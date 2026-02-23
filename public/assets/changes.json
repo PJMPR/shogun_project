@@ -45,7 +45,7 @@
       "changes": [ {
         "subject": "Warsztaty programistyczne",
         "type": "usunięcie",
-        "reason": "W programie były  ogólnie 4 przedmioty warsztatowe, które uczyły tworzenia aplikacji internetowych (baza danych + api + UI). Zdecydowano się na wprowadzenie jednego przedmiotu warsztatowego, który będzie realizowany przez cały semestr 3, a jego treści będą obejmowały wszystkie te obszary."
+        "reason": "Przedmiot koncentrował się wokół technologii PHP. W programie były  ogólnie 4 przedmioty warsztatowe, które uczyły tworzenia aplikacji internetowych (baza danych + api + UI). Zdecydowano się na wprowadzenie jednego przedmiotu warsztatowego, który będzie realizowany przez cały semestr 3, a jego treści będą obejmowały wszystkie te obszary."
       },
         {
           "subject": "Algebra liniowa i geometria",
