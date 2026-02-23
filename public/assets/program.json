@@ -591,7 +591,9 @@
           "lab": 60,
           "form": "Z",
           "ects": 6,
-          "electiveGroup": "PRZ1"
+          "electiveGroup": "PRZ1",
+          "syllabusFile": "assets/syllabusy/PRZ1.json",
+          "pdf": "assets/files/stacjonarne/PRZ1.pdf"
         },
         {
           "name": "Przedmiot Specjalizacyjny 3",
@@ -692,7 +694,9 @@
           "lab": 60,
           "form": "Z",
           "ects": 4,
-          "electiveGroup": "PRZ2"
+          "electiveGroup": "PRZ2",
+          "syllabusFile": "assets/syllabusy/PRZ2.json",
+          "pdf": "assets/files/stacjonarne/PRZ2.pdf"
         },
         {
           "name": "Przedmiot obieralny humanistyczny/społeczny 2",
