@@ -47,7 +47,11 @@
                                                      {
                                                          "nazwa":  "PRIN – Procesy Innowacyjne",
                                                          "wymagania":  "Wiedza ogólna na temat technologii"
-                                                     }
+                                                     },
+                      {
+                        "nazwa":  "KLI – Kompetencje lidera IT",
+                        "wymagania":  "Wiedza ogólna na temat technologii"
+                      }
                                                  ],
                     "cel_dydaktyczny":  "Zapoznanie ze społecznymi aspektami rozwoju technologii cyfrowych, ich używaniem i nadużywaniem, z uwzględnieniem odpowiedzialności zawodowo-etycznej informatyków, zagadnień prawnych, wpływu technologii na jednostki, grupy zawodowe oraz społeczeństwo. Poruszane są też zagadnienia komunikacji międzyludzkiej i rozwiązywania konfliktów.",
                     "literatura":  {

@@ -37,8 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy programowania",
-      "Podstawy tworzenia aplikacji webowych lub mobilnych"
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia wieloplatformowych aplikacji mobilnych z wykorzystaniem frameworka Flutter i języka Dart. Studenci poznają architekturę aplikacji opartych na widżetach, zasady budowania interfejsu użytkownika, zarządzanie stanem oraz integrację aplikacji z zewnętrznymi usługami. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych aplikacji działających na systemach Android i iOS.",
     "literatura": {

@@ -37,7 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy programowania (dowolny język)"
+      {
+        "nazwa": "Podstawy Programowania",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Java oraz wykształcenie umiejętności tworzenia prostych aplikacji z wykorzystaniem paradygmatu obiektowego. Zajęcia kładą nacisk na poprawne modelowanie klas, czytelność kodu, obsługę wyjątków oraz wykorzystanie standardowych bibliotek języka Java. Przedmiot przygotowuje studentów do dalszej nauki technologii opartych na JVM oraz do realizacji niewielkich projektów programistycznych.",
     "literatura": {

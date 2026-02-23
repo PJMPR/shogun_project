@@ -407,7 +407,9 @@
           "tutorial": 0,
           "lab": 30,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy/LLP.json",
+          "pdf": "assets/files/stacjonarne/LLP.pdf"
         },
         {
           "name": "Bezpieczeństwo systemów informacyjnych",
@@ -672,7 +674,9 @@
           "lab": 0,
           "form": "Z",
           "ects": 2,
-          "electiveGroup": "PSEM"
+          "electiveGroup": "PSEM",
+          "syllabusFile": "assets/syllabusy/PSEM.json",
+          "pdf": "assets/files/stacjonarne/PSEM.pdf"
         },
         {
           "name": "Przedmiot Specjalizacyjny 4",

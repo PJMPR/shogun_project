@@ -42,16 +42,16 @@
                                        ],
                     "przedmioty_wprowadzajace":  [
                                                      {
-                                                         "nazwa":  "Programowanie obiektowe w Javie",
-                                                         "wymagania":  "Relacyjne bazy danych"
+                                                         "nazwa":  "Programowanie obiektowe",
+                                                         "wymagania":  "Podstawowe umiejętności w zakresie programowania obiektowego"
                                                      },
                                                      {
-                                                         "nazwa":  "Podstawowe umiejętności w zakresie programowania obiektowego",
+                                                         "nazwa":  "Algorytmy i struktury danych",
                                                          "wymagania":  "Umiejętność projektowania podstawowych algorytmów"
                                                      },
                                                      {
-                                                         "nazwa":  "Ogólna znajomość problematyki relacyjnych baz danych",
-                                                         "wymagania":  ""
+                                                         "nazwa":  "Relacyjne bazy danych",
+                                                         "wymagania":  "Ogólna znajomość problematyki relacyjnych baz danych"
                                                      }
                                                  ],
                     "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie słuchaczy z podstawowymi technikami analityczno-projektowymi, narzędziami CASE oraz założeniami metodologicznymi wytwarzania rozwiązań IT. Student musi wykazywać się znajomością najczęściej wykorzystywanych dokumentów przedprojektowych, rdzeniowych kategorii modelowania i diagramów języka UML oraz metod odwzorowania modelu obiektowego w wybranym języku programowania/schemacie relacyjnym z wykorzystaniem narzędziowych technik transformacji.",

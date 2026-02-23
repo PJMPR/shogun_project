@@ -37,9 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy programowania",
-      "Podstawy JavaScript lub TypeScript",
-      "Podstawy tworzenia aplikacji webowych"
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia aplikacji mobilnych z wykorzystaniem frameworka React Native. Studenci poznają architekturę aplikacji opartych na komponentach, zarządzanie stanem, nawigację oraz integrację z natywnymi funkcjami urządzeń mobilnych. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych, wieloplatformowych aplikacji mobilnych na systemy Android i iOS.",
     "literatura": {

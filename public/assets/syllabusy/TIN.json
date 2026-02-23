@@ -95,12 +95,8 @@
                                           ],
                     "przedmioty_wprowadzajace":  [
                                                      {
-                                                         "nazwa":  "Warsztaty programistyczne (WPR)",
+                                                         "nazwa":  "Warsztat programisty (WPR)",
                                                          "wymagania":  "Znajomosc HTML, obslugi bazy danych za pomoca jezyka zapytan SQL"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Relacyjne bazy danych (RBD)",
-                                                         "wymagania":  "Podstawy projektowania i obslugi baz danych"
                                                      }
                                                  ]
                 }

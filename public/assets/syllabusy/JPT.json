@@ -37,7 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy programowania (dowolny język)"
+      {
+        "nazwa": "Podstawy Programowania",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Python oraz wykształcenie umiejętności samodzielnego tworzenia prostych aplikacji i skryptów. Zajęcia kładą nacisk na czytelność kodu, dobre praktyki programistyczne oraz praktyczne zastosowania języka Python w analizie danych, automatyzacji zadań i tworzeniu prostych aplikacji. Przedmiot przygotowuje studentów do dalszej nauki technologii wykorzystujących Python oraz do realizacji niewielkich projektów programistycznych.",
     "literatura": {

@@ -37,8 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy baz danych relacyjnych",
-      "Podstawy programowania (dowolny język)"
+      {
+        "nazwa": "Relacyjne bazy danych",
+        "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją baz danych słownikowych (klucz–wartość) oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają charakterystykę tego modelu, zasady przechowywania i wyszukiwania danych, a także typowe scenariusze użycia, takie jak cache, sesje użytkowników czy konfiguracje aplikacji. Przedmiot przygotowuje do świadomego doboru baz słownikowych jako elementu architektury systemów informatycznych.",
     "literatura": {

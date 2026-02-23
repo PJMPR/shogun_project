@@ -153,6 +153,13 @@ function Generate-Tex($s, [string]$code) {
     if ($s.literatura.uzupelniajaca.pozycje) {
         foreach ($p in $s.literatura.uzupelniajaca.pozycje) { $litUItems += "  \item $(Escape-Latex $p)$nl" }
     }
+    # Dokumentacja internetowa - jesli istnieje, dołącz do literatury uzupełniającej
+    if ($s.literatura.dokumentacja_internetowa) {
+        $docKeys = $s.literatura.dokumentacja_internetowa.PSObject.Properties.Name
+        foreach ($key in $docKeys) {
+            $litUItems += "  \item $(Escape-Latex $key)$nl"
+        }
+    }
 
     # Zabezpieczenie przed pustymi listami
     if (-not $tresciItems)   { $tresciItems   = "  \item Brak danych.$nl" }

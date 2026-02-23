@@ -37,8 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy programowania w C#",
-      "Podstawy platformy .NET"
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia wieloplatformowych aplikacji mobilnych i desktopowych z wykorzystaniem platformy .NET MAUI. Studenci poznają architekturę aplikacji opartych na wzorcu MVVM, budowę interfejsu użytkownika w XAML, zarządzanie stanem oraz integrację aplikacji z natywnymi funkcjami systemów Android, iOS i Windows. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych aplikacji wieloplatformowych.",
     "literatura": {

@@ -37,8 +37,10 @@
       "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
     ],
     "przedmioty_wprowadzajace": [
-      "Podstawy baz danych relacyjnych",
-      "Podstawy programowania (dowolny język)"
+      {
+        "nazwa": "Relacyjne bazy danych",
+        "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
+      }
     ],
     "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją nierelacyjnych baz danych typu dokumentowego oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają różnice pomiędzy podejściem relacyjnym a dokumentowym, zasady modelowania danych w formacie dokumentów (np. JSON), podstawowe operacje na danych oraz integrację baz dokumentowych z aplikacjami. Przedmiot przygotowuje do świadomego doboru technologii bazodanowej w zależności od charakteru problemu i wymagań systemu.",
     "literatura": {
