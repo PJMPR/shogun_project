@@ -74,6 +74,11 @@
       "semester": 3,
       "changes": [
         {
+          "subject": "Metody programowania oraz Java zaawansowana",
+          "type": "usunięcie",
+          "reason": "Przedmioty powielały sporo treści programowych - utworzono nowy przedmiot z większa ilością godzin przeznaczonych na wykład i laboratoria."
+        },
+        {
           "subject": "Programowanie aplikacji internetowych",
           "type": "nowy",
           "reason": "Przedmiot powstał z połączenia Metod programowania i Javy zaawansowanej, które powielały treści. Dodatkowo zmieniono technologię wiodącą z Javy na C#."
