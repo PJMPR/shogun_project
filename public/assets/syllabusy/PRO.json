@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -45,28 +45,6 @@
                                            "ocena doboru i wykonania rozwiązań projektowych i powiązanej dokumentacji",
                                            "Uwaga: Ocena na podstawie oceny produktu realizowanego projektu oraz ocen częściowych, otrzymywanych za wykonanie udokumentowanych komponentów projektowych"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "• Programowanie 2",
-                                                         "wymagania":  "• Wstęp do informatyki i architektury komputerów"
-                                                     },
-                                                     {
-                                                         "nazwa":  "• Relacyjne bazy danych",
-                                                         "wymagania":  "• Projektowanie systemów informacyjnych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "• Umiejętność programowania obiektowego na poziomie podstawowym",
-                                                         "wymagania":  "• Wiedza o organizacji systemu komputerowego oraz architekturze"
-                                                     },
-                                                     {
-                                                         "nazwa":  "• Znajomość projektowania baz danych",
-                                                         "wymagania":  "• Znajomość zagadnień analizy i projektowania SI i notacji UML"
-                                                     },
-                                                     {
-                                                         "nazwa":  "• Wcześniejsze lub równoczesne zrozumienie zagadnień planowania i prowadzenia projektu informatycznego.",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Celem zajęć jest zwiększenie umiejętności związanych z podstawowymi zagadnieniami i praktyką planowania i prowadzenia projektu informatycznego, w szczególności – projektu mającego na celu wytworzenie produktu programowego w technologii obiektowej oraz zdobycie przez studentów doświadczeń pracy w zespole. Zajęcia projektowe są skorelowane z wykładem przedmiotu Budowa i integracja systemów (BYT), zapewniając kompleksowość przedstawianych zagadnień inżynierii oprogramowania i dając studentom możliwość samodzielnego, metodycznego przeprowadzenia niedużych projektów informatycznych – od zdefiniowania problemu, poprzez dobór strategii i zaplanowanie jego rozwiązania do wykonania praktycznych elementów produktu, z użyciem wzorców i komponentów projektowych oraz przeprowadzeniem testów systemowych i walidacyjnych, a także ich udokumentowaniem. Wzorcowym projektem jest wykorzystanie technologii obiektowej w cyklu kaskadowym lub komponentowym, oraz zwinne strategie realizacji projektów. Istotnymi czynnikami doboru tematów są praktyczna przydatność, a także, w miarę możliwości, zapewnienie współpracy studentów z rzeczywistym klientem projektu. Tematy są prowadzone są w 2-4 osobowych grupach.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -133,6 +111,24 @@
                                               "13. Ocena i poprawa jakości oprogramowania. Scenariusze testów. Testowanie i walidacja oprogramowania; przygotowanie raportu z przeprowadzonych testów.",
                                               "14. Finalizacja prac implementacyjnych i dokumentacyjnych; odbiór techniczny, przygotowanie raportu końcowego.",
                                               "15. Prezentacja, omówienie i podsumowanie projektów. Zaliczenie przedmiotu."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Programowanie 2 (POJ)",
+                                                         "wymagania":  "Umiejetnosc programowania obiektowego na poziomie podstawowym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Wstep do informatyki i architektury komputerow (UKOS)",
+                                                         "wymagania":  "Wiedza o organizacji systemu komputerowego oraz architekturze"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Relacyjne bazy danych (RBD)",
+                                                         "wymagania":  "Znajomosc projektowania baz danych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Projektowanie systemow informatycznych (PRI)",
+                                                         "wymagania":  "Znajomosc zagadnien analizy i projektowania SI i notacji UML; wczesniejsze lub rownoczesne zrozumienie zagadnien planowania i prowadzenia projektu informatycznego"
+                                                     }
+                                                 ]
                 }
 }

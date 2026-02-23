@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -41,20 +41,6 @@
                                            "Kryteria oceny",
                                            "Ocena z projektu i aktywności studenta na zajęciach."
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Machine Learning",
-                                                         "wymagania":  "Znajomość budowy podstawowych architektur sztucznych sieci neuronowych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość podstawowych funkcji aktywacji wykorzystywanych w sztucznych sieciach neuronowych",
-                                                         "wymagania":  "Znajomość podstawowych architektur splotowych sieci neuronowych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość podstawowych architektur rekurencyjnych sieci neuronowych",
-                                                         "wymagania":  "Znajomość wybranych algorytmów uczenia maszynowego (k-means, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, klasyfikator Bayesowski)"
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z algorytmami sztucznej inteligencji, wykorzystywanymi aktualnie w badaniach naukowych i przemyśle, w szczególności zrozumienie i implementacja architektur sztucznych sieci neuronywch wykorzystywanych w analizie obrazu, analizie danych danych tabelarycznych i przetwarzaniu języka naturalnego. Do celów pośrednich przedmiotu należy również nauka wyszukiwania informacji na temat najnowszych osiągnięć z dziedziny sztucznej inteligencji oraz otwarty zbiorów danych przydatnych w analizie danego zagadnienia.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -65,7 +51,7 @@
                                                       },
                                        "uzupelniajaca":  {
                                                              "pozycje":  [
-                                                                             "Goldberg, Yoav, and Graeme Hirst. \"Neural Network Methods in Natural Language Processing. Morgan & Claypool Publishers(2017).\""
+                                                                             "Goldberg, Yoav, and Graeme Hirst. \"Neural Network Methods in Natural Language Processing. Morgan \u0026 Claypool Publishers(2017).\""
                                                                          ]
                                                          }
                                    },
@@ -95,6 +81,12 @@
                                               "Kapsułowe sieci neuronowe i analiza obrazu w wykorzystaniem architektury typu transformer",
                                               "Implementacja kapsułowych sieci neuronowych i modelu Vision Transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
                                               "Metody nauki nienadzorowanej jako mechanizm pretreningu sieci neuronowych"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Machine Learning (IML)",
+                                                         "wymagania":  "Znajomosc budowy podstawowych architektur sztucznych sieci neuronowych, funkcji aktywacji, architektur splotowych i rekurencyjnych, algorytmow uczenia maszynowego (k-means, SVM, drzewo decyzyjne, las losowy, klasyfikator Bayesowski)"
+                                                     }
+                                                 ]
                 }
 }

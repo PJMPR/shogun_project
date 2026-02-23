@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -44,24 +44,6 @@
                                            "60% Kolokwium",
                                            "40% Projekt programistyczny"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Użytkowanie komputerów",
-                                                         "wymagania":  "Systemy operacyjne"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Technologie internetu",
-                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
-                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość protokołu HTTP",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot \"Technologie Backendowe\" został stworzony z myślą o rozwijaniu umiejętności z zakresu zaawansowanego programowania w języku JavaScript, z wykorzystaniem Node.js i przykładowego narzędzia do tworzenia środowiska po stronie serwera za pomocą protokołu HTTP, w celu tworzenia efektywnych i skalowalnych aplikacji internetowych. Program nauczania skupia się na głębokim zrozumieniu protokołu HTTP i wzorca REST API, co pozwala na efektywne projektowanie i implementację interfejsów API, odpowiadających za komunikację między frontendem a backendem.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -115,6 +97,20 @@
                                               "Tworzenie aplikacji typu REST API z wykorzystania JavaScript oraz dokumentowej bazie danych",
                                               "Pojęcie bezpieczeństwa w aplikacjach typu REST API",
                                               "Testowanie aplikacji typu REST API"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Uzytkowanie komputerow (UKOS)",
+                                                         "wymagania":  "Znajomosc struktur plikow i katalogow; znajomosc pojecia procesu; umiejetnosc poslugiwania sie emulatorem terminala"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Systemy operacyjne (SOP)",
+                                                         "wymagania":  "Podstawy administracji systemem operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu (TIN)",
+                                                         "wymagania":  "Znajomosc protokolu HTTP; znajomosc pojec z zakresu tworzenia aplikacji internetowych"
+                                                     }
+                                                 ]
                 }
 }

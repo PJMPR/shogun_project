@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -42,24 +42,6 @@
                                            "Ocenę stanowi 40% kolokwium z zakresu przyznawania  adresów IP v4 i v 6  , 40%  ćwiczenia praktyczne na urządzeniach Cisco  lub na symulatorze sieci Cisco Packet Tracer  wykonywane w trakcie zajęć, 20% aktywność",
                                            "Ocenę stanowi 45% wyniku uzyskanego na egzaminie,45% ocen otrzymywanych systematycznie w trakcie trwania semestru z tytułu realizacji modułów tematycznych(egzaminycząstkowe), 10% aktywność"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Użytkowanie Komputerów i Podstawy Systemów Operacyjnych",
-                                                         "wymagania":  "Wstęp do informatyki i architektury komputerów"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Wymagane zagadnienia/umiejętności niezbędne w realizacji danego przedmiotu",
-                                                         "wymagania":  "Znajomość regulaminu i zasad BHP pracowni informatycznej i sieciowej"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Rozumienie pojęć z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności",
-                                                         "wymagania":  "Rozumienie  pojęć z zakresu  sieci komputerowych,  technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Podstawowa wiedza o organizacji systemu komputerowego i architekturze warstwowej",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot poświęcony jest prezentacji zasad funkcjonowania  współczesnych sieci teleinformatycznych w oparciu o model warstwowy OSI. Omawiane są funkcje poszczególnych  warstw OSI i powiązań między nimi, używane technologie, standardy, protokoły. Studenci nabywają umiejętności niezbędne do opracowania  projektu sieci LAN  łącznie z konfiguracją IPv4 i IPv6, hermetyzacją  routerów i przełączników ,  routingiem i podstawowym zabezpieczeniem urządzeń przed atakami z  sieci Inside  i Outside .",
                     "literatura":  {
                                        "podstawowa":  {
@@ -99,6 +81,16 @@
                                               "Obsługa niezawodnej komunikacji TCP, trójstopniowe uzgadnianie, kontrola przepływu, dynamiczne wymiary okien. Protokół TCP a UDP.",
                                               "Usługi i protokoły warstwy aplikacji ( DNS, HTTP, HTTPS, Telnet, SSH , FTP, DHCP, SMTP, POP3, IMAP, S ) – charakterystyka, wykorzystanie , konfiguracja",
                                               "Metody zarządzania siecią LAN"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Uzytkowanie Komputerow i Podstawy Systemow Operacyjnych (UKOS)",
+                                                         "wymagania":  "Rozumienie pojec z zakresu systemow operacyjnych; znajomosc regulaminu BHP pracowni; podstawowa wiedza o organizacji systemu komputerowego i architekturze warstwowej; rozumienie pojec z zakresu sieci komputerowych i protokolow komunikacyjnych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Wstep do informatyki i architektury komputerow",
+                                                         "wymagania":  "Podstawy organizacji systemu komputerowego"
+                                                     }
+                                                 ]
                 }
 }

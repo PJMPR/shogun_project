@@ -49,12 +49,8 @@
                                        ],
                     "przedmioty_wprowadzajace":  [
                                                      {
-                                                         "nazwa":  "Niezbędna jest ogólna znajomość obsługi komputera.",
-                                                         "wymagania":  "M3D lub G3D"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Bardzo zalecane jest wcześniejsze skończenie kursu Grafiki komputerowej lub Modelowania 3D dla gier.",
-                                                         "wymagania":  ""
+                                                         "nazwa":  "Grafika 3D.",
+                                                         "wymagania":  "Bardzo zalecane jest wcześniejsze skończenie kursu Grafiki komputerowej lub Modelowania 3D dla gier."
                                                      }
                                                  ],
                     "cel_dydaktyczny":  "Celem przedmiotu jest przygotowanie studentów do bardziej wszechstronnej pracy w branży Gamedev w charakterze twórców dynamicznych treści cyfrowych związanych z animacją w różnych jej odmianach. Nacisk kładziony jest na wykorzystanie mechanizmów parametrycznych i hierarchicznych, tworzenie rigów 3D oraz związane z nimi tematy takie jak 12 podstaw animacji Disneya, przechwytywanie ruchu, symulowanie ruchu, upraszczanie i edycja krzywych ruchu, tworzenie mechanik i mechanizmów z elementami obliczeń inżynierskich i skryptowania oraz zarządzanie danymi dynamicznymi, takimi jak mockupy, pozy, klucze kształtów i sterowniki/więzy ograniczające.",

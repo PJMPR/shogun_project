@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -47,12 +47,6 @@
                                            "Od 80% - db+",
                                            "Od 90% - bdb"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Algorytmy i struktury danych, podstawy języka C++, Analiza matematyczna, Matematyka dyskretna",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Kurs traktuje o metodach metaheurystycznych. Jest to przegląd technik z tej dziedziny wraz z metodami testowania i porównywania różnych podejść do problemu optymalizacyjnego. Student zapozna się z właściwościami oraz zastosowaniem algorytmów heurystycznych. Wiedza wykładowa zostanie przetrenowana na laboratoriach, które pozwolą w sposób bardziej praktyczny zapoznać się z tematem i przygotują studenta do podejmowania decyzji odnośnie zastosowania metod metaheurystycznych lub wybrania innych technik odpowiednich do danego zadania..",
                     "literatura":  {
                                        "podstawowa":  {
@@ -98,6 +92,20 @@
                                               "Strategia Ewolucyjna",
                                               "Programowanie Genetyczne",
                                               "Metody testowania i porównywania metod heurystycznych"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Algorytmy i struktury danych (ASD)",
+                                                         "wymagania":  "Podstawy projektowania i analizy algorytmow; podstawy jezyka C++"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Analiza matematyczna (AM)",
+                                                         "wymagania":  "Podstawy analizy matematycznej"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Matematyka dyskretna (MAD)",
+                                                         "wymagania":  "Podstawy matematyki dyskretnej"
+                                                     }
+                                                 ]
                 }
 }

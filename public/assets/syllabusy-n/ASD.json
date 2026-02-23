@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -56,28 +56,6 @@
                                            "Od 80% - db+",
                                            "Od 90% - bdb"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "PRG1 – Programowanie",
-                                                         "wymagania":  "POJ – Programowanie obiektowe"
-                                                     },
-                                                     {
-                                                         "nazwa":  "ALG – Algebra liniowa z geometrią",
-                                                         "wymagania":  "AM – Analiza matematyczna"
-                                                     },
-                                                     {
-                                                         "nazwa":  "MAD – Matematyka Dyskretna",
-                                                         "wymagania":  "Umiejętność programowania programów iteracyjnych i rekursywnych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Umiejętność liczenia granic i sum szeregów oraz całek",
-                                                         "wymagania":  "funkcji elementarnych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Umiejętność wnioskowania",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -125,6 +103,20 @@
                                               "Algorytmy grafowe",
                                               "Podstawy teorii złożoności, klasy złożoności, metody redukcji i problemy zupełne w klasie",
                                               "Języki formalne – języki regularne, kontekstowe i bezkontekstowe,automaty i gramatyki."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRG1 - Programowanie",
+                                                         "wymagania":  "Umiejetnosc programowania iteracyjnego i rekursywnego; umiejetnosc liczenia granic, sum szeregow oraz calek funkcji elementarnych; umiejetnosc logicznego wnioskowania"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ALG - Algebra liniowa z geometria",
+                                                         "wymagania":  "Podstawy algebry liniowej"
+                                                     },
+                                                     {
+                                                         "nazwa":  "MAD - Matematyka Dyskretna",
+                                                         "wymagania":  "Podstawy matematyki dyskretnej"
+                                                     }
+                                                 ]
                 }
 }

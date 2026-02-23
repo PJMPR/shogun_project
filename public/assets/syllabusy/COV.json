@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -41,25 +41,11 @@
                                            "Ocena zadań laboratoryjnych",
                                            "Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50% laboratorium, 50% projekt."
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Narzędzia Sztucznej Inteligencji",
-                                                         "wymagania":  "Future of Deep Learning"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Algebra liniowa z geometrią",
-                                                         "wymagania":  "Praca ze środowiskami: Colab, HuggingFace, metryki, zadania uczenia maszynowego"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Podstawy działania sieci neuronowej, transfer learning, self-supervised learning, foundation models, podstawy pracy w PyTorchu",
-                                                         "wymagania":  "Podstawowe operacje na macierzach"
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
                     "literatura":  {
                                        "podstawowa":  {
                                                           "pozycje":  [
-                                                                          "Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 14, 17"
+                                                                          "Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O\u0027Reilly Media, Inc.\", 2022.  Rozdział 14, 17"
                                                                       ]
                                                       },
                                        "uzupelniajaca":  {
@@ -104,6 +90,16 @@
                                               "Generowanie obrazu. Style Transfer.",
                                               "Rekonstrukcja 3D na podstawie obrazu 2D.",
                                               "Detekcja pozy. Rozpoznawanie twarzy."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Narzedzia Sztucznej Inteligencji (NAI)",
+                                                         "wymagania":  "Podstawy dzialania sieci neuronowej; transfer learning; self-supervised learning; foundation models; podstawy PyTorch; praca ze srodowiskami Colab, HuggingFace"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ALG - Algebra liniowa z geometria",
+                                                         "wymagania":  "Podstawowe operacje na macierzach"
+                                                     }
+                                                 ]
                 }
 }

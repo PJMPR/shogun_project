@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -45,24 +45,6 @@
                                            "40% Ocena z laboratorium",
                                            "60% Egzamin"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Użytkowanie komputerów",
-                                                         "wymagania":  "Systemy operacyjne"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Technologie internetu",
-                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
-                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość protokołu HTTP",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie się z techniką konteneryzacji na podstawie narzędzia Docker oraz Kubernetes. Efektem przedmiotu ma być możliwość utworzenia aplikacji typu REST API, która będzie spakowana za pomocą wyżej wymienionych narzędzi.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -110,6 +92,20 @@
                                               "Proces wdrażania aplikcji za pomocą narzędzia Ansible",
                                               "Proces monitorowania aplikacji w cyklu produkcyjnym",
                                               "Uruchomienie kontenerezowanej aplikacji w chmurze"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Uzytkowanie komputerow (UKOS)",
+                                                         "wymagania":  "Znajomosc struktur plikow i katalogow; znajomosc pojecia procesu w systemie operacyjnym; umiejetnosc poslugiwania sie emulatorem terminala"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Systemy operacyjne (SOP)",
+                                                         "wymagania":  "Podstawy administracji systemem operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu (TIN)",
+                                                         "wymagania":  "Znajomosc protokolu HTTP; znajomosc pojec z zakresu tworzenia aplikacji internetowych"
+                                                     }
+                                                 ]
                 }
 }

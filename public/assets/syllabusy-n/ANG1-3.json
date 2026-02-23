@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -63,12 +63,6 @@
                                            "uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/ testy",
                                            "pozytywna (min. 3.0) ocena łączna za pozostałe formy"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Znajomość języka angielskiego na poziomie min.A2+/B1.",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angielskiego uzupełnionego o wprowadzenie elementów języka specjalistycznego, tj. biznesu, grafiki, sztuki nowych mediów oraz o treści typowo akademickie na poziomie docelowym B2. Studenci z wejściowym poziomem minimum B2 osiągają poziom C1 lub C2. Kurs obejmuje nauczanie specjalistycznego słownictwa, sprawności komunikacyjnych w biznesie, zwłaszcza umiejętności przygotowania i przedstawienia profesjonalnej prezentacji, jak również rozwijanie podstawowych sprawności komunikacyjnych, a szczególnie szybkiego czytania tekstów specjalistycznych zwłaszcza z zakresu grafiki (artykuły prasowe, książki, strony internetowe poświęcone tematyce) i słuchania tekstów o wzrastającym poziomie trudności. Podczas kursu studenci zostają zapoznani z terminologią dotyczącą grafiki, przygotowują się do porozumiewania się na tematy fachowe podczas pracy. Abstrakt po angielsku: The aim of the course is to pass the knowledge enhancing the basic English  lexis of the specific aspects of business and the studied area (graphic design), teach communication skills and raise the awareness of cross-cultural circumstances in business communication, as well as to revise and expand general language skills to the B2-C2 level (depending on the initial language level of students). Communicative skills in business are transferable to the native language. Secondary education graduates are usually deficient in this matter. These skills and abilities are indispensable in the modern working environment, irrespective of the sector and area of specialization.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -164,9 +158,15 @@
                                               "10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów.",
                                               "11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K_U01",
                                               "12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.(",
-                                              "13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading&Listening.",
+                                              "13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading\u0026Listening.",
                                               "14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.)",
                                               "15. Colloquium / Podsumowanie semestru."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Jezyk angielski (szkola srednia)",
+                                                         "wymagania":  "Znajomosc jezyka angielskiego na poziomie min. A2+/B1"
+                                                     }
+                                                 ]
                 }
 }

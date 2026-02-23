@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -51,12 +51,6 @@
                                            "Ocena grupowa i indywidualna (uwzględniająca wkład).",
                                            "Nie dotyczy."
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Znajomość podstawowych pojęć z zakresu inżynierii oprogramowania, cyklu życia oprogramowania.",
-                                                         "wymagania":  "Umiejętność pracy w zespole."
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -117,6 +111,12 @@
                                               "Teorie X, Y, Z - style zarządzania.",
                                               "Cargo Cults - unikanie bezmyślnego naśladowania.",
                                               "Etyka w zarządzaniu projektami IT."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Inzynieria oprogramowania",
+                                                         "wymagania":  "Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole"
+                                                     }
+                                                 ]
                 }
 }

@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -41,16 +41,6 @@
                                            "50% Kolokwium pisemne",
                                            "50% Projekt praktyczny"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Warsztaty programistyczne",
-                                                         "wymagania":  "Bazy danych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość HTML, obsługi bazy danych za pomocą języka zapytań",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Zapoznanie studentów z nowoczesnymi technologiami internetowymi, które są kluczowe dla tworzenia i zarządzania dynamicznymi stronami oraz aplikacjami internetowymi. Zdobycie wiedzy na temat tworzenia responsywnych interfejsów, wykorzystania zaawansowanych technik CSS oraz programowania w języku JavaScript, w tym programowania funkcyjnego i obiektowego. Przedmiot obejmuje także tematykę asynchronicznego programowania, modyfikacji elementów DOM oraz korzystania z narzędzi sieciowych, takich jak HTTP i WebSocket. Dodatkowo, studenci poznają podstawy pracy z popularnym narzędziem do budowy aplikacji serwerowych.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -102,6 +92,16 @@
                                               "Obsługa komunikacji sieciowej w JavaScript, w tym zapytania HTTP i mechanizmy komunikacji w czasie rzeczywistym.",
                                               "Podstawy pracy z technologiami serwerowymi oraz budowa aplikacji internetowych.",
                                               "Wprowadzenie do tworzenia aplikacji internetowych z wykorzystaniem popularnych narzędzi serwerowych."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Warsztaty programistyczne (WPR)",
+                                                         "wymagania":  "Znajomosc HTML, obslugi bazy danych za pomoca jezyka zapytan SQL"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Relacyjne bazy danych (RBD)",
+                                                         "wymagania":  "Podstawy projektowania i obslugi baz danych"
+                                                     }
+                                                 ]
                 }
 }

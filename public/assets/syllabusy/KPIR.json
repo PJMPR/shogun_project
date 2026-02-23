@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -45,16 +45,6 @@
                                            "- pozytywna ocena za ćwiczenia laboratoryjne,",
                                            "- egzamin pisemny składający się z co najwyżej dziesięciu zadań"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Analiza Matematyczna, Algebra Liniowa i Geometria, Fizyka, Użytkowanie komputerów, Wstęp do informatyki i architektury komputerów, Programowanie 1,  Elektronika.",
-                                                         "wymagania":  "Umiejętność programowania w języku typu C, C++ lub Java."
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość regulaminu i zasad BHP obowiązujących w laboratorium.",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Celem głównym przedmiotu jest przedstawienie budowy i działania systemów Internetu rzeczy a w szczególności metod i sposobów komunikowania w tym protokołów, które umożliwią wymianę informacji między czujnikami, efektorami i sterownikami.Cechą systemów Internetu rzeczy jest wykorzystywanie urządzeń o obniżonym poborze mocy oraz działanie w warunkach wymagających zapewnienia bezpieczeństwa transmisji i przetwarzania danych.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -96,6 +86,12 @@
                                               "Walidacja i testowanie systemy IoT.",
                                               "Standardy komunikacyjne dla IoT.",
                                               "Wdrożenie i prezentacja systemu IoT."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Analiza Matematyczna, ALG, FIZ, UKOS, Programowanie, Elektronika",
+                                                         "wymagania":  "Umiejetnosc programowania w jezyku C, C++ lub Java; znajomosc regulaminu i zasad BHP obowiazujacych w laboratorium"
+                                                     }
+                                                 ]
                 }
 }

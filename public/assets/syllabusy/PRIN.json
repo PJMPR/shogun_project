@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -46,12 +46,6 @@
                                            "ocena sporządzonego sprawozdania",
                                            "brak"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "POZ – Podstawy Organizacji i Zarządzania znajomość podstaw organizacji i zarządzania",
-                                                         "wymagania":  "Znajomość podstaw organizacji i zarządzania"
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawami zarządzania firmą innowacyjną oraz organizacyjnymi podstawami jej funkcjonowania Zapoznanie studentów z technikami analizy i pobudzania kreatywności oraz twórczego rozwiązywania problemów inżynierskich.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -64,8 +58,8 @@
                                                              "pozycje":  [
                                                                              "Szmidt, K. J. (2021). Teoria i praktyka twórczości: Od badań do edukacji kreatywnej. Łódź: Wydawnictwo Uniwersytetu Łódzkiego. ISBN: 978-83-8142-929-0",
                                                                              "Penc-Pietrzak, I. (2019). Kreatywność w zarządzaniu. Nowe wyzwania dla liderów organizacji. Warszawa: Difin. ISBN: 978-83-8085-882-2",
-                                                                             "Trzebiński, J., & Siemieńska, R. (2020). Twórcze rozwiązywanie problemów: Podstawy teoretyczne i zastosowania praktyczne. Warszawa: PWN. ISBN: 978-83-01-21489-7",
-                                                                             "Nęcka, E., Orzechowski, J., & Słabosz, A. (2019). Kreatywność: Procesy poznawcze, osobowość, środowisko. Warszawa: PWN. ISBN: 978-83-01-20526-0"
+                                                                             "Trzebiński, J., \u0026 Siemieńska, R. (2020). Twórcze rozwiązywanie problemów: Podstawy teoretyczne i zastosowania praktyczne. Warszawa: PWN. ISBN: 978-83-01-21489-7",
+                                                                             "Nęcka, E., Orzechowski, J., \u0026 Słabosz, A. (2019). Kreatywność: Procesy poznawcze, osobowość, środowisko. Warszawa: PWN. ISBN: 978-83-01-20526-0"
                                                                          ]
                                                          }
                                    },
@@ -134,6 +128,9 @@
                                               "Zarządzanie wiedzą i innowacjami w organizacji",
                                               "Zasady efektywnej komunikacji;",
                                               "Prezentacja rozwiązań projektowych"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ]
                 }
 }

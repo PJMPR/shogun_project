@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -46,12 +46,6 @@
                                            "ocena sporządzonego sprawozdania",
                                            "brak"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "POZ – Podstawy Organizacji i Zarządzania znajomość podstaw organizacji i zarządzania",
-                                                         "wymagania":  "Znajomość podstaw organizacji i zarządzania"
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawami zarządzania firmą innowacyjną oraz organizacyjnymi podstawami jej funkcjonowania Zapoznanie studentów z technikami analizy i pobudzania kreatywności oraz twórczego rozwiązywania problemów inżynierskich.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -134,6 +128,12 @@
                                               "Zarządzanie wiedzą i innowacjami w organizacji",
                                               "Zasady efektywnej komunikacji;",
                                               "Prezentacja rozwiązań projektowych"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "POZ - Podstawy Organizacji i Zarzadzania",
+                                                         "wymagania":  "Znajomosc podstaw organizacji i zarzadzania"
+                                                     }
+                                                 ]
                 }
 }

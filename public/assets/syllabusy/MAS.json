@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -41,20 +41,6 @@
                                            "Warunkiem dopuszczenia do egzaminu jest zaliczenie ćwiczeń.",
                                            "Warunkiem zdania egzaminu pisemnego jest zdobycie co najmniej  50% punktów."
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "PRI – Projektowanie systemów informatycznych",
-                                                         "wymagania":  "ALG – Algebra liniowa z geometrią"
-                                                     },
-                                                     {
-                                                         "nazwa":  "AM – Analiza matematyczna",
-                                                         "wymagania":  "MAD – Matematyka Dyskretna"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Umiejętność logicznego wnioskowania oraz umiejętność programowania",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -84,6 +70,24 @@
                                            },
                     "tresci_programowe":  [
                                               "Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRI - Projektowanie systemow informatycznych",
+                                                         "wymagania":  "Umiejetnosc logicznego wnioskowania oraz umiejetnosc programowania"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ALG - Algebra liniowa z geometria",
+                                                         "wymagania":  "Podstawy algebry liniowej"
+                                                     },
+                                                     {
+                                                         "nazwa":  "AM - Analiza matematyczna",
+                                                         "wymagania":  "Podstawy analizy matematycznej"
+                                                     },
+                                                     {
+                                                         "nazwa":  "MAD - Matematyka Dyskretna",
+                                                         "wymagania":  "Podstawy matematyki dyskretnej"
+                                                     }
+                                                 ]
                 }
 }

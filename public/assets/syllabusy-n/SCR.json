@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -51,26 +51,16 @@
                                            "Ocena końcowa (zal) zaliczająca przedmiot (SCR) jest wyliczana wg poniższego wzoru:",
                                            "przy czym obie oceny składowe muszą być pozytywne."
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Analiza matematyczna, Algebra liniowa i geometria, Fizyka, Użytkowanie komputerów, Wstęp do informatyki i architektury komputerów, Programowanie,  Elektronika,Systemy operacyjne, Systemy wbudowane i  techniki cyfrowe.",
-                                                         "wymagania":  "Umiejętność programowania w języku C."
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość regulaminu i zasad BHP obowiązujących w laboratorium.",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z podstawowymi zagadnieniami dotyczącymi systemów czasu rzeczywistego (SCR), dotyczącymi: zasad funkcjonowania i specyfikisystemów czasu rzeczywistego i systemów operacyjnych czasu rzeczywistego, a także metodologii tworzenia aplikacji czasurzeczywistego. Pozwala to na osiągnięcie praktycznej umiejętności tworzenia aplikacji czasu rzeczywistego dla określonej specyfikacji i wybranego hardware’u.",
                     "literatura":  {
                                        "podstawowa":  {
                                                           "pozycje":  [
-                                                                          "M. Chetto. Ed.Real-time Systems Scheduling 1. Fundamentals. J. Wiley & Sons, 2014.",
+                                                                          "M. Chetto. Ed.Real-time Systems Scheduling 1. Fundamentals. J. Wiley \u0026 Sons, 2014.",
                                                                           "A.Gupta, A. Kumar Chandra and P. Luksch.Real-Time and Distributed Real-Time Systems.",
                                                                           "Theory and Applications. CRC Press 2016.",
                                                                           "H. Kopetz. Real - Time Systems. Springer 2020.",
                                                                           "A. Kwiecień, P. Gaj. (Red.).Współczesne problemy systemów czasu rzeczywistego. WNT, Warszawa2004.",
-                                                                          "P. Laplante and S. Ovaska. REAL-TIME SYSTEMS DESIGN AND ANALYSIS.Tools for the Practitioner. Fourth Edition. IEEE Press &J. Wiley 2012.",
+                                                                          "P. Laplante and S. Ovaska. REAL-TIME SYSTEMS DESIGN AND ANALYSIS.Tools for the Practitioner. Fourth Edition. IEEE Press \u0026J. Wiley 2012.",
                                                                           "C. Ptolemaeus, Ed. System Design, Modeling, and Simulation using Ptolemy II. Ptolemy org, 2014.",
                                                                           "K. Sacha. Systemy czasu rzeczywistego. Wyd .PW  2006.",
                                                                           "J. Ułasiewicz.Systemy czasu rzeczywistego QNX6 Neutrino, Wyd.BTC, Legionowo 2007."
@@ -122,6 +112,12 @@
                                               "13 , Zagadnienia bezpieczeństwa w sieciach rozproszonych SCR.",
                                               "14 , Analiza utworzonego systemu z punktu widzenia spełnienia wymagań dotyczących jego specyfikacji.",
                                               "15 , Zastosowania wybranych rozwiązań SCR w  różnych dziedzinach, np. automatyka przemysłowa, robotyka, internet rzeczy, logistyka dedykowanych dostaw towarów, medycyna, technologie kosmiczne, technologie militarne i inne."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Analiza matematyczna, ALG, FIZ, UKOS, Programowanie, Elektronika, SOP, SWB",
+                                                         "wymagania":  "Umiejetnosc programowania w jezyku C; znajomosc regulaminu i zasad BHP obowiazujacych w laboratorium"
+                                                     }
+                                                 ]
                 }
 }

@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -44,16 +44,6 @@
                                            "Projekt programistyczny.",
                                            "Ustalenie oceny zaliczeniowej na podstawie ocen cząstkowych otrzymanych w  trakcie trwania semestru"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Wiedza z zakresu szkoły średniej. Algebra liniowa.",
-                                                         "wymagania":  ""
-                                                     },
-                                                     {
-                                                         "nazwa":  "Wymagane jest ukończenie kursu Animacja 3D lub posiadanie certyﬁkatu BFCT (Blender Foundation Certiﬁed Trainer).",
-                                                         "wymagania":  ""
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot \"Symulacje i gry decyzyjne\" ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -62,7 +52,7 @@
                                                                           "- Watson J. Stategia. Wprowadzenie do teorii gier. WNT Warszawa 2004.",
                                                                           "- Gajda J.B., Prognozowanie i symulacja a decyzje gospodarcze, Wyd. C.H.Beck, Warszawa 2001",
                                                                           "- Rymarczyk M. (red.): Gry, symulacje, sieci. Wyd. WBS Poznań, 1997.",
-                                                                          "- Poundstone, W. (1992), Prisoner's Dilemma: John von Neumann, Game Theory and the Puzzle of the Bomb",
+                                                                          "- Poundstone, W. (1992), Prisoner\u0027s Dilemma: John von Neumann, Game Theory and the Puzzle of the Bomb",
                                                                           "- Maynard-Smith, J. (1982), Evolution and the theory of games",
                                                                           "- Axelrod R. Advancing the Art of Simulation in the Social Sciences",
                                                                           "-Hucara Ł., „Projektowanie i programowanie gier video”, Wydawnictwo PJWSTK, 2011",
@@ -72,7 +62,7 @@
                                                       },
                                        "uzupelniajaca":  {
                                                              "pozycje":  [
-                                                                             "- Orlin B., Math Games with Bad Drawings: 75 ¼ Simple, Challenging, Go-Anywhere Games – And Why They Matter,  Black Dog & Leventhal, 2022",
+                                                                             "- Orlin B., Math Games with Bad Drawings: 75 ¼ Simple, Challenging, Go-Anywhere Games – And Why They Matter,  Black Dog \u0026 Leventhal, 2022",
                                                                              "- DeLoura M. ,  Game programming gems 1 - 6– seria książek",
                                                                              "- Nystrom R, 2014, Game programming patterns"
                                                                          ]
@@ -105,6 +95,12 @@
                                               "Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji.",
                                               "Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych",
                                               "Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Brak formalnego przedmiotu wprowadzajacego",
+                                                         "wymagania":  "Wiedza z zakresu szkoly sredniej (algebra liniowa); ukonczenie kursu Animacja 3D lub posiadanie certyfikatu BFCT (Blender Foundation Certified Trainer)"
+                                                     }
+                                                 ]
                 }
 }

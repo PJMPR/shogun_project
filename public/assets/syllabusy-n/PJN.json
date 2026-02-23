@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -47,20 +47,6 @@
                                            "81%-90%4,5",
                                            "91%-100%5"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Narzędzia Sztucznej Inteligencji",
-                                                         "wymagania":  "Future of Deep Learning"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Algebra liniowa z geometrią",
-                                                         "wymagania":  "Praca ze środowiskami: Colab, HuggingFace, metryki, zadania uczenia maszynowego"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Podstawy działania sieci neuronowej, transfer learning, self-supervised learning, foundation models, podstawy pracy w PyTorchu",
-                                                         "wymagania":  "Podstawowe operacje na macierzach"
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -140,6 +126,16 @@
                                               "Podsumowanie i Dyskusja",
                                               "•Przegląd kluczowych zagadnień omówionych w kursie",
                                               "•Dyskusja na temat przyszłości NLP i jego wpływu na różne dziedziny"
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Narzedzia Sztucznej Inteligencji (NAI)",
+                                                         "wymagania":  "Podstawy dzialania sieci neuronowej; transfer learning; self-supervised learning; foundation models; podstawy PyTorch; praca ze srodowiskami Colab i HuggingFace"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ALG - Algebra liniowa z geometria",
+                                                         "wymagania":  "Podstawowe operacje na macierzach"
+                                                     }
+                                                 ]
                 }
 }

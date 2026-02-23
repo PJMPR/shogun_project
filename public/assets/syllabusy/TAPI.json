@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -46,24 +46,6 @@
                                            "40% Ocena z laboratorium",
                                            "60% Egzamin z zagadnień poruszanych na wykładzie"
                                        ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "Technologie Frontendowe",
-                                                         "wymagania":  "Technologie Backendowe"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Technologie internetu",
-                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
-                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość protokołu HTTP",
-                                                         "wymagania":  "Znajomość pojęć z zakresu tworzenia aplikacji internetowej z podziałem na frontend oraz backend."
-                                                     }
-                                                 ],
                     "cel_dydaktyczny":  "Przedmiot \"Trendy w rozwoju API\" ma na celu zaznajomienie studentów z aktualnymi kierunkami rozwoju i innowacjami w dziedzinie tworzenia API dla aplikacji internetowych. Studenci zdobędą wiedzę teoretyczną i praktyczną na temat najnowszych standardów, protokołów i narzędzi używanych do projektowania, implementacji i zarządzania interfejsami API. Uczestnicy będą mieli okazję zgłębić tematykę takich kwestii jak: bezpieczeństwo API, skalowalność, wydajność oraz dobre praktyki programistyczne. Poznają również różnorodność stylów API, w tym REST, GraphQL, gRPC i inne, analizując ich zalety i wady oraz zastosowania w różnych kontekstach projektowych. Kolejnym istotnym elementem przedmiotu jest praca grupowa, która ma na celu rozwijanie umiejętności współpracy, komunikacji i innowacyjnego myślenia. Studenci będą mieli za zadanie zanalizować i opracować materiał dotyczący wybranej technologii z zakresu tworzenia API, co pozwoli na pogłębienie wiedzy i umiejętności praktycznych w konkretnym obszarze.",
                     "literatura":  {
                                        "podstawowa":  {
@@ -108,6 +90,20 @@
                                               "Rola i znaczenie dokumentacji API. Narzędzia do tworzenia dokumentacji API - OpenAPI, Swagger, Postman",
                                               "Język TypeScript",
                                               "Inne znane technologie wspierające proces budowania aplikacji internetowych."
-                                          ]
+                                          ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Technologie Frontendowe",
+                                                         "wymagania":  "Znajomosc struktur plikow i katalogow; znajomosc pojecia procesu; umiejetnosc poslugiwania sie emulatorem terminala; znajomosc protokolu HTTP; znajomosc pojec frontend/backend"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie Backendowe",
+                                                         "wymagania":  "Podstawy tworzenia aplikacji serwerowych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu (TIN)",
+                                                         "wymagania":  "Znajomosc technologii webowych"
+                                                     }
+                                                 ]
                 }
 }
