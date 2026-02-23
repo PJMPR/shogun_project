@@ -1,0 +1,389 @@
+<div class="ns-container">
+
+  <div class="ns-header">
+    <h1 class="ns-title"><i class="pi pi-file-edit"></i> Nowy sylabus</h1>
+    <p class="ns-subtitle">Wypełnij formularz, aby wygenerować plik JSON sylabusa.</p>
+  </div>
+
+  <!-- 0. Dane podstawowe -->
+  <p-panel header="Dane podstawowe" styleClass="ns-panel" [toggleable]="false">
+    <div class="ns-grid-2">
+      <div class="ns-field">
+        <label class="ns-label">Tryb studiów <span class="ns-req">*</span></label>
+        <p-select [options]="trybOptions" [(ngModel)]="form.tryb_studiow"
+                  optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Jednostka</label>
+        <p-select [options]="jednostkiOptions" [(ngModel)]="form.jednostka"
+                  optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+      </div>
+      <div class="ns-field ns-col-2">
+        <label class="ns-label">Nazwa przedmiotu <span class="ns-req">*</span></label>
+        <input pInputText [(ngModel)]="form.nazwa_przedmiotu"
+               placeholder="np. Programowanie obiektowe" class="ns-input" />
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Kod przedmiotu <span class="ns-req">*</span></label>
+        <input pInputText [(ngModel)]="form.kod_przedmiotu"
+               placeholder="np. POJ" class="ns-input" />
+        <small class="ns-hint">Kod będzie nazwą pliku JSON</small>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Odpowiedzialny za przedmiot</label>
+        <input pInputText [(ngModel)]="form.odpowiedzialny"
+               placeholder="np. dr Jan Kowalski" class="ns-input" />
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Rok studiów</label>
+        <p-inputNumber [(ngModel)]="form.rok_studiow" [min]="1" [max]="5"
+                       styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Semestr studiów</label>
+        <p-inputNumber [(ngModel)]="form.semestr_studiow" [min]="1" [max]="10"
+                       styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Punkty ECTS</label>
+        <p-inputNumber [(ngModel)]="form.ects" [min]="0" [max]="30"
+                       styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+      <div class="ns-field ns-obligatoryjny">
+        <p-checkbox [(ngModel)]="form.obligatoryjny" [binary]="true"
+                    inputId="obligatoryjny" />
+        <label for="obligatoryjny" class="ns-label ns-label-inline">Przedmiot obowiązkowy</label>
+      </div>
+    </div>
+    <p-divider />
+    <div class="ns-auto-info">
+      <span class="ns-auto-item"><i class="pi pi-lock"></i> Uczelnia: <strong>Polsko-Japońska Akademia Technik Komputerowych</strong></span>
+      <span class="ns-auto-item"><i class="pi pi-lock"></i> Kierunek: <strong>INFORMATYKA</strong></span>
+      <span class="ns-auto-item"><i class="pi pi-lock"></i> Profil: <strong>praktyczny</strong></span>
+      <span class="ns-auto-item"><i class="pi pi-lock"></i> Wersja z dnia: <strong>{{ today }}</strong></span>
+    </div>
+  </p-panel>
+
+  <!-- 1. Godziny -->
+  <p-panel header="1. Godziny zajęć" styleClass="ns-panel" [toggleable]="false">
+    <div class="ns-grid-3">
+      <div class="ns-field">
+        <label class="ns-label">Wykłady [h]</label>
+        <p-inputNumber [(ngModel)]="form.wyklady" [min]="0"
+                       (ngModelChange)="onGodzinyChange()" styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Ćwiczenia / Lektorat [h]</label>
+        <p-inputNumber [(ngModel)]="form.cwiczenia" [min]="0"
+                       (ngModelChange)="onGodzinyChange()" styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Laboratorium / Projekt [h]</label>
+        <p-inputNumber [(ngModel)]="form.laboratorium" [min]="0"
+                       (ngModelChange)="onGodzinyChange()" styleClass="ns-inputnumber"></p-inputNumber>
+      </div>
+    </div>
+    <p-divider />
+    <div class="ns-grid-3">
+      <div class="ns-field">
+        <label class="ns-label">Z udziałem prowadzącego [h]</label>
+        <p-inputNumber [(ngModel)]="form.z_udzialem_prowadzacego_h" [min]="0"
+                       (ngModelChange)="onRecalcPraca()" styleClass="ns-inputnumber"></p-inputNumber>
+        <small class="ns-hint">Auto: suma godzin zajęć</small>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Całkowita liczba godzin [h]</label>
+        <p-inputNumber [(ngModel)]="form.calkowita_liczba_godzin_h" [min]="0"
+                       (ngModelChange)="onRecalcPraca()" styleClass="ns-inputnumber"></p-inputNumber>
+        <small class="ns-hint">np. ECTS × 25</small>
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Praca własna studenta [h]</label>
+        <p-inputNumber [(ngModel)]="form.praca_wlasna_studenta_h" [disabled]="true"
+                       styleClass="ns-inputnumber ns-readonly"></p-inputNumber>
+        <small class="ns-hint">= całkowita − z prowadzącym</small>
+      </div>
+    </div>
+  </p-panel>
+
+  <!-- 2. Forma zaliczenia -->
+  <p-panel header="2. Forma zaliczenia" styleClass="ns-panel" [toggleable]="false">
+    <div class="ns-grid-3">
+      @if ((form.wyklady || 0) > 0) {
+        <div class="ns-field">
+          <label class="ns-label">Wykład</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_wyklad"
+                    optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+        </div>
+      }
+      @if ((form.cwiczenia || 0) > 0) {
+        <div class="ns-field">
+          <label class="ns-label">Ćwiczenia / Lektorat</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_cwiczenia"
+                    optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+        </div>
+      }
+      @if ((form.laboratorium || 0) > 0) {
+        <div class="ns-field">
+          <label class="ns-label">Laboratorium / Projekt</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_laboratorium"
+                    optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+        </div>
+      }
+      @if ((form.wyklady || 0) === 0 && (form.cwiczenia || 0) === 0 && (form.laboratorium || 0) === 0) {
+        <p class="ns-hint-block">Wprowadź najpierw godziny zajęć.</p>
+      }
+    </div>
+  </p-panel>
+
+  <!-- 3. Cel dydaktyczny -->
+  <p-panel header="3. Cel dydaktyczny" styleClass="ns-panel" [toggleable]="false">
+    <div class="ns-field">
+      <textarea pTextarea [(ngModel)]="form.cel_dydaktyczny" rows="5"
+                placeholder="Opisz cel dydaktyczny przedmiotu..." class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 4. Metody dydaktyczne -->
+  <p-panel header="4. Metody dydaktyczne" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każda metoda w nowej linii.</small>
+    @if ((form.wyklady || 0) > 0) {
+      <div class="ns-field">
+        <label class="ns-label">Wykład</label>
+        <textarea pTextarea [(ngModel)]="form.metody_wyklad_txt" rows="3"
+                  placeholder="np. Wykład problemowy&#10;Prezentacja multimedialna" class="ns-textarea"></textarea>
+      </div>
+    }
+    @if ((form.cwiczenia || 0) > 0) {
+      <div class="ns-field">
+        <label class="ns-label">Ćwiczenia / Lektorat</label>
+        <textarea pTextarea [(ngModel)]="form.metody_cwiczenia_txt" rows="3"
+                  placeholder="np. Ćwiczenia tablicowe&#10;Praca w grupach" class="ns-textarea"></textarea>
+      </div>
+    }
+    @if ((form.laboratorium || 0) > 0) {
+      <div class="ns-field">
+        <label class="ns-label">Laboratorium / Projekt</label>
+        <textarea pTextarea [(ngModel)]="form.metody_laboratorium_txt" rows="3"
+                  placeholder="np. Laboratoria komputerowe&#10;Realizacja projektów" class="ns-textarea"></textarea>
+      </div>
+    }
+  </p-panel>
+
+  <!-- 5. Kryteria oceny -->
+  <p-panel header="5. Kryteria oceny" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każde kryterium w nowej linii.</small>
+    <div class="ns-field">
+      <textarea pTextarea [(ngModel)]="form.kryteria_oceny_txt" rows="5"
+                placeholder="np. Kolokwium zaliczeniowe (60%)&#10;Projekt (40%)" class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 6. Przedmioty wprowadzające -->
+  <p-panel header="6. Przedmioty wprowadzające" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    @for (p of form.przedmioty_wprowadzajace; track $index) {
+      <div class="ns-przedmiot-row">
+        <div class="ns-field ns-field-grow">
+          <label class="ns-label">Nazwa przedmiotu</label>
+          <input pInputText [(ngModel)]="p.nazwa"
+                 placeholder="np. Podstawy programowania" class="ns-input" />
+        </div>
+        <div class="ns-field ns-field-grow">
+          <label class="ns-label">Wymagane zagadnienia</label>
+          <input pInputText [(ngModel)]="p.wymagania"
+                 placeholder="np. Znajomość programowania strukturalnego" class="ns-input" />
+        </div>
+        <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                  (onClick)="removePrzedmiot($index)" />
+      </div>
+    }
+    <p-button label="Dodaj przedmiot" icon="pi pi-plus" [text]="true" size="small"
+              (onClick)="addPrzedmiot()" />
+  </p-panel>
+
+  <!-- 7. Efekty kształcenia -->
+  <p-panel header="7. Efekty kształcenia" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każdy efekt w nowej linii.</small>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-lightbulb"></i> Wiedza</label>
+      <textarea pTextarea [(ngModel)]="form.efekty_wiedza_txt" rows="4"
+                placeholder="np. Student zna podstawowe algorytmy sortowania..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-cog"></i> Umiejętności</label>
+      <textarea pTextarea [(ngModel)]="form.efekty_umiejetnosci_txt" rows="4"
+                placeholder="np. Student potrafi zaimplementować algorytm..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-users"></i> Kompetencje społeczne</label>
+      <textarea pTextarea [(ngModel)]="form.efekty_kompetencje_txt" rows="3"
+                placeholder="np. Student jest gotowy do pracy w zespole..." class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 8. Treści programowe -->
+  <p-panel header="8. Treści programowe" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każda pozycja w nowej linii.</small>
+    <div class="ns-field">
+      <textarea pTextarea [(ngModel)]="form.tresci_programowe_txt" rows="7"
+                placeholder="np. Wprowadzenie do algorytmów&#10;Złożoność czasowa i pamięciowa..." class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 9. Literatura -->
+  <p-panel header="9. Literatura" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każda pozycja w nowej linii.</small>
+    <div class="ns-field">
+      <label class="ns-label">Literatura podstawowa</label>
+      <textarea pTextarea [(ngModel)]="form.literatura_podstawowa_txt" rows="4"
+                placeholder="np. T. Cormen – Wprowadzenie do algorytmów, PWN 2022" class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label">Literatura uzupełniająca</label>
+      <textarea pTextarea [(ngModel)]="form.literatura_uzupelniajaca_txt" rows="4"
+                placeholder="np. G. Mirkowska – Algorytmy i struktury danych, PJWSTK 2006" class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label">Dokumentacja internetowa</label>
+      <small class="ns-hint-block">Każdy link / opis w nowej linii.</small>
+      <textarea pTextarea [(ngModel)]="form.literatura_internetowa_txt" rows="3"
+                placeholder="np. https://docs.oracle.com/en/java/ – dokumentacja Java, stan na 01.01.2026" class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- Pasek akcji -->
+  <div class="ns-action-bar">
+    <p-button
+      label="Importuj JSON"
+      icon="pi pi-upload"
+      severity="warn"
+      (onClick)="openImport()"
+      styleClass="ns-btn"
+    />
+    <p-button
+      label="Podgląd sylabusa"
+      icon="pi pi-eye"
+      severity="info"
+      (onClick)="previewSylabus()"
+      styleClass="ns-btn"
+    />
+    <p-button
+      label="Podgląd JSON"
+      icon="pi pi-code"
+      severity="secondary"
+      (onClick)="previewJson()"
+      styleClass="ns-btn"
+    />
+    <p-button
+      [label]="'Pobierz JSON (' + (form.kod_przedmiotu.trim() || 'sylabus') + '.json)'"
+      icon="pi pi-download"
+      severity="success"
+      (onClick)="downloadJson()"
+      styleClass="ns-btn"
+    />
+  </div>
+
+</div>
+
+<!-- Dialog importu JSON -->
+<p-dialog
+  [(visible)]="importDialogVisible"
+  header="Importuj JSON sylabusa"
+  [modal]="true"
+  [style]="{ width: '700px', maxWidth: '98vw' }"
+  [contentStyle]="{ 'max-height': '75vh', 'overflow-y': 'auto' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <div class="ns-import-container">
+    <p class="ns-import-info">
+      <i class="pi pi-info-circle"></i>
+      Wgraj plik JSON lub wklej jego zawartość poniżej. Dane wypełnią formularz.
+    </p>
+
+    <!-- Drag & Drop -->
+    <div
+      class="ns-dropzone"
+      [class.ns-dropzone-active]="importDragOver"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave()"
+      (drop)="onDrop($event)"
+      (click)="fileInput.click()"
+    >
+      <i class="pi pi-cloud-upload ns-dropzone-icon"></i>
+      <span class="ns-dropzone-text">Przeciągnij plik <strong>.json</strong> tutaj lub kliknij, aby wybrać</span>
+      <input #fileInput type="file" accept=".json" class="ns-file-input" (change)="onFileSelected($event)" />
+    </div>
+
+    <p-divider align="center"><span class="ns-divider-label">lub wklej JSON</span></p-divider>
+
+    <!-- Textarea -->
+    <textarea
+      pTextarea
+      [(ngModel)]="importJsonText"
+      rows="12"
+      placeholder='{ "sylabus": { "nazwa_przedmiotu": "...", "kod_przedmiotu": "...", ... } }'
+      class="ns-textarea ns-import-textarea"
+    ></textarea>
+
+    <!-- Błąd -->
+    @if (importError) {
+      <div class="ns-import-error">
+        <i class="pi pi-exclamation-triangle"></i> {{ importError }}
+      </div>
+    }
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Wypełnij formularz"
+      icon="pi pi-check"
+      severity="success"
+      (onClick)="applyImport()"
+    />
+    <p-button
+      label="Anuluj"
+      icon="pi pi-times"
+      severity="secondary"
+      [text]="true"
+      (onClick)="importDialogVisible = false"
+    />
+  </ng-template>
+</p-dialog>
+
+<!-- Dialog podglądu JSON -->
+<p-dialog
+  [(visible)]="dialogVisible"
+  [header]="'Podgląd JSON — ' + (form.nazwa_przedmiotu || form.kod_przedmiotu || 'sylabus')"
+  [modal]="true"
+  [style]="{ width: '800px', maxWidth: '98vw' }"
+  [contentStyle]="{ 'max-height': '75vh', 'overflow-y': 'auto' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <pre class="ns-json-preview">{{ jsonPreview }}</pre>
+  <ng-template pTemplate="footer">
+    <p-button label="Pobierz JSON" icon="pi pi-download" severity="success" (onClick)="downloadJson()" />
+    <p-button label="Zamknij" icon="pi pi-times" severity="secondary" [text]="true" (onClick)="dialogVisible = false" />
+  </ng-template>
+</p-dialog>
+
+<!-- Dialog podglądu sylabusa -->
+<p-dialog
+  [(visible)]="previewDialogVisible"
+  [header]="'Podgląd sylabusa — ' + (form.nazwa_przedmiotu || form.kod_przedmiotu || 'sylabus')"
+  [modal]="true"
+  [style]="{ width: '900px', maxWidth: '98vw' }"
+  [contentStyle]="{ 'max-height': '82vh', 'overflow-y': 'auto' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  @if (previewSylabusData) {
+    <app-sylabus-preview [sylabus]="previewSylabusData" />
+  }
+  <ng-template pTemplate="footer">
+    <p-button label="Pobierz JSON" icon="pi pi-download" severity="success" (onClick)="downloadJson()" />
+    <p-button label="Zamknij" icon="pi pi-times" severity="secondary" [text]="true" (onClick)="previewDialogVisible = false" />
+  </ng-template>
+</p-dialog>
+

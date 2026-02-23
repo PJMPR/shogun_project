@@ -16,5 +16,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pdf-viewer/pdf-viewer.component').then((m) => m.PdfViewerComponent),
   },
+  {
+    path: 'sylabus/nowy',
+    loadComponent: () =>
+      import('./sylabus/nowy/nowy-sylabus.component').then((m) => m.NowySylabusComponent),
+  },
+  {
+    path: 'sylabus/edytuj',
+    loadComponent: () =>
+      import('./sylabus/edytuj/edytuj-sylabus.component').then((m) => m.EdytujSylabusComponent),
+  },
   { path: '', redirectTo: 'stacjonarne/program', pathMatch: 'full' },
 ];

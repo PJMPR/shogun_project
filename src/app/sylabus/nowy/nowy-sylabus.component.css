@@ -1,0 +1,275 @@
+.ns-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ns-header {
+  margin-bottom: 0.5rem;
+}
+
+.ns-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--p-primary-color);
+  margin: 0 0 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ns-subtitle {
+  color: var(--p-text-muted-color);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+:host ::ng-deep .ns-panel {
+  border: 1px solid var(--p-surface-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+:host ::ng-deep .ns-panel .p-panel-header {
+  background: var(--p-surface-100);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+:host ::ng-deep .ns-panel .p-panel-content {
+  padding: 1rem;
+}
+
+.ns-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+}
+
+.ns-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+}
+
+.ns-col-2 {
+  grid-column: span 2;
+}
+
+.ns-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ns-field-grow {
+  flex: 1;
+}
+
+.ns-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--p-surface-600);
+}
+
+.ns-label-inline {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ns-req {
+  color: #e11d48;
+}
+
+.ns-input {
+  width: 100%;
+}
+
+:host ::ng-deep .ns-select {
+  width: 100%;
+}
+
+:host ::ng-deep .ns-select .p-select-overlay,
+:host ::ng-deep .p-select-overlay {
+  z-index: 9999 !important;
+}
+
+:host ::ng-deep .ns-inputnumber {
+  width: 100%;
+}
+
+:host ::ng-deep .ns-inputnumber.ns-readonly input {
+  background: var(--p-surface-100);
+  color: var(--p-text-muted-color);
+}
+
+.ns-textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.ns-hint {
+  font-size: 0.78rem;
+  color: var(--p-text-muted-color);
+}
+
+.ns-hint-block {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--p-text-muted-color);
+  margin-bottom: 0.5rem;
+}
+
+.ns-auto-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.ns-auto-item {
+  font-size: 0.82rem;
+  color: var(--p-text-muted-color);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ns-auto-item strong {
+  color: var(--p-text-color);
+}
+
+.ns-obligatoryjny {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.ns-przedmiot-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.ns-action-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: var(--p-surface-50);
+  border: 1px solid var(--p-surface-200);
+  border-radius: 8px;
+  position: sticky;
+  bottom: 1rem;
+  z-index: 10;
+}
+
+.ns-json-preview {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+/* Import dialog */
+.ns-import-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ns-import-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--p-text-muted-color);
+  margin: 0;
+}
+
+.ns-dropzone {
+  border: 2px dashed var(--p-surface-300);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: var(--p-surface-50);
+  user-select: none;
+}
+
+.ns-dropzone:hover,
+.ns-dropzone-active {
+  border-color: var(--p-primary-color);
+  background: var(--p-primary-50, #ecfdf5);
+}
+
+.ns-dropzone-icon {
+  font-size: 2rem;
+  color: var(--p-surface-400);
+}
+
+.ns-dropzone-active .ns-dropzone-icon {
+  color: var(--p-primary-color);
+}
+
+.ns-dropzone-text {
+  font-size: 0.9rem;
+  color: var(--p-text-muted-color);
+  text-align: center;
+}
+
+.ns-file-input {
+  display: none;
+}
+
+.ns-divider-label {
+  font-size: 0.8rem;
+  color: var(--p-text-muted-color);
+  padding: 0 0.5rem;
+}
+
+.ns-import-textarea {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+}
+
+.ns-import-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 700px) {
+  .ns-grid-2, .ns-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .ns-col-2 {
+    grid-column: span 1;
+  }
+  .ns-przedmiot-row {
+    flex-direction: column;
+  }
+}
+
