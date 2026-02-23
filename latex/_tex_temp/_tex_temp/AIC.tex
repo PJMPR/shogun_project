@@ -1,0 +1,188 @@
+﻿% ===========================================================
+%  Sylabus: Analiza Incydentów Cyberbezpieczeństwa (AIC)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: AIC}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/_tex_temp/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/_tex_temp/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Analiza Incydentów Cyberbezpieczeństwa} \\[3pt]
+  \textbf{Kod przedmiotu:}    & AIC \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Paweł Lelental \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 30 h & 60 h & 40 h & 100 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Analiza incydentów cyberbezpieczeństwa to proces badania i oceny zdarzeń, które mogą stanowić naruszenie cyberbezpieczeństwa. Celem jest zrozumienie, jak doszło do incydentu, jakie są jego skutki, jak można go zażegnać i jak zapobiegać podobnym incydentom w przyszłości. W całym tym procesie kluczowe jest posiadanie odpowiednich umiejętności analizy systemów i sieci, a także do podejmowania szybkich i skutecznych działań w celu zminimalizowania wpływu incydentów na cyberbezpieczeństwo.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wykład:
+  \item Anatomia zagrożenia – Ransomware (wg. ENISA)
+  \item Anatomia zagrożenia – Malware (wg. ENISA)
+  \item Anatomia zagrożenia – Cryptojacking (wg. ENISA)
+  \item Anatomia zagrożenia - E-mail related threats (wg. ENISA)
+  \item Anatomia zagrożenia - Threats against data (wg. ENISA)
+  \item Anatomia zagrożenia - Threats against availability and integrity (wg. ENISA)
+  \item Anatomia zagrożenia - Disinformation – misinformation (wg. ENISA)
+  \item Anatomia zagrożenia - Non-malicious threats (wg. ENISA)
+  \item Laboratoria:
+  \item Zapoznanie się z organizacją oraz utworzenie Zespołów SOC
+  \item Atak 1: Atak typu Ransomware, Poziom 1– Reakcja i prewencja
+  \item Atak 2: Atak typu Malware. Poziom 1 – Reakcja i prewencja
+  \item Atak 3: Atak typu Cryptojacking, Poziom 1 – Reakcja i prewencja
+  \item Atak 4: Atak typu E-mail related threats, Poziom 1 – Reakcja i prewencja
+  \item Atak 5: Atak typu Threats against data, Poziom 1 – Reakcja i prewencja
+  \item Atak 6: Atak typu Threats against availability and integrity, Poziom 1 – Reakcja i prewencja
+  \item Atak 7: Atak typu Disinformation – misinformation, Poziom 1 – Reakcja i prewencja
+  \item Atak 8: Atak typu Non-malicious threats, Poziom 1 – Reakcja i prewencja
+  \item Atak 9: Atak typu Zaawansowany wektor ataku 1, Poziom 2  – Reakcja i prewencja
+  \item Atak 10: Atak typu Zaawansowany wektor ataku 2, Poziom 2  – Reakcja i prewencja
+  \item Atak 11: Atak typu Zaawansowany wektor ataku 3, Poziom 2  – Reakcja i prewencja
+  \item Atak 12 : Atak typu Zaawansowany wektor ataku 4, Poziom 2  – Reakcja i prewencja
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie anatomię kluczowych zagrożeń Cyber
+  \item Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń
+  \item Student potrafi wskazać mocne i słabe strony systemów ochrony informacji
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do pracy zespołowej w dziale SOC
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item burza mózgów
+  \item warsztaty
+  \item Kryteria oceny
+  \item Laboratorium/Projekt
+  \item rezultaty gry strategicznej, kolokwium końcowe
+  \item Kryteria oceny:niedostateczny: < 50\% możliwych do zdobycia punktów dostateczny  :     50\%-60\% możliwych do zdobycia punktów dostateczny+ :    61\%- 70\% możliwych do zdobycia punktówdobry :                71\%-80\% możliwych do zdobycia punktówdobry +:              81\%-90\% możliwych do zdobycia punktów bardzo dobry  :   >90\%  możliwych do zdobycia punktów
+  \item Zaliczenie – kolokwium końcowe z Laboratoriów
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item William Stallings, Lawrie Brown - Bezpieczeństwo systemów informatycznych. Zasady i praktyka. (ang. Computer Security: Principles and Practice), Wydanie IV. Tom 1 i 2, Helion 2019
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\end{document}

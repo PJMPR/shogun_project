@@ -1,0 +1,296 @@
+
+===== Sylabusy stacjonarne (79 plikow) =====
+--> AAI
+  OK: AAI.pdf (223.8 KB)
+--> AIC
+  OK: AIC.pdf (220.7 KB)
+--> ALG
+  OK: ALG.pdf (223.2 KB)
+--> AMs
+  OK: AMs.pdf (224.8 KB)
+--> ANG1-3
+  OK: ANG1-3.pdf (236 KB)
+--> ANK
+  OK: ANK.pdf (223.6 KB)
+--> ASD
+  OK: ASD.pdf (223.4 KB)
+--> BSI
+  OK: BSI.pdf (220.9 KB)
+--> BYT
+  OK: BYT.pdf (230.9 KB)
+--> COV
+  OK: COV.pdf (230.1 KB)
+--> CPP
+  OK: CPP.pdf (219.1 KB)
+--> DDO
+  OK: DDO.pdf (218.6 KB)
+--> DEV
+  OK: DEV.pdf (224.4 KB)
+--> DGR
+  OK: DGR.pdf (218 KB)
+--> DOT
+  OK: DOT.pdf (222.3 KB)
+--> DSL
+  OK: DSL.pdf (218.1 KB)
+--> ELK
+  OK: ELK.pdf (219.8 KB)
+--> FDL
+  OK: FDL.pdf (227.4 KB)
+--> FIZ
+  OK: FIZ.pdf (226.4 KB)
+--> GRK
+  OK: GRK.pdf (226.7 KB)
+--> HKJ
+  OK: HKJ.pdf (223.5 KB)
+--> ICK
+  OK: ICK.pdf (225 KB)
+--> IML
+  OK: IML.pdf (234.4 KB)
+--> JFS
+  OK: JFS.pdf (218 KB)
+--> JJA
+  OK: JJA.pdf (218.3 KB)
+--> JPC
+  OK: JPC.pdf (219.4 KB)
+--> JPT
+  OK: JPT.pdf (218.1 KB)
+--> JSC
+  OK: JSC.pdf (218.4 KB)
+--> KCs
+  OK: KCs.pdf (219.9 KB)
+--> KIP
+  OK: KIP.pdf (222.4 KB)
+--> KNO
+  OK: KNO.pdf (216.5 KB)
+--> KPIR
+  OK: KPIR.pdf (223.5 KB)
+--> LLP
+  OK: LLP.pdf (218.2 KB)
+--> M3D
+  OK: M3D.pdf (220.4 KB)
+--> MAD
+  OK: MAD.pdf (223.7 KB)
+--> MAS
+  OK: MAS.pdf (220.2 KB)
+--> MFL
+  OK: MFL.pdf (217.4 KB)
+--> MHE
+  OK: MHE.pdf (221.7 KB)
+--> MLR
+  OK: MLR.pdf (225 KB)
+--> MNE
+  OK: MNE.pdf (218.2 KB)
+--> MRN
+  OK: MRN.pdf (218.6 KB)
+--> MUN
+  OK: MUN.pdf (218.2 KB)
+--> NAI
+  OK: NAI.pdf (218.2 KB)
+--> OGL
+  OK: OGL.pdf (224.3 KB)
+--> PJN
+  OK: PJN.pdf (229.8 KB)
+--> POJ
+  OK: POJ.pdf (224.1 KB)
+--> POZ
+  OK: POZ.pdf (224.7 KB)
+--> PPS
+  OK: PPS.pdf (217.3 KB)
+--> PRG1
+  OK: PRG1.pdf (221.9 KB)
+--> PRI
+  OK: PRI.pdf (223 KB)
+--> PRIN
+  OK: PRIN.pdf (228.8 KB)
+--> PRO
+  OK: PRO.pdf (230.1 KB)
+--> PTT
+  OK: PTT.pdf (221.2 KB)
+--> RBD
+  OK: RBD.pdf (219.4 KB)
+--> RTO
+  OK: RTO.pdf (223.4 KB)
+--> S3D
+  OK: S3D.pdf (220.2 KB)
+--> SAD
+  OK: SAD.pdf (220.3 KB)
+--> SAI
+  OK: SAI.pdf (229.2 KB)
+--> SCR
+  OK: SCR.pdf (231.7 KB)
+--> SGD
+  OK: SGD.pdf (225.6 KB)
+--> SITA
+  OK: SITA.pdf (227.2 KB)
+--> SKOA
+  OK: SKOA.pdf (223.5 KB)
+--> SOP
+  OK: SOP.pdf (221.5 KB)
+--> SPR
+  OK: SPR.pdf (216.5 KB)
+--> SWB
+  OK: SWB.pdf (225.4 KB)
+--> TAPI
+  OK: TAPI.pdf (223.3 KB)
+--> TBK
+  OK: TBK.pdf (223.7 KB)
+--> TBS
+  OK: TBS.pdf (226.7 KB)
+--> TFN
+  OK: TFN.pdf (226.3 KB)
+--> TIN
+  OK: TIN.pdf (223.5 KB)
+--> UKOS
+  OK: UKOS.pdf (220.4 KB)
+--> WDZ
+  OK: WDZ.pdf (221.7 KB)
+--> WF1
+  OK: WF1.pdf (219.5 KB)
+--> WF2
+  OK: WF2.pdf (219.5 KB)
+--> WG1
+  OK: WG1.pdf (230.6 KB)
+--> WG2
+  OK: WG2.pdf (233.8 KB)
+--> WPR
+  OK: WPR.pdf (224 KB)
+--> ZPR
+  OK: ZPR.pdf (225.9 KB)
+--> ZZGA
+  OK: ZZGA.pdf (224.9 KB)
+
+----- Sylabusy stacjonarne: 79 OK, 0 bledow -----
+
+
+===== Sylabusy niestacjonarne (62 plikow) =====
+--> AAI
+  OK: AAI.pdf (223.7 KB)
+--> AIC
+  OK: AIC.pdf (220.7 KB)
+--> ALG
+  OK: ALG.pdf (223.2 KB)
+--> AMs
+  OK: AMs.pdf (224.8 KB)
+--> ANG1-3
+  OK: ANG1-3.pdf (236 KB)
+--> ANK
+  OK: ANK.pdf (223.9 KB)
+--> ASD
+  OK: ASD.pdf (223.4 KB)
+--> BSI
+  OK: BSI.pdf (221 KB)
+--> BYT
+  OK: BYT.pdf (230.9 KB)
+--> COV
+  OK: COV.pdf (230.1 KB)
+--> CPP
+  OK: CPP.pdf (219.1 KB)
+--> DEV
+  OK: DEV.pdf (224.4 KB)
+--> DOT
+  OK: DOT.pdf (222.3 KB)
+--> ELK
+  OK: ELK.pdf (220.1 KB)
+--> FDL
+  OK: FDL.pdf (227.4 KB)
+--> FIZ
+  OK: FIZ.pdf (226.5 KB)
+--> GRK
+  OK: GRK.pdf (226.7 KB)
+--> HKJ
+  OK: HKJ.pdf (223.5 KB)
+--> ICK
+  OK: ICK.pdf (225 KB)
+--> IML
+  OK: IML.pdf (234.4 KB)
+--> KCs
+  OK: KCs.pdf (219.9 KB)
+--> KNO
+  OK: KNO.pdf (216.6 KB)
+--> KPIR
+  OK: KPIR.pdf (223.5 KB)
+--> M3D
+  OK: M3D.pdf (220.4 KB)
+--> MAD
+  OK: MAD.pdf (223.7 KB)
+--> MAS
+  OK: MAS.pdf (220.3 KB)
+--> MHE
+  OK: MHE.pdf (221.7 KB)
+--> MLR
+  OK: MLR.pdf (225 KB)
+--> NAI
+  OK: NAI.pdf (218.2 KB)
+--> OGL
+  OK: OGL.pdf (224.3 KB)
+--> PJN
+  OK: PJN.pdf (229.8 KB)
+--> POJ
+  OK: POJ.pdf (224.1 KB)
+--> POZ
+  OK: POZ.pdf (224.7 KB)
+--> PPS
+  OK: PPS.pdf (217.6 KB)
+--> PRG1
+  OK: PRG1.pdf (221.9 KB)
+--> PRI
+  OK: PRI.pdf (223 KB)
+--> PRIN
+  OK: PRIN.pdf (230.9 KB)
+--> PRO
+  OK: PRO.pdf (230.1 KB)
+--> RBD
+  OK: RBD.pdf (219.4 KB)
+--> S3D
+  OK: S3D.pdf (220.2 KB)
+--> SAD
+  OK: SAD.pdf (220.3 KB)
+--> SAI
+  OK: SAI.pdf (229.2 KB)
+--> SCR
+  OK: SCR.pdf (231.9 KB)
+--> SGD
+  OK: SGD.pdf (225.6 KB)
+--> SITA
+  OK: SITA.pdf (227.2 KB)
+--> SKOA
+  OK: SKOA.pdf (223.5 KB)
+--> SOP
+  OK: SOP.pdf (221.5 KB)
+--> SPR
+  OK: SPR.pdf (216.5 KB)
+--> SWB
+  OK: SWB.pdf (225.5 KB)
+--> TAPI
+  OK: TAPI.pdf (223.3 KB)
+--> TBK
+  OK: TBK.pdf (223.7 KB)
+--> TBS
+  OK: TBS.pdf (226.7 KB)
+--> TFN
+  OK: TFN.pdf (226.3 KB)
+--> TIN
+  OK: TIN.pdf (223.5 KB)
+--> UKOS
+  OK: UKOS.pdf (220.4 KB)
+--> WF1
+  OK: WF1.pdf (219.5 KB)
+--> WF2
+  OK: WF2.pdf (219.5 KB)
+--> WG1
+  OK: WG1.pdf (230.6 KB)
+--> WG2
+  OK: WG2.pdf (233.8 KB)
+--> WPR
+  OK: WPR.pdf (224 KB)
+--> ZPR
+  OK: ZPR.pdf (225.9 KB)
+--> ZZGA
+  OK: ZZGA.pdf (224.9 KB)
+
+----- Sylabusy niestacjonarne: 62 OK, 0 bledow -----
+
+
+Gotowe! PDF-y zapisane w:
+  C:\Users\adamu\WebstormProjects\pj-studies\latex\output\stacjonarne
+  C:\Users\adamu\WebstormProjects\pj-studies\latex\output\niestacjonarne

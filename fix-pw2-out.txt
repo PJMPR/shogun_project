@@ -1,0 +1,41 @@
+OK: public\assets\syllabusy\AAI.json
+OK: public\assets\syllabusy-n\AAI.json
+OK: public\assets\syllabusy\ASD.json
+OK: public\assets\syllabusy-n\ASD.json
+OK: public\assets\syllabusy\COV.json
+OK: public\assets\syllabusy-n\COV.json
+OK: public\assets\syllabusy\DEV.json
+OK: public\assets\syllabusy-n\DEV.json
+OK: public\assets\syllabusy\KPIR.json
+OK: public\assets\syllabusy-n\KPIR.json
+OK: public\assets\syllabusy\MAS.json
+OK: public\assets\syllabusy-n\MAS.json
+OK: public\assets\syllabusy\MHE.json
+OK: public\assets\syllabusy-n\MHE.json
+OK: public\assets\syllabusy\PJN.json
+OK: public\assets\syllabusy-n\PJN.json
+OK: public\assets\syllabusy\PRIN.json
+OK: public\assets\syllabusy-n\PRIN.json
+OK: public\assets\syllabusy\PRO.json
+OK: public\assets\syllabusy-n\PRO.json
+OK: public\assets\syllabusy\SCR.json
+OK: public\assets\syllabusy-n\SCR.json
+OK: public\assets\syllabusy\SGD.json
+OK: public\assets\syllabusy-n\SGD.json
+OK: public\assets\syllabusy\SKOA.json
+OK: public\assets\syllabusy-n\SKOA.json
+OK: public\assets\syllabusy\TAPI.json
+OK: public\assets\syllabusy-n\TAPI.json
+OK: public\assets\syllabusy\TBK.json
+OK: public\assets\syllabusy-n\TBK.json
+OK: public\assets\syllabusy\TIN.json
+OK: public\assets\syllabusy-n\TIN.json
+OK: public\assets\syllabusy\ZPR.json
+OK: public\assets\syllabusy-n\ZPR.json
+OK: public\assets\syllabusy-n\ANG1-3.json
+OK: public\assets\syllabusy-n\ANK.json
+
+=== WERYFIKACJA ===
+[NADAL BLAD] ANG1-3.json: nazwa=[Znajomosc jezyka angielskiego na poziomie min.A2+/B1.]
+[NADAL BLAD] ANK.json: nazwa=[Bardzo zalecane jest wczesniejsze skonczenie kursu Grafiki komputerowe]
+Pozostale bledy: 2

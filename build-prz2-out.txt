@@ -1,0 +1,4 @@
+Brak pasujacych plikow dla kodow: @('PRZ1','PRZ2')
+
+Gotowe! PDF-y zapisane w:
+  C:\Users\adamu\WebstormProjects\pj-studies\latex\output\stacjonarne

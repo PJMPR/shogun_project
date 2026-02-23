@@ -226,6 +226,7 @@ export class ProgramService {
               form: subject.form,
               ects: subject.ects,
               electiveGroup: groupId,
+              syllabusFile: (subject as any).syllabusFile,
               pdf: (subject as any).pdf,
             },
             leaf: true,

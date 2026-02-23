@@ -13,8 +13,8 @@
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
                                                         "wyklady":  15,
-                                                        "cwiczenia_lektorat_seminarium":  60,
-                                                        "laboratorium_projekt":  null
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  60
                                                     },
                     "odpowiedzialny_za_przedmiot":  "dr hab. Marek A. Bednarczyk",
                     "ects":  6,
@@ -43,20 +43,16 @@
                                        ],
                     "przedmioty_wprowadzajace":  [
                                                      {
-                                                         "nazwa":  "Projekt informatyczny PRI",
-                                                         "wymagania":  "Budowa i integracja oprogramowania BYT"
+                                                         "nazwa":  "Projekt informatyczny (PRI)",
+                                                         "wymagania":  "Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Budowa i integracja oprogramowania (BYT)",
+                                                         "wymagania":  "Podstawy inżynierii oprogramowania"
                                                      },
                                                      {
                                                          "nazwa":  "Przedmioty specjalizacyjne",
-                                                         "wymagania":  "Znajomość analizy wymagań i projektowania obiektowego"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość notacji UML",
-                                                         "wymagania":  "Umiejętność programowania oraz konstrukcji baz danych"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Znajomość narzędziWiedza specjalizacyjna",
-                                                         "wymagania":  ""
+                                                         "wymagania":  "Wiedza specjalizacyjna"
                                                      }
                                                  ],
                     "cel_dydaktyczny":  "W ramach przedmiotu studenci obierają i realizują pod opieką promotora zespołowy projekt inżynierski w zakresie powiązanym tematycznie z wybraną specjalizacją. Ich rozwiązanie praktycznego problemu winno wykorzystywać adekwatne podejście realizacyjne, jak i nowoczesne, dobrze dobrane technologie, a obok różnych wymiarów technicznych, powinno też uwzględniać aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, Udokumentowane, opracowane w ramach przedsięwzięcia rozwiązanie jest kontynuowane w ramach Projektu zespołowego 2 i, wraz z opisem wkładu własnego, stanowi treść dyplomowej pracy inżynierskiej; może też stanowić produkt „preinkubacyjny”.",

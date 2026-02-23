@@ -5,16 +5,26 @@
 #   .\build-all-syllabi.ps1 -Mode s - tylko stacjonarne
 #   .\build-all-syllabi.ps1 -Mode n - tylko niestacjonarne
 
-param([string]$Mode = "all")
+param(
+    [string]$Mode = "all",
+    [string]$Codes = ""
+)
+
+# Parsuj Codes do tablicy (np. "PRZ1,PRZ2" lub "PRZ1 PRZ2")
+$CodesArray = @()
+if ($Codes -and $Codes.Trim() -ne "") {
+    $CodesArray = $Codes -split '[,\s]+' | Where-Object { $_ -ne "" }
+}
 
 $MIKTEX_BIN = "C:\Users\adamu\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
 $env:PATH   = "$MIKTEX_BIN;$env:PATH"
 
 $SCRIPT_DIR = $PSScriptRoot
-$ASSETS_S   = "C:\Users\adamu\WebstormProjects\pj-studies\public\assets\syllabusy"
-$ASSETS_N   = "C:\Users\adamu\WebstormProjects\pj-studies\public\assets\syllabusy-n"
-$OUTPUT_S   = "$SCRIPT_DIR\output\stacjonarne"
-$OUTPUT_N   = "$SCRIPT_DIR\output\niestacjonarne"
+$PROJECT    = "C:\Users\adamu\WebstormProjects\pj-studies"
+$ASSETS_S   = "$PROJECT\public\assets\syllabusy"
+$ASSETS_N   = "$PROJECT\public\assets\syllabusy-n"
+$OUTPUT_S   = "$PROJECT\public\assets\files\stacjonarne"
+$OUTPUT_N   = "$PROJECT\public\assets\files\niestacjonarne"
 $TEMP_DIR   = "$SCRIPT_DIR\_tex_temp"
 
 New-Item -ItemType Directory -Force -Path $OUTPUT_S | Out-Null
@@ -348,6 +358,12 @@ function Compile-Tex([string]$texPath, [string]$outputDir) {
 function Process-Folder([string]$jsonDir, [string]$outputDir, [string]$label) {
     $jsonFiles = Get-ChildItem "$jsonDir\*.json" -ErrorAction SilentlyContinue
     if (-not $jsonFiles) { Write-Host "Brak plikow JSON w: $jsonDir" -ForegroundColor Yellow; return }
+
+    # Filtruj po kodach jesli podano
+    if ($CodesArray -and $CodesArray.Count -gt 0) {
+        $jsonFiles = $jsonFiles | Where-Object { $CodesArray -contains $_.BaseName }
+        if (-not $jsonFiles) { Write-Host "Brak pasujacych plikow dla kodow: $($CodesArray -join ', ')" -ForegroundColor Yellow; return }
+    }
 
     $ok = 0; $err = 0
     Write-Host "`n===== $label ($($jsonFiles.Count) plikow) =====" -ForegroundColor Cyan

@@ -12,9 +12,9 @@
                     "semestr_studiow":  7,
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  60,
+                                                        "wyklady":  0,
                                                         "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  null
+                                                        "laboratorium_projekt":  60
                                                     },
                     "odpowiedzialny_za_przedmiot":  "dr hab. Marek A. Bednarczyk",
                     "ects":  6,
@@ -49,24 +49,20 @@
                                        ],
                     "przedmioty_wprowadzajace":  [
                                                      {
-                                                         "nazwa":  "Projekt zespołowy PRZ1",
-                                                         "wymagania":  "Proseminarium PSEM - równocześnie"
+                                                         "nazwa":  "Projekt zespołowy 1 (PRZ1)",
+                                                         "wymagania":  "Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi; wiedza specjalizacyjna"
                                                      },
                                                      {
-                                                         "nazwa":  "poprzedzająco lub równocześnie",
-                                                         "wymagania":  "przedmioty specjalizacyjne"
+                                                         "nazwa":  "Proseminarium (PSEM)",
+                                                         "wymagania":  "Równocześnie lub poprzedzająco"
                                                      },
                                                      {
-                                                         "nazwa":  "Społeczne Aspekty Informatyki SAI",
-                                                         "wymagania":  "Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ"
+                                                         "nazwa":  "Przedmioty specjalizacyjne",
+                                                         "wymagania":  "Wiedza specjalizacyjna z wybranej specjalizacji"
                                                      },
                                                      {
-                                                         "nazwa":  "Znajomość analizy wymagań i projektowania obiektowego, znajomość notacji UML",
-                                                         "wymagania":  "Umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi"
-                                                     },
-                                                     {
-                                                         "nazwa":  "Wiedza specjalizacyjna",
-                                                         "wymagania":  ""
+                                                         "nazwa":  "Społeczne Aspekty Informatyki (SAI)",
+                                                         "wymagania":  "Komercjalizacja projektów informatycznych (KMR) / Planowanie, organizacja i zarządzanie przedsiębiorstwem (POZ)"
                                                      }
                                                  ],
                     "cel_dydaktyczny":  "W ramach przedmiotu studenci kontynuują projekt podjęty w ramach Projektu zespołowego PRZ1, tematycznie związany z realizowaną specjalizacją. Udokumentowane, opracowane w ramach przedmiotu rozwiązanie stanowi element dyplomowej pracy inżynierskiej. Proponowane przez zespół rozwiązanie praktycznego problemu winno być innowacyjne i możliwie wszechstronne, obok różnych wymiarów technicznych uwzględniać też aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, może też stanowić produkt „preinkubacyjny”. Typowo – zależnie od przyjętej strategii -  w ramach PRZ2 realizowane są ewolucyjne przyrosty (kolejne wydania) projektów, powstające na bazie wydania powstałego w ramach PRZ1.",

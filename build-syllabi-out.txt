@@ -1,0 +1,35 @@
+
+===== Sylabusy stacjonarne (79 plikow) =====
+--> AAI
+  OK: AAI.pdf (223.8 KB)
+--> AIC
+  OK: AIC.pdf (220.7 KB)
+--> ALG
+  OK: ALG.pdf (223.2 KB)
+--> AMs
+  OK: AMs.pdf (224.8 KB)
+--> ANG1-3
+  OK: ANG1-3.pdf (236 KB)
+--> ANK
+  OK: ANK.pdf (223.8 KB)
+--> ASD
+  OK: ASD.pdf (223.4 KB)
+--> BSI
+  OK: BSI.pdf (220.9 KB)
+--> BYT
+  OK: BYT.pdf (230.9 KB)
+--> COV
+  OK: COV.pdf (230.1 KB)
+--> CPP
+  OK: CPP.pdf (219.1 KB)
+--> DDO
+  OK: DDO.pdf (218.6 KB)
+--> DEV
+  OK: DEV.pdf (224.4 KB)
+--> DGR
+  OK: DGR.pdf (218 KB)
+--> DOT
+  OK: DOT.pdf (222.3 KB)
+--> DSL
+  OK: DSL.pdf (218.1 KB)
+--> ELK

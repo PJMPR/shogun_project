@@ -1,0 +1,6 @@
+count=1
+NAZWA: Jezyk angielski (szkola srednia)
+WYMAG: Znajomosc jezyka angielskiego na poziomie min. A2+/B1
+ANK count=1
+NAZWA: Grafika komputerowa
+WYMAG: Ogolna znajomosc obslugi programow graficznych; bardzo zalecane ukonczenie kursu Grafiki komputerowej
