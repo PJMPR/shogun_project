@@ -177,8 +177,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 2,
-          "syllabusFile": "public/assets/syllabusy/KLI.json",
-          "pdf": "public/assets/files/stacjonarne/KLI.pdf"
+          "syllabusFile": "assets/syllabusy/KLI.json",
+          "pdf": "assets/files/stacjonarne/KLI.pdf"
         }
       ]
     },
@@ -206,8 +206,8 @@
           "lab": 30,
           "form": "EZ",
           "ects": 5,
-          "syllabusFile": "public/assets/syllabusy/DTH.json",
-          "pdf": "public/assets/files/stacjonarne/DTH.pdf"
+          "syllabusFile": "assets/syllabusy/DTH.json",
+          "pdf": "assets/files/stacjonarne/DTH.pdf"
         },
         {
           "name": "Administrowanie systemami operacyjnymi",
