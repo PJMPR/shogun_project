@@ -30,17 +30,21 @@ echo "  pdf          → $PDF_ASSET_PATH"
 
 UPDATED=0
 
-# ── Funkcja pomocnicza: aktualizuj plik JSON (in-place przez tmp) ─────────────
-update_json_inplace() {
+# ── Funkcja pomocnicza: aktualizuj plik JSON in-place ────────────────────────
+# Użycie: jq_update <plik> <wyrażenie_jq>
+# Zmienne $CODE, $JSON_ASSET_PATH, $PDF_ASSET_PATH są dostępne jako --arg
+jq_update() {
   local file="$1"
-  local jq_expr="$2"
+  local expr="$2"
   local tmp
   tmp=$(mktemp)
-  jq "$jq_expr" "$file" > "$tmp"
-  mv "$tmp" "$file"
+  jq --arg code "$CODE" \
+     --arg syl  "$JSON_ASSET_PATH" \
+     --arg pdf  "$PDF_ASSET_PATH" \
+     "$expr" "$file" > "$tmp" && mv "$tmp" "$file"
 }
 
-# ── 1. program.json (stacjonarny lub niestacjonarny) ─────────────────────────
+# ── 1. program.json ───────────────────────────────────────────────────────────
 if [[ "$MODE" == "s" ]]; then
   PROGRAM_FILE="$ASSETS/program.json"
 else
@@ -48,16 +52,12 @@ else
 fi
 
 if [[ -f "$PROGRAM_FILE" ]]; then
-  # Sprawdź czy kod istnieje w subjects któregokolwiek semestru
-  MATCH=$(jq -r --arg code "$CODE" '
-    .semesters[]?.subjects[]? | select(.code == $code) | .code
-  ' "$PROGRAM_FILE" | head -1)
+  MATCH=$(jq -r --arg code "$CODE" \
+    '.semesters[]?.subjects[]? | select(.code == $code) | .code' \
+    "$PROGRAM_FILE" | head -1)
 
   if [[ -n "$MATCH" ]]; then
-    update_json_inplace "$PROGRAM_FILE" \
-      --arg code "$CODE" \
-      --arg syl "$JSON_ASSET_PATH" \
-      --arg pdf "$PDF_ASSET_PATH" \
+    jq_update "$PROGRAM_FILE" \
       '(.semesters[]?.subjects[]? | select(.code == $code)) |= . + {syllabusFile: $syl, pdf: $pdf}'
     echo "  ✓ Zaktualizowano $PROGRAM_FILE (subjects)"
     UPDATED=$((UPDATED+1))
@@ -65,7 +65,7 @@ if [[ -f "$PROGRAM_FILE" ]]; then
     echo "  ○ Kod $CODE nie znaleziony w subjects w $PROGRAM_FILE"
   fi
 else
-  echo "  OSTRZEŻENIE: Brak pliku $PROGRAM_FILE" >&2
+  echo "  OSTRZEZENIE: Brak pliku $PROGRAM_FILE" >&2
 fi
 
 # ── 2. electives-other.json ───────────────────────────────────────────────────
@@ -76,15 +76,12 @@ else
 fi
 
 if [[ -f "$ELECTIVES_OTHER" ]]; then
-  MATCH=$(jq -r --arg code "$CODE" '
-    .groups[]?.items[]? | select(.code == $code) | .code
-  ' "$ELECTIVES_OTHER" | head -1)
+  MATCH=$(jq -r --arg code "$CODE" \
+    '.groups[]?.items[]? | select(.code == $code) | .code' \
+    "$ELECTIVES_OTHER" | head -1)
 
   if [[ -n "$MATCH" ]]; then
-    update_json_inplace "$ELECTIVES_OTHER" \
-      --arg code "$CODE" \
-      --arg syl "$JSON_ASSET_PATH" \
-      --arg pdf "$PDF_ASSET_PATH" \
+    jq_update "$ELECTIVES_OTHER" \
       '(.groups[]?.items[]? | select(.code == $code)) |= . + {syllabusFile: $syl, pdf: $pdf}'
     echo "  ✓ Zaktualizowano $ELECTIVES_OTHER (electives-other)"
     UPDATED=$((UPDATED+1))
@@ -92,7 +89,7 @@ if [[ -f "$ELECTIVES_OTHER" ]]; then
     echo "  ○ Kod $CODE nie znaleziony w electives-other"
   fi
 else
-  echo "  OSTRZEŻENIE: Brak pliku $ELECTIVES_OTHER" >&2
+  echo "  OSTRZEZENIE: Brak pliku $ELECTIVES_OTHER" >&2
 fi
 
 # ── 3. electives-specializations.json ────────────────────────────────────────
@@ -103,15 +100,12 @@ else
 fi
 
 if [[ -f "$ELECTIVES_SPEC" ]]; then
-  MATCH=$(jq -r --arg code "$CODE" '
-    .specializations[]?.items[]? | select(.code == $code) | .code
-  ' "$ELECTIVES_SPEC" | head -1)
+  MATCH=$(jq -r --arg code "$CODE" \
+    '.specializations[]?.items[]? | select(.code == $code) | .code' \
+    "$ELECTIVES_SPEC" | head -1)
 
   if [[ -n "$MATCH" ]]; then
-    update_json_inplace "$ELECTIVES_SPEC" \
-      --arg code "$CODE" \
-      --arg syl "$JSON_ASSET_PATH" \
-      --arg pdf "$PDF_ASSET_PATH" \
+    jq_update "$ELECTIVES_SPEC" \
       '(.specializations[]?.items[]? | select(.code == $code)) |= . + {syllabusFile: $syl, pdf: $pdf}'
     echo "  ✓ Zaktualizowano $ELECTIVES_SPEC (electives-specializations)"
     UPDATED=$((UPDATED+1))
