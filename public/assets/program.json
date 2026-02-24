@@ -243,7 +243,9 @@
           "tutorial": 0,
           "lab": 60,
           "form": "Z",
-          "ects": 6
+          "ects": 6,
+          "syllabusFile": "assets/syllabusy/PAI.json",
+          "pdf": "assets/files/stacjonarne/PAI.pdf"
         },
         {
           "name": "Systemy baz danych 1",
