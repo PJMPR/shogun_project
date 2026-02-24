@@ -1,0 +1,22 @@
+# Domyślne zachowanie – auto-konwersja końców linii
+* text=auto
+
+# Skrypty bash/shell – zawsze LF (wymagane na Linux/macOS/GitHub Actions)
+*.sh text eol=lf
+*.py text eol=lf
+
+# Pliki YAML (workflow GitHub Actions)
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Pliki JSON – LF
+*.json text eol=lf
+
+# Pliki binarne – bez konwersji
+*.pdf binary
+*.svg binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+
