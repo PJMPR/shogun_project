@@ -176,7 +176,9 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "public/assets/syllabusy/KLI.json",
+          "pdf": "public/assets/files/stacjonarne/KLI.pdf"
         }
       ]
     },
