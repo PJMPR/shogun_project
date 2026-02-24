@@ -1651,6 +1651,86 @@
             "inzynierskie": false
           }
         ]
+      },
+      {
+        "tresc": "Zna style przywódcze i teorie motywacji stosowane w zarządzaniu zespołami inżynierskimi oraz rozumie psychologiczne aspekty pracy zespołowej i techniki udzielania informacji zwrotnej (FUKO, SBI).",
+        "kody": ["KLI"],
+        "mnsiw": [{ "kod": "P6S_WK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Zna strategie rozwiązywania konfliktów w zespole i techniki moderowania spotkań grupowych (facilitation).",
+        "kody": ["KLI"],
+        "mnsiw": [{ "kod": "P6S_WK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test) i rozumie różnice między projektowaniem skoncentrowanym na technologii a Human-Centered Design.",
+        "kody": ["DTH"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Posiada wiedzę o technikach kreatywnego rozwiązywania problemów, moderowania sesji ideacyjnych oraz tworzenia prototypów low-fidelity (makiety papierowe, storyboarding).",
+        "kody": ["DTH"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Zna zasady projektowania pętli rozgrywki (gameplay loop), mechanizmów retencji gracza oraz psychologiczne podstawy projektowania gier (flow, motywacja, pętle dopaminowe).",
+        "kody": ["PG1"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Rozumie model MDA (Mechanics, Dynamics, Aesthetics) oraz metodologię testów korygujących i zbierania feedbacku od testerów gier.",
+        "kody": ["PG1"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Posiada zaawansowaną wiedzę o psychologii gracza i projektowaniu doświadczeń UX w grach, trendach rynkowych oraz modelach biznesowych (F2P, Premium).",
+        "kody": ["PG2"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Rozumie proces budowania spójności wizualnej (Art Direction) i dźwiękowej w grach oraz podstawowe techniki marketingu gier.",
+        "kody": ["PG2"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie podstawowe pojęcia DDD (model domenowy, encje, wartości, agregaty, repozytoria, bounded context) oraz założenia architektury oktogonalnej i zasady separacji warstw.",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna mechanizmy uwierzytelniania i autoryzacji w aplikacjach internetowych (OAuth 2.1), podstawy SOA oraz typowe style integracji usług (API, komunikacja synchroniczna/asynchroniczna).",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie rolę testów integracyjnych i end-to-end w cyklu wytwarzania oprogramowania oraz podstawy automatyzacji w CI.",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera.",
+        "kody": ["LLP", "KIP"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy (IoT), jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii.",
+        "kody": ["PTT", "RTO", "KIP"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki.",
+        "kody": ["KIP"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna i rozumie podstawowe pojęcia z zakresu inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań oraz ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania.",
+        "kody": ["RTO"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Zna funkcje, biblioteki i podstawową składnię Arduino, wie jak działa kompilator AVR, zna niskopoziomowe programowanie i zarządzanie energią w MSP430 oraz języki Ladder Logic i Structured Text.",
+        "kody": ["PPS"],
+        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
       }
     ],
     "umiejetnosci": [
@@ -3747,6 +3827,61 @@
             "inzynierskie": false
           }
         ]
+      },
+      {
+        "tresc": "Potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI, identyfikować źródła konfliktów w zespole i moderować spotkania zespołowe dbając o zaangażowanie wszystkich członków.",
+        "kody": ["KLI"],
+        "mnsiw": [{ "kod": "P6S_UO", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem, stworzyć mapę empatii i personę, zdefiniować Point of View oraz formułować pytania How Might We; tworzy prototypy low-fidelity i wykorzystuje je do zbierania feedbacku.",
+        "kody": ["DTH"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Potrafi zaprojektować i przeprowadzić sesję prototypowania papierowego, szybko budować makiety poziomów (greyboxing/whiteboxing) oraz wyizolować pojedynczą mechanikę (core hook) i sprawdzić jej atrakcyjność przed pełną produkcją.",
+        "kody": ["PG1"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi zaprojektować i zaimplementować intuicyjny interfejs użytkownika (UI/HUD) w grze, przygotować strategię promocji projektu z analizą grupy docelowej (USP) oraz zarządzać złożonym projektem gry zgodnie z harmonogramem produkcji.",
+        "kody": ["PG2"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi zaprojektować i zaimplementować backend zgodny z DDD i architekturą oktogonalną, zintegrować frontend z backendem przez API z zachowaniem bezpieczeństwa sesji/tokenów oraz zastosować OAuth 2.1 w aplikacji.",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi przygotować środowisko uruchomieniowe w kontenerach (Docker + Compose) oraz napisać testy integracyjne i E2E dla kluczowych scenariuszy użytkownika i uruchamiać je automatycznie w CI.",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi projektować proste układy sekwencyjne i kombinacyjne, obliczać reprezentacje liczb całkowitych i rzeczywistych oraz pisać proste programy na poziomie asemblera.",
+        "kody": ["LLP", "KIP"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi diagnozować problem specyficzny dla internetu rzeczy, projektować jego rozwiązanie, dobierać środki oraz określać i realizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": ["PTT", "RTO", "KIP"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi przeanalizować, zsyntetyzować i oprogramować prosty system wbudowany z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację.",
+        "kody": ["KIP"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość; potrafi operować obrazem dwu- i trójwymiarowym za pomocą standardowego API graficznego oraz przeprowadzać testy użyteczności aplikacji.",
+        "kody": ["RTO"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+      },
+      {
+        "tresc": "Potrafi programować sekwencje zdarzeń w sterownikach PLC, wykorzystywać C++/Python do szybkiego prototypowania, NodeJS do aplikacji sieciowych oraz programować i optymalizować mikrokontrolery o ograniczonych zasobach (ATtiny).",
+        "kody": ["PPS"],
+        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
       }
     ],
     "kompetencje_spoleczne": [
@@ -4326,6 +4461,46 @@
             "inzynierskie": false
           }
         ]
+      },
+      {
+        "tresc": "Wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu; jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą.",
+        "kody": ["KLI"],
+        "mnsiw": [{ "kod": "P6S_KR", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika; jest gotowy do moderowania procesów grupowych z dbałością o bezpieczeństwo psychologiczne i kreatywność zespołu.",
+        "kody": ["DTH"],
+        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Wykazuje postawę badawczą – traktuje błędy w prototypie jako cenne źródło danych, a nie porażkę programistyczną; potrafi argumentować decyzje projektowe w oparciu o wyniki testów z użytkownikami.",
+        "kody": ["PG1"],
+        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Potrafi prezentować swój projekt w formie pitchingu, argumentując wybory projektowe i biznesowe; wykazuje świadomość znaczenia inkluzywności i dostępności (accessibility) w projektowaniu gier.",
+        "kody": ["PG2"],
+        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Jest gotów do pracy zespołowej nad produktem programistycznym, w tym do komunikacji, podziału zadań i przeglądu kodu oraz odpowiedzialnego podejścia do jakości, testowania i utrzymania spójności architektury.",
+        "kody": ["PAI"],
+        "mnsiw": [{ "kod": "P6S_KO", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Jest gotów do samodzielnego uczenia się przez całe życie w zakresie systemów wbudowanych i programowania niskopoziomowego.",
+        "kody": ["LLP", "KIP"],
+        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego oraz do myślenia i działania w sposób innowacyjny i przedsiębiorczy.",
+        "kody": ["PTT", "RTO"],
+        "mnsiw": [{ "kod": "P6S_KO", "inzynierskie": false }]
+      },
+      {
+        "tresc": "Jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej w obszarze systemów wbudowanych i programowania platform sprzętowych.",
+        "kody": ["PPS"],
+        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
       }
     ]
   }
