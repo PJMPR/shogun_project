@@ -25,18 +25,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # ── 2. Instalacja zależności systemowych ─────────────────────────────
-      - name: Instalacja jq
+      - name: Instalacja zaleznosci (jq + TeX Live)
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y jq
-
-      - name: Instalacja TeX Live (pdflatex + pakiety)
-        run: |
-          sudo apt-get install -y \
+          sudo apt-get install -y --no-install-recommends \
+            jq \
             texlive-latex-base \
             texlive-latex-extra \
             texlive-fonts-recommended \
-            texlive-fonts-extra \
             texlive-lang-polish \
             texlive-pictures \
             lmodern
