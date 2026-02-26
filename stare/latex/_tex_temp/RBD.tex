@@ -1,0 +1,169 @@
+﻿% ===========================================================
+%  Sylabus: Relacyjne Bazy Danych (RBD)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: RBD}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Relacyjne Bazy Danych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & RBD \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 2 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Adam Urbanowicz aurbanow@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Student potrafi przygotować schemat bazy danych w języku SQL, gotową do implementacji w dowolnym systemie zarządzania bazami danych, spełniającą oczekiwania klienta, poprawną z punktu widzenia postaci normalnych i wyposażoną w dokumentacje techniczną (w tym diagram ERD, objaśnienia ew. procedur wyzwalanych).
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Podstawowe cechy relacyjnych baz danych
+  \item Zalety i wady relacyjnych i nierelacyjnych organizacji baz danych
+  \item Znaczenie zależności funkcyjnych i postaci normalnych przy projektowaniu schematu bazy danych.
+  \item Podstawowe elementy i znaczenie diagramów związków encji (ERD) przy projektowaniu schematu bazy danych.
+  \item Podstawowe konstrukcje języka SQL.
+  \item Interfejs ODBC.
+  \item Elementy programistyczne w bazie danych, procedury wyzwalane, definicje, przykłady zastosowań.
+  \item Reguły integralności w bazie danych, przykłady występowania, sposoby realizacji w języku SQL
+  \item Podstawowe zasady optymalizacji zapytań, w tym rodzaje i znaczenie indeksów w bazie danych
+  \item Problemy współbieżnego dostępu do baz danych, rozwiązania tych problemów (transakcje, blokady).
+  \item Inne rodzaje baz danych: bazy dokumentowe, bazy grafowe.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student ma uporządkowaną wiedzę obejmującą kluczowe zagadnienia w zakresie zarządzania informacją i modelowania danych; szczegółowo zna zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma znajomość aktualnie stosowanych systemów baz danych
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi stworzyć model związków encji (ERD) dla przykładowego wycinka rzeczywistości a następnie wykorzystać ten model w budowie prostej bazy danych.
+  \item Student posiada umiejętność formułowania zapytań w języku SQL i
+  \item konstruowania schematu relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item Kryteria oceny
+  \item Kolokwium
+  \item Znajomość zagadnień przedstawionych na wykładach.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item R. Elmasari, S. B. Navathe, Wprowadzenie do systemów baz danych, Helion, 2019
+  \item L. Banachowski, Relacyjne bazy danych, Wydawnictwo PJWSTK
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item K. Hansen, Praktyczna nauka SQL dla Oracle. Wykorzystaj ogromne możliwości bazy danych Oracle, Helion, 2022
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,198 @@
+﻿% ===========================================================
+%  Sylabus: Algebra liniowa i geometria (ALG)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ALG}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Algebra liniowa i geometria} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ALG \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 2 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Elżbieta Puźniakowska-Gałuch, ela@pejot.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & 16 h & --- & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  Wykład & Egzamin pisemny \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem kształcenia jest nabycie umiejętności posługiwania się aparatem teorii mnogości, liczb zespolonych, pierścieni wielomianów; formułowania problemów w terminach macierzy i wykonywania operacji na macierzach; rozwiązywania układu równań liniowych; znajomości podstawowych struktur algebraicznych. Omawiane są również podstawowe zagadnienia geometrii analitycznej na płaszczyźnie i w przestrzeni trójwymiarowej.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  matematyka z zakresu szkoły średniej & --- \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych.
+  \item Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone).
+  \item Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych.
+  \item Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych).
+  \item Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera.
+  \item Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych.
+  \item Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.
+  \item Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej.
+  \item Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.
+  \item Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Rozwiązywanie zadań na tablicy
+  \item rozwiązywanie zadań na tablicy
+  \item dykusja
+  \item Kryteria oceny
+  \item Zaliczenie ćwiczeń na podstawie dwóch kolokwiów (do 10 zadań). Student jest zobowiązany uzyskać wynik powyżej 50\% możliwych do zdobycia sumarycznie z obu kolokwiów.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item 1. T. Jurlewicz, Z. Skoczylas, " Algebra i geometria analityczna. Definicje, twierdzenia, wzory.", wydanie z 2021 roku i nowsze.2. T. Jurlewicz, Z. Skoczylas, "Algebra liniowa 2. Definicje, twierdzenia, wzory.", wydanie z 2005 roku i nowsze.
+  \item 3. T. Jurlewicz, Z. Skoczylas, "Algebra i geometria analityczna. Przykłady i zadania", wydanie z 2021 roku i nowsze.4. T. Jurlewicz, Z. Skoczylas, "Algebra liniowa 2. Przykłady i zadania", wydanie z 2001 roku i nowsze.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item 1. Przemysław Kajetanowicz, Jędrzej Wierzejewski, Algebra z geometrią analityczną Wydawnictwo PWN, 2008, ISBN 978-83-01-15493-6 2008.
+  \item 2. Henryk Arodź, Krzysztof Rościszewski, Algebra i geometria analityczna w zadaniach Wydawnictwo Znak, 2005, ISBN 83-240-0547-1 2005.
+  \item 3. Aleksiej I. Kostrikin, Zbiór zadań z algebry Wydawnictwo PWN, 2005, ISBN 83-01-14539-0
+\end{itemize}
+
+\end{document}

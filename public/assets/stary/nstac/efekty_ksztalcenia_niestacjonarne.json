@@ -1,0 +1,1050 @@
+{
+  "efekty_ksztalcenia": {
+    "wiedza": [
+      {
+        "tresc": "ma rozszerzoną i pogłębioną wiedzę w zakresie matematyki, algebry, analizy matematycznej, geometrii liniowej, statystycznej analizy danych oraz matematyki dyskretnej w zakresie wymaganym dla realizacji złożonych zadań inżynierskich w dziedzinie informatyki",
+        "kody": [
+          "K_W01"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "ma rozszerzoną wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki",
+        "kody": [
+          "K_W02"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "ma uporządkowaną, podbudowaną teorerycznie wiedzę ogólna w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki.",
+        "kody": [
+          "K_W03"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia w zakresie konstrukcji programistycznych, rekurencji oraz struktur danych, jak też ich implementacji",
+        "kody": [
+          "K_W04"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "ma uporządkowaną i podbudowaną teoretycznie wiedzę w zakresie kluczowych zagadnień z zakresu algorytmów i złożoności obliczeniowej jak również abstrakcyjnych struktur i metod ich implementacji; zna i rozumie zagadnienia nierozstrzygalne i obliczeniowo trudne; zna i rozumie problem weryfikacji poprawności programów",
+        "kody": [
+          "K_W05"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie asemblera",
+        "kody": [
+          "K_W06"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności; zna i rozumie powszechnie stosowane systemy.",
+        "kody": [
+          "K_W07"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki",
+        "kody": [
+          "K_W08"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia w zakresie głównych protokołów internetowych, zasad tworzenia bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie podstawowe techniki, wzorce projektowe i technologie towarzyszące wytwarzaniu takich aplikacji",
+        "kody": [
+          "K_W09"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia z zakresu programowania, konstrukcji programów, ich implementacji, testowania i uruchamiania, a także ma podstawową wiedzę w zakresie języków, poziomów i paradygmatów programowania, w tym obiektowego; zna i rozumie pojęcia z zakresu aktualnych metod, technik i narzędzi stosowanych podczas tworzenia, testowania i uruchamiania oprogramowania",
+        "kody": [
+          "K_W10"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer",
+        "kody": [
+          "K_W11"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie zagadnień probabilistyki i statystyki oraz sztucznej inteligencji, a także ich zastosowania w praktyce informatycznej; zna i rozumie podstawowe pojęcia z zakresu narzędzi wspomagających rozwiązywanie problemów inżynierskich w obszarze tych zagadnień",
+        "kody": [
+          "K_W12"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień w zarządzania informacją i modelowania danych; zna i rozumie zaawansowane zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma dogłębną znajomość aktualnie stosowanych systemów baz danych",
+        "kody": [
+          "K_W13"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową, podbudowaną teoretycznie wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma podstawową wiedzę o typowych narzędziach i środowiskach wspomagających;",
+        "kody": [
+          "K_W14"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi;",
+        "kody": [
+          "K_W15"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "ma rozszerzoną wiedzę z zakresu walidacji i testowania oprogramowania",
+        "kody": [
+          "K_W16"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności",
+        "kody": [
+          "K_W17"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki",
+        "kody": [
+          "K_W18"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki; zna i rozumie podstawowe pojęcia z zakresu ochrony własności intelektualnej oraz prawa patentowego i autorskiego; zna i rozumie pozatechniczne aspekty informatyki, powiązanie przedsięwzięć informatycznych z ich otoczeniem i zagrożenia stąd płynące",
+        "kody": [
+          "K_W19"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, szczególnie przedsięwzięć informatycznych i rozumie rolę jej innowacyjności; zna i rozumie ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych",
+        "kody": [
+          "K_W20"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WK",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie aplikacji internetowych, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W21"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie sztucznej inteligencji, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W22"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie cyberbezpieczeństwa, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W23"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie inżynierii gier komputerowych, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W24"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie grafiki komputerowej, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W25"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
+        "kody": [
+          "K_W26"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_WG",
+            "inzynierskie": true
+          }
+        ]
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "tresc": "potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski oraz formułować i uzasadniać opinie",
+        "kody": [
+          "K_U01"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi porozumiewać się za pomocą specjalistycznej terminologii w języku polskim i angielskim przy użyciu różnych technik, w tym narzędzi telekomunikacyjnych i prezentacji multimedialnych, w środowisku zawodowym oraz w innych środowiskach",
+        "kody": [
+          "K_U02"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego",
+        "kody": [
+          "K_U03"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i przeprowadzić proces samokształcenia się, m.in. w celu podnoszenia kompetencji zawodowych; potrafi korzystać z różnych źródeł i technik kształcenia zdalnego dla podnoszenia swoich kwalifikacji",
+        "kody": [
+          "K_U04"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UU",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
+        "kody": [
+          "K_U05"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi posługiwać się językiem obcym, w zakresie informatyki, na poziomie zgodnym z wymaganiami określonymi dla poziomu B2 Europejskiego Systemu Opisu Kształcenia Językowego",
+        "kody": [
+          "K_U06"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym",
+        "kody": [
+          "K_U07"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi analizować i wyjaśnianiać obserwowane zjawiska; tworzyć i weryfikować modele świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwie dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów",
+        "kody": [
+          "K_U08"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i dobrać właściwe metody i urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP",
+        "kody": [
+          "K_U09"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania",
+        "kody": [
+          "K_U10"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi przeanalizować złożoność algorytmów, wykorzystać podstawowe techniki algorytmiczne z uwzględnieniem ich złożoności; potrafi dobrać i zaimplementować struktury danych adekwatne do rozwiązywanego problemu",
+        "kody": [
+          "K_U11"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacje arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
+        "kody": [
+          "K_U12"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować",
+        "kody": [
+          "K_U13"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN, która umożliwia także realizację kluczowych usług sieciowych z zachowaniem zasad bezpieczeństwa informacji",
+        "kody": [
+          "K_U14"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi ocenić przydatność różnych podejść programistycznych i związanych z nimi środowisk",
+        "kody": [
+          "K_U15"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebugować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+        "kody": [
+          "K_U16"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzyć graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji",
+        "kody": [
+          "K_U17"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi sformułować zapytania w języku SQL i skonstruować schemat relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych",
+        "kody": [
+          "K_U18"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania",
+        "kody": [
+          "K_U19"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji",
+        "kody": [
+          "K_U20"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość",
+        "kody": [
+          "K_U21"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów",
+        "kody": [
+          "K_U22"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi przeanalizować, zsyntezować i oprogramować prosty system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację",
+        "kody": [
+          "K_U23"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy odpowiednio dobranych technologii",
+        "kody": [
+          "K_U24"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego oraz ocenić związane z nim zagrożenia",
+        "kody": [
+          "K_U25"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców;",
+        "kody": [
+          "K_U26"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6U_U",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)",
+        "kody": [
+          "K_U27"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla aplikacji internetowych, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U28"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla sztucznej inteligencji, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U29"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla cyberbezpieczeństwa, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U30"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla inżynierii gier komputerowych, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U31"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla grafiki komputerowej, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U32"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "kody": [
+          "K_U33"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_UW",
+            "inzynierskie": true
+          },
+          {
+            "kod": "P6S_UO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6SUK",
+            "inzynierskie": false
+          }
+        ]
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "tresc": "jest gotów do zastosowania informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+        "kody": [
+          "K_K01"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej",
+        "kody": [
+          "K_K02"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KK",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_KO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do samodzielnego uczenia się przez całe życie",
+        "kody": [
+          "K_K03"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KR",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_KK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy",
+        "kody": [
+          "K_K04"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do określenia priorytetów służących realizacji zadania",
+        "kody": [
+          "K_K05"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KO",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_KK",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do dostrzegania problemów i prawidłowego, zgodnego z zasadami profesjonalizmu zawodowego ich rozwiązywania, a także do podjęcia decyzji z zakresu problemów etycznych i prawnych",
+        "kody": [
+          "K_K06"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KK",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_KR",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy",
+        "kody": [
+          "K_K07"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KO",
+            "inzynierskie": false
+          }
+        ]
+      },
+      {
+        "tresc": "jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych",
+        "kody": [
+          "K_K08"
+        ],
+        "mnsiw": [
+          {
+            "kod": "P6S_KK",
+            "inzynierskie": false
+          },
+          {
+            "kod": "P6S_KR",
+            "inzynierskie": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+﻿% ===========================================================
+%  Sylabus: Wytwarzanie gier 1 (WG1)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: WG1}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Wytwarzanie gier 1} \\[3pt]
+  \textbf{Kod przedmiotu:}    & WG1 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Lic. Aleksandr Polin (alex.polin@pjwstk.edu.pl) \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 65 h & 125 h & \textbf{} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem tego kursu jest zanurzenie studentów w cyklu tworzenia gier, od projektu koncepcyjnego po kontrolę jakości, zaszczepienie dogłębnego zrozumienia praktyk branżowych, narzędzi (takich jak Unreal Engine) i kluczowych procesów niezbędnych do udanej kariery w branży gier.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie do branży tworzenia gier. Prezentowanie historii gier z przykładami unikalnych i nieoczekiwanych ciekawych faktów na temat gier.
+  \item Dyskusja na temat branży gier, osobistych doświadczeń uczniów z grami, wpływu gier na życie i tego, czego można się spodziewać pracując w tej branży.
+  \item Wprowadzenie do projektowania gier. Dlaczego istnieje i jak to rozumieć.
+  \item Projektowanie małej gry przy użyciu wyłącznie pióra i papieru. Granie i ulepszanie swoich gier.
+  \item Projektowanie puzzli, jako głównego interaktywnego elementu zabawy. Jak łamigłówki angażują graczy.
+  \item Projektowanie układanki przy użyciu dostarczonych ograniczeń i testowanie pojawiających się mechanik gry w małych grupach.
+  \item Wprowadzenie do Unreal Engine. Przegląd układu i funkcji UE 5.
+  \item Wykonanie pierwszego planu UE mechaniki gry z wykorzystaniem elementów interaktywnych.
+  \item Podstawy silnika Unreal Engine. Ciąg dalszy przedstawiania silnika studentom. Wyjaśnienie rozwoju opartego na planach za pomocą interaktywnych przykładów.
+  \item Studenci doskonalą i rozwijają pierwszy projekt stworzony podczas poprzedniego ćwiczenia, wykorzystując nową wiedzę zdobytą na wykładzie.
+  \item Podstawowe zasady projektowania poziomu podstawowego i Asset Pipeline w UE5.
+  \item Uczniowie korzystają z dostarczonych zasobów i niestandardowych materiałów, aby konfigurować i wykorzystywać własne projekty oraz projektować układ poziomów.
+  \item Dokumentacja gry i dlaczego jest to ważne.
+  \item Napisanie krótkiego opisu gry na podanym przykładzie.
+  \item GDD. Przegląd i ocena GDD znanych gier.
+  \item Pisanie GDD. Uczniowie korzystają z dostarczonego przykładu GDD i pracują w grupach, aby stworzyć własne dokumenty.
+  \item Praca w zespole i zarządzanie projektem gry.
+  \item Omówienie ról zespołowych i zarządzania sytuacją, kontynuacja pracy w zespołach, nad grami.
+  \item Wprowadzenie do animacji w UE5. Rzuć okiem na możliwe potoki animacji i narzędzia dostępne w Unreal Engine.
+  \item Implementacja podstawowych animacji w UE z wykorzystaniem dostarczonych materiałów i przykładów.
+  \item Zrozumienie wpływu projektowania dźwięku w grach i sposobu implementacji dźwięków w UE5.
+  \item Implementacja podstawowych dźwięków w UE z wykorzystaniem dostarczonych materiałów i przykładów.
+  \item Zapewnienie jakości gier. Jak zespoły zapewniają jakość i dbałość o szczegóły.
+  \item Testowanie dostarczonej przykładowej gry i przygotowanie raportu o błędzie.
+  \item Praktyki HR w tworzeniu gier. Oczekiwania firm zajmujących się tworzeniem gier i czego szukają u potencjalnych kandydatów.
+  \item Napisanie osobistego CV na podanym przykładzie.
+  \item Zarządzanie zasobami studia gier. Ukryte koszty i dlaczego tak trudno osiągnąć równowagę pomiędzy zyskami a zabawą.
+  \item Praca w grupach w celu przygotowania analizy rynkowej dostarczonej gry, przedstawienia planu ulepszeń z prośbą o dodatkowe inwestycje, analizy konkurencji i oceny innych grup uczniów.
+  \item Pełne podsumowanie kursu. Powracanie do poprzednich lekcji, odświeżanie wiedzy i podkreślanie najważniejszych aspektów.
+  \item Omawianie projektów gier zespołowych, ulepszanie i dopracowywanie projektów.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry.
+  \item Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową.
+  \item Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu.
+  \item Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych.
+  \item Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego.
+  \item Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych.
+  \item Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev.
+  \item Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier.
+  \item Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier.
+  \item Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony
+  \item burza mózgów
+  \item rozwiązywanie zadań
+  \item analiza przypadków
+  \item prezentacje
+  \item praca w Unreal Engine
+  \item Kryteria oceny
+  \item Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:
+  \item Styl (1-10)
+  \item Rozgrywka (1-10)
+  \item Zabawa (1-10)
+  \item Kreatywność (1-10)
+  \item Ukończenie (1-10)
+  \item Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:
+  \item Wysiłek (1-10).
+  \item Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item "Rules of Play: Game Design Fundamentals" by Katie Salen and Eric Zimmerman (2003)
+  \item "The Art of Game Design: A Book of Lenses" by Jesse Schell (2008)
+  \item "Level Up! The Guide to Great Video Game Design" by Scott Rogers (2010)
+  \item "Unreal Engine 4 for Design Visualization: Developing Stunning Interactive Visualizations, Animations, and Renderings" by Tom Shannon (2017)
+  \item "Game Engine Architecture" by Jason Gregory (2018)
+  \item "Introduction to Game Development" by Steve Rabin (2009)
+  \item "A Theory of Fun for Game Design" by Raph Koster (2012)
+  \item Unreal Engine Educator Resources
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item "David Perry on Game Design: A Brainstorming ToolBox" by David Perry and Rusel DeMaria (2009)
+  \item "Challenges for Game Designers" by Brenda Romero and Ian Schreiber (2008)
+  \item "Character Development and Storytelling for Games" by Lee Sheldon (2004)
+  \item "Game Design: Theory and Practice" by Richard Rouse III (2001)
+  \item "Game Feel: A Game Designer's Guide to Virtual Sensation" by Steve Swink (2008)
+  \item "Game Mechanics: Advanced Game Design" by Ernest W. Adams and Joris Dormans (2012)
+  \item Freese, Maria \& Lukosch, Heide. (2023). The Funnel of Game Design – An Adaptive Game Design Approach for Complex Systems. Simulation \& Gaming. 55. 10.1177/10468781231222524.
+  \item Hammar, Emil \& Canossa, Alessandro \& Juul, Jesper \& Debus, Michael \& Pfau, Johannes \& El-Nasr, Magy \& Azadvar, Ahmad. (2023). From Teams to Games: Connecting Game Development to Game Characteristics. 336-340. 10.1007/978-3-031-48050-8\_23.
+  \item Zehnder, S. M., \& Lipscomb, S. D. (2006). The Role of Music in Video Games. In P. Vorderer \& J. Bryant (Eds.), Playing video games: Motives, responses, and consequences (pp. 241–258). Lawrence Erlbaum Associates Publishers.
+  \item Ermi, Laura \& Mäyrä, Frans. (2005). Player-Centred Game Design: Experiences in Using Scenario Study to Inform Mobile Game Design.. Game Studies. 5.
+\end{itemize}
+
+\end{document}

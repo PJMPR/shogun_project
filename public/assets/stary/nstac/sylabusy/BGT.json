@@ -1,0 +1,98 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "BigData",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Adam Pietrzak",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Omówienie w formie prezentacji kolejnych tematów przedmiotu, pokazujących wykorzystanie narzędzi Google Cloud Platform do przetwarzania dużych zbioró danych / hurtowni danych",
+                                           "Realizacja zadań ćwiczeniowych z wykorzystaniem GCP za pomocą platformy Qwiklabs. Realizacja projektu tematycznego z wykorzystaniem poznanych narzędzi",
+                                           "Kryteria oceny",
+                                           "Realizacja ćwiczeń + projektu zaliczeniowego do końca zajęć",
+                                           ".",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Podstawy programowania",
+                                                         "wymagania":  "Bazy Danych / Podstawy SQL"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Podstawowe umiejętności programistyczne",
+                                                         "wymagania":  "Znajomość podstawowych koncepcji bazodanowych oraz składni języka SQL"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z narzędziami dostępnymi na publicznej chmurze obliczeniowej Google Cloud Platform, które służą do przetwarzania zbiorów danych. Student po zapoznaniu się z zajęciami powinien w praktyczny sposób znaleźć zbiór danych dostępny w internecie np. https://stat.gov.pl lub zdobyć dane i wyciągnąć wnioski analityczne na ich podstawie",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Google BigQuery: The Definitive Guide. Data Warehousing, Analytics, and Machine Learning at Scale (ebook), Valliappa Lakshmanan, Jordan Tigani"
+                                                                      ]
+                                                      },
+                                       "dokumentacja_internetowa":  {
+                                                                        "https://cloud.google.com/appengine/docs/standard/python/an-overview-of-app-engine":  "https://cloud.google.com/appengine/docs/standard/python/an-overview-of-app-engine",
+                                                                        "https://cloud.google.com/bigquery/docs/quickstarts":  "https://cloud.google.com/bigquery/docs/quickstarts",
+                                                                        "https://support.google.com/analytics/answer/4419694?hl=pl#zippy=%2Ctematy-w-tym-artykule":  "https://support.google.com/analytics/answer/4419694?hl=pl#zippy=%2Ctematy-w-tym-artykule"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawowe pojęcia związane z przetwarzaniem danych i modelowaniem danych.",
+                                                              "Student zna i rozumie  pojęcia związane z Big Data . Student zna i rozumie  mechanizmy używane w rozproszonych środowiskach przetwarzania danych"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wykorzystać  pojęcia związane z przetwarzaniem danych i modelowaniem danych.",
+                                                                    "Student  potrafi zaimplementować własne skrypt do przetwarzania złożonej ilości danych",
+                                                                    "Student potrafi  skonfigurować i wykorzystać narzędzia do przetwarzania Big Data.  Potrafi dobrać odpowiednie narzędzie do postawionego zadania z przetwarzania danych"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "1Narzędzia compute - maszyny wirtualne w GCP.",
+                                              "2App Engine - rozwiązanie PaaS do tworzenia aplikacji z funkcją automatycznego skalowania.",
+                                              "3Przegląd Baz Danychw GCP",
+                                              "4BigQuery – podstawy, partinioned tables,  clustering,  joins",
+                                              "5Datastudio. Zapoznanie się z generacją raportów w DataStudio",
+                                              "6Cloud Functions & Pub/subZapoznanie się z architekturą eventową za pomocą Cloud Functions i Pub/Sub",
+                                              "7Data loss prevention Zapoznanie się z narzędziami do anonimizacji danych osobowych w GCP",
+                                              "8Cloud Run. Narzędzie Cloud Run do zarządzania VMkami na podstawie obrazu Dockerowego",
+                                              "9DialogFlow. Zapoznanie się z pisaniem chatbotów z wykorzystaniem narzędzia DialogFlow"
+                                          ]
+                }
+}

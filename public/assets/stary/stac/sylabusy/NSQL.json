@@ -1,0 +1,97 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Bazy NoSQL",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  3,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr inż. Adam Urbanowicz",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "burza mózgów",
+                                           "Kryteria oceny",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Relacyjne Bazy Danych (RBD)",
+                                                         "wymagania":  "Dobre przygotowanie studentów do kursu \"Bazy NoSQL\" wymaga znajomości podstawowych koncepcji relacyjnych baz danych oraz systemów zarządzania bazami danych (DBMS)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kursu jest zapoznanie studentów z bazami NoSQL – ich architekturą, modelami danych, zastosowaniami oraz porównaniem do tradycyjnych relacyjnych baz danych. Studenci poznają różne typy baz NoSQL (dokumentowe, klucz-wartość, grafowe, kolumnowe) oraz nauczą się korzystać z wybranych systemów takich jak MongoDB, Redis, Cassandra, Neo4j.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence\" – Martin Fowler",
+                                                                          "\"MongoDB: The Definitive Guide\" – Shannon Bradshaw, Eoin Brazil",
+                                                                          "\"Designing Data-Intensive Applications\" – Martin Kleppmann",
+                                                                          "Dokumentacja techniczna: MongoDB, Redis, Cassandra, Neo4j"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student ma uporządkowaną wiedzę obejmującą kluczowe",
+                                                              "zagadnienia w zakresie zarządzania informacją i",
+                                                              "modelowania danych; szczegółowo zna zagadnienia",
+                                                              "konstrukcji baz danych NoSQL oraz ich programowania; ma znajomość aktualnie",
+                                                              "stosowanych systemów baz danych"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zaprojektować model danych dostosowany do wybranego typu bazy NoSQL (dokumentowej, kolumnowej, klucz-wartość, grafowej) oraz zaimplementować go w praktycznym zastosowaniu.",
+                                                                    "Student posiada umiejętność modelowania danych dla wybranych typów baz NoSQL (dokumentowych, klucz-wartość, kolumnowych, grafowych) oraz konstruowania ich schematu zgodnie z wymaganiami aplikacji; potrafi formułować zapytania w odpowiednich językach dla danej bazy NoSQL, zarządzać danymi oraz implementować mechanizmy wersjonowania i transakcji tam, gdzie są wspierane."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do Baz NoSQL. Omówienie różnic między SQL i NoSQL, typów baz NoSQL oraz teorii CAP Theorem, które wpływa na wybór odpowiedniej technologii.",
+                                              "MongoDB – podstawy. Przedstawienie modelu dokumentowego MongoDB oraz podstawowych operacji CRUD na danych zapisanych w formacie JSON/BSON.",
+                                              "MongoDB – skalowalność i wersjonowanie. Omówienie mechanizmów indeksowania, replikacji i sharding w MongoDB oraz metod wersjonowania dokumentów (Change Streams, kopie historyczne).",
+                                              "Programowanie MongoDB w Java Spring. Zastosowanie Spring Data MongoDB do integracji bazy z aplikacją oraz implementacja mechanizmu wersjonowania dokumentów.",
+                                              "Redis – podstawy. Zapoznanie się z modelem klucz-wartość w Redis oraz omówienie struktur danych i podstawowych operacji CRUD.",
+                                              "Redis – trwałość i wersjonowanie. Analiza mechanizmów przechowywania danych w Redis (RDB, AOF) oraz metod wersjonowania poprzez przechowywanie historycznych wartości kluczy.",
+                                              "Cassandra – podstawy. Wprowadzenie do baz kolumnowych na przykładzie Apache Cassandra, omówienie modelowania danych i operacji CRUD.",
+                                              "Cassandra – skalowalność i wersjonowanie. Przedstawienie replikacji i partycjonowania w Cassandra oraz metod wersjonowania danych w systemach time-series.",
+                                              "Programowanie Cassandra w Java Spring. Integracja Apache Cassandra z aplikacją Java Spring i implementacja systemu przechowywania wersji danych.",
+                                              "Neo4j – podstawy. Omówienie modelu grafowego baz danych, jego zastosowań i podstawowych operacji na węzłach i relacjach.",
+                                              "Neo4j – zaawansowane operacje i wersjonowanie. Przedstawienie języka zapytań Cypher i metod wersjonowania danych w grafowych bazach danych (Temporal Graphs).",
+                                              "Programowanie Neo4j w Java Spring. Wykorzystanie Spring Data Neo4j do budowy aplikacji pracujących na grafowych bazach danych oraz implementacja wersjonowania relacji.",
+                                              "Integracja i miksowanie baz SQL + NoSQL. Omówienie strategii hybrydowego podejścia, integracji baz relacyjnych i NoSQL oraz technik migracji danych.",
+                                              "Zaawansowane techniki w NoSQL. Analiza strategii przechowywania danych w systemach rozproszonych, Event Sourcing i CQRS z wykorzystaniem baz NoSQL."
+                                          ]
+                }
+}

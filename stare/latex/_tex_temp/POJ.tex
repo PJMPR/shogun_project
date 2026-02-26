@@ -1,0 +1,191 @@
+﻿% ===========================================================
+%  Sylabus: Programowanie Obiektowe w C\# (POJ)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: POJ}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Programowanie Obiektowe w C\#} \\[3pt]
+  \textbf{Kod przedmiotu:}    & POJ \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 2 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Adam Urbanowicz \\[3pt]
+  \textbf{Wersja z dnia:}     & 15.02.2025 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 30 h & 60 h & 40 h & 100 h & \textbf{3} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem zajęć jest zapoznanie studentów z podstawowymi koncepcjami programowania obiektowego na przykładzie języka C\# i platformy .NET. Omawiane są pojęcia interfejs, klasa, obiekt, dziedziczenie, polimorfizm, enkapsulacja i kompozycja. Prezentowane są koncepcje i praktyka związana z wykorzystaniem kolekcji generycznych, wyjątków, delegatów i zdarzeń, operacji wejścia/wyjścia oraz wybranych elementów nowoczesnego C\# (m.in. LINQ).
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  PRG1 & znajomość i umiejętność stosowania podstaw programowania strukturalnego (instrukcja warunkowa, pętle, tablice, funkcje i procedury) \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie do programowania w C\#: typy danych, definicja zmiennych, instrukcje sterujące. Tworzenie prostych programów z wykorzystaniem metody Main oraz klasy Console.
+  \item Metody statyczne, tablice i ich praktyczne zastosowanie; interakcja człowiek – komputer z użyciem Console.ReadLine/WriteLine, parsowanie danych wejściowych.
+  \item Programowanie obiektowe: definicja klas, tworzenie obiektów, konstruktory, pola i właściwości (properties). Implementacja metod niestatycznych.
+  \item Enkapsulacja, modyfikatory dostępu, zasady przechowywania danych w pamięci: stos i sterta w kontekście .NET; typy wartościowe i referencyjne.
+  \item Dziedziczenie: override oraz overload, metody wirtualne, przesłanianie składowych, dziedziczenie po klasie object (ToString, Equals, GetHashCode).
+  \item Klasy abstrakcyjne, polimorfizm, kompozycja; wprowadzenie do przestrzeni nazw i organizacji projektu.
+  \item Parametry opcjonalne i nazwane, params (zmienna liczba parametrów) oraz omówienie wyjątków (try/catch/finally), własne wyjątki.
+  \item Wyrażenia regularne w .NET, operacje na plikach (System.IO), serializacja w podstawowym zakresie (np. JSON jako format danych – wprowadzenie).
+  \item Interfejsy w C\#, implementacja wielokrotna interfejsów; interfejs IComparable, wprowadzenie do typów generycznych.
+  \item Kolekcje generyczne: List, Dictionary, HashSet; iteracja (foreach), porównywanie i sortowanie; wprowadzenie do LINQ (Where/Select/OrderBy).
+  \item Delegaty i zdarzenia: model zdarzeniowy w C\#, Action/Func, event; podstawy programowania zdarzeniowego na prostych przykładach.
+  \item Omówienie wybranych wzorców projektowych (np. Singleton, Factory, Strategy) oraz wstęp do programowania asynchronicznego w C\# (async/await) w kontekście prostych operacji I/O.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie podstawowe konstrukcje programistyczne oraz struktury danych, jak też ich podstawowe implementacje w języku C\# i środowisku .NET
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi ocenić poprawność konstrukcji obiektowych w programach w języku C\#.
+  \item Potrafi skonstruować i uruchomić program obiektowy w języku C\# (aplikacja konsolowa) z wykorzystaniem platformy .NET.
+  \item Student potrafi znajdować błędy w tworzonych programach obiektowych przy użyciu wybranych środowisk uruchomieniowych i debuggera.
+  \item Potrafi korzystać z bibliotek .NET (m.in. System, System.Collections.Generic, System.IO, System.Text.RegularExpressions).
+  \item Student potrafi korzystać ze środowiska developerskiego przeznaczonego do tworzenia programów w języku C\# (np. Visual Studio / Rider / VS Code), zaplanować prostą hierarchię klas oraz zastosować proste wzorce obiektowe zależnie od przedstawionego problemu.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item Kryteria oceny
+  \item Ocena pracy podczas ćwiczenia – ocena zadań wykonanych przez studentów oddanych do końca zajęć.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Brak
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Andrew Troelsen, Phil Japikse - Pro C\# with .NET, Apress (najnowsze wydanie)
+  \item Mark J. Price - C\# (najnowsze wydanie, Packt)
+  \item Microsoft Learn - Dokumentacja języka C\# i platformy .NET
+  \item Jon Skeet - C\# in Depth, Manning Publications
+\end{itemize}
+
+\end{document}

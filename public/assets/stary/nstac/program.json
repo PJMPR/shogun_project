@@ -1,0 +1,653 @@
+{
+  "pdf": "Program_niestacjonarne_stary.pdf",
+  "semesters": [
+    {
+      "semester": 1,
+      "summary": {
+        "ects": 20,
+        "lecture": 100,
+        "tutorial": 32,
+        "lab": 48
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Algebra liniowa i geometria",
+          "type": "M",
+          "code": "ALG",
+          "lecture": 8,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 4
+        },
+        {
+          "name": "Historia i kultura Japonii",
+          "type": "M",
+          "code": "HKJ",
+          "lecture": 32,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        },
+        {
+          "name": "Podstawy programowania",
+          "type": "M",
+          "code": "PRG1",
+          "lecture": 24,
+          "tutorial": 0,
+          "lab": 32,
+          "form": "Z",
+          "ects": 6
+        },
+        {
+          "name": "Użytkowanie komputerów i Podstawy Systemów Operacyjnych",
+          "type": "M",
+          "code": "UKOS",
+          "lecture": 4,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 2
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny 1.",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S1"
+        },
+        {
+          "name": "Wstęp do informatyki i architektury komputerów",
+          "type": "M",
+          "code": "WIA",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 3
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 1
+        }
+      ]
+    },
+    {
+      "semester": 2,
+      "summary": {
+        "ects": 20,
+        "lecture": 80,
+        "tutorial": 48,
+        "lab": 64
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Analiza matematyczna",
+          "type": "M",
+          "code": "AMs",
+          "lecture": 16,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Matematyka dyskretna 1",
+          "type": "M",
+          "code": "MAD",
+          "lecture": 16,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        },
+        {
+          "name": "Programowanie obiektowe w Javie",
+          "type": "M",
+          "code": "JJA",
+          "lecture": 24,
+          "tutorial": 0,
+          "lab": 32,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Wstęp do informatyki i architektury komputerów 2",
+          "type": "M",
+          "code": "WIA2",
+          "lecture": 8,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Systemy operacyjne",
+          "type": "M",
+          "code": "SOP",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 1
+        }
+      ]
+    },
+    {
+      "semester": 3,
+      "summary": {
+        "ects": 23,
+        "lecture": 80,
+        "tutorial": 32,
+        "lab": 80
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Matematyka dyskretna 2",
+          "type": "M",
+          "code": "MAD",
+          "lecture": 8,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 4
+        },
+        {
+          "name": "Relacyjne bazy danych",
+          "type": "M",
+          "code": "RBD",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Fizyka",
+          "type": "M",
+          "code": "FIZ",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Metody programowania",
+          "type": "M",
+          "code": "MPR",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 24,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny 2.",
+          "type": "O",
+          "code": "-",
+          "lecture": 8,
+          "tutorial": 0,
+          "lab": 8,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S3"
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 1
+        },
+        {
+          "name": "Technologie Internetu",
+          "type": "M",
+          "code": "TIN",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4
+        }
+      ]
+    },
+    {
+      "semester": 4,
+      "summary": {
+        "ects": 32,
+        "lecture": 64,
+        "tutorial": 40,
+        "lab": 88
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Algorytmy i struktury danych",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 24,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "ASD_S4"
+        },
+        {
+          "name": "Sieci komputerowe",
+          "type": "M",
+          "code": "SKOA",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 24,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Java zaawansowana",
+          "type": "M",
+          "code": "JAZ",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 24,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Projektowanie systemów informacyjnych",
+          "type": "M",
+          "code": "PRI",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Warsztaty programistyczne",
+          "type": "M",
+          "code": "WPR",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 24,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 1
+        },
+        {
+          "name": "Praktyka 1",
+          "type": "M",
+          "code": "PRK1",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 10
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "summary": {
+        "ects": 20,
+        "lecture": 72,
+        "tutorial": 28,
+        "lab": 92
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Grafika komputerowa",
+          "type": "M",
+          "code": "GRK",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 32,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Budowa i integracja systemów informatycznych",
+          "type": "M",
+          "code": "BYT",
+          "lecture": 24,
+          "tutorial": 0,
+          "lab": 32,
+          "form": "EZ",
+          "ects": 5
+        },
+        {
+          "name": "Elektronika",
+          "type": "M",
+          "code": "ELK",
+          "lecture": 16,
+          "tutorial": 12,
+          "lab": 12,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Interakcja człowiek - komputer",
+          "type": "M",
+          "code": "ICK",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        }
+      ]
+    },
+    {
+      "semester": 6,
+      "summary": {
+        "ects": 34,
+        "lecture": 88,
+        "tutorial": 40,
+        "lab": 64
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Statystyczna analiza danych 1",
+          "type": "M",
+          "code": "SAD",
+          "lecture": 16,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Systemy wbudowane",
+          "type": "M",
+          "code": "SWB",
+          "lecture": 16,
+          "tutorial": 8,
+          "lab": 8,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Systemy baz danych",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SBD_S6"
+        },
+        {
+          "name": "Przedmiot obieralny 2",
+          "type": "O",
+          "code": "-",
+          "lecture": 8,
+          "tutorial": 0,
+          "lab": 8,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "OB2_S6"
+        },
+        {
+          "name": "Przedmiot specjalizacyjny 1",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SPEC1_S6"
+        },
+        {
+          "name": "Przedmiot obieralny - specjalizacji",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4,
+          "electiveGroup": "SPECOB_S6"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        },
+        {
+          "name": "Praktyka 2",
+          "type": "M",
+          "code": "PRK2",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 10
+        }
+      ]
+    },
+    {
+      "semester": 7,
+      "summary": {
+        "ects": 23,
+        "lecture": 72,
+        "tutorial": 32,
+        "lab": 88
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Statystyczna analiza danych 2",
+          "type": "M",
+          "code": "SAD",
+          "lecture": 16,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 3
+        },
+        {
+          "name": "Narzędzia sztucznej inteligencji",
+          "type": "M",
+          "code": "NAI",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Projekt zespołowy 1",
+          "type": "M",
+          "code": "PRZ1",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 32,
+          "form": "Z",
+          "ects": 6
+        },
+        {
+          "name": "Bezpieczeństwo systemów informacyjnych",
+          "type": "M",
+          "code": "BSI",
+          "lecture": 8,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Przedmiot specjalizacyjny 2",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 24,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SPEC2_S7"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        }
+      ]
+    },
+    {
+      "semester": 8,
+      "summary": {
+        "ects": 38,
+        "lecture": 56,
+        "tutorial": 40,
+        "lab": 88
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Przedmiot obieralny 1",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 4,
+          "electiveGroup": "OB1_S8"
+        },
+        {
+          "name": "Projekt zespołowy 2",
+          "type": "M",
+          "code": "PRZ2",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 40,
+          "form": "Z",
+          "ects": 6
+        },
+        {
+          "name": "Społeczne aspekty informatyki",
+          "type": "M",
+          "code": "SAI",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "Z",
+          "ects": 4
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK4-ANG",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny 3.",
+          "type": "O",
+          "code": "-",
+          "lecture": 8,
+          "tutorial": 8,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S8"
+        },
+        {
+          "name": "Przedmiot monograficzny specjalizacji",
+          "type": "O",
+          "code": "-",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "MONO_S8"
+        },
+        {
+          "name": "Proseminarium",
+          "type": "M",
+          "code": "PSEM",
+          "lecture": 0,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 3
+        },
+        {
+          "name": "Praktyka 3",
+          "type": "M",
+          "code": "PRK3",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 12
+        }
+      ]
+    }
+  ]
+}
+

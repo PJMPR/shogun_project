@@ -1,0 +1,191 @@
+﻿% ===========================================================
+%  Sylabus: Systemy wbudowane (SWB)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SWB}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Systemy wbudowane} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SWB \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Paweł Syty \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Ćwiczenia & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zaznajomienie studentów z budową i podstawowymi metodami projektowania i programowania systemów wbudowanych (ang. embedded systems), głównie o opartych o mikrokontrolery, czyli specjalizowanych systemów informatycznych, odpowiadających za wykonywanie ściśle określonych zadań - zwykle związanych z monitorowaniem i sterowaniem. Omówione zostaną fizyczne podstawy funkcjonowania czujników (receptorów) i elementów wykonawczych (efektorów / aktuatorów), jako podstawowych składników tego typu systemów.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Zagadnienia ogólne
+  \item • Definicja systemu wbudowanego, historia, zastosowania
+  \item • Architektury mikroprocesorów i mikrokontrolerów. Rodziny mikrokontrolerów
+  \item • Modelowanie systemów czasu rzeczywistego, system przerwań
+  \item • Szyny komunikacyjne (SPI, I2C, 1-wire)
+  \item • Systemy monitoringu domowego (Home Assistant, Domoticz itp.)
+  \item • Wstęp do Internetu Rzeczy (IoT), protokoły komunikacyjne (ZigBee, Z-Wave, MQTT)
+  \item • Przykładowe realizacje
+  \item Omówienie wybranych platform sprzętowych
+  \item • Arduino (Uno, Mega, Nano, Pro Mini itp.) – platforma oparta na 8-bitowych mikrokontrolerach z rodziny Atmel AVR
+  \item • Raspberry Pi – rodzina 32/64-bitowych jednopłytkowych minikomputerów opartych na mikroprocesorach z rodziny ARM (11, Cortex)
+  \item • ESP8266 / ESP32 – 32-bitowy mikrokontroler RISC z wbudowaną transmisją WiFi / Wifi+Bluetooth, przez co przydatny do połączenia systemu z siecią Internet
+  \item • Raspberry Pi Pico – płytka mikrokontrolera, zbudowana na bazie chipu RP2040
+  \item • STM32 – rodzina 32-bitowych mikrokontrolerów z rodziny ARM Cortex
+  \item Omówienie wybranych języków programowania – w zakresie niezbędnym do programowania systemów wbudowanych
+  \item • Pochodna języka C/C++ – programowanie Arduino / ESP8266 / ESP32
+  \item • C/C++ – programowanie STM32
+  \item • Python – skryptowy język ogólnego zastosowania, szczególnie wygodny w programowaniu dla Raspberry Pi, omówiony w kontekście wielowątkowości, sterowania zdalnymi urządzeniami i podstaw projektowania graficznego interfejsu użytkownika
+  \item • MicroPython – wersja języka Python dla mikrokontrolerów – Raspberry Pi Pico
+  \item Omówienie zasad funkcjonowania, podłączenia itp. osprzętu pomocniczego (5.5h)
+  \item • Czujniki / sensory: termometry, barometry, czujniki odległości, deszczu, ruchu, koloru, dźwięku, urządzenia GPS, kamery itp.
+  \item • Aktuatory / efektory / elementy wykonawcze: silniki, wyświetlacze LCD/LED/OLED itp.
+  \item • Urządzenia do komunikacji: GSM, RFID/NFC itp.
+  \item • Inne: zegary czasu rzeczywistego, konwertery napięć i poziomów logicznych itp.
+  \item Omówienie wybranych środowisk programistycznych i narzędzi
+  \item • Arduino IDE – środowisko programistyczne dla Arduino i ESP8266, wraz z niezbędnymi bibliotekami
+  \item • TinkerCAD – serwis WWW do modelowania i symulowania urządzeń wbudowanych
+  \item • Fritzing – projektowanie obwodów i układów
+  \item • Arduino Cloud – środowisko programistyczne w chmurze
+  \item • ThingSpeak – serwisy WWW, umożliwiający zbieranie i prezentowanie danych pomiarowych
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna architektury systemów komputerowe (w tym mikrokontrolerowych) i rozumie zasady projektowania systemów cyfrowych, opartych o mikrokontrolery.
+  \item Student zna i rozumie podstawowe metody projektowania i implementacji systemów wbudowanych
+  \item Student zna i rozumie zasady funkcjonowania wybranych składników systemu wbudowanego
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi zaprojektować proste układy cyfrowe sekwencyjne i kombinatoryczne oraz je oprogramować.
+  \item Student potrafi  wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia systemu wbudowanego
+  \item Student potrafi zaprojektować, zbudować i oprogramować proste, specjalizowane systemy wbudowane oparte na wybranych mikrokontrolerach.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+  \item warsztaty
+  \item Kryteria oceny
+  \item Ocena praktycznego zastosowania kwestii omawianych na wykładach. Studenci otrzymują zadania praktyczne do wykonania podczas zajęć (do zdobycia maks. 25 punktów, z gradacją 0.5 p.) oraz zadanie indywidualne (do zdobycia maks. 25 punktów) – w sumie 50 punktów. Zajęcia zalicza otrzymanie co najmniej 25 punktów.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item A. Peck, Raspberry Pi Zero W. Kontrolery, czujniki, sterowniki i gadżety. Helion, 2019W. Wrotek, Arduino od podstaw. Helion, 2023
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\end{document}

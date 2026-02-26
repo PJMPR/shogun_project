@@ -1,0 +1,200 @@
+﻿% ===========================================================
+%  Sylabus: Matematyka dyskretna (MAD)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: MAD}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Matematyka dyskretna} \\[3pt]
+  \textbf{Kod przedmiotu:}    & MAD \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 2 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Elżbieta Puźniakowska-Gałuch \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & 16 h & --- & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Zapoznanie z podstawowym aparatem matematycznym i podstawowymi pojęciami matematyki dyskretnej. Rachunek zdań, teoria zbiorów, kombinatoryka, rachunek prawdopodobieństwa, teoria liczb, stosy, kolejki, drzewa, grafy.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  matematyka z zakresu szkoły średniej & --- \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Podstawy logiki.
+  \item Podstawy teorii mnogości.
+  \item Arytmetyka komputerowa.
+  \item Kombinatoryka.
+  \item Rachunek prawdopodobieństwa wraz ze zmiennymi losowymi.
+  \item Algebra Boole’a oraz funkcje i sieci boolowskie.
+  \item Arytmetyka modulo.
+  \item Teoria liczb.
+  \item Stosy, kolejki, drzewa.
+  \item Rekurencja.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie pojęcia logiki oraz język kwantyfikatorów. Zna i rozumie reguły wnioskowania przeprowadzania prostych dowodów. Student zna i rozumie  pojęcia zbioru, relacji, relacji równoważności, obrazu i przeciwobrazu zbioru i złożenie relacji w zbiorach dyskretnych. Student zna i rozumie pojęcia z arytmetyki modularnej. Student zna i rozumie podstawowe twierdzenia teorii liczb oraz jej znaczenie w informatyce. Student zna i rozumie  pojęcia kombinatoryki, prawdopodobieństwa, prawdopodobieństwa warunkowego i całkowitego oraz zmiennej losowej, wartości oczekiwanej i wariancji. Student zna i rozumie  pojęcia z algebry Boole’a oraz funkcji boolowskich.
+  \item Student zna i rozumie idee rekurencji. Student zna i rozumie podstawowe struktury danych (stosy, kolejki, drzewa).
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi wykonywać działania na zbiorach. Student potrafi definiować i rozpoznawać relacje, relacje równoważności. Potrafi wykonywać na nich działania. Student potrafi zapisać i odczytać zdanie logiczne zapisane również za pomocą kwantyfikatorów. Student potrafi sprawdzać, czy zdanie logiczne jest tautologią. Student potrafi uzasadnić, że dana reguła jest regułą dowodzenia oraz wykorzystać indukcję matematyczną. Student potrafi wykonywać obliczenia w arytmetyce modularnej z zastosowaniem do reprezentacji liczb i arytmetyki wykorzystywanej w komputerach. Student potrafi rozwiązywać zadania wymagające podstawowych pojęć z zakresu kombinatoryki i prawdopodobieństwa (w tym prawdopodobieństwa warunkowego i całkowitego). Student potrafi znaleźć rozkład zmiennej losowej i sprawdzić czy zmienne losowe są niezależne. Student potrafi obliczyć wartość oczekiwaną oraz wariancję zmiennej losowej. Student potrafi wykonywać działania w algebrze Boole’a. Student potrafi zapisać funkcję boolowską w postaciach normalnych.  Student potrafi, na podstawie twierdzeń z teorii liczb, przeprowadzić kodowanie w kryptosystemie RSA. Student potrafi odnaleźć elementy przeciwne i odwrotne w pierścieniach/ciałach Zk (również przy pomocy rozszerzonego algorytmu Euklidesa). Student potrafi przeprowadzić test pierwszości. Student potrafi posługiwać się algorytmami wykorzystującymi stosy, kolejki lub drzewa. Potrafi przeszukać drzewa binarne oraz drzewa operacji arytmetycznych. Student potrafi zastosować idee rekurencji w różnych kontekstach.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Ćwiczenia / Laboratorium/Lektorat:
+  \item rozwiązywanie zadań
+  \item Kryteria oceny
+  \item Kolokwia sprawdzające wiedzę podczas semestru. Do zaliczenia wymagane jest uzyskanie ponad 50\% punktów możliwych do zdobycia.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Materiał wykładu całego kursu MAD objęty jest egzaminem pisemnym. Zaliczenie od 50\% punktów możliwych do zdobycia.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item H. Furmańczyk, K. Horodecki, P. Żyliński, „Matematyka dyskretna dla studentów kierunku informatyka”, Wyd. UG (2010)
+  \item A. Szepietowski, „Matematyka dyskretna”, Wyd. UG (2004)
+  \item Ross, Kenneth, „Matematyka dyskretna”, 2006, Wydaw. Naukowe PWN
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item H. Lewis, R. Zax, „Matematyka dyskretna. Niezbędnik dla informatyków”, Wydawnictwo Naukowe PWN (2021)
+  \item M.Kacprzak, G. Mirkowska, „Matematyka Dyskretna” (w systemie Edu PJWSTK)
+\end{itemize}
+
+\end{document}

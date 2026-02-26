@@ -1,0 +1,1154 @@
+% ============================================================
+%  Program studiów – stacjonarne  PJATK Filia w Gdańsku
+% ============================================================
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}   % Helvetica ≈ Arial
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+\usepackage{needspace}
+\usepackage[colorlinks=true,linkcolor=red!70!black,urlcolor=red!70!black]{hyperref}
+
+% --- Kolor spisu treści – czarny -----------------------------
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+% --- Kolory (zgodne ze stroną Angular) -----------------------
+\definecolor{pjatkRed}{RGB}{220,38,38}       % #dc2626 – akcent czerwony
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,223,230}
+\definecolor{tableRowLight}{RGB}{242,243,246} % jasny szary (prawie biały)
+\definecolor{tableRowAlt}{RGB}{205,209,218}   % wyraźnie ciemniejszy szary
+\definecolor{tableElective}{RGB}{255,235,235} % obieralne – jasnoróżowy
+\definecolor{tableChild}{RGB}{255,245,245}    % dzieci
+\definecolor{tableSummary}{RGB}{195,199,210}  % podsumowanie
+\definecolor{descBorder}{RGB}{220,38,38}
+
+% --- Odstępy w tabelach (wiersze danych) ----------------------
+\setlength{\extrarowheight}{4pt}
+\renewcommand{\arraystretch}{1.35}
+
+% --- Makra do nagłówka tabeli (kompaktowy wiersz) -------------
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{4pt}}}
+
+% --- Nagłówki / stopki ----------------------------------------
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Program studiów -- stacjonarne}}
+\fancyfoot[C]{\small\thepage}
+
+% --- Sekcje ---------------------------------------------------
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\titleformat{\subsection}{\normalsize\bfseries\color{pjatkGray}}{\thesubsection.}{0.5em}{}
+\setlist{noitemsep,topsep=3pt,parsep=2pt}
+
+% --- Ramka infobox --------------------------------------------
+\newmdenv[linecolor=pjatkRed,linewidth=1.2pt,backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=8pt,
+  innerbottommargin=8pt,roundcorner=4pt]{infobox}
+
+% =============================================================
+\begin{document}
+
+% --- Watermark ------------------------------------------------
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[opacity=0.35,anchor=south] at (current page.south){%
+      \includegraphics[width=10cm]{../latex/PJATK_pl_sygnet}};
+  \end{tikzpicture}}
+
+% --- Nagłówek tytułowy ----------------------------------------
+\begin{center}
+  \includegraphics[height=2cm]{../latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} PROGRAM STUDIÓW}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Uczelnia:}             & Polsko-Japońska Akademia Technik Komputerowych \\[3pt]
+  \textbf{Wydział / Filia:}      & Informatyki w Gdańsku \\[3pt]
+  \textbf{Kierunek / Profil:}    & Informatyka / praktyczny \\[3pt]
+  \textbf{Poziom:}               & studia pierwszego stopnia (inżynierskie) \\[3pt]
+  \textbf{Forma studiów:}        & stacjonarne \\[3pt]
+  \textbf{Liczba semestrów:}     & 7 \\[3pt]
+  \textbf{Język wykładowy:}      & polski \\[3pt]
+  \textbf{Łączna liczba ECTS:}   & 195 + 30 (praktyki zawodowe) \\[3pt]
+  \textbf{Rok akademicki:}       & 2026/2027 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+\begin{mdframed}[linecolor=pjatkGray,linewidth=0.6pt,backgroundcolor=white,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=6pt,innerbottommargin=6pt]
+{\small\textbf{Podstawa prawna:}\\[4pt]
+Art.~53 i Art.~67 Ustawy Prawo o Szkolnictwie Wyższym i Nauce z dnia 20 lipca 2018~r. (Dz.~U.~2018 poz.~1668), Rozporządzenie Ministra Nauki i Szkolnictwa Wyższego z dnia 27 września 2018~r. w sprawie studiów oraz Rozporządzenie Ministra Nauki i Szkolnictwa Wyższego z dnia 14 listopada 2018~r. w sprawie charakterystyk drugiego stopnia efektów uczenia się dla kwalifikacji na poziomach 6--8 Polskiej Ramy Kwalifikacji.}
+\end{mdframed}
+
+\vspace{1cm}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+% --- Spis treści ----------------------------------------------
+\tableofcontents
+\newpage
+
+% =============================================================
+\section{Charakterystyka studiów}
+
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{@{}Xr@{}}
+\toprule
+  {\small Nazwa kierunku:} & {\small\textbf{Informatyka}} \\
+  {\small Poziom:} & {\small\textbf{Pierwszy stopień}} \\
+  {\small Profil:} & {\small\textbf{Praktyczny}} \\
+  {\small Forma:} & {\small\textbf{Studia stacjonarne}} \\
+  {\small Język wykładowy:} & {\small\textbf{Polski}} \\
+  {\small Kierunek przyporządkowany do dyscypliny:} & {\small\textbf{Nauki techniczne}} \\
+\midrule
+  {\small Liczba semestrów:} & {\small\textbf{7}} \\
+  {\small Liczba punktów ECTS konieczna do ukończenia studiów:} & {\small\textbf{210}} \\
+  {\small Tytuł zawodowy nadawany absolwentom:} & {\small\textbf{inżynier}} \\
+\midrule
+  {\small Łączna liczba godzin zajęć:} & {\small\textbf{2749}} \\
+  {\small Liczba punktów ECTS z dziedziny nauk humanistycznych lub społecznych:} & {\small\textbf{15}} \\
+  {\small Liczba godzin zajęć z bezpośrednim udziałem prowadzących i studentów:} & {\small\textbf{2749}} \\
+  {\small Łączna liczba punktów ECTS przyporządkowana zajęciom kształtującym umiejętności praktyczne:} & {\small\textbf{135}} \\
+  {\small Liczba punktów ECTS uzyskiwana w ramach zajęć do wyboru:} & {\small\textbf{66}} \\
+\bottomrule
+\end{tabularx}}
+
+\bigskip
+
+
+\newpage
+
+Studia na kierunku \textbf{Informatyka} prowadzone w Filii w Gdańsku Polsko-Japońskiej Akademii Technik Komputerowych (PJATK) mają charakter \textbf{praktyczny} i trwają \textbf{7 semestry}. Absolwent uzyskuje tytuł zawodowy \textbf{inżyniera informatyki}.
+
+\subsection{Cel i zakres kształcenia}
+
+Celem kształcenia jest wyposażenie studentów w wiedzę, umiejętności i kompetencje społeczne niezbędne do samodzielnego projektowania, tworzenia i utrzymania systemów informatycznych. Program obejmuje m.in.: programowanie obiektowe i funkcyjne, bazy danych, sieci komputerowe, systemy operacyjne, sztuczną inteligencję, grafikę komputerową, bezpieczeństwo systemów informatycznych oraz zarządzanie projektami.
+
+\subsection{Warunki przyjęcia}
+
+Na studia przyjmowani są kandydaci posiadający świadectwo dojrzałości.
+
+\subsection{Warunki ukończenia studiów}
+
+Warunkiem ukończenia studiów jest zaliczenie wszystkich przedmiotów przewidzianych w planie, uzyskanie co najmniej \textbf{210 punktów ECTS} oraz obrona pracy dyplomowej (inżynierskiej).
+
+\subsection{Specjalizacje}
+
+W ramach studiów student wybiera jedną z pięciu specjalizacji:
+\begin{itemize}
+  \item Architektury oprogramowania i DevOps
+  \item Cyberbezpieczeństwo
+  \item Inżynieria gier komputerowych
+  \item Sztuczna inteligencja
+  \item Internet Rzeczy
+\end{itemize}
+
+\newpage
+
+% =============================================================
+\section{Kierunkowe efekty uczenia się}
+
+Poniższe tabele prezentują pełny zakres efektów uczenia się określonych w rozporządzeniu MNiSW z dnia 14 listopada 2018~r. w sprawie charakterystyk drugiego stopnia efektów uczenia się dla kwalifikacji na poziomach 6--8 Polskiej Ramy Kwalifikacji wydanym na podstawie art.~68 ust.~3 ustawy, określającym standardy kształcenia przygotowującego do wykonywania zawodu właściwy dla prezentowanych w tym Programie Studiów.
+
+\subsection*{Odniesienie do Polskiej Ramy Kwalifikacji (PRK)}
+
+{\scriptsize
+\begin{longtable}{m{2.8cm}m{12cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Charakterystyka}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Charakterystyka}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} P6S\_KK & Kompetencje -- krytyczna ocena posiadanej wiedzy \\
+\rowcolor{tableRowAlt} P6S\_KO & Kompetencje -- odpowiedzialne pełnienie ról zawodowych \\
+\rowcolor{tableRowLight} P6S\_KR & Kompetencje -- wyznaczanie i przyjmowanie odpowiedzialności zawodowej \\
+\rowcolor{tableRowAlt} P6S\_UK & Umiejętności -- komunikowanie się w zakresie specjalności \\
+\rowcolor{tableRowLight} P6S\_UO & Umiejętności -- planowanie i organizowanie pracy własnej i zespołowej \\
+\rowcolor{tableRowAlt} P6S\_UU & Umiejętności -- samodzielne uczenie się przez całe życie \\
+\rowcolor{tableRowLight} P6S\_UW & Umiejętności -- wykorzystanie wiedzy do rozwiązywania problemów informatycznych \\
+\rowcolor{tableRowAlt} P6S\_WG & Wiedza ogólna -- podstawy nauk ścisłych i technicznych właściwe dla informatyki \\
+\rowcolor{tableRowLight} P6S\_WK & Wiedza kierunkowa -- teorie, zasady i metody właściwe dla informatyki \\
+\bottomrule
+\end{longtable}}
+
+\bigskip
+\subsection*{W -- Wiedza}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} W01 & Gospodarczej, szczególnie przedsięwzięć. Zna ogólne zasady tworzenia przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych & {\scriptsize P6S\_WK} & {\scriptsize POZ} \\
+\rowcolor{tableRowAlt} W02 & Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry. & {\scriptsize P6S\_WG} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} W03 & Paradygmaty programowania obiektowego w języku C\# & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize DOT} \\
+\rowcolor{tableRowAlt} W04 & Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości. & {\scriptsize P6S\_WG} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} W05 & Rozumie rolę eksperymentu fizycznego, matematycznych modeli teoretycznych przybliżających rzeczywistość oraz symulacji komputerowych w metodologii badań naukowych; ma świadomość ograniczeń technologicznych, aparaturowych i metodologicznych w badaniach naukowych; & {\scriptsize P6S\_WG} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} W06 & Student demonstruje głębokie zrozumienie składni, struktur i możliwości języka JavaScript w kontekście programowania backendowego. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowLight} W07 & Student ma podstawowa wiedzę w zakresie architektur i programowania systemów mikroprocesorowych, wybranych języków mikroprogramowania procesorów, zna i rozumie zasadę działania podstawowych modułów peryferyjnych oraz interfejsów komunikacyjnych stosowanych w systemach mikroprocesorowych. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} W08 & Student ma uporządkowaną wiedzę w zakresie architektur komputerów, systemów i sieci komputerowych oraz systemów operacyjnych w tym systemów operacyjnych czasu rzeczywistego. & {\scriptsize P6S\_WG} & {\scriptsize SCR} \\
+\rowcolor{tableRowLight} W09 & Student ma uporządkowaną, podbudowaną teoretycznie wiedzę w zakresie systemów operacyjnych i zasad ich działania, współbieżności i szeregowania zadań, metod synchronizacji i komunikacji między procesami. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} W10 & Student ma wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki. & {\scriptsize P6S\_WG} & {\scriptsize FIZ} \\
+\rowcolor{tableRowLight} W11 & Student ma wiedzę z zakresu rachunku prawdopodobieństwa, statystyki matematycznej i analizy danych wykorzystywaną w rozwiązywaniu prostych zadań inżynierskich w informatyce. & {\scriptsize P6S\_WG} & {\scriptsize SAD} \\
+\rowcolor{tableRowAlt} W12 & Student potrafi czytać ze zrozumieniem kod języków skryptowych, tworzyć skrypty oraz zweryfikować poprawność utworzonego kodu. & {\scriptsize P6S\_WG} & {\scriptsize WPR} \\
+\rowcolor{tableRowLight} W13 & Student potrafi projektować aplikacje zgodnie z paradygmatem strukturalnym i obiektowym. Student posiada podstawową wiedzę na temat protokołu HTTP oraz tworzenia bezpiecznych aplikacji internetowych i bazodanowych. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize WPR} \\
+\rowcolor{tableRowAlt} W14 & Student potrafi wyjaśnić zasady asynchronicznego programowania w JavaScript i zastosować je w praktyce. & {\scriptsize P6S\_WG} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} W15 & Student potrafi wyjaśnić zasady responsywności stron internetowych oraz zastosować odpowiednie techniki do ich implementacji. & {\scriptsize P6S\_WG} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} W16 & Student potrafi wyjaśnić, jak działają żądania i odpowiedzi HTTP, a także zidentyfikować i opisać różne metody, kody odpowiedzi i nagłówki. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowLight} W17 & Student potrafi wyjaśnić, jak są zbudowane współczesne aplikacje internetowe, włączając w to rolę i funkcje backendu. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} W18 & Student potrafi: zastosować zaawansowane pojęcia z zakresu programowania, co jest niezbędne przy tworzeniu, testowaniu i uruchamianiu aplikacji wykorzystujących NLP. Umiejętność programowania w różnych językach oraz znajomość technik i narzędzi programistycznych jest kluczowa w realizacji projektów związanych z NLP. & {\scriptsize P6S\_WG} & {\scriptsize PJN} \\
+\rowcolor{tableRowLight} W19 & Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP. & {\scriptsize P6S\_WG} & {\scriptsize PJN} \\
+\rowcolor{tableRowAlt} W20 & Student potrafi: zrozumieć zaawansowane pojęcia związane z wybraną specjalizacją w NLP, co pozwala na rozwijanie innowacyjnych rozwiązań oraz adaptację aktualnych technologii w praktyce. Wiedza ta umożliwia studentom angażowanie się w badania i rozwój w dziedzinie NLP. & {\scriptsize P6S\_WG} & {\scriptsize PJN} \\
+\rowcolor{tableRowLight} W21 & Student rozumie działanie preprocesorów CSS i potrafi wykorzystać je do optymalizacji oraz organizacji kodu CSS. & {\scriptsize P6S\_WK, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} W22 & Student rozumie etyczne i prawne aspekty tworzenia i zarządzania API, w tym prywatność, ochronę danych i zgodność z regulacjami prawnymi. & {\scriptsize P6S\_WK} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} W23 & Student rozumie kluczowe zagadnienia związane ze skalowalnością i wydajnością aplikacji internetowych, oraz umie zastosować praktyki optymalizacji. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} W24 & Student rozumie kwestie związane z zabezpieczaniem API, w tym uwierzytelnianie, autoryzację oraz ochronę przed powszechnymi zagrożeniami i atakami. & {\scriptsize P6S\_WK} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} W25 & Student rozumie metody zapewniania jakości i testowania API, włączając w to testy jednostkowe, integracyjne oraz testy obciążenia. & {\scriptsize P6S\_WG} & {\scriptsize TAPI} \\
+\rowcolor{tableRowAlt} W26 & Student rozumie podstawowe koncepcje i zasady rządzące współczesnymi API, w tym ich role i zastosowania w różnych typach aplikacji internetowych. & {\scriptsize P6S\_WG} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} W27 & Student rozumie podstawowe technologie internetowe oraz ich rolę w tworzeniu nowoczesnych stron i aplikacji internetowych. & {\scriptsize P6S\_WG} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} W28 & Student rozumie podstawy działania narzędzi serwerowych, takich jak Node.js i potrafi je zastosować w kontekście budowy aplikacji internetowych. & {\scriptsize P6S\_WG} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} W29 & Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk. & {\scriptsize P6S\_WK, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize MAS} \\
+\rowcolor{tableRowAlt} W30 & Student rozumie wagę wymagań systemowych w procesie wytwarzania oprogramowania & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PRI} \\
+\rowcolor{tableRowLight} W31 & Student rozumie zaawansowane pojęcia w zakresie technologii backendowych. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} W32 & Student rozumie zasady działania języka JavaScript, w tym zmienne, operatory oraz funkcje, i potrafi zastosować je w praktycznych zadaniach. & {\scriptsize P6S\_WG} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} W33 & Student rozumie zasady działania sieci komputerowych, protokołów komunikacyjnych i zagadnień bezpieczeństwa. & {\scriptsize P6S\_WG} & {\scriptsize UKOS} \\
+\rowcolor{tableRowAlt} W34 & Student rozumie, jak działa nierelacyjna baza danych, potrafi zidentyfikować główne cechy bazy dokumentowej i zastosować je w praktyce. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowLight} W35 & Student umie zdefiniować i opisać wzorzec REST API, jego zasady i konwencje, a także zastosowania w budowie aplikacji internetowych. & {\scriptsize P6S\_WG} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} W36 & Student wie, że jakość danych ma kluczowe znaczenie w przypadku uczenia maszynowego & {\scriptsize P6S\_WG} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowLight} W37 & Student zna architektury systemów komputerowe (w tym mikrokontrolerowych) i rozumie zasady projektowania systemów cyfrowych, opartych o mikrokontrolery. & {\scriptsize P6S\_WG} & {\scriptsize SWB} \\
+\rowcolor{tableRowAlt} W38 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber & {\scriptsize P6S\_WG} & {\scriptsize AIC, KC} \\
+\rowcolor{tableRowLight} W39 & Student zna i rozumie cechy najistotniejszych cykli wytwarzania/ewolucji oprogramowania & {\scriptsize P6S\_WG} & {\scriptsize PRI} \\
+\rowcolor{tableRowAlt} W40 & Student zna i rozumie elementy programowania funkcyjnego na przykładzie języka JavaScript. Student zna i rozumie techniki oraz metody programistyczne wykorzystywane w języku JavaScript. & {\scriptsize P6S\_WG} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} W41 & Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN & {\scriptsize P6S\_WG} & {\scriptsize MAS} \\
+\rowcolor{tableRowAlt} W42 & Student zna i rozumie idee rekurencji. Student zna i rozumie podstawowe struktury danych (stosy, kolejki, drzewa). & {\scriptsize P6S\_WG} & {\scriptsize MAD} \\
+\rowcolor{tableRowLight} W43 & Student zna i rozumie istotę podstawowych struktur danych oraz potrafi dobrać je do zadania. & {\scriptsize P6S\_WG} & {\scriptsize ASD} \\
+\rowcolor{tableRowAlt} W44 & Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych & {\scriptsize P6S\_WK} & {\scriptsize SAI} \\
+\rowcolor{tableRowLight} W45 & Student zna i rozumie jak zastosować pojęcia algebry i geometrii analitycznej do problemów informatycznych. & {\scriptsize P6S\_WG} & {\scriptsize ALG} \\
+\rowcolor{tableRowAlt} W46 & Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania & {\scriptsize P6S\_WG} & {\scriptsize BYT} \\
+\rowcolor{tableRowLight} W47 & Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania. & {\scriptsize P6S\_WG} & {\scriptsize PRO} \\
+\rowcolor{tableRowAlt} W48 & Student zna i rozumie kluczowe zagadnienia i metody w zakresie grafiki, multimediów i komunikacji człowiek-komputer. & {\scriptsize P6S\_WG} & {\scriptsize ZZGA} \\
+\rowcolor{tableRowLight} W49 & Student zna i rozumie konstrukcje programistyczne w języku C\#. & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowAlt} W50 & Student zna i rozumie metody pracy na zbiorach danych. & {\scriptsize P6S\_WG} & {\scriptsize MHE} \\
+\rowcolor{tableRowLight} W51 & Student zna i rozumie metody przechowywania danych dla uczenia maszynowego & {\scriptsize P6S\_WG} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowAlt} W52 & Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych. Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize ALG} \\
+\rowcolor{tableRowLight} W53 & Student zna i rozumie notację asymptotyczną opisującą złożoność obliczeniową. & {\scriptsize P6S\_WG} & {\scriptsize ASD} \\
+\rowcolor{tableRowAlt} W54 & Student zna i rozumie ograniczenia występujące w procesie wytwarzania oprogramowania & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PRI} \\
+\rowcolor{tableRowLight} W55 & Student zna i rozumie opis matematyczny sztucznych sieci neuronowych z wykorzystaniem elementów algebry. Zna i rozumie algorytmy optymalizacji funkcji błędu z wykorzystaniem metod gradientowych. & {\scriptsize P6S\_WG} & {\scriptsize AAI} \\
+\rowcolor{tableRowAlt} W56 & Student zna i rozumie podstawowe fakty z historii i kultury Japonii. & {\scriptsize P6S\_WG} & {\scriptsize HKJ} \\
+\rowcolor{tableRowLight} W57 & Student zna i rozumie podstawowe metody projektowania i implementacji systemów wbudowanych & {\scriptsize P6S\_WG} & {\scriptsize SWB} \\
+\rowcolor{tableRowAlt} W58 & Student zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, szczególnie przedsięwzięć informatycznych i rozumie rolę jej innowacyjności. Zna i rozumie ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych. & {\scriptsize P6S\_WK} & {\scriptsize PRIN} \\
+\rowcolor{tableRowLight} W59 & Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi & {\scriptsize P6S\_WG} & {\scriptsize BYT} \\
+\rowcolor{tableRowAlt} W60 & Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi. & {\scriptsize P6S\_WG} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} W61 & Student zna i rozumie podstawowe problemów etycznych, społecznych i zawodowych informatyki oraz odpowiedzialności związanej z działalnością & {\scriptsize P6S\_WG} & {\scriptsize POZ} \\
+\rowcolor{tableRowAlt} W62 & Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki; zna i rozumie podstawowe pojęcia z zakresu ochrony własności intelektualnej oraz prawa patentowego i autorskiego; zna i rozumie pozatechniczne aspekty informatyki, powiązanie przedsięwzięć informatycznych z ich otoczeniem i zagrożenia stąd płynące & {\scriptsize P6S\_WK} & {\scriptsize PRIN} \\
+\rowcolor{tableRowLight} W63 & Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka & {\scriptsize P6S\_WG} & {\scriptsize SAI} \\
+\rowcolor{tableRowAlt} W64 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber & {\scriptsize P6S\_WK} & {\scriptsize AIC, KC} \\
+\rowcolor{tableRowLight} W65 & Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika. & {\scriptsize P6S\_WG} & {\scriptsize SGD} \\
+\rowcolor{tableRowAlt} W66 & Student zna i rozumie podstawowe zastosowania wybranych narzędzi uczenia maszynowego & {\scriptsize P6S\_WG} & {\scriptsize MLR} \\
+\rowcolor{tableRowLight} W67 & Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania. & {\scriptsize P6S\_WG} & {\scriptsize CPP} \\
+\rowcolor{tableRowAlt} W68 & Student zna i rozumie pojęcia logiki oraz język kwantyfikatorów. Zna i rozumie reguły wnioskowania przeprowadzania prostych dowodów. Student zna i rozumie pojęcia zbioru, relacji, relacji równoważności, obrazu i przeciwobrazu zbioru i złożenie relacji w zbiorach dyskretnych. Student zna i rozumie pojęcia z arytmetyki modularnej. Student zna i rozumie podstawowe twierdzenia teorii liczb oraz jej znaczenie w informatyce. Student zna i rozumie pojęcia kombinatoryki, prawdopodobieństwa, prawdopodobieństwa warunkowego i całkowitego oraz zmiennej losowej, wartości oczekiwanej i wariancji. Student zna i rozumie pojęcia z algebry Boole’a oraz funkcji boolowskich. & {\scriptsize P6S\_WK, P6S\_WG} & {\scriptsize MAD} \\
+\rowcolor{tableRowLight} W69 & Student zna i rozumie pojęcia takie jak specyfikacja, weryfikacja i własność stopu algorytmu. & {\scriptsize P6S\_WK, P6S\_WG} & {\scriptsize ASD} \\
+\rowcolor{tableRowAlt} W70 & Student zna i rozumie pojęcia w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki. & {\scriptsize P6S\_WG} & {\scriptsize ELK} \\
+\rowcolor{tableRowLight} W71 & Student zna i rozumie pojęcia w zakresie pojęcia wirtualizacji i konteneryzacji z wykorzystaniem sieci komputerowych, ich technologii oraz protokołów komunikacyjnych. & {\scriptsize P6S\_WG} & {\scriptsize DEV} \\
+\rowcolor{tableRowAlt} W72 & Student zna i rozumie pojęcia w zakresie sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki & {\scriptsize P6S\_WG} & {\scriptsize BYT} \\
+\rowcolor{tableRowLight} W73 & Student zna i rozumie pojęcia występujące w procesie konteneryzacji na przykładzie narzędzia Docker. Zna i rozumie proces tworzenia, skonteneryzowanych bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie pojęcia związane z orchestracją i monitorowaniem takiej aplikacji & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize DEV} \\
+\rowcolor{tableRowAlt} W74 & Student zna i rozumie pojęcia z zakresu elektrotechniki, elektroniki i miernictwa; powiązania informatyki z tymi obszarami & {\scriptsize P6S\_WG} & {\scriptsize SKO1} \\
+\rowcolor{tableRowLight} W75 & Student zna i rozumie pojęcia z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu. & {\scriptsize P6S\_WG} & {\scriptsize ELK} \\
+\rowcolor{tableRowAlt} W76 & Student zna i rozumie pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer & {\scriptsize P6S\_WG} & {\scriptsize OGL} \\
+\rowcolor{tableRowLight} W77 & Student zna i rozumie pojęcia z zakresu kluczowych zagadnień w zarządzania informacją i modelowania danych; szczegółowo zna i rozumie zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma znajomość aktualnie stosowanych systemów baz danych & {\scriptsize P6S\_WK, P6S\_WG} & {\scriptsize BYT} \\
+\rowcolor{tableRowAlt} W78 & Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności & {\scriptsize P6S\_WK} & {\scriptsize PRIN} \\
+\rowcolor{tableRowLight} W79 & Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności. & {\scriptsize P6S\_WK} & {\scriptsize PRO} \\
+\rowcolor{tableRowAlt} W80 & Student zna i rozumie pojęcia z zakresu tworzenia interaktywnych aplikacji internetowych, umożliwiających komunikację typu człowiek-komputer. & {\scriptsize P6S\_WG} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} W81 & Student zna i rozumie pojęcia z zastosowania z zakresu AI od strony oprogramowania. & {\scriptsize P6S\_WG} & {\scriptsize AAI} \\
+\rowcolor{tableRowAlt} W82 & Student zna i rozumie pojęcia związane z algorytmami heurystycznymi takie jak funkcja celu, funkcja selekcji, automatyczne dostosowanie zasięgu mutacji, programowanie genetyczne, metoda tabu, krzywa zbieżności. Student potrafi zidentyfikować problemy które można rozwiązać za pomocą algorytmów z dziedziny metaheurystyk. Student potrafi także zastosować metody statystyczne od analizy i porównani różnych metod rozwiązania tego samego problemu. & {\scriptsize P6S\_WG} & {\scriptsize MHE} \\
+\rowcolor{tableRowLight} W83 & Student zna i rozumie pojęcia związane z implementowaniem zapór ogniowych, ochrony przed wtargnięciami do sieci, systemów kryptograficznych, implementacji wirtualnych sieci prywatnych i zarządzania bezpiecznymi sieciami komputerowymi; zna metody zabezpieczania urządzeń sieciowych i systemów komputerowych. & {\scriptsize P6S\_WK, P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize BSI} \\
+\rowcolor{tableRowAlt} W84 & Student zna i rozumie pojęcia związane z pojęciem Frontend Development. Student zna i rozumie pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku. & {\scriptsize P6S\_WK, P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} W85 & Student zna i rozumie pojęcie zbioru liczb zespolonych. Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych. Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych. & {\scriptsize P6S\_WG} & {\scriptsize ALG} \\
+\rowcolor{tableRowAlt} W86 & Student zna i rozumie poznane pojęcia w stopniu zaawansowanym. & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} W87 & Student zna i rozumie składnię rdzeniowych diagramów języka UML & {\scriptsize P6S\_WG} & {\scriptsize PRI} \\
+\rowcolor{tableRowAlt} W88 & Student zna i rozumie sposoby programowania grafiki dwu- i trójwymiarowej. & {\scriptsize P6S\_WG} & {\scriptsize ZZGA} \\
+\rowcolor{tableRowLight} W89 & Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne & {\scriptsize P6S\_WG} & {\scriptsize CPP} \\
+\rowcolor{tableRowAlt} W90 & Student zna i rozumie techniki specyfikowania wymagań. Student zna i rozumie umiejscowienie poszczególnych elementów testowania w zależności od obranego cyklu & {\scriptsize P6S\_WG} & {\scriptsize PRI} \\
+\rowcolor{tableRowLight} W91 & Student zna i rozumie w jaki sposób zaplanować przedsięwzięcie informatyczne. Zna sposób wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności przedsięwzięcia. & {\scriptsize P6S\_WK} & {\scriptsize POZ} \\
+\rowcolor{tableRowAlt} W92 & Student zna i rozumie wykorzystywane w przemyśle i badaniach naukowych algorytmy uczenia maszynowego i modele sieci neuronowych & {\scriptsize P6S\_WG} & {\scriptsize AAI} \\
+\rowcolor{tableRowLight} W93 & Student zna i rozumie zaawansowane pojęcia w zakresie programowania grafiki 3W, stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG} & {\scriptsize OGL} \\
+\rowcolor{tableRowAlt} W94 & Student zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektura wieloprocesorowych oraz programowania na poziomie assemblera & {\scriptsize P6S\_WK, P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize KPIR} \\
+\rowcolor{tableRowLight} W95 & Student zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki & {\scriptsize P6S\_WG} & {\scriptsize KPIR} \\
+\rowcolor{tableRowAlt} W96 & Student zna i rozumie zaawansowane pojęcia z zakresu uczenia maszynowego oraz sposoby ich wykorzystania w sytuacjach praktycznych. & {\scriptsize P6S\_WG} & {\scriptsize IML} \\
+\rowcolor{tableRowLight} W97 & Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających; & {\scriptsize P6S\_WK, P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize BYT, PRO} \\
+\rowcolor{tableRowAlt} W98 & Student zna i rozumie zaawansowane pojęcia związane z pojęciem Frontend Development. Student zna i rozumie zaawansowane pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku. & {\scriptsize P6S\_WK, P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} W99 & Student zna i rozumie zagadnienia z zakresu sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki & {\scriptsize P6S\_WG} & {\scriptsize SKO1} \\
+\rowcolor{tableRowAlt} W100 & Student zna i rozumie zagadnienia z zakresu techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych & {\scriptsize P6S\_WK, P6S\_WG} & {\scriptsize SKO1} \\
+\rowcolor{tableRowLight} W101 & Student zna i rozumie zasady działania architektury systemów komputerowych oraz systemu Linux. & {\scriptsize P6S\_WG} & {\scriptsize UKOS} \\
+\rowcolor{tableRowAlt} W102 & Student zna i rozumie zasady funkcjonowania wybranych składników systemu wbudowanego & {\scriptsize P6S\_WG} & {\scriptsize SWB} \\
+\rowcolor{tableRowLight} W103 & Student zna i rozumie zasady prowadzenia działalności & {\scriptsize P6S\_WG} & {\scriptsize POZ} \\
+\rowcolor{tableRowAlt} W104 & Student zna i rozumie zastosowania wybranych narzędzi uczenia maszynowego & {\scriptsize P6S\_WG} & {\scriptsize IML} \\
+\rowcolor{tableRowLight} W105 & Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach. Zna podstawowe zasady symulacji komputerowych. & {\scriptsize P6S\_WG} & {\scriptsize SGD} \\
+\rowcolor{tableRowAlt} W106 & Student zna i rozumie:kluczowe zagadnienia i metody z zakresu computer vision, w tym techniki przetwarzania i analizy obrazów cyfrowych; rozumie podstawy algorytmów segmentacji obrazu, detekcji krawędzi i cech charakterystycznych; zna metody rozpoznawania obiektów i twarzy w obrazach oraz sekwencjach wideo; jest zaznajomiony z technikami rekonstrukcji trójwymiarowej sceny z obrazów dwuwymiarowych; zna podstawy deep learningu w zastosowaniu do zadań widzenia komputerowego, w tym architekturę i zastosowania sieci neuronowych splotowych in transformerowych ; jest świadomy wyzwań związanych z przetwarzaniem obrazów w czasie rzeczywistym i optymalizacją wydajności algorytmów wizyjnych. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize COV} \\
+\rowcolor{tableRowLight} W107 & Student zna i rozumie:zaawansowane koncepcje i techniki przetwarzania obrazów cyfrowych, w tym metody segmentacji obrazu, detekcji krawędzi i wykrywania obiektów; posiada wiedzę na temat zastosowania splotowych i transformerowych sieci neuronowych w zadaniach klasyfikacji, detekcji, segmentacji i generowania obrazów; rozumie zasady działania algorytmów przetwarzających obrazy 2D i 3D oraz sekwence wideo; zna podstawy przetwarzania obrazów w czasie rzeczywistym i optymalizacji wydajności algorytmów computer vision; jest zaznajomiony z bibliotekami i frameworkami takimi jak OpenCV, PyTorch i HuggingFace stosowanymi w implementacji rozwiązań z zakresu widzenia komputerowego; rozumie wyzwania związane z przetwarzaniem dużych zbiorów danych obrazowych i metody ich efektywnego składowania i analizy. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize COV} \\
+\rowcolor{tableRowAlt} W108 & Student zna i rozumie:zaawansowane pojęcia i techniki w dziedzinie computer vision; rozumie głębokie modele uczenia maszynowego stosowane w analizie obrazów, w tym architektury sieci neuronowych takie jak CNN, R-CNN, YOLO, autoencoder, GAN, modele dyfuzyjne, transformery do obrazów; zna zaawansowane metody detekcji i segmentacji obiektów, w tym techniki segmentacji semantycznej i instancyjnej; rozumie zasady działania systemów śledzenia wielu obiektów (multi-object tracking) w czasie rzeczywistym; jest zaznajomiony z technikami generowania i manipulacji obrazów przy użyciu modeli generatywnych, takich jak GANy i dyfuzyjne; zna metody uczenia się bez nadzoru i samonadzorowanego w kontekście analizy obrazów; rozumie problematykę interpretacji i wyjaśnialności modeli wizyjnych; zna zaawansowane techniki przetwarzania obrazów medycznych i przemysłowych; rozumie zasady działania i zastosowania systemów widzenia maszynowego w robotyce i pojazdach autonomicznych; jest zaznajomiony z aktualnymi narzędziami i bibliotekami takimi jak PyTorch, czy OpenCV, stosowanymi w zaawansowanych projektach computer vision. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize COV} \\
+\rowcolor{tableRowLight} W109 & Student zna i rozumiepodstawowe zagadnienia i pojęcia kryptografii i kryptoanalizy oraz zasady działania algorytmów kryptograficznych. & {\scriptsize P6S\_WG} & {\scriptsize BSI} \\
+\rowcolor{tableRowAlt} W110 & Student zna i rozumieróżnicę między algorytmami iteracyjnymi i rekursywnymi. & {\scriptsize P6S\_WG} & {\scriptsize ASD} \\
+\rowcolor{tableRowLight} W111 & Student zna najważniejsze pojęcia estetyki japońskiej. & {\scriptsize P6S\_WK} & {\scriptsize HKJ} \\
+\rowcolor{tableRowAlt} W112 & Student zna odpowiednie narzędzia wspomagające tworzenie skryptów oraz wspomagające projektowanie aplikacji internetowych, bazodanowych & {\scriptsize P6S\_WG} & {\scriptsize WPR} \\
+\rowcolor{tableRowLight} W113 & Student zna podstawowe pojęcia dotyczące systemów operacyjnych, ich budowy i działania & {\scriptsize P6S\_WG} & {\scriptsize UKOS} \\
+\rowcolor{tableRowAlt} W114 & Student zna podstawowe pojęcia i metody wnioskowania statystycznego oraz ich zastosowania w praktyce informatycznej. & {\scriptsize P6S\_WG} & {\scriptsize SAD} \\
+\rowcolor{tableRowLight} W115 & Student zna problematykę bezpieczeństwa w nowoczesnych systemach informatycznych; rozumie pojęcia związane z poufnością, integralnością, dostępnością, uwierzytelnianiem, autoryzacją i ewidencjonowaniem. & {\scriptsize P6S\_WG} & {\scriptsize BSI} \\
+\rowcolor{tableRowAlt} W116 & W obszarze informatyki; ma podstawową wiedzę w zakresie ochrony własności intelektualnej oraz prawa patentowego i autorskiego. & {\scriptsize P6S\_WK} & {\scriptsize POZ} \\
+\rowcolor{tableRowLight} W117 & Wie, jak zaplanować i wykonać prosty eksperyment fizyczny oraz przeanalizować otrzymane wyniki; zna elementy teorii niepewności pomiarowych w zastosowaniu do eksperymentów fizycznych; & {\scriptsize P6S\_WG} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} W118 & Wykorzystanie delegacji i obsługi zdarzeń & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} W119 & Wykorzystanie i tworzenie atrybutów oraz korzystanie z mechanizmu refleksji & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowAlt} W120 & Wykorzystanie serializacji & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} W121 & Wykorzystanie właściwości i indeksatorów & {\scriptsize P6S\_WG} & {\scriptsize DOT} \\
+\rowcolor{tableRowAlt} W122 & Zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki. & {\scriptsize P6S\_WG} & {\scriptsize ZPR} \\
+\rowcolor{tableRowLight} W123 & Zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności. & {\scriptsize P6S\_WK} & {\scriptsize ZPR} \\
+\rowcolor{tableRowAlt} W124 & Zna i rozumie pojęcie złożoności problemu algorytmicznego oraz klasy złożoności. & {\scriptsize P6S\_WG} & {\scriptsize ASD} \\
+\rowcolor{tableRowLight} W125 & Zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (inż.)}} & {\scriptsize ZPR} \\
+\rowcolor{tableRowAlt} W126 & Zna i rozumie zastosowanie losowości w rozwiązywaniu problemów obliczeniowych. & {\scriptsize P6S\_WG} & {\scriptsize NAI} \\
+\rowcolor{tableRowLight} W127 & Zna i rozumie zastosowanie pojęć matematycznych w sztucznej inteligencji & {\scriptsize P6S\_WG} & {\scriptsize NAI} \\
+\rowcolor{tableRowAlt} W128 & Zna sposoby planowania i przeprowadzania eksperymentów w wykorzystaniem sieci neuronowych oraz ocenić ich wyniki. & {\scriptsize P6S\_WG} & {\scriptsize AAI} \\
+\rowcolor{tableRowLight} W129 & Zna style przywódcze i teorie motywacji stosowane w zarządzaniu zespołami inżynierskimi oraz rozumie psychologiczne aspekty pracy zespołowej i techniki udzielania informacji zwrotnej (FUKO, SBI). & {\scriptsize P6S\_WK} & {\scriptsize KLI} \\
+\rowcolor{tableRowAlt} W130 & Zna strategie rozwiązywania konfliktów w zespole i techniki moderowania spotkań grupowych (facilitation). & {\scriptsize P6S\_WK} & {\scriptsize KLI} \\
+\rowcolor{tableRowLight} W131 & Zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test) i rozumie różnice między projektowaniem skoncentrowanym na technologii a Human-Centered Design. & {\scriptsize P6S\_WG} & {\scriptsize DTH} \\
+\rowcolor{tableRowAlt} W132 & Posiada wiedzę o technikach kreatywnego rozwiązywania problemów, moderowania sesji ideacyjnych oraz tworzenia prototypów low-fidelity (makiety papierowe, storyboarding). & {\scriptsize P6S\_WG} & {\scriptsize DTH} \\
+\rowcolor{tableRowLight} W133 & Zna zasady projektowania pętli rozgrywki (gameplay loop), mechanizmów retencji gracza oraz psychologiczne podstawy projektowania gier (flow, motywacja, pętle dopaminowe). & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PG1} \\
+\rowcolor{tableRowAlt} W134 & Rozumie model MDA (Mechanics, Dynamics, Aesthetics) oraz metodologię testów korygujących i zbierania feedbacku od testerów gier. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PG1} \\
+\rowcolor{tableRowLight} W135 & Posiada zaawansowaną wiedzę o psychologii gracza i projektowaniu doświadczeń UX w grach, trendach rynkowych oraz modelach biznesowych (F2P, Premium). & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PG2} \\
+\rowcolor{tableRowAlt} W136 & Rozumie proces budowania spójności wizualnej (Art Direction) i dźwiękowej w grach oraz podstawowe techniki marketingu gier. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PG2} \\
+\rowcolor{tableRowLight} W137 & Zna i rozumie podstawowe pojęcia DDD (model domenowy, encje, wartości, agregaty, repozytoria, bounded context) oraz założenia architektury oktogonalnej i zasady separacji warstw. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PAI} \\
+\rowcolor{tableRowAlt} W138 & Zna mechanizmy uwierzytelniania i autoryzacji w aplikacjach internetowych (OAuth 2.1), podstawy SOA oraz typowe style integracji usług (API, komunikacja synchroniczna/asynchroniczna). & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PAI} \\
+\rowcolor{tableRowLight} W139 & Zna i rozumie rolę testów integracyjnych i end-to-end w cyklu wytwarzania oprogramowania oraz podstawy automatyzacji w CI. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PAI} \\
+\rowcolor{tableRowAlt} W140 & Zna i rozumie pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize LLP, KIP} \\
+\rowcolor{tableRowLight} W141 & Zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy (IoT), jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PTT, RTO, KIP} \\
+\rowcolor{tableRowAlt} W142 & Zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize KIP} \\
+\rowcolor{tableRowLight} W143 & Zna i rozumie podstawowe pojęcia z zakresu inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań oraz ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize RTO} \\
+\rowcolor{tableRowAlt} W144 & Zna funkcje, biblioteki i podstawową składnię Arduino, wie jak działa kompilator AVR, zna niskopoziomowe programowanie i zarządzanie energią w MSP430 oraz języki Ladder Logic i Structured Text. & {\scriptsize P6S\_WG {\scriptsize (inż.)}} & {\scriptsize PPS} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{U -- Umiejętności}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} U01 & Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji. & {\scriptsize P6S\_UW} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowAlt} U02 & Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych. & {\scriptsize P6S\_UU, P6S\_UW} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} U03 & Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego. & {\scriptsize P6S\_UW} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowAlt} U04 & Konstruowania schematu relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize RBD} \\
+\rowcolor{tableRowLight} U05 & Krytycznej oceny posiadanej wiedzy i odbieranych treści, uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięgania opinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu & {\scriptsize P6S\_UW} & {\scriptsize WF} \\
+\rowcolor{tableRowAlt} U06 & Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu. & {\scriptsize P6S\_UK, P6S\_UO, P6S\_UW} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} U07 & Posługuje się terminologią z zakresu fizyki oraz nomenklaturą poszczególnych dyscyplin z nią związanych; & {\scriptsize P6S\_UW} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} U08 & Potrafi korzystać z bibliotek . NET (m.in. System, System. Collections. Generic, System. IO, System. Text. RegularExpressions). & {\scriptsize P6S\_UW} & {\scriptsize POJ} \\
+\rowcolor{tableRowLight} U09 & Potrafi pracować w zespole, oszacować czas i koszty realizacji zadania, planować i realizować harmonogram prac. & {\scriptsize P6S\_UO} & {\scriptsize ZPR} \\
+\rowcolor{tableRowAlt} U10 & Potrafi przeanalizować złożoność programów opartych o zasadę ''dziel i zwyciężaj''. & {\scriptsize P6S\_UW} & {\scriptsize ASD} \\
+\rowcolor{tableRowLight} U11 & Potrafi skonstruować i uruchomić program obiektowy w języku C\# (aplikacja konsolowa) z wykorzystaniem platformy . NET. & {\scriptsize P6S\_UK, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize POJ} \\
+\rowcolor{tableRowAlt} U12 & Potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją projektu informatycznego. & {\scriptsize P6S\_UW} & {\scriptsize ZPR} \\
+\rowcolor{tableRowLight} U13 & Samodzielnie poszerzać wiedzę z zakresu computer vision, wykorzystując platformy e-learningowe jak Coursera czy edX czy kursy na platformie YouTube; implementować i testować algorytmy wizyjne, korzystając z otwartych repozytoriów kodu; śledzić postępy w dziedzinie poprzez lekturę artykułów naukowych i uczestnictwo w webinarach; efektywnie rozwiązywać problemy techniczne przy użyciu forów specjalistycznych; tworzyć własne projekty wizyjne i dzielić się nimi online; uczestniczyć w wirtualnych grupach studyjnych, rozwijając praktyczne umiejętności w dziedzinie przetwarzania obrazów i sztucznej inteligencji. & {\scriptsize P6S\_UW} & {\scriptsize COV} \\
+\rowcolor{tableRowAlt} U14 & Stosuje podstawowe metody matematyczne, statystyczne i techniki informatyczne do opisu zjawisk i analizy danych; & {\scriptsize P6S\_UW} & {\scriptsize FIZ} \\
+\rowcolor{tableRowLight} U15 & Student jest gotów do nauki o kulturze fizycznej & {\scriptsize P6S\_UW} & {\scriptsize WF} \\
+\rowcolor{tableRowAlt} U16 & Student jest w stanie bezpiecznie korzystać z komputera & {\scriptsize P6S\_UW} & {\scriptsize UKOS} \\
+\rowcolor{tableRowLight} U17 & Student ma umiejętność analizowania i wyjaśniania obserwowanych zjawisk; tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} U18 & Student posiada umiejętność formułowania zapytań w języku SQL i zarządzania bazą danych. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize RBD} \\
+\rowcolor{tableRowLight} U19 & Student potrafi - zgodnie z zadaną specyfikacją - zaprojektować oraz zrealizować prosty system informatyczny, używając właściwych metod, technik i narzędzi. & {\scriptsize P6S\_UW} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} U20 & Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U21 & Student potrafi biegle posługiwać się dokumentacją w języku polskim i angielskim & {\scriptsize P6S\_UK} & {\scriptsize SPR} \\
+\rowcolor{tableRowAlt} U22 & Student potrafi czytać ze zrozumieniem programy w języku C\#. Potrafi je pisać, weryfikować i uruchamiać. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} U23 & Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać. & {\scriptsize P6S\_UW} & {\scriptsize CPP} \\
+\rowcolor{tableRowAlt} U24 & Student potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania & {\scriptsize P6S\_UW} & {\scriptsize GRK} \\
+\rowcolor{tableRowLight} U25 & Student potrafi dobrać algorytm przetwarzania i kompresji obrazu. & {\scriptsize P6S\_UW} & {\scriptsize ZZGA} \\
+\rowcolor{tableRowAlt} U26 & Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową. & {\scriptsize P6S\_UW} & {\scriptsize CPP} \\
+\rowcolor{tableRowLight} U27 & Student potrafi dobrać rodzaj i parametry układu wykonawczego, układu pomiarowego, jednostki sterującej oraz modułów peryferyjnych i komunikacyjnych dla wybranego zastosowania oraz dokonać ich integracji w postaci wynikowego system pomiarowo-sterującego. & {\scriptsize P6S\_UK, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} U28 & Student potrafi dobrać struktury danych odpowiednie do zadania oraz potrafi oszacować złożoność algorytmu. & {\scriptsize P6S\_UW} & {\scriptsize ASD} \\
+\rowcolor{tableRowLight} U29 & Student potrafi dobrać właściwe parametry wejściowe, by zoptymalizować działanie wybranych algorytmów. & {\scriptsize P6S\_UW} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowAlt} U30 & Student potrafi dokonać analizy złożoności programów iteracyjnych. & {\scriptsize P6S\_UW} & {\scriptsize ASD} \\
+\rowcolor{tableRowLight} U31 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość & {\scriptsize P6S\_UW} & {\scriptsize BYT} \\
+\rowcolor{tableRowAlt} U32 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość. & {\scriptsize P6S\_UW} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U33 & Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski. & {\scriptsize P6S\_UW} & {\scriptsize HKJ} \\
+\rowcolor{tableRowAlt} U34 & Student potrafi formułować i rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzać proste wnioskowanie statystyczne. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SGD} \\
+\rowcolor{tableRowLight} U35 & Student potrafi formułować i rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SGD} \\
+\rowcolor{tableRowAlt} U36 & Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie. & {\scriptsize P6S\_UW} & {\scriptsize HKJ} \\
+\rowcolor{tableRowLight} U37 & Student potrafi komunikować się w języku angielskim w życiu codziennym. & {\scriptsize P6S\_UK} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowAlt} U38 & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe. & {\scriptsize P6S\_UW} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowLight} U39 & Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim. & {\scriptsize P6S\_UK} & {\scriptsize CPP} \\
+\rowcolor{tableRowAlt} U40 & Student potrafi korzystać ze środowiska developerskiego przeznaczonego do tworzenia programów w języku C\# (np. Visual Studio / Rider / VS Code), zaplanować prostą hierarchię klas oraz zastosować proste wzorce obiektowe zależnie od przedstawionego problemu. & {\scriptsize P6S\_UK, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize POJ} \\
+\rowcolor{tableRowLight} U41 & Student potrafi ocenić poprawność konstrukcji obiektowych w programach w języku C\#. & {\scriptsize P6S\_UK, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize POJ} \\
+\rowcolor{tableRowAlt} U42 & Student potrafi ocenić przydatność paradygmatów programistycznych języka C\# do rozwiązania zadań laboratoryjnych oraz dobrać odpowiednie środowisko programistyczne. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} U43 & Student potrafi ocenić przydatność różnych podejść programistycznych na podstawie języka JavaScript i związanych z nimi środowisk na przykładzie narzędzia Node.js & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize TFN} \\
+\rowcolor{tableRowAlt} U44 & Student potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzenia graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize GRK} \\
+\rowcolor{tableRowLight} U45 & Student potrafi opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize SAI} \\
+\rowcolor{tableRowAlt} U46 & Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize SAI} \\
+\rowcolor{tableRowLight} U47 & Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize SAI} \\
+\rowcolor{tableRowAlt} U48 & Student potrafi oteksturować obiekt metodami tekstur proceduralnych & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize M3D} \\
+\rowcolor{tableRowLight} U49 & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & {\scriptsize P6S\_UW} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowAlt} U50 & Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowLight} U51 & Student potrafi poprawnie przygotować dane i stworzyć na ich podstawie zbiory uczące, walidujące i testowe & {\scriptsize P6S\_UW} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowAlt} U52 & Student potrafi porozumiewać się w języku polskim i angielskim w środowisku zawodowy. & {\scriptsize P6S\_UK} & {\scriptsize S3D} \\
+\rowcolor{tableRowLight} U53 & Student potrafi posługiwać się językiem formalnym. & {\scriptsize P6S\_UK} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowAlt} U54 & Student potrafi posługiwać się środowiskiem programistycznym języka C++ & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize CPP} \\
+\rowcolor{tableRowLight} U55 & Student potrafi ocenić przydatność wirtualizacji i konteneryzacji i związanych z nimi środowisk & {\scriptsize P6S\_UW} & {\scriptsize DEV} \\
+\rowcolor{tableRowAlt} U56 & Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikację utworzoną w procesie konteneryzacji za pomocą plików Dockerfile. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize DEV} \\
+\rowcolor{tableRowLight} U57 & Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich. & {\scriptsize P6S\_UW} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowAlt} U58 & Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii. & {\scriptsize P6S\_UW} & {\scriptsize HKJ} \\
+\rowcolor{tableRowLight} U59 & Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski oraz formułować i uzasadniać opinie. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize PRO} \\
+\rowcolor{tableRowAlt} U60 & Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & {\scriptsize P6S\_UO} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U61 & Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize KPIR} \\
+\rowcolor{tableRowAlt} U62 & Student potrafi przeprowadzić analizę otrzymanych wyników & {\scriptsize P6S\_UW} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowLight} U63 & Student potrafi przeprowadzić analizę prostego problemu analizy danych, dokonać wyboru narzędzi oraz przedstawić i zinterpretować uzyskane wyniki przy użyciu odpowiedniego oprogramowania. & {\scriptsize P6S\_UW} & {\scriptsize SAD} \\
+\rowcolor{tableRowAlt} U64 & Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego. & {\scriptsize P6S\_UK} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U65 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & {\scriptsize P6S\_UW} & {\scriptsize AIC, KC} \\
+\rowcolor{tableRowAlt} U66 & Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym. & {\scriptsize P6S\_UW} & {\scriptsize CPP} \\
+\rowcolor{tableRowLight} U67 & Student potrafi rozwiązywać problemy z wykorzystaniem narzędzi sztucznej inteligencji & {\scriptsize P6S\_UW} & {\scriptsize NAI} \\
+\rowcolor{tableRowAlt} U68 & Student potrafi rozwinąć siatkę obiektu we współrzędnych UV & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize M3D} \\
+\rowcolor{tableRowLight} U69 & Student potrafi samodzielnie przygotować modele 3D oraz odpowiednie pliki STL i gcode za pomocą adekwatnych narzędzi do druku 3D uwzględniając specyfikę technologii FDM ze szczególnym uwzględnieniem wpływu orientacji obiektu na jego wytrzymałość & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SPR} \\
+\rowcolor{tableRowAlt} U70 & Student potrafi skonfigurować środowisko potrzebne do stworzenia skryptów i aplikacji internetowej i bazodanowej, tzn. posiada wiedzę na temat konfiguracji bazy danych oraz oprogramowania, które jest potrzebne do tworzenie projektu programistycznego. & {\scriptsize P6S\_UW} & {\scriptsize WPR} \\
+\rowcolor{tableRowLight} U71 & Student potrafi skonstruować algorytm rozwiązania prostego zadania inżynierskiego oraz zaimplementować, przetestować i uruchomić go w wybranym środowisku programistycznym na komputerze klasy PC dla wybranych systemów operacyjnych. & {\scriptsize P6S\_UW} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} U72 & Student potrafi specyfikować wymagania systemowe & {\scriptsize P6S\_UW} & {\scriptsize PRI} \\
+\rowcolor{tableRowLight} U73 & Student potrafi stworzyć i przetestować backend aplikacji internetowej za pomocą poznanych narzędzi. & {\scriptsize P6S\_UW} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} U74 & Student potrafi stworzyć model związków encji (ERD) dla przykładowego wycinka rzeczywistości a następnie wykorzystać ten model w budowie prostej bazy danych. & {\scriptsize P6S\_UW} & {\scriptsize RBD} \\
+\rowcolor{tableRowLight} U75 & Student potrafi tworzyć animacje zależne oraz parametryczne, włącznie z obliczaniem parametrów ruchu (np. prędkości kół zębatych w przekładni planetarnej, itp.) & {\scriptsize P6S\_UW} & {\scriptsize ANK} \\
+\rowcolor{tableRowAlt} U76 & Student potrafi utworzyć animację w oparciu o rig z kości lub innych obiektów powiązanych hierarchicznie & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize ANK} \\
+\rowcolor{tableRowLight} U77 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego oraz ocenić związane z nim zagrożenia & {\scriptsize P6S\_UW} & {\scriptsize BYT} \\
+\rowcolor{tableRowAlt} U78 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & {\scriptsize P6S\_UW} & {\scriptsize AIC, KC} \\
+\rowcolor{tableRowLight} U79 & Student potrafi wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia systemu wbudowanego & {\scriptsize P6S\_UW} & {\scriptsize SWB} \\
+\rowcolor{tableRowAlt} U80 & Student potrafi wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia uczenia maszynowego & {\scriptsize P6S\_UW} & {\scriptsize IML, MLR} \\
+\rowcolor{tableRowLight} U81 & Student potrafi wybrać odpowiednie środowisko programistyczne i inne narzędzia, które wspomagają w projektowaniu aplikacji oraz potrafi dobrać model procesu wytwarzania aplikacji do specyfiki przedsięwzięcia. Student potrafi posługiwać się wybranym środowiskiem oraz analizować poprawność działania stworzonej aplikacji. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize WPR} \\
+\rowcolor{tableRowAlt} U82 & Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize CPP} \\
+\rowcolor{tableRowLight} U83 & Student potrafi wyjaśnić pojęcia programowania funkcyjnego oraz obiektowego w JavaScript i zastosować je w kodzie. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} U84 & Student potrafi wykonywać aplikacje graficzne za pomocą Blendera. & {\scriptsize P6S\_UW} & {\scriptsize S3D} \\
+\rowcolor{tableRowLight} U85 & Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień. Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne. & {\scriptsize P6S\_UO, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize ALG} \\
+\rowcolor{tableRowAlt} U86 & Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych. & {\scriptsize P6S\_UO} & {\scriptsize ALG} \\
+\rowcolor{tableRowLight} U87 & Student potrafi wykonywać operacje CRUD na dokumentowej bazie danych, z wykorzystaniem odpowiednich metod i narzędzi. & {\scriptsize P6S\_UW} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} U88 & Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej. & {\scriptsize P6S\_UO} & {\scriptsize ALG} \\
+\rowcolor{tableRowLight} U89 & Student potrafi wykorzystać dostępne technologie dla reprezentacji wiedzy i wnioskowania w rozwiązywaniu zadanego problemu. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize KNO} \\
+\rowcolor{tableRowAlt} U90 & Student potrafi wykorzystać odpowiednie biblioteki do tworzenia aplikacji oraz wykorzystać narzędzia, które umożliwiają tworzenie, debbugowanie i uruchomienie projektów programistycznych. Student potrafi przedstawić stworzoną aplikację oraz omówić jej sposób działania. & {\scriptsize P6S\_UW} & {\scriptsize WPR} \\
+\rowcolor{tableRowLight} U91 & Student potrafi wykorzystać odpowiednie narzędzia sztucznych sieci neuronowych celem implemantacji algorytmów AI. & {\scriptsize P6S\_UW} & {\scriptsize AAI} \\
+\rowcolor{tableRowAlt} U92 & Student potrafi wykorzystać protokół HTTP do konstrukcji i obsługi żądań i odpowiedzi w kontekście aplikacji internetowej. & {\scriptsize P6S\_UW} & {\scriptsize TBK} \\
+\rowcolor{tableRowLight} U93 & Student potrafi wykorzystać wiedzę i umiejętności analizy algorytmów w realizacjiprojektu dyplomowego. & {\scriptsize P6S\_UW} & {\scriptsize ASD} \\
+\rowcolor{tableRowAlt} U94 & Student potrafi wymodelować obiekty w technice low-poly oraz high-poly & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize M3D} \\
+\rowcolor{tableRowLight} U95 & Student potrafi wymodelować ruchy obiektów po zadanej, oczekiwanej trajektorii w przestrzeni 3D & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize ANK} \\
+\rowcolor{tableRowAlt} U96 & Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych & {\scriptsize P6S\_UW} & {\scriptsize M3D} \\
+\rowcolor{tableRowLight} U97 & Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych. & {\scriptsize P6S\_UW} & {\scriptsize PRO} \\
+\rowcolor{tableRowAlt} U98 & Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikację webową; potrafi korzystać z bibliotek przy użyciu narzędzia npm, środowisk programistycznych, integrujących i uruchomieniowych. & {\scriptsize P6S\_UW} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} U99 & Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych. & {\scriptsize P6S\_UW} & {\scriptsize GRK, NAI} \\
+\rowcolor{tableRowAlt} U100 & Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku. & {\scriptsize P6S\_UW} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} U101 & Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy narzędzia Docker utworzyć kontener i umieścić go w technologii chmurowej. & {\scriptsize P6S\_UW} & {\scriptsize DEV} \\
+\rowcolor{tableRowAlt} U102 & Student potrafi wytworzyć zaawansowaną warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku. & {\scriptsize P6S\_UW} & {\scriptsize TFN} \\
+\rowcolor{tableRowLight} U103 & Student potrafi zainstalować kompletny system (OS, baza danych, aplikacje) i go uruchomić & {\scriptsize P6S\_UW} & {\scriptsize UKOS} \\
+\rowcolor{tableRowAlt} U104 & Student potrafi zainstalować, skonfigurować i administrować system operacyjny & {\scriptsize P6S\_UW} & {\scriptsize UKOS} \\
+\rowcolor{tableRowLight} U105 & Student potrafi zaplanować i dobrać właściwe metody i urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} U106 & Student potrafi zaplanować i przeprowadzić automatyczny proces tworzenia aplikacji z wykorzystaniem pojęcia konteneryzacji i związanych z nimi narzędzi. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize DEV} \\
+\rowcolor{tableRowLight} U107 & Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające). & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRO} \\
+\rowcolor{tableRowAlt} U108 & Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U109 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize BYT} \\
+\rowcolor{tableRowAlt} U110 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U111 & Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców; & {\scriptsize P6S\_UW} & {\scriptsize BYT, PRO} \\
+\rowcolor{tableRowAlt} U112 & Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} U113 & Student potrafi zaplanować, przygotować i przeprowadzić symulację działania prostych układów automatyki i robotyki. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SCR} \\
+\rowcolor{tableRowAlt} U114 & Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych. & {\scriptsize P6S\_UW} & {\scriptsize SGD} \\
+\rowcolor{tableRowLight} U115 & Student potrafi zaprojektować i wytworzyć oprogramowanie, zgodnie z paradygmatami programistycznymi języka C\# oraz przetestować i zdebuggować program. W zależności od specyfiki zadania, potrafi zaplanować etapy wytwarzania oprogramowania oraz dobrać narzędzia programistyczne wspomagające ten proces. & {\scriptsize P6S\_UK, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize DOT} \\
+\rowcolor{tableRowAlt} U116 & Student potrafi zaprojektować proste układy cyfrowe sekwencyjne i kombinatoryczne oraz je oprogramować. & {\scriptsize P6S\_UW} & {\scriptsize SWB} \\
+\rowcolor{tableRowLight} U117 & Student potrafi zaprojektować złożone układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize KPIR} \\
+\rowcolor{tableRowAlt} U118 & Student potrafi zaprojektować, zbudować i oprogramować proste, specjalizowane systemy wbudowane oparte na wybranych mikrokontrolerach. & {\scriptsize P6S\_UW} & {\scriptsize SWB} \\
+\rowcolor{tableRowLight} U119 & Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym & {\scriptsize P6S\_UW} & {\scriptsize GRK, MHE} \\
+\rowcolor{tableRowAlt} U120 & Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym. & {\scriptsize P6S\_UW} & {\scriptsize ZZGA} \\
+\rowcolor{tableRowLight} U121 & Student potrafi zastosować aparat matematyczny w kontekście AI. & {\scriptsize P6S\_UW} & {\scriptsize AAI} \\
+\rowcolor{tableRowAlt} U122 & Student potrafi zastosować metody testowania i porównywania metod heurystycznych. & {\scriptsize P6S\_UW} & {\scriptsize MHE} \\
+\rowcolor{tableRowLight} U123 & Student potrafi zastosować mockupy z zewnętrznych baz motion-capture i stworzyć z nich animację złożoną z różnych nakładających się na siebie akcji & {\scriptsize P6S\_UW} & {\scriptsize ANK} \\
+\rowcolor{tableRowAlt} U124 & Student potrafi zastosować narzędzia uczenia maszynowego w sytuacjach praktycznych. & {\scriptsize P6S\_UW} & {\scriptsize IML} \\
+\rowcolor{tableRowLight} U125 & Student potrafi zastosować poznane metody statystyki opisowej, modelowania probabilistycznego i wnioskowania statystycznego do rozwiązywania zadań informatycznych. & {\scriptsize P6S\_UW} & {\scriptsize SAD} \\
+\rowcolor{tableRowAlt} U126 & Student potrafi zastosować poznane pojęcia celem stworzenia działającego rozwiązania napisanego w jeżyku C\#. & {\scriptsize P6S\_UW} & {\scriptsize DOT} \\
+\rowcolor{tableRowLight} U127 & Student potrafi zastosować reguły logiki i rachunku zdań do reprezentacji wiedzy o problemie i rozwiązania go z użyciem reguł wnioskowania. Student potrafi dobrać odpowiedni model (np. system zdań logicznych, sieć semantyczną, system rozmyty) dla zadanego problemu, zaprojektować go i zaimplementować. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize KNO} \\
+\rowcolor{tableRowAlt} U128 & Student potrafi zidentyfikować problemy obliczeniowe które nie nadają się do rozwiązania klasycznymi algorytmami. Wie kiedy zastosować metody przybliżone. & {\scriptsize P6S\_UW} & {\scriptsize NAI} \\
+\rowcolor{tableRowLight} U129 & Student potrafi znajdować błędy w tworzonych programach obiektowych przy użyciu wybranych środowisk uruchomieniowych i debuggera. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize POJ} \\
+\rowcolor{tableRowAlt} U130 & Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowLight} U131 & Student potrafi: analizować i wyjaśniać zjawiska związane z NLP, a także tworzyć modele rzeczywiste. Umiejętność weryfikacji modeli i ich zastosowania do predykcji stanów jest kluczowa w rozwoju aplikacji i systemów opartych na NLP. & {\scriptsize P6S\_UW} & {\scriptsize PJN} \\
+\rowcolor{tableRowAlt} U132 & Student potrafi: pozyskiwać i analizować specjalistyczne informacje z literatury oraz źródeł internetowych w obszarze NLP. Umiejętność krytycznej analizy i syntezy informacji jest niezbędna do rozwoju projektów oraz badań naukowych w dziedzinie przetwarzania języka naturalnego. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize PJN} \\
+\rowcolor{tableRowLight} U133 & Student potrafi:współpracować w zespole nad projektami computer vision; trafnie oszacować czas i zasoby potrzebne do implementacji algorytmów przetwarzania obrazu; tworzyć realistyczne harmonogramy projektów wizyjnych, uwzględniające etapy od zbierania danych po testowanie; zarządzać priorytetami w złożonych zadaniach, jak systemy rozpoznawania twarzy; efektywnie komunikować postępy techniczne zespołowi; dostosowywać plan do zmian, utrzymując terminowość dostaw; przewidywać i zarządzać ryzykiem w projektach uczenia maszynowego dla analizy obrazów. & {\scriptsize P6S\_UK, P6S\_UO, P6S\_UW} & {\scriptsize COV} \\
+\rowcolor{tableRowAlt} U134 & Student potrafi:zdiagnozować złożone problemy w dziedzinie computer vision, takie jak niska dokładność detekcji obiektów w trudnych warunkach oświetleniowych; zaprojektować rozwiązanie wykorzystujące zaawansowane techniki, np. transfer learning czy data augmentation; dobrać odpowiednie narzędzia, jak PyTorch czy TensorFlow, oraz zestaw danych do treningu; określić etapy implementacji, od preprocessingu obrazów po fine-tuning modelu; zrealizować projekt, iteracyjnie optymalizując wyniki poprzez dostrajanie hiperparametrów i analizę błędów; ocenić efektywność rozwiązania przy użyciu odpowiednich metryk i testów; zaadaptować wdrożone rozwiązanie do wymagań czasu rzeczywistego lub ograniczeń sprzętowych. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize COV} \\
+\rowcolor{tableRowLight} U135 & Student potrafi korzystać z narzędzi klasy CASE na poziomie średniozaawansowanym & {\scriptsize P6S\_UW} & {\scriptsize PRI} \\
+\rowcolor{tableRowAlt} U136 & Student potrafi projektować algorytmikę przypadków użycia oraz interakcje pomiędzy składowymi przypadku użycia. Student potrafi projektować architekturę systemu wyrażoną klasami. Student potrafi iteracyjnie udoskonalać komponenty projektowe systemu & {\scriptsize P6S\_UU, P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PRI} \\
+\rowcolor{tableRowLight} U137 & Student potrafi zaprojektować małoskalowe rozwiązanie IT w sposób holistyczny & {\scriptsize P6S\_UW} & {\scriptsize PRI} \\
+\rowcolor{tableRowAlt} U138 & Student umie analizować i oceniać różne style i architektury API (takie jak REST, GraphQL, gRPC), rozumiejąc ich zalety, wady i najlepsze zastosowania. & {\scriptsize P6S\_UW} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} U139 & Student umie efektywnie komunikować się w zespole programistycznym, współtworzyć dokumentację API i udostępniać informacje o API zespołowi i interesariuszom. & {\scriptsize P6S\_UK, P6S\_UO, P6S\_UW} & {\scriptsize TAPI} \\
+\rowcolor{tableRowAlt} U140 & Student umie pisać i optymalizować kod w języku JavaScript, stosując zmienne, operatory oraz funkcje. & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} U141 & Student umie projektować interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize TAPI} \\
+\rowcolor{tableRowAlt} U142 & Student umie projektować zaawansowane interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} U143 & Student umie tworzyć złożone REST API, uwzględniając dobre praktyki i zasady projektowania interfejsów API. & {\scriptsize P6S\_UW} & {\scriptsize TBK} \\
+\rowcolor{tableRowAlt} U144 & Student umie wykorzystać narzędzia sieciowe w JavaScript, w tym obsługę protokołów HTTP i WebSocket, do budowy dynamicznych aplikacji internetowych. & {\scriptsize P6S\_UW} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} U145 & Student umie wykorzystywać narzędzia i technologie wspierające proces tworzenia, wdrażania i monitorowania API, zwiększając efektywność i jakość pracy. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize TAPI} \\
+\rowcolor{tableRowAlt} U146 & Student umie zaprojektować i zaimplementować funkcjonalny i optymalizowany backend aplikacji internetowej, wykorzystując zaawansowane techniki programowania. & {\scriptsize P6S\_UW} & {\scriptsize TBK} \\
+\rowcolor{tableRowLight} U147 & Student umie zastosować frameworki CSS w celu tworzenia złożonych i estetycznych interfejsów użytkownika. & {\scriptsize P6S\_UW} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} U148 & Student potrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować & {\scriptsize P6S\_UW} & {\scriptsize SOP} \\
+\rowcolor{tableRowLight} U149 & Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające) & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (inż.)}} & {\scriptsize SOP} \\
+\rowcolor{tableRowAlt} U150 & Tworzenia i rozwijania wzorów właściwego postępowania w środowisku pracy i życia, podejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, w których uczestniczy. & {\scriptsize P6S\_UO} & {\scriptsize WF} \\
+\rowcolor{tableRowLight} U151 & Użytkuje komputer w zakresie koniecznym do wyszukiwania informacji, komunikowania się, organizowania i wstępnej analizy danych, sporządzania raportów i prezentacji wyników; & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} U152 & Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową. & {\scriptsize P6S\_UW} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} U153 & Potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI, identyfikować źródła konfliktów w zespole i moderować spotkania zespołowe dbając o zaangażowanie wszystkich członków. & {\scriptsize P6S\_UO} & {\scriptsize KLI} \\
+\rowcolor{tableRowAlt} U154 & Potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem, stworzyć mapę empatii i personę, zdefiniować Point of View oraz formułować pytania How Might We; tworzy prototypy low-fidelity i wykorzystuje je do zbierania feedbacku. & {\scriptsize P6S\_UW} & {\scriptsize DTH} \\
+\rowcolor{tableRowLight} U155 & Potrafi zaprojektować i przeprowadzić sesję prototypowania papierowego, szybko budować makiety poziomów (greyboxing/whiteboxing) oraz wyizolować pojedynczą mechanikę (core hook) i sprawdzić jej atrakcyjność przed pełną produkcją. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PG1} \\
+\rowcolor{tableRowAlt} U156 & Potrafi zaprojektować i zaimplementować intuicyjny interfejs użytkownika (UI/HUD) w grze, przygotować strategię promocji projektu z analizą grupy docelowej (USP) oraz zarządzać złożonym projektem gry zgodnie z harmonogramem produkcji. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PG2} \\
+\rowcolor{tableRowLight} U157 & Potrafi zaprojektować i zaimplementować backend zgodny z DDD i architekturą oktogonalną, zintegrować frontend z backendem przez API z zachowaniem bezpieczeństwa sesji/tokenów oraz zastosować OAuth 2.1 w aplikacji. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PAI} \\
+\rowcolor{tableRowAlt} U158 & Potrafi przygotować środowisko uruchomieniowe w kontenerach (Docker + Compose) oraz napisać testy integracyjne i E2E dla kluczowych scenariuszy użytkownika i uruchamiać je automatycznie w CI. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PAI} \\
+\rowcolor{tableRowLight} U159 & Potrafi projektować proste układy sekwencyjne i kombinacyjne, obliczać reprezentacje liczb całkowitych i rzeczywistych oraz pisać proste programy na poziomie asemblera. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize LLP, KIP} \\
+\rowcolor{tableRowAlt} U160 & Potrafi diagnozować problem specyficzny dla internetu rzeczy, projektować jego rozwiązanie, dobierać środki oraz określać i realizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PTT, RTO, KIP} \\
+\rowcolor{tableRowLight} U161 & Potrafi przeanalizować, zsyntetyzować i oprogramować prosty system wbudowany z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize KIP} \\
+\rowcolor{tableRowAlt} U162 & Potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość; potrafi operować obrazem dwu- i trójwymiarowym za pomocą standardowego API graficznego oraz przeprowadzać testy użyteczności aplikacji. & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize RTO} \\
+\rowcolor{tableRowLight} U163 & Potrafi programować sekwencje zdarzeń w sterownikach PLC, wykorzystywać C++/Python do szybkiego prototypowania, NodeJS do aplikacji sieciowych oraz programować i optymalizować mikrokontrolery o ograniczonych zasobach (ATtiny). & {\scriptsize P6S\_UW {\scriptsize (inż.)}} & {\scriptsize PPS} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{K -- Kompetencje społeczne}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Efekt kształcenia}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kody PRK}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmioty}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} K01 & Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu. & {\scriptsize P6S\_KR} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowAlt} K02 & Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev. & {\scriptsize P6S\_KR} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} K03 & Jest gotów do działania w sposób przedsiębiorczy. & {\scriptsize P6S\_KO} & {\scriptsize ZPR} \\
+\rowcolor{tableRowAlt} K04 & Jest gotów do współdziałań i współpracy w zespole, przyjmując różne role. & {\scriptsize P6S\_KR} & {\scriptsize ZPR} \\
+\rowcolor{tableRowLight} K05 & Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier. & {\scriptsize P6S\_KR} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowAlt} K06 & Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier. & {\scriptsize P6S\_KR} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} K07 & Stosowanie zasady ,,czystej gry” i sportowego kibicowania. & {\scriptsize P6S\_KR} & {\scriptsize WF} \\
+\rowcolor{tableRowAlt} K08 & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & {\scriptsize P6S\_KR} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowLight} K09 & Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności & {\scriptsize P6S\_KR} & {\scriptsize ANK, M3D} \\
+\rowcolor{tableRowAlt} K10 & Student jest gotów do działania w sposób przedsiębiorczy. & {\scriptsize P6S\_KO} & {\scriptsize POZ} \\
+\rowcolor{tableRowLight} K11 & Student jest gotów do efektywnej współpracy w zespole projektowym, wnosząc wkład w tworzenie oraz rozwój aplikacji internetowych. & {\scriptsize P6S\_KR} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} K12 & Student jest gotów do samodzielnego uczenia się przez całe życie & {\scriptsize P6S\_KR} & {\scriptsize TAPI} \\
+\rowcolor{tableRowLight} K13 & Student jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych & {\scriptsize P6S\_KO} & {\scriptsize SKO1} \\
+\rowcolor{tableRowAlt} K14 & Student jest gotów do krytycznego oceniania własnych umiejętności i poszerzania wiedzy w zakresie nowoczesnych technologii internetowych, podejmując inicjatywy samokształcenia. & {\scriptsize P6S\_KK} & {\scriptsize TIN} \\
+\rowcolor{tableRowLight} K15 & Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy & {\scriptsize P6S\_KO} & {\scriptsize SKO1} \\
+\rowcolor{tableRowAlt} K16 & Student jest gotów do myślenia w sposób innowacyjny. & {\scriptsize P6S\_KR} & {\scriptsize SPR} \\
+\rowcolor{tableRowLight} K17 & Student jest gotów do określenia priorytetów służących realizacji zadania & {\scriptsize P6S\_KR} & {\scriptsize PRIN, SKO1} \\
+\rowcolor{tableRowAlt} K18 & Student jest gotów do określenia priorytetów w realizacji zadań z zakresu głębokiego uczenia, uwzględniając kluczowe aspekty rozwoju nowoczesnych systemów AI. Potrafi hierarchizować etapy projektu, stawiając na pierwszym miejscu prawidłowe zdefiniowanie problemu i przygotowanie wysokiej jakości danych. Umie priorytetyzować wybór odpowiedniej architektury modelu (np. transformery, modele multimodalne) i technik uczenia (np. transfer learning, self-supervised learning) w zależności od specyfiki zadania. Jest gotów do nadania wysokiego priorytetu optymalizacji wydajności i skalowalności modelu, uwzględniając ograniczenia zasobów obliczeniowych. Jest gotów do rozumienia wagi implementacji metod interpretacji i wyjaśnialności AI oraz zasad Responsible AI, stawiając je wysoko w hierarchii zadań. Jest gotów oceniać, które eksperymenty i iteracje są kluczowe dla sukcesu projektu, efektywnie zarządzając czasem i zasobami w dynamicznym środowisku badawczo-rozwojowym AI. & {\scriptsize P6S\_KK, P6S\_KO} & {\scriptsize FDL} \\
+\rowcolor{tableRowLight} K19 & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & {\scriptsize P6S\_KR} & {\scriptsize ANG1-3} \\
+\rowcolor{tableRowAlt} K20 & Student jest gotów do podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością & {\scriptsize P6S\_KR} & {\scriptsize SAI} \\
+\rowcolor{tableRowLight} K21 & Student jest gotów do podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki & {\scriptsize P6S\_KO} & {\scriptsize SAI} \\
+\rowcolor{tableRowAlt} K22 & Student jest gotów do podejmowania starania, aby przekazać informacje i opinie w sposób powszechnie zrozumiały & {\scriptsize P6S\_KR} & {\scriptsize POZ} \\
+\rowcolor{tableRowLight} K23 & Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania. & {\scriptsize P6S\_KR} & {\scriptsize CPP} \\
+\rowcolor{tableRowAlt} K24 & Student jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej & {\scriptsize P6S\_KO} & {\scriptsize MHE} \\
+\rowcolor{tableRowLight} K25 & Student jest gotów do rozwiązywania problemów programistycznych w sposób kreatywny i efektywny, korzystając z nowoczesnych narzędzi i technologii. & {\scriptsize P6S\_KR} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} K26 & Student jest gotów do samodzielnego rozwijania swoich umiejętności & {\scriptsize P6S\_KR} & {\scriptsize CPP} \\
+\rowcolor{tableRowLight} K27 & Student jest gotów do stosowania najlepszych praktyk programistycznych oraz standardów branżowych przy tworzeniu rozwiązań internetowych, dbając o ich jakość i bezpieczeństwo. & {\scriptsize P6S\_KR} & {\scriptsize TIN} \\
+\rowcolor{tableRowAlt} K28 & Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii. & {\scriptsize P6S\_KR} & {\scriptsize HKJ} \\
+\rowcolor{tableRowLight} K29 & Student jest gotów do uczenia się przez całe życie; potrafi inspirować i organizować proces uczenia się innych osób & {\scriptsize P6S\_KR} & {\scriptsize SKO1} \\
+\rowcolor{tableRowAlt} K30 & Student jest gotów do ustalania priorytetów zadań. & {\scriptsize P6S\_KR} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} K31 & Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy & {\scriptsize P6S\_KR} & {\scriptsize PRIN} \\
+\rowcolor{tableRowAlt} K32 & Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy. & {\scriptsize P6S\_KR} & {\scriptsize PRO} \\
+\rowcolor{tableRowLight} K33 & Student jest gotów do współpracy i dzielenia się swoją wiedzą & {\scriptsize P6S\_KR} & {\scriptsize ANK, M3D} \\
+\rowcolor{tableRowAlt} K34 & Student jest gotów do wykorzystania zaawansowanych technik głębokiego uczenia na rzecz rozwoju nauki i społeczeństwa informacyjnego. Jest gotów do zastosowania modeli foundation i architektury multimodalnych do rozwiązywania złożonych problemów w różnych dziedzinach, takich jak medycyna (np. analiza obrazów medycznych), ochrona środowiska (np. monitorowanie zmian klimatycznych) czy edukacja (np. spersonalizowane systemy nauczania). Jest przygotowany do tworzenia innowacyjnych rozwiązań AI, które usprawniają procesy decyzyjne i automatyzację w przemyśle i administracji publicznej. Jest gotów do rozumienia etycznych implikacji wdrażania systemów AI i jest gotowy do stosowania zasad Responsible AI, zapewniając transparentność, fairness i prywatność danych. Jest gotów do uczestniczenia w interdyscyplinarnych projektach badawczych, łącząc wiedzę z zakresu głębokiego uczenia z innymi dziedzinami nauki, przyczyniając się do postępu technologicznego i społecznego. & {\scriptsize P6S\_KO} & {\scriptsize FDL} \\
+\rowcolor{tableRowLight} K35 & Student jest gotów do wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji & {\scriptsize P6S\_KR} & {\scriptsize SAI} \\
+\rowcolor{tableRowAlt} K36 & Student jest gotów do zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu & {\scriptsize P6S\_KR} & {\scriptsize SAI} \\
+\rowcolor{tableRowLight} K37 & Student jest gotów do zastosowania informatyki na rzecz rozwoju nauki poprzez umiejętność szybkiego tworzenia prototypów fizycznych obiektów & {\scriptsize P6S\_KR} & {\scriptsize SPR} \\
+\rowcolor{tableRowAlt} K38 & Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego & {\scriptsize P6S\_KO} & {\scriptsize MHE, PRIN} \\
+\rowcolor{tableRowLight} K39 & Student jest gotów do:ustalenia kluczowych priorytetów w projektach computer vision, takich jak wybór optymalnej architektury sieci neuronowej dla danego zadania wizyjnego; określenia krytycznych etapów w procesie rozwoju systemu rozpoznawania obrazów, od przygotowania danych po optymalizację modelu; priorytetyzacji zadań w zespole pracującym nad złożonym projektem widzenia maszynowego, uwzględniając terminy i zasoby; identyfikacji najważniejszych metryk oceny wydajności algorytmów przetwarzania obrazu w kontekście wymagań projektu; ustalenia kolejności implementacji funkcji w systemie analizy wideo, zaczynając od najbardziej istotnych dla użytkownika końcowego; określenia priorytetów w optymalizacji czasu wykonania algorytmów wizyjnych dla aplikacji czasu rzeczywistego; efektywnego zarządzania czasem i zasobami w procesie treningu i walidacji modeli deep learning do zadań wizyjnych. & {\scriptsize P6S\_KK} & {\scriptsize COV} \\
+\rowcolor{tableRowAlt} K40 & Student jest gotów do:wykorzystania technik computer vision w rozwoju innowacyjnych rozwiązań naukowych i społecznych; zastosowania algorytmów przetwarzania obrazów w medycynie, np. do automatycznej analizy zdjęć rentgenowskich czy wykrywania nowotworów; wdrażania systemów rozpoznawania twarzy, z uwzględnieniem aspektów etycznych; tworzenia zaawansowanych systemów wizyjnych dla pojazdów autonomicznych, przyczyniając się do rozwoju inteligentnego transportu; implementacji rozwiązań augmented reality w edukacji i przemyśle; rozwijania technologii computer vision wspierających osoby z niepełnosprawnościami wzroku; projektowania systemów monitoringu środowiska wykorzystujących analizę obrazów satelitarnych; aktywnego udziału w otwartych projektach badawczych, dzieląc się wiedzą i kodem z globalną społecznością naukową. & {\scriptsize P6S\_KO} & {\scriptsize COV} \\
+\rowcolor{tableRowLight} K41 & Student potrafi pracować w zespole nad wspólnym projektem związanym z tworzeniem API, wykazując się umiejętnościami analitycznymi, kreatywnymi i komunikacyjnymi. & {\scriptsize P6S\_KR} & {\scriptsize TAPI} \\
+\rowcolor{tableRowAlt} K42 & Student potrafi: samodzielnie uczyć się przez całe życie, co jest niezbędne w szybko rozwijającej się dziedzinie NLP. Techniki i narzędzia w tej dziedzinie stale ewoluują, więc umiejętność ciągłego kształcenia się jest kluczowa dla rozwoju zawodowego. & {\scriptsize P6S\_KR} & {\scriptsize PJN} \\
+\rowcolor{tableRowLight} K43 & Student potrafi: współdziałać w zespole, co jest ważne w projektach związanych z NLP, gdzie często wymagane są różnorodne umiejętności i kompetencje. Praca zespołowa sprzyja innowacyjności i efektywności w realizacji złożonych zadań. & {\scriptsize P6S\_KR} & {\scriptsize PJN} \\
+\rowcolor{tableRowAlt} K44 & Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych. & {\scriptsize P6S\_KR} & {\scriptsize WG1, WG2} \\
+\rowcolor{tableRowLight} K45 & Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych. & {\scriptsize P6S\_KR} & {\scriptsize WF} \\
+\rowcolor{tableRowAlt} K46 & Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu. & {\scriptsize P6S\_KR} & {\scriptsize WF} \\
+\rowcolor{tableRowLight} K47 & Znajomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych. & {\scriptsize P6S\_KR} & {\scriptsize WF} \\
+\rowcolor{tableRowAlt} K48 & Wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu; jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą. & {\scriptsize P6S\_KR} & {\scriptsize KLI} \\
+\rowcolor{tableRowLight} K49 & Wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika; jest gotowy do moderowania procesów grupowych z dbałością o bezpieczeństwo psychologiczne i kreatywność zespołu. & {\scriptsize P6S\_KK} & {\scriptsize DTH} \\
+\rowcolor{tableRowAlt} K50 & Wykazuje postawę badawczą -- traktuje błędy w prototypie jako cenne źródło danych, a nie porażkę programistyczną; potrafi argumentować decyzje projektowe w oparciu o wyniki testów z użytkownikami. & {\scriptsize P6S\_KK} & {\scriptsize PG1} \\
+\rowcolor{tableRowLight} K51 & Potrafi prezentować swój projekt w formie pitchingu, argumentując wybory projektowe i biznesowe; wykazuje świadomość znaczenia inkluzywności i dostępności (accessibility) w projektowaniu gier. & {\scriptsize P6S\_KK} & {\scriptsize PG2} \\
+\rowcolor{tableRowAlt} K52 & Jest gotów do pracy zespołowej nad produktem programistycznym, w tym do komunikacji, podziału zadań i przeglądu kodu oraz odpowiedzialnego podejścia do jakości, testowania i utrzymania spójności architektury. & {\scriptsize P6S\_KO} & {\scriptsize PAI} \\
+\rowcolor{tableRowLight} K53 & Jest gotów do samodzielnego uczenia się przez całe życie w zakresie systemów wbudowanych i programowania niskopoziomowego. & {\scriptsize P6S\_KK} & {\scriptsize LLP, KIP} \\
+\rowcolor{tableRowAlt} K54 & Jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego oraz do myślenia i działania w sposób innowacyjny i przedsiębiorczy. & {\scriptsize P6S\_KO} & {\scriptsize PTT, RTO} \\
+\rowcolor{tableRowLight} K55 & Jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej w obszarze systemów wbudowanych i programowania platform sprzętowych. & {\scriptsize P6S\_KK} & {\scriptsize PPS} \\
+\bottomrule
+\end{longtable}}
+
+
+
+\newpage
+
+% =============================================================
+\section{Plan studiów}
+
+
+\bigskip
+
+\Needspace{22\baselineskip}
+\subsection*{Semestr 1}
+\addcontentsline{toc}{subsection}{Semestr 1}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Analiza Matematyczna & {\scriptsize obowiązkowy} & AM & 30 & 30 & 0 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Podstawy Programowania & {\scriptsize obowiązkowy} & PRG & 30 & 0 & 60 & {\scriptsize egzamin} & 6 \\
+\rowcolor{tableRowLight} Wstęp do zarządzania & {\scriptsize obowiązkowy} & WDZ & 30 & 30 & 0 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowAlt} Warsztat programisty & {\scriptsize obowiązkowy} & WPR & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Użytkowanie komputerów i podstawy systemów operacyjnych & {\scriptsize obowiązkowy} & UKOS & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Historia i kultura Japonii & {\scriptsize obowiązkowy} & HKJ & 30 & 0 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Język angielski & {\scriptsize obowiązkowy} & ANG1 & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowAlt} Szkolenie BHP & {\scriptsize obowiązkowy} & BHP & 4 & 0 & 0 & {\scriptsize zaliczenie} & 0 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 1} & & & \textbf{184} & \textbf{120} & \textbf{120} & & \textbf{28} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{22\baselineskip}
+\subsection*{Semestr 2}
+\addcontentsline{toc}{subsection}{Semestr 2}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Algebra liniowa i geometria & {\scriptsize obowiązkowy} & ALG & 30 & 30 & 0 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Matematyka Dyskretna & {\scriptsize obowiązkowy} & MAD & 30 & 30 & 0 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowLight} Relacyjne bazy danych & {\scriptsize obowiązkowy} & RBD & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableElective} Języki programowania 1 i 2 & {\scriptsize obieralny} & -- & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Programowanie obiektowe & {\scriptsize obowiązkowy} & POJ & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Technologie internetu & {\scriptsize obowiązkowy} & TIN & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Wychowanie fizyczne 1 & {\scriptsize obowiązkowy} & WF1 & 0 & 30 & 0 & {\scriptsize zaliczenie} & 0 \\
+\rowcolor{tableRowLight} Język angielski & {\scriptsize obowiązkowy} & ANG2 & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 2} & & & \textbf{150} & \textbf{150} & \textbf{90} & & \textbf{30} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{22\baselineskip}
+\subsection*{Semestr 3}
+\addcontentsline{toc}{subsection}{Semestr 3}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Programowanie aplikacji internetowych & {\scriptsize obowiązkowy} & PAI & 30 & 0 & 60 & {\scriptsize zaliczenie} & 6 \\
+\rowcolor{tableElective} Systemy bazy danych 1 i 2 & {\scriptsize obieralny} & -- & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Fizyka & {\scriptsize obowiązkowy} & FIZ & 15 & 15 & 15 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowLight} Statystyczna analiza danych & {\scriptsize obowiązkowy} & SAD & 30 & 15 & 15 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Narzędzia sztucznej inteligencji & {\scriptsize obowiązkowy} & NAI & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Systemy operacyjne & {\scriptsize obowiązkowy} & SOP & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Algorytmy i struktury danych & {\scriptsize obowiązkowy} & ASD & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowLight} Język angielski & {\scriptsize obowiązkowy} & ANG3 & 0 & 60 & 60 & {\scriptsize zaliczenie} & 3 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 3} & & & \textbf{165} & \textbf{90} & \textbf{255} & & \textbf{35} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{24\baselineskip}
+\subsection*{Semestr 4}
+\addcontentsline{toc}{subsection}{Semestr 4}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Grafika komputerowa & {\scriptsize obowiązkowy} & GRK & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Projektowanie systemów informacyjnych & {\scriptsize obowiązkowy} & PRI & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowLight} Elektronika & {\scriptsize obowiązkowy} & ELK & 30 & 15 & 15 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Sieci komputerowe & {\scriptsize obowiązkowy} & SKOA & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowLight} Programowanie systemowe & {\scriptsize obowiązkowy} & LLP & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Bezpieczeństwo systemów informacyjnych & {\scriptsize obowiązkowy} & BSI & 15 & 15 & 15 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableElective} Technologie Aplikacji Mobilnych 1 i 2 & {\scriptsize obieralny} & -- & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Wychowanie fizyczne 2 & {\scriptsize obowiązkowy} & WF2 & 0 & 30 & 0 & {\scriptsize zaliczenie} & 0 \\
+\rowcolor{tableElective} Lektorat & {\scriptsize obieralny} & -- & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 4} & & & \textbf{195} & \textbf{90} & \textbf{195} & & \textbf{34} \\
+\bottomrule
+\end{longtable}}
+
+\clearpage
+\subsection*{Semestr 5}
+\addcontentsline{toc}{subsection}{Semestr 5}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Projekt & {\scriptsize obowiązkowy} & PRO & 0 & 0 & 45 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowAlt} Budowa i integracja systemów informatycznych & {\scriptsize obowiązkowy} & BYT & 30 & 0 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Systemy wbudowane & {\scriptsize obowiązkowy} & SWB & 30 & 15 & 15 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowAlt} Interakcja człowiek-komputer & {\scriptsize obowiązkowy} & ICK & 30 & 0 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableElective} Przedmioty specjalizacyjne & {\scriptsize specjalizacyjny} & -- & 60 & 0 & 60 & {\scriptsize egzamin} & 9 \\
+\rowcolor{tableElective} Przedmiot obieralny humanistyczny/społeczny 1 & {\scriptsize obieralny} & -- & 30 & 0 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableElective} Lektorat & {\scriptsize obieralny} & -- & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 5} & & & \textbf{150} & \textbf{75} & \textbf{135} & & \textbf{27} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{17\baselineskip}
+\subsection*{Semestr 6}
+\addcontentsline{toc}{subsection}{Semestr 6}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableElective} Projekt Zespołowy & {\scriptsize obieralny} & -- & 15 & 0 & 60 & {\scriptsize zaliczenie} & 6 \\
+\rowcolor{tableElective} Przedmioty specjalizacyjne & {\scriptsize specjalizacyjny} & -- & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableElective} Przedmiot Obieralny 1 & {\scriptsize obieralny} & -- & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableElective} Przedmiot Obieralny 2 & {\scriptsize obieralny} & -- & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableElective} Lektorat & {\scriptsize obieralny} & -- & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 6} & & & \textbf{90} & \textbf{60} & \textbf{135} & & \textbf{21} \\
+\bottomrule
+\end{longtable}}
+
+\clearpage
+\subsection*{Semestr 7}
+\addcontentsline{toc}{subsection}{Semestr 7}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Nazwa przedmiotu}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Typ}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Społeczne aspekty informatyki & {\scriptsize obowiązkowy} & SAI & 30 & 30 & 0 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableElective} Proseminarium & {\scriptsize obieralny} & -- & 0 & 30 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableElective} Przedmioty specjalizacyjne & {\scriptsize specjalizacyjny} & -- & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableElective} Projekt zespołowy 2 & {\scriptsize obieralny} & -- & 0 & 0 & 60 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableElective} Przedmiot obieralny humanistyczny/społeczny 2 i 3 & {\scriptsize obieralny} & -- & 30 & 30 & 0 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableElective} Lektorat & {\scriptsize obieralny} & -- & 0 & 30 & 0 & {\scriptsize zaliczenie} & 1 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Suma semestru 7} & & & \textbf{90} & \textbf{120} & \textbf{90} & & \textbf{20} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Podsumowanie}
+\addcontentsline{toc}{subsection}{Podsumowanie planu studiów}
+
+\begin{tabular}{lrrrr}
+\toprule
+\rowcolor{pjatkRed} {\color{white}} & {\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratoria}} & {\color{white}\textbf{ECTS}} \\
+\midrule
+\textbf{RAZEM} & \textbf{1024} & \textbf{705} & \textbf{1020} & \textbf{195} \\
+\bottomrule
+\end{tabular}
+
+
+
+\newpage
+
+% =============================================================
+\section{Praktyki zawodowe}
+
+\subsection*{Wymiar, zasady i forma odbywania praktyk zawodowych}
+
+Wszyscy studenci studiów pierwszego stopnia na kierunku Informatyka zobowiązani są do zrealizowania praktyk zawodowych w wymiarze \textbf{720 godzin zegarowych (960 godzin lekcyjnych)}. Praktykom zawodowym przypisano \textbf{30 punktów ECTS}.
+
+Praktyki mogą odbywać się w trakcie roku akademickiego w kraju i za granicą, o ile nie utrudniają przebiegu studiów. Student może skorzystać z ofert zamieszczonych na portalu Akademickiego Biura Karier lub zaproponować pracodawcę, który zgadza się na przeprowadzenie praktyki. Charakter praktyki musi odpowiadać programowi nauczania i umożliwiać osiągnięcie założonych efektów uczenia się.
+
+Praktyki mogą mieć zarówno charakter odpłatny, jak i nieodpłatny. Uczelnia nie pokrywa kosztów związanych z ich organizacją.
+
+Osobami odpowiedzialnymi za weryfikację i rozliczanie praktyk z ramienia PJATK są \textbf{Pełnomocnik Rektora ds.~Praktyk Studenckich} oraz \textbf{Koordynator ds.~Praktyk Studenckich}.
+
+Rozliczenie odbywa się na podstawie Sprawozdania z praktyk oraz dodatkowych załączników. W ramach praktyk zawodowych mogą zostać rozliczone np.: praca zarobkowa, staż lub wolontariat, jeżeli pełnione obowiązki umożliwiają osiągnięcie założonych efektów uczenia się, a student posiada w tym czasie prawa studenckie.
+
+Dokumenty do rozliczenia praktyk muszą zostać przesłane przez moduł \textit{Praktyki} w systemie GAKKO w odpowiednim terminie rozliczeniowym przed obroną. W przypadku niespełnienia wymogów formalnych praktyki nie są zaliczane.
+
+Szczegółowe informacje dotyczące praktyk zawodowych znajdują się w \textbf{Regulaminie Praktyk Studenckich}.
+
+\newpage
+
+% =============================================================
+\section{Przedmioty obieralne}
+
+
+\subsection*{Języki programowania 1 i 2 (wybór 2 z 6)}
+\addcontentsline{toc}{subsection}{Języki programowania 1 i 2 (wybór 2 z 6)}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Programowanie w języku Python & JPT & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Programowanie w języku C++ & JCP & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Programowanie w języku JAVA & JJA & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Programowanie w języku SCALA & JSC & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Programowanie w języku F\# & JFS & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Systemy bazy danych 1 i 2 (wybór 2 z 3)}
+\addcontentsline{toc}{subsection}{Systemy bazy danych 1 i 2 (wybór 2 z 3)}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Wprowadzenie do baz dokumentowych & DDO & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Wprowadzenie do baz grafowych & DGR & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Wprowadzenie do baz słownikowych & DSL & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Technologie Aplikacji Mobilnych 1 i 2 (wybór 2 z 4)}
+\addcontentsline{toc}{subsection}{Technologie Aplikacji Mobilnych 1 i 2 (wybór 2 z 4)}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Wprowadzenie do React Native & MRN & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Wprowadzenie do Flutter & MFL & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Wprowadzenie do .Net MAUI & MNE & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Wprowadzenie do Unity 3D & MUN & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Przedmiot obieralny humanistyczny/społeczny 1}
+\addcontentsline{toc}{subsection}{Przedmiot obieralny humanistyczny/społeczny 1}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Psychologia umiejętności inżynierskich & PUI & 30 & 0 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Kompetencje lidera IT & KLI & 30 & 0 & 0 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Przedmiot Obieralny 1}
+\addcontentsline{toc}{subsection}{Przedmiot Obieralny 1}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Modelowanie i analiza systemów informacyjnych & MAS & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Metody Design Thinking w projektowaniu systemów IT & DTH & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowLight} Administrowanie systemami operacyjnymi & ADM & 30 & 0 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Przedmiot Obieralny 2}
+\addcontentsline{toc}{subsection}{Przedmiot Obieralny 2}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Symulacje i gry decyzyjne & SGD & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Zarządzanie projektem informatycznym & ZPR & 15 & 0 & 15 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Przedmiot obieralny humanistyczny/społeczny 2 i 3 (wybór 2 z 3)}
+\addcontentsline{toc}{subsection}{Przedmiot obieralny humanistyczny/społeczny 2 i 3 (wybór 2 z 3)}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Zarządzanie własnym przedsięwzięciem & POZ & 15 & 15 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowAlt} Procesy Innowacyjne & PRIN & 15 & 15 & 0 & {\scriptsize zaliczenie} & 2 \\
+\rowcolor{tableRowLight} Komercjalizacja projektów informatycznych & KMR & 15 & 15 & 0 & {\scriptsize zaliczenie} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Lektorat (wybór języka)}
+\addcontentsline{toc}{subsection}{Lektorat (wybór języka)}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Ćw.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Język angielski & ANG & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowAlt} Język niemiecki & NEM & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowLight} Język hiszpański & HIS & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\rowcolor{tableRowAlt} Język japoński & JAP & 0 & 60 & 0 & {\scriptsize zaliczenie} & 3 \\
+\bottomrule
+\end{longtable}}
+
+
+
+\newpage
+
+% =============================================================
+\section{Specjalizacje}
+
+Student wybiera jedną specjalizację na cały tok studiów. Przedmioty specjalizacyjne realizowane są w semestrach wskazanych w tabelach poniżej.
+
+\subsection*{Architektury oprogramowania i DevOps}
+\addcontentsline{toc}{subsection}{Architektury oprogramowania i DevOps}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Architektura mikroserwisowa i mikrofrontendowa & 5 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Konteneryzacja serwisów internetowych & 5 & 30 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Technologie DevOps & 6 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Zarządzanie infrastrukturą chmurową & 7 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Cyberbezpieczeństwo}
+\addcontentsline{toc}{subsection}{Cyberbezpieczeństwo}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Kryminalistyka cyfrowa & 5 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Analiza incydentów cyberbezpieczeństwa & 5 & 30 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Testowanie bezpieczeństwa systemów IT & 6 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Projektowanie bezpiecznych architektur IT & 7 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Inżynieria gier komputerowych}
+\addcontentsline{toc}{subsection}{Inżynieria gier komputerowych}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Prototypowanie gier komputerowych & 5 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Modelowanie 3D dla gier & 5 & 30 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Silniki gier komputerowych & 6 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Projektowanie gier komputerowych & 7 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Sztuczna inteligencja}
+\addcontentsline{toc}{subsection}{Sztuczna inteligencja}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Wstęp do nauczania maszynowego & 5 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Deep Learning & 5 & 30 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Computer Vision & 6 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Przetwarzanie języka naturalnego & 7 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Internet rzeczy}
+\addcontentsline{toc}{subsection}{Internet rzeczy}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiot}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Wyk.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Zaliczenie}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Szybkie prototypowanie & 5 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Systemy czasu rzeczywistego & 5 & 30 & 30 & {\scriptsize zaliczenie} & 4 \\
+\rowcolor{tableRowLight} Komunikacja i protokoły dla Internetu Rzeczy & 6 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\rowcolor{tableRowAlt} Programowanie platform sprzętowych & 7 & 30 & 30 & {\scriptsize egzamin} & 5 \\
+\bottomrule
+\end{longtable}}
+
+
+
+\end{document}

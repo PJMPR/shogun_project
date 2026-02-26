@@ -1,0 +1,104 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie obiektowo-funkcyjne",
+                    "kod_przedmiotu":  "SKL",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr hab. Marek A Bednarczyk",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Wykład problemowy, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu",
+                                           "Ćwiczenia rozszerzone o proste projekty programistyczne poświęcone implementacji różnych analizowanych algorytmów i struktur danych z wykorzystaniem języka Scala oraz biblioteki Akka lub Pekko",
+                                           "Ćwiczenia/Laboratorium",
+                                           "Kryteria oceny",
+                                           "zaliczenie ćwiczeń wymaga zdobycia co najmniej 50% punktów możliwych do zdobycia na kolokwium oraz za zrealizowane projekty programistyczne",
+                                           "Nie dotyczy"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRG1 – Programowanie 1",
+                                                         "wymagania":  "POZ – Podstawy programowania obiektowego"
+                                                     },
+                                                     {
+                                                         "nazwa":  "JAZ – Java zaawansowana",
+                                                         "wymagania":  "WPR – Warsztaty Programistyczne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Umiejętność programowania w obiektowych językach programowania.",
+                                                         "wymagania":  "Umiejętność wnioskowania"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Opanowanie zasad łączenia programowania obiektowego z programowaniem funkcyjnym oraz idei aktorów (mikroserwisów). W trakcie zajęć obowiązuje zakaz stosowania technik programistycznych rodem z programowania imperatywnego (zmienne oraz pętle są zabronione). Umiejętność tworzenia oprogramowania typu mikroserwisy w oparciu o bibliotekę Akka implementującą paradygmat programowania opartego o aktorów.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Michael Swaine, Programowanie funkcyjne, PWN, 2021."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Martin Odersky, Lex Spoon, Bill Venners, Programming in Scala, 1st Edition, Artima Press, 2008.",
+                                                                             "(dostępne on-line)"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie różnice między paradygmatami: imperatywnym, obiektowym oraz funkcyjnym",
+                                                              "Student zna i rozumie sposoby implementacji podstawowych struktur danych.",
+                                                              "Student zna i rozumie paradygmaty programowania takie jak imperatywny, obiektowy i funkcyjny;",
+                                                              "Zna i rozumie problemy występujące przy programowaniu systemów rozproszonych i współbieżnych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi napisać i czytać ze zrozumieniem proste programy funkcyjne.",
+                                                                    "Student potrafi wybrać pomiędzy rozwiązaniami opartymi o podejście map-reduce, a podejściem rekursywnym",
+                                                                    "Student:",
+                                                                    "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu",
+                                                                    "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych",
+                                                                    "Student:",
+                                                                    "potrafi zaprojektować i zrealizować prosty system oprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami",
+                                                                    "potrafi dobrać model procesu i narzędzia dla jego wytworzenia"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Programowanie funkcyjne - podstawy",
+                                              "Klasy i obiekty",
+                                              "Funkcje wyższego rzędu, zastosowania",
+                                              "Kolekcje (zbiory, wektory, listy)",
+                                              "Manipulacje na kolekcjach (rekursja)",
+                                              "System typów w Scali – podstawy; Parametryzacja funkcji typem.",
+                                              "Kolekcji ciąg dalszy (Mapy)",
+                                              "Nierekursywne metody manipulacji na kolekcjach",
+                                              "Asercje i testy jednostkowe",
+                                              "Wyrażenia for",
+                                              "Programowanie rozproszone – paradygmat Aktorów",
+                                              "Aktorzy i współbieżność"
+                                          ]
+                }
+}

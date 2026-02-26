@@ -1,0 +1,190 @@
+﻿% ===========================================================
+%  Sylabus: Historia i Kultura Japonii (HKJ)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: HKJ}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Historia i Kultura Japonii} \\[3pt]
+  \textbf{Kod przedmiotu:}    & HKJ \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    &  \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & --- & 30 h & 20 h & 50 h & \textbf{2} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Wykład & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Zapoznanie studentów z historią i kulturą Japonii, z najważniejszymi osiągnięciami w dziedzinie sztuki i estetyki. Zaznajomienie z tradycjami, zwyczajami, normami zachowań społecznych, problemami współczesnego społeczeństwa japońskiego oraz współczesną i dawną architekturą.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Kultura i etykieta biznesu w Japonii (1) - Jak zdobyć zaufanie Japończyka. Dobre pierwsze wrażenie. Przedstawianie się i wymiana wizytówek. Nawiązywanie i podtrzymywanie kontaktu. Podstawowa japońska etykieta biznesu. Japońska gospodarka. Rynek pracy w Japonii.
+  \item Kultura i etykieta biznesu w Japonii (2) - Charakterystyka pracy w Japonii. Kobiety w japońskich firmach. Przedsiębiorstwa japońskie (kaizen). Wartości, symbole, postawy w japońskich firmach. Przebieg spotkania biznesowego. Negocjacje i podejmowanie decyzji.
+  \item Japonia w relacjach zagranicznych - Firmy zagraniczne w Japonii. Efektywny biznes w Japonii. Różnice kulturowe pomiędzy Japonią, Chinami i Koreą. Lokalizacja Japonii na świecie i elementy kultury japońskiej.
+  \item Geneza i historia animacji i mangi - Wczesny rozwój animacji i mangi. Ważne dzieła i ich wpływ kulturowy. Popularność i rozpowszechnianie w Japonii i za granicą.
+  \item Gatunki i cechy charakterystyczne mangi i anime - Gatunki shōnen, shōjo, seinen. Projekty postaci i style ekspresji. Przemysłowy i ekonomiczny wpływ anime i mangi.
+  \item Wielkość i rozwój rynku animacji i mangi - Działalność związana z licencjonowaniem i rozwojem produktów. Wpływ gospodarczy animacji i mangi.
+  \item Estetyka japońska - Percepcja natury. Pojęcie piękna i kształtowanie się estetyki japońskiej. Cechy kluczowe estetyki japońskiej: sugestia, nieregularność, prostota, nietrwałość. Pojęcia estetyczne: wabi-sabi, miyabi, aware, iki, yūgen.
+  \item Architektura japońska - Miasta i prowincji, współcześni architekci. Przejście od architektury tradycyjnej do nowoczesnej. Architektura współczesna: powojenny metabolism, postmodernizm.
+  \item Koleje japońskie - Ewolucja i estetyka dworców kolejowych w Japonii. Japońskie pociągi.
+  \item Estetyka infrastruktury w Japonii - Architekt i inżynier w Japonii. Historia estetyki infrastruktury. Zasady estetyki kolei.
+  \item Przestrzeń publiczna w Japonii - Przykłady kolei na estakadach, placów dworcowych, sztuka publiczna.
+  \item Kultura otaku - Powstanie i charakterystyka. Znaczenie cosplay i doujin. Rola wydarzeń i społeczności - globalny wpływ.
+  \item Popularność i wpływ anime i mangi za granicą - Interakcja z międzynarodowymi fanami. Akceptacja kulturowa.
+  \item Wprowadzenie do historii japońskiej.
+  \item Podsumowanie wszystkich zagadnień, kolokwium końcowe.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie podstawowe fakty z historii i kultury Japonii.
+  \item Student zna najważniejsze pojęcia estetyki japońskiej.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii.
+  \item Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski.
+  \item Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Kolokwium końcowe pisemne.
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Marszałek-Kawa, J., Gawłowski, R. (red.) (2013) Kulturowe i edukacyjne oblicza współczesnej Azji, Wydawnictwo Adam Marszałek, Toruń.
+  \item Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.
+  \item Takei, N. (2001) Getting closer to Japan. Japanese culture, ASK., Ltd., Tokyo.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Doi, T. (1973) The Anatomy of Dependence, Kodansha International, Tokyo.
+  \item Keene, D. (1971) Appreciations of Japanese culture, Kodansha International, Tokyo.
+  \item Kubiak Ho-Chi, B. (2009) Estetyka i sztuka japońska, Universitas, Kraków.
+  \item Mukai, K. (2008) A guidebook to Japan and its customs, Nihon Bungeisha, Tokyo.
+  \item Richie, D. (2007) A tractate on Japanese aesthetics, Stone Bridges Press, Berkley.
+  \item Young, D., Young, M. (2019) The art of Japanese architecture, Tuttle Publishing, Tokyo.
+  \item Lynch, K. (1960) The Image of the City, MIT Press, Cambridge MA.
+  \item Meeks, C.L.V. (1995) The Railroad Station: An Architectural History, Dover Publications, New York.
+  \item Mizuno, K. (2017) Subway stations around the world, Seigensha, Tokyo.
+\end{itemize}
+
+\end{document}

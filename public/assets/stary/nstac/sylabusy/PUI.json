@@ -1,0 +1,159 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Psychologia Umiejętności Inżynierskich",
+                    "kod_przedmiotu":  "PUI",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mczerwonka@pjwstk.edu.pl",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Zaliczenie z oceną"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład problemowy (klasyczny, sytuacyjny)",
+                                           "burza mózgów",
+                                           "stolik ekspercki (praca zespołowa nad",
+                                           "rozwiązaniem problemów: prezentacja wraz z omówieniem)",
+                                           "studium przypadków",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "nie dotyczy",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat/Seminarium",
+                                           "Nie dotyczy",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Nie dotyczy",
+                                           "Ocena aktywności podczas konwersatorium. Podstawą",
+                                           "oceny jest aktywność w trakcie konwersatorium, która",
+                                           "decyduje o ocenie.",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Osoby, które chcą uzupełnić",
+                                           "brakujące punkty (np. z powodu nieobecności na",
+                                           "wykładzie), wykonują zadane przez Prowadzącego",
+                                           "zadania odnoszące się do treści wykładu"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wiedza z zakresu szkoły ponadpodstawowej",
+                                                         "wymagania":  "Umiejętność poszukiwania i selekcji informacji"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Krytyczna analiza treści",
+                                                         "wymagania":  "Dokonywanie syntezy treści, tworzenie konkluzji"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Pozytywne nastawienie do rozwijania umiejętności pozatechnicznych, w szczególności pracy zespołowej",
+                                                         "wymagania":  "Prowadzenia dyskusji wspartej argumentami"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Studenci kierunków inżynierskich, w tym informatyki, często nie dostrzegają potrzeby rozwijania swoich umiejętności pozatechnicznych, w literaturze określanych jako tzw. soft skills. Co więcej, znaczenie i waga, np. kompetencji komunikacyjnych czy pracy zespołowej, jest przez kandydatów na inżynierów, niejednokrotnie deprecjonowana bądź umniejszana. Tymczasem wymagania pracodawców w branży IT zmieniły się dość istotnie w stosunku do tego, co było oczekiwane jeszcze kilka lat temu. Umiejętność skutecznej organizacji pracy własnej, skupienia, czy rozwiązywania problemów (także we współpracy z innymi) jest już nie tylko atutem, ale niekiedy warunkiem decydującym o przyjęciu do firmy czy projektu. Kurs jest autorską propozycją skierowaną do studentów uczących się na kierunku informatyka. W ramach przedmiotu kształtowana jest świadomość i nawyki dotyczące rozwijania zasobów osobistych odnoszących się do motywacji, potencjału intelektualnego oraz funkcjonowania w zespole. Studenci uzyskują wiedzę i umiejętności na temat kluczowych kompetencji pozatechnicznych, niezbędnych do efektywnej realizacji zespołowych projektów informatycznych, a także budowania przewagi konkurencyjnej na rynku pracy. Zastosowane podejście uwzględnia specyfikę profilu kształcenia inżyniera, dając studentom podstawę do wykorzystywania poznanych umiejętności w praktyce. W ramach modułu praca samodzielna studenci poznają wiele technik i narzędzi optymalizujących realizację zadań, wykonywanych często pod presją czasu i oczekiwań, wymagające koncentracji uwagi, wyszukiwania błędów czy poszukiwania nowych pomysłów i rozwiązań. Ponadto będą w stanie skuteczniej planować własny rozwój w branży IT, rozumiejąc potrzebę ciągłego zdobywania umiejętności i dokształcania się. W ramach modułu praca zespołowa studenci identyfikują kluczowe wyzwania i problemy, z jakimi będą się mierzyć w trakcie realizacji projektów. Poznają także strategie poprawiające wydajność pracy z innymi – w kontekście komunikacji, podziału i szacowania zadań, odpowiedzialności. Ważnym elementem przedmiotu jest gościnny udział absolwentów Wydziału oraz przedstawicieli firm z branży informatycznej, którzy będą dzielić się swoim doświadczeniem, adekwatnie do tematyki danego wykładu.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Bartyzel, M. (2016). Getting Things Programmed. Droga do efektywności. Wydawnictwo Helion.",
+                                                                          "Newport, C. (2018). Praca głęboka. Jak odnieść sukces w świecie, w którym ciągle coś nas rozprasza.",
+                                                                          "Wydawnictwo StudioEMKA"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. Bartyzel, M. (2015). Oprogramowanie szyte na miarę. Jak rozmawiać z klientem, który (nie) wie,",
+                                                                             "czego chce. Wydawnictwo Helion.",
+                                                                             "2. Belbin M. (2010). Nie tylko zespół. Oficyna Ekonomiczna.",
+                                                                             "3. Biancuzzi, F., & Warden, S. (2010). Wielkie umysły programowania. Jak myślą i pracują twórcy",
+                                                                             "najważniejszych języków. Wydawnictwo Helion.",
+                                                                             "4. Bond, M. L. (2014). Siła innych. O presji otoczenia, syndromie grupowego myślenia i o tym, jak",
+                                                                             "ludzie wokół na nas wpływają i na wszystkie nasze poczynania. Wydawnictwo Naukowe PWN.",
+                                                                             "5. Duarte, N. (2012). Współbrzmienie. Znajdź wspólny język z odbiorcami Twojej prezentacji.",
+                                                                             "Wydawnictwo Helion.",
+                                                                             "6. Fiore, N. (2008). Nawyk samodyscypliny. Zaprogramuj wewnętrznego stróża. Wydawnictwo Sensus.",
+                                                                             "7. Fitzpatrick, B.W, & Collins-Sussman, B. (2018). Debugging Teams. Przez współpracę do lepszej",
+                                                                             "produktywności. Wydawnictwo Helion",
+                                                                             "8. Gelert M., & Nowak C. (2008). Zespół. Gdańskie Wydawnictwo Psychologiczne.",
+                                                                             "9. Goldberg, E. (2018). Kreatywność. Mózg w dobie innowacji. Wydawnictwo Naukowe PWN.",
+                                                                             "10. Henning, B. (2020). Mózgobrednie. 20 i pół mitu o mózgu i jak on naprawdę działa. Feeria Science.",
+                                                                             "11. Kahneman, D. (2020). Pułapki myślenia. O myśleniu szybkim i wolnym. Media Rodzina.",
+                                                                             "12. Kelley, T., & Kelley, D. (2019). Twórcza odwaga. Otwórz się na Design Thinking. MIT biznes.",
+                                                                             "13. Lopp, M. (2019). Zarządzanie ludźmi w zespołach IT. Zabawne historie z życia menedżera.",
+                                                                             "Wydawnictwo Helion.",
+                                                                             "14. Nordengen, K. (2019). Mózg ćwiczy, czyli jak utrzymać umysł w dobrej formie. Wydawnictwo",
+                                                                             "Marginesy.",
+                                                                             "15. Nordengen, K. (2018). Mózg rządzi. Twój niezastąpiony narząd. Wydawnictwo Marginesy.",
+                                                                             "16. Norris, D. (2020). Kreatywność i nienawiść. Twórz jak ludzie sukcesu. Wydawnictwo OnePress.",
+                                                                             "17. Nowocień, R. (2020). Zespoły wirtualne i rozproszone. Zdalne zarządzanie projektem",
+                                                                             "informatycznym. Wydawnictwo Helion.",
+                                                                             "18. Sapolksy, D.M. (2020). Dlaczego zebry nie mają wrzodów. Psychofizjologia stresu. Wydawnictwo",
+                                                                             "Naukowe PWN.",
+                                                                             "19. Schein, E. H. (2019). Potęga dobrej komunikacji w zespole. O trudnej sztuce zadawania pytań.",
+                                                                             "Wydawnictwo Naukowe PWN.",
+                                                                             "20. Scott, S. J. (2008). Nawyk nieodwlekania. Proste sposoby pokonania prokrastynacji. Wydawnictwo",
+                                                                             "Sensus.",
+                                                                             "21. Shenk, J. W. (2016). Siła duetów. Jak relacje rozbudzają kreatywność. Wydawnictwo Naukowe",
+                                                                             "PWN.",
+                                                                             "22. Stefaniuk, T. (2014). Komunikacja w zespole wirtualnym. Difin.",
+                                                                             "23. Wróblewski, P. (2020). Zwinnie do przodu. Poradnik kierownika projektów informatycznych.",
+                                                                             "Wydawnictwo Helion."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawy pracy intelektualnej i zespołowej, dzięki czemu będzie mógł wytwarzać lepsze",
+                                                              "oprogramowanie.",
+                                                              "Student zna i rozumie skutki, jakie przynosi niewłaściwie zaplanowany i realizowany projekt.",
+                                                              "Student zna i rozumie wyzwania oraz zagrożenia, z",
+                                                              "którymi będzie się mierzyć w zakresie modułu pracy",
+                                                              "zespołowej. Zna i rozumie sposoby wykorzystywania",
+                                                              "właściwych narzędzia i metod służących zwiększaniu prawdopodobieństwa realizacji projektu inżynierskiego z sukcesem."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować swoją wiedzę przenosząc ją na gruntpraktycznych umiejętności w zakresie podstaw planowania i realizacji swojej pracy w projekcie informatycznym",
+                                                                    "Student potrafi odpowiednio dobierać źródła informacji",
+                                                                    "Student potrafi wytwarzać oprogramowanie i produkty technologiczne z uwzględnieniem aspektu pracy zespołowej"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do rozumienia wpływu umiejętności nietechnicznych na efektywność i wydajność pracy inżyniera.",
+                                                                             "Student jest gotów do   podejmowania starań, aby przekazać informacje i opinie w sposób powszechnie zrozumiały oraz rozumie  wagę roli informatyki we współczesnym świecie.",
+                                                                             "Student jest gotów do ciągłego kształcenia i doskonalenia (także w aspekcie pozatechnicznym) umiejętności",
+                                                                             "Student jest gotów do swojejroli (jako inżyniera) w pracach zespołu, w tym interdyscyplinarnego"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Dużo więcej niż technologiczny stos. Dlaczego i jak zmieniają się wymagania branży informatycznej dotyczące kompetencji inżynierów.Znaczenie kompetencji pozatechnicznych, motywacji, organizacji pracy i umiejętności pracy zespołowej dla rozwoju zawodowego",
+                                              "2. Współczesne podejście do rozwoju i kariery w branży IT. Co robić, by zwiększać swoje szanse na praktyki, staż, pracę? Czy wiesz jak się uczyć? Krzywa uczenia się juniora vs. seniora. Metapoznanie. Motywacja. Style poznawcze i strategie uczenia się.",
+                                              "3. Mózg jako kluczowe narzędzie pracy inżyniera. Jak o nie dbać, by służyło długo i efektywnie? Jak osiągać stan koncentracji i poprawiać myślenie analityczne? Metody i narzędzia wspierające tryb pracy głębokiej i radzenie sobie z brakiem skupienia. Mit wielozadaniowości.",
+                                              "4. O wpływie kawy, muzyki i powiadomień. Strategie podnoszenia wydajności pracy nad projektem",
+                                              "informatycznym. Techniki zarządzania czasem, organizacji zadań, monitorowania postępów. Czemu służy retrospektywa i jak ją przeprowadzać? Prokrastynacja. Intuicja kontra wzory. Czy inżynier może myśleć",
+                                              "twórczo? Stan flow i strategie rozwiązywania problemów. Metody i narzędzia wspierające kreatywne aspekty pracy inżyniera.",
+                                              "5. Radzenie sobie ze stresem i wypaleniem w trakcie realizacji projektu informatycznego. Higiena pracy intelektualnej. Zasady cyfrowej higieny. Dlaczego drużyny składające się z samych gwiazd niemal zawsze wypadają poniżej oczekiwań? Skuteczne sposoby budowania zespołów inżynierskich.",
+                                              "6. Jak nie wpaść w pułapkę próżniactwa społecznego, myślenia grupowego oraz nie ulegać błędom poznawczym w trakcie realizacji projektu. Zasady skutecznej współpracy. Praca zespołowa jako doświadczenie efektywnego uczenia się od siebie nawzajem. Dlaczego i jak komunikować pomysły, odmienne zdanie, niezadowolenie z prac, problemy? W jaki sposób zadawać pytania i prosić o wsparcie? Informacja zwrotna i konstruktywna krytyka.",
+                                              "7. Jak koordynować pracę i rozwiązywać problemy w zespole informatycznym? Metodyka pracy zespołów wirtualnych i rozproszonych. Zdalne zarządzanie zespołowym projektem informatycznym."
+                                          ]
+                }
+}

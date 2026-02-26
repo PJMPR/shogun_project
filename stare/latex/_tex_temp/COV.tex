@@ -1,0 +1,196 @@
+﻿% ===========================================================
+%  Sylabus: Computer Vision (COV)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: COV}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Computer Vision} \\[3pt]
+  \textbf{Kod przedmiotu:}    & COV \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Dr Tadeusz Puźniakowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 30 h & 60 h & 65 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Narzedzia Sztucznej Inteligencji (NAI) & Podstawy dzialania sieci neuronowej; transfer learning; self-supervised learning; foundation models; podstawy PyTorch; praca ze srodowiskami Colab, HuggingFace \\
+  ALG - Algebra liniowa z geometria & Podstawowe operacje na macierzach \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Podstawowe operacje przetwarzania obrazu. Zapoznanie z biblioteką OpenCV.
+  \item Podstawy działania sieci splotowej.
+  \item Zaawansowane architektury bazujące na sieciach splotowych (LeNet, AlexNet, VGG, Inception).
+  \item Zaawansowane architektury bazujące na sieciach splotowych (ResNet, DenseNet, MobileNet, SqueezeNet, EfficientNet). Transfer Learning.
+  \item Detekcja obrazu. Architektura modeli typu YOLO.
+  \item Segmentacja obrazu. Metryki do segmentacji oraz najbardziej znane architektury.
+  \item Autoencoder oraz Variation Autoencoder.
+  \item Generative Adversarial Networks.
+  \item Image transformer.
+  \item Stable Diffusion.
+  \item Segment Anything oraz DINO.
+  \item Generowanie obrazu. Style Transfer.
+  \item Rekonstrukcja 3D na podstawie obrazu 2D.
+  \item Detekcja pozy. Rozpoznawanie twarzy.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie:zaawansowane koncepcje i techniki przetwarzania obrazów cyfrowych, w tym metody segmentacji obrazu, detekcji krawędzi i wykrywania obiektów; posiada wiedzę na temat zastosowania splotowych i transformerowych sieci neuronowych w zadaniach klasyfikacji, detekcji, segmentacji i generowania obrazów; rozumie zasady działania algorytmów przetwarzających obrazy 2D i 3D oraz sekwence wideo; zna podstawy przetwarzania obrazów w czasie rzeczywistym i optymalizacji wydajności algorytmów computer vision; jest zaznajomiony z bibliotekami i frameworkami takimi jak OpenCV, PyTorch i HuggingFace stosowanymi w implementacji rozwiązań z zakresu widzenia komputerowego; rozumie wyzwania związane z przetwarzaniem dużych zbiorów danych obrazowych i metody ich efektywnego składowania i analizy.
+  \item Student zna i rozumie:kluczowe zagadnienia i metody z zakresu computer vision, w tym techniki przetwarzania i analizy obrazów cyfrowych; rozumie podstawy algorytmów segmentacji obrazu, detekcji krawędzi i cech charakterystycznych; zna metody rozpoznawania obiektów i twarzy w obrazach oraz sekwencjach wideo; jest zaznajomiony z technikami rekonstrukcji trójwymiarowej sceny z obrazów dwuwymiarowych; zna podstawy deep learningu w zastosowaniu do zadań widzenia komputerowego, w tym architekturę i zastosowania sieci neuronowych splotowych in transformerowych ; jest świadomy wyzwań związanych z przetwarzaniem obrazów w czasie rzeczywistym i optymalizacją wydajności algorytmów wizyjnych.
+  \item Student zna i rozumie:zaawansowane pojęcia i techniki w dziedzinie computer vision; rozumie głębokie modele uczenia maszynowego stosowane w analizie obrazów, w tym architektury sieci neuronowych takie jak CNN, R-CNN, YOLO, autoencoder, GAN, modele dyfuzyjne, transformery do obrazów; zna zaawansowane metody detekcji i segmentacji obiektów, w tym techniki segmentacji semantycznej i instancyjnej; rozumie zasady działania systemów śledzenia wielu obiektów (multi-object tracking) w czasie rzeczywistym; jest zaznajomiony z technikami generowania i manipulacji obrazów przy użyciu modeli generatywnych, takich jak GANy i dyfuzyjne; zna metody uczenia się bez nadzoru i samonadzorowanego w kontekście analizy obrazów; rozumie problematykę interpretacji i wyjaśnialności modeli wizyjnych; zna zaawansowane techniki przetwarzania obrazów medycznych i przemysłowych; rozumie zasady działania i zastosowania systemów widzenia maszynowego w robotyce i pojazdach autonomicznych; jest zaznajomiony z aktualnymi narzędziami i bibliotekami takimi jak PyTorch, czy OpenCV, stosowanymi w zaawansowanych projektach computer vision.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi:
+  \item samodzielnie poszerzać wiedzę z zakresu computer vision, wykorzystując platformy e-learningowe jak Coursera czy edX czy kursy na platformie YouTube; implementować i testować algorytmy wizyjne, korzystając z otwartych repozytoriów kodu; śledzić postępy w dziedzinie poprzez lekturę artykułów naukowych i uczestnictwo w webinarach; efektywnie rozwiązywać problemy techniczne przy użyciu forów specjalistycznych; tworzyć własne projekty wizyjne i dzielić się nimi online; uczestniczyć w wirtualnych grupach studyjnych, rozwijając praktyczne umiejętności w dziedzinie przetwarzania obrazów i sztucznej inteligencji.
+  \item Student potrafi:współpracować w zespole nad projektami computer vision; trafnie oszacować czas i zasoby potrzebne do implementacji algorytmów przetwarzania obrazu; tworzyć realistyczne harmonogramy projektów wizyjnych, uwzględniające etapy od zbierania danych po testowanie; zarządzać priorytetami w złożonych zadaniach, jak systemy rozpoznawania twarzy; efektywnie komunikować postępy techniczne zespołowi; dostosowywać plan do zmian, utrzymując terminowość dostaw; przewidywać i zarządzać ryzykiem w projektach uczenia maszynowego dla analizy obrazów.
+  \item Student potrafi:zdiagnozować złożone problemy w dziedzinie computer vision, takie jak niska dokładność detekcji obiektów w trudnych warunkach oświetleniowych; zaprojektować rozwiązanie wykorzystujące zaawansowane techniki, np. transfer learning czy data augmentation; dobrać odpowiednie narzędzia, jak PyTorch czy TensorFlow, oraz zestaw danych do treningu; określić etapy implementacji, od preprocessingu obrazów po fine-tuning modelu; zrealizować projekt, iteracyjnie optymalizując wyniki poprzez dostrajanie hiperparametrów i analizę błędów; ocenić efektywność rozwiązania przy użyciu odpowiednich metryk i testów; zaadaptować wdrożone rozwiązanie do wymagań czasu rzeczywistego lub ograniczeń sprzętowych.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do:wykorzystania technik computer vision w rozwoju innowacyjnych rozwiązań naukowych i społecznych; zastosowania algorytmów przetwarzania obrazów w medycynie, np. do automatycznej analizy zdjęć rentgenowskich czy wykrywania nowotworów; wdrażania systemów rozpoznawania twarzy, z uwzględnieniem aspektów etycznych; tworzenia zaawansowanych systemów wizyjnych dla pojazdów autonomicznych, przyczyniając się do rozwoju inteligentnego transportu; implementacji rozwiązań augmented reality w edukacji i przemyśle; rozwijania technologii computer vision wspierających osoby z niepełnosprawnościami wzroku; projektowania systemów monitoringu środowiska wykorzystujących analizę obrazów satelitarnych; aktywnego udziału w otwartych projektach badawczych, dzieląc się wiedzą i kodem z globalną społecznością naukową.
+  \item Student jest gotów do:ustalenia kluczowych priorytetów w projektach computer vision, takich jak wybór optymalnej architektury sieci neuronowej dla danego zadania wizyjnego; określenia krytycznych etapów w procesie rozwoju systemu rozpoznawania obrazów, od przygotowania danych po optymalizację modelu; priorytetyzacji zadań w zespole pracującym nad złożonym projektem widzenia maszynowego, uwzględniając terminy i zasoby; identyfikacji najważniejszych metryk oceny wydajności algorytmów przetwarzania obrazu w kontekście wymagań projektu; ustalenia kolejności implementacji funkcji w systemie analizy wideo, zaczynając od najbardziej istotnych dla użytkownika końcowego; określenia priorytetów w optymalizacji czasu wykonania algorytmów wizyjnych dla aplikacji czasu rzeczywistego; efektywnego zarządzania czasem i zasobami w procesie treningu i walidacji modeli deep learning do zadań wizyjnych.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Case study - prezentacja oprogramowania (ostatnie 4 zajęcia).
+  \item Ćwiczenia / Laboratorium/Lektorat:
+  \item Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).
+  \item Projekt zespołowy (ostatnie 5 zajęć).
+  \item Laboratorium oraz Projekt
+  \item Kryteria oceny
+  \item Ocena zadań laboratoryjnych
+  \item Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50\% laboratorium, 50\% projekt.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. " O'Reilly Media, Inc.", 2022.  Rozdział 14, 17
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Foley, James D., et al. "Computer graphics: Principles and practice, in c." Color Research and Application 22.1 (1997): 65-65. Rozdział 5.
+  \item Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdział: 7, 11, 14, 22
+  \item Szeliski, Richard. Computer vision: algorithms and applications. Springer Nature, 2022. https://szeliski.org/Book/
+\end{itemize}
+
+\end{document}

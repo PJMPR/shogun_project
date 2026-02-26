@@ -1,0 +1,79 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "20.02.2026",
+    "nazwa_przedmiotu": "Wprowadzenie do baz grafowych",
+    "kod_przedmiotu": "DGR",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 15
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50
+    },
+    "metody_dydaktyczne": {
+
+    },
+    "zaliczenie": {
+      "Projekt": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": [
+      "Projekt realizowany indywidualnie lub w parach – 100%",
+      "Ocena projektu obejmuje: poprawność modelu grafowego, jakość zapytań grafowych, poprawność relacji i własności, uzasadnienie decyzji projektowych oraz dokumentację",
+      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Relacyjne bazy danych",
+        "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją baz danych grafowych oraz ich zastosowaniami w systemach, w których kluczowe znaczenie mają relacje pomiędzy danymi. Studenci poznają podstawowe elementy modelu grafowego (wierzchołki, krawędzie, właściwości), zasady modelowania danych oraz wykonywania zapytań grafowych. Przedmiot przygotowuje do projektowania i implementacji prostych rozwiązań opartych na bazach grafowych oraz do świadomego porównywania tego podejścia z innymi modelami baz danych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Ian Robinson, Jim Webber, Emil Eifrem, Graph Databases",
+          "Dokumentacja Neo4j: https://neo4j.com/docs",
+          "Dokumentacja Cypher Query Language"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Martin Fowler, NoSQL Distilled",
+          "Materiały online producentów baz grafowych"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": "Student zna podstawowe pojęcia związane z bazami grafowymi, rozumie model grafowy oraz różnice pomiędzy bazami grafowymi, relacyjnymi i dokumentowymi.",
+      "umiejetnosci": "Student potrafi zaprojektować prosty model grafowy, tworzyć wierzchołki i relacje, formułować zapytania grafowe oraz wykorzystać bazę grafową w prostym projekcie aplikacyjnym.",
+      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, analizować zależności pomiędzy danymi oraz argumentować wybór modelu grafowego."
+    },
+    "tresci_programowe": [
+      "Wprowadzenie do baz grafowych i ich zastosowań",
+      "Model grafowy: wierzchołki, relacje i właściwości",
+      "Porównanie baz grafowych z relacyjnymi i dokumentowymi",
+      "Projektowanie modelu danych w bazie grafowej",
+      "Tworzenie i modyfikacja danych w grafie",
+      "Podstawy języka zapytań grafowych",
+      "Wyszukiwanie ścieżek i zależności",
+      "Indeksowanie i podstawy wydajności",
+      "Integracja bazy grafowej z aplikacją",
+      "Projekt zaliczeniowy – implementacja i prezentacja"
+    ]
+  }
+}

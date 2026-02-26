@@ -1,0 +1,85 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Zastosowanie języków formalnych",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr. Hab. Marek A Bednarczyk",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Wykład problemowy, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu",
+                                           "Ćwiczenia rozszerzone o projekty programistyczne poświęcone analizie leksykalnej i rozpoznawaniu języków przy pomocy automatów",
+                                           "zaliczenie ćwiczeń  wymaga zdobycia co najmniej  50% punktów możliwych do zdobycia na kolokwium oraz za zrealizowane projekty programistyczne",
+                                           "Warunkiem dopuszczenia do egzaminu jest zaliczenie ćwiczeń.",
+                                           "Warunkiem zdania egzaminu pisemnego jest zdobycie co najmniej  50% punktów."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRI – Projektowanie systemów informatycznych",
+                                                         "wymagania":  "ALG – Algebra liniowa z geometrią"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ASD – Algorytmy i Struktury Danych",
+                                                         "wymagania":  "MAD – Matematyka Dyskretna"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Umiejętność logicznego wnioskowania oraz umiejętność programowania",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot poświęcony jest technikom analizy leksykalnej i składniowej, wykorzystanie narzędzi wspomagającymi generowanie analizatorów leksykalnych i składniowych (lex i yacc), oraz niezbędne podstawy z teorii języków formalnych i automatów, n.t. języków regularnych i bezkontekstowych. Przedstawione są również elementarne wiadomości z  teorii obliczeń: maszyny Turinga, klasy języków obliczalnych i częściowo obliczalnych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "J. E. Hopcroft, R. Motwani, J. D. Ullman, Wprowadzenie do teorii automatów, języków i obliczeń, Wydawnictwo Naukowe PWN, Warszawa, 2005.",
+                                                                          "J. Jędrzejowicz, A. Szepietowski, Języki, automaty, złożoność obliczeniowa, Wydawnictwo Uniwersytetu Gdańskiego, Gdańsk, 2008."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "T. Krasiński, Automaty i języki formalne, Wydawnictwo Uniwersytetu Łódzkiego, Łódź, 2007"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student  ma szczegółową, uporządkowaną wiedzę z zakresu programowania, konstrukcji programów, ich implementacji, testowania i uruchamiania, a także podstawową wiedzę w zakresie języków, języków formalnych, poziomów i paradygmatów programowania, w tym obiektowego; ma znajomość aktualnych metod, technik i narzędzi stosowanych podczas tworzenia, testowania i uruchamiania oprogramowania",
+                                               "umiejetnosci":  [
+                                                                    "Student posiada umiejętność specyfikowania, projektowania, implementacji, testowania i debuggowania programów; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+                                                                    "Potrafi korzystać z narzędzi pozwalających tworzyć parsery tekstu opisanego przy pomocy gramatyki celem ich dalszej obróbki, np.: z formatu XML na HTML, itp",
+                                                                    "Kolokwium oraz zaliczenie ćwiczeń realizowanych pod okiem prowadzącego"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie – automaty i gramatyki.  Operacje na słowach i językach.  Wyrażenia regularne i wzorce.  Analiza leksykalna, Flex/Lex.  Analiza składniowa, Bison/Yacc.  Deterministyczne automaty skończone;  Równoważność automatów skończonych i wyrażeń regularnych.  Budowa analizatora składniowego prostego języka regularnego.  Języki bezkontekstowe, automaty ze stosem.  Maszyny Turinga i obliczalność.  Języki obliczalne, częściowo obliczalne i nieobliczalne."
+                                          ]
+                }
+}

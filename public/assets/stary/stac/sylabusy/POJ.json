@@ -1,0 +1,93 @@
+{
+  "sylabus":  {
+    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka":  "Filia w Gdansku",
+    "kierunek":  "INFORMATYKA",
+    "profil":  "praktyczny",
+    "tryb_studiow":  "stacjonarny",
+    "wersja_z_dnia":  "15.02.2025",
+    "nazwa_przedmiotu":  "Programowanie Obiektowe w C#",
+    "kod_przedmiotu":  "POJ",
+    "rok_studiow":  1,
+    "semestr_studiow":  2,
+    "obligatoryjny":  true,
+    "forma_i_liczba_godzin_zajec":  {
+      "wyklady":  30,
+      "cwiczenia_lektorat_seminarium":  null,
+      "laboratorium_projekt":  30
+    },
+    "odpowiedzialny_za_przedmiot":  "mgr inż. Adam Urbanowicz",
+    "ects":  4,
+    "godziny":  {
+      "z_udzialem_prowadzacego_h":  60,
+      "praca_wlasna_studenta_h":  40,
+      "calkowita_liczba_godzin_h":  100
+    },
+    "metody_dydaktyczne":  {
+
+    },
+    "zaliczenie":  {
+      "Laboratorium":  {
+        "sposob":  "Zaliczenie z oceną"
+      },
+      "Wykład":  {
+        "sposob":  "Nieoceniany"
+      }
+    },
+    "kryteria_oceny":  [
+      "rozwiązywanie zadań",
+      "Kryteria oceny",
+      "Ocena pracy podczas ćwiczenia – ocena zadań wykonanych przez studentów oddanych do końca zajęć.",
+      "Skala ocen:",
+      "Poniżej 50% - ndst",
+      "Od 50% - dst",
+      "Od 60% - dst+",
+      "Od 70% - db",
+      "Od 80% - db+",
+      "Od 90% - bdb",
+      "Brak"
+    ],
+    "przedmioty_wprowadzajace":  [
+      {
+        "nazwa":  "PRG1",
+        "wymagania":  "znajomość i umiejętność stosowania podstaw programowania strukturalnego (instrukcja warunkowa, pętle, tablice, funkcje i procedury)"
+      }
+    ],
+    "cel_dydaktyczny":  "Celem zajęć jest zapoznanie studentów z podstawowymi koncepcjami programowania obiektowego na przykładzie języka C# i platformy .NET. Omawiane są pojęcia interfejs, klasa, obiekt, dziedziczenie, polimorfizm, enkapsulacja i kompozycja. Prezentowane są koncepcje i praktyka związana z wykorzystaniem kolekcji generycznych, wyjątków, delegatów i zdarzeń, operacji wejścia/wyjścia oraz wybranych elementów nowoczesnego C# (m.in. LINQ).",
+    "literatura":  {
+      "uzupelniajaca":  {
+        "pozycje":  [
+          "Andrew Troelsen, Phil Japikse - Pro C# with .NET, Apress (najnowsze wydanie)",
+          "Mark J. Price - C# (najnowsze wydanie, Packt)",
+          "Microsoft Learn - Dokumentacja języka C# i platformy .NET",
+          "Jon Skeet - C# in Depth, Manning Publications"
+        ]
+      }
+    },
+    "efekty_ksztalcenia":  {
+      "wiedza":  "Student zna i rozumie podstawowe konstrukcje programistyczne oraz struktury danych, jak też ich podstawowe implementacje w języku C# i środowisku .NET",
+      "umiejetnosci":  [
+        "Student potrafi ocenić poprawność konstrukcji obiektowych w programach w języku C#.",
+        "Potrafi skonstruować i uruchomić program obiektowy w języku C# (aplikacja konsolowa) z wykorzystaniem platformy .NET.",
+        "Student potrafi znajdować błędy w tworzonych programach obiektowych przy użyciu wybranych środowisk uruchomieniowych i debuggera.",
+        "Potrafi korzystać z bibliotek .NET (m.in. System, System.Collections.Generic, System.IO, System.Text.RegularExpressions).",
+        "Student potrafi korzystać ze środowiska developerskiego przeznaczonego do tworzenia programów w języku C# (np. Visual Studio / Rider / VS Code), zaplanować prostą hierarchię klas oraz zastosować proste wzorce obiektowe zależnie od przedstawionego problemu."
+      ],
+      "kompetencje_spoleczne":  null
+    },
+    "tresci_programowe":  [
+      "Wprowadzenie do programowania w C#: typy danych, definicja zmiennych, instrukcje sterujące. Tworzenie prostych programów z wykorzystaniem metody Main oraz klasy Console.",
+      "Metody statyczne, tablice i ich praktyczne zastosowanie; interakcja człowiek – komputer z użyciem Console.ReadLine/WriteLine, parsowanie danych wejściowych.",
+      "Programowanie obiektowe: definicja klas, tworzenie obiektów, konstruktory, pola i właściwości (properties). Implementacja metod niestatycznych.",
+      "Enkapsulacja, modyfikatory dostępu, zasady przechowywania danych w pamięci: stos i sterta w kontekście .NET; typy wartościowe i referencyjne.",
+      "Dziedziczenie: override oraz overload, metody wirtualne, przesłanianie składowych, dziedziczenie po klasie object (ToString, Equals, GetHashCode).",
+      "Klasy abstrakcyjne, polimorfizm, kompozycja; wprowadzenie do przestrzeni nazw i organizacji projektu.",
+      "Parametry opcjonalne i nazwane, params (zmienna liczba parametrów) oraz omówienie wyjątków (try/catch/finally), własne wyjątki.",
+      "Wyrażenia regularne w .NET, operacje na plikach (System.IO), serializacja w podstawowym zakresie (np. JSON jako format danych – wprowadzenie).",
+      "Interfejsy w C#, implementacja wielokrotna interfejsów; interfejs IComparable, wprowadzenie do typów generycznych.",
+      "Kolekcje generyczne: List, Dictionary, HashSet; iteracja (foreach), porównywanie i sortowanie; wprowadzenie do LINQ (Where/Select/OrderBy).",
+      "Delegaty i zdarzenia: model zdarzeniowy w C#, Action/Func, event; podstawy programowania zdarzeniowego na prostych przykładach.",
+      "Omówienie wybranych wzorców projektowych (np. Singleton, Factory, Strategy) oraz wstęp do programowania asynchronicznego w C# (async/await) w kontekście prostych operacji I/O."
+    ]
+  }
+}

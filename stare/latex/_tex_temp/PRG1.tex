@@ -1,0 +1,177 @@
+﻿% ===========================================================
+%  Sylabus: Podstawy Programowania (PRG1)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRG1}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Podstawy Programowania} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRG1 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Adam Urbanowicz \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 60 h & 56 h & 94 h & 150 h & \textbf{6} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem zajęć jest opanowanie przez studentów podstaw klasycznych technik programowania strukturalnego na bazie języka C\#. Wprowadzone zostają również elementy programowania obiektowego. Zajęcia mają na celu rozwijanie umiejętności abstrakcyjnego myślenia oraz rozwiązywania prostych problemów programistycznych z wykorzystaniem platformy .NET i aplikacji konsolowych.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Pojęcie algorytmu. Sposoby przedstawiania algorytmów. Zmienne, typy, operator przypisania, instrukcje Console.WriteLine i Console.ReadLine, pierwszy program w C\#.
+  \item Wprowadzenie do środowiska .NET i Visual Studio. Tworzenie projektu, edycja kodu źródłowego, kompilacja, uruchamianie i debugowanie aplikacji konsolowych. Implementacja prostych obliczeń matematycznych.
+  \item Instrukcja warunkowa if, if else, zagnieżdżona instrukcja if. Instrukcja switch.
+  \item Implementacja programów wymagających użycia instrukcji warunkowych i wielowariantowych.
+  \item Pętle for, while, do while. Różnice i zastosowania. Zagnieżdżanie pętli. Instrukcje break i continue.
+  \item Implementacja programów wymagających użycia pętli.
+  \item Typy całkowite i zmiennoprzecinkowe. Typ znakowy i logiczny. Konwersje typów i rzutowania. Kwalifikator const. Operatory arytmetyczne, relacyjne i logiczne. Priorytety operatorów.
+  \item Implementacja programów z wykorzystaniem zmiennych różnych typów oraz operatorów.
+  \item Tablice jednowymiarowe i wielowymiarowe. Inicjalizacja tablic. Podstawowe algorytmy sortowania.
+  \item Implementacja programów wykorzystujących tablice jednowymiarowe i wielowymiarowe.
+  \item Metody. Przekazywanie parametrów. Zwracanie wartości. Metody void. Przeciążanie metod. Metody biblioteczne.
+  \item Definiowanie i stosowanie metod. Implementacja aplikacji wykorzystujących metody.
+  \item Rekurencja. Wady i zalety stosowania rekurencji. Klasa string i jej metody.
+  \item Implementacja programów wykorzystujących rekurencję oraz operacje na łańcuchach znakowych.
+  \item Typy referencyjne i wartościowe. Wprowadzenie do kolekcji: List, ArrayList. Zarządzanie pamięcią w .NET. Garbage Collector.
+  \item Implementacja programów wykorzystujących kolekcje i dynamiczne struktury danych.
+  \item Wstęp do testowania jednostkowego
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Wymienia zasady programowania strukturalnego i obiektowego w języku C\#, w tym techniki iteracji, rekurencji, organizacji pamięci zarządzanej, obsługi typów wartościowych i referencyjnych. Opisuje podstawowe algorytmy wyszukiwania i sortowania danych.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Pozyskuje informacje dotyczące programowania z dokumentacji technicznej, literatury i Internetu. Konstruuje rozwiązania prostych zadań programistycznych w języku C\# wymagających użycia instrukcji warunkowych, pętli, rekurencji, metod z odpowiednim sposobem przekazywania parametrów, tablic i kolekcji. Testuje poprawność wykonywanego oprogramowania oraz wykorzystuje zintegrowane środowisko programistyczne do konfigurowania, edytowania i testowania aplikacji konsolowych.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Ćwiczenia / Laboratorium/Lektorat:
+  \item rozwiązywanie zadań programistycznych
+  \item Kryteria oceny
+  \item Ćwiczenia/Laboratorium/Projekt/Lektorat
+  \item Zadania laboratoryjne (czas oddawania: następne zajęcia) - 20\%
+  \item Kolokwia (dwa): 60\%
+  \item Projekt programistyczny: 20\%
+  \item Brak
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Andrew Troelsen, Phil Japikse, Pro C\# 10 with .NET 6, Apress, 2022
+  \item Ian Griffiths, Programming C\# 10, O'Reilly Media, 2022
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Jon Skeet, C\# in Depth, Fourth Edition, Manning Publications, 2019
+  \item Robert C. Martin, Czysty kod. Podręcznik dobrego programisty, Helion, 2010
+\end{itemize}
+
+\end{document}

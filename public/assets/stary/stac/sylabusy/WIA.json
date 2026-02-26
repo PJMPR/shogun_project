@@ -1,0 +1,97 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Wstęp do informatyki i architektury komputerów",
+                    "kod_przedmiotu":  "WIA",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Liczba punktów ECTS :",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Wykład problemowo-konwersacyjny, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu",
+                                           "Studenci zachęcani są do przygotowania prezentacji omawiającej interesujący aspekt informatyzacji dowolnej dziedziny życia",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat/Seminarium",
+                                           "brak",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Warunkiem zdania egzaminu pisemnego jest zdobycie co najmniej  50% punktów.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "(brak wymagań wstępnych)",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zaznajomienie słuchaczy z podstawowymi problemami  którymi  zajmuje się informatyka, omówienie rozwoju architektury i paradygmatów programowania, analiza trendów rozwojowych w przeszłości i próba określenia tego co nas czeka w przyszłości",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Wstęp do informatyki, Slajdy do wykładu"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "P. Clements, Architektura oprogramowania w praktyce, Helion, 2022",
+                                                                             "Z. Michalewicz, Nauczanie łamigłówkowe, Wydawnictwo PJWSTK, 2010",
+                                                                             "D. Harel, Rzecz o istocie informatyki. Algorytmika, Helion 2008informatyki."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie istotę różnicy między algorytmami  iteracyjnymi i rekursywnymi, rozumie podstawowe idee stojące za rozwojem języków obiektowych, funkcyjnych i logicznych",
+                                                              "Student zna i rozumie  Zna historię rozwoju informatyki oraz trendów rozwojowych w zakresie sprzętu i oprogramowania",
+                                                              "Zna i rozumie podstawy architektury współczesnych systemów komputerowych"
+                                                          ],
+                                               "umiejetnosci":  null,
+                                               "kompetencje_spoleczne":  "Student jest gotów do  zaplanowania oraz przeprowadzenia prezentacji interesującego tematu rozwoju informatyki w formie pracy zespołowej."
+                                           },
+                    "tresci_programowe":  [
+                                              "Pojęcie algorytmu, problemu algorytmicznego,",
+                                              "Specyfikacja problemu, problemy nierozstrzygalne",
+                                              "Przykłady analizy poprawności i złożoności algorytmu,  klasy złożoności",
+                                              "Historia rozwoju informatyki.",
+                                              "Podstawy i rozwój architektury PC.",
+                                              "Architektura pamięci, macierze dyskowe.",
+                                              "Przerwania, magistrala systemowa.",
+                                              "Systemy operacyjne.",
+                                              "Systemy plików.",
+                                              "Języki programowania – rozwój różnych paradygmatów.",
+                                              "Programowanie funkcyjno-obiektowe i rozproszone: Scala + Akka.",
+                                              "Kompilatory, interpretery i narzędzia wsparcia programisty (make, ant, systemy zarządzania kodem).",
+                                              "Wyrażenia regularne.",
+                                              "Umiejętność przygotowania zespołowej prezentacji na tematy związane z informatyką."
+                                          ]
+                }
+}

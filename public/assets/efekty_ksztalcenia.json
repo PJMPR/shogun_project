@@ -2,4506 +2,657 @@
   "efekty_ksztalcenia": {
     "wiedza": [
       {
-        "tresc": "Gospodarczej, szczególnie przedsięwzięć. Zna ogólne zasady tworzenia przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych",
-        "kody": [
-          "POZ"
-        ],
+        "tresc": "Zna i rozumie podstawowe pojęcia i metody matematyki dyskretnej, algebry liniowej, rachunku prawdopodobieństwa i statystyki matematycznej niezbędne w informatyce.",
+        "kody": ["MAD", "ALG", "SAD"],
         "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Zna i rozumie podstawy fizyki, elektryczności, magnetyzmu oraz metodologię eksperymentu naukowego w kontekście zastosowań informatycznych.",
+        "kody": ["FIZ", "ELK", "EEC"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Paradygmaty programowania obiektowego w języku C#",
-        "kody": [
-          "DOT"
-        ],
+        "tresc": "Zna i rozumie zagadnienia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką.",
+        "kody": ["ELK", "SKO1"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Zna i rozumie struktury danych, algorytmy, ich złożoność obliczeniową oraz metody projektowania i analizy algorytmów.",
+        "kody": ["ASD", "MAD", "GRK"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Rozumie rolę eksperymentu fizycznego, matematycznych modeli teoretycznych przybliżających rzeczywistość oraz symulacji komputerowych w metodologii badań naukowych; ma świadomość ograniczeń technologicznych, aparaturowych i metodologicznych w badaniach naukowych;",
-        "kody": [
-          "FIZ"
-        ],
+        "tresc": "Zna i rozumie paradygmaty programowania obiektowego, funkcyjnego oraz współbieżnego na przykładzie języków C#, C++, JavaScript i innych.",
+        "kody": ["POJ", "DOT", "CPP", "TFN", "TIN"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student demonstruje głębokie zrozumienie składni, struktur i możliwości języka JavaScript w kontekście programowania backendowego.",
-        "kody": [
-          "TBK"
-        ],
+        "tresc": "Zna i rozumie zasady tworzenia aplikacji webowych: technologie frontendowe, backendowe, protokół HTTP, REST API oraz komunikację synchroniczną i asynchroniczną.",
+        "kody": ["TIN", "TBK", "TAPI", "TFN", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student ma podstawowa wiedzę w zakresie architektur i programowania systemów mikroprocesorowych, wybranych języków mikroprogramowania procesorów, zna i rozumie zasadę działania podstawowych modułów peryferyjnych oraz interfejsów komunikacyjnych stosowanych w systemach mikroprocesorowych.",
-        "kody": [
-          "SCR"
-        ],
+        "tresc": "Zna i rozumie pojęcia z zakresu relacyjnych i nierelacyjnych baz danych, modelowania danych, języka SQL oraz przetwarzania transakcji.",
+        "kody": ["RBD", "TBK", "BYT"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student ma uporządkowaną wiedzę w zakresie architektur komputerów, systemów i sieci komputerowych oraz systemów operacyjnych w tym systemów operacyjnych czasu rzeczywistego.",
-        "kody": [
-          "SCR"
-        ],
+        "tresc": "Zna i rozumie architekturę systemów komputerowych, technikę cyfrową, systemy cyfrowe oraz programowanie na poziomie assemblera.",
+        "kody": ["SKO1", "KPIR", "LLP", "KIP"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true },
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student ma uporządkowaną, podbudowaną teoretycznie wiedzę w zakresie systemów operacyjnych i zasad ich działania, współbieżności i szeregowania zadań, metod synchronizacji i komunikacji między procesami.",
-        "kody": [
-          "SCR"
-        ],
+        "tresc": "Zna i rozumie budowę i zasady działania systemów operacyjnych, w tym zarządzanie procesami, szeregowanie zadań, współbieżność i systemy czasu rzeczywistego.",
+        "kody": ["SCR", "SOP", "UKOS"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student ma wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki.",
-        "kody": [
-          "FIZ"
-        ],
+        "tresc": "Zna i rozumie zagadnienia sieci komputerowych, protokołów komunikacyjnych, wirtualizacji, konteneryzacji oraz chmury obliczeniowej.",
+        "kody": ["DEV", "SKO1", "BYT", "UKOS"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student ma wiedzę z zakresu rachunku prawdopodobieństwa, statystyki matematycznej i analizy danych wykorzystywaną w rozwiązywaniu prostych zadań inżynierskich w informatyce.",
-        "kody": [
-          "SAD"
-        ],
+        "tresc": "Zna i rozumie podstawy i zaawansowane koncepcje bezpieczeństwa systemów informatycznych, kryptografii, zabezpieczania sieci i ochrony danych.",
+        "kody": ["BSI", "AIC", "KC"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WK", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi czytać ze zrozumieniem kod języków skryptowych, tworzyć skrypty oraz zweryfikować poprawność utworzonego kodu.",
-        "kody": [
-          "WPR"
-        ],
+        "tresc": "Zna i rozumie podstawy inżynierii wymagań: specyfikowanie, analizę, modelowanie i pielęgnację wymagań systemowych.",
+        "kody": ["PRI", "BYT", "PRO", "RTO"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi projektować aplikacje zgodnie z paradygmatem strukturalnym i obiektowym. Student posiada podstawową wiedzę na temat protokołu HTTP oraz tworzenia bezpiecznych aplikacji internetowych i bazodanowych.",
-        "kody": [
-          "WPR"
-        ],
+        "tresc": "Zna i rozumie cykle wytwarzania oprogramowania, metodyki zwinne i tradycyjne, standardy jakości oprogramowania oraz rolę modelowania obiektowego i notacji UML.",
+        "kody": ["BYT", "PRO", "PRI", "ZPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true },
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi wyjaśnić zasady asynchronicznego programowania w JavaScript i zastosować je w praktyce.",
-        "kody": [
-          "TIN"
-        ],
+        "tresc": "Zna i rozumie zaawansowane zagadnienia inżynierii oprogramowania: wzorce projektowe, standardowe API, narzędzia wspomagające i dobre praktyki programistyczne.",
+        "kody": ["PRO", "BYT", "ZPR", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi wyjaśnić zasady responsywności stron internetowych oraz zastosować odpowiednie techniki do ich implementacji.",
-        "kody": [
-          "TIN"
-        ],
+        "tresc": "Zna i rozumie metody walidacji i testowania oprogramowania, w tym testy jednostkowe, integracyjne, E2E oraz techniki zapewniania jakości.",
+        "kody": ["BYT", "PRO", "TAPI", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi wyjaśnić, jak działają żądania i odpowiedzi HTTP, a także zidentyfikować i opisać różne metody, kody odpowiedzi i nagłówki.",
-        "kody": [
-          "TBK"
-        ],
+        "tresc": "Zna i rozumie pojęcia z zakresu modelowania systemów z użyciem notacji UML, BPMN i Sieci Petriego oraz idee weryfikacji systemów przez logiki temporalne.",
+        "kody": ["MAS", "PRI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi wyjaśnić, jak są zbudowane współczesne aplikacje internetowe, włączając w to rolę i funkcje backendu.",
-        "kody": [
-          "TBK"
-        ],
+        "tresc": "Zna i rozumie podstawy sztucznej inteligencji, uczenia maszynowego i głębokiego uczenia: algorytmy, sieci neuronowe, metody optymalizacji i oceny jakości modeli.",
+        "kody": ["AAI", "IML", "MLR", "FDL", "NAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi: zastosować zaawansowane pojęcia z zakresu programowania, co jest niezbędne przy tworzeniu, testowaniu i uruchamianiu aplikacji wykorzystujących NLP. Umiejętność programowania w różnych językach oraz znajomość technik i narzędzi programistycznych jest kluczowa w realizacji projektów związanych z NLP.",
-        "kody": [
-          "PJN"
-        ],
+        "tresc": "Zna i rozumie zaawansowane pojęcia z zakresu przetwarzania języka naturalnego (NLP), w tym modele językowe, probabilistykę i technologie stosowane w praktycznych zastosowaniach NLP.",
+        "kody": ["PJN"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP.",
-        "kody": [
-          "PJN"
-        ],
+        "tresc": "Zna i rozumie kluczowe zagadnienia computer vision: przetwarzanie i analiza obrazów, segmentacja, detekcja obiektów, sieci splotowe i transformerowe, rekonstrukcja 3D oraz systemy czasu rzeczywistego.",
+        "kody": ["COV"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi: zrozumieć zaawansowane pojęcia związane z wybraną specjalizacją w NLP, co pozwala na rozwijanie innowacyjnych rozwiązań oraz adaptację aktualnych technologii w praktyce. Wiedza ta umożliwia studentom angażowanie się w badania i rozwój w dziedzinie NLP.",
-        "kody": [
-          "PJN"
-        ],
+        "tresc": "Zna i rozumie algorytmy metaheurystyczne (algorytmy genetyczne, tabu search) oraz metody statystyczne do analizy i porównywania metod rozwiązywania problemów obliczeniowych.",
+        "kody": ["MHE", "NAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie działanie preprocesorów CSS i potrafi wykorzystać je do optymalizacji oraz organizacji kodu CSS.",
-        "kody": [
-          "TIN"
-        ],
+        "tresc": "Zna i rozumie podstawy grafiki komputerowej 2D i 3D, multimediów oraz komunikacji człowiek-komputer.",
+        "kody": ["ZZGA", "OGL", "GRK"],
         "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie etyczne i prawne aspekty tworzenia i zarządzania API, w tym prywatność, ochronę danych i zgodność z regulacjami prawnymi.",
-        "kody": [
-          "TAPI"
-        ],
+        "tresc": "Zna i rozumie zagadnienia modelowania i animacji 3D, w tym techniki riggingu, teksturowania i tworzenia animacji parametrycznych.",
+        "kody": ["M3D", "ANK", "S3D"],
         "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student rozumie kluczowe zagadnienia związane ze skalowalnością i wydajnością aplikacji internetowych, oraz umie zastosować praktyki optymalizacji.",
-        "kody": [
-          "TBK"
-        ],
+        "tresc": "Zna i rozumie podstawy projektowania gier: pętlę rozgrywki, model MDA, psychologię gracza, mechanizmy retencji oraz projektowanie interfejsów UX/UI w grach.",
+        "kody": ["SGD", "WG1", "WG2", "PG1", "PG2"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student rozumie kwestie związane z zabezpieczaniem API, w tym uwierzytelnianie, autoryzację oraz ochronę przed powszechnymi zagrożeniami i atakami.",
-        "kody": [
-          "TAPI"
-        ],
+        "tresc": "Zna i rozumie architekturę i programowanie mikrokontrolerów i systemów wbudowanych, interfejsów komunikacyjnych, automatyki i robotyki oraz internetu rzeczy (IoT).",
+        "kody": ["SCR", "SWB", "KPIR", "KIP", "PTT", "RTO", "PPS"],
         "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WG", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student rozumie metody zapewniania jakości i testowania API, włączając w to testy jednostkowe, integracyjne oraz testy obciążenia.",
-        "kody": [
-          "TAPI"
-        ],
+        "tresc": "Zna i rozumie zasady analizy wykonalności przedsięwzięcia informatycznego oraz metody oceny ekonomicznej, społecznej i etycznej projektów.",
+        "kody": ["SAI", "POZ", "PRIN"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie podstawowe koncepcje i zasady rządzące współczesnymi API, w tym ich role i zastosowania w różnych typach aplikacji internetowych.",
-        "kody": [
-          "TAPI"
-        ],
+        "tresc": "Zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, innowacyjności i przedsiębiorczości w obszarze IT, w tym aspekty prawa autorskiego i własności intelektualnej.",
+        "kody": ["POZ", "PRIN", "ZPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie podstawowe technologie internetowe oraz ich rolę w tworzeniu nowoczesnych stron i aplikacji internetowych.",
-        "kody": [
-          "TIN"
-        ],
+        "tresc": "Zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki oraz zasady odpowiedzialności zawodowej informatyka.",
+        "kody": ["POZ", "PRIN", "SAI", "ZPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie podstawy działania narzędzi serwerowych, takich jak Node.js i potrafi je zastosować w kontekście budowy aplikacji internetowych.",
-        "kody": [
-          "TIN"
-        ],
+        "tresc": "Zna i rozumie podstawowe pojęcia w zakresie planowania przedsięwzięcia informatycznego: wstępna ocena ekonomiczna, zarządzanie ryzykiem, analiza wymagań i planowanie zasobów.",
+        "kody": ["PRIN", "ZPR", "PRO", "SAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_WK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk.",
-        "kody": [
-          "MAS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student rozumie wagę wymagań systemowych w procesie wytwarzania oprogramowania",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student rozumie zaawansowane pojęcia w zakresie technologii backendowych.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student rozumie zasady działania języka JavaScript, w tym zmienne, operatory oraz funkcje, i potrafi zastosować je w praktycznych zadaniach.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student rozumie zasady działania sieci komputerowych, protokołów komunikacyjnych i zagadnień bezpieczeństwa.",
-        "kody": [
-          "UKOS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student rozumie, jak działa nierelacyjna baza danych, potrafi zidentyfikować główne cechy bazy dokumentowej i zastosować je w praktyce.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie zdefiniować i opisać wzorzec REST API, jego zasady i konwencje, a także zastosowania w budowie aplikacji internetowych.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student wie, że jakość danych ma kluczowe znaczenie w przypadku uczenia maszynowego",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna architektury systemów komputerowe (w tym mikrokontrolerowych) i rozumie zasady projektowania systemów cyfrowych, opartych o mikrokontrolery.",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie anatomię kluczowych zagrożeń Cyber",
-        "kody": [
-          "AIC",
-          "KC"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie cechy najistotniejszych cykli wytwarzania/ewolucji oprogramowania",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie elementy programowania funkcyjnego na przykładzie języka JavaScript. Student zna i rozumie techniki oraz metody programistyczne wykorzystywane w języku JavaScript.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN",
-        "kody": [
-          "MAS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie idee rekurencji. Student zna i rozumie podstawowe struktury danych (stosy, kolejki, drzewa).",
-        "kody": [
-          "MAD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie istotę podstawowych struktur danych oraz potrafi dobrać je do zadania.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie jak zastosować pojęcia algebry i geometrii analitycznej do problemów informatycznych.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie kluczowe zagadnienia i metody w zakresie grafiki, multimediów i komunikacji człowiek-komputer.",
-        "kody": [
-          "ZZGA"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie konstrukcje programistyczne w języku C#.",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie metody pracy na zbiorach danych.",
-        "kody": [
-          "MHE"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie metody przechowywania danych dla uczenia maszynowego",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych. Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie notację asymptotyczną opisującą złożoność obliczeniową.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie ograniczenia występujące w procesie wytwarzania oprogramowania",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie opis matematyczny sztucznych sieci neuronowych z wykorzystaniem elementów algebry. Zna i rozumie algorytmy optymalizacji funkcji błędu z wykorzystaniem metod gradientowych.",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe fakty z historii i kultury Japonii.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe metody projektowania i implementacji systemów wbudowanych",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, szczególnie przedsięwzięć informatycznych i rozumie rolę jej innowacyjności. Zna i rozumie ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych.",
-        "kody": [
-          "PRIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe problemów etycznych, społecznych i zawodowych informatyki oraz odpowiedzialności związanej z działalnością",
-        "kody": [
-          "POZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki; zna i rozumie podstawowe pojęcia z zakresu ochrony własności intelektualnej oraz prawa patentowego i autorskiego; zna i rozumie pozatechniczne aspekty informatyki, powiązanie przedsięwzięć informatycznych z ich otoczeniem i zagrożenia stąd płynące",
-        "kody": [
-          "PRIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber",
-        "kody": [
-          "AIC",
-          "KC"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika.",
-        "kody": [
-          "SGD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawowe zastosowania wybranych narzędzi uczenia maszynowego",
-        "kody": [
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia logiki oraz język kwantyfikatorów. Zna i rozumie reguły wnioskowania przeprowadzania prostych dowodów. Student zna i rozumie pojęcia zbioru, relacji, relacji równoważności, obrazu i przeciwobrazu zbioru i złożenie relacji w zbiorach dyskretnych. Student zna i rozumie pojęcia z arytmetyki modularnej. Student zna i rozumie podstawowe twierdzenia teorii liczb oraz jej znaczenie w informatyce. Student zna i rozumie pojęcia kombinatoryki, prawdopodobieństwa, prawdopodobieństwa warunkowego i całkowitego oraz zmiennej losowej, wartości oczekiwanej i wariancji. Student zna i rozumie pojęcia z algebry Boole’a oraz funkcji boolowskich.",
-        "kody": [
-          "MAD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia takie jak specyfikacja, weryfikacja i własność stopu algorytmu.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki.",
-        "kody": [
-          "ELK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia w zakresie pojęcia wirtualizacji i konteneryzacji z wykorzystaniem sieci komputerowych, ich technologii oraz protokołów komunikacyjnych.",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia w zakresie sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia występujące w procesie konteneryzacji na przykładzie narzędzia Docker. Zna i rozumie proces tworzenia, skonteneryzowanych bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie pojęcia związane z orchestracją i monitorowaniem takiej aplikacji",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu elektrotechniki, elektroniki i miernictwa; powiązania informatyki z tymi obszarami",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu.",
-        "kody": [
-          "ELK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer",
-        "kody": [
-          "OGL"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu kluczowych zagadnień w zarządzania informacją i modelowania danych; szczegółowo zna i rozumie zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma znajomość aktualnie stosowanych systemów baz danych",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności",
-        "kody": [
-          "PRIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zakresu tworzenia interaktywnych aplikacji internetowych, umożliwiających komunikację typu człowiek-komputer.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia z zastosowania z zakresu AI od strony oprogramowania.",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia związane z algorytmami heurystycznymi takie jak funkcja celu, funkcja selekcji, automatyczne dostosowanie zasięgu mutacji, programowanie genetyczne, metoda tabu, krzywa zbieżności. Student potrafi zidentyfikować problemy które można rozwiązać za pomocą algorytmów z dziedziny metaheurystyk. Student potrafi także zastosować metody statystyczne od analizy i porównani różnych metod rozwiązania tego samego problemu.",
-        "kody": [
-          "MHE"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia związane z implementowaniem zapór ogniowych, ochrony przed wtargnięciami do sieci, systemów kryptograficznych, implementacji wirtualnych sieci prywatnych i zarządzania bezpiecznymi sieciami komputerowymi; zna metody zabezpieczania urządzeń sieciowych i systemów komputerowych.",
-        "kody": [
-          "BSI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcia związane z pojęciem Frontend Development. Student zna i rozumie pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie pojęcie zbioru liczb zespolonych. Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych. Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie poznane pojęcia w stopniu zaawansowanym.",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie składnię rdzeniowych diagramów języka UML",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie sposoby programowania grafiki dwu- i trójwymiarowej.",
-        "kody": [
-          "ZZGA"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie techniki specyfikowania wymagań. Student zna i rozumie umiejscowienie poszczególnych elementów testowania w zależności od obranego cyklu",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie w jaki sposób zaplanować przedsięwzięcie informatyczne. Zna sposób wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności przedsięwzięcia.",
-        "kody": [
-          "POZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie wykorzystywane w przemyśle i badaniach naukowych algorytmy uczenia maszynowego i modele sieci neuronowych",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia w zakresie programowania grafiki 3W, stosowanych aktualnie narzędzi i technologii",
-        "kody": [
-          "OGL"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektura wieloprocesorowych oraz programowania na poziomie assemblera",
-        "kody": [
-          "KPIR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki",
-        "kody": [
-          "KPIR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia z zakresu uczenia maszynowego oraz sposoby ich wykorzystania w sytuacjach praktycznych.",
-        "kody": [
-          "IML"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających;",
-        "kody": [
-          "BYT",
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zaawansowane pojęcia związane z pojęciem Frontend Development. Student zna i rozumie zaawansowane pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zagadnienia z zakresu sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zasady działania architektury systemów komputerowych oraz systemu Linux.",
-        "kody": [
-          "UKOS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zasady funkcjonowania wybranych składników systemu wbudowanego",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zasady prowadzenia działalności",
-        "kody": [
-          "POZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie zastosowania wybranych narzędzi uczenia maszynowego",
-        "kody": [
-          "IML"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach. Zna podstawowe zasady symulacji komputerowych.",
-        "kody": [
-          "SGD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie:kluczowe zagadnienia i metody z zakresu computer vision, w tym techniki przetwarzania i analizy obrazów cyfrowych; rozumie podstawy algorytmów segmentacji obrazu, detekcji krawędzi i cech charakterystycznych; zna metody rozpoznawania obiektów i twarzy w obrazach oraz sekwencjach wideo; jest zaznajomiony z technikami rekonstrukcji trójwymiarowej sceny z obrazów dwuwymiarowych; zna podstawy deep learningu w zastosowaniu do zadań widzenia komputerowego, w tym architekturę i zastosowania sieci neuronowych splotowych in transformerowych ; jest świadomy wyzwań związanych z przetwarzaniem obrazów w czasie rzeczywistym i optymalizacją wydajności algorytmów wizyjnych.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie:zaawansowane koncepcje i techniki przetwarzania obrazów cyfrowych, w tym metody segmentacji obrazu, detekcji krawędzi i wykrywania obiektów; posiada wiedzę na temat zastosowania splotowych i transformerowych sieci neuronowych w zadaniach klasyfikacji, detekcji, segmentacji i generowania obrazów; rozumie zasady działania algorytmów przetwarzających obrazy 2D i 3D oraz sekwence wideo; zna podstawy przetwarzania obrazów w czasie rzeczywistym i optymalizacji wydajności algorytmów computer vision; jest zaznajomiony z bibliotekami i frameworkami takimi jak OpenCV, PyTorch i HuggingFace stosowanymi w implementacji rozwiązań z zakresu widzenia komputerowego; rozumie wyzwania związane z przetwarzaniem dużych zbiorów danych obrazowych i metody ich efektywnego składowania i analizy.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumie:zaawansowane pojęcia i techniki w dziedzinie computer vision; rozumie głębokie modele uczenia maszynowego stosowane w analizie obrazów, w tym architektury sieci neuronowych takie jak CNN, R-CNN, YOLO, autoencoder, GAN, modele dyfuzyjne, transformery do obrazów; zna zaawansowane metody detekcji i segmentacji obiektów, w tym techniki segmentacji semantycznej i instancyjnej; rozumie zasady działania systemów śledzenia wielu obiektów (multi-object tracking) w czasie rzeczywistym; jest zaznajomiony z technikami generowania i manipulacji obrazów przy użyciu modeli generatywnych, takich jak GANy i dyfuzyjne; zna metody uczenia się bez nadzoru i samonadzorowanego w kontekście analizy obrazów; rozumie problematykę interpretacji i wyjaśnialności modeli wizyjnych; zna zaawansowane techniki przetwarzania obrazów medycznych i przemysłowych; rozumie zasady działania i zastosowania systemów widzenia maszynowego w robotyce i pojazdach autonomicznych; jest zaznajomiony z aktualnymi narzędziami i bibliotekami takimi jak PyTorch, czy OpenCV, stosowanymi w zaawansowanych projektach computer vision.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumiepodstawowe zagadnienia i pojęcia kryptografii i kryptoanalizy oraz zasady działania algorytmów kryptograficznych.",
-        "kody": [
-          "BSI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna i rozumieróżnicę między algorytmami iteracyjnymi i rekursywnymi.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna najważniejsze pojęcia estetyki japońskiej.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna odpowiednie narzędzia wspomagające tworzenie skryptów oraz wspomagające projektowanie aplikacji internetowych, bazodanowych",
-        "kody": [
-          "WPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna podstawowe pojęcia dotyczące systemów operacyjnych, ich budowy i działania",
-        "kody": [
-          "UKOS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna podstawowe pojęcia i metody wnioskowania statystycznego oraz ich zastosowania w praktyce informatycznej.",
-        "kody": [
-          "SAD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student zna problematykę bezpieczeństwa w nowoczesnych systemach informatycznych; rozumie pojęcia związane z poufnością, integralnością, dostępnością, uwierzytelnianiem, autoryzacją i ewidencjonowaniem.",
-        "kody": [
-          "BSI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "W obszarze informatyki; ma podstawową wiedzę w zakresie ochrony własności intelektualnej oraz prawa patentowego i autorskiego.",
-        "kody": [
-          "POZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wie, jak zaplanować i wykonać prosty eksperyment fizyczny oraz przeanalizować otrzymane wyniki; zna elementy teorii niepewności pomiarowych w zastosowaniu do eksperymentów fizycznych;",
-        "kody": [
-          "FIZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wykorzystanie delegacji i obsługi zdarzeń",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wykorzystanie i tworzenie atrybutów oraz korzystanie z mechanizmu refleksji",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wykorzystanie serializacji",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wykorzystanie właściwości i indeksatorów",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki.",
-        "kody": [
-          "ZPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności.",
-        "kody": [
-          "ZPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie pojęcie złożoności problemu algorytmicznego oraz klasy złożoności.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania.",
-        "kody": [
-          "ZPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie zastosowanie losowości w rozwiązywaniu problemów obliczeniowych.",
-        "kody": [
-          "NAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie zastosowanie pojęć matematycznych w sztucznej inteligencji",
-        "kody": [
-          "NAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna sposoby planowania i przeprowadzania eksperymentów w wykorzystaniem sieci neuronowych oraz ocenić ich wyniki.",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_WG",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Zna style przywódcze i teorie motywacji stosowane w zarządzaniu zespołami inżynierskimi oraz rozumie psychologiczne aspekty pracy zespołowej i techniki udzielania informacji zwrotnej (FUKO, SBI).",
-        "kody": ["KLI"],
-        "mnsiw": [{ "kod": "P6S_WK", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Zna strategie rozwiązywania konfliktów w zespole i techniki moderowania spotkań grupowych (facilitation).",
-        "kody": ["KLI"],
-        "mnsiw": [{ "kod": "P6S_WK", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test) i rozumie różnice między projektowaniem skoncentrowanym na technologii a Human-Centered Design.",
+        "tresc": "Zna i rozumie zasady projektowania metodą Design Thinking: empatyzowanie z użytkownikiem, definiowanie problemu, generowanie pomysłów, prototypowanie i testowanie.",
         "kody": ["DTH"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": false }]
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Posiada wiedzę o technikach kreatywnego rozwiązywania problemów, moderowania sesji ideacyjnych oraz tworzenia prototypów low-fidelity (makiety papierowe, storyboarding).",
-        "kody": ["DTH"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": false }]
+        "tresc": "Zna style przywódcze, teorie motywacji, techniki udzielania informacji zwrotnej (FUKO, SBI) oraz strategie rozwiązywania konfliktów w zespołach inżynierskich.",
+        "kody": ["KLI"],
+        "mnsiw": [
+          { "kod": "P6S_WK", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Zna zasady projektowania pętli rozgrywki (gameplay loop), mechanizmów retencji gracza oraz psychologiczne podstawy projektowania gier (flow, motywacja, pętle dopaminowe).",
-        "kody": ["PG1"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna i rozumie podstawowe fakty z historii i kultury Japonii, w tym estetykę japońską, oraz potrafi wyszukiwać specjalistyczne informacje na ten temat.",
+        "kody": ["HKJ"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false },
+          { "kod": "P6S_WK", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Rozumie model MDA (Mechanics, Dynamics, Aesthetics) oraz metodologię testów korygujących i zbierania feedbacku od testerów gier.",
-        "kody": ["PG1"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna podstawy teoretyczne i praktyczne języków skryptowych, w tym składnię, struktury danych, asynchroniczność oraz techniki programistyczne JavaScript.",
+        "kody": ["TIN", "TFN", "WPR"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Posiada zaawansowaną wiedzę o psychologii gracza i projektowaniu doświadczeń UX w grach, trendach rynkowych oraz modelach biznesowych (F2P, Premium).",
-        "kody": ["PG2"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna i rozumie zagadnienia dotyczące jakości danych, metod ich przechowywania, przygotowania zbiorów uczących oraz oceny wyników w projektach uczenia maszynowego.",
+        "kody": ["IML", "MLR", "FDL"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Rozumie proces budowania spójności wizualnej (Art Direction) i dźwiękowej w grach oraz podstawowe techniki marketingu gier.",
-        "kody": ["PG2"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna i rozumie pojęcia z zakresu reprezentacji wiedzy i wnioskowania: systemy regułowe, sieci semantyczne, logika rozmyta i ich zastosowania.",
+        "kody": ["KNO", "NAI"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Zna i rozumie podstawowe pojęcia DDD (model domenowy, encje, wartości, agregaty, repozytoria, bounded context) oraz założenia architektury oktogonalnej i zasady separacji warstw.",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna zaawansowane koncepcje architektoniczne aplikacji internetowych: DDD, architektura heksagonalna, SOA, mikroserwisy, uwierzytelnianie OAuth 2.1 oraz integracja usług.",
+        "kody": ["PAI", "TBK", "TAPI"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": true }
+        ]
       },
       {
-        "tresc": "Zna mechanizmy uwierzytelniania i autoryzacji w aplikacjach internetowych (OAuth 2.1), podstawy SOA oraz typowe style integracji usług (API, komunikacja synchroniczna/asynchroniczna).",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna i rozumie rolę testów integracyjnych i end-to-end w cyklu wytwarzania oprogramowania oraz podstawy automatyzacji w CI.",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna i rozumie pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera.",
-        "kody": ["LLP", "KIP"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy (IoT), jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii.",
-        "kody": ["PTT", "RTO", "KIP"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki.",
-        "kody": ["KIP"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna i rozumie podstawowe pojęcia z zakresu inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań oraz ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania.",
-        "kody": ["RTO"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Zna funkcje, biblioteki i podstawową składnię Arduino, wie jak działa kompilator AVR, zna niskopoziomowe programowanie i zarządzanie energią w MSP430 oraz języki Ladder Logic i Structured Text.",
-        "kody": ["PPS"],
-        "mnsiw": [{ "kod": "P6S_WG", "inzynierskie": true }]
+        "tresc": "Zna możliwości i ograniczenia narzędzi do druku 3D (FDM) oraz zasady projektowania modeli do wydruku z uwzględnieniem specyfiki materiałów i orientacji obiektu.",
+        "kody": ["SPR"],
+        "mnsiw": [
+          { "kod": "P6S_WG", "inzynierskie": false }
+        ]
       }
     ],
     "umiejetnosci": [
       {
-        "tresc": "Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Potrafi stosować aparat matematyczny (algebra liniowa, geometria analityczna, rachunek prawdopodobieństwa) do interpretowania pojęć informatycznych i rozwiązywania problemów obliczeniowych.",
+        "kody": ["ALG", "MAD", "SAD", "GRK", "MHE"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Potrafi przeprowadzić analizę złożoności algorytmów, dobrać odpowiednie struktury danych i algorytmy do zadania oraz zaimplementować je w wybranym środowisku programistycznym.",
+        "kody": ["ASD", "GRK", "MAD"],
         "mnsiw": [
-          {
-            "kod": "P6S_UU",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Potrafi programować w języku C# z użyciem platformy .NET: tworzyć hierarchie klas, stosować wzorce obiektowe, delegacje, zdarzenia, serializację i mechanizm refleksji.",
+        "kody": ["POJ", "DOT"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true },
+          { "kod": "P6S_UK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Konstruowania schematu relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych",
-        "kody": [
-          "RBD"
-        ],
+        "tresc": "Potrafi programować w języku C++ z uwzględnieniem współbieżności, wyrażeń lambda, zadań asynchronicznych, mutexa oraz innych zaawansowanych technik języka.",
+        "kody": ["CPP"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Krytycznej oceny posiadanej wiedzy i odbieranych treści, uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięgania opinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu",
-        "kody": [
-          "WF"
-        ],
+        "tresc": "Potrafi tworzyć aplikacje webowe z użyciem JavaScript/Node.js, stosując techniki programowania funkcyjnego, reaktywnego i asynchronicznego.",
+        "kody": ["TIN", "TFN", "TBK"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Potrafi zaprojektować i zaimplementować warstwową aplikację webową (frontend + backend) w oparciu o wybrane wzorce architektoniczne, z użyciem odpowiednich frameworków i narzędzi.",
+        "kody": ["TFN", "TIN", "TBK", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Posługuje się terminologią z zakresu fizyki oraz nomenklaturą poszczególnych dyscyplin z nią związanych;",
-        "kody": [
-          "FIZ"
-        ],
+        "tresc": "Potrafi projektować i implementować interfejsy API (REST, GraphQL, gRPC), zapewniając wydajność, bezpieczeństwo, skalowalność i zgodność z dobrymi praktykami.",
+        "kody": ["TAPI", "TBK"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Potrafi korzystać z bibliotek . NET (m.in. System, System. Collections. Generic, System. IO, System. Text. RegularExpressions).",
-        "kody": [
-          "POJ"
-        ],
+        "tresc": "Potrafi projektować i implementować relacyjne i nierelacyjne bazy danych: tworzyć modele ERD, formułować zapytania SQL, zarządzać transakcjami i wykonywać operacje CRUD.",
+        "kody": ["RBD", "TBK"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Potrafi pracować w zespole, oszacować czas i koszty realizacji zadania, planować i realizować harmonogram prac.",
-        "kody": [
-          "ZPR"
-        ],
+        "tresc": "Potrafi zainstalować, skonfigurować i administrować systemem operacyjnym, a także zarządzać procesami, synchronizacją i sieciowymi usługami systemowymi.",
+        "kody": ["SOP", "UKOS"],
         "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Potrafi przeanalizować złożoność programów opartych o zasadę \"dziel i zwyciężaj\".",
-        "kody": [
-          "ASD"
-        ],
+        "tresc": "Potrafi projektować, wdrażać i zarządzać konteneryzowanymi aplikacjami (Docker, Docker Compose) oraz automatyzować procesy CI/CD.",
+        "kody": ["DEV", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Potrafi skonstruować i uruchomić program obiektowy w języku C# (aplikacja konsolowa) z wykorzystaniem platformy . NET.",
-        "kody": [
-          "POJ"
-        ],
+        "tresc": "Potrafi specyfikować wymagania systemowe, tworzyć dokumentację projektową z użyciem narzędzi CASE i notacji UML oraz oceniać wykonalność przedsięwzięcia informatycznego.",
+        "kody": ["PRI", "SAI", "ZPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją projektu informatycznego.",
-        "kody": [
-          "ZPR"
-        ],
+        "tresc": "Potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania, a także oceniać i poprawiać jakość projektu.",
+        "kody": ["BYT", "PRO"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Samodzielnie poszerzać wiedzę z zakresu computer vision, wykorzystując platformy e-learningowe jak Coursera czy edX czy kursy na platformie YouTube; implementować i testować algorytmy wizyjne, korzystając z otwartych repozytoriów kodu; śledzić postępy w dziedzinie poprzez lekturę artykułów naukowych i uczestnictwo w webinarach; efektywnie rozwiązywać problemy techniczne przy użyciu forów specjalistycznych; tworzyć własne projekty wizyjne i dzielić się nimi online; uczestniczyć w wirtualnych grupach studyjnych, rozwijając praktyczne umiejętności w dziedzinie przetwarzania obrazów i sztucznej inteligencji.",
-        "kody": [
-          "COV"
-        ],
+        "tresc": "Potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować i zdebuggować program oraz uruchomić cały system (OS, bazy danych, aplikacja).",
+        "kody": ["PRO", "GRK", "NAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Stosuje podstawowe metody matematyczne, statystyczne i techniki informatyczne do opisu zjawisk i analizy danych;",
-        "kody": [
-          "FIZ"
-        ],
+        "tresc": "Potrafi zaplanować i zrealizować prosty projekt informatyczny zgodnie z metodyką obiektową, dobierając model procesu wytwarzania, narzędzia i wzorce programowe do specyfiki zadania.",
+        "kody": ["PRO", "ZPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student jest gotów do nauki o kulturze fizycznej",
-        "kody": [
-          "WF"
-        ],
+        "tresc": "Potrafi przeprowadzić testy oprogramowania (jednostkowe, integracyjne, E2E), identyfikować i dokumentować defekty oraz diagnozować je przy użyciu narzędzi debugowania.",
+        "kody": ["BYT", "PRO", "TAPI", "PAI", "WG1", "WG2"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student jest w stanie bezpiecznie korzystać z komputera",
-        "kody": [
-          "UKOS"
-        ],
+        "tresc": "Potrafi przygotować i przetworzyć dane na potrzeby uczenia maszynowego, dobrać właściwe algorytmy ML, przeprowadzić trening modelu i ocenić uzyskane wyniki.",
+        "kody": ["IML", "MLR", "AAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student ma umiejętność analizowania i wyjaśniania obserwowanych zjawisk; tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów",
-        "kody": [
-          "FIZ"
-        ],
+        "tresc": "Potrafi zastosować narzędzia sztucznej inteligencji i sieci neuronowych do rozwiązywania praktycznych problemów, identyfikować zadania wymagające podejść przybliżonych.",
+        "kody": ["AAI", "NAI", "FDL"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student posiada umiejętność formułowania zapytań w języku SQL i zarządzania bazą danych.",
-        "kody": [
-          "RBD"
-        ],
+        "tresc": "Potrafi samodzielnie pozyskiwać specjalistyczne informacje z literatury, baz danych i Internetu w języku polskim i angielskim, krytycznie je analizować, syntetyzować oraz formułować wnioski.",
+        "kody": ["PRO", "PJN", "COV", "HKJ"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UK", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi - zgodnie z zadaną specyfikacją - zaprojektować oraz zrealizować prosty system informatyczny, używając właściwych metod, technik i narzędzi.",
-        "kody": [
-          "SCR"
-        ],
+        "tresc": "Potrafi komunikować się w języku angielskim na poziomie akademickim i zawodowym: pisać dokumentację techniczną, abstrakty, raporty i CV z użyciem fachowego słownictwa.",
+        "kody": ["ANG1-3", "SPR"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UK", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów.",
-        "kody": [
-          "PRO"
-        ],
+        "tresc": "Potrafi operować grafiką 2D i 3D za pomocą standardowych API graficznych, tworzyć interfejsy użytkownika i przeprowadzać testy użyteczności aplikacji.",
+        "kody": ["GRK", "ZZGA", "OGL"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi biegle posługiwać się dokumentacją w języku polskim i angielskim",
-        "kody": [
-          "SPR"
-        ],
+        "tresc": "Potrafi modelować obiekty 3D technikami low-poly i high-poly, rozwijać siatki UV, teksturować i wypalać tekstury proceduralne przy użyciu narzędzi takich jak Blender.",
+        "kody": ["M3D", "S3D"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi czytać ze zrozumieniem programy w języku C#. Potrafi je pisać, weryfikować i uruchamiać.",
-        "kody": [
-          "DOT"
-        ],
+        "tresc": "Potrafi tworzyć animacje szkieletowe i parametryczne, stosować rigging, mocap i animacje zależne obiektów w przestrzeni 3D.",
+        "kody": ["ANK"],
         "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać.",
-        "kody": [
-          "CPP"
-        ],
+        "tresc": "Potrafi zaprojektować i zaimplementować prostą grę komputerową z użyciem silnika gier (np. Unreal Engine), w tym blueprintów, fizyki, animacji i efektów cząsteczkowych.",
+        "kody": ["SGD", "WG1", "WG2", "PG1", "PG2"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania",
-        "kody": [
-          "GRK"
-        ],
+        "tresc": "Potrafi zaprojektować, zbudować i oprogramować systemy wbudowane oparte na mikrokontrolerach, dobierając odpowiednie moduły, interfejsy i algorytmy sterowania.",
+        "kody": ["SCR", "SWB", "KPIR", "KIP", "PPS"],
         "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Student potrafi dobrać algorytm przetwarzania i kompresji obrazu.",
-        "kody": [
-          "ZZGA"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dobrać rodzaj i parametry układu wykonawczego, układu pomiarowego, jednostki sterującej oraz modułów peryferyjnych i komunikacyjnych dla wybranego zastosowania oraz dokonać ich integracji w postaci wynikowego system pomiarowo-sterującego.",
-        "kody": [
-          "SCR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dobrać struktury danych odpowiednie do zadania oraz potrafi oszacować złożoność algorytmu.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dobrać właściwe parametry wejściowe, by zoptymalizować działanie wybranych algorytmów.",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dokonać analizy złożoności programów iteracyjnych.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi formułować i rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzać proste wnioskowanie statystyczne.",
-        "kody": [
-          "SGD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi formułować i rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego.",
-        "kody": [
-          "SGD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi komunikować się w języku angielskim w życiu codziennym.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi korzystać ze środowiska developerskiego przeznaczonego do tworzenia programów w języku C# (np. Visual Studio / Rider / VS Code), zaplanować prostą hierarchię klas oraz zastosować proste wzorce obiektowe zależnie od przedstawionego problemu.",
-        "kody": [
-          "POJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi ocenić poprawność konstrukcji obiektowych w programach w języku C#.",
-        "kody": [
-          "POJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi ocenić przydatność paradygmatów programistycznych języka C# do rozwiązania zadań laboratoryjnych oraz dobrać odpowiednie środowisko programistyczne.",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi ocenić przydatność różnych podejść programistycznych na podstawie języka JavaScript i związanych z nimi środowisk na przykładzie narzędzia Node.js",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzenia graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji",
-        "kody": [
-          "GRK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi oteksturować obiekt metodami tekstur proceduralnych",
-        "kody": [
-          "M3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi poprawnie przygotować dane i stworzyć na ich podstawie zbiory uczące, walidujące i testowe",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi porozumiewać się w języku polskim i angielskim w środowisku zawodowy.",
-        "kody": [
-          "S3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi posługiwać się językiem formalnym.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi posługiwać się środowiskiem programistycznym języka C++",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi ocenić przydatność wirtualizacji i konteneryzacji i związanych z nimi środowisk",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikację utworzoną w procesie konteneryzacji za pomocą plików Dockerfile.",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski oraz formułować i uzasadniać opinie.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację",
-        "kody": [
-          "KPIR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi przeprowadzić analizę otrzymanych wyników",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi przeprowadzić analizę prostego problemu analizy danych, dokonać wyboru narzędzi oraz przedstawić i zinterpretować uzyskane wyniki przy użyciu odpowiedniego oprogramowania.",
-        "kody": [
-          "SAD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń",
-        "kody": [
-          "AIC",
-          "KC"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi rozwiązywać problemy z wykorzystaniem narzędzi sztucznej inteligencji",
-        "kody": [
-          "NAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi rozwinąć siatkę obiektu we współrzędnych UV",
-        "kody": [
-          "M3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi samodzielnie przygotować modele 3D oraz odpowiednie pliki STL i gcode za pomocą adekwatnych narzędzi do druku 3D uwzględniając specyfikę technologii FDM ze szczególnym uwzględnieniem wpływu orientacji obiektu na jego wytrzymałość",
-        "kody": [
-          "SPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi skonfigurować środowisko potrzebne do stworzenia skryptów i aplikacji internetowej i bazodanowej, tzn. posiada wiedzę na temat konfiguracji bazy danych oraz oprogramowania, które jest potrzebne do tworzenie projektu programistycznego.",
-        "kody": [
-          "WPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi skonstruować algorytm rozwiązania prostego zadania inżynierskiego oraz zaimplementować, przetestować i uruchomić go w wybranym środowisku programistycznym na komputerze klasy PC dla wybranych systemów operacyjnych.",
-        "kody": [
-          "SCR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi specyfikować wymagania systemowe",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi stworzyć i przetestować backend aplikacji internetowej za pomocą poznanych narzędzi.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi stworzyć model związków encji (ERD) dla przykładowego wycinka rzeczywistości a następnie wykorzystać ten model w budowie prostej bazy danych.",
-        "kody": [
-          "RBD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi tworzyć animacje zależne oraz parametryczne, włącznie z obliczaniem parametrów ruchu (np. prędkości kół zębatych w przekładni planetarnej, itp.)",
-        "kody": [
-          "ANK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi utworzyć animację w oparciu o rig z kości lub innych obiektów powiązanych hierarchicznie",
-        "kody": [
-          "ANK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego oraz ocenić związane z nim zagrożenia",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wskazać mocne i słabe strony systemów ochrony informacji",
-        "kody": [
-          "AIC",
-          "KC"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia systemu wbudowanego",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia uczenia maszynowego",
-        "kody": [
-          "IML",
-          "MLR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wybrać odpowiednie środowisko programistyczne i inne narzędzia, które wspomagają w projektowaniu aplikacji oraz potrafi dobrać model procesu wytwarzania aplikacji do specyfiki przedsięwzięcia. Student potrafi posługiwać się wybranym środowiskiem oraz analizować poprawność działania stworzonej aplikacji.",
-        "kody": [
-          "WPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wyjaśnić pojęcia programowania funkcyjnego oraz obiektowego w JavaScript i zastosować je w kodzie.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykonywać aplikacje graficzne za pomocą Blendera.",
-        "kody": [
-          "S3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień. Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykonywać operacje CRUD na dokumentowej bazie danych, z wykorzystaniem odpowiednich metod i narzędzi.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej.",
-        "kody": [
-          "ALG"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykorzystać dostępne technologie dla reprezentacji wiedzy i wnioskowania w rozwiązywaniu zadanego problemu.",
-        "kody": [
-          "KNO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykorzystać odpowiednie biblioteki do tworzenia aplikacji oraz wykorzystać narzędzia, które umożliwiają tworzenie, debbugowanie i uruchomienie projektów programistycznych. Student potrafi przedstawić stworzoną aplikację oraz omówić jej sposób działania.",
-        "kody": [
-          "WPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykorzystać odpowiednie narzędzia sztucznych sieci neuronowych celem implemantacji algorytmów AI.",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykorzystać protokół HTTP do konstrukcji i obsługi żądań i odpowiedzi w kontekście aplikacji internetowej.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wykorzystać wiedzę i umiejętności analizy algorytmów w realizacjiprojektu dyplomowego.",
-        "kody": [
-          "ASD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wymodelować obiekty w technice low-poly oraz high-poly",
-        "kody": [
-          "M3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wymodelować ruchy obiektów po zadanej, oczekiwanej trajektorii w przestrzeni 3D",
-        "kody": [
-          "ANK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych",
-        "kody": [
-          "M3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikację webową; potrafi korzystać z bibliotek przy użyciu narzędzia npm, środowisk programistycznych, integrujących i uruchomieniowych.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
-        "kody": [
-          "GRK",
-          "NAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy narzędzia Docker utworzyć kontener i umieścić go w technologii chmurowej.",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi wytworzyć zaawansowaną warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku.",
-        "kody": [
-          "TFN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zainstalować kompletny system (OS, baza danych, aplikacje) i go uruchomić",
-        "kody": [
-          "UKOS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zainstalować, skonfigurować i administrować system operacyjny",
-        "kody": [
-          "UKOS"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i dobrać właściwe metody i urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP",
-        "kody": [
-          "FIZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić automatyczny proces tworzenia aplikacji z wykorzystaniem pojęcia konteneryzacji i związanych z nimi narzędzi.",
-        "kody": [
-          "DEV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające).",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji",
-        "kody": [
-          "BYT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców;",
-        "kody": [
-          "BYT",
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować, przygotować i przeprowadzić symulację działania prostych układów automatyki i robotyki.",
-        "kody": [
-          "SCR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych.",
-        "kody": [
-          "SGD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprojektować i wytworzyć oprogramowanie, zgodnie z paradygmatami programistycznymi języka C# oraz przetestować i zdebuggować program. W zależności od specyfiki zadania, potrafi zaplanować etapy wytwarzania oprogramowania oraz dobrać narzędzia programistyczne wspomagające ten proces.",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprojektować proste układy cyfrowe sekwencyjne i kombinatoryczne oraz je oprogramować.",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprojektować złożone układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
-        "kody": [
-          "KPIR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprojektować, zbudować i oprogramować proste, specjalizowane systemy wbudowane oparte na wybranych mikrokontrolerach.",
-        "kody": [
-          "SWB"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym",
-        "kody": [
-          "GRK",
-          "MHE"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym.",
-        "kody": [
-          "ZZGA"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować aparat matematyczny w kontekście AI.",
-        "kody": [
-          "AAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować metody testowania i porównywania metod heurystycznych.",
-        "kody": [
-          "MHE"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować mockupy z zewnętrznych baz motion-capture i stworzyć z nich animację złożoną z różnych nakładających się na siebie akcji",
-        "kody": [
-          "ANK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować narzędzia uczenia maszynowego w sytuacjach praktycznych.",
-        "kody": [
-          "IML"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować poznane metody statystyki opisowej, modelowania probabilistycznego i wnioskowania statystycznego do rozwiązywania zadań informatycznych.",
-        "kody": [
-          "SAD"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować poznane pojęcia celem stworzenia działającego rozwiązania napisanego w jeżyku C#.",
-        "kody": [
-          "DOT"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zastosować reguły logiki i rachunku zdań do reprezentacji wiedzy o problemie i rozwiązania go z użyciem reguł wnioskowania. Student potrafi dobrać odpowiedni model (np. system zdań logicznych, sieć semantyczną, system rozmyty) dla zadanego problemu, zaprojektować go i zaimplementować.",
-        "kody": [
-          "KNO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zidentyfikować problemy obliczeniowe które nie nadają się do rozwiązania klasycznymi algorytmami. Wie kiedy zastosować metody przybliżone.",
-        "kody": [
-          "NAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi znajdować błędy w tworzonych programach obiektowych przy użyciu wybranych środowisk uruchomieniowych i debuggera.",
-        "kody": [
-          "POJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi: analizować i wyjaśniać zjawiska związane z NLP, a także tworzyć modele rzeczywiste. Umiejętność weryfikacji modeli i ich zastosowania do predykcji stanów jest kluczowa w rozwoju aplikacji i systemów opartych na NLP.",
-        "kody": [
-          "PJN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi: pozyskiwać i analizować specjalistyczne informacje z literatury oraz źródeł internetowych w obszarze NLP. Umiejętność krytycznej analizy i syntezy informacji jest niezbędna do rozwoju projektów oraz badań naukowych w dziedzinie przetwarzania języka naturalnego.",
-        "kody": [
-          "PJN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi:współpracować w zespole nad projektami computer vision; trafnie oszacować czas i zasoby potrzebne do implementacji algorytmów przetwarzania obrazu; tworzyć realistyczne harmonogramy projektów wizyjnych, uwzględniające etapy od zbierania danych po testowanie; zarządzać priorytetami w złożonych zadaniach, jak systemy rozpoznawania twarzy; efektywnie komunikować postępy techniczne zespołowi; dostosowywać plan do zmian, utrzymując terminowość dostaw; przewidywać i zarządzać ryzykiem w projektach uczenia maszynowego dla analizy obrazów.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi:zdiagnozować złożone problemy w dziedzinie computer vision, takie jak niska dokładność detekcji obiektów w trudnych warunkach oświetleniowych; zaprojektować rozwiązanie wykorzystujące zaawansowane techniki, np. transfer learning czy data augmentation; dobrać odpowiednie narzędzia, jak PyTorch czy TensorFlow, oraz zestaw danych do treningu; określić etapy implementacji, od preprocessingu obrazów po fine-tuning modelu; zrealizować projekt, iteracyjnie optymalizując wyniki poprzez dostrajanie hiperparametrów i analizę błędów; ocenić efektywność rozwiązania przy użyciu odpowiednich metryk i testów; zaadaptować wdrożone rozwiązanie do wymagań czasu rzeczywistego lub ograniczeń sprzętowych.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi korzystać z narzędzi klasy CASE na poziomie średniozaawansowanym",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi projektować algorytmikę przypadków użycia oraz interakcje pomiędzy składowymi przypadku użycia. Student potrafi projektować architekturę systemu wyrażoną klasami. Student potrafi iteracyjnie udoskonalać komponenty projektowe systemu",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UU",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaprojektować małoskalowe rozwiązanie IT w sposób holistyczny",
-        "kody": [
-          "PRI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie analizować i oceniać różne style i architektury API (takie jak REST, GraphQL, gRPC), rozumiejąc ich zalety, wady i najlepsze zastosowania.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie efektywnie komunikować się w zespole programistycznym, współtworzyć dokumentację API i udostępniać informacje o API zespołowi i interesariuszom.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie pisać i optymalizować kod w języku JavaScript, stosując zmienne, operatory oraz funkcje.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie projektować interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie projektować zaawansowane interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie tworzyć złożone REST API, uwzględniając dobre praktyki i zasady projektowania interfejsów API.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie wykorzystać narzędzia sieciowe w JavaScript, w tym obsługę protokołów HTTP i WebSocket, do budowy dynamicznych aplikacji internetowych.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie wykorzystywać narzędzia i technologie wspierające proces tworzenia, wdrażania i monitorowania API, zwiększając efektywność i jakość pracy.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie zaprojektować i zaimplementować funkcjonalny i optymalizowany backend aplikacji internetowej, wykorzystując zaawansowane techniki programowania.",
-        "kody": [
-          "TBK"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student umie zastosować frameworki CSS w celu tworzenia złożonych i estetycznych interfejsów użytkownika.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować",
-        "kody": [
-          "SOP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)",
-        "kody": [
-          "SOP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": true
-          }
-        ]
-      },
-      {
-        "tresc": "Tworzenia i rozwijania wzorów właściwego postępowania w środowisku pracy i życia, podejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, w których uczestniczy.",
-        "kody": [
-          "WF"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Użytkuje komputer w zakresie koniecznym do wyszukiwania informacji, komunikowania się, organizowania i wstępnej analizy danych, sporządzania raportów i prezentacji wyników;",
-        "kody": [
-          "FIZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_UW",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI, identyfikować źródła konfliktów w zespole i moderować spotkania zespołowe dbając o zaangażowanie wszystkich członków.",
-        "kody": ["KLI"],
-        "mnsiw": [{ "kod": "P6S_UO", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem, stworzyć mapę empatii i personę, zdefiniować Point of View oraz formułować pytania How Might We; tworzy prototypy low-fidelity i wykorzystuje je do zbierania feedbacku.",
-        "kody": ["DTH"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Potrafi zaprojektować i przeprowadzić sesję prototypowania papierowego, szybko budować makiety poziomów (greyboxing/whiteboxing) oraz wyizolować pojedynczą mechanikę (core hook) i sprawdzić jej atrakcyjność przed pełną produkcją.",
-        "kody": ["PG1"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Potrafi zaprojektować i zaimplementować intuicyjny interfejs użytkownika (UI/HUD) w grze, przygotować strategię promocji projektu z analizą grupy docelowej (USP) oraz zarządzać złożonym projektem gry zgodnie z harmonogramem produkcji.",
-        "kody": ["PG2"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Potrafi zaprojektować i zaimplementować backend zgodny z DDD i architekturą oktogonalną, zintegrować frontend z backendem przez API z zachowaniem bezpieczeństwa sesji/tokenów oraz zastosować OAuth 2.1 w aplikacji.",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Potrafi przygotować środowisko uruchomieniowe w kontenerach (Docker + Compose) oraz napisać testy integracyjne i E2E dla kluczowych scenariuszy użytkownika i uruchamiać je automatycznie w CI.",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Potrafi projektować proste układy sekwencyjne i kombinacyjne, obliczać reprezentacje liczb całkowitych i rzeczywistych oraz pisać proste programy na poziomie asemblera.",
-        "kody": ["LLP", "KIP"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
-      },
-      {
-        "tresc": "Potrafi diagnozować problem specyficzny dla internetu rzeczy, projektować jego rozwiązanie, dobierać środki oraz określać i realizować kroki prowadzące do implementacji przyjętego rozwiązania.",
+        "tresc": "Potrafi diagnozować problemy w obszarze internetu rzeczy (IoT) i realizować ich rozwiązania z użyciem odpowiednich technologii sprzętowych i sieciowych.",
         "kody": ["PTT", "RTO", "KIP"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": true }
+        ]
       },
       {
-        "tresc": "Potrafi przeanalizować, zsyntetyzować i oprogramować prosty system wbudowany z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację.",
-        "kody": ["KIP"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+        "tresc": "Potrafi przeprowadzić analizę złożonych problemów computer vision, zaprojektować i zaimplementować rozwiązanie z użyciem bibliotek (OpenCV, PyTorch), ocenić wyniki i zoptymalizować algorytm.",
+        "kody": ["COV"],
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
+        ]
       },
       {
-        "tresc": "Potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość; potrafi operować obrazem dwu- i trójwymiarowym za pomocą standardowego API graficznego oraz przeprowadzać testy użyteczności aplikacji.",
-        "kody": ["RTO"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+        "tresc": "Potrafi zastosować metody reprezentacji wiedzy i wnioskowania (logika predykatów, sieci semantyczne, systemy rozmyte) do rozwiązywania problemów z użyciem systemów AI.",
+        "kody": ["KNO"],
+        "mnsiw": [
+          { "kod": "P6S_UK", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Potrafi programować sekwencje zdarzeń w sterownikach PLC, wykorzystywać C++/Python do szybkiego prototypowania, NodeJS do aplikacji sieciowych oraz programować i optymalizować mikrokontrolery o ograniczonych zasobach (ATtiny).",
-        "kody": ["PPS"],
-        "mnsiw": [{ "kod": "P6S_UW", "inzynierskie": true }]
+        "tresc": "Potrafi analizować i rozwiązywać problemy NLP: budować modele językowe, przetwarzać dane tekstowe i implementować zastosowania praktyczne z użyciem nowoczesnych frameworków.",
+        "kody": ["PJN"],
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi opracować dokumentację projektu informatycznego uwzględniającą aspekty ekonomiczne, społeczne, prawne i etyczne oraz ocenić zagrożenia związane z przedsięwzięciem.",
+        "kody": ["SAI", "ZPR", "BYT"],
+        "mnsiw": [
+          { "kod": "P6S_UK", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi pracować w zespole projektowym: szacować czas i koszty realizacji zadania, planować harmonogram, przyjmować różne role i współtworzyć dokumentację.",
+        "kody": ["PRO", "ZPR", "COV", "TAPI"],
+        "mnsiw": [
+          { "kod": "P6S_UO", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi przygotować modele 3D do druku 3D (STL, G-code), uwzględniając specyfikę technologii FDM, orientację obiektu i ograniczenia materiałowe.",
+        "kody": ["SPR"],
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
+        ]
+      },
+      {
+        "tresc": "Potrafi przeprowadzić wywiad z użytkownikiem, tworzyć mapy empatii i persony, definiować problem metodą HMW oraz budować i testować prototypy low-fidelity.",
+        "kody": ["DTH"],
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi przeprowadzić sesję informacji zwrotnej (FUKO/SBI), identyfikować źródła konfliktów w zespole i moderować spotkania z dbałością o zaangażowanie wszystkich uczestników.",
+        "kody": ["KLI"],
+        "mnsiw": [
+          { "kod": "P6S_UO", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi korzystać z narzędzi wspomagających programowanie (IDE, debugger, systemy kontroli wersji, npm) i wydajnie posługiwać się dokumentacją techniczną w języku polskim i angielskim.",
+        "kody": ["CPP", "DOT", "WPR", "SPR"],
+        "mnsiw": [
+          { "kod": "P6S_UK", "inzynierskie": false }
+        ]
+      },
+      {
+        "tresc": "Potrafi przygotować i przeprowadzić prosty eksperyment fizyczny, posłużyć się symulacją komputerową i przeanalizować wyniki z uwzględnieniem teorii niepewności pomiarowych.",
+        "kody": ["FIZ"],
+        "mnsiw": [
+          { "kod": "P6S_UW", "inzynierskie": false },
+          { "kod": "P6S_UW", "inzynierskie": true }
+        ]
       }
     ],
     "kompetencje_spoleczne": [
       {
-        "tresc": "Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Jest gotów do ciągłego samokształcenia i rozwijania kompetencji zawodowych przez całe życie, śledząc rozwój technologii informatycznych i branżowych.",
+        "kody": ["PRO", "TIN", "TAPI", "COV", "PJN", "ANK", "M3D", "WG1", "WG2", "HKJ", "ANG1-3", "SKO1"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Jest gotów do krytycznej oceny własnych umiejętności, poszukiwania informacji zwrotnej i podejmowania inicjatyw samokształcenia, szczególnie w zakresie nowych technologii.",
+        "kody": ["TIN", "FDL", "COV", "DTH"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest gotów do działania w sposób przedsiębiorczy.",
-        "kody": [
-          "ZPR"
-        ],
+        "tresc": "Jest gotów do efektywnej współpracy w zespole projektowym, przyjmując różne role (analityk, projektant, wykonawca, tester), i do dzielenia się wiedzą z innymi członkami zespołu.",
+        "kody": ["PRO", "PRIN", "ZPR", "ANK", "M3D", "TIN", "TAPI", "PJN", "COV", "PAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest gotów do współdziałań i współpracy w zespole, przyjmując różne role.",
-        "kody": [
-          "ZPR"
-        ],
+        "tresc": "Jest gotów do działania w sposób przedsiębiorczy i innowacyjny oraz do myślenia zorientowanego na tworzenie wartości dodanej w projektach informatycznych.",
+        "kody": ["ZPR", "POZ", "SKO1", "MHE"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KO", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Jest gotów do podejmowania odpowiedzialności za jakość swojej pracy, przestrzegania standardów branżowych oraz stosowania dobrych praktyk inżynierskich.",
+        "kody": ["TIN", "PAI", "PRO"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
+        "tresc": "Jest gotów do efektywnego zarządzania czasem i zasobami, określania priorytetów oraz dostosowywania planu do zmian w dynamicznym środowisku projektowym.",
+        "kody": ["WG1", "WG2", "PRO", "FDL", "COV"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KR", "inzynierskie": false },
+          { "kod": "P6S_KK", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Stosowanie zasady „czystej gry” i sportowego kibicowania.",
-        "kody": [
-          "WF"
-        ],
+        "tresc": "Jest gotów do przekazywania informacji i opinii dotyczących informatyki i inżynierii w sposób zrozumiały dla różnych grup odbiorców, w tym inwestorów i interesariuszy.",
+        "kody": ["POZ", "MHE", "SKO1", "PRIN", "SAI"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KO", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
-        "kody": [
-          "ANG1-3"
-        ],
+        "tresc": "Jest gotów do rozumienia i angażowania się w rozwiązywanie kwestii etycznych, prawnych i społecznych związanych z tworzeniem i wdrażaniem systemów informatycznych.",
+        "kody": ["SAI", "WG1", "WG2", "TAPI", "FDL", "COV"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KR", "inzynierskie": false },
+          { "kod": "P6S_KO", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności",
-        "kody": [
-          "ANK",
-          "M3D"
-        ],
+        "tresc": "Jest gotów do zastosowania informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego oraz do budowania innowacyjnych rozwiązań odpowiadających na potrzeby społeczne.",
+        "kody": ["MHE", "PRIN", "FDL", "COV", "SPR", "PTT", "RTO"],
         "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KO", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Student jest gotów do działania w sposób przedsiębiorczy.",
-        "kody": [
-          "POZ"
-        ],
+        "tresc": "Wykazuje postawę otwartości na krytykę i gotowość do porzucenia własnych założeń na rzecz realnych potrzeb użytkownika; traktuje błędy jako cenne źródło danych.",
+        "kody": ["DTH", "PG1"],
         "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do efektywnej współpracy w zespole projektowym, wnosząc wkład w tworzenie oraz rozwój aplikacji internetowych.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do samodzielnego uczenia się przez całe życie",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do krytycznego oceniania własnych umiejętności i poszerzania wiedzy w zakresie nowoczesnych technologii internetowych, podejmując inicjatywy samokształcenia.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do myślenia w sposób innowacyjny.",
-        "kody": [
-          "SPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do określenia priorytetów służących realizacji zadania",
-        "kody": [
-          "PRIN",
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do określenia priorytetów w realizacji zadań z zakresu głębokiego uczenia, uwzględniając kluczowe aspekty rozwoju nowoczesnych systemów AI. Potrafi hierarchizować etapy projektu, stawiając na pierwszym miejscu prawidłowe zdefiniowanie problemu i przygotowanie wysokiej jakości danych. Umie priorytetyzować wybór odpowiedniej architektury modelu (np. transformery, modele multimodalne) i technik uczenia (np. transfer learning, self-supervised learning) w zależności od specyfiki zadania. Jest gotów do nadania wysokiego priorytetu optymalizacji wydajności i skalowalności modelu, uwzględniając ograniczenia zasobów obliczeniowych. Jest gotów do rozumienia wagi implementacji metod interpretacji i wyjaśnialności AI oraz zasad Responsible AI, stawiając je wysoko w hierarchii zadań. Jest gotów oceniać, które eksperymenty i iteracje są kluczowe dla sukcesu projektu, efektywnie zarządzając czasem i zasobami w dynamicznym środowisku badawczo-rozwojowym AI.",
-        "kody": [
-          "FDL"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KK",
-            "inzynierskie": false
-          },
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
-        "kody": [
-          "ANG1-3"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do podejmowania starania, aby przekazać informacje i opinie w sposób powszechnie zrozumiały",
-        "kody": [
-          "POZ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania.",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej",
-        "kody": [
-          "MHE"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do rozwiązywania problemów programistycznych w sposób kreatywny i efektywny, korzystając z nowoczesnych narzędzi i technologii.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do samodzielnego rozwijania swoich umiejętności",
-        "kody": [
-          "CPP"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do stosowania najlepszych praktyk programistycznych oraz standardów branżowych przy tworzeniu rozwiązań internetowych, dbając o ich jakość i bezpieczeństwo.",
-        "kody": [
-          "TIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii.",
-        "kody": [
-          "HKJ"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do uczenia się przez całe życie; potrafi inspirować i organizować proces uczenia się innych osób",
-        "kody": [
-          "SKO1"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do ustalania priorytetów zadań.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy",
-        "kody": [
-          "PRIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy.",
-        "kody": [
-          "PRO"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do współpracy i dzielenia się swoją wiedzą",
-        "kody": [
-          "ANK",
-          "M3D"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do wykorzystania zaawansowanych technik głębokiego uczenia na rzecz rozwoju nauki i społeczeństwa informacyjnego. Jest gotów do zastosowania modeli foundation i architektury multimodalnych do rozwiązywania złożonych problemów w różnych dziedzinach, takich jak medycyna (np. analiza obrazów medycznych), ochrona środowiska (np. monitorowanie zmian klimatycznych) czy edukacja (np. spersonalizowane systemy nauczania). Jest przygotowany do tworzenia innowacyjnych rozwiązań AI, które usprawniają procesy decyzyjne i automatyzację w przemyśle i administracji publicznej. Jest gotów do rozumienia etycznych implikacji wdrażania systemów AI i jest gotowy do stosowania zasad Responsible AI, zapewniając transparentność, fairness i prywatność danych. Jest gotów do uczestniczenia w interdyscyplinarnych projektach badawczych, łącząc wiedzę z zakresu głębokiego uczenia z innymi dziedzinami nauki, przyczyniając się do postępu technologicznego i społecznego.",
-        "kody": [
-          "FDL"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu",
-        "kody": [
-          "SAI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do zastosowania informatyki na rzecz rozwoju nauki poprzez umiejętność szybkiego tworzenia prototypów fizycznych obiektów",
-        "kody": [
-          "SPR"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
-        "kody": [
-          "MHE",
-          "PRIN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do:ustalenia kluczowych priorytetów w projektach computer vision, takich jak wybór optymalnej architektury sieci neuronowej dla danego zadania wizyjnego; określenia krytycznych etapów w procesie rozwoju systemu rozpoznawania obrazów, od przygotowania danych po optymalizację modelu; priorytetyzacji zadań w zespole pracującym nad złożonym projektem widzenia maszynowego, uwzględniając terminy i zasoby; identyfikacji najważniejszych metryk oceny wydajności algorytmów przetwarzania obrazu w kontekście wymagań projektu; ustalenia kolejności implementacji funkcji w systemie analizy wideo, zaczynając od najbardziej istotnych dla użytkownika końcowego; określenia priorytetów w optymalizacji czasu wykonania algorytmów wizyjnych dla aplikacji czasu rzeczywistego; efektywnego zarządzania czasem i zasobami w procesie treningu i walidacji modeli deep learning do zadań wizyjnych.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KK",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student jest gotów do:wykorzystania technik computer vision w rozwoju innowacyjnych rozwiązań naukowych i społecznych; zastosowania algorytmów przetwarzania obrazów w medycynie, np. do automatycznej analizy zdjęć rentgenowskich czy wykrywania nowotworów; wdrażania systemów rozpoznawania twarzy, z uwzględnieniem aspektów etycznych; tworzenia zaawansowanych systemów wizyjnych dla pojazdów autonomicznych, przyczyniając się do rozwoju inteligentnego transportu; implementacji rozwiązań augmented reality w edukacji i przemyśle; rozwijania technologii computer vision wspierających osoby z niepełnosprawnościami wzroku; projektowania systemów monitoringu środowiska wykorzystujących analizę obrazów satelitarnych; aktywnego udziału w otwartych projektach badawczych, dzieląc się wiedzą i kodem z globalną społecznością naukową.",
-        "kody": [
-          "COV"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KO",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi pracować w zespole nad wspólnym projektem związanym z tworzeniem API, wykazując się umiejętnościami analitycznymi, kreatywnymi i komunikacyjnymi.",
-        "kody": [
-          "TAPI"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi: samodzielnie uczyć się przez całe życie, co jest niezbędne w szybko rozwijającej się dziedzinie NLP. Techniki i narzędzia w tej dziedzinie stale ewoluują, więc umiejętność ciągłego kształcenia się jest kluczowa dla rozwoju zawodowego.",
-        "kody": [
-          "PJN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Student potrafi: współdziałać w zespole, co jest ważne w projektach związanych z NLP, gdzie często wymagane są różnorodne umiejętności i kompetencje. Praca zespołowa sprzyja innowacyjności i efektywności w realizacji złożonych zadań.",
-        "kody": [
-          "PJN"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych.",
-        "kody": [
-          "WG1",
-          "WG2"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych.",
-        "kody": [
-          "WF"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu.",
-        "kody": [
-          "WF"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
-        ]
-      },
-      {
-        "tresc": "Znajomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych.",
-        "kody": [
-          "WF"
-        ],
-        "mnsiw": [
-          {
-            "kod": "P6S_KR",
-            "inzynierskie": false
-          }
+          { "kod": "P6S_KK", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu; jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą.",
         "kody": ["KLI"],
-        "mnsiw": [{ "kod": "P6S_KR", "inzynierskie": false }]
+        "mnsiw": [
+          { "kod": "P6S_KR", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika; jest gotowy do moderowania procesów grupowych z dbałością o bezpieczeństwo psychologiczne i kreatywność zespołu.",
-        "kody": ["DTH"],
-        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+        "tresc": "Jest gotów do permanentnego doskonalenia kompetencji językowych, szczególnie w języku angielskim, w celach zawodowych i akademickich.",
+        "kody": ["ANG1-3"],
+        "mnsiw": [
+          { "kod": "P6S_KR", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Wykazuje postawę badawczą – traktuje błędy w prototypie jako cenne źródło danych, a nie porażkę programistyczną; potrafi argumentować decyzje projektowe w oparciu o wyniki testów z użytkownikami.",
-        "kody": ["PG1"],
-        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+        "tresc": "Zna i stosuje zasady bezpieczeństwa, higieny, zdrowego stylu życia oraz fair play w aktywności fizycznej i na obiektach sportowych.",
+        "kody": ["WF"],
+        "mnsiw": [
+          { "kod": "P6S_KR", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Potrafi prezentować swój projekt w formie pitchingu, argumentując wybory projektowe i biznesowe; wykazuje świadomość znaczenia inkluzywności i dostępności (accessibility) w projektowaniu gier.",
-        "kody": ["PG2"],
-        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+        "tresc": "Jest gotów do samodzielnego uczenia się niskpoziomowego programowania systemów wbudowanych i śledzenia postępów w tej dziedzinie.",
+        "kody": ["LLP", "KIP", "PPS"],
+        "mnsiw": [
+          { "kod": "P6S_KK", "inzynierskie": false }
+        ]
       },
       {
-        "tresc": "Jest gotów do pracy zespołowej nad produktem programistycznym, w tym do komunikacji, podziału zadań i przeglądu kodu oraz odpowiedzialnego podejścia do jakości, testowania i utrzymania spójności architektury.",
-        "kody": ["PAI"],
-        "mnsiw": [{ "kod": "P6S_KO", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Jest gotów do samodzielnego uczenia się przez całe życie w zakresie systemów wbudowanych i programowania niskopoziomowego.",
-        "kody": ["LLP", "KIP"],
-        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego oraz do myślenia i działania w sposób innowacyjny i przedsiębiorczy.",
-        "kody": ["PTT", "RTO"],
-        "mnsiw": [{ "kod": "P6S_KO", "inzynierskie": false }]
-      },
-      {
-        "tresc": "Jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej w obszarze systemów wbudowanych i programowania platform sprzętowych.",
-        "kody": ["PPS"],
-        "mnsiw": [{ "kod": "P6S_KK", "inzynierskie": false }]
+        "tresc": "Potrafi prezentować projekty i argumentować decyzje projektowe oraz biznesowe w formie pitchingu wobec zróżnicowanego grona odbiorców.",
+        "kody": ["PG2", "WG1", "WG2"],
+        "mnsiw": [
+          { "kod": "P6S_KK", "inzynierskie": false }
+        ]
       }
     ]
   }
 }
+

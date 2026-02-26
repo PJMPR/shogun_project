@@ -1,0 +1,184 @@
+﻿% ===========================================================
+%  Sylabus: Zaawansowane zastosowania grafiki i animacji ()
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: }}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Zaawansowane zastosowania grafiki i animacji} \\[3pt]
+  \textbf{Kod przedmiotu:}    &  \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Dr Piotr Arłukowicz \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 65 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Przedmiot przeznaczony jest dla zaawansowanych i jako taki stanowi wyjątkową pozycję w ofercie polskich uczelni, ponieważ niewiele z nich oferuje tak zaawansowane zajęcia. Tematyką przedmiotu jest tworzenie efektów specjalnych rozumianych jako "practical effects" (niewidoczne efekty) oraz "special effects" (widoczne efekty). Techniki, które zostaną zaprezentowane, wykorzystywane są w studiach w Los Angeles w trakcie prac nad wielkimi produkcjami. Practical effects polegają na takiej modyfikacji obrazu, aby nie było widać modyfikacji. Możliwości jest tutaj bardzo wiele i każdy temat jest unikalny. Podczas tego kursu przewidywana jest praca nad efektami specjalnymi takimi jak: dodawanie ptaków w tle, wstawianie dymu i ognia, usuwanie niechcianych elementów (znaków, napisów, itp), tworzenie tłumu z garstki osób, animowanie wybuchów, pęknięć, zmiana wyglądu, itp. W trakcie zajęć zapoznamy się z technikami takimi jak kluczowanie (greenscreen), rotoscoping (animowane maski), object tracking (śledzenie obiektów w 3d), camera tracking (fotogrammometryczne wyliczanie ruchu kamery na podstawie ruchów kadru), planar tracking (przydatne do modyfikacji powierzchni płaskich w nagranym filmie), oraz różne techniki tzw. rekonstrukcji sceny. Jeżeli starczy czasu, przyjrzymy się możliwościom montażu i color-gradingu filmów a także innym technikom takim jak matte painting lub motion capture (możemy wykorzystać darmowe biblioteki ruchu z Carnegie Mellon University).
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Grafika komputerowa & Symulacje 3D \\
+  Animacje komputerowe & Ukończenie przedmiotów  Grafika komputerowa,  Symulacje 3D i  Animacje komputerowe \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item 1Przypomnienie wiadomości i wstęp do tworzenia efektów specjalnych w BlenderzePraktyczne ćwiczenia z renderowania, przypomnienie pracy z nodami i maskami
+  \item 2Stabilizacja obrazu. Obraz nagrany za pomocą komórki lub ręcznej kamery ma zostać ustabilizowany za pomocą narzędzi dostępnych w Blenderze.Stabilizacja obrazu - generowanie proxy, obsługa VSE, deembedyzacja materiału filmowego, tracking, postprocessing.
+  \item 3Stabilizacja obrazu rozmytego i różne trudne przypadki gdy zawodzi podstawowa technika - stabilizacja zoomu, panoramy, hyperlapsów, timelapsów, itp.Tworzenie hyperlapsu i jego stabilizacja manualna oraz za pomocą technik śledzenia wzorców.
+  \item 4Usuwanie obiektów ze sceny. Jest to najczęściej wykonywana operacja i gdy jest dobrze zrobiona, powinna być całkowicie niewidoczna. Na filmie nagranym za pomocą kamery będziemy usuwali niektóre elementy nieruchome.Usuwanie statycznych elementów sceny, za pomocą kombinacji metod - rotoskopia, tracking, maskowanie, postprocessing.
+  \item 5Usuwanie obiektów ze sceny, które są ruchome lub ulegają zmianom (wyglądu, położenia, oświetlenia, itp).Usuwanie dynamicznych elementów sceny, za pomocą kombinacji metod - zaawansowana rotoskopia, tracking masek, itp.
+  \item 6Dodawanie obiektów do sceny.Dodawanie ognia na ręku, błysku w oku lub inne tego typu proste i efektowne ćwiczenia.
+  \item 7Dodawanie obiektów do sceny.Wkomponowanie w scenę obiektów ruchomych, analiza i montaż scen z materiałów dostępnych na hollywoodcamerawork.com
+  \item 8Zmiana obiektów na scenie. Przykładowo, może to być zmiana numeru tablicy rejestracyjnej widocznego w kadrze samochodu, zmiana koloru oczu, lub całkowita zmiana tła.Patchwork na nagranym materiale, za pomocą masek i zmiany HSV w przypadku kolorów, lub dodanie innych efektów, które mogą tego wymagać.
+  \item 9Rozkład sceny na plany i praca na niezależnych źródłach.Przećwiczymy dekompozycję wizualną, w której podstawą rozdziału planów będzie rotoskopia. W efekcie można stworzyć wrażenie perspektywy która nie istnieje.
+  \item 10Praca na obrazie kluczowanym. Greenscreen - techniki podstawowe.Poznajemy jak działa zielony ekran na przykładzie nagranych własnoręcznie materiałów.
+  \item 11Walka z greenscreenem - rozwiązywanie częstych problemów: niejednolite oświetlenie, zły odcień ubrań, przedmioty błyszczące i odbijające zielone tło, przedmioty przezroczysteĆwiczenia z trudnych przypadków: kluczowanie szkła, metalu, przejrzystych tkanin, rozmytego ruchu, itp.
+  \item 12Koloryzacja i kompozycja barwna, nieliniowe przestrzenie kolorów i kompresja barw.Koloryzacja filmu, ‘film look’, podstawowe techniki.
+  \item 13Montaż filmowy; typy ujęć; typy cięć; zastosowania, mattepainting, compositingĆwiczenia z montażu filmów.
+  \item 14Mattee painting, CompositingĆwiczenia z koloryzacji oraz podmiany/wzbogacania tła.
+  \item 15Własne efekty specjalne - np. duplikacja postaci, obiekty fantomowe, zmiana odbicia w lustrze, itp.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie kluczowe zagadnienia i metody w zakresie grafiki, multimediów i komunikacji człowiek-komputer.
+  \item Student zna i rozumie sposoby programowania grafiki dwu- i trójwymiarowej.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi  zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym.
+  \item Student potrafi  dobrać algorytm przetwarzania i kompresji obrazu.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item wykład z elementami dyskusji z prezentacją multimedialną
+  \item praca indywidualna przy komputerze
+  \item Kryteria oceny
+  \item Projekty (oceny cząstkowe otrzymywane w trakcie semestru)
+  \item Wykonanie i obrona pracy zaliczeniowej.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Secrets of Hollywood Special Effects, by Robert McCarthy
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Lista książek o efektach specjalnych
+\end{itemize}
+
+\end{document}

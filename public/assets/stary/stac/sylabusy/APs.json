@@ -1,0 +1,133 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Algorytmika praktyczna",
+                    "kod_przedmiotu":  "AP",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  3,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr hab. Marek A. Bednarczyk",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "warsztaty",
+                                           "rozwiązywanie zadań",
+                                           "projekty",
+                                           "warsztaty",
+                                           "Metody weryfikacji i kryteria oceny",
+                                           "Kolokwium oraz oceniane aktywności dodatkowe np. kartkówki, referaty.",
+                                           "Student musi uzyskać minimum 50% punktów możliwych do zdobycia.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Zdanie egzaminu pisemnyz zadaniami problemowymi oraz testowymi jednokrotnego wyboru wymaga zdobycia minimum 50% punktów.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRG1 – Programowanie",
+                                                         "wymagania":  "POJ – Programowanie obiektowe"
+                                                     },
+                                                     {
+                                                         "nazwa":  "ALG – Algebra liniowa z geometrią",
+                                                         "wymagania":  "AM – Analiza matematyczna"
+                                                     },
+                                                     {
+                                                         "nazwa":  "MAD – Matematyka Dyskretna",
+                                                         "wymagania":  "Umiejętność programowania programów iteracyjnych i rekursywnych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Umiejętność liczenia granic i sum szeregów oraz całek",
+                                                         "wymagania":  "funkcji elementarnych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Umiejętność wnioskowania",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne. Umiejętność wykorzystania narzędzi typu profiler do oceny złożoności czasowej i pamięciowej programu.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "T. Cormen, Ch. Leiserson, R. Rivest, C. Stein.Wprowadzenie do algorytmów, Wydawnictwo Naukowe PWN,2022"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Szepietowski.Matematyka dyskretna, Wydawnictwo UG, 2004",
+                                                                             "G. Mirkowska.Algorytmy i struktury danych, Wydawnictwo PJWSTK, 2006",
+                                                                             "G. Mirkowska.Algorytmy i struktury danych – Zadania, Wydawnictwo PJWSTK, 2006",
+                                                                             "Z. Michalewicz.Algorytmy genetyczne + struktury danych = programy ewolucyjne, Wydawnictwo PJWSTK 2003"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia takie jak specyfikacja, weryfikacja i własność stopu algorytmu.",
+                                                              "Student zna i rozumieróżnicę między algorytmami iteracyjnymi i rekursywnymi.",
+                                                              "Zna i rozumie istotę podstawowych struktur danych oraz złożoność operacji na nich.",
+                                                              "Zna i rozumie notację asymptotyczną opisującą złożoność obliczeniową.",
+                                                              "Zna i rozumie pojęcie złożoności czasowej i pamięciowej problemu algorytmicznego oraz klasy złożoności."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi dokonać analizyzłożoności programówiteracyjnych.",
+                                                                    "Potrafi przeanalizowaćzłożoność programówopartych o zasadę ,,dziel izwyciężaj’’.",
+                                                                    "Student potrafi dobrać struktury danych odpowiednie do zadania oraz potrafi oszacować złożoność algorytmu.",
+                                                                    "Student potrafi dokonać analizy złożoności czasowej i pamięciowej programu z wykorzystaniem profilera.",
+                                                                    "Student potrafi wykorzystać wiedzę i umiejętności analizy algorytmów w realizacjiprojektu dyplomowego."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Algorytmy iproblemy algorytmiczne; Złożoność czasowa i pamięciowa; przykłady.",
+                                              "Analiza złożoności problemu wyszukiwania informacji w kolekcji uporządkowanej i nieuporządkowanej, notacje asymptotyczne",
+                                              "Profilery – sprawdzanie złożoności w praktyce",
+                                              "Specyfikowanie problemów, własność stopu, problemy nierozstrzygalne",
+                                              "Logika Hoare’ai metody dowodzenia własności stopu",
+                                              "Proste algorytmy sortujące",
+                                              "Quicksort; algorytmy sortujące w czasie liniowym",
+                                              "Programowanie dynamiczne i zachłanne",
+                                              "Kolejki, stosy, listy i drzewa",
+                                              "Tablice z haszowaniem",
+                                              "Drzewa BST",
+                                              "Algorytmy grafowe",
+                                              "Podstawy teorii złożoności",
+                                              "Algorytmy ewolucyjne"
+                                          ]
+                }
+}

@@ -1,0 +1,89 @@
+{
+  "sylabus":  {
+    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka":  "Filia w Gdansku",
+    "kierunek":  "INFORMATYKA",
+    "profil":  "praktyczny",
+    "tryb_studiow":  "stacjonarny",
+    "wersja_z_dnia":  "19.02.2026",
+    "nazwa_przedmiotu":  "Warsztat Programisty",
+    "kod_przedmiotu":  "WPR",
+    "rok_studiow":  1,
+    "semestr_studiow":  1,
+    "obligatoryjny":  true,
+    "forma_i_liczba_godzin_zajec":  {
+      "wyklady":  30,
+      "cwiczenia_lektorat_seminarium":  null,
+      "laboratorium_projekt":  30
+    },
+    "odpowiedzialny_za_przedmiot":  "mgr inż. Adam Urbanowicz",
+    "ects":  4,
+    "godziny":  {
+      "z_udzialem_prowadzacego_h":  60,
+      "praca_wlasna_studenta_h":  40,
+      "calkowita_liczba_godzin_h":  100
+    },
+    "metody_dydaktyczne":  {
+
+    },
+    "zaliczenie":  {
+
+    },
+    "kryteria_oceny":  [
+      "Ćwiczenia / Laboratorium/Lektorat:",
+      "rozwiązywanie zadań",
+      "warsztaty",
+      "Ćwiczenia/Laboratorium/Projekt/Lektorat/Seminarium",
+      "Kryteria oceny",
+      "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+      "Procentowy udział o ocenie ostatecznej:",
+      "laboratorium- 20%",
+      "projektu- 50%",
+      "kolokwium- 30%",
+      "Uzyskanie pozytywnej oceny od 50% zdobytych punktów, które są pomnożone przez odpowiednie wagi procentowe, przy czym z kolokwium,  należy uzyskać co najmniej 40% punktów."
+    ],
+    "przedmioty_wprowadzajace":  [
+
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest wykształcenie u studentów praktycznych umiejętności pracy warsztatowej programisty, w szczególności w zakresie korzystania z narzędzi programistycznych, debugowania kodu, pracy zespołowej z wykorzystaniem systemu kontroli wersji Git oraz platformy GitHub. Zajęcia mają na celu zapoznanie studentów z podstawami automatyzacji procesów (CI/CD), debugowania aplikacji internetowych z użyciem narzędzi deweloperskich przeglądarek, podstawami technologii webowych (HTML, CSS, JavaScript), a także wprowadzenie do świadomego i odpowiedzialnego wykorzystania narzędzi opartych na sztucznej inteligencji w pracy programisty. Dodatkowym celem jest przygotowanie studentów do budowania własnego portfolio programistycznego.",
+    "literatura":  {
+      "podstawowa":  {
+        "pozycje":  [
+          "Dokumentacja języka: www.php.net",
+          "w3schools.com",
+          "Larry Ullman ,PHP i MySQL. Dynamiczne strony WWW. Szybki start, Helion 2018"
+        ]
+      }
+    },
+    "efekty_ksztalcenia":  {
+      "wiedza":  [
+        "Student potrafi  czytać ze zrozumieniem kod języków skryptowych,  tworzyć skrypty  oraz zweryfikować poprawność utworzonego kodu.",
+        "Student potrafi projektować aplikacje  zgodnie z paradygmatem strukturalnym i obiektowym. Student posiada podstawową wiedzę na temat protokołu HTTP oraz tworzenia bezpiecznych aplikacji internetowych i bazodanowych.",
+        "Student zna odpowiednie narzędzia wspomagające tworzenie skryptów oraz wspomagające projektowanie aplikacji internetowych, bazodanowych"
+      ],
+      "umiejetnosci":  [
+        "Student potrafi wybrać odpowiednie środowisko programistyczne i inne narzędzia, które wspomagają w projektowaniu aplikacji oraz potrafi dobrać model procesu wytwarzania aplikacji  do specyfiki przedsięwzięcia. Student potrafi posługiwać się wybranym środowiskiem oraz analizować poprawność działania stworzonej aplikacji.",
+        "Student potrafi wykorzystać odpowiednie biblioteki do tworzenia aplikacji oraz wykorzystać narzędzia, które umożliwiają tworzenie,  debbugowanie i uruchomienie projektów programistycznych. Student potrafi przedstawić stworzoną aplikację oraz omówić jej sposób działania.",
+        "Student potrafi skonfigurować środowisko potrzebne do stworzenia skryptów i aplikacji internetowej i bazodanowej, tzn. posiada wiedzę na temat konfiguracji bazy danych oraz oprogramowania, które jest potrzebne do tworzenie projektu programistycznego."
+      ],
+      "kompetencje_spoleczne":  null
+    },
+    "tresci_programowe":  [
+      "Organizacja pracy programisty: repozytorium kursowe, wymagane konta (GitHub), struktura materiałów, zasady oddawania prac i checklisty jakości.",
+      "Przegląd popularnych IDE i narzędzi: Visual Studio / VS Code / IntelliJ / Rider (porównanie), konfiguracja środowiska, rozszerzenia, formatowanie i linting.",
+      "Debugowanie kodu: podstawy debuggera (breakpointy, step in/out/over, watch, call stack), praca na przykładach w aplikacji konsolowej.",
+      "Debugowanie błędów wykonania: wyjątki, logowanie, asercje, minimalny repro-case, czytanie stack trace, kultura zgłaszania błędów (issue).",
+      "Git: model pracy i podstawowe komendy (init/clone/status/add/commit/log/diff), ignorowanie plików (.gitignore), dobre komunikaty commitów.",
+      "Git: praca z repozytorium zdalnym (remote, fetch, pull, push), rozwiązywanie typowych problemów, praca w parach i code review (wstęp).",
+      "Branche w Git: tworzenie i przełączanie gałęzi, merge vs rebase (intuicja), konflikty i ich rozwiązywanie na prostych przykładach.",
+      "Pull Requesty na GitHub: workflow PR, szablon opisu, review, komentarze, poprawki, podstawy pracy z Issues i Projects (tablica zadań).",
+      "Wprowadzenie do prostych pipeline’ów: czym jest CI/CD, podstawowy workflow (np. build/test/lint), plik konfiguracyjny, uruchomienia automatyczne po push/PR.",
+      " Publikacja statycznej strony na GitHub Pages: struktura repo, branch/folder publikacji, podstawy konfiguracji, dodanie prostej strony kursowej.",
+      " DevTools w przeglądarce: inspekcja DOM/CSS, podgląd i modyfikacja stylów na żywo, box model, debugowanie responsywności.",
+      " DevTools zaawansowane: zakładka Network (żądania/odpowiedzi), Console (logowanie, błędy), Sources (breakpointy w JS), podstawy wydajności (Performance/Lighthouse).",
+      " Wstęp do HTML: struktura dokumentu, semantyka, formularze (podstawy), dostępność (a11y) i dobre praktyki.",
+      " Wstęp do CSS: selektory, kaskada i specyficzność, flexbox/grid (wprowadzenie), responsywność, organizacja stylów w projekcie.",
+      " Wstęp do JavaScript: typy i zmienne, funkcje, zdarzenia w DOM, proste operacje na elementach strony; wstęp do pracy z agentem AI w roli asystenta programisty (promptowanie, weryfikacja odpowiedzi, zasady bezpieczeństwa i etyki)."
+    ]
+  }
+}

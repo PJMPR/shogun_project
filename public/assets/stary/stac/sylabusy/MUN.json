@@ -1,0 +1,79 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "20.02.2026",
+    "nazwa_przedmiotu": "Wprowadzenie do Unity 3D",
+    "kod_przedmiotu": "MUN",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 15
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50
+    },
+    "metody_dydaktyczne": {
+
+    },
+    "zaliczenie": {
+      "Projekt": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": [
+      "Projekt gry lub aplikacji interaktywnej realizowany indywidualnie lub w parach – 100%",
+      "Ocena projektu obejmuje: poprawność działania aplikacji, strukturę scen i obiektów, logikę gry, jakość kodu w C#, wykorzystanie zasobów silnika oraz dokumentację",
+      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia gier i aplikacji interaktywnych 3D z wykorzystaniem silnika Unity oraz języka C#. Studenci poznają architekturę silnika, pracę z obiektami sceny, komponentami, systemem fizyki oraz podstawami interakcji użytkownika. Zajęcia mają charakter praktyczny i przygotowują do samodzielnej realizacji prostych projektów 3D, również z myślą o platformach mobilnych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Dokumentacja Unity: https://docs.unity.com",
+          "Unity Learn – oficjalne materiały edukacyjne",
+          "Dokumentacja C# (Microsoft Learn)"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Jesse Schell, The Art of Game Design (wybrane rozdziały)",
+          "Will Goldstone, Unity Game Development Essentials"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji i gier 3D w Unity, w tym sceny, obiekty, komponenty, system fizyki oraz cykl życia aplikacji.",
+      "umiejetnosci": "Student potrafi zaprojektować i zaimplementować prostą grę lub aplikację 3D w Unity, tworzyć i konfigurować sceny, skrypty w C#, obsługiwać interakcje użytkownika oraz uruchamiać projekt na wybranej platformie.",
+      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu interaktywnego, pracować z dokumentacją techniczną oraz dbać o jakość i czytelność kodu i zasobów projektu."
+    },
+    "tresci_programowe": [
+      "Wprowadzenie do Unity i silników gier",
+      "Środowisko Unity Editor i struktura projektu",
+      "Sceny, obiekty i komponenty",
+      "Skrypty w C# i cykl życia obiektów",
+      "Transformacje, kamery i oświetlenie",
+      "Podstawy fizyki i kolizji",
+      "Sterowanie i interakcja użytkownika",
+      "Zarządzanie zasobami i prefabrykaty",
+      "Debugowanie i testowanie projektu",
+      "Projekt zaliczeniowy – implementacja i prezentacja"
+    ]
+  }
+}

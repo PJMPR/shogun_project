@@ -1,0 +1,62 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Praktyka 2",
+                    "kod_przedmiotu":  "PRK2",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  300,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Michał Hyla",
+                    "ects":  10,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  0,
+                                    "praca_wlasna_studenta_h":  300,
+                                    "calkowita_liczba_godzin_h":  300
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+
+                                   },
+                    "kryteria_oceny":  [
+                                           "Nie dotyczy",
+                                           "Praktyka zawodowa",
+                                           "Zaliczenie bez oceny",
+                                           "Kryteria oceny",
+                                           "Sprawozdanie z praktyk, w razie konieczności dodatkowa weryfikacja z pracodawcą"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRK1",
+                                                         "wymagania":  "Nie dotyczy"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu jest umożliwienie studentom zdobycia praktycznych doświadczeń w rzeczywistym środowisku pracy. Studenci mają okazję wykorzystać i pogłębić swoją wiedzę teoretyczną zdobytą na uczelni, poprzez wykonywanie zadań związanych z ich przyszłym zawodem. Praktyka rozwija także umiejętności interpersonalne, zdolność pracy w zespole oraz adaptacji do wymagań rynku pracy, co zwiększa ich konkurencyjność na rynku. Głównym celem jest zatem integracja wiedzy akademickiej z praktyką zawodową w realnych warunkach.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Nie dotyczy"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Podczas praktyki student pogłębia znajomość procesów funkcjonowania firm IT, analizując strategie zarządzania projektami, modele biznesowe oraz zasady ochrony własności intelektualnej i aspektów prawnych w branży. Zdobywa wiedzę na temat kosztorysowania, planowania zasobów oraz metod pracy zespołowej w środowisku komercyjnym.",
+                                               "umiejetnosci":  "Student uczy się pracy w zespole w bardziej złożonych zadaniach, zdobywa umiejętność planowania, szacowania czasu i kosztów realizacji projektów. Wykorzystuje różne techniki zarządzania projektami i narzędzia IT wspomagające organizację pracy. Rozwija samodzielność w poszukiwaniu nowych technologii oraz metod doskonalenia swoich kompetencji.",
+                                               "kompetencje_spoleczne":  "Student doskonali umiejętność pracy w zespole, podejmując różne role i dostosowując się do wymagań organizacji. Zwiększa świadomość profesjonalizmu zawodowego, analizuje i rozwiązuje problemy zgodnie z zasadami etyki i przepisami prawa. Rozwija umiejętność ustalania priorytetów i efektywnej organizacji pracy, dbając o dotrzymywanie terminów."
+                                           },
+                    "tresci_programowe":  [
+                                              "Nie dotyczy"
+                                          ]
+                }
+}

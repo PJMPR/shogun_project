@@ -1,0 +1,194 @@
+﻿% ===========================================================
+%  Sylabus: Technologie .NET (DOT)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: DOT}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Technologie .NET} \\[3pt]
+  \textbf{Kod przedmiotu:}    & DOT \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Tomasz Borzyszkowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 40 h & 100 h & \textbf{4} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Przedmiot ma na celu zapoznanie studentów z podstawami języka C\# oraz z wybranymi bibliotekami związanymi z technologiami .Net (np. ASP.NET).
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Programowanie obiektowe w Javie & Znajomość zasad programowania obiektowego oraz podstaw języków C++ oraz Java \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie do Visual Studio i języka C\#
+  \item Postawy programowania obiektowego w C\#: definiowanie klas i obiektów, ukrywanie informacji w klasach języka C\#, modyfikatory dostępu, klasy częściowe, porównanie właściwości struktur i klas, konstruktory i destruktory obiektów, inicjalizowanie struktur, dziedziczenie i przesłanianie metod
+  \item Konstrukcje programistyczne: definicja właściwości i indeksatorów, składowe statyczne, przeciążanie operatorów
+  \item Techniki zaawansowane: atrybuty i mechanizm refleksji, delegacje i obsługa zdarzeń, serializacja
+  \item Wprowadzenie do tworzenia serwisów webowych w technologii ASP.
+  \item Informacje dodatkowe
+  \item Wymagana instalacja współczesnej wersji kompilatora .Net wraz z odpowiednim wsparciem edycji kodu i jego uruchamiania.
+  \item Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy
+  \item Zrozumienie zagadnień realizowanych w ramach tego przedmiotu jest niezbędne do wykonywania zawodów: programisty oraz architekta oprogramowania w firmach wykorzystujących bibliotekę .Net.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie konstrukcje programistyczne w języku C\#.
+  \item Student zna i rozumie:
+  \item paradygmaty programowania obiektowego w języku C\#
+  \item wykorzystanie właściwości i indeksatorów
+  \item wykorzystanie i tworzenie atrybutów oraz korzystanie z mechanizmu refleksji
+  \item wykorzystanie delegacji i obsługi zdarzeń
+  \item wykorzystanie serializacji
+  \item Student zna i rozumie poznane pojęcia w stopniu zaawansowanym.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi czytać ze zrozumieniem programy w języku C\#. Potrafi je pisać, weryfikować i uruchamiać.
+  \item Student potrafi ocenić przydatność paradygmatów programistycznych języka C\# do rozwiązania zadań laboratoryjnych oraz dobrać odpowiednie środowisko programistyczne.
+  \item Student potrafi  zaprojektować i wytworzyć oprogramowanie, zgodnie z  paradygmatami programistycznymi języka C\# oraz przetestować i zdebuggować program. W zależności od specyfiki zadania, potrafi zaplanować etapy wytwarzania oprogramowania oraz dobrać narzędzia programistyczne wspomagające ten proces.
+  \item Student potrafi zastosować poznane pojęcia celem stworzenia działającego rozwiązania napisanego w jeżyku C\#.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item z prezentacją multimedialna
+  \item z prezentacją oprogramowania
+  \item rozwiązywanie zadań
+  \item brak
+  \item Kryteria oceny
+  \item ocena praktycznego zastosowania kwestii omawianych na wykładach. W ramach każdej jednostki laboratoryjnej studenci otrzymują do wykonania zadania programistyczne. Przedmiot zalicza otrzymanie minimum 50\% punktów.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item brak
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Ian Griffiths, C\# 10. Programowanie. Tworzenie aplikacji Windows, internetowych i biurowych. Helion, 2023.
+  \item Andrew Stellman, Jennifer Greene, C\#. Rusz głową! Wydanie IV. Helion, 2022.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Adam Freeman, ASP.NET Core 3. Zaawansowane programowanie. Wydanie VIII. Helion, 2021.
+\end{itemize}
+
+\end{document}

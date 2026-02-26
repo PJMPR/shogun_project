@@ -1,0 +1,93 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Systemy baz danych",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  3,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Robert Suski",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "burza mózgów",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "kolokwium końcowe",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Bazy Danych",
+                                                         "wymagania":  "Systemy Opercyjne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Podstawowa znajomośc Reacyjnych Baz Danych",
+                                                         "wymagania":  "Znajomość jęyka SQL"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Umiejętność poruszania się w srodowisku Unix/Linux",
+                                                         "wymagania":  "Podstawowa znajomość algorytmiki i co najmnej jednego języka (preferowany język skryptowy Python)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu \"Serwery baz danych\" jest zapoznanie studentów z różnymi typami silników baz danych dostępnymi w AWS, w tym relacyjnymi i NoSQL, oraz nauczenie ich zarządzania baz danych w środowisku chmurowym. Kurs kładzie nacisk na praktyczne umiejętności tworzenia, zabezpieczania i integrowania baz danych w oparciu o usługi AWS.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Zajęcia są prowadzone w oparciu o:",
+                                                                          "internetową dokumentację AWS",
+                                                                          "następujące kursy AWS Academy:",
+                                                                          "AWS Academy Cloud Foundations [61739]",
+                                                                          "materiały przygotowane przez prowadzącego"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie różnice pomiędzy rodzajami typów silników baz danych: RDS (Relational Database Service), NoSQL (np. DynamoDB), oraz inne dostępne w AWS (Aurora, Redshift, etc.).",
+                                                              "Student zna i rozumie inne usługi AWS, .m.in. S3, EC2, Lambda, IAM, SNS, usługi sieciowe",
+                                                              "Student zna i rozumie usługi AWS ściśle związane z bazami danych: AWS Glue, Athena, QuickSight"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student posiada umiejętność tworzenia i zarządzania instancjami baz danych na AWS",
+                                                                    "Student potrafi integrować bazy danych z innymi usługami, m.in.: AS Lambda, AWS Glue, Athena, QuickSight"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+
+                                          ]
+                }
+}

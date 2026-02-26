@@ -1,0 +1,84 @@
+{
+  "sylabus":  {
+    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka":  "Filia w Gdansku",
+    "kierunek":  "INFORMATYKA",
+    "profil":  "praktyczny",
+    "tryb_studiow":  "stacjonarny",
+    "wersja_z_dnia":  "20.02.2026",
+    "nazwa_przedmiotu":  "Wstęp do Zarządzania",
+    "kod_przedmiotu":  "WDZ",
+    "rok_studiow":  1,
+    "semestr_studiow":  1,
+    "obligatoryjny":  true,
+    "forma_i_liczba_godzin_zajec":  {
+      "wyklady":  30,
+      "cwiczenia_lektorat_seminarium":  30,
+      "laboratorium_projekt":  null
+    },
+    "odpowiedzialny_za_przedmiot":  "dr. Radosław Stojek",
+    "ects":  3,
+    "godziny":  {
+      "z_udzialem_prowadzacego_h":  60,
+      "praca_wlasna_studenta_h":  30,
+      "calkowita_liczba_godzin_h":  90
+    },
+    "metody_dydaktyczne":  {
+
+    },
+    "zaliczenie":  {
+      "Ćwiczenia":  {
+        "sposob":  "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny":  [
+      "Ćwiczenia:",
+      "zadania wykonywane na zajęciach (indywidualne i zespołowe) - 40%",
+      "projekt zespołowy (opracowanie i prezentacja) - 60%",
+      "Warunek zaliczenia: oddanie projektu oraz uzyskanie co najmniej 50% punktów łącznie.",
+      "Wymagana obecność i aktywność: dopuszczalne 2 nieobecności nieusprawiedliwione; pozostałe do odrobienia."
+    ],
+    "przedmioty_wprowadzajace":  [
+      "Brak"
+    ],
+    "cel_dydaktyczny":  "Celem przedmiotu jest wprowadzenie studentów kierunku Informatyka w podstawowe pojęcia i praktyki zarządzania organizacją oraz pracą zespołów projektowych, ze szczególnym uwzględnieniem realiów branży IT. Student poznaje rolę menedżera, podstawowe funkcje zarządzania (planowanie, organizowanie, przewodzenie, kontrola), zasady pracy zespołowej, komunikacji i podejmowania decyzji, a także wybrane metody zarządzania projektami i produktami w środowisku wytwarzania oprogramowania. Zajęcia rozwijają umiejętność analizy problemów organizacyjnych, przygotowania prostych planów działań oraz prezentowania wyników pracy w formie projektu.",
+    "literatura":  {
+      "podstawowa":  {
+        "pozycje":  [
+          "R. Griffin, Podstawy zarządzania organizacjami",
+          "H. Kerzner, Project Management: A Systems Approach (wybrane rozdziały)",
+          "P. Drucker, Praktyka zarządzania (wybrane rozdziały)"
+        ]
+      },
+      "uzupelniajaca":  {
+        "pozycje":  [
+          "M. C. Lencioni, Pięć dysfunkcji pracy zespołowej",
+          "D. Pink, Drive. Kompletnie nowe spojrzenie na motywację",
+          "Scrum Guide (aktualna wersja) – materiały referencyjne"
+        ]
+      }
+    },
+    "efekty_ksztalcenia":  {
+      "wiedza":  "Student definiuje podstawowe pojęcia zarządzania (organizacja, proces, cel, zasoby, interesariusze) oraz opisuje funkcje zarządzania i podstawowe role w zespołach IT. Zna podstawowe podejścia do zarządzania projektami i produktami (m.in. klasyczne i zwinne) oraz rozumie znaczenie komunikacji, motywacji i kontroli jakości w pracy zespołowej.",
+      "umiejetnosci":  "Student potrafi przygotować prosty plan działań (cele, zakres, ryzyka, zasoby, harmonogram w zarysie) dla przedsięwzięcia informatycznego. Dobiera podstawowe narzędzia pracy zespołowej (podział zadań, priorytety, przepływ informacji), analizuje problemy organizacyjne i proponuje usprawnienia. Potrafi opracować i zaprezentować wyniki projektu w zespole, uzasadniając podjęte decyzje.",
+      "kompetencje_spoleczne":  "Student potrafi współpracować w zespole, przyjmować role i odpowiedzialności, komunikować się w sposób rzeczowy i respektujący różnorodność opinii. Rozumie potrzebę etycznego działania, terminowości i dbałości o jakość w realizacji zadań."
+    },
+    "tresci_programowe":  [
+      "Wprowadzenie: pojęcie zarządzania, organizacja i jej otoczenie; specyfika branży IT.",
+      "Funkcje zarządzania: planowanie, organizowanie, przewodzenie, kontrola – przykłady z projektów informatycznych.",
+      "Cele i mierniki: SMART/OKR (wprowadzenie), priorytetyzacja i podejmowanie decyzji.",
+      "Struktury organizacyjne i role w IT (zespół wytwórczy, product, project, ops); odpowiedzialność i zakres kompetencji.",
+      "Praca zespołowa: role zespołowe, normy współpracy, kontrakt zespołowy, odpowiedzialność zbiorowa.",
+      "Komunikacja w zespole: kanały komunikacji, feedback, dokumentowanie ustaleń, spotkania efektywne.",
+      "Konflikt i negocjacje: źródła konfliktów, techniki rozwiązywania, eskalacja i deeskalacja.",
+      "Motywacja i zaangażowanie: potrzeby, motywatory, środowisko pracy w IT, kultura organizacyjna.",
+      "Zarządzanie czasem i zadaniami: plan tygodnia, praca w sprintach (intuicja), ograniczenia WIP (wprowadzenie).",
+      " Wprowadzenie do zarządzania projektami: zakres, czas, koszt, jakość, ryzyko; interesariusze.",
+      " Metodyki zwinne w IT: Agile (wartości i zasady), Scrum/Kanban – role i artefakty (wprowadzenie).",
+      " Ryzyko i jakość: identyfikacja ryzyk, proste rejestry ryzyk, przeglądy jakości i kryteria akceptacji.",
+      " Etyka i odpowiedzialność w zarządzaniu: prywatność, bezpieczeństwo, AI w organizacji (wprowadzenie).",
+      " Warsztat projektowy: analiza przypadku, plan działań, podział ról, przygotowanie prezentacji projektu.",
+      " Prezentacje projektów i podsumowanie: omówienie wniosków, retrospektywa, zalecenia do dalszego rozwoju."
+    ]
+  }
+}

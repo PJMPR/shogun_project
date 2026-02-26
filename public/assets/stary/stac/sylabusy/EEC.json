@@ -1,0 +1,103 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Estetyka i etyka cyberkultury",
+                    "kod_przedmiotu":  "EEC",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Liczba punktów ECTS : 2",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Zaliczenie z oceną"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "analiza przypadków",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "nie dotyczy",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Nie dotyczy.",
+                                           "Ocena aktywności na konwersatorium + wypowiedź pisemna (esej). Podstawą oceny jest aktywność na konwersatorium, która decyduje o ocenie.",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Osoby, które chcą uzupełnić brakujące punkty (np. z powodu nieobecności na wykładzie), mogą napisać esej na wyznaczony temat."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wiedza z zakresu szkoły średniej.",
+                                                         "wymagania":  "Umiejętność krytycznej analizy, prowadzenia dyskusji wspartej argumentami, przygotowanie wypowiedzi pisemnej"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "W ramach przedmiotu Student uzyskuje wiedzę na temat podstawowych zagadnień teorii kultury oraz jej fenomenów - w tym etyki i poczucia piękna. Prezentowane treści dotyczą przede wszystkim cybercywilizacji XXI wieku, ale w naturalny sposób odwołują się kanonu całej historii cywilizacji. Zastosowane podejście uwzględnia specyfikę profilu kształcenia inżyniera, dając Studentowi podstawę do wykorzystywania poznanych umiejętności w praktyce. W ramach modułu estetyki Studenci poznają wiele zagadnień plastycznych (w tym, m.in.  kompozycji, typografii, kolorystyki, zarządzania przestrzenią i kolorem) w ujęciu niezbędnym dla inżynierii aplikacji komputerowych i projektowania graficznego. Dzięki temu będą w stanie wytwarzać lepsze interfejsów użytkownika, projektować atrakcyjne aplikacje, rozwijać umiejętności z zakresu UX i projektowania graficznego w informatyce. W ramach modułu etyki Studenci przygotowują się do lepszego rozumienia swojej odpowiedzialności jako inżynierów XXI wieku. Treści przedmiotu obejmują również szeroki zakres pojęciowy, który pozwala na skuteczne budowanie umiejętności miękkich - w tym czerpania ze zdobyczy humanizmu dla lepszego odnajdywania się w skomplikowanej rzeczywistości XXI wieku.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Adrian Frutiger, CZŁOWIEK I JEGO ZNAKI",
+                                                                          "John Berger, ZROZUMIEĆ FOTOGRAFIĘ",
+                                                                          "Władysław Tatarkiewicz HISTORIA FILOZOFII"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawy estetyki, dzięki czemu może wytwarzać lepsze oprogramowanie, zna podstawy budowy interfejsów i rozumie wagę wizualnego aspektu oprogramowania – zwłaszcza w odniesieniu do typografii i koloru.",
+                                                              "Student zna i rozumie społeczne aspekty przedsięwzięcia informatycznego",
+                                                              "Student zna i rozumie moduł etyczny, student zna podstawy myślenia etycznego rozwijanego przez 30 ostatnich wieków i jest w stanie postawić przed sobą pytania dotyczące swojej roli i odpowiedzialności jako projektanta."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi podstawy projektowania graficznego i budowy spójnego komunikatu wizualnego (w tym – w odniesieniu do interfejsów użytkownika i front-endu aplikacji).",
+                                                                    "Student potrafi odpowiednio dobierać źródła.",
+                                                                    "Student potrafi wytwarzać oprogramowanie i produkty techniczne z uwzględnieniem aspektu etycznego (np. czy jest etyczne wytwarzanie autonomicznej broni, pojazdów bez nadzoru etc.)."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do rozumienia wpływu informatyki na rozwój różnych dziedzin życia",
+                                                                             "Student jest gotów do świadomego wykorzystania dziedzictwa ludzkości w tworzeniu nowych jakości, jest aktywnym i świadomym podmiotem społecznym.",
+                                                                             "Student jest gotów do ciągłego doszkalania się.",
+                                                                             "Student jest gotów do roli jako inżyniera w procesie zagospodarowywania przestrzeni."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1Wprowadzenie do estetyki. Definicja kultury. Cyberkultura jako fenomen nowoczesności.",
+                                              "2Pojęcia kluczowe dla estetyki.  Kompozycja, elementy obrazu, napięcie i energia.",
+                                              "3Historia wizualnej koncepcji piękna - świat starożytny. Człowiek jako istota piękna. Proporcja i harmonia. Świat średniowieczny. Symbol, jako nośnik treści. Architektura jako nośnik piękna w inżynierii.",
+                                              "4Historia wizualnej koncepcji piękna - renesans i oświecenie. Tradycja i nowoczesność. Pismo i typografia jako inżynieria estetyki.",
+                                              "5Historia wizualnej koncepcji piękna - czasy współczesne. Świat komputerów i jego estetyka.",
+                                              "6Projektowanie graficzne. Czy istnieje matematyczny wzorzec piękna?",
+                                              "7Wstęp do etyki. Pojęcie człowieczeństwa. Dobro a piękno. Moralne aspekty wyborów.",
+                                              "8Między Platonem a Arystotelesem - krótka lekcja rozumienia człowieka. Etyka Sokratejska. Między hedonizmem a cynizmem.",
+                                              "9Pytania o punkt stały w etyce. Czy istnieje obiektywne dobro i prawda obiektywna? Czy można mówić o etyce komputerów? Odpowiedzialność etyczna maszyny, odpowiedzialność inżyniera.",
+                                              "10Etyka czasów produkcji (XX i XXI wiek). Wstęp do teorii pieniądza i teorii wartości. Hasło „greed is good”. Czy reklama jest moralna? Inżynierowie dusz.",
+                                              "11Popyt i podaż etyki. Czy etyka jest niezmienna?",
+                                              "12Etyka biznesu a etyka inżynierska. Wybór moralny projektu Manhattan.",
+                                              "13Czy inżynier jest odpowiedzialny za swoje dzieło? Auta bez kierowców. Broń autonomiczna. Prawa robotyki Asimova.",
+                                              "14Sztuczna inteligencja z punktu widzenia etyki."
+                                          ]
+                }
+}
