@@ -166,8 +166,8 @@
         },
         {
           "semester": 5,
-          "name": "Głębokie sieci neuronowe",
-          "code": "DL",
+          "name": "Nowoczesne metody uczenia głębokiego",
+          "code": "FDL",
           "lecture": 30,
           "tutorial": 0,
           "lab": 30,
