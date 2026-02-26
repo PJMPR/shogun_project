@@ -23,7 +23,9 @@
           "tutorial": 0,
           "lab": 30,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy/KSI.json",
+          "pdf": "assets/files/stacjonarne/KSI.pdf"
         },
         {
           "semester": 6,
