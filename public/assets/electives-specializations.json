@@ -166,7 +166,7 @@
         },
         {
           "semester": 5,
-          "name": "Deep Learning",
+          "name": "Głębokie sieci neuronowe",
           "code": "DL",
           "lecture": 30,
           "tutorial": 0,
