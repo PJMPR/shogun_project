@@ -172,7 +172,9 @@
           "tutorial": 0,
           "lab": 30,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy/FDL.json",
+          "pdf": "assets/files/stacjonarne/FDL.pdf"
         },
         {
           "semester": 6,
