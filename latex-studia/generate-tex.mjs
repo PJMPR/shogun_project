@@ -112,15 +112,15 @@ function efektyList(items, prefix) {
 }
 
 // ── Plan studiów – tabele semestralne ─────────────────────────────────────────
+// helper: usuwa tekst w nawiasach z końca etykiety, np. "(wybór 2 z 6)"
+function trimLabel(lbl) {
+  return lbl.replace(/\s*\(.*?\)\s*$/, '').trim();
+}
+
 function planStudiow(semesters, elOth) {
   const groupMap = {};
   for (const g of (elOth.groups || [])) groupMap[g.id] = g;
   let out = '';
-
-  // helper: usuwa tekst w nawiasach z końca etykiety, np. "(wybór 2 z 6)"
-  function trimLabel(lbl) {
-    return lbl.replace(/\s*\(.*?\)\s*$/, '').trim();
-  }
 
   for (const sem of semesters) {
     // oblicz liczbę wierszy: przedmioty (grupy O liczymy raz) + nagłówek + suma
@@ -232,7 +232,7 @@ function obieralne(elOth) {
     if (SKIP.has(g.id)) continue;
     if (!g.items || g.items.length === 0) continue;
     out += `\\subsection*{${esc(g.label)}}\n`;
-    out += `\\addcontentsline{toc}{subsection}{${esc(g.label)}}\n\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(trimLabel(g.label))}}\n\n`;
     out += `{\\scriptsize\n\\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
     out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Ćw.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n`;
     out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Ćw.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
