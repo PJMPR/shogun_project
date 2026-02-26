@@ -141,7 +141,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/SGK.json",
+          "pdf": "assets/files/niestacjonarne/SGK.pdf"
         },
         {
           "semester": 8,
