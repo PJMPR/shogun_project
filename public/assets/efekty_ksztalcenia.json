@@ -10,14 +10,14 @@
       },
       {
         "tresc": "Zna i rozumie podstawy fizyki, elektryczności, magnetyzmu oraz metodologię eksperymentu naukowego w kontekście zastosowań informatycznych.",
-        "kody": ["FIZ", "ELK", "EEC"],
+        "kody": ["FIZ", "ELK"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Zna i rozumie zagadnienia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką.",
-        "kody": ["ELK", "SKO1"],
+        "kody": ["ELK"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
@@ -30,8 +30,8 @@
         ]
       },
       {
-        "tresc": "Zna i rozumie paradygmaty programowania obiektowego, funkcyjnego oraz współbieżnego na przykładzie języków C#, C++, JavaScript i innych.",
-        "kody": ["POJ", "DOT", "CPP", "TFN", "TIN"],
+        "tresc": "Zna i rozumie paradygmaty programowania obiektowego, funkcyjnego oraz współbieżnego w językach programowania dostępnych w planie studiów.",
+        "kody": ["POJ", "TIN"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -39,7 +39,7 @@
       },
       {
         "tresc": "Zna i rozumie zasady tworzenia aplikacji webowych: technologie frontendowe, backendowe, protokół HTTP, REST API oraz komunikację synchroniczną i asynchroniczną.",
-        "kody": ["TIN", "TBK", "TAPI", "TFN", "PAI"],
+        "kody": ["TIN", "PAI"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -47,7 +47,7 @@
       },
       {
         "tresc": "Zna i rozumie pojęcia z zakresu relacyjnych i nierelacyjnych baz danych, modelowania danych, języka SQL oraz przetwarzania transakcji.",
-        "kody": ["RBD", "TBK", "BYT"],
+        "kody": ["RBD", "BYT"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WK", "inzynierskie": false }
@@ -55,7 +55,7 @@
       },
       {
         "tresc": "Zna i rozumie architekturę systemów komputerowych, technikę cyfrową, systemy cyfrowe oraz programowanie na poziomie assemblera.",
-        "kody": ["SKO1", "KPIR", "LLP", "KIP"],
+        "kody": ["LLP", "KIP"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true },
@@ -64,7 +64,7 @@
       },
       {
         "tresc": "Zna i rozumie budowę i zasady działania systemów operacyjnych, w tym zarządzanie procesami, szeregowanie zadań, współbieżność i systemy czasu rzeczywistego.",
-        "kody": ["SCR", "SOP", "UKOS"],
+        "kody": ["SOP", "UKOS"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -72,7 +72,7 @@
       },
       {
         "tresc": "Zna i rozumie zagadnienia sieci komputerowych, protokołów komunikacyjnych, wirtualizacji, konteneryzacji oraz chmury obliczeniowej.",
-        "kody": ["DEV", "SKO1", "BYT", "UKOS"],
+        "kody": ["DEV", "BYT", "UKOS"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -114,7 +114,7 @@
       },
       {
         "tresc": "Zna i rozumie metody walidacji i testowania oprogramowania, w tym testy jednostkowe, integracyjne, E2E oraz techniki zapewniania jakości.",
-        "kody": ["BYT", "PRO", "TAPI", "PAI"],
+        "kody": ["BYT", "PRO", "PAI"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
@@ -128,7 +128,7 @@
       },
       {
         "tresc": "Zna i rozumie podstawy sztucznej inteligencji, uczenia maszynowego i głębokiego uczenia: algorytmy, sieci neuronowe, metody optymalizacji i oceny jakości modeli.",
-        "kody": ["AAI", "IML", "MLR", "FDL", "NAI"],
+        "kody": ["IML", "NAI"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
@@ -149,22 +149,15 @@
         ]
       },
       {
-        "tresc": "Zna i rozumie algorytmy metaheurystyczne (algorytmy genetyczne, tabu search) oraz metody statystyczne do analizy i porównywania metod rozwiązywania problemów obliczeniowych.",
-        "kody": ["MHE", "NAI"],
-        "mnsiw": [
-          { "kod": "P6S_WG", "inzynierskie": false }
-        ]
-      },
-      {
         "tresc": "Zna i rozumie podstawy grafiki komputerowej 2D i 3D, multimediów oraz komunikacji człowiek-komputer.",
-        "kody": ["ZZGA", "OGL", "GRK"],
+        "kody": ["GRK", "ICK"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Zna i rozumie zagadnienia modelowania i animacji 3D, w tym techniki riggingu, teksturowania i tworzenia animacji parametrycznych.",
-        "kody": ["M3D", "ANK", "S3D"],
+        "kody": ["M3D"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -172,7 +165,7 @@
       },
       {
         "tresc": "Zna i rozumie podstawy projektowania gier: pętlę rozgrywki, model MDA, psychologię gracza, mechanizmy retencji oraz projektowanie interfejsów UX/UI w grach.",
-        "kody": ["SGD", "WG1", "WG2", "PG1", "PG2"],
+        "kody": ["SGD", "PG1", "PG2"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -180,7 +173,7 @@
       },
       {
         "tresc": "Zna i rozumie architekturę i programowanie mikrokontrolerów i systemów wbudowanych, interfejsów komunikacyjnych, automatyki i robotyki oraz internetu rzeczy (IoT).",
-        "kody": ["SCR", "SWB", "KPIR", "KIP", "PTT", "RTO", "PPS"],
+        "kody": ["SWB", "KIP", "PTT", "RTO", "PPS"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false },
           { "kod": "P6S_WG", "inzynierskie": true }
@@ -238,44 +231,30 @@
       },
       {
         "tresc": "Zna podstawy teoretyczne i praktyczne języków skryptowych, w tym składnię, struktury danych, asynchroniczność oraz techniki programistyczne JavaScript.",
-        "kody": ["TIN", "TFN", "WPR"],
+        "kody": ["TIN", "WPR"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Zna i rozumie zagadnienia dotyczące jakości danych, metod ich przechowywania, przygotowania zbiorów uczących oraz oceny wyników w projektach uczenia maszynowego.",
-        "kody": ["IML", "MLR", "FDL"],
-        "mnsiw": [
-          { "kod": "P6S_WG", "inzynierskie": false }
-        ]
-      },
-      {
-        "tresc": "Zna i rozumie pojęcia z zakresu reprezentacji wiedzy i wnioskowania: systemy regułowe, sieci semantyczne, logika rozmyta i ich zastosowania.",
-        "kody": ["KNO", "NAI"],
+        "kody": ["IML"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Zna zaawansowane koncepcje architektoniczne aplikacji internetowych: DDD, architektura heksagonalna, SOA, mikroserwisy, uwierzytelnianie OAuth 2.1 oraz integracja usług.",
-        "kody": ["PAI", "TBK", "TAPI"],
+        "kody": ["PAI"],
         "mnsiw": [
           { "kod": "P6S_WG", "inzynierskie": true }
-        ]
-      },
-      {
-        "tresc": "Zna możliwości i ograniczenia narzędzi do druku 3D (FDM) oraz zasady projektowania modeli do wydruku z uwzględnieniem specyfiki materiałów i orientacji obiektu.",
-        "kody": ["SPR"],
-        "mnsiw": [
-          { "kod": "P6S_WG", "inzynierskie": false }
         ]
       }
     ],
     "umiejetnosci": [
       {
         "tresc": "Potrafi stosować aparat matematyczny (algebra liniowa, geometria analityczna, rachunek prawdopodobieństwa) do interpretowania pojęć informatycznych i rozwiązywania problemów obliczeniowych.",
-        "kody": ["ALG", "MAD", "SAD", "GRK", "MHE"],
+        "kody": ["ALG", "MAD", "SAD", "GRK"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -289,8 +268,8 @@
         ]
       },
       {
-        "tresc": "Potrafi programować w języku C# z użyciem platformy .NET: tworzyć hierarchie klas, stosować wzorce obiektowe, delegacje, zdarzenia, serializację i mechanizm refleksji.",
-        "kody": ["POJ", "DOT"],
+        "tresc": "Potrafi programować obiektowo z użyciem języków dostępnych w planie studiów: tworzyć hierarchie klas, stosować wzorce obiektowe, korzystać z bibliotek standardowych.",
+        "kody": ["POJ"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true },
@@ -298,16 +277,8 @@
         ]
       },
       {
-        "tresc": "Potrafi programować w języku C++ z uwzględnieniem współbieżności, wyrażeń lambda, zadań asynchronicznych, mutexa oraz innych zaawansowanych technik języka.",
-        "kody": ["CPP"],
-        "mnsiw": [
-          { "kod": "P6S_UW", "inzynierskie": false },
-          { "kod": "P6S_UK", "inzynierskie": false }
-        ]
-      },
-      {
         "tresc": "Potrafi tworzyć aplikacje webowe z użyciem JavaScript/Node.js, stosując techniki programowania funkcyjnego, reaktywnego i asynchronicznego.",
-        "kody": ["TIN", "TFN", "TBK"],
+        "kody": ["TIN"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -315,15 +286,7 @@
       },
       {
         "tresc": "Potrafi zaprojektować i zaimplementować warstwową aplikację webową (frontend + backend) w oparciu o wybrane wzorce architektoniczne, z użyciem odpowiednich frameworków i narzędzi.",
-        "kody": ["TFN", "TIN", "TBK", "PAI"],
-        "mnsiw": [
-          { "kod": "P6S_UW", "inzynierskie": false },
-          { "kod": "P6S_UW", "inzynierskie": true }
-        ]
-      },
-      {
-        "tresc": "Potrafi projektować i implementować interfejsy API (REST, GraphQL, gRPC), zapewniając wydajność, bezpieczeństwo, skalowalność i zgodność z dobrymi praktykami.",
-        "kody": ["TAPI", "TBK"],
+        "kody": ["TIN", "PAI"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -331,7 +294,7 @@
       },
       {
         "tresc": "Potrafi projektować i implementować relacyjne i nierelacyjne bazy danych: tworzyć modele ERD, formułować zapytania SQL, zarządzać transakcjami i wykonywać operacje CRUD.",
-        "kody": ["RBD", "TBK"],
+        "kody": ["RBD"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UK", "inzynierskie": false }
@@ -386,21 +349,21 @@
       },
       {
         "tresc": "Potrafi przeprowadzić testy oprogramowania (jednostkowe, integracyjne, E2E), identyfikować i dokumentować defekty oraz diagnozować je przy użyciu narzędzi debugowania.",
-        "kody": ["BYT", "PRO", "TAPI", "PAI", "WG1", "WG2"],
+        "kody": ["BYT", "PRO", "PAI"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Potrafi przygotować i przetworzyć dane na potrzeby uczenia maszynowego, dobrać właściwe algorytmy ML, przeprowadzić trening modelu i ocenić uzyskane wyniki.",
-        "kody": ["IML", "MLR", "AAI"],
+        "kody": ["IML"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Potrafi zastosować narzędzia sztucznej inteligencji i sieci neuronowych do rozwiązywania praktycznych problemów, identyfikować zadania wymagające podejść przybliżonych.",
-        "kody": ["AAI", "NAI", "FDL"],
+        "tresc": "Potrafi zastosować narzędzia sztucznej inteligencji do rozwiązywania praktycznych problemów, identyfikować zadania wymagające podejść przybliżonych.",
+        "kody": ["NAI"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false }
         ]
@@ -415,7 +378,7 @@
       },
       {
         "tresc": "Potrafi komunikować się w języku angielskim na poziomie akademickim i zawodowym: pisać dokumentację techniczną, abstrakty, raporty i CV z użyciem fachowego słownictwa.",
-        "kody": ["ANG1-3", "SPR"],
+        "kody": ["ANG1", "ANG2", "ANG3"],
         "mnsiw": [
           { "kod": "P6S_UK", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": false }
@@ -423,7 +386,7 @@
       },
       {
         "tresc": "Potrafi operować grafiką 2D i 3D za pomocą standardowych API graficznych, tworzyć interfejsy użytkownika i przeprowadzać testy użyteczności aplikacji.",
-        "kody": ["GRK", "ZZGA", "OGL"],
+        "kody": ["GRK", "ICK"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -431,23 +394,15 @@
       },
       {
         "tresc": "Potrafi modelować obiekty 3D technikami low-poly i high-poly, rozwijać siatki UV, teksturować i wypalać tekstury proceduralne przy użyciu narzędzi takich jak Blender.",
-        "kody": ["M3D", "S3D"],
+        "kody": ["M3D"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
-        "tresc": "Potrafi tworzyć animacje szkieletowe i parametryczne, stosować rigging, mocap i animacje zależne obiektów w przestrzeni 3D.",
-        "kody": ["ANK"],
-        "mnsiw": [
-          { "kod": "P6S_UW", "inzynierskie": false },
-          { "kod": "P6S_UW", "inzynierskie": true }
-        ]
-      },
-      {
-        "tresc": "Potrafi zaprojektować i zaimplementować prostą grę komputerową z użyciem silnika gier (np. Unreal Engine), w tym blueprintów, fizyki, animacji i efektów cząsteczkowych.",
-        "kody": ["SGD", "WG1", "WG2", "PG1", "PG2"],
+        "tresc": "Potrafi zaprojektować i zaimplementować prostą grę komputerową z użyciem silnika gier, w tym mechanik rozgrywki, fizyki, animacji i efektów cząsteczkowych.",
+        "kody": ["SGD", "PG1", "PG2"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -455,7 +410,7 @@
       },
       {
         "tresc": "Potrafi zaprojektować, zbudować i oprogramować systemy wbudowane oparte na mikrokontrolerach, dobierając odpowiednie moduły, interfejsy i algorytmy sterowania.",
-        "kody": ["SCR", "SWB", "KPIR", "KIP", "PPS"],
+        "kody": ["SWB", "KIP", "PPS"],
         "mnsiw": [
           { "kod": "P6S_UW", "inzynierskie": false },
           { "kod": "P6S_UW", "inzynierskie": true }
@@ -477,14 +432,6 @@
         ]
       },
       {
-        "tresc": "Potrafi zastosować metody reprezentacji wiedzy i wnioskowania (logika predykatów, sieci semantyczne, systemy rozmyte) do rozwiązywania problemów z użyciem systemów AI.",
-        "kody": ["KNO"],
-        "mnsiw": [
-          { "kod": "P6S_UK", "inzynierskie": false },
-          { "kod": "P6S_UW", "inzynierskie": false }
-        ]
-      },
-      {
         "tresc": "Potrafi analizować i rozwiązywać problemy NLP: budować modele językowe, przetwarzać dane tekstowe i implementować zastosowania praktyczne z użyciem nowoczesnych frameworków.",
         "kody": ["PJN"],
         "mnsiw": [
@@ -501,17 +448,9 @@
       },
       {
         "tresc": "Potrafi pracować w zespole projektowym: szacować czas i koszty realizacji zadania, planować harmonogram, przyjmować różne role i współtworzyć dokumentację.",
-        "kody": ["PRO", "ZPR", "COV", "TAPI"],
+        "kody": ["PRO", "ZPR", "COV"],
         "mnsiw": [
           { "kod": "P6S_UO", "inzynierskie": false }
-        ]
-      },
-      {
-        "tresc": "Potrafi przygotować modele 3D do druku 3D (STL, G-code), uwzględniając specyfikę technologii FDM, orientację obiektu i ograniczenia materiałowe.",
-        "kody": ["SPR"],
-        "mnsiw": [
-          { "kod": "P6S_UW", "inzynierskie": false },
-          { "kod": "P6S_UW", "inzynierskie": true }
         ]
       },
       {
@@ -529,8 +468,8 @@
         ]
       },
       {
-        "tresc": "Potrafi korzystać z narzędzi wspomagających programowanie (IDE, debugger, systemy kontroli wersji, npm) i wydajnie posługiwać się dokumentacją techniczną w języku polskim i angielskim.",
-        "kody": ["CPP", "DOT", "WPR", "SPR"],
+        "tresc": "Potrafi korzystać z narzędzi wspomagających programowanie (IDE, debugger, systemy kontroli wersji) i wydajnie posługiwać się dokumentacją techniczną w języku polskim i angielskim.",
+        "kody": ["WPR"],
         "mnsiw": [
           { "kod": "P6S_UK", "inzynierskie": false }
         ]
@@ -547,28 +486,28 @@
     "kompetencje_spoleczne": [
       {
         "tresc": "Jest gotów do ciągłego samokształcenia i rozwijania kompetencji zawodowych przez całe życie, śledząc rozwój technologii informatycznych i branżowych.",
-        "kody": ["PRO", "TIN", "TAPI", "COV", "PJN", "ANK", "M3D", "WG1", "WG2", "HKJ", "ANG1-3", "SKO1"],
+        "kody": ["PRO", "TIN", "COV", "PJN", "M3D", "HKJ", "ANG1", "ANG2", "ANG3"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Jest gotów do krytycznej oceny własnych umiejętności, poszukiwania informacji zwrotnej i podejmowania inicjatyw samokształcenia, szczególnie w zakresie nowych technologii.",
-        "kody": ["TIN", "FDL", "COV", "DTH"],
+        "kody": ["TIN", "COV", "DTH"],
         "mnsiw": [
           { "kod": "P6S_KK", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Jest gotów do efektywnej współpracy w zespole projektowym, przyjmując różne role (analityk, projektant, wykonawca, tester), i do dzielenia się wiedzą z innymi członkami zespołu.",
-        "kody": ["PRO", "PRIN", "ZPR", "ANK", "M3D", "TIN", "TAPI", "PJN", "COV", "PAI"],
+        "kody": ["PRO", "PRIN", "ZPR", "M3D", "TIN", "PJN", "COV", "PAI"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Jest gotów do działania w sposób przedsiębiorczy i innowacyjny oraz do myślenia zorientowanego na tworzenie wartości dodanej w projektach informatycznych.",
-        "kody": ["ZPR", "POZ", "SKO1", "MHE"],
+        "kody": ["ZPR", "POZ"],
         "mnsiw": [
           { "kod": "P6S_KO", "inzynierskie": false }
         ]
@@ -582,7 +521,7 @@
       },
       {
         "tresc": "Jest gotów do efektywnego zarządzania czasem i zasobami, określania priorytetów oraz dostosowywania planu do zmian w dynamicznym środowisku projektowym.",
-        "kody": ["WG1", "WG2", "PRO", "FDL", "COV"],
+        "kody": ["PRO", "COV"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false },
           { "kod": "P6S_KK", "inzynierskie": false }
@@ -590,14 +529,14 @@
       },
       {
         "tresc": "Jest gotów do przekazywania informacji i opinii dotyczących informatyki i inżynierii w sposób zrozumiały dla różnych grup odbiorców, w tym inwestorów i interesariuszy.",
-        "kody": ["POZ", "MHE", "SKO1", "PRIN", "SAI"],
+        "kody": ["POZ", "PRIN", "SAI"],
         "mnsiw": [
           { "kod": "P6S_KO", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Jest gotów do rozumienia i angażowania się w rozwiązywanie kwestii etycznych, prawnych i społecznych związanych z tworzeniem i wdrażaniem systemów informatycznych.",
-        "kody": ["SAI", "WG1", "WG2", "TAPI", "FDL", "COV"],
+        "kody": ["SAI", "COV"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false },
           { "kod": "P6S_KO", "inzynierskie": false }
@@ -605,7 +544,7 @@
       },
       {
         "tresc": "Jest gotów do zastosowania informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego oraz do budowania innowacyjnych rozwiązań odpowiadających na potrzeby społeczne.",
-        "kody": ["MHE", "PRIN", "FDL", "COV", "SPR", "PTT", "RTO"],
+        "kody": ["PRIN", "COV", "PTT", "RTO"],
         "mnsiw": [
           { "kod": "P6S_KO", "inzynierskie": false }
         ]
@@ -626,20 +565,20 @@
       },
       {
         "tresc": "Jest gotów do permanentnego doskonalenia kompetencji językowych, szczególnie w języku angielskim, w celach zawodowych i akademickich.",
-        "kody": ["ANG1-3"],
+        "kody": ["ANG1", "ANG2", "ANG3"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
         "tresc": "Zna i stosuje zasady bezpieczeństwa, higieny, zdrowego stylu życia oraz fair play w aktywności fizycznej i na obiektach sportowych.",
-        "kody": ["WF"],
+        "kody": ["WF1", "WF2"],
         "mnsiw": [
           { "kod": "P6S_KR", "inzynierskie": false }
         ]
       },
       {
-        "tresc": "Jest gotów do samodzielnego uczenia się niskpoziomowego programowania systemów wbudowanych i śledzenia postępów w tej dziedzinie.",
+        "tresc": "Jest gotów do samodzielnego uczenia się niskopoziomowego programowania systemów wbudowanych i śledzenia postępów w tej dziedzinie.",
         "kody": ["LLP", "KIP", "PPS"],
         "mnsiw": [
           { "kod": "P6S_KK", "inzynierskie": false }
@@ -647,7 +586,7 @@
       },
       {
         "tresc": "Potrafi prezentować projekty i argumentować decyzje projektowe oraz biznesowe w formie pitchingu wobec zróżnicowanego grona odbiorców.",
-        "kody": ["PG2", "WG1", "WG2"],
+        "kody": ["PG2"],
         "mnsiw": [
           { "kod": "P6S_KK", "inzynierskie": false }
         ]
@@ -655,4 +594,3 @@
     ]
   }
 }
-
