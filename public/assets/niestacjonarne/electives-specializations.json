@@ -11,7 +11,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/AMM.json",
+          "pdf": "assets/files/niestacjonarne/AMM.pdf"
         },
         {
           "semester": 6,
@@ -21,7 +23,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/KSI.json",
+          "pdf": "assets/files/niestacjonarne/KSI.pdf"
         },
         {
           "semester": 7,
@@ -43,7 +47,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/ZIC.json",
+          "pdf": "assets/files/niestacjonarne/ZIC.pdf"
         }
       ]
     },
@@ -94,7 +100,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PBA.json",
+          "pdf": "assets/files/niestacjonarne/PBA.pdf"
         }
       ]
     },
@@ -109,7 +117,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PG1.json",
+          "pdf": "assets/files/niestacjonarne/PG1.pdf"
         },
         {
           "semester": 6,
@@ -141,7 +151,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PG2.json",
+          "pdf": "assets/files/niestacjonarne/PG2.pdf"
         }
       ]
     },
@@ -168,7 +180,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/FDL.json",
+          "pdf": "assets/files/niestacjonarne/FDL.pdf"
         },
         {
           "semester": 7,
@@ -207,7 +221,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/RTO.json",
+          "pdf": "assets/files/niestacjonarne/RTO.pdf"
         },
         {
           "semester": 6,
@@ -217,7 +233,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PTT.json",
+          "pdf": "assets/files/niestacjonarne/PTT.pdf"
         },
         {
           "semester": 7,
@@ -227,7 +245,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/KIP.json",
+          "pdf": "assets/files/niestacjonarne/KIP.pdf"
         },
         {
           "semester": 8,
