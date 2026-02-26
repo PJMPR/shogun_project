@@ -11,7 +11,9 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/AMM.json",
+          "pdf": "assets/files/stacjonarne/AMM.pdf"
         },
         {
           "semester": 5,
