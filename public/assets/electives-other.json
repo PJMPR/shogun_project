@@ -337,7 +337,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/LANG1.json",
+          "pdf": "assets/files/stacjonarne/LANG1.pdf"
         },
         {
           "name": "Język niemiecki",
@@ -355,7 +357,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/HIS1.json",
+          "pdf": "assets/files/stacjonarne/HIS1.pdf"
         },
         {
           "name": "Język japoński",
@@ -398,7 +402,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/HIS2.json",
+          "pdf": "assets/files/stacjonarne/HIS2.pdf"
         },
         {
           "name": "Język japoński",
