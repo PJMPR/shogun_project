@@ -1,10 +1,10 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
                     "kierunek":  "INFORMATYKA",
                     "profil":  "praktyczny",
-                    "tryb_studiow":  "stacjonarny",
+                    "tryb_studiow":  "niestacjonarny",
                     "wersja_z_dnia":  "19.02.2026",
                     "nazwa_przedmiotu":  "Wytwarzanie gier 1",
                     "kod_przedmiotu":  "WG1",
@@ -75,12 +75,12 @@
                                                                              "\"Challenges for Game Designers\" by Brenda Romero and Ian Schreiber (2008)",
                                                                              "\"Character Development and Storytelling for Games\" by Lee Sheldon (2004)",
                                                                              "\"Game Design: Theory and Practice\" by Richard Rouse III (2001)",
-                                                                             "\"Game Feel: A Game Designer's Guide to Virtual Sensation\" by Steve Swink (2008)",
+                                                                             "\"Game Feel: A Game Designer\u0027s Guide to Virtual Sensation\" by Steve Swink (2008)",
                                                                              "\"Game Mechanics: Advanced Game Design\" by Ernest W. Adams and Joris Dormans (2012)",
-                                                                             "Freese, Maria & Lukosch, Heide. (2023). The Funnel of Game Design – An Adaptive Game Design Approach for Complex Systems. Simulation & Gaming. 55. 10.1177/10468781231222524.",
-                                                                             "Hammar, Emil & Canossa, Alessandro & Juul, Jesper & Debus, Michael & Pfau, Johannes & El-Nasr, Magy & Azadvar, Ahmad. (2023). From Teams to Games: Connecting Game Development to Game Characteristics. 336-340. 10.1007/978-3-031-48050-8_23.",
-                                                                             "Zehnder, S. M., & Lipscomb, S. D. (2006). The Role of Music in Video Games. In P. Vorderer & J. Bryant (Eds.), Playing video games: Motives, responses, and consequences (pp. 241–258). Lawrence Erlbaum Associates Publishers.",
-                                                                             "Ermi, Laura & Mäyrä, Frans. (2005). Player-Centred Game Design: Experiences in Using Scenario Study to Inform Mobile Game Design.. Game Studies. 5."
+                                                                             "Freese, Maria \u0026 Lukosch, Heide. (2023). The Funnel of Game Design – An Adaptive Game Design Approach for Complex Systems. Simulation \u0026 Gaming. 55. 10.1177/10468781231222524.",
+                                                                             "Hammar, Emil \u0026 Canossa, Alessandro \u0026 Juul, Jesper \u0026 Debus, Michael \u0026 Pfau, Johannes \u0026 El-Nasr, Magy \u0026 Azadvar, Ahmad. (2023). From Teams to Games: Connecting Game Development to Game Characteristics. 336-340. 10.1007/978-3-031-48050-8_23.",
+                                                                             "Zehnder, S. M., \u0026 Lipscomb, S. D. (2006). The Role of Music in Video Games. In P. Vorderer \u0026 J. Bryant (Eds.), Playing video games: Motives, responses, and consequences (pp. 241–258). Lawrence Erlbaum Associates Publishers.",
+                                                                             "Ermi, Laura \u0026 Mäyrä, Frans. (2005). Player-Centred Game Design: Experiences in Using Scenario Study to Inform Mobile Game Design.. Game Studies. 5."
                                                                          ]
                                                          }
                                    },

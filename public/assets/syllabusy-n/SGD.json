@@ -12,16 +12,16 @@
                     "semestr_studiow":  8,
                     "obligatoryjny":  false,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  8,
+                                                        "wyklady":  16,
                                                         "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  8
+                                                        "laboratorium_projekt":  16
                                                     },
                     "odpowiedzialny_za_przedmiot":  "dr Elżbieta Puźniakowska-Gałuch, ela@pjwstk.edu.pl,  dr Tadeusz Puźniakowski,   pantadeusz@pjwstk.edu.pl",
                     "ects":  2,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  16,
-                                    "praca_wlasna_studenta_h":  34,
-                                    "calkowita_liczba_godzin_h":  50
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
                                 },
                     "metody_dydaktyczne":  {
 

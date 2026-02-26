@@ -12,15 +12,15 @@
                     "semestr_studiow":  7,
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  30,
+                                                        "wyklady":  16,
                                                         "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  30
+                                                        "laboratorium_projekt":  16
                                                     },
                     "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
                     "ects":  5,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  60,
-                                    "praca_wlasna_studenta_h":  65,
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
                                     "calkowita_liczba_godzin_h":  125
                                 },
                     "metody_dydaktyczne":  {

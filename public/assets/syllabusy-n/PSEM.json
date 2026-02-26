@@ -4,7 +4,7 @@
                     "jednostka":  "Filia w Gdansku",
                     "kierunek":  "INFORMATYKA",
                     "profil":  "praktyczny",
-                    "tryb_studiow":  "stacjonarny",
+                    "tryb_studiow":  "niestacjonarny",
                     "wersja_z_dnia":  "15.02.2025",
                     "nazwa_przedmiotu":  "Proseminarium",
                     "kod_przedmiotu":  "PSEM",
@@ -12,15 +12,15 @@
                     "semestr_studiow":  7,
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  30,
-                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "wyklady":  null,
+                                                        "cwiczenia_lektorat_seminarium":  16,
                                                         "laboratorium_projekt":  null
                                                     },
                     "odpowiedzialny_za_przedmiot":  "Dr hab. Marek A. Bednarczyk, prof. PJATK",
                     "ects":  3,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  30,
-                                    "praca_wlasna_studenta_h":  45,
+                                    "z_udzialem_prowadzacego_h":  16,
+                                    "praca_wlasna_studenta_h":  59,
                                     "calkowita_liczba_godzin_h":  75
                                 },
                     "metody_dydaktyczne":  {

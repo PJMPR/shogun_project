@@ -4,7 +4,7 @@
                     "jednostka":  "Filia w Gdansku",
                     "kierunek":  "INFORMATYKA",
                     "profil":  "praktyczny",
-                    "tryb_studiow":  "stacjonarny",
+                    "tryb_studiow":  "niestacjonarny",
                     "wersja_z_dnia":  "19.02.2026",
                     "nazwa_przedmiotu":  "Projekt",
                     "kod_przedmiotu":  "PRO",
@@ -12,16 +12,16 @@
                     "semestr_studiow":  5,
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  null,
+                                                        "wyklady":  16,
                                                         "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  45
+                                                        "laboratorium_projekt":  16
                                                     },
                     "odpowiedzialny_za_przedmiot":  "dr hab. inż. Marta Łabuda",
                     "ects":  3,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  45,
-                                    "praca_wlasna_studenta_h":  30,
-                                    "calkowita_liczba_godzin_h":  75
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
                                 },
                     "metody_dydaktyczne":  {
 

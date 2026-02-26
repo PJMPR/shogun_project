@@ -1,0 +1,79 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "niestacjonarny",
+                    "wersja_z_dnia":  "20.02.2026",
+                    "nazwa_przedmiotu":  "Programowanie w języku Scala",
+                    "kod_przedmiotu":  "JSC",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  8,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  8
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "do ustalenia",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  16,
+                                    "praca_wlasna_studenta_h":  34,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Projekt":  {
+                                                       "sposob":  "Zaliczenie z oceną"
+                                                   }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+                                           "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, wykorzystanie paradygmatu funkcyjnego i obiektowego oraz dokumentację",
+                                           "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Podstawy Programowania",
+                                                         "wymagania":  "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Scala, łączącym paradygmat obiektowy i funkcyjny, oraz wykształcenie umiejętności tworzenia prostych aplikacji działających na platformie JVM. Zajęcia kładą nacisk na niemutowalność danych, wyrażenia funkcyjne, dopasowanie wzorców oraz czytelny i bezpieczny kod. Przedmiot przygotowuje studentów do dalszej nauki technologii opartych na JVM oraz do pracy z nowoczesnymi językami funkcyjnymi.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Martin Odersky, Lex Spoon, Bill Venners, Programming in Scala",
+                                                                          "Dean Wampler, Programming Scala",
+                                                                          "Dokumentacja Scala: https://docs.scala-lang.org"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Paul Chiusano, Rúnar Bjarnason, Functional Programming in Scala",
+                                                                             "Scala Exercises – materiały online"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna podstawowe konstrukcje języka Scala, różnice między paradygmatem obiektowym i funkcyjnym oraz zasady działania aplikacji na platformie JVM.",
+                                               "umiejetnosci":  "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Scala, definiować funkcje i klasy, korzystać z kolekcji niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+                                               "kompetencje_spoleczne":  "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie dobierać narzędzia i paradygmaty do rozwiązywanego problemu."
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do języka Scala i platformy JVM oraz konfiguracja środowiska",
+                                              "Podstawowe typy danych, wyrażenia, instrukcje sterujące i niemutowalność",
+                                              "Funkcje, funkcje anonimowe i funkcje wyższego rzędu",
+                                              "Kolekcje w Scali i operacje funkcyjne (map, flatMap, filter)",
+                                              "Podstawy programowania obiektowego: klasy, obiekty, case class",
+                                              "Dziedziczenie, cechy (traits) i kompozycja",
+                                              "Dopasowanie wzorców (pattern matching)",
+                                              "Obsługa błędów: Option, Either, Try",
+                                              "Dobre praktyki i czytelność kodu w stylu funkcyjnym",
+                                              "Projekt programistyczny – implementacja i prezentacja"
+                                          ]
+                }
+}

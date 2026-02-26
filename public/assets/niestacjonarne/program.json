@@ -79,7 +79,9 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy-n/WDZ.json",
+          "pdf": "assets/files/niestacjonarne/WDZ.pdf"
         },
         {
           "name": "Język angielski 1",
@@ -160,6 +162,7 @@
           "lab": 32,
           "form": "Z",
           "ects": 4,
+          "syllabusFile": "assets/syllabusy-n/POJ.json",
           "pdf": "assets/files/niestacjonarne/POJ.pdf"
         },
         {
@@ -206,7 +209,9 @@
           "tutorial": 0,
           "lab": 32,
           "form": "Z",
-          "ects": 6
+          "ects": 6,
+          "syllabusFile": "assets/syllabusy-n/PAI.json",
+          "pdf": "assets/files/niestacjonarne/PAI.pdf"
         },
         {
           "name": "Fizyka",
@@ -324,7 +329,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy-n/LLP.json",
+          "pdf": "assets/files/niestacjonarne/LLP.pdf"
         },
         {
           "name": "Języki programowania 1",

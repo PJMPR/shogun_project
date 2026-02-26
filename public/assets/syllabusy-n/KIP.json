@@ -1,0 +1,94 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+                    "jednostka":  "Filia w Gdańsku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "niestacjonarny",
+                    "wersja_z_dnia":  "19.02.2026",
+                    "nazwa_przedmiotu":  "Komunikacja i protokoły dla Internetu Rzeczy",
+                    "kod_przedmiotu":  "KIP",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  16,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  16
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "inż. Antoni Ulenberg",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+                                               "wyklad":  [
+                                                              "Wykład z prezentacją multimedialną",
+                                                              "Wykład z zespołowym rozwiązaniem problemu",
+                                                              "Live-Coding"
+                                                          ],
+                                               "laboratorium":  [
+                                                                    "Ćwiczenia praktyczne",
+                                                                    "Implementacja projektów"
+                                                                ]
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  },
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "1 projekt - 40% oceny",
+                                           "Zadania z zajęć - 20% oceny",
+                                           "Kolokwium teoretyczno-praktyczne - 40% oceny"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera",
+                                                              "zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki",
+                                                              "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
+                                                                    "potrafi przeanalizować, zsyntezować i oprogramować prosty system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację",
+                                                                    "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "jest gotów do samodzielnego uczenia się przez całe życie"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS.",
+                                              "Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug.",
+                                              "Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU.",
+                                              "Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput.",
+                                              "Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń.",
+                                              "MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie.",
+                                              "CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania.",
+                                              "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
+                                              "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
+                                              "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff."
+                                          ]
+                }
+}

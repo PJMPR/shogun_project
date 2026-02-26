@@ -1,0 +1,98 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+                    "jednostka":  "Filia w Gdańsku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "niestacjonarny",
+                    "wersja_z_dnia":  "19.02.2026",
+                    "nazwa_przedmiotu":  "Projektowanie gier komputerowych",
+                    "kod_przedmiotu":  "PG2",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  16,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  16
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Aleksandr Polin",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+                                               "wyklad":  [
+                                                              "Wykład"
+                                                          ],
+                                               "laboratorium":  [
+                                                                    "Projekt"
+                                                                ]
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  },
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Zrobiony projekt (waga 70%)",
+                                           "Obecność i aktywność na zajęciach (waga 30%)"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Prototypowanie gier komputerowych (PG1) ",
+                                                         "wymagania":  "Umiejętność szybkiej iteracji mechanik, zasada \"fail fast\", podstawowa obsługa silnika gier."
+                                                     },
+                                                     {
+                                                         "nazwa":  "Interacja Człowiek-Komputer (ICK) ",
+                                                         "wymagania":  "Podstawowe zasady użyteczności i projektowania interfejsów."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Rozwój umiejętności kompleksowego projektowania gier jako produktów multimedialnych. Nacisk kładziony jest na integrację zaawansowanych technik designu z aspektami wizualnymi (Art), użytkowymi (UX/UI) oraz biznesowymi (Marketing/Rynek). Przeprowadzenie projektu od zaawansowanego prototypu do etapu \"vertical slice\", dbając o spójność estetyczną i komunikację z odbiorcą.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Sylvester T., Designing Games: A Guide to Engineering Experiences, O\u0027Reilly Vlg. GmbH \u0026 Co. 2013",
+                                                                          "Sellers M., Advanced Game Design: A Systems Approach, Addison Wesley 2017",
+                                                                          "Elias G., Characteristics of Games, The MIT Press 2020"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Kramarzewski A., Practical Game Design - Second Edition: A modern and comprehensive guide to video game design, Packt Publishing 2023",
+                                                                             "McGonigal J., Random House UK Ltd, 2012"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student ma zaawansowaną wiedzę o psychologii gracza i projektowaniu doświadczeń (UX w grach).",
+                                                              "Student zna trendy rynkowe, modele biznesowe (F2P, Premium) i podstawowe techniki marketingu gier (Steam page, hook).",
+                                                              "Student rozumie proces budowania spójności wizualnej (Art Direction) i dźwiękowej w grach."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zaprojektować i zaimplementować intuicyjny interfejs użytkownika (UI) oraz systemy HUD.",
+                                                                    "Student umie przygotować strategię promocji swojego projektu, w tym analizę grupy docelowej i unikalnych cech sprzedaży (USP).",
+                                                                    "Student potrafi zarządzać złożonym projektem gry, priorytetyzując funkcjonalności zgodnie z harmonogramem produkcji."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student potrafi prezentować swój projekt w formie \"pitchingu\", argumentując wybory projektowe i biznesowe.",
+                                                                             "Student wykazuje świadomość znaczenia inkluzywności i dostępności (accessibility) w projektowaniu gier."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Advanced Game Design. Projektowanie systemowe, ekonomia w grach i zaawansowany balans.",
+                                              "Game UX \u0026 UI: Architektura informacji w grach, projektowanie diegetycznych i niediegetycznych elementów interfejsu.",
+                                              "Visual Storytelling \u0026 Art Direction. Budowanie nastroju poprzez światło, kolor i otoczenie (environmental storytelling).",
+                                              "Marketing dla twórców gier. Budowanie społeczności, przygotowanie assetów marketingowych (traillery, screenshoty) i Steam marketing.",
+                                              "Produkcja i Project Management. Metodologie pracy w zespole, zarządzanie zakresem projektu (scope management).",
+                                              "Analityka i zbieranie danych. Implementacja narzędzi analitycznych i interpretacja danych o zachowaniach graczy.",
+                                              "Pitching i publikacja. Jak \"sprzedać\" swój pomysł wydawcy lub graczom na platformach dystrybucyjnych."
+                                          ]
+                }
+}

@@ -1,0 +1,92 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+                    "jednostka":  "Filia w Gdańsku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "niestacjonarny",
+                    "wersja_z_dnia":  "19.02.2026",
+                    "nazwa_przedmiotu":  "Metody Design Thinking w projektowaniu systemów IT",
+                    "kod_przedmiotu":  "DTH",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  16,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  16
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Aleksandr Polin",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+                                               "wyklad":  [
+                                                              "Wykład"
+                                                          ],
+                                               "laboratorium":  [
+                                                                    "Projekt"
+                                                                ]
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  },
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Zrobiony projekt (waga 70%)",
+                                           "Obecność i aktywność na zajęciach (waga 30%)"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Projektowanie systemów informacyjnych (PRI)",
+                                                         "wymagania":  "Rozumienie cyklu życia oprogramowania i podstawowych diagramów procesów."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie studentów z metodologią Design Thinking jako usystematyzowanym podejściem do rozwiązywania problemów i tworzenia innowacyjnych rozwiązań IT. Student nauczy się, jak budować produkty (aplikacje, systemy, gry) w oparciu o głęboką empatię wobec użytkownika, szybkie prototypowanie rozwiązań o niskiej wierności oraz proces ciągłej iteracji na podstawie otrzymanego feedbacku.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Lewrick M. Link P. Leifer L., The Design Thinking Playbook: Mindful Digital Transformation of Teams, Products, Services, Businesses and Ecosystems, Wiley John + Sons 2018",
+                                                                          "Brown T., Change by Design: How Design Thinking Transforms Organizations and Inspires Innovation, Harper Collins Publ. USA 2019"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Norman D., The Design of Everyday Things, Hachette Book Group USA 2013"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test).",
+                                                              "Student rozumie różnice między projektowaniem skoncentrowanym na technologii a projektowaniem skoncentrowanym na człowieku (Human-Centered Design).",
+                                                              "Student posiada wiedzę o technikach kreatywnego rozwiązywania problemów i moderowania sesji ideacyjnych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem oraz stworzyć na jego podstawie mapę empatii i personę.",
+                                                                    "Student umie zdefiniować \"Point of View\" (POV) i sformułować pytania typu \"How Might We\" w celu znalezienia innowacyjnych rozwiązań.",
+                                                                    "Student potrafi tworzyć prototypy \"low-fidelity\" (np. makiety papierowe, storyboarding) i wykorzystywać je do zbierania wczesnego feedbacku."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika.",
+                                                                             "Student jest gotowy do moderowania procesów grupowych, dbając o bezpieczeństwo psychologiczne i kreatywność zespołu."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Fundamenty Design Thinking. Geneza metody, \"Double Diamond\" i różnica między myśleniem dywergencyjnym a konwergencyjnym.",
+                                              "Etap Empatii. Techniki obserwacji, wywiady pogłębione i mapowanie podróży użytkownika (Customer Journey Map).",
+                                              "Definiowanie problemu. Synteza danych, tworzenie Person i identyfikacja realnych bólów (pains) oraz zysków (gains) użytkownika.",
+                                              "Generowanie pomysłów (Ideate). Techniki burzy mózgów (np. Brainwriting, SCAMPER) i selekcja pomysłów za pomocą macierzy priorytetów.",
+                                              "Prototypowanie w IT. Szybkie makiety lo-fi, prototypowanie usług (Service Blueprint) i rola MVP.",
+                                              "Testowanie i Iteracja. Planowanie scenariuszy testowych, zbieranie feedbacku i powrót do wcześniejszych faz procesu.",
+                                              "Wdrożenie i prezentacja. Storytelling jako narzędzie prezentacji pomysłu biznesowego/technicznego."
+                                          ]
+                }
+}

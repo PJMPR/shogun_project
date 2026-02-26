@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
@@ -20,8 +20,8 @@
                     "ects":  3,
                     "godziny":  {
                                     "z_udzialem_prowadzacego_h":  24,
-                                    "praca_wlasna_studenta_h":  76,
-                                    "calkowita_liczba_godzin_h":  100
+                                    "praca_wlasna_studenta_h":  51,
+                                    "calkowita_liczba_godzin_h":  75
                                 },
                     "metody_dydaktyczne":  {
 

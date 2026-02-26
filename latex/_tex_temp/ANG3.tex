@@ -1,0 +1,190 @@
+﻿% ===========================================================
+%  Sylabus: Język angielski 3 (ANG3)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ANG3}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Język angielski 3} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ANG3 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 3 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Studium Języków Obcych \\[3pt]
+  \textbf{Wersja z dnia:}     & 26.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+--- & 16 h & --- & 16 h & 59 h & 75 h & \textbf{3} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Nauczanie języka angielskiego na poziomie B2/B2+. Student opanowuje język angielski w stopniu pozwalającym na swobodną komunikację zawodową i akademicką, pisanie dokumentacji technicznej, prowadzenie prezentacji oraz uczestnictwo w międzynarodowych projektach informatycznych. Kurs przygotowuje do egzaminu certyfikacyjnego na poziomie B2.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Język angielski ANG2 & Znajomość języka angielskiego na poziomie B2. \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Powtórzenie i utrwalenie materiału z semestrów 1–2. Diagnoza poziomu B2.
+  \item Zaawansowane struktury gramatyczne: inwersja, zdania eliptyczne, causative have/get.
+  \item Słownictwo zawodowe IT: cloud computing, DevOps, wirtualizacja. Analiza dokumentacji technicznej w języku angielskim.
+  \item Pisanie techniczne: specyfikacje wymagań (SRS), user stories, dokumentacja API.
+  \item Komunikacja w środowisku Agile: daily stand-up, sprint review, retrospekcja – ćwiczenia symulacyjne.
+  \item Słownictwo: sztuczna inteligencja, uczenie maszynowe, sieci neuronowe. Czytanie artykułów naukowych.
+  \item Prowadzenie prezentacji technicznych w języku angielskim – techniki, struktura, język perswazji.
+  \item Akademickie pisanie po angielsku: esej argumentacyjny, streszczenie artykułu naukowego.
+  \item Negocjacje i rozwiązywanie problemów w języku angielskim – ćwiczenia symulacyjne.
+  \item Słownictwo: bezpieczeństwo danych, RODO/GDPR, prawo IT. Analiza anglojęzycznych aktów prawnych.
+  \item Przygotowanie do egzaminów certyfikacyjnych B2: czytanie, słuchanie, użycie języka.
+  \item Przygotowanie do egzaminów certyfikacyjnych B2: mówienie, pisanie – ćwiczenia praktyczne.
+  \item Projekt semestralny – przygotowanie i prezentacja raportu technicznego w języku angielskim.
+  \item Obrona projektu semestralnego, informacja zwrotna.
+  \item Powtórzenie materiału, kolokwium zaliczeniowe.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje.
+  \item Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich.
+  \item Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First).
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.
+  \item Prace pisemne – min. jedna praca na semestr.
+  \item Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.
+  \item Wypowiedź ustna (o rodzaju decyduje lektor).
+  \item Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.
+  \item Kryteria zaliczenia: uzyskanie przynajmniej 51\% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Materiały własne przygotowane przez lektora.
+  \item Podręcznik wskazany przez lektora prowadzącego na początku semestru.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Oxford Advanced Learner's Dictionary, Oxford University Press.
+  \item Materiały online: BBC Learning English, British Council, Cambridge English Online.
+\end{itemize}
+
+\end{document}

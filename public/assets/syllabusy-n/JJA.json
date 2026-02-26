@@ -1,0 +1,79 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "niestacjonarny",
+                    "wersja_z_dnia":  "20.02.2026",
+                    "nazwa_przedmiotu":  "Programowanie w języku Java",
+                    "kod_przedmiotu":  "JJA",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  8,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  8
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "do ustalenia",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  16,
+                                    "praca_wlasna_studenta_h":  34,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Projekt":  {
+                                                       "sposob":  "Zaliczenie z oceną"
+                                                   }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+                                           "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, strukturę projektu, obsługę wyjątków oraz dokumentację",
+                                           "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Podstawy Programowania",
+                                                         "wymagania":  "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Java oraz wykształcenie umiejętności tworzenia prostych aplikacji z wykorzystaniem paradygmatu obiektowego. Zajęcia kładą nacisk na poprawne modelowanie klas, czytelność kodu, obsługę wyjątków oraz wykorzystanie standardowych bibliotek języka Java. Przedmiot przygotowuje studentów do dalszej nauki technologii opartych na JVM oraz do realizacji niewielkich projektów programistycznych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Cay S. Horstmann, Core Java, Volume I",
+                                                                          "Herbert Schildt, Java: The Complete Reference",
+                                                                          "Dokumentacja Java: https://docs.oracle.com/javase"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Joshua Bloch, Effective Java",
+                                                                             "Oracle Java Tutorials"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna podstawowe konstrukcje języka Java, typy danych, instrukcje sterujące oraz zasady programowania obiektowego. Rozumie działanie maszyny wirtualnej JVM oraz rolę bibliotek standardowych.",
+                                               "umiejetnosci":  "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Java, projektować klasy i ich relacje, obsługiwać wyjątki oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+                                               "kompetencje_spoleczne":  "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy."
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do języka Java, platformy JVM oraz środowiska programistycznego",
+                                              "Typy danych, zmienne, operatory oraz instrukcje sterujące",
+                                              "Metody, przekazywanie parametrów oraz organizacja kodu",
+                                              "Tablice oraz kolekcje wprowadzające (List, Set, Map)",
+                                              "Podstawy programowania obiektowego: klasy, obiekty, enkapsulacja",
+                                              "Konstruktory, dziedziczenie i polimorfizm",
+                                              "Obsługa wyjątków i mechanizmy kontroli błędów",
+                                              "Operacje wejścia i wyjścia oraz praca z plikami",
+                                              "Dobre praktyki programistyczne i czytelność kodu",
+                                              "Projekt programistyczny – implementacja i prezentacja"
+                                          ]
+                }
+}

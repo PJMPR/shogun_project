@@ -12,7 +12,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JPT.json",
+          "pdf": "assets/files/niestacjonarne/JPT.pdf"
         },
         {
           "name": "Programowanie w języku C++",
@@ -21,7 +23,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JPC.json",
+          "pdf": "assets/files/niestacjonarne/JPC.pdf"
         },
         {
           "name": "Programowanie w języku JAVA",
@@ -30,7 +34,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JJA.json",
+          "pdf": "assets/files/niestacjonarne/JJA.pdf"
         },
         {
           "name": "Programowanie w języku C#",
@@ -39,7 +45,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JCS.json",
+          "pdf": "assets/files/niestacjonarne/JCS.pdf"
         },
         {
           "name": "Programowanie w języku SCALA",
@@ -48,7 +56,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JSC.json",
+          "pdf": "assets/files/niestacjonarne/JSC.pdf"
         },
         {
           "name": "Programowanie w języku F#",
@@ -57,7 +67,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/JFS.json",
+          "pdf": "assets/files/niestacjonarne/JFS.pdf"
         }
       ]
     },
@@ -73,7 +85,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/DDO.json",
+          "pdf": "assets/files/niestacjonarne/DDO.pdf"
         },
         {
           "name": "Wprowadzenie do baz grafowych",
@@ -82,7 +96,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/DGR.json",
+          "pdf": "assets/files/niestacjonarne/DGR.pdf"
         },
         {
           "name": "Wprowadzenie do baz słownikowych",
@@ -91,7 +107,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/DSL.json",
+          "pdf": "assets/files/niestacjonarne/DSL.pdf"
         }
       ]
     },
@@ -107,7 +125,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/MRN.json",
+          "pdf": "assets/files/niestacjonarne/MRN.pdf"
         },
         {
           "name": "Wprowadzenie do Flutter",
@@ -116,7 +136,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/MFL.json",
+          "pdf": "assets/files/niestacjonarne/MFL.pdf"
         },
         {
           "name": "Wprowadzenie do .Net MAUI",
@@ -125,7 +147,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/MNE.json",
+          "pdf": "assets/files/niestacjonarne/MNE.pdf"
         },
         {
           "name": "Wprowadzenie do Unity 3D",
@@ -134,7 +158,9 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/MUN.json",
+          "pdf": "assets/files/niestacjonarne/MUN.pdf"
         }
       ]
     },
@@ -150,7 +176,9 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/PUI.json",
+          "pdf": "assets/files/niestacjonarne/PUI.pdf"
         },
         {
           "name": "Kompetencje lidera IT",
@@ -159,7 +187,9 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/KLI.json",
+          "pdf": "assets/files/niestacjonarne/KLI.pdf"
         }
       ]
     },
@@ -186,7 +216,9 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/DTH.json",
+          "pdf": "assets/files/niestacjonarne/DTH.pdf"
         }
       ]
     },
@@ -253,7 +285,9 @@
           "tutorial": 8,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy-n/KMR.json",
+          "pdf": "assets/files/niestacjonarne/KMR.pdf"
         }
       ]
     },

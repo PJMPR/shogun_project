@@ -1,0 +1,192 @@
+﻿% ===========================================================
+%  Sylabus: Komercjalizacja projektów informatycznych (KMR)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: KMR}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Komercjalizacja projektów informatycznych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & KMR \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & Sławomir Ostrowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 26.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Wykład & Nieoceniany \\
+  Ćwiczenia & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest poznanie  procesu tworzenia od podstaw przedsięwzięcia typu start-up. Student zapoznaje się z tematyką modeli biznesowych oraz komercjalizacji rozwiązań innowacyjnych, a następnie rozpoczyna praktyczne stosowanie przyswojonej wiedzy na bazie projektu inżynierskiego.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Wiedza z zakresu szkoły średniej. & --- \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Get rich’ or die trying – wprowadzenie do tematyki prowadzenia własnej firmy, ustalanie celów finansowych oraz rozwojowych dla własnej kariery zawodowej, porównanie zalet i wad pracy najemnej oraz samozatrudnienia. Analiza przykładów – tj. dobrych i złych praktyk w zakresie komercjalizacji, próba ustalenia przyczyn porażki lub sukcesu wybranych przykładów biznesowych.
+  \item Wprowadzenie do tematyki modeli biznesowych. Dlaczego startupu upadają, konwersja, eliminacja niepewności, pretotypowanie (wg. podejścia A.Savoia) oraz testowanie projektów biznesowych. Case study urządzenia „iPod” firmy Apple Inc.Tworzenie zespołu projektowego, dobieranie funkcji w zespole ustalanie przewag i braków kompetencyjnych zespołu.
+  \item 3Współczesne modele biznesoweTworzenie założeń dla oferty. Definiowane jej przy użyciu tzw. języka korzyści, doskonalenie umiejętności pozycjonowania oferty w formie unique selling point.
+  \item Określenie charakterystyki behawioralnej docelowych odbiorców projektu. Rozróżnianie pojęć klienta-nabywcy i klienta-użytkownika.
+  \item Market fitting i scenariuszowanie. Student poznaje pojęcie produktu całościowego oraz  sposoby analizy wstępnej oferty, pod kątem  dopasowania do potrzeb rynku. Omawiana jest również tematyka innowacji liniowej i nieliniowej oraz jej wpływu na dotychczasowe nawyki użytkowników.Tworzenie scenariuszy
+  \item sprzedażowych dla różnych segmentów klientów (na podstawie charakterystyki behawioralnej)  i
+  \item wybór najatrakcyjniejszego segmentu innowatorów.
+  \item Design Thinking przy użyciu Value Proposition Canvas – omówienie zasad przeprowadzenia ćwiczenia. Na podstawie wybranego w poprzednim bloku segmentu tworzenie Propozycji Wartości, ostatecznie ustalając zakres oferty w kontekście jej atrakcyjności. Praca nad kwantyfikacją proponowanych
+  \item wartości do postaci mierzalnych parametrów stanowiących podstawę do późniejszej
+  \item narracji marketingowej.
+  \item 7Business Model Canvas cz. I. – omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „propozycja wartości”, „klienci”, „relacje” szablonu
+  \item Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „kanały dotarcia” oraz „przychody”.  W ramach omówienia, również sposoby ustalania ścieżek generowania tzw. lead’ów oraz szacowanie budżetu  dla tego działania w oparciu o takie parametry jak CAC, CHURN czy LTV.Wykonanie ćwiczenia w ramach zespołów projektowych, przy użyciu szablonów.
+  \item Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „partnerzy”, „kluczowe aktywności”, „kluczowe zasoby”, „koszty.”
+  \item End of freemium – case study Spotify, jako modelu biznesowego o ograniczonej funkcjonalności i jego konsekwencjach w zakresie rozwoju/opłacalności przedsięwzięcia.   Prace uzupełniające na szablonach, wyszukiwanie danych rynkowych i informacji o wielkości rynku, jego wysyceniu oraz działaniach konkurencji.
+  \item Prezentacje podsumowujące ćwiczenie Business Model Canvas wykonywane przez zespoły projektowe. Analiza dostrzeżonych błędów oraz rekomendacje w zakresie poprawek.
+  \item Fred Flinstone i ciasto winogronowe – case study nieudanego przedsięwzięcia biznesowego wraz ustaleniem przyczyn porażki. Modele ustalania ceny.Rewizja opracowanych modeli biznesowych pod kątem ich dochodowości i perspektyw rozwojowych. Ustalenie założeń cenowych w oparciu o poznane modele ustalania ceny.
+  \item Dlaczego Twój produkt nie sprzeda się za granicą?!”
+  \item czyli najczęstsze błędy popełniane przy wchodzeniu na obce rynki. Omówienie założeń dla procesu eksportowania wraz z analizą najczęstszych błędów popełnianych przez polskich przedsiębiorców. Wskazanie trendów w eksporcie oraz ich znaczenia dla polityki dywersyfikacji rynków zbytu.   Dyskusja nad możliwymi założeniami eksportowymi dla projektów opracowywanych w ramach przedmiotu. Wyszukiwanie źródeł informacji o procesie podejmowania decyzji zakupowych w innych państwach.
+  \item Uczelniana komercjalizacja – wizja a realia. Rozróżnianie potencjału naukowego/wynalazczego a komercyjnego/wdrożeniowego projektów innowacyjnych. Omówienie tzw. cyklu przyjmowania innowacji oraz trendów wdrożeniowych na podstawie analiz „Hype Cycle for Emerging Technologies” Gartner Inc. Analiza opłacalności komercjalizacji akademickiej na wybranych rynkach. Analiza wybranych przykładów prezentacji promujących projekty startupowe. Przygotowanie prezentacji zaliczeniowych w formie tzw. pitchu.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie  jak oszacować ekonomiczne i społeczne tło projektu informatycznego. Potrafi ustalić finansową opłacalność lub jej brak, a także ocenić skalowalność projektu i jego potencjał rozwojowy.
+  \item Student zna i rozumie  sposoby oszacowania nakładów finansowych i pozafinansowych związanych z prowadzeniem działalności gospodarczej.  Rozróżnia potencjał naukowy od komercyjnego i potrafi opracować ścieżki finansowania w zależności od potencjału, którym dysponuje projekt.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi  ustalać kosztorys projektu oraz jego budżet, po uwzględnieniu spodziewanych/zakładanych przychodów.  Potrafi planować i rozdzielać prace w ramach zespołu, opracowywać założenia dla działań związanych z rozwojem rynku i pozyskiwaniem klientów.
+  \item Student potrafi  przygotować biznesplan w oparciu o metodologię  Business Model Canvas, a także przygotować prezentację relacyjną lub sprzedażową projektu.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do  stosowania technik empatycznych (m.in. mapa apatii, design thinking) dzięki którym jest w stanie lepiej zrozumieć pragnienia i potrzeby interesariuszy projektu.
+  \item Student jest gotów do  definiowania problemów oraz stosowania technik pozwalających na szybką walidację sposobów rozwiązania zdefiniowanych problemów, pod kątem ich opłacalności i skuteczności.
+  \item Student jest gotów do  opracowania narracji opartaej na języku korzyści (m.in. definiować unique selling point projektu) a także przygotowania prezentacji relacyjnej lub sprzedażowej projektu.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Prezentacja zaliczeniowa zespołu projektowego wykonana w formie 10-minutowej prezentacji multimedialnej. Istnieje możliwość poprawy w formie eseju na wskazany przez prowadzącego temat.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item “Tworzenie modeli biznesowych. Podręcznik wizjonera”, A. Osterwalder, Y. Pigneur, Onepress, 2012
+  \item “Przedsiębiorczość zdyscyplinowana Od startupu do sukcesu w 24 krokach”, B. Aulet,, Helion, 2014
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item blog autorski: steveblank.com, S.Blank
+  \item materiały i ćwiczenia zawarte na stronie: strategyzer.com, Strategyzer AG
+\end{itemize}
+
+\end{document}

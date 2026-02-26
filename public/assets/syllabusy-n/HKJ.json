@@ -1,4 +1,4 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
                     "jednostka":  "Filia w Gdańsku",
@@ -12,15 +12,15 @@
                     "semestr_studiow":  1,
                     "obligatoryjny":  true,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  30,
+                                                        "wyklady":  32,
                                                         "cwiczenia_lektorat_seminarium":  null,
                                                         "laboratorium_projekt":  null
                                                     },
                     "odpowiedzialny_za_przedmiot":  "",
                     "ects":  2,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  30,
-                                    "praca_wlasna_studenta_h":  20,
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  18,
                                     "calkowita_liczba_godzin_h":  50
                                 },
                     "metody_dydaktyczne":  {

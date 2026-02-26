@@ -1,10 +1,10 @@
-{
+﻿{
     "sylabus":  {
                     "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
                     "jednostka":  "Filia w Gdansku",
                     "kierunek":  "INFORMATYKA",
                     "profil":  "praktyczny",
-                    "tryb_studiow":  "stacjonarny",
+                    "tryb_studiow":  "niestacjonarny",
                     "wersja_z_dnia":  "19.02.2026",
                     "nazwa_przedmiotu":  "Future of Deep Learning",
                     "kod_przedmiotu":  "FDL",
@@ -12,16 +12,16 @@
                     "semestr_studiow":  5,
                     "obligatoryjny":  false,
                     "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  30,
-                                                        "cwiczenia_lektorat_seminarium":  30,
-                                                        "laboratorium_projekt":  null
+                                                        "wyklady":  16,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  16
                                                     },
                     "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
                     "ects":  4,
                     "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  60,
-                                    "praca_wlasna_studenta_h":  40,
-                                    "calkowita_liczba_godzin_h":  100
+                                    "z_udzialem_prowadzacego_h":  32,
+                                    "praca_wlasna_studenta_h":  93,
+                                    "calkowita_liczba_godzin_h":  125
                                 },
                     "metody_dydaktyczne":  {
 
@@ -55,7 +55,7 @@
                                                                          ]
                                                          },
                                        "dokumentacja_internetowa":  {
-                                                                        "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 1-4":  "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 1-4"
+                                                                        "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O\u0027Reilly Media, Inc.\", 2022.  Rozdział 1-4":  "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O\u0027Reilly Media, Inc.\", 2022.  Rozdział 1-4"
                                                                     }
                                    },
                     "efekty_ksztalcenia":  {
