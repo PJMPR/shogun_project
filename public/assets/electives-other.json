@@ -283,7 +283,9 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/syllabusy/KMR.json",
+          "pdf": "assets/files/stacjonarne/KMR.pdf"
         }
       ]
     },
