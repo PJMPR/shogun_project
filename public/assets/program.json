@@ -92,8 +92,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy/ANG1-3.json",
-          "pdf": "assets/files/stacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy/ANG1.json",
+          "pdf": "assets/files/stacjonarne/ANG1.pdf"
         },
         {
           "name": "Szkolenie BHP",
@@ -220,8 +220,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy/ANG1-3.json",
-          "pdf": "assets/files/stacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy/ANG2.json",
+          "pdf": "assets/files/stacjonarne/ANG2.pdf"
         }
       ]
     },
@@ -338,8 +338,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy/ANG1-3.json",
-          "pdf": "assets/files/stacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy/ANG3.json",
+          "pdf": "assets/files/stacjonarne/ANG3.pdf"
         }
       ]
     },
