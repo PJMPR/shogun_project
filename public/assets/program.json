@@ -335,7 +335,7 @@
           "code": "ANG3",
           "lecture": 0,
           "tutorial": 60,
-          "lab": 60,
+          "lab": 0,
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy/ANG1-3.json",

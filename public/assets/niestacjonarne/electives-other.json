@@ -306,7 +306,7 @@
       "items": [
         {
           "name": "Język angielski",
-          "code": "ANG",
+          "code": "LANG1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -315,7 +315,7 @@
         },
         {
           "name": "Język niemiecki",
-          "code": "NEM",
+          "code": "NIM1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -324,7 +324,7 @@
         },
         {
           "name": "Język hiszpański",
-          "code": "HIS",
+          "code": "HIS1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -333,7 +333,7 @@
         },
         {
           "name": "Język japoński",
-          "code": "JAP",
+          "code": "JAP1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -349,7 +349,7 @@
       "items": [
         {
           "name": "Język angielski",
-          "code": "ANG",
+          "code": "LANG2",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -358,7 +358,7 @@
         },
         {
           "name": "Język niemiecki",
-          "code": "NEM",
+          "code": "NIM2",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -367,7 +367,7 @@
         },
         {
           "name": "Język hiszpański",
-          "code": "HIS",
+          "code": "HIS2",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -376,7 +376,7 @@
         },
         {
           "name": "Język japoński",
-          "code": "JAP",
+          "code": "JAP2",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -392,7 +392,7 @@
       "items": [
         {
           "name": "Język angielski",
-          "code": "ANG",
+          "code": "LANG3",
           "lecture": 0,
           "tutorial": 60,
           "lab": 0,
@@ -401,7 +401,7 @@
         },
         {
           "name": "Język niemiecki",
-          "code": "NEM",
+          "code": "NIM3",
           "lecture": 0,
           "tutorial": 60,
           "lab": 0,
@@ -410,7 +410,7 @@
         },
         {
           "name": "Język hiszpański",
-          "code": "HIS",
+          "code": "HIS3",
           "lecture": 0,
           "tutorial": 60,
           "lab": 0,
@@ -419,7 +419,7 @@
         },
         {
           "name": "Język japoński",
-          "code": "JAP",
+          "code": "JAP3",
           "lecture": 0,
           "tutorial": 60,
           "lab": 0,
@@ -435,7 +435,7 @@
       "items": [
         {
           "name": "Język angielski",
-          "code": "ANG",
+          "code": "LANG4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -444,7 +444,7 @@
         },
         {
           "name": "Język niemiecki",
-          "code": "NEM",
+          "code": "NIM4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -453,7 +453,7 @@
         },
         {
           "name": "Język hiszpański",
-          "code": "HIS",
+          "code": "HIS4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -462,7 +462,7 @@
         },
         {
           "name": "Język japoński",
-          "code": "JAP",
+          "code": "JAP4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -478,7 +478,7 @@
       "items": [
         {
           "name": "Język angielski",
-          "code": "ANG",
+          "code": "LANG1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -487,7 +487,7 @@
         },
         {
           "name": "Język niemiecki",
-          "code": "NEM",
+          "code": "NIM5",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -496,7 +496,7 @@
         },
         {
           "name": "Język hiszpański",
-          "code": "HIS",
+          "code": "HIS5",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
@@ -505,7 +505,7 @@
         },
         {
           "name": "Język japoński",
-          "code": "JAP",
+          "code": "JAP5",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
