@@ -7,20 +7,14 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: ["Dodaj / zaktualizuj sylabus"]
-    types:
-      - completed
-    branches:
-      - main
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Ten sam lock co w add-syllabus.yml → tylko 1 workflow naraz, reszta czeka
-concurrency:
-  group: ${{ github.repository }}-workflow-serial
-  cancel-in-progress: false
+  actions: read
 
 jobs:
   build:
@@ -36,6 +30,14 @@ jobs:
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git pull --ff-only origin main
+
+      # --- SERIALIZACJA (WSPÓLNA KOLEJKA) ---
+      - name: Turnstyle (kolejkowanie uruchomień)
+        uses: softprops/turnstyle@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          poll-interval-seconds: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

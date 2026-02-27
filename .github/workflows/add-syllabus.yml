@@ -12,18 +12,13 @@ on:
 
 permissions:
   contents: write
-
-# Globalna kolejka dla całego repo (wspólna także z deploy.yml)
-concurrency:
-  group: ${{ github.repository }}-workflow-serial
-  cancel-in-progress: false
+  actions: read
 
 jobs:
   process-syllabus:
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout repozytorium ─────────────────────────────────────────
       - name: Checkout repozytorium
         uses: actions/checkout@v4
         with:
@@ -31,13 +26,19 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      # ── 1b. Pull najnowszego main ────────────────────────────────────────
       - name: Pull latest from main
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git pull --ff-only origin main
 
-      # ── 2. Instalacja zależności systemowych ─────────────────────────────
+      # --- SERIALIZACJA (KOLEJKA) ---
+      - name: Turnstyle (kolejkowanie uruchomień)
+        uses: softprops/turnstyle@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          poll-interval-seconds: 10
+
       - name: Instalacja zaleznosci (jq + TeX Live)
         run: |
           sudo apt-get update -qq
@@ -50,7 +51,6 @@ jobs:
             texlive-pictures \
             lmodern
 
-      # ── 3. Walidacja i zapis JSON do pliku tymczasowego ──────────────────
       - name: Walidacja i zapis JSON sylabusu
         id: validate
         env:
@@ -75,13 +75,9 @@ jobs:
             exit 1
           fi
 
-          echo "Kod przedmiotu: $CODE"
-          echo "Tryb studiów:   $TRYB"
-
           echo "syllabus_code=$CODE" >> $GITHUB_OUTPUT
           echo "syllabus_tryb=$TRYB" >> $GITHUB_OUTPUT
 
-      # ── 4. Uruchomienie głównego skryptu przetwarzania ───────────────────
       - name: Przetwarzanie sylabusu (JSON → TEX → PDF + aktualizacja programu)
         run: |
           chmod +x cicd/scripts/process-syllabus.sh
@@ -90,7 +86,6 @@ jobs:
           chmod +x cicd/scripts/update-program-json.sh
           bash cicd/scripts/process-syllabus.sh /tmp/input_syllabus.json
 
-      # ── 5. Weryfikacja wygenerowanych plików ─────────────────────────────
       - name: Weryfikacja wygenerowanych plików
         run: |
           CODE="${{ steps.validate.outputs.syllabus_code }}"
@@ -104,22 +99,9 @@ jobs:
             PDF_PATH="public/assets/files/stacjonarne/${CODE}.pdf"
           fi
 
-          echo "Sprawdzam: $JSON_PATH"
-          if [[ ! -f "$JSON_PATH" ]]; then
-            echo "BŁĄD: Brak pliku JSON: $JSON_PATH" >&2
-            exit 1
-          fi
-          echo "  ✓ JSON istnieje ($(wc -c < "$JSON_PATH") bajtów)"
+          [[ -f "$JSON_PATH" ]] || (echo "BŁĄD: Brak JSON: $JSON_PATH" >&2; exit 1)
+          [[ -f "$PDF_PATH" ]]  || (echo "BŁĄD: Brak PDF:  $PDF_PATH" >&2; exit 1)
 
-          echo "Sprawdzam: $PDF_PATH"
-          if [[ ! -f "$PDF_PATH" ]]; then
-            echo "BŁĄD: Brak pliku PDF: $PDF_PATH" >&2
-            exit 1
-          fi
-          PDF_SIZE=$(du -k "$PDF_PATH" | cut -f1)
-          echo "  ✓ PDF istnieje (${PDF_SIZE} KB)"
-
-      # ── 6. Commit i push ─────────────────────────────────────────────────
       - name: Commit i push zmian
         run: |
           CODE="${{ steps.validate.outputs.syllabus_code }}"
@@ -141,33 +123,8 @@ jobs:
                   || true
 
           if git diff --cached --quiet; then
-            echo "Brak zmian do zacommitowania (pliki już aktualne)."
+            echo "Brak zmian do zacommitowania."
           else
-            git commit -m "sylabus($CODE): dodaj/zaktualizuj [$TRYB]
-
-            Automatyczne dodanie/aktualizacja sylabusu:
-            - Kod: $CODE
-            - Tryb: $TRYB
-            - Data: $(date -u '+%Y-%m-%d %H:%M UTC')
-            - Wyzwolone przez: ${{ github.actor }}
-
-            [skip ci]"
+            git commit -m "sylabus($CODE): dodaj/zaktualizuj [$TRYB] [skip ci]"
             git push
-            echo "✓ Zmiany opublikowane."
           fi
-
-      # ── 7. Podsumowanie ───────────────────────────────────────────────────
-      - name: Podsumowanie
-        if: always()
-        run: |
-          CODE="${{ steps.validate.outputs.syllabus_code }}"
-          TRYB="${{ steps.validate.outputs.syllabus_tryb }}"
-
-          echo "## Wynik przetwarzania sylabusu" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Pole | Wartość |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|---------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Kod przedmiotu | \`$CODE\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Tryb studiów | $TRYB |" >> $GITHUB_STEP_SUMMARY
-          echo "| Uruchomiony przez | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Data | $(date -u '+%Y-%m-%d %H:%M UTC') |" >> $GITHUB_STEP_SUMMARY
