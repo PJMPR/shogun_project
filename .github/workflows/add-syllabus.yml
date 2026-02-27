@@ -19,6 +19,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Turnstyle (kolejkowanie uruchomień)
+        uses: softprops/turnstyle@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          poll-interval-seconds: 10
       - name: Checkout repozytorium
         uses: actions/checkout@v4
         with:
@@ -31,13 +37,6 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git pull --ff-only origin main
 
-      # --- SERIALIZACJA (KOLEJKA) ---
-      - name: Turnstyle (kolejkowanie uruchomień)
-        uses: softprops/turnstyle@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          poll-interval-seconds: 10
 
       - name: Instalacja zaleznosci (jq + TeX Live)
         run: |
