@@ -480,7 +480,9 @@
           "tutorial": 30,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/syllabusy/LANG4.json",
+          "pdf": "assets/files/stacjonarne/LANG4.pdf"
         },
         {
           "name": "Język niemiecki",
