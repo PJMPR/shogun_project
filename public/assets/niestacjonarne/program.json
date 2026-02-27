@@ -672,7 +672,9 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "electiveGroup": "PSEM"
+          "electiveGroup": "PSEM",
+          "syllabusFile": "assets/syllabusy-n/PSEM.json",
+          "pdf": "assets/files/niestacjonarne/PSEM.pdf"
         },
         {
           "name": "Przedmiot Specjalizacyjny 4",
