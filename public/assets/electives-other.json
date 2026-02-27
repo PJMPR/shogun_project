@@ -384,7 +384,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/LANG2.json",
+          "pdf": "assets/files/stacjonarne/LANG2.pdf"
         },
         {
           "name": "Język niemiecki",
