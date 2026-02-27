@@ -13,8 +13,9 @@ on:
 permissions:
   contents: write
 
+# Globalna kolejka dla całego repo (wspólna także z deploy.yml)
 concurrency:
-  group: add-syllabus
+  group: ${{ github.repository }}-workflow-serial
   cancel-in-progress: false
 
 jobs:
@@ -27,6 +28,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 0
+
+      # ── 1b. Pull najnowszego main ────────────────────────────────────────
+      - name: Pull latest from main
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git pull --ff-only origin main
 
       # ── 2. Instalacja zależności systemowych ─────────────────────────────
       - name: Instalacja zaleznosci (jq + TeX Live)
@@ -47,10 +56,8 @@ jobs:
         env:
           SYLLABUS_JSON_INPUT: ${{ github.event.inputs.syllabus_json }}
         run: |
-          # Zapisz JSON do pliku tymczasowego przez zmienną env (bezpieczne dla znaków specjalnych)
           printf '%s' "$SYLLABUS_JSON_INPUT" > /tmp/input_syllabus.json
 
-          # Walidacja struktury
           if ! jq -e '.sylabus' /tmp/input_syllabus.json > /dev/null 2>&1; then
             echo "BŁĄD: Nieprawidłowa struktura JSON – brak klucza 'sylabus'" >&2
             exit 1
@@ -71,7 +78,6 @@ jobs:
           echo "Kod przedmiotu: $CODE"
           echo "Tryb studiów:   $TRYB"
 
-          # Eksportuj do dalszych kroków
           echo "syllabus_code=$CODE" >> $GITHUB_OUTPUT
           echo "syllabus_tryb=$TRYB" >> $GITHUB_OUTPUT
 
@@ -134,7 +140,6 @@ jobs:
                   public/assets/niestacjonarne/electives-specializations.json \
                   || true
 
-          # Sprawdź czy są jakiekolwiek zmiany
           if git diff --cached --quiet; then
             echo "Brak zmian do zacommitowania (pliki już aktualne)."
           else
@@ -166,4 +171,3 @@ jobs:
           echo "| Tryb studiów | $TRYB |" >> $GITHUB_STEP_SUMMARY
           echo "| Uruchomiony przez | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Data | $(date -u '+%Y-%m-%d %H:%M UTC') |" >> $GITHUB_STEP_SUMMARY
-
