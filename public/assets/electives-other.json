@@ -453,7 +453,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/HIS3.json",
+          "pdf": "assets/files/stacjonarne/HIS3.pdf"
         },
         {
           "name": "Język japoński",
