@@ -501,7 +501,9 @@
           "tutorial": 30,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/syllabusy/NIM4.json",
+          "pdf": "assets/files/stacjonarne/NIM4.pdf"
         },
         {
           "name": "Język hiszpański",
