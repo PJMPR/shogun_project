@@ -472,7 +472,9 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy/JAP3.json",
+          "pdf": "assets/files/stacjonarne/JAP3.pdf"
         }
       ]
     },
