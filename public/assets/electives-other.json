@@ -521,7 +521,9 @@
           "tutorial": 30,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/syllabusy/JAP4.json",
+          "pdf": "assets/files/stacjonarne/JAP4.pdf"
         }
       ]
     }
