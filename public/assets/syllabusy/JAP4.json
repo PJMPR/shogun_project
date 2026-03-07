@@ -1,1 +1,110 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "04.03.2026",         "nazwa_przedmiotu": "Język japoński 4",         "kod_przedmiotu": "JAP4",         "rok_studiow": 4,         "semestr_studiow": 7,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 30,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "",         "ects": 1,         "godziny": {             "z_udzialem_prowadzacego_h": 30,             "praca_wlasna_studenta_h": 5,             "calkowita_liczba_godzin_h": 35         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "JAP3",                 "wymagania": "Zaliczenie JAP3"             }         ],         "cel_dydaktyczny": "Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Japonii i krajach obszaru języka japońskiego.\n",         "literatura": {             "podstawowa": {                 "pozycje": [                     "L. Czernichowska-Kramarz Japoński w obrazkach. Słownik, rozmówki, gramatyka wyd. Edgar"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Minna no nihongo II – główny podręcznik  wyd. 3anetwork Japonia",                     "Minna no nihongo I choukai– słuchanie  wyd. 3anetwork Japonia",                     "Minna no nihongo II choukai– słuchanie  wyd. 3anetwork Japonia"                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",                 "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Konstrukcja gramatyczna : ndesu, teitadakemasenka",             "Konstrukcja _shi,_shi / ćwiczenie pisemne: ogłoszenie w języku japońskim",             "Forma -ga dekimashita / ćwiczenie pisemne: opis postaci „wybrana postać z anime lub mangi”",             "Znaki kanji  i budowanie zdań",             "Znaki kanji i budowanie zdań",             "Czasowniki zakładania i zdejmowania – chakudatsudōshi powtórzenie i budowa zdań",             "Znaki kanji i budowanie zdań",             "Znaki kanji i budowanie zdań",             "Nowe kanji i układanie do nich zdań",             "Forma -tagatteimasu",             "Budowa zdań do formy -teshimau",             "Budowa zdań do formy -teoku,,-tearu",             "Partykuła de -  bnowe zastosowanie partykuły de + czytanka”trzęsienie ziemi w Japonii”",             "Rodzina i klasyfikatory-zadanie ze słuchu + czytanka",             "Nowe kanji i układanie do nich zdań",             "Wypracowanie",             "Kolokwium z kanji i gramatyki",             "Budowa zdań do formy tsumori desu/yotei desu",             "Klasyfikatory – omówienie wszystkich klasyfikatorów",             "Zadanie ze słuchu – tematyka związana z klasyfikatorami i życia codziennego",             "Analiza tekstu – czytanka o robotach",             "Próbne testy JLPTN4 ; kanji, gramatyka",             "Próbne testy JLPTN4 ; czytanki",             "Próbne testy JLPTN4 ; słuchanie",             "Powtórzenie matu z całego semestru – budowanie zdań",             "Różnica między teageru, temorau i tekureru",             "Tryb warunkowy – ba",             "Ćwiczenia z czasownikami przechodnimi/nieprzechodnimi",             "Forma gramatyczna kamoshiremasen",             "Kolokwium zaliczeniowe"         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "04.03.2026",
+        "nazwa_przedmiotu": "Język japoński 4",
+        "kod_przedmiotu": "JAP4",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 1,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 5,
+            "calkowita_liczba_godzin_h": 35
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "JAP3",
+                "wymagania": "Zaliczenie JAP3"
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Japonii i krajach obszaru języka japońskiego.\n",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "L. Czernichowska-Kramarz Japoński w obrazkach. Słownik, rozmówki, gramatyka wyd. Edgar"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Minna no nihongo II – główny podręcznik  wyd. 3anetwork Japonia",
+                    "Minna no nihongo I choukai– słuchanie  wyd. 3anetwork Japonia",
+                    "Minna no nihongo II choukai– słuchanie  wyd. 3anetwork Japonia"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Konstrukcja gramatyczna : ndesu, teitadakemasenka",
+            "Konstrukcja _shi,_shi / ćwiczenie pisemne: ogłoszenie w języku japońskim",
+            "Forma -ga dekimashita / ćwiczenie pisemne: opis postaci „wybrana postać z anime lub mangi”",
+            "Znaki kanji  i budowanie zdań",
+            "Znaki kanji i budowanie zdań",
+            "Czasowniki zakładania i zdejmowania – chakudatsudōshi powtórzenie i budowa zdań",
+            "Znaki kanji i budowanie zdań",
+            "Znaki kanji i budowanie zdań",
+            "Nowe kanji i układanie do nich zdań",
+            "Forma -tagatteimasu",
+            "Budowa zdań do formy -teshimau",
+            "Budowa zdań do formy -teoku,,-tearu",
+            "Partykuła de -  bnowe zastosowanie partykuły de + czytanka”trzęsienie ziemi w Japonii”",
+            "Rodzina i klasyfikatory-zadanie ze słuchu + czytanka",
+            "Nowe kanji i układanie do nich zdań",
+            "Wypracowanie",
+            "Kolokwium z kanji i gramatyki",
+            "Budowa zdań do formy tsumori desu/yotei desu",
+            "Klasyfikatory – omówienie wszystkich klasyfikatorów",
+            "Zadanie ze słuchu – tematyka związana z klasyfikatorami i życia codziennego",
+            "Analiza tekstu – czytanka o robotach",
+            "Próbne testy JLPTN4 ; kanji, gramatyka",
+            "Próbne testy JLPTN4 ; czytanki",
+            "Próbne testy JLPTN4 ; słuchanie",
+            "Powtórzenie matu z całego semestru – budowanie zdań",
+            "Różnica między teageru, temorau i tekureru",
+            "Tryb warunkowy – ba",
+            "Ćwiczenia z czasownikami przechodnimi/nieprzechodnimi",
+            "Forma gramatyczna kamoshiremasen",
+            "Kolokwium zaliczeniowe"
+        ],
+        "cel_dydaktyczny_eng": "Japanese language instruction from scratch. Students acquire Japanese proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Japan and Japanese-speaking regions."
+    }
+}

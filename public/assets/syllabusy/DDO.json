@@ -1,79 +1,78 @@
 {
-  "sylabus": {
-    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-    "jednostka": "Filia w Gdansku",
-    "kierunek": "INFORMATYKA",
-    "profil": "praktyczny",
-    "tryb_studiow": "stacjonarny",
-    "wersja_z_dnia": "20.02.2026",
-    "nazwa_przedmiotu": "Wprowadzenie do baz dokumentowych",
-    "kod_przedmiotu": "DDO",
-    "rok_studiow": 2,
-    "semestr_studiow": 3,
-    "obligatoryjny": false,
-    "forma_i_liczba_godzin_zajec": {
-      "wyklady": 15,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 15
-    },
-    "odpowiedzialny_za_przedmiot": "do ustalenia",
-    "ects": 2,
-    "godziny": {
-      "z_udzialem_prowadzacego_h": 30,
-      "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
-    },
-    "metody_dydaktyczne": {
-
-    },
-    "zaliczenie": {
-      "Projekt": {
-        "sposob": "Zaliczenie z oceną"
-      }
-    },
-    "kryteria_oceny": [
-      "Projekt realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność modelu danych, jakość zapytań, poprawność operacji CRUD, uzasadnienie wyborów projektowych oraz dokumentację",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
-    "przedmioty_wprowadzajace": [
-      {
-        "nazwa": "Relacyjne bazy danych",
-        "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
-      }
-    ],
-    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją nierelacyjnych baz danych typu dokumentowego oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają różnice pomiędzy podejściem relacyjnym a dokumentowym, zasady modelowania danych w formacie dokumentów (np. JSON), podstawowe operacje na danych oraz integrację baz dokumentowych z aplikacjami. Przedmiot przygotowuje do świadomego doboru technologii bazodanowej w zależności od charakteru problemu i wymagań systemu.",
-    "literatura": {
-      "podstawowa": {
-        "pozycje": [
-          "Kristina Chodorow, MongoDB: The Definitive Guide",
-          "Dokumentacja MongoDB: https://www.mongodb.com/docs",
-          "MDN Web Docs – JSON"
-        ]
-      },
-      "uzupelniajaca": {
-        "pozycje": [
-          "Martin Fowler, NoSQL Distilled",
-          "Materiały online producentów baz NoSQL"
-        ]
-      }
-    },
-    "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów.",
-      "umiejetnosci": "Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji."
-    },
-    "tresci_programowe": [
-      "Wprowadzenie do baz danych NoSQL i ich klasyfikacja",
-      "Model dokumentowy i format JSON",
-      "Porównanie baz relacyjnych i dokumentowych",
-      "Projektowanie struktury dokumentów i kolekcji",
-      "Podstawowe operacje CRUD",
-      "Zapytania i filtrowanie danych",
-      "Indeksy i podstawy optymalizacji",
-      "Agregacje i przetwarzanie danych",
-      "Integracja bazy dokumentowej z aplikacją",
-      "Projekt zaliczeniowy – implementacja i prezentacja"
-    ]
-  }
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "20.02.2026",
+        "nazwa_przedmiotu": "Wprowadzenie do baz dokumentowych",
+        "kod_przedmiotu": "DDO",
+        "rok_studiow": 2,
+        "semestr_studiow": 3,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 15,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 15
+        },
+        "odpowiedzialny_za_przedmiot": "do ustalenia",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 20,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Projekt": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Projekt realizowany indywidualnie lub w parach – 100%",
+            "Ocena projektu obejmuje: poprawność modelu danych, jakość zapytań, poprawność operacji CRUD, uzasadnienie wyborów projektowych oraz dokumentację",
+            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Relacyjne bazy danych",
+                "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją nierelacyjnych baz danych typu dokumentowego oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają różnice pomiędzy podejściem relacyjnym a dokumentowym, zasady modelowania danych w formacie dokumentów (np. JSON), podstawowe operacje na danych oraz integrację baz dokumentowych z aplikacjami. Przedmiot przygotowuje do świadomego doboru technologii bazodanowej w zależności od charakteru problemu i wymagań systemu.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Kristina Chodorow, MongoDB: The Definitive Guide",
+                    "Dokumentacja MongoDB: https://www.mongodb.com/docs",
+                    "MDN Web Docs – JSON"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Martin Fowler, NoSQL Distilled",
+                    "Materiały online producentów baz NoSQL"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów.",
+            "umiejetnosci": "Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją.",
+            "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji."
+        },
+        "tresci_programowe": [
+            "Wprowadzenie do baz danych NoSQL i ich klasyfikacja",
+            "Model dokumentowy i format JSON",
+            "Porównanie baz relacyjnych i dokumentowych",
+            "Projektowanie struktury dokumentów i kolekcji",
+            "Podstawowe operacje CRUD",
+            "Zapytania i filtrowanie danych",
+            "Indeksy i podstawy optymalizacji",
+            "Agregacje i przetwarzanie danych",
+            "Integracja bazy dokumentowej z aplikacją",
+            "Projekt zaliczeniowy – implementacja i prezentacja"
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the concept of non-relational document databases and their applications in modern IT systems. Students learn the differences between the relational and document-oriented approaches, the principles of modeling data in document format (e.g. JSON), basic data operations, and the integration of document databases with applications. The course prepares students to make informed choices about database technology depending on the nature of the problem and the system requirements."
+    }
 }

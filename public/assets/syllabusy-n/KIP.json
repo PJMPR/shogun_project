@@ -1,94 +1,90 @@
-﻿{
-    "sylabus":  {
-                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
-                    "jednostka":  "Filia w Gdańsku",
-                    "kierunek":  "INFORMATYKA",
-                    "profil":  "praktyczny",
-                    "tryb_studiow":  "niestacjonarny",
-                    "wersja_z_dnia":  "19.02.2026",
-                    "nazwa_przedmiotu":  "Komunikacja i protokoły dla Internetu Rzeczy",
-                    "kod_przedmiotu":  "KIP",
-                    "rok_studiow":  3,
-                    "semestr_studiow":  6,
-                    "obligatoryjny":  false,
-                    "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  16,
-                                                        "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  16
-                                                    },
-                    "odpowiedzialny_za_przedmiot":  "inż. Antoni Ulenberg",
-                    "ects":  5,
-                    "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  32,
-                                    "praca_wlasna_studenta_h":  93,
-                                    "calkowita_liczba_godzin_h":  125
-                                },
-                    "metody_dydaktyczne":  {
-                                               "wyklad":  [
-                                                              "Wykład z prezentacją multimedialną",
-                                                              "Wykład z zespołowym rozwiązaniem problemu",
-                                                              "Live-Coding"
-                                                          ],
-                                               "laboratorium":  [
-                                                                    "Ćwiczenia praktyczne",
-                                                                    "Implementacja projektów"
-                                                                ]
-                                           },
-                    "zaliczenie":  {
-                                       "Wykład":  {
-                                                      "sposob":  "Egzamin"
-                                                  },
-                                       "Laboratorium":  {
-                                                            "sposob":  "Zaliczenie z oceną"
-                                                        }
-                                   },
-                    "kryteria_oceny":  [
-                                           "1 projekt - 40% oceny",
-                                           "Zadania z zajęć - 20% oceny",
-                                           "Kolokwium teoretyczno-praktyczne - 40% oceny"
-                                       ],
-                    "przedmioty_wprowadzajace":  [
-
-                                                 ],
-                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.",
-                    "literatura":  {
-                                       "podstawowa":  {
-                                                          "pozycje":  [
-
-                                                                      ]
-                                                      },
-                                       "uzupelniajaca":  {
-                                                             "pozycje":  [
-
-                                                                         ]
-                                                         }
-                                   },
-                    "efekty_ksztalcenia":  {
-                                               "wiedza":  [
-                                                              "zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera",
-                                                              "zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki",
-                                                              "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii"
-                                                          ],
-                                               "umiejetnosci":  [
-                                                                    "potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
-                                                                    "potrafi przeanalizować, zsyntezować i oprogramować prosty system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację",
-                                                                    "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania."
-                                                                ],
-                                               "kompetencje_spoleczne":  [
-                                                                             "jest gotów do samodzielnego uczenia się przez całe życie"
-                                                                         ]
-                                           },
-                    "tresci_programowe":  [
-                                              "Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS.",
-                                              "Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug.",
-                                              "Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU.",
-                                              "Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput.",
-                                              "Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń.",
-                                              "MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie.",
-                                              "CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania.",
-                                              "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
-                                              "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
-                                              "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff."
-                                          ]
-                }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Komunikacja i protokoły dla Internetu Rzeczy",
+        "kod_przedmiotu": "KIP",
+        "rok_studiow": 3,
+        "semestr_studiow": 6,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 16,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "inż. Antoni Ulenberg",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 93,
+            "calkowita_liczba_godzin_h": 125
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "Wykład z prezentacją multimedialną",
+                "Wykład z zespołowym rozwiązaniem problemu",
+                "Live-Coding"
+            ],
+            "laboratorium": [
+                "Ćwiczenia praktyczne",
+                "Implementacja projektów"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Egzamin"
+            },
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "1 projekt - 40% oceny",
+            "Zadania z zajęć - 20% oceny",
+            "Kolokwium teoretyczno-praktyczne - 40% oceny"
+        ],
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": []
+            },
+            "uzupelniajaca": {
+                "pozycje": []
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie zaawansowane pojęcia z zakresu techniki cyfrowej i architektury systemów komputerowych: układy kombinacyjne i sekwencyjne, architekturę ARM/RISC-V, organizację pamięci i magistral komunikacyjnych. [K_W06]",
+                "Student zna i rozumie zaawansowane zagadnienia mikrokontrolerów i systemów wbudowanych stosowanych w IoT: programowanie bare-metal i RTOS-based, interfejsy peryferyjne (I2C, SPI, UART, CAN), zarządzanie energią. [K_W18]",
+                "Student zna i rozumie zaawansowane pojęcia w zakresie Internetu Rzeczy: protokoły komunikacyjne warstwy aplikacji (MQTT, CoAP, HTTP/REST), architektury IoT (edge, fog, cloud), bezpieczeństwo urządzeń IoT. [K_W26]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi zaprojektować proste układy cyfrowe, napisać program w asemblerze dla mikrokontrolera oraz zintegrować peryferyjne moduły sprzętowe z systemem wbudowanym. [K_U12]",
+                "Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany IoT: skonfigurować interfejsy sensorów i aktuatorów, zaimplementować stos komunikacyjny i zapewnić niezawodność systemu. [K_U23]",
+                "Student potrafi zdiagnozować problem inżynierski w dziedzinie IoT, zaprojektować rozwiązanie i zrealizować prototyp z użyciem dostępnych platform (ESP32, Raspberry Pi, Arduino). [K_U33]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do zastosowania technologii IoT na rzecz rozwoju innowacyjnych rozwiązań w przemyśle, rolnictwie, medycynie i inteligentnych miastach. [K_K01]",
+                "Student jest gotów do samodzielnego pogłębiania wiedzy z dynamicznie rozwijającego się obszaru systemów wbudowanych i Internetu Rzeczy. [K_K03]"
+            ]
+        },
+        "tresci_programowe": [
+            "Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS.",
+            "Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug.",
+            "Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU.",
+            "Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput.",
+            "Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń.",
+            "MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie.",
+            "CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania.",
+            "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
+            "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
+            "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff."
+        ],
+        "cel_dydaktyczny_eng": "The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency."
+    }
 }

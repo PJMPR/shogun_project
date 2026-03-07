@@ -112,6 +112,12 @@
   resize: vertical;
 }
 
+.ns-textarea-eng {
+  background: var(--p-surface-50, #f8fafc);
+  border-style: dashed;
+  font-style: italic;
+}
+
 .ns-hint {
   font-size: 0.78rem;
   color: var(--p-text-muted-color);

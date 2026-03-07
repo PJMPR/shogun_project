@@ -1,1 +1,95 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "03.03.2026",         "nazwa_przedmiotu": "Język hiszpański – Lektorat 1",         "kod_przedmiotu": "HIS1",         "rok_studiow": 2,         "semestr_studiow": 4,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 60,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 15,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {},         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "ANG3",                 "wymagania": "Brak wymagań wstępnych w zakresie języka hiszpańskiego."             }         ],         "cel_dydaktyczny": "Nauczanie języka hiszpańskiego na poziomie A1/A2. Student opanowuje język hiszpański w stopniu pozwalającym na podstawową komunikację językową w sytuacjach dnia codziennego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 1, Wydawnictwo DRACO, 2020."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",                     "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023."                 ]             },             "dokumentacja_internetowa": {                 "https://www.profedeele.es/": "https://www.profedeele.es/",                 "https://www.ver-taal.com/": "https://www.ver-taal.com/",                 "https://www.rae.es/ – Słownik języka hiszpańskiego.": "https://www.rae.es/ – Słownik języka hiszpańskiego."             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",                 "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Hiszpański na świecie - ogólne informacje o krajach hiszpańskojęzycznych, alfabet, przywitania, pożegnania, samopoczucie",             "Edukacja – nazwy przyborów szkolnych, zwroty przydatne na lekcjach, liczebniki do 20, rodzaj i liczba rzeczowników",             "Człowiek - dane personalne, narodowość, wiek, stan cywilny, zawody, czasownik ser, tener, vivir, llamarse, rodzaj i liczba przymiotników, zaimki osobowe",             "Życie prywatne – rodzina (pokrewieństwo), przyjaciele, imiona i nazwiska hiszpańskie, liczebniki do 100",             "Praca – zawody, miejsca pracy,  odmiana czasowników regularnych,",             "Wygląd człowieka – cechy fizyczne i cechy charakteru, zaimki dzierżawcze",             "Rzeczy osobiste – ubrania i kolory, zaimki wskazujące, czasownik llevar, rodzajniki nieokreślone",             "Święta w Hiszpanii: Sylwester, Nowy Rok, Święto Trzech Króli, tradycje",             "Dom – pomieszczenia i wyposażenie domu, sprzęty gospodarstwa domowego, czasowniki estar, ser i haber, rodzajniki ściągnięte: al., del, przyimki miejsca",             "Miejsce zamieszkania – budynki miejskie, opis dzielnicy, liczebniki do 1000",             "Szkoła – system edukacyjny w Hiszpanii, nazwy przedmiotów szkolnych, czynności wykonywane w szkole, obowiązki, przymiotniki nieokreślone muchos/as, wskazywanie ilości",             "Życie codzienne – czynności dnia codziennego, przysłówki i wyrażenia czasowe, odmiana czasowników zwrotnych",             "Miasto – obiekty miejskie, usługi, zaimki",             "Czas wolny – formy spędzania czasu wolnego, częstotliwość wykonywanych czynności",             "Święta w Hiszpanii – Wielkanoc, Święto ognia, tradycje"         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "03.03.2026",
+        "nazwa_przedmiotu": "Język hiszpański – Lektorat 1",
+        "kod_przedmiotu": "HIS1",
+        "rok_studiow": 2,
+        "semestr_studiow": 4,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 60,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 15,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "ANG3",
+                "wymagania": "Brak wymagań wstępnych w zakresie języka hiszpańskiego."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka hiszpańskiego na poziomie A1/A2. Student opanowuje język hiszpański w stopniu pozwalającym na podstawową komunikację językową w sytuacjach dnia codziennego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 1, Wydawnictwo DRACO, 2020."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",
+                    "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023."
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "https://www.profedeele.es/": "https://www.profedeele.es/",
+                "https://www.ver-taal.com/": "https://www.ver-taal.com/",
+                "https://www.rae.es/ – Słownik języka hiszpańskiego.": "https://www.rae.es/ – Słownik języka hiszpańskiego."
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Hiszpański na świecie - ogólne informacje o krajach hiszpańskojęzycznych, alfabet, przywitania, pożegnania, samopoczucie",
+            "Edukacja – nazwy przyborów szkolnych, zwroty przydatne na lekcjach, liczebniki do 20, rodzaj i liczba rzeczowników",
+            "Człowiek - dane personalne, narodowość, wiek, stan cywilny, zawody, czasownik ser, tener, vivir, llamarse, rodzaj i liczba przymiotników, zaimki osobowe",
+            "Życie prywatne – rodzina (pokrewieństwo), przyjaciele, imiona i nazwiska hiszpańskie, liczebniki do 100",
+            "Praca – zawody, miejsca pracy,  odmiana czasowników regularnych,",
+            "Wygląd człowieka – cechy fizyczne i cechy charakteru, zaimki dzierżawcze",
+            "Rzeczy osobiste – ubrania i kolory, zaimki wskazujące, czasownik llevar, rodzajniki nieokreślone",
+            "Święta w Hiszpanii: Sylwester, Nowy Rok, Święto Trzech Króli, tradycje",
+            "Dom – pomieszczenia i wyposażenie domu, sprzęty gospodarstwa domowego, czasowniki estar, ser i haber, rodzajniki ściągnięte: al., del, przyimki miejsca",
+            "Miejsce zamieszkania – budynki miejskie, opis dzielnicy, liczebniki do 1000",
+            "Szkoła – system edukacyjny w Hiszpanii, nazwy przedmiotów szkolnych, czynności wykonywane w szkole, obowiązki, przymiotniki nieokreślone muchos/as, wskazywanie ilości",
+            "Życie codzienne – czynności dnia codziennego, przysłówki i wyrażenia czasowe, odmiana czasowników zwrotnych",
+            "Miasto – obiekty miejskie, usługi, zaimki",
+            "Czas wolny – formy spędzania czasu wolnego, częstotliwość wykonywanych czynności",
+            "Święta w Hiszpanii – Wielkanoc, Święto ognia, tradycje"
+        ],
+        "cel_dydaktyczny_eng": "Spanish language instruction at the A1/A2 level. Students acquire Spanish proficiency enabling basic communication in everyday situations, expression of thoughts and opinions, and understanding and producing short written texts and spoken statements. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries."
+    }
+}

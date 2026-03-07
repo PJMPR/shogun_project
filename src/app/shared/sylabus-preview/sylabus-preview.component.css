@@ -98,3 +98,19 @@
   padding: 0.4rem 0.5rem;
 }
 
+.sylabus-cel-eng-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0 0.3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--p-primary-color, #2563eb);
+  border-top: 1px dashed var(--p-surface-300);
+  padding-top: 0.75rem;
+}
+
+.sylabus-text-eng {
+  font-style: italic;
+  color: var(--p-surface-600);
+}

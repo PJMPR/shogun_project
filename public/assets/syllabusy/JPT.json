@@ -1,80 +1,79 @@
 {
-  "sylabus": {
-    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-    "jednostka": "Filia w Gdansku",
-    "kierunek": "INFORMATYKA",
-    "profil": "praktyczny",
-    "tryb_studiow": "stacjonarny",
-    "wersja_z_dnia": "20.02.2026",
-    "nazwa_przedmiotu": "Programowanie w języku Python",
-    "kod_przedmiotu": "JPT",
-    "rok_studiow": 1,
-    "semestr_studiow": 2,
-    "obligatoryjny": false,
-    "forma_i_liczba_godzin_zajec": {
-      "wyklady": 15,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 15
-    },
-    "odpowiedzialny_za_przedmiot": "do ustalenia",
-    "ects": 2,
-    "godziny": {
-      "z_udzialem_prowadzacego_h": 30,
-      "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
-    },
-    "metody_dydaktyczne": {
-
-    },
-    "zaliczenie": {
-      "Projekt": {
-        "sposob": "Zaliczenie z oceną"
-      }
-    },
-    "kryteria_oceny": [
-      "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność działania, jakość kodu, strukturę programu, dokumentację oraz prezentację rozwiązania",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
-    "przedmioty_wprowadzajace": [
-      {
-        "nazwa": "Podstawy Programowania",
-        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
-      }
-    ],
-    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Python oraz wykształcenie umiejętności samodzielnego tworzenia prostych aplikacji i skryptów. Zajęcia kładą nacisk na czytelność kodu, dobre praktyki programistyczne oraz praktyczne zastosowania języka Python w analizie danych, automatyzacji zadań i tworzeniu prostych aplikacji. Przedmiot przygotowuje studentów do dalszej nauki technologii wykorzystujących Python oraz do realizacji niewielkich projektów programistycznych.",
-    "literatura": {
-      "podstawowa": {
-        "pozycje": [
-          "Mark Lutz, Learning Python, O'Reilly Media",
-          "Eric Matthes, Python Crash Course, No Starch Press",
-          "Dokumentacja Python: https://docs.python.org"
-        ]
-      },
-      "uzupelniajaca": {
-        "pozycje": [
-          "Al Sweigart, Automate the Boring Stuff with Python",
-          "Real Python – materiały online"
-        ]
-      }
-    },
-    "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych.",
-      "umiejetnosci": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
-    },
-    "tresci_programowe": [
-      "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
-      "Typy danych: int, float, bool, string, operatory i konwersje typów.",
-      "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
-      "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
-      "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
-      "Moduły i pakiety, korzystanie z bibliotek standardowych.",
-      "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
-      "Wyjątki i obsługa błędów.",
-      "Wprowadzenie do programowania obiektowego w Pythonie.",
-      " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
-      " Testowanie i debugowanie prostych programów."
-    ]
-  }
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "20.02.2026",
+        "nazwa_przedmiotu": "Programowanie w języku Python",
+        "kod_przedmiotu": "JPT",
+        "rok_studiow": 1,
+        "semestr_studiow": 2,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 15,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 15
+        },
+        "odpowiedzialny_za_przedmiot": "do ustalenia",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 20,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Projekt": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+            "Ocena projektu obejmuje: poprawność działania, jakość kodu, strukturę programu, dokumentację oraz prezentację rozwiązania",
+            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Podstawy Programowania",
+                "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Python oraz wykształcenie umiejętności samodzielnego tworzenia prostych aplikacji i skryptów. Zajęcia kładą nacisk na czytelność kodu, dobre praktyki programistyczne oraz praktyczne zastosowania języka Python w analizie danych, automatyzacji zadań i tworzeniu prostych aplikacji. Przedmiot przygotowuje studentów do dalszej nauki technologii wykorzystujących Python oraz do realizacji niewielkich projektów programistycznych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Mark Lutz, Learning Python, O'Reilly Media",
+                    "Eric Matthes, Python Crash Course, No Starch Press",
+                    "Dokumentacja Python: https://docs.python.org"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Al Sweigart, Automate the Boring Stuff with Python",
+                    "Real Python – materiały online"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych.",
+            "umiejetnosci": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+            "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
+        },
+        "tresci_programowe": [
+            "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
+            "Typy danych: int, float, bool, string, operatory i konwersje typów.",
+            "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
+            "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
+            "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
+            "Moduły i pakiety, korzystanie z bibliotek standardowych.",
+            "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
+            "Wyjątki i obsługa błędów.",
+            "Wprowadzenie do programowania obiektowego w Pythonie.",
+            " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
+            " Testowanie i debugowanie prostych programów."
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in Python and to develop the ability to independently create simple applications and scripts. The course places emphasis on code readability, good programming practices, and practical applications of Python in data analysis, task automation, and building simple applications. It prepares students for further study of technologies that use Python and for the implementation of small programming projects."
+    }
 }

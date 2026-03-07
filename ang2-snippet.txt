@@ -1,0 +1,12 @@
+Cel dydaktyczny}
+
+Nauczanie języka angielskiego na poziomie B1+/B2. Student pogłębia umiejętności komunikacji w języku angielskim w środowisku zawodowym i akademickim, ze szczególnym uwzględnieniem słownictwa technicznego z zakresu informatyki. Student doskonali sprawności receptywne (czytanie, słuchanie) i produktywne (mówienie, pisanie) na materiale tekstów branżowych.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Język angielski ANG1 & Znajomość języka angielskiego na poziomie B1+. \\
+  \hlin

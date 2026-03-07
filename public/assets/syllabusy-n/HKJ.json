@@ -1,101 +1,98 @@
-﻿{
-    "sylabus":  {
-                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
-                    "jednostka":  "Filia w Gdańsku",
-                    "kierunek":  "INFORMATYKA",
-                    "profil":  "praktyczny",
-                    "tryb_studiow":  "niestacjonarny",
-                    "wersja_z_dnia":  "19.02.2026",
-                    "nazwa_przedmiotu":  "Historia i Kultura Japonii",
-                    "kod_przedmiotu":  "HKJ",
-                    "rok_studiow":  1,
-                    "semestr_studiow":  1,
-                    "obligatoryjny":  true,
-                    "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  32,
-                                                        "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  null
-                                                    },
-                    "odpowiedzialny_za_przedmiot":  "",
-                    "ects":  2,
-                    "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  32,
-                                    "praca_wlasna_studenta_h":  18,
-                                    "calkowita_liczba_godzin_h":  50
-                                },
-                    "metody_dydaktyczne":  {
-
-                                           },
-                    "zaliczenie":  {
-                                       "Wykład":  {
-                                                      "sposob":  "Zaliczenie z oceną"
-                                                  }
-                                   },
-                    "kryteria_oceny":  [
-                                           "Kolokwium końcowe pisemne.",
-                                           "Poniżej 50% - ndst",
-                                           "Od 50% - dst",
-                                           "Od 60% - dst+",
-                                           "Od 70% - db",
-                                           "Od 80% - db+",
-                                           "Od 90% - bdb"
-                                       ],
-                    "przedmioty_wprowadzajace":  [
-
-                                                 ],
-                    "cel_dydaktyczny":  "Zapoznanie studentów z historią i kulturą Japonii, z najważniejszymi osiągnięciami w dziedzinie sztuki i estetyki. Zaznajomienie z tradycjami, zwyczajami, normami zachowań społecznych, problemami współczesnego społeczeństwa japońskiego oraz współczesną i dawną architekturą.",
-                    "literatura":  {
-                                       "podstawowa":  {
-                                                          "pozycje":  [
-                                                                          "Marszałek-Kawa, J., Gawłowski, R. (red.) (2013) Kulturowe i edukacyjne oblicza współczesnej Azji, Wydawnictwo Adam Marszałek, Toruń.",
-                                                                          "Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.",
-                                                                          "Takei, N. (2001) Getting closer to Japan. Japanese culture, ASK., Ltd., Tokyo."
-                                                                      ]
-                                                      },
-                                       "uzupelniajaca":  {
-                                                             "pozycje":  [
-                                                                             "Doi, T. (1973) The Anatomy of Dependence, Kodansha International, Tokyo.",
-                                                                             "Keene, D. (1971) Appreciations of Japanese culture, Kodansha International, Tokyo.",
-                                                                             "Kubiak Ho-Chi, B. (2009) Estetyka i sztuka japońska, Universitas, Kraków.",
-                                                                             "Mukai, K. (2008) A guidebook to Japan and its customs, Nihon Bungeisha, Tokyo.",
-                                                                             "Richie, D. (2007) A tractate on Japanese aesthetics, Stone Bridges Press, Berkley.",
-                                                                             "Young, D., Young, M. (2019) The art of Japanese architecture, Tuttle Publishing, Tokyo.",
-                                                                             "Lynch, K. (1960) The Image of the City, MIT Press, Cambridge MA.",
-                                                                             "Meeks, C.L.V. (1995) The Railroad Station: An Architectural History, Dover Publications, New York.",
-                                                                             "Mizuno, K. (2017) Subway stations around the world, Seigensha, Tokyo."
-                                                                         ]
-                                                         }
-                                   },
-                    "efekty_ksztalcenia":  {
-                                               "wiedza":  [
-                                                              "Student zna i rozumie podstawowe fakty z historii i kultury Japonii.",
-                                                              "Student zna najważniejsze pojęcia estetyki japońskiej."
-                                                          ],
-                                               "umiejetnosci":  [
-                                                                    "Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii.",
-                                                                    "Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski.",
-                                                                    "Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie."
-                                                                ],
-                                               "kompetencje_spoleczne":  [
-                                                                             "Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii."
-                                                                         ]
-                                           },
-                    "tresci_programowe":  [
-                                              "Kultura i etykieta biznesu w Japonii (1) - Jak zdobyć zaufanie Japończyka. Dobre pierwsze wrażenie. Przedstawianie się i wymiana wizytówek. Nawiązywanie i podtrzymywanie kontaktu. Podstawowa japońska etykieta biznesu. Japońska gospodarka. Rynek pracy w Japonii.",
-                                              "Kultura i etykieta biznesu w Japonii (2) - Charakterystyka pracy w Japonii. Kobiety w japońskich firmach. Przedsiębiorstwa japońskie (kaizen). Wartości, symbole, postawy w japońskich firmach. Przebieg spotkania biznesowego. Negocjacje i podejmowanie decyzji.",
-                                              "Japonia w relacjach zagranicznych - Firmy zagraniczne w Japonii. Efektywny biznes w Japonii. Różnice kulturowe pomiędzy Japonią, Chinami i Koreą. Lokalizacja Japonii na świecie i elementy kultury japońskiej.",
-                                              "Geneza i historia animacji i mangi - Wczesny rozwój animacji i mangi. Ważne dzieła i ich wpływ kulturowy. Popularność i rozpowszechnianie w Japonii i za granicą.",
-                                              "Gatunki i cechy charakterystyczne mangi i anime - Gatunki shōnen, shōjo, seinen. Projekty postaci i style ekspresji. Przemysłowy i ekonomiczny wpływ anime i mangi.",
-                                              "Wielkość i rozwój rynku animacji i mangi - Działalność związana z licencjonowaniem i rozwojem produktów. Wpływ gospodarczy animacji i mangi.",
-                                              "Estetyka japońska - Percepcja natury. Pojęcie piękna i kształtowanie się estetyki japońskiej. Cechy kluczowe estetyki japońskiej: sugestia, nieregularność, prostota, nietrwałość. Pojęcia estetyczne: wabi-sabi, miyabi, aware, iki, yūgen.",
-                                              "Architektura japońska - Miasta i prowincji, współcześni architekci. Przejście od architektury tradycyjnej do nowoczesnej. Architektura współczesna: powojenny metabolism, postmodernizm.",
-                                              "Koleje japońskie - Ewolucja i estetyka dworców kolejowych w Japonii. Japońskie pociągi.",
-                                              "Estetyka infrastruktury w Japonii - Architekt i inżynier w Japonii. Historia estetyki infrastruktury. Zasady estetyki kolei.",
-                                              "Przestrzeń publiczna w Japonii - Przykłady kolei na estakadach, placów dworcowych, sztuka publiczna.",
-                                              "Kultura otaku - Powstanie i charakterystyka. Znaczenie cosplay i doujin. Rola wydarzeń i społeczności - globalny wpływ.",
-                                              "Popularność i wpływ anime i mangi za granicą - Interakcja z międzynarodowymi fanami. Akceptacja kulturowa.",
-                                              "Wprowadzenie do historii japońskiej.",
-                                              "Podsumowanie wszystkich zagadnień, kolokwium końcowe."
-                                          ]
-                }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Historia i Kultura Japonii",
+        "kod_przedmiotu": "HKJ",
+        "rok_studiow": 1,
+        "semestr_studiow": 1,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 32,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 18,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Kolokwium końcowe pisemne.",
+            "Poniżej 50% - ndst",
+            "Od 50% - dst",
+            "Od 60% - dst+",
+            "Od 70% - db",
+            "Od 80% - db+",
+            "Od 90% - bdb"
+        ],
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Zapoznanie studentów z historią i kulturą Japonii, z najważniejszymi osiągnięciami w dziedzinie sztuki i estetyki. Zaznajomienie z tradycjami, zwyczajami, normami zachowań społecznych, problemami współczesnego społeczeństwa japońskiego oraz współczesną i dawną architekturą.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Marszałek-Kawa, J., Gawłowski, R. (red.) (2013) Kulturowe i edukacyjne oblicza współczesnej Azji, Wydawnictwo Adam Marszałek, Toruń.",
+                    "Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.",
+                    "Takei, N. (2001) Getting closer to Japan. Japanese culture, ASK., Ltd., Tokyo."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Doi, T. (1973) The Anatomy of Dependence, Kodansha International, Tokyo.",
+                    "Keene, D. (1971) Appreciations of Japanese culture, Kodansha International, Tokyo.",
+                    "Kubiak Ho-Chi, B. (2009) Estetyka i sztuka japońska, Universitas, Kraków.",
+                    "Mukai, K. (2008) A guidebook to Japan and its customs, Nihon Bungeisha, Tokyo.",
+                    "Richie, D. (2007) A tractate on Japanese aesthetics, Stone Bridges Press, Berkley.",
+                    "Young, D., Young, M. (2019) The art of Japanese architecture, Tuttle Publishing, Tokyo.",
+                    "Lynch, K. (1960) The Image of the City, MIT Press, Cambridge MA.",
+                    "Meeks, C.L.V. (1995) The Railroad Station: An Architectural History, Dover Publications, New York.",
+                    "Mizuno, K. (2017) Subway stations around the world, Seigensha, Tokyo."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie podstawowe fakty z historii i kultury Japonii.",
+                "Student zna najważniejsze pojęcia estetyki japońskiej."
+            ],
+            "umiejetnosci": [
+                "Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii.",
+                "Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski.",
+                "Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii."
+            ]
+        },
+        "tresci_programowe": [
+            "Kultura i etykieta biznesu w Japonii (1) - Jak zdobyć zaufanie Japończyka. Dobre pierwsze wrażenie. Przedstawianie się i wymiana wizytówek. Nawiązywanie i podtrzymywanie kontaktu. Podstawowa japońska etykieta biznesu. Japońska gospodarka. Rynek pracy w Japonii.",
+            "Kultura i etykieta biznesu w Japonii (2) - Charakterystyka pracy w Japonii. Kobiety w japońskich firmach. Przedsiębiorstwa japońskie (kaizen). Wartości, symbole, postawy w japońskich firmach. Przebieg spotkania biznesowego. Negocjacje i podejmowanie decyzji.",
+            "Japonia w relacjach zagranicznych - Firmy zagraniczne w Japonii. Efektywny biznes w Japonii. Różnice kulturowe pomiędzy Japonią, Chinami i Koreą. Lokalizacja Japonii na świecie i elementy kultury japońskiej.",
+            "Geneza i historia animacji i mangi - Wczesny rozwój animacji i mangi. Ważne dzieła i ich wpływ kulturowy. Popularność i rozpowszechnianie w Japonii i za granicą.",
+            "Gatunki i cechy charakterystyczne mangi i anime - Gatunki shōnen, shōjo, seinen. Projekty postaci i style ekspresji. Przemysłowy i ekonomiczny wpływ anime i mangi.",
+            "Wielkość i rozwój rynku animacji i mangi - Działalność związana z licencjonowaniem i rozwojem produktów. Wpływ gospodarczy animacji i mangi.",
+            "Estetyka japońska - Percepcja natury. Pojęcie piękna i kształtowanie się estetyki japońskiej. Cechy kluczowe estetyki japońskiej: sugestia, nieregularność, prostota, nietrwałość. Pojęcia estetyczne: wabi-sabi, miyabi, aware, iki, yūgen.",
+            "Architektura japońska - Miasta i prowincji, współcześni architekci. Przejście od architektury tradycyjnej do nowoczesnej. Architektura współczesna: powojenny metabolism, postmodernizm.",
+            "Koleje japońskie - Ewolucja i estetyka dworców kolejowych w Japonii. Japońskie pociągi.",
+            "Estetyka infrastruktury w Japonii - Architekt i inżynier w Japonii. Historia estetyki infrastruktury. Zasady estetyki kolei.",
+            "Przestrzeń publiczna w Japonii - Przykłady kolei na estakadach, placów dworcowych, sztuka publiczna.",
+            "Kultura otaku - Powstanie i charakterystyka. Znaczenie cosplay i doujin. Rola wydarzeń i społeczności - globalny wpływ.",
+            "Popularność i wpływ anime i mangi za granicą - Interakcja z międzynarodowymi fanami. Akceptacja kulturowa.",
+            "Wprowadzenie do historii japońskiej.",
+            "Podsumowanie wszystkich zagadnień, kolokwium końcowe."
+        ],
+        "cel_dydaktyczny_eng": "Introduction to the history and culture of Japan, including its most important achievements in the field of art and aesthetics. Familiarization with traditions, customs, norms of social behavior, problems of contemporary Japanese society, as well as modern and historical architecture."
+    }
 }

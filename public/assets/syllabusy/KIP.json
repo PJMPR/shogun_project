@@ -59,17 +59,18 @@
         },
         "efekty_ksztalcenia": {
             "wiedza": [
-                "zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera",
-                "zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki",
-                "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii"
+                "Student zna i rozumie zaawansowane pojęcia z zakresu techniki cyfrowej i architektury systemów komputerowych: układy kombinacyjne i sekwencyjne, architekturę ARM/RISC-V, organizację pamięci i magistral komunikacyjnych. [K_W06]",
+                "Student zna i rozumie zaawansowane zagadnienia mikrokontrolerów i systemów wbudowanych stosowanych w IoT: programowanie bare-metal i RTOS-based, interfejsy peryferyjne (I2C, SPI, UART, CAN), zarządzanie energią. [K_W18]",
+                "Student zna i rozumie zaawansowane pojęcia w zakresie Internetu Rzeczy: protokoły komunikacyjne warstwy aplikacji (MQTT, CoAP, HTTP/REST), architektury IoT (edge, fog, cloud), bezpieczeństwo urządzeń IoT. [K_W26]"
             ],
             "umiejetnosci": [
-                "potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
-                "potrafi przeanalizować, zsyntezować i oprogramować prosty system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację",
-                "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania."
+                "Student potrafi zaprojektować proste układy cyfrowe, napisać program w asemblerze dla mikrokontrolera oraz zintegrować peryferyjne moduły sprzętowe z systemem wbudowanym. [K_U12]",
+                "Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany IoT: skonfigurować interfejsy sensorów i aktuatorów, zaimplementować stos komunikacyjny i zapewnić niezawodność systemu. [K_U23]",
+                "Student potrafi zdiagnozować problem inżynierski w dziedzinie IoT, zaprojektować rozwiązanie i zrealizować prototyp z użyciem dostępnych platform (ESP32, Raspberry Pi, Arduino). [K_U33]"
             ],
             "kompetencje_spoleczne": [
-                "jest gotów do samodzielnego uczenia się przez całe życie"
+                "Student jest gotów do zastosowania technologii IoT na rzecz rozwoju innowacyjnych rozwiązań w przemyśle, rolnictwie, medycynie i inteligentnych miastach. [K_K01]",
+                "Student jest gotów do samodzielnego pogłębiania wiedzy z dynamicznie rozwijającego się obszaru systemów wbudowanych i Internetu Rzeczy. [K_K03]"
             ]
         },
         "tresci_programowe": [
@@ -83,6 +84,7 @@
             "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
             "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
             "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff."
-        ]
+        ],
+        "cel_dydaktyczny_eng": "The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency."
     }
 }

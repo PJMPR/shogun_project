@@ -93,6 +93,11 @@
   border-color: #b91c1c !important;
   outline: none;
 }
+.sf-textarea-eng {
+  border-style: dashed !important;
+  font-style: italic;
+  opacity: 0.92;
+}
 
 /* Select */
 .sf-select {

@@ -316,7 +316,7 @@ function charTabela(isSt, semCount, semesters, elOth) {
     `  {\\small ${label}} & {\\small\\textbf{${value}}} \\\\\n`;
 
   let out = `{\\renewcommand{\\arraystretch}{1.4}\n`;
-  out += `\\begin{tabularx}{\\textwidth}{@{}Xp{7cm}@{}}\n`;
+  out += `\\begin{tabularx}{\\textwidth}{@{}Xp{8.5cm}@{}}\n`;
   out += `\\toprule\n`;
   out += row('Nazwa kierunku:', 'Informatyka');
   out += row('Poziom:', 'Pierwszy stopień');

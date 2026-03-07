@@ -85,7 +85,8 @@ function Generate-Tex($s, [string]$code) {
     }
 
     # Cel dydaktyczny
-    $cel = Escape-Latex $s.cel_dydaktyczny
+    $cel    = Escape-Latex $s.cel_dydaktyczny
+    $celEng = Escape-Latex $s.cel_dydaktyczny_eng
 
     # Przedmioty wprowadzajace
     $pwRows = ""
@@ -190,7 +191,7 @@ function Generate-Tex($s, [string]$code) {
     $sposobLabel  = "Spos" + [char]0x00F3 + "b zaliczenia"
     $przedmWprow  = "Przedmioty wprowadzaj" + [char]0x0105 + "ce"
     $kompSpolLabel= "Kompetencje spo" + [char]0x0142 + "eczne"
-    $wiedzaLabel  = "Wiedza"
+    $celEngLabel  = "Wersja w j" + [char]0x0119 + "zyku angielskim (English version)"
 
     # Sekcje opcjonalne
     $zalSection = ""
@@ -310,7 +311,11 @@ function Generate-Tex($s, [string]$code) {
     $t += "\end{center}`n"
     $t += "$zalSection`n"
     $t += "\section{Cel dydaktyczny}`n`n"
-    $t += "$cel`n"
+    $t += "$cel`n`n"
+    if ($celEng) {
+        $t += "\subsection*{\textit{$celEngLabel}}`n`n"
+        $t += "\textit{$celEng}`n`n"
+    }
     $t += "$pwSection`n"
     $t += "\section{$tresciSec}`n`n"
     $t += "\begin{enumerate}`n" + $tresciItems + "\end{enumerate}`n`n"

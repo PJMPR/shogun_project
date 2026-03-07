@@ -1,1 +1,102 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "26.02.2026",         "nazwa_przedmiotu": "Wstęp do zarządzania",         "kod_przedmiotu": "WDZ",         "rok_studiow": 1,         "semestr_studiow": 1,         "obligatoryjny": true,         "forma_i_liczba_godzin_zajec": {             "wyklady": 30,             "cwiczenia_lektorat_seminarium": 30,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "mgr Adam Urbanowicz",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 15,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {             "wyklad": [                 "Wykład z prezentacją multimedialną, analiza przypadków, dyskusja."             ],             "cwiczenia": [                 "Ćwiczenia warsztatowe: praca w grupach, analiza przypadków biznesowych, krótkie prezentacje zespołowe."             ]         },         "zaliczenie": {             "Wykład": {                 "sposob": "Nieoceniany"             },             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Ćwiczenia – zaliczenie z oceną:",             "Aktywność na zajęciach i praca w grupie (20% oceny).",             "Kolokwium pisemne z treści wykładów i ćwiczeń (40% oceny).",             "Projekt zespołowy: analiza wybranej organizacji z zastosowaniem poznanych narzędzi zarządczych (40% oceny).",             "Warunkiem zaliczenia jest uzyskanie co najmniej 51% punktów łącznie.",             "Skala ocen: 51–60% – 3.0, 61–70% – 3.5, 71–80% – 4.0, 81–90% – 4.5, 91–100% – 5.0."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "Brak wymagań wstępnych",                 "wymagania": "Wiedza ogólna z zakresu szkoły średniej."             }         ],         "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawowymi pojęciami i koncepcjami zarządzania organizacją. Student poznaje funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola), struktury organizacyjne, style przywództwa oraz elementy zarządzania projektami i zespołami. Przedmiot stanowi wprowadzenie do rozumienia środowiska biznesowego, w którym funkcjonują projekty informatyczne, i kształtuje u studentów świadomość menedżerską niezbędną w pracy inżyniera IT.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "R. W. Griffin: \"Podstawy zarządzania organizacjami\", PWN, Warszawa 2017.",                     "J. A. F. Stoner, R. E. Freeman, D. R. Gilbert: \"Kierowanie\", PWE, Warszawa 2011.",                     "P. Drucker: \"Praktyka zarządzania\", MT Biznes, Warszawa 2021."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "H. Mintzberg: \"Zarządzanie\", Wolters Kluwer, Warszawa 2012.",                     "A. Koźmiński, W. Piotrowski (red.): \"Zarządzanie. Teoria i praktyka\", PWN, Warszawa 2013."                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [                 "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji.",                 "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór.",                 "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników."             ],             "umiejetnosci": [                 "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania.",                 "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego.",                 "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań.",                 "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych."             ]         },         "tresci_programowe": [             "Organizacja i zarządzanie – podstawowe pojęcia. Czym jest zarządzanie? Menedżer i jego role (Mintzberg). Ewolucja myśli zarządczej: szkoła klasyczna, behawioralna, ilościowa, systemowa.",             "Otoczenie organizacji: otoczenie ogólne (makrootoczenie) i otoczenie zadaniowe. Analiza PEST. Interesariusze organizacji.",             "Planowanie jako funkcja zarządzania: rodzaje planów, cele organizacyjne, zarządzanie przez cele (MBO). Analiza SWOT jako narzędzie planowania strategicznego.",             "Organizowanie: projekt struktury organizacyjnej, podział pracy, rozpiętość kierowania, centralizacja i decentralizacja. Typy struktur: liniowa, funkcjonalna, dywizjonalna, macierzowa, projektowa.",             "Kierowanie ludźmi: przywództwo i style kierowania (autokratyczny, demokratyczny, laissez-faire). Teorie motywacji (Maslow, Herzberg, teoria oczekiwań Vrooma). Komunikacja w organizacji.",             "Kontrola jako funkcja zarządzania: rodzaje kontroli, etapy procesu kontroli, controlling. Zarządzanie przez jakość (TQM) – wprowadzenie.",             "Wprowadzenie do zarządzania projektami: projekt a działalność operacyjna, cykl życia projektu, trójkąt projektowy (zakres, czas, koszt). Metodyki zarządcze: waterfall, Agile/Scrum – przegląd.",             "Zarządzanie zespołem projektowym: role w zespole (model Belbina), budowanie i etapy rozwoju zespołu (model Tuckmana), konflikty i sposoby ich rozwiązywania.",             "Kultura organizacyjna: pojęcie, elementy, typologie (Quinn, Hofstede). Wpływ kultury organizacyjnej na efektywność zespołu i firmy informatycznej.",             "Przedsiębiorczość i innowacje w organizacji: rodzaje innowacji, ekosystem startupowy, modele biznesowe – wprowadzenie (Business Model Canvas). Społeczna odpowiedzialność biznesu (CSR)."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "26.02.2026",
+        "nazwa_przedmiotu": "Wstęp do zarządzania",
+        "kod_przedmiotu": "WDZ",
+        "rok_studiow": 1,
+        "semestr_studiow": 1,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "mgr Adam Urbanowicz",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 15,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "Wykład z prezentacją multimedialną, analiza przypadków, dyskusja."
+            ],
+            "cwiczenia": [
+                "Ćwiczenia warsztatowe: praca w grupach, analiza przypadków biznesowych, krótkie prezentacje zespołowe."
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            },
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Ćwiczenia – zaliczenie z oceną:",
+            "Aktywność na zajęciach i praca w grupie (20% oceny).",
+            "Kolokwium pisemne z treści wykładów i ćwiczeń (40% oceny).",
+            "Projekt zespołowy: analiza wybranej organizacji z zastosowaniem poznanych narzędzi zarządczych (40% oceny).",
+            "Warunkiem zaliczenia jest uzyskanie co najmniej 51% punktów łącznie.",
+            "Skala ocen: 51–60% – 3.0, 61–70% – 3.5, 71–80% – 4.0, 81–90% – 4.5, 91–100% – 5.0."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Brak wymagań wstępnych",
+                "wymagania": "Wiedza ogólna z zakresu szkoły średniej."
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawowymi pojęciami i koncepcjami zarządzania organizacją. Student poznaje funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola), struktury organizacyjne, style przywództwa oraz elementy zarządzania projektami i zespołami. Przedmiot stanowi wprowadzenie do rozumienia środowiska biznesowego, w którym funkcjonują projekty informatyczne, i kształtuje u studentów świadomość menedżerską niezbędną w pracy inżyniera IT.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "R. W. Griffin: \"Podstawy zarządzania organizacjami\", PWN, Warszawa 2017.",
+                    "J. A. F. Stoner, R. E. Freeman, D. R. Gilbert: \"Kierowanie\", PWE, Warszawa 2011.",
+                    "P. Drucker: \"Praktyka zarządzania\", MT Biznes, Warszawa 2021."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "H. Mintzberg: \"Zarządzanie\", Wolters Kluwer, Warszawa 2012.",
+                    "A. Koźmiński, W. Piotrowski (red.): \"Zarządzanie. Teoria i praktyka\", PWN, Warszawa 2013."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji.",
+                "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór.",
+                "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników."
+            ],
+            "umiejetnosci": [
+                "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania.",
+                "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego.",
+                "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań.",
+                "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych."
+            ]
+        },
+        "tresci_programowe": [
+            "Organizacja i zarządzanie – podstawowe pojęcia. Czym jest zarządzanie? Menedżer i jego role (Mintzberg). Ewolucja myśli zarządczej: szkoła klasyczna, behawioralna, ilościowa, systemowa.",
+            "Otoczenie organizacji: otoczenie ogólne (makrootoczenie) i otoczenie zadaniowe. Analiza PEST. Interesariusze organizacji.",
+            "Planowanie jako funkcja zarządzania: rodzaje planów, cele organizacyjne, zarządzanie przez cele (MBO). Analiza SWOT jako narzędzie planowania strategicznego.",
+            "Organizowanie: projekt struktury organizacyjnej, podział pracy, rozpiętość kierowania, centralizacja i decentralizacja. Typy struktur: liniowa, funkcjonalna, dywizjonalna, macierzowa, projektowa.",
+            "Kierowanie ludźmi: przywództwo i style kierowania (autokratyczny, demokratyczny, laissez-faire). Teorie motywacji (Maslow, Herzberg, teoria oczekiwań Vrooma). Komunikacja w organizacji.",
+            "Kontrola jako funkcja zarządzania: rodzaje kontroli, etapy procesu kontroli, controlling. Zarządzanie przez jakość (TQM) – wprowadzenie.",
+            "Wprowadzenie do zarządzania projektami: projekt a działalność operacyjna, cykl życia projektu, trójkąt projektowy (zakres, czas, koszt). Metodyki zarządcze: waterfall, Agile/Scrum – przegląd.",
+            "Zarządzanie zespołem projektowym: role w zespole (model Belbina), budowanie i etapy rozwoju zespołu (model Tuckmana), konflikty i sposoby ich rozwiązywania.",
+            "Kultura organizacyjna: pojęcie, elementy, typologie (Quinn, Hofstede). Wpływ kultury organizacyjnej na efektywność zespołu i firmy informatycznej.",
+            "Przedsiębiorczość i innowacje w organizacji: rodzaje innowacji, ekosystem startupowy, modele biznesowe – wprowadzenie (Business Model Canvas). Społeczna odpowiedzialność biznesu (CSR)."
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic concepts and principles of organizational management. Students learn the functions of management (planning, organizing, leading, controlling), organizational structures, leadership styles, and elements of project and team management. The course serves as an introduction to understanding the business environment in which IT projects operate and develops managerial awareness necessary in the work of an IT engineer."
+    }
+}

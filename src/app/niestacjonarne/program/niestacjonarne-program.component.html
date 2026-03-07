@@ -233,6 +233,12 @@
           @if (s.cel_dydaktyczny) {
             <p-panel header="Cel dydaktyczny" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
               <p class="sylabus-text">{{ s.cel_dydaktyczny }}</p>
+              @if (s.cel_dydaktyczny_eng) {
+                <p class="sylabus-cel-eng-label">
+                  <i class="pi pi-globe"></i> Cel dydaktyczny &ndash; wersja w języku angielskim (English version)
+                </p>
+                <p class="sylabus-text sylabus-text-eng">{{ s.cel_dydaktyczny_eng }}</p>
+              }
             </p-panel>
           }
           @if (getZaliczenieEntries(s.zaliczenie).length > 0) {

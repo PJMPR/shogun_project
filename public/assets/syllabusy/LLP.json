@@ -63,13 +63,16 @@
         },
         "efekty_ksztalcenia": {
             "wiedza": [
-                "Student zna i rozumie pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera."
+                "Student zna i rozumie zaawansowane pojęcia z zakresu architektury i organizacji systemów komputerowych: model von Neumanna, pipeline, pamięć podręczna (cache), architekturę wielordzeniową i zestawy instrukcji (x86-64, ARM). [K_W06]",
+                "Student zna i rozumie zasady programowania na poziomie asemblera: reprezentacje liczb (U2, IEEE 754), arytmetykę binarną, tryby adresowania, wywołania systemowe i konwencje wywoływania funkcji. [K_W06]"
             ],
             "umiejetnosci": [
-                "Student potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera"
+                "Student potrafi zaprojektować proste układy kombinacyjne i sekwencyjne, obliczyć reprezentacje liczb całkowitych i zmiennoprzecinkowych oraz napisać programy w asemblerze x86-64 realizujące zadane algorytmy. [K_U12]",
+                "Student potrafi analizować kod maszynowy i asemblerowy wygenerowany przez kompilator C/C++, identyfikować optymalizacje i rozumieć niskopoziomowe aspekty wykonania programu. [K_U12]"
             ],
             "kompetencje_spoleczne": [
-                "Student jest gotów do samodzielnego uczenia się przez całe życie"
+                "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu architektury procesorów i programowania niskopoziomowego w oparciu o dokumentację producentów i literaturę branżową. [K_K03]",
+                "Student jest gotów do stosowania wiedzy o niskopoziomowej architekturze systemów przy projektowaniu wydajnego i bezpiecznego oprogramowania. [K_K05]"
             ]
         },
         "tresci_programowe": [
@@ -87,6 +90,7 @@
             "Bootsector, ładowanie jądra",
             "Proste jądro",
             "Proste mechanizmy OS, rozwój jądra OS"
-        ]
+        ],
+        "cel_dydaktyczny_eng": "The educational objective of the course is to understand how a computer executes a program at the level of processor architecture and instructions, and to acquire practical skills in x86 assembly programming. Students learn to work consciously with memory, the stack, control flow (jumps, loops), and arithmetic, as well as to design and organize code."
     }
 }

@@ -1,0 +1,186 @@
+﻿% ===========================================================
+%  Sylabus: Wprowadzenie do baz dokumentowych (DDO)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: DDO}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Wprowadzenie do baz dokumentowych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & DDO \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 3 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & do ustalenia \\[3pt]
+  \textbf{Wersja z dnia:}     & 20.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+8 h & --- & 8 h & 16 h & 34 h & 50 h & \textbf{2} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Projekt & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie studentów z koncepcją nierelacyjnych baz danych typu dokumentowego oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają różnice pomiędzy podejściem relacyjnym a dokumentowym, zasady modelowania danych w formacie dokumentów (np. JSON), podstawowe operacje na danych oraz integrację baz dokumentowych z aplikacjami. Przedmiot przygotowuje do świadomego doboru technologii bazodanowej w zależności od charakteru problemu i wymagań systemu.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with the concept of non-relational document databases and their applications in modern IT systems. Students learn the differences between the relational and document-oriented approaches, the principles of modeling data in document format (e.g. JSON), basic data operations, and the integration of document databases with applications. The course prepares students to make informed choices about database technology depending on the nature of the problem and the system requirements.}
+
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Relacyjne bazy danych & Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie do baz danych NoSQL i ich klasyfikacja
+  \item Model dokumentowy i format JSON
+  \item Porównanie baz relacyjnych i dokumentowych
+  \item Projektowanie struktury dokumentów i kolekcji
+  \item Podstawowe operacje CRUD
+  \item Zapytania i filtrowanie danych
+  \item Indeksy i podstawy optymalizacji
+  \item Agregacje i przetwarzanie danych
+  \item Integracja bazy dokumentowej z aplikacją
+  \item Projekt zaliczeniowy – implementacja i prezentacja
+\end{enumerate}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{}
+\begin{itemize}
+  \item Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Projekt realizowany indywidualnie lub w parach – 100\%
+  \item Ocena projektu obejmuje: poprawność modelu danych, jakość zapytań, poprawność operacji CRUD, uzasadnienie wyborów projektowych oraz dokumentację
+  \item Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Kristina Chodorow, MongoDB: The Definitive Guide
+  \item Dokumentacja MongoDB: https://www.mongodb.com/docs
+  \item MDN Web Docs – JSON
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Martin Fowler, NoSQL Distilled
+  \item Materiały online producentów baz NoSQL
+\end{itemize}
+
+\end{document}

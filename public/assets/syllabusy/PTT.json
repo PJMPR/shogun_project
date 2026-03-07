@@ -58,15 +58,16 @@
         },
         "efekty_ksztalcenia": {
             "wiedza": [
-                "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii"
+                "Student zna i rozumie zaawansowane zagadnienia prototypowania urządzeń IoT: dobór platformy sprzętowej, szybkie wytwarzanie PCB i obudów metodami addytywnymi (druk 3D), metodyki Agile Hardware Development. [K_W18]",
+                "Student zna i rozumie zaawansowane pojęcia Internetu Rzeczy: architektury połączeń (MQTT, CoAP), integrację z platformami chmurowymi (AWS IoT, Azure IoT Hub, Google Cloud IoT), zbieranie i wizualizację danych (Grafana, InfluxDB). [K_W26]"
             ],
             "umiejetnosci": [
-                "potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie",
-                "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania."
+                "Student potrafi zrealizować pełny cykl prototypowania urządzenia IoT: od projektu elektronicznego i oprogramowania wbudowanego, przez testy, do wdrożenia i monitorowania w środowisku produkcyjnym. [K_U23]",
+                "Student potrafi zdiagnozować problem inżynierski w obszarze IoT i zaproponować rozwiązanie, dobierając odpowiednią platformę sprzętową, protokół komunikacyjny i usługi chmurowe. [K_U33]"
             ],
             "kompetencje_spoleczne": [
-                "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
-                "jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy"
+                "Student jest gotów do zastosowań technologii IoT i prototypowania na rzecz rozwoju innowacyjnych produktów i rozwiązań społecznych. [K_K01]",
+                "Student jest gotów do myślenia i działania w sposób innowacyjny, iteracyjnego doskonalenia prototypów na podstawie feedbacku użytkowników. [K_K07]"
             ]
         },
         "tresci_programowe": [
@@ -83,6 +84,7 @@
             "Komunikacja: Wi-Fi/BLE/MQTT/HTTP (w zależności od platformy), podstawy integracji z usługą/HA.",
             "Testowanie i diagnostyka: logowanie, pomiary, oscyloskop (opcjonalnie), checklisty uruchomieniowe.",
             "Projekt zespołowy: wymagania, schemat połączeń, BOM, pliki CAD, wersjonowanie i repozytorium."
-        ]
+        ],
+        "cel_dydaktyczny_eng": "The educational objective of the course 'Rapid Prototyping' is to prepare students in the IoT specialization to move efficiently from an idea to a working device prototype. Students learn to design and manufacture mechanical elements using 3D printing and to integrate them with electronics (prototype boards, wiring, connectors) while observing the principles of reliability and work safety. They develop practical skills in assembling and starting up systems: soldering, component selection, testing, and diagnosing typical prototype errors."
     }
 }

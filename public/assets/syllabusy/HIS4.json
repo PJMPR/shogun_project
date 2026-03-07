@@ -1,1 +1,92 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "03.03.2026",         "nazwa_przedmiotu": "Język hiszpański 4",         "kod_przedmiotu": "HIS4",         "rok_studiow": 4,         "semestr_studiow": 7,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 30,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "",         "ects": 1,         "godziny": {             "z_udzialem_prowadzacego_h": 30,             "praca_wlasna_studenta_h": 5,             "calkowita_liczba_godzin_h": 35         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "HIS3",                 "wymagania": "Zaliczenie HIS3"             }         ],         "cel_dydaktyczny": "Nauczanie języka hiszpańskiego od poziomu A2 do B1. Student  opanowuje język hiszpański w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.\n",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Materiały własne przygotowane przez lektora"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019",                     "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023"                 ]             },             "dokumentacja_internetowa": {                 "https://www.profedeele.es/": "https://www.profedeele.es/",                 "https://www.ver-taal.com/": "https://www.ver-taal.com/",                 "https://www.rae.es/ - Słownik": "https://www.rae.es/ - Słownik"             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",                 "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "1. Wyrażenie intencji i planów dotyczących przyszłości - czas przyszły futuro imperfecto",             "2. Klimat, określanie pogody w różnych porach roku i miejscach - zaimki osobowe w funkcji dopełnienia bliższego i dalszego",             "3. Spędzanie wolnego czasu, wakacje rozrywki - zdania warunkowe",             "4. Ciało ludzkie. Dolegliwości, leczenie - czas teraźniejszy trybu łączącego subjuntivo",             "5. Przedsiębiorstwo, zatrudnienie, rozmowa kwalifikacyjna, CV - stopniowanie przymiotników (porównania)",             "6. Praca w sektorze państwowym, praca na własny rachunek - konstrukcja llevar + gerundio",             "7. Zawód informatyka - szkolenia, kompetencje, praca - stopień najwyższy przymiotników i przysłówków",             "8. Opowiadanie o zdarzeniach z przeszłości - czasy przeszłe trybu oznajmującego"         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "03.03.2026",
+        "nazwa_przedmiotu": "Język hiszpański 4",
+        "kod_przedmiotu": "HIS4",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 1,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 5,
+            "calkowita_liczba_godzin_h": 35
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "HIS3",
+                "wymagania": "Zaliczenie HIS3"
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka hiszpańskiego od poziomu A2 do B1. Student  opanowuje język hiszpański w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.\n",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne przygotowane przez lektora"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019",
+                    "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023"
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "https://www.profedeele.es/": "https://www.profedeele.es/",
+                "https://www.ver-taal.com/": "https://www.ver-taal.com/",
+                "https://www.rae.es/ - Słownik": "https://www.rae.es/ - Słownik"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "1. Wyrażenie intencji i planów dotyczących przyszłości - czas przyszły futuro imperfecto",
+            "2. Klimat, określanie pogody w różnych porach roku i miejscach - zaimki osobowe w funkcji dopełnienia bliższego i dalszego",
+            "3. Spędzanie wolnego czasu, wakacje rozrywki - zdania warunkowe",
+            "4. Ciało ludzkie. Dolegliwości, leczenie - czas teraźniejszy trybu łączącego subjuntivo",
+            "5. Przedsiębiorstwo, zatrudnienie, rozmowa kwalifikacyjna, CV - stopniowanie przymiotników (porównania)",
+            "6. Praca w sektorze państwowym, praca na własny rachunek - konstrukcja llevar + gerundio",
+            "7. Zawód informatyka - szkolenia, kompetencje, praca - stopień najwyższy przymiotników i przysłówków",
+            "8. Opowiadanie o zdarzeniach z przeszłości - czasy przeszłe trybu oznajmującego"
+        ],
+        "cel_dydaktyczny_eng": "Spanish language instruction from A2 to B1 level. Students acquire Spanish proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries."
+    }
+}

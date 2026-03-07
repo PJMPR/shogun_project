@@ -23,6 +23,7 @@ interface FormModel {
   zaliczenie_cwiczenia: string;
   zaliczenie_laboratorium: string;
   cel_dydaktyczny: string;
+  cel_dydaktyczny_eng: string;
   kryteria_oceny_txt: string;
   metody_wyklad_txt: string;
   metody_cwiczenia_txt: string;
@@ -78,6 +79,7 @@ export class SylabusFormComponent implements OnInit {
     zaliczenie_cwiczenia: '',
     zaliczenie_laboratorium: '',
     cel_dydaktyczny: '',
+    cel_dydaktyczny_eng: '',
     kryteria_oceny_txt: '',
     metody_wyklad_txt: '',
     metody_cwiczenia_txt: '',
@@ -196,6 +198,7 @@ export class SylabusFormComponent implements OnInit {
         kryteria_oceny: this.splitLines(this.form.kryteria_oceny_txt),
         przedmioty_wprowadzajace: przedmioty,
         cel_dydaktyczny: this.form.cel_dydaktyczny,
+        cel_dydaktyczny_eng: this.form.cel_dydaktyczny_eng || undefined,
         literatura: {
           podstawowa: {
             pozycje: this.splitLines(this.form.literatura_podstawowa_txt),

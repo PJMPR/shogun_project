@@ -38,6 +38,7 @@ interface FormModel {
   zaliczenie_cwiczenia: string;
   zaliczenie_laboratorium: string;
   cel_dydaktyczny: string;
+  cel_dydaktyczny_eng: string;
   kryteria_oceny_txt: string;
   metody_wyklad_txt: string;
   metody_cwiczenia_txt: string;
@@ -126,6 +127,7 @@ export class NowySylabusComponent {
     zaliczenie_cwiczenia: '',
     zaliczenie_laboratorium: '',
     cel_dydaktyczny: '',
+    cel_dydaktyczny_eng: '',
     kryteria_oceny_txt: '',
     metody_wyklad_txt: '',
     metody_cwiczenia_txt: '',
@@ -232,6 +234,7 @@ export class NowySylabusComponent {
         kryteria_oceny: this.splitLines(f.kryteria_oceny_txt),
         przedmioty_wprowadzajace: przedmioty,
         cel_dydaktyczny: f.cel_dydaktyczny,
+        ...(f.cel_dydaktyczny_eng ? { cel_dydaktyczny_eng: f.cel_dydaktyczny_eng } : {}),
         literatura: lit,
         efekty_ksztalcenia: {
           wiedza: this.splitLines(f.efekty_wiedza_txt),
@@ -346,6 +349,7 @@ export class NowySylabusComponent {
       zaliczenie_cwiczenia: getZal('Ćwiczenia'),
       zaliczenie_laboratorium: getZal('Laboratorium'),
       cel_dydaktyczny: s.cel_dydaktyczny ?? '',
+      cel_dydaktyczny_eng: s.cel_dydaktyczny_eng ?? '',
       kryteria_oceny_txt: join(s.kryteria_oceny),
       metody_wyklad_txt: getMet('wyklad'),
       metody_cwiczenia_txt: getMet('cwiczenia'),

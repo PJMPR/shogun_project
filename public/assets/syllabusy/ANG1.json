@@ -1,1 +1,91 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdansku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "26.02.2026",         "nazwa_przedmiotu": "Język angielski 1",         "kod_przedmiotu": "ANG1",         "rok_studiow": 1,         "semestr_studiow": 1,         "obligatoryjny": true,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 60,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 15,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {},         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "Brak wymagań wstępnych",                 "wymagania": "Znajomość języka angielskiego na poziomie B1."             }         ],         "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie B1/B2. Student opanowuje język angielski w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje słownictwo branżowe z zakresu informatyki i technologii.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Materiały własne przygotowane przez lektora.",                     "Podręcznik wskazany przez lektora prowadzącego na początku semestru."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Oxford Advanced Learner's Dictionary, Oxford University Press.",                     "Materiały online: BBC Learning English (bbc.co.uk/learningenglish), British Council (learnenglish.britishcouncil.org)."                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować wypowiedzi pisemne i ustne w języku angielskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",                 "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B1/B2."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Wprowadzenie, poznanie grupy, omówienie zasad i wymagań. Diagnoza poziomu językowego. Słownictwo: technologia i codzienne życie studenta.",             "Czasy gramatyczne – przegląd i ćwiczenia: Present Simple, Present Continuous. Słownictwo: środowisko akademickie i życie studenta.",             "Czasy przeszłe: Past Simple, Past Continuous. Słownictwo: wydarzenia i doświadczenia z przeszłości.",             "Present Perfect vs. Past Simple – użycie i ćwiczenia. Słownictwo: osiągnięcia i doświadczenia zawodowe.",             "Wyrażanie przyszłości: will, going to, Present Continuous. Słownictwo: plany i cele zawodowe.",             "Tryb warunkowy I i II – użycie i ćwiczenia. Słownictwo: decyzje i scenariusze.",             "Strona bierna – budowanie i użycie. Słownictwo: procesy technologiczne i produkcyjne.",             "Słownictwo branżowe IT: sprzęt komputerowy, oprogramowanie, sieci. Czytanie i omawianie tekstów technicznych.",             "Komunikacja w miejscu pracy: e-maile, raporty, prezentacje techniczne. Pisanie formalnej korespondencji.",             "Prezentacje w języku angielskim – struktura i techniki. Ćwiczenia praktyczne: prezentacja projektu.",             "Słownictwo IT: bazy danych, programowanie, algorytmy. Analiza anglojęzycznych dokumentacji technicznych.",             "Rozmowa kwalifikacyjna w języku angielskim – słownictwo, typowe pytania, ćwiczenia symulacyjne.",             "Czytanie ze zrozumieniem – artykuły z prasy anglojęzycznej (TechCrunch, Wired). Dyskusja.",             "Pisanie CV i listu motywacyjnego w języku angielskim. Analiza przykładów.",             "Powtórzenie materiału, kolokwium zaliczeniowe."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "26.02.2026",
+        "nazwa_przedmiotu": "Język angielski 1",
+        "kod_przedmiotu": "ANG1",
+        "rok_studiow": 1,
+        "semestr_studiow": 1,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 60,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 15,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Brak wymagań wstępnych",
+                "wymagania": "Znajomość języka angielskiego na poziomie B1."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie B1/B2. Student opanowuje język angielski w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje słownictwo branżowe z zakresu informatyki i technologii.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne przygotowane przez lektora.",
+                    "Podręcznik wskazany przez lektora prowadzącego na początku semestru."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Oxford Advanced Learner's Dictionary, Oxford University Press.",
+                    "Materiały online: BBC Learning English (bbc.co.uk/learningenglish), British Council (learnenglish.britishcouncil.org)."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować wypowiedzi pisemne i ustne w języku angielskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B1/B2."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Wprowadzenie, poznanie grupy, omówienie zasad i wymagań. Diagnoza poziomu językowego. Słownictwo: technologia i codzienne życie studenta.",
+            "Czasy gramatyczne – przegląd i ćwiczenia: Present Simple, Present Continuous. Słownictwo: środowisko akademickie i życie studenta.",
+            "Czasy przeszłe: Past Simple, Past Continuous. Słownictwo: wydarzenia i doświadczenia z przeszłości.",
+            "Present Perfect vs. Past Simple – użycie i ćwiczenia. Słownictwo: osiągnięcia i doświadczenia zawodowe.",
+            "Wyrażanie przyszłości: will, going to, Present Continuous. Słownictwo: plany i cele zawodowe.",
+            "Tryb warunkowy I i II – użycie i ćwiczenia. Słownictwo: decyzje i scenariusze.",
+            "Strona bierna – budowanie i użycie. Słownictwo: procesy technologiczne i produkcyjne.",
+            "Słownictwo branżowe IT: sprzęt komputerowy, oprogramowanie, sieci. Czytanie i omawianie tekstów technicznych.",
+            "Komunikacja w miejscu pracy: e-maile, raporty, prezentacje techniczne. Pisanie formalnej korespondencji.",
+            "Prezentacje w języku angielskim – struktura i techniki. Ćwiczenia praktyczne: prezentacja projektu.",
+            "Słownictwo IT: bazy danych, programowanie, algorytmy. Analiza anglojęzycznych dokumentacji technicznych.",
+            "Rozmowa kwalifikacyjna w języku angielskim – słownictwo, typowe pytania, ćwiczenia symulacyjne.",
+            "Czytanie ze zrozumieniem – artykuły z prasy anglojęzycznej (TechCrunch, Wired). Dyskusja.",
+            "Pisanie CV i listu motywacyjnego w języku angielskim. Analiza przykładów.",
+            "Powtórzenie materiału, kolokwium zaliczeniowe."
+        ],
+        "cel_dydaktyczny_eng": "English language instruction at the B1/B2 level. Students acquire English proficiency that allows them to communicate in most everyday and professional situations, express thoughts and opinions, understand and produce short written texts and spoken statements on various topics. Students also learn specialist vocabulary in IT and technology."
+    }
+}

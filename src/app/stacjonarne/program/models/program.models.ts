@@ -164,6 +164,7 @@ export interface SylabusData {
   kryteria_oceny: string[];
   przedmioty_wprowadzajace: SylabusPrzedmiotWprowadzajacy[];
   cel_dydaktyczny: string;
+  cel_dydaktyczny_eng?: string;
   literatura: SylabusLiteratura;
   efekty_ksztalcenia: SylabusEfekty;
   tresci_programowe: string[];

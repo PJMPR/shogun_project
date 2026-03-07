@@ -62,6 +62,7 @@ interface EditForm {
   zaliczenie_cwiczenia: string;
   zaliczenie_laboratorium: string;
   cel_dydaktyczny: string;
+  cel_dydaktyczny_eng: string;
   kryteria_oceny_txt: string;
   metody_wyklad_txt: string;
   metody_cwiczenia_txt: string;
@@ -286,6 +287,7 @@ export class EdytujSylabusComponent implements OnInit {
       zaliczenie_cwiczenia: getZal('Ćwiczenia'),
       zaliczenie_laboratorium: getZal('Laboratorium'),
       cel_dydaktyczny: s.cel_dydaktyczny ?? '',
+      cel_dydaktyczny_eng: s.cel_dydaktyczny_eng ?? '',
       kryteria_oceny_txt: joinLines(s.kryteria_oceny),
       metody_wyklad_txt: getMetody('wyklad'),
       metody_cwiczenia_txt: getMetody('cwiczenia'),
@@ -311,7 +313,7 @@ export class EdytujSylabusComponent implements OnInit {
       z_udzialem_prowadzacego_h: null, praca_wlasna_studenta_h: null,
       calkowita_liczba_godzin_h: null,
       zaliczenie_wyklad: '', zaliczenie_cwiczenia: '', zaliczenie_laboratorium: '',
-      cel_dydaktyczny: '', kryteria_oceny_txt: '',
+      cel_dydaktyczny: '', cel_dydaktyczny_eng: '', kryteria_oceny_txt: '',
       metody_wyklad_txt: '', metody_cwiczenia_txt: '', metody_laboratorium_txt: '',
       przedmioty_wprowadzajace: [{ nazwa: '', wymagania: '' }],
       efekty_wiedza_txt: '', efekty_umiejetnosci_txt: '', efekty_kompetencje_txt: '',
@@ -409,6 +411,7 @@ export class EdytujSylabusComponent implements OnInit {
         kryteria_oceny: this.splitLines(f.kryteria_oceny_txt),
         przedmioty_wprowadzajace: f.przedmioty_wprowadzajace.filter(p => p.nazwa.trim()),
         cel_dydaktyczny: f.cel_dydaktyczny,
+        ...(f.cel_dydaktyczny_eng ? { cel_dydaktyczny_eng: f.cel_dydaktyczny_eng } : {}),
         literatura: lit,
         efekty_ksztalcenia: {
           wiedza:               this.splitLines(f.efekty_wiedza_txt),

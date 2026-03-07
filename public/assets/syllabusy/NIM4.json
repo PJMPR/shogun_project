@@ -1,1 +1,94 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "06.03.2026",         "nazwa_przedmiotu": "Język niemiecki",         "kod_przedmiotu": "NIM4",         "rok_studiow": 4,         "semestr_studiow": 7,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 30,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",         "ects": 1,         "godziny": {             "z_udzialem_prowadzacego_h": 30,             "praca_wlasna_studenta_h": 5,             "calkowita_liczba_godzin_h": 35         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "NIM3",                 "wymagania": "Zagadnienia z NIM3"             }         ],         "cel_dydaktyczny": "Nauczanie języka niemieckiego od poziomu A2 do B1. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023",                     "Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020"                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy",                 "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "1.Wiederholung des Stoffes. Powtórzenie materiału. Omówienie kwestii otrzymania zaliczenia.",             "2. Futur I und sich informieren. Czas przyszły Futur I",             "3. Sich informieren. Wir schreiben eine Anfrage. Piszemy ogłoszenie o pracę.",             "4. Czas przyszły Futur I",             "5. Brauchen +zu, Im Gastland.",             "6. Traeume und Plaene fuer die Zukunft",             "7. Politik in Deutschland",             "8. Futur I – czas przyszły, powtórzenie i test.",             "9. Politisches System in Deutschland",             "10. Politische Parteien. Der Bundestag.",             "11. Ich engagiere mich fuer",             "12. Flashmob",             "13. Die Entwicklung der deutschen Sprache..",             "14. Die Sprachen in der Welt. – die Diskussion",             "15. Varietaeten der Sprache.Wiederholung des Stoffes."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "06.03.2026",
+        "nazwa_przedmiotu": "Język niemiecki",
+        "kod_przedmiotu": "NIM4",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
+        "ects": 1,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 5,
+            "calkowita_liczba_godzin_h": 35
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "NIM3",
+                "wymagania": "Zagadnienia z NIM3"
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka niemieckiego od poziomu A2 do B1. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023",
+                    "Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy",
+                "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "1.Wiederholung des Stoffes. Powtórzenie materiału. Omówienie kwestii otrzymania zaliczenia.",
+            "2. Futur I und sich informieren. Czas przyszły Futur I",
+            "3. Sich informieren. Wir schreiben eine Anfrage. Piszemy ogłoszenie o pracę.",
+            "4. Czas przyszły Futur I",
+            "5. Brauchen +zu, Im Gastland.",
+            "6. Traeume und Plaene fuer die Zukunft",
+            "7. Politik in Deutschland",
+            "8. Futur I – czas przyszły, powtórzenie i test.",
+            "9. Politisches System in Deutschland",
+            "10. Politische Parteien. Der Bundestag.",
+            "11. Ich engagiere mich fuer",
+            "12. Flashmob",
+            "13. Die Entwicklung der deutschen Sprache..",
+            "14. Die Sprachen in der Welt. – die Diskussion",
+            "15. Varietaeten der Sprache.Wiederholung des Stoffes."
+        ],
+        "cel_dydaktyczny_eng": "German language instruction from A2 to B1 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries."
+    }
+}

@@ -1,1 +1,88 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "niestacjonarny",         "wersja_z_dnia": "04.03.2026",         "nazwa_przedmiotu": "Język japoński 1",         "kod_przedmiotu": "JAP1",         "rok_studiow": 3,         "semestr_studiow": 5,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 16,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 16,             "praca_wlasna_studenta_h": 59,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "ANG4",                 "wymagania": "brak"             }         ],         "cel_dydaktyczny": "Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Japonii i krajach obszaru języka japońskiego.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "L. Czernichowska-Kramarz Japoński w obrazkach. Słownik, rozmówki, gramatyka wyd. Edgar"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Materiały własne – przygotowane przez lektorkę Lindę Czernichowską-Kramarz na podstawie własnych pomysłów oraz różnych książek",                     "Minna no nihongo I – główny podręcznik  wyd. 3anetwork Japonia",                     "Minna no nihongo I choukai– słuchanie  wyd. 3anetwork Japonia"                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",                 "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe"             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Nauka znaków hiragany a,i,u,e,o /  ka,ki,ku,ke,ko,ga,gi,gu,ge,go, zwroty z życia codziennego, budowanie zdań z formą: ___wa____desu.",             "Nauka znaków hiragany : sa,shi,su,se,so,za,ji,zu,ze,zo,ta,chi,tsu,te,to,da,di,du,de,do  /przedstawienie się / przedstawienie drugiej osoby",             "Nauka znaków hiragany:  na,ni,nu,ne,no, ha,hi,fu,he,ho,ba,bi,bu,be,bo,pa,pi,pu,pe,po , liczby,wypracowanie: autoprezentacja/ nauka słówek zw. z hiraganą, nauka znaków Kanji:",             "Nauka znaków hiragany:  ma,mi,mu,me,mo, ya,yu,yo, zaimki osobowe , kolokwium 1 (z hiragany)",             "Nauka znaków hiragany:  ra,ri,ru,re,ro,wa,wo,n  budowa zdań oraz tworzenie pytań, partykuła ka  / nauka słówek zw. z hiraganą  forma gramatyczna desu, deshita, ja arimasen, ja arimasendeshita/Dodatki do hiragany / partykuła to i no / nauka słówek zw. z hiraganą",             "Tworzenie form pytających „nan no ..””dare no …” / zaimki wskazujące kore, sore, are",             "narodowość/pytanie o wiek/nauka znaków Kanji",             "Kolokwium końcowe"         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "04.03.2026",
+        "nazwa_przedmiotu": "Język japoński 1",
+        "kod_przedmiotu": "JAP1",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 59,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "ANG4",
+                "wymagania": "brak"
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Japonii i krajach obszaru języka japońskiego.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "L. Czernichowska-Kramarz Japoński w obrazkach. Słownik, rozmówki, gramatyka wyd. Edgar"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Materiały własne – przygotowane przez lektorkę Lindę Czernichowską-Kramarz na podstawie własnych pomysłów oraz różnych książek",
+                    "Minna no nihongo I – główny podręcznik  wyd. 3anetwork Japonia",
+                    "Minna no nihongo I choukai– słuchanie  wyd. 3anetwork Japonia"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
+                "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Nauka znaków hiragany a,i,u,e,o /  ka,ki,ku,ke,ko,ga,gi,gu,ge,go, zwroty z życia codziennego, budowanie zdań z formą: ___wa____desu.",
+            "Nauka znaków hiragany : sa,shi,su,se,so,za,ji,zu,ze,zo,ta,chi,tsu,te,to,da,di,du,de,do  /przedstawienie się / przedstawienie drugiej osoby",
+            "Nauka znaków hiragany:  na,ni,nu,ne,no, ha,hi,fu,he,ho,ba,bi,bu,be,bo,pa,pi,pu,pe,po , liczby,wypracowanie: autoprezentacja/ nauka słówek zw. z hiraganą, nauka znaków Kanji:",
+            "Nauka znaków hiragany:  ma,mi,mu,me,mo, ya,yu,yo, zaimki osobowe , kolokwium 1 (z hiragany)",
+            "Nauka znaków hiragany:  ra,ri,ru,re,ro,wa,wo,n  budowa zdań oraz tworzenie pytań, partykuła ka  / nauka słówek zw. z hiraganą  forma gramatyczna desu, deshita, ja arimasen, ja arimasendeshita/Dodatki do hiragany / partykuła to i no / nauka słówek zw. z hiraganą",
+            "Tworzenie form pytających „nan no ..””dare no …” / zaimki wskazujące kore, sore, are",
+            "narodowość/pytanie o wiek/nauka znaków Kanji",
+            "Kolokwium końcowe"
+        ],
+        "cel_dydaktyczny_eng": "Japanese language instruction from scratch. Students acquire Japanese proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Japan and Japanese-speaking regions."
+    }
+}

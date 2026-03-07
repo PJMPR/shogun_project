@@ -47,6 +47,7 @@
 
 .es-input { width: 100%; }
 .es-textarea { width: 100%; resize: vertical; }
+.es-textarea-eng { background: var(--p-surface-50, #f8fafc); border-style: dashed; font-style: italic; }
 .es-hint { font-size: 0.78rem; color: var(--p-text-muted-color); }
 .es-hint-block { display: block; font-size: 0.78rem; color: var(--p-text-muted-color); margin-bottom: 0.5rem; }
 

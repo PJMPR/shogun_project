@@ -75,6 +75,12 @@
   @if (sylabus.cel_dydaktyczny) {
     <p-panel header="Cel dydaktyczny" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
       <p class="sylabus-text">{{ sylabus.cel_dydaktyczny }}</p>
+      @if (sylabus.cel_dydaktyczny_eng) {
+        <p class="sylabus-cel-eng-label">
+          <i class="pi pi-globe"></i> Cel dydaktyczny &ndash; wersja w języku angielskim (English version)
+        </p>
+        <p class="sylabus-text sylabus-text-eng">{{ sylabus.cel_dydaktyczny_eng }}</p>
+      }
     </p-panel>
   }
 

@@ -1,88 +1,93 @@
-﻿{
-    "sylabus":  {
-                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-                    "jednostka":  "Filia w Gdansku",
-                    "kierunek":  "INFORMATYKA",
-                    "profil":  "praktyczny",
-                    "tryb_studiow":  "niestacjonarny",
-                    "wersja_z_dnia":  "19.02.2026",
-                    "nazwa_przedmiotu":  "Bezpieczeństwo systemów informacyjnych (BSI)",
-                    "kod_przedmiotu":  "BSI",
-                    "rok_studiow":  3,
-                    "semestr_studiow":  5,
-                    "obligatoryjny":  true,
-                    "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  8,
-                                                        "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  16
-                                                    },
-                    "odpowiedzialny_za_przedmiot":  "dr Andrzej Bobyk",
-                    "ects":  3,
-                    "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  24,
-                                    "praca_wlasna_studenta_h":  51,
-                                    "calkowita_liczba_godzin_h":  75
-                                },
-                    "metody_dydaktyczne":  {
-
-                                           },
-                    "zaliczenie":  {
-                                       "Wykład":  {
-                                                      "sposob":  "Nieoceniany"
-                                                  }
-                                   },
-                    "kryteria_oceny":  [
-                                           "Ćwiczenia / Laboratorium:",
-                                           "rozwiązywanie zadań",
-                                           "Ćwiczenia/Laboratorium",
-                                           "Kryteria oceny",
-                                           "Ćwiczenia/Laboratorium",
-                                           "Student jest zobowiązany uzyskać ponad 50% punktów możliwych do zdobycia w trakcie trwania semestru."
-                                       ],
-                    "przedmioty_wprowadzajace":  [
-                                                     {
-                                                         "nazwa":  "ALG, SKOA",
-                                                         "wymagania":  "Podstawy algebry, wiedza z zakresu systemów operacyjnych i sieci komputerowych."
-                                                     }
-                                                 ],
-                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie słuchaczy z zasadami i metodami ochrony informacji w systemach i sieciach komputerowych.",
-                    "literatura":  {
-                                       "podstawowa":  {
-                                                          "pozycje":  [
-                                                                          "D. E. Robling Denning: Kryptografia i ochrona danych. WNT, Warszawa 1993.",
-                                                                          "S. Garfinkel, G. Spafford: Bezpieczeństwo w Unixie i Internecie. RM, Warszawa 1997 (+A. Schwartz: Practical UNIX and Internet Security. 3rd Edition. O\u0027Reilly Media 2003).",
-                                                                          "W. Stallings: Ochrona danych w sieci i intersieci. W teorii i praktyce. WNT, Warszawa 1997.",
-                                                                          "M. Kutyłowski, W.-B. Strothmann: Kryptografia. Teoria i praktyka zabezpieczania systemów komputerowych (wyd. 2). Read Me, Warszawa 1999.",
-                                                                          "J.-P. Aumasson: Nowoczesna kryptografia. Praktyczne wprowadzenie do szyfrowania. PWN, Warszawa 2018.",
-                                                                          "J. Andress: Podstawy bezpieczeństwa informacji. Praktyczne wprowadzenie. Helion, Gliwice 2021."
-                                                                      ]
-                                                      },
-                                       "uzupelniajaca":  {
-                                                             "pozycje":  [
-                                                                             "C. Adams, S. Lloyd: Podpis elektroniczny. Klucz publiczny. Robomatic, Warszawa 2002.",
-                                                                             "R. Wobst: Kryptologia. Budowa i łamanie zabezpieczeń. RM, Warszawa, 2002.",
-                                                                             "F. L. Bauer: Sekrety kryptografii. Helion, Gliwice 2002.",
-                                                                             "D. R. Stinson: Kryptografia. WNT, Warszawa, 2005."
-                                                                         ]
-                                                         },
-                                       "dokumentacja_internetowa":  {
-                                                                        "A. J. Menezes, P. C. van Oorschot, S. A. Vanstone: Kryptografia stosowana, WNT, Warszawa 2005 (Handbook of Applied Cryptography, CRC Press, 1997, New York, https://cacr.uwaterloo.ca/hac/).":  "A. J. Menezes, P. C. van Oorschot, S. A. Vanstone: Kryptografia stosowana, WNT, Warszawa 2005 (Handbook of Applied Cryptography, CRC Press, 1997, New York, https://cacr.uwaterloo.ca/hac/)."
-                                                                    }
-                                   },
-                    "efekty_ksztalcenia":  {
-                                               "wiedza":  [
-                                                              "Student zna i rozumiepodstawowe zagadnienia i pojęcia kryptografii i kryptoanalizy oraz zasady działania algorytmów kryptograficznych.",
-                                                              "Student zna problematykę bezpieczeństwa w nowoczesnych systemach informatycznych; rozumie pojęcia związane z poufnością, integralnością, dostępnością, uwierzytelnianiem, autoryzacją i ewidencjonowaniem.",
-                                                              "Student zna i rozumie pojęcia związane z implementowaniem zapór ogniowych, ochrony przed wtargnięciami do sieci, systemów kryptograficznych, implementacji wirtualnych sieci prywatnych i zarządzania bezpiecznymi sieciami komputerowymi; zna metody zabezpieczania urządzeń sieciowych i systemów komputerowych."
-                                                          ],
-                                               "umiejetnosci":  null,
-                                               "kompetencje_spoleczne":  null
-                                           },
-                    "tresci_programowe":  [
-                                              "Polityka bezpieczeństwa systemów informatycznych: etapy tworzenia struktur bezpieczeństwa, zasady efektywnej strategii i polityki bezpieczeństwa. Usługi związane z ochroną informacji, kategorie zagrożeń systemów informatycznych.",
-                                              "Elementy kryptografii: podstawowe techniki szyfrowania, zastosowania technik szyfrowania, algorytmy symetryczne (DES, 3DES, IDEA).Algorytmy asymetryczne: (RSA, El-Gamal), uwierzytelnianie i sygnatury cyfrowe. Podpis elektroniczny.",
-                                              "Bezpieczeństwo w sieciach: usługi i protokoły kryptograficzne (SSL, SSH, Kerberos), bezpieczeństwo poczty elektronicznej; protokoły PGP i PEM, zarządzanie kluczami, certyfikaty.",
-                                              "Praktyka ochrony danych w systemach komputerowych: programy złośliwe (wirusy, robaki, konie trojańskie), archiwizacja danych – procedury, metody, programy."
-                                          ]
-                }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Bezpieczeństwo systemów informacyjnych (BSI)",
+        "kod_przedmiotu": "BSI",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 8,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "dr Andrzej Bobyk",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 24,
+            "praca_wlasna_studenta_h": 51,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": [
+            "Ćwiczenia / Laboratorium:",
+            "rozwiązywanie zadań",
+            "Ćwiczenia/Laboratorium",
+            "Kryteria oceny",
+            "Ćwiczenia/Laboratorium",
+            "Student jest zobowiązany uzyskać ponad 50% punktów możliwych do zdobycia w trakcie trwania semestru."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "ALG, SKOA",
+                "wymagania": "Podstawy algebry, wiedza z zakresu systemów operacyjnych i sieci komputerowych."
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie słuchaczy z zasadami i metodami ochrony informacji w systemach i sieciach komputerowych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "D. E. Robling Denning: Kryptografia i ochrona danych. WNT, Warszawa 1993.",
+                    "S. Garfinkel, G. Spafford: Bezpieczeństwo w Unixie i Internecie. RM, Warszawa 1997 (+A. Schwartz: Practical UNIX and Internet Security. 3rd Edition. O'Reilly Media 2003).",
+                    "W. Stallings: Ochrona danych w sieci i intersieci. W teorii i praktyce. WNT, Warszawa 1997.",
+                    "M. Kutyłowski, W.-B. Strothmann: Kryptografia. Teoria i praktyka zabezpieczania systemów komputerowych (wyd. 2). Read Me, Warszawa 1999.",
+                    "J.-P. Aumasson: Nowoczesna kryptografia. Praktyczne wprowadzenie do szyfrowania. PWN, Warszawa 2018.",
+                    "J. Andress: Podstawy bezpieczeństwa informacji. Praktyczne wprowadzenie. Helion, Gliwice 2021."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "C. Adams, S. Lloyd: Podpis elektroniczny. Klucz publiczny. Robomatic, Warszawa 2002.",
+                    "R. Wobst: Kryptologia. Budowa i łamanie zabezpieczeń. RM, Warszawa, 2002.",
+                    "F. L. Bauer: Sekrety kryptografii. Helion, Gliwice 2002.",
+                    "D. R. Stinson: Kryptografia. WNT, Warszawa, 2005."
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "A. J. Menezes, P. C. van Oorschot, S. A. Vanstone: Kryptografia stosowana, WNT, Warszawa 2005 (Handbook of Applied Cryptography, CRC Press, 1997, New York, https://cacr.uwaterloo.ca/hac/).": "A. J. Menezes, P. C. van Oorschot, S. A. Vanstone: Kryptografia stosowana, WNT, Warszawa 2005 (Handbook of Applied Cryptography, CRC Press, 1997, New York, https://cacr.uwaterloo.ca/hac/)."
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie zaawansowane pojęcia z zakresu cyberbezpieczeństwa: kryptografię symetryczną i asymetryczną, protokoły bezpieczeństwa (TLS/SSL, Kerberos, PKI), bezpieczeństwo sieci i systemów operacyjnych. [K_W23]",
+                "Student zna i rozumie metody oceny podatności systemów informatycznych, typologię ataków (OWASP Top 10, MITRE ATT&CK) i zasady bezpiecznego wytwarzania oprogramowania (SAST, DAST, DevSecOps). [K_W23]",
+                "Student zna i rozumie zaawansowane zagadnienia sieci komputerowych w kontekście bezpieczeństwa: firewalle, systemy IDS/IPS, VPN, segmentację sieci i zasady zero-trust. [K_W08]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi zdiagnozować problem cyberbezpieczeństwa, zaprojektować i wdrożyć rozwiązanie ochrony systemu informatycznego, przeprowadzić testy penetracyjne i analizę podatności. [K_U30]",
+                "Student potrafi skonfigurować mechanizmy kontroli dostępu, szyfrowania danych i monitorowania bezpieczeństwa w systemach informatycznych. [K_U14]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do odpowiedzialnego projektowania bezpiecznych systemów informatycznych z uwzględnieniem etycznych aspektów ochrony danych i prywatności użytkowników. [K_K06]",
+                "Student jest gotów do samodzielnego poszerzania wiedzy o nowych zagrożeniach i technikach obrony w dynamicznie zmieniającym się krajobrazie cyberbezpieczeństwa. [K_K03]"
+            ]
+        },
+        "tresci_programowe": [
+            "Polityka bezpieczeństwa systemów informatycznych: etapy tworzenia struktur bezpieczeństwa, zasady efektywnej strategii i polityki bezpieczeństwa. Usługi związane z ochroną informacji, kategorie zagrożeń systemów informatycznych.",
+            "Elementy kryptografii: podstawowe techniki szyfrowania, zastosowania technik szyfrowania, algorytmy symetryczne (DES, 3DES, IDEA).Algorytmy asymetryczne: (RSA, El-Gamal), uwierzytelnianie i sygnatury cyfrowe. Podpis elektroniczny.",
+            "Bezpieczeństwo w sieciach: usługi i protokoły kryptograficzne (SSL, SSH, Kerberos), bezpieczeństwo poczty elektronicznej; protokoły PGP i PEM, zarządzanie kluczami, certyfikaty.",
+            "Praktyka ochrony danych w systemach komputerowych: programy złośliwe (wirusy, robaki, konie trojańskie), archiwizacja danych – procedury, metody, programy."
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the principles and methods of information protection in computer systems and networks."
+    }
 }

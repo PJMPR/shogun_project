@@ -82,6 +82,7 @@
             "Kapsułowe sieci neuronowe i analiza obrazu w wykorzystaniem architektury typu transformer",
             "Implementacja kapsułowych sieci neuronowych i modelu Vision Transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
             "Metody nauki nienadzorowanej jako mechanizm pretreningu sieci neuronowych"
-        ]
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with artificial intelligence algorithms currently used in scientific research and industry, with particular emphasis on understanding and implementing artificial neural network architectures used in image analysis, tabular data analysis, and natural language processing. An additional objective of the course is to develop students’ ability to search for information on the latest achievements in artificial intelligence and open datasets useful for analyzing specific problems."
     }
 }

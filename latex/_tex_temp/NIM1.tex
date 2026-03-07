@@ -1,0 +1,199 @@
+﻿% ===========================================================
+%  Sylabus: Język niemiecki 1 (NIM1)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: NIM1}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Język niemiecki 1} \\[3pt]
+  \textbf{Kod przedmiotu:}    & NIM1 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & Studium Języków Obcych  \\[3pt]
+  \textbf{Wersja z dnia:}     & 06.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+--- & 16 h & --- & 16 h & 59 h & 75 h & \textbf{3} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Nauczanie języka niemieckiego od poziomu A1 do A2. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{German language instruction from A1 to A2 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries.}
+
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  ANG4 & brak \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Mein Tagesablauf. T2- Guten Tag, Guten Morgen.
+  \item Willkommen. T2.- Ich spreche ein bisschen Deutsch.
+  \item Ich bin neu hier. T2-Berufe.
+  \item Wiederholung, Test 1. T2- Wie ist deine Telefonnummer? – Zahlen.
+  \item Heimatorte- Deutschland. T2: Orte und Dinge.
+  \item Wiederholung (sich vorstellen, Berufe); was kostet das?
+  \item Meine Familie. ; Ostern in Deutschland.
+  \item Zaliczenie. Meine Familie- Wiederholung des Wortschatzes.
+  \item Das ist meine Familie. T2: Ich möchte….- Modalverb
+  \item Wiederholung: Ich und meine Familie. T: Verkehrsmittel- Wortschatz
+  \item Zaliczenie. Unregelmässige Verben. Meine Hobbys.
+  \item Trennbare Verben. T2: Mein Alltag
+  \item Zaliczenie ( czasowniki nieregularne). T2: Mein Alltag.
+  \item Wiederholung des Stoffes. T2: Essen- Wortschatz
+  \item Was isst gerne? T2: Ich hätte gern- Dialoge im Laden und im Restaurant.
+\end{enumerate}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy
+  \item Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych
+  \item Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Obecność na zajęciach – zgodnie z regulaminem 15\% nieobecności nieustawiedliwionych, 15\% nieobecności usprawiedliwionych
+  \item Prace pisemne – min. jedna praca na semestr.
+  \item Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)
+  \item Wypowiedź ustna (o rodzaju decyduje lektor).
+  \item Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.
+  \item Kryteria zaliczenia: uzyskanie przynajmniej 51\% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+\textbf{cwiczenia:}
+\begin{itemize}
+  \item analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023
+  \item Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020
+\end{itemize}
+
+\end{document}

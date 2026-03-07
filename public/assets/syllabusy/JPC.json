@@ -1,81 +1,80 @@
 {
-  "sylabus": {
-    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-    "jednostka": "Filia w Gdansku",
-    "kierunek": "INFORMATYKA",
-    "profil": "praktyczny",
-    "tryb_studiow": "stacjonarny",
-    "wersja_z_dnia": "20.02.2026",
-    "nazwa_przedmiotu": "Programowanie w języku C++",
-    "kod_przedmiotu": "CPP",
-    "rok_studiow": 1,
-    "semestr_studiow": 2,
-    "obligatoryjny": false,
-    "forma_i_liczba_godzin_zajec": {
-      "wyklady": 15,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 15
-    },
-    "odpowiedzialny_za_przedmiot": "do ustalenia",
-    "ects": 2,
-    "godziny": {
-      "z_udzialem_prowadzacego_h": 30,
-      "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
-    },
-    "metody_dydaktyczne": {
-
-    },
-    "zaliczenie": {
-      "Projekt": {
-        "sposob": "Zaliczenie z oceną"
-      }
-    },
-    "kryteria_oceny": [
-      "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność działania programu, jakość i czytelność kodu, strukturę rozwiązania, zarządzanie pamięcią oraz dokumentację",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
-    "przedmioty_wprowadzajace": [
-      {
-        "nazwa": "Podstawy Programowania",
-        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
-      }
-    ],
-    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku C++ oraz wykształcenie umiejętności tworzenia prostych aplikacji konsolowych z wykorzystaniem klasycznych konstrukcji programistycznych. Zajęcia kładą nacisk na zrozumienie modelu pamięci, poprawne użycie typów danych, funkcji i struktur, a także wprowadzenie do podstaw programowania obiektowego. Przedmiot przygotowuje studentów do dalszej nauki języków kompilowanych oraz pracy nad projektami wymagającymi większej kontroli nad wydajnością i zasobami.",
-    "literatura": {
-      "podstawowa": {
-        "pozycje": [
-          "Bjarne Stroustrup, Programming: Principles and Practice Using C++",
-          "Stephen Prata, C++ Primer Plus",
-          "Dokumentacja C++: https://en.cppreference.com"
-        ]
-      },
-      "uzupelniajaca": {
-        "pozycje": [
-          "Scott Meyers, Effective C++",
-          "Herb Sutter, Exceptional C++"
-        ]
-      }
-    },
-    "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe konstrukcje języka C++, typy danych, instrukcje sterujące oraz zasady działania kompilatora i linkera. Rozumie podstawy zarządzania pamięcią i różnice między typami wartościowymi i referencyjnymi.",
-      "umiejetnosci": "Student potrafi tworzyć, kompilować i debugować proste programy w języku C++, korzystać z dokumentacji technicznej, dzielić program na funkcje i pliki źródłowe oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, dbać o jakość i czytelność kodu oraz terminowo realizować powierzone zadania."
-    },
-    "tresci_programowe": [
-     "Wprowadzenie do języka C++: zastosowania, kompilacja, struktura programu, pierwszy program.",
-     "Typy danych, zmienne, stałe, operatory, instrukcje wejścia i wyjścia (cin, cout).",
-     "Instrukcje sterujące: if, switch, pętle for, while, do while.",
-     "Funkcje: definicja, parametry, wartości zwracane, przeciążanie funkcji.",
-     "Tablice i łańcuchy znaków, podstawy pracy z pamięcią.",
-     "Wskaźniki i referencje – wprowadzenie i zastosowania.",
-     "Struktury i typy złożone.",
-     "Dynamiczna alokacja pamięci (new, delete) i podstawy bezpiecznego zarządzania zasobami.",
-     "Wprowadzenie do programowania obiektowego: klasy i obiekty.",
-     " Konstruktory, destruktory, enkapsulacja.",
-     " Dziedziczenie i polimorfizm – podstawy.",
-     " Biblioteka standardowa STL – wprowadzenie (vector, string)."
-    ]
-  }
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "20.02.2026",
+        "nazwa_przedmiotu": "Programowanie w języku C++",
+        "kod_przedmiotu": "CPP",
+        "rok_studiow": 1,
+        "semestr_studiow": 2,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 15,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 15
+        },
+        "odpowiedzialny_za_przedmiot": "do ustalenia",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 20,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Projekt": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+            "Ocena projektu obejmuje: poprawność działania programu, jakość i czytelność kodu, strukturę rozwiązania, zarządzanie pamięcią oraz dokumentację",
+            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Podstawy Programowania",
+                "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku C++ oraz wykształcenie umiejętności tworzenia prostych aplikacji konsolowych z wykorzystaniem klasycznych konstrukcji programistycznych. Zajęcia kładą nacisk na zrozumienie modelu pamięci, poprawne użycie typów danych, funkcji i struktur, a także wprowadzenie do podstaw programowania obiektowego. Przedmiot przygotowuje studentów do dalszej nauki języków kompilowanych oraz pracy nad projektami wymagającymi większej kontroli nad wydajnością i zasobami.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Bjarne Stroustrup, Programming: Principles and Practice Using C++",
+                    "Stephen Prata, C++ Primer Plus",
+                    "Dokumentacja C++: https://en.cppreference.com"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Scott Meyers, Effective C++",
+                    "Herb Sutter, Exceptional C++"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna podstawowe konstrukcje języka C++, typy danych, instrukcje sterujące oraz zasady działania kompilatora i linkera. Rozumie podstawy zarządzania pamięcią i różnice między typami wartościowymi i referencyjnymi.",
+            "umiejetnosci": "Student potrafi tworzyć, kompilować i debugować proste programy w języku C++, korzystać z dokumentacji technicznej, dzielić program na funkcje i pliki źródłowe oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+            "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, dbać o jakość i czytelność kodu oraz terminowo realizować powierzone zadania."
+        },
+        "tresci_programowe": [
+            "Wprowadzenie do języka C++: zastosowania, kompilacja, struktura programu, pierwszy program.",
+            "Typy danych, zmienne, stałe, operatory, instrukcje wejścia i wyjścia (cin, cout).",
+            "Instrukcje sterujące: if, switch, pętle for, while, do while.",
+            "Funkcje: definicja, parametry, wartości zwracane, przeciążanie funkcji.",
+            "Tablice i łańcuchy znaków, podstawy pracy z pamięcią.",
+            "Wskaźniki i referencje – wprowadzenie i zastosowania.",
+            "Struktury i typy złożone.",
+            "Dynamiczna alokacja pamięci (new, delete) i podstawy bezpiecznego zarządzania zasobami.",
+            "Wprowadzenie do programowania obiektowego: klasy i obiekty.",
+            " Konstruktory, destruktory, enkapsulacja.",
+            " Dziedziczenie i polimorfizm – podstawy.",
+            " Biblioteka standardowa STL – wprowadzenie (vector, string)."
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in C++ and to develop the ability to create simple console applications using classical programming constructs. The course places emphasis on understanding the memory model, correct use of data types, functions and structures, as well as an introduction to the basics of object-oriented programming. It prepares students for further study of compiled languages and for work on projects requiring greater control over performance and resources."
+    }
 }

@@ -1,1 +1,90 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "03.03.2026",         "nazwa_przedmiotu": "Język hiszpański – Lektorat 3",         "kod_przedmiotu": "HIS3",         "rok_studiow": 4,         "semestr_studiow": 6,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 60,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 15,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "Język hiszpański LEK2",                 "wymagania": "Znajomość języka hiszpańskiego na poziomie A2."             }         ],         "cel_dydaktyczny": "Nauczanie języka hiszpańskiego na poziomie A2+. Student opanowuje język w stopniu pozwalającym na opisywanie przeszłych wydarzeń, wyrażanie planów na przyszłość, komunikację w środowisku zawodowym. Kurs obejmuje czasy przeszłe, słownictwo z obszaru zdrowia i podróży oraz elementy kultury krajów hiszpańskojęzycznych.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 2, Wydawnictwo DRACO, 2020."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",                     "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023.",                     "https://www.profedeele.es/",                     "https://www.ver-taal.com/",                     "https://www.rae.es/ – Słownik języka hiszpańskiego."                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",                 "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie A2+."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Zdrowie – części ciała, symptomy, choroby, odczucia fizyczne. Czasownik doler, estar (opis stanu zdrowia).",             "Zdrowie – wizyta u lekarza, środki lecznicze. Peryfrazy konieczności: deber/tener que + bezokolicznik. Tryb rozkazujący (tú i usted). Hiszpańska służba zdrowia.",             "Czynności codzienne i czynności zakończone w bliskiej przeszłości – Pretérito Perfecto Compuesto. Imiesłów bierny regularny. Okoliczniki czasu.",             "Przeżycia i doświadczenia – opisywanie dnia w przeszłości. Pretérito Perfecto Compuesto: imiesłów bierny nieregularny.",             "Doświadczenia życiowe – Pretérito Perfecto Simple, czasowniki regularne. Wyrażanie częstotliwości w przeszłości. Przyimki: en, desde, hace …años.",             "Opisywanie weekendu w czasie przeszłym – Pretérito Perfecto Simple, czasowniki nieregularne. Sporty ekstremalne i podróże.",             "Rozmowa kwalifikacyjna, pisanie CV, kształcenie wyższe i zdolności zawodowe.",             "Wakacje – podróżowanie, zakwaterowanie, transport. Wyrażanie planów na przyszłość. Kolokwium zaliczeniowe."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "03.03.2026",
+        "nazwa_przedmiotu": "Język hiszpański – Lektorat 3",
+        "kod_przedmiotu": "HIS3",
+        "rok_studiow": 4,
+        "semestr_studiow": 6,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 60,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 15,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język hiszpański LEK2",
+                "wymagania": "Znajomość języka hiszpańskiego na poziomie A2."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka hiszpańskiego na poziomie A2+. Student opanowuje język w stopniu pozwalającym na opisywanie przeszłych wydarzeń, wyrażanie planów na przyszłość, komunikację w środowisku zawodowym. Kurs obejmuje czasy przeszłe, słownictwo z obszaru zdrowia i podróży oraz elementy kultury krajów hiszpańskojęzycznych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 2, Wydawnictwo DRACO, 2020."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",
+                    "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023.",
+                    "https://www.profedeele.es/",
+                    "https://www.ver-taal.com/",
+                    "https://www.rae.es/ – Słownik języka hiszpańskiego."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie A2+."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Zdrowie – części ciała, symptomy, choroby, odczucia fizyczne. Czasownik doler, estar (opis stanu zdrowia).",
+            "Zdrowie – wizyta u lekarza, środki lecznicze. Peryfrazy konieczności: deber/tener que + bezokolicznik. Tryb rozkazujący (tú i usted). Hiszpańska służba zdrowia.",
+            "Czynności codzienne i czynności zakończone w bliskiej przeszłości – Pretérito Perfecto Compuesto. Imiesłów bierny regularny. Okoliczniki czasu.",
+            "Przeżycia i doświadczenia – opisywanie dnia w przeszłości. Pretérito Perfecto Compuesto: imiesłów bierny nieregularny.",
+            "Doświadczenia życiowe – Pretérito Perfecto Simple, czasowniki regularne. Wyrażanie częstotliwości w przeszłości. Przyimki: en, desde, hace …años.",
+            "Opisywanie weekendu w czasie przeszłym – Pretérito Perfecto Simple, czasowniki nieregularne. Sporty ekstremalne i podróże.",
+            "Rozmowa kwalifikacyjna, pisanie CV, kształcenie wyższe i zdolności zawodowe.",
+            "Wakacje – podróżowanie, zakwaterowanie, transport. Wyrażanie planów na przyszłość. Kolokwium zaliczeniowe."
+        ],
+        "cel_dydaktyczny_eng": "Spanish language instruction at the A2+ level. Students acquire language skills enabling them to describe past events, express future plans, and communicate in a professional environment. The course covers past tenses, vocabulary related to health and travel, and elements of the culture of Spanish-speaking countries."
+    }
+}

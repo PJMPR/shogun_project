@@ -1,0 +1,242 @@
+﻿% ===========================================================
+%  Sylabus: Procesy Innowacyjne (PRIN)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRIN}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Procesy Innowacyjne} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRIN \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Albert Śledzianowski, albertsledzianowski@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawami zarządzania firmą innowacyjną oraz organizacyjnymi podstawami jej funkcjonowania Zapoznanie studentów z technikami analizy i pobudzania kreatywności oraz twórczego rozwiązywania problemów inżynierskich.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The course 'Innovation Processes' aims to familiarize students with the basics of managing an innovative company and the organizational foundations of its operation, as well as with techniques for analyzing and stimulating creativity and for creatively solving engineering problems.}
+
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  POZ - Podstawy Organizacji i Zarzadzania & Znajomosc podstaw organizacji i zarzadzania \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wykład
+  \item Ćwiczenia
+  \item Kreatywność menedżerska
+  \item Profil osoby kreatywnej i przedsiębiorczej
+  \item Istota i motywy przedsiębiorczości gospodarczej
+  \item Tworzenie i analiza ścieżki doświadczeń dla wybranego produktu / usługi (praca z szablonem
+  \item customer journey map)
+  \item Metody graficzne i analityczne w diagnozowaniu
+  \item problemu
+  \item Odkrywanie możliwości dla produktu innowacyjnego – studium przypadku
+  \item Rozpoznawanie szans rynkowych i możliwości
+  \item sytuacyjnych
+  \item Analiza rozwoju firm innowacyjnych – macierz
+  \item kluczowych czynników
+  \item Planowanie rozwoju - elementy analizy strategicznej
+  \item Wprowadzenie do Design Thinking
+  \item Struktury organizacyjne
+  \item Wprowadzenie do pracy zespołowej i projektowej
+  \item Trening umiejętności pracy w zespole.
+  \item Organizowanie procesów i zarządzanie zasobami
+  \item Środowiska do komputerowego
+  \item wspomagania pracy projektowej i
+  \item zespołowej
+  \item Kontrolowanie, doskonalenie i zarządzanie jakością
+  \item Identyfikacja potrzeb; wprowadzenie do analizy badań zastanych i jakościowych – wywiad,
+  \item obserwacja uczestnicząca, netnografia; mapa empatii, Persony
+  \item Mała firma – cykl rozwojowy i czynniki sukcesu
+  \item Diagnoza problemu:
+  \item Metoda 5 x dlaczego
+  \item Metoda Pareto-Lorenza i Diagram
+  \item Ishikawy
+  \item Rysowanie odręczne
+  \item Zarządzanie personelem i motywowanie
+  \item Metoda Kano
+  \item Wybrane techniki oceny wariantów i wspomagania
+  \item decyzji
+  \item Indywidualne generowanie pomysłów do problemu (mindmapping, analiza
+  \item morfologiczna)
+  \item Generowanie pomysłów: burza mózgów,
+  \item MindMapping, deBono
+  \item Zespołowe generowanie pomysłów:
+  \item burza mózgów i metoda 6 kapeluszy
+  \item Wybrane techniki oceny wariantów i wspomagania
+  \item decyzji
+  \item Metody oceny wariantów; testowanie wygenerowanych rozwiązań
+  \item Organizacja kreatywnej pracy zespołowej
+  \item Ocena potencjału motywacyjnego
+  \item personelu; analiza i dopracowywanie własnego CV, SWOT osobisty
+  \item Zarządzanie wiedzą i innowacjami w organizacji
+  \item Zasady efektywnej komunikacji;
+  \item Prezentacja rozwiązań projektowych
+\end{enumerate}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{}
+\begin{itemize}
+  \item Student zna i rozumie podstawowe zagadnienia planowania przedsięwzięcia informatycznego: wstępną ocenę ekonomiczną, analizę wykonalności, aspekty społeczne i środowiskowe projektu IT. [K\_W17]
+  \item Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki: odpowiedzialność zawodowa, prawo autorskie, licencjonowanie oprogramowania i ochrona własności intelektualnej. [K\_W19]
+  \item Student zna i rozumie ogólne zasady tworzenia przedsiębiorczości w IT: modele biznesowe, formy prawne działalności, zasady komercjalizacji rozwiązań informatycznych i pozyskiwania finansowania. [K\_W20]
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi pracować w zespole projektowym, szacować czas i koszty realizacji zadań oraz budować harmonogram prac zapewniający terminową realizację projektu informatycznego. [K\_U05]
+  \item Student potrafi zaplanować i wytworzyć dokumentację przedsięwzięcia informatycznego (studium wykonalności, analiza ryzyka, wstępna wycena) z uwzględnieniem aspektów etycznych i prawnych. [K\_U26]
+  \item Student potrafi uwzględnić aspekty etyczne, prawne i społeczne w planowanym przedsięwzięciu informatycznym i ocenić potencjalne zagrożenia. [K\_U25]
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego, działając zgodnie z zasadami etyki zawodowej. [K\_K01]
+  \item Student jest gotów do efektywnej współpracy w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań projektowych. [K\_K04]
+  \item Student jest gotów do przekazywania społeczeństwu informacji na temat konsekwencji i odpowiedzialności związanej z działalnością inżynierską w IT. [K\_K02]
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item analiza tekstów z dyskusją
+  \item rozwiązywanie zadań
+  \item burza mózgów
+  \item praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych
+  \item warsztaty
+  \item Kryteria oceny
+  \item ćwiczenia związane z tematyką wykładu
+  \item opracowania obliczeniowe i koncepcyjne
+  \item ocena sporządzonego sprawozdania
+  \item brak
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Kosieradzka, A., Szopiński, T., Stanisławiak, E., Głażewska, I., Kąkol, U., Smagowicz, J. (2021). Metody i techniki pobudzania kreatywności w organizacji i zarządzaniu. Warszawa: PWN. ISBN 978-83-01-21845-0.
+  \item Kosieradzka, A. (2019). Zarządzanie produktywnością w przedsiębiorstwie. Kraków: edu-Libri. ISBN 978-83-63804-04-6.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Szmidt, K. J. (2021). Teoria i praktyka twórczości: Od badań do edukacji kreatywnej. Łódź: Wydawnictwo Uniwersytetu Łódzkiego. ISBN: 978-83-8142-929-0
+  \item Penc-Pietrzak, I. (2019). Kreatywność w zarządzaniu. Nowe wyzwania dla liderów organizacji. Warszawa: Difin. ISBN: 978-83-8085-882-2
+  \item Trzebiński, J., \& Siemieńska, R. (2020). Twórcze rozwiązywanie problemów: Podstawy teoretyczne i zastosowania praktyczne. Warszawa: PWN. ISBN: 978-83-01-21489-7
+  \item Nęcka, E., Orzechowski, J., \& Słabosz, A. (2019). Kreatywność: Procesy poznawcze, osobowość, środowisko. Warszawa: PWN. ISBN: 978-83-01-20526-0
+\end{itemize}
+
+\end{document}

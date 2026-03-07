@@ -1,94 +1,90 @@
-﻿{
-    "sylabus":  {
-                    "uczelnia":  "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
-                    "jednostka":  "Filia w Gdańsku",
-                    "kierunek":  "INFORMATYKA",
-                    "profil":  "praktyczny",
-                    "tryb_studiow":  "niestacjonarny",
-                    "wersja_z_dnia":  "19.02.2026",
-                    "nazwa_przedmiotu":  "Szybkie prototypowanie",
-                    "kod_przedmiotu":  "PTT",
-                    "rok_studiow":  3,
-                    "semestr_studiow":  5,
-                    "obligatoryjny":  false,
-                    "forma_i_liczba_godzin_zajec":  {
-                                                        "wyklady":  16,
-                                                        "cwiczenia_lektorat_seminarium":  null,
-                                                        "laboratorium_projekt":  16
-                                                    },
-                    "odpowiedzialny_za_przedmiot":  "inż. Marek Kudła",
-                    "ects":  5,
-                    "godziny":  {
-                                    "z_udzialem_prowadzacego_h":  32,
-                                    "praca_wlasna_studenta_h":  93,
-                                    "calkowita_liczba_godzin_h":  125
-                                },
-                    "metody_dydaktyczne":  {
-                                               "wyklad":  [
-                                                              "Wykład z prezentacją multimedialną",
-                                                              "Wykład z prezentacją oprogramowania",
-                                                              "Wykład z realizacją projektu"
-                                                          ],
-                                               "laboratorium":  [
-                                                                    "Ćwiczenia obsługi oprogramowania",
-                                                                    "Projektowanie modeli",
-                                                                    "Warsztaty praktyczne w pracowni IoT"
-                                                                ]
-                                           },
-                    "zaliczenie":  {
-                                       "Wykład":  {
-                                                      "sposob":  "Egzamin"
-                                                  },
-                                       "Laboratorium":  {
-                                                            "sposob":  "Zaliczenie z oceną"
-                                                        }
-                                   },
-                    "kryteria_oceny":  [
-                                           "2 projekty składające sią na 100% oceny"
-                                       ],
-                    "przedmioty_wprowadzajace":  [
-
-                                                 ],
-                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu „Szybkie prototypowanie” jest przygotowanie studenta specjalizacji IoT do sprawnego przechodzenia od pomysłu do działającego prototypu urządzenia. Student nauczy się projektować i wytwarzać elementy mechaniczne w druku 3D oraz integrować je z elektroniką (płytki prototypowe, okablowanie, złącza), z zachowaniem zasad niezawodności i bezpieczeństwa pracy. Rozwinie praktyczne umiejętności montażu i uruchamiania układów: lutowania, doboru komponentów, testowania oraz diagnozowania typowych błędów prototypu.",
-                    "literatura":  {
-                                       "podstawowa":  {
-                                                          "pozycje":  [
-
-                                                                      ]
-                                                      },
-                                       "uzupelniajaca":  {
-                                                             "pozycje":  [
-
-                                                                         ]
-                                                         }
-                                   },
-                    "efekty_ksztalcenia":  {
-                                               "wiedza":  [
-                                                              "zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii"
-                                                          ],
-                                               "umiejetnosci":  [
-                                                                    "potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie",
-                                                                    "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania."
-                                                                ],
-                                               "kompetencje_spoleczne":  [
-                                                                             "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
-                                                                             "jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy"
-                                                                         ]
-                                           },
-                    "tresci_programowe":  [
-                                              "Rola prototypowania w IoT: iteracje, wymagania, dokumentacja, MVP sprzętowe.",
-                                              "Podstawy CAD pod druk 3D (modelowanie pod obudowy, uchwyty, tolerancje, gwinty, zatrzaski).",
-                                              "Technologie druku 3D (FDM/SLA – przegląd), materiały, dobór parametrów, orientacja i podpory.",
-                                              "Przygotowanie do druku: slicer, testy kalibracyjne, ocena jakości, typowe defekty i ich przyczyny.",
-                                              "Post-processing i montaż: insert nuts, wkręty, klejenie, wzmocnienia, prowadzenie przewodów.",
-                                              "Płytki prototypowe i montaż THT/SMD: ergonomia układu, zasilanie, masa, porządek w okablowaniu.",
-                                              "Lutowanie: narzędzia, techniki, BHP, naprawy i rework, podstawy pomiarów multimetrem.",
-                                              "Interfejsy i peryferia w IoT: GPIO, I²C, SPI, UART, czujniki i aktuatory (serwo, silnik, przekaźnik).",
-                                              "Zasilanie prototypu: USB, Li-Ion/LiPo, stabilizatory, przetwornice, pobór prądu, ochrona.",
-                                              "Programowanie mikrokontrolera pod prototyp: struktura projektu, obsługa peryferiów, testy modułów.",
-                                              "Komunikacja: Wi-Fi/BLE/MQTT/HTTP (w zależności od platformy), podstawy integracji z usługą/HA.",
-                                              "Testowanie i diagnostyka: logowanie, pomiary, oscyloskop (opcjonalnie), checklisty uruchomieniowe.",
-                                              "Projekt zespołowy: wymagania, schemat połączeń, BOM, pliki CAD, wersjonowanie i repozytorium."
-                                          ]
-                }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Szybkie prototypowanie",
+        "kod_przedmiotu": "PTT",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 16,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "inż. Marek Kudła",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 93,
+            "calkowita_liczba_godzin_h": 125
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "Wykład z prezentacją multimedialną",
+                "Wykład z prezentacją oprogramowania",
+                "Wykład z realizacją projektu"
+            ],
+            "laboratorium": [
+                "Ćwiczenia obsługi oprogramowania",
+                "Projektowanie modeli",
+                "Warsztaty praktyczne w pracowni IoT"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Egzamin"
+            },
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "2 projekty składające sią na 100% oceny"
+        ],
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Celem dydaktycznym przedmiotu „Szybkie prototypowanie” jest przygotowanie studenta specjalizacji IoT do sprawnego przechodzenia od pomysłu do działającego prototypu urządzenia. Student nauczy się projektować i wytwarzać elementy mechaniczne w druku 3D oraz integrować je z elektroniką (płytki prototypowe, okablowanie, złącza), z zachowaniem zasad niezawodności i bezpieczeństwa pracy. Rozwinie praktyczne umiejętności montażu i uruchamiania układów: lutowania, doboru komponentów, testowania oraz diagnozowania typowych błędów prototypu.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": []
+            },
+            "uzupelniajaca": {
+                "pozycje": []
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie zaawansowane zagadnienia prototypowania urządzeń IoT: dobór platformy sprzętowej, szybkie wytwarzanie PCB i obudów metodami addytywnymi (druk 3D), metodyki Agile Hardware Development. [K_W18]",
+                "Student zna i rozumie zaawansowane pojęcia Internetu Rzeczy: architektury połączeń (MQTT, CoAP), integrację z platformami chmurowymi (AWS IoT, Azure IoT Hub, Google Cloud IoT), zbieranie i wizualizację danych (Grafana, InfluxDB). [K_W26]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi zrealizować pełny cykl prototypowania urządzenia IoT: od projektu elektronicznego i oprogramowania wbudowanego, przez testy, do wdrożenia i monitorowania w środowisku produkcyjnym. [K_U23]",
+                "Student potrafi zdiagnozować problem inżynierski w obszarze IoT i zaproponować rozwiązanie, dobierając odpowiednią platformę sprzętową, protokół komunikacyjny i usługi chmurowe. [K_U33]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do zastosowań technologii IoT i prototypowania na rzecz rozwoju innowacyjnych produktów i rozwiązań społecznych. [K_K01]",
+                "Student jest gotów do myślenia i działania w sposób innowacyjny, iteracyjnego doskonalenia prototypów na podstawie feedbacku użytkowników. [K_K07]"
+            ]
+        },
+        "tresci_programowe": [
+            "Rola prototypowania w IoT: iteracje, wymagania, dokumentacja, MVP sprzętowe.",
+            "Podstawy CAD pod druk 3D (modelowanie pod obudowy, uchwyty, tolerancje, gwinty, zatrzaski).",
+            "Technologie druku 3D (FDM/SLA – przegląd), materiały, dobór parametrów, orientacja i podpory.",
+            "Przygotowanie do druku: slicer, testy kalibracyjne, ocena jakości, typowe defekty i ich przyczyny.",
+            "Post-processing i montaż: insert nuts, wkręty, klejenie, wzmocnienia, prowadzenie przewodów.",
+            "Płytki prototypowe i montaż THT/SMD: ergonomia układu, zasilanie, masa, porządek w okablowaniu.",
+            "Lutowanie: narzędzia, techniki, BHP, naprawy i rework, podstawy pomiarów multimetrem.",
+            "Interfejsy i peryferia w IoT: GPIO, I²C, SPI, UART, czujniki i aktuatory (serwo, silnik, przekaźnik).",
+            "Zasilanie prototypu: USB, Li-Ion/LiPo, stabilizatory, przetwornice, pobór prądu, ochrona.",
+            "Programowanie mikrokontrolera pod prototyp: struktura projektu, obsługa peryferiów, testy modułów.",
+            "Komunikacja: Wi-Fi/BLE/MQTT/HTTP (w zależności od platformy), podstawy integracji z usługą/HA.",
+            "Testowanie i diagnostyka: logowanie, pomiary, oscyloskop (opcjonalnie), checklisty uruchomieniowe.",
+            "Projekt zespołowy: wymagania, schemat połączeń, BOM, pliki CAD, wersjonowanie i repozytorium."
+        ],
+        "cel_dydaktyczny_eng": "The educational objective of the course 'Rapid Prototyping' is to prepare students in the IoT specialization to move efficiently from an idea to a working device prototype. Students learn to design and manufacture mechanical elements using 3D printing and to integrate them with electronics (prototype boards, wiring, connectors) while observing the principles of reliability and work safety. They develop practical skills in assembling and starting up systems: soldering, component selection, testing, and diagnosing typical prototype errors."
+    }
 }

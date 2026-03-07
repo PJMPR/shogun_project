@@ -1,1 +1,135 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdansku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "03.03.2026",         "nazwa_przedmiotu": "Interakcja Człowiek-Komputer",         "kod_przedmiotu": "ICK",         "rok_studiow": 3,         "semestr_studiow": 6,         "obligatoryjny": true,         "forma_i_liczba_godzin_zajec": {             "wyklady": 30,             "cwiczenia_lektorat_seminarium": null,             "laboratorium_projekt": 30         },         "odpowiedzialny_za_przedmiot": "",         "ects": 4,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 40,             "calkowita_liczba_godzin_h": 100         },         "metody_dydaktyczne": {             "wyklad": [                 "Wykład problemowy z wykorzystaniem prezentacji multimedialnych,",                 "Analiza studiów przypadków (case study),",                 "Dyskusja moderowana,",                 "Analiza przykładów dobrych i błędnych rozwiązań interfejsowych,",                 "Omówienie metod projektowych stosowanych w HCI,",                 "Elementy mini-analiz wykonywanych w trakcie zajęć."             ],             "laboratorium": [                 "Ćwiczenia projektowe realizowane indywidualnie i zespołowo,",                 "Warsztaty z zakresu analizy potrzeb użytkowników i projektowania ścieżek użytkownika,",                 "Tworzenie architektury informacji i makiet interfejsów,",                 "Prototypowanie, analiza heurystyczna,",                 "Testowanie użyteczności oraz iteracyjne doskonalenie projektów,",                 "Konsultacje projektowe,",                 "Prezentacje wyników prac."             ]         },         "zaliczenie": {             "Wykład": {                 "sposob": "Nieoceniany"             },             "Laboratorium": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Poprawność merytoryczna opracowanych rozwiązań projektowych.",             "Adekwatność zaproponowanych rozwiązań do zdefiniowanego problemu oraz potrzeb użytkownika.",             "Stopień zastosowania poznanych metod i narzędzi HCI w procesie projektowym.",             "Jakość opracowań koncepcyjnych i projektowych, w tym analiza problemu, uzasadnienie decyzji projektowych, przygotowanie prototypów oraz dokumentacja procesu.",             "Spójność i logiczność argumentacji projektowej.",             "Jakość i czytelność prezentacji wyników pracy.",             "Terminowość realizacji poszczególnych etapów projektu.",             "Wynik kolokwium pisemnego weryfikującego znajomość zagadnień teoretycznych oraz umiejętność ich zastosowania w rozwiązywaniu problemów projektowych."         ],         "przedmioty_wprowadzajace": [],         "cel_dydaktyczny": "Celem przedmiotu jest rozwinięcie wiedzy i umiejętności studentów w zakresie projektowania interakcji człowiek–komputer (HCI) poprzez zapoznanie z teorią oraz metodyką tworzenia użytecznych, dostępnych i efektywnych interfejsów użytkownika, ze szczególnym uwzględnieniem analizy potrzeb użytkowników, projektowania ścieżek użytkownika, budowania architektury informacji, prototypowania oraz ewaluacji użyteczności zgodnie z założeniami podejścia User-Centred Design (UCD), przy czym realizacja przedmiotu ma charakter teoretyczno-praktyczny i obejmuje analizę istniejących systemów interaktywnych oraz projektowanie i testowanie własnych rozwiązań w oparciu o przyjęte standardy i dobre praktyki.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Sikorski, M. (2017). Interakcja człowiek–komputer. Warszawa: Wydawnictwo PJWSTK.",                     "Tidwell, J., Brewer, C., Valencia, A. (2012). Projektowanie interfejsów. Wzorce skutecznego projektowania interakcji. Gliwice: Helion."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Badura, C. (2019). UX/UI. Design zoptymalizowany. Gliwice: Helion.",                     "Pereyra, I. (2025). Uniwersalne zasady projektowania UX. 100 ponadczasowych strategii tworzenia pozytywnych interakcji. Gliwice: Helion."                 ]             },             "dokumentacja_internetowa": {                 "Sikorski, M. (2021). Interaction Design in Agile IT Projects. Gdańsk: Wydawnictwo Politechniki Gdańskiej": "Sikorski, M. (2021). Interaction Design in Agile IT Projects. Gdańsk: Wydawnictwo Politechniki Gdańskiej",                 "https://mostwiedzy.pl/pl/publication/download/1/interaction-design-in-agile-it-projects_58444.pdf": "https://mostwiedzy.pl/pl/publication/download/1/interaction-design-in-agile-it-projects_58444.pdf"             }         },         "efekty_ksztalcenia": {             "wiedza": [                 "Student zna i rozumie podstawowe pojęcia, modele oraz zakres projektowania interakcji człowiek–komputer (HCI).",                 "Student zna zasady użyteczności, heurystyki projektowe oraz klasyczne reguły projektowania interfejsów użytkownika.",                 "Student zna ograniczenia poznawcze i motoryczne użytkowników oraz ich znaczenie w projektowaniu systemów interaktywnych.",                 "Student zna etapy procesu projektowego zgodnego z podejściem zorientowanym na użytkownika (UCD), w tym analizę potrzeb, prototypowanie i ewaluację rozwiązań.",                 "Student zna metody badania potrzeb użytkowników oraz podstawowe techniki testowania użyteczności systemów informatycznych."             ],             "umiejetnosci": [                 "Student potrafi analizować potrzeby użytkowników oraz definiować wymagania systemu informatycznego.",                 "Student potrafi opracować koncepcję rozwiązania informatycznego z uwzględnieniem kontekstu użycia i grupy docelowej.",                 "Student potrafi projektować interakcję użytkownik–system, tworzyć user flow oraz modelować podstawowe procesy użytkownika.",                 "Student potrafi opracowywać prototypy interfejsów (Lo-Fi i Hi-Fi) z wykorzystaniem wybranych narzędzi projektowych.",                 "Student potrafi planować i przeprowadzać podstawowe testy użyteczności oraz interpretować ich wyniki w celu doskonalenia projektu."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do współdziałania w zespołach projektowych realizujących projekty z zakresu projektowania interakcji człowiek–komputer.",                 "Student jest gotów do uwzględniania perspektywy użytkownika oraz jego ograniczeń poznawczych i kontekstowych w procesie podejmowania decyzji projektowych.",                 "Student jest gotów do odpowiedzialnego projektowania interfejsów użytkownika z uwzględnieniem zasad użyteczności, dostępności i ergonomii.",                 "Student jest gotów do krytycznej oceny rozwiązań interfejsowych, zarówno własnych, jak i cudzych, oraz do przyjmowania konstruktywnej informacji zwrotnej w procesie doskonalenia projektu.",                 "Student jest gotów do ciągłego rozwijania kompetencji w zakresie projektowania interakcji w odpowiedzi na zmieniające się technologie, modele interakcji i potrzeby użytkowników."             ]         },         "tresci_programowe": [             "Wprowadzenie do projektowania interakcji człowiek–komputer (HCI) – zakres, definicja i znaczenie.",             "Historia rozwoju interfejsów oraz ewolucja modeli interakcji.",             "Model człowiek–interfejs–system w projektowaniu systemów informatycznych.",             "Charakterystyka użytkowników oraz analiza kontekstu użycia.",             "Ograniczenia poznawcze i motoryczne użytkowników w projektowaniu interfejsów.",             "Percepcja i uwaga użytkownika – rola hierarchii wizualnej w projektowaniu.",             "Identyfikacja błędów projektowych (analiza „bad design”).",             "Heurystyki użyteczności oraz klasyczne zasady projektowania interfejsów.",             "Zasady projektowania graficznych interfejsów użytkownika (GUI).",             "Wymagania i standardy projektowania interfejsów WWW i mobilnych.",             "Projektowanie interakcji dla usług cyfrowych i systemów złożonych.",             "Interfejsy multimodalne – głos, gest, systemy inteligentne i rozwiązania typu „smart”.",             "Organizacja pracy projektowej – podział na zespoły i wybór tematu projektu.",             "Analiza konkurencji, rynku docelowego oraz uzasadnienie biznesowe rozwiązania.",             "Współpraca z klientem i użytkownikiem – identyfikacja i specyfikacja wymagań.",             "Podejście User-Centred Design (UCD) w procesie projektowym.",             "Elementy Design Thinking – empatyzacja i definiowanie problemu projektowego.",             "Generowanie i wartościowanie koncepcji rozwiązań.",             "Analiza potrzeb użytkowników oraz opracowanie person.",             "Wizja produktu i projekt koncepcyjny systemu.",             "Opracowanie i mapowanie historyjek użytkownika.",             "Projektowanie interakcji – tworzenie user flow oraz priorytetyzacja funkcjonalności.",             "Prototypowanie wstępne (Lo-Fi) oraz prototypowanie cyfrowe (Hi-Fi).",             "Scenariusze testowe, testy użyteczności oraz analiza wyników badań użytkowników.",             "Iteracyjne doskonalenie projektu oraz prezentacja końcowych prototypów interfejsu użytkownika."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "03.03.2026",
+        "nazwa_przedmiotu": "Interakcja Człowiek-Komputer",
+        "kod_przedmiotu": "ICK",
+        "rok_studiow": 3,
+        "semestr_studiow": 6,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 30
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 4,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 40,
+            "calkowita_liczba_godzin_h": 100
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "Wykład problemowy z wykorzystaniem prezentacji multimedialnych,",
+                "Analiza studiów przypadków (case study),",
+                "Dyskusja moderowana,",
+                "Analiza przykładów dobrych i błędnych rozwiązań interfejsowych,",
+                "Omówienie metod projektowych stosowanych w HCI,",
+                "Elementy mini-analiz wykonywanych w trakcie zajęć."
+            ],
+            "laboratorium": [
+                "Ćwiczenia projektowe realizowane indywidualnie i zespołowo,",
+                "Warsztaty z zakresu analizy potrzeb użytkowników i projektowania ścieżek użytkownika,",
+                "Tworzenie architektury informacji i makiet interfejsów,",
+                "Prototypowanie, analiza heurystyczna,",
+                "Testowanie użyteczności oraz iteracyjne doskonalenie projektów,",
+                "Konsultacje projektowe,",
+                "Prezentacje wyników prac."
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            },
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Poprawność merytoryczna opracowanych rozwiązań projektowych.",
+            "Adekwatność zaproponowanych rozwiązań do zdefiniowanego problemu oraz potrzeb użytkownika.",
+            "Stopień zastosowania poznanych metod i narzędzi HCI w procesie projektowym.",
+            "Jakość opracowań koncepcyjnych i projektowych, w tym analiza problemu, uzasadnienie decyzji projektowych, przygotowanie prototypów oraz dokumentacja procesu.",
+            "Spójność i logiczność argumentacji projektowej.",
+            "Jakość i czytelność prezentacji wyników pracy.",
+            "Terminowość realizacji poszczególnych etapów projektu.",
+            "Wynik kolokwium pisemnego weryfikującego znajomość zagadnień teoretycznych oraz umiejętność ich zastosowania w rozwiązywaniu problemów projektowych."
+        ],
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Celem przedmiotu jest rozwinięcie wiedzy i umiejętności studentów w zakresie projektowania interakcji człowiek–komputer (HCI) poprzez zapoznanie z teorią oraz metodyką tworzenia użytecznych, dostępnych i efektywnych interfejsów użytkownika, ze szczególnym uwzględnieniem analizy potrzeb użytkowników, projektowania ścieżek użytkownika, budowania architektury informacji, prototypowania oraz ewaluacji użyteczności zgodnie z założeniami podejścia User-Centred Design (UCD), przy czym realizacja przedmiotu ma charakter teoretyczno-praktyczny i obejmuje analizę istniejących systemów interaktywnych oraz projektowanie i testowanie własnych rozwiązań w oparciu o przyjęte standardy i dobre praktyki.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Sikorski, M. (2017). Interakcja człowiek–komputer. Warszawa: Wydawnictwo PJWSTK.",
+                    "Tidwell, J., Brewer, C., Valencia, A. (2012). Projektowanie interfejsów. Wzorce skutecznego projektowania interakcji. Gliwice: Helion."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Badura, C. (2019). UX/UI. Design zoptymalizowany. Gliwice: Helion.",
+                    "Pereyra, I. (2025). Uniwersalne zasady projektowania UX. 100 ponadczasowych strategii tworzenia pozytywnych interakcji. Gliwice: Helion."
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "Sikorski, M. (2021). Interaction Design in Agile IT Projects. Gdańsk: Wydawnictwo Politechniki Gdańskiej": "Sikorski, M. (2021). Interaction Design in Agile IT Projects. Gdańsk: Wydawnictwo Politechniki Gdańskiej",
+                "https://mostwiedzy.pl/pl/publication/download/1/interaction-design-in-agile-it-projects_58444.pdf": "https://mostwiedzy.pl/pl/publication/download/1/interaction-design-in-agile-it-projects_58444.pdf"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie podstawowe pojęcia, modele oraz zakres projektowania interakcji człowiek–komputer (HCI).",
+                "Student zna zasady użyteczności, heurystyki projektowe oraz klasyczne reguły projektowania interfejsów użytkownika.",
+                "Student zna ograniczenia poznawcze i motoryczne użytkowników oraz ich znaczenie w projektowaniu systemów interaktywnych.",
+                "Student zna etapy procesu projektowego zgodnego z podejściem zorientowanym na użytkownika (UCD), w tym analizę potrzeb, prototypowanie i ewaluację rozwiązań.",
+                "Student zna metody badania potrzeb użytkowników oraz podstawowe techniki testowania użyteczności systemów informatycznych."
+            ],
+            "umiejetnosci": [
+                "Student potrafi analizować potrzeby użytkowników oraz definiować wymagania systemu informatycznego.",
+                "Student potrafi opracować koncepcję rozwiązania informatycznego z uwzględnieniem kontekstu użycia i grupy docelowej.",
+                "Student potrafi projektować interakcję użytkownik–system, tworzyć user flow oraz modelować podstawowe procesy użytkownika.",
+                "Student potrafi opracowywać prototypy interfejsów (Lo-Fi i Hi-Fi) z wykorzystaniem wybranych narzędzi projektowych.",
+                "Student potrafi planować i przeprowadzać podstawowe testy użyteczności oraz interpretować ich wyniki w celu doskonalenia projektu."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do współdziałania w zespołach projektowych realizujących projekty z zakresu projektowania interakcji człowiek–komputer.",
+                "Student jest gotów do uwzględniania perspektywy użytkownika oraz jego ograniczeń poznawczych i kontekstowych w procesie podejmowania decyzji projektowych.",
+                "Student jest gotów do odpowiedzialnego projektowania interfejsów użytkownika z uwzględnieniem zasad użyteczności, dostępności i ergonomii.",
+                "Student jest gotów do krytycznej oceny rozwiązań interfejsowych, zarówno własnych, jak i cudzych, oraz do przyjmowania konstruktywnej informacji zwrotnej w procesie doskonalenia projektu.",
+                "Student jest gotów do ciągłego rozwijania kompetencji w zakresie projektowania interakcji w odpowiedzi na zmieniające się technologie, modele interakcji i potrzeby użytkowników."
+            ]
+        },
+        "tresci_programowe": [
+            "Wprowadzenie do projektowania interakcji człowiek–komputer (HCI) – zakres, definicja i znaczenie.",
+            "Historia rozwoju interfejsów oraz ewolucja modeli interakcji.",
+            "Model człowiek–interfejs–system w projektowaniu systemów informatycznych.",
+            "Charakterystyka użytkowników oraz analiza kontekstu użycia.",
+            "Ograniczenia poznawcze i motoryczne użytkowników w projektowaniu interfejsów.",
+            "Percepcja i uwaga użytkownika – rola hierarchii wizualnej w projektowaniu.",
+            "Identyfikacja błędów projektowych (analiza „bad design”).",
+            "Heurystyki użyteczności oraz klasyczne zasady projektowania interfejsów.",
+            "Zasady projektowania graficznych interfejsów użytkownika (GUI).",
+            "Wymagania i standardy projektowania interfejsów WWW i mobilnych.",
+            "Projektowanie interakcji dla usług cyfrowych i systemów złożonych.",
+            "Interfejsy multimodalne – głos, gest, systemy inteligentne i rozwiązania typu „smart”.",
+            "Organizacja pracy projektowej – podział na zespoły i wybór tematu projektu.",
+            "Analiza konkurencji, rynku docelowego oraz uzasadnienie biznesowe rozwiązania.",
+            "Współpraca z klientem i użytkownikiem – identyfikacja i specyfikacja wymagań.",
+            "Podejście User-Centred Design (UCD) w procesie projektowym.",
+            "Elementy Design Thinking – empatyzacja i definiowanie problemu projektowego.",
+            "Generowanie i wartościowanie koncepcji rozwiązań.",
+            "Analiza potrzeb użytkowników oraz opracowanie person.",
+            "Wizja produktu i projekt koncepcyjny systemu.",
+            "Opracowanie i mapowanie historyjek użytkownika.",
+            "Projektowanie interakcji – tworzenie user flow oraz priorytetyzacja funkcjonalności.",
+            "Prototypowanie wstępne (Lo-Fi) oraz prototypowanie cyfrowe (Hi-Fi).",
+            "Scenariusze testowe, testy użyteczności oraz analiza wyników badań użytkowników.",
+            "Iteracyjne doskonalenie projektu oraz prezentacja końcowych prototypów interfejsu użytkownika."
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to develop students’ knowledge and skills in the field of human–computer interaction (HCI) design by introducing the theory and methodology of creating useful, accessible, and efficient user interfaces, with particular emphasis on user needs analysis, user journey design, information architecture, prototyping, and usability evaluation in accordance with the principles of the User-Centred Design (UCD) approach. The course has a theoretical and practical character and includes the analysis of existing interactive systems as well as the design and testing of students’ own solutions based on accepted standards and good practices."
+    }
+}

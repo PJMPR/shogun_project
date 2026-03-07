@@ -1,1 +1,84 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "27.02.2026",         "nazwa_przedmiotu": "Lektorat – Język angielski (semestr 7)",         "kod_przedmiotu": "LANG4",         "rok_studiow": 4,         "semestr_studiow": 7,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 30,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",         "ects": 1,         "godziny": {             "z_udzialem_prowadzacego_h": 30,             "praca_wlasna_studenta_h": 5,             "calkowita_liczba_godzin_h": 35         },         "metody_dydaktyczne": {},         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 1 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "Lektorat ANG – semestr 6 (LEK3)",                 "wymagania": "Znajomość języka angielskiego na poziomie C1."             }         ],         "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie C1/C2. Semestr końcowy lektoratu – student doskonali umiejętności językowe niezbędne do obrony pracy dyplomowej i startu na międzynarodowym rynku pracy w branży IT.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Materiały własne przygotowane przez lektora.",                     "Materiały przygotowujące do obrony pracy dyplomowej w języku angielskim."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Oxford Advanced Learner's Dictionary, Oxford University Press.",                     "Materiały online: BBC Learning English, Cambridge English Online."                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej.",                 "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT.",                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów."             ]         },         "tresci_programowe": [             "Przygotowanie do obrony pracy dyplomowej w języku angielskim – struktura, słownictwo, ćwiczenia.",             "Symulacja obrony pracy dyplomowej – pytania komisji, odpowiedzi, prezentacja wyników.",             "Rozmowa kwalifikacyjna na stanowisko inżynierskie – zaawansowane symulacje i informacja zwrotna.",             "Przygotowanie portfolio zawodowego (CV, LinkedIn, portfolio projektów) w języku angielskim.",             "Komunikacja w środowisku startupowym i korporacyjnym – język negocjacji i prezentacji.",             "Certyfikacje językowe – omówienie możliwości (IELTS, CAE, CPE, TOEFL).",             "Projekt zaliczeniowy – prezentacja lub rozmowa kwalifikacyjna.",             "Powtórzenie materiału i kolokwium zaliczeniowe."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "27.02.2026",
+        "nazwa_przedmiotu": "Lektorat – Język angielski (semestr 7)",
+        "kod_przedmiotu": "LANG4",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 1,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 30,
+            "praca_wlasna_studenta_h": 5,
+            "calkowita_liczba_godzin_h": 35
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 1 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Lektorat ANG – semestr 6 (LEK3)",
+                "wymagania": "Znajomość języka angielskiego na poziomie C1."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie C1/C2. Semestr końcowy lektoratu – student doskonali umiejętności językowe niezbędne do obrony pracy dyplomowej i startu na międzynarodowym rynku pracy w branży IT.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne przygotowane przez lektora.",
+                    "Materiały przygotowujące do obrony pracy dyplomowej w języku angielskim."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Oxford Advanced Learner's Dictionary, Oxford University Press.",
+                    "Materiały online: BBC Learning English, Cambridge English Online."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej.",
+                "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT.",
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów."
+            ]
+        },
+        "tresci_programowe": [
+            "Przygotowanie do obrony pracy dyplomowej w języku angielskim – struktura, słownictwo, ćwiczenia.",
+            "Symulacja obrony pracy dyplomowej – pytania komisji, odpowiedzi, prezentacja wyników.",
+            "Rozmowa kwalifikacyjna na stanowisko inżynierskie – zaawansowane symulacje i informacja zwrotna.",
+            "Przygotowanie portfolio zawodowego (CV, LinkedIn, portfolio projektów) w języku angielskim.",
+            "Komunikacja w środowisku startupowym i korporacyjnym – język negocjacji i prezentacji.",
+            "Certyfikacje językowe – omówienie możliwości (IELTS, CAE, CPE, TOEFL).",
+            "Projekt zaliczeniowy – prezentacja lub rozmowa kwalifikacyjna.",
+            "Powtórzenie materiału i kolokwium zaliczeniowe."
+        ],
+        "cel_dydaktyczny_eng": "English language instruction at the C1/C2 level. Final semester of the language course—students refine the language skills necessary to defend their diploma thesis and enter the international IT job market."
+    }
+}

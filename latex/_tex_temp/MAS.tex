@@ -1,0 +1,180 @@
+﻿% ===========================================================
+%  Sylabus: Modelowanie i analiza systemów informacyjnych (MAS)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: MAS}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Modelowanie i analiza systemów informacyjnych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & MAS \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & Dr. Hab. Marek A Bednarczyk \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL.}
+
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  PRI - Projektowanie systemow informatycznych & Umiejetnosc logicznego wnioskowania oraz umiejetnosc programowania \\
+  ALG - Algebra liniowa z geometria & Podstawy algebry liniowej \\
+  AM - Analiza matematyczna & Podstawy analizy matematycznej \\
+  MAD - Matematyka Dyskretna & Podstawy matematyki dyskretnej \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna.
+\end{enumerate}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{}
+\begin{itemize}
+  \item Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN
+  \item Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Wykład problemowy, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu
+  \item Ćwiczenia rozszerzone o projekty programistyczne poświęcone analizie leksykalnej i rozpoznawaniu języków przy pomocy automatów
+  \item zaliczenie ćwiczeń  wymaga zdobycia co najmniej  50\% punktów możliwych do zdobycia na kolokwium oraz za zrealizowane projekty programistyczne
+  \item Warunkiem dopuszczenia do egzaminu jest zaliczenie ćwiczeń.
+  \item Warunkiem zdania egzaminu pisemnego jest zdobycie co najmniej  50\% punktów.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item - M. Szpyrka, Sieci Petriego w modelowaniu i analizie systemów współbieżnych, Helion, 2008
+  \item W. Dąbrowski: Modelowanie systemów informatycznych w języku UML, Wydawnictwo Naukowe PWN, 2009
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item J. Cheesman, Komponenty UML, WNT, 2004
+  \item Wrycza S., Marcinkowski B., Wyrzykowski K.: Język UML 2.0 w modelowaniu systemów informatycznych, Helion, 2005
+  \item Gawin B., Marcinkowski B.: Symulacja procesów biznesowych. Standardy BPMS i BPMN w praktyce, He-lion, 2013
+  \item https://www.omg.org/spec/UML/2.5.1/
+\end{itemize}
+
+\end{document}

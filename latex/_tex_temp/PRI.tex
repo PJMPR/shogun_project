@@ -1,0 +1,198 @@
+﻿% ===========================================================
+%  Sylabus: Projektowanie systemów informacyjnych (PRI)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRI}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Projektowanie systemów informacyjnych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRI \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr hab. Bartosz Marcinkowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 118 h & 150 h & \textbf{6} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie słuchaczy z podstawowymi technikami analityczno-projektowymi, narzędziami CASE oraz założeniami metodologicznymi wytwarzania rozwiązań IT. Student musi wykazywać się znajomością najczęściej wykorzystywanych dokumentów przedprojektowych, rdzeniowych kategorii modelowania i diagramów języka UML oraz metod odwzorowania modelu obiektowego w wybranym języku programowania/schemacie relacyjnym z wykorzystaniem narzędziowych technik transformacji.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with basic analytical and design techniques, CASE tools, and the methodological foundations of developing IT solutions. Students are expected to demonstrate knowledge of the most commonly used pre-project documents, core modeling categories and UML diagrams, as well as methods of mapping the object model into a selected programming language or relational schema using tool-supported transformation techniques.}
+
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Programowanie obiektowe w Javie & Relacyjne bazy danych \\
+  Podstawowe umiejętności w zakresie programowania obiektowego & Umiejętność projektowania podstawowych algorytmów \\
+  Ogólna znajomość problematyki relacyjnych baz danych & --- \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Pojęcia i metody inżynierii oprogramowania. Cykl życia produktu informatycznego
+  \item Faza przedprojektowa i planowanie projektu; Dokument Założeń Wstępnych (DZW)
+  \item Inżynieria wymagań; pojęcie wymagania; kategorie i przykłady wymagań. Specyfikacja wymagań i dokument Specyfikacji Wymagań Systemowych (SWS)
+  \item Praktyczne przykłady konstrukcji SWS
+  \item Cechy narządzi CASE. Enterprise Architect
+  \item Graficzne techniki modelowania wymagań systemowych na przykładzie diagramów wymagań systemowych języka SysML. Strukturyzacja złożonych modeli z wykorzystaniem pakietów
+  \item Model przypadków użycia
+  \item Praktyka modelowania i specyfikacji przypadków użycia. Techniki specyfikacji scenariuszy przypadków użycia
+  \item Modelowanie dynamiki systemu w języku UML – wprowadzenie. Techniki modelowania interakcji w systemie
+  \item Diagramy sekwencji UML jako uniwersalna technika modelowania interakcji pomiędzy składowymi systemu
+  \item Alternatywne techniki modelowania interakcje na przykładzie diagramu komunikacji. Wstęp do transformacji w narzędziu Enterprise Architect
+  \item Specyfikowanie przypadków użycia z wykorzystaniem diagramów czynności
+  \item Modelowanie struktury systemu: obiekty, klasy, właściwości klasy, dziedziczenie, polimorfizm, agregacja. Wyrażanie struktury systemu w języku UML
+  \item Zaawansowane przykłady modelowania diagramu klas UML
+  \item Przekształcanie modeli klas w kod szkieletowy, modele w wybranych frameworkach i trwałe struktury bazodanowe w narzędziu Enterprise Architect
+  \item Diagramy maszyny stanowej jako technika zarządzania złożonością
+\end{enumerate}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{}
+\begin{itemize}
+  \item Student zna i rozumie cechy najistotniejszych cykli wytwarzania/ewolucji oprogramowania
+  \item Student zna i rozumie składnię rdzeniowych diagramów języka UML
+  \item Student zna i rozumie ograniczenia występujące w procesie wytwarzania oprogramowania
+  \item Student rozumie wagę wymagań systemowych w procesie wytwarzania oprogramowania
+  \item Student zna i rozumie techniki specyfikowania wymagań. Student zna i rozumie umiejscowienie poszczególnych elementów testowania w zależności od obranego cyklu
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafizaprojektować małoskalowe rozwiązanie IT w sposób holistyczny
+  \item Student potrafikorzystać z narzędzi klasy CASE na poziomie średniozaawansowanym
+  \item Student potrafi specyfikować wymagania systemowe
+  \item Student potrafiprojektować algorytmikę przypadków użycia oraz interakcje pomiędzy składowymi przypadku użycia. Student potrafi projektować architekturę systemu wyrażoną klasami. Student potrafi iteracyjnie udoskonalać komponenty projektowe systemu
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Kryteria oceny
+  \item prezentacja projektu i dokumentacji (60\%)
+  \item aktywność na zajęciach (10\%)
+  \item kolokwium końcowe (30\%)
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Wrycza S., Marcinkowski B., Wyrzykowski K. (2006): Język UML 2.0  w modelowaniu systemów informatycznych. Helion, Gliwice.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Wrycza S., Marcinkowski B., Maślankowski J. (2012): UML. Ćwiczenia zaawansowane. Helion, Gliwice.
+  \item Unified Modeling Language, version2.5.1 [oficjalna specyfikacja], https://www.omg.org/spec/UML/2.5.1/PDF, stan na dzień 20/04/2024
+  \item OMG Systems Modeling Language, version 1.7 beta [oficjalna specyfikacja], https://www.omg.org/spec/SysML/1.7/Beta1/PDF, stan na dzień 20/04/2024
+  \item Enterprise Architect User Guide, https://sparxsystems.com/enterprise\_architect\_user\_guide/16.0, stan na dzień 20/04/2024
+\end{itemize}
+
+\end{document}

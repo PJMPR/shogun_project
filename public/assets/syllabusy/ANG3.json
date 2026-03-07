@@ -1,1 +1,91 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "stacjonarny",         "wersja_z_dnia": "26.02.2026",         "nazwa_przedmiotu": "Język angielski 3",         "kod_przedmiotu": "ANG3",         "rok_studiow": 2,         "semestr_studiow": 3,         "obligatoryjny": true,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 60,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 60,             "praca_wlasna_studenta_h": 90,             "calkowita_liczba_godzin_h": 150         },         "metody_dydaktyczne": {},         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "Język angielski ANG2",                 "wymagania": "Znajomość języka angielskiego na poziomie B2."             }         ],         "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie B2/B2+. Student opanowuje język angielski w stopniu pozwalającym na swobodną komunikację zawodową i akademicką, pisanie dokumentacji technicznej, prowadzenie prezentacji oraz uczestnictwo w międzynarodowych projektach informatycznych. Kurs przygotowuje do egzaminu certyfikacyjnego na poziomie B2.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Materiały własne przygotowane przez lektora.",                     "Podręcznik wskazany przez lektora prowadzącego na początku semestru."                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Oxford Advanced Learner's Dictionary, Oxford University Press.",                     "Materiały online: BBC Learning English, British Council, Cambridge English Online."                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje.",                 "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich.",                 "Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First)."             ]         },         "tresci_programowe": [             "Powtórzenie i utrwalenie materiału z semestrów 1–2. Diagnoza poziomu B2.",             "Zaawansowane struktury gramatyczne: inwersja, zdania eliptyczne, causative have/get.",             "Słownictwo zawodowe IT: cloud computing, DevOps, wirtualizacja. Analiza dokumentacji technicznej w języku angielskim.",             "Pisanie techniczne: specyfikacje wymagań (SRS), user stories, dokumentacja API.",             "Komunikacja w środowisku Agile: daily stand-up, sprint review, retrospekcja – ćwiczenia symulacyjne.",             "Słownictwo: sztuczna inteligencja, uczenie maszynowe, sieci neuronowe. Czytanie artykułów naukowych.",             "Prowadzenie prezentacji technicznych w języku angielskim – techniki, struktura, język perswazji.",             "Akademickie pisanie po angielsku: esej argumentacyjny, streszczenie artykułu naukowego.",             "Negocjacje i rozwiązywanie problemów w języku angielskim – ćwiczenia symulacyjne.",             "Słownictwo: bezpieczeństwo danych, RODO/GDPR, prawo IT. Analiza anglojęzycznych aktów prawnych.",             "Przygotowanie do egzaminów certyfikacyjnych B2: czytanie, słuchanie, użycie języka.",             "Przygotowanie do egzaminów certyfikacyjnych B2: mówienie, pisanie – ćwiczenia praktyczne.",             "Projekt semestralny – przygotowanie i prezentacja raportu technicznego w języku angielskim.",             "Obrona projektu semestralnego, informacja zwrotna.",             "Powtórzenie materiału, kolokwium zaliczeniowe."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "26.02.2026",
+        "nazwa_przedmiotu": "Język angielski 3",
+        "kod_przedmiotu": "ANG3",
+        "rok_studiow": 2,
+        "semestr_studiow": 3,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 60,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 90,
+            "calkowita_liczba_godzin_h": 150
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język angielski ANG2",
+                "wymagania": "Znajomość języka angielskiego na poziomie B2."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie B2/B2+. Student opanowuje język angielski w stopniu pozwalającym na swobodną komunikację zawodową i akademicką, pisanie dokumentacji technicznej, prowadzenie prezentacji oraz uczestnictwo w międzynarodowych projektach informatycznych. Kurs przygotowuje do egzaminu certyfikacyjnego na poziomie B2.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne przygotowane przez lektora.",
+                    "Podręcznik wskazany przez lektora prowadzącego na początku semestru."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Oxford Advanced Learner's Dictionary, Oxford University Press.",
+                    "Materiały online: BBC Learning English, British Council, Cambridge English Online."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje.",
+                "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich.",
+                "Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First)."
+            ]
+        },
+        "tresci_programowe": [
+            "Powtórzenie i utrwalenie materiału z semestrów 1–2. Diagnoza poziomu B2.",
+            "Zaawansowane struktury gramatyczne: inwersja, zdania eliptyczne, causative have/get.",
+            "Słownictwo zawodowe IT: cloud computing, DevOps, wirtualizacja. Analiza dokumentacji technicznej w języku angielskim.",
+            "Pisanie techniczne: specyfikacje wymagań (SRS), user stories, dokumentacja API.",
+            "Komunikacja w środowisku Agile: daily stand-up, sprint review, retrospekcja – ćwiczenia symulacyjne.",
+            "Słownictwo: sztuczna inteligencja, uczenie maszynowe, sieci neuronowe. Czytanie artykułów naukowych.",
+            "Prowadzenie prezentacji technicznych w języku angielskim – techniki, struktura, język perswazji.",
+            "Akademickie pisanie po angielsku: esej argumentacyjny, streszczenie artykułu naukowego.",
+            "Negocjacje i rozwiązywanie problemów w języku angielskim – ćwiczenia symulacyjne.",
+            "Słownictwo: bezpieczeństwo danych, RODO/GDPR, prawo IT. Analiza anglojęzycznych aktów prawnych.",
+            "Przygotowanie do egzaminów certyfikacyjnych B2: czytanie, słuchanie, użycie języka.",
+            "Przygotowanie do egzaminów certyfikacyjnych B2: mówienie, pisanie – ćwiczenia praktyczne.",
+            "Projekt semestralny – przygotowanie i prezentacja raportu technicznego w języku angielskim.",
+            "Obrona projektu semestralnego, informacja zwrotna.",
+            "Powtórzenie materiału, kolokwium zaliczeniowe."
+        ],
+        "cel_dydaktyczny_eng": "English language instruction at the B2/B2+ level. Students acquire English proficiency that enables fluent professional and academic communication, technical documentation writing, delivering presentations, and participation in international IT projects. The course prepares students for a B2-level certification exam."
+    }
+}

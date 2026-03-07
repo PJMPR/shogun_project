@@ -1,0 +1,10 @@
+Cel dydaktyczny}
+
+Nauczanie języka angielskiego na poziomie B1+/B2. Student pogłębia umiejętności komunikacji w języku angielskim w środowisku zawodowym i akademickim, ze szczególnym uwzględnieniem słownictwa technicznego z zakresu informatyki. Student doskonali sprawności receptywne (czytanie, słuchanie) i produktywne (mówienie, pisanie) na materiale tekstów branżowych.
+
+\subsection*{\textit{Cel dydaktyczny -- wersja w języku angielskim}}
+
+\textit{English language instruction at the B1+/B2 level. Students further develop communication skills in English in professional and academic settings, with particular emphasis on technical vocabulary in computer science. They improve receptive skills (reading and listening) and productive skills (speaking and writing) based on specialist texts.}
+
+
+\s

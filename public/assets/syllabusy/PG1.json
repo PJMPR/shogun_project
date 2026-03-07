@@ -98,6 +98,7 @@
             "Interface & Affordance. Jak projektować przedmioty i menu, by gracz intuicyjnie wiedział, co z nimi zrobić.",
             "Psychologia playtestingu. Jak przygotować ankiety, jak obserwować gracza i jak nie sugerować odpowiedzi.",
             "Iteracja na podstawie danych. Analiza sesji testowych i radykalne zmiany w projekcie (\"Kill your darlings\")."
-        ]
+        ],
+        "cel_dydaktyczny_eng": "Understanding the prototype life cycle from concept to a functional digital prototype. Learning to identify design flaws early and eliminate unplayable mechanics with minimal effort. Practical use of game engines, ready-made tools, and scripts for rapid implementation of game logic without the need to build full production systems. Ability to evaluate gameplay, develop critical analysis of the feedback loop and player experience (game feel) at an early production stage. Visual and technical communication, and preparation for presenting ideas in the form of a Vertical Slice or a Minimum Viable Product (MVP)."
     }
 }

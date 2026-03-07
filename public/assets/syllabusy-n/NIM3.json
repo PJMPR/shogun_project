@@ -1,1 +1,94 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "niestacjonarny",         "wersja_z_dnia": "06.03.2026",         "nazwa_przedmiotu": "Język niemiecki 3",         "kod_przedmiotu": "NIM3",         "rok_studiow": 4,         "semestr_studiow": 7,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": null,             "cwiczenia_lektorat_seminarium": 16,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",         "ects": 3,         "godziny": {             "z_udzialem_prowadzacego_h": 16,             "praca_wlasna_studenta_h": 59,             "calkowita_liczba_godzin_h": 75         },         "metody_dydaktyczne": {             "cwiczenia": [                 "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"             ]         },         "zaliczenie": {             "Ćwiczenia": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": [             "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",             "Prace pisemne – min. jedna praca na semestr.",             "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",             "Wypowiedź ustna (o rodzaju decyduje lektor).",             "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",             "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."         ],         "przedmioty_wprowadzajace": [             {                 "nazwa": "NIM2",                 "wymagania": "Zagadnienia z NIM2"             }         ],         "cel_dydaktyczny": "Nauczanie języka niemieckiego od poziomu A1 do A2. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023",                     "Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020"                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [],             "umiejetnosci": [                 "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy",                 "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."             ],             "kompetencje_spoleczne": [                 "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych",                 "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."             ]         },         "tresci_programowe": [             "Wiederholung des Konjuktivs. Sprachspiele./ T2- Unser Leben mit neuen Medien.",             "Was ist Freundcshaft?/ T2- Campus in Deutschalnd. Studieren in Deutschland.",             "eine informelle E-mail schreiben. Saetze mut ‘weil’, ‘deshalb’, obwohl’. T2- wer die wahl hat?- HV",             "Sätze mit „trotzdem” und „deshalb”. T2- Eine formelle E-mail schreiben. Seinen weg finden.",             "Frust im Studium. T2: Sätze mit „obwohl”, „trotzdem” – Wiederholung.",             "Wiedeholung des Wortschatzes. T2- Engagement für Natur und Menschen.",             "Ostern in Deutschland. T2- WWOOF- Arbeit am Text",             "Zaliczenie. T2: Unten im Tal oder oben auf der Alp. – Arbeit mit dem Text.",             "T1- Eine tolle Erfahrung. T2: sich begrüssen- international",             "Siezen, dozen, miteinander reden. T2: Keine Panik-niemand ist perfekt.",             "T1: Zaliczenie; Keine Panik- Fehler machen. T2: Eine Stelle in Dresden.",             "T1: Silicon Saxony. T2: Geschichten und Gesichter Berlins",             "T1:Berliner Geschichten. T2: warum auswandern?",             "T1: sich informieren. T2: Im Gastland – Österreich",             "T1: Typisch deutsch und österreichisch, T2: Politik in Deutschland."         ]     } }
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "06.03.2026",
+        "nazwa_przedmiotu": "Język niemiecki 3",
+        "kod_przedmiotu": "NIM3",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 59,
+            "calkowita_liczba_godzin_h": 75
+        },
+        "metody_dydaktyczne": {
+            "cwiczenia": [
+                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "NIM2",
+                "wymagania": "Zagadnienia z NIM2"
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka niemieckiego od poziomu A1 do A2. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023",
+                    "Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy",
+                "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Wiederholung des Konjuktivs. Sprachspiele./ T2- Unser Leben mit neuen Medien.",
+            "Was ist Freundcshaft?/ T2- Campus in Deutschalnd. Studieren in Deutschland.",
+            "eine informelle E-mail schreiben. Saetze mut ‘weil’, ‘deshalb’, obwohl’. T2- wer die wahl hat?- HV",
+            "Sätze mit „trotzdem” und „deshalb”. T2- Eine formelle E-mail schreiben. Seinen weg finden.",
+            "Frust im Studium. T2: Sätze mit „obwohl”, „trotzdem” – Wiederholung.",
+            "Wiedeholung des Wortschatzes. T2- Engagement für Natur und Menschen.",
+            "Ostern in Deutschland. T2- WWOOF- Arbeit am Text",
+            "Zaliczenie. T2: Unten im Tal oder oben auf der Alp. – Arbeit mit dem Text.",
+            "T1- Eine tolle Erfahrung. T2: sich begrüssen- international",
+            "Siezen, dozen, miteinander reden. T2: Keine Panik-niemand ist perfekt.",
+            "T1: Zaliczenie; Keine Panik- Fehler machen. T2: Eine Stelle in Dresden.",
+            "T1: Silicon Saxony. T2: Geschichten und Gesichter Berlins",
+            "T1:Berliner Geschichten. T2: warum auswandern?",
+            "T1: sich informieren. T2: Im Gastland – Österreich",
+            "T1: Typisch deutsch und österreichisch, T2: Politik in Deutschland."
+        ],
+        "cel_dydaktyczny_eng": "German language instruction from A2 to B1 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries."
+    }
+}
