@@ -536,51 +536,6 @@
           "pdf": "assets/files/niestacjonarne/JAP4.pdf"
         }
       ]
-    },
-    {
-      "id": "LEK5",
-      "label": "Lektorat (wybór języka)",
-      "semester": 8,
-      "items": [
-        {
-          "name": "Język angielski",
-          "code": "LANG1",
-          "lecture": 0,
-          "tutorial": 16,
-          "lab": 0,
-          "form": "Z",
-          "ects": 2,
-          "syllabusFile": "assets/syllabusy-n/LANG1.json",
-          "pdf": "assets/files/niestacjonarne/LANG1.pdf"
-        },
-        {
-          "name": "Język niemiecki",
-          "code": "NIM5",
-          "lecture": 0,
-          "tutorial": 16,
-          "lab": 0,
-          "form": "Z",
-          "ects": 2
-        },
-        {
-          "name": "Język hiszpański",
-          "code": "HIS5",
-          "lecture": 0,
-          "tutorial": 16,
-          "lab": 0,
-          "form": "Z",
-          "ects": 2
-        },
-        {
-          "name": "Język japoński",
-          "code": "JAP5",
-          "lecture": 0,
-          "tutorial": 16,
-          "lab": 0,
-          "form": "Z",
-          "ects": 2
-        }
-      ]
     }
   ]
 }

@@ -92,8 +92,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
-          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy-n/ANG1.json",
+          "pdf": "assets/files/niestacjonarne/ANG1.pdf"
         },
         {
           "name": "Szkolenie BHP",
@@ -186,8 +186,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
-          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy-n/ANG2.json",
+          "pdf": "assets/files/niestacjonarne/ANG2.pdf"
         }
       ]
     },
@@ -270,8 +270,8 @@
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
-          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf"
+          "syllabusFile": "assets/syllabusy-n/ANG3.json",
+          "pdf": "assets/files/niestacjonarne/ANG3.pdf"
         }
       ]
     },
@@ -356,15 +356,16 @@
           "electiveGroup": "JP1_2"
         },
         {
-          "name": "Lektorat",
-          "type": "O",
-          "code": "LEK1",
+          "name": "Język angielski 4",
+          "type": "M",
+          "code": "ANG4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "electiveGroup": "LEK1"
+          "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
+          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf"
         }
       ]
     },
@@ -447,17 +448,16 @@
           "form": "Z",
           "ects": 2,
           "electiveGroup": "SBD1_2"
-        },
-        {
+        },        {
           "name": "Lektorat",
           "type": "O",
-          "code": "LEK2",
+          "code": "LEK1",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "electiveGroup": "LEK2"
+          "electiveGroup": "LEK1"
         }
       ]
     },
@@ -541,13 +541,13 @@
         {
           "name": "Lektorat",
           "type": "O",
-          "code": "LEK3",
+          "code": "LEK2",
           "lecture": 0,
-          "tutorial": 60,
+          "tutorial": 16,
           "lab": 0,
           "form": "Z",
           "ects": 3,
-          "electiveGroup": "LEK3"
+          "electiveGroup": "LEK2"
         }
       ]
     },
@@ -618,16 +618,17 @@
           "ects": 5,
           "electiveGroup": "OB_7_1"
         },
+
         {
           "name": "Lektorat",
           "type": "O",
-          "code": "LEK4",
+          "code": "LEK3",
           "lecture": 0,
-          "tutorial": 16,
+          "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2,
-          "electiveGroup": "LEK4"
+          "ects": 3,
+          "electiveGroup": "LEK3"
         }
       ]
     },
@@ -713,13 +714,13 @@
         {
           "name": "Lektorat",
           "type": "O",
-          "code": "LEK5",
+          "code": "LEK4",
           "lecture": 0,
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
           "ects": 2,
-          "electiveGroup": "LEK5"
+          "electiveGroup": "LEK4"
         }
       ]
     }

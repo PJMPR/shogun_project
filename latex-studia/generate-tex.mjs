@@ -533,7 +533,7 @@ Praktyki mogą odbywać się w trakcie roku akademickiego w kraju i za granicą,
 
 Praktyki mogą mieć zarówno charakter odpłatny, jak i nieodpłatny. Uczelnia nie pokrywa kosztów związanych z ich organizacją.
 
-Osobami odpowiedzialnymi za weryfikację i rozliczanie praktyk z ramienia PJATK są \\textbf{Pełnomocnik Rektora ds.~Praktyk Studenckich} oraz \\textbf{Koordynator ds.~Praktyk Studenckich}.
+Osobami odpowiedzialnymi za weryfikację i rozliczanie praktyk z ramienia PJATK są \\textbf{Pełnomocnik Rektora ds.~Praktyk Studenckich}.
 
 Rozliczenie odbywa się na podstawie Sprawozdania z praktyk oraz dodatkowych załączników. W ramach praktyk zawodowych mogą zostać rozliczone np.: praca zarobkowa, staż lub wolontariat, jeżeli pełnione obowiązki umożliwiają osiągnięcie założonych efektów uczenia się, a student posiada w tym czasie prawa studenckie.
 
