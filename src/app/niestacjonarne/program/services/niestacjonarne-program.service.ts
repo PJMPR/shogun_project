@@ -64,6 +64,7 @@ export class NiestacjonarneProgramService {
           form: item.form, ects: item.ects,
           syllabusFile: (item as any).syllabusFile,
           pdf: (item as any).pdf,
+          docFile: (item as any).docFile,
         };
         if (existing) {
           existing.items.push(row);
@@ -86,6 +87,7 @@ export class NiestacjonarneProgramService {
               form: subject.form, ects: subject.ects,
               syllabusFile: (subject as any).syllabusFile,
               pdf: (subject as any).pdf,
+              docFile: (subject as any).docFile,
             },
             leaf: true,
           });
@@ -142,6 +144,7 @@ export class NiestacjonarneProgramService {
                 form: item.form, ects: item.ects,
                 syllabusFile: (item as any).syllabusFile,
                 pdf: (item as any).pdf,
+                docFile: (item as any).docFile,
               },
               leaf: true,
             })),
@@ -154,6 +157,7 @@ export class NiestacjonarneProgramService {
               form: subject.form, ects: subject.ects, electiveGroup: groupId,
               syllabusFile: (subject as any).syllabusFile,
               pdf: (subject as any).pdf,
+              docFile: (subject as any).docFile,
             },
             leaf: true,
           });

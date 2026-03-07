@@ -14,7 +14,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JPT.json",
-          "pdf": "assets/files/niestacjonarne/JPT.pdf"
+          "pdf": "assets/files/niestacjonarne/JPT.pdf",
+          "docFile": "assets/files/niestacjonarne/JPT.docx"
         },
         {
           "name": "Programowanie w języku C++",
@@ -25,7 +26,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JPC.json",
-          "pdf": "assets/files/niestacjonarne/JPC.pdf"
+          "pdf": "assets/files/niestacjonarne/JPC.pdf",
+          "docFile": "assets/files/niestacjonarne/JPC.docx"
         },
         {
           "name": "Programowanie w języku JAVA",
@@ -36,7 +38,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JJA.json",
-          "pdf": "assets/files/niestacjonarne/JJA.pdf"
+          "pdf": "assets/files/niestacjonarne/JJA.pdf",
+          "docFile": "assets/files/niestacjonarne/JJA.docx"
         },
         {
           "name": "Programowanie w języku C#",
@@ -47,7 +50,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JCS.json",
-          "pdf": "assets/files/niestacjonarne/JCS.pdf"
+          "pdf": "assets/files/niestacjonarne/JCS.pdf",
+          "docFile": "assets/files/niestacjonarne/JCS.docx"
         },
         {
           "name": "Programowanie w języku SCALA",
@@ -58,7 +62,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JSC.json",
-          "pdf": "assets/files/niestacjonarne/JSC.pdf"
+          "pdf": "assets/files/niestacjonarne/JSC.pdf",
+          "docFile": "assets/files/niestacjonarne/JSC.docx"
         },
         {
           "name": "Programowanie w języku F#",
@@ -69,7 +74,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JFS.json",
-          "pdf": "assets/files/niestacjonarne/JFS.pdf"
+          "pdf": "assets/files/niestacjonarne/JFS.pdf",
+          "docFile": "assets/files/niestacjonarne/JFS.docx"
         }
       ]
     },
@@ -87,7 +93,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/DDO.json",
-          "pdf": "assets/files/niestacjonarne/DDO.pdf"
+          "pdf": "assets/files/niestacjonarne/DDO.pdf",
+          "docFile": "assets/files/niestacjonarne/DDO.docx"
         },
         {
           "name": "Wprowadzenie do baz grafowych",
@@ -98,7 +105,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/DGR.json",
-          "pdf": "assets/files/niestacjonarne/DGR.pdf"
+          "pdf": "assets/files/niestacjonarne/DGR.pdf",
+          "docFile": "assets/files/niestacjonarne/DGR.docx"
         },
         {
           "name": "Wprowadzenie do baz słownikowych",
@@ -109,7 +117,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/DSL.json",
-          "pdf": "assets/files/niestacjonarne/DSL.pdf"
+          "pdf": "assets/files/niestacjonarne/DSL.pdf",
+          "docFile": "assets/files/niestacjonarne/DSL.docx"
         }
       ]
     },
@@ -127,7 +136,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/MRN.json",
-          "pdf": "assets/files/niestacjonarne/MRN.pdf"
+          "pdf": "assets/files/niestacjonarne/MRN.pdf",
+          "docFile": "assets/files/niestacjonarne/MRN.docx"
         },
         {
           "name": "Wprowadzenie do Flutter",
@@ -138,7 +148,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/MFL.json",
-          "pdf": "assets/files/niestacjonarne/MFL.pdf"
+          "pdf": "assets/files/niestacjonarne/MFL.pdf",
+          "docFile": "assets/files/niestacjonarne/MFL.docx"
         },
         {
           "name": "Wprowadzenie do .Net MAUI",
@@ -149,7 +160,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/MNE.json",
-          "pdf": "assets/files/niestacjonarne/MNE.pdf"
+          "pdf": "assets/files/niestacjonarne/MNE.pdf",
+          "docFile": "assets/files/niestacjonarne/MNE.docx"
         },
         {
           "name": "Wprowadzenie do Unity 3D",
@@ -160,7 +172,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/MUN.json",
-          "pdf": "assets/files/niestacjonarne/MUN.pdf"
+          "pdf": "assets/files/niestacjonarne/MUN.pdf",
+          "docFile": "assets/files/niestacjonarne/MUN.docx"
         }
       ]
     },
@@ -178,7 +191,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/PUI.json",
-          "pdf": "assets/files/niestacjonarne/PUI.pdf"
+          "pdf": "assets/files/niestacjonarne/PUI.pdf",
+          "docFile": "assets/files/niestacjonarne/PUI.docx"
         },
         {
           "name": "Kompetencje lidera IT",
@@ -189,7 +203,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/KLI.json",
-          "pdf": "assets/files/niestacjonarne/KLI.pdf"
+          "pdf": "assets/files/niestacjonarne/KLI.pdf",
+          "docFile": "assets/files/niestacjonarne/KLI.docx"
         }
       ]
     },
@@ -207,7 +222,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/MAS.json",
-          "pdf": "assets/files/niestacjonarne/MAS.pdf"
+          "pdf": "assets/files/niestacjonarne/MAS.pdf",
+          "docFile": "assets/files/niestacjonarne/MAS.docx"
         },
         {
           "name": "Metody Design Thinking w projektowaniu systemów IT",
@@ -218,7 +234,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/DTH.json",
-          "pdf": "assets/files/niestacjonarne/DTH.pdf"
+          "pdf": "assets/files/niestacjonarne/DTH.pdf",
+          "docFile": "assets/files/niestacjonarne/DTH.docx"
         }
       ]
     },
@@ -236,7 +253,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/SGD.json",
-          "pdf": "assets/files/niestacjonarne/SGD.pdf"
+          "pdf": "assets/files/niestacjonarne/SGD.pdf",
+          "docFile": "assets/files/niestacjonarne/SGD.docx"
         },
         {
           "name": "Zarządzanie projektem informatycznym",
@@ -247,7 +265,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ZPR.json",
-          "pdf": "assets/files/niestacjonarne/ZPR.pdf"
+          "pdf": "assets/files/niestacjonarne/ZPR.pdf",
+          "docFile": "assets/files/niestacjonarne/ZPR.docx"
         }
       ]
     },
@@ -265,7 +284,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/POZ.json",
-          "pdf": "assets/files/niestacjonarne/POZ.pdf"
+          "pdf": "assets/files/niestacjonarne/POZ.pdf",
+          "docFile": "assets/files/niestacjonarne/POZ.docx"
         },
         {
           "name": "Procesy Innowacyjne",
@@ -276,7 +296,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/PRIN.json",
-          "pdf": "assets/files/niestacjonarne/PRIN.pdf"
+          "pdf": "assets/files/niestacjonarne/PRIN.pdf",
+          "docFile": "assets/files/niestacjonarne/PRIN.docx"
         },
         {
           "name": "Komercjalizacja projektów informatycznych",
@@ -287,7 +308,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/KMR.json",
-          "pdf": "assets/files/niestacjonarne/KMR.pdf"
+          "pdf": "assets/files/niestacjonarne/KMR.pdf",
+          "docFile": "assets/files/niestacjonarne/KMR.docx"
         }
       ]
     },
@@ -347,7 +369,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/LANG1.json",
-          "pdf": "assets/files/niestacjonarne/LANG1.pdf"
+          "pdf": "assets/files/niestacjonarne/LANG1.pdf",
+          "docFile": "assets/files/niestacjonarne/LANG1.docx"
         },
         {
           "name": "Język niemiecki",
@@ -358,7 +381,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/NIM1.json",
-          "pdf": "assets/files/niestacjonarne/NIM1.pdf"
+          "pdf": "assets/files/niestacjonarne/NIM1.pdf",
+          "docFile": "assets/files/niestacjonarne/NIM1.docx"
         },
         {
           "name": "Język hiszpański",
@@ -369,7 +393,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/HIS1.json",
-          "pdf": "assets/files/niestacjonarne/HIS1.pdf"
+          "pdf": "assets/files/niestacjonarne/HIS1.pdf",
+          "docFile": "assets/files/niestacjonarne/HIS1.docx"
         },
         {
           "name": "Język japoński",
@@ -380,7 +405,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/JAP1.json",
-          "pdf": "assets/files/niestacjonarne/JAP1.pdf"
+          "pdf": "assets/files/niestacjonarne/JAP1.pdf",
+          "docFile": "assets/files/niestacjonarne/JAP1.docx"
         }
       ]
     },
@@ -398,7 +424,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/LANG2.json",
-          "pdf": "assets/files/niestacjonarne/LANG2.pdf"
+          "pdf": "assets/files/niestacjonarne/LANG2.pdf",
+          "docFile": "assets/files/niestacjonarne/LANG2.docx"
         },
         {
           "name": "Język niemiecki",
@@ -409,7 +436,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/NIM2.json",
-          "pdf": "assets/files/niestacjonarne/NIM2.pdf"
+          "pdf": "assets/files/niestacjonarne/NIM2.pdf",
+          "docFile": "assets/files/niestacjonarne/NIM2.docx"
         },
         {
           "name": "Język hiszpański",
@@ -420,7 +448,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/HIS2.json",
-          "pdf": "assets/files/niestacjonarne/HIS2.pdf"
+          "pdf": "assets/files/niestacjonarne/HIS2.pdf",
+          "docFile": "assets/files/niestacjonarne/HIS2.docx"
         },
         {
           "name": "Język japoński",
@@ -431,7 +460,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/JAP2.json",
-          "pdf": "assets/files/niestacjonarne/JAP2.pdf"
+          "pdf": "assets/files/niestacjonarne/JAP2.pdf",
+          "docFile": "assets/files/niestacjonarne/JAP2.docx"
         }
       ]
     },
@@ -449,7 +479,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/LANG3.json",
-          "pdf": "assets/files/niestacjonarne/LANG3.pdf"
+          "pdf": "assets/files/niestacjonarne/LANG3.pdf",
+          "docFile": "assets/files/niestacjonarne/LANG3.docx"
         },
         {
           "name": "Język niemiecki",
@@ -460,7 +491,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/NIM3.json",
-          "pdf": "assets/files/niestacjonarne/NIM3.pdf"
+          "pdf": "assets/files/niestacjonarne/NIM3.pdf",
+          "docFile": "assets/files/niestacjonarne/NIM3.docx"
         },
         {
           "name": "Język hiszpański",
@@ -471,7 +503,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/HIS3.json",
-          "pdf": "assets/files/niestacjonarne/HIS3.pdf"
+          "pdf": "assets/files/niestacjonarne/HIS3.pdf",
+          "docFile": "assets/files/niestacjonarne/HIS3.docx"
         },
         {
           "name": "Język japoński",
@@ -482,7 +515,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/JAP3.json",
-          "pdf": "assets/files/niestacjonarne/JAP3.pdf"
+          "pdf": "assets/files/niestacjonarne/JAP3.pdf",
+          "docFile": "assets/files/niestacjonarne/JAP3.docx"
         }
       ]
     },
@@ -500,7 +534,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/LANG4.json",
-          "pdf": "assets/files/niestacjonarne/LANG4.pdf"
+          "pdf": "assets/files/niestacjonarne/LANG4.pdf",
+          "docFile": "assets/files/niestacjonarne/LANG4.docx"
         },
         {
           "name": "Język niemiecki",
@@ -511,7 +546,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/NIM4.json",
-          "pdf": "assets/files/niestacjonarne/NIM4.pdf"
+          "pdf": "assets/files/niestacjonarne/NIM4.pdf",
+          "docFile": "assets/files/niestacjonarne/NIM4.docx"
         },
         {
           "name": "Język hiszpański",
@@ -522,7 +558,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/HIS4.json",
-          "pdf": "assets/files/niestacjonarne/HIS4.pdf"
+          "pdf": "assets/files/niestacjonarne/HIS4.pdf",
+          "docFile": "assets/files/niestacjonarne/HIS4.docx"
         },
         {
           "name": "Język japoński",
@@ -533,7 +570,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JAP4.json",
-          "pdf": "assets/files/niestacjonarne/JAP4.pdf"
+          "pdf": "assets/files/niestacjonarne/JAP4.pdf",
+          "docFile": "assets/files/niestacjonarne/JAP4.docx"
         }
       ]
     }

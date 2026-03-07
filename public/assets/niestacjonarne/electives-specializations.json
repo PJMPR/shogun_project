@@ -13,7 +13,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/AMM.json",
-          "pdf": "assets/files/niestacjonarne/AMM.pdf"
+          "pdf": "assets/files/niestacjonarne/AMM.pdf",
+          "docFile": "assets/files/niestacjonarne/AMM.docx"
         },
         {
           "semester": 6,
@@ -25,7 +26,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/KSI.json",
-          "pdf": "assets/files/niestacjonarne/KSI.pdf"
+          "pdf": "assets/files/niestacjonarne/KSI.pdf",
+          "docFile": "assets/files/niestacjonarne/KSI.docx"
         },
         {
           "semester": 7,
@@ -37,7 +39,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/DEV.json",
-          "pdf": "assets/files/niestacjonarne/DEV.pdf"
+          "pdf": "assets/files/niestacjonarne/DEV.pdf",
+          "docFile": "assets/files/niestacjonarne/DEV.docx"
         },
         {
           "semester": 8,
@@ -49,7 +52,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/ZIC.json",
-          "pdf": "assets/files/niestacjonarne/ZIC.pdf"
+          "pdf": "assets/files/niestacjonarne/ZIC.pdf",
+          "docFile": "assets/files/niestacjonarne/ZIC.docx"
         }
       ]
     },
@@ -66,7 +70,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/KCs.json",
-          "pdf": "assets/files/niestacjonarne/KCs.pdf"
+          "pdf": "assets/files/niestacjonarne/KCs.pdf",
+          "docFile": "assets/files/niestacjonarne/KCs.docx"
         },
         {
           "semester": 6,
@@ -78,7 +83,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/AIC.json",
-          "pdf": "assets/files/niestacjonarne/AIC.pdf"
+          "pdf": "assets/files/niestacjonarne/AIC.pdf",
+          "docFile": "assets/files/niestacjonarne/AIC.docx"
         },
         {
           "semester": 7,
@@ -90,7 +96,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/TBS.json",
-          "pdf": "assets/files/niestacjonarne/TBS.pdf"
+          "pdf": "assets/files/niestacjonarne/TBS.pdf",
+          "docFile": "assets/files/niestacjonarne/TBS.docx"
         },
         {
           "semester": 8,
@@ -102,7 +109,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PBA.json",
-          "pdf": "assets/files/niestacjonarne/PBA.pdf"
+          "pdf": "assets/files/niestacjonarne/PBA.pdf",
+          "docFile": "assets/files/niestacjonarne/PBA.docx"
         }
       ]
     },
@@ -119,7 +127,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PG1.json",
-          "pdf": "assets/files/niestacjonarne/PG1.pdf"
+          "pdf": "assets/files/niestacjonarne/PG1.pdf",
+          "docFile": "assets/files/niestacjonarne/PG1.docx"
         },
         {
           "semester": 6,
@@ -131,7 +140,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/M3D.json",
-          "pdf": "assets/files/niestacjonarne/M3D.pdf"
+          "pdf": "assets/files/niestacjonarne/M3D.pdf",
+          "docFile": "assets/files/niestacjonarne/M3D.docx"
         },
         {
           "semester": 7,
@@ -143,7 +153,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/SGK.json",
-          "pdf": "assets/files/niestacjonarne/SGK.pdf"
+          "pdf": "assets/files/niestacjonarne/SGK.pdf",
+          "docFile": "assets/files/niestacjonarne/SGK.docx"
         },
         {
           "semester": 8,
@@ -155,7 +166,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PG2.json",
-          "pdf": "assets/files/niestacjonarne/PG2.pdf"
+          "pdf": "assets/files/niestacjonarne/PG2.pdf",
+          "docFile": "assets/files/niestacjonarne/PG2.docx"
         }
       ]
     },
@@ -172,7 +184,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/IML.json",
-          "pdf": "assets/files/niestacjonarne/IML.pdf"
+          "pdf": "assets/files/niestacjonarne/IML.pdf",
+          "docFile": "assets/files/niestacjonarne/IML.docx"
         },
         {
           "semester": 6,
@@ -184,7 +197,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/FDL.json",
-          "pdf": "assets/files/niestacjonarne/FDL.pdf"
+          "pdf": "assets/files/niestacjonarne/FDL.pdf",
+          "docFile": "assets/files/niestacjonarne/FDL.docx"
         },
         {
           "semester": 7,
@@ -196,7 +210,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/COV.json",
-          "pdf": "assets/files/niestacjonarne/COV.pdf"
+          "pdf": "assets/files/niestacjonarne/COV.pdf",
+          "docFile": "assets/files/niestacjonarne/COV.docx"
         },
         {
           "semester": 8,
@@ -208,7 +223,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PJN.json",
-          "pdf": "assets/files/niestacjonarne/PJN.pdf"
+          "pdf": "assets/files/niestacjonarne/PJN.pdf",
+          "docFile": "assets/files/niestacjonarne/PJN.docx"
         }
       ]
     },
@@ -225,7 +241,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/RTO.json",
-          "pdf": "assets/files/niestacjonarne/RTO.pdf"
+          "pdf": "assets/files/niestacjonarne/RTO.pdf",
+          "docFile": "assets/files/niestacjonarne/RTO.docx"
         },
         {
           "semester": 6,
@@ -237,7 +254,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PTT.json",
-          "pdf": "assets/files/niestacjonarne/PTT.pdf"
+          "pdf": "assets/files/niestacjonarne/PTT.pdf",
+          "docFile": "assets/files/niestacjonarne/PTT.docx"
         },
         {
           "semester": 7,
@@ -249,7 +267,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/KIP.json",
-          "pdf": "assets/files/niestacjonarne/KIP.pdf"
+          "pdf": "assets/files/niestacjonarne/KIP.pdf",
+          "docFile": "assets/files/niestacjonarne/KIP.docx"
         },
         {
           "semester": 8,
@@ -261,7 +280,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PPS.json",
-          "pdf": "assets/files/niestacjonarne/PPS.pdf"
+          "pdf": "assets/files/niestacjonarne/PPS.pdf",
+          "docFile": "assets/files/niestacjonarne/PPS.docx"
         }
       ]
     }

@@ -59,37 +59,23 @@ export class ProgramService {
         const key = `SPEC_${item.semester}`;
         if (!specBySemesterGroup.has(key)) specBySemesterGroup.set(key, []);
         const existing = specBySemesterGroup.get(key)!.find((x) => x.specName === s.name);
+        const row: SubjectRow = {
+          name: item.name,
+          type: 'O',
+          code: item.code,
+          lecture: item.lecture,
+          tutorial: item.tutorial,
+          lab: item.lab,
+          form: item.form,
+          ects: item.ects,
+          syllabusFile: (item as any).syllabusFile,
+          pdf: (item as any).pdf,
+          docFile: (item as any).docFile,
+        };
         if (existing) {
-          existing.items.push({
-            name: item.name,
-            type: 'O',
-            code: item.code,
-            lecture: item.lecture,
-            tutorial: item.tutorial,
-            lab: item.lab,
-            form: item.form,
-            ects: item.ects,
-            syllabusFile: (item as any).syllabusFile,
-            pdf: (item as any).pdf,
-          });
+          existing.items.push(row);
         } else {
-          specBySemesterGroup.get(key)!.push({
-            specName: s.name,
-            items: [
-              {
-                name: item.name,
-                type: 'O',
-                code: item.code,
-                lecture: item.lecture,
-                tutorial: item.tutorial,
-                lab: item.lab,
-                form: item.form,
-                ects: item.ects,
-                syllabusFile: (item as any).syllabusFile,
-                pdf: (item as any).pdf,
-              },
-            ],
-          });
+          specBySemesterGroup.get(key)!.push({ specName: s.name, items: [row] });
         }
       });
     });
@@ -114,6 +100,7 @@ export class ProgramService {
               ects: subject.ects,
               syllabusFile: (subject as any).syllabusFile,
               pdf: (subject as any).pdf,
+              docFile: (subject as any).docFile,
             },
             leaf: true,
           });
@@ -208,6 +195,7 @@ export class ProgramService {
                 ects: item.ects,
                 syllabusFile: (item as any).syllabusFile,
                 pdf: (item as any).pdf,
+                docFile: (item as any).docFile,
               },
               leaf: true,
             })),
@@ -228,6 +216,7 @@ export class ProgramService {
               electiveGroup: groupId,
               syllabusFile: (subject as any).syllabusFile,
               pdf: (subject as any).pdf,
+              docFile: (subject as any).docFile,
             },
             leaf: true,
           });

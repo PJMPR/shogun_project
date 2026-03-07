@@ -21,7 +21,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/AMs.json",
-          "pdf": "assets/files/niestacjonarne/AMs.pdf"
+          "pdf": "assets/files/niestacjonarne/AMs.pdf",
+          "docFile": "assets/files/niestacjonarne/AMs.docx"
         },
         {
           "name": "Podstawy Programowania",
@@ -33,7 +34,8 @@
           "form": "EZ",
           "ects": 6,
           "syllabusFile": "assets/syllabusy-n/PRG1.json",
-          "pdf": "assets/files/niestacjonarne/PRG1.pdf"
+          "pdf": "assets/files/niestacjonarne/PRG1.pdf",
+          "docFile": "assets/files/niestacjonarne/PRG1.docx"
         },
         {
           "name": "Warsztat programisty",
@@ -45,7 +47,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/WPR.json",
-          "pdf": "assets/files/niestacjonarne/WPR.pdf"
+          "pdf": "assets/files/niestacjonarne/WPR.pdf",
+          "docFile": "assets/files/niestacjonarne/WPR.docx"
         },
         {
           "name": "Użytkowanie komputerów i podstawy systemów operacyjnych",
@@ -57,7 +60,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/UKOS.json",
-          "pdf": "assets/files/niestacjonarne/UKOS.pdf"
+          "pdf": "assets/files/niestacjonarne/UKOS.pdf",
+          "docFile": "assets/files/niestacjonarne/UKOS.docx"
         },
         {
           "name": "Historia i kultura Japonii",
@@ -69,7 +73,8 @@
           "form": "Z",
           "ects": 2,
           "syllabusFile": "assets/syllabusy-n/HKJ.json",
-          "pdf": "assets/files/niestacjonarne/HKJ.pdf"
+          "pdf": "assets/files/niestacjonarne/HKJ.pdf",
+          "docFile": "assets/files/niestacjonarne/HKJ.docx"
         },
         {
           "name": "Wstęp do zarządzania",
@@ -81,7 +86,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/WDZ.json",
-          "pdf": "assets/files/niestacjonarne/WDZ.pdf"
+          "pdf": "assets/files/niestacjonarne/WDZ.pdf",
+          "docFile": "assets/files/niestacjonarne/WDZ.docx"
         },
         {
           "name": "Język angielski 1",
@@ -93,7 +99,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG1.json",
-          "pdf": "assets/files/niestacjonarne/ANG1.pdf"
+          "pdf": "assets/files/niestacjonarne/ANG1.pdf",
+          "docFile": "assets/files/niestacjonarne/ANG1.docx"
         },
         {
           "name": "Szkolenie BHP",
@@ -127,7 +134,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/ALG.json",
-          "pdf": "assets/files/niestacjonarne/ALG.pdf"
+          "pdf": "assets/files/niestacjonarne/ALG.pdf",
+          "docFile": "assets/files/niestacjonarne/ALG.docx"
         },
         {
           "name": "Matematyka Dyskretna",
@@ -139,7 +147,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/MAD.json",
-          "pdf": "assets/files/niestacjonarne/MAD.pdf"
+          "pdf": "assets/files/niestacjonarne/MAD.pdf",
+          "docFile": "assets/files/niestacjonarne/MAD.docx"
         },
         {
           "name": "Relacyjne bazy danych",
@@ -151,7 +160,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/RBD.json",
-          "pdf": "assets/files/niestacjonarne/RBD.pdf"
+          "pdf": "assets/files/niestacjonarne/RBD.pdf",
+          "docFile": "assets/files/niestacjonarne/RBD.docx"
         },
         {
           "name": "Programowanie obiektowe",
@@ -163,7 +173,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/POJ.json",
-          "pdf": "assets/files/niestacjonarne/POJ.pdf"
+          "pdf": "assets/files/niestacjonarne/POJ.pdf",
+          "docFile": "assets/files/niestacjonarne/POJ.docx"
         },
         {
           "name": "Technologie internetu",
@@ -175,7 +186,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/TIN.json",
-          "pdf": "assets/files/niestacjonarne/TIN.pdf"
+          "pdf": "assets/files/niestacjonarne/TIN.pdf",
+          "docFile": "assets/files/niestacjonarne/TIN.docx"
         },
         {
           "name": "Język angielski 2",
@@ -187,7 +199,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG2.json",
-          "pdf": "assets/files/niestacjonarne/ANG2.pdf"
+          "pdf": "assets/files/niestacjonarne/ANG2.pdf",
+          "docFile": "assets/files/niestacjonarne/ANG2.docx"
         }
       ]
     },
@@ -211,7 +224,8 @@
           "form": "Z",
           "ects": 6,
           "syllabusFile": "assets/syllabusy-n/PAI.json",
-          "pdf": "assets/files/niestacjonarne/PAI.pdf"
+          "pdf": "assets/files/niestacjonarne/PAI.pdf",
+          "docFile": "assets/files/niestacjonarne/PAI.docx"
         },
         {
           "name": "Fizyka",
@@ -223,7 +237,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/FIZ.json",
-          "pdf": "assets/files/niestacjonarne/FIZ.pdf"
+          "pdf": "assets/files/niestacjonarne/FIZ.pdf",
+          "docFile": "assets/files/niestacjonarne/FIZ.docx"
         },
         {
           "name": "Statystyczna analiza danych",
@@ -235,7 +250,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/SAD.json",
-          "pdf": "assets/files/niestacjonarne/SAD.pdf"
+          "pdf": "assets/files/niestacjonarne/SAD.pdf",
+          "docFile": "assets/files/niestacjonarne/SAD.docx"
         },
         {
           "name": "Algorytmy i struktury danych",
@@ -247,7 +263,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/ASD.json",
-          "pdf": "assets/files/niestacjonarne/ASD.pdf"
+          "pdf": "assets/files/niestacjonarne/ASD.pdf",
+          "docFile": "assets/files/niestacjonarne/ASD.docx"
         },
         {
           "name": "Systemy operacyjne",
@@ -259,7 +276,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/SOP.json",
-          "pdf": "assets/files/niestacjonarne/SOP.pdf"
+          "pdf": "assets/files/niestacjonarne/SOP.pdf",
+          "docFile": "assets/files/niestacjonarne/SOP.docx"
         },
         {
           "name": "Język angielski 3",
@@ -271,7 +289,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG3.json",
-          "pdf": "assets/files/niestacjonarne/ANG3.pdf"
+          "pdf": "assets/files/niestacjonarne/ANG3.pdf",
+          "docFile": "assets/files/niestacjonarne/ANG3.docx"
         }
       ]
     },
@@ -295,7 +314,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/GRK.json",
-          "pdf": "assets/files/niestacjonarne/GRK.pdf"
+          "pdf": "assets/files/niestacjonarne/GRK.pdf",
+          "docFile": "assets/files/niestacjonarne/GRK.docx"
         },
         {
           "name": "Elektronika",
@@ -307,7 +327,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/ELK.json",
-          "pdf": "assets/files/niestacjonarne/ELK.pdf"
+          "pdf": "assets/files/niestacjonarne/ELK.pdf",
+          "docFile": "assets/files/niestacjonarne/ELK.docx"
         },
         {
           "name": "Sieci komputerowe",
@@ -319,7 +340,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/SKOA.json",
-          "pdf": "assets/files/niestacjonarne/SKOA.pdf"
+          "pdf": "assets/files/niestacjonarne/SKOA.pdf",
+          "docFile": "assets/files/niestacjonarne/SKOA.docx"
         },
         {
           "name": "Programowanie Sprzętowe",
@@ -331,7 +353,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/LLP.json",
-          "pdf": "assets/files/niestacjonarne/LLP.pdf"
+          "pdf": "assets/files/niestacjonarne/LLP.pdf",
+          "docFile": "assets/files/niestacjonarne/LLP.docx"
         },
         {
           "name": "Języki programowania 1",
@@ -365,7 +388,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
-          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf"
+          "pdf": "assets/files/niestacjonarne/ANG1-3.pdf",
+          "docFile": "assets/files/niestacjonarne/ANG1-3.docx"
         }
       ]
     },
@@ -389,7 +413,8 @@
           "form": "Z",
           "ects": 3,
           "syllabusFile": "assets/syllabusy-n/BSI.json",
-          "pdf": "assets/files/niestacjonarne/BSI.pdf"
+          "pdf": "assets/files/niestacjonarne/BSI.pdf",
+          "docFile": "assets/files/niestacjonarne/BSI.docx"
         },
         {
           "name": "Narzędzia sztucznej inteligencji",
@@ -401,7 +426,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/NAI.json",
-          "pdf": "assets/files/niestacjonarne/NAI.pdf"
+          "pdf": "assets/files/niestacjonarne/NAI.pdf",
+          "docFile": "assets/files/niestacjonarne/NAI.docx"
         },
         {
           "name": "Systemy wbudowane",
@@ -413,7 +439,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SWB.json",
-          "pdf": "assets/files/niestacjonarne/SWB.pdf"
+          "pdf": "assets/files/niestacjonarne/SWB.pdf",
+          "docFile": "assets/files/niestacjonarne/SWB.docx"
         },
         {
           "name": "Interakcja człowiek-komputer",
@@ -425,7 +452,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/ICK.json",
-          "pdf": "assets/files/niestacjonarne/ICK.pdf"
+          "pdf": "assets/files/niestacjonarne/ICK.pdf",
+          "docFile": "assets/files/niestacjonarne/ICK.docx"
         },
         {
           "name": "Systemy baz danych 1",
@@ -448,7 +476,8 @@
           "form": "Z",
           "ects": 2,
           "electiveGroup": "SBD1_2"
-        },        {
+        },
+        {
           "name": "Lektorat",
           "type": "O",
           "code": "LEK1",
@@ -481,7 +510,8 @@
           "form": "Z",
           "ects": 6,
           "syllabusFile": "assets/syllabusy-n/PRI.json",
-          "pdf": "assets/files/niestacjonarne/PRI.pdf"
+          "pdf": "assets/files/niestacjonarne/PRI.pdf",
+          "docFile": "assets/files/niestacjonarne/PRI.docx"
         },
         {
           "name": "Technologie aplikacji mobilnych 1",
@@ -572,7 +602,8 @@
           "ects": 6,
           "electiveGroup": "BYT",
           "syllabusFile": "assets/syllabusy-n/BYT.json",
-          "pdf": "assets/files/niestacjonarne/BYT.pdf"
+          "pdf": "assets/files/niestacjonarne/BYT.pdf",
+          "docFile": "assets/files/niestacjonarne/BYT.docx"
         },
         {
           "name": "Przedmiot Specjalizacyjny 3",
@@ -618,7 +649,6 @@
           "ects": 5,
           "electiveGroup": "OB_7_1"
         },
-
         {
           "name": "Lektorat",
           "type": "O",
@@ -675,7 +705,8 @@
           "ects": 3,
           "electiveGroup": "PSEM",
           "syllabusFile": "assets/syllabusy-n/PSEM.json",
-          "pdf": "assets/files/niestacjonarne/PSEM.pdf"
+          "pdf": "assets/files/niestacjonarne/PSEM.pdf",
+          "docFile": "assets/files/niestacjonarne/PSEM.docx"
         },
         {
           "name": "Przedmiot Specjalizacyjny 4",
@@ -709,7 +740,8 @@
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SAI.json",
-          "pdf": "assets/files/niestacjonarne/SAI.pdf"
+          "pdf": "assets/files/niestacjonarne/SAI.pdf",
+          "docFile": "assets/files/niestacjonarne/SAI.docx"
         },
         {
           "name": "Lektorat",

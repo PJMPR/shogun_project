@@ -75,6 +75,11 @@ export class NiestacjonarneProgramComponent implements OnInit {
     this.router.navigate(['/pdf-viewer'], { queryParams: { url, title } });
   }
 
+
+  getDocUrl(docPath: string): string {
+    return this.baseHrefService.assetUrl(docPath.replace(/^assets\//, ''));
+  }
+
   ngOnInit(): void {
     this.http.get<any>(this.baseHrefService.assetUrl('niestacjonarne/program.json')).subscribe({
       next: (raw) => { if (raw?.pdf) this.programPdf.set(raw.pdf); },

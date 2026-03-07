@@ -110,11 +110,18 @@
                           severity="primary"
                           (onClick)="openDetails(rowData, sem.semester)"
                         />
-                        @if (rowData.pdf) {
-                          <p-button icon="pi pi-file-pdf" [rounded]="true" [text]="true" severity="danger" size="small"
-                            title="Pobierz sylabus (PDF)"
-                            (onClick)="openPdf(rowData.pdf, rowData.name)" />
-                        }
+            @if (rowData.pdf) {
+              <p-button icon="pi pi-file-pdf" [rounded]="true" [text]="true" severity="danger" size="small"
+                title="Pobierz sylabus (PDF)"
+                (onClick)="openPdf(rowData.pdf, rowData.name)" />
+            }
+            @if (rowData.docFile) {
+              <a [href]="getDocUrl(rowData.docFile)" [download]="rowData.code + '.docx'"
+                class="p-button p-button-rounded p-button-text p-button-sm p-button-info doc-btn"
+                title="Pobierz sylabus (Word)">
+                <span class="doc-icon">W</span>
+              </a>
+            }
                       </div>
                     }
                   </td>

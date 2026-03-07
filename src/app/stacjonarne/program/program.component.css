@@ -35,6 +35,30 @@
   flex-wrap: nowrap;
 }
 
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #2563eb;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.doc-btn:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.doc-icon {
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: serif;
+  line-height: 1;
+}
+
 .loading-info {
   text-align: center;
   padding: 3rem;
