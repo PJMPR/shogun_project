@@ -323,6 +323,20 @@
   justify-content: center;
   align-items: center;
   border-right: 1px solid var(--p-surface-200);
+  overflow: hidden;
+}
+
+:host ::ng-deep .ns-tresci-col-nr p-inputnumber,
+:host ::ng-deep .ns-tresci-col-nr .p-inputnumber {
+  width: 100%;
+  max-width: 68px;
+}
+
+:host ::ng-deep .ns-tresci-col-nr .p-inputnumber input {
+  width: 100%;
+  text-align: center;
+  padding: 0.35rem 0.25rem;
+  min-width: 0;
 }
 
 .ns-tresci-col-w {
@@ -338,14 +352,6 @@
   justify-content: center;
 }
 
-:host ::ng-deep .ns-inputnumber-sm {
-  width: 70px;
-}
-
-:host ::ng-deep .ns-inputnumber-sm input {
-  text-align: center;
-  padding: 0.35rem 0.25rem;
-}
 
 .ns-textarea-sm {
   font-size: 0.85rem;

@@ -99,6 +99,78 @@
 
 .es-przedmiot-row { display: flex; gap: 0.75rem; align-items: flex-end; margin-bottom: 0.75rem; }
 
+/* Tabelka treści programowych */
+.es-tresci-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--p-surface-200);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.es-tresci-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 40px;
+  gap: 0;
+  background: var(--p-surface-100);
+  border-bottom: 1px solid var(--p-surface-200);
+}
+
+.es-tresci-header span {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--p-surface-600);
+}
+
+.es-tresci-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 40px;
+  gap: 0;
+  border-bottom: 1px solid var(--p-surface-100);
+  align-items: stretch;
+}
+
+.es-tresci-row:last-child { border-bottom: none; }
+
+.es-tresci-col-nr,
+.es-tresci-col-w,
+.es-tresci-col-c,
+.es-tresci-col-btn {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.es-tresci-col-nr {
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--p-surface-200);
+  overflow: hidden;
+}
+
+:host ::ng-deep .es-tresci-col-nr p-inputnumber,
+:host ::ng-deep .es-tresci-col-nr .p-inputnumber {
+  width: 100%;
+  max-width: 68px;
+}
+
+:host ::ng-deep .es-tresci-col-nr .p-inputnumber input {
+  width: 100%;
+  text-align: center;
+  padding: 0.35rem 0.25rem;
+  min-width: 0;
+}
+
+.es-tresci-col-w { border-right: 1px solid var(--p-surface-200); }
+.es-tresci-col-c { border-right: 1px solid var(--p-surface-200); }
+.es-tresci-col-btn { align-items: center; justify-content: center; }
+
+.es-textarea-sm { font-size: 0.85rem; }
+.es-add-btn { margin-top: 0.25rem; }
+
 .es-action-bar {
   display: flex;
   gap: 1rem;
