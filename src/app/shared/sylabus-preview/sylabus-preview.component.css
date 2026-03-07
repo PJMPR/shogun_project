@@ -114,3 +114,18 @@
   font-style: italic;
   color: var(--p-surface-600);
 }
+
+.praca-wlasna-opis {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--p-surface-300);
+}
+
+.sylabus-list-inline {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  list-style: disc;
+}
+

@@ -129,27 +129,46 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 
 \section{Treści programowe}
 
-\begin{enumerate}
-  \item Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI.
-  \item Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore.
-  \item Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze.
-  \item Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera.
-  \item Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych.
-  \item Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec.
-  \item Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne.
-  \item Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s.
-  \item Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces.
-  \item Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra.
-  \item Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy.
-  \item Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych.
-  \item Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler.
-  \item Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault.
-  \item CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS.
-\end{enumerate}
+\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+\endhead
+  \hline
+  Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI. & & \\
+  \hline
+  Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore. & & \\
+  \hline
+  Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze. & & \\
+  \hline
+  Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera. & & \\
+  \hline
+  Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych. & & \\
+  \hline
+  Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec. & & \\
+  \hline
+  Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne. & & \\
+  \hline
+  Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s. & & \\
+  \hline
+  Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces. & & \\
+  \hline
+  Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra. & & \\
+  \hline
+  Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy. & & \\
+  \hline
+  Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych. & & \\
+  \hline
+  Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler. & & \\
+  \hline
+  Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault. & & \\
+  \hline
+  CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS. & & \\
+  \hline
+\end{longtable}
 
 \section{Przedmiotowe efekty uczenia się}
 
-\subsection*{}
+\subsection*{Wiedza}
 \begin{itemize}
   \item Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności.
   \item Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem.
@@ -187,23 +206,15 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 \section{Kryteria oceny}
 
 \begin{itemize}
-  \item Laboratorium – zaliczenie z oceną:
-  \item Ocena ciągła na podstawie sprawozdań z zajęć laboratoryjnych (40\% oceny końcowej laboratorium).
-  \item Projekt końcowy: skonteneryzowanie wielokomponentowej aplikacji webowej (frontend, backend, baza danych) z użyciem Docker Compose oraz wdrożenie jej na lokalny klaster Kubernetes z konfiguracją Ingress i zmiennymi środowiskowymi (60\% oceny końcowej laboratorium).
-  \item Warunkiem zaliczenia laboratorium jest oddanie wszystkich sprawozdań oraz obrona projektu końcowego.
-  \item Ocena końcowa przedmiotu: średnia ważona oceny z egzaminu (60\%) i oceny z laboratorium (40\%).
+  \item Brak danych.
 \end{itemize}
+
 
 \section{Metody dydaktyczne}
 
-\textbf{wyklad:}
+\textbf{Wykład:}
 \begin{itemize}
   \item Wykład z prezentacją multimedialną, demonstracje na żywo, analiza przypadków przemysłowych, omawianie dokumentacji technicznej Docker i Kubernetes.
-\end{itemize}
-\vspace{4pt}
-\textbf{laboratorium:}
-\begin{itemize}
-  \item Ćwiczenia praktyczne: budowanie, uruchamianie i orkiestracja kontenerów z użyciem Docker, Docker Compose oraz Kubernetes; realizacja projektu końcowego obejmującego pełny cykl konteneryzacji aplikacji webowej.
 \end{itemize}
 \vspace{4pt}
 
@@ -212,17 +223,17 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 
 \textbf{Podstawowa:}
 \begin{itemize}
-  \item N. Mouat: "Docker. Projektowanie i wdrażanie aplikacji", Helion, Gliwice 2016 (Using Docker, O'Reilly 2015).
-  \item B. Burns, J. Beda, K. Hightower: "Kubernetes. Tworzenie niezawodnych systemów rozproszonych", Helion, Gliwice 2023 (Kubernetes: Up and Running, 3rd ed., O'Reilly 2022).
+  \item N. Mouat: ''Docker. Projektowanie i wdrażanie aplikacji'', Helion, Gliwice 2016 (Using Docker, O'Reilly 2015).
+  \item B. Burns, J. Beda, K. Hightower: ''Kubernetes. Tworzenie niezawodnych systemów rozproszonych'', Helion, Gliwice 2023 (Kubernetes: Up and Running, 3rd ed., O'Reilly 2022).
   \item dokumentacja oficjalna Docker: docs.docker.com.
   \item dokumentacja oficjalna Kubernetes: kubernetes.io/docs.
 \end{itemize}
 
 \textbf{Uzupełniająca:}
 \begin{itemize}
-  \item B. Kane: "Docker w praktyce", Helion, Gliwice 2019 (Docker in Practice, 2nd ed., Manning 2018).
-  \item M. Luksa: "Kubernetes w akcji", Helion, Gliwice 2019 (Kubernetes in Action, Manning 2018).
-  \item M. Kleppmann: "Przetwarzanie danych w dużej skali. Niezawodność, skalowalność i łatwość konserwacji systemów", Helion 2021.
+  \item B. Kane: ''Docker w praktyce'', Helion, Gliwice 2019 (Docker in Practice, 2nd ed., Manning 2018).
+  \item M. Luksa: ''Kubernetes w akcji'', Helion, Gliwice 2019 (Kubernetes in Action, Manning 2018).
+  \item M. Kleppmann: ''Przetwarzanie danych w dużej skali. Niezawodność, skalowalność i łatwość konserwacji systemów'', Helion 2021.
   \item The Twelve-Factor App: 12factor.net – metodologia budowania aplikacji gotowych do konteneryzacji.
 \end{itemize}
 

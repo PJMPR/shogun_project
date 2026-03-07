@@ -21,30 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań programistycznych w technologii .NET; implementacja projektów z użyciem ASP.NET Core, Entity Framework; przygotowanie do zadań laboratoryjnych."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "z prezentacją multimedialna",
-            "z prezentacją oprogramowania",
-            "rozwiązywanie zadań",
-            "brak",
-            "Kryteria oceny",
-            "ocena praktycznego zastosowania kwestii omawianych na wykładach. W ramach każdej jednostki laboratoryjnej studenci otrzymują do wykonania zadania programistyczne. Przedmiot zalicza otrzymanie minimum 50% punktów.",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "brak"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Programowanie obiektowe w Javie",
@@ -80,16 +81,63 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do Visual Studio i języka C#",
-            "Postawy programowania obiektowego w C#: definiowanie klas i obiektów, ukrywanie informacji w klasach języka C#, modyfikatory dostępu, klasy częściowe, porównanie właściwości struktur i klas, konstruktory i destruktory obiektów, inicjalizowanie struktur, dziedziczenie i przesłanianie metod",
-            "Konstrukcje programistyczne: definicja właściwości i indeksatorów, składowe statyczne, przeciążanie operatorów",
-            "Techniki zaawansowane: atrybuty i mechanizm refleksji, delegacje i obsługa zdarzeń, serializacja",
-            "Wprowadzenie do tworzenia serwisów webowych w technologii ASP.",
-            "Informacje dodatkowe",
-            "Wymagana instalacja współczesnej wersji kompilatora .Net wraz z odpowiednim wsparciem edycji kodu i jego uruchamiania.",
-            "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
-            "Zrozumienie zagadnień realizowanych w ramach tego przedmiotu jest niezbędne do wykonywania zawodów: programisty oraz architekta oprogramowania w firmach wykorzystujących bibliotekę .Net."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do Visual Studio i języka C#",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Postawy programowania obiektowego w C#: definiowanie klas i obiektów, ukrywanie informacji w klasach języka C#, modyfikatory dostępu, klasy częściowe, porównanie właściwości struktur i klas, konstruktory i destruktory obiektów, inicjalizowanie struktur, dziedziczenie i przesłanianie metod",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Konstrukcje programistyczne: definicja właściwości i indeksatorów, składowe statyczne, przeciążanie operatorów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Techniki zaawansowane: atrybuty i mechanizm refleksji, delegacje i obsługa zdarzeń, serializacja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Wprowadzenie do tworzenia serwisów webowych w technologii ASP.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Informacje dodatkowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wymagana instalacja współczesnej wersji kompilatora .Net wraz z odpowiednim wsparciem edycji kodu i jego uruchamiania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Zrozumienie zagadnień realizowanych w ramach tego przedmiotu jest niezbędne do wykonywania zawodów: programisty oraz architekta oprogramowania w firmach wykorzystujących bibliotekę .Net.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The course aims to familiarize students with the basics of the C# language and selected libraries related to .NET technologies (e.g. ASP.NET)."
+        "cel_dydaktyczny_eng": "The course aims to familiarize students with the basics of the C# language and selected libraries related to .NET technologies (e.g. ASP.NET).",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

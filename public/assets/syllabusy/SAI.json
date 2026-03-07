@@ -21,9 +21,21 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Analiza wpływu technologii informatycznych na społeczeństwo; przygotowanie prezentacji tematycznej; lektura wskazanych materiałów dotyczących etyki i społecznych aspektów IT."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład konwersatoryjny (z elementami dyskusji)",
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "burza mózgów",
+                "dyskusja",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Nieoceniany"
@@ -32,15 +44,13 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "Kryteria oceny",
-            "ustalenie oceny zaliczeniowej na podstawie ocen cząstkowych otrzymanych w trakcie trwania semestru: analizy wpływu, prezentacji i zagadnień z komunikacji",
-            "brak"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "prezentacja elementu zespołowej pracy semestralnej"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "PRIN – Procesy Innowacyjne",
@@ -107,23 +117,98 @@
             ]
         },
         "tresci_programowe": [
-            "Społeczny kontekst informatyki; odpowiedzialność zawodowa i etyczna. Profesjonalizm w inżynierii oprogramowania. Wprowadzenie do zajęć. Dyskusja tematów związanych ze społecznymi aspektami wykorzystania Internetu Analiza zawartości i zakresu ACM/IEEE Code of Ethics and Professional Practice",
-            "Wyzwania pracy w zespołach zdalnych i rozproszonych.Strategie pracy i narzędzia usprawniające pracę w zespołach zdalnych i rozproszonych",
-            "Usprawnianie pracy i rozwiązywanie problemów w zespole informatycznym. Metodyka Scrum.Identyfikacja problemów (projekty inżynierskie)",
-            "Rozszerzona analiza wpływu. Potrzeba, usytuowanie, zakres. Metoda SODIS (Software Development Impact Statement).Prowadzenie analizy rozszerzonej metodą SoDIS",
-            "Ryzyko w projekcie informatycznym. Ryzyko i odpowiedzialność związane z systemami informatycznymi.Wprowadzenie do analizy ryzyka na przykładzie wczesnego etapu projektów inżynierskich",
-            "Obszary styku i zagrożeń; przedsiębiorczość; wiarygodność; zjawiska społeczne i kulturowe, swoboda wypowiedzi, własność intelektualnaĆwiczenie sztuki prezentacji",
-            "Znaczenie „czynnika ludzkiego” w projekcie",
-            "informatycznym – szanse i zagrożeniaAnaliza studium przypadku produktów, usług i firm informatycznych – czynników decydujących o sukcesie/porażce",
-            "Wybrane aspekty efektywnej pracy zespołowejAnaliza strategii i narzędzi sprzyjających pracy zespołowej",
-            "Psychologiczne aspekty skutecznej komunikacji. Od myślenia abstrakcyjnego do konkretyzacji przekazu.Analiza i projektowanie protokołów komunikacyjnych – zastosowanie w projekcie inżynierskim",
-            "Prezentowanie informacji. StorytellingZasady efektywnej prezentacji danych",
-            "Aspekty prawne budowy i działania systemów informatycznych; audyt informatycznyPrzygotowanie i prezentacja seminaryjna tematów związanych z zagadnieniami prywatności i swobód obywatelskich",
-            "Własność intelektualna. Zagadnienia prywatności, swobód obywatelskich (wykład zaproszony)Przygotowanie i prezentacja seminaryjna tematów związanych z aspektami prawnymi budowy i działania systemów informatycznych",
-            "Slow Tech Analiza studium przypadków",
-            "Metody i narzędzia analizy aspektów etyki w projekcie informatycznym. Analiza przypadku, podejście proceduralne; wzorce etyczneAnaliza wybranych przypadków metodą Bynuma i Rogersona",
-            "Problemy ochrony i poufności danych"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Społeczny kontekst informatyki; odpowiedzialność zawodowa i etyczna. Profesjonalizm w inżynierii oprogramowania. Wprowadzenie do zajęć. Dyskusja tematów związanych ze społecznymi aspektami wykorzystania Internetu Analiza zawartości i zakresu ACM/IEEE Code of Ethics and Professional Practice",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Wyzwania pracy w zespołach zdalnych i rozproszonych.Strategie pracy i narzędzia usprawniające pracę w zespołach zdalnych i rozproszonych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Usprawnianie pracy i rozwiązywanie problemów w zespole informatycznym. Metodyka Scrum.Identyfikacja problemów (projekty inżynierskie)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Rozszerzona analiza wpływu. Potrzeba, usytuowanie, zakres. Metoda SODIS (Software Development Impact Statement).Prowadzenie analizy rozszerzonej metodą SoDIS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Ryzyko w projekcie informatycznym. Ryzyko i odpowiedzialność związane z systemami informatycznymi.Wprowadzenie do analizy ryzyka na przykładzie wczesnego etapu projektów inżynierskich",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Obszary styku i zagrożeń; przedsiębiorczość; wiarygodność; zjawiska społeczne i kulturowe, swoboda wypowiedzi, własność intelektualnaĆwiczenie sztuki prezentacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Znaczenie „czynnika ludzkiego” w projekcie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "informatycznym – szanse i zagrożeniaAnaliza studium przypadku produktów, usług i firm informatycznych – czynników decydujących o sukcesie/porażce",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Wybrane aspekty efektywnej pracy zespołowejAnaliza strategii i narzędzi sprzyjających pracy zespołowej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Psychologiczne aspekty skutecznej komunikacji. Od myślenia abstrakcyjnego do konkretyzacji przekazu.Analiza i projektowanie protokołów komunikacyjnych – zastosowanie w projekcie inżynierskim",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Prezentowanie informacji. StorytellingZasady efektywnej prezentacji danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Aspekty prawne budowy i działania systemów informatycznych; audyt informatycznyPrzygotowanie i prezentacja seminaryjna tematów związanych z zagadnieniami prywatności i swobód obywatelskich",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Własność intelektualna. Zagadnienia prywatności, swobód obywatelskich (wykład zaproszony)Przygotowanie i prezentacja seminaryjna tematów związanych z aspektami prawnymi budowy i działania systemów informatycznych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Slow Tech Analiza studium przypadków",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Metody i narzędzia analizy aspektów etyki w projekcie informatycznym. Analiza przypadku, podejście proceduralne; wzorce etyczneAnaliza wybranych przypadków metodą Bynuma i Rogersona",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Problemy ochrony i poufności danych",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the social aspects of the development of digital technologies, their use and misuse, taking into account the professional and ethical responsibility of computer scientists, legal issues, and the impact of technology on individuals, professional groups, and society. Issues of interpersonal communication and conflict resolution are also discussed."
+        "cel_dydaktyczny_eng": "Introduction to the social aspects of the development of digital technologies, their use and misuse, taking into account the professional and ethical responsibility of computer scientists, legal issues, and the impact of technology on individuals, professional groups, and society. Issues of interpersonal communication and conflict resolution are also discussed.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

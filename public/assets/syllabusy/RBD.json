@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Projektowanie i implementacja zapytań SQL; modelowanie relacyjnych baz danych (normalizacja, diagramy ER); przygotowanie do kolokwium."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,12 +42,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "rozwiązywanie zadań",
-            "Kryteria oceny",
-            "Kolokwium",
-            "Znajomość zagadnień przedstawionych na wykładach."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Student potrafi przygotować schemat bazy danych w języku SQL, gotową do implementacji w dowolnym systemie zarządzania bazami danych, spełniającą oczekiwania klienta, poprawną z punktu widzenia postaci normalnych i wyposażoną w dokumentacje techniczną (w tym diagram ERD, objaśnienia ew. procedur wyzwalanych).",
         "literatura": {
@@ -71,18 +82,73 @@
             ]
         },
         "tresci_programowe": [
-            "Podstawowe cechy relacyjnych baz danych",
-            "Zalety i wady relacyjnych i nierelacyjnych organizacji baz danych",
-            "Znaczenie zależności funkcyjnych i postaci normalnych przy projektowaniu schematu bazy danych.",
-            "Podstawowe elementy i znaczenie diagramów związków encji (ERD) przy projektowaniu schematu bazy danych.",
-            "Podstawowe konstrukcje języka SQL.",
-            "Interfejs ODBC.",
-            "Elementy programistyczne w bazie danych, procedury wyzwalane, definicje, przykłady zastosowań.",
-            "Reguły integralności w bazie danych, przykłady występowania, sposoby realizacji w języku SQL",
-            "Podstawowe zasady optymalizacji zapytań, w tym rodzaje i znaczenie indeksów w bazie danych",
-            "Problemy współbieżnego dostępu do baz danych, rozwiązania tych problemów (transakcje, blokady).",
-            "Inne rodzaje baz danych: bazy dokumentowe, bazy grafowe."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawowe cechy relacyjnych baz danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Zalety i wady relacyjnych i nierelacyjnych organizacji baz danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Znaczenie zależności funkcyjnych i postaci normalnych przy projektowaniu schematu bazy danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Podstawowe elementy i znaczenie diagramów związków encji (ERD) przy projektowaniu schematu bazy danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Podstawowe konstrukcje języka SQL.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Interfejs ODBC.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Elementy programistyczne w bazie danych, procedury wyzwalane, definicje, przykłady zastosowań.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Reguły integralności w bazie danych, przykłady występowania, sposoby realizacji w języku SQL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Podstawowe zasady optymalizacji zapytań, w tym rodzaje i znaczenie indeksów w bazie danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Problemy współbieżnego dostępu do baz danych, rozwiązania tych problemów (transakcje, blokady).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Inne rodzaje baz danych: bazy dokumentowe, bazy grafowe.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Students are able to prepare a database schema in SQL, ready for implementation in any database management system, meeting client expectations, correct from the point of view of normalization, and equipped with technical documentation (including an ERD diagram and explanations of any triggers or procedures used)."
+        "cel_dydaktyczny_eng": "Students are able to prepare a database schema in SQL, ready for implementation in any database management system, meeting client expectations, correct from the point of view of normalization, and equipped with technical documentation (including an ERD diagram and explanations of any triggers or procedures used).",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

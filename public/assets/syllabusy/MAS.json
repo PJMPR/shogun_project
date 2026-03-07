@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja projektów programistycznych dotyczących analizy leksykalnej i automatów; przygotowanie do kolokwium i egzaminu; tworzenie dokumentacji modeli."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,13 +42,15 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Wykład problemowy, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu",
-            "Ćwiczenia rozszerzone o projekty programistyczne poświęcone analizie leksykalnej i rozpoznawaniu języków przy pomocy automatów",
-            "zaliczenie ćwiczeń  wymaga zdobycia co najmniej  50% punktów możliwych do zdobycia na kolokwium oraz za zrealizowane projekty programistyczne",
-            "Warunkiem dopuszczenia do egzaminu jest zaliczenie ćwiczeń.",
-            "Warunkiem zdania egzaminu pisemnego jest zdobycie co najmniej  50% punktów."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "cel_dydaktyczny": "Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.",
         "literatura": {
             "podstawowa": {
@@ -67,7 +79,11 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -87,6 +103,17 @@
                 "wymagania": "Podstawy matematyki dyskretnej"
             }
         ],
-        "cel_dydaktyczny_eng": "The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL."
+        "cel_dydaktyczny_eng": "The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

@@ -483,7 +483,17 @@ class SyllabusBuilder:
         _value_cell(row.cells[0], _safe(s, 'odpowiedzialny_za_przedmiot'))
 
     # -------------------------------------------------------------------------
-    # Sekcja 9 — Formy zajęć
+    # Sekcja 9 — Formy zajęć  (struktura 1:1 z szablonem Sylabus3.0_PL.docx)
+    # Szablon: tabela 10-kolumnowa
+    #   R0  [s=10]        nagłówek sekcji
+    #   R1  [s=10]        "Wymiar godzinowy..."
+    #   R2  [s=2|s=3|s=3|s=2]  nagłówki kolumn godzin
+    #   R3  [s=2|s=3|s=3|s=2]  wartości godzin
+    #   R4  [s=10]        "Bilans ECTS"
+    #   R5  [s=5|s=3|s=2] nagłówki bilansu
+    #   R6  [s=5|s=3|s=2] zajęcia z udziałem nauczyciela
+    #   R7  [s=5|s=3|s=2] samodzielna praca studenta (liczby)
+    #   R8  [s=5|s=5]     samodzielna praca studenta (opis w punktach)
     # -------------------------------------------------------------------------
     def _section_9(self):
         s = self.s
@@ -491,66 +501,115 @@ class SyllabusBuilder:
         godziny = s.get('godziny', {})
         ects_total = _safe(s, 'ects', default=0)
 
-        # Nagłówek sekcji
-        t_header = self.doc.add_table(rows=0, cols=1)
-        _set_table_borders(t_header)
-        _set_table_width(t_header, self.doc)
-        row = t_header.add_row()
-        _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
-        _run_in_cell(row.cells[0], '9.  Formy zajęć, sposób ich realizacji i przypisana im liczba godzin:', bold=True, size=FONT_SIZE_LABEL)
-
-        # Tabela godzin — 4 kolumny
-        t_godziny = self.doc.add_table(rows=0, cols=4)
-        _set_table_borders(t_godziny)
-        _set_table_width(t_godziny, self.doc)
-
-        row = t_godziny.add_row()
-        col_headers = ['wykład', 'ćwiczenia/laboratorium/pracownia', 'wykład internetowo', 'ćw./lab./prac. internetowo']
-        for i, h in enumerate(col_headers):
-            _set_cell_bg(row.cells[i], COLOR_HEADER_BG)
-            _run_in_cell(row.cells[i], h, bold=True, size=Pt(8))
-
         wyklady = forma.get('wyklady') or 0
         lab = forma.get('laboratorium_projekt') or 0
         cwiczenia = forma.get('cwiczenia_lektorat_seminarium') or 0
-        total_cwiczenia = lab + cwiczenia
-
-        row = t_godziny.add_row()
-        _value_cell(row.cells[0], str(wyklady) if wyklady else '—')
-        _value_cell(row.cells[1], str(total_cwiczenia) if total_cwiczenia else '—')
-        _value_cell(row.cells[2], '—')
-        _value_cell(row.cells[3], '—')
-
-        # Tabela bilansu ECTS — 3 kolumny
-        t_bilans = self.doc.add_table(rows=0, cols=3)
-        _set_table_borders(t_bilans)
-        _set_table_width(t_bilans, self.doc)
-
-        row = t_bilans.add_row()
-        _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
-        _run_in_cell(row.cells[0], 'Rodzaj nakładu pracy:', bold=True, size=Pt(8))
-        _set_cell_bg(row.cells[1], COLOR_HEADER_BG)
-        _run_in_cell(row.cells[1], 'Liczba godzin', bold=True, size=Pt(8))
-        _set_cell_bg(row.cells[2], COLOR_HEADER_BG)
-        _run_in_cell(row.cells[2], 'ECTS', bold=True, size=Pt(8))
+        total_cwiczenia = (lab or 0) + (cwiczenia or 0)
 
         z_udzialem = godziny.get('z_udzialem_prowadzacego_h') or 0
-        praca_wlasna = godziny.get('praca_wlasna_studenta_h') or 0
+        praca_wlasna_h = godziny.get('praca_wlasna_studenta_h') or 0
         calkowita = godziny.get('calkowita_liczba_godzin_h') or 0
+        praca_opis = godziny.get('praca_wlasna_studenta', '') or ''
 
         ects_z_udzialem = round(z_udzialem / 25, 1) if z_udzialem else 0
-        ects_praca = round(praca_wlasna / 25, 1) if praca_wlasna else 0
+        ects_praca = round(praca_wlasna_h / 25, 1) if praca_wlasna_h else 0
 
-        rows_bilans = [
-            ('Zajęcia z bezpośrednim udziałem nauczyciela', str(z_udzialem), str(ects_z_udzialem)),
-            ('Samodzielna praca studenta', str(praca_wlasna), str(ects_praca)),
-            ('Suma', str(calkowita), str(ects_total)),
-        ]
-        for label, h, e in rows_bilans:
-            row = t_bilans.add_row()
-            _value_cell(row.cells[0], label)
-            _value_cell(row.cells[1], h)
-            _value_cell(row.cells[2], e)
+        # Jedna tabela 10-kolumnowa (jak w szablonie)
+        table = self.doc.add_table(rows=0, cols=10)
+        _set_table_borders(table)
+        _set_table_width(table, self.doc)
+
+        # R0: nagłówek sekcji [s=10]
+        row = table.add_row()
+        hdr = row.cells[0]
+        for i in range(1, 10):
+            hdr = hdr.merge(row.cells[i])
+        _set_cell_bg(hdr, COLOR_HEADER_BG)
+        _run_in_cell(hdr, '9.  Formy zajęć, sposób ich realizacji i przypisana im liczba godzin:', bold=True, size=FONT_SIZE_LABEL)
+
+        # R1: "Wymiar godzinowy..." [s=10]
+        row = table.add_row()
+        sub = row.cells[0]
+        for i in range(1, 10):
+            sub = sub.merge(row.cells[i])
+        _set_cell_bg(sub, COLOR_HEADER_BG)
+        _run_in_cell(sub, 'Wymiar godzinowy (liczba godzin w semestrze)', bold=False, size=Pt(8))
+
+        # R2: nagłówki kolumn godzin [s=2 | s=3 | s=3 | s=2]
+        row = table.add_row()
+        cells = row.cells
+        c0 = cells[0].merge(cells[1])
+        c1 = cells[2].merge(cells[3]).merge(cells[4])
+        c2 = cells[5].merge(cells[6]).merge(cells[7])
+        c3 = cells[8].merge(cells[9])
+        for cell, label in [
+            (c0, 'wykład'),
+            (c1, 'ćwiczenia/laboratorium/pracownia'),
+            (c2, 'wykład internetowo'),
+            (c3, 'ćw./lab./prac. internetowo'),
+        ]:
+            _set_cell_bg(cell, COLOR_HEADER_BG)
+            _run_in_cell(cell, label, bold=True, size=Pt(8))
+
+        # R3: wartości godzin [s=2 | s=3 | s=3 | s=2]
+        row = table.add_row()
+        cells = row.cells
+        v0 = cells[0].merge(cells[1])
+        v1 = cells[2].merge(cells[3]).merge(cells[4])
+        v2 = cells[5].merge(cells[6]).merge(cells[7])
+        v3 = cells[8].merge(cells[9])
+        _value_cell(v0, str(wyklady) if wyklady else '—')
+        _value_cell(v1, str(total_cwiczenia) if total_cwiczenia else '—')
+        _value_cell(v2, '—')
+        _value_cell(v3, '—')
+
+        # R4: "Bilans ECTS" [s=10]
+        row = table.add_row()
+        cells = row.cells
+        bilans_hdr = cells[0]
+        for i in range(1, 10):
+            bilans_hdr = bilans_hdr.merge(cells[i])
+        _set_cell_bg(bilans_hdr, COLOR_HEADER_BG)
+        _run_in_cell(bilans_hdr, 'Bilans ECTS', bold=True, size=FONT_SIZE_LABEL)
+
+        # R5: nagłówki bilansu [s=5 | s=3 | s=2]
+        row = table.add_row()
+        cells = row.cells
+        b0 = cells[0].merge(cells[1]).merge(cells[2]).merge(cells[3]).merge(cells[4])
+        b1 = cells[5].merge(cells[6]).merge(cells[7])
+        b2 = cells[8].merge(cells[9])
+        for cell, label in [(b0, 'Rodzaj nakładu pracy:'), (b1, 'Liczba godzin'), (b2, 'ECTS')]:
+            _set_cell_bg(cell, COLOR_HEADER_BG)
+            _run_in_cell(cell, label, bold=True, size=Pt(8))
+
+        # R6: zajęcia z udziałem nauczyciela [s=5 | s=3 | s=2]
+        row = table.add_row()
+        cells = row.cells
+        r0 = cells[0].merge(cells[1]).merge(cells[2]).merge(cells[3]).merge(cells[4])
+        r1 = cells[5].merge(cells[6]).merge(cells[7])
+        r2 = cells[8].merge(cells[9])
+        _value_cell(r0, 'Zajęcia z bezpośrednim udziałem nauczyciela')
+        _value_cell(r1, str(z_udzialem) if z_udzialem else '')
+        _value_cell(r2, str(ects_z_udzialem) if ects_z_udzialem else '')
+
+        # R7: samodzielna praca studenta – liczby [s=5 | s=3 | s=2]
+        row = table.add_row()
+        cells = row.cells
+        s0 = cells[0].merge(cells[1]).merge(cells[2]).merge(cells[3]).merge(cells[4])
+        s1 = cells[5].merge(cells[6]).merge(cells[7])
+        s2 = cells[8].merge(cells[9])
+        _value_cell(s0, 'Samodzielna praca studenta')
+        _value_cell(s1, str(praca_wlasna_h) if praca_wlasna_h else '')
+        _value_cell(s2, str(ects_praca) if ects_praca else '')
+
+        # R8: opis pracy własnej studenta [s=5 | s=5]
+        row = table.add_row()
+        cells = row.cells
+        d0 = cells[0].merge(cells[1]).merge(cells[2]).merge(cells[3]).merge(cells[4])
+        d1 = cells[5].merge(cells[6]).merge(cells[7]).merge(cells[8]).merge(cells[9])
+        _set_cell_bg(d0, COLOR_HEADER_BG)
+        _run_in_cell(d0, 'Opis samodzielnej pracy studenta', bold=True, size=Pt(8))
+        _value_cell(d1, praca_opis if praca_opis else '')
 
     # -------------------------------------------------------------------------
     # Sekcja 10 — Język wykładowy
@@ -586,10 +645,18 @@ class SyllabusBuilder:
         cell = row.cells[0]
         all_methods = []
 
+        _metody_labels = {
+            'wyklad': 'Wykład',
+            'wykład': 'Wykład',
+            'cwiczenia_laboratorium': 'Ćwiczenia / Laboratorium',
+            'cwiczenia': 'Ćwiczenia',
+            'laboratorium': 'Laboratorium',
+        }
+
         if isinstance(metody, dict):
             for key, methods in metody.items():
-                if methods and isinstance(methods, list):
-                    label = 'Wykład' if 'wyklad' in key.lower() or 'wykład' in key.lower() else key.capitalize()
+                if methods and isinstance(methods, list) and len(methods) > 0:
+                    label = _metody_labels.get(key.lower(), key.replace('_', ' ').capitalize())
                     all_methods.append(('label', f'{label}:'))
                     for m in methods:
                         all_methods.append(('item', f'• {m}'))
@@ -617,7 +684,19 @@ class SyllabusBuilder:
     def _section_12(self):
         s = self.s
         zaliczenie = s.get('zaliczenie', {})
-        kryteria = s.get('kryteria_oceny', [])
+        kryteria = s.get('kryteria_oceny', {})
+
+        # Obsługa nowego formatu {wyklad: [], cwiczenia_laboratorium: []}
+        # oraz starego formatu (lista lub string)
+        if isinstance(kryteria, dict):
+            kryteria_wyklad = kryteria.get('wyklad', []) or []
+            kryteria_cw = kryteria.get('cwiczenia_laboratorium', []) or []
+        elif isinstance(kryteria, list):
+            kryteria_wyklad = kryteria
+            kryteria_cw = kryteria
+        else:
+            kryteria_wyklad = []
+            kryteria_cw = []
 
         table = self.doc.add_table(rows=0, cols=2)
         _set_table_borders(table)
@@ -636,10 +715,28 @@ class SyllabusBuilder:
         _set_cell_bg(row.cells[1], COLOR_HEADER_BG)
         _run_in_cell(row.cells[1], 'ćwiczenia/laboratorium/pracownia', bold=True, size=Pt(8))
 
-        # Formy zaliczenia
+        # Formy zaliczenia - odczytujemy z zaliczenie{} dopasowując do klucza
         forms = ['Nieoceniany', 'Zaliczenie bez oceny', 'Zaliczenie z oceną', 'Egzamin']
         wyklad_sposob = _safe(zaliczenie, 'Wykład', 'sposob')
-        lab_sposob = _safe(zaliczenie, 'Laboratorium', 'sposob')
+        # Szukamy klucza laboratorium lub ćwiczenia
+        lab_sposob = (
+            _safe(zaliczenie, 'Laboratorium', 'sposob') or
+            _safe(zaliczenie, 'Ćwiczenia', 'sposob') or
+            _safe(zaliczenie, 'Cwiczenia', 'sposob') or
+            _safe(zaliczenie, 'Lektorat', 'sposob') or
+            _safe(zaliczenie, 'Seminarium', 'sposob') or ''
+        )
+        # Jeśli brak klucza Wykład, sprawdź inne warianty
+        if not wyklad_sposob:
+            wyklad_sposob = next(
+                (v.get('sposob', '') for k, v in zaliczenie.items()
+                 if 'wyk' in k.lower() and isinstance(v, dict)), ''
+            )
+        if not lab_sposob:
+            lab_sposob = next(
+                (v.get('sposob', '') for k, v in zaliczenie.items()
+                 if 'wyk' not in k.lower() and isinstance(v, dict)), ''
+            )
 
         row = table.add_row()
         for col_idx, sposob in enumerate([wyklad_sposob, lab_sposob]):
@@ -664,13 +761,13 @@ class SyllabusBuilder:
             _set_cell_bg(row.cells[col_idx], COLOR_HEADER_BG)
             _run_in_cell(row.cells[col_idx], 'kryteria oceny:', bold=True, size=Pt(8))
 
-        # Wartości kryteriów
+        # Wartości kryteriów — osobno dla wykładu i ćwiczeń/lab
         row = table.add_row()
-        for col_idx in range(2):
+        for col_idx, kryt_list in enumerate([kryteria_wyklad, kryteria_cw]):
             cell = row.cells[col_idx]
-            if kryteria:
+            if kryt_list:
                 first = True
-                for i, k in enumerate(kryteria):
+                for i, k in enumerate(kryt_list):
                     if first and cell.paragraphs and cell.paragraphs[0].text == '':
                         p = cell.paragraphs[0]
                         first = False
@@ -778,6 +875,27 @@ class SyllabusBuilder:
         _set_table_borders(table)
         _set_table_width(table, self.doc)
 
+        # Ustaw szerokości kolumn: Nr zajęć wąska (1.2 cm), reszta po równo
+        # Robimy to przez ustawienie preferowanych szerokości w XML
+        def _set_col_width(table, col_widths_cm):
+            from docx.oxml import OxmlElement
+            from docx.oxml.ns import qn as _qn
+            tbl = table._tbl
+            tblPr = tbl.find(_qn('w:tblPr'))
+            # usuń istniejący tblGrid jeśli jest
+            existing = tbl.find(_qn('w:tblGrid'))
+            if existing is not None:
+                tbl.remove(existing)
+            tblGrid = OxmlElement('w:tblGrid')
+            for w_cm in col_widths_cm:
+                gridCol = OxmlElement('w:gridCol')
+                # 1 cm = 567 twips
+                gridCol.set(_qn('w:w'), str(int(w_cm * 567)))
+                tblGrid.append(gridCol)
+            tbl.insert(list(tbl).index(tblPr) + 1 if tblPr is not None else 0, tblGrid)
+
+        _set_col_width(table, [1.2, 8.0, 7.5])
+
         # Nagłówek scalony
         row = table.add_row()
         header_cell = row.cells[0]
@@ -793,12 +911,26 @@ class SyllabusBuilder:
             _set_cell_bg(row.cells[i], COLOR_HEADER_BG)
             _run_in_cell(row.cells[i], h, bold=True, size=Pt(8))
 
+        def _get_val(item, key):
+            if isinstance(item, dict):
+                return str(item.get(key) or '')
+            return ''
+
         if tresci:
             for i, tresc in enumerate(tresci):
                 row = table.add_row()
-                _value_cell(row.cells[0], f'{i+1}.')
-                _value_cell(row.cells[1], tresc)
-                _value_cell(row.cells[2], '')
+                if isinstance(tresc, dict):
+                    nr = str(tresc.get('nr_zajec', i + 1)) + '.'
+                    wyk = str(tresc.get('wyklad') or '')
+                    cw = str(tresc.get('cwiczenia') or '')
+                else:
+                    # stary format – string
+                    nr = f'{i+1}.'
+                    wyk = str(tresc)
+                    cw = ''
+                _value_cell(row.cells[0], nr)
+                _value_cell(row.cells[1], wyk)
+                _value_cell(row.cells[2], cw)
         else:
             for i in range(1, 9):
                 row = table.add_row()
@@ -914,6 +1046,18 @@ class SyllabusBuilder:
         s = self.s
         efekty = s.get('efekty_ksztalcenia', {})
 
+        # Kryteria oceny do kolumny "Metody weryfikacji"
+        kryteria_raw = s.get('kryteria_oceny', {})
+        if isinstance(kryteria_raw, dict):
+            kryt_wyklad = kryteria_raw.get('wyklad', []) or []
+            kryt_cw = kryteria_raw.get('cwiczenia_laboratorium', []) or []
+            kryt_all = list(dict.fromkeys(kryt_wyklad + kryt_cw))  # unikalne, zachowując kolejność
+        elif isinstance(kryteria_raw, list):
+            kryt_all = kryteria_raw
+        else:
+            kryt_all = []
+        weryfikacja_str = '; '.join(kryt_all) if kryt_all else ''
+
         sections = [
             ('18.  Wiedza nabywana / dostarczana uczestnikom w trakcie realizacji przedmiotu', 'wiedza'),
             ('19.  Umiejętności nabywane podczas realizacji przedmiotu', 'umiejetnosci'),
@@ -922,7 +1066,6 @@ class SyllabusBuilder:
 
         for section_title, key in sections:
             items = efekty.get(key, [])
-            # Kody kierunkowych efektów dla tej kategorii
             kody_kierunkowe = self._kody_kierunkowe.get(key, [])
 
             table = self.doc.add_table(rows=0, cols=3)
@@ -951,30 +1094,34 @@ class SyllabusBuilder:
             if items:
                 for idx, item in enumerate(items):
                     row = table.add_row()
-                    # Kod kierunkowy — przypisz kolejny z listy (jeśli dostępny)
                     kod_kier = kody_kierunkowe[idx] if idx < len(kody_kierunkowe) else ''
                     _value_cell(row.cells[0], kod_kier)
                     _value_cell(row.cells[1], item)
-                    _value_cell(row.cells[2], '')
+                    _value_cell(row.cells[2], weryfikacja_str)
             else:
-                # Brak efektów przedmiotowych — pokaż tylko kody kierunkowe (jeśli są)
                 if kody_kierunkowe:
                     for kod_kier in kody_kierunkowe:
                         row = table.add_row()
                         _value_cell(row.cells[0], kod_kier)
                         _value_cell(row.cells[1], '')
-                        _value_cell(row.cells[2], '')
+                        _value_cell(row.cells[2], weryfikacja_str)
                 else:
                     for _ in range(3):
                         row = table.add_row()
                         _value_cell(row.cells[0], '')
                         _value_cell(row.cells[1], '')
-                        _value_cell(row.cells[2], '')
+                        _value_cell(row.cells[2], weryfikacja_str)
 
     # -------------------------------------------------------------------------
     # Sekcja 21 — Wymagania laboratorium
     # -------------------------------------------------------------------------
     def _section_21(self):
+        s = self.s
+        wym = s.get('wymagania_laboratorium', {}) or {}
+        pc_params  = wym.get('pc_params', []) or []
+        software   = wym.get('software', []) or []
+        wyposazenie = wym.get('wyposazenie_dodatkowe', []) or []
+
         table = self.doc.add_table(rows=0, cols=3)
         _set_table_borders(table)
         _set_table_width(table, self.doc)
@@ -998,16 +1145,24 @@ class SyllabusBuilder:
             _set_cell_bg(row.cells[i], COLOR_HEADER_BG)
             _run_in_cell(row.cells[i], h, bold=True, size=Pt(8))
 
-        # Puste wiersze
-        for _ in range(2):
+        # Wiersze danych – każda pozycja listy w osobnym wierszu tabeli
+        cols_data = [pc_params, software, wyposazenie]
+        max_rows = max((len(c) for c in cols_data), default=1)
+        if max_rows == 0:
+            max_rows = 1
+        for i in range(max_rows):
             row = table.add_row()
-            for j in range(3):
-                _value_cell(row.cells[j], '')
+            for j, items in enumerate(cols_data):
+                val = items[i] if i < len(items) else ''
+                _value_cell(row.cells[j], val)
 
     # -------------------------------------------------------------------------
     # Sekcja 22 — Informacje dodatkowe
     # -------------------------------------------------------------------------
     def _section_22(self):
+        s = self.s
+        info = _safe(s, 'informacje_dodatkowe') or ''
+
         table = self.doc.add_table(rows=0, cols=1)
         _set_table_borders(table)
         _set_table_width(table, self.doc)
@@ -1017,12 +1172,18 @@ class SyllabusBuilder:
         _run_in_cell(row.cells[0], '22.  Informacje dodatkowe – certyfikaty do których przygotowuje przedmiot', bold=True, size=FONT_SIZE_LABEL)
 
         row = table.add_row()
-        _value_cell(row.cells[0], '')
+        _value_cell(row.cells[0], info)
 
     # -------------------------------------------------------------------------
-    # Sekcja 23 — Uzasadnienie
+    # Sekcja 23 — Uzasadnienie / Rynek pracy
     # -------------------------------------------------------------------------
     def _section_23(self):
+        s = self.s
+        rynek = s.get('rynek_pracy', {}) or {}
+        dziedzina    = str(rynek.get('dziedzina_gospodarki') or '')
+        zawody       = str(rynek.get('zawody') or '')
+        prace_dypl   = rynek.get('prace_dyplomowe') or []
+
         table = self.doc.add_table(rows=0, cols=1)
         _set_table_borders(table)
         _set_table_width(table, self.doc)
@@ -1031,16 +1192,39 @@ class SyllabusBuilder:
         _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
         _run_in_cell(row.cells[0], '23.  Uzasadnienie dla prowadzenia przedmiotu - współpraca z rynkiem pracy', bold=True, size=FONT_SIZE_LABEL)
 
-        sub_sections = [
-            'A.  W jakiego typu firmach bądź dziedzinach gospodarki będą potrzebne umiejętności nabyte w trakcie zajęć:',
-            'B.  W jakich zawodach wiedza i umiejętności nabyte podczas zajęć są istotne:',
-            'C.  Przykładowe tematy prac dyplomowych i projektów badawczych:'
-        ]
-        for sub in sub_sections:
-            row = table.add_row()
-            _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
-            _run_in_cell(row.cells[0], sub, bold=False, size=Pt(8))
+        # A — dziedzina gospodarki
+        row = table.add_row()
+        _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
+        _run_in_cell(row.cells[0], 'A.  W jakiego typu firmach bądź dziedzinach gospodarki będą potrzebne umiejętności nabyte w trakcie zajęć:', bold=False, size=Pt(8))
+        row = table.add_row()
+        _value_cell(row.cells[0], dziedzina)
 
-            row = table.add_row()
-            _value_cell(row.cells[0], '')
+        # B — zawody
+        row = table.add_row()
+        _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
+        _run_in_cell(row.cells[0], 'B.  W jakich zawodach wiedza i umiejętności nabyte podczas zajęć są istotne:', bold=False, size=Pt(8))
+        row = table.add_row()
+        _value_cell(row.cells[0], zawody)
+
+        # C — prace dyplomowe
+        row = table.add_row()
+        _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
+        _run_in_cell(row.cells[0], 'C.  Przykładowe tematy prac dyplomowych i projektów badawczych:', bold=False, size=Pt(8))
+        row = table.add_row()
+        cell = row.cells[0]
+        if prace_dypl:
+            first = True
+            for i, pd in enumerate(prace_dypl):
+                if first and cell.paragraphs and cell.paragraphs[0].text == '':
+                    p = cell.paragraphs[0]
+                    first = False
+                else:
+                    p = cell.add_paragraph()
+                p.paragraph_format.space_before = Pt(1)
+                p.paragraph_format.space_after = Pt(1)
+                run = p.add_run(f'{i+1}. {pd}')
+                run.font.name = FONT_NAME
+                run.font.size = FONT_SIZE_NORMAL
+        else:
+            _value_cell(cell, '')
 

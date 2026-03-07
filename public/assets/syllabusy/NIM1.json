@@ -21,11 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 15,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka niemieckiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
         },
         "metody_dydaktyczne": {
-            "cwiczenia": [
-                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
             ]
         },
         "zaliczenie": {
@@ -33,14 +40,14 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
-            "Prace pisemne – min. jedna praca na semestr.",
-            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
-            "Wypowiedź ustna (o rodzaju decyduje lektor).",
-            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
-            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Język angielski (ANG3)",
@@ -73,24 +80,103 @@
             ]
         },
         "tresci_programowe": [
-            "Niemiecki na świecie - ogólne informacje o krajach niemieckojęzycznych, alfabet, przywitania, pożegnania, pytanie o samopoczucie - odmiana czasownika",
-            "Przedstawianie siebie i opis rodziny-zaimki dzierżawcze",
-            "Zawody oraz zwierzęta- Celownik, Biernik",
-            "Podstawowe słownictwo z zakresu szkoły/uczelni, czasowniki modalne",
-            "Podawanie czasu zegarowego w formie oficjalnej i nieoficjalnej",
-            "Podawanie daty - liczebniki porządkowe, zaimki osobowe",
-            "Opisywanie dnia-czasowniki rozdzielnie i nierozdzielnie złożone",
-            "Opis czasu wolnego/Hobby",
-            "Artykuły spożywcze",
-            "Dialog w restauracji",
-            "Wizyta u lekarza",
-            "Dialog w sklepie",
-            "Opisywanie pogody, nazywanie kierunków świata",
-            "Opis domu- Przyimki",
-            "Części garderoby, kolory - stopniowanie przymiotnika",
-            "Podróże - czas przeszły Perfekt",
-            "Opis drogi"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Niemiecki na świecie - ogólne informacje o krajach niemieckojęzycznych, alfabet, przywitania, pożegnania, pytanie o samopoczucie - odmiana czasownika",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Przedstawianie siebie i opis rodziny-zaimki dzierżawcze",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Zawody oraz zwierzęta- Celownik, Biernik",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Podstawowe słownictwo z zakresu szkoły/uczelni, czasowniki modalne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Podawanie czasu zegarowego w formie oficjalnej i nieoficjalnej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Podawanie daty - liczebniki porządkowe, zaimki osobowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Opisywanie dnia-czasowniki rozdzielnie i nierozdzielnie złożone",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Opis czasu wolnego/Hobby",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Artykuły spożywcze",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Dialog w restauracji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Wizyta u lekarza",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Dialog w sklepie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Opisywanie pogody, nazywanie kierunków świata",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Opis domu- Przyimki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Części garderoby, kolory - stopniowanie przymiotnika",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Podróże - czas przeszły Perfekt",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Opis drogi",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "German language instruction from A1 to A2 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries."
+        "cel_dydaktyczny_eng": "German language instruction from A1 to A2 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

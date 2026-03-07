@@ -16,7 +16,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TimelineModule } from 'primeng/timeline';
 
 import { ProgramService, SemesterViewModel } from './services/program.service';
-import { SubjectRow, SylabusData, SylabusFile, ProgramChange, ProgramChangesData } from './models/program.models';
+import { SubjectRow, SylabusData, SylabusFile, ProgramChange, ProgramChangesData, SylabusTrescProgramowa, SylabusKryteriaOceny } from './models/program.models';
 import { BaseHrefService } from '../../shared/base-href.service';
 import { SylabusFormComponent } from '../../shared/sylabus-form/sylabus-form.component';
 
@@ -189,5 +189,24 @@ export class ProgramComponent implements OnInit {
       usunięcie: 'Usunięcie',
     };
     return map[type] ?? type;
+  }
+
+  isTresciObject(tresci: any): tresci is SylabusTrescProgramowa[] {
+    return Array.isArray(tresci) && tresci.length > 0 && typeof tresci[0] === 'object' && 'nr_zajec' in tresci[0];
+  }
+
+  asTresciRows(tresci: any): SylabusTrescProgramowa[] {
+    return tresci as SylabusTrescProgramowa[];
+  }
+
+  getKryteriaOceny(k: any): string[] {
+    if (!k) return [];
+    if (Array.isArray(k)) return k as string[];
+    return [];
+  }
+
+  getKryteriaOcenyObj(k: any): SylabusKryteriaOceny | null {
+    if (!k || Array.isArray(k)) return null;
+    return k as SylabusKryteriaOceny;
   }
 }

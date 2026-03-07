@@ -35,6 +35,10 @@ function Escape-Latex([string]$text) {
     if (-not $text) { return '' }
     # Usuń niewidzialne znaki unicode (LTR/RTL marks, zero-width space itp.)
     $text = $text -replace '[^\x09\x0A\x0D\x20-\x7E\x80-\xFF\u0100-\uD7FF]', ''
+    # Zamień znaki nowej linii na spację (unikamy niezamkniętych makr w LaTeX)
+    $text = $text -replace '\r\n', ' '
+    $text = $text -replace '\r',   ' '
+    $text = $text -replace '\n',   ' '
     $text = $text -replace '\\', '\textbackslash{}'
     $text = $text -replace '&',  '\&'
     $text = $text -replace '%',  '\%'
@@ -43,6 +47,7 @@ function Escape-Latex([string]$text) {
     $text = $text -replace '_',  '\_'
     $text = $text -replace '~',  '\textasciitilde{}'
     $text = $text -replace '\^', '\textasciicircum{}'
+    $text = $text -replace '"',  "''"
     return $text
 }
 
@@ -72,6 +77,7 @@ function Generate-Tex($s, [string]$code) {
                 { "$($s.godziny.praca_wlasna_studenta_h) h" } else { "---" }
     $lac = if ($s.godziny.calkowita_liczba_godzin_h)
                 { "$($s.godziny.calkowita_liczba_godzin_h) h" } else { "---" }
+    $pracaWlasnaStuOpis = if ($s.godziny.praca_wlasna_studenta) { Escape-Latex $s.godziny.praca_wlasna_studenta } else { "" }
 
     # Forma zaliczenia
     $dbs = "\\"   # double backslash dla LaTeX
@@ -102,10 +108,25 @@ function Generate-Tex($s, [string]$code) {
         }
     }
 
-    # Tresci programowe
-    $tresciItems = ""
+    # Tresci programowe – nowy format: [{nr_zajec, wyklad, cwiczenia}]
+    $tresciRows = ""
     if ($s.tresci_programowe) {
-        foreach ($ti in $s.tresci_programowe) { $tresciItems += "  \item $(Escape-Latex $ti)$nl" }
+        foreach ($ti in $s.tresci_programowe) {
+            if ($ti -is [string]) {
+                # stary format fallback
+                $tresciRows += "  \hline$nl"
+                $tresciRows += "  $(Escape-Latex $ti) $amp $amp $dbs$nl"
+            } else {
+                $nr   = if ($ti.nr_zajec) { "$($ti.nr_zajec)." } else { "" }
+                $tWyk = Escape-Latex ([string]$ti.wyklad)
+                $tCw  = Escape-Latex ([string]$ti.cwiczenia)
+                $tresciRows += "  \hline$nl"
+                $tresciRows += "  $nr $amp $tWyk $amp $tCw $dbs$nl"
+            }
+        }
+    }
+    if (-not $tresciRows) {
+        $tresciRows = "  \hline$nl  1. $amp $amp $dbs$nl"
     }
 
     # Efekty ksztalcenia
@@ -122,25 +143,58 @@ function Generate-Tex($s, [string]$code) {
         foreach ($k in $s.efekty_ksztalcenia.kompetencje_spoleczne) { $kompItems += "  \item $(Escape-Latex $k)$nl" }
     }
 
-    # Kryteria oceny
-    $kryteriaItems = ""
-    if ($s.kryteria_oceny) {
-        foreach ($ki in $s.kryteria_oceny) { $kryteriaItems += "  \item $(Escape-Latex $ki)$nl" }
+    # Kryteria oceny – nowy format: obiekt {wyklad: [], cwiczenia_laboratorium: []}
+    $kryteriaBlock = ""
+    if ($s.kryteria_oceny -and $s.kryteria_oceny.PSObject.Properties) {
+        $krytWykItems = ""
+        $krytCwItems  = ""
+        $krytWykArr = $s.kryteria_oceny.wyklad
+        $krytCwArr  = $s.kryteria_oceny.cwiczenia_laboratorium
+        if ($krytWykArr -is [System.Array]) {
+            foreach ($ki in $krytWykArr) { $krytWykItems += "  \item $(Escape-Latex $ki)$nl" }
+        } elseif ($krytWykArr -is [string] -and $krytWykArr) {
+            $krytWykItems += "  \item $(Escape-Latex $krytWykArr)$nl"
+        }
+        if ($krytCwArr -is [System.Array]) {
+            foreach ($ki in $krytCwArr) { $krytCwItems += "  \item $(Escape-Latex $ki)$nl" }
+        } elseif ($krytCwArr -is [string] -and $krytCwArr) {
+            $krytCwItems += "  \item $(Escape-Latex $krytCwArr)$nl"
+        }
+        $wykKrytLabel = "Wyk" + [char]0x0142 + "ad"
+        $cwKrytLabel  = [char]0x0106 + "wiczenia / Laboratorium"
+        if ($krytWykItems) {
+            $kryteriaBlock += "\textbf{${wykKrytLabel}:}$nl\begin{itemize}$nl${krytWykItems}\end{itemize}$nl\vspace{4pt}$nl"
+        }
+        if ($krytCwItems) {
+            $kryteriaBlock += "\textbf{${cwKrytLabel}:}$nl\begin{itemize}$nl${krytCwItems}\end{itemize}$nl"
+        }
     }
+    if (-not $kryteriaBlock) { $kryteriaBlock = "\begin{itemize}$nl  \item Brak danych.$nl\end{itemize}$nl" }
 
-    # Metody dydaktyczne
+    # Metody dydaktyczne – nowy format: {wyklad: [], cwiczenia_laboratorium: []}
     $metodyBlock = ""
-    if ($s.metody_dydaktyczne) {
-        foreach ($key in $s.metody_dydaktyczne.PSObject.Properties.Name) {
-            $fo = Escape-Latex $key
-            $metodyBlock += "\textbf{${fo}:}$nl\begin{itemize}$nl"
-            $items = $s.metody_dydaktyczne.$key
-            if ($items -is [System.Array]) {
-                foreach ($m in $items) { $metodyBlock += "  \item $(Escape-Latex $m)$nl" }
-            } elseif ($items -is [string] -and $items) {
-                $metodyBlock += "  \item $(Escape-Latex $items)$nl"
-            }
-            $metodyBlock += "\end{itemize}$nl\vspace{4pt}$nl"
+    if ($s.metody_dydaktyczne -and $s.metody_dydaktyczne.PSObject.Properties) {
+        $metWykArr = $s.metody_dydaktyczne.wyklad
+        $metCwArr  = $s.metody_dydaktyczne.cwiczenia_laboratorium
+        $wykMetLabel = "Wyk" + [char]0x0142 + "ad"
+        $cwMetLabel  = [char]0x0106 + "wiczenia / Laboratorium"
+        $metWykItems = ""
+        $metCwItems  = ""
+        if ($metWykArr -is [System.Array]) {
+            foreach ($m in $metWykArr) { $metWykItems += "  \item $(Escape-Latex $m)$nl" }
+        } elseif ($metWykArr -is [string] -and $metWykArr) {
+            $metWykItems += "  \item $(Escape-Latex $metWykArr)$nl"
+        }
+        if ($metCwArr -is [System.Array]) {
+            foreach ($m in $metCwArr) { $metCwItems += "  \item $(Escape-Latex $m)$nl" }
+        } elseif ($metCwArr -is [string] -and $metCwArr) {
+            $metCwItems += "  \item $(Escape-Latex $metCwArr)$nl"
+        }
+        if ($metWykItems) {
+            $metodyBlock += "\textbf{${wykMetLabel}:}$nl\begin{itemize}$nl${metWykItems}\end{itemize}$nl\vspace{4pt}$nl"
+        }
+        if ($metCwItems) {
+            $metodyBlock += "\textbf{${cwMetLabel}:}$nl\begin{itemize}$nl${metCwItems}\end{itemize}$nl\vspace{4pt}$nl"
         }
     }
     if (-not $metodyBlock) { $metodyBlock = "Wyk" + [char]0x142 + "ad, laboratoria, praca w" + [char]0x142 + "asna studenta." }
@@ -166,9 +220,42 @@ function Generate-Tex($s, [string]$code) {
     if (-not $tresciItems)   { $tresciItems   = "  \item Brak danych.$nl" }
     if (-not $wiedzaItems)   { $wiedzaItems   = "  \item Brak danych.$nl" }
     if (-not $umiejItems)    { $umiejItems    = "  \item Brak danych.$nl" }
-    if (-not $kryteriaItems) { $kryteriaItems = "  \item Brak danych.$nl" }
     if (-not $litPItems)     { $litPItems     = "  \item Brak danych.$nl" }
     if (-not $litUItems)     { $litUItems     = "  \item Brak danych.$nl" }
+
+    # Informacje dodatkowe i rynek pracy
+    $infoDodatkowe   = if ($s.informacje_dodatkowe) { Escape-Latex $s.informacje_dodatkowe } else { "" }
+    $rynekDziedzina  = ""
+    $rynekZawody     = ""
+    $rynekPraceDypl  = ""
+    if ($s.rynek_pracy) {
+        $rynekDziedzina = if ($s.rynek_pracy.dziedzina_gospodarki) { Escape-Latex $s.rynek_pracy.dziedzina_gospodarki } else { "" }
+        $rynekZawody    = if ($s.rynek_pracy.zawody) { Escape-Latex $s.rynek_pracy.zawody } else { "" }
+        if ($s.rynek_pracy.prace_dyplomowe -and $s.rynek_pracy.prace_dyplomowe.Count -gt 0) {
+            foreach ($pd in $s.rynek_pracy.prace_dyplomowe) {
+                $rynekPraceDypl += "  \item $(Escape-Latex $pd)$nl"
+            }
+        }
+    }
+    $hasInfoDod  = [bool]$infoDodatkowe
+    $hasRynek    = [bool]($rynekDziedzina -or $rynekZawody -or $rynekPraceDypl)
+
+    # Wymagania laboratorium
+    $labPcItems  = ""
+    $labSwItems  = ""
+    $labWypItems = ""
+    if ($s.wymagania_laboratorium) {
+        if ($s.wymagania_laboratorium.pc_params) {
+            foreach ($p in $s.wymagania_laboratorium.pc_params) { $labPcItems  += "  \item $(Escape-Latex $p)$nl" }
+        }
+        if ($s.wymagania_laboratorium.software) {
+            foreach ($p in $s.wymagania_laboratorium.software) { $labSwItems  += "  \item $(Escape-Latex $p)$nl" }
+        }
+        if ($s.wymagania_laboratorium.wyposazenie_dodatkowe) {
+            foreach ($p in $s.wymagania_laboratorium.wyposazenie_dodatkowe) { $labWypItems += "  \item $(Escape-Latex $p)$nl" }
+        }
+    }
+    $hasLabWym = [bool]($labPcItems -or $labSwItems -or $labWypItems)
 
     # Polskie napisy (przez char codes zeby nie bylo problemow z encoding pliku .ps1)
     $gdansk       = "Gda" + [char]0x0144 + "sku"
@@ -186,6 +273,8 @@ function Generate-Tex($s, [string]$code) {
     $litSec       = "Literatura"
     $litPodst     = "Podstawowa:"
     $litUzup      = "Uzupe" + [char]0x0142 + "niaj" + [char]0x0105 + "ca:"
+    $pracaWlLabel = "Zadania do samodzielnej realizacji:"
+    $wiedzaLabel  = "Wiedza"
     $trybyLabel   = "Tryb studi" + [char]0x00F3 + "w:"
     $formaZajLabel= "Forma zaj" + [char]0x0119 + [char]0x0107
     $sposobLabel  = "Spos" + [char]0x00F3 + "b zaliczenia"
@@ -309,6 +398,10 @@ function Generate-Tex($s, [string]$code) {
     $t += "\hline`n"
     $t += "\end{tabular}`n"
     $t += "\end{center}`n"
+    if ($pracaWlasnaStuOpis) {
+        $t += "`n\vspace{4pt}`n"
+        $t += "\noindent\textbf{$pracaWlLabel} $pracaWlasnaStuOpis`n"
+    }
     $t += "$zalSection`n"
     $t += "\section{Cel dydaktyczny}`n`n"
     $t += "$cel`n`n"
@@ -318,7 +411,13 @@ function Generate-Tex($s, [string]$code) {
     }
     $t += "$pwSection`n"
     $t += "\section{$tresciSec}`n`n"
-    $t += "\begin{enumerate}`n" + $tresciItems + "\end{enumerate}`n`n"
+    $t += "\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}`n"
+    $t += "\hline`n"
+    $t += "\textbf{Nr zaj.} $amp \textbf{Wyk" + [char]0x0142 + "ad} $amp \textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia} $dbs\hline`n"
+    $t += "\endhead`n"
+    $t += $tresciRows
+    $t += "  \hline`n"
+    $t += "\end{longtable}`n`n"
     $t += "\section{$efektySec}`n`n"
     $t += "\subsection*{$wiedzaLabel}`n"
     $t += "\begin{itemize}`n" + $wiedzaItems + "\end{itemize}`n`n"
@@ -326,7 +425,7 @@ function Generate-Tex($s, [string]$code) {
     $t += "\begin{itemize}`n" + $umiejItems + "\end{itemize}`n"
     $t += "$kompSection`n"
     $t += "\section{$krytSec}`n`n"
-    $t += "\begin{itemize}`n" + $kryteriaItems + "\end{itemize}`n`n"
+    $t += "$kryteriaBlock`n`n"
     $t += "\section{$metSec}`n`n"
     $t += "$metodyBlock`n`n"
     $t += "\section{$litSec}`n`n"
@@ -334,6 +433,69 @@ function Generate-Tex($s, [string]$code) {
     $t += "\begin{itemize}`n" + $litPItems + "\end{itemize}`n`n"
     $t += "\textbf{$litUzup}`n"
     $t += "\begin{itemize}`n" + $litUItems + "\end{itemize}`n`n"
+
+    # Wymagania laboratorium (tylko jesli niepuste)
+    if ($hasLabWym) {
+        $labSec    = "Wymagania dotycz" + [char]0x0105 + "ce laboratorium"
+        $labPcLbl  = "Stanowisko komputerowe"
+        $labSwLbl  = "Oprogramowanie"
+        $labWypLbl = "Wyposa" + [char]0x017C + "enie specjalistyczne"
+
+        # Zbierz wiersze – max dlugosc kolumn
+        $labPcArr  = @(); if ($s.wymagania_laboratorium.pc_params)             { $labPcArr  = @($s.wymagania_laboratorium.pc_params) }
+        $labSwArr  = @(); if ($s.wymagania_laboratorium.software)              { $labSwArr  = @($s.wymagania_laboratorium.software) }
+        $labWypArr = @(); if ($s.wymagania_laboratorium.wyposazenie_dodatkowe) { $labWypArr = @($s.wymagania_laboratorium.wyposazenie_dodatkowe) }
+        $labMaxRows = [Math]::Max([Math]::Max($labPcArr.Count, $labSwArr.Count), $labWypArr.Count)
+        if ($labMaxRows -eq 0) { $labMaxRows = 1 }
+
+        $labTableRows = ""
+        for ($ri = 0; $ri -lt $labMaxRows; $ri++) {
+            $c1 = if ($ri -lt $labPcArr.Count)  { Escape-Latex $labPcArr[$ri]  } else { "" }
+            $c2 = if ($ri -lt $labSwArr.Count)  { Escape-Latex $labSwArr[$ri]  } else { "" }
+            $c3 = if ($ri -lt $labWypArr.Count) { Escape-Latex $labWypArr[$ri] } else { "" }
+            $labTableRows += "  \hline$nl  $c1 $amp $c2 $amp $c3 $dbs$nl"
+        }
+
+        $t += "\section{$labSec}`n`n"
+        $t += "\begin{center}`n"
+        $t += "\begin{tabular}{|p{4.5cm}|p{4.5cm}|p{4.5cm}|}`n"
+        $t += "\hline`n"
+        $t += "\rowcolor{tableHeader}`n"
+        $t += "\textbf{$labPcLbl} $amp \textbf{$labSwLbl} $amp \textbf{$labWypLbl} $dbs`n"
+        $t += $labTableRows
+        $t += "  \hline`n"
+        $t += "\end{tabular}`n"
+        $t += "\end{center}`n`n"
+    }
+
+    # Informacje dodatkowe (tylko jesli niepuste)
+    if ($hasInfoDod) {
+        $infoDodSec = "Informacje dodatkowe"
+        $t += "\section{$infoDodSec}`n`n"
+        $t += "$infoDodatkowe`n`n"
+    }
+
+    # Rynek pracy (tylko jesli niepuste)
+    if ($hasRynek) {
+        $rynekSec    = "Uzasadnienie dla prowadzenia przedmiotu -- wsp" + [char]0x00F3 + [char]0x0142 + "praca z rynkiem pracy"
+        $dziedzLabel = "W jakiego typu firmach b" + [char]0x0105 + "d" + [char]0x017A + " dziedzinach gospodarki b" + [char]0x0119 + "d" + [char]0x0105 + " potrzebne umiej" + [char]0x0119 + "tno" + [char]0x015B + "ci:"
+        $zawodyLabel = "W jakich zawodach wiedza i umiej" + [char]0x0119 + "tno" + [char]0x015B + "ci nabyte podczas zaj" + [char]0x0119 + [char]0x0107 + " s" + [char]0x0105 + " istotne:"
+        $praceDyplLabel = "Przyk" + [char]0x0142 + "adowe tematy prac dyplomowych i projekt" + [char]0x00F3 + "w badawczych:"
+        $t += "\section{$rynekSec}`n`n"
+        if ($rynekDziedzina) {
+            $t += "\subsection*{$dziedzLabel}`n`n"
+            $t += "$rynekDziedzina`n`n"
+        }
+        if ($rynekZawody) {
+            $t += "\subsection*{$zawodyLabel}`n`n"
+            $t += "$rynekZawody`n`n"
+        }
+        if ($rynekPraceDypl) {
+            $t += "\subsection*{$praceDyplLabel}`n`n"
+            $t += "\begin{itemize}`n" + $rynekPraceDypl + "\end{itemize}`n`n"
+        }
+    }
+
     $t += "\end{document}`n"
 
     return $t

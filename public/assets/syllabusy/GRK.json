@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna praca z narzędziami grafiki komputerowej; ćwiczenia z tworzenia i przetwarzania grafiki; przygotowanie do testu wyboru z zagadnień teorii grafiki."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,18 +42,14 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "rozwiązywanie zadań",
-            "Kryteria oceny",
-            "Zaliczenie ćwiczeń polega na zbieraniu punktów:",
-            "50% możliwych punktów daje ocenę 3",
-            "60% punktów daje ocenę 3½",
-            "70% — ocenę 4",
-            "80% — 4½",
-            "90% i więcej — 5",
-            "Test wyboru, 20 pytań. Każda poprawna odpowiedź warta jest 1 punkt. Zasady zaliczenia: 19–20 punktów: 5, 17–18 punktów: 4 12 , 14–16 punktów: 4, 11–13 punktów: 3 12 , 8–10 punktów: 3. Mniej niż 8 punktów: 2"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny - test wyboru"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "• Algebra liniowa i geometria  (ALG)",
@@ -94,39 +100,178 @@
             ]
         },
         "tresci_programowe": [
-            "Wykład:",
-            "Percepcja wizualna i modele barw",
-            "Algorytmy rastrowe",
-            "Formaty plików graficznych i kompresja obrazów",
-            "Biblioteka LibPNG. Wizualizacja danych",
-            "Biblioteka Jpeglib.",
-            "Geometria Liniowa 3W",
-            "Geometria Afiniczna 3W.",
-            "Rzutowanie",
-            "Podstawy oświetlenia",
-            "Podstawy teksturowania",
-            "Podstawy OpenGL i GLSL",
-            "Transformacje w OpenGL",
-            "Podstawy teksturowania w OpenGL,",
-            "Podstawy Krzywych i powierzchni Béziera",
-            "Metoda śledzenia promieni",
-            "Ćwiczenia:",
-            "Podstawy Blendera",
-            "Podstawy edycji masha.",
-            "Materiały i tekstury",
-            "Ustawienia środowiska",
-            "Podstawy Animacji. System cząstek",
-            "Postprocessing",
-            "Format svg.",
-            "Algorytmy rastrowe.",
-            "Filtry punktowe",
-            "Geometryczne przekształcenie obrazów",
-            "Podstawy OpenGL",
-            "Przekształcenia w OpenGL",
-            "Teksturowanie w OpenGL",
-            "Oświetlenie w OpenGL",
-            "Modelowanie za pomocą krzywych i powierzchni Béziera"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wykład:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Percepcja wizualna i modele barw",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Algorytmy rastrowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Formaty plików graficznych i kompresja obrazów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Biblioteka LibPNG. Wizualizacja danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Biblioteka Jpeglib.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Geometria Liniowa 3W",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Geometria Afiniczna 3W.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Rzutowanie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Podstawy oświetlenia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Podstawy teksturowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Podstawy OpenGL i GLSL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Transformacje w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Podstawy teksturowania w OpenGL,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Podstawy Krzywych i powierzchni Béziera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Metoda śledzenia promieni",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Ćwiczenia:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Podstawy Blendera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Podstawy edycji masha.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Materiały i tekstury",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Ustawienia środowiska",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Podstawy Animacji. System cząstek",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Postprocessing",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Format svg.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Algorytmy rastrowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Filtry punktowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Geometryczne przekształcenie obrazów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "Podstawy OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Przekształcenia w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Teksturowanie w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Oświetlenie w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "Modelowanie za pomocą krzywych i powierzchni Béziera",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to acquire the ability to create images using standard graphics APIs (the OpenGL library and the Blender renderer) and to perform basic 2D and 3D image transformations."
+        "cel_dydaktyczny_eng": "The aim of the course is to acquire the ability to create images using standard graphics APIs (the OpenGL library and the Blender renderer) and to perform basic 2D and 3D image transformations.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

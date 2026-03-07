@@ -21,23 +21,34 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań CTF (Capture the Flag) z kryminalistyki cyfrowej; analiza dowodów cyfrowych; przygotowanie raportów z przeprowadzonych analiz."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Zadania CTF",
-            "Laboratoria",
-            "Kryteria oceny",
-            "Laboratorium/Projekt",
-            "raport z wykonanych zadań laboratoryjnych, kolokwia",
-            "Kryteria oceny:niedostateczny: < 50% możliwych do zdobycia punktów dostateczny  :     50%-60% możliwych do zdobycia punktów dostateczny+ :    61%- 70% możliwych do zdobycia punktówdobry :                71%-80% możliwych do zdobycia punktówdobry +:              81%-90% możliwych do zdobycia punktów bardzo dobry  :   >90%  możliwych do zdobycia punktów",
-            "Kryteria oceny:niedostateczny: < 50% poprawnie rozwiązanych zadań egz.dostateczny  :     50%-60% poprawnie rozwiązanych zadań egz.dostateczny+ :    61%- 70% poprawnie rozwiązanych zadań egz.dobry :                71%-80% poprawnie rozwiązanych zadań egz.dobry +:              81%-90% poprawnie rozwiązanych zadań egz.bardzo dobry  :   >90%  poprawnie rozwiązanych zadań zaliczeniowych egz."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium końcowe"
+            ],
+            "cwiczenia_laboratorium": [
+                "raport z wykonanego zadania",
+                "kolokwium"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Kryminalistyka cyfrowa to dziedzina zajmująca się śledztwem i badaniem dowodów związanych z przestępstwami cyfrowymi. Jest to rodzaj kryminalistyki, która koncentruje się na zdolności do wykorzystywania technologii i nauki do zgromadzenia dowodów, które mogą być przedstawione w sądzie. Kryminalistyka Cyfrowa odgrywa kluczową rolę w walce z cyberprzestępczością, pomagając organom ścigania zrozumieć, jak doszło do przestępstwa, kto może za nie odpowiadać i jakie kroki mogą być podjęte, aby zapobiec przyszłym incydentom. Główne cele dydaktyczne to badanie sieci, czyli umiejętność analizy ruchu sieciowego w celu wykrycia nieprawidłowości lub dowodów na działania przestępcze.Inny cel to analiza logów systemowych, czyli zebranie informacji o tym, co się działo na danym systemie w określonym czasie. Analiza tych logów może pomóc w ustaleniu, co się stało podczas incydentu.",
         "literatura": {
@@ -63,30 +74,133 @@
             "kompetencje_spoleczne": "Student jest gotów do pracy zespołowej w dziale SOC"
         },
         "tresci_programowe": [
-            "Wykład:",
-            "Wprowadzenie do Kryminalistyki Cyfrowej",
-            "Bezpieczeństwo protokołów i urządzeń warstwy 1-2 modelu OSI",
-            "Bezpieczeństwo protokołów i urządzeń warstwy 3-4 modelu OSI",
-            "Bezpieczeństwo protokołów i urządzeń warstwy 5-7 modelu OSI",
-            "Metody analizy ruchu sieciowego (Network analysis)",
-            "Metody analizy oprogramowania (Software analysis)",
-            "Metody analizy mediów (Media analysis)",
-            "Metody analizy sprzętu (Hardware analysis)",
-            "Ćwiczenia:",
-            "[Linux 1] Operacje na plikach",
-            "[Linux 1] Operacje identyfikacji oraz kodowania danych",
-            "[Linux 1] Analiza logów",
-            "[Linux 2] Mechanizmy systemowe i skrypty Bash",
-            "[Linux 2] Analiza danych z pliku",
-            "[Linux 2] Administracja systemem GNU/Linux",
-            "[Linux 2] Zarządzanie procesami",
-            "[Sieci 2] Protokół http",
-            "[Sieci 2] Protokół DNS",
-            "[Sieci 2] Protokoły poczty",
-            "[Sieci 2] Inne protokoły",
-            "[Sieci 2] Bezpieczna komunikacja",
-            "[Sieci 2] Bezpieczeństwo sieci WiFi"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wykład:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Wprowadzenie do Kryminalistyki Cyfrowej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Bezpieczeństwo protokołów i urządzeń warstwy 1-2 modelu OSI",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Bezpieczeństwo protokołów i urządzeń warstwy 3-4 modelu OSI",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Bezpieczeństwo protokołów i urządzeń warstwy 5-7 modelu OSI",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Metody analizy ruchu sieciowego (Network analysis)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Metody analizy oprogramowania (Software analysis)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Metody analizy mediów (Media analysis)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Metody analizy sprzętu (Hardware analysis)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Ćwiczenia:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "[Linux 1] Operacje na plikach",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "[Linux 1] Operacje identyfikacji oraz kodowania danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "[Linux 1] Analiza logów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "[Linux 2] Mechanizmy systemowe i skrypty Bash",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "[Linux 2] Analiza danych z pliku",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "[Linux 2] Administracja systemem GNU/Linux",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "[Linux 2] Zarządzanie procesami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "[Sieci 2] Protokół http",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "[Sieci 2] Protokół DNS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "[Sieci 2] Protokoły poczty",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "[Sieci 2] Inne protokoły",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "[Sieci 2] Bezpieczna komunikacja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "[Sieci 2] Bezpieczeństwo sieci WiFi",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Digital forensics is a field concerned with the investigation and examination of evidence related to digital crimes. It is a branch of forensic science focused on the ability to use technology and scientific methods to gather evidence that can be presented in court. Digital forensics plays a key role in combating cybercrime by helping law enforcement understand how a crime occurred, who may be responsible, and what steps can be taken to prevent future incidents. The main educational objectives include network investigation, i.e. the ability to analyze network traffic in order to detect irregularities or evidence of criminal activity. Another objective is system log analysis, i.e. collecting information about what occurred on a given system at a specific time. Analyzing such logs can help determine what happened during an incident."
+        "cel_dydaktyczny_eng": "Digital forensics is a field concerned with the investigation and examination of evidence related to digital crimes. It is a branch of forensic science focused on the ability to use technology and scientific methods to gather evidence that can be presented in court. Digital forensics plays a key role in combating cybercrime by helping law enforcement understand how a crime occurred, who may be responsible, and what steps can be taken to prevent future incidents. The main educational objectives include network investigation, i.e. the ability to analyze network traffic in order to detect irregularities or evidence of criminal activity. Another objective is system log analysis, i.e. collecting information about what occurred on a given system at a specific time. Analyzing such logs can help determine what happened during an incident.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

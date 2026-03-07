@@ -127,27 +127,46 @@ Celem przedmiotu jest zapoznanie studentów z podstawowymi zagadnieniami dotycz�
 
 \section{Treści programowe}
 
-\begin{enumerate}
-  \item 1 , Wprowadzenie. Podstawowe definicje. Wymagania stawiane systemom czasu rzeczywistego (SCR). Podział SCR. Wybór algorytmów stosowanych dla potrzeb SCR, wy oceny ich złożoności obliczeniowej.
-  \item 2 , Dobór algorytmu dla potrzeb SCR. Weryfikacja poprawności logicznej wybranych algorytmów. Symulacyjne szacowanie czasu realizacji zadań algorytmów, które uzyskały pozytywną weryfikację poprawności logicznej.  Metody przyspieszania działania SCR. Symulacyjna weryfikacja poprawności logicznej wybranych algorytmów dla potrzeb SCR.
-  \item 3 , Charakterystyczne cechy, potrzeby i rozwój systemów czasurzeczywistego. Metodaiteracyjnego osiągania wymagań, narzuconych w specyfikacji zleceniodawcy systemu czasu rzeczywistego. Szacowanie czasu realizacji zadań dla algorytmów,  które uzyskały pozytywną weryfikację poprawności logicznej, wybranych do realizacji SCR.
-  \item 4 , Tworzenie zadań i metody ich szeregowania. Wybrane algorytmy szeregowania zadań. Zastosowanie szeregowania zadań do alokacji operacji algorytmów SCR, implementowanych na określonym/dedykowanym hardware. Szeregowanie wieloprocesorowe. Obsługa przerwań i sygnałów. Obsługa czasu.  Tolerancje czasowe. Synchronizacja procesów.  Stosowane protokoły komunikacyjne. Szeregowanie wieloprocesorowe. Szeregowanie w sieciach rozproszonych. Analiza utworzonych algorytmów i ich kwalifikacja do implementacji w systemach czasu rzeczywistego. Metody polepszania parametrów projektowanego SCR (algorytmiczne i programistyczne).
-  \item 5 , Systemy operacyjny spełniający wymogi czasu rzeczywistego (RTOS).   Definicja systemu operacyjnego czasu rzeczywistego i jego podstawowe cechy. Budowa systemu operacyjnego czasu rzeczywistego. Mechanizmy systemów czasu rzeczywistego: algorytmy wywłaszczania, semafory, odmierzanie czasu. Czasy reakcji systemu. Komunikacja międzyzadaniowa w systemie operacyjnym. Powtarzalność czasów reakcji systemu dla tych samych zadań. Analiza przypadków zastosowania systemów operacyjnych czasu rzeczywistego. System operacyjne czasu rzeczywistego QNX RTOS  Wybór systemu operacyjnego (RTOS).  dla tworzonego SCR.
-  \item 6 , Przykłady systemów czasu rzeczywistego i wybrane metody ich projektowania dla zadanej specyfikacji. Przypadki nieokreśloności czasu opóźnienia SCR i metody ich eliminacji/redukcji.Podstawy obsługi QNX RTOS.
-  \item 7 , Przykłady praktycznie działających urządzeń/instalacji technologicznych, spełniających wymogi SCR. Heterogeniczny system czasu rzeczywistego dla potrzeb przemysłowych (monitoring, sterowanie i diagnostyka w rozproszonej sieci rozległej).
-  \item 8 , Wymagania dotyczące hardware’u dla potrzeb systemów czasurzeczywistego. Metody porównywania procesorów i ich wybór dla potrzeb SCR. Wybór hardware’u dla projektowanego SCR. Analiza wpływu elementów hardware’u na opóźnienia czasowe. Właściwy dobór częstotliwości próbkowania przetworników A/D - wpływ na czas opóźnienia systemu. Wprowadzenie do wybranego środowiska programistycznego (ang. IDE) dla potrzeb określonych procesorów. Obsługi wybranego środowiska i zasady programowania. Program zaimplementowany na wybranym hardware.
-  \item 9 , Języki programowania stosowane do tworzenia SCR.  Programowania urządzeń wbudowanych SCR. Automatyczna generacja kodu (kiedy występują takie możliwości). Realizacja wybranego projektu SCR, np. sterowanie światłami w ruchu ulicznym.
-  \item 10 , Potrzeba redukcji poboru mocy w SCR Ocena jakości utworzonego kodu programu dla SCR.
-  \item 11 , Metody optymalizacji kodu dla potrzeb SCR. Walidacja utworzonego SCR.Analiza potrzeb dodatkowych optymalizacji. Wielokrotna optymalizacja SCR. ,
-  \item 12 , Szybkie tworzenie prototypu systemu czasu rzeczywistego, np. z wykorzystaniem układów FPGA. Projektowanie i symulacje zadanych SCR. Pomiar czasu opóźnienia systemu.
-  \item 13 , Zagadnienia bezpieczeństwa w sieciach rozproszonych SCR.
-  \item 14 , Analiza utworzonego systemu z punktu widzenia spełnienia wymagań dotyczących jego specyfikacji.
-  \item 15 , Zastosowania wybranych rozwiązań SCR w  różnych dziedzinach, np. automatyka przemysłowa, robotyka, internet rzeczy, logistyka dedykowanych dostaw towarów, medycyna, technologie kosmiczne, technologie militarne i inne.
-\end{enumerate}
+\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+\endhead
+  \hline
+  1 , Wprowadzenie. Podstawowe definicje. Wymagania stawiane systemom czasu rzeczywistego (SCR). Podział SCR. Wybór algorytmów stosowanych dla potrzeb SCR, wy oceny ich złożoności obliczeniowej. & & \\
+  \hline
+  2 , Dobór algorytmu dla potrzeb SCR. Weryfikacja poprawności logicznej wybranych algorytmów. Symulacyjne szacowanie czasu realizacji zadań algorytmów, które uzyskały pozytywną weryfikację poprawności logicznej.  Metody przyspieszania działania SCR. Symulacyjna weryfikacja poprawności logicznej wybranych algorytmów dla potrzeb SCR. & & \\
+  \hline
+  3 , Charakterystyczne cechy, potrzeby i rozwój systemów czasurzeczywistego. Metodaiteracyjnego osiągania wymagań, narzuconych w specyfikacji zleceniodawcy systemu czasu rzeczywistego. Szacowanie czasu realizacji zadań dla algorytmów,  które uzyskały pozytywną weryfikację poprawności logicznej, wybranych do realizacji SCR. & & \\
+  \hline
+  4 , Tworzenie zadań i metody ich szeregowania. Wybrane algorytmy szeregowania zadań. Zastosowanie szeregowania zadań do alokacji operacji algorytmów SCR, implementowanych na określonym/dedykowanym hardware. Szeregowanie wieloprocesorowe. Obsługa przerwań i sygnałów. Obsługa czasu.  Tolerancje czasowe. Synchronizacja procesów.  Stosowane protokoły komunikacyjne. Szeregowanie wieloprocesorowe. Szeregowanie w sieciach rozproszonych. Analiza utworzonych algorytmów i ich kwalifikacja do implementacji w systemach czasu rzeczywistego. Metody polepszania parametrów projektowanego SCR (algorytmiczne i programistyczne). & & \\
+  \hline
+  5 , Systemy operacyjny spełniający wymogi czasu rzeczywistego (RTOS).   Definicja systemu operacyjnego czasu rzeczywistego i jego podstawowe cechy. Budowa systemu operacyjnego czasu rzeczywistego. Mechanizmy systemów czasu rzeczywistego: algorytmy wywłaszczania, semafory, odmierzanie czasu. Czasy reakcji systemu. Komunikacja międzyzadaniowa w systemie operacyjnym. Powtarzalność czasów reakcji systemu dla tych samych zadań. Analiza przypadków zastosowania systemów operacyjnych czasu rzeczywistego. System operacyjne czasu rzeczywistego QNX RTOS  Wybór systemu operacyjnego (RTOS).  dla tworzonego SCR. & & \\
+  \hline
+  6 , Przykłady systemów czasu rzeczywistego i wybrane metody ich projektowania dla zadanej specyfikacji. Przypadki nieokreśloności czasu opóźnienia SCR i metody ich eliminacji/redukcji.Podstawy obsługi QNX RTOS. & & \\
+  \hline
+  7 , Przykłady praktycznie działających urządzeń/instalacji technologicznych, spełniających wymogi SCR. Heterogeniczny system czasu rzeczywistego dla potrzeb przemysłowych (monitoring, sterowanie i diagnostyka w rozproszonej sieci rozległej). & & \\
+  \hline
+  8 , Wymagania dotyczące hardware’u dla potrzeb systemów czasurzeczywistego. Metody porównywania procesorów i ich wybór dla potrzeb SCR. Wybór hardware’u dla projektowanego SCR. Analiza wpływu elementów hardware’u na opóźnienia czasowe. Właściwy dobór częstotliwości próbkowania przetworników A/D - wpływ na czas opóźnienia systemu. Wprowadzenie do wybranego środowiska programistycznego (ang. IDE) dla potrzeb określonych procesorów. Obsługi wybranego środowiska i zasady programowania. Program zaimplementowany na wybranym hardware. & & \\
+  \hline
+  9 , Języki programowania stosowane do tworzenia SCR.  Programowania urządzeń wbudowanych SCR. Automatyczna generacja kodu (kiedy występują takie możliwości). Realizacja wybranego projektu SCR, np. sterowanie światłami w ruchu ulicznym. & & \\
+  \hline
+  10 , Potrzeba redukcji poboru mocy w SCR Ocena jakości utworzonego kodu programu dla SCR. & & \\
+  \hline
+  11 , Metody optymalizacji kodu dla potrzeb SCR. Walidacja utworzonego SCR.Analiza potrzeb dodatkowych optymalizacji. Wielokrotna optymalizacja SCR. , & & \\
+  \hline
+  12 , Szybkie tworzenie prototypu systemu czasu rzeczywistego, np. z wykorzystaniem układów FPGA. Projektowanie i symulacje zadanych SCR. Pomiar czasu opóźnienia systemu. & & \\
+  \hline
+  13 , Zagadnienia bezpieczeństwa w sieciach rozproszonych SCR. & & \\
+  \hline
+  14 , Analiza utworzonego systemu z punktu widzenia spełnienia wymagań dotyczących jego specyfikacji. & & \\
+  \hline
+  15 , Zastosowania wybranych rozwiązań SCR w  różnych dziedzinach, np. automatyka przemysłowa, robotyka, internet rzeczy, logistyka dedykowanych dostaw towarów, medycyna, technologie kosmiczne, technologie militarne i inne. & & \\
+  \hline
+\end{longtable}
 
 \section{Przedmiotowe efekty uczenia się}
 
-\subsection*{}
+\subsection*{Wiedza}
 \begin{itemize}
   \item Student ma uporządkowaną wiedzę z zakresu architektur systemów komputerowych, systemów operacyjnych czasu rzeczywistego (RTOS) i zasad projektowania systemów czasu rzeczywistego z uwzględnieniem algorytmów szeregowania zadań i analizy WCET. [K\_W07]
   \item Student ma podstawową wiedzę z zakresu programowania systemów mikroprocesorowych dla zastosowań SCR: interfejsy peryferyjne, obsługa przerwań, protokoły komunikacyjne i techniki optymalizacji kodu pod kątem deterministyczności czasowej. [K\_W18]
@@ -168,22 +187,9 @@ Celem przedmiotu jest zapoznanie studentów z podstawowymi zagadnieniami dotycz�
 \section{Kryteria oceny}
 
 \begin{itemize}
-  \item wykład z elementami dyskusji z prezentacją multimedialną
-  \item projektowanie systemów dla zadanej specyfikacji
-  \item rozwiązywanie zadań projektowych
-  \item analiza przypadków
-  \item badania symulacyjne
-  \item Kryteria oceny
-  \item Sprawdziany, tzw. wejściówki (średnia za semestr - awe)
-  \item ocena z aktywności na zajęciach (średnia za semestr - apr)
-  \item ocena końcowego zaliczenia sprawozdań– kz\_sp)
-  \item Końcowa ocena zaliczenia laboratorium (zl) jest wyznaczana na podstawie poniższego wzoru:
-  \item zl=(2.0*awe+1,9*apr+1,1*kz\_sp)/5
-  \item Wykład (ocena z wykładu zw) jest zaliczany na podstawie dwóch kartkówek (k1, k2)
-  \item Każda nieobecność na wykładzie, rozpoczynając od drugiej powoduje obniżenie oceny końcowejzw o wartość 0,1.
-  \item Ocena końcowa (zal) zaliczająca przedmiot (SCR) jest wyliczana wg poniższego wzoru:
-  \item przy czym obie oceny składowe muszą być pozytywne.
+  \item Brak danych.
 \end{itemize}
+
 
 \section{Metody dydaktyczne}
 

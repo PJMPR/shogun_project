@@ -21,22 +21,33 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 15,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka hiszpańskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
-            "Prace pisemne – min. jedna praca na semestr.",
-            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
-            "Wypowiedź ustna (o rodzaju decyduje lektor).",
-            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
-            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "ANG3",
@@ -74,22 +85,93 @@
             ]
         },
         "tresci_programowe": [
-            "Hiszpański na świecie - ogólne informacje o krajach hiszpańskojęzycznych, alfabet, przywitania, pożegnania, samopoczucie",
-            "Edukacja – nazwy przyborów szkolnych, zwroty przydatne na lekcjach, liczebniki do 20, rodzaj i liczba rzeczowników",
-            "Człowiek - dane personalne, narodowość, wiek, stan cywilny, zawody, czasownik ser, tener, vivir, llamarse, rodzaj i liczba przymiotników, zaimki osobowe",
-            "Życie prywatne – rodzina (pokrewieństwo), przyjaciele, imiona i nazwiska hiszpańskie, liczebniki do 100",
-            "Praca – zawody, miejsca pracy,  odmiana czasowników regularnych,",
-            "Wygląd człowieka – cechy fizyczne i cechy charakteru, zaimki dzierżawcze",
-            "Rzeczy osobiste – ubrania i kolory, zaimki wskazujące, czasownik llevar, rodzajniki nieokreślone",
-            "Święta w Hiszpanii: Sylwester, Nowy Rok, Święto Trzech Króli, tradycje",
-            "Dom – pomieszczenia i wyposażenie domu, sprzęty gospodarstwa domowego, czasowniki estar, ser i haber, rodzajniki ściągnięte: al., del, przyimki miejsca",
-            "Miejsce zamieszkania – budynki miejskie, opis dzielnicy, liczebniki do 1000",
-            "Szkoła – system edukacyjny w Hiszpanii, nazwy przedmiotów szkolnych, czynności wykonywane w szkole, obowiązki, przymiotniki nieokreślone muchos/as, wskazywanie ilości",
-            "Życie codzienne – czynności dnia codziennego, przysłówki i wyrażenia czasowe, odmiana czasowników zwrotnych",
-            "Miasto – obiekty miejskie, usługi, zaimki",
-            "Czas wolny – formy spędzania czasu wolnego, częstotliwość wykonywanych czynności",
-            "Święta w Hiszpanii – Wielkanoc, Święto ognia, tradycje"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Hiszpański na świecie - ogólne informacje o krajach hiszpańskojęzycznych, alfabet, przywitania, pożegnania, samopoczucie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Edukacja – nazwy przyborów szkolnych, zwroty przydatne na lekcjach, liczebniki do 20, rodzaj i liczba rzeczowników",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Człowiek - dane personalne, narodowość, wiek, stan cywilny, zawody, czasownik ser, tener, vivir, llamarse, rodzaj i liczba przymiotników, zaimki osobowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Życie prywatne – rodzina (pokrewieństwo), przyjaciele, imiona i nazwiska hiszpańskie, liczebniki do 100",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Praca – zawody, miejsca pracy,  odmiana czasowników regularnych,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Wygląd człowieka – cechy fizyczne i cechy charakteru, zaimki dzierżawcze",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Rzeczy osobiste – ubrania i kolory, zaimki wskazujące, czasownik llevar, rodzajniki nieokreślone",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Święta w Hiszpanii: Sylwester, Nowy Rok, Święto Trzech Króli, tradycje",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Dom – pomieszczenia i wyposażenie domu, sprzęty gospodarstwa domowego, czasowniki estar, ser i haber, rodzajniki ściągnięte: al., del, przyimki miejsca",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Miejsce zamieszkania – budynki miejskie, opis dzielnicy, liczebniki do 1000",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Szkoła – system edukacyjny w Hiszpanii, nazwy przedmiotów szkolnych, czynności wykonywane w szkole, obowiązki, przymiotniki nieokreślone muchos/as, wskazywanie ilości",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Życie codzienne – czynności dnia codziennego, przysłówki i wyrażenia czasowe, odmiana czasowników zwrotnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Miasto – obiekty miejskie, usługi, zaimki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Czas wolny – formy spędzania czasu wolnego, częstotliwość wykonywanych czynności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Święta w Hiszpanii – Wielkanoc, Święto ognia, tradycje",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Spanish language instruction at the A1/A2 level. Students acquire Spanish proficiency enabling basic communication in everyday situations, expression of thoughts and opinions, and understanding and producing short written texts and spoken statements. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries."
+        "cel_dydaktyczny_eng": "Spanish language instruction at the A1/A2 level. Students acquire Spanish proficiency enabling basic communication in everyday situations, expression of thoughts and opinions, and understanding and producing short written texts and spoken statements. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

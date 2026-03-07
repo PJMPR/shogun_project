@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna implementacja projektów symulacyjnych 3D; ćwiczenia z silnikami symulacyjnymi; przygotowanie i obrona pracy zaliczeniowej."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,13 +42,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "praca indywidualna przy komputerze",
-            "Kryteria oceny",
-            "Projekty (oceny cząstkowe otrzymywane w trakcie semestru)",
-            "Wykonanie i obrona pracy zaliczeniowej."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "obrona projektu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Grafika komputerowa",
@@ -65,22 +75,93 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "1Symulacje Rigid-BodyTworzenie obiektów Rigid-Body i symulowanie ich zderzeń i ewolucji w systemie. Sprawdzanie, kto zbuduje najbardziej wytrzymałą konstrukcję.",
-            "2Wykorzystanie driverów i motorów do sterowania więzami sztywnymi i łamalnymiĆwiczenia z burzenia budynków.",
-            "3Symulacje Soft-BodyBryły elastyczne o różnej sztywności, bryły odkształcające się po kolizji.",
-            "4Zaawansowane ustawienia symulacji soft-bodyTworzenie kolizji samochodów.",
-            "5Symulacje ClothSymulowanie odzieży - skórzanej, gumowej, jedwabnej, dżinsowej i innej. Kolizje wewnętrzne",
-            "6Symulowanie odzieży na modelu ludzkim.",
-            "Od prostych ćwiczeń takich jak flaga do ubrania ludzi.",
-            "7Symulacje cząsteczkoweSymulowanie w modelach Newtonian, Boids, Fluid i Keyed. Animacje cząsteczkowe.",
-            "8Tworzenie animacji napisów i elementów graficznych z cząstek.Animacja wybuchających sztucznych ogni.",
-            "9Symulacje trawy, włosów, futra i układów podobnych do nich.Włosy czesane, dynamicznie reagujące na obiekty na scenie, kolidujące ze sobą, edycja i układanie włosów.",
-            "10Tworzenie trawnika lub pola zboża.Animacja trawy lub kłosów zboża w wielkiej skali.",
-            "11Symulacje cieczy. Ciecze gęste, miód, czekolada, syrop. Dodawanie i usuwanie cieczy.Ćwiczenia z budowania scen w których występują symulacje płynów.",
-            "12Symulacje cieczy ze zmienną gęstością.Efekt kropli wpadającej do wody.",
-            "13Symulacje dymu, ognia, wybuchy.Wysadzanie modelu uczelni lub inne ćwiczenia.",
-            "14Zaawansowane przypadki symulacji ognia i dymy.Ćwiczenie spalania kartki papieru."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1Symulacje Rigid-BodyTworzenie obiektów Rigid-Body i symulowanie ich zderzeń i ewolucji w systemie. Sprawdzanie, kto zbuduje najbardziej wytrzymałą konstrukcję.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2Wykorzystanie driverów i motorów do sterowania więzami sztywnymi i łamalnymiĆwiczenia z burzenia budynków.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3Symulacje Soft-BodyBryły elastyczne o różnej sztywności, bryły odkształcające się po kolizji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4Zaawansowane ustawienia symulacji soft-bodyTworzenie kolizji samochodów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5Symulacje ClothSymulowanie odzieży - skórzanej, gumowej, jedwabnej, dżinsowej i innej. Kolizje wewnętrzne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6Symulowanie odzieży na modelu ludzkim.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Od prostych ćwiczeń takich jak flaga do ubrania ludzi.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "7Symulacje cząsteczkoweSymulowanie w modelach Newtonian, Boids, Fluid i Keyed. Animacje cząsteczkowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "8Tworzenie animacji napisów i elementów graficznych z cząstek.Animacja wybuchających sztucznych ogni.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "9Symulacje trawy, włosów, futra i układów podobnych do nich.Włosy czesane, dynamicznie reagujące na obiekty na scenie, kolidujące ze sobą, edycja i układanie włosów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "10Tworzenie trawnika lub pola zboża.Animacja trawy lub kłosów zboża w wielkiej skali.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "11Symulacje cieczy. Ciecze gęste, miód, czekolada, syrop. Dodawanie i usuwanie cieczy.Ćwiczenia z budowania scen w których występują symulacje płynów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "12Symulacje cieczy ze zmienną gęstością.Efekt kropli wpadającej do wody.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "13Symulacje dymu, ognia, wybuchy.Wysadzanie modelu uczelni lub inne ćwiczenia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "14Zaawansowane przypadki symulacji ognia i dymy.Ćwiczenie spalania kartki papieru.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The subject matter of the course is based on simulation engines available in open-source software (Blender). Topics include simulations of systems with inertia and friction in a rigid-body model, simulations of soft bodies with deformable surfaces, cloth and fabric simulations, particle simulations in Newtonian, Fluid, Boids, and Keyed models, as well as simulations of fire, smoke, explosions, sparks, dust, fog, and other volumetric phenomena. In addition, topics from the field of Dynamic Paint are discussed, where the simulation system affects the simulated system, for example simulating waves on water, destruction, deformations, reflections, changes in medium density, etc. The course extends and enriches the knowledge acquired in the Computer Graphics course."
+        "cel_dydaktyczny_eng": "The subject matter of the course is based on simulation engines available in open-source software (Blender). Topics include simulations of systems with inertia and friction in a rigid-body model, simulations of soft bodies with deformable surfaces, cloth and fabric simulations, particle simulations in Newtonian, Fluid, Boids, and Keyed models, as well as simulations of fire, smoke, explosions, sparks, dust, fog, and other volumetric phenomena. In addition, topics from the field of Dynamic Paint are discussed, where the simulation system affects the simulated system, for example simulating waves on water, destruction, deformations, reflections, changes in medium density, etc. The course extends and enriches the knowledge acquired in the Computer Graphics course.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

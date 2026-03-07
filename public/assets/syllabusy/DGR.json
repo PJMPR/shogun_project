@@ -21,19 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 30,
             "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Projektowanie modelu grafowego bazy danych (Neo4j); implementacja zapytań grafowych; przygotowanie dokumentacji projektu; analiza relacji w danych."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Projekt realizowany indywidualnie lub w parach – 100%",
-            "Ocena projektu obejmuje: poprawność modelu grafowego, jakość zapytań grafowych, poprawność relacji i własności, uzasadnienie decyzji projektowych oraz dokumentację",
-            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Relacyjne bazy danych",
@@ -62,17 +74,68 @@
             "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, analizować zależności pomiędzy danymi oraz argumentować wybór modelu grafowego."
         },
         "tresci_programowe": [
-            "Wprowadzenie do baz grafowych i ich zastosowań",
-            "Model grafowy: wierzchołki, relacje i właściwości",
-            "Porównanie baz grafowych z relacyjnymi i dokumentowymi",
-            "Projektowanie modelu danych w bazie grafowej",
-            "Tworzenie i modyfikacja danych w grafie",
-            "Podstawy języka zapytań grafowych",
-            "Wyszukiwanie ścieżek i zależności",
-            "Indeksowanie i podstawy wydajności",
-            "Integracja bazy grafowej z aplikacją",
-            "Projekt zaliczeniowy – implementacja i prezentacja"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do baz grafowych i ich zastosowań",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Model grafowy: wierzchołki, relacje i właściwości",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Porównanie baz grafowych z relacyjnymi i dokumentowymi",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Projektowanie modelu danych w bazie grafowej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Tworzenie i modyfikacja danych w grafie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Podstawy języka zapytań grafowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wyszukiwanie ścieżek i zależności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Indeksowanie i podstawy wydajności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Integracja bazy grafowej z aplikacją",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the concept of graph databases and their applications in systems where relationships between data are of key importance. Students learn the basic elements of the graph model (vertices, edges, properties), principles of data modeling, and execution of graph queries. The course prepares students to design and implement simple graph database solutions and to compare this approach consciously with other database models."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the concept of graph databases and their applications in systems where relationships between data are of key importance. Students learn the basic elements of the graph model (vertices, edges, properties), principles of data modeling, and execution of graph queries. The course prepares students to design and implement simple graph database solutions and to compare this approach consciously with other database models.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

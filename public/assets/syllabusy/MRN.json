@@ -21,19 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 30,
             "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Projektowanie i implementacja aplikacji mobilnej w React Native; obsługa stanu i nawigacji; integracja z API; przygotowanie dokumentacji projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Projekt aplikacji mobilnej realizowany indywidualnie lub w parach – 100%",
-            "Ocena projektu obejmuje: poprawność działania aplikacji, strukturę komponentów, obsługę stanu i nawigacji, integrację z API oraz jakość kodu",
-            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Programowanie aplikacji internetowych",
@@ -62,17 +74,68 @@
             "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu."
         },
         "tresci_programowe": [
-            "Wprowadzenie do aplikacji mobilnych i React Native",
-            "Środowisko pracy, Expo i konfiguracja projektu",
-            "Komponenty, JSX oraz właściwości komponentów",
-            "Zarządzanie stanem i obsługa zdarzeń",
-            "Stylowanie interfejsu i layout aplikacji",
-            "Nawigacja pomiędzy ekranami",
-            "Komunikacja z API i obsługa danych zdalnych",
-            "Dostęp do funkcji urządzenia mobilnego",
-            "Debugowanie i testowanie aplikacji mobilnych",
-            "Projekt zaliczeniowy – implementacja i prezentacja"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do aplikacji mobilnych i React Native",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Środowisko pracy, Expo i konfiguracja projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Komponenty, JSX oraz właściwości komponentów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zarządzanie stanem i obsługa zdarzeń",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Stylowanie interfejsu i layout aplikacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Nawigacja pomiędzy ekranami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Komunikacja z API i obsługa danych zdalnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Dostęp do funkcji urządzenia mobilnego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Debugowanie i testowanie aplikacji mobilnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of mobile application development using the React Native framework. Students learn the architecture of component-based applications, state management, navigation, and integration with native mobile device features. The classes are practical in nature and prepare students to independently create simple cross-platform mobile applications for Android and iOS."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of mobile application development using the React Native framework. Students learn the architecture of component-based applications, state management, navigation, and integration with native mobile device features. The classes are practical in nature and prepare students to independently create simple cross-platform mobile applications for Android and iOS.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

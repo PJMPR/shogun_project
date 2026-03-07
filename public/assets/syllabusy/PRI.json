@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Projektowanie systemu informacyjnego z użyciem narzędzi CASE; tworzenie diagramów UML i dokumentacji; przygotowanie do kolokwium końcowego; prezentacja projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,12 +43,14 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "Kryteria oceny",
-            "prezentacja projektu i dokumentacji (60%)",
-            "aktywność na zajęciach (10%)",
-            "kolokwium końcowe (30%)"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "kolokwium końcowe",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Programowanie obiektowe",
@@ -87,23 +100,98 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "Pojęcia i metody inżynierii oprogramowania. Cykl życia produktu informatycznego",
-            "Faza przedprojektowa i planowanie projektu; Dokument Założeń Wstępnych (DZW)",
-            "Inżynieria wymagań; pojęcie wymagania; kategorie i przykłady wymagań. Specyfikacja wymagań i dokument Specyfikacji Wymagań Systemowych (SWS)",
-            "Praktyczne przykłady konstrukcji SWS",
-            "Cechy narządzi CASE. Enterprise Architect",
-            "Graficzne techniki modelowania wymagań systemowych na przykładzie diagramów wymagań systemowych języka SysML. Strukturyzacja złożonych modeli z wykorzystaniem pakietów",
-            "Model przypadków użycia",
-            "Praktyka modelowania i specyfikacji przypadków użycia. Techniki specyfikacji scenariuszy przypadków użycia",
-            "Modelowanie dynamiki systemu w języku UML – wprowadzenie. Techniki modelowania interakcji w systemie",
-            "Diagramy sekwencji UML jako uniwersalna technika modelowania interakcji pomiędzy składowymi systemu",
-            "Alternatywne techniki modelowania interakcje na przykładzie diagramu komunikacji. Wstęp do transformacji w narzędziu Enterprise Architect",
-            "Specyfikowanie przypadków użycia z wykorzystaniem diagramów czynności",
-            "Modelowanie struktury systemu: obiekty, klasy, właściwości klasy, dziedziczenie, polimorfizm, agregacja. Wyrażanie struktury systemu w języku UML",
-            "Zaawansowane przykłady modelowania diagramu klas UML",
-            "Przekształcanie modeli klas w kod szkieletowy, modele w wybranych frameworkach i trwałe struktury bazodanowe w narzędziu Enterprise Architect",
-            "Diagramy maszyny stanowej jako technika zarządzania złożonością"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Pojęcia i metody inżynierii oprogramowania. Cykl życia produktu informatycznego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Faza przedprojektowa i planowanie projektu; Dokument Założeń Wstępnych (DZW)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Inżynieria wymagań; pojęcie wymagania; kategorie i przykłady wymagań. Specyfikacja wymagań i dokument Specyfikacji Wymagań Systemowych (SWS)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Praktyczne przykłady konstrukcji SWS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Cechy narządzi CASE. Enterprise Architect",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Graficzne techniki modelowania wymagań systemowych na przykładzie diagramów wymagań systemowych języka SysML. Strukturyzacja złożonych modeli z wykorzystaniem pakietów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Model przypadków użycia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Praktyka modelowania i specyfikacji przypadków użycia. Techniki specyfikacji scenariuszy przypadków użycia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Modelowanie dynamiki systemu w języku UML – wprowadzenie. Techniki modelowania interakcji w systemie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Diagramy sekwencji UML jako uniwersalna technika modelowania interakcji pomiędzy składowymi systemu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Alternatywne techniki modelowania interakcje na przykładzie diagramu komunikacji. Wstęp do transformacji w narzędziu Enterprise Architect",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Specyfikowanie przypadków użycia z wykorzystaniem diagramów czynności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Modelowanie struktury systemu: obiekty, klasy, właściwości klasy, dziedziczenie, polimorfizm, agregacja. Wyrażanie struktury systemu w języku UML",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Zaawansowane przykłady modelowania diagramu klas UML",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Przekształcanie modeli klas w kod szkieletowy, modele w wybranych frameworkach i trwałe struktury bazodanowe w narzędziu Enterprise Architect",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Diagramy maszyny stanowej jako technika zarządzania złożonością",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with basic analytical and design techniques, CASE tools, and the methodological foundations of developing IT solutions. Students are expected to demonstrate knowledge of the most commonly used pre-project documents, core modeling categories and UML diagrams, as well as methods of mapping the object model into a selected programming language or relational schema using tool-supported transformation techniques."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with basic analytical and design techniques, CASE tools, and the methodological foundations of developing IT solutions. Students are expected to demonstrate knowledge of the most commonly used pre-project documents, core modeling categories and UML diagrams, as well as methods of mapping the object model into a selected programming language or relational schema using tool-supported transformation techniques.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

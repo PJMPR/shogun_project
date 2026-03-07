@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 30,
             "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Tworzenie planu zarządzania projektem informatycznym w grupie; analiza realnych projektów IT; przygotowanie prezentacji planu zarządzania; opracowanie dokumentacji projektowej."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach",
+                "dyskusja",
+                "burza mózgów",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie"
@@ -32,23 +42,13 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "Wykład z elementami dyskusji,",
-            "prezentacja multimedialna,",
-            "case study,",
-            "wykład zaproszony.",
-            "dyskusja,",
-            "burza mózgów,",
-            "rozwiązywanie zadań,",
-            "analiza przypadków,",
-            "prezentacje.",
-            "Zaliczenie",
-            "Kryteria oceny",
-            "Studenci tworzą i prezentują projekt planu zarządzania projektem informatycznym, wybranego przez grupę.",
-            "Oceniane są: kompletność planu, zastosowanie teorii z wykładów, realizm, innowacyjność, jakość prezentacji.",
-            "Ocena grupowa i indywidualna (uwzględniająca wkład).",
-            "Nie dotyczy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "cel_dydaktyczny": "Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.",
         "literatura": {
             "podstawowa": {
@@ -84,34 +84,146 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do zarządzania projektami IT",
-            "Definicje, cele i zakres zarządzania projektami.",
-            "Cykl życia projektu IT.",
-            "Case study: Denver International Airport Baggage System - analiza błędów i wnioski.",
-            "Metodologie zarządzania projektami",
-            "Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania.",
-            "Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu.",
-            "Motywacja i zarządzanie zespołami IT",
-            "Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej.",
-            "Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację.",
-            "Budowanie efektywnych zespołów, role i odpowiedzialności.",
-            "Planowanie projektu",
-            "Etapy planowania projektu, analiza sytuacji, SMART goals, WBS.",
-            "Identyfikacja i analiza ryzyka.",
-            "Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania.",
-            "Ćwiczenia: planowanie projektu z użyciem \"Ninja Planning Card\".",
-            "Realizacja i kontrola projektu",
-            "Zarządzanie czasem, budżetem i zasobami.",
-            "Monitoring postępów projektu, raportowanie, analiza odchyleń.",
-            "Zarządzanie zmianą, kontrola jakości.",
-            "Zamykanie projektu",
-            "Ocena projektu, dokumentacja, lessons learned.",
-            "Prezentacja wyników projektu.",
-            "Dodatkowe zagadnienia",
-            "PRINCE2, Six Sigma - wprowadzenie.",
-            "Teorie X, Y, Z - style zarządzania.",
-            "Cargo Cults - unikanie bezmyślnego naśladowania.",
-            "Etyka w zarządzaniu projektami IT."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do zarządzania projektami IT",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Definicje, cele i zakres zarządzania projektami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Cykl życia projektu IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Case study: Denver International Airport Baggage System - analiza błędów i wnioski.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Metodologie zarządzania projektami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Motywacja i zarządzanie zespołami IT",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Budowanie efektywnych zespołów, role i odpowiedzialności.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Planowanie projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Etapy planowania projektu, analiza sytuacji, SMART goals, WBS.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Identyfikacja i analiza ryzyka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Ćwiczenia: planowanie projektu z użyciem \"Ninja Planning Card\".",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Realizacja i kontrola projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Zarządzanie czasem, budżetem i zasobami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Monitoring postępów projektu, raportowanie, analiza odchyleń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Zarządzanie zmianą, kontrola jakości.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Zamykanie projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Ocena projektu, dokumentacja, lessons learned.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Prezentacja wyników projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Dodatkowe zagadnienia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "PRINCE2, Six Sigma - wprowadzenie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Teorie X, Y, Z - style zarządzania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Cargo Cults - unikanie bezmyślnego naśladowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "Etyka w zarządzaniu projektami IT.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -119,6 +231,17 @@
                 "wymagania": "Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole"
             }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the key concepts and practices of IT project management. Equipping students with the skills to plan, organize, lead, and control IT projects. Understanding the specifics of managing IT teams, motivation, and communication."
+        "cel_dydaktyczny_eng": "Introduction to the key concepts and practices of IT project management. Equipping students with the skills to plan, organize, lead, and control IT projects. Understanding the specifics of managing IT teams, motivation, and communication.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

@@ -21,17 +21,16 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja i konfiguracja protokołów komunikacyjnych IoT (MQTT, CoAP); realizacja projektu z urządzeniami IoT; przygotowanie do kolokwium teoretyczno-praktycznego."
         },
         "metody_dydaktyczne": {
             "wyklad": [
-                "Wykład z prezentacją multimedialną",
-                "Wykład z zespołowym rozwiązaniem problemu",
-                "Live-Coding"
+                "wykład z prezentacją multimedialną"
             ],
-            "laboratorium": [
-                "Ćwiczenia praktyczne",
-                "Implementacja projektów"
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
             ]
         },
         "zaliczenie": {
@@ -42,11 +41,15 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "1 projekt - 40% oceny",
-            "Zadania z zajęć - 20% oceny",
-            "Kolokwium teoretyczno-praktyczne - 40% oceny"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.",
         "literatura": {
@@ -74,17 +77,68 @@
             ]
         },
         "tresci_programowe": [
-            "Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS.",
-            "Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug.",
-            "Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU.",
-            "Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput.",
-            "Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń.",
-            "MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie.",
-            "CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania.",
-            "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
-            "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
-            "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency."
+        "cel_dydaktyczny_eng": "The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

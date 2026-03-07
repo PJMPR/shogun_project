@@ -21,14 +21,16 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna praca nad prototypem gry komputerowej; testowanie mechanik i rozgrywki; przygotowanie dokumentacji projektowej i prezentacji."
         },
         "metody_dydaktyczne": {
             "wyklad": [
-                "Wykład"
+                "wykład z prezentacją multimedialną"
             ],
-            "laboratorium": [
-                "Projekt"
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach"
             ]
         },
         "zaliczenie": {
@@ -39,10 +41,13 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Zrobiony projekt (waga 70%)",
-            "Obecność i aktywność na zajęciach (waga 30%)"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Projektowanie systemów informacyjnych (PRI)",
@@ -91,14 +96,53 @@
             ]
         },
         "tresci_programowe": [
-            "Ideacja i dokumentacja wizualna. Techniki burzy mózgów, tworzenie \"one-paged GDD\" i moodboardów.",
-            "Analog Prototyping. Tworzenie gier planszowych i karcianych jako modeli systemów cyfrowych.",
-            "Greyboxing i Level Design. Prototypowanie przestrzeni – jak architektura poziomu wpływa na zachowanie gracza.",
-            "Prototypowanie mechanik (Core Loop). Skupienie na \"30 sekundach zabawy\" – czy bazowy ruch i interakcja są satysfakcjonujące?",
-            "Interface & Affordance. Jak projektować przedmioty i menu, by gracz intuicyjnie wiedział, co z nimi zrobić.",
-            "Psychologia playtestingu. Jak przygotować ankiety, jak obserwować gracza i jak nie sugerować odpowiedzi.",
-            "Iteracja na podstawie danych. Analiza sesji testowych i radykalne zmiany w projekcie (\"Kill your darlings\")."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Ideacja i dokumentacja wizualna. Techniki burzy mózgów, tworzenie \"one-paged GDD\" i moodboardów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Analog Prototyping. Tworzenie gier planszowych i karcianych jako modeli systemów cyfrowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Greyboxing i Level Design. Prototypowanie przestrzeni – jak architektura poziomu wpływa na zachowanie gracza.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Prototypowanie mechanik (Core Loop). Skupienie na \"30 sekundach zabawy\" – czy bazowy ruch i interakcja są satysfakcjonujące?",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Interface & Affordance. Jak projektować przedmioty i menu, by gracz intuicyjnie wiedział, co z nimi zrobić.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Psychologia playtestingu. Jak przygotować ankiety, jak obserwować gracza i jak nie sugerować odpowiedzi.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Iteracja na podstawie danych. Analiza sesji testowych i radykalne zmiany w projekcie (\"Kill your darlings\").",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Understanding the prototype life cycle from concept to a functional digital prototype. Learning to identify design flaws early and eliminate unplayable mechanics with minimal effort. Practical use of game engines, ready-made tools, and scripts for rapid implementation of game logic without the need to build full production systems. Ability to evaluate gameplay, develop critical analysis of the feedback loop and player experience (game feel) at an early production stage. Visual and technical communication, and preparation for presenting ideas in the form of a Vertical Slice or a Minimum Viable Product (MVP)."
+        "cel_dydaktyczny_eng": "Understanding the prototype life cycle from concept to a functional digital prototype. Learning to identify design flaws early and eliminate unplayable mechanics with minimal effort. Practical use of game engines, ready-made tools, and scripts for rapid implementation of game logic without the need to build full production systems. Ability to evaluate gameplay, develop critical analysis of the feedback loop and player experience (game feel) at an early production stage. Visual and technical communication, and preparation for presenting ideas in the form of a Vertical Slice or a Minimum Viable Product (MVP).",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

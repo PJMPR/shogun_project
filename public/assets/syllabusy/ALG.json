@@ -21,9 +21,16 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań z algebry liniowej i geometrii analitycznej; powtórzenie materiału przed kolokwiami; ćwiczenie obliczeń macierzowych i wektorowych."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "dyskusja"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,27 +39,13 @@
                 "sposob": "Egzamin pisemny"
             }
         },
-        "kryteria_oceny": [
-            "Rozwiązywanie zadań na tablicy",
-            "rozwiązywanie zadań na tablicy",
-            "dykusja",
-            "Kryteria oceny",
-            "Zaliczenie ćwiczeń na podstawie dwóch kolokwiów (do 10 zadań). Student jest zobowiązany uzyskać wynik powyżej 50% możliwych do zdobycia sumarycznie z obu kolokwiów.",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "sprawdziany wstępne „wejściówki\""
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "matematyka z zakresu szkoły średniej",
@@ -89,13 +82,48 @@
             "kompetencje_spoleczne": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
         },
         "tresci_programowe": [
-            "Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych.",
-            "Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone).",
-            "Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych.",
-            "Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych).",
-            "Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera.",
-            "Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to acquire skills in using the apparatus of set theory, complex numbers, and polynomial rings; formulating problems in terms of matrices and performing matrix operations; solving systems of linear equations; and understanding basic algebraic structures. Basic issues in analytic geometry in the plane and three-dimensional space are also discussed."
+        "cel_dydaktyczny_eng": "The aim of the course is to acquire skills in using the apparatus of set theory, complex numbers, and polynomial rings; formulating problems in terms of matrices and performing matrix operations; solving systems of linear equations; and understanding basic algebraic structures. Basic issues in analytic geometry in the plane and three-dimensional space are also discussed.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

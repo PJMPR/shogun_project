@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -10,12 +11,19 @@ import { DividerModule } from 'primeng/divider';
 import { SelectModule } from 'primeng/select';
 import { DialogModule } from 'primeng/dialog';
 import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { SylabusPreviewComponent } from '../../shared/sylabus-preview/sylabus-preview.component';
 import { SylabusData } from '../../stacjonarne/program/models/program.models';
 
 interface PrzedmiotWprowadzajacy {
   nazwa: string;
   wymagania: string;
+}
+
+interface TrescProgramowa {
+  nr_zajec: number | null;
+  wyklad: string;
+  cwiczenia: string;
 }
 
 interface FormModel {
@@ -34,23 +42,31 @@ interface FormModel {
   z_udzialem_prowadzacego_h: number | null;
   praca_wlasna_studenta_h: number | null;
   calkowita_liczba_godzin_h: number | null;
+  praca_wlasna_studenta: string;
   zaliczenie_wyklad: string;
   zaliczenie_cwiczenia: string;
   zaliczenie_laboratorium: string;
   cel_dydaktyczny: string;
   cel_dydaktyczny_eng: string;
-  kryteria_oceny_txt: string;
-  metody_wyklad_txt: string;
-  metody_cwiczenia_txt: string;
-  metody_laboratorium_txt: string;
+  kryteria_wyklad: string[];
+  kryteria_cwiczenia_laboratorium: string[];
+  metody_wyklad: string[];
+  metody_cwiczenia_laboratorium: string[];
   przedmioty_wprowadzajace: PrzedmiotWprowadzajacy[];
   efekty_wiedza_txt: string;
   efekty_umiejetnosci_txt: string;
   efekty_kompetencje_txt: string;
-  tresci_programowe_txt: string;
+  tresci_programowe: TrescProgramowa[];
   literatura_podstawowa_txt: string;
   literatura_uzupelniajaca_txt: string;
   literatura_internetowa_txt: string;
+  informacje_dodatkowe: string;
+  rynek_pracy_dziedzina: string;
+  rynek_pracy_zawody: string;
+  rynek_pracy_prace_txt: string;
+  lab_pc_params_txt: string;
+  lab_software_txt: string;
+  lab_wyposazenie_txt: string;
 }
 
 const SPOSOBY_ZALICZENIA = [
@@ -85,12 +101,13 @@ const JEDNOSTKI = [
     SelectModule,
     DialogModule,
     CheckboxModule,
+    MultiSelectModule,
     SylabusPreviewComponent,
   ],
   templateUrl: './nowy-sylabus.component.html',
   styleUrl: './nowy-sylabus.component.css',
 })
-export class NowySylabusComponent {
+export class NowySylabusComponent implements OnInit {
 
   sposobyZaliczenia = SPOSOBY_ZALICZENIA;
   trybOptions = TRYBY_STUDIOW;
@@ -106,6 +123,11 @@ export class NowySylabusComponent {
   importJsonText = '';
   importError = '';
   importDragOver = false;
+
+  /** Dostępne opcje z plików JSON */
+  metodyWykladOptions: { label: string; value: string }[] = [];
+  metodyCwiczeniaOptions: { label: string; value: string }[] = [];
+  krytyriaOptions: { label: string; value: string }[] = [];
 
   form: FormModel = {
     tryb_studiow: 'stacjonarny',
@@ -123,24 +145,44 @@ export class NowySylabusComponent {
     z_udzialem_prowadzacego_h: null,
     praca_wlasna_studenta_h: null,
     calkowita_liczba_godzin_h: null,
+    praca_wlasna_studenta: '',
     zaliczenie_wyklad: '',
     zaliczenie_cwiczenia: '',
     zaliczenie_laboratorium: '',
     cel_dydaktyczny: '',
     cel_dydaktyczny_eng: '',
-    kryteria_oceny_txt: '',
-    metody_wyklad_txt: '',
-    metody_cwiczenia_txt: '',
-    metody_laboratorium_txt: '',
+    kryteria_wyklad: [],
+    kryteria_cwiczenia_laboratorium: [],
+    metody_wyklad: [],
+    metody_cwiczenia_laboratorium: [],
     przedmioty_wprowadzajace: [{ nazwa: '', wymagania: '' }],
     efekty_wiedza_txt: '',
     efekty_umiejetnosci_txt: '',
     efekty_kompetencje_txt: '',
-    tresci_programowe_txt: '',
+    tresci_programowe: [{ nr_zajec: 1, wyklad: '', cwiczenia: '' }],
     literatura_podstawowa_txt: '',
     literatura_uzupelniajaca_txt: '',
     literatura_internetowa_txt: '',
+    informacje_dodatkowe: '',
+    rynek_pracy_dziedzina: '',
+    rynek_pracy_zawody: '',
+    rynek_pracy_prace_txt: '',
+    lab_pc_params_txt: '',
+    lab_software_txt: '',
+    lab_wyposazenie_txt: '',
   };
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<any>('/assets/metody_dydaktyczne.json').subscribe(data => {
+      this.metodyWykladOptions = (data.wyklad as string[]).map(m => ({ label: m, value: m }));
+      this.metodyCwiczeniaOptions = (data.cwiczenia_laboratorium as string[]).map(m => ({ label: m, value: m }));
+    });
+    this.http.get<any>('/assets/metody_weryfikacji.json').subscribe(data => {
+      this.krytyriaOptions = (data.metody_weryfikacji as string[]).map(m => ({ label: m, value: m }));
+    });
+  }
 
   get today(): string {
     const d = new Date();
@@ -172,6 +214,17 @@ export class NowySylabusComponent {
     this.form.przedmioty_wprowadzajace.splice(index, 1);
   }
 
+  addTresc(): void {
+    const nr = (this.form.tresci_programowe.length > 0
+      ? (this.form.tresci_programowe[this.form.tresci_programowe.length - 1].nr_zajec ?? 0) + 1
+      : 1);
+    this.form.tresci_programowe.push({ nr_zajec: nr, wyklad: '', cwiczenia: '' });
+  }
+
+  removeTresc(index: number): void {
+    this.form.tresci_programowe.splice(index, 1);
+  }
+
   private splitLines(txt: string): string[] {
     return txt.split('\n').map(l => l.trim()).filter(l => l.length > 0);
   }
@@ -188,9 +241,8 @@ export class NowySylabusComponent {
     if (l > 0 && f.zaliczenie_laboratorium) zaliczenie['Laboratorium'] = { sposob: f.zaliczenie_laboratorium };
 
     const metody: Record<string, string[]> = {};
-    if (w > 0 && f.metody_wyklad_txt) metody['wyklad'] = this.splitLines(f.metody_wyklad_txt);
-    if (c > 0 && f.metody_cwiczenia_txt) metody['cwiczenia'] = this.splitLines(f.metody_cwiczenia_txt);
-    if (l > 0 && f.metody_laboratorium_txt) metody['laboratorium'] = this.splitLines(f.metody_laboratorium_txt);
+    if (w > 0 && f.metody_wyklad.length) metody['wyklad'] = f.metody_wyklad;
+    if ((c > 0 || l > 0) && f.metody_cwiczenia_laboratorium.length) metody['cwiczenia_laboratorium'] = f.metody_cwiczenia_laboratorium;
 
     const przedmioty = f.przedmioty_wprowadzajace.filter(p => p.nazwa.trim());
 
@@ -203,6 +255,15 @@ export class NowySylabusComponent {
       this.splitLines(f.literatura_internetowa_txt).forEach(line => { docObj[line] = line; });
       lit['dokumentacja_internetowa'] = docObj;
     }
+
+    const kryteria_oceny = {
+      wyklad: w > 0 ? f.kryteria_wyklad : [],
+      cwiczenia_laboratorium: (c > 0 || l > 0) ? f.kryteria_cwiczenia_laboratorium : [],
+    };
+
+    const tresci = f.tresci_programowe
+      .filter(t => t.wyklad.trim() || t.cwiczenia.trim())
+      .map(t => ({ nr_zajec: t.nr_zajec, wyklad: t.wyklad, cwiczenia: t.cwiczenia }));
 
     return {
       sylabus: {
@@ -228,10 +289,11 @@ export class NowySylabusComponent {
           z_udzialem_prowadzacego_h: f.z_udzialem_prowadzacego_h,
           praca_wlasna_studenta_h: f.praca_wlasna_studenta_h,
           calkowita_liczba_godzin_h: f.calkowita_liczba_godzin_h,
+          praca_wlasna_studenta: f.praca_wlasna_studenta,
         },
         metody_dydaktyczne: metody,
         zaliczenie,
-        kryteria_oceny: this.splitLines(f.kryteria_oceny_txt),
+        kryteria_oceny,
         przedmioty_wprowadzajace: przedmioty,
         cel_dydaktyczny: f.cel_dydaktyczny,
         ...(f.cel_dydaktyczny_eng ? { cel_dydaktyczny_eng: f.cel_dydaktyczny_eng } : {}),
@@ -241,7 +303,18 @@ export class NowySylabusComponent {
           umiejetnosci: this.splitLines(f.efekty_umiejetnosci_txt),
           kompetencje_spoleczne: this.splitLines(f.efekty_kompetencje_txt),
         },
-        tresci_programowe: this.splitLines(f.tresci_programowe_txt),
+        tresci_programowe: tresci,
+        informacje_dodatkowe: f.informacje_dodatkowe,
+        rynek_pracy: {
+          dziedzina_gospodarki: f.rynek_pracy_dziedzina,
+          zawody: f.rynek_pracy_zawody,
+          prace_dyplomowe: this.splitLines(f.rynek_pracy_prace_txt),
+        },
+        wymagania_laboratorium: {
+          pc_params: this.splitLines(f.lab_pc_params_txt),
+          software: this.splitLines(f.lab_software_txt),
+          wyposazenie_dodatkowe: this.splitLines(f.lab_wyposazenie_txt),
+        },
       },
     };
   }
@@ -325,9 +398,38 @@ export class NowySylabusComponent {
       return Array.isArray(val) ? val.join('\n') : val;
     };
     const getZal = (forma: string): string => s.zaliczenie?.[forma]?.sposob ?? '';
-    const getMet = (key: string): string => join((s.metody_dydaktyczne as any)?.[key]);
+    const getMet = (key: string): string[] => {
+      const v = (s.metody_dydaktyczne as any)?.[key];
+      return Array.isArray(v) ? v : (v ? [v] : []);
+    };
     const docInternet = s.literatura?.dokumentacja_internetowa
       ? Object.keys(s.literatura.dokumentacja_internetowa).join('\n') : '';
+
+    // kryteria_oceny – nowy format obiektowy lub stary (tablica)
+    let kryt_wyklad: string[] = [];
+    let kryt_cwiczenia: string[] = [];
+    const ko = s.kryteria_oceny as any;
+    if (ko && !Array.isArray(ko) && typeof ko === 'object') {
+      kryt_wyklad = Array.isArray(ko.wyklad) ? ko.wyklad : [];
+      kryt_cwiczenia = Array.isArray(ko.cwiczenia_laboratorium) ? ko.cwiczenia_laboratorium : [];
+    } else if (Array.isArray(ko)) {
+      kryt_wyklad = ko;
+    }
+
+    // tresci_programowe – nowy format obiektowy lub stary (tablica stringów)
+    let tresci: TrescProgramowa[] = [];
+    const tp = s.tresci_programowe as any;
+    if (Array.isArray(tp) && tp.length > 0) {
+      if (typeof tp[0] === 'object' && 'nr_zajec' in tp[0]) {
+        tresci = tp.map((t: any) => ({ nr_zajec: t.nr_zajec, wyklad: t.wyklad ?? '', cwiczenia: t.cwiczenia ?? '' }));
+      } else {
+        tresci = tp.map((t: string, i: number) => ({ nr_zajec: i + 1, wyklad: t, cwiczenia: '' }));
+      }
+    }
+    if (tresci.length === 0) tresci = [{ nr_zajec: 1, wyklad: '', cwiczenia: '' }];
+
+    const rp = (s as any).rynek_pracy;
+    const wl = (s as any).wymagania_laboratorium;
 
     this.form = {
       tryb_studiow: s.tryb_studiow ?? this.form.tryb_studiow,
@@ -345,25 +447,33 @@ export class NowySylabusComponent {
       z_udzialem_prowadzacego_h: s.godziny?.z_udzialem_prowadzacego_h ?? null,
       praca_wlasna_studenta_h: s.godziny?.praca_wlasna_studenta_h ?? null,
       calkowita_liczba_godzin_h: s.godziny?.calkowita_liczba_godzin_h ?? null,
+      praca_wlasna_studenta: (s.godziny as any)?.praca_wlasna_studenta ?? '',
       zaliczenie_wyklad: getZal('Wykład'),
       zaliczenie_cwiczenia: getZal('Ćwiczenia'),
       zaliczenie_laboratorium: getZal('Laboratorium'),
       cel_dydaktyczny: s.cel_dydaktyczny ?? '',
       cel_dydaktyczny_eng: s.cel_dydaktyczny_eng ?? '',
-      kryteria_oceny_txt: join(s.kryteria_oceny),
-      metody_wyklad_txt: getMet('wyklad'),
-      metody_cwiczenia_txt: getMet('cwiczenia'),
-      metody_laboratorium_txt: getMet('laboratorium'),
+      kryteria_wyklad: kryt_wyklad,
+      kryteria_cwiczenia_laboratorium: kryt_cwiczenia,
+      metody_wyklad: getMet('wyklad'),
+      metody_cwiczenia_laboratorium: getMet('cwiczenia_laboratorium'),
       przedmioty_wprowadzajace: s.przedmioty_wprowadzajace?.length
         ? s.przedmioty_wprowadzajace.map(p => ({ nazwa: p.nazwa, wymagania: p.wymagania }))
         : [{ nazwa: '', wymagania: '' }],
       efekty_wiedza_txt: join(s.efekty_ksztalcenia?.wiedza),
       efekty_umiejetnosci_txt: join(s.efekty_ksztalcenia?.umiejetnosci),
       efekty_kompetencje_txt: join(s.efekty_ksztalcenia?.kompetencje_spoleczne),
-      tresci_programowe_txt: join(s.tresci_programowe),
+      tresci_programowe: tresci,
       literatura_podstawowa_txt: join(s.literatura?.podstawowa?.pozycje),
       literatura_uzupelniajaca_txt: join(s.literatura?.uzupelniajaca?.pozycje),
       literatura_internetowa_txt: docInternet,
+      informacje_dodatkowe: (s as any).informacje_dodatkowe ?? '',
+      rynek_pracy_dziedzina: rp?.dziedzina_gospodarki ?? '',
+      rynek_pracy_zawody: rp?.zawody ?? '',
+      rynek_pracy_prace_txt: Array.isArray(rp?.prace_dyplomowe) ? rp.prace_dyplomowe.join('\n') : '',
+      lab_pc_params_txt: Array.isArray(wl?.pc_params) ? wl.pc_params.join('\n') : '',
+      lab_software_txt: Array.isArray(wl?.software) ? wl.software.join('\n') : '',
+      lab_wyposazenie_txt: Array.isArray(wl?.wyposazenie_dodatkowe) ? wl.wyposazenie_dodatkowe.join('\n') : '',
     };
   }
 

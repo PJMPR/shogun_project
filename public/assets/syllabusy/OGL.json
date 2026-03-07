@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Implementacja scen 3D w OpenGL; ćwiczenia z shaderów, oświetlenia i teksturowania; przygotowanie zadań laboratoryjnych; samodzielne eksperymenty z grafiką 3D."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,18 +42,14 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "rozwiązywanie zadań",
-            "Kryteria oceny",
-            "Laboratorium/",
-            "Zaliczenie ćwiczeń polega na zbieraniu punktów:",
-            "50% możliwych punktów daje ocenę 3",
-            "60% punktów daje ocenę 3½",
-            "70% — ocenę 4",
-            "80% — 4½",
-            "90% i więcej — 5",
-            "brak"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny - test wyboru"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "• Algebra liniowa i geometria  (ALG)",
@@ -95,39 +101,178 @@
             ]
         },
         "tresci_programowe": [
-            "Wykład",
-            "Modelowanie oświetenia",
-            "Obiekt buforu ramki",
-            "Shadery geometrii",
-            "Teselacja",
-            "Import modeli 3W w OpenGL",
-            "Modelowanie nieba (Skybox)",
-            "Modelowanie mgły",
-            "Modelowanie przezroczystości. Sprajty punktowe",
-            "Sprajty punktowe",
-            "Modelowanie nierówności",
-            "Shadery obliczeniowe",
-            "Modelowanie systemu cząstek",
-            "Podstawy API Vulkan",
-            "Bufory w API Vulkan",
-            "Teksturowanie w API Vulkan",
-            "Laboratorium",
-            "Modelowanie oświetenia",
-            "Mapowanie cienia",
-            "Modelowanie krzywych Béziera",
-            "Modelowanie płatów Béziera",
-            "Import modeli 3W w OpenGL",
-            "Modelowanie nieba (Skybox)",
-            "Modelowanie mgły",
-            "Modelowanie przezroczystości. Sprajty punktowe",
-            "Sprajty punktowe",
-            "Modelowanie nierówności",
-            "Modelowanie głębi ostrości",
-            "Modelowanie systemu cząstek",
-            "Podstawy API Vulkan",
-            "Bufory w API Vulkan",
-            "Teksturowanie w API Vulkan"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wykład",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Modelowanie oświetenia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Obiekt buforu ramki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Shadery geometrii",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Teselacja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Import modeli 3W w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Modelowanie nieba (Skybox)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Modelowanie mgły",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Modelowanie przezroczystości. Sprajty punktowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Sprajty punktowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Modelowanie nierówności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Shadery obliczeniowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Modelowanie systemu cząstek",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Podstawy API Vulkan",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Bufory w API Vulkan",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Teksturowanie w API Vulkan",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Laboratorium",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Modelowanie oświetenia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Mapowanie cienia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Modelowanie krzywych Béziera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Modelowanie płatów Béziera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Import modeli 3W w OpenGL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Modelowanie nieba (Skybox)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Modelowanie mgły",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Modelowanie przezroczystości. Sprajty punktowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Sprajty punktowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Modelowanie nierówności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "Modelowanie głębi ostrości",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Modelowanie systemu cząstek",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Podstawy API Vulkan",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Bufory w API Vulkan",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "Teksturowanie w API Vulkan",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to acquire the ability to use the advanced capabilities of the OpenGL library."
+        "cel_dydaktyczny_eng": "The aim of the course is to acquire the ability to use the advanced capabilities of the OpenGL library.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

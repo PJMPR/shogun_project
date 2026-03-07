@@ -114,6 +114,30 @@ export interface SylabusGodzinyEcts {
   z_udzialem_prowadzacego_h: number | null;
   praca_wlasna_studenta_h: number | null;
   calkowita_liczba_godzin_h: number | null;
+  praca_wlasna_studenta?: string;
+}
+
+export interface SylabusKryteriaOceny {
+  wyklad?: string[];
+  cwiczenia_laboratorium?: string[];
+}
+
+export interface SylabusTrescProgramowa {
+  nr_zajec: number;
+  wyklad: string;
+  cwiczenia: string;
+}
+
+export interface SylabusRynekPracy {
+  dziedzina_gospodarki?: string;
+  zawody?: string;
+  prace_dyplomowe?: string[];
+}
+
+export interface SylabusWymaganiaLaboratorium {
+  pc_params?: string[];
+  software?: string[];
+  wyposazenie_dodatkowe?: string[];
 }
 
 export interface SylabusZaliczenie {
@@ -163,13 +187,16 @@ export interface SylabusData {
   godziny: SylabusGodzinyEcts;
   metody_dydaktyczne: SylabusMetodyDydaktyczne;
   zaliczenie: SylabusZaliczenie;
-  kryteria_oceny: string[];
+  kryteria_oceny: SylabusKryteriaOceny | string[];
   przedmioty_wprowadzajace: SylabusPrzedmiotWprowadzajacy[];
   cel_dydaktyczny: string;
   cel_dydaktyczny_eng?: string;
   literatura: SylabusLiteratura;
   efekty_ksztalcenia: SylabusEfekty;
-  tresci_programowe: string[];
+  tresci_programowe: SylabusTrescProgramowa[] | string[];
+  informacje_dodatkowe?: string;
+  rynek_pracy?: SylabusRynekPracy;
+  wymagania_laboratorium?: SylabusWymaganiaLaboratorium;
 }
 
 export interface SylabusFile {

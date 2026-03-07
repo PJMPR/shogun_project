@@ -21,14 +21,17 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 15,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Realizacja projektu zespołowego z analizy wybranej organizacji; przygotowanie do kolokwium z treści wykładów; lektura wskazanych materiałów z zarządzania."
         },
         "metody_dydaktyczne": {
             "wyklad": [
-                "Wykład z prezentacją multimedialną, analiza przypadków, dyskusja."
+                "wykład z prezentacją multimedialną"
             ],
-            "cwiczenia": [
-                "Ćwiczenia warsztatowe: praca w grupach, analiza przypadków biznesowych, krótkie prezentacje zespołowe."
+            "cwiczenia_laboratorium": [
+                "praca w grupach",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "dyskusja"
             ]
         },
         "zaliczenie": {
@@ -39,14 +42,14 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Ćwiczenia – zaliczenie z oceną:",
-            "Aktywność na zajęciach i praca w grupie (20% oceny).",
-            "Kolokwium pisemne z treści wykładów i ćwiczeń (40% oceny).",
-            "Projekt zespołowy: analiza wybranej organizacji z zastosowaniem poznanych narzędzi zarządczych (40% oceny).",
-            "Warunkiem zaliczenia jest uzyskanie co najmniej 51% punktów łącznie.",
-            "Skala ocen: 51–60% – 3.0, 61–70% – 3.5, 71–80% – 4.0, 81–90% – 4.5, 91–100% – 5.0."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena pracy podczas ćwiczenia",
+                "prezentacja elementu zespołowej pracy semestralnej"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Brak wymagań wstępnych",
@@ -86,17 +89,68 @@
             ]
         },
         "tresci_programowe": [
-            "Organizacja i zarządzanie – podstawowe pojęcia. Czym jest zarządzanie? Menedżer i jego role (Mintzberg). Ewolucja myśli zarządczej: szkoła klasyczna, behawioralna, ilościowa, systemowa.",
-            "Otoczenie organizacji: otoczenie ogólne (makrootoczenie) i otoczenie zadaniowe. Analiza PEST. Interesariusze organizacji.",
-            "Planowanie jako funkcja zarządzania: rodzaje planów, cele organizacyjne, zarządzanie przez cele (MBO). Analiza SWOT jako narzędzie planowania strategicznego.",
-            "Organizowanie: projekt struktury organizacyjnej, podział pracy, rozpiętość kierowania, centralizacja i decentralizacja. Typy struktur: liniowa, funkcjonalna, dywizjonalna, macierzowa, projektowa.",
-            "Kierowanie ludźmi: przywództwo i style kierowania (autokratyczny, demokratyczny, laissez-faire). Teorie motywacji (Maslow, Herzberg, teoria oczekiwań Vrooma). Komunikacja w organizacji.",
-            "Kontrola jako funkcja zarządzania: rodzaje kontroli, etapy procesu kontroli, controlling. Zarządzanie przez jakość (TQM) – wprowadzenie.",
-            "Wprowadzenie do zarządzania projektami: projekt a działalność operacyjna, cykl życia projektu, trójkąt projektowy (zakres, czas, koszt). Metodyki zarządcze: waterfall, Agile/Scrum – przegląd.",
-            "Zarządzanie zespołem projektowym: role w zespole (model Belbina), budowanie i etapy rozwoju zespołu (model Tuckmana), konflikty i sposoby ich rozwiązywania.",
-            "Kultura organizacyjna: pojęcie, elementy, typologie (Quinn, Hofstede). Wpływ kultury organizacyjnej na efektywność zespołu i firmy informatycznej.",
-            "Przedsiębiorczość i innowacje w organizacji: rodzaje innowacji, ekosystem startupowy, modele biznesowe – wprowadzenie (Business Model Canvas). Społeczna odpowiedzialność biznesu (CSR)."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Organizacja i zarządzanie – podstawowe pojęcia. Czym jest zarządzanie? Menedżer i jego role (Mintzberg). Ewolucja myśli zarządczej: szkoła klasyczna, behawioralna, ilościowa, systemowa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Otoczenie organizacji: otoczenie ogólne (makrootoczenie) i otoczenie zadaniowe. Analiza PEST. Interesariusze organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Planowanie jako funkcja zarządzania: rodzaje planów, cele organizacyjne, zarządzanie przez cele (MBO). Analiza SWOT jako narzędzie planowania strategicznego.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Organizowanie: projekt struktury organizacyjnej, podział pracy, rozpiętość kierowania, centralizacja i decentralizacja. Typy struktur: liniowa, funkcjonalna, dywizjonalna, macierzowa, projektowa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Kierowanie ludźmi: przywództwo i style kierowania (autokratyczny, demokratyczny, laissez-faire). Teorie motywacji (Maslow, Herzberg, teoria oczekiwań Vrooma). Komunikacja w organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Kontrola jako funkcja zarządzania: rodzaje kontroli, etapy procesu kontroli, controlling. Zarządzanie przez jakość (TQM) – wprowadzenie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wprowadzenie do zarządzania projektami: projekt a działalność operacyjna, cykl życia projektu, trójkąt projektowy (zakres, czas, koszt). Metodyki zarządcze: waterfall, Agile/Scrum – przegląd.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Zarządzanie zespołem projektowym: role w zespole (model Belbina), budowanie i etapy rozwoju zespołu (model Tuckmana), konflikty i sposoby ich rozwiązywania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Kultura organizacyjna: pojęcie, elementy, typologie (Quinn, Hofstede). Wpływ kultury organizacyjnej na efektywność zespołu i firmy informatycznej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Przedsiębiorczość i innowacje w organizacji: rodzaje innowacji, ekosystem startupowy, modele biznesowe – wprowadzenie (Business Model Canvas). Społeczna odpowiedzialność biznesu (CSR).",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic concepts and principles of organizational management. Students learn the functions of management (planning, organizing, leading, controlling), organizational structures, leadership styles, and elements of project and team management. The course serves as an introduction to understanding the business environment in which IT projects operate and develops managerial awareness necessary in the work of an IT engineer."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic concepts and principles of organizational management. Students learn the functions of management (planning, organizing, leading, controlling), organizational structures, leadership styles, and elements of project and team management. The course serves as an introduction to understanding the business environment in which IT projects operate and develops managerial awareness necessary in the work of an IT engineer.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

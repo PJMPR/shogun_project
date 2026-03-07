@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna praca nad ćwiczeniami animacyjnymi; budowanie portfolio semestralnego; praca nad projektem końcowym z animacji komputerowej; eksperymentowanie z technikami animacji."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,19 +43,13 @@
                 "sposob": "Projekt końcowy na prawach egzaminu"
             }
         },
-        "kryteria_oceny": [
-            "prezentacja na żywo",
-            "wykład z elementami dyskusji",
-            "studium przypadku",
-            "najlepsze praktyki",
-            "praca samodzielna ucznia nad zadaniami i mini-projektami",
-            "projekt semestralny",
-            "Projekt końcowy na prawach egzaminu",
-            "Kryteria oceny",
-            "Ćwiczenia/Projekt",
-            "Student musi wykonać zgodnie z regułami sztuki kluczowe ćwiczenia prezentowane w trakcie semestru. Sprawdzana jest zgodność z zasadami ale dopuszczane są inwencja twórcza oraz kreatywność (dziedzina jest twórcza). Tworzone jest w ciągu semestru portfolio rozwojowe pokazujące eksperymenty własne i ścieżkę osiągnięć, które są następnie na końcu zajęć oceniane.",
-            "Student zobowiązany jest przedstawić większy projekt własny w którym wykorzystuje poznane techniki modelowania. Projekty są negocjowane indywidualnie już podczas semestru i można je przygotowywać w trakcie jego trwania."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja samodzielnej pracy semestralnej"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Grafika 3D.",
@@ -85,22 +90,93 @@
             ]
         },
         "tresci_programowe": [
-            "1. Wprowadzenie do podstaw animacji metodą klatek kluczowych, animacja w wielu wymiarach.",
-            "2. Animacja typu straight-ahead piłki spadającej ze schodów ze zderzeniami doskonale sprężystymi.",
-            "3. Modyfikatory animacji, dopesheet, edytor krzywych ruchu (graph editor).",
-            "4. Modelowanie animacji: prędkość, dynamika, tworzenie wrażenia energii ruchu i charakteru obiektu.",
-            "5. Dwanaście zasad animacji wg Disneya – podstawowe principia.",
-            "6. Animacje zależne: układ słoneczny, zastosowanie więzów (constraints).",
-            "7. Animacja uniwersalna za pomocą driverów – tworzenie skomplikowanego układu kół zębatych.",
-            "8. Wstęp do armatur – podstawy tworzenia rigów.",
-            "9. Rig piłki i realizacja zasady squash/stretch.",
-            "10. Rig falującego ogona, pojęcie secondary animation, przekazanie energii, punkt działania.",
-            "11. Inverse kinematics, rig ręki, kombinacja FK+IK.",
-            "12. Rig stopy (opcjonalnie) lub biped rig, wstęp do walkcycle.",
-            "13. Walkcycle i stosowanie referencji animacji",
-            "14. Edytor NLA, akcje, biblioteka póz, animacje z motion-capture.",
-            "15. Tworzenie zaawansowanej wieloskładnikowej animacji pełnego aktora na przykładzie profesjonalnych rigów przemysłowych (np. blenrig5 lub innych)."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Wprowadzenie do podstaw animacji metodą klatek kluczowych, animacja w wielu wymiarach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2. Animacja typu straight-ahead piłki spadającej ze schodów ze zderzeniami doskonale sprężystymi.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3. Modyfikatory animacji, dopesheet, edytor krzywych ruchu (graph editor).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4. Modelowanie animacji: prędkość, dynamika, tworzenie wrażenia energii ruchu i charakteru obiektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5. Dwanaście zasad animacji wg Disneya – podstawowe principia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6. Animacje zależne: układ słoneczny, zastosowanie więzów (constraints).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7. Animacja uniwersalna za pomocą driverów – tworzenie skomplikowanego układu kół zębatych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8. Wstęp do armatur – podstawy tworzenia rigów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "9. Rig piłki i realizacja zasady squash/stretch.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "10. Rig falującego ogona, pojęcie secondary animation, przekazanie energii, punkt działania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "11. Inverse kinematics, rig ręki, kombinacja FK+IK.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "12. Rig stopy (opcjonalnie) lub biped rig, wstęp do walkcycle.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "13. Walkcycle i stosowanie referencji animacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "14. Edytor NLA, akcje, biblioteka póz, animacje z motion-capture.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "15. Tworzenie zaawansowanej wieloskładnikowej animacji pełnego aktora na przykładzie profesjonalnych rigów przemysłowych (np. blenrig5 lub innych).",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to prepare students for more versatile work in the game development industry as creators of dynamic digital content related to various forms of animation. Emphasis is placed on the use of parametric and hierarchical mechanisms, the creation of 3D rigs, and related topics such as Disney’s 12 principles of animation, motion capture, motion simulation, simplification and editing of motion curves, creating mechanics and mechanisms with elements of engineering calculations and scripting, and managing dynamic data such as mock-ups, poses, shape keys, and control drivers/constraints."
+        "cel_dydaktyczny_eng": "The aim of the course is to prepare students for more versatile work in the game development industry as creators of dynamic digital content related to various forms of animation. Emphasis is placed on the use of parametric and hierarchical mechanisms, the creation of 3D rigs, and related topics such as Disney’s 12 principles of animation, motion capture, motion simulation, simplification and editing of motion curves, creating mechanics and mechanisms with elements of engineering calculations and scripting, and managing dynamic data such as mock-ups, poses, shape keys, and control drivers/constraints.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

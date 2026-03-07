@@ -129,27 +129,46 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 
 \section{Treści programowe}
 
-\begin{enumerate}
-  \item Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps.
-  \item Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy.
-  \item Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod).
-  \item Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji.
-  \item AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform.
-  \item AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform.
-  \item AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform.
-  \item Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell).
-  \item Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność.
-  \item Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null\_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end.
-  \item LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury.
-  \item OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS.
-  \item Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack.
-  \item Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail.
-  \item Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate).
-\end{enumerate}
+\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+\endhead
+  \hline
+  Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps. & & \\
+  \hline
+  Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy. & & \\
+  \hline
+  Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod). & & \\
+  \hline
+  Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji. & & \\
+  \hline
+  AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform. & & \\
+  \hline
+  AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform. & & \\
+  \hline
+  AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform. & & \\
+  \hline
+  Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell). & & \\
+  \hline
+  Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność. & & \\
+  \hline
+  Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null\_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end. & & \\
+  \hline
+  LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury. & & \\
+  \hline
+  OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS. & & \\
+  \hline
+  Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack. & & \\
+  \hline
+  Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail. & & \\
+  \hline
+  Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate). & & \\
+  \hline
+\end{longtable}
 
 \section{Przedmiotowe efekty uczenia się}
 
-\subsection*{}
+\subsection*{Wiedza}
 \begin{itemize}
   \item Student zna i rozumie koncepcję Infrastructure as Code (IaC): zasady deklaratywnego i imperatywnego podejścia do definiowania infrastruktury, korzyści z wersjonowania i powtarzalności środowisk.
   \item Student zna i rozumie architekturę i model działania Terraform: providers, resources, data sources, state (lokalny i zdalny), moduły, workspace oraz cykl plan–apply–destroy.
@@ -187,26 +206,15 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 \section{Kryteria oceny}
 
 \begin{itemize}
-  \item Wykład – egzamin pisemny:
-  \item Egzamin pisemny zawierający pytania otwarte i zamknięte sprawdzające wiedzę teoretyczną z zakresu zarządzania infrastrukturą chmurową, narzędzi IaC oraz usług AWS i OpenStack. Warunkiem zaliczenia jest uzyskanie co najmniej 51\% punktów.
-  \item Skala ocen: 51–60\% – 3.0, 61–70\% – 3.5, 71–80\% – 4.0, 81–90\% – 4.5, 91–100\% – 5.0.
-  \item Laboratorium – zaliczenie z oceną:
-  \item Ocena ciągła na podstawie sprawozdań z zajęć laboratoryjnych (40\% oceny końcowej laboratorium).
-  \item Projekt końcowy: zaprojektowanie i zaimplementowanie infrastruktury wielowarstwowej aplikacji webowej (sieć, serwery, bazy danych, load balancer) przy użyciu Terraform oraz Ansible, wdrożonej na LocalStack lub OpenStack (60\% oceny końcowej laboratorium).
-  \item Warunkiem zaliczenia laboratorium jest oddanie wszystkich sprawozdań oraz obrona projektu końcowego.
-  \item Ocena końcowa przedmiotu: średnia ważona oceny z egzaminu (60\%) i oceny z laboratorium (40\%).
+  \item Brak danych.
 \end{itemize}
+
 
 \section{Metody dydaktyczne}
 
-\textbf{wyklad:}
+\textbf{Wykład:}
 \begin{itemize}
   \item Wykład z prezentacją multimedialną, demonstracje na żywo, analiza przypadków przemysłowych, omawianie dokumentacji technicznej narzędzi IaC i usług chmurowych.
-\end{itemize}
-\vspace{4pt}
-\textbf{laboratorium:}
-\begin{itemize}
-  \item Ćwiczenia praktyczne: definiowanie infrastruktury jako kodu (Terraform), automatyzacja konfiguracji (Ansible), praca z lokalnym emulatorem AWS (LocalStack) oraz środowiskiem OpenStack; realizacja projektu końcowego polegającego na pełnym wdrożeniu infrastruktury aplikacji webowej za pomocą narzędzi IaC.
 \end{itemize}
 \vspace{4pt}
 
@@ -215,7 +223,7 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 
 \textbf{Podstawowa:}
 \begin{itemize}
-  \item Y. Brikman: "Terraform. Krótkie wprowadzenie. Wdrażanie infrastruktury jako kodu", Helion, Gliwice 2023 (Terraform: Up \& Running, 3rd ed., O'Reilly 2022).
+  \item Y. Brikman: ''Terraform. Krótkie wprowadzenie. Wdrażanie infrastruktury jako kodu'', Helion, Gliwice 2023 (Terraform: Up \& Running, 3rd ed., O'Reilly 2022).
   \item dokumentacja oficjalna Terraform: developer.hashicorp.com/terraform/docs.
   \item dokumentacja oficjalna Ansible: docs.ansible.com.
   \item dokumentacja oficjalna AWS: docs.aws.amazon.com.
@@ -225,10 +233,10 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 
 \textbf{Uzupełniająca:}
 \begin{itemize}
-  \item K. Morris: "Infrastructure as Code. Dynamic Systems for the Cloud Age", 2nd ed., O'Reilly 2021.
-  \item J. Looney, M. Domański: "Ansible w praktyce. Automatyzacja konfiguracji i wdrożeń", Helion, Gliwice 2022 (Ansible: Up and Running, 3rd ed., O'Reilly 2022).
-  \item B. Burns, J. Beda, K. Hightower: "Kubernetes. Tworzenie niezawodnych systemów rozproszonych", Helion, Gliwice 2023.
-  \item A. Wittig, M. Wittig: "Amazon Web Services w akcji", Helion, Gliwice 2023 (Amazon Web Services in Action, 3rd ed., Manning 2023).
+  \item K. Morris: ''Infrastructure as Code. Dynamic Systems for the Cloud Age'', 2nd ed., O'Reilly 2021.
+  \item J. Looney, M. Domański: ''Ansible w praktyce. Automatyzacja konfiguracji i wdrożeń'', Helion, Gliwice 2022 (Ansible: Up and Running, 3rd ed., O'Reilly 2022).
+  \item B. Burns, J. Beda, K. Hightower: ''Kubernetes. Tworzenie niezawodnych systemów rozproszonych'', Helion, Gliwice 2023.
+  \item A. Wittig, M. Wittig: ''Amazon Web Services w akcji'', Helion, Gliwice 2023 (Amazon Web Services in Action, 3rd ed., Manning 2023).
 \end{itemize}
 
 \end{document}

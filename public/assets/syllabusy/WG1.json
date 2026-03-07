@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Projektowanie i wytwarzanie gry w Unreal Engine; programowanie mechanik rozgrywki; praca w grupie projektowej; przygotowanie prezentacji projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,24 +43,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "prezentacje",
-            "praca w Unreal Engine",
-            "Kryteria oceny",
-            "Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:",
-            "Styl (1-10)",
-            "Rozgrywka (1-10)",
-            "Zabawa (1-10)",
-            "Kreatywność (1-10)",
-            "Ukończenie (1-10)",
-            "Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:",
-            "Wysiłek (1-10).",
-            "Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Celem tego kursu jest zanurzenie studentów w cyklu tworzenia gier, od projektu koncepcyjnego po kontrolę jakości, zaszczepienie dogłębnego zrozumienia praktyk branżowych, narzędzi (takich jak Unreal Engine) i kluczowych procesów niezbędnych do udanej kariery w branży gier.",
         "literatura": {
@@ -101,37 +101,168 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do branży tworzenia gier. Prezentowanie historii gier z przykładami unikalnych i nieoczekiwanych ciekawych faktów na temat gier.",
-            "Dyskusja na temat branży gier, osobistych doświadczeń uczniów z grami, wpływu gier na życie i tego, czego można się spodziewać pracując w tej branży.",
-            "Wprowadzenie do projektowania gier. Dlaczego istnieje i jak to rozumieć.",
-            "Projektowanie małej gry przy użyciu wyłącznie pióra i papieru. Granie i ulepszanie swoich gier.",
-            "Projektowanie puzzli, jako głównego interaktywnego elementu zabawy. Jak łamigłówki angażują graczy.",
-            "Projektowanie układanki przy użyciu dostarczonych ograniczeń i testowanie pojawiających się mechanik gry w małych grupach.",
-            "Wprowadzenie do Unreal Engine. Przegląd układu i funkcji UE 5.",
-            "Wykonanie pierwszego planu UE mechaniki gry z wykorzystaniem elementów interaktywnych.",
-            "Podstawy silnika Unreal Engine. Ciąg dalszy przedstawiania silnika studentom. Wyjaśnienie rozwoju opartego na planach za pomocą interaktywnych przykładów.",
-            "Studenci doskonalą i rozwijają pierwszy projekt stworzony podczas poprzedniego ćwiczenia, wykorzystując nową wiedzę zdobytą na wykładzie.",
-            "Podstawowe zasady projektowania poziomu podstawowego i Asset Pipeline w UE5.",
-            "Uczniowie korzystają z dostarczonych zasobów i niestandardowych materiałów, aby konfigurować i wykorzystywać własne projekty oraz projektować układ poziomów.",
-            "Dokumentacja gry i dlaczego jest to ważne.",
-            "Napisanie krótkiego opisu gry na podanym przykładzie.",
-            "GDD. Przegląd i ocena GDD znanych gier.",
-            "Pisanie GDD. Uczniowie korzystają z dostarczonego przykładu GDD i pracują w grupach, aby stworzyć własne dokumenty.",
-            "Praca w zespole i zarządzanie projektem gry.",
-            "Omówienie ról zespołowych i zarządzania sytuacją, kontynuacja pracy w zespołach, nad grami.",
-            "Wprowadzenie do animacji w UE5. Rzuć okiem na możliwe potoki animacji i narzędzia dostępne w Unreal Engine.",
-            "Implementacja podstawowych animacji w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
-            "Zrozumienie wpływu projektowania dźwięku w grach i sposobu implementacji dźwięków w UE5.",
-            "Implementacja podstawowych dźwięków w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
-            "Zapewnienie jakości gier. Jak zespoły zapewniają jakość i dbałość o szczegóły.",
-            "Testowanie dostarczonej przykładowej gry i przygotowanie raportu o błędzie.",
-            "Praktyki HR w tworzeniu gier. Oczekiwania firm zajmujących się tworzeniem gier i czego szukają u potencjalnych kandydatów.",
-            "Napisanie osobistego CV na podanym przykładzie.",
-            "Zarządzanie zasobami studia gier. Ukryte koszty i dlaczego tak trudno osiągnąć równowagę pomiędzy zyskami a zabawą.",
-            "Praca w grupach w celu przygotowania analizy rynkowej dostarczonej gry, przedstawienia planu ulepszeń z prośbą o dodatkowe inwestycje, analizy konkurencji i oceny innych grup uczniów.",
-            "Pełne podsumowanie kursu. Powracanie do poprzednich lekcji, odświeżanie wiedzy i podkreślanie najważniejszych aspektów.",
-            "Omawianie projektów gier zespołowych, ulepszanie i dopracowywanie projektów."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do branży tworzenia gier. Prezentowanie historii gier z przykładami unikalnych i nieoczekiwanych ciekawych faktów na temat gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Dyskusja na temat branży gier, osobistych doświadczeń uczniów z grami, wpływu gier na życie i tego, czego można się spodziewać pracując w tej branży.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Wprowadzenie do projektowania gier. Dlaczego istnieje i jak to rozumieć.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Projektowanie małej gry przy użyciu wyłącznie pióra i papieru. Granie i ulepszanie swoich gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Projektowanie puzzli, jako głównego interaktywnego elementu zabawy. Jak łamigłówki angażują graczy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Projektowanie układanki przy użyciu dostarczonych ograniczeń i testowanie pojawiających się mechanik gry w małych grupach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wprowadzenie do Unreal Engine. Przegląd układu i funkcji UE 5.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Wykonanie pierwszego planu UE mechaniki gry z wykorzystaniem elementów interaktywnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Podstawy silnika Unreal Engine. Ciąg dalszy przedstawiania silnika studentom. Wyjaśnienie rozwoju opartego na planach za pomocą interaktywnych przykładów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Studenci doskonalą i rozwijają pierwszy projekt stworzony podczas poprzedniego ćwiczenia, wykorzystując nową wiedzę zdobytą na wykładzie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Podstawowe zasady projektowania poziomu podstawowego i Asset Pipeline w UE5.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Uczniowie korzystają z dostarczonych zasobów i niestandardowych materiałów, aby konfigurować i wykorzystywać własne projekty oraz projektować układ poziomów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Dokumentacja gry i dlaczego jest to ważne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Napisanie krótkiego opisu gry na podanym przykładzie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "GDD. Przegląd i ocena GDD znanych gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Pisanie GDD. Uczniowie korzystają z dostarczonego przykładu GDD i pracują w grupach, aby stworzyć własne dokumenty.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Praca w zespole i zarządzanie projektem gry.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Omówienie ról zespołowych i zarządzania sytuacją, kontynuacja pracy w zespołach, nad grami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Wprowadzenie do animacji w UE5. Rzuć okiem na możliwe potoki animacji i narzędzia dostępne w Unreal Engine.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Implementacja podstawowych animacji w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Zrozumienie wpływu projektowania dźwięku w grach i sposobu implementacji dźwięków w UE5.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Implementacja podstawowych dźwięków w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Zapewnienie jakości gier. Jak zespoły zapewniają jakość i dbałość o szczegóły.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Testowanie dostarczonej przykładowej gry i przygotowanie raportu o błędzie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Praktyki HR w tworzeniu gier. Oczekiwania firm zajmujących się tworzeniem gier i czego szukają u potencjalnych kandydatów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Napisanie osobistego CV na podanym przykładzie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Zarządzanie zasobami studia gier. Ukryte koszty i dlaczego tak trudno osiągnąć równowagę pomiędzy zyskami a zabawą.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "Praca w grupach w celu przygotowania analizy rynkowej dostarczonej gry, przedstawienia planu ulepszeń z prośbą o dodatkowe inwestycje, analizy konkurencji i oceny innych grup uczniów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Pełne podsumowanie kursu. Powracanie do poprzednich lekcji, odświeżanie wiedzy i podkreślanie najważniejszych aspektów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Omawianie projektów gier zespołowych, ulepszanie i dopracowywanie projektów.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of this course is to immerse students in the game creation cycle, from conceptual design to quality control, and to instill a deep understanding of industry practices, tools (such as Unreal Engine), and key processes necessary for a successful career in the games industry."
+        "cel_dydaktyczny_eng": "The aim of this course is to immerse students in the game creation cycle, from conceptual design to quality control, and to instill a deep understanding of industry practices, tools (such as Unreal Engine), and key processes necessary for a successful career in the games industry.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

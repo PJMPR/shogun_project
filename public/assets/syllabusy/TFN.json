@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja projektu frontendowego z użyciem nowoczesnych technologii (React, Vue, Angular); przygotowanie do egzaminu z zagadnień frontendowych; dokumentacja projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,18 +43,15 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "projekt praktyczny",
-            "Kryteria oceny",
-            "50% Kolokwium",
-            "50% Projekt praktyczny",
-            "40% Ocena z laboratorium",
-            "60% Egzamin"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Warsztaty programistyczne",
@@ -100,30 +108,133 @@
             "kompetencje_spoleczne": "Student jest gotów do jest gotów do samodzielnego uczenia się przez całe życie"
         },
         "tresci_programowe": [
-            "Historia frontendu. Język znaczników HTML i CSS",
-            "Użycie preprocesorów CSS jako alternatywa pisania stylów w aplikacjach webowych",
-            "Animacje oraz inne technologie wspierające proces pisania interfejsów użytkownika za pomocą CSS",
-            "Pojęcie responsywności oraz dostępności w aplikacjach webowych",
-            "Architektura aplikacji SPA: Środowisko Node.js",
-            "Wprowadzenie do frameworka budowania aplikacji webowych w środowisku Node.js",
-            "Format JSX. Integracja CSS w aplikacji.",
-            "Pojęcie stanu aplikacji w aplikacjach webowych",
-            "Formularze oraz ich walidacja w aplikacjach webowych",
-            "Inne rodzaje hooków i dobre praktyki w tworzeniu aplikacji webowych",
-            "Integracja danych w aplikacjach webowych",
-            "Trasowanie aplikacji w aplikacjach webowych",
-            "Testowanie aplikacji frontendowych",
-            "Technologia suspense w aplikacjach webowych",
-            "Metody optymalizacji w aplikacjach webowych",
-            "Informacje dodatkowe",
-            "Wymagane oprogramowanie w laboratoriach: Serwer Node.js.",
-            "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
-            "A. W jakiego typu firmach będą potrzebne umiejętności nabyte w trakcie zajęć:",
-            "Wszystkie firmy zajmujące się budowanie serwisów internetowych.",
-            "B. W jakich zawodach wiedza i umiejętności są istotne:",
-            "Wiedza i umiejętności z tworzenia interaktywnych interfejsów użytkownika jest bardzo przydatna we",
-            "wszystkich zawodach informatycznych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Historia frontendu. Język znaczników HTML i CSS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Użycie preprocesorów CSS jako alternatywa pisania stylów w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Animacje oraz inne technologie wspierające proces pisania interfejsów użytkownika za pomocą CSS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Pojęcie responsywności oraz dostępności w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Architektura aplikacji SPA: Środowisko Node.js",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Wprowadzenie do frameworka budowania aplikacji webowych w środowisku Node.js",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Format JSX. Integracja CSS w aplikacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Pojęcie stanu aplikacji w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Formularze oraz ich walidacja w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Inne rodzaje hooków i dobre praktyki w tworzeniu aplikacji webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Integracja danych w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Trasowanie aplikacji w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Testowanie aplikacji frontendowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Technologia suspense w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Metody optymalizacji w aplikacjach webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Informacje dodatkowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Wymagane oprogramowanie w laboratoriach: Serwer Node.js.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "A. W jakiego typu firmach będą potrzebne umiejętności nabyte w trakcie zajęć:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Wszystkie firmy zajmujące się budowanie serwisów internetowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "B. W jakich zawodach wiedza i umiejętności są istotne:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Wiedza i umiejętności z tworzenia interaktywnych interfejsów użytkownika jest bardzo przydatna we",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "wszystkich zawodach informatycznych.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with modern technologies, techniques, and tools for developing graphical user interfaces in web applications."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with modern technologies, techniques, and tools for developing graphical user interfaces in web applications.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

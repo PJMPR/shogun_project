@@ -21,19 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 30,
             "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Implementacja aplikacji w języku Python; korzystanie z bibliotek standardowych i zewnętrznych; dokumentacja kodu; przygotowanie i prezentacja projektu zaliczeniowego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-            "Ocena projektu obejmuje: poprawność działania, jakość kodu, strukturę programu, dokumentację oraz prezentację rozwiązania",
-            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Podstawy Programowania",
@@ -62,18 +74,73 @@
             "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
         },
         "tresci_programowe": [
-            "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
-            "Typy danych: int, float, bool, string, operatory i konwersje typów.",
-            "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
-            "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
-            "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
-            "Moduły i pakiety, korzystanie z bibliotek standardowych.",
-            "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
-            "Wyjątki i obsługa błędów.",
-            "Wprowadzenie do programowania obiektowego w Pythonie.",
-            " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
-            " Testowanie i debugowanie prostych programów."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Typy danych: int, float, bool, string, operatory i konwersje typów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Moduły i pakiety, korzystanie z bibliotek standardowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Wyjątki i obsługa błędów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Wprowadzenie do programowania obiektowego w Pythonie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": " Testowanie i debugowanie prostych programów.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in Python and to develop the ability to independently create simple applications and scripts. The course places emphasis on code readability, good programming practices, and practical applications of Python in data analysis, task automation, and building simple applications. It prepares students for further study of technologies that use Python and for the implementation of small programming projects."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in Python and to develop the ability to independently create simple applications and scripts. The course places emphasis on code readability, good programming practices, and practical applications of Python in data analysis, task automation, and building simple applications. It prepares students for further study of technologies that use Python and for the implementation of small programming projects.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

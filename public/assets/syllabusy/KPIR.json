@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Konfiguracja protokołów IoT (MQTT, CoAP, HTTP) w środowisku symulacyjnym; realizacja mikroprojektów; przygotowanie do egzaminu pisemnego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,17 +43,15 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "badania symulacyjne",
-            "Kryteria oceny",
-            "Laboratorium/",
-            "- pozytywna ocena za mikroprojekty,",
-            "- pozytywna ocena za ćwiczenia laboratoryjne,",
-            "- egzamin pisemny składający się z co najwyżej dziesięciu zadań"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "raport z wykonanego zadania"
+            ]
+        },
         "cel_dydaktyczny": "Celem głównym przedmiotu jest przedstawienie budowy i działania systemów Internetu rzeczy a w szczególności metod i sposobów komunikowania w tym protokołów, które umożliwią wymianę informacji między czujnikami, efektorami i sterownikami.Cechą systemów Internetu rzeczy jest wykorzystywanie urządzeń o obniżonym poborze mocy oraz działanie w warunkach wymagających zapewnienia bezpieczeństwa transmisji i przetwarzania danych.",
         "literatura": {
             "podstawowa": {
@@ -72,18 +81,66 @@
             "kompetencje_spoleczne": "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu systemów wbudowanych oraz dzielenia się nią"
         },
         "tresci_programowe": [
-            "Wprowadzenie i sprawy organizacyjne. Wprowadzenie do zajęć projektowych i laboratoryjnych.",
-            "System wbudowany a system IoT.Analiza dedykowane systemu IoT w  CISCO PacketTracer.",
-            "Urządzenia i układy IoT.",
-            "Projekt prostego systemu IoT w CISCO Packet Tracer.",
-            "Architektura systemów IoT.",
-            "Projekt systemu IoT z wykorzystaniem wybranego mikrokontrolera lub komputera jednoukładowego.",
-            "Typy protokołów IoT.",
-            "Konfiguracja i oprogramowanie systemu IoT.",
-            "Zaawansowany protokół kolejkowania wiadomości.",
-            "Walidacja i testowanie systemy IoT.",
-            "Standardy komunikacyjne dla IoT.",
-            "Wdrożenie i prezentacja systemu IoT."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie i sprawy organizacyjne. Wprowadzenie do zajęć projektowych i laboratoryjnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "System wbudowany a system IoT.Analiza dedykowane systemu IoT w  CISCO PacketTracer.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Urządzenia i układy IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Projekt prostego systemu IoT w CISCO Packet Tracer.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Architektura systemów IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Projekt systemu IoT z wykorzystaniem wybranego mikrokontrolera lub komputera jednoukładowego.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Typy protokołów IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Konfiguracja i oprogramowanie systemu IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Zaawansowany protokół kolejkowania wiadomości.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Walidacja i testowanie systemy IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Standardy komunikacyjne dla IoT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Wdrożenie i prezentacja systemu IoT.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -91,6 +148,17 @@
                 "wymagania": "Umiejetnosc programowania w jezyku C, C++ lub Java; znajomosc regulaminu i zasad BHP obowiazujacych w laboratorium"
             }
         ],
-        "cel_dydaktyczny_eng": "The main objective of the course is to present the structure and operation of Internet of Things systems, in particular the methods and means of communication, including protocols that enable information exchange between sensors, actuators, and controllers. A characteristic feature of IoT systems is the use of low-power devices and operation in conditions requiring secure transmission and data processing."
+        "cel_dydaktyczny_eng": "The main objective of the course is to present the structure and operation of Internet of Things systems, in particular the methods and means of communication, including protocols that enable information exchange between sensors, actuators, and controllers. A characteristic feature of IoT systems is the use of low-power devices and operation in conditions requiring secure transmission and data processing.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

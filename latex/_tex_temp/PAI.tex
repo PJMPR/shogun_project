@@ -131,24 +131,40 @@ Celem przedmiotu jest nabycie praktycznych umiejętności projektowania i implem
 
 \section{Treści programowe}
 
-\begin{enumerate}
-  \item Wprowadzenie do aplikacji internetowych: backend vs frontend, kontrakty API, podstawy jakości i utrzymania.
-  \item DDD w praktyce: język ubiquitous, model domenowy, agregaty, invariants, repozytoria, domena vs aplikacja vs infrastruktura.
-  \item Architektura oktogonalna: porty i adaptery, granice odpowiedzialności, kierunek zależności, testowalność.
-  \item Wstęp do SOA: rozbicie na usługi, kontrakty, wersjonowanie API, spójność danych i integracja usług.
-  \item Bezpieczeństwo i autoryzacja: wprowadzenie do OAuth 2.1, tokeny, scenariusze integracyjne (w zakresie kursu).
-  \item Konteneryzacja: Docker, obrazy, sieci, wolumeny, docker-compose; uruchamianie pełnego środowiska projektu.
-  \item Budowa backendu: warstwy, API, walidacja, obsługa błędów, persystencja danych; integracja z innymi usługami (wg programu).
-  \item Budowa frontendu: podstawy architektury aplikacji klienckiej, integracja z API, zarządzanie stanem, obsługa błędów.
-  \item Testy integracyjne: strategia testów, testy kontraktów/warstw, uruchamianie z zależnościami (np. kontenery).
-  \item Testy end-to-end: scenariusze użytkownika, automatyzacja uruchomienia środowiska i testów.
-  \item Elementy procesu wytwarzania: Git flow / PR, code review, podstawy CI (pipeline uruchamiający testy).
-  \item Projekt zaliczeniowy: iteracyjna realizacja funkcji, dopięcie architektury, testów i uruchamiania w kontenerach.
-\end{enumerate}
+\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
+\hline
+\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+\endhead
+  \hline
+  Wprowadzenie do aplikacji internetowych: backend vs frontend, kontrakty API, podstawy jakości i utrzymania. & & \\
+  \hline
+  DDD w praktyce: język ubiquitous, model domenowy, agregaty, invariants, repozytoria, domena vs aplikacja vs infrastruktura. & & \\
+  \hline
+  Architektura oktogonalna: porty i adaptery, granice odpowiedzialności, kierunek zależności, testowalność. & & \\
+  \hline
+  Wstęp do SOA: rozbicie na usługi, kontrakty, wersjonowanie API, spójność danych i integracja usług. & & \\
+  \hline
+  Bezpieczeństwo i autoryzacja: wprowadzenie do OAuth 2.1, tokeny, scenariusze integracyjne (w zakresie kursu). & & \\
+  \hline
+  Konteneryzacja: Docker, obrazy, sieci, wolumeny, docker-compose; uruchamianie pełnego środowiska projektu. & & \\
+  \hline
+  Budowa backendu: warstwy, API, walidacja, obsługa błędów, persystencja danych; integracja z innymi usługami (wg programu). & & \\
+  \hline
+  Budowa frontendu: podstawy architektury aplikacji klienckiej, integracja z API, zarządzanie stanem, obsługa błędów. & & \\
+  \hline
+  Testy integracyjne: strategia testów, testy kontraktów/warstw, uruchamianie z zależnościami (np. kontenery). & & \\
+  \hline
+  Testy end-to-end: scenariusze użytkownika, automatyzacja uruchomienia środowiska i testów. & & \\
+  \hline
+  Elementy procesu wytwarzania: Git flow / PR, code review, podstawy CI (pipeline uruchamiający testy). & & \\
+  \hline
+  Projekt zaliczeniowy: iteracyjna realizacja funkcji, dopięcie architektury, testów i uruchamiania w kontenerach. & & \\
+  \hline
+\end{longtable}
 
 \section{Przedmiotowe efekty uczenia się}
 
-\subsection*{}
+\subsection*{Wiedza}
 \begin{itemize}
   \item Student zna i rozumie podstawowe pojęcia DDD (m.in. model domenowy, encje, wartości, agregaty, repozytoria, bounded context) oraz potrafi uzasadnić ich użycie.
   \item Student zna i rozumie założenia architektury oktogonalnej oraz zasady separacji warstw i zależności w systemie.
@@ -175,28 +191,17 @@ Celem przedmiotu jest nabycie praktycznych umiejętności projektowania i implem
 \section{Kryteria oceny}
 
 \begin{itemize}
-  \item Kolokwium (część wykładowa): pytania problemowe + zadania dotyczące DDD, architektury oktogonalnej, SOA oraz OAuth 2.1.
-  \item Praca na zajęciach (laboratoria): realizacja zadań cząstkowych, jakość kodu, poprawność architektury, terminowość.
-  \item Projekt: kompletność funkcjonalna, zgodność z założeniami (DDD + architektura oktogonalna), jakość testów (integracyjne + E2E), konteneryzacja i uruchamianie środowiska.
-  \item Ocena końcowa = składowa z kolokwium + składowa z laboratoriów (praca) + składowa z projektu.
-  \item Warunek zaliczenia: oddanie projektu oraz uzyskanie wyniku pozytywnego z kolokwium.
+  \item Brak danych.
 \end{itemize}
+
 
 \section{Metody dydaktyczne}
 
-\textbf{wyklad:}
+\textbf{Wykład:}
 \begin{itemize}
   \item wykład problemowy
   \item analiza przypadków (case study) architektury systemów
   \item mini-demonstracje (live coding / przegląd repozytorium)
-\end{itemize}
-\vspace{4pt}
-\textbf{laboratorium:}
-\begin{itemize}
-  \item zadania praktyczne (warsztaty)
-  \item praca zespołowa w repozytorium (code review, pull requesty)
-  \item projekt semestralny iteracyjny (MVP -> kolejne przyrosty)
-  \item testy automatyczne i pipeline CI
 \end{itemize}
 \vspace{4pt}
 
@@ -205,9 +210,9 @@ Celem przedmiotu jest nabycie praktycznych umiejętności projektowania i implem
 
 \textbf{Podstawowa:}
 \begin{itemize}
-  \item Eric Evans, "Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003
-  \item Vaughn Vernon, "Implementing Domain-Driven Design", 2013
-  \item Robert C. Martin, "Clean Architecture", 2017
+  \item Eric Evans, ''Domain-Driven Design: Tackling Complexity in the Heart of Software'', 2003
+  \item Vaughn Vernon, ''Implementing Domain-Driven Design'', 2013
+  \item Robert C. Martin, ''Clean Architecture'', 2017
 \end{itemize}
 
 \textbf{Uzupełniająca:}

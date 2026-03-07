@@ -21,30 +21,32 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Rozwiązywanie zadań NLP w Google Colab; praca nad projektem zespołowym z przetwarzania języka naturalnego; przygotowanie prezentacji posterowej."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Case study - prezentacja oprogramowania (ostatnie 4 zajęcia).",
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
-            "Projekt zespołowy (ostatnie 5 zajęć).",
-            "Laboratorium oraz Projekt",
-            "Kryteria oceny",
-            "Ocena zadań laboratoryjnych",
-            "Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50% laboratorium, 50% projekt.",
-            "Skala ocen",
-            "51%-60%3",
-            "61%-70%3,5",
-            "71%-80%4",
-            "81%-90%4,5",
-            "91%-100%5"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "cel_dydaktyczny": "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
         "literatura": {
             "podstawowa": {
@@ -79,51 +81,231 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do NLP",
-            "•Historia NLP: od pierwszych prób do współczesnych zastosowań",
-            "•Kluczowe zadania w NLP: analiza sentymentu, tłumaczenie maszynowe, rozpoznawanie nazwanych encji (NER)",
-            "Tokenizacja i Wektory Słów",
-            "•Metody tokenizacji: podejścia oparte na regułach i uczeniu maszynowym",
-            "•Wektoryzacja słów: Word2Vec, GloVe, FastText",
-            "Rekurencyjne Sieci Neuronowe (RNN)",
-            "•Architektura RNN i jej zastosowania w NLP",
-            "•Problemy z RNN: zanikanie gradientu, eksplozja gradientu",
-            "•Wprowadzenie do LSTM i GRU",
-            "Transformery",
-            "•Wprowadzenie do architektury transformera",
-            "•Zastosowania transformera w NLP",
-            "Wariacje Transformerów",
-            "•BERT, GPT, T5: różnice i zastosowania",
-            "•Jak dostosować architekturę transformera do różnych zadań",
-            "Modele Języka",
-            "•Budowa modeli językowych",
-            "•Zastosowania i wyzwania związane z modelami językowymi",
-            "Enkodery",
-            "•Rola enkoderów w modelach transformacyjnych",
-            "•Przykłady zastosowań enkoderów w różnych zadaniach NLP",
-            "Fine-Tuning",
-            "•Proces dostrajania modeli pretrenowanych",
-            "•Techniki fine-tuningu dla różnych zadań NLP",
-            "Kompresja Modeli",
-            "•Wprowadzenie do kompresji modeli: skwantyzowanie, prunning",
-            "•Korzyści i wyzwania związane z kompresją",
-            "Stworzenie Skwantyzowanej Wersji Modelu",
-            "•Praktyczne podejście do kompresji modeli",
-            "•Implementacja skwantyzacji na przykładzie wybranego modelu",
-            "Pair Programming - Rozpoznawanie Nazwanych Encji (NER)",
-            "•Wprowadzenie do NER",
-            "•Przykład implementacji NER za pomocą Lightning Transformers",
-            "•Warsztaty praktyczne",
-            "Pair Programming - Chatbot",
-            "•Projektowanie chatbota: wymagania i architektura",
-            "•Implementacja chatbota na przykładzie Chartum",
-            "•Warsztaty praktyczne",
-            "Przykłady Aplikacji NLP",
-            "•Przegląd rzeczywistych zastosowań NLP w różnych branżach",
-            "•Studium przypadku: analiza skuteczności modeli NLP w zastosowaniach komercyjnych",
-            "Podsumowanie i Dyskusja",
-            "•Przegląd kluczowych zagadnień omówionych w kursie",
-            "•Dyskusja na temat przyszłości NLP i jego wpływu na różne dziedziny"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "•Historia NLP: od pierwszych prób do współczesnych zastosowań",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "•Kluczowe zadania w NLP: analiza sentymentu, tłumaczenie maszynowe, rozpoznawanie nazwanych encji (NER)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Tokenizacja i Wektory Słów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "•Metody tokenizacji: podejścia oparte na regułach i uczeniu maszynowym",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "•Wektoryzacja słów: Word2Vec, GloVe, FastText",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Rekurencyjne Sieci Neuronowe (RNN)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "•Architektura RNN i jej zastosowania w NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "•Problemy z RNN: zanikanie gradientu, eksplozja gradientu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "•Wprowadzenie do LSTM i GRU",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Transformery",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "•Wprowadzenie do architektury transformera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "•Zastosowania transformera w NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Wariacje Transformerów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "•BERT, GPT, T5: różnice i zastosowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "•Jak dostosować architekturę transformera do różnych zadań",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Modele Języka",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "•Budowa modeli językowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "•Zastosowania i wyzwania związane z modelami językowymi",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Enkodery",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "•Rola enkoderów w modelach transformacyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "•Przykłady zastosowań enkoderów w różnych zadaniach NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Fine-Tuning",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "•Proces dostrajania modeli pretrenowanych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "•Techniki fine-tuningu dla różnych zadań NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Kompresja Modeli",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "•Wprowadzenie do kompresji modeli: skwantyzowanie, prunning",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "•Korzyści i wyzwania związane z kompresją",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Stworzenie Skwantyzowanej Wersji Modelu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "•Praktyczne podejście do kompresji modeli",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "•Implementacja skwantyzacji na przykładzie wybranego modelu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "Pair Programming - Rozpoznawanie Nazwanych Encji (NER)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "•Wprowadzenie do NER",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "•Przykład implementacji NER za pomocą Lightning Transformers",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "•Warsztaty praktyczne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "Pair Programming - Chatbot",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "•Projektowanie chatbota: wymagania i architektura",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "•Implementacja chatbota na przykładzie Chartum",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "•Warsztaty praktyczne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "Przykłady Aplikacji NLP",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "•Przegląd rzeczywistych zastosowań NLP w różnych branżach",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "•Studium przypadku: analiza skuteczności modeli NLP w zastosowaniach komercyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "Podsumowanie i Dyskusja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "•Przegląd kluczowych zagadnień omówionych w kursie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "•Dyskusja na temat przyszłości NLP i jego wpływu na różne dziedziny",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -135,6 +317,17 @@
                 "wymagania": "Podstawowe operacje na macierzach"
             }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the basic problems of computer vision, methods for solving them, and evaluation of the developed solutions."
+        "cel_dydaktyczny_eng": "Introduction to the basic problems of computer vision, methods for solving them, and evaluation of the developed solutions.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

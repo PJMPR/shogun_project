@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań w Google Colab dotyczących nowoczesnych metod uczenia głębokiego; przygotowanie prezentacji seminaryjnej na wybrany temat badawczy z dziedziny DL."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Nieoceniany"
@@ -32,13 +43,13 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
-            "Seminarium (ostatnie 5 zajęć).",
-            "Laboratorium oraz Seminarium",
-            "Kryteria oceny",
-            "Ocena zadań laboratoryjnych.  Prezentacja seminaryjna"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja samodzielnej pracy semestralnej"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Algebra liniowa z geometrią",
@@ -73,21 +84,88 @@
             ]
         },
         "tresci_programowe": [
-            "Podstawy uczenia maszynowego",
-            "Self-supervised learning.",
-            "Foundation models.",
-            "Modele języka.",
-            "Testy statystyczne.",
-            "Organizacja eksperymentów.",
-            "Testy statystyczne.",
-            "Responsible AI.",
-            "AI w medycynie.",
-            "Analiza literatury.",
-            "Jak pisać artykuły naukowe.",
-            "Transfer learning.",
-            "Optymalizacja modeli.",
-            "Multitask learning i multimodal learning."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawy uczenia maszynowego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Self-supervised learning.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Foundation models.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Modele języka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Testy statystyczne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Organizacja eksperymentów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Testy statystyczne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Responsible AI.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "AI w medycynie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Analiza literatury.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Jak pisać artykuły naukowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Transfer learning.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Optymalizacja modeli.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Multitask learning i multimodal learning.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the latest directions in the development of artificial intelligence and state-of-the-art solutions. Introduction to work on real scientific and industrial problems."
+        "cel_dydaktyczny_eng": "Introduction to the latest directions in the development of artificial intelligence and state-of-the-art solutions. Introduction to work on real scientific and industrial problems.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

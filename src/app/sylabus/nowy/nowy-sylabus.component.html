@@ -104,6 +104,14 @@
         <small class="ns-hint">= całkowita − z prowadzącym</small>
       </div>
     </div>
+    <p-divider />
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-pencil"></i> Opis samodzielnej pracy studenta</label>
+      <small class="ns-hint-block">Opisz zadania do wykonania samodzielnie w domu (np. przygotowanie do kolokwium, realizacja projektu).</small>
+      <textarea pTextarea [(ngModel)]="form.praca_wlasna_studenta" rows="3"
+                placeholder="np. Samodzielne ćwiczenia z programowania; realizacja projektu; przygotowanie do kolokwium."
+                class="ns-textarea"></textarea>
+    </div>
   </p-panel>
 
   <!-- 2. Forma zaliczenia -->
@@ -153,37 +161,82 @@
 
   <!-- 4. Metody dydaktyczne -->
   <p-panel header="4. Metody dydaktyczne" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
-    <small class="ns-hint-block">Każda metoda w nowej linii.</small>
+    <small class="ns-hint-block">Wybierz metody dydaktyczne stosowane na poszczególnych formach zajęć.</small>
     @if ((form.wyklady || 0) > 0) {
       <div class="ns-field">
         <label class="ns-label">Wykład</label>
-        <textarea pTextarea [(ngModel)]="form.metody_wyklad_txt" rows="3"
-                  placeholder="np. Wykład problemowy&#10;Prezentacja multimedialna" class="ns-textarea"></textarea>
+        <p-multiselect
+          [options]="metodyWykladOptions"
+          [(ngModel)]="form.metody_wyklad"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Wybierz metody dydaktyczne dla wykładu"
+          [showClear]="true"
+          appendTo="body"
+          styleClass="ns-multiselect"
+          display="chip"
+        />
       </div>
     }
-    @if ((form.cwiczenia || 0) > 0) {
+    @if ((form.cwiczenia || 0) > 0 || (form.laboratorium || 0) > 0) {
       <div class="ns-field">
-        <label class="ns-label">Ćwiczenia / Lektorat</label>
-        <textarea pTextarea [(ngModel)]="form.metody_cwiczenia_txt" rows="3"
-                  placeholder="np. Ćwiczenia tablicowe&#10;Praca w grupach" class="ns-textarea"></textarea>
+        <label class="ns-label">Ćwiczenia / Laboratorium</label>
+        <p-multiselect
+          [options]="metodyCwiczeniaOptions"
+          [(ngModel)]="form.metody_cwiczenia_laboratorium"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Wybierz metody dydaktyczne dla ćwiczeń/laboratorium"
+          [showClear]="true"
+          appendTo="body"
+          styleClass="ns-multiselect"
+          display="chip"
+        />
       </div>
     }
-    @if ((form.laboratorium || 0) > 0) {
-      <div class="ns-field">
-        <label class="ns-label">Laboratorium / Projekt</label>
-        <textarea pTextarea [(ngModel)]="form.metody_laboratorium_txt" rows="3"
-                  placeholder="np. Laboratoria komputerowe&#10;Realizacja projektów" class="ns-textarea"></textarea>
-      </div>
+    @if ((form.wyklady || 0) === 0 && (form.cwiczenia || 0) === 0 && (form.laboratorium || 0) === 0) {
+      <p class="ns-hint-block">Wprowadź najpierw godziny zajęć.</p>
     }
   </p-panel>
 
   <!-- 5. Kryteria oceny -->
   <p-panel header="5. Kryteria oceny" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
-    <small class="ns-hint-block">Każde kryterium w nowej linii.</small>
-    <div class="ns-field">
-      <textarea pTextarea [(ngModel)]="form.kryteria_oceny_txt" rows="5"
-                placeholder="np. Kolokwium zaliczeniowe (60%)&#10;Projekt (40%)" class="ns-textarea"></textarea>
-    </div>
+    <small class="ns-hint-block">Wybierz metody weryfikacji efektów kształcenia dla poszczególnych form zajęć.</small>
+    @if ((form.wyklady || 0) > 0) {
+      <div class="ns-field">
+        <label class="ns-label">Wykład</label>
+        <p-multiselect
+          [options]="krytyriaOptions"
+          [(ngModel)]="form.kryteria_wyklad"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Wybierz kryteria oceny dla wykładu"
+          [showClear]="true"
+          appendTo="body"
+          styleClass="ns-multiselect"
+          display="chip"
+        />
+      </div>
+    }
+    @if ((form.cwiczenia || 0) > 0 || (form.laboratorium || 0) > 0) {
+      <div class="ns-field">
+        <label class="ns-label">Ćwiczenia / Laboratorium</label>
+        <p-multiselect
+          [options]="krytyriaOptions"
+          [(ngModel)]="form.kryteria_cwiczenia_laboratorium"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Wybierz kryteria oceny dla ćwiczeń/laboratorium"
+          [showClear]="true"
+          appendTo="body"
+          styleClass="ns-multiselect"
+          display="chip"
+        />
+      </div>
+    }
+    @if ((form.wyklady || 0) === 0 && (form.cwiczenia || 0) === 0 && (form.laboratorium || 0) === 0) {
+      <p class="ns-hint-block">Wprowadź najpierw godziny zajęć.</p>
+    }
   </p-panel>
 
   <!-- 6. Przedmioty wprowadzające -->
@@ -230,11 +283,36 @@
 
   <!-- 8. Treści programowe -->
   <p-panel header="8. Treści programowe" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
-    <small class="ns-hint-block">Każda pozycja w nowej linii.</small>
-    <div class="ns-field">
-      <textarea pTextarea [(ngModel)]="form.tresci_programowe_txt" rows="7"
-                placeholder="np. Wprowadzenie do algorytmów&#10;Złożoność czasowa i pamięciowa..." class="ns-textarea"></textarea>
+    <small class="ns-hint-block">Dla każdych zajęć podaj numer, treść wykładu i ćwiczeń/laboratorium.</small>
+    <div class="ns-tresci-table">
+      <div class="ns-tresci-header">
+        <span class="ns-tresci-col-nr">Nr zajęć</span>
+        <span class="ns-tresci-col-w">Wykład</span>
+        <span class="ns-tresci-col-c">Ćwiczenia / Laboratorium</span>
+        <span class="ns-tresci-col-btn"></span>
+      </div>
+      @for (t of form.tresci_programowe; track $index) {
+        <div class="ns-tresci-row">
+          <div class="ns-tresci-col-nr">
+            <p-inputNumber [(ngModel)]="t.nr_zajec" [min]="1" styleClass="ns-inputnumber-sm" />
+          </div>
+          <div class="ns-tresci-col-w">
+            <textarea pTextarea [(ngModel)]="t.wyklad" rows="3" class="ns-textarea ns-textarea-sm"
+                      placeholder="Treść wykładu..."></textarea>
+          </div>
+          <div class="ns-tresci-col-c">
+            <textarea pTextarea [(ngModel)]="t.cwiczenia" rows="3" class="ns-textarea ns-textarea-sm"
+                      placeholder="Treść ćwiczeń / laboratorium..."></textarea>
+          </div>
+          <div class="ns-tresci-col-btn">
+            <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                      (onClick)="removeTresc($index)" />
+          </div>
+        </div>
+      }
     </div>
+    <p-button label="Dodaj zajęcia" icon="pi pi-plus" [text]="true" size="small"
+              (onClick)="addTresc()" styleClass="ns-add-btn" />
   </p-panel>
 
   <!-- 9. Literatura -->
@@ -255,6 +333,52 @@
       <small class="ns-hint-block">Każdy link / opis w nowej linii.</small>
       <textarea pTextarea [(ngModel)]="form.literatura_internetowa_txt" rows="3"
                 placeholder="np. https://docs.oracle.com/en/java/ – dokumentacja Java, stan na 01.01.2026" class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 10. Informacje dodatkowe -->
+  <p-panel header="10. Informacje dodatkowe i rynek pracy" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <div class="ns-field">
+      <label class="ns-label">Informacje dodatkowe</label>
+      <textarea pTextarea [(ngModel)]="form.informacje_dodatkowe" rows="3"
+                placeholder="Dodatkowe informacje o przedmiocie..." class="ns-textarea"></textarea>
+    </div>
+    <p-divider />
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-briefcase"></i> Dziedzina gospodarki</label>
+      <textarea pTextarea [(ngModel)]="form.rynek_pracy_dziedzina" rows="2"
+                placeholder="np. IT, finanse, przemysł..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-id-card"></i> Zawody</label>
+      <textarea pTextarea [(ngModel)]="form.rynek_pracy_zawody" rows="2"
+                placeholder="np. Programista, Administrator systemów..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-graduation-cap"></i> Przykładowe tematy prac dyplomowych</label>
+      <small class="ns-hint-block">Każdy temat w nowej linii.</small>
+      <textarea pTextarea [(ngModel)]="form.rynek_pracy_prace_txt" rows="4"
+                placeholder="np. Implementacja algorytmu XYZ w systemie Z..." class="ns-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 11. Wymagania laboratorium -->
+  <p-panel header="11. Wymagania dotyczące laboratorium" styleClass="ns-panel" [toggleable]="true" [collapsed]="true">
+    <small class="ns-hint-block">Każda pozycja w nowej linii.</small>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-desktop"></i> Parametry stanowisk komputerowych</label>
+      <textarea pTextarea [(ngModel)]="form.lab_pc_params_txt" rows="3"
+                placeholder="np. Procesor min. 4 rdzenie, 8 GB RAM, dysk SSD..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-code"></i> Oprogramowanie</label>
+      <textarea pTextarea [(ngModel)]="form.lab_software_txt" rows="3"
+                placeholder="np. Linux Ubuntu 22.04, GCC, VS Code..." class="ns-textarea"></textarea>
+    </div>
+    <div class="ns-field">
+      <label class="ns-label"><i class="pi pi-wrench"></i> Wyposażenie specjalistyczne</label>
+      <textarea pTextarea [(ngModel)]="form.lab_wyposazenie_txt" rows="3"
+                placeholder="np. Oscyloskop cyfrowy, zestaw Arduino..." class="ns-textarea"></textarea>
     </div>
   </p-panel>
 

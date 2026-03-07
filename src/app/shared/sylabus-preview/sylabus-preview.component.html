@@ -69,6 +69,12 @@
         </tr>
       </ng-template>
     </p-table>
+    @if (sylabus.godziny?.praca_wlasna_studenta) {
+      <div class="praca-wlasna-opis">
+        <p class="efekty-kategoria"><i class="pi pi-home"></i> Opis samodzielnej pracy studenta</p>
+        <p class="sylabus-text">{{ sylabus.godziny.praca_wlasna_studenta }}</p>
+      </div>
+    }
   </p-card>
 
   <!-- 3. Cel dydaktyczny -->
@@ -99,10 +105,28 @@
   }
 
   <!-- 5. Kryteria oceny -->
-  @if (sylabus.kryteria_oceny?.length) {
-    <p-panel header="Kryteria oceny" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+  @if (isKryteriaObject(sylabus.kryteria_oceny)) {
+    @let ko = $any(sylabus.kryteria_oceny);
+    @if ((ko.wyklad?.length || 0) + (ko.cwiczenia_laboratorium?.length || 0) > 0) {
+      <p-panel header="Kryteria oceny" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
+        @if (ko.wyklad?.length) {
+          <p class="efekty-kategoria"><i class="pi pi-desktop"></i> Wykład</p>
+          <ul class="sylabus-list">
+            @for (k of ko.wyklad; track $index) { <li>{{ k }}</li> }
+          </ul>
+        }
+        @if (ko.cwiczenia_laboratorium?.length) {
+          <p class="efekty-kategoria"><i class="pi pi-wrench"></i> Ćwiczenia / Laboratorium</p>
+          <ul class="sylabus-list">
+            @for (k of ko.cwiczenia_laboratorium; track $index) { <li>{{ k }}</li> }
+          </ul>
+        }
+      </p-panel>
+    }
+  } @else if (asArray(sylabus.kryteria_oceny).length) {
+    <p-panel header="Kryteria oceny" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
       <ul class="sylabus-list">
-        @for (k of sylabus.kryteria_oceny; track $index) { <li>{{ k }}</li> }
+        @for (k of asArray(sylabus.kryteria_oceny); track $index) { <li>{{ k }}</li> }
       </ul>
     </p-panel>
   }
@@ -158,10 +182,29 @@
   }
 
   <!-- 9. Treści programowe -->
-  @if (sylabus.tresci_programowe?.length) {
+  @if (getTresciRows().length > 0) {
+    <p-panel header="Treści programowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+      <p-table [value]="getTresciRows()" styleClass="p-datatable-sm" [showGridlines]="true">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width:80px">Nr zajęć</th>
+            <th>Wykład</th>
+            <th>Ćwiczenia / Laboratorium / Pracownia</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-row>
+          <tr>
+            <td class="text-center">{{ row.nr_zajec }}</td>
+            <td>{{ row.wyklad }}</td>
+            <td>{{ row.cwiczenia || '–' }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  } @else if (getTresciLegacy().length > 0) {
     <p-panel header="Treści programowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
       <ol class="sylabus-list">
-        @for (t of sylabus.tresci_programowe; track $index) { <li>{{ t }}</li> }
+        @for (t of getTresciLegacy(); track $index) { <li>{{ t }}</li> }
       </ol>
     </p-panel>
   }
@@ -180,6 +223,74 @@
         <ul class="sylabus-list">
           @for (p of sylabus.literatura.uzupelniajaca!.pozycje; track $index) { <li>{{ p }}</li> }
         </ul>
+      }
+    </p-panel>
+  }
+
+  <!-- 11. Wymagania laboratorium -->
+  @let wl = sylabus.wymagania_laboratorium;
+  @if (wl && ((wl.pc_params?.length || 0) + (wl.software?.length || 0) + (wl.wyposazenie_dodatkowe?.length || 0) > 0)) {
+    <p-panel header="Wymagania dotyczące laboratorium" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+      <p-table [value]="[wl]" styleClass="p-datatable-sm" [showGridlines]="true">
+        <ng-template pTemplate="header">
+          <tr>
+            @if (wl.pc_params?.length) { <th>Stanowisko komputerowe</th> }
+            @if (wl.software?.length) { <th>Oprogramowanie</th> }
+            @if (wl.wyposazenie_dodatkowe?.length) { <th>Wyposażenie specjalistyczne</th> }
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-row>
+          <tr>
+            @if (wl.pc_params?.length) {
+              <td>
+                <ul class="sylabus-list-inline">
+                  @for (p of wl.pc_params!; track $index) { <li>{{ p }}</li> }
+                </ul>
+              </td>
+            }
+            @if (wl.software?.length) {
+              <td>
+                <ul class="sylabus-list-inline">
+                  @for (s of wl.software!; track $index) { <li>{{ s }}</li> }
+                </ul>
+              </td>
+            }
+            @if (wl.wyposazenie_dodatkowe?.length) {
+              <td>
+                <ul class="sylabus-list-inline">
+                  @for (w of wl.wyposazenie_dodatkowe!; track $index) { <li>{{ w }}</li> }
+                </ul>
+              </td>
+            }
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  }
+
+  <!-- 12. Informacje dodatkowe / Rynek pracy -->
+  @let rp = sylabus.rynek_pracy;
+  @if (sylabus.informacje_dodatkowe || rp?.dziedzina_gospodarki || rp?.zawody || rp?.prace_dyplomowe?.length) {
+    <p-panel header="Informacje dodatkowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+      @if (sylabus.informacje_dodatkowe) {
+        <p class="sylabus-text">{{ sylabus.informacje_dodatkowe }}</p>
+      }
+      @if (rp?.dziedzina_gospodarki || rp?.zawody || rp?.prace_dyplomowe?.length) {
+        <p class="efekty-kategoria"><i class="pi pi-briefcase"></i> Uzasadnienie – współpraca z rynkiem pracy</p>
+        @if (rp?.dziedzina_gospodarki) {
+          <p class="literatura-typ">Dziedziny gospodarki / typy firm:</p>
+          <p class="sylabus-text">{{ rp!.dziedzina_gospodarki }}</p>
+        }
+        @if (rp?.zawody) {
+          <p class="literatura-typ">Zawody:</p>
+          <p class="sylabus-text">{{ rp!.zawody }}</p>
+        }
+        @if (rp?.prace_dyplomowe?.length) {
+          <p class="literatura-typ">Przykładowe tematy prac dyplomowych:</p>
+          <ul class="sylabus-list">
+            @for (p of rp!.prace_dyplomowe!; track $index) { <li>{{ p }}</li> }
+          </ul>
+        }
       }
     </p-panel>
   }

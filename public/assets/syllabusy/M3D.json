@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Samodzielna praca nad modelami 3D dla gier; budowanie portfolio ćwiczeń semestralnych; realizacja projektu końcowego z modelowania 3D; eksploracja narzędzi (Blender, Maya)."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,18 +43,13 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "prezentacja na żywo",
-            "wykład z elementami dyskusji",
-            "studium przypadku",
-            "najlepsze praktyki",
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "praca samodzielna ucznia nad zadaniami i mini-projektami",
-            "projekt semestralny",
-            "Kryteria oceny",
-            "Student musi wykonać zgodnie z regułami sztuki kluczowe ćwiczenia prezentowane w trakcie semestru. Sprawdzana jest zgodność z zasadami ale dopuszczane są inwencja twórcza oraz kreatywność (dziedzina jest twórcza). Tworzone jest w ciągu semestru portfolio rozwojowe pokazujące eksperymenty własne i ścieżkę osiągnięć, które są następnie na końcu zajęć oceniane.",
-            "Student zobowiązany jest przedstawić większy projekt własny w którym wykorzystuje poznane techniki modelowania. Projekty są negocjowane indywidualnie już podczas semestru i można je przygotowywać w trakcie jego trwania."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja samodzielnej pracy semestralnej"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Niezbędna jest ogólna znajomość obsługi komputera.",
@@ -81,20 +87,83 @@
             ]
         },
         "tresci_programowe": [
-            "1. Wprowadzenie do podstaw obsługi Blendera.",
-            "2. Modelowanie w trybie obiektowym.",
-            "3. Modyfikatory.",
-            "4. Modelowanie w trybie edycji.",
-            "5. Modelowanie high-poly w trybie rzeźbienia.",
-            "6. Oświetlenie.",
-            "7. Materiały.",
-            "8. Tekstury proceduralne.",
-            "9. Mapowanie tekstur i przestrzenie współrzędnych.",
-            "10. Tekstury bitmapowe.",
-            "11. Wypalanie tekstur.",
-            "12. Optymalizacja sceny 3D i rendering.",
-            "13. Komponowanie (compositing)."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Wprowadzenie do podstaw obsługi Blendera.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2. Modelowanie w trybie obiektowym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3. Modyfikatory.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4. Modelowanie w trybie edycji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5. Modelowanie high-poly w trybie rzeźbienia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6. Oświetlenie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7. Materiały.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8. Tekstury proceduralne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "9. Mapowanie tekstur i przestrzenie współrzędnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "10. Tekstury bitmapowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "11. Wypalanie tekstur.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "12. Optymalizacja sceny 3D i rendering.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "13. Komponowanie (compositing).",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to prepare students for work in the game development industry as creators of digital content. Emphasis is placed on 3D modeling and related topics such as texturing, material creation, baking, optimization techniques, and strategies related to game development."
+        "cel_dydaktyczny_eng": "The aim of the course is to prepare students for work in the game development industry as creators of digital content. Emphasis is placed on 3D modeling and related topics such as texturing, material creation, baking, optimization techniques, and strategies related to game development.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

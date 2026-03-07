@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna implementacja zaawansowanych projektów z grafiki i animacji; ćwiczenia z narzędzi (Blender, Adobe AE, Unity); przygotowanie i obrona pracy zaliczeniowej."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,13 +42,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "praca indywidualna przy komputerze",
-            "Kryteria oceny",
-            "Projekty (oceny cząstkowe otrzymywane w trakcie semestru)",
-            "Wykonanie i obrona pracy zaliczeniowej."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "obrona projektu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Grafika komputerowa",
@@ -75,22 +85,93 @@
             ]
         },
         "tresci_programowe": [
-            "1Przypomnienie wiadomości i wstęp do tworzenia efektów specjalnych w BlenderzePraktyczne ćwiczenia z renderowania, przypomnienie pracy z nodami i maskami",
-            "2Stabilizacja obrazu. Obraz nagrany za pomocą komórki lub ręcznej kamery ma zostać ustabilizowany za pomocą narzędzi dostępnych w Blenderze.Stabilizacja obrazu - generowanie proxy, obsługa VSE, deembedyzacja materiału filmowego, tracking, postprocessing.",
-            "3Stabilizacja obrazu rozmytego i różne trudne przypadki gdy zawodzi podstawowa technika - stabilizacja zoomu, panoramy, hyperlapsów, timelapsów, itp.Tworzenie hyperlapsu i jego stabilizacja manualna oraz za pomocą technik śledzenia wzorców.",
-            "4Usuwanie obiektów ze sceny. Jest to najczęściej wykonywana operacja i gdy jest dobrze zrobiona, powinna być całkowicie niewidoczna. Na filmie nagranym za pomocą kamery będziemy usuwali niektóre elementy nieruchome.Usuwanie statycznych elementów sceny, za pomocą kombinacji metod - rotoskopia, tracking, maskowanie, postprocessing.",
-            "5Usuwanie obiektów ze sceny, które są ruchome lub ulegają zmianom (wyglądu, położenia, oświetlenia, itp).Usuwanie dynamicznych elementów sceny, za pomocą kombinacji metod - zaawansowana rotoskopia, tracking masek, itp.",
-            "6Dodawanie obiektów do sceny.Dodawanie ognia na ręku, błysku w oku lub inne tego typu proste i efektowne ćwiczenia.",
-            "7Dodawanie obiektów do sceny.Wkomponowanie w scenę obiektów ruchomych, analiza i montaż scen z materiałów dostępnych na hollywoodcamerawork.com",
-            "8Zmiana obiektów na scenie. Przykładowo, może to być zmiana numeru tablicy rejestracyjnej widocznego w kadrze samochodu, zmiana koloru oczu, lub całkowita zmiana tła.Patchwork na nagranym materiale, za pomocą masek i zmiany HSV w przypadku kolorów, lub dodanie innych efektów, które mogą tego wymagać.",
-            "9Rozkład sceny na plany i praca na niezależnych źródłach.Przećwiczymy dekompozycję wizualną, w której podstawą rozdziału planów będzie rotoskopia. W efekcie można stworzyć wrażenie perspektywy która nie istnieje.",
-            "10Praca na obrazie kluczowanym. Greenscreen - techniki podstawowe.Poznajemy jak działa zielony ekran na przykładzie nagranych własnoręcznie materiałów.",
-            "11Walka z greenscreenem - rozwiązywanie częstych problemów: niejednolite oświetlenie, zły odcień ubrań, przedmioty błyszczące i odbijające zielone tło, przedmioty przezroczysteĆwiczenia z trudnych przypadków: kluczowanie szkła, metalu, przejrzystych tkanin, rozmytego ruchu, itp.",
-            "12Koloryzacja i kompozycja barwna, nieliniowe przestrzenie kolorów i kompresja barw.Koloryzacja filmu, ‘film look’, podstawowe techniki.",
-            "13Montaż filmowy; typy ujęć; typy cięć; zastosowania, mattepainting, compositingĆwiczenia z montażu filmów.",
-            "14Mattee painting, CompositingĆwiczenia z koloryzacji oraz podmiany/wzbogacania tła.",
-            "15Własne efekty specjalne - np. duplikacja postaci, obiekty fantomowe, zmiana odbicia w lustrze, itp."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1Przypomnienie wiadomości i wstęp do tworzenia efektów specjalnych w BlenderzePraktyczne ćwiczenia z renderowania, przypomnienie pracy z nodami i maskami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2Stabilizacja obrazu. Obraz nagrany za pomocą komórki lub ręcznej kamery ma zostać ustabilizowany za pomocą narzędzi dostępnych w Blenderze.Stabilizacja obrazu - generowanie proxy, obsługa VSE, deembedyzacja materiału filmowego, tracking, postprocessing.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3Stabilizacja obrazu rozmytego i różne trudne przypadki gdy zawodzi podstawowa technika - stabilizacja zoomu, panoramy, hyperlapsów, timelapsów, itp.Tworzenie hyperlapsu i jego stabilizacja manualna oraz za pomocą technik śledzenia wzorców.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4Usuwanie obiektów ze sceny. Jest to najczęściej wykonywana operacja i gdy jest dobrze zrobiona, powinna być całkowicie niewidoczna. Na filmie nagranym za pomocą kamery będziemy usuwali niektóre elementy nieruchome.Usuwanie statycznych elementów sceny, za pomocą kombinacji metod - rotoskopia, tracking, maskowanie, postprocessing.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5Usuwanie obiektów ze sceny, które są ruchome lub ulegają zmianom (wyglądu, położenia, oświetlenia, itp).Usuwanie dynamicznych elementów sceny, za pomocą kombinacji metod - zaawansowana rotoskopia, tracking masek, itp.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6Dodawanie obiektów do sceny.Dodawanie ognia na ręku, błysku w oku lub inne tego typu proste i efektowne ćwiczenia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7Dodawanie obiektów do sceny.Wkomponowanie w scenę obiektów ruchomych, analiza i montaż scen z materiałów dostępnych na hollywoodcamerawork.com",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8Zmiana obiektów na scenie. Przykładowo, może to być zmiana numeru tablicy rejestracyjnej widocznego w kadrze samochodu, zmiana koloru oczu, lub całkowita zmiana tła.Patchwork na nagranym materiale, za pomocą masek i zmiany HSV w przypadku kolorów, lub dodanie innych efektów, które mogą tego wymagać.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "9Rozkład sceny na plany i praca na niezależnych źródłach.Przećwiczymy dekompozycję wizualną, w której podstawą rozdziału planów będzie rotoskopia. W efekcie można stworzyć wrażenie perspektywy która nie istnieje.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "10Praca na obrazie kluczowanym. Greenscreen - techniki podstawowe.Poznajemy jak działa zielony ekran na przykładzie nagranych własnoręcznie materiałów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "11Walka z greenscreenem - rozwiązywanie częstych problemów: niejednolite oświetlenie, zły odcień ubrań, przedmioty błyszczące i odbijające zielone tło, przedmioty przezroczysteĆwiczenia z trudnych przypadków: kluczowanie szkła, metalu, przejrzystych tkanin, rozmytego ruchu, itp.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "12Koloryzacja i kompozycja barwna, nieliniowe przestrzenie kolorów i kompresja barw.Koloryzacja filmu, ‘film look’, podstawowe techniki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "13Montaż filmowy; typy ujęć; typy cięć; zastosowania, mattepainting, compositingĆwiczenia z montażu filmów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "14Mattee painting, CompositingĆwiczenia z koloryzacji oraz podmiany/wzbogacania tła.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "15Własne efekty specjalne - np. duplikacja postaci, obiekty fantomowe, zmiana odbicia w lustrze, itp.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "This course is intended for advanced students and, as such, constitutes a unique offering among Polish universities, as very few institutions provide classes at such an advanced level. The subject of the course is the creation of effects understood as 'practical effects' (invisible effects) and 'special effects' (visible effects). The techniques presented are used in studios in Los Angeles during work on major productions. Practical effects involve modifying an image in such a way that the modifications are not visible. The possibilities here are very broad, and each topic is unique. During this course, students are expected to work on effects such as adding birds in the background, inserting smoke and fire, removing unwanted elements (signs, text, etc.), creating a crowd from a handful of people, animating explosions, cracks, changes in appearance, and more. During the classes, we become familiar with techniques such as keying (greenscreen), rotoscoping (animated masks), object tracking (3D object tracking), camera tracking (photogrammetric calculation of camera movement based on frame movement), planar tracking (useful for modifying flat surfaces in recorded video), as well as various scene reconstruction techniques. If time allows, we also look at the possibilities of film editing and color grading, as well as other techniques such as matte painting or motion capture (including the possible use of free motion libraries from Carnegie Mellon University)."
+        "cel_dydaktyczny_eng": "This course is intended for advanced students and, as such, constitutes a unique offering among Polish universities, as very few institutions provide classes at such an advanced level. The subject of the course is the creation of effects understood as 'practical effects' (invisible effects) and 'special effects' (visible effects). The techniques presented are used in studios in Los Angeles during work on major productions. Practical effects involve modifying an image in such a way that the modifications are not visible. The possibilities here are very broad, and each topic is unique. During this course, students are expected to work on effects such as adding birds in the background, inserting smoke and fire, removing unwanted elements (signs, text, etc.), creating a crowd from a handful of people, animating explosions, cracks, changes in appearance, and more. During the classes, we become familiar with techniques such as keying (greenscreen), rotoscoping (animated masks), object tracking (3D object tracking), camera tracking (photogrammetric calculation of camera movement based on frame movement), planar tracking (useful for modifying flat surfaces in recorded video), as well as various scene reconstruction techniques. If time allows, we also look at the possibilities of film editing and color grading, as well as other techniques such as matte painting or motion capture (including the possible use of free motion libraries from Carnegie Mellon University).",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

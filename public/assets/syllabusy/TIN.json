@@ -21,24 +21,34 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Implementacja projektu z technologii internetowych; ćwiczenia z protokołów sieciowych i usług webowych; przygotowanie do kolokwium pisemnego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "projekt praktyczny",
-            "Kryteria oceny",
-            "50% Kolokwium pisemne",
-            "50% Projekt praktyczny"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "cel_dydaktyczny": "Zapoznanie studentów z nowoczesnymi technologiami internetowymi, które są kluczowe dla tworzenia i zarządzania dynamicznymi stronami oraz aplikacjami internetowymi. Zdobycie wiedzy na temat tworzenia responsywnych interfejsów, wykorzystania zaawansowanych technik CSS oraz programowania w języku JavaScript, w tym programowania funkcyjnego i obiektowego. Przedmiot obejmuje także tematykę asynchronicznego programowania, modyfikacji elementów DOM oraz korzystania z narzędzi sieciowych, takich jak HTTP i WebSocket. Dodatkowo, studenci poznają podstawy pracy z popularnym narzędziem do budowy aplikacji serwerowych.",
         "literatura": {
             "podstawowa": {
@@ -69,20 +79,76 @@
             ]
         },
         "tresci_programowe": [
-            "Przegląd technologii internetowych i ich rola w tworzeniu nowoczesnych stron internetowych.",
-            "Zasady responsywności stron internetowych i ich implementacja.",
-            "Techniki zaawansowanego stylowania CSS oraz organizacja i optymalizacja kodu.",
-            "Zastosowanie narzędzi do tworzenia układów i stylizacji stron internetowych.",
-            "Wprowadzenie do języka JavaScript: zmienne oraz operatory.",
-            "Funkcje i paradygmat programowania funkcyjnego w języku JavaScript.",
-            "Programowanie obiektowe w JavaScript oraz manipulacja obiektami.",
-            "Zarządzanie zdarzeniami w JavaScript oraz modyfikacja struktury DOM.",
-            "Asynchroniczne programowanie w JavaScript: podstawy i praktyczne zastosowania.",
-            "Zaawansowane techniki programowania w JavaScript: rozprzestrzenianie i destrukturyzacja.",
-            "Wprowadzenie do mechanizmów obsługi zdarzeń w aplikacjach internetowych.",
-            "Obsługa komunikacji sieciowej w JavaScript, w tym zapytania HTTP i mechanizmy komunikacji w czasie rzeczywistym.",
-            "Podstawy pracy z technologiami serwerowymi oraz budowa aplikacji internetowych.",
-            "Wprowadzenie do tworzenia aplikacji internetowych z wykorzystaniem popularnych narzędzi serwerowych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Przegląd technologii internetowych i ich rola w tworzeniu nowoczesnych stron internetowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Zasady responsywności stron internetowych i ich implementacja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Techniki zaawansowanego stylowania CSS oraz organizacja i optymalizacja kodu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zastosowanie narzędzi do tworzenia układów i stylizacji stron internetowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Wprowadzenie do języka JavaScript: zmienne oraz operatory.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Funkcje i paradygmat programowania funkcyjnego w języku JavaScript.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Programowanie obiektowe w JavaScript oraz manipulacja obiektami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Zarządzanie zdarzeniami w JavaScript oraz modyfikacja struktury DOM.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Asynchroniczne programowanie w JavaScript: podstawy i praktyczne zastosowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Zaawansowane techniki programowania w JavaScript: rozprzestrzenianie i destrukturyzacja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Wprowadzenie do mechanizmów obsługi zdarzeń w aplikacjach internetowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Obsługa komunikacji sieciowej w JavaScript, w tym zapytania HTTP i mechanizmy komunikacji w czasie rzeczywistym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Podstawy pracy z technologiami serwerowymi oraz budowa aplikacji internetowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Wprowadzenie do tworzenia aplikacji internetowych z wykorzystaniem popularnych narzędzi serwerowych.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -90,6 +156,17 @@
                 "wymagania": "Znajomosc HTML, obslugi bazy danych za pomoca jezyka zapytan SQL"
             }
         ],
-        "cel_dydaktyczny_eng": "Introduction to modern web technologies that are essential for creating and managing dynamic websites and web applications. The course provides knowledge on building responsive interfaces, using advanced CSS techniques, and programming in JavaScript, including both functional and object-oriented approaches. It also covers asynchronous programming, DOM manipulation, and the use of networking tools such as HTTP and WebSocket. In addition, students learn the basics of working with a popular tool for building server-side applications."
+        "cel_dydaktyczny_eng": "Introduction to modern web technologies that are essential for creating and managing dynamic websites and web applications. The course provides knowledge on building responsive interfaces, using advanced CSS techniques, and programming in JavaScript, including both functional and object-oriented approaches. It also covers asynchronous programming, DOM manipulation, and the use of networking tools such as HTTP and WebSocket. In addition, students learn the basics of working with a popular tool for building server-side applications.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

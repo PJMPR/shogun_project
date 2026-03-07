@@ -21,28 +21,32 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 45,
             "praca_wlasna_studenta_h": 30,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Realizacja kolejnych komponentów projektu dyplomowego; dokumentowanie produktów projektowych; przygotowanie do obrony projektu; weryfikacja i testowanie oprogramowania."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Wykład (powiązany treściami z przedmiotem BYT):",
-            "dokumentowanie produktów projektowych",
-            "burza mózgów",
-            "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik i narzędzi informatycznych",
-            "Kryteria oceny",
-            "prezentacja projektu i dokumentacji",
-            "obrona projektu",
-            "raport z wykonanego zadania",
-            "ocena sporządzonego dokumentu: szablony dokumentów, raporty",
-            "ocena sporządzonego oprogramowania: weryfikacja powstałych komponentów oraz produktu końcowego",
-            "ocena doboru i wykonania rozwiązań projektowych i powiązanej dokumentacji",
-            "Uwaga: Ocena na podstawie oceny produktu realizowanego projektu oraz ocen częściowych, otrzymywanych za wykonanie udokumentowanych komponentów projektowych"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "obrona projektu",
+                "raport z wykonanego zadania",
+                "ocena sporządzonego dokumentu",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "cel_dydaktyczny": "Celem zajęć jest zwiększenie umiejętności związanych z podstawowymi zagadnieniami i praktyką planowania i prowadzenia projektu informatycznego, w szczególności – projektu mającego na celu wytworzenie produktu programowego w technologii obiektowej oraz zdobycie przez studentów doświadczeń pracy w zespole. Zajęcia projektowe są skorelowane z wykładem przedmiotu Budowa i integracja systemów (BYT), zapewniając kompleksowość przedstawianych zagadnień inżynierii oprogramowania i dając studentom możliwość samodzielnego, metodycznego przeprowadzenia niedużych projektów informatycznych – od zdefiniowania problemu, poprzez dobór strategii i zaplanowanie jego rozwiązania do wykonania praktycznych elementów produktu, z użyciem wzorców i komponentów projektowych oraz przeprowadzeniem testów systemowych i walidacyjnych, a także ich udokumentowaniem. Wzorcowym projektem jest wykorzystanie technologii obiektowej w cyklu kaskadowym lub komponentowym, oraz zwinne strategie realizacji projektów. Istotnymi czynnikami doboru tematów są praktyczna przydatność, a także, w miarę możliwości, zapewnienie współpracy studentów z rzeczywistym klientem projektu. Tematy są prowadzone są w 2-4 osobowych grupach.",
         "literatura": {
             "podstawowa": {
@@ -92,23 +96,91 @@
             ]
         },
         "tresci_programowe": [
-            "Projekt",
-            "Konstrukcja aplikacji w oparciu o przyjętą metodykę, wzorce (analityczne, projektowe) frameworki i komponenty + dokumentacja projektu",
-            "1. Wprowadzenie, zasady zaliczenia przedmiotu. Założenia prac projektowych, ich prowadzenia i dokumentowania. Zapoznanie się z dostępnym środowiskiem. Dyskusja nad sformułowaniami projektów i grup projektowych. Opis projektu, założenia projektowe Analiza dokumentacji przykładowych rozwiązań projektowych.",
-            "2. Praca nad projektem: Identyfikacja problemu. Kontekst i udziałowcy problemu; klient projektu. Wzbogacony wizerunek, definicja i wizja systemu, zakres systemu, rodzaj produktu. Przygotowanie Dokumentu Założeń Wstępnych",
-            "3. Specyfikacja wymagań na system, podział i analiza wymagań. User stories. Studium wykonalności projektu; analiza organizacyjna, mikro i makrootoczenie projektu; dyskusja wariantów rozwiązania. Dobór strategii realizacji projektu w zależności od rodzaju produktu. Debata",
-            "4. Modelowanie systemu (przypadki użycia, diagramy sekwencji i/lub czynności). Logiczny diagram klas",
-            "5. Modelowanie systemu. Architektura systemu: podział na podsystemy i komponenty. Projekt bazy danych.",
-            "6. Harmonogram prac implementacyjnych, integracji, testowania oraz dodatkowej dokumentacji z podziałem na członków zespołu i ich role.",
-            "7. Konfiguracja środowiska programistycznego i technologicznego.",
-            "8. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu.",
-            "9. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu.",
-            "10. Prace implementacyjne. Wstępna ocena postępów, analiza zagrożeń.",
-            "11. Implementacja i integracja oprogramowania.",
-            "12. Implementacja i integracja. Inspekcja kodu. Analiza bezpieczeństwa.",
-            "13. Ocena i poprawa jakości oprogramowania. Scenariusze testów. Testowanie i walidacja oprogramowania; przygotowanie raportu z przeprowadzonych testów.",
-            "14. Finalizacja prac implementacyjnych i dokumentacyjnych; odbiór techniczny, przygotowanie raportu końcowego.",
-            "15. Prezentacja, omówienie i podsumowanie projektów. Zaliczenie przedmiotu."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Projekt",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Konstrukcja aplikacji w oparciu o przyjętą metodykę, wzorce (analityczne, projektowe) frameworki i komponenty + dokumentacja projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "1. Wprowadzenie, zasady zaliczenia przedmiotu. Założenia prac projektowych, ich prowadzenia i dokumentowania. Zapoznanie się z dostępnym środowiskiem. Dyskusja nad sformułowaniami projektów i grup projektowych. Opis projektu, założenia projektowe Analiza dokumentacji przykładowych rozwiązań projektowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "2. Praca nad projektem: Identyfikacja problemu. Kontekst i udziałowcy problemu; klient projektu. Wzbogacony wizerunek, definicja i wizja systemu, zakres systemu, rodzaj produktu. Przygotowanie Dokumentu Założeń Wstępnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "3. Specyfikacja wymagań na system, podział i analiza wymagań. User stories. Studium wykonalności projektu; analiza organizacyjna, mikro i makrootoczenie projektu; dyskusja wariantów rozwiązania. Dobór strategii realizacji projektu w zależności od rodzaju produktu. Debata",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "4. Modelowanie systemu (przypadki użycia, diagramy sekwencji i/lub czynności). Logiczny diagram klas",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "5. Modelowanie systemu. Architektura systemu: podział na podsystemy i komponenty. Projekt bazy danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "6. Harmonogram prac implementacyjnych, integracji, testowania oraz dodatkowej dokumentacji z podziałem na członków zespołu i ich role.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "7. Konfiguracja środowiska programistycznego i technologicznego.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "8. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "9. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "10. Prace implementacyjne. Wstępna ocena postępów, analiza zagrożeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "11. Implementacja i integracja oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "12. Implementacja i integracja. Inspekcja kodu. Analiza bezpieczeństwa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "13. Ocena i poprawa jakości oprogramowania. Scenariusze testów. Testowanie i walidacja oprogramowania; przygotowanie raportu z przeprowadzonych testów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "14. Finalizacja prac implementacyjnych i dokumentacyjnych; odbiór techniczny, przygotowanie raportu końcowego.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "15. Prezentacja, omówienie i podsumowanie projektów. Zaliczenie przedmiotu.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -128,6 +200,17 @@
                 "wymagania": "Znajomosc zagadnien analizy i projektowania SI i notacji UML; wczesniejsze lub rownoczesne zrozumienie zagadnien planowania i prowadzenia projektu informatycznego"
             }
         ],
-        "cel_dydaktyczny_eng": "The aim of the classes is to enhance skills related to the fundamental issues and practice of planning and managing an IT project, in particular a project aimed at producing a software product using object-oriented technology, and to provide students with experience in teamwork. The project classes are coordinated with the lecture course Systems Construction and Integration (BYT), ensuring a comprehensive treatment of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and planning of the solution, to implementation of practical product elements using patterns and design components, as well as conducting system and validation tests and documenting them. The reference project model is the use of object technology in a waterfall or component-based cycle, as well as agile project implementation strategies. Important factors in topic selection include practical usefulness and, where possible, cooperation with a real project client. Topics are carried out in groups of 2–4 students."
+        "cel_dydaktyczny_eng": "The aim of the classes is to enhance skills related to the fundamental issues and practice of planning and managing an IT project, in particular a project aimed at producing a software product using object-oriented technology, and to provide students with experience in teamwork. The project classes are coordinated with the lecture course Systems Construction and Integration (BYT), ensuring a comprehensive treatment of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and planning of the solution, to implementation of practical product elements using patterns and design components, as well as conducting system and validation tests and documenting them. The reference project model is the use of object technology in a waterfall or component-based cycle, as well as agile project implementation strategies. Important factors in topic selection include practical usefulness and, where possible, cooperation with a real project client. Topics are carried out in groups of 2–4 students.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

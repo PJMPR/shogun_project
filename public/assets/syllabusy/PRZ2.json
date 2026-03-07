@@ -21,9 +21,16 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 90,
-            "calkowita_liczba_godzin_h": 150
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Kontynuacja i finalizacja projektu dyplomowego; opracowanie dokumentacji końcowej; przygotowanie prezentacji finalnej i obrony przed komisją."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,19 +39,15 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "Praca stanowi kontynuację projektu podjętego w ramach zajęć PRZ1",
-            "Praca w kilkuosobowych grupach, pokrywających się z zespołami projektu dyplomowego",
-            "Uwzględnienie w projekcie aspektów społecznych i komercyjnych",
-            "Realizacja wspierana przez zajęcia Proseminarium PSEM",
-            "Wsparcie szablonami dokumentacji",
-            "Kryteria oceny",
-            "Projekt zespołowy",
-            "wykonanie i przedłożenie udokumentowanej pracy – projektu dyplomowego",
-            "przedstawienie finalnej prezentacji projektu z omówieniem pełnionych ról i wkładu pracy",
-            "Akceptacja promotora projektu dopuszczająca do obrony przed komisją",
-            "Ocena ustalana przez opiekuna projektu i recenzenta na podstawie jakości, metodyki i stopnia zrealizowania planowanego produktu (wydania), jego dokumentacji oraz wkładu i zaangażowania studenta w pracę zespołu"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "obrona projektu",
+                "ocena sporządzonego dokumentu",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Projekt zespołowy 1 (PRZ1)",
@@ -119,17 +122,68 @@
             ]
         },
         "tresci_programowe": [
-            "Przegląd stanu projektu i jego dokumentacji; dyskusja zakresu analizy biznesowej lub społecznej projektu.",
-            "Dyskusja (i ewentualnie zmiana) strategii realizacji, ról i zadań członków zespołu. Planowanie realizacji kolejnych wydań systemu",
-            "Iteracyjnie: analiza i modelowanie kolejnego przyrostu+kontrola postępów prac projektowych",
-            "Iteracyjnie: projektowanie rozwiązań kolejnego przyrostu+kontrola postępów prac projektowych",
-            "Iteracyjnie: implementacja modułów kolejnego przyrostu przez członków zespołu projektowego+kontrola postępów prac projektowych i dokumentacyjnych",
-            "Iteracyjnie: testowanie przyrostu. Uzgodnienie zbioru danych walidujących całość produktu.",
-            "Integracja modułów wykonanych przez poszczególnych członków zespołów; uruchamianie.",
-            "Walidacja rezultatów projektu",
-            "Dokumentowanie wyników projektu i wkładu pracy członków zespołu; raport końcowy",
-            "Prezentacje systemów realizujących tematy prac inż. zespołów projektowych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Przegląd stanu projektu i jego dokumentacji; dyskusja zakresu analizy biznesowej lub społecznej projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Dyskusja (i ewentualnie zmiana) strategii realizacji, ról i zadań członków zespołu. Planowanie realizacji kolejnych wydań systemu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Iteracyjnie: analiza i modelowanie kolejnego przyrostu+kontrola postępów prac projektowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Iteracyjnie: projektowanie rozwiązań kolejnego przyrostu+kontrola postępów prac projektowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Iteracyjnie: implementacja modułów kolejnego przyrostu przez członków zespołu projektowego+kontrola postępów prac projektowych i dokumentacyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Iteracyjnie: testowanie przyrostu. Uzgodnienie zbioru danych walidujących całość produktu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Integracja modułów wykonanych przez poszczególnych członków zespołów; uruchamianie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Walidacja rezultatów projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Dokumentowanie wyników projektu i wkładu pracy członków zespołu; raport końcowy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Prezentacje systemów realizujących tematy prac inż. zespołów projektowych.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "As part of the course, students continue the project started in Team Project PRZ1, thematically related to their specialization. The documented solution developed within the course constitutes part of the engineering diploma thesis. The solution proposed by the team to a practical problem should be innovative and as comprehensive as possible, taking into account, in addition to various technical dimensions, also economic, ergonomic, legal, and social aspects; it may also serve as a 'pre-incubation' product. Typically, depending on the adopted strategy, PRZ2 involves evolutionary increments (subsequent releases) of projects based on the release created in PRZ1."
+        "cel_dydaktyczny_eng": "As part of the course, students continue the project started in Team Project PRZ1, thematically related to their specialization. The documented solution developed within the course constitutes part of the engineering diploma thesis. The solution proposed by the team to a practical problem should be innovative and as comprehensive as possible, taking into account, in addition to various technical dimensions, also economic, ergonomic, legal, and social aspects; it may also serve as a 'pre-incubation' product. Typically, depending on the adopted strategy, PRZ2 involves evolutionary increments (subsequent releases) of projects based on the release created in PRZ1.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

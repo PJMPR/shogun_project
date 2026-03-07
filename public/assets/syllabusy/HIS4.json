@@ -21,11 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 30,
             "praca_wlasna_studenta_h": 5,
-            "calkowita_liczba_godzin_h": 35
+            "calkowita_liczba_godzin_h": 35,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka hiszpańskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
         },
         "metody_dydaktyczne": {
-            "cwiczenia": [
-                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
             ]
         },
         "zaliczenie": {
@@ -33,14 +40,14 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
-            "Prace pisemne – min. jedna praca na semestr.",
-            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
-            "Wypowiedź ustna (o rodzaju decyduje lektor).",
-            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
-            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "HIS3",
@@ -78,15 +85,58 @@
             ]
         },
         "tresci_programowe": [
-            "1. Wyrażenie intencji i planów dotyczących przyszłości - czas przyszły futuro imperfecto",
-            "2. Klimat, określanie pogody w różnych porach roku i miejscach - zaimki osobowe w funkcji dopełnienia bliższego i dalszego",
-            "3. Spędzanie wolnego czasu, wakacje rozrywki - zdania warunkowe",
-            "4. Ciało ludzkie. Dolegliwości, leczenie - czas teraźniejszy trybu łączącego subjuntivo",
-            "5. Przedsiębiorstwo, zatrudnienie, rozmowa kwalifikacyjna, CV - stopniowanie przymiotników (porównania)",
-            "6. Praca w sektorze państwowym, praca na własny rachunek - konstrukcja llevar + gerundio",
-            "7. Zawód informatyka - szkolenia, kompetencje, praca - stopień najwyższy przymiotników i przysłówków",
-            "8. Opowiadanie o zdarzeniach z przeszłości - czasy przeszłe trybu oznajmującego"
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Wyrażenie intencji i planów dotyczących przyszłości - czas przyszły futuro imperfecto",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2. Klimat, określanie pogody w różnych porach roku i miejscach - zaimki osobowe w funkcji dopełnienia bliższego i dalszego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3. Spędzanie wolnego czasu, wakacje rozrywki - zdania warunkowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4. Ciało ludzkie. Dolegliwości, leczenie - czas teraźniejszy trybu łączącego subjuntivo",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5. Przedsiębiorstwo, zatrudnienie, rozmowa kwalifikacyjna, CV - stopniowanie przymiotników (porównania)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6. Praca w sektorze państwowym, praca na własny rachunek - konstrukcja llevar + gerundio",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7. Zawód informatyka - szkolenia, kompetencje, praca - stopień najwyższy przymiotników i przysłówków",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8. Opowiadanie o zdarzeniach z przeszłości - czasy przeszłe trybu oznajmującego",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Spanish language instruction from A2 to B1 level. Students acquire Spanish proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries."
+        "cel_dydaktyczny_eng": "Spanish language instruction from A2 to B1 level. Students acquire Spanish proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Spain and Spanish-speaking countries.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

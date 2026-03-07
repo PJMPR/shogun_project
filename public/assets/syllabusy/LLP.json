@@ -21,17 +21,17 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Samodzielna implementacja programów systemowych; ćwiczenia z systemowych wywołań API; przygotowanie do kolokwiów; praca z narzędziami debugowania na poziomie systemu."
         },
         "metody_dydaktyczne": {
             "wyklad": [
-                "Wykład z prezentacją multimedialną",
-                "Live-coding",
-                "Dyskusja",
-                "Wspólne rozwiązywanie zadań"
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
             ],
-            "laboratorium": [
-                "Laboratorium komputerowe"
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty"
             ]
         },
         "zaliczenie": {
@@ -42,10 +42,13 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Zadania z zajęć - 1/3 oceny",
-            "2 Kolokwia - 2/3 oceny"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Podstawy Programowania",
@@ -76,21 +79,88 @@
             ]
         },
         "tresci_programowe": [
-            "Podstawy architektury komputera",
-            "Wstęp do programowania w x86 assembly",
-            "Pamięć",
-            "Skoki",
-            "Arytmetyka",
-            "ONP + Stos",
-            "Pętle",
-            "Projekt / funkcje",
-            "Projekt / funkcje, include, asm zaawansowany",
-            "Bootsector OS, BIOS",
-            "32-bit assembly",
-            "Bootsector, ładowanie jądra",
-            "Proste jądro",
-            "Proste mechanizmy OS, rozwój jądra OS"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawy architektury komputera",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Wstęp do programowania w x86 assembly",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Pamięć",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Skoki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Arytmetyka",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "ONP + Stos",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Pętle",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Projekt / funkcje",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Projekt / funkcje, include, asm zaawansowany",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Bootsector OS, BIOS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "32-bit assembly",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Bootsector, ładowanie jądra",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Proste jądro",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Proste mechanizmy OS, rozwój jądra OS",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The educational objective of the course is to understand how a computer executes a program at the level of processor architecture and instructions, and to acquire practical skills in x86 assembly programming. Students learn to work consciously with memory, the stack, control flow (jumps, loops), and arithmetic, as well as to design and organize code."
+        "cel_dydaktyczny_eng": "The educational objective of the course is to understand how a computer executes a program at the level of processor architecture and instructions, and to acquire practical skills in x86 assembly programming. Students learn to work consciously with memory, the stack, control flow (jumps, loops), and arithmetic, as well as to design and organize code.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }
