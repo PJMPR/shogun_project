@@ -95,6 +95,9 @@
 \end{tabular}
 \end{center}
 
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Definiowanie infrastruktury jako kodu z użyciem Terraform i Ansible; praca z LocalStack i OpenStack; przygotowanie sprawozdań i projektu końcowego dotyczącego wdrożenia infrastruktury chmurowej.
+
 \section{Forma zajęć}
 
 \begin{tabular}{ll}
@@ -134,35 +137,35 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 \textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
 \endhead
   \hline
-  Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps. & & \\
+  1. & Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps. &  \\
   \hline
-  Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy. & & \\
+  2. & Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy. &  \\
   \hline
-  Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod). & & \\
+  3. & Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod). &  \\
   \hline
-  Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji. & & \\
+  4. & Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji. &  \\
   \hline
-  AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform. & & \\
+  5. & AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform. &  \\
   \hline
-  AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform. & & \\
+  6. & AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform. &  \\
   \hline
-  AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform. & & \\
+  7. & AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform. &  \\
   \hline
-  Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell). & & \\
+  8. & Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell). &  \\
   \hline
-  Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność. & & \\
+  9. & Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność. &  \\
   \hline
-  Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null\_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end. & & \\
+  10. & Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null\_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end. &  \\
   \hline
-  LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury. & & \\
+  11. & LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury. &  \\
   \hline
-  OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS. & & \\
+  12. & OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS. &  \\
   \hline
-  Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack. & & \\
+  13. & Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack. &  \\
   \hline
-  Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail. & & \\
+  14. & Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail. &  \\
   \hline
-  Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate). & & \\
+  15. & Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate). &  \\
   \hline
 \end{longtable}
 
@@ -205,8 +208,16 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 
 \section{Kryteria oceny}
 
+\textbf{Wykład:}
 \begin{itemize}
-  \item Brak danych.
+  \item egzamin pisemny z zadaniami problemowymi
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item raport z wykonanego zadania
+  \item prezentacja projektu i dokumentacji
+  \item obrona projektu
 \end{itemize}
 
 

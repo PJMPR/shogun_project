@@ -21,22 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna praca ze skryptami systemowymi; ćwiczenia z poleceń terminala i podstaw systemów operacyjnych; przygotowanie do kolokwiów i wykonywanie prac domowych."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty",
+                "praca w grupach"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Laboratorium/:",
-            "Praca indywidualna ze skryptem",
-            "Praca grupowa",
-            "Warsztat",
-            "Kryteria oceny",
-            "Laboratorium: 2 kolokwia, prace domowe"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Nie dotyczy",
@@ -73,17 +82,68 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do systemu Linux oraz interfejsu wiersza poleceń (CLI)Studenci poznają podstawowe pojęcia dotyczące systemów operacyjnych, obsługi systemu Linux oraz podstawowych komend CLI.",
-            "Praca z systemami plików i zarządzanie nimiStudenci zdobywają umiejętności w zakresie pracy z systemami plików, tworzenia, usuwania i zarządzania plikami oraz katalogami w systemie Linux.",
-            "Skrypty BashTworzenie i uruchamianie skryptów Bash, automatyzacja zadań systemowych, praca z pętlami, funkcjami i warunkami.",
-            "Zarządzanie procesami w systemie operacyjnymOmówienie zarządzania procesami w systemie Linux, monitorowanie ich działania, manipulowanie zadaniami i zarządzanie współbieżnością.",
-            "Kontrola wersji z użyciem GITPraktyczne wprowadzenie do systemów kontroli wersji, takich jak GIT, oraz zarządzanie wersjami oprogramowania.",
-            "Architektura systemów wieloprocesorowychZrozumienie architektury systemów komputerowych, w tym wieloprocesorowych, oraz zarządzanie współbieżnością.",
-            "Podstawy sieci komputerowych i bezpieczeństwaStudenci poznają technologie sieciowe, protokoły komunikacyjne oraz podstawowe zagadnienia związane z bezpieczeństwem.",
-            "Instalacja i konfiguracja systemów operacyjnychProces instalacji i konfiguracji systemów operacyjnych, a także podstawowa administracja systemami.",
-            "Problemy synchronizacji zadańRozwiązywanie klasycznych problemów synchronizacji zadań, dobór algorytmów szeregowania i analiza ich efektywności.",
-            "Symulacja komputerowa i analiza systemów operacyjnychStudenci wykonują symulacje komputerowe w celu analizy działania systemów operacyjnych oraz ich parametrów."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do systemu Linux oraz interfejsu wiersza poleceń (CLI)Studenci poznają podstawowe pojęcia dotyczące systemów operacyjnych, obsługi systemu Linux oraz podstawowych komend CLI.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Praca z systemami plików i zarządzanie nimiStudenci zdobywają umiejętności w zakresie pracy z systemami plików, tworzenia, usuwania i zarządzania plikami oraz katalogami w systemie Linux.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Skrypty BashTworzenie i uruchamianie skryptów Bash, automatyzacja zadań systemowych, praca z pętlami, funkcjami i warunkami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zarządzanie procesami w systemie operacyjnymOmówienie zarządzania procesami w systemie Linux, monitorowanie ich działania, manipulowanie zadaniami i zarządzanie współbieżnością.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Kontrola wersji z użyciem GITPraktyczne wprowadzenie do systemów kontroli wersji, takich jak GIT, oraz zarządzanie wersjami oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Architektura systemów wieloprocesorowychZrozumienie architektury systemów komputerowych, w tym wieloprocesorowych, oraz zarządzanie współbieżnością.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Podstawy sieci komputerowych i bezpieczeństwaStudenci poznają technologie sieciowe, protokoły komunikacyjne oraz podstawowe zagadnienia związane z bezpieczeństwem.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Instalacja i konfiguracja systemów operacyjnychProces instalacji i konfiguracji systemów operacyjnych, a także podstawowa administracja systemami.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Problemy synchronizacji zadańRozwiązywanie klasycznych problemów synchronizacji zadań, dobór algorytmów szeregowania i analiza ich efektywności.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Symulacja komputerowa i analiza systemów operacyjnychStudenci wykonują symulacje komputerowe w celu analizy działania systemów operacyjnych oraz ich parametrów.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The educational objectives of the course include familiarizing students with the basics of working in Linux, including command-line operation and task automation using bash scripts. It is also essential to understand how version control systems (e.g. Git) work, which supports effective teamwork in programming projects. Secondary objectives include more practical skills such as creating functions and scripts to automate everyday programming tasks, working with files, packaging data, and using tools such as Midnight Commander and FTP."
+        "cel_dydaktyczny_eng": "The educational objectives of the course include familiarizing students with the basics of working in Linux, including command-line operation and task automation using bash scripts. It is also essential to understand how version control systems (e.g. Git) work, which supports effective teamwork in programming projects. Secondary objectives include more practical skills such as creating functions and scripts to automate everyday programming tasks, working with files, packaging data, and using tools such as Midnight Commander and FTP.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

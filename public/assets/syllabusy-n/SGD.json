@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja projektu programistycznego z symulacji i gier decyzyjnych; przygotowanie do kartkówek z części teoretycznej; eksperymenty z modelami decyzyjnymi."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,16 +43,15 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "Kryteria oceny",
-            "Kilka kartkówek. Na zaliczenie części teoretycznej ćwiczeń student jest zobowiązany uzyskać wynik powyżej 50% możliwych punktów.  Istnieje możliwość poprawy kartkówek na dziewiątych zajęciach.",
-            "Projekt programistyczny.",
-            "Ustalenie oceny zaliczeniowej na podstawie ocen cząstkowych otrzymanych w  trakcie trwania semestru"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "sprawdziany wstępne „wejściówki\""
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "cel_dydaktyczny": "Przedmiot \"Symulacje i gry decyzyjne\" ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.",
         "literatura": {
             "podstawowa": {
@@ -83,16 +93,56 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne.",
-            "Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną.",
-            "Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3.",
-            "Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach.",
-            "Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie.",
-            "Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą.",
-            "Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie.",
-            "Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji.",
-            "Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych",
-            "Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -100,6 +150,17 @@
                 "wymagania": "Wiedza z zakresu szkoly sredniej (algebra liniowa); ukonczenie kursu Animacja 3D lub posiadanie certyfikatu BFCT (Blender Foundation Certified Trainer)"
             }
         ],
-        "cel_dydaktyczny_eng": "The course 'Simulations and Decision Games' aims to familiarize students with selected decision-support methods, develop the ability to build decision models using software, and develop the ability to make decisions in dynamic decision-making environments. In its practical component, the course also allows students to learn how to create games with an emphasis on designing logic and strategy."
+        "cel_dydaktyczny_eng": "The course 'Simulations and Decision Games' aims to familiarize students with selected decision-support methods, develop the ability to build decision models using software, and develop the ability to make decisions in dynamic decision-making environments. In its practical component, the course also allows students to learn how to create games with an emphasis on designing logic and strategy.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

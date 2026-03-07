@@ -21,7 +21,8 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 56,
             "praca_wlasna_studenta_h": 94,
-            "calkowita_liczba_godzin_h": 150
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Implementacja projektu semestralnego z DDD i architekturą oktogonalną; pisanie testów integracyjnych i E2E; konfiguracja konteneryzacji; przygotowanie do kolokwium z architektury."
         },
         "metody_dydaktyczne": {
             "wyklad": [
@@ -44,13 +45,16 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Kolokwium (część wykładowa): pytania problemowe + zadania dotyczące DDD, architektury oktogonalnej, SOA oraz OAuth 2.1.",
-            "Praca na zajęciach (laboratoria): realizacja zadań cząstkowych, jakość kodu, poprawność architektury, terminowość.",
-            "Projekt: kompletność funkcjonalna, zgodność z założeniami (DDD + architektura oktogonalna), jakość testów (integracyjne + E2E), konteneryzacja i uruchamianie środowiska.",
-            "Ocena końcowa = składowa z kolokwium + składowa z laboratoriów (praca) + składowa z projektu.",
-            "Warunek zaliczenia: oddanie projektu oraz uzyskanie wyniku pozytywnego z kolokwium."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Podstawy programowania",
@@ -114,19 +118,78 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do aplikacji internetowych: backend vs frontend, kontrakty API, podstawy jakości i utrzymania.",
-            "DDD w praktyce: język ubiquitous, model domenowy, agregaty, invariants, repozytoria, domena vs aplikacja vs infrastruktura.",
-            "Architektura oktogonalna: porty i adaptery, granice odpowiedzialności, kierunek zależności, testowalność.",
-            "Wstęp do SOA: rozbicie na usługi, kontrakty, wersjonowanie API, spójność danych i integracja usług.",
-            "Bezpieczeństwo i autoryzacja: wprowadzenie do OAuth 2.1, tokeny, scenariusze integracyjne (w zakresie kursu).",
-            "Konteneryzacja: Docker, obrazy, sieci, wolumeny, docker-compose; uruchamianie pełnego środowiska projektu.",
-            "Budowa backendu: warstwy, API, walidacja, obsługa błędów, persystencja danych; integracja z innymi usługami (wg programu).",
-            "Budowa frontendu: podstawy architektury aplikacji klienckiej, integracja z API, zarządzanie stanem, obsługa błędów.",
-            "Testy integracyjne: strategia testów, testy kontraktów/warstw, uruchamianie z zależnościami (np. kontenery).",
-            "Testy end-to-end: scenariusze użytkownika, automatyzacja uruchomienia środowiska i testów.",
-            "Elementy procesu wytwarzania: Git flow / PR, code review, podstawy CI (pipeline uruchamiający testy).",
-            "Projekt zaliczeniowy: iteracyjna realizacja funkcji, dopięcie architektury, testów i uruchamiania w kontenerach."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do aplikacji internetowych: backend vs frontend, kontrakty API, podstawy jakości i utrzymania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "DDD w praktyce: język ubiquitous, model domenowy, agregaty, invariants, repozytoria, domena vs aplikacja vs infrastruktura.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Architektura oktogonalna: porty i adaptery, granice odpowiedzialności, kierunek zależności, testowalność.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Wstęp do SOA: rozbicie na usługi, kontrakty, wersjonowanie API, spójność danych i integracja usług.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Bezpieczeństwo i autoryzacja: wprowadzenie do OAuth 2.1, tokeny, scenariusze integracyjne (w zakresie kursu).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Konteneryzacja: Docker, obrazy, sieci, wolumeny, docker-compose; uruchamianie pełnego środowiska projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Budowa backendu: warstwy, API, walidacja, obsługa błędów, persystencja danych; integracja z innymi usługami (wg programu).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Budowa frontendu: podstawy architektury aplikacji klienckiej, integracja z API, zarządzanie stanem, obsługa błędów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Testy integracyjne: strategia testów, testy kontraktów/warstw, uruchamianie z zależnościami (np. kontenery).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Testy end-to-end: scenariusze użytkownika, automatyzacja uruchomienia środowiska i testów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Elementy procesu wytwarzania: Git flow / PR, code review, podstawy CI (pipeline uruchamiający testy).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Projekt zaliczeniowy: iteracyjna realizacja funkcji, dopięcie architektury, testów i uruchamiania w kontenerach.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to acquire practical skills in designing and implementing modern web applications divided into backend and frontend layers, based on Domain-Driven Design (DDD) and hexagonal architecture. Students learn the basics of building SOA-style solutions, authentication and authorization mechanisms (OAuth 2.1), containerization, and software engineering practices including integration and end-to-end testing. The intended outcome is the ability to deliver a working application together with automated setup and testing."
+        "cel_dydaktyczny_eng": "The aim of the course is to acquire practical skills in designing and implementing modern web applications divided into backend and frontend layers, based on Domain-Driven Design (DDD) and hexagonal architecture. Students learn the basics of building SOA-style solutions, authentication and authorization mechanisms (OAuth 2.1), containerization, and software engineering practices including integration and end-to-end testing. The intended outcome is the ability to deliver a working application together with automated setup and testing.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

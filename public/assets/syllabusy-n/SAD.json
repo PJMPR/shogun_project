@@ -21,9 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna analiza zbiorów danych statystycznych; ćwiczenia z narzędzi statystycznych (R, Python); przygotowanie do kolokwiów laboratoryjnych i egzaminu pisemnego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,27 +41,14 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "rozwiązywanie zadań",
-            "Kryteria oceny",
-            "Laboratorium–dwa kolokwia",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Wykład– egzamin pisemny",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Analiza matematyczna, Programowanie",
@@ -88,18 +84,73 @@
             ]
         },
         "tresci_programowe": [
-            "Prawdopodobieństwo klasyczne i warunkowe. Niezależność zdarzeń. Prawdopodobieństwo całkowite. Wzór Bayesa. Niezawodność systemu.",
-            "Zmienne losowe dyskretne, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady dwumianowy, ujemny dwumianowy i Poissona.",
-            "Zmienne losowe ciągłe, gęstość, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady jednostajny, geometryczny, wykładniczy, gamma i normalny. Centralne twierdzenie graniczne.",
-            "Zmienne losowe dwuwymiarowa. Rozkłady brzegowe. Niezależność zmiennych losowych.",
-            "Zastosowania metody Monte Carlo.",
-            "Elementy procesów stochastycznych. Łańcuchy Markowa.",
-            "Elementy teorii kolejek.",
-            "Statystyka opisowa.Miary położenia, rozproszenia, asymetrii, koncentracji.",
-            "Estymacja punktowa i przedziałowa parametrów rozkładów.",
-            "Testowanie hipotez statystycznych.",
-            "Model regresji liniowej."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Prawdopodobieństwo klasyczne i warunkowe. Niezależność zdarzeń. Prawdopodobieństwo całkowite. Wzór Bayesa. Niezawodność systemu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Zmienne losowe dyskretne, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady dwumianowy, ujemny dwumianowy i Poissona.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Zmienne losowe ciągłe, gęstość, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady jednostajny, geometryczny, wykładniczy, gamma i normalny. Centralne twierdzenie graniczne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zmienne losowe dwuwymiarowa. Rozkłady brzegowe. Niezależność zmiennych losowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Zastosowania metody Monte Carlo.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Elementy procesów stochastycznych. Łańcuchy Markowa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Elementy teorii kolejek.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Statystyka opisowa.Miary położenia, rozproszenia, asymetrii, koncentracji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Estymacja punktowa i przedziałowa parametrów rozkładów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Testowanie hipotez statystycznych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Model regresji liniowej.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with methods of data presentation and analysis as well as probabilistic modeling tools; to present methods of mathematical statistics and statistical inference; and to equip students with practical skills in using software for statistical data analysis."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with methods of data presentation and analysis as well as probabilistic modeling tools; to present methods of mathematical statistics and statistical inference; and to equip students with practical skills in using software for statistical data analysis.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

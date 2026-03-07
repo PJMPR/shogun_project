@@ -95,6 +95,9 @@
 \end{tabular}
 \end{center}
 
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Konteneryzacja aplikacji webowych z użyciem Docker i Docker Compose; konfiguracja klastra Kubernetes; przygotowanie sprawozdań i projektu końcowego.
+
 \section{Forma zajęć}
 
 \begin{tabular}{ll}
@@ -134,35 +137,35 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 \textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
 \endhead
   \hline
-  Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI. & & \\
+  1. & Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI. &  \\
   \hline
-  Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore. & & \\
+  2. & Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore. &  \\
   \hline
-  Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze. & & \\
+  3. & Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze. &  \\
   \hline
-  Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera. & & \\
+  4. & Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera. &  \\
   \hline
-  Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych. & & \\
+  5. & Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych. &  \\
   \hline
-  Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec. & & \\
+  6. & Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec. &  \\
   \hline
-  Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne. & & \\
+  7. & Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne. &  \\
   \hline
-  Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s. & & \\
+  8. & Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s. &  \\
   \hline
-  Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces. & & \\
+  9. & Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces. &  \\
   \hline
-  Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra. & & \\
+  10. & Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra. &  \\
   \hline
-  Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy. & & \\
+  11. & Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy. &  \\
   \hline
-  Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych. & & \\
+  12. & Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych. &  \\
   \hline
-  Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler. & & \\
+  13. & Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler. &  \\
   \hline
-  Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault. & & \\
+  14. & Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault. &  \\
   \hline
-  CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS. & & \\
+  15. & CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS. &  \\
   \hline
 \end{longtable}
 
@@ -205,8 +208,16 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 
 \section{Kryteria oceny}
 
+\textbf{Wykład:}
 \begin{itemize}
-  \item Brak danych.
+  \item egzamin pisemny z zadaniami problemowymi
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item raport z wykonanego zadania
+  \item prezentacja projektu i dokumentacji
+  \item obrona projektu
 \end{itemize}
 
 

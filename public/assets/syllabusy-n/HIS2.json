@@ -21,11 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 59,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka hiszpańskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
         },
         "metody_dydaktyczne": {
-            "cwiczenia": [
-                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
             ]
         },
         "zaliczenie": {
@@ -33,14 +40,14 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",
-            "Prace pisemne – min. jedna praca na semestr.",
-            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",
-            "Wypowiedź ustna (o rodzaju decyduje lektor).",
-            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
-            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "HIS1",
@@ -73,20 +80,58 @@
             ]
         },
         "tresci_programowe": [
-            "Dom – pomieszczenia i wyposażenie domu, sprzęty gospodarstwa domowego,",
-            "czasowniki estar, ser i haber, rodzajniki ściągnięte: al., del, przyimki miejsca",
-            "Miejsce zamieszkania – budynki miejskie, opis dzielnicy, liczebniki do 1000",
-            "Transport - środki transportu i korzystanie z nich, czasownik nieregularny ir",
-            "Szkoła – system edukacyjny w Hiszpanii, nazwy przedmiotów szkolnych, czynności",
-            "wykonywane w szkole, obowiązki, przymiotniki nieokreślone muchos/as,",
-            "wskazywanie ilości",
-            "Życie codzienne – czynności dnia codziennego, przysłówki i wyrażenia czasowe,",
-            "odmiana czasowników zwrotnych",
-            "Czas wolny – formy spędzania czasu wolnego, częstotliwość wykonywanych",
-            "Czynności",
-            "Święta w Hiszpanii – Wielkanoc, Święto ognia, tradycje",
-            "Miasto – obiekty miejskie, usługi, przyimki miejsca"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Życie codzienne – czas zegarowy, czynności wykonywane w różnych porach dnia. Odmiana czasowników regularnych w czasie teraźniejszym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Życie codzienne – czynności dnia codziennego. Odmiana czasowników nieregularnych (e→ie, o→ue, u→ue, e→i) w czasie teraźniejszym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Pogoda – zjawiska atmosferyczne, nazwy miesięcy, kierunki geograficzne, pory roku. Użycie rodzajnika określonego przy porach dnia i datach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Czas wolny – nazwy zainteresowań i upodobań. Czasowniki gustar i encantar w czasie teraźniejszym. Przysłówki tampoco i también.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Jedzenie – artykuły spożywcze i rodzaje opakowań, piramida żywieniowa. Przysłówki i wyrażenia czasu. Posiłki w Kolumbii i Hiszpanii.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Jedzenie – nazwy potraw i posiłków, składanie i przyjmowanie zamówień w lokalu gastronomicznym. Powtórzenie wiadomości.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Świat technologii – słownictwo związane z branżą IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Zawód informatyka – szkolenia, kompetencje, praca. Stopień najwyższy przymiotników i przysłówków. Kolokwium zaliczeniowe.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Continuation of Spanish language instruction at the A2 level. Students acquire language skills that enable communication in most everyday situations and, to some extent, professional contexts. The course includes vocabulary expansion, reinforcement of basic grammatical tenses, and familiarization with elements of the culture of Spain and Spanish-speaking countries."
+        "cel_dydaktyczny_eng": "Continuation of Spanish language instruction at the A2 level. Students acquire language skills that enable communication in most everyday situations and, to some extent, professional contexts. The course includes vocabulary expansion, reinforcement of basic grammatical tenses, and familiarization with elements of the culture of Spain and Spanish-speaking countries.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

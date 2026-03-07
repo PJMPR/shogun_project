@@ -21,9 +21,17 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 48,
             "praca_wlasna_studenta_h": 102,
-            "calkowita_liczba_godzin_h": 150
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Realizacja przydzielonych zadań w projekcie zespołowym; dokumentowanie postępów; przygotowanie wydania (release) produktu; współpraca z zespołem projektowym."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,13 +40,14 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "Burza mózgów",
-            "Kryteria oceny",
-            "Ćwiczenia/Laboratorium/Projekt/Lektorat",
-            "Ocena ustalana przez opiekuna projektu na podstawie jakości, metodyki i stopnia zrealizowania planowanego produktu (wydania), jego dokumentacji oraz wkładu i zaangażowania studenta w pracę zespołu"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "prezentacja elementu zespołowej pracy semestralnej",
+                "raport z wykonanego zadania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Projekt informatyczny (PRI)",
@@ -131,16 +140,63 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW)",
-            "Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu",
-            "Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP)",
-            "Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP).",
-            "Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej",
-            "Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac",
-            "Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac",
-            "Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem.",
-            "Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "As part of the course, students choose and carry out, under the supervision of a thesis advisor, a team engineering project related thematically to their chosen specialization. Their solution to a practical problem should employ an appropriate implementation approach and modern, well-selected technologies, and in addition to various technical dimensions should also take into account economic, ergonomic, legal, and social aspects. The documented solution developed within the project is continued in Team Project 2 and, together with a description of the individual contribution, constitutes the content of the engineering diploma thesis; it may also serve as a 'pre-incubation' product."
+        "cel_dydaktyczny_eng": "As part of the course, students choose and carry out, under the supervision of a thesis advisor, a team engineering project related thematically to their chosen specialization. Their solution to a practical problem should employ an appropriate implementation approach and modern, well-selected technologies, and in addition to various technical dimensions should also take into account economic, ergonomic, legal, and social aspects. The documented solution developed within the project is continued in Team Project 2 and, together with a description of the individual contribution, constitutes the content of the engineering diploma thesis; it may also serve as a 'pre-incubation' product.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

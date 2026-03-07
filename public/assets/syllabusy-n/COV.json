@@ -21,24 +21,33 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Rozwiązywanie zadań w Google Colab z zakresu Computer Vision; praca nad projektem zespołowym; implementacja algorytmów detekcji i rozpoznawania obrazów; przygotowanie prezentacji posterowej."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Case study - prezentacja oprogramowania (ostatnie 4 zajęcia).",
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
-            "Projekt zespołowy (ostatnie 5 zajęć).",
-            "Laboratorium oraz Projekt",
-            "Kryteria oceny",
-            "Ocena zadań laboratoryjnych",
-            "Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50% laboratorium, 50% projekt."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji",
+                "raport z wykonanego zadania"
+            ]
+        },
         "cel_dydaktyczny": "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
         "literatura": {
             "podstawowa": {
@@ -74,20 +83,76 @@
             ]
         },
         "tresci_programowe": [
-            "Podstawowe operacje przetwarzania obrazu. Zapoznanie z biblioteką OpenCV.",
-            "Podstawy działania sieci splotowej.",
-            "Zaawansowane architektury bazujące na sieciach splotowych (LeNet, AlexNet, VGG, Inception).",
-            "Zaawansowane architektury bazujące na sieciach splotowych (ResNet, DenseNet, MobileNet, SqueezeNet, EfficientNet). Transfer Learning.",
-            "Detekcja obrazu. Architektura modeli typu YOLO.",
-            "Segmentacja obrazu. Metryki do segmentacji oraz najbardziej znane architektury.",
-            "Autoencoder oraz Variation Autoencoder.",
-            "Generative Adversarial Networks.",
-            "Image transformer.",
-            "Stable Diffusion.",
-            "Segment Anything oraz DINO.",
-            "Generowanie obrazu. Style Transfer.",
-            "Rekonstrukcja 3D na podstawie obrazu 2D.",
-            "Detekcja pozy. Rozpoznawanie twarzy."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawowe operacje przetwarzania obrazu. Zapoznanie z biblioteką OpenCV.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Podstawy działania sieci splotowej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Zaawansowane architektury bazujące na sieciach splotowych (LeNet, AlexNet, VGG, Inception).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zaawansowane architektury bazujące na sieciach splotowych (ResNet, DenseNet, MobileNet, SqueezeNet, EfficientNet). Transfer Learning.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Detekcja obrazu. Architektura modeli typu YOLO.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Segmentacja obrazu. Metryki do segmentacji oraz najbardziej znane architektury.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Autoencoder oraz Variation Autoencoder.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Generative Adversarial Networks.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Image transformer.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Stable Diffusion.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Segment Anything oraz DINO.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Generowanie obrazu. Style Transfer.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Rekonstrukcja 3D na podstawie obrazu 2D.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Detekcja pozy. Rozpoznawanie twarzy.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -99,6 +164,17 @@
                 "wymagania": "Podstawowe operacje na macierzach"
             }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the basic problems of computer vision, methods for solving them, and evaluation of the prepared solutions."
+        "cel_dydaktyczny_eng": "Introduction to the basic problems of computer vision, methods for solving them, and evaluation of the prepared solutions.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

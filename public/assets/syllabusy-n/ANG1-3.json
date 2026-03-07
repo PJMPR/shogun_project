@@ -21,46 +21,33 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 59,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Przygotowywanie prac pisemnych (listy formalne/nieformalne, eseje, raporty); nauka słownictwa i gramatyki; przygotowanie do kolokwiów i testów; samodzielne ćwiczenia z wymową i konwersacją."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Lektorat": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "analiza tekstów z dyskusją",
-            "rozwiązywanie zadań",
-            "burza mózgów",
-            "mind map",
-            "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
-            "warsztaty",
-            "Kryteria oceny",
-            "obecność na zajęciach- max. 4  nieusprawiedliwione nieobecności w czasie semestru (zwolnienia lekarskie przedstawiane na bieżąco)",
-            "prace pisemne- min. jedna praca na semestr-w zależności od poziomu i tempa pracy grupy",
-            "formal/ informal letter/ e-mail",
-            "covering letter",
-            "CV",
-            "report",
-            "memo",
-            "discursive essay",
-            "postcard",
-            "note",
-            "portfolio",
-            "kolokwia/ test/ kartkówki na podstawie opracowanego materiału - min. 2 na semestr",
-            "wypowiedź ustna- (o rodzaju decyduje lektor)",
-            "news report",
-            "newspaper article presentation",
-            "multimedia presentation",
-            "group projects",
-            "przygotowywanie prac domowych",
-            "aktywne uczestnictwo w zajęciach",
-            "bieżąca obserwacja pracy studenta",
-            "Kryteria zaliczenia:",
-            "uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/ testy",
-            "pozytywna (min. 3.0) ocena łączna za pozostałe formy"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "cel_dydaktyczny": "Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angielskiego uzupełnionego o wprowadzenie elementów języka specjalistycznego, tj. biznesu, grafiki, sztuki nowych mediów oraz o treści typowo akademickie na poziomie docelowym B2. Studenci z wejściowym poziomem minimum B2 osiągają poziom C1 lub C2. Kurs obejmuje nauczanie specjalistycznego słownictwa, sprawności komunikacyjnych w biznesie, zwłaszcza umiejętności przygotowania i przedstawienia profesjonalnej prezentacji, jak również rozwijanie podstawowych sprawności komunikacyjnych, a szczególnie szybkiego czytania tekstów specjalistycznych zwłaszcza z zakresu grafiki (artykuły prasowe, książki, strony internetowe poświęcone tematyce) i słuchania tekstów o wzrastającym poziomie trudności. Podczas kursu studenci zostają zapoznani z terminologią dotyczącą grafiki, przygotowują się do porozumiewania się na tematy fachowe podczas pracy. Abstrakt po angielsku: The aim of the course is to pass the knowledge enhancing the basic English  lexis of the specific aspects of business and the studied area (graphic design), teach communication skills and raise the awareness of cross-cultural circumstances in business communication, as well as to revise and expand general language skills to the B2-C2 level (depending on the initial language level of students). Communicative skills in business are transferable to the native language. Secondary education graduates are usually deficient in this matter. These skills and abilities are indispensable in the modern working environment, irrespective of the sector and area of specialization.",
         "literatura": {
             "podstawowa": {
@@ -111,54 +98,246 @@
             ]
         },
         "tresci_programowe": [
-            "1. Zagadnienia z matematyki np.",
-            "algebra,",
-            "liczby naturalne,",
-            "liczby rzeczywiste,",
-            "liczby całkowite,",
-            "liczby wymierne,",
-            "działania wykonywane na liczbach,",
-            "notacja pozycyjna,",
-            "figury geometryczne,",
-            "macierze,",
-            "typy danych,",
-            "tryb całkowitoliczbowy,",
-            "tryb zmiennoprzecinkowy,",
-            "tekstowe typy danych etc.",
-            "2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np.",
-            "debatowanie,",
-            "wywieranie wpływu,",
-            "podejmowanie decyzji,",
-            "komunikacja w biznesie,",
-            "marki,",
-            "zatrudnienie,",
-            "etyka zawodowa,",
-            "team building,",
-            "style zarządzania,  rynki międzynarodowe etc.",
-            "3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych.",
-            "4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np).",
-            "zastosowanie komputerów w życiu codziennym,",
-            "systemy operacyjne,",
-            "mikroprocesory,",
-            "bazy danych,",
-            "Internet,",
-            "wirusy komputerowe,",
-            "gry komputerowe, sieci komputerowe,",
-            "nowe technologie,",
-            "języki programowania,",
-            "oprogramowanie komputerowe etc.)",
-            "5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy.",
-            "6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki.",
-            "7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy.",
-            "8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu.",
-            "9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze",
-            "środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje.",
-            "10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów.",
-            "11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K_U01",
-            "12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.(",
-            "13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading&Listening.",
-            "14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.)",
-            "15. Colloquium / Podsumowanie semestru."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Zagadnienia z matematyki np.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "algebra,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "liczby naturalne,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "liczby rzeczywiste,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "liczby całkowite,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "liczby wymierne,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "działania wykonywane na liczbach,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "notacja pozycyjna,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "figury geometryczne,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "macierze,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "typy danych,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "tryb całkowitoliczbowy,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "tryb zmiennoprzecinkowy,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "tekstowe typy danych etc.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "debatowanie,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "wywieranie wpływu,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "podejmowanie decyzji,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "komunikacja w biznesie,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "marki,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "zatrudnienie,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "etyka zawodowa,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "team building,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "style zarządzania,  rynki międzynarodowe etc.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "zastosowanie komputerów w życiu codziennym,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "systemy operacyjne,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "mikroprocesory,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "bazy danych,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Internet,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "wirusy komputerowe,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "gry komputerowe, sieci komputerowe,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "nowe technologie,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "języki programowania,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "oprogramowanie komputerowe etc.)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K_U01",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.(",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 46,
+                "wyklad": "13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading&Listening.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 47,
+                "wyklad": "14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 48,
+                "wyklad": "15. Colloquium / Podsumowanie semestru.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -166,6 +345,17 @@
                 "wymagania": "Znajomosc jezyka angielskiego na poziomie min. A2+/B1"
             }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to teach students general English supplemented with elements of specialist language, i.e. business, graphics, new media arts, and typically academic content, at the target B2 level. Students entering the course with at least B2 proficiency achieve C1 or C2 level. The course includes specialist vocabulary, communication skills in business, especially the ability to prepare and deliver a professional presentation, as well as the development of basic communication skills, particularly rapid reading of specialist texts, especially in the field of graphics (press articles, books, websites devoted to the subject), and listening to texts of increasing difficulty. During the course, students become familiar with graphics-related terminology and prepare to communicate on professional topics at work. Abstract in English: The aim of the course is to develop students’ knowledge by expanding their general English vocabulary with elements specific to business and the field of study (graphic design), to teach communication skills, and to raise awareness of cross-cultural aspects of business communication, as well as to revise and expand general language competence to the B2–C2 level, depending on the students’ initial proficiency. Business communication skills are transferable to one’s native language. Secondary-school graduates are usually deficient in this area. These skills and abilities are indispensable in the modern work environment, regardless of sector and field of specialization."
+        "cel_dydaktyczny_eng": "The aim of the course is to teach students general English supplemented with elements of specialist language, i.e. business, graphics, new media arts, and typically academic content, at the target B2 level. Students entering the course with at least B2 proficiency achieve C1 or C2 level. The course includes specialist vocabulary, communication skills in business, especially the ability to prepare and deliver a professional presentation, as well as the development of basic communication skills, particularly rapid reading of specialist texts, especially in the field of graphics (press articles, books, websites devoted to the subject), and listening to texts of increasing difficulty. During the course, students become familiar with graphics-related terminology and prepare to communicate on professional topics at work. Abstract in English: The aim of the course is to develop students’ knowledge by expanding their general English vocabulary with elements specific to business and the field of study (graphic design), to teach communication skills, and to raise awareness of cross-cultural aspects of business communication, as well as to revise and expand general language competence to the B2–C2 level, depending on the students’ initial proficiency. Business communication skills are transferable to one’s native language. Secondary-school graduates are usually deficient in this area. These skills and abilities are indispensable in the modern work environment, regardless of sector and field of specialization.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

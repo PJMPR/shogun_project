@@ -21,9 +21,19 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne testowanie bezpieczeństwa systemów IT z użyciem wybranych narzędzi; analiza podatności; przygotowanie do kolokwium pisemnego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,26 +42,15 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Studium przypadków",
-            "Zadania problemowe",
-            "Kryteria oceny",
-            "Kolokwium pisemne.",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium końcowe"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium końcowe",
+                "raport z wykonanego zadania"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania systemów IT, ale także zdobycie praktycznych umiejętności w identyfikacji i naprawie luk w zabezpieczeniach. Dzięki temu studenci będą lepiej przygotowani do zabezpieczania systemów informatycznych w rzeczywistych scenariuszach.",
         "literatura": {
@@ -75,52 +74,243 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "1. Wprowadzenie do testowania bezpieczeństwa",
-            "Cel i znaczenie testowania bezpieczeństwa.",
-            "2. Metodologia testów penetracyjnych",
-            "Definicja testów penetracyjnych.",
-            "Różne podejścia i metodologie.",
-            "Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie.",
-            "Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach.",
-            "3. Metasploit",
-            "Wprowadzenie do narzędzia Metasploit.",
-            "Konfiguracja i podstawowe funkcje.",
-            "Przykłady wykorzystania Metasploit do testów penetracyjnych.",
-            "Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach.",
-            "4. Bezpieczeństwo aplikacji webowych",
-            "Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych.",
-            "Przykłady ataków i ich skutki.",
-            "Techniki zabezpieczania aplikacji webowych.",
-            "Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń.",
-            "5. Kontrola dostępu do funkcji i danych",
-            "Definicja i znaczenie kontroli dostępu.",
-            "Najlepsze praktyki implementacji.",
-            "Przykłady problemów i ich rozwiązania.",
-            "Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach.",
-            "6. SQL Injection",
-            "Mechanizmy ataku SQL Injection.",
-            "Metody identyfikacji i zabezpieczania przed SQL Injection.",
-            "Przykłady ataków i ich skutki.",
-            "Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach.",
-            "7. Cross Site Scripting (XSS)",
-            "Typy XSS: reflected, stored, DOM-based.",
-            "Techniki wykrywania i zabezpieczania przed XSS.",
-            "Przykłady ataków i ich skutki.",
-            "Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń.",
-            "8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych.",
-            "Techniki bezpiecznego przetwarzania danych.",
-            "Przykłady zagrożeń związanych z danymi niezaufanymi.",
-            "Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach.",
-            "9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT.",
-            "Metody identyfikacji i korekty.",
-            "Przykłady konsekwencji błędnej konfiguracji.",
-            "Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień.",
-            "10. Testowanie typu Black Box",
-            "Definicja i cel testowania typu Black Box.",
-            "Techniki i narzędzia używane w testach Black Box.",
-            "Przykłady scenariuszy testowych.",
-            "Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Wprowadzenie do testowania bezpieczeństwa",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Cel i znaczenie testowania bezpieczeństwa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "2. Metodologia testów penetracyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Definicja testów penetracyjnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Różne podejścia i metodologie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "3. Metasploit",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Wprowadzenie do narzędzia Metasploit.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Konfiguracja i podstawowe funkcje.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Przykłady wykorzystania Metasploit do testów penetracyjnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "4. Bezpieczeństwo aplikacji webowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Przykłady ataków i ich skutki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Techniki zabezpieczania aplikacji webowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "5. Kontrola dostępu do funkcji i danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Definicja i znaczenie kontroli dostępu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Najlepsze praktyki implementacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Przykłady problemów i ich rozwiązania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "6. SQL Injection",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Mechanizmy ataku SQL Injection.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Metody identyfikacji i zabezpieczania przed SQL Injection.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Przykłady ataków i ich skutki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "7. Cross Site Scripting (XSS)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Typy XSS: reflected, stored, DOM-based.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Techniki wykrywania i zabezpieczania przed XSS.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Przykłady ataków i ich skutki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "Techniki bezpiecznego przetwarzania danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "Przykłady zagrożeń związanych z danymi niezaufanymi.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "Metody identyfikacji i korekty.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "Przykłady konsekwencji błędnej konfiguracji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "10. Testowanie typu Black Box",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "Definicja i cel testowania typu Black Box.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "Techniki i narzędzia używane w testach Black Box.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "Przykłady scenariuszy testowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is not only to teach the theoretical foundations of securing IT systems, but also to provide practical skills in identifying and fixing security vulnerabilities. As a result, students are better prepared to secure IT systems in real-world scenarios."
+        "cel_dydaktyczny_eng": "The aim of the course is not only to teach the theoretical foundations of securing IT systems, but also to provide practical skills in identifying and fixing security vulnerabilities. As a result, students are better prepared to secure IT systems in real-world scenarios.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

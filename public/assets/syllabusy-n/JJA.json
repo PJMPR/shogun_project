@@ -21,19 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Implementacja aplikacji w języku Java; obsługa wyjątków, kolekcji i operacji I/O; dokumentacja kodu; przygotowanie i prezentacja projektu zaliczeniowego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-            "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, strukturę projektu, obsługę wyjątków oraz dokumentację",
-            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Podstawy Programowania",
@@ -62,17 +74,68 @@
             "kompetencje_spoleczne": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy."
         },
         "tresci_programowe": [
-            "Wprowadzenie do języka Java, platformy JVM oraz środowiska programistycznego",
-            "Typy danych, zmienne, operatory oraz instrukcje sterujące",
-            "Metody, przekazywanie parametrów oraz organizacja kodu",
-            "Tablice oraz kolekcje wprowadzające (List, Set, Map)",
-            "Podstawy programowania obiektowego: klasy, obiekty, enkapsulacja",
-            "Konstruktory, dziedziczenie i polimorfizm",
-            "Obsługa wyjątków i mechanizmy kontroli błędów",
-            "Operacje wejścia i wyjścia oraz praca z plikami",
-            "Dobre praktyki programistyczne i czytelność kodu",
-            "Projekt programistyczny – implementacja i prezentacja"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do języka Java, platformy JVM oraz środowiska programistycznego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Typy danych, zmienne, operatory oraz instrukcje sterujące",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Metody, przekazywanie parametrów oraz organizacja kodu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Tablice oraz kolekcje wprowadzające (List, Set, Map)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Podstawy programowania obiektowego: klasy, obiekty, enkapsulacja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Konstruktory, dziedziczenie i polimorfizm",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Obsługa wyjątków i mechanizmy kontroli błędów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Operacje wejścia i wyjścia oraz praca z plikami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Dobre praktyki programistyczne i czytelność kodu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt programistyczny – implementacja i prezentacja",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in Java and to develop the ability to create simple applications using the object-oriented paradigm. The course places emphasis on proper class modeling, code readability, exception handling, and the use of standard Java libraries. It prepares students for further study of JVM-based technologies and for the implementation of small programming projects."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of programming in Java and to develop the ability to create simple applications using the object-oriented paradigm. The course places emphasis on proper class modeling, code readability, exception handling, and the use of standard Java libraries. It prepares students for further study of JVM-based technologies and for the implementation of small programming projects.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

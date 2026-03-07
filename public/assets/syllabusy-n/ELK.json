@@ -21,26 +21,33 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 68,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Przygotowanie sprawozdań z ćwiczeń laboratoryjnych z elektroniki; samodzielne analizy układów elektronicznych; przygotowanie do kolokwium."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji",
-            "z prezentacją multimedialną",
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "rozwiązywanie zadań projektowych",
-            "analiza przypadków",
-            "badania symulacyjne",
-            "Ćwiczenia/Laboratorium",
-            "Kryteria oceny",
-            "Sprawozdania z przeprowadzonych ćwiczeń",
-            "Bez dostarczenia sprawozdań ze wszystkich zajęć laboratoryjnych, które przewidują taką formę pracy, nie ma możliwości uzyskania oceny pozytywnej z zajęć laboratoryjnych."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "raport z wykonanego zadania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "[BHP] Szkolenie BHP",
@@ -77,10 +84,33 @@
             ]
         },
         "tresci_programowe": [
-            "Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych.",
-            "Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych.",
-            "Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to provide students with basic knowledge in electronics, electrical engineering, and measurement techniques. Students learn the principles of operation and applications of electronic components and circuits such as resistors, capacitors, coils, diodes, transistors, and logic gates. They also learn the basics of measurement and diagnostic techniques using multimeters, oscilloscopes, and other measuring instruments."
+        "cel_dydaktyczny_eng": "The aim of the course is to provide students with basic knowledge in electronics, electrical engineering, and measurement techniques. Students learn the principles of operation and applications of electronic components and circuits such as resistors, capacitors, coils, diodes, transistors, and logic gates. They also learn the basics of measurement and diagnostic techniques using multimeters, oscilloscopes, and other measuring instruments.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

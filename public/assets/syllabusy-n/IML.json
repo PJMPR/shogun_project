@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne zadania programistyczne z machine learning; implementacja i testowanie modeli predykcyjnych; analiza wyników i dostrajanie hiperparametrów."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,14 +43,13 @@
                 "sposob": "Egzamin z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "rozwiązywanie zadań",
-            "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
-            "warsztaty",
-            "Kryteria oceny",
-            "Ocena praktycznego zastosowania kwestii omawianych na wykładach. Studenci otrzymują zadania programistyczne do wykonania podczas zajęć (do zdobycia maks. 40 punktów, z gradacją 0.5 p.)"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami uczenia maszynowego (w tym elementami uczenia głębokiego), głównie z wykorzystaniem sieci neuronowych (w tym sieci splotowych), a także z metodami programowania wybranych metod oraz praktycznym wykorzystaniem gotowych narzędzi.",
         "literatura": {
@@ -75,72 +85,343 @@
             ]
         },
         "tresci_programowe": [
-            "1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python.",
-            "2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta.",
-            "3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów.",
-            "4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie.",
-            "5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych.",
-            "6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji.",
-            "7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout.",
-            "8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych.",
-            "9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji.",
-            "10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU.",
-            "11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play.",
-            "12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym.",
-            "13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble).",
-            "14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping).",
-            "15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód.",
-            "// A. lista dotychczas zaproponowanych metod dydaktycznych; można zaproponować inne.",
-            "Wykład:",
-            "wykład",
-            "wykład konwersatoryjny (z elementami dyskusji)",
-            "wykład z prezentacją multimedialną",
-            "wykład z prezentacją oprogramowania",
-            "warsztaty",
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "analiza tekstów z dyskusją",
-            "metoda projektów (projekt praktyczny)",
-            "praca w grupach",
-            "dyskusja",
-            "rozwiązywanie zadań",
-            "burza mózgów",
-            "mind map",
-            "puzzle learning",
-            "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
-            "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
-            "warsztaty",
-            "// B. lista dotychczas zaproponowanych metod weryfikacji; można zaproponować inne.",
-            "sprawdziany wstępne „wejściówki”",
-            "kolokwium",
-            "kolokwium końcowe",
-            "egzamin pisemny",
-            "egzamin pisemny - test wyboru",
-            "egzamin pisemny - tekst z lukami",
-            "egzamin pisemny z zadaniami problemowymi",
-            "egzamin pisemny ze studium przypadku",
-            "egzamin ustny",
-            "końcowe sprawozdanie z pracy w zespole",
-            "prezentacja samodzielnej pracy semestralnej",
-            "prezentacja elementu zespołowej pracy semestralnej",
-            "prezentacja projektu i dokumentacji",
-            "prezentacja mini-projektu",
-            "obrona projektu",
-            "rezultaty gry strategicznej",
-            "ocena pracy podczas ćwiczenia",
-            "raport z wykonanego zadania",
-            "ocena sporządzonego dokumentu",
-            "ocena sporządzonego oprogramowania",
-            "wskazanie źródeł użytych materiałów",
-            "kwestionariusz wywiadu",
-            "sprawozdanie z rozmowy",
-            "zapisanie na ścieżkę certyfikacyjną",
-            "//C. ECTS sposób obliczania",
-            "1 punkt ECTS przyznawany jest za 25-30 godzin pracy studenta. W obliczanie punktów ECTS włącza się:",
-            "liczbę godzin poszczególnych przedmiotów w danym semestrze;",
-            "czas, jaki student poświęcił na indywidualną naukę (w tym przygotowanie do zajęć, zbieranie materiałów czy pisanie prac zaliczeniowych);",
-            "czas, jaki student poświęcił na przygotowanie do egzaminu i zaliczenie danego przedmiotu;",
-            "liczbę godzin praktyk studenckich."
+            {
+                "nr_zajec": 1,
+                "wyklad": "1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "// A. lista dotychczas zaproponowanych metod dydaktycznych; można zaproponować inne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Wykład:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "wykład",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "wykład konwersatoryjny (z elementami dyskusji)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "wykład z prezentacją multimedialną",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "wykład z prezentacją oprogramowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "warsztaty",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Ćwiczenia / Laboratorium/Lektorat:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "analiza tekstów z dyskusją",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "metoda projektów (projekt praktyczny)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "praca w grupach",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "dyskusja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "rozwiązywanie zadań",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "burza mózgów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "mind map",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "puzzle learning",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "warsztaty",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "// B. lista dotychczas zaproponowanych metod weryfikacji; można zaproponować inne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "sprawdziany wstępne „wejściówki”",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "kolokwium",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "kolokwium końcowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "egzamin pisemny",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "egzamin pisemny - test wyboru",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "egzamin pisemny - tekst z lukami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "egzamin pisemny z zadaniami problemowymi",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "egzamin pisemny ze studium przypadku",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "egzamin ustny",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "końcowe sprawozdanie z pracy w zespole",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 46,
+                "wyklad": "prezentacja samodzielnej pracy semestralnej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 47,
+                "wyklad": "prezentacja elementu zespołowej pracy semestralnej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 48,
+                "wyklad": "prezentacja projektu i dokumentacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 49,
+                "wyklad": "prezentacja mini-projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 50,
+                "wyklad": "obrona projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 51,
+                "wyklad": "rezultaty gry strategicznej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 52,
+                "wyklad": "ocena pracy podczas ćwiczenia",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 53,
+                "wyklad": "raport z wykonanego zadania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 54,
+                "wyklad": "ocena sporządzonego dokumentu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 55,
+                "wyklad": "ocena sporządzonego oprogramowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 56,
+                "wyklad": "wskazanie źródeł użytych materiałów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 57,
+                "wyklad": "kwestionariusz wywiadu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 58,
+                "wyklad": "sprawozdanie z rozmowy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 59,
+                "wyklad": "zapisanie na ścieżkę certyfikacyjną",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 60,
+                "wyklad": "//C. ECTS sposób obliczania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 61,
+                "wyklad": "1 punkt ECTS przyznawany jest za 25-30 godzin pracy studenta. W obliczanie punktów ECTS włącza się:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 62,
+                "wyklad": "liczbę godzin poszczególnych przedmiotów w danym semestrze;",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 63,
+                "wyklad": "czas, jaki student poświęcił na indywidualną naukę (w tym przygotowanie do zajęć, zbieranie materiałów czy pisanie prac zaliczeniowych);",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 64,
+                "wyklad": "czas, jaki student poświęcił na przygotowanie do egzaminu i zaliczenie danego przedmiotu;",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 65,
+                "wyklad": "liczbę godzin praktyk studenckich.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic issues of machine learning (including elements of deep learning), mainly using neural networks (including convolutional neural networks), as well as with methods for programming selected techniques and the practical use of ready-made tools."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic issues of machine learning (including elements of deep learning), mainly using neural networks (including convolutional neural networks), as well as with methods for programming selected techniques and the practical use of ready-made tools.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

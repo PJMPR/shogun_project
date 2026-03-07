@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Projektowanie systemów czasu rzeczywistego dla zadanej specyfikacji; badania symulacyjne; przygotowanie sprawozdań z laboratoriów; powtórzenie materiału przed kartkówkami."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,23 +43,16 @@
                 "sposob": "Nieoceniany"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "projektowanie systemów dla zadanej specyfikacji",
-            "rozwiązywanie zadań projektowych",
-            "analiza przypadków",
-            "badania symulacyjne",
-            "Kryteria oceny",
-            "Sprawdziany, tzw. wejściówki (średnia za semestr - awe)",
-            "ocena z aktywności na zajęciach (średnia za semestr - apr)",
-            "ocena końcowego zaliczenia sprawozdań– kz_sp)",
-            "Końcowa ocena zaliczenia laboratorium (zl) jest wyznaczana na podstawie poniższego wzoru:",
-            "zl=(2.0*awe+1,9*apr+1,1*kz_sp)/5",
-            "Wykład (ocena z wykładu zw) jest zaliczany na podstawie dwóch kartkówek (k1, k2)",
-            "Każda nieobecność na wykładzie, rozpoczynając od drugiej powoduje obniżenie oceny końcowejzw o wartość 0,1.",
-            "Ocena końcowa (zal) zaliczająca przedmiot (SCR) jest wyliczana wg poniższego wzoru:",
-            "przy czym obie oceny składowe muszą być pozytywne."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "sprawdziany wstępne „wejściówki\""
+            ],
+            "cwiczenia_laboratorium": [
+                "sprawdziany wstępne „wejściówki\"",
+                "raport z wykonanego zadania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawowymi zagadnieniami dotyczącymi systemów czasu rzeczywistego (SCR), dotyczącymi: zasad funkcjonowania i specyfikisystemów czasu rzeczywistego i systemów operacyjnych czasu rzeczywistego, a także metodologii tworzenia aplikacji czasurzeczywistego. Pozwala to na osiągnięcie praktycznej umiejętności tworzenia aplikacji czasu rzeczywistego dla określonej specyfikacji i wybranego hardware’u.",
         "literatura": {
             "podstawowa": {
@@ -95,21 +99,81 @@
             ]
         },
         "tresci_programowe": [
-            "1 , Wprowadzenie. Podstawowe definicje. Wymagania stawiane systemom czasu rzeczywistego (SCR). Podział SCR. Wybór algorytmów stosowanych dla potrzeb SCR, wy oceny ich złożoności obliczeniowej.",
-            "2 , Dobór algorytmu dla potrzeb SCR. Weryfikacja poprawności logicznej wybranych algorytmów. Symulacyjne szacowanie czasu realizacji zadań algorytmów, które uzyskały pozytywną weryfikację poprawności logicznej.  Metody przyspieszania działania SCR. Symulacyjna weryfikacja poprawności logicznej wybranych algorytmów dla potrzeb SCR.",
-            "3 , Charakterystyczne cechy, potrzeby i rozwój systemów czasurzeczywistego. Metodaiteracyjnego osiągania wymagań, narzuconych w specyfikacji zleceniodawcy systemu czasu rzeczywistego. Szacowanie czasu realizacji zadań dla algorytmów,  które uzyskały pozytywną weryfikację poprawności logicznej, wybranych do realizacji SCR.",
-            "4 , Tworzenie zadań i metody ich szeregowania. Wybrane algorytmy szeregowania zadań. Zastosowanie szeregowania zadań do alokacji operacji algorytmów SCR, implementowanych na określonym/dedykowanym hardware. Szeregowanie wieloprocesorowe. Obsługa przerwań i sygnałów. Obsługa czasu.  Tolerancje czasowe. Synchronizacja procesów.  Stosowane protokoły komunikacyjne. Szeregowanie wieloprocesorowe. Szeregowanie w sieciach rozproszonych. Analiza utworzonych algorytmów i ich kwalifikacja do implementacji w systemach czasu rzeczywistego. Metody polepszania parametrów projektowanego SCR (algorytmiczne i programistyczne).",
-            "5 , Systemy operacyjny spełniający wymogi czasu rzeczywistego (RTOS).   Definicja systemu operacyjnego czasu rzeczywistego i jego podstawowe cechy. Budowa systemu operacyjnego czasu rzeczywistego. Mechanizmy systemów czasu rzeczywistego: algorytmy wywłaszczania, semafory, odmierzanie czasu. Czasy reakcji systemu. Komunikacja międzyzadaniowa w systemie operacyjnym. Powtarzalność czasów reakcji systemu dla tych samych zadań. Analiza przypadków zastosowania systemów operacyjnych czasu rzeczywistego. System operacyjne czasu rzeczywistego QNX RTOS  Wybór systemu operacyjnego (RTOS).  dla tworzonego SCR.",
-            "6 , Przykłady systemów czasu rzeczywistego i wybrane metody ich projektowania dla zadanej specyfikacji. Przypadki nieokreśloności czasu opóźnienia SCR i metody ich eliminacji/redukcji.Podstawy obsługi QNX RTOS.",
-            "7 , Przykłady praktycznie działających urządzeń/instalacji technologicznych, spełniających wymogi SCR. Heterogeniczny system czasu rzeczywistego dla potrzeb przemysłowych (monitoring, sterowanie i diagnostyka w rozproszonej sieci rozległej).",
-            "8 , Wymagania dotyczące hardware’u dla potrzeb systemów czasurzeczywistego. Metody porównywania procesorów i ich wybór dla potrzeb SCR. Wybór hardware’u dla projektowanego SCR. Analiza wpływu elementów hardware’u na opóźnienia czasowe. Właściwy dobór częstotliwości próbkowania przetworników A/D - wpływ na czas opóźnienia systemu. Wprowadzenie do wybranego środowiska programistycznego (ang. IDE) dla potrzeb określonych procesorów. Obsługi wybranego środowiska i zasady programowania. Program zaimplementowany na wybranym hardware.",
-            "9 , Języki programowania stosowane do tworzenia SCR.  Programowania urządzeń wbudowanych SCR. Automatyczna generacja kodu (kiedy występują takie możliwości). Realizacja wybranego projektu SCR, np. sterowanie światłami w ruchu ulicznym.",
-            "10 , Potrzeba redukcji poboru mocy w SCR Ocena jakości utworzonego kodu programu dla SCR.",
-            "11 , Metody optymalizacji kodu dla potrzeb SCR. Walidacja utworzonego SCR.Analiza potrzeb dodatkowych optymalizacji. Wielokrotna optymalizacja SCR. ,",
-            "12 , Szybkie tworzenie prototypu systemu czasu rzeczywistego, np. z wykorzystaniem układów FPGA. Projektowanie i symulacje zadanych SCR. Pomiar czasu opóźnienia systemu.",
-            "13 , Zagadnienia bezpieczeństwa w sieciach rozproszonych SCR.",
-            "14 , Analiza utworzonego systemu z punktu widzenia spełnienia wymagań dotyczących jego specyfikacji.",
-            "15 , Zastosowania wybranych rozwiązań SCR w  różnych dziedzinach, np. automatyka przemysłowa, robotyka, internet rzeczy, logistyka dedykowanych dostaw towarów, medycyna, technologie kosmiczne, technologie militarne i inne."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie. Podstawowe definicje. Wymagania stawiane systemom czasu rzeczywistego (SCR). Podział SCR. Wybór algorytmów stosowanych dla potrzeb SCR, wy oceny ich złożoności obliczeniowej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Dobór algorytmu dla potrzeb SCR. Weryfikacja poprawności logicznej wybranych algorytmów. Symulacyjne szacowanie czasu realizacji zadań algorytmów, które uzyskały pozytywną weryfikację poprawności logicznej.  Metody przyspieszania działania SCR. Symulacyjna weryfikacja poprawności logicznej wybranych algorytmów dla potrzeb SCR.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Charakterystyczne cechy, potrzeby i rozwój systemów czasurzeczywistego. Metodaiteracyjnego osiągania wymagań, narzuconych w specyfikacji zleceniodawcy systemu czasu rzeczywistego. Szacowanie czasu realizacji zadań dla algorytmów,  które uzyskały pozytywną weryfikację poprawności logicznej, wybranych do realizacji SCR.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Tworzenie zadań i metody ich szeregowania. Wybrane algorytmy szeregowania zadań. Zastosowanie szeregowania zadań do alokacji operacji algorytmów SCR, implementowanych na określonym/dedykowanym hardware. Szeregowanie wieloprocesorowe. Obsługa przerwań i sygnałów. Obsługa czasu.  Tolerancje czasowe. Synchronizacja procesów.  Stosowane protokoły komunikacyjne. Szeregowanie wieloprocesorowe. Szeregowanie w sieciach rozproszonych. Analiza utworzonych algorytmów i ich kwalifikacja do implementacji w systemach czasu rzeczywistego. Metody polepszania parametrów projektowanego SCR (algorytmiczne i programistyczne).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Systemy operacyjny spełniający wymogi czasu rzeczywistego (RTOS).   Definicja systemu operacyjnego czasu rzeczywistego i jego podstawowe cechy. Budowa systemu operacyjnego czasu rzeczywistego. Mechanizmy systemów czasu rzeczywistego: algorytmy wywłaszczania, semafory, odmierzanie czasu. Czasy reakcji systemu. Komunikacja międzyzadaniowa w systemie operacyjnym. Powtarzalność czasów reakcji systemu dla tych samych zadań. Analiza przypadków zastosowania systemów operacyjnych czasu rzeczywistego. System operacyjne czasu rzeczywistego QNX RTOS  Wybór systemu operacyjnego (RTOS).  dla tworzonego SCR.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Przykłady systemów czasu rzeczywistego i wybrane metody ich projektowania dla zadanej specyfikacji. Przypadki nieokreśloności czasu opóźnienia SCR i metody ich eliminacji/redukcji.Podstawy obsługi QNX RTOS.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Przykłady praktycznie działających urządzeń/instalacji technologicznych, spełniających wymogi SCR. Heterogeniczny system czasu rzeczywistego dla potrzeb przemysłowych (monitoring, sterowanie i diagnostyka w rozproszonej sieci rozległej).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Wymagania dotyczące hardware’u dla potrzeb systemów czasurzeczywistego. Metody porównywania procesorów i ich wybór dla potrzeb SCR. Wybór hardware’u dla projektowanego SCR. Analiza wpływu elementów hardware’u na opóźnienia czasowe. Właściwy dobór częstotliwości próbkowania przetworników A/D - wpływ na czas opóźnienia systemu. Wprowadzenie do wybranego środowiska programistycznego (ang. IDE) dla potrzeb określonych procesorów. Obsługi wybranego środowiska i zasady programowania. Program zaimplementowany na wybranym hardware.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Języki programowania stosowane do tworzenia SCR.  Programowania urządzeń wbudowanych SCR. Automatyczna generacja kodu (kiedy występują takie możliwości). Realizacja wybranego projektu SCR, np. sterowanie światłami w ruchu ulicznym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Potrzeba redukcji poboru mocy w SCR Ocena jakości utworzonego kodu programu dla SCR.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Metody optymalizacji kodu dla potrzeb SCR. Walidacja utworzonego SCR.Analiza potrzeb dodatkowych optymalizacji. Wielokrotna optymalizacja SCR. ,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Szybkie tworzenie prototypu systemu czasu rzeczywistego, np. z wykorzystaniem układów FPGA. Projektowanie i symulacje zadanych SCR. Pomiar czasu opóźnienia systemu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Zagadnienia bezpieczeństwa w sieciach rozproszonych SCR.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Analiza utworzonego systemu z punktu widzenia spełnienia wymagań dotyczących jego specyfikacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Zastosowania wybranych rozwiązań SCR w  różnych dziedzinach, np. automatyka przemysłowa, robotyka, internet rzeczy, logistyka dedykowanych dostaw towarów, medycyna, technologie kosmiczne, technologie militarne i inne.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -117,6 +181,17 @@
                 "wymagania": "Umiejetnosc programowania w jezyku C; znajomosc regulaminu i zasad BHP obowiazujacych w laboratorium"
             }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic issues related to real-time systems (SCR), including the principles of operation and the specific nature of real-time systems and real-time operating systems, as well as the methodology of developing real-time applications. This enables students to acquire practical skills in creating real-time applications for a specified system specification and selected hardware."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic issues related to real-time systems (SCR), including the principles of operation and the specific nature of real-time systems and real-time operating systems, as well as the methodology of developing real-time applications. This enables students to acquire practical skills in creating real-time applications for a specified system specification and selected hardware.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

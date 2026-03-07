@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Projektowanie i implementacja projektu programistycznego z nowoczesnych technologii API; przygotowanie prezentacji i dokumentacji projektu; przygotowanie do egzaminu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,18 +43,15 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "projekt praktyczny",
-            "Kryteria oceny",
-            "50% Projekt programistyczny",
-            "50% Prezentacja projektu oraz dokumentacji",
-            "40% Ocena z laboratorium",
-            "60% Egzamin z zagadnień poruszanych na wykładzie"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "cel_dydaktyczny": "Przedmiot \"Trendy w rozwoju API\" ma na celu zaznajomienie studentów z aktualnymi kierunkami rozwoju i innowacjami w dziedzinie tworzenia API dla aplikacji internetowych. Studenci zdobędą wiedzę teoretyczną i praktyczną na temat najnowszych standardów, protokołów i narzędzi używanych do projektowania, implementacji i zarządzania interfejsami API. Uczestnicy będą mieli okazję zgłębić tematykę takich kwestii jak: bezpieczeństwo API, skalowalność, wydajność oraz dobre praktyki programistyczne. Poznają również różnorodność stylów API, w tym REST, GraphQL, gRPC i inne, analizując ich zalety i wady oraz zastosowania w różnych kontekstach projektowych. Kolejnym istotnym elementem przedmiotu jest praca grupowa, która ma na celu rozwijanie umiejętności współpracy, komunikacji i innowacyjnego myślenia. Studenci będą mieli za zadanie zanalizować i opracować materiał dotyczący wybranej technologii z zakresu tworzenia API, co pozwoli na pogłębienie wiedzy i umiejętności praktycznych w konkretnym obszarze.",
         "literatura": {
             "podstawowa": {
@@ -81,13 +89,41 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie do API (Application Programming Interface). Przegląd różnych typów API (REST, SOAP, GraphQL, gRPC, itd.). Znaczenie i role API w rozwoju aplikacji internetowych",
-            "Konwencje, normy i najlepsze praktyki w tworzeniu REST API",
-            "GraphQL - wprowadzenie i porównanie z REST. Tworzenie prostych API z wykorzystaniem GraphQL",
-            "Wprowadzenie do gRPC. Porównanie gRPC z REST i GraphQL, zalety i wady",
-            "Rola i znaczenie dokumentacji API. Narzędzia do tworzenia dokumentacji API - OpenAPI, Swagger, Postman",
-            "Język TypeScript",
-            "Inne znane technologie wspierające proces budowania aplikacji internetowych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do API (Application Programming Interface). Przegląd różnych typów API (REST, SOAP, GraphQL, gRPC, itd.). Znaczenie i role API w rozwoju aplikacji internetowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Konwencje, normy i najlepsze praktyki w tworzeniu REST API",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "GraphQL - wprowadzenie i porównanie z REST. Tworzenie prostych API z wykorzystaniem GraphQL",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Wprowadzenie do gRPC. Porównanie gRPC z REST i GraphQL, zalety i wady",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Rola i znaczenie dokumentacji API. Narzędzia do tworzenia dokumentacji API - OpenAPI, Swagger, Postman",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Język TypeScript",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Inne znane technologie wspierające proces budowania aplikacji internetowych.",
+                "cwiczenia": ""
+            }
         ],
         "przedmioty_wprowadzajace": [
             {
@@ -103,6 +139,17 @@
                 "wymagania": "Znajomosc technologii webowych"
             }
         ],
-        "cel_dydaktyczny_eng": "The course 'Trends in API Development' aims to familiarize students with current directions of development and innovations in the field of creating APIs for web applications. Students acquire theoretical and practical knowledge of the latest standards, protocols, and tools used for designing, implementing, and managing APIs. Participants have the opportunity to explore issues such as API security, scalability, performance, and good programming practices. They also become familiar with different API styles, including REST, GraphQL, gRPC, and others, analyzing their advantages, disadvantages, and applications in various project contexts. Another important element of the course is group work, which aims to develop collaboration, communication, and innovative thinking skills. Students are tasked with analyzing and preparing material on a selected API-related technology, allowing them to deepen their knowledge and practical skills in a specific area."
+        "cel_dydaktyczny_eng": "The course 'Trends in API Development' aims to familiarize students with current directions of development and innovations in the field of creating APIs for web applications. Students acquire theoretical and practical knowledge of the latest standards, protocols, and tools used for designing, implementing, and managing APIs. Participants have the opportunity to explore issues such as API security, scalability, performance, and good programming practices. They also become familiar with different API styles, including REST, GraphQL, gRPC, and others, analyzing their advantages, disadvantages, and applications in various project contexts. Another important element of the course is group work, which aims to develop collaboration, communication, and innovative thinking skills. Students are tasked with analyzing and preparing material on a selected API-related technology, allowing them to deepen their knowledge and practical skills in a specific area.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

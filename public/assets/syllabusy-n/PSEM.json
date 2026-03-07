@@ -21,25 +21,29 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 59,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Przygotowanie konspektu pracy dyplomowej; realizacja kolejnych zadań wspomagających pracę dyplomową; przygotowanie dwóch prezentacji seminaryjnych; konsultacje z promotorem."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach",
+                "dyskusja"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie"
             }
         },
-        "kryteria_oceny": [
-            "Nie dotyczy",
-            "Seminarium:",
-            "seminaryjna prezentacja i dyskusja rozwiązań projektu",
-            "realizacja kolejnych zadań wspomaga-jących przygotowanie pracy dyplomo-wej, poprzedzanych omówieniem przez prowadzącego zajęcia",
-            "praca w 2-3 osobowych grupach, pokrywających się z zespołami projektu dyplomowego i w ścisłym kontakcie z promotorami prac dyplomowych",
-            "Nie dotyczy",
-            "Kryteria oceny",
-            "ocena na podstawie dwu prezentacji i dyskusji pracy dyplomowej, opracowanego konspektu oraz dokumentacji pracy, a także obecności i aktywności na zajęciach",
-            "brak"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja samodzielnej pracy semestralnej",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Budowa i integracja oprogramowania BYT",
@@ -91,24 +95,103 @@
             ]
         },
         "tresci_programowe": [
-            "Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych.",
-            "Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu",
-            "Przygotowanie I. prezentacji na temat",
-            "-problemu i kontekstu pracy dyplomowej,",
-            "-wizji, rozwiązania postawionego problemu,",
-            "-planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe),",
-            "- stanu aktualnego pracy,",
-            "-zagrożeń i sposobów przeciwdziałania im",
-            "Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu.",
-            "Przegląd aktualnej dokumentacji pracy.",
-            "Przygotowanie rozwiniętego konspektu pracy.",
-            "Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów.",
-            "Korekta konspektu.",
-            "Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych",
-            "Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania",
-            "Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy.",
-            "Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Przygotowanie I. prezentacji na temat",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "-problemu i kontekstu pracy dyplomowej,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "-wizji, rozwiązania postawionego problemu,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "-planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe),",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "- stanu aktualnego pracy,",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "-zagrożeń i sposobów przeciwdziałania im",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Przegląd aktualnej dokumentacji pracy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Przygotowanie rozwiniętego konspektu pracy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Korekta konspektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the classes is to prepare students for developing and presenting diploma theses, to discipline them in the process of team-based completion of the work, and to prepare them for the diploma examination. The classes are conducted and discussed in specialization groups and include preparation, seminar presentation, and discussion of solutions and decisions adopted during the completion of diploma theses. An important educational element is the analysis and discussion of design solutions, the roles and tasks of project stakeholders, and the social or business context of the work."
+        "cel_dydaktyczny_eng": "The aim of the classes is to prepare students for developing and presenting diploma theses, to discipline them in the process of team-based completion of the work, and to prepare them for the diploma examination. The classes are conducted and discussed in specialization groups and include preparation, seminar presentation, and discussion of solutions and decisions adopted during the completion of diploma theses. An important educational element is the analysis and discussion of design solutions, the roles and tasks of project stakeholders, and the social or business context of the work.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

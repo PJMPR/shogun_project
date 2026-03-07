@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja projektu z programowania platform sprzętowych (mikrokontrolery, FPGA); testowanie działania oprogramowania; przygotowanie dokumentacji i prezentacji."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań",
+                "warsztaty"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,14 +43,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Prezentacja multimedialna z elementami dyskusji",
-            "Prezentacja gotowych rozwiązań",
-            "Rozwiązywanie zadań",
-            "Praca nad projektem",
-            "Kryteria oceny",
-            "Wykonanie indywidualnego projektu."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "prezentacja projektu i dokumentacji"
+            ]
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Kurs ma na celu wykształcenie umiejętności projektowania, programowania i optymalizacji różnorodnych platform sprzętowych, co jest nieocenione w dzisiejszej technologicznej rzeczywistości. Wprowadzenie do typowych platform, na których można rozpoczynać projekty z IoT. Są one także wykorzystywane w gotowych produktach.",
         "literatura": {
@@ -61,14 +71,53 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "Programowanie platform cyfrowych i peryferiów",
-            "Arduino: Arduion IDE + gcc-avr",
-            "Raspberry Pi: C++, Python, NodeJS (2 do wyboru)",
-            "MSP 430",
-            "PLC",
-            "Weryfikacja wybranych algorytmów dla potrzeb IoT w środowisku Ptolemy",
-            "Atiny"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Programowanie platform cyfrowych i peryferiów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Arduino: Arduion IDE + gcc-avr",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Raspberry Pi: C++, Python, NodeJS (2 do wyboru)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "MSP 430",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "PLC",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Weryfikacja wybranych algorytmów dla potrzeb IoT w środowisku Ptolemy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Atiny",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The course aims to develop skills in designing, programming, and optimizing a variety of hardware platforms, which is invaluable in today’s technological reality. It introduces typical platforms on which IoT projects can be started. These platforms are also used in finished products."
+        "cel_dydaktyczny_eng": "The course aims to develop skills in designing, programming, and optimizing a variety of hardware platforms, which is invaluable in today’s technological reality. It introduces typical platforms on which IoT projects can be started. These platforms are also used in finished products.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

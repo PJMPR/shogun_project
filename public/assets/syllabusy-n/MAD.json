@@ -21,9 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań z matematyki dyskretnej; ćwiczenia z kombinatoryki, teorii grafów i logiki; przygotowanie do kolokwiów i egzaminu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "dyskusja"
+            ]
+        },
         "zaliczenie": {
             "Ćwiczenia": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,28 +41,14 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "rozwiązywanie zadań",
-            "Kryteria oceny",
-            "Kolokwia sprawdzające wiedzę podczas semestru. Do zaliczenia wymagane jest uzyskanie ponad 50% punktów możliwych do zdobycia.",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Materiał wykładu całego kursu MAD objęty jest egzaminem pisemnym. Zaliczenie od 50% punktów możliwych do zdobycia.",
-            "Skala ocen:",
-            "Poniżej 50% - ndst",
-            "Od 50% - dst",
-            "Od 60% - dst+",
-            "Od 70% - db",
-            "Od 80% - db+",
-            "Od 90% - bdb",
-            "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "matematyka z zakresu szkoły średniej",
@@ -85,17 +80,68 @@
             "kompetencje_spoleczne": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
         },
         "tresci_programowe": [
-            "Podstawy logiki.",
-            "Podstawy teorii mnogości.",
-            "Arytmetyka komputerowa.",
-            "Kombinatoryka.",
-            "Rachunek prawdopodobieństwa wraz ze zmiennymi losowymi.",
-            "Algebra Boole’a oraz funkcje i sieci boolowskie.",
-            "Arytmetyka modulo.",
-            "Teoria liczb.",
-            "Stosy, kolejki, drzewa.",
-            "Rekurencja."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawy logiki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Podstawy teorii mnogości.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Arytmetyka komputerowa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Kombinatoryka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Rachunek prawdopodobieństwa wraz ze zmiennymi losowymi.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Algebra Boole’a oraz funkcje i sieci boolowskie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Arytmetyka modulo.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Teoria liczb.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Stosy, kolejki, drzewa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Rekurencja.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Introduction to the basic mathematical apparatus and fundamental concepts of discrete mathematics. Propositional calculus, set theory, combinatorics, probability theory, number theory, stacks, queues, trees, and graphs."
+        "cel_dydaktyczny_eng": "Introduction to the basic mathematical apparatus and fundamental concepts of discrete mathematics. Propositional calculus, set theory, combinatorics, probability theory, number theory, stacks, queues, trees, and graphs.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

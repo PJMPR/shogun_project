@@ -21,19 +21,31 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Projektowanie modelu danych w słownikowej bazie danych (Redis/DynamoDB); implementacja operacji wyszukiwania i zarządzania danymi; dokumentacja projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "rozwiązywanie zadań"
+            ]
+        },
         "zaliczenie": {
             "Projekt": {
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Projekt realizowany indywidualnie lub w parach – 100%",
-            "Ocena projektu obejmuje: poprawność modelu danych, efektywność operacji wyszukiwania, spójność kluczy i wartości, uzasadnienie wyborów technologicznych oraz dokumentację",
-            "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Relacyjne bazy danych",
@@ -62,17 +74,68 @@
             "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, uzasadniać wybór bazy słownikowej oraz dbać o jakość dokumentacji projektowej."
         },
         "tresci_programowe": [
-            "Wprowadzenie do baz słownikowych i ich zastosowań",
-            "Model klucz–wartość i jego charakterystyka",
-            "Porównanie baz słownikowych z innymi modelami baz danych",
-            "Podstawowe operacje zapisu i odczytu danych",
-            "Struktury danych w bazach słownikowych",
-            "Spójność danych i modele replikacji",
-            "Wydajność i skalowalność baz klucz–wartość",
-            "Zastosowanie baz słownikowych jako cache",
-            "Integracja bazy słownikowej z aplikacją",
-            "Projekt zaliczeniowy – implementacja i prezentacja"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do baz słownikowych i ich zastosowań",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Model klucz–wartość i jego charakterystyka",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Porównanie baz słownikowych z innymi modelami baz danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Podstawowe operacje zapisu i odczytu danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Struktury danych w bazach słownikowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Spójność danych i modele replikacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wydajność i skalowalność baz klucz–wartość",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Zastosowanie baz słownikowych jako cache",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Integracja bazy słownikowej z aplikacją",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the concept of key–value databases and their applications in modern IT systems. Students learn the characteristics of this model, the principles of storing and retrieving data, as well as typical use cases such as cache, user sessions, or application configuration. The course prepares students to make informed decisions when using key–value databases as part of IT systems architecture."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the concept of key–value databases and their applications in modern IT systems. Students learn the characteristics of this model, the principles of storing and retrieving data, as well as typical use cases such as cache, user sessions, or application configuration. The course prepares students to make informed decisions when using key–value databases as part of IT systems architecture.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

@@ -21,11 +21,18 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 59,
-            "calkowita_liczba_godzin_h": 75
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka niemieckiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
         },
         "metody_dydaktyczne": {
-            "cwiczenia": [
-                "analiza tekstów z dyskusją, metoda projektów (projekt praktyczny), praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty"
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "mind map",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
             ]
         },
         "zaliczenie": {
@@ -33,14 +40,14 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność na zajęciach – zgodnie z regulaminem 15% nieobecności nieustawiedliwionych, 15% nieobecności usprawiedliwionych",
-            "Prace pisemne – min. jedna praca na semestr.",
-            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – 1-2 na semestr (decyzja lektora)",
-            "Wypowiedź ustna (o rodzaju decyduje lektor).",
-            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
-            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy/formę zaliczenia ustaloną przez lektora na podstawie poziomu grupy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "NIM1",
@@ -73,22 +80,93 @@
             ]
         },
         "tresci_programowe": [
-            "Wiederholung des Stoffes. Powtórzenie materiału. Omówienie spraw organizacyjnych.",
-            "Przygotowanie do testu.",
-            "Essen und Trinken. Jedzenie i picie. Dialogi w restauracji.",
-            "Pruefungstraining, eine Party.",
-            "Essen und Trinken. Rzeczowniki złożone.",
-            "Wir schreiben eine Einladung zum Party. Test 1",
-            "Restaurants in Deutschland. Was isst du gerne? / nicht gerne- Sprachspiel",
-            "Ich moechte einen Termin vereinbaren- Und was musst du machen?",
-            "Ich rufe dich an. Zaimki osobowe w bierniku. Test 2",
-            "Mit Bus und Bahn/ Was kostet die Karte.",
-            "Wiederholung des Stoffes",
-            "Frage nach dem Weg.  Das muessen wir feiern",
-            "Das muessen wir feiern. Den Studienabschluss feiern.",
-            "Feste hier und dort. Wie feiert man Karneval in Deutschland.",
-            "Wohnen in einer neuen Stadt; Ist die Wohnung noch frein. Mein Zimmer. Wiederholung des Stoffes"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Powtórzenie i diagnoza poziomu. Słownictwo: środowisko pracy i życie studenta.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Gramatyka: Konjunktiv II – wyrażanie życzeń, możliwości i warunków.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Słownictwo IT: sprzęt komputerowy, oprogramowanie, systemy operacyjne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Komunikacja zawodowa: korespondencja e-mailowa, pisanie podania o pracę.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Gramatyka: Passiv – budowanie i użycie strony biernej w opisach procesów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Słownictwo: internet, sieci komputerowe, bezpieczeństwo danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Czytanie ze zrozumieniem: artykuły techniczne w języku niemieckim.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Prezentacje w języku niemieckim – struktura i słownictwo.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Słownictwo: programowanie, algorytmy, języki programowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Komunikacja w projekcie: spotkania, raporty, statusy – symulacje.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Kultura i realia gospodarcze Niemiec, Austrii i Szwajcarii – rynek IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Przygotowanie do certyfikacji B1 (Goethe-Zertifikat B1) – ćwiczenia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Projekt zaliczeniowy – prezentacja lub raport w języku niemieckim.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Powtórzenie materiału.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Kolokwium zaliczeniowe.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "German language instruction at the B1/B1+ level. Students acquire German proficiency enabling communication in most everyday and professional situations, expressing thoughts and opinions, and understanding and producing written texts and spoken statements on general topics and specialist topics related to computer science."
+        "cel_dydaktyczny_eng": "German language instruction at the B1/B1+ level. Students acquire German proficiency enabling communication in most everyday and professional situations, expressing thoughts and opinions, and understanding and producing written texts and spoken statements on general topics and specialist topics related to computer science.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

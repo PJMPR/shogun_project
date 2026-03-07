@@ -21,7 +21,8 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
             "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Lektura wskazanych materiałów dotyczących kompetencji liderskich; refleksja i analiza własnych doświadczeń; przygotowanie do aktywnego udziału w konwersatorium."
         },
         "metody_dydaktyczne": {
             "wyklad": [
@@ -33,9 +34,12 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Obecność i aktywność na zajęciach (waga 100%)"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "ocena pracy podczas ćwiczenia"
+            ],
+            "cwiczenia_laboratorium": []
+        },
         "przedmioty_wprowadzajace": [],
         "cel_dydaktyczny": "Przygotowanie studentów do pełnienia ról liderskich w zespołach technicznych (Tech Lead, Team Leader, Scrum Master). Przedmiot kładzie nacisk na rozwój inteligencji emocjonalnej, umiejętność budowania efektywnych zespołów oraz zarządzanie procesami w dynamicznym środowisku IT. Student pozna techniki komunikacji, rozwiązywania konfliktów oraz metodyki wspierające samodzielność zespołów.",
         "literatura": {
@@ -69,14 +73,53 @@
             ]
         },
         "tresci_programowe": [
-            "Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership.",
-            "Budowanie Zespołu. Rekrutacja \"culture fit\", onboarding i etapy formowania się zespołu.",
-            "Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych.",
-            "Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka).",
-            "Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0).",
-            "Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej.",
-            "Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Budowanie Zespołu. Rekrutacja \"culture fit\", onboarding i etapy formowania się zespołu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Preparing students to take on leadership roles in technical teams (Tech Lead, Team Leader, Scrum Master). The course places emphasis on the development of emotional intelligence, the ability to build effective teams, and process management in a dynamic IT environment. Students learn communication techniques, conflict resolution, and methodologies supporting team autonomy."
+        "cel_dydaktyczny_eng": "Preparing students to take on leadership roles in technical teams (Tech Lead, Team Leader, Scrum Master). The course places emphasis on the development of emotional intelligence, the ability to build effective teams, and process management in a dynamic IT environment. Students learn communication techniques, conflict resolution, and methodologies supporting team autonomy.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

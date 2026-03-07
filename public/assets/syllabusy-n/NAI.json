@@ -21,19 +21,27 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja niewielkich projektów praktycznych z narzędzi AI; eksploracja bibliotek i frameworków AI; przygotowanie prezentacji projektu."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
         "zaliczenie": {},
-        "kryteria_oceny": [
-            "Ćwiczenia / Laboratorium/Lektorat:",
-            "rozwiązywanie zadań",
-            "Laboratorium/Projekt",
-            "brak",
-            "Kryteria oceny",
-            "LaboratoriumPrezentacje niewielkich projektów praktycznych",
-            "Ocena jest liczona jak średnia z uzyskanych ocen cząstkowych."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja mini-projektu",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "PRG1, MAD, ASD",
@@ -65,14 +73,53 @@
             "kompetencje_spoleczne": null
         },
         "tresci_programowe": [
-            "Wstęp oraz przypomnienie zagadnień które były na innych przedmiotach, ale są konieczne w dalszym przebiegu tego przedmiotu",
-            "Klasyczne rozważania na temat sztucznej inteligencji",
-            "Podstawy widzenia maszynowego na przykładzie biblioteki OpenCV",
-            "Przykłady algorytmów heurystycznych",
-            "Podstawy sieci neuronowych z punktu widzenia konstrukcji i algorytmów",
-            "Podstawy drzew decyzyjnych",
-            "Algorytm A* jako przykład efektywnego rozwinięcia klasyczneo algorytmu o zastosowanie heurystyki"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wstęp oraz przypomnienie zagadnień które były na innych przedmiotach, ale są konieczne w dalszym przebiegu tego przedmiotu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Klasyczne rozważania na temat sztucznej inteligencji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Podstawy widzenia maszynowego na przykładzie biblioteki OpenCV",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Przykłady algorytmów heurystycznych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Podstawy sieci neuronowych z punktu widzenia konstrukcji i algorytmów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Podstawy drzew decyzyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Algorytm A* jako przykład efektywnego rozwinięcia klasyczneo algorytmu o zastosowanie heurystyki",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The goal of the course is to familiarize students with the basic techniques used in artificial intelligence. These techniques are increasingly becoming part of mainstream IT technologies and are playing a growing role in industrial applications. Moreover, a large portion of the material discussed has a broader scope and can help future engineers solve IT problems beyond the strict domain of AI."
+        "cel_dydaktyczny_eng": "The goal of the course is to familiarize students with the basic techniques used in artificial intelligence. These techniques are increasingly becoming part of mainstream IT technologies and are playing a growing role in industrial applications. Moreover, a large portion of the material discussed has a broader scope and can help future engineers solve IT problems beyond the strict domain of AI.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

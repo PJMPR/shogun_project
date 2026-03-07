@@ -21,9 +21,20 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
             "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Rozwijanie i doskonalenie gry komputerowej w Unreal Engine; praca w grupie; przygotowanie końcowej prezentacji projektu z pełną oceną styl/rozgrywka/zabawa/kreatywność."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach",
+                "burza mózgów"
+            ]
+        },
         "zaliczenie": {
             "Laboratorium": {
                 "sposob": "Zaliczenie z oceną"
@@ -32,24 +43,13 @@
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony",
-            "burza mózgów",
-            "rozwiązywanie zadań",
-            "analiza przypadków",
-            "prezentacje",
-            "praca w Unreal Engine",
-            "Kryteria oceny",
-            "Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:",
-            "Styl (1-10)",
-            "Rozgrywka (1-10)",
-            "Zabawa (1-10)",
-            "Kreatywność (1-10)",
-            "Ukończenie (1-10)",
-            "Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:",
-            "Wysiłek (1-10).",
-            "Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Wytwarzanie gier 1 (WG1)",
@@ -101,62 +101,293 @@
             ]
         },
         "tresci_programowe": [
-            "Wprowadzenie i powtórka z WG1",
-            "Przypomnienie najważniejszych zagadnień z Wytwarzania gier 1.",
-            "Omówienie przykładowych projektów z poprzedniego semestru, analiza mocnych i słabych stron.",
-            "Trendy na rynku gier, nowości technologiczne.",
-            "Analityka gier",
-            "Rodzaje danych zbieranych w grach i ich znaczenie.",
-            "Narzędzia analityczne i ich zastosowanie w optymalizacji gier.",
-            "Interpretacja danych, wyciąganie wniosków i podejmowanie decyzji na podstawie analizy.",
-            "Marketing gier",
-            "Wprowadzenie do marketingu w grach.",
-            "Definiowanie grupy docelowej, tworzenie persony gracza.",
-            "Kanały marketingowe dla gier, strategie promocji.",
-            "Rynek gier: VR, PC, Konsole",
-            "Omówienie specyfiki, zalet i wad tworzenia gier na różne platformy.",
-            "Trendy na poszczególnych rynkach, analiza konkurencji.",
-            "Wybór platformy docelowej dla gry, dostosowanie projektu do specyfiki rynku.",
-            "Zaawansowane techniki projektowania gier",
-            "Projektowanie narracji w grach, budowanie świata gry.",
-            "Tworzenie angażującej rozgrywki, projektowanie wyzwań i nagród.",
-            "Balansowanie gry, zapewnienie odpowiedniego poziomu trudności.",
-            "Optymalizacja gier",
-            "Zaawansowana optymalizacja gier na platformy PC i konsolowe.",
-            "Optymalizacja grafiki, dźwięku i kodu gry.",
-            "Narzędzia do profilowania i optymalizacji, dobre praktyki.",
-            "Zwiastuny gier i kampanie społecznościowe",
-            "Tworzenie zwiastunów gier przyciągających uwagę graczy.",
-            "Prowadzenie kampanii w mediach społecznościowych, budowanie zaangażowania.",
-            "Współpraca z influencerami, marketing szeptany.",
-            "Psychologia gier: kierowanie uwagą gracza",
-            "Techniki narracji wizualnej w grach, budowanie napięcia i emocji.",
-            "Prowadzenie gracza przez świat gry, projektowanie intuicyjnego interfejsu.",
-            "Wykorzystanie dźwięku i muzyki do budowania atmosfery.",
-            "Sztuka w grach: kadrowanie i kompozycja",
-            "Podstawy kompozycji obrazu, stosowanie zasad kadrowania w grach.",
-            "Język filmu: ujęcia, montaż, ruch kamery.",
-            "Analiza udanych przykładów, inspiracje z innych mediów.",
-            "Tworzenie gier jako biznes",
-            "Modele biznesowe w grach: free-to-play, premium, subskrypcje.",
-            "Monetyzacja gier, projektowanie systemu mikropłatności.",
-            "Aspekty prawne tworzenia gier, prawa autorskie.",
-            "Budowanie relacji z partnerami",
-            "Nawiązywanie kontaktów z wydawcami, platformami dystrybucji cyfrowej.",
-            "Sposoby pozyskiwania funduszy na tworzenie gier, crowdfunding.",
-            "Prezentacja projektu gry, przygotowanie materiałów prasowych.",
-            "Budowanie i utrzymywanie społeczności",
-            "Sposoby budowania zaangażowanej społeczności wokół gry.",
-            "Komunikacja z graczami, moderacja forów i grup dyskusyjnych.",
-            "Organizowanie konkursów i eventów, zarządzanie feedbackiem.",
-            "Prezentacja projektów",
-            "Prezentacja postępów prac nad projektami gier.",
-            "Omówienie wyzwań i rozwiązań, analiza i feedback od prowadzącego i grupy.",
-            "Dzień gier",
-            "Prezentacja finalnych wersji gier.",
-            "Testowanie gier przez studentów i zaproszonych gości.",
-            "Wręczenie nagród, podsumowanie semestru."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie i powtórka z WG1",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Przypomnienie najważniejszych zagadnień z Wytwarzania gier 1.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Omówienie przykładowych projektów z poprzedniego semestru, analiza mocnych i słabych stron.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Trendy na rynku gier, nowości technologiczne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Analityka gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Rodzaje danych zbieranych w grach i ich znaczenie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Narzędzia analityczne i ich zastosowanie w optymalizacji gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Interpretacja danych, wyciąganie wniosków i podejmowanie decyzji na podstawie analizy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Marketing gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Wprowadzenie do marketingu w grach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Definiowanie grupy docelowej, tworzenie persony gracza.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Kanały marketingowe dla gier, strategie promocji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Rynek gier: VR, PC, Konsole",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Omówienie specyfiki, zalet i wad tworzenia gier na różne platformy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Trendy na poszczególnych rynkach, analiza konkurencji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Wybór platformy docelowej dla gry, dostosowanie projektu do specyfiki rynku.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Zaawansowane techniki projektowania gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Projektowanie narracji w grach, budowanie świata gry.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Tworzenie angażującej rozgrywki, projektowanie wyzwań i nagród.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "Balansowanie gry, zapewnienie odpowiedniego poziomu trudności.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Optymalizacja gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Zaawansowana optymalizacja gier na platformy PC i konsolowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Optymalizacja grafiki, dźwięku i kodu gry.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "Narzędzia do profilowania i optymalizacji, dobre praktyki.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Zwiastuny gier i kampanie społecznościowe",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Tworzenie zwiastunów gier przyciągających uwagę graczy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Prowadzenie kampanii w mediach społecznościowych, budowanie zaangażowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "Współpraca z influencerami, marketing szeptany.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Psychologia gier: kierowanie uwagą gracza",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Techniki narracji wizualnej w grach, budowanie napięcia i emocji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Prowadzenie gracza przez świat gry, projektowanie intuicyjnego interfejsu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "Wykorzystanie dźwięku i muzyki do budowania atmosfery.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "Sztuka w grach: kadrowanie i kompozycja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "Podstawy kompozycji obrazu, stosowanie zasad kadrowania w grach.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "Język filmu: ujęcia, montaż, ruch kamery.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "Analiza udanych przykładów, inspiracje z innych mediów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "Tworzenie gier jako biznes",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "Modele biznesowe w grach: free-to-play, premium, subskrypcje.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "Monetyzacja gier, projektowanie systemu mikropłatności.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "Aspekty prawne tworzenia gier, prawa autorskie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "Budowanie relacji z partnerami",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "Nawiązywanie kontaktów z wydawcami, platformami dystrybucji cyfrowej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "Sposoby pozyskiwania funduszy na tworzenie gier, crowdfunding.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "Prezentacja projektu gry, przygotowanie materiałów prasowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "Budowanie i utrzymywanie społeczności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 46,
+                "wyklad": "Sposoby budowania zaangażowanej społeczności wokół gry.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 47,
+                "wyklad": "Komunikacja z graczami, moderacja forów i grup dyskusyjnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 48,
+                "wyklad": "Organizowanie konkursów i eventów, zarządzanie feedbackiem.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 49,
+                "wyklad": "Prezentacja projektów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 50,
+                "wyklad": "Prezentacja postępów prac nad projektami gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 51,
+                "wyklad": "Omówienie wyzwań i rozwiązań, analiza i feedback od prowadzącego i grupy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 52,
+                "wyklad": "Dzień gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 53,
+                "wyklad": "Prezentacja finalnych wersji gier.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 54,
+                "wyklad": "Testowanie gier przez studentów i zaproszonych gości.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 55,
+                "wyklad": "Wręczenie nagród, podsumowanie semestru.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to deepen students’ knowledge and skills in game development, focusing on advanced game design techniques, optimization, marketing, and market analysis. Students gain practical experience in creating games that run smoothly on different platforms and learn how to effectively promote their products on the gaming market."
+        "cel_dydaktyczny_eng": "The aim of the course is to deepen students’ knowledge and skills in game development, focusing on advanced game design techniques, optimization, marketing, and market analysis. Students gain practical experience in creating games that run smoothly on different platforms and learn how to effectively promote their products on the gaming market.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

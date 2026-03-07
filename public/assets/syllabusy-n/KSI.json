@@ -21,7 +21,8 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Konteneryzacja aplikacji webowych z użyciem Docker i Docker Compose; konfiguracja klastra Kubernetes; przygotowanie sprawozdań i projektu końcowego."
         },
         "metody_dydaktyczne": {
             "wyklad": [
@@ -39,13 +40,16 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Laboratorium – zaliczenie z oceną:",
-            "Ocena ciągła na podstawie sprawozdań z zajęć laboratoryjnych (40% oceny końcowej laboratorium).",
-            "Projekt końcowy: skonteneryzowanie wielokomponentowej aplikacji webowej (frontend, backend, baza danych) z użyciem Docker Compose oraz wdrożenie jej na lokalny klaster Kubernetes z konfiguracją Ingress i zmiennymi środowiskowymi (60% oceny końcowej laboratorium).",
-            "Warunkiem zaliczenia laboratorium jest oddanie wszystkich sprawozdań oraz obrona projektu końcowego.",
-            "Ocena końcowa przedmiotu: średnia ważona oceny z egzaminu (60%) i oceny z laboratorium (40%)."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "raport z wykonanego zadania",
+                "prezentacja projektu i dokumentacji",
+                "obrona projektu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "SOP – Systemy operacyjne",
@@ -111,22 +115,93 @@
             ]
         },
         "tresci_programowe": [
-            "Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI.",
-            "Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore.",
-            "Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze.",
-            "Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera.",
-            "Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych.",
-            "Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends_on, healthcheck. Polecenia compose up/down/logs/exec.",
-            "Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne.",
-            "Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s.",
-            "Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces.",
-            "Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra.",
-            "Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy.",
-            "Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych.",
-            "Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler.",
-            "Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault.",
-            "CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends_on, healthcheck. Polecenia compose up/down/logs/exec.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with techniques for containerizing web applications and orchestrating containers in production environments. Students learn the Docker ecosystem—from building images, through managing networks and volumes, to automating multi-container environments with Docker Compose. In the later part of the course, students are introduced to Kubernetes as the standard for cloud container orchestration, learning how to deploy, scale, and monitor applications. The course prepares students for work in modern DevOps and cloud environments (AWS, GCP, Azure)."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with techniques for containerizing web applications and orchestrating containers in production environments. Students learn the Docker ecosystem—from building images, through managing networks and volumes, to automating multi-container environments with Docker Compose. In the later part of the course, students are introduced to Kubernetes as the standard for cloud container orchestration, learning how to deploy, scale, and monitor applications. The course prepares students for work in modern DevOps and cloud environments (AWS, GCP, Azure).",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

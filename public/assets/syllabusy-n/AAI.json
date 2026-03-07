@@ -21,21 +21,35 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań programistycznych w środowisku Google Colab Notebooks; implementacja i eksperymentowanie z algorytmami AI; przygotowanie mini-projektu zaliczeniowego."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych"
+            ]
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Wykład z elementami dyskusji z prezentacją multimedialną",
-            "Przedstawienie implementacji zagadnień poruszanych na wykładzie z wykorzystaniem interaktywnego środowiska wykonawczego języka python - Google Colab Notebooks",
-            "Zadania wykonywane samodzielnie przez studentów z wykorzystaniem interaktywnego środowiska wykonawczego języka python - Google Colab Notebooks",
-            "Kryteria oceny",
-            "Ocena z projektu i aktywności studenta na zajęciach."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium końcowe"
+            ],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "ocena sporządzonego oprogramowania",
+                "prezentacja mini-projektu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Machine Learning",
@@ -70,19 +84,78 @@
             "kompetencje_spoleczne": []
         },
         "tresci_programowe": [
-            "Wprowadzenie do sztucznej inteligencji, Wprowadzenie do języka Python, implementacja klasycznych algorytmów uczenia maszynowego z wykorzystaniem biblioteki sklearn",
-            "Wprowadzenie do sieci neuronowych. Wprowadzenie do biblioteki Pytorch Lightning i Pytorch, implementacja prostych architektur sieci neuronowych",
-            "Regularyzacja sieci neuronowych. Regularyzacja sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja algorytmów batch normalization i dropout",
-            "Wprowadzenie do splotowych sieci neuronowych, architektury splotowych sieci neuronowych, algorytmy segmentacji i klasyfikacji obrazu",
-            "Implementacja prostych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja generatorów danych obrazowych, implementacja zaawansowanych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, wykorzystanie transferu wiedzy z modeli dostępnych w TIMM, implementacja algorytmów segmentacji i klasyfikacji obrazów z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
-            "Wprowadzenie do przetwarzania języka naturalnego, rekurencyjne sieci neuronowe, architektury typy transformer i mechanizm atencji w sieciach neuronowych, modelowanie języka naturalnego, transfer wiedzy w przetwarzaniu języka naturalnego",
-            "Wykorzystanie wektorów słów używając bibliotek Gensim i Flair, wizualizacja wektorów słów z wykorzystaniem algorytmu t-SNE, implementacja rekurencyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch w szczególności sieci typu BiLSTM w zagadnieniach klasyfikacji i oznaczania tekstu, implementacja sieci typu transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja pre-trenowanych modeli języka z wykorzystaniem biblioteki Huggingface Transformers",
-            "Optymalizacja hiper parametrów sieci neuronowych, generacyjne sieci neuronowe i wyjaśnialna sztuczna inteligencja",
-            "Implementacja algorytmów automatycznego doboru hiperparametów sieci neuronowych. Implementacja generacyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja algorytmów wyjaśniania predykcji sieci neuronowych z wykorzystaniem bibliotek Dalex i Lime",
-            "Kapsułowe sieci neuronowe i analiza obrazu w wykorzystaniem architektury typu transformer",
-            "Implementacja kapsułowych sieci neuronowych i modelu Vision Transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
-            "Metody nauki nienadzorowanej jako mechanizm pretreningu sieci neuronowych"
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do sztucznej inteligencji, Wprowadzenie do języka Python, implementacja klasycznych algorytmów uczenia maszynowego z wykorzystaniem biblioteki sklearn",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Wprowadzenie do sieci neuronowych. Wprowadzenie do biblioteki Pytorch Lightning i Pytorch, implementacja prostych architektur sieci neuronowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Regularyzacja sieci neuronowych. Regularyzacja sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja algorytmów batch normalization i dropout",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Wprowadzenie do splotowych sieci neuronowych, architektury splotowych sieci neuronowych, algorytmy segmentacji i klasyfikacji obrazu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Implementacja prostych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja generatorów danych obrazowych, implementacja zaawansowanych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, wykorzystanie transferu wiedzy z modeli dostępnych w TIMM, implementacja algorytmów segmentacji i klasyfikacji obrazów z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Wprowadzenie do przetwarzania języka naturalnego, rekurencyjne sieci neuronowe, architektury typy transformer i mechanizm atencji w sieciach neuronowych, modelowanie języka naturalnego, transfer wiedzy w przetwarzaniu języka naturalnego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Wykorzystanie wektorów słów używając bibliotek Gensim i Flair, wizualizacja wektorów słów z wykorzystaniem algorytmu t-SNE, implementacja rekurencyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch w szczególności sieci typu BiLSTM w zagadnieniach klasyfikacji i oznaczania tekstu, implementacja sieci typu transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja pre-trenowanych modeli języka z wykorzystaniem biblioteki Huggingface Transformers",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Optymalizacja hiper parametrów sieci neuronowych, generacyjne sieci neuronowe i wyjaśnialna sztuczna inteligencja",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Implementacja algorytmów automatycznego doboru hiperparametów sieci neuronowych. Implementacja generacyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja algorytmów wyjaśniania predykcji sieci neuronowych z wykorzystaniem bibliotek Dalex i Lime",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Kapsułowe sieci neuronowe i analiza obrazu w wykorzystaniem architektury typu transformer",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Implementacja kapsułowych sieci neuronowych i modelu Vision Transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Metody nauki nienadzorowanej jako mechanizm pretreningu sieci neuronowych",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with artificial intelligence algorithms currently used in scientific research and industry, with particular emphasis on understanding and implementing artificial neural network architectures used in image analysis, tabular data analysis, and natural language processing. An additional objective of the course is to develop students’ ability to search for information on the latest achievements in artificial intelligence and open datasets useful for analyzing specific problems."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with artificial intelligence algorithms currently used in scientific research and industry, with particular emphasis on understanding and implementing artificial neural network architectures used in image analysis, tabular data analysis, and natural language processing. An additional objective of the course is to develop students’ ability to search for information on the latest achievements in artificial intelligence and open datasets useful for analyzing specific problems.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

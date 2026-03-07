@@ -21,7 +21,8 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Rozwijanie projektu gry komputerowej; iteracyjne doskonalenie rozgrywki i mechanik; przygotowanie dokumentacji projektowej i prezentacji końcowej."
         },
         "metody_dydaktyczne": {
             "wyklad": [
@@ -39,10 +40,13 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Zrobiony projekt (waga 70%)",
-            "Obecność i aktywność na zajęciach (waga 30%)"
-        ],
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Prototypowanie gier komputerowych (PG1) ",
@@ -86,14 +90,53 @@
             ]
         },
         "tresci_programowe": [
-            "Advanced Game Design. Projektowanie systemowe, ekonomia w grach i zaawansowany balans.",
-            "Game UX & UI: Architektura informacji w grach, projektowanie diegetycznych i niediegetycznych elementów interfejsu.",
-            "Visual Storytelling & Art Direction. Budowanie nastroju poprzez światło, kolor i otoczenie (environmental storytelling).",
-            "Marketing dla twórców gier. Budowanie społeczności, przygotowanie assetów marketingowych (traillery, screenshoty) i Steam marketing.",
-            "Produkcja i Project Management. Metodologie pracy w zespole, zarządzanie zakresem projektu (scope management).",
-            "Analityka i zbieranie danych. Implementacja narzędzi analitycznych i interpretacja danych o zachowaniach graczy.",
-            "Pitching i publikacja. Jak \"sprzedać\" swój pomysł wydawcy lub graczom na platformach dystrybucyjnych."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Advanced Game Design. Projektowanie systemowe, ekonomia w grach i zaawansowany balans.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Game UX & UI: Architektura informacji w grach, projektowanie diegetycznych i niediegetycznych elementów interfejsu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Visual Storytelling & Art Direction. Budowanie nastroju poprzez światło, kolor i otoczenie (environmental storytelling).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Marketing dla twórców gier. Budowanie społeczności, przygotowanie assetów marketingowych (traillery, screenshoty) i Steam marketing.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Produkcja i Project Management. Metodologie pracy w zespole, zarządzanie zakresem projektu (scope management).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Analityka i zbieranie danych. Implementacja narzędzi analitycznych i interpretacja danych o zachowaniach graczy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Pitching i publikacja. Jak \"sprzedać\" swój pomysł wydawcy lub graczom na platformach dystrybucyjnych.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "Development of skills in comprehensive game design as multimedia products. Emphasis is placed on integrating advanced design techniques with visual (Art), usability (UX/UI), and business (Marketing/Market) aspects. Carrying a project from an advanced prototype to the vertical slice stage while ensuring aesthetic coherence and effective communication with the audience."
+        "cel_dydaktyczny_eng": "Development of skills in comprehensive game design as multimedia products. Emphasis is placed on integrating advanced design techniques with visual (Art), usability (UX/UI), and business (Marketing/Market) aspects. Carrying a project from an advanced prototype to the vertical slice stage while ensuring aesthetic coherence and effective communication with the audience.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

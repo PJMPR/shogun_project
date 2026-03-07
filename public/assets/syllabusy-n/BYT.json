@@ -21,18 +21,27 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 56,
             "praca_wlasna_studenta_h": 94,
-            "calkowita_liczba_godzin_h": 150
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Studiowanie materiałów z zakresu budowy i integracji systemów informatycznych; przygotowanie do egzaminu pisemnego; analiza dokumentacji technicznej i architektonicznych wzorców integracji."
         },
-        "metody_dydaktyczne": {},
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": []
+        },
         "zaliczenie": {
             "Wykład": {
                 "sposob": "Egzamin"
             }
         },
-        "kryteria_oceny": [
-            "Kryteria oceny",
-            "Wykład: egzamin pisemny poprzedzony pracami bieżącej oceny, motywującej do systematycznej pracy w trakcie semestru."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": []
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "• Wstęp do informatyki i architektura komputerów",
@@ -95,23 +104,98 @@
             ]
         },
         "tresci_programowe": [
-            "Wykład:",
-            "Przedmiot i zagadnienia inżynierii oprogramowania. Podstawowe motywacje, społeczny kontekst przedsięwzięcia. Modelowanie pojęciowe. Pojęcie metodyki. Modele cyklu życia oprogramowania",
-            "Przebieg i ocena fazy strategicznej. Planowanie projektu. Projekt informatyczny; podstawowe charakterystyki, pojęcia, udziałowcy projektu; cykl życia i zakres projektu. Planowanie zadań. Identyfikacja problemu; Wzbogacony wizerunek (Rich Picture). Decyzje strategiczne i wizja rozwiązania.",
-            "Studium Wykonalności projektu informatycznego. Cele, płaszczyzny oceny –techniczna, ekonomiczna, organizacyjna i prawna; ryzyko przedsięwzięcia. Przykłady studiów wykonalności",
-            "Analiza wymagań i proces inżynierii wymagań. Wymagania stawiane oprogramowaniu. Cechy dobrego wymagania. Metody pozyskiwania wymagań, user stories. Podział i klasyfikacja wymagań. Miary i formalne techniki  specyfikowania wymagań.",
-            "Strategie i procesy prowadzenia projektów informatycznych; tradycyjne (model kaskadowy, model V, prototypowanie, przyrostowy, spiralny) i nowoczesne cykle wytwarzania oprogramowania (reuse i komponentowość), MDA, ponowna inżynieria, RUP.",
-            "Zwinne metodyki wytwarzania oprogramowania. Programowanie ekstremalne. SCRUM: procesy, artefakty, role. Dobór strategii prowadzenia projektu.",
-            "Analiza i projektowanie architektury systemów; role, procesy, techniki i produkty w podejściu obiektowym oraz agile. Wzorce analizy i projektowania; Klasyfikacja i przykłady wzorców.",
-            "Optymalizacja projektu dla specyfiki produktu. Projektowanie systemów rozproszonych, krytycznych, czasu rzeczywistego i wielokrotnego użytku.",
-            "Zarządzanie przedsięwzięciem informatycznym. Infrastruktura - dokumentacja procesu wytwarzania i produktu programistycznego, komunikacja, struktury organizacyjne. Raportowanie. Obszary zarządzania. zarządzanie zespołem. Harmonogramowanie.",
-            "Implementacja, integracja i wersjonowanie oprogramowania.; środowiska narzędziowe oraz technologie. Zarządzanie konfiguracją oprogramowania.",
-            "Pojęcie jakości oprogramowania i dróg jej osiągania. Standardy jakości i dobre praktyki jakości. Zapewnianie jakości oprogramowania. Modele i miary jakości oprogramowania. Wprowadzenie do zarządzania jakością. Inspekcja kodu i analiza bezpieczeństwa. Metody szacowania nakładów. Model COCOMO II.",
-            "Testowanie i walidacja oprogramowania. Rodzaje testów testy jednostkowe, integracyjne, systemowe; walidacja i testy akceptacyjne. Typowe fazy i metody testowania. Testy statyczne, funkcjonalne i strukturalne. Czynniki sukcesu i rezultaty testowania. Dokumentowanie testów. Przeglądy oprogramowania.",
-            "Instalacja i wdrożenie oprogramowania. Pielęgnacja oprogramowania. Analiza potrzeby wprowadzania modyfikacji. Koszty konserwacji oprogramowania. Kluczowe czynniki sukcesu fazy utrzymania.",
-            "Outsourcing w inżynierii oprogramowania.",
-            "Informatyczne wsparcie procesów biznesowych. Oprogramowanie klasy CRM, ERP. Architektura systemów ERP. Przykłady dostawców systemów CRM i ERP."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wykład:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Przedmiot i zagadnienia inżynierii oprogramowania. Podstawowe motywacje, społeczny kontekst przedsięwzięcia. Modelowanie pojęciowe. Pojęcie metodyki. Modele cyklu życia oprogramowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Przebieg i ocena fazy strategicznej. Planowanie projektu. Projekt informatyczny; podstawowe charakterystyki, pojęcia, udziałowcy projektu; cykl życia i zakres projektu. Planowanie zadań. Identyfikacja problemu; Wzbogacony wizerunek (Rich Picture). Decyzje strategiczne i wizja rozwiązania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Studium Wykonalności projektu informatycznego. Cele, płaszczyzny oceny –techniczna, ekonomiczna, organizacyjna i prawna; ryzyko przedsięwzięcia. Przykłady studiów wykonalności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Analiza wymagań i proces inżynierii wymagań. Wymagania stawiane oprogramowaniu. Cechy dobrego wymagania. Metody pozyskiwania wymagań, user stories. Podział i klasyfikacja wymagań. Miary i formalne techniki  specyfikowania wymagań.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Strategie i procesy prowadzenia projektów informatycznych; tradycyjne (model kaskadowy, model V, prototypowanie, przyrostowy, spiralny) i nowoczesne cykle wytwarzania oprogramowania (reuse i komponentowość), MDA, ponowna inżynieria, RUP.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Zwinne metodyki wytwarzania oprogramowania. Programowanie ekstremalne. SCRUM: procesy, artefakty, role. Dobór strategii prowadzenia projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Analiza i projektowanie architektury systemów; role, procesy, techniki i produkty w podejściu obiektowym oraz agile. Wzorce analizy i projektowania; Klasyfikacja i przykłady wzorców.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Optymalizacja projektu dla specyfiki produktu. Projektowanie systemów rozproszonych, krytycznych, czasu rzeczywistego i wielokrotnego użytku.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Zarządzanie przedsięwzięciem informatycznym. Infrastruktura - dokumentacja procesu wytwarzania i produktu programistycznego, komunikacja, struktury organizacyjne. Raportowanie. Obszary zarządzania. zarządzanie zespołem. Harmonogramowanie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Implementacja, integracja i wersjonowanie oprogramowania.; środowiska narzędziowe oraz technologie. Zarządzanie konfiguracją oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Pojęcie jakości oprogramowania i dróg jej osiągania. Standardy jakości i dobre praktyki jakości. Zapewnianie jakości oprogramowania. Modele i miary jakości oprogramowania. Wprowadzenie do zarządzania jakością. Inspekcja kodu i analiza bezpieczeństwa. Metody szacowania nakładów. Model COCOMO II.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Testowanie i walidacja oprogramowania. Rodzaje testów testy jednostkowe, integracyjne, systemowe; walidacja i testy akceptacyjne. Typowe fazy i metody testowania. Testy statyczne, funkcjonalne i strukturalne. Czynniki sukcesu i rezultaty testowania. Dokumentowanie testów. Przeglądy oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Instalacja i wdrożenie oprogramowania. Pielęgnacja oprogramowania. Analiza potrzeby wprowadzania modyfikacji. Koszty konserwacji oprogramowania. Kluczowe czynniki sukcesu fazy utrzymania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Outsourcing w inżynierii oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Informatyczne wsparcie procesów biznesowych. Oprogramowanie klasy CRM, ERP. Architektura systemów ERP. Przykłady dostawców systemów CRM i ERP.",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of this lecture series is to familiarize students with the basic issues of software engineering, including the phases of software development and evolution, as well as methods of improving software quality. The lecture concerns the fundamental aspects of software engineering and is organized according to the subsequent phases of the software life cycle. The following phases are discussed: strategy, requirements gathering, analysis, design, construction, testing, installation, maintenance, deployment, and support. The lecture also presents issues related to the architecture of IT systems and good design practices using CASE tools. Significant importance is attached to the discussion of current software life-cycle models and criteria for selecting a development strategy, as well as to the use of design patterns, standard APIs, and good practices in system design and implementation, particularly for distributed systems, critical systems, real-time systems, and reusable systems. Topics discussed in class also include software quality and its metrics, basic information on software testing, software project management, software configuration management, implementation, and outsourcing issues. The course also characterizes IT systems supporting business processes by discussing their most important features. The classes are correlated with the lecture and project course IT Project (PRO), ensuring a comprehensive presentation of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and solution planning, to designing and implementing practical product elements, using patterns and design components, and conducting system and validation tests. The reference model is the use of object technology in waterfall, component-based, or agile cycles, although other development strategies are also possible, e.g. for specific products such as computer games."
+        "cel_dydaktyczny_eng": "The aim of this lecture series is to familiarize students with the basic issues of software engineering, including the phases of software development and evolution, as well as methods of improving software quality. The lecture concerns the fundamental aspects of software engineering and is organized according to the subsequent phases of the software life cycle. The following phases are discussed: strategy, requirements gathering, analysis, design, construction, testing, installation, maintenance, deployment, and support. The lecture also presents issues related to the architecture of IT systems and good design practices using CASE tools. Significant importance is attached to the discussion of current software life-cycle models and criteria for selecting a development strategy, as well as to the use of design patterns, standard APIs, and good practices in system design and implementation, particularly for distributed systems, critical systems, real-time systems, and reusable systems. Topics discussed in class also include software quality and its metrics, basic information on software testing, software project management, software configuration management, implementation, and outsourcing issues. The course also characterizes IT systems supporting business processes by discussing their most important features. The classes are correlated with the lecture and project course IT Project (PRO), ensuring a comprehensive presentation of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and solution planning, to designing and implementing practical product elements, using patterns and design components, and conducting system and validation tests. The reference model is the use of object technology in waterfall, component-based, or agile cycles, although other development strategies are also possible, e.g. for specific products such as computer games.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }

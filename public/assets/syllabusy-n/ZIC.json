@@ -21,7 +21,8 @@
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
             "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Definiowanie infrastruktury jako kodu z użyciem Terraform i Ansible; praca z LocalStack i OpenStack; przygotowanie sprawozdań i projektu końcowego dotyczącego wdrożenia infrastruktury chmurowej."
         },
         "metody_dydaktyczne": {
             "wyklad": [
@@ -39,16 +40,16 @@
                 "sposob": "Zaliczenie z oceną"
             }
         },
-        "kryteria_oceny": [
-            "Wykład – egzamin pisemny:",
-            "Egzamin pisemny zawierający pytania otwarte i zamknięte sprawdzające wiedzę teoretyczną z zakresu zarządzania infrastrukturą chmurową, narzędzi IaC oraz usług AWS i OpenStack. Warunkiem zaliczenia jest uzyskanie co najmniej 51% punktów.",
-            "Skala ocen: 51–60% – 3.0, 61–70% – 3.5, 71–80% – 4.0, 81–90% – 4.5, 91–100% – 5.0.",
-            "Laboratorium – zaliczenie z oceną:",
-            "Ocena ciągła na podstawie sprawozdań z zajęć laboratoryjnych (40% oceny końcowej laboratorium).",
-            "Projekt końcowy: zaprojektowanie i zaimplementowanie infrastruktury wielowarstwowej aplikacji webowej (sieć, serwery, bazy danych, load balancer) przy użyciu Terraform oraz Ansible, wdrożonej na LocalStack lub OpenStack (60% oceny końcowej laboratorium).",
-            "Warunkiem zaliczenia laboratorium jest oddanie wszystkich sprawozdań oraz obrona projektu końcowego.",
-            "Ocena końcowa przedmiotu: średnia ważona oceny z egzaminu (60%) i oceny z laboratorium (40%)."
-        ],
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "raport z wykonanego zadania",
+                "prezentacja projektu i dokumentacji",
+                "obrona projektu"
+            ]
+        },
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "KSI – Konteneryzacja serwisów internetowych",
@@ -116,22 +117,93 @@
             ]
         },
         "tresci_programowe": [
-            "Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps.",
-            "Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy.",
-            "Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod).",
-            "Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji.",
-            "AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform.",
-            "AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform.",
-            "AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform.",
-            "Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell).",
-            "Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność.",
-            "Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end.",
-            "LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury.",
-            "OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS.",
-            "Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack.",
-            "Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail.",
-            "Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate)."
+            {
+                "nr_zajec": 1,
+                "wyklad": "Infrastructure as Code – motywacja, historia i korzyści. Podejście deklaratywne vs. imperatywne. Przegląd narzędzi IaC: Terraform, Ansible, Pulumi, CloudFormation. Miejsce IaC w cyklu DevOps.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Terraform – architektura i podstawy. Providers (AWS, OpenStack), resources, data sources. Język HCL: typy danych, wyrażenia, funkcje wbudowane. Cykl życia konfiguracji: init, validate, plan, apply, destroy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Terraform state: cel i struktura pliku stanu. Zdalny backend (S3 + DynamoDB lock). Import istniejących zasobów. Terraform workspace – izolacja środowisk (dev/staging/prod).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Moduły Terraform: tworzenie, parametryzacja i kompozycja modułów. Rejestr publiczny (Terraform Registry). Wzorce organizacji kodu: flat, monorepo, multi-repo. Refaktoryzacja konfiguracji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "AWS – globalna infrastruktura i model usług. VPC: subnety publiczne i prywatne, Internet Gateway, NAT Gateway, routing tables, security groups, Network ACL. Provisionowanie sieci w Terraform.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "AWS EC2 i zarządzanie obliczeniami: typy instancji, AMI, key pairs, user data, Elastic IP. Auto Scaling Groups i Launch Templates. Elastic Load Balancer (ALB/NLB). Konfiguracja przez Terraform.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "AWS – usługi zarządzane: RDS (PostgreSQL/MySQL), ElastiCache (Redis), S3 (bucket policies, versioning, lifecycle), SQS, SNS. Wdrożenie warstwy danych aplikacji przez Terraform.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Ansible – architektura i instalacja. Inventory (statyczne i dynamiczne). Ad-hoc commands. Playbooks: plays, tasks, handlers, notify. Moduły wbudowane (apt, yum, copy, template, service, shell).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Ansible – zaawansowane techniki: role (struktura katalogów, defaults, vars, tasks, handlers, templates), Ansible Galaxy, zmienne grupowe i hostowe, Vault (szyfrowanie sekretów). Idempotentność.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Integracja Terraform + Ansible: przekazywanie outputów Terraform do inventory Ansible (dynamic inventory), null_resource i local-exec/remote-exec provisioners. Wzorce automatyzacji end-to-end.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "LocalStack – emulacja usług AWS lokalnie. Instalacja i konfiguracja (Docker Compose). Obsługiwane usługi: S3, SQS, SNS, Lambda, DynamoDB, EC2, IAM. Konfiguracja Terraform provider dla LocalStack. Strategie testowania infrastruktury.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "OpenStack – architektura i komponenty: Keystone (auth), Nova (compute), Neutron (network), Cinder (block storage), Glance (images), Swift (object storage), Heat (orchestration). Porównanie z usługami AWS.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Praca z OpenStack: openstack CLI, zarządzanie instancjami, sieciami, woluminami i floating IP. Szablony Heat (HOT): struktura, parametry, resources, outputs. Automatyzacja przez Terraform provider OpenStack.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Bezpieczeństwo infrastruktury chmurowej: IAM – użytkownicy, grupy, role, polityki (managed, inline), zasada least privilege. AWS Secrets Manager i HashiCorp Vault. Szyfrowanie EBS/S3 (KMS). Audyt z AWS CloudTrail.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Monitoring i obserwowalność: CloudWatch (metryki, logi, alarmy, dashboardy), AWS Cost Explorer i budżety. Eksport metryk do Prometheus, wizualizacja w Grafana. CI/CD dla infrastruktury: terraform plan w GitHub Actions, atlantis, automatyczne wdrożenia po merge. Podsumowanie kursu i ścieżki certyfikacji (AWS Cloud Practitioner, AWS Solutions Architect Associate, Terraform Associate).",
+                "cwiczenia": ""
+            }
         ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the Infrastructure as Code (IaC) methodology and the tools and platforms enabling the automatic creation, configuration, and management of cloud infrastructure at production scale. Students acquire practical skills in working with Terraform (resource provisioning), Ansible (configuration management and automation), Amazon Web Services (public cloud services), and OpenStack together with its local emulator LocalStack (private cloud and testing environments). The course develops the competencies of a DevOps/Cloud engineer who can design repeatable, versioned, and auditable infrastructure environments."
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the Infrastructure as Code (IaC) methodology and the tools and platforms enabling the automatic creation, configuration, and management of cloud infrastructure at production scale. Students acquire practical skills in working with Terraform (resource provisioning), Ansible (configuration management and automation), Amazon Web Services (public cloud services), and OpenStack together with its local emulator LocalStack (private cloud and testing environments). The course develops the competencies of a DevOps/Cloud engineer who can design repeatable, versioned, and auditable infrastructure environments.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
     }
 }
