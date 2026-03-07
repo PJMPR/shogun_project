@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
+import { BaseHrefService } from '../../shared/base-href.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -149,15 +150,15 @@ export class EdytujSylabusComponent implements OnInit {
   metodyCwiczeniaOptions: { label: string; value: string }[] = [];
   krytyriaOptions: { label: string; value: string }[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
 
   ngOnInit(): void {
     this.loadSubjectOptions();
-    this.http.get<any>('/assets/metody_dydaktyczne.json').subscribe(data => {
+    this.http.get<any>(this.baseHref.assetUrl('metody_dydaktyczne.json')).subscribe(data => {
       this.metodyWykladOptions = (data.wyklad as string[]).map((m: string) => ({ label: m, value: m }));
       this.metodyCwiczeniaOptions = (data.cwiczenia_laboratorium as string[]).map((m: string) => ({ label: m, value: m }));
     });
-    this.http.get<any>('/assets/metody_weryfikacji.json').subscribe(data => {
+    this.http.get<any>(this.baseHref.assetUrl('metody_weryfikacji.json')).subscribe(data => {
       this.krytyriaOptions = (data.metody_weryfikacji as string[]).map((m: string) => ({ label: m, value: m }));
     });
   }
@@ -172,15 +173,15 @@ export class EdytujSylabusComponent implements OnInit {
 
   private loadSubjectOptions(): void {
     this.loadingOptions = true;
-    const base = this.selectedTryb === 'stacjonarny'
-      ? 'assets'
-      : 'assets/niestacjonarne';
+    const baseUrl = this.selectedTryb === 'stacjonarny'
+      ? this.baseHref.assetUrl('')
+      : this.baseHref.assetUrl('niestacjonarne/');
 
     forkJoin({
-      program:  this.http.get<ProgramData>(`${base}/program.json`),
-      elOther:  this.http.get<ElectivesOtherData>(`${base}/electives-other.json`),
-      elSpec:   this.http.get<ElectivesSpecializationsData>(`${base}/electives-specializations.json`),
-      sylIndex: this.http.get<Record<string, string>>(`${base}/syllabus-index.json`),
+      program:  this.http.get<ProgramData>(`${baseUrl}program.json`),
+      elOther:  this.http.get<ElectivesOtherData>(`${baseUrl}electives-other.json`),
+      elSpec:   this.http.get<ElectivesSpecializationsData>(`${baseUrl}electives-specializations.json`),
+      sylIndex: this.http.get<Record<string, string>>(`${baseUrl}syllabus-index.json`),
     }).subscribe({
       next: ({ program, elOther, elSpec, sylIndex }) => {
         const opts: SubjectOption[] = [];

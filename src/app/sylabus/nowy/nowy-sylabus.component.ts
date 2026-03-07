@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { BaseHrefService } from '../../shared/base-href.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -172,14 +173,14 @@ export class NowySylabusComponent implements OnInit {
     lab_wyposazenie_txt: '',
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
 
   ngOnInit(): void {
-    this.http.get<any>('/assets/metody_dydaktyczne.json').subscribe(data => {
+    this.http.get<any>(this.baseHref.assetUrl('metody_dydaktyczne.json')).subscribe(data => {
       this.metodyWykladOptions = (data.wyklad as string[]).map(m => ({ label: m, value: m }));
       this.metodyCwiczeniaOptions = (data.cwiczenia_laboratorium as string[]).map(m => ({ label: m, value: m }));
     });
-    this.http.get<any>('/assets/metody_weryfikacji.json').subscribe(data => {
+    this.http.get<any>(this.baseHref.assetUrl('metody_weryfikacji.json')).subscribe(data => {
       this.krytyriaOptions = (data.metody_weryfikacji as string[]).map(m => ({ label: m, value: m }));
     });
   }
