@@ -198,6 +198,97 @@ def _load_efekty_kierunkowe() -> dict:
     return _efekty_cache
 
 
+# ---------------------------------------------------------------------------
+# Mapowanie kod_przedmiotu → zakres specjalizacyjny
+# ---------------------------------------------------------------------------
+_ASSETS = Path(__file__).parent.parent / 'public' / 'assets'
+_typ_cache: dict | None = None  # {kod_upper: 'obligatoryjny'|'obieralny'|'lektorat'|'specjalizacyjny'}
+
+
+def _load_typ_przedmiotu() -> dict:
+    """
+    Buduje mapowanie kod_przedmiotu → zakres specjalizacyjny na podstawie:
+      - program.json (obowiązkowe)
+      - electives-other.json (obieralne, lektoraty)
+      - electives-specializations.json (specjalizacyjne)
+    Analogicznie dla katalogu niestacjonarne/.
+    Priorytet: specjalizacyjny > lektorat > obieralny > obligatoryjny
+    """
+    global _typ_cache
+    if _typ_cache is not None:
+        return _typ_cache
+
+    _typ_cache = {}
+
+    def _process(assets_dir: Path):
+        # Grupy lektoratowe — identyfikujemy po id grupy 'LEK*' lub label zawierającym 'lektorat'
+        lektorat_ids: set = set()
+        other_file = assets_dir / 'electives-other.json'
+        if other_file.exists():
+            try:
+                with open(other_file, encoding='utf-8') as f:
+                    other = json.load(f)
+                for g in other.get('groups', []):
+                    gid = str(g.get('id', '')).upper()
+                    label = str(g.get('label', '')).lower()
+                    if gid.startswith('LEK') or 'lektorat' in label:
+                        lektorat_ids.add(gid)
+                    for item in g.get('items', []):
+                        kod = str(item.get('code', '')).upper()
+                        if gid.startswith('LEK') or 'lektorat' in label:
+                            _typ_cache[kod] = 'lektorat'
+                        else:
+                            # nie nadpisuj jeśli już ustawione jako lektorat
+                            if _typ_cache.get(kod) != 'lektorat':
+                                _typ_cache[kod] = 'obieralny'
+            except Exception:
+                pass
+
+        # Specjalizacyjne
+        spec_file = assets_dir / 'electives-specializations.json'
+        if spec_file.exists():
+            try:
+                with open(spec_file, encoding='utf-8') as f:
+                    spec = json.load(f)
+                for sp in spec.get('specializations', []):
+                    for item in sp.get('items', []):
+                        kod = str(item.get('code', '')).upper()
+                        _typ_cache[kod] = 'specjalizacyjny'  # nadpisuje obieralny
+            except Exception:
+                pass
+
+        # Obowiązkowe z program.json — tylko jeśli kod nie jest jeszcze sklasyfikowany
+        prog_file = assets_dir / 'program.json'
+        if prog_file.exists():
+            try:
+                with open(prog_file, encoding='utf-8') as f:
+                    prog = json.load(f)
+                for sem in prog.get('semesters', []):
+                    for s in sem.get('subjects', []):
+                        kod = str(s.get('code', '')).upper()
+                        if kod not in _typ_cache:
+                            _typ_cache[kod] = 'obligatoryjny'
+            except Exception:
+                pass
+
+    _process(_ASSETS)
+    _process(_ASSETS / 'niestacjonarne')
+    return _typ_cache
+
+
+def _get_zakres_specjalizacyjny(kod: str) -> str:
+    """Zwraca tekst zakresu specjalizacyjnego dla komórki w tabeli sekcji 7."""
+    typ_map = _load_typ_przedmiotu()
+    typ = typ_map.get(str(kod).upper(), 'obligatoryjny')
+    mapping = {
+        'specjalizacyjny': 'specjalizacyjny',
+        'lektorat': 'lektorat',
+        'obieralny': 'obieralny',
+        'obligatoryjny': 'obligatoryjny',
+    }
+    return mapping.get(typ, 'obligatoryjny')
+
+
 class SyllabusBuilder:
     """Buduje dokument Word sylabusu na podstawie danych z JSON."""
 
@@ -210,6 +301,9 @@ class SyllabusBuilder:
         kod = str(self.s.get('kod_przedmiotu', '')).upper()
         efekty_map = _load_efekty_kierunkowe()
         self._kody_kierunkowe = efekty_map.get(kod, {'wiedza': [], 'umiejetnosci': [], 'kompetencje_spoleczne': []})
+        # Zakres specjalizacyjny i stopień
+        self._zakres = _get_zakres_specjalizacyjny(kod)
+        self._stopien = 'I'
 
     def _setup_page(self):
         """Konfiguruje marginesy strony."""
@@ -367,7 +461,7 @@ class SyllabusBuilder:
         semestr = _safe(s, 'semestr_studiow', default='')
         profil = _safe(s, 'profil', default='')
         kierunek = _safe(s, 'kierunek', default='')
-        values = [kierunek, '', tryb, '', profil, str(semestr)]
+        values = [kierunek, self._stopien, tryb, self._zakres, profil, str(semestr)]
         row = table.add_row()
         for i, v in enumerate(values):
             _value_cell(row.cells[i], v)
