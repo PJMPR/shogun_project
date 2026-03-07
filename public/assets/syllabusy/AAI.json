@@ -39,15 +39,7 @@
         "przedmioty_wprowadzajace": [
             {
                 "nazwa": "Machine Learning",
-                "wymagania": "Znajomość budowy podstawowych architektur sztucznych sieci neuronowych"
-            },
-            {
-                "nazwa": "Znajomość podstawowych funkcji aktywacji wykorzystywanych w sztucznych sieciach neuronowych",
-                "wymagania": "Znajomość podstawowych architektur splotowych sieci neuronowych"
-            },
-            {
-                "nazwa": "Znajomość podstawowych architektur rekurencyjnych sieci neuronowych",
-                "wymagania": "Znajomość wybranych algorytmów uczenia maszynowego (k-means, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, klasyfikator Bayesowski)"
+                "wymagania": "Znajomość budowy podstawowych architektur sztucznych sieci neuronowych. Znajomość podstawowych funkcji aktywacji wykorzystywanych w sztucznych sieciach neuronowych. Znajomość podstawowych architektur splotowych sieci neuronowych. Znajomość podstawowych architektur rekurencyjnych sieci neuronowych. Znajomość wybranych algorytmów uczenia maszynowego (k-means, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, klasyfikator Bayesowski)"
             }
         ],
         "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z algorytmami sztucznej inteligencji, wykorzystywanymi aktualnie w badaniach naukowych i przemyśle, w szczególności zrozumienie i implementacja architektur sztucznych sieci neuronywch wykorzystywanych w analizie obrazu, analizie danych danych tabelarycznych i przetwarzaniu języka naturalnego. Do celów pośrednich przedmiotu należy również nauka wyszukiwania informacji na temat najnowszych osiągnięć z dziedziny sztucznej inteligencji oraz otwarty zbiorów danych przydatnych w analizie danego zagadnienia.",

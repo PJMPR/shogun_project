@@ -178,7 +178,7 @@ function Generate-Tex($s, [string]$code) {
     $lacznie      = [char]0x0141 + [char]0x0105 + "cznie"
     $godzZaj      = "Godziny zaj" + [char]0x0119 + [char]0x0107 + " i punkty ECTS"
     $tresciSec    = "Tre" + [char]0x015B + "ci programowe"
-    $efektySec    = "Efekty kszta" + [char]0x0142 + "cenia"
+    $efektySec    = "Przedmiotowe efekty uczenia si"+ [char]0x0119
     $umiejSec     = "Umiej" + [char]0x0119 + "tno" + [char]0x015B + "ci"
     $krytSec      = "Kryteria oceny"
     $metSec       = "Metody dydaktyczne"

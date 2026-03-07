@@ -94,10 +94,10 @@ function efektySection(ef) {
 
 function efektyList(items, prefix) {
   let out = `{\\scriptsize\n\\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}\n`;
-  out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Efekt kształcenia}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kody PRK}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmioty}} \\\\\n\\midrule\\thdend\n`;
-  out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Efekt kształcenia}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kody PRK}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmioty}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+  out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Efekt uczenia się}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kody PRK}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmioty}} \\\\\n\\midrule\\thdend\n`;
+  out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Efekt uczenia się}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kody PRK}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmioty}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
   items.forEach((item, i) => {
-    const kod  = `${prefix}${String(i+1).padStart(2,'0')}`;
+    const kod  = item.kod_efektu || `${prefix}${String(i+1).padStart(2,'0')}`;
     const bg   = (i % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
     const prk  = item.mnsiw
       ? [...new Map(item.mnsiw.map(m => [m.kod + (m.inzynierskie ? '_inz' : ''), m])).values()]
@@ -316,7 +316,7 @@ function charTabela(isSt, semCount, semesters, elOth) {
     `  {\\small ${label}} & {\\small\\textbf{${value}}} \\\\\n`;
 
   let out = `{\\renewcommand{\\arraystretch}{1.4}\n`;
-  out += `\\begin{tabularx}{\\textwidth}{@{}Xr@{}}\n`;
+  out += `\\begin{tabularx}{\\textwidth}{@{}Xp{7cm}@{}}\n`;
   out += `\\toprule\n`;
   out += row('Nazwa kierunku:', 'Informatyka');
   out += row('Poziom:', 'Pierwszy stopień');
@@ -533,7 +533,7 @@ Praktyki mogą odbywać się w trakcie roku akademickiego w kraju i za granicą,
 
 Praktyki mogą mieć zarówno charakter odpłatny, jak i nieodpłatny. Uczelnia nie pokrywa kosztów związanych z ich organizacją.
 
-Osobami odpowiedzialnymi za weryfikację i rozliczanie praktyk z ramienia PJATK są \\textbf{Pełnomocnik Rektora ds.~Praktyk Studenckich}.
+Osobą odpowiedzialną za weryfikację i rozliczanie praktyk z ramienia PJATK jest \\textbf{Pełnomocnik Rektora ds.~Praktyk Studenckich}.
 
 Rozliczenie odbywa się na podstawie Sprawozdania z praktyk oraz dodatkowych załączników. W ramach praktyk zawodowych mogą zostać rozliczone np.: praca zarobkowa, staż lub wolontariat, jeżeli pełnione obowiązki umożliwiają osiągnięcie założonych efektów uczenia się, a student posiada w tym czasie prawa studenckie.
 
