@@ -323,7 +323,7 @@ function charTabela(isSt, semCount, semesters, elOth) {
   out += row('Profil:', 'Praktyczny');
   out += row('Forma:', forma);
   out += row('Język wykładowy:', 'Polski');
-  out += row('Kierunek przyporządkowany do dyscypliny:', 'Nauki techniczne');
+  out += row('Kierunek przyporządkowany do dyscypliny:', 'Informatyka techniczna i telekomunikacja w dziedzinie nauk inżynieryjno technicznych');
   out += `\\midrule\n`;
   out += row('Liczba semestrów:', `${semCount}`);
   out += row('Liczba punktów ECTS konieczna do ukończenia studiów:', '210');
