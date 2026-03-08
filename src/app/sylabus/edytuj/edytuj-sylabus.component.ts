@@ -156,6 +156,14 @@ export class EdytujSylabusComponent implements OnInit {
   metodyCwiczeniaOptions: { label: string; value: string }[] = [];
   krytyriaOptions: { label: string; value: string }[] = [];
 
+  /** Opcje KEU per kategoria */
+  keuWiedzaOptions: { label: string; value: string }[] = [];
+  keuUmiejOptions:  { label: string; value: string }[] = [];
+  keuKompOptions:   { label: string; value: string }[] = [];
+
+  /** Opcje metody weryfikacji (z pliku JSON) */
+  metodyWeryfikacjiOptions: { label: string; value: string }[] = [];
+
   constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
 
   ngOnInit(): void {
@@ -165,7 +173,19 @@ export class EdytujSylabusComponent implements OnInit {
       this.metodyCwiczeniaOptions = (data.cwiczenia_laboratorium as string[]).map((m: string) => ({ label: m, value: m }));
     });
     this.http.get<any>(this.baseHref.assetUrl('metody_weryfikacji.json')).subscribe(data => {
-      this.krytyriaOptions = (data.metody_weryfikacji as string[]).map((m: string) => ({ label: m, value: m }));
+      const opts = (data.metody_weryfikacji as string[]).map((m: string) => ({ label: m, value: m }));
+      this.krytyriaOptions = opts;
+      this.metodyWeryfikacjiOptions = opts;
+    });
+    this.http.get<any>(this.baseHref.assetUrl('efekty_ksztalcenia.json')).subscribe(data => {
+      const ef = data.efekty_ksztalcenia;
+      const toOpts = (arr: any[]) => arr.map((e: any) => ({
+        label: `${e.kod_efektu} – ${e.tresc}`,
+        value: e.kod_efektu,
+      }));
+      this.keuWiedzaOptions = toOpts(ef.wiedza ?? []);
+      this.keuUmiejOptions  = toOpts(ef.umiejetnosci ?? []);
+      this.keuKompOptions   = toOpts(ef.kompetencje_spoleczne ?? []);
     });
   }
 
@@ -448,6 +468,12 @@ export class EdytujSylabusComponent implements OnInit {
 
   removeEfekt(lista: EfektItem[], i: number): void {
     if (lista.length > 1) lista.splice(i, 1);
+  }
+
+  getKeuOptions(kategoria: 'wiedza' | 'umiejetnosci' | 'kompetencje'): { label: string; value: string }[] {
+    if (kategoria === 'wiedza') return this.keuWiedzaOptions;
+    if (kategoria === 'umiejetnosci') return this.keuUmiejOptions;
+    return this.keuKompOptions;
   }
 
   private splitLines(txt: string): string[] {

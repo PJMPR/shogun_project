@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
@@ -8,6 +9,7 @@ import { PanelModule } from 'primeng/panel';
 import { DividerModule } from 'primeng/divider';
 import { SelectModule } from 'primeng/select';
 import { SubjectRow } from '../../stacjonarne/program/models/program.models';
+import { BaseHrefService } from '../base-href.service';
 
 interface PrzedmiotWprowadzajacy {
   nazwa: string;
@@ -76,6 +78,16 @@ export class SylabusFormComponent implements OnInit {
 
   sposobyZaliczenia = SPOSOBY_ZALICZENIA;
 
+  /** Opcje KEU per kategoria */
+  keuWiedzaOptions: { label: string; value: string }[] = [];
+  keuUmiejOptions:  { label: string; value: string }[] = [];
+  keuKompOptions:   { label: string; value: string }[] = [];
+
+  /** Opcje metody weryfikacji */
+  metodyWeryfikacjiOptions: { label: string; value: string }[] = [];
+
+  constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
+
   form: FormModel = {
     odpowiedzialny: '',
     z_udzialem_prowadzacego_h: null,
@@ -104,7 +116,6 @@ export class SylabusFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form.tryb_studiow = this.trybStudiow;
-    // Ustaw godziny z_udzialem jako suma godzin kontaktowych
     const w = (this.subject.lecture as number) || 0;
     const c = (this.subject.tutorial as number) || 0;
     const l = (this.subject.lab as number) || 0;
@@ -113,12 +124,24 @@ export class SylabusFormComponent implements OnInit {
     this.form.calkowita_liczba_godzin_h = ects * 25;
     this.form.praca_wlasna_studenta_h =
       this.form.calkowita_liczba_godzin_h - this.form.z_udzialem_prowadzacego_h;
-
-    // Ustaw domyślne formy zaliczenia na podstawie form przedmiotu
     const form = this.subject.form;
     if (w > 0) this.form.zaliczenie_wyklad = form === 'EZ' ? 'Egzamin' : 'Zaliczenie z oceną';
     if (c > 0) this.form.zaliczenie_cwiczenia = 'Zaliczenie z oceną';
     if (l > 0) this.form.zaliczenie_laboratorium = 'Zaliczenie z oceną';
+
+    this.http.get<any>(this.baseHref.assetUrl('metody_weryfikacji.json')).subscribe(data => {
+      this.metodyWeryfikacjiOptions = (data.metody_weryfikacji as string[]).map((m: string) => ({ label: m, value: m }));
+    });
+    this.http.get<any>(this.baseHref.assetUrl('efekty_ksztalcenia.json')).subscribe(data => {
+      const ef = data.efekty_ksztalcenia;
+      const toOpts = (arr: any[]) => arr.map((e: any) => ({
+        label: `${e.kod_efektu} – ${e.tresc}`,
+        value: e.kod_efektu,
+      }));
+      this.keuWiedzaOptions = toOpts(ef.wiedza ?? []);
+      this.keuUmiejOptions  = toOpts(ef.umiejetnosci ?? []);
+      this.keuKompOptions   = toOpts(ef.kompetencje_spoleczne ?? []);
+    });
   }
 
   get lectureH(): number { return Number(this.subject?.lecture) || 0; }

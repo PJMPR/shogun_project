@@ -217,6 +217,20 @@
 
 .es-input-sm { font-size: 0.85rem; }
 
+:host ::ng-deep .es-keu-select,
+:host ::ng-deep .es-met-select {
+  width: 100%;
+  font-size: 0.82rem;
+}
+:host ::ng-deep .es-keu-select .p-select-label,
+:host ::ng-deep .es-met-select .p-select-label {
+  font-size: 0.82rem;
+  padding: 0.3rem 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .es-action-bar {
   display: flex;
   gap: 1rem;

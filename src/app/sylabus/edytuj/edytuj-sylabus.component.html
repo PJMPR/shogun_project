@@ -329,9 +329,9 @@
       <small class="es-hint-block">Każdy wiersz to jeden efekt: kod KEU, treść (PEU) i metoda weryfikacji.</small>
 
       @for (kat of [
-        { label: 'Wiedza', icon: 'pi pi-lightbulb', lista: form.efekty_wiedza },
-        { label: 'Umiejętności', icon: 'pi pi-cog', lista: form.efekty_umiejetnosci },
-        { label: 'Kompetencje społeczne', icon: 'pi pi-users', lista: form.efekty_kompetencje }
+        { label: 'Wiedza', icon: 'pi pi-lightbulb', lista: form.efekty_wiedza,       keuOpts: keuWiedzaOptions },
+        { label: 'Umiejętności', icon: 'pi pi-cog', lista: form.efekty_umiejetnosci, keuOpts: keuUmiejOptions },
+        { label: 'Kompetencje społeczne', icon: 'pi pi-users', lista: form.efekty_kompetencje, keuOpts: keuKompOptions }
       ]; track kat.label) {
         <p class="es-label" style="margin-top:12px"><i [class]="kat.icon"></i> {{ kat.label }}</p>
         <div class="es-efekty-table">
@@ -344,14 +344,34 @@
           @for (e of kat.lista; track $index) {
             <div class="es-efekty-row">
               <div class="es-efekty-col-keu">
-                <input pInputText [(ngModel)]="e.keu" placeholder="np. K_W01" class="es-input es-input-sm" />
+                <p-select
+                  [options]="kat.keuOpts"
+                  [(ngModel)]="e.keu"
+                  optionLabel="label"
+                  optionValue="value"
+                  [filter]="true"
+                  filterBy="label"
+                  [editable]="true"
+                  placeholder="Wybierz KEU..."
+                  appendTo="body"
+                  styleClass="es-keu-select"
+                />
               </div>
               <div class="es-efekty-col-peu">
                 <textarea pTextarea [(ngModel)]="e.peu" rows="2" class="es-textarea es-textarea-sm"
                           placeholder="Treść efektu..."></textarea>
               </div>
               <div class="es-efekty-col-met">
-                <input pInputText [(ngModel)]="e.metoda_weryfikacji" placeholder="np. kolokwium" class="es-input es-input-sm" />
+                <p-select
+                  [options]="metodyWeryfikacjiOptions"
+                  [(ngModel)]="e.metoda_weryfikacji"
+                  optionLabel="label"
+                  optionValue="value"
+                  [editable]="true"
+                  placeholder="Wybierz metodę..."
+                  appendTo="body"
+                  styleClass="es-met-select"
+                />
               </div>
               <div class="es-efekty-col-btn">
                 <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"

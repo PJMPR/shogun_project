@@ -206,3 +206,17 @@
 .sf-input-sm { font-size: 0.85rem; }
 .sf-textarea-sm { font-size: 0.85rem; }
 
+:host ::ng-deep .sf-keu-select,
+:host ::ng-deep .sf-met-select {
+  width: 100%;
+  font-size: 0.82rem;
+}
+:host ::ng-deep .sf-keu-select .p-select-label,
+:host ::ng-deep .sf-met-select .p-select-label {
+  font-size: 0.82rem;
+  padding: 0.3rem 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
