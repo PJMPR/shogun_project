@@ -4,7 +4,7 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 28,
+        "ects": 26,
         "lecture": 184,
         "tutorial": 120,
         "lab": 120
@@ -32,7 +32,7 @@
           "tutorial": 0,
           "lab": 60,
           "form": "EZ",
-          "ects": 6,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/PRG1.json",
           "pdf": "assets/files/stacjonarne/PRG1.pdf",
           "docFile": "assets/files/stacjonarne/PRG1.docx"
@@ -97,7 +97,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/ANG1.json",
           "pdf": "assets/files/stacjonarne/ANG1.pdf",
           "docFile": "assets/files/stacjonarne/ANG1.docx"
@@ -117,7 +117,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 30,
+        "ects": 28,
         "lecture": 150,
         "tutorial": 150,
         "lab": 90
@@ -158,7 +158,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/RBD.json",
           "pdf": "assets/files/stacjonarne/RBD.pdf",
           "docFile": "assets/files/stacjonarne/RBD.docx"
@@ -232,7 +232,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/ANG2.json",
           "pdf": "assets/files/stacjonarne/ANG2.pdf",
           "docFile": "assets/files/stacjonarne/ANG2.docx"
@@ -242,7 +242,7 @@
     {
       "semester": 3,
       "summary": {
-        "ects": 35,
+        "ects": 30,
         "lecture": 165,
         "tutorial": 90,
         "lab": 255
@@ -257,7 +257,7 @@
           "tutorial": 0,
           "lab": 60,
           "form": "Z",
-          "ects": 6,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/PAI.json",
           "pdf": "assets/files/stacjonarne/PAI.pdf",
           "docFile": "assets/files/stacjonarne/PAI.docx"
@@ -305,7 +305,7 @@
           "tutorial": 15,
           "lab": 15,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/SAD.json",
           "pdf": "assets/files/stacjonarne/SAD.pdf",
           "docFile": "assets/files/stacjonarne/SAD.docx"
@@ -331,7 +331,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/SOP.json",
           "pdf": "assets/files/stacjonarne/SOP.pdf",
           "docFile": "assets/files/stacjonarne/SOP.docx"
@@ -344,7 +344,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/ASD.json",
           "pdf": "assets/files/stacjonarne/ASD.pdf",
           "docFile": "assets/files/stacjonarne/ASD.docx"
@@ -357,7 +357,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/ANG3.json",
           "pdf": "assets/files/stacjonarne/ANG3.pdf",
           "docFile": "assets/files/stacjonarne/ANG3.docx"
@@ -367,7 +367,7 @@
     {
       "semester": 4,
       "summary": {
-        "ects": 34,
+        "ects": 30,
         "lecture": 195,
         "tutorial": 90,
         "lab": 195
@@ -382,7 +382,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/GRK.json",
           "pdf": "assets/files/stacjonarne/GRK.pdf",
           "docFile": "assets/files/stacjonarne/GRK.docx"
@@ -395,7 +395,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/PRI.json",
           "pdf": "assets/files/stacjonarne/PRI.pdf",
           "docFile": "assets/files/stacjonarne/PRI.docx"
@@ -421,7 +421,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/SKOA.json",
           "pdf": "assets/files/stacjonarne/SKOA.pdf",
           "docFile": "assets/files/stacjonarne/SKOA.docx"
@@ -495,7 +495,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK1"
         }
       ]
@@ -503,7 +503,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 27,
+        "ects": 26,
         "lecture": 150,
         "tutorial": 75,
         "lab": 135
@@ -603,7 +603,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK2"
         }
       ]
@@ -611,7 +611,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 21,
+        "ects": 20,
         "lecture": 90,
         "tutorial": 60,
         "lab": 135
@@ -673,7 +673,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK3"
         }
       ]

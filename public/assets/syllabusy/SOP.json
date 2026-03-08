@@ -20,8 +20,8 @@
         "ects": 5,
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
-            "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta_h": 60,
+            "calkowita_liczba_godzin_h": 120,
             "praca_wlasna_studenta": "Samodzielne ćwiczenia z systemów operacyjnych (zarządzanie procesami, pamięcią, systemem plików); realizacja projektu zespołowego; przygotowanie do kolokwium i egzaminu."
         },
         "metody_dydaktyczne": {

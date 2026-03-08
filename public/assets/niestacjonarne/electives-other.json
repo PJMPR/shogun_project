@@ -367,7 +367,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/LANG1.json",
           "pdf": "assets/files/niestacjonarne/LANG1.pdf",
           "docFile": "assets/files/niestacjonarne/LANG1.docx"
@@ -379,7 +379,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/NIM1.json",
           "pdf": "assets/files/niestacjonarne/NIM1.pdf",
           "docFile": "assets/files/niestacjonarne/NIM1.docx"
@@ -391,7 +391,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/HIS1.json",
           "pdf": "assets/files/niestacjonarne/HIS1.pdf",
           "docFile": "assets/files/niestacjonarne/HIS1.docx"
@@ -403,7 +403,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JAP1.json",
           "pdf": "assets/files/niestacjonarne/JAP1.pdf",
           "docFile": "assets/files/niestacjonarne/JAP1.docx"
@@ -422,7 +422,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/LANG2.json",
           "pdf": "assets/files/niestacjonarne/LANG2.pdf",
           "docFile": "assets/files/niestacjonarne/LANG2.docx"
@@ -434,7 +434,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/NIM2.json",
           "pdf": "assets/files/niestacjonarne/NIM2.pdf",
           "docFile": "assets/files/niestacjonarne/NIM2.docx"
@@ -446,7 +446,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/HIS2.json",
           "pdf": "assets/files/niestacjonarne/HIS2.pdf",
           "docFile": "assets/files/niestacjonarne/HIS2.docx"
@@ -458,7 +458,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JAP2.json",
           "pdf": "assets/files/niestacjonarne/JAP2.pdf",
           "docFile": "assets/files/niestacjonarne/JAP2.docx"
@@ -477,7 +477,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/LANG3.json",
           "pdf": "assets/files/niestacjonarne/LANG3.pdf",
           "docFile": "assets/files/niestacjonarne/LANG3.docx"
@@ -489,7 +489,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/NIM3.json",
           "pdf": "assets/files/niestacjonarne/NIM3.pdf",
           "docFile": "assets/files/niestacjonarne/NIM3.docx"
@@ -501,7 +501,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/HIS3.json",
           "pdf": "assets/files/niestacjonarne/HIS3.pdf",
           "docFile": "assets/files/niestacjonarne/HIS3.docx"
@@ -513,7 +513,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JAP3.json",
           "pdf": "assets/files/niestacjonarne/JAP3.pdf",
           "docFile": "assets/files/niestacjonarne/JAP3.docx"

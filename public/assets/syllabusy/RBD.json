@@ -17,11 +17,11 @@
             "laboratorium_projekt": 30
         },
         "odpowiedzialny_za_przedmiot": "Adam Urbanowicz aurbanow@pjwstk.edu.pl",
-        "ects": 5,
+        "ects": 4,
         "godziny": {
             "z_udzialem_prowadzacego_h": 60,
-            "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta_h": 60,
+            "calkowita_liczba_godzin_h": 120,
             "praca_wlasna_studenta": "Projektowanie i implementacja zapytań SQL; modelowanie relacyjnych baz danych (normalizacja, diagramy ER); przygotowanie do kolokwium."
         },
         "metody_dydaktyczne": {
