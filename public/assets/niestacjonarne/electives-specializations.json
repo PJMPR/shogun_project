@@ -70,8 +70,8 @@
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/KCs.json",
-          "pdf": "assets/files/niestacjonarne/KCs.pdf",
-          "docFile": "assets/files/niestacjonarne/KCs.docx"
+          "pdf": "assets/files/niestacjonarne/KC.pdf",
+          "docFile": "assets/files/niestacjonarne/KC.docx"
         },
         {
           "semester": 6,

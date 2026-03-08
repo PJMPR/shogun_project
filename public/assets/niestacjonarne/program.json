@@ -625,7 +625,10 @@
           "lab": 32,
           "form": "Z",
           "ects": 6,
-          "electiveGroup": "PRZ1"
+          "electiveGroup": "PRZ1",
+          "syllabusFile": "assets/syllabusy-n/PRZ1.json",
+          "pdf": "assets/files/niestacjonarne/PRZ2.pdf",
+          "docFile": "assets/files/niestacjonarne/PRZ1.docx"
         },
         {
           "name": "Przedmiot obieralny humanistyczny/społeczny 2",
@@ -728,7 +731,10 @@
           "lab": 40,
           "form": "Z",
           "ects": 6,
-          "electiveGroup": "PRZ2"
+          "electiveGroup": "PRZ2",
+          "syllabusFile": "assets/syllabusy-n/PRZ2.json",
+          "pdf": "assets/files/niestacjonarne/PRZ2.pdf",
+          "docFile": "assets/files/niestacjonarne/PRZ2.docx"
         },
         {
           "name": "Społeczne aspekty informatyki",
