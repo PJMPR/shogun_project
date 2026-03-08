@@ -63,18 +63,50 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie specyfikę systemów czasu rzeczywistego (SCR): definicję twardego i miękkiego czasu rzeczywistego, wymagania dotyczące deterministyczności, niezawodności i bezpieczeństwa. [K_W18]",
-        "Student zna i rozumie architektury RTOS (FreeRTOS, Zephyr, QNX): harmonogramowanie zadań (RM, EDF), zarządzanie przerwaniami, komunikację między zadaniami (kolejki, semafory, zdarzenia) i analizę czasu wykonania (WCET). [K_W26]",
-        "Student zna i rozumie zastosowania systemów czasu rzeczywistego w automatyce przemysłowej, robotyce, medycynie i Internecie Rzeczy oraz powiązane standardy bezpieczeństwa (IEC 61131, DO-178). [K_W18]"
+        {
+          "keu": "K_W18",
+          "peu": "Student zna i rozumie specyfikę systemów czasu rzeczywistego (SCR): definicję twardego i miękkiego czasu rzeczywistego, wymagania dotyczące deterministyczności, niezawodności i bezpieczeństwa. [K_W18]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W26",
+          "peu": "Student zna i rozumie architektury RTOS (FreeRTOS, Zephyr, QNX): harmonogramowanie zadań (RM, EDF), zarządzanie przerwaniami, komunikację między zadaniami (kolejki, semafory, zdarzenia) i analizę czasu wykonania (WCET). [K_W26]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W18",
+          "peu": "Student zna i rozumie zastosowania systemów czasu rzeczywistego w automatyce przemysłowej, robotyce, medycynie i Internecie Rzeczy oraz powiązane standardy bezpieczeństwa (IEC 61131, DO-178). [K_W18]",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zaprojektować i zaimplementować aplikację czasu rzeczywistego z użyciem RTOS, w tym zaplanować harmonogram zadań, zaimplementować synchronizację i spełnić ograniczenia czasowe. [K_U23]",
-        "Student potrafi zdiagnozować problem specyficzny dla systemu IoT/RT, zaprojektować jego rozwiązanie z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa systemu wbudowanego. [K_U33]",
-        "Student potrafi zastosować informatykę na rzecz rozwiązywania problemów automatyki i robotyki, przenosząc dobre praktyki projektowania systemów czasu rzeczywistego. [K_K01]"
+        {
+          "keu": "K_U23",
+          "peu": "Student potrafi zaprojektować i zaimplementować aplikację czasu rzeczywistego z użyciem RTOS, w tym zaplanować harmonogram zadań, zaimplementować synchronizację i spełnić ograniczenia czasowe. [K_U23]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_U33",
+          "peu": "Student potrafi zdiagnozować problem specyficzny dla systemu IoT/RT, zaprojektować jego rozwiązanie z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa systemu wbudowanego. [K_U33]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_K01",
+          "peu": "Student potrafi zastosować informatykę na rzecz rozwiązywania problemów automatyki i robotyki, przenosząc dobre praktyki projektowania systemów czasu rzeczywistego. [K_K01]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do zastosowania systemów czasu rzeczywistego w rozwiązaniach przemysłowych i IoT, z uwzględnieniem wymogów certyfikacji i bezpieczeństwa. [K_K01]",
-        "Student jest gotów do samodzielnego poszerzania wiedzy o nowych architekturach RTOS i standardach przemysłowych. [K_K03]"
+        {
+          "keu": "K_K01",
+          "peu": "Student jest gotów do zastosowania systemów czasu rzeczywistego w rozwiązaniach przemysłowych i IoT, z uwzględnieniem wymogów certyfikacji i bezpieczeństwa. [K_K01]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego poszerzania wiedzy o nowych architekturach RTOS i standardach przemysłowych. [K_K03]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji"
+        }
       ]
     },
     "tresci_programowe": [

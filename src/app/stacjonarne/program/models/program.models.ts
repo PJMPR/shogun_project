@@ -155,10 +155,16 @@ export interface SylabusLiteratura {
   dokumentacja_internetowa?: { [key: string]: string };
 }
 
+export interface SylabusEfektyItem {
+  keu: string;
+  peu: string;
+  metoda_weryfikacji: string;
+}
+
 export interface SylabusEfekty {
-  wiedza?: string | string[];
-  umiejetnosci?: string | string[];
-  kompetencje_spoleczne?: string | string[];
+  wiedza?: SylabusEfektyItem[] | string[] | string;
+  umiejetnosci?: SylabusEfektyItem[] | string[] | string;
+  kompetencje_spoleczne?: SylabusEfektyItem[] | string[] | string;
 }
 
 export interface SylabusMetodyDydaktyczne {

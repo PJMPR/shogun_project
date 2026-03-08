@@ -172,39 +172,77 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{itemize}
-  \item Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności.
-  \item Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem.
-  \item Student zna i rozumie cykl życia kontenera oraz zasady tworzenia efektywnych obrazów Dockera z użyciem instrukcji Dockerfile: FROM, RUN, COPY, ENV, EXPOSE, ENTRYPOINT, CMD.
-  \item Student zna i rozumie mechanizmy sieciowe Dockera (bridge, host, overlay, macvlan) oraz sposoby persystowania danych (volumes, bind mounts, tmpfs).
-  \item Student zna i rozumie przeznaczenie i budowę pliku docker-compose.yml: definiowanie usług, sieci, woluminów, zmiennych środowiskowych i zależności między serwisami.
-  \item Student zna i rozumie architekturę Kubernetes: komponenty warstwy sterowania (API Server, etcd, Scheduler, Controller Manager) oraz węzłów roboczych (kubelet, kube-proxy, container runtime).
-  \item Student zna i rozumie podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment, Service (ClusterIP, NodePort, LoadBalancer), ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, Ingress.
-  \item Student zna i rozumie zasady skalowania aplikacji w Kubernetes: skalowanie manualne, Horizontal Pod Autoscaler (HPA) oraz rolling update i rollback.
-  \item Student zna i rozumie zagadnienia bezpieczeństwa kontenerów: zasadę najmniejszych uprawnień, skanowanie obrazów pod kątem podatności (Trivy, Snyk), zarządzanie sekretami oraz polityki sieciowe (NetworkPolicy).
-  \item Student zna i rozumie podstawy CI/CD w kontekście konteneryzacji: budowanie i publikowanie obrazów w potoku CI (GitHub Actions, GitLab CI), strategie wdrożeń (rolling, blue-green, canary).
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_W08 & Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie cykl życia kontenera oraz zasady tworzenia efektywnych obrazów Dockera z użyciem instrukcji Dockerfile: FROM, RUN, COPY, ENV, EXPOSE, ENTRYPOINT, CMD. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie mechanizmy sieciowe Dockera (bridge, host, overlay, macvlan) oraz sposoby persystowania danych (volumes, bind mounts, tmpfs). & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie przeznaczenie i budowę pliku docker-compose.yml: definiowanie usług, sieci, woluminów, zmiennych środowiskowych i zależności między serwisami. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie architekturę Kubernetes: komponenty warstwy sterowania (API Server, etcd, Scheduler, Controller Manager) oraz węzłów roboczych (kubelet, kube-proxy, container runtime). & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment, Service (ClusterIP, NodePort, LoadBalancer), ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, Ingress. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie zasady skalowania aplikacji w Kubernetes: skalowanie manualne, Horizontal Pod Autoscaler (HPA) oraz rolling update i rollback. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W23 & Student zna i rozumie zagadnienia bezpieczeństwa kontenerów: zasadę najmniejszych uprawnień, skanowanie obrazów pod kątem podatności (Trivy, Snyk), zarządzanie sekretami oraz polityki sieciowe (NetworkPolicy). & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie podstawy CI/CD w kontekście konteneryzacji: budowanie i publikowanie obrazów w potoku CI (GitHub Actions, GitLab CI), strategie wdrożeń (rolling, blue-green, canary). & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+\end{longtable}
 
 \subsection*{Umiejętności}
-\begin{itemize}
-  \item Student potrafi napisać poprawny plik Dockerfile dla aplikacji webowej (Node.js, Python lub Java), stosując best practices: multi-stage build, minimalizację warstw, użytkownik non-root, .dockerignore.
-  \item Student potrafi zbudować, otagować i opublikować obraz Docker w rejestrze Docker Hub oraz w prywatnym rejestrze.
-  \item Student potrafi skonfigurować plik docker-compose.yml dla środowiska wielokontenerowego (aplikacja webowa + baza danych + cache), uruchamiać, zatrzymywać i debugować usługi.
-  \item Student potrafi skonfigurować sieci i woluminy Dockera w celu zapewnienia izolacji i persystencji danych między kontenerami.
-  \item Student potrafi wdrożyć aplikację na lokalny klaster Kubernetes (Minikube lub k3s), tworząc manifesty YAML dla obiektów Deployment, Service i Ingress.
-  \item Student potrafi skonfigurować ConfigMap i Secret w Kubernetes oraz przekazywać zmienne środowiskowe i pliki konfiguracyjne do podów.
-  \item Student potrafi przeprowadzić rolling update i rollback wdrożenia w Kubernetes oraz monitorować stan klastra poleceniami kubectl (get, describe, logs, exec, top).
-  \item Student potrafi skonfigurować Horizontal Pod Autoscaler i zweryfikować działanie automatycznego skalowania pod obciążeniem.
-  \item Student potrafi skonfigurować prosty potok CI/CD (GitHub Actions) automatycznie budujący i publikujący obraz Docker po każdym push do repozytorium.
-  \item Student potrafi zidentyfikować i usunąć podstawowe problemy z kontenerami (crashloopbackoff, brak zasobów, błędy konfiguracji sieci) przy użyciu narzędzi diagnostycznych.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_U27 & Student potrafi napisać poprawny plik Dockerfile dla aplikacji webowej (Node.js, Python lub Java), stosując best practices: multi-stage build, minimalizację warstw, użytkownik non-root, .dockerignore. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi zbudować, otagować i opublikować obraz Docker w rejestrze Docker Hub oraz w prywatnym rejestrze. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi skonfigurować plik docker-compose.yml dla środowiska wielokontenerowego (aplikacja webowa + baza danych + cache), uruchamiać, zatrzymywać i debugować usługi. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi skonfigurować sieci i woluminy Dockera w celu zapewnienia izolacji i persystencji danych między kontenerami. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi wdrożyć aplikację na lokalny klaster Kubernetes (Minikube lub k3s), tworząc manifesty YAML dla obiektów Deployment, Service i Ingress. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi skonfigurować ConfigMap i Secret w Kubernetes oraz przekazywać zmienne środowiskowe i pliki konfiguracyjne do podów. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi przeprowadzić rolling update i rollback wdrożenia w Kubernetes oraz monitorować stan klastra poleceniami kubectl (get, describe, logs, exec, top). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi skonfigurować Horizontal Pod Autoscaler i zweryfikować działanie automatycznego skalowania pod obciążeniem. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi skonfigurować prosty potok CI/CD (GitHub Actions) automatycznie budujący i publikujący obraz Docker po każdym push do repozytorium. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi zidentyfikować i usunąć podstawowe problemy z kontenerami (crashloopbackoff, brak zasobów, błędy konfiguracji sieci) przy użyciu narzędzi diagnostycznych. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \subsection*{Kompetencje społeczne}
-\begin{itemize}
-  \item Student jest gotów do stosowania podejścia Infrastructure as Code, traktując pliki konfiguracyjne (Dockerfile, docker-compose.yml, manifesty Kubernetes) jako integralną część kodu źródłowego przechowywanego w systemie kontroli wersji.
-  \item Student jest gotów do krytycznej oceny zasadności konteneryzacji w danym projekcie, uwzględniając koszty utrzymania infrastruktury, złożoność operacyjną i wymagania bezpieczeństwa.
-  \item Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu technologii chmurowych i DevOps, śledząc dokumentację, blogi techniczne i społeczność open source (CNCF).
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_K05 & Student jest gotów do stosowania podejścia Infrastructure as Code, traktując pliki konfiguracyjne (Dockerfile, docker-compose.yml, manifesty Kubernetes) jako integralną część kodu źródłowego przechowywanego w systemie kontroli wersji. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K05 & Student jest gotów do krytycznej oceny zasadności konteneryzacji w danym projekcie, uwzględniając koszty utrzymania infrastruktury, złożoność operacyjną i wymagania bezpieczeństwa. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu technologii chmurowych i DevOps, śledząc dokumentację, blogi techniczne i społeczność open source (CNCF). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \section{Kryteria oceny}
 

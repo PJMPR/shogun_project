@@ -1,166 +1,190 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
-        "jednostka": "Filia w Gdańsku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "stacjonarny",
-        "wersja_z_dnia": "19.02.2026",
-        "nazwa_przedmiotu": "Programowanie systemowe",
-        "kod_przedmiotu": "LLP",
-        "rok_studiow": 2,
-        "semestr_studiow": 4,
-        "obligatoryjny": true,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 30,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 30
+  "sylabus": {
+    "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Programowanie systemowe",
+    "kod_przedmiotu": "LLP",
+    "rok_studiow": 2,
+    "semestr_studiow": 4,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "mgr inż. Michał Hyla",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": "Samodzielna implementacja programów systemowych; ćwiczenia z systemowych wywołań API; przygotowanie do kolokwiów; praca z narzędziami debugowania na poziomie systemu."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "ocena pracy podczas ćwiczenia"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Podstawy Programowania",
+        "wymagania": "Programowanie strukturalne"
+      }
+    ],
+    "cel_dydaktyczny": "Celem dydaktycznym przedmiotu jest zrozumienie, jak komputer wykonuje program na poziomie architektury i instrukcji procesora, oraz nabycie praktycznych umiejętności programowania w asemblerze x86. Student nauczy się świadomie operować pamięcią, stosem, przepływem sterowania (skoki, pętle) i arytmetyką, a także projektować i organizować kod",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": []
+      },
+      "uzupelniajaca": {
+        "pozycje": []
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W06",
+          "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu architektury i organizacji systemów komputerowych: model von Neumanna, pipeline, pamięć podręczna (cache), architekturę wielordzeniową i zestawy instrukcji (x86-64, ARM). [K_W06]",
+          "metoda_weryfikacji": ""
         },
-        "odpowiedzialny_za_przedmiot": "mgr inż. Michał Hyla",
-        "ects": 4,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 60,
-            "praca_wlasna_studenta_h": 40,
-            "calkowita_liczba_godzin_h": 100,
-            "praca_wlasna_studenta": "Samodzielna implementacja programów systemowych; ćwiczenia z systemowych wywołań API; przygotowanie do kolokwiów; praca z narzędziami debugowania na poziomie systemu."
-        },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład z prezentacją oprogramowania"
-            ],
-            "cwiczenia_laboratorium": [
-                "rozwiązywanie zadań",
-                "warsztaty"
-            ]
-        },
-        "zaliczenie": {
-            "Wykład": {
-                "sposob": "Zaliczenie z oceną"
-            },
-            "Laboratorium": {
-                "sposob": "Zaliczenie z oceną"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "kolokwium",
-                "ocena pracy podczas ćwiczenia"
-            ]
-        },
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "Podstawy Programowania",
-                "wymagania": "Programowanie strukturalne"
-            }
-        ],
-        "cel_dydaktyczny": "Celem dydaktycznym przedmiotu jest zrozumienie, jak komputer wykonuje program na poziomie architektury i instrukcji procesora, oraz nabycie praktycznych umiejętności programowania w asemblerze x86. Student nauczy się świadomie operować pamięcią, stosem, przepływem sterowania (skoki, pętle) i arytmetyką, a także projektować i organizować kod",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": []
-            },
-            "uzupelniajaca": {
-                "pozycje": []
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie zaawansowane pojęcia z zakresu architektury i organizacji systemów komputerowych: model von Neumanna, pipeline, pamięć podręczna (cache), architekturę wielordzeniową i zestawy instrukcji (x86-64, ARM). [K_W06]",
-                "Student zna i rozumie zasady programowania na poziomie asemblera: reprezentacje liczb (U2, IEEE 754), arytmetykę binarną, tryby adresowania, wywołania systemowe i konwencje wywoływania funkcji. [K_W06]"
-            ],
-            "umiejetnosci": [
-                "Student potrafi zaprojektować proste układy kombinacyjne i sekwencyjne, obliczyć reprezentacje liczb całkowitych i zmiennoprzecinkowych oraz napisać programy w asemblerze x86-64 realizujące zadane algorytmy. [K_U12]",
-                "Student potrafi analizować kod maszynowy i asemblerowy wygenerowany przez kompilator C/C++, identyfikować optymalizacje i rozumieć niskopoziomowe aspekty wykonania programu. [K_U12]"
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu architektury procesorów i programowania niskopoziomowego w oparciu o dokumentację producentów i literaturę branżową. [K_K03]",
-                "Student jest gotów do stosowania wiedzy o niskopoziomowej architekturze systemów przy projektowaniu wydajnego i bezpiecznego oprogramowania. [K_K05]"
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Podstawy architektury komputera",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Wstęp do programowania w x86 assembly",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Pamięć",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Skoki",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Arytmetyka",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "ONP + Stos",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Pętle",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Projekt / funkcje",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Projekt / funkcje, include, asm zaawansowany",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Bootsector OS, BIOS",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "32-bit assembly",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "Bootsector, ładowanie jądra",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "Proste jądro",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 14,
-                "wyklad": "Proste mechanizmy OS, rozwój jądra OS",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "The educational objective of the course is to understand how a computer executes a program at the level of processor architecture and instructions, and to acquire practical skills in x86 assembly programming. Students learn to work consciously with memory, the stack, control flow (jumps, loops), and arithmetic, as well as to design and organize code.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+        {
+          "keu": "K_W06",
+          "peu": "Student zna i rozumie zasady programowania na poziomie asemblera: reprezentacje liczb (U2, IEEE 754), arytmetykę binarną, tryby adresowania, wywołania systemowe i konwencje wywoływania funkcji. [K_W06]",
+          "metoda_weryfikacji": ""
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U12",
+          "peu": "Student potrafi zaprojektować proste układy kombinacyjne i sekwencyjne, obliczyć reprezentacje liczb całkowitych i zmiennoprzecinkowych oraz napisać programy w asemblerze x86-64 realizujące zadane algorytmy. [K_U12]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U12",
+          "peu": "Student potrafi analizować kod maszynowy i asemblerowy wygenerowany przez kompilator C/C++, identyfikować optymalizacje i rozumieć niskopoziomowe aspekty wykonania programu. [K_U12]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu architektury procesorów i programowania niskopoziomowego w oparciu o dokumentację producentów i literaturę branżową. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do stosowania wiedzy o niskopoziomowej architekturze systemów przy projektowaniu wydajnego i bezpiecznego oprogramowania. [K_K05]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Podstawy architektury komputera",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Wstęp do programowania w x86 assembly",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Pamięć",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Skoki",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Arytmetyka",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "ONP + Stos",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Pętle",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Projekt / funkcje",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Projekt / funkcje, include, asm zaawansowany",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Bootsector OS, BIOS",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "32-bit assembly",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Bootsector, ładowanie jądra",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Proste jądro",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Proste mechanizmy OS, rozwój jądra OS",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The educational objective of the course is to understand how a computer executes a program at the level of processor architecture and instructions, and to acquire practical skills in x86 assembly programming. Students learn to work consciously with memory, the stack, control flow (jumps, loops), and arithmetic, as well as to design and organize code.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

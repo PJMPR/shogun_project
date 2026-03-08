@@ -14,6 +14,12 @@ interface PrzedmiotWprowadzajacy {
   wymagania: string;
 }
 
+interface EfektItem {
+  keu: string;
+  peu: string;
+  metoda_weryfikacji: string;
+}
+
 interface FormModel {
   odpowiedzialny: string;
   z_udzialem_prowadzacego_h: number | null;
@@ -29,9 +35,9 @@ interface FormModel {
   metody_cwiczenia_txt: string;
   metody_laboratorium_txt: string;
   przedmioty_wprowadzajace: PrzedmiotWprowadzajacy[];
-  efekty_wiedza_txt: string;
-  efekty_umiejetnosci_txt: string;
-  efekty_kompetencje_txt: string;
+  efekty_wiedza: EfektItem[];
+  efekty_umiejetnosci: EfektItem[];
+  efekty_kompetencje: EfektItem[];
   tresci_programowe_txt: string;
   literatura_podstawowa_txt: string;
   literatura_uzupelniajaca_txt: string;
@@ -85,9 +91,9 @@ export class SylabusFormComponent implements OnInit {
     metody_cwiczenia_txt: '',
     metody_laboratorium_txt: '',
     przedmioty_wprowadzajace: [{ nazwa: '', wymagania: '' }],
-    efekty_wiedza_txt: '',
-    efekty_umiejetnosci_txt: '',
-    efekty_kompetencje_txt: '',
+    efekty_wiedza: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
+    efekty_umiejetnosci: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
+    efekty_kompetencje: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
     tresci_programowe_txt: '',
     literatura_podstawowa_txt: '',
     literatura_uzupelniajaca_txt: '',
@@ -129,6 +135,14 @@ export class SylabusFormComponent implements OnInit {
 
   removePrzedmiot(index: number): void {
     this.form.przedmioty_wprowadzajace.splice(index, 1);
+  }
+
+  addEfekt(lista: EfektItem[]): void {
+    lista.push({ keu: '', peu: '', metoda_weryfikacji: '' });
+  }
+
+  removeEfekt(lista: EfektItem[], i: number): void {
+    if (lista.length > 1) lista.splice(i, 1);
   }
 
   private splitLines(txt: string): string[] {
@@ -208,9 +222,9 @@ export class SylabusFormComponent implements OnInit {
           },
         },
         efekty_ksztalcenia: {
-          wiedza: this.splitLines(this.form.efekty_wiedza_txt),
-          umiejetnosci: this.splitLines(this.form.efekty_umiejetnosci_txt),
-          kompetencje_spoleczne: this.splitLines(this.form.efekty_kompetencje_txt),
+          wiedza:                this.form.efekty_wiedza.filter(e => e.peu.trim()),
+          umiejetnosci:          this.form.efekty_umiejetnosci.filter(e => e.peu.trim()),
+          kompetencje_spoleczne: this.form.efekty_kompetencje.filter(e => e.peu.trim()),
         },
         tresci_programowe: this.splitLines(this.form.tresci_programowe_txt),
       },

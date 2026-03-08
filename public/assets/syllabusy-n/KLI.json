@@ -1,1 +1,157 @@
-{     "sylabus": {         "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",         "jednostka": "Filia w Gdańsku",         "kierunek": "INFORMATYKA",         "profil": "praktyczny",         "tryb_studiow": "niestacjonarny",         "wersja_z_dnia": "08.03.2026",         "nazwa_przedmiotu": "Kompetencje lidera IT",         "kod_przedmiotu": "KLI",         "rok_studiow": 3,         "semestr_studiow": 6,         "obligatoryjny": false,         "forma_i_liczba_godzin_zajec": {             "wyklady": 16,             "cwiczenia_lektorat_seminarium": null,             "laboratorium_projekt": null         },         "odpowiedzialny_za_przedmiot": "Aleksandr Polin",         "ects": 2,         "godziny": {             "z_udzialem_prowadzacego_h": 16,             "praca_wlasna_studenta_h": 34,             "calkowita_liczba_godzin_h": 50,             "praca_wlasna_studenta": "Lektura wskazanych materiałów dotyczących kompetencji liderskich; refleksja i analiza własnych doświadczeń; przygotowanie do aktywnego udziału w konwersatorium."         },         "metody_dydaktyczne": {             "wyklad": [                 "Wykład"             ]         },         "zaliczenie": {             "Wykład": {                 "sposob": "Zaliczenie z oceną"             }         },         "kryteria_oceny": {             "wyklad": [                 "ocena pracy podczas ćwiczenia"             ],             "cwiczenia_laboratorium": []         },         "przedmioty_wprowadzajace": [],         "cel_dydaktyczny": "Przygotowanie studentów do pełnienia ról liderskich w zespołach technicznych (Tech Lead, Team Leader, Scrum Master). Przedmiot kładzie nacisk na rozwój inteligencji emocjonalnej, umiejętność budowania efektywnych zespołów oraz zarządzanie procesami w dynamicznym środowisku IT. Student pozna techniki komunikacji, rozwiązywania konfliktów oraz metodyki wspierające samodzielność zespołów.",         "cel_dydaktyczny_eng": "Preparing students to take on leadership roles in technical teams (Tech Lead, Team Leader, Scrum Master). The course places emphasis on the development of emotional intelligence, the ability to build effective teams, and process management in a dynamic IT environment. Students learn communication techniques, conflict resolution, and methodologies supporting team autonomy.",         "literatura": {             "podstawowa": {                 "pozycje": [                     "Grant A., Give and Take: Why Helping Others Drives Our Success, Penguin Books 2014",                     "Sinek S., Leaders eat last: why some teams pull together and others don't, Penguin Books Ltd (UK) 2019",                     "Catmull E., Creativity, Inc.: an inspiring look at how creativity can - and should - be harnessed for business success by the founder of Pixar, Transworld Publ. Ltd UK 2019"                 ]             },             "uzupelniajaca": {                 "pozycje": [                     "Sinek S., Start With Why: 15th Anniversary Edition: How Great Leaders Inspire Everyone to Take Action, Penguin Books Ltd (UK) 2025"                 ]             }         },         "efekty_ksztalcenia": {             "wiedza": [                 "Student zna różnice między zarządzaniem (management) a przywództwem (leadership) w kontekście inżynierii oprogramowania.",                 "Student rozumie psychologiczne aspekty dynamiki grupowej (model Tuckmana) oraz motywacji pracowników wiedzy.",                 "Student posiada wiedzę na temat różnych stylów przywództwa i potrafi dopasować je do dojrzałości zespołu."             ],             "umiejetnosci": [                 "Student potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI.",                 "Student umie identyfikować źródła konfliktów w zespole i dobierać odpowiednie strategie ich rozwiązywania.",                 "Student potrafi moderować spotkania zespołowe, dbając o zaangażowanie wszystkich członków (facilitation)."             ],             "kompetencje_spoleczne": [                 "Student wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu.",                 "Student jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą."             ]         },         "tresci_programowe": [             {                 "nr_zajec": 1,                 "wyklad": "Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership.",                 "cwiczenia": ""             },             {                 "nr_zajec": 2,                 "wyklad": "Budowanie Zespołu. Rekrutacja \"culture fit\", onboarding i etapy formowania się zespołu.",                 "cwiczenia": ""             },             {                 "nr_zajec": 3,                 "wyklad": "Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych.",                 "cwiczenia": ""             },             {                 "nr_zajec": 4,                 "wyklad": "Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka).",                 "cwiczenia": ""             },             {                 "nr_zajec": 5,                 "wyklad": "Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0).",                 "cwiczenia": ""             },             {                 "nr_zajec": 6,                 "wyklad": "Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej.",                 "cwiczenia": ""             },             {                 "nr_zajec": 7,                 "wyklad": "Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji.",                 "cwiczenia": ""             }         ],         "informacje_dodatkowe": "",         "rynek_pracy": {             "dziedzina_gospodarki": "",             "zawody": "",             "prace_dyplomowe": []         },         "wymagania_laboratorium": {             "pc_params": [],             "software": [],             "wyposazenie_dodatkowe": []         }     } }
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "08.03.2026",
+    "nazwa_przedmiotu": "Kompetencje lidera IT",
+    "kod_przedmiotu": "KLI",
+    "rok_studiow": 3,
+    "semestr_studiow": 6,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Aleksandr Polin",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 16,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Lektura wskazanych materiałów dotyczących kompetencji liderskich; refleksja i analiza własnych doświadczeń; przygotowanie do aktywnego udziału w konwersatorium."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "Wykład"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "ocena pracy podczas ćwiczenia"
+      ],
+      "cwiczenia_laboratorium": []
+    },
+    "przedmioty_wprowadzajace": [],
+    "cel_dydaktyczny": "Przygotowanie studentów do pełnienia ról liderskich w zespołach technicznych (Tech Lead, Team Leader, Scrum Master). Przedmiot kładzie nacisk na rozwój inteligencji emocjonalnej, umiejętność budowania efektywnych zespołów oraz zarządzanie procesami w dynamicznym środowisku IT. Student pozna techniki komunikacji, rozwiązywania konfliktów oraz metodyki wspierające samodzielność zespołów.",
+    "cel_dydaktyczny_eng": "Preparing students to take on leadership roles in technical teams (Tech Lead, Team Leader, Scrum Master). The course places emphasis on the development of emotional intelligence, the ability to build effective teams, and process management in a dynamic IT environment. Students learn communication techniques, conflict resolution, and methodologies supporting team autonomy.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Grant A., Give and Take: Why Helping Others Drives Our Success, Penguin Books 2014",
+          "Sinek S., Leaders eat last: why some teams pull together and others don't, Penguin Books Ltd (UK) 2019",
+          "Catmull E., Creativity, Inc.: an inspiring look at how creativity can - and should - be harnessed for business success by the founder of Pixar, Transworld Publ. Ltd UK 2019"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Sinek S., Start With Why: 15th Anniversary Edition: How Great Leaders Inspire Everyone to Take Action, Penguin Books Ltd (UK) 2025"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W17",
+          "peu": "Student zna różnice między zarządzaniem (management) a przywództwem (leadership) w kontekście inżynierii oprogramowania.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student rozumie psychologiczne aspekty dynamiki grupowej (model Tuckmana) oraz motywacji pracowników wiedzy.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student posiada wiedzę na temat różnych stylów przywództwa i potrafi dopasować je do dojrzałości zespołu.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student umie identyfikować źródła konfliktów w zespole i dobierać odpowiednie strategie ich rozwiązywania.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi moderować spotkania zespołowe, dbając o zaangażowanie wszystkich członków (facilitation).",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K06",
+          "peu": "Student wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Budowanie Zespołu. Rekrutacja \"culture fit\", onboarding i etapy formowania się zespołu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji.",
+        "cwiczenia": ""
+      }
+    ],
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

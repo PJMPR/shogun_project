@@ -71,16 +71,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zaawansowane zagadnienia probabilistyki i statystyki: rozkłady prawdopodobieństwa, procesy stochastyczne, łańcuchy Markowa, teorię kolejek i metody Monte Carlo w kontekście zastosowań informatycznych. [K_W12]",
-        "Student zna i rozumie metody statystycznej analizy danych: estymację parametryczną i nieparametryczną, testowanie hipotez, regresję liniową i podstawy analizy bayesowskiej. [K_W12]"
+        {
+          "keu": "K_W12",
+          "peu": "Student zna i rozumie zaawansowane zagadnienia probabilistyki i statystyki: rozkłady prawdopodobieństwa, procesy stochastyczne, łańcuchy Markowa, teorię kolejek i metody Monte Carlo w kontekście zastosowań informatycznych. [K_W12]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        },
+        {
+          "keu": "K_W12",
+          "peu": "Student zna i rozumie metody statystycznej analizy danych: estymację parametryczną i nieparametryczną, testowanie hipotez, regresję liniową i podstawy analizy bayesowskiej. [K_W12]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zastosować aparat matematyczny statystyki do analizy danych informatycznych, implementować modele probabilistyczne i interpretować wyniki analiz statystycznych. [K_U07]",
-        "Student potrafi posługiwać się narzędziami analityki danych (Python: NumPy, SciPy, pandas, matplotlib) do eksploracji i wizualizacji danych oraz budowy podstawowych modeli predykcyjnych. [K_U07]"
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi zastosować aparat matematyczny statystyki do analizy danych informatycznych, implementować modele probabilistyczne i interpretować wyniki analiz statystycznych. [K_U07]",
+          "metoda_weryfikacji": "kolokwium"
+        },
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi posługiwać się narzędziami analityki danych (Python: NumPy, SciPy, pandas, matplotlib) do eksploracji i wizualizacji danych oraz budowy podstawowych modeli predykcyjnych. [K_U07]",
+          "metoda_weryfikacji": "kolokwium"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do zastosowania metod statystycznych w analizie danych na rzecz rozwiązywania problemów naukowych i inżynierskich. [K_K01]",
-        "Student jest gotów do samodzielnego uczenia się przez całe życie, aktualizując wiedzę z zakresu statystyki i analizy danych. [K_K03]"
+        {
+          "keu": "K_K01",
+          "peu": "Student jest gotów do zastosowania metod statystycznych w analizie danych na rzecz rozwiązywania problemów naukowych i inżynierskich. [K_K01]",
+          "metoda_weryfikacji": "kolokwium"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie, aktualizując wiedzę z zakresu statystyki i analizy danych. [K_K03]",
+          "metoda_weryfikacji": "kolokwium"
+        }
       ]
     },
     "tresci_programowe": [

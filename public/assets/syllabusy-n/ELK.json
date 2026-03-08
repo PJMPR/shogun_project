@@ -71,16 +71,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe prawa i zjawiska elektryczne: prawo Ohma, prawa Kirchhoffa, zasady działania obwodów prądu stałego i przemiennego, elementy pasywne (rezystory, kondensatory, cewki) i podstawy półprzewodnikowe. [K_W02]",
-        "Student zna i rozumie podstawy elektrotechniki i elektroniki w kontekście informatyki: interfejsy elektryczne układów cyfrowych (TTL, CMOS), analogowe układy wzmacniające i konwersja A/D i D/A. [K_W03]"
+        {
+          "keu": "K_W02",
+          "peu": "Student zna i rozumie podstawowe prawa i zjawiska elektryczne: prawo Ohma, prawa Kirchhoffa, zasady działania obwodów prądu stałego i przemiennego, elementy pasywne (rezystory, kondensatory, cewki) i podstawy półprzewodnikowe. [K_W02]",
+          "metoda_weryfikacji": "kolokwium"
+        },
+        {
+          "keu": "K_W03",
+          "peu": "Student zna i rozumie podstawy elektrotechniki i elektroniki w kontekście informatyki: interfejsy elektryczne układów cyfrowych (TTL, CMOS), analogowe układy wzmacniające i konwersja A/D i D/A. [K_W03]",
+          "metoda_weryfikacji": "kolokwium"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi analizować proste obwody elektryczne, projektować układy kombinacyjne i sekwencyjne, obsługiwać przyrządy pomiarowe (multimetr, oscyloskop) i montować układy na płytce prototypowej. [K_U08]",
-        "Student potrafi zaplanować i przeprowadzić pomiary elektryczne, interpretować wyniki i weryfikować działanie projektowanego układu elektronicznego. [K_U09]"
+        {
+          "keu": "K_U08",
+          "peu": "Student potrafi analizować proste obwody elektryczne, projektować układy kombinacyjne i sekwencyjne, obsługiwać przyrządy pomiarowe (multimetr, oscyloskop) i montować układy na płytce prototypowej. [K_U08]",
+          "metoda_weryfikacji": "raport z wykonanego zadania, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U09",
+          "peu": "Student potrafi zaplanować i przeprowadzić pomiary elektryczne, interpretować wyniki i weryfikować działanie projektowanego układu elektronicznego. [K_U09]",
+          "metoda_weryfikacji": "raport z wykonanego zadania, ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do stosowania wiedzy elektrycznej i elektronicznej w projektowaniu systemów informatycznych z komponentami sprzętowymi. [K_K01]",
-        "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu elektroniki i elektrotechniki jako podstawy dla inżynierii systemów wbudowanych. [K_K03]"
+        {
+          "keu": "K_K01",
+          "peu": "Student jest gotów do stosowania wiedzy elektrycznej i elektronicznej w projektowaniu systemów informatycznych z komponentami sprzętowymi. [K_K01]",
+          "metoda_weryfikacji": "raport z wykonanego zadania, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu elektroniki i elektrotechniki jako podstawy dla inżynierii systemów wbudowanych. [K_K03]",
+          "metoda_weryfikacji": "raport z wykonanego zadania, ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

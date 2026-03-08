@@ -67,18 +67,50 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test).",
-        "Student rozumie różnice między projektowaniem skoncentrowanym na technologii a projektowaniem skoncentrowanym na człowieku (Human-Centered Design).",
-        "Student posiada wiedzę o technikach kreatywnego rozwiązywania problemów i moderowania sesji ideacyjnych."
+        {
+          "keu": "K_W15",
+          "peu": "Student zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test).",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W15",
+          "peu": "Student rozumie różnice między projektowaniem skoncentrowanym na technologii a projektowaniem skoncentrowanym na człowieku (Human-Centered Design).",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W15",
+          "peu": "Student posiada wiedzę o technikach kreatywnego rozwiązywania problemów i moderowania sesji ideacyjnych.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem oraz stworzyć na jego podstawie mapę empatii i personę.",
-        "Student umie zdefiniować \"Point of View\" (POV) i sformułować pytania typu \"How Might We\" w celu znalezienia innowacyjnych rozwiązań.",
-        "Student potrafi tworzyć prototypy \"low-fidelity\" (np. makiety papierowe, storyboarding) i wykorzystywać je do zbierania wczesnego feedbacku."
+        {
+          "keu": "K_U20",
+          "peu": "Student potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem oraz stworzyć na jego podstawie mapę empatii i personę.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "Student umie zdefiniować \"Point of View\" (POV) i sformułować pytania typu \"How Might We\" w celu znalezienia innowacyjnych rozwiązań.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "Student potrafi tworzyć prototypy \"low-fidelity\" (np. makiety papierowe, storyboarding) i wykorzystywać je do zbierania wczesnego feedbacku.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika.",
-        "Student jest gotowy do moderowania procesów grupowych, dbając o bezpieczeństwo psychologiczne i kreatywność zespołu."
+        {
+          "keu": "K_K06",
+          "peu": "Student wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotowy do moderowania procesów grupowych, dbając o bezpieczeństwo psychologiczne i kreatywność zespołu.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

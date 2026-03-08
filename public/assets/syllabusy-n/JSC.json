@@ -67,13 +67,25 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna podstawowe konstrukcje języka Scala, różnice między paradygmatem obiektowym i funkcyjnym oraz zasady działania aplikacji na platformie JVM."
+        {
+          "keu": "K_W10",
+          "peu": "Student zna podstawowe konstrukcje języka Scala, różnice między paradygmatem obiektowym i funkcyjnym oraz zasady działania aplikacji na platformie JVM.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Scala, definiować funkcje i klasy, korzystać z kolekcji niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Scala, definiować funkcje i klasy, korzystać z kolekcji niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie dobierać narzędzia i paradygmaty do rozwiązywanego problemu."
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie dobierać narzędzia i paradygmaty do rozwiązywanego problemu.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

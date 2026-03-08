@@ -85,18 +85,50 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie matematyczne podstawy grafiki komputerowej: algebrę liniową (wektory, macierze transformacji, układy współrzędnych), geometrię obliczeniową i podstawy optyki geometrycznej. [K_W11]",
-        "Student zna i rozumie zasady działania potoku renderowania GPU (vertex/fragment shader, rasteryzacja, z-buffer, blending) oraz podstawowe algorytmy syntezy obrazu: rzutowanie, oświetlenie (Phong, PBR), cieniowanie. [K_W11]",
-        "Student zna i rozumie podstawowe pojęcia z zakresu komunikacji człowiek-komputer: zasady użyteczności, projektowanie interfejsu graficznego (GUI) i zasady dostępności (WCAG). [K_W11]"
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie matematyczne podstawy grafiki komputerowej: algebrę liniową (wektory, macierze transformacji, układy współrzędnych), geometrię obliczeniową i podstawy optyki geometrycznej. [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        },
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie zasady działania potoku renderowania GPU (vertex/fragment shader, rasteryzacja, z-buffer, blending) oraz podstawowe algorytmy syntezy obrazu: rzutowanie, oświetlenie (Phong, PBR), cieniowanie. [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        },
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu komunikacji człowiek-komputer: zasady użyteczności, projektowanie interfejsu graficznego (GUI) i zasady dostępności (WCAG). [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zastosować aparat matematyczny (algebrę liniową, geometrię obliczeniową) do rozwiązywania problemów z zakresu grafiki komputerowej i transformacji przestrzennych. [K_U07]",
-        "Student potrafi zaprogramować aplikację grafiki 2D i 3D z użyciem nowoczesnego API (OpenGL 4.x / Vulkan / WebGL) lub silnika (Unity/Godot), implementując shadery i efekty postprocessingu. [K_U17]",
-        "Student potrafi zaprojektować i zaimplementować graficzny interfejs użytkownika z uwzględnieniem zasad użyteczności i przeprowadzić podstawowe testy użyteczności. [K_U17]"
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi zastosować aparat matematyczny (algebrę liniową, geometrię obliczeniową) do rozwiązywania problemów z zakresu grafiki komputerowej i transformacji przestrzennych. [K_U07]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U17",
+          "peu": "Student potrafi zaprogramować aplikację grafiki 2D i 3D z użyciem nowoczesnego API (OpenGL 4.x / Vulkan / WebGL) lub silnika (Unity/Godot), implementując shadery i efekty postprocessingu. [K_U17]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U17",
+          "peu": "Student potrafi zaprojektować i zaimplementować graficzny interfejs użytkownika z uwzględnieniem zasad użyteczności i przeprowadzić podstawowe testy użyteczności. [K_U17]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego rozwijania kompetencji w dynamicznie zmieniającym się obszarze grafiki komputerowej i GPU computing. [K_K03]",
-        "Student jest gotów do krytycznej oceny rozwiązań graficznych pod kątem wydajności, jakości wizualnej i dostępności dla użytkownika końcowego. [K_K05]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego rozwijania kompetencji w dynamicznie zmieniającym się obszarze grafiki komputerowej i GPU computing. [K_K03]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny rozwiązań graficznych pod kątem wydajności, jakości wizualnej i dostępności dla użytkownika końcowego. [K_K05]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

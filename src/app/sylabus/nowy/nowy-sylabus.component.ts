@@ -27,6 +27,12 @@ interface TrescProgramowa {
   cwiczenia: string;
 }
 
+interface EfektItem {
+  keu: string;
+  peu: string;
+  metoda_weryfikacji: string;
+}
+
 interface FormModel {
   tryb_studiow: string;
   jednostka: string;
@@ -54,9 +60,9 @@ interface FormModel {
   metody_wyklad: string[];
   metody_cwiczenia_laboratorium: string[];
   przedmioty_wprowadzajace: PrzedmiotWprowadzajacy[];
-  efekty_wiedza_txt: string;
-  efekty_umiejetnosci_txt: string;
-  efekty_kompetencje_txt: string;
+  efekty_wiedza: EfektItem[];
+  efekty_umiejetnosci: EfektItem[];
+  efekty_kompetencje: EfektItem[];
   tresci_programowe: TrescProgramowa[];
   literatura_podstawowa_txt: string;
   literatura_uzupelniajaca_txt: string;
@@ -157,9 +163,9 @@ export class NowySylabusComponent implements OnInit {
     metody_wyklad: [],
     metody_cwiczenia_laboratorium: [],
     przedmioty_wprowadzajace: [{ nazwa: '', wymagania: '' }],
-    efekty_wiedza_txt: '',
-    efekty_umiejetnosci_txt: '',
-    efekty_kompetencje_txt: '',
+    efekty_wiedza: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
+    efekty_umiejetnosci: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
+    efekty_kompetencje: [{ keu: '', peu: '', metoda_weryfikacji: '' }],
     tresci_programowe: [{ nr_zajec: 1, wyklad: '', cwiczenia: '' }],
     literatura_podstawowa_txt: '',
     literatura_uzupelniajaca_txt: '',
@@ -224,6 +230,26 @@ export class NowySylabusComponent implements OnInit {
 
   removeTresc(index: number): void {
     this.form.tresci_programowe.splice(index, 1);
+  }
+
+  addEfekt(lista: EfektItem[]): void {
+    lista.push({ keu: '', peu: '', metoda_weryfikacji: '' });
+  }
+
+  removeEfekt(lista: EfektItem[], i: number): void {
+    if (lista.length > 1) lista.splice(i, 1);
+  }
+
+  private normalizeEfekty(val: any): EfektItem[] {
+    if (!val) return [{ keu: '', peu: '', metoda_weryfikacji: '' }];
+    const arr = Array.isArray(val) ? val : [val];
+    if (arr.length === 0) return [{ keu: '', peu: '', metoda_weryfikacji: '' }];
+    return arr.map((item: any) => {
+      if (typeof item === 'object' && item !== null && 'peu' in item) {
+        return { keu: item.keu ?? '', peu: item.peu ?? '', metoda_weryfikacji: item.metoda_weryfikacji ?? '' };
+      }
+      return { keu: '', peu: String(item), metoda_weryfikacji: '' };
+    });
   }
 
   private splitLines(txt: string): string[] {
@@ -300,9 +326,9 @@ export class NowySylabusComponent implements OnInit {
         ...(f.cel_dydaktyczny_eng ? { cel_dydaktyczny_eng: f.cel_dydaktyczny_eng } : {}),
         literatura: lit,
         efekty_ksztalcenia: {
-          wiedza: this.splitLines(f.efekty_wiedza_txt),
-          umiejetnosci: this.splitLines(f.efekty_umiejetnosci_txt),
-          kompetencje_spoleczne: this.splitLines(f.efekty_kompetencje_txt),
+          wiedza:                f.efekty_wiedza.filter(e => e.peu.trim()),
+          umiejetnosci:          f.efekty_umiejetnosci.filter(e => e.peu.trim()),
+          kompetencje_spoleczne: f.efekty_kompetencje.filter(e => e.peu.trim()),
         },
         tresci_programowe: tresci,
         informacje_dodatkowe: f.informacje_dodatkowe,
@@ -461,9 +487,9 @@ export class NowySylabusComponent implements OnInit {
       przedmioty_wprowadzajace: s.przedmioty_wprowadzajace?.length
         ? s.przedmioty_wprowadzajace.map(p => ({ nazwa: p.nazwa, wymagania: p.wymagania }))
         : [{ nazwa: '', wymagania: '' }],
-      efekty_wiedza_txt: join(s.efekty_ksztalcenia?.wiedza),
-      efekty_umiejetnosci_txt: join(s.efekty_ksztalcenia?.umiejetnosci),
-      efekty_kompetencje_txt: join(s.efekty_ksztalcenia?.kompetencje_spoleczne),
+      efekty_wiedza: this.normalizeEfekty(s.efekty_ksztalcenia?.wiedza),
+      efekty_umiejetnosci: this.normalizeEfekty(s.efekty_ksztalcenia?.umiejetnosci),
+      efekty_kompetencje: this.normalizeEfekty(s.efekty_ksztalcenia?.kompetencje_spoleczne),
       tresci_programowe: tresci,
       literatura_podstawowa_txt: join(s.literatura?.podstawowa?.pozycje),
       literatura_uzupelniajaca_txt: join(s.literatura?.uzupelniajaca?.pozycje),

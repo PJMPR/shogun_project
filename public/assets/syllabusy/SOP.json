@@ -74,18 +74,50 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie procesami, wątkami i pamięcią wirtualną, mechanizmy współbieżności oraz organizację systemu plików w popularnych systemach (Linux, Windows). [K_W07]",
-        "Student zna i rozumie algorytmy szeregowania procesów (FCFS, SJF, Round-Robin, priorytety) i rozumie ich wpływ na wydajność systemu w różnych scenariuszach obciążenia. [K_W07]",
-        "Student zna i rozumie klasyczne problemy synchronizacji (sekcja krytyczna, producent-konsument, czytelnicy-pisarze) oraz mechanizmy ich rozwiązania: semafory, muteksy, zmienne warunkowe, monitory. [K_W07]"
+        {
+          "keu": "K_W07",
+          "peu": "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie procesami, wątkami i pamięcią wirtualną, mechanizmy współbieżności oraz organizację systemu plików w popularnych systemach (Linux, Windows). [K_W07]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        },
+        {
+          "keu": "K_W07",
+          "peu": "Student zna i rozumie algorytmy szeregowania procesów (FCFS, SJF, Round-Robin, priorytety) i rozumie ich wpływ na wydajność systemu w różnych scenariuszach obciążenia. [K_W07]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        },
+        {
+          "keu": "K_W07",
+          "peu": "Student zna i rozumie klasyczne problemy synchronizacji (sekcja krytyczna, producent-konsument, czytelnicy-pisarze) oraz mechanizmy ich rozwiązania: semafory, muteksy, zmienne warunkowe, monitory. [K_W07]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym Linux (zarządzanie użytkownikami, uprawnieniami, usługami systemd, przestrzenią dyskową i siecią). [K_U13]",
-        "Student potrafi implementować programy wielowątkowe/wieloprocesowe w języku C/C++ z użyciem POSIX API (pthread, fork/exec, pipe, sygnały) oraz identyfikować i eliminować wyścigi danych i zakleszczenia. [K_U13]",
-        "Student potrafi dobrać i skonfigurować system operacyjny do wymagań aplikacji, z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa. [K_U13]"
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym Linux (zarządzanie użytkownikami, uprawnieniami, usługami systemd, przestrzenią dyskową i siecią). [K_U13]",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi implementować programy wielowątkowe/wieloprocesowe w języku C/C++ z użyciem POSIX API (pthread, fork/exec, pipe, sygnały) oraz identyfikować i eliminować wyścigi danych i zakleszczenia. [K_U13]",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi dobrać i skonfigurować system operacyjny do wymagań aplikacji, z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa. [K_U13]",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego rozwiązywania problemów administracyjnych i konfiguracyjnych systemów operacyjnych, korzystając z dokumentacji i zasobów społeczności open-source. [K_K03]",
-        "Student jest gotów do świadomego wyboru narzędzi i konfiguracji systemowych z uwzględnieniem ich wpływu na bezpieczeństwo i niezawodność systemu informatycznego. [K_K06]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego rozwiązywania problemów administracyjnych i konfiguracyjnych systemów operacyjnych, korzystając z dokumentacji i zasobów społeczności open-source. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Student jest gotów do świadomego wyboru narzędzi i konfiguracji systemowych z uwzględnieniem ich wpływu na bezpieczeństwo i niezawodność systemu informatycznego. [K_K06]",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

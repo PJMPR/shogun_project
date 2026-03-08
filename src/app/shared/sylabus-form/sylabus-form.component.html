@@ -142,22 +142,43 @@
 
   <!-- 8. Efekty kształcenia -->
   <p-panel header="8. Efekty kształcenia" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
-    <small class="sf-hint-block">Każdy efekt w nowej linii.</small>
-    <div class="sf-field">
-      <label class="sf-label"><i class="pi pi-lightbulb"></i> Wiedza</label>
-      <textarea pTextarea [(ngModel)]="form.efekty_wiedza_txt" rows="4"
-                placeholder="np. Student zna podstawowe algorytmy sortowania..." class="sf-textarea"></textarea>
-    </div>
-    <div class="sf-field">
-      <label class="sf-label"><i class="pi pi-cog"></i> Umiejętności</label>
-      <textarea pTextarea [(ngModel)]="form.efekty_umiejetnosci_txt" rows="4"
-                placeholder="np. Student potrafi zaimplementować algorytm..." class="sf-textarea"></textarea>
-    </div>
-    <div class="sf-field">
-      <label class="sf-label"><i class="pi pi-users"></i> Kompetencje społeczne</label>
-      <textarea pTextarea [(ngModel)]="form.efekty_kompetencje_txt" rows="3"
-                placeholder="np. Student jest gotowy do pracy w zespole..." class="sf-textarea"></textarea>
-    </div>
+    <small class="sf-hint-block">Każdy wiersz to jeden efekt: kod KEU, treść (PEU) i metoda weryfikacji.</small>
+
+    @for (kat of [
+      { label: 'Wiedza', icon: 'pi pi-lightbulb', lista: form.efekty_wiedza },
+      { label: 'Umiejętności', icon: 'pi pi-cog', lista: form.efekty_umiejetnosci },
+      { label: 'Kompetencje społeczne', icon: 'pi pi-users', lista: form.efekty_kompetencje }
+    ]; track kat.label) {
+      <p class="sf-label" style="margin-top:12px"><i [class]="kat.icon"></i> {{ kat.label }}</p>
+      <div class="sf-efekty-table">
+        <div class="sf-efekty-header">
+          <span class="sf-efekty-col-keu">Kod KEU</span>
+          <span class="sf-efekty-col-peu">Przedmiotowy efekt uczenia się (PEU)</span>
+          <span class="sf-efekty-col-met">Metoda weryfikacji</span>
+          <span class="sf-efekty-col-btn"></span>
+        </div>
+        @for (e of kat.lista; track $index) {
+          <div class="sf-efekty-row">
+            <div class="sf-efekty-col-keu">
+              <input pInputText [(ngModel)]="e.keu" placeholder="np. K_W01" class="sf-input sf-input-sm" />
+            </div>
+            <div class="sf-efekty-col-peu">
+              <textarea pTextarea [(ngModel)]="e.peu" rows="2" class="sf-textarea sf-textarea-sm"
+                        placeholder="Treść efektu..."></textarea>
+            </div>
+            <div class="sf-efekty-col-met">
+              <input pInputText [(ngModel)]="e.metoda_weryfikacji" placeholder="np. kolokwium" class="sf-input sf-input-sm" />
+            </div>
+            <div class="sf-efekty-col-btn">
+              <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                        (onClick)="removeEfekt(kat.lista, $index)" />
+            </div>
+          </div>
+        }
+      </div>
+      <p-button label="Dodaj efekt" icon="pi pi-plus" [text]="true" size="small"
+                (onClick)="addEfekt(kat.lista)" styleClass="sf-add-btn" />
+    }
   </p-panel>
 
   <!-- 9. Treści programowe -->

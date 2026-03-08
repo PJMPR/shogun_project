@@ -97,20 +97,60 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych",
-        "Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka"
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W19",
+          "peu": "Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego",
-        "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego",
-        "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne",
-        "Student potrafi  opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego"
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U25",
+          "peu": "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi  opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do  podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki",
-        "Student jest gotów do  podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością",
-        "Student jest gotów do  zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu",
-        "Student jest gotów do  wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji"
+        {
+          "keu": "K_K02",
+          "peu": "Student jest gotów do  podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K02",
+          "peu": "Student jest gotów do  podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Student jest gotów do  zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K08",
+          "peu": "Student jest gotów do  wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
       ]
     },
     "tresci_programowe": [

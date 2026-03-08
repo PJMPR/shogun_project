@@ -70,12 +70,28 @@
     "efekty_ksztalcenia": {
       "wiedza": [],
       "umiejetnosci": [
-        "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
-        "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe"
+        {
+          "keu": "",
+          "peu": "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
-        "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ]
     },
     "tresci_programowe": [

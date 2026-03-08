@@ -1,160 +1,168 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "stacjonarny",
-        "wersja_z_dnia": "27.02.2026",
-        "nazwa_przedmiotu": "Projektowanie bezpiecznych architektur",
-        "kod_przedmiotu": "PBA",
-        "rok_studiow": 4,
-        "semestr_studiow": 7,
-        "obligatoryjny": true,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 30,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 30
-        },
-        "odpowiedzialny_za_przedmiot": "mgr Adam Kassenberg",
-        "ects": 5,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 60,
-            "praca_wlasna_studenta_h": 65,
-            "calkowita_liczba_godzin_h": 125,
-            "praca_wlasna_studenta": "Analiza przypadków projektowania bezpiecznych architektur; samodzielne ćwiczenia modelowania zagrożeń (threat modeling); przygotowanie do kolokwium pisemnego."
-        },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład konwersatoryjny (z elementami dyskusji)"
-            ],
-            "cwiczenia_laboratorium": [
-                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
-                "rozwiązywanie zadań"
-            ]
-        },
-        "zaliczenie": {
-            "Wykład": {
-                "sposob": "Egzamin"
-            },
-            "Laboratorium": {
-                "sposob": "Zaliczenie z oceną"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [
-                "kolokwium końcowe"
-            ],
-            "cwiczenia_laboratorium": [
-                "kolokwium końcowe",
-                "raport z wykonanego zadania"
-            ]
-        },
-        "przedmioty_wprowadzajace": [],
-        "cel_dydaktyczny": "Ten kurs ma na celu dostarczenie studentom kompleksowej wiedzy oraz umiejętności niezbędnych do projektowania i utrzymania bezpiecznych systemów informatycznych. Dzięki połączeniu wykładów teoretycznych z praktycznymi ćwiczeniami studenci będą lepiej przygotowani do stawiania czoła wyzwaniom związanym z bezpieczeństwem IT w rzeczywistym świecie.\n\nStudenci poznają podstawowe pojęcia i zasady bezpieczeństwa informatycznego, takie jak poufność, integralność oraz dostępność danych. Nauczą się projektować systemy i infrastrukturę informatyczną odporną na różnorodne zagrożenia i ataki. Celem kursu jest również zrozumienie mechanizmów zarządzania tożsamością oraz kontroli dostępu, w tym wdrażania polityk bezpieczeństwa.\n\nKurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, które pomagają zapobiegać wprowadzaniu luk bezpieczeństwa już na etapie rozwoju oprogramowania. Studenci nauczą się także reagować na incydenty bezpieczeństwa, w tym przeprowadzać ich analizę oraz sporządzać raporty dotyczące naruszeń.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "\"Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson",
-                    "\"Threat Modeling: Designing for Security\", Adam Shostack",
-                    "\"Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks\", Robert Hansen"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "\"Black Hat Python: Python Programming for Hackers and Pentesters\" autorstwa Justin Seitz",
-                    "\"SQL Injection Attacks and Defense\" autorstwa Justin Clarke"
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR."
-            ],
-            "umiejetnosci": [
-                "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować."
-            ],
-            "kompetencje_spoleczne": []
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Wybór organizacji.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Definicja celów biznesowych.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Utworzenie diagramów przepływu danych (DFD).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Procesowy opis organizacji zgodnie z ISO 9001.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Utworzenie architektury IT.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Koncepcja komunikacji, sprzętu i oprogramowania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Klasyfikacja informacji oraz struktura zarządzania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Identyfikacja zasobów organizacji.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Utworzenie deklaracji stosowania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Identyfikacja zagrożeń dla architektury IT.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "Identyfikacja podatności powiązanych z zagrożeniami.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "Szacowanie ryzyka dla zidentyfikowanych zagrożeń.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "Tworzenie rekomendacji po analizie ryzyka.",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments.\n\nStudents learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies.\n\nThe course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and preparing breach reports.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "27.02.2026",
+    "nazwa_przedmiotu": "Projektowanie bezpiecznych architektur",
+    "kod_przedmiotu": "PBA",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "mgr Adam Kassenberg",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 65,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": "Analiza przypadków projektowania bezpiecznych architektur; samodzielne ćwiczenia modelowania zagrożeń (threat modeling); przygotowanie do kolokwium pisemnego."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład konwersatoryjny (z elementami dyskusji)"
+      ],
+      "cwiczenia_laboratorium": [
+        "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+        "rozwiązywanie zadań"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Egzamin"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "kolokwium końcowe"
+      ],
+      "cwiczenia_laboratorium": [
+        "kolokwium końcowe",
+        "raport z wykonanego zadania"
+      ]
+    },
+    "przedmioty_wprowadzajace": [],
+    "cel_dydaktyczny": "Ten kurs ma na celu dostarczenie studentom kompleksowej wiedzy oraz umiejętności niezbędnych do projektowania i utrzymania bezpiecznych systemów informatycznych. Dzięki połączeniu wykładów teoretycznych z praktycznymi ćwiczeniami studenci będą lepiej przygotowani do stawiania czoła wyzwaniom związanym z bezpieczeństwem IT w rzeczywistym świecie.\n\nStudenci poznają podstawowe pojęcia i zasady bezpieczeństwa informatycznego, takie jak poufność, integralność oraz dostępność danych. Nauczą się projektować systemy i infrastrukturę informatyczną odporną na różnorodne zagrożenia i ataki. Celem kursu jest również zrozumienie mechanizmów zarządzania tożsamością oraz kontroli dostępu, w tym wdrażania polityk bezpieczeństwa.\n\nKurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, które pomagają zapobiegać wprowadzaniu luk bezpieczeństwa już na etapie rozwoju oprogramowania. Studenci nauczą się także reagować na incydenty bezpieczeństwa, w tym przeprowadzać ich analizę oraz sporządzać raporty dotyczące naruszeń.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "\"Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson",
+          "\"Threat Modeling: Designing for Security\", Adam Shostack",
+          "\"Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks\", Robert Hansen"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "\"Black Hat Python: Python Programming for Hackers and Pentesters\" autorstwa Justin Seitz",
+          "\"SQL Injection Attacks and Defense\" autorstwa Justin Clarke"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W23",
+          "peu": "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR.",
+          "metoda_weryfikacji": "kolokwium końcowe"
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U30",
+          "peu": "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować.",
+          "metoda_weryfikacji": "kolokwium końcowe, raport z wykonanego zadania"
+        }
+      ],
+      "kompetencje_spoleczne": []
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wybór organizacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Definicja celów biznesowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Utworzenie diagramów przepływu danych (DFD).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Procesowy opis organizacji zgodnie z ISO 9001.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Utworzenie architektury IT.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Koncepcja komunikacji, sprzętu i oprogramowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Klasyfikacja informacji oraz struktura zarządzania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Identyfikacja zasobów organizacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Utworzenie deklaracji stosowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Identyfikacja zagrożeń dla architektury IT.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Identyfikacja podatności powiązanych z zagrożeniami.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Szacowanie ryzyka dla zidentyfikowanych zagrożeń.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Tworzenie rekomendacji po analizie ryzyka.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments.\n\nStudents learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies.\n\nThe course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and preparing breach reports.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

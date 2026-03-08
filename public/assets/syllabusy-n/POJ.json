@@ -68,16 +68,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zaawansowane pojęcia programowania obiektowego w C#: klasy, interfejsy, dziedziczenie, polimorfizm, enkapsulacja, typy generyczne, kolekcje, delegaty i zdarzenia, obsługa wyjątków i serializacja. [K_W10]",
-        "Student zna i rozumie wybrane wzorce projektowe (Creational, Structural, Behavioral) i rozumie ich zastosowanie w budowie rozszerzalnego, testowalnego kodu w .NET. [K_W10]"
+        {
+          "keu": "K_W10",
+          "peu": "Student zna i rozumie zaawansowane pojęcia programowania obiektowego w C#: klasy, interfejsy, dziedziczenie, polimorfizm, enkapsulacja, typy generyczne, kolekcje, delegaty i zdarzenia, obsługa wyjątków i serializacja. [K_W10]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W10",
+          "peu": "Student zna i rozumie wybrane wzorce projektowe (Creational, Structural, Behavioral) i rozumie ich zastosowanie w budowie rozszerzalnego, testowalnego kodu w .NET. [K_W10]",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi ocenić poprawność konstrukcji obiektowych i zaprojektować hierarchię klas, zastosować odpowiedni wzorzec projektowy i zaimplementować program obiektowy w C# spełniający specyfikację. [K_U15]",
-        "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować i zdebugować program obiektowy w C# z użyciem środowiska Visual Studio/Rider i platformy .NET. [K_U16]"
+        {
+          "keu": "K_U15",
+          "peu": "Student potrafi ocenić poprawność konstrukcji obiektowych i zaprojektować hierarchię klas, zastosować odpowiedni wzorzec projektowy i zaimplementować program obiektowy w C# spełniający specyfikację. [K_U15]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować i zdebugować program obiektowy w C# z użyciem środowiska Visual Studio/Rider i platformy .NET. [K_U16]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego uczenia się przez całe życie, systematycznie poszerzając wiedzę o nowych możliwościach platformy .NET i języka C#. [K_K03]",
-        "Student jest gotów do krytycznej oceny jakości kodu obiektowego i stosowania dobrych praktyk (SOLID, Clean Code) w projektach programistycznych. [K_K05]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie, systematycznie poszerzając wiedzę o nowych możliwościach platformy .NET i języka C#. [K_K03]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny jakości kodu obiektowego i stosowania dobrych praktyk (SOLID, Clean Code) w projektach programistycznych. [K_K05]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

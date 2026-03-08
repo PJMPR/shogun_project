@@ -6,6 +6,7 @@ import { TableModule } from 'primeng/table';
 import { DividerModule } from 'primeng/divider';
 import {
   SylabusData,
+  SylabusEfektyItem,
   SylabusKryteriaOceny,
   SylabusTrescProgramowa,
 } from '../../stacjonarne/program/models/program.models';
@@ -22,8 +23,37 @@ export class SylabusPreviewComponent {
 
   asArray(val: string | string[] | undefined | null): string[] {
     if (!val) return [];
-    if (Array.isArray(val)) return val;
+    if (Array.isArray(val)) return val.map(i => typeof i === 'object' ? (i as SylabusEfektyItem).peu : i);
     return [val];
+  }
+
+  asStringArray(items: any[]): string[] {
+    return items.map(i => typeof i === 'string' ? i : (i as SylabusEfektyItem).peu);
+  }
+
+  asEfektyItems(items: any[]): SylabusEfektyItem[] {
+    return items as SylabusEfektyItem[];
+  }
+
+  isEfektyObjects(items: any[]): boolean {
+    return items.length > 0 && typeof items[0] === 'object' && 'peu' in items[0];
+  }
+
+  private normalizeEfekty(val: any): any[] {
+    if (!val) return [];
+    if (Array.isArray(val)) return val;
+    if (typeof val === 'string') return val.trim() ? [val] : [];
+    return [];
+  }
+
+  getEfektyKategorie(): { key: string; label: string; icon: string; items: any[] }[] {
+    const ef = this.sylabus?.efekty_ksztalcenia;
+    if (!ef) return [];
+    return [
+      { key: 'wiedza',               label: 'Wiedza',               icon: 'pi pi-lightbulb', items: this.normalizeEfekty(ef.wiedza) },
+      { key: 'umiejetnosci',         label: 'Umiejętności',         icon: 'pi pi-cog',       items: this.normalizeEfekty(ef.umiejetnosci) },
+      { key: 'kompetencje_spoleczne',label: 'Kompetencje społeczne',icon: 'pi pi-users',     items: this.normalizeEfekty(ef.kompetencje_spoleczne) },
+    ];
   }
 
   getZaliczenieEntries(z: Record<string, { sposob: string }> | undefined): { forma: string; sposob: string }[] {
@@ -38,12 +68,10 @@ export class SylabusPreviewComponent {
       .map(([forma, v]) => ({ forma, metody: v as string[] }));
   }
 
-  /** Zwraca true gdy kryteria_oceny to nowy format obiektowy */
   isKryteriaObject(k: any): k is SylabusKryteriaOceny {
     return k && !Array.isArray(k) && typeof k === 'object';
   }
 
-  /** Zwraca true gdy tresci_programowe to nowy format obiektowy */
   isTresciObject(t: any): t is SylabusTrescProgramowa[] {
     return Array.isArray(t) && t.length > 0 && typeof t[0] === 'object' && 'nr_zajec' in t[0];
   }

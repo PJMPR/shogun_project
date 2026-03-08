@@ -380,3 +380,44 @@
   }
 }
 
+/* Tabela efektów kształcenia */
+.ns-efekty-table {
+  display: grid;
+  border: 1px solid var(--p-surface-200);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.ns-efekty-header,
+.ns-efekty-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 180px 40px;
+  border-bottom: 1px solid var(--p-surface-200);
+}
+
+.ns-efekty-header { background: var(--p-surface-100); }
+.ns-efekty-row:last-child { border-bottom: none; }
+
+.ns-efekty-header > span {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--p-surface-600);
+  border-right: 1px solid var(--p-surface-200);
+}
+.ns-efekty-header > span:last-child { border-right: none; }
+
+.ns-efekty-row > div {
+  padding: 0.35rem 0.4rem;
+  border-right: 1px solid var(--p-surface-200);
+}
+.ns-efekty-row > div:last-child {
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ns-input-sm { font-size: 0.85rem; }
+

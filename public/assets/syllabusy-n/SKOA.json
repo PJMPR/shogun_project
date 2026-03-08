@@ -64,16 +64,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe pojęcia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką w kontekście projektowania sieci komputerowych. [K_W03]",
-        "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej, architektury systemów komputerowych i sieci LAN/WAN: protokoły komunikacyjne (Ethernet, TCP/IP, IPv6), mechanizmy routingu i switchingu oraz zagadnienia bezpieczeństwa sieciowego. [K_W08]"
+        {
+          "keu": "K_W03",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką w kontekście projektowania sieci komputerowych. [K_W03]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        },
+        {
+          "keu": "K_W08",
+          "peu": "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej, architektury systemów komputerowych i sieci LAN/WAN: protokoły komunikacyjne (Ethernet, TCP/IP, IPv6), mechanizmy routingu i switchingu oraz zagadnienia bezpieczeństwa sieciowego. [K_W08]",
+          "metoda_weryfikacji": "egzamin pisemny"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN umożliwiającą realizację kluczowych usług sieciowych (DNS, DHCP, HTTP/HTTPS) z zachowaniem zasad bezpieczeństwa informacji. [K_U14]"
+        {
+          "keu": "K_U14",
+          "peu": "Student potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN umożliwiającą realizację kluczowych usług sieciowych (DNS, DHCP, HTTP/HTTPS) z zachowaniem zasad bezpieczeństwa informacji. [K_U14]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do uczenia się przez całe życie i inspirowania innych do pogłębiania wiedzy o sieciach komputerowych i bezpieczeństwie. [K_K03]",
-        "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy w obszarze infrastruktury sieciowej. [K_K07]",
-        "Student jest gotów do efektywnej komunikacji z interesariuszami technicznymi i biznesowymi w zakresie projektowania i administrowania sieciami. [K_K08]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do uczenia się przez całe życie i inspirowania innych do pogłębiania wiedzy o sieciach komputerowych i bezpieczeństwie. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K07",
+          "peu": "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy w obszarze infrastruktury sieciowej. [K_K07]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K08",
+          "peu": "Student jest gotów do efektywnej komunikacji z interesariuszami technicznymi i biznesowymi w zakresie projektowania i administrowania sieciami. [K_K08]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

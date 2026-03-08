@@ -1,247 +1,287 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "niestacjonarny",
-        "wersja_z_dnia": "19.02.2026",
-        "nazwa_przedmiotu": "Zarządzanie projektem informatycznym",
-        "kod_przedmiotu": "ZPR",
-        "rok_studiow": 4,
-        "semestr_studiow": 8,
-        "obligatoryjny": false,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 8,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 8
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Zarządzanie projektem informatycznym",
+    "kod_przedmiotu": "ZPR",
+    "rok_studiow": 4,
+    "semestr_studiow": 8,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 8,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 8
+    },
+    "odpowiedzialny_za_przedmiot": "mgr. Aleksandr Polin (alex.polin@pjwstk.edu.pl)",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 16,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Tworzenie planu zarządzania projektem informatycznym w grupie; analiza realnych projektów IT; przygotowanie prezentacji planu zarządzania; opracowanie dokumentacji projektowej."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "praca w grupach",
+        "dyskusja",
+        "burza mózgów",
+        "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie"
+      },
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "prezentacja projektu i dokumentacji",
+        "ocena pracy podczas ćwiczenia"
+      ]
+    },
+    "cel_dydaktyczny": "Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Dąbrowski, M. Wieczne opóźnienie. Zarządzanie projektami IT. OnePress, 2021.",
+          "Schwalbe, Kathy. Information Technology Project Management. 9th ed. Cengage Learning, 2019",
+          "Kisielnicki, J., Zarządzanie projektami, Nieoczywiste"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "PMI. A Guide to the Project Management Body of Knowledge (PMBOK® Guide). 7th ed. Project Management Institute, 2021.",
+          "Sutherland, Jeff. Scrum: The Art of Doing Twice the Work in Half the Time. Crown Business, 2014."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. [K_W14]",
+          "metoda_weryfikacji": ""
         },
-        "odpowiedzialny_za_przedmiot": "mgr. Aleksandr Polin (alex.polin@pjwstk.edu.pl)",
-        "ects": 2,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 16,
-            "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50,
-            "praca_wlasna_studenta": "Tworzenie planu zarządzania projektem informatycznym w grupie; analiza realnych projektów IT; przygotowanie prezentacji planu zarządzania; opracowanie dokumentacji projektowej."
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. [K_W17]",
+          "metoda_weryfikacji": ""
         },
-        "metody_dydaktyczne": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "metoda projektów (projekt praktyczny)",
-                "praca w grupach",
-                "dyskusja",
-                "burza mózgów",
-                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
-            ]
+        {
+          "keu": "K_W19",
+          "peu": "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. [K_W19]",
+          "metoda_weryfikacji": ""
         },
-        "zaliczenie": {
-            "Ćwiczenia": {
-                "sposob": "Zaliczenie"
-            },
-            "Wykład": {
-                "sposob": "Nieoceniany"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "prezentacja projektu i dokumentacji",
-                "ocena pracy podczas ćwiczenia"
-            ]
-        },
-        "cel_dydaktyczny": "Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "Dąbrowski, M. Wieczne opóźnienie. Zarządzanie projektami IT. OnePress, 2021.",
-                    "Schwalbe, Kathy. Information Technology Project Management. 9th ed. Cengage Learning, 2019",
-                    "Kisielnicki, J., Zarządzanie projektami, Nieoczywiste"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "PMI. A Guide to the Project Management Body of Knowledge (PMBOK® Guide). 7th ed. Project Management Institute, 2021.",
-                    "Sutherland, Jeff. Scrum: The Art of Doing Twice the Work in Half the Time. Crown Business, 2014."
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. [K_W14]",
-                "Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. [K_W17]",
-                "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. [K_W19]",
-                "Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. [K_W20]"
-            ],
-            "umiejetnosci": [
-                "Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). [K_U05]",
-                "Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. [K_U26]",
-                "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. [K_U25]"
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. [K_K04]",
-                "Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. [K_K07]",
-                "Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. [K_K08]"
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Wprowadzenie do zarządzania projektami IT",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Definicje, cele i zakres zarządzania projektami.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Cykl życia projektu IT.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Case study: Denver International Airport Baggage System - analiza błędów i wnioski.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Metodologie zarządzania projektami",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Motywacja i zarządzanie zespołami IT",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "Budowanie efektywnych zespołów, role i odpowiedzialności.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "Planowanie projektu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "Etapy planowania projektu, analiza sytuacji, SMART goals, WBS.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 14,
-                "wyklad": "Identyfikacja i analiza ryzyka.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 15,
-                "wyklad": "Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 16,
-                "wyklad": "Ćwiczenia: planowanie projektu z użyciem \"Ninja Planning Card\".",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 17,
-                "wyklad": "Realizacja i kontrola projektu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 18,
-                "wyklad": "Zarządzanie czasem, budżetem i zasobami.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 19,
-                "wyklad": "Monitoring postępów projektu, raportowanie, analiza odchyleń.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 20,
-                "wyklad": "Zarządzanie zmianą, kontrola jakości.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 21,
-                "wyklad": "Zamykanie projektu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 22,
-                "wyklad": "Ocena projektu, dokumentacja, lessons learned.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 23,
-                "wyklad": "Prezentacja wyników projektu.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 24,
-                "wyklad": "Dodatkowe zagadnienia",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 25,
-                "wyklad": "PRINCE2, Six Sigma - wprowadzenie.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 26,
-                "wyklad": "Teorie X, Y, Z - style zarządzania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 27,
-                "wyklad": "Cargo Cults - unikanie bezmyślnego naśladowania.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 28,
-                "wyklad": "Etyka w zarządzaniu projektami IT.",
-                "cwiczenia": ""
-            }
-        ],
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "Inzynieria oprogramowania",
-                "wymagania": "Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole"
-            }
-        ],
-        "cel_dydaktyczny_eng": "Introduction to the key concepts and practices of IT project management. Equipping students with the skills to plan, organize, lead, and control IT projects. Understanding the specifics of managing IT teams, motivation, and communication.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+        {
+          "keu": "K_W20",
+          "peu": "Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. [K_W20]",
+          "metoda_weryfikacji": ""
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). [K_U05]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. [K_U26]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U25",
+          "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. [K_U25]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. [K_K04]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K07",
+          "peu": "Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. [K_K07]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K08",
+          "peu": "Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. [K_K08]",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do zarządzania projektami IT",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Definicje, cele i zakres zarządzania projektami.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Cykl życia projektu IT.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Case study: Denver International Airport Baggage System - analiza błędów i wnioski.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Metodologie zarządzania projektami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Motywacja i zarządzanie zespołami IT",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Budowanie efektywnych zespołów, role i odpowiedzialności.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Planowanie projektu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Etapy planowania projektu, analiza sytuacji, SMART goals, WBS.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Identyfikacja i analiza ryzyka.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "Ćwiczenia: planowanie projektu z użyciem \"Ninja Planning Card\".",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "Realizacja i kontrola projektu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 18,
+        "wyklad": "Zarządzanie czasem, budżetem i zasobami.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 19,
+        "wyklad": "Monitoring postępów projektu, raportowanie, analiza odchyleń.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 20,
+        "wyklad": "Zarządzanie zmianą, kontrola jakości.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 21,
+        "wyklad": "Zamykanie projektu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 22,
+        "wyklad": "Ocena projektu, dokumentacja, lessons learned.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 23,
+        "wyklad": "Prezentacja wyników projektu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 24,
+        "wyklad": "Dodatkowe zagadnienia",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 25,
+        "wyklad": "PRINCE2, Six Sigma - wprowadzenie.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 26,
+        "wyklad": "Teorie X, Y, Z - style zarządzania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 27,
+        "wyklad": "Cargo Cults - unikanie bezmyślnego naśladowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 28,
+        "wyklad": "Etyka w zarządzaniu projektami IT.",
+        "cwiczenia": ""
+      }
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Inzynieria oprogramowania",
+        "wymagania": "Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole"
+      }
+    ],
+    "cel_dydaktyczny_eng": "Introduction to the key concepts and practices of IT project management. Equipping students with the skills to plan, organize, lead, and control IT projects. Understanding the specifics of managing IT teams, motivation, and communication.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

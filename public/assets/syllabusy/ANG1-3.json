@@ -88,19 +88,55 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": null,
+      "wiedza": [],
       "umiejetnosci": [
-        "Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich.",
-        "Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim.",
-        "Student potrafi posługiwać się językiem formalnym.",
-        "Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych.",
-        "Student potrafi komunikować się w języku angielskim w życiu codziennym.",
-        "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
-        "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe."
+        {
+          "keu": "",
+          "peu": "Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi posługiwać się językiem formalnym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi komunikować się w języku angielskim w życiu codziennym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
-        "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+        {
+          "keu": "",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ]
     },
     "tresci_programowe": [

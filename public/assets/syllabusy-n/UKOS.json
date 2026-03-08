@@ -68,17 +68,45 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie zasobami, organizację współbieżności, systemy plików i mechanizmy bezpieczeństwa w środowiskach Windows i Linux. [K_W07]",
-        "Student zna i rozumie zaawansowane pojęcia z zakresu sieci komputerowych: modele OSI/TCP-IP, konfigurację protokołów sieciowych, usługi katalogowe (Active Directory/LDAP) oraz wirtualizację sieci. [K_W08]"
+        {
+          "keu": "K_W07",
+          "peu": "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie zasobami, organizację współbieżności, systemy plików i mechanizmy bezpieczeństwa w środowiskach Windows i Linux. [K_W07]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W08",
+          "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu sieci komputerowych: modele OSI/TCP-IP, konfigurację protokołów sieciowych, usługi katalogowe (Active Directory/LDAP) oraz wirtualizację sieci. [K_W08]",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym (Windows Server / Linux) w środowisku wirtualnym lub fizycznym, zarządzając użytkownikami, uprawnieniami i usługami. [K_U13]",
-        "Student potrafi zaprojektować i skonfigurować infrastrukturę sieciową LAN/WAN, w tym usługi DHCP, DNS, NAT, firewall, a także przeprowadzić podstawową analizę ruchu sieciowego. [K_U14]",
-        "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia kompletnego systemu informatycznego (system operacyjny, baza danych, aplikacja webowa). [K_U27]"
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym (Windows Server / Linux) w środowisku wirtualnym lub fizycznym, zarządzając użytkownikami, uprawnieniami i usługami. [K_U13]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U14",
+          "peu": "Student potrafi zaprojektować i skonfigurować infrastrukturę sieciową LAN/WAN, w tym usługi DHCP, DNS, NAT, firewall, a także przeprowadzić podstawową analizę ruchu sieciowego. [K_U14]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia kompletnego systemu informatycznego (system operacyjny, baza danych, aplikacja webowa). [K_U27]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego uczenia się nowych technologii systemowych i sieciowych w oparciu o dokumentację techniczną i zasoby społeczności. [K_K03]",
-        "Student jest gotów do odpowiedzialnego zarządzania infrastrukturą informatyczną z uwzględnieniem zasad bezpieczeństwa i ochrony danych. [K_K06]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego uczenia się nowych technologii systemowych i sieciowych w oparciu o dokumentację techniczną i zasoby społeczności. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Student jest gotów do odpowiedzialnego zarządzania infrastrukturą informatyczną z uwzględnieniem zasad bezpieczeństwa i ochrony danych. [K_K06]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

@@ -70,16 +70,46 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych.",
-        "Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.",
-        "Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D."
+        {
+          "keu": "K_W01",
+          "peu": "Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W01",
+          "peu": "Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W01",
+          "peu": "Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej.",
-        "Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.",
-        "Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne."
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej.",
+          "metoda_weryfikacji": "kolokwium, sprawdziany wstępne „wejściówki\""
+        },
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.",
+          "metoda_weryfikacji": "kolokwium, sprawdziany wstępne „wejściówki\""
+        },
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne.",
+          "metoda_weryfikacji": "kolokwium, sprawdziany wstępne „wejściówki\""
+        }
       ],
-      "kompetencje_spoleczne": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst.",
+          "metoda_weryfikacji": "kolokwium, sprawdziany wstępne „wejściówki\""
+        }
+      ]
     },
     "tresci_programowe": [
       {

@@ -129,19 +129,51 @@ function Generate-Tex($s, [string]$code) {
         $tresciRows = "  \hline$nl  1. $amp $amp $dbs$nl"
     }
 
-    # Efekty ksztalcenia
-    $wiedzaItems = ""
-    if ($s.efekty_ksztalcenia.wiedza) {
-        foreach ($w in $s.efekty_ksztalcenia.wiedza) { $wiedzaItems += "  \item $(Escape-Latex $w)$nl" }
+    # Efekty ksztalcenia — nowy format: lista obiektow {keu, peu, metoda_weryfikacji}
+    function Build-EfektyTable([array]$items, [string]$label) {
+        if (-not $items -or $items.Count -eq 0) {
+            return "\subsection*{$label}`n\begin{itemize}`n  \item Brak danych.$nl\end{itemize}`n`n"
+        }
+        $keuHdr   = "Kod KEU"
+        $peuHdr   = "Przedmiotowy efekt uczenia si" + [char]0x0119
+        $metHdr   = "Metody weryfikacji"
+        $rows = ""
+        foreach ($item in $items) {
+            if ($item -is [string]) {
+                # fallback: stary format
+                $keu  = ""
+                $peu  = Escape-Latex $item
+                $met  = ""
+            } else {
+                $keu  = Escape-Latex ([string]$item.keu)
+                $peu  = Escape-Latex ([string]$item.peu)
+                $met  = Escape-Latex ([string]$item.metoda_weryfikacji)
+            }
+            $rows += "  \hline$nl  $keu $amp $peu $amp $met $dbs$nl"
+        }
+        $block  = "\subsection*{$label}`n"
+        $block += "\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}`n"
+        $block += "\hline`n"
+        $block += "\rowcolor{tableHeader}`n"
+        $block += "\textbf{$keuHdr} $amp \textbf{$peuHdr} $amp \textbf{$metHdr} $dbs`n"
+        $block += "\endhead`n"
+        $block += $rows
+        $block += "  \hline`n"
+        $block += "\end{longtable}`n`n"
+        return $block
     }
-    $umiejItems = ""
-    if ($s.efekty_ksztalcenia.umiejetnosci) {
-        foreach ($u in $s.efekty_ksztalcenia.umiejetnosci) { $umiejItems += "  \item $(Escape-Latex $u)$nl" }
-    }
-    $kompItems = ""
-    if ($s.efekty_ksztalcenia.kompetencje_spoleczne) {
-        foreach ($k in $s.efekty_ksztalcenia.kompetencje_spoleczne) { $kompItems += "  \item $(Escape-Latex $k)$nl" }
-    }
+
+    $wiedzaArr = @(); if ($s.efekty_ksztalcenia.wiedza)                { $wiedzaArr = @($s.efekty_ksztalcenia.wiedza) }
+    $umiejArr  = @(); if ($s.efekty_ksztalcenia.umiejetnosci)          { $umiejArr  = @($s.efekty_ksztalcenia.umiejetnosci) }
+    $kompArr   = @(); if ($s.efekty_ksztalcenia.kompetencje_spoleczne) { $kompArr   = @($s.efekty_ksztalcenia.kompetencje_spoleczne) }
+
+    $wiedzaLabel  = "Wiedza"
+    $umiejSec     = "Umiej" + [char]0x0119 + "tno" + [char]0x015B + "ci"
+    $kompSpolLabel= "Kompetencje spo" + [char]0x0142 + "eczne"
+
+    $wiedzaBlock = Build-EfektyTable $wiedzaArr $wiedzaLabel
+    $umiejBlock  = Build-EfektyTable $umiejArr  $umiejSec
+    $kompBlock   = if ($kompArr -and $kompArr.Count -gt 0) { Build-EfektyTable $kompArr $kompSpolLabel } else { "" }
 
     # Kryteria oceny – nowy format: obiekt {wyklad: [], cwiczenia_laboratorium: []}
     $kryteriaBlock = ""
@@ -216,10 +248,8 @@ function Generate-Tex($s, [string]$code) {
         }
     }
 
-    # Zabezpieczenie przed pustymi listami
+    # Zabezpieczenie przed pustymi listami (efekty juz generowane jako tabele)
     if (-not $tresciItems)   { $tresciItems   = "  \item Brak danych.$nl" }
-    if (-not $wiedzaItems)   { $wiedzaItems   = "  \item Brak danych.$nl" }
-    if (-not $umiejItems)    { $umiejItems    = "  \item Brak danych.$nl" }
     if (-not $litPItems)     { $litPItems     = "  \item Brak danych.$nl" }
     if (-not $litUItems)     { $litUItems     = "  \item Brak danych.$nl" }
 
@@ -267,19 +297,16 @@ function Generate-Tex($s, [string]$code) {
     $godzZaj      = "Godziny zaj" + [char]0x0119 + [char]0x0107 + " i punkty ECTS"
     $tresciSec    = "Tre" + [char]0x015B + "ci programowe"
     $efektySec    = "Przedmiotowe efekty uczenia si"+ [char]0x0119
-    $umiejSec     = "Umiej" + [char]0x0119 + "tno" + [char]0x015B + "ci"
     $krytSec      = "Kryteria oceny"
     $metSec       = "Metody dydaktyczne"
     $litSec       = "Literatura"
     $litPodst     = "Podstawowa:"
     $litUzup      = "Uzupe" + [char]0x0142 + "niaj" + [char]0x0105 + "ca:"
     $pracaWlLabel = "Zadania do samodzielnej realizacji:"
-    $wiedzaLabel  = "Wiedza"
     $trybyLabel   = "Tryb studi" + [char]0x00F3 + "w:"
     $formaZajLabel= "Forma zaj" + [char]0x0119 + [char]0x0107
     $sposobLabel  = "Spos" + [char]0x00F3 + "b zaliczenia"
     $przedmWprow  = "Przedmioty wprowadzaj" + [char]0x0105 + "ce"
-    $kompSpolLabel= "Kompetencje spo" + [char]0x0142 + "eczne"
     $celEngLabel  = "Wersja w j" + [char]0x0119 + "zyku angielskim (English version)"
 
     # Sekcje opcjonalne
@@ -305,11 +332,7 @@ function Generate-Tex($s, [string]$code) {
         $pwSection += "  \hline${nl}\end{tabularx}${nl}"
     }
 
-    $kompSection = ""
-    if ($kompItems) {
-        $kompSection  = "${nl}\subsection*{$kompSpolLabel}${nl}"
-        $kompSection += "\begin{itemize}${nl}${kompItems}\end{itemize}${nl}"
-    }
+    $kompSection = ""  # nieużywane — kompetencje generowane w $kompBlock
 
     # Budowanie TEX
     $t  = "% ===========================================================`n"
@@ -419,11 +442,9 @@ function Generate-Tex($s, [string]$code) {
     $t += "  \hline`n"
     $t += "\end{longtable}`n`n"
     $t += "\section{$efektySec}`n`n"
-    $t += "\subsection*{$wiedzaLabel}`n"
-    $t += "\begin{itemize}`n" + $wiedzaItems + "\end{itemize}`n`n"
-    $t += "\subsection*{$umiejSec}`n"
-    $t += "\begin{itemize}`n" + $umiejItems + "\end{itemize}`n"
-    $t += "$kompSection`n"
+    $t += $wiedzaBlock
+    $t += $umiejBlock
+    $t += $kompBlock
     $t += "\section{$krytSec}`n`n"
     $t += "$kryteriaBlock`n`n"
     $t += "\section{$metSec}`n`n"

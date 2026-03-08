@@ -46,17 +46,45 @@
     "cel_dydaktyczny": "kształtowanie zdolności rozpoznawania i oceny własnej sprawności fizycznej i rozwoju fizycznego, zachęcanie do uczestnictwa w sportowych i rekreacyjnych formach aktywności fizycznej, poznanie i umiejętne stosowanie zasad bezpieczeństwa podczas aktywności fizycznej, zrozumienie związku aktywności fizycznej ze zdrowiem oraz kształtowanie umiejętności praktykowania zachowań prozdrowotnych. Zajęcia na basenie, saunie ,siłowni, sali gimnastycznej",
     "literatura": {},
     "efekty_ksztalcenia": {
-      "wiedza": null,
+      "wiedza": [],
       "umiejetnosci": [
-        "student jest gotów do nauki o kulturzefizycznej",
-        "krytycznej oceny posiadanej wiedzy i odbieranych treści uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięganiaopinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu",
-        "tworzenia i rozwijania wzorów właściwegopostępowania w środowisku pracy i życiapodejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, wktórych uczestniczy."
+        {
+          "keu": "K_U04",
+          "peu": "student jest gotów do nauki o kulturzefizycznej",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U04",
+          "peu": "krytycznej oceny posiadanej wiedzy i odbieranych treści uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięganiaopinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "tworzenia i rozwijania wzorów właściwegopostępowania w środowisku pracy i życiapodejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, wktórych uczestniczy.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu.",
-        "Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych.",
-        "Znaomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych.",
-        "Stosowanie zasady „czystej gry” i sportowego kibicowania."
+        {
+          "keu": "K_K03",
+          "peu": "Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Znaomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Stosowanie zasady „czystej gry” i sportowego kibicowania.",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

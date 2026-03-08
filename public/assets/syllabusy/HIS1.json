@@ -76,12 +76,28 @@
     "efekty_ksztalcenia": {
       "wiedza": [],
       "umiejetnosci": [
-        "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
-        "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2."
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
-        "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ]
     },
     "tresci_programowe": [

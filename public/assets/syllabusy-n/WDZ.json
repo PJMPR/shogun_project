@@ -72,18 +72,50 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji.",
-        "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór.",
-        "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników."
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania.",
-        "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego.",
-        "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji."
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań.",
-        "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych."
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
       ]
     },
     "tresci_programowe": [

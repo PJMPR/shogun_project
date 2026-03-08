@@ -1,202 +1,410 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "stacjonarny",
-        "wersja_z_dnia": "15.02.2025",
-        "nazwa_przedmiotu": "Specjalizacyjny Projekt Zespołowy 1",
-        "kod_przedmiotu": "PRZ1",
-        "rok_studiow": 3,
-        "semestr_studiow": 6,
-        "obligatoryjny": true,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 15,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 60
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "15.02.2025",
+    "nazwa_przedmiotu": "Specjalizacyjny Projekt Zespołowy 1",
+    "kod_przedmiotu": "PRZ1",
+    "rok_studiow": 3,
+    "semestr_studiow": 6,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 60
+    },
+    "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
+    "ects": 6,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 75,
+      "praca_wlasna_studenta_h": 75,
+      "calkowita_liczba_godzin_h": 150,
+      "praca_wlasna_studenta": "Realizacja przydzielonych zadań w projekcie zespołowym; dokumentowanie postępów; przygotowanie wydania (release) produktu; współpraca z zespołem projektowym."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+        "burza mózgów"
+      ]
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "ocena pracy podczas ćwiczenia",
+        "prezentacja elementu zespołowej pracy semestralnej",
+        "raport z wykonanego zadania"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Projekt informatyczny (PRI)",
+        "wymagania": "Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi"
+      },
+      {
+        "nazwa": "Budowa i integracja oprogramowania (BYT)",
+        "wymagania": "Podstawy inżynierii oprogramowania"
+      },
+      {
+        "nazwa": "Przedmioty specjalizacyjne",
+        "wymagania": "Wiedza specjalizacyjna"
+      }
+    ],
+    "cel_dydaktyczny": "W ramach przedmiotu studenci obierają i realizują pod opieką promotora zespołowy projekt inżynierski w zakresie powiązanym tematycznie z wybraną specjalizacją. Ich rozwiązanie praktycznego problemu winno wykorzystywać adekwatne podejście realizacyjne, jak i nowoczesne, dobrze dobrane technologie, a obok różnych wymiarów technicznych, powinno też uwzględniać aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, Udokumentowane, opracowane w ramach przedsięwzięcia rozwiązanie jest kontynuowane w ramach Projektu zespołowego 2 i, wraz z opisem wkładu własnego, stanowi treść dyplomowej pracy inżynierskiej; może też stanowić produkt „preinkubacyjny”.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Sommerville, I. (2021). Inżynieria oprogramowania. Wydanie X. Wydawnictwo Naukowe PWN",
+          "Żeliński, J. (2016). Analiza biznesowa. Praktyczne modelowanie organizacji.Onepress",
+          "Wrycza, S., Marcinkowski, B., Maślankowski, J. (2012). UML 2.x. Ćwiczenia zaawansowane.Helion"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Dokumentacja środowisk i narzędzi",
+          "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK",
+          "Górski, J. (2000, red.). Inżynieria oprogramowania w projekcie informatycznym. MIKOMSzejko, St. (2002, red). Metody wytwarzania oprogramowania. MIKOM"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W13",
+          "peu": "Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi",
+          "metoda_weryfikacji": ""
         },
-        "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
-        "ects": 6,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 75,
-            "praca_wlasna_studenta_h": 75,
-            "calkowita_liczba_godzin_h": 150,
-            "praca_wlasna_studenta": "Realizacja przydzielonych zadań w projekcie zespołowym; dokumentowanie postępów; przygotowanie wydania (release) produktu; współpraca z zespołem projektowym."
+        {
+          "keu": "K_W17",
+          "peu": "Student:",
+          "metoda_weryfikacji": ""
         },
-        "metody_dydaktyczne": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "metoda projektów (projekt praktyczny)",
-                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
-                "burza mózgów"
-            ]
+        {
+          "keu": "K_W14",
+          "peu": "ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania",
+          "metoda_weryfikacji": ""
         },
-        "zaliczenie": {
-            "Laboratorium": {
-                "sposob": "Zaliczenie z oceną"
-            },
-            "Wykład": {
-                "sposob": "Nieoceniany"
-            }
+        {
+          "keu": "K_W14",
+          "peu": "zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania",
+          "metoda_weryfikacji": ""
         },
-        "kryteria_oceny": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "ocena pracy podczas ćwiczenia",
-                "prezentacja elementu zespołowej pracy semestralnej",
-                "raport z wykonanego zadania"
-            ]
+        {
+          "keu": "K_W14",
+          "peu": "rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML",
+          "metoda_weryfikacji": ""
         },
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "Projekt informatyczny (PRI)",
-                "wymagania": "Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi"
-            },
-            {
-                "nazwa": "Budowa i integracja oprogramowania (BYT)",
-                "wymagania": "Podstawy inżynierii oprogramowania"
-            },
-            {
-                "nazwa": "Przedmioty specjalizacyjne",
-                "wymagania": "Wiedza specjalizacyjna"
-            }
-        ],
-        "cel_dydaktyczny": "W ramach przedmiotu studenci obierają i realizują pod opieką promotora zespołowy projekt inżynierski w zakresie powiązanym tematycznie z wybraną specjalizacją. Ich rozwiązanie praktycznego problemu winno wykorzystywać adekwatne podejście realizacyjne, jak i nowoczesne, dobrze dobrane technologie, a obok różnych wymiarów technicznych, powinno też uwzględniać aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, Udokumentowane, opracowane w ramach przedsięwzięcia rozwiązanie jest kontynuowane w ramach Projektu zespołowego 2 i, wraz z opisem wkładu własnego, stanowi treść dyplomowej pracy inżynierskiej; może też stanowić produkt „preinkubacyjny”.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "Sommerville, I. (2021). Inżynieria oprogramowania. Wydanie X. Wydawnictwo Naukowe PWN",
-                    "Żeliński, J. (2016). Analiza biznesowa. Praktyczne modelowanie organizacji.Onepress",
-                    "Wrycza, S., Marcinkowski, B., Maślankowski, J. (2012). UML 2.x. Ćwiczenia zaawansowane.Helion"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "Dokumentacja środowisk i narzędzi",
-                    "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK",
-                    "Górski, J. (2000, red.). Inżynieria oprogramowania w projekcie informatycznym. MIKOMSzejko, St. (2002, red). Metody wytwarzania oprogramowania. MIKOM"
-                ]
-            }
+        {
+          "keu": "K_W14",
+          "peu": "umie korzystać z wzorców programowych i standardowych API",
+          "metoda_weryfikacji": ""
         },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi",
-                "Student:",
-                "ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania",
-                "zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania",
-                "rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML",
-                "umie korzystać z wzorców programowych i standardowych API",
-                "ma wiedzę o narzędziach i środowiskach wspomagających",
-                "Student:",
-                "ma wiedzę dotyczącą procesów inżynierii wymagań",
-                "rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań",
-                "ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi",
-                "Student ma wiedzę z zakresu procesów walidacji i testowania",
-                "Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego",
-                "Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym",
-                "Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
-            ],
-            "umiejetnosci": [
-                "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego",
-                "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego",
-                "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
-                "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia",
-                "Student:",
-                "potrafi pracować w zespole pełniąc w nim uzgodnione role",
-                "potrafi oszacować czas potrzebny na realizację zadania",
-                "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
-                "Student:",
-                "ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu",
-                "ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych",
-                "Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości",
-                "Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego",
-                "Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego",
-                "Student:",
-                "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu",
-                "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych",
-                "Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu",
-                "Student:",
-                "potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami",
-                "potrafi dobrać model procesu i narzędzia dla jego wytworzenia",
-                "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu",
-                "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość",
-                "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów",
-                "Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu",
-                "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia",
-                "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców",
-                "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu",
-                "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
-            ],
-            "kompetencje_spoleczne": [
-                "Student:",
-                "potrafi pełnić przypadające nań role projektowe i wykonawcze",
-                "potrafi współpracować z innymi członkami grupy i otoczeniem projektu",
-                "Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych",
-                "Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych",
-                "Student:",
-                "stosuje w projekcie rozwiązania innowacyjne",
-                "dostrzega i ocenia aspekty komercjalizacji projektu"
-            ]
+        {
+          "keu": "K_W14",
+          "peu": "ma wiedzę o narzędziach i środowiskach wspomagających",
+          "metoda_weryfikacji": ""
         },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW)",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP)",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "As part of the course, students choose and carry out, under the supervision of a thesis advisor, a team engineering project related thematically to their chosen specialization. Their solution to a practical problem should employ an appropriate implementation approach and modern, well-selected technologies, and in addition to various technical dimensions should also take into account economic, ergonomic, legal, and social aspects. The documented solution developed within the project is continued in Team Project 2 and, together with a description of the individual contribution, constitutes the content of the engineering diploma thesis; it may also serve as a 'pre-incubation' product.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
+        {
+          "keu": "K_W17",
+          "peu": "Student:",
+          "metoda_weryfikacji": ""
         },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+        {
+          "keu": "K_W15",
+          "peu": "ma wiedzę dotyczącą procesów inżynierii wymagań",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W15",
+          "peu": "rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W15",
+          "peu": "ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W16",
+          "peu": "Student ma wiedzę z zakresu procesów walidacji i testowania",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W20",
+          "peu": "Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego",
+          "metoda_weryfikacji": ""
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U01",
+          "peu": "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U02",
+          "peu": "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U04",
+          "peu": "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "potrafi pracować w zespole pełniąc w nim uzgodnione role",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "potrafi oszacować czas potrzebny na realizację zadania",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U09",
+          "peu": "Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U15",
+          "peu": "Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U16",
+          "peu": "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U16",
+          "peu": "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U18",
+          "peu": "Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "potrafi dobrać model procesu i narzędzia dla jego wytworzenia",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U21",
+          "peu": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U22",
+          "peu": "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U24",
+          "peu": "Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U25",
+          "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K05",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "potrafi pełnić przypadające nań role projektowe i wykonawcze",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "potrafi współpracować z innymi członkami grupy i otoczeniem projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student:",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K07",
+          "peu": "stosuje w projekcie rozwiązania innowacyjne",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K08",
+          "peu": "dostrzega i ocenia aspekty komercjalizacji projektu",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "As part of the course, students choose and carry out, under the supervision of a thesis advisor, a team engineering project related thematically to their chosen specialization. Their solution to a practical problem should employ an appropriate implementation approach and modern, well-selected technologies, and in addition to various technical dimensions should also take into account economic, ergonomic, legal, and social aspects. The documented solution developed within the project is continued in Team Project 2 and, together with a description of the individual contribution, constitutes the content of the engineering diploma thesis; it may also serve as a 'pre-incubation' product.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

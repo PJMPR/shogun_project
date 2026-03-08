@@ -67,13 +67,25 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna podstawowe konstrukcje języka F#, paradygmat funkcyjny oraz zasady tworzenia aplikacji na platformie .NET."
+        {
+          "keu": "K_W10",
+          "peu": "Student zna podstawowe konstrukcje języka F#, paradygmat funkcyjny oraz zasady tworzenia aplikacji na platformie .NET.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi tworzyć, uruchamiać i testować proste aplikacje w języku F#, definiować funkcje, korzystać z typów niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi tworzyć, uruchamiać i testować proste aplikacje w języku F#, definiować funkcje, korzystać z typów niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie stosować paradygmat funkcyjny w praktyce."
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie stosować paradygmat funkcyjny w praktyce.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

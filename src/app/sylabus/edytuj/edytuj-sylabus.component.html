@@ -326,19 +326,43 @@
 
     <!-- 8. Efekty kształcenia -->
     <p-panel header="8. Efekty kształcenia" styleClass="es-panel" [toggleable]="true" [collapsed]="true">
-      <small class="es-hint-block">Każdy efekt w nowej linii.</small>
-      <div class="es-field">
-        <label class="es-label"><i class="pi pi-lightbulb"></i> Wiedza</label>
-        <textarea pTextarea [(ngModel)]="form.efekty_wiedza_txt" rows="4" class="es-textarea"></textarea>
-      </div>
-      <div class="es-field">
-        <label class="es-label"><i class="pi pi-cog"></i> Umiejętności</label>
-        <textarea pTextarea [(ngModel)]="form.efekty_umiejetnosci_txt" rows="4" class="es-textarea"></textarea>
-      </div>
-      <div class="es-field">
-        <label class="es-label"><i class="pi pi-users"></i> Kompetencje społeczne</label>
-        <textarea pTextarea [(ngModel)]="form.efekty_kompetencje_txt" rows="3" class="es-textarea"></textarea>
-      </div>
+      <small class="es-hint-block">Każdy wiersz to jeden efekt: kod KEU, treść (PEU) i metoda weryfikacji.</small>
+
+      @for (kat of [
+        { label: 'Wiedza', icon: 'pi pi-lightbulb', lista: form.efekty_wiedza },
+        { label: 'Umiejętności', icon: 'pi pi-cog', lista: form.efekty_umiejetnosci },
+        { label: 'Kompetencje społeczne', icon: 'pi pi-users', lista: form.efekty_kompetencje }
+      ]; track kat.label) {
+        <p class="es-label" style="margin-top:12px"><i [class]="kat.icon"></i> {{ kat.label }}</p>
+        <div class="es-efekty-table">
+          <div class="es-efekty-header">
+            <span class="es-efekty-col-keu">Kod KEU</span>
+            <span class="es-efekty-col-peu">Przedmiotowy efekt uczenia się (PEU)</span>
+            <span class="es-efekty-col-met">Metoda weryfikacji</span>
+            <span class="es-efekty-col-btn"></span>
+          </div>
+          @for (e of kat.lista; track $index) {
+            <div class="es-efekty-row">
+              <div class="es-efekty-col-keu">
+                <input pInputText [(ngModel)]="e.keu" placeholder="np. K_W01" class="es-input es-input-sm" />
+              </div>
+              <div class="es-efekty-col-peu">
+                <textarea pTextarea [(ngModel)]="e.peu" rows="2" class="es-textarea es-textarea-sm"
+                          placeholder="Treść efektu..."></textarea>
+              </div>
+              <div class="es-efekty-col-met">
+                <input pInputText [(ngModel)]="e.metoda_weryfikacji" placeholder="np. kolokwium" class="es-input es-input-sm" />
+              </div>
+              <div class="es-efekty-col-btn">
+                <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                          (onClick)="removeEfekt(kat.lista, $index)" />
+              </div>
+            </div>
+          }
+        </div>
+        <p-button label="Dodaj efekt" icon="pi pi-plus" [text]="true" size="small"
+                  (onClick)="addEfekt(kat.lista)" styleClass="es-add-btn" />
+      }
     </p-panel>
 
     <!-- 9. Treści programowe -->

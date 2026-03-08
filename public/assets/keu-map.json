@@ -1,0 +1,3445 @@
+{
+  "ADM": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student posiada wiedzę dotyczącą architektury systemu Windows Server, jego ról i usług oraz zasad instalacji, konfiguracji i aktualizacji systemu serwerowego."
+      },
+      {
+        "keu": "",
+        "peu": "Rozumie koncepcję domeny, kontrolera domeny, usług Active Directory, DNS i DHCP oraz mechanizmów zarządzania użytkownikami, grupami i uprawnieniami."
+      },
+      {
+        "keu": "",
+        "peu": "Zna podstawy bezpieczeństwa systemów serwerowych, polityk zabezpieczeń, kopii zapasowych i odtwarzania danych."
+      },
+      {
+        "keu": "",
+        "peu": "Rozumie zasady wirtualizacji, monitorowania wydajności oraz automatyzacji."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi instalować i konfigurować system Windows Server w środowisku fizycznym i wirtualnym."
+      },
+      {
+        "keu": "",
+        "peu": "Konfiguruje domenę oraz usługi katalogowe i sieciowe, zarządza kontami użytkowników, grupami i politykami GPO."
+      },
+      {
+        "keu": "",
+        "peu": "Wdraża usługi plikowe i sieciowe, monitoruje działanie systemu oraz diagnozuje i usuwa typowe problemy administracyjne."
+      },
+      {
+        "keu": "",
+        "peu": "Wykonuje kopie zapasowe, odtwarza dane oraz automatyzuje zadania administracyjne."
+      },
+      {
+        "keu": "",
+        "peu": "Stosuje mechanizmy zabezpieczeń w celu ochrony danych i infrastruktury."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotowy do samodzielnej i zespołowej pracy przy utrzymaniu infrastruktury serwerowej."
+      },
+      {
+        "keu": "",
+        "peu": "Przejawia odpowiedzialność za bezpieczeństwo danych, ciągłość działania systemów i poprawność konfiguracji."
+      }
+    ]
+  },
+  "AIC": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie anatomię kluczowych zagrożeń Cyber"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wskazać mocne i słabe strony systemów ochrony informacji"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do pracy zespołowej w dziale SOC"
+      }
+    ]
+  },
+  "ALG": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+      }
+    ]
+  },
+  "AM": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcie ciągu liczbowego, granicy ciągu, ciągu ograniczonego, monotonicznego. Student zna i rozumie pojęcia i własności funkcji (w szczególności funkcji wykładniczej, logarytmicznej, trygonometrycznej, cyklometrycznej), granicy funkcji, funkcji monotonicznej, ograniczonej, funkcji ciągłej. Zna i rozumie definicję, własności i twierdzenia dotyczące pochodnych funkcji jednej zmiennej. Zna i rozumie definicję oraz sposoby obliczania całek nieoznaczonych i oznaczonych. Zna i rozumie definicje szeregów liczbowych oraz kryteria zbieżności szeregów liczbowych. Student zna metody numerycznego obliczania pochodnych oraz całek oznaczonych. Student zna i rozumie pojęcie szeregu potęgowego.  Student zna i rozumie zastosowanie równań różniczkowych zwyczajnych oraz zna podstawowe metody ich rozwiązywania. Student zna i rozumie sposoby przeprowadzania prostych dowodów twierdzeń matematycznych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi wyznaczać granice ciągów liczbowych oraz funkcji jednej zmiennej. Potrafi sprawdzić czy funkcja jest ciągła.  Potrafi liczyć pochodne. Zna interpretację geometryczną pochodnej i twierdzeń z nią związaną. Potrafi stosować  regułę de L'Hospitala. Potrafi  wyznaczać wielomian Taylora.  Potrafi zastosować twierdzenie Rolle’a, Lagrange’a i Cauchy’ego. Potrafi  obliczać ekstrema lokalne i globalne funkcji jednej zmiennej.  Potrafi przeprowadzić badanie przebiegu zmienności funkcji. Potrafi liczyć całki oznaczone i nieoznaczone jednej zmiennej oraz wykorzystywać je do zagadnień geometrycznych. Student potrafi opisać związek twierdzeń rachunku różniczkowego i całkowego jednej zamiennej z wybranymi metodami numerycznymi. Student potrafi użyć twierdzenie Taylora do obliczania przybliżonej wartości wyrażenia. Student potrafi określić rząd równania różniczkowego zwyczajnego oraz rozwiązać równanie różniczkowe zwyczajne pierwszego rzędu oraz zagadnienie Cauchy,ego związane z tymi równaniami. Student potrafi przeprowadzić elementarny dowód twierdzenia."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+      }
+    ]
+  },
+  "AMM": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie różnice między architekturą monolityczną a mikroserwisową: zalety, wady, kryteria wyboru oraz typowe scenariusze migracji."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady dekompozycji systemu na mikroserwisy z użyciem Domain-Driven Design (DDD), bounded context i reguł spójności domenowej."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie mechanizmy komunikacji między mikroserwisami: wywołania synchroniczne (REST, gRPC) oraz asynchroniczne (message broker: RabbitMQ, Kafka) i potrafi wskazać zastosowania każdego z podejść."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie wzorce architektoniczne stosowane w mikroserwisach: API Gateway, Service Discovery, Circuit Breaker, Saga, CQRS, Event Sourcing."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie koncepcję mikrofrontendów: podział aplikacji frontendowej na niezależne moduły wdrażane i rozwijane przez oddzielne zespoły, w tym podejście Module Federation (Webpack 5)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy konteneryzacji (Docker) i orkiestracji (Kubernetes) w kontekście wdrażania i skalowania mikroserwisów."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zagadnienia bezpieczeństwa w architekturze mikroserwisowej: uwierzytelnianie i autoryzacja (OAuth 2.0/JWT) na poziomie API Gateway, szyfrowanie komunikacji wewnętrznej."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować architekturę systemu opartego na mikroserwisach, dokonując dekompozycji domeny biznesowej, identyfikując granice serwisów i definiując kontrakty API."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaimplementować co najmniej trzy współpracujące mikroserwisy w technologii Node.js/Express lub Spring Boot, stosując komunikację synchroniczną (REST) i asynchroniczną (message broker)."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonteneryzować mikroserwisy za pomocą Dockera, tworzyć pliki Dockerfile i konfiguracje Docker Compose do uruchamiania całego systemu lokalnie."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować aplikację mikrofrontendową z użyciem Webpack Module Federation, integrując co najmniej dwa niezależne moduły frontendowe w ramach wspólnego shell-a."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować i wdrożyć API Gateway (np. NGINX, Kong lub własny w Node.js) obsługujące routing, load balancing i uwierzytelnianie."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zidentyfikować wąskie gardła i punkty awarii w architekturze mikroserwisowej oraz zastosować wzorzec Circuit Breaker i mechanizmy retry/fallback."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować podstawową konfigurację klastra Kubernetes (Deployment, Service, Ingress) i wdrożyć na nim skonteneryzowany system mikroserwisowy."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do pracy w modelu organizacyjnym opartym na autonomicznych zespołach (tzw. team topologies), rozumiejąc wpływ struktury zespołu na architekturę systemu (prawo Conwaya)."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny zasadności stosowania architektury mikroserwisowej w danym projekcie, uwzględniając koszty złożoności operacyjnej i organizacyjnej."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego śledzenia aktualnych trendów w inżynierii oprogramowania i infrastrukturze chmurowej oraz aktualizowania swojej wiedzy w oparciu o dokumentację techniczną i społeczność open source."
+      }
+    ]
+  },
+  "ANG1": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować wypowiedzi pisemne i ustne w języku angielskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B1/B2."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "ANG2": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować wypowiedzi pisemne i ustne w języku angielskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B1+/B2."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "ANG3": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First)."
+      }
+    ]
+  },
+  "ASD": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia w zakresie algorytmiki: złożoność czasową i pamięciową algorytmów (notacja O, Omega, Theta), algorytmy sortowania, wyszukiwania i algorytmy grafowe. [K_W04]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia algorytmiczne: algorytmy zachłanne, programowanie dynamiczne, drzewa binarne (BST, AVL, czerwono-czarne), tablice haszujące i algorytmy grafowe (BFS, DFS, Dijkstra, Floyd-Warshall). [K_W05]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy teorii złożoności obliczeniowej: klasy P i NP, problemy NP-zupełne, metody redukcji, automaty skończone i języki formalne. [K_W05]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przeanalizować złożoność algorytmu, dobrać i zaimplementować odpowiednie struktury danych oraz algorytmy dla zadanego problemu inżynierskiego w C++/Pythonie/C#. [K_U11]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zweryfikować poprawność algorytmu z użyciem logiki Hoare'a oraz oszacować jego koszt obliczeniowy metodami asymptotycznymi. [K_U11]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do stosowania zaawansowanych technik algorytmicznych w rozwiązywaniu złożonych problemów inżynierskich, wykazując się krytycznym myśleniem i precyzją. [K_K05]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się nowych algorytmów i technik obliczeniowych niezbędnych w pracy inżyniera oprogramowania. [K_K03]"
+      }
+    ]
+  },
+  "BSI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu cyberbezpieczeństwa: kryptografię symetryczną i asymetryczną, protokoły bezpieczeństwa (TLS/SSL, Kerberos, PKI), bezpieczeństwo sieci i systemów operacyjnych. [K_W23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie metody oceny podatności systemów informatycznych, typologię ataków (OWASP Top 10, MITRE ATT&CK) i zasady bezpiecznego wytwarzania oprogramowania (SAST, DAST, DevSecOps). [K_W23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia sieci komputerowych w kontekście bezpieczeństwa: firewalle, systemy IDS/IPS, VPN, segmentację sieci i zasady zero-trust. [K_W08]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem cyberbezpieczeństwa, zaprojektować i wdrożyć rozwiązanie ochrony systemu informatycznego, przeprowadzić testy penetracyjne i analizę podatności. [K_U30]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować mechanizmy kontroli dostępu, szyfrowania danych i monitorowania bezpieczeństwa w systemach informatycznych. [K_U14]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do odpowiedzialnego projektowania bezpiecznych systemów informatycznych z uwzględnieniem etycznych aspektów ochrony danych i prywatności użytkowników. [K_K06]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania wiedzy o nowych zagrożeniach i technikach obrony w dynamicznie zmieniającym się krajobrazie cyberbezpieczeństwa. [K_K03]"
+      }
+    ]
+  },
+  "BYT": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, protokołów komunikacyjnych i mechanizmów bezpieczeństwa sieciowego, w tym firewalle, systemy IDS/IPS oraz wirtualne sieci prywatne (VPN). [K_W08]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia relacyjnych baz danych: modelowanie ERD, normalizację, transakcje, indeksy oraz programowanie SQL w kontekście bezpieczeństwa danych. [K_W13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady inżynierii oprogramowania, wzorce projektowe (GoF), notację UML, cykle wytwórcze (Agile/Scrum) oraz problem jakości oprogramowania i techniczny dług. [K_W14]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie metody i techniki inżynierii wymagań, sposoby tworzenia specyfikacji funkcjonalnych i niefunkcjonalnych oraz narzędzia do modelowania wymagań (m.in. diagramy przypadków użycia). [K_W15]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane metody walidacji i testowania oprogramowania: testy jednostkowe, integracyjne, systemowe i akceptacyjne, a także narzędzia do automatyzacji testów i analizy pokrycia kodu. [K_W16]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować, zainstalować i administrować siecią LAN/WAN z zachowaniem zasad bezpieczeństwa informacji, skonfigurować usługi sieciowe oraz reagować na incydenty bezpieczeństwa. [K_U14]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi sformułować zapytania SQL, zaprojektować schemat relacyjnej bazy danych na podstawie modelu ERD oraz zarządzać transakcjami i uprawnieniami w systemie bazodanowym. [K_U18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i zrealizować projekt programistyczny metodą obiektową z zastosowaniem wzorców projektowych, narzędzi CI/CD oraz systemów kontroli wersji (Git). [K_U19]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić pełny proces testowania oprogramowania: opracować plan testów, napisać testy automatyczne (JUnit/NUnit/pytest), wykonać testy regresji i zinterpretować wyniki. [K_U22]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przeprowadzić inspekcję kodu, zidentyfikować defekty i poprawić jakość oprogramowania zgodnie z przyjętymi standardami (SOLID, Clean Code). [K_U21]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do pracy w zespole deweloperskim w zróżnicowanych rolach (deweloper, tester, analityk), stosując metodyki zwinne i dobre praktyki inżynierii oprogramowania. [K_K04]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania wiedzy z zakresu bezpieczeństwa systemów informatycznych i nowych technologii wytwarzania oprogramowania. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do dostrzegania i profesjonalnego rozwiązywania problemów etycznych i prawnych związanych z bezpieczeństwem danych i odpowiedzialnością inżynierską. [K_K06]"
+      }
+    ]
+  },
+  "COV": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie:zaawansowane koncepcje i techniki przetwarzania obrazów cyfrowych, w tym metody segmentacji obrazu, detekcji krawędzi i wykrywania obiektów; posiada wiedzę na temat zastosowania splotowych i transformerowych sieci neuronowych w zadaniach klasyfikacji, detekcji, segmentacji i generowania obrazów; rozumie zasady działania algorytmów przetwarzających obrazy 2D i 3D oraz sekwence wideo; zna podstawy przetwarzania obrazów w czasie rzeczywistym i optymalizacji wydajności algorytmów computer vision; jest zaznajomiony z bibliotekami i frameworkami takimi jak OpenCV, PyTorch i HuggingFace stosowanymi w implementacji rozwiązań z zakresu widzenia komputerowego; rozumie wyzwania związane z przetwarzaniem dużych zbiorów danych obrazowych i metody ich efektywnego składowania i analizy."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie:kluczowe zagadnienia i metody z zakresu computer vision, w tym techniki przetwarzania i analizy obrazów cyfrowych; rozumie podstawy algorytmów segmentacji obrazu, detekcji krawędzi i cech charakterystycznych; zna metody rozpoznawania obiektów i twarzy w obrazach oraz sekwencjach wideo; jest zaznajomiony z technikami rekonstrukcji trójwymiarowej sceny z obrazów dwuwymiarowych; zna podstawy deep learningu w zastosowaniu do zadań widzenia komputerowego, w tym architekturę i zastosowania sieci neuronowych splotowych in transformerowych ; jest świadomy wyzwań związanych z przetwarzaniem obrazów w czasie rzeczywistym i optymalizacją wydajności algorytmów wizyjnych."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie:zaawansowane pojęcia i techniki w dziedzinie computer vision; rozumie głębokie modele uczenia maszynowego stosowane w analizie obrazów, w tym architektury sieci neuronowych takie jak CNN, R-CNN, YOLO, autoencoder, GAN, modele dyfuzyjne, transformery do obrazów; zna zaawansowane metody detekcji i segmentacji obiektów, w tym techniki segmentacji semantycznej i instancyjnej; rozumie zasady działania systemów śledzenia wielu obiektów (multi-object tracking) w czasie rzeczywistym; jest zaznajomiony z technikami generowania i manipulacji obrazów przy użyciu modeli generatywnych, takich jak GANy i dyfuzyjne; zna metody uczenia się bez nadzoru i samonadzorowanego w kontekście analizy obrazów; rozumie problematykę interpretacji i wyjaśnialności modeli wizyjnych; zna zaawansowane techniki przetwarzania obrazów medycznych i przemysłowych; rozumie zasady działania i zastosowania systemów widzenia maszynowego w robotyce i pojazdach autonomicznych; jest zaznajomiony z aktualnymi narzędziami i bibliotekami takimi jak PyTorch, czy OpenCV, stosowanymi w zaawansowanych projektach computer vision."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi:"
+      },
+      {
+        "keu": "",
+        "peu": "samodzielnie poszerzać wiedzę z zakresu computer vision, wykorzystując platformy e-learningowe jak Coursera czy edX czy kursy na platformie YouTube; implementować i testować algorytmy wizyjne, korzystając z otwartych repozytoriów kodu; śledzić postępy w dziedzinie poprzez lekturę artykułów naukowych i uczestnictwo w webinarach; efektywnie rozwiązywać problemy techniczne przy użyciu forów specjalistycznych; tworzyć własne projekty wizyjne i dzielić się nimi online; uczestniczyć w wirtualnych grupach studyjnych, rozwijając praktyczne umiejętności w dziedzinie przetwarzania obrazów i sztucznej inteligencji."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi:współpracować w zespole nad projektami computer vision; trafnie oszacować czas i zasoby potrzebne do implementacji algorytmów przetwarzania obrazu; tworzyć realistyczne harmonogramy projektów wizyjnych, uwzględniające etapy od zbierania danych po testowanie; zarządzać priorytetami w złożonych zadaniach, jak systemy rozpoznawania twarzy; efektywnie komunikować postępy techniczne zespołowi; dostosowywać plan do zmian, utrzymując terminowość dostaw; przewidywać i zarządzać ryzykiem w projektach uczenia maszynowego dla analizy obrazów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi:zdiagnozować złożone problemy w dziedzinie computer vision, takie jak niska dokładność detekcji obiektów w trudnych warunkach oświetleniowych; zaprojektować rozwiązanie wykorzystujące zaawansowane techniki, np. transfer learning czy data augmentation; dobrać odpowiednie narzędzia, jak PyTorch czy TensorFlow, oraz zestaw danych do treningu; określić etapy implementacji, od preprocessingu obrazów po fine-tuning modelu; zrealizować projekt, iteracyjnie optymalizując wyniki poprzez dostrajanie hiperparametrów i analizę błędów; ocenić efektywność rozwiązania przy użyciu odpowiednich metryk i testów; zaadaptować wdrożone rozwiązanie do wymagań czasu rzeczywistego lub ograniczeń sprzętowych."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do:wykorzystania technik computer vision w rozwoju innowacyjnych rozwiązań naukowych i społecznych; zastosowania algorytmów przetwarzania obrazów w medycynie, np. do automatycznej analizy zdjęć rentgenowskich czy wykrywania nowotworów; wdrażania systemów rozpoznawania twarzy, z uwzględnieniem aspektów etycznych; tworzenia zaawansowanych systemów wizyjnych dla pojazdów autonomicznych, przyczyniając się do rozwoju inteligentnego transportu; implementacji rozwiązań augmented reality w edukacji i przemyśle; rozwijania technologii computer vision wspierających osoby z niepełnosprawnościami wzroku; projektowania systemów monitoringu środowiska wykorzystujących analizę obrazów satelitarnych; aktywnego udziału w otwartych projektach badawczych, dzieląc się wiedzą i kodem z globalną społecznością naukową."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do:ustalenia kluczowych priorytetów w projektach computer vision, takich jak wybór optymalnej architektury sieci neuronowej dla danego zadania wizyjnego; określenia krytycznych etapów w procesie rozwoju systemu rozpoznawania obrazów, od przygotowania danych po optymalizację modelu; priorytetyzacji zadań w zespole pracującym nad złożonym projektem widzenia maszynowego, uwzględniając terminy i zasoby; identyfikacji najważniejszych metryk oceny wydajności algorytmów przetwarzania obrazu w kontekście wymagań projektu; ustalenia kolejności implementacji funkcji w systemie analizy wideo, zaczynając od najbardziej istotnych dla użytkownika końcowego; określenia priorytetów w optymalizacji czasu wykonania algorytmów wizyjnych dla aplikacji czasu rzeczywistego; efektywnego zarządzania czasem i zasobami w procesie treningu i walidacji modeli deep learning do zadań wizyjnych."
+      }
+    ]
+  },
+  "CPP": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe konstrukcje języka C++, typy danych, instrukcje sterujące oraz zasady działania kompilatora i linkera. Rozumie podstawy zarządzania pamięcią i różnice między typami wartościowymi i referencyjnymi."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć, kompilować i debugować proste programy w języku C++, korzystać z dokumentacji technicznej, dzielić program na funkcje i pliki źródłowe oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, dbać o jakość i czytelność kodu oraz terminowo realizować powierzone zadania."
+      }
+    ]
+  },
+  "DDO": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji."
+      }
+    ]
+  },
+  "DEV": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia sieci komputerowych w kontekście DevOps: wirtualizację sieci (SDN, overlay networks), protokoły routingu (BGP, OSPF), bezpieczeństwo sieciowe (TLS, mTLS, zero-trust) i monitoring sieci. [K_W08]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę konteneryzacji (Docker, Kubernetes), zasady Infrastructure as Code (Terraform, Ansible), potoki CI/CD (GitHub Actions, GitLab CI) i modele chmurowe (AWS, GCP, Azure). [K_W08]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować, zainstalować i administrować infrastrukturą sieciową z zachowaniem zasad bezpieczeństwa, stosując narzędzia automatyzacji i monitorowania. [K_U14]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zbudować potok CI/CD automatyzujący budowanie, testowanie i wdrażanie aplikacji kontenerowej na klaster Kubernetes z użyciem deklaratywnej konfiguracji infrastruktury. [K_U14]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania wiedzy o dynamicznie rozwijającym się ekosystemie DevOps i chmurowym, śledzenia dokumentacji i społeczności open source. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do odpowiedzialnego zarządzania infrastrukturą z uwzględnieniem kosztów, bezpieczeństwa i zrównoważonego użytkowania zasobów chmurowych. [K_K06]"
+      }
+    ]
+  },
+  "DGR": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z bazami grafowymi, rozumie model grafowy oraz różnice pomiędzy bazami grafowymi, relacyjnymi i dokumentowymi."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować prosty model grafowy, tworzyć wierzchołki i relacje, formułować zapytania grafowe oraz wykorzystać bazę grafową w prostym projekcie aplikacyjnym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, analizować zależności pomiędzy danymi oraz argumentować wybór modelu grafowego."
+      }
+    ]
+  },
+  "DSL": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z bazami słownikowymi oraz rozumie różnice pomiędzy modelem klucz–wartość a innymi modelami baz danych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować prosty system oparty na bazie słownikowej, wykonywać operacje zapisu i odczytu danych, ocenić wydajność oraz zintegrować bazę słownikową z aplikacją."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, uzasadniać wybór bazy słownikowej oraz dbać o jakość dokumentacji projektowej."
+      }
+    ]
+  },
+  "DTH": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test)."
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie różnice między projektowaniem skoncentrowanym na technologii a projektowaniem skoncentrowanym na człowieku (Human-Centered Design)."
+      },
+      {
+        "keu": "",
+        "peu": "Student posiada wiedzę o technikach kreatywnego rozwiązywania problemów i moderowania sesji ideacyjnych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem oraz stworzyć na jego podstawie mapę empatii i personę."
+      },
+      {
+        "keu": "",
+        "peu": "Student umie zdefiniować \"Point of View\" (POV) i sformułować pytania typu \"How Might We\" w celu znalezienia innowacyjnych rozwiązań."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć prototypy \"low-fidelity\" (np. makiety papierowe, storyboarding) i wykorzystywać je do zbierania wczesnego feedbacku."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotowy do moderowania procesów grupowych, dbając o bezpieczeństwo psychologiczne i kreatywność zespołu."
+      }
+    ]
+  },
+  "ELK": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe prawa i zjawiska elektryczne: prawo Ohma, prawa Kirchhoffa, zasady działania obwodów prądu stałego i przemiennego, elementy pasywne (rezystory, kondensatory, cewki) i podstawy półprzewodnikowe. [K_W02]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy elektrotechniki i elektroniki w kontekście informatyki: interfejsy elektryczne układów cyfrowych (TTL, CMOS), analogowe układy wzmacniające i konwersja A/D i D/A. [K_W03]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi analizować proste obwody elektryczne, projektować układy kombinacyjne i sekwencyjne, obsługiwać przyrządy pomiarowe (multimetr, oscyloskop) i montować układy na płytce prototypowej. [K_U08]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić pomiary elektryczne, interpretować wyniki i weryfikować działanie projektowanego układu elektronicznego. [K_U09]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do stosowania wiedzy elektrycznej i elektronicznej w projektowaniu systemów informatycznych z komponentami sprzętowymi. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu elektroniki i elektrotechniki jako podstawy dla inżynierii systemów wbudowanych. [K_K03]"
+      }
+    ]
+  },
+  "FDL": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane koncepcje uczenia maszynowego i głębokiego uczenia, ich implementację w językach programowania takich jak Python, oraz kluczowe techniki, jak self-supervised learning, foundation models i modele językowe. Posiada wiedzę o metodologii badań, testach statystycznych, optymalizacji modeli i zastosowaniach AI w różnych dziedzinach. Rozumie zasady Responsible AI, transfer learning oraz tworzenia modeli wielozadaniowych i multimodalnych.Student zna i rozumie zastosowanie głębokiego uczenia w grafice, multimediach i interakcji człowiek-komputer. Obejmuje to modele generatywne, architektury multimodalne oraz metody AI w analizie i tworzeniu treści wizualnych i dźwiękowych. Rozumie techniki uczenia maszynowego w widzeniu komputerowym, przetwarzaniu mowy i języka naturalnego. Zna koncepcje transfer learning, oraz optymalizacji modeli dla aplikacji czasu rzeczywistego. Ta wiedza pozwala na innowacyjne łączenie AI z tradycyjnymi technikami w projektowaniu zaawansowanych interfejsów i treści multimedialnych.Student zna i rozumie zaawansowane koncepcje w dziedzinie głębokiego uczenia, w tym architekturę i zastosowania modeli podstawowych, techniki self-supervised learning, transfer learning oraz modele multimodalne i multitask. Rozumie zasady optymalizacji i skalowania dużych modeli językowych, metody interpretacji i wyjaśnialności AI oraz koncepcje Responsible AI. Zna aktualne narzędzia i technologie stosowane w badaniach nad AI, w tym frameworki do automatyzacji uczenia maszynowego i techniki efektywnego treningu na dużych zbiorach danych. Posiada wiedzę o najnowszych trendach i wyzwaniach w rozwoju sztucznej inteligencji, umożliwiającą mu krytyczną analizę i twórcze rozwiązywanie złożonych problemów w tej dziedzinie."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować i realizować proces ciągłego uczenia się w dziedzinie głębokiego uczenia, wykorzystując różnorodne źródła wiedzy, takie jak publikacje naukowe, kursy online, webinaria i konferencje branżowe. Umie efektywnie korzystać z platform e-learningowych i repozytoriów kodu (np. GitHub) do zgłębiania najnowszych technik i implementacji modeli AI. Potrafi śledzić i analizować postępy w dziedzinie poprzez regularną lekturę artykułów naukowych i technicznych blogów. Jest zdolny do samodzielnego przeprowadzania eksperymentów z nowymi architekturami modeli i technikami uczenia, wykorzystując dostępne narzędzia i frameworki. Umie oceniać i adaptować nowe metody do własnych projektów, rozwijając tym samym swoje kompetencje zawodowe w dynamicznie zmieniającym się obszarze sztucznej inteligencji.Student potrafi efektywnie współpracować w zespole nad projektami z zakresu głębokiego uczenia, dzieląc się wiedzą i umiejętnościami. Umie precyzyjnie oszacować czas i zasoby obliczeniowe potrzebne do treningu, optymalizacji i wdrożenia zaawansowanych modeli AI, uwzględniając specyfikę różnych architektur (np. transformery, modele multitask). Potrafi planować i realizować harmonogram prac badawczo-rozwojowych w obszarze AI, obejmujący fazy od przygotowania danych, przez eksperymentowanie z różnymi technikami (np. transfer learning, fine-tuning), po ewaluację i interpretację wyników. Jest w stanie zarządzać procesem iteracyjnego doskonalenia modeli, uwzględniając ograniczenia czasowe i budżetowe projektu. Umie koordynować zadania w zespole, efektywnie wykorzystując narzędzia do współpracy i kontroli wersji, zapewniając terminową realizację złożonych projektów AI.Student potrafi zdiagnozować złożone problemy w dziedzinie głębokiego uczenia, takie jak nieefektywność modeli na dużych zbiorach danych czy trudności w generalizacji wiedzy. Umie zaprojektować innowacyjne rozwiązania, dobierając odpowiednie architektury (np. modele foundation, sieci multimodalne) i techniki (np. self-supervised learning, transfer learning). Potrafi określić i zrealizować etapy implementacji, obejmujące przygotowanie danych, wybór odpowiednich metryk, trening modelu, jego optymalizację i ewaluację. Jest w stanie dobrać adekwatne narzędzia i frameworki (np. PyTorch) oraz zaplanować eksperymenty z wykorzystaniem metod optymalizacji hiperparametrów czy skalowania modeli. Umie zastosować metody interpretacji wyników i zapewnić zgodność z zasadami Responsible AI. Potrafi iteracyjnie udoskonalać rozwiązanie, analizując wyniki i adaptując najnowsze osiągnięcia w dziedzinie do specyfiki rozwiązywanego problemu."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do wykorzystania zaawansowanych technik głębokiego uczenia na rzecz rozwoju nauki i społeczeństwa informacyjnego. Jest gotów do zastosowania modeli foundation i architektury multimodalnych do rozwiązywania złożonych problemów w różnych dziedzinach, takich jak medycyna (np. analiza obrazów medycznych), ochrona środowiska (np. monitorowanie zmian klimatycznych) czy edukacja (np. spersonalizowane systemy nauczania). Jest przygotowany do tworzenia innowacyjnych rozwiązań AI, które usprawniają procesy decyzyjne i automatyzację w przemyśle i administracji publicznej. Jest gotów do rozumienia etycznych implikacji wdrażania systemów AI i jest gotów do stosowania zasad Responsible AI, zapewniając transparentność, fairness i prywatność danych. Jest gotów do uczestniczenia w interdyscyplinarnych projektach badawczych, łącząc wiedzę z zakresu głębokiego uczenia z innymi dziedzinami nauki, przyczyniając się do postępu technologicznego i społecznego."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do określenia priorytetów w realizacji zadań z zakresu głębokiego uczenia, uwzględniając kluczowe aspekty rozwoju nowoczesnych systemów AI. Potrafi hierarchizować etapy projektu, stawiając na pierwszym miejscu prawidłowe zdefiniowanie problemu i przygotowanie wysokiej jakości danych. Umie priorytetyzować wybór odpowiedniej architektury modelu (np. transformery, modele multimodalne) i technik uczenia (np. transfer learning, self-supervised learning) w zależności od specyfiki zadania. Jest gotów do nadania wysokiego priorytetu optymalizacji wydajności i skalowalności modelu, uwzględniając ograniczenia zasobów obliczeniowych. Jest gotów do rozumienia wagi implementacji metod interpretacji i wyjaśnialności AI oraz zasad Responsible AI, stawiając je wysoko w hierarchii zadań. Jest gotów oceniać, które eksperymenty i iteracje są kluczowe dla sukcesu projektu, efektywnie zarządzając czasem i zasobami w dynamicznym środowisku badawczo-rozwojowym AI."
+      }
+    ]
+  },
+  "FIZ": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student ma rozszerzoną wiedzę z zakresu mechaniki klasycznej, termodynamiki, elektrostatyki i elektromagnetyzmu oraz optyki i akustyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka. [K_W02]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady tworzenia i weryfikacji modeli fizycznych oraz metody numeryczne przybliżonego rozwiązywania równań fizycznych. [K_W02]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi analizować i wyjaśniać zjawiska fizyczne, budować i weryfikować modele matematyczne układów fizycznych oraz posługiwać się narzędziami symulacyjnymi. [K_U08]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić eksperyment fizyczny (pomiar lub symulację), dobrać metody pomiarowe i sprzęt, opracować wyniki z uwzględnieniem błędu pomiarowego. [K_U09]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do stosowania modelowania fizycznego i symulacji w rozwiązywaniu złożonych problemów inżynierskich z zakresu informatyki. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie i poszerzania wiedzy fizycznej jako podstawy nowoczesnych technologii informatycznych. [K_K03]"
+      }
+    ]
+  },
+  "GRK": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie matematyczne podstawy grafiki komputerowej: algebrę liniową (wektory, macierze transformacji, układy współrzędnych), geometrię obliczeniową i podstawy optyki geometrycznej. [K_W11]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady działania potoku renderowania GPU (vertex/fragment shader, rasteryzacja, z-buffer, blending) oraz podstawowe algorytmy syntezy obrazu: rzutowanie, oświetlenie (Phong, PBR), cieniowanie. [K_W11]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia z zakresu komunikacji człowiek-komputer: zasady użyteczności, projektowanie interfejsu graficznego (GUI) i zasady dostępności (WCAG). [K_W11]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować aparat matematyczny (algebrę liniową, geometrię obliczeniową) do rozwiązywania problemów z zakresu grafiki komputerowej i transformacji przestrzennych. [K_U07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprogramować aplikację grafiki 2D i 3D z użyciem nowoczesnego API (OpenGL 4.x / Vulkan / WebGL) lub silnika (Unity/Godot), implementując shadery i efekty postprocessingu. [K_U17]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować graficzny interfejs użytkownika z uwzględnieniem zasad użyteczności i przeprowadzić podstawowe testy użyteczności. [K_U17]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego rozwijania kompetencji w dynamicznie zmieniającym się obszarze grafiki komputerowej i GPU computing. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny rozwiązań graficznych pod kątem wydajności, jakości wizualnej i dostępności dla użytkownika końcowego. [K_K05]"
+      }
+    ]
+  },
+  "HIS1": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "HIS2": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A2."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "HIS3": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie A2+."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "HIS4": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "HKJ": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe fakty z historii i kultury Japonii."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna najważniejsze pojęcia estetyki japońskiej."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii."
+      }
+    ]
+  },
+  "ICK": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia, modele oraz zakres projektowania interakcji człowiek–komputer (HCI)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna zasady użyteczności, heurystyki projektowe oraz klasyczne reguły projektowania interfejsów użytkownika."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna ograniczenia poznawcze i motoryczne użytkowników oraz ich znaczenie w projektowaniu systemów interaktywnych."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna etapy procesu projektowego zgodnego z podejściem zorientowanym na użytkownika (UCD), w tym analizę potrzeb, prototypowanie i ewaluację rozwiązań."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna metody badania potrzeb użytkowników oraz podstawowe techniki testowania użyteczności systemów informatycznych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi analizować potrzeby użytkowników oraz definiować wymagania systemu informatycznego."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi opracować koncepcję rozwiązania informatycznego z uwzględnieniem kontekstu użycia i grupy docelowej."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi projektować interakcję użytkownik–system, tworzyć user flow oraz modelować podstawowe procesy użytkownika."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi opracowywać prototypy interfejsów (Lo-Fi i Hi-Fi) z wykorzystaniem wybranych narzędzi projektowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi planować i przeprowadzać podstawowe testy użyteczności oraz interpretować ich wyniki w celu doskonalenia projektu."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do współdziałania w zespołach projektowych realizujących projekty z zakresu projektowania interakcji człowiek–komputer."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do uwzględniania perspektywy użytkownika oraz jego ograniczeń poznawczych i kontekstowych w procesie podejmowania decyzji projektowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do odpowiedzialnego projektowania interfejsów użytkownika z uwzględnieniem zasad użyteczności, dostępności i ergonomii."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny rozwiązań interfejsowych, zarówno własnych, jak i cudzych, oraz do przyjmowania konstruktywnej informacji zwrotnej w procesie doskonalenia projektu."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego rozwijania kompetencji w zakresie projektowania interakcji w odpowiedzi na zmieniające się technologie, modele interakcji i potrzeby użytkowników."
+      }
+    ]
+  },
+  "IML": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia probabilistyki i statystyki: rozkłady prawdopodobieństwa, estymację, testy hipotez i ich zastosowanie w uczeniu maszynowym. [K_W12]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady działania i zastosowania algorytmów uczenia maszynowego: regresja, klasyfikacja (SVM, drzewa decyzyjne, lasy losowe), klasteryzacja, redukcja wymiarowości (PCA) i metody ewaluacji modeli. [K_W12]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia w zakresie sztucznej inteligencji: głębokie sieci neuronowe (CNN, RNN, Transformer), transfer learning i zasady odpowiedzialnej AI. [K_W22]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować aparat matematyczny (rachunek różniczkowy, algebrę liniową, statystykę) do implementacji i analizy algorytmów uczenia maszynowego w Pythonie (scikit-learn, PyTorch/TensorFlow). [K_U07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem z obszaru sztucznej inteligencji, zaprojektować pipeline danych, wytrenować, ocenić i zoptymalizować model ML/DL na danych rzeczywistych. [K_U29]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowania sztucznej inteligencji na rzecz rozwiązywania problemów naukowych i społecznych z uwzględnieniem zasad etycznej AI. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego śledzenia postępów w dziedzinie ML/AI i adaptowania nowych metod w praktyce inżynierskiej. [K_K03]"
+      }
+    ]
+  },
+  "JAP1": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "JAP2": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "JAP3": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "JAP4": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N4."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "JFS": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe konstrukcje języka F#, paradygmat funkcyjny oraz zasady tworzenia aplikacji na platformie .NET."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć, uruchamiać i testować proste aplikacje w języku F#, definiować funkcje, korzystać z typów niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie stosować paradygmat funkcyjny w praktyce."
+      }
+    ]
+  },
+  "JJA": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe konstrukcje języka Java, typy danych, instrukcje sterujące oraz zasady programowania obiektowego. Rozumie działanie maszyny wirtualnej JVM oraz rolę bibliotek standardowych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Java, projektować klasy i ich relacje, obsługiwać wyjątki oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy."
+      }
+    ]
+  },
+  "JPT": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
+      }
+    ]
+  },
+  "JSC": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe konstrukcje języka Scala, różnice między paradygmatem obiektowym i funkcyjnym oraz zasady działania aplikacji na platformie JVM."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Scala, definiować funkcje i klasy, korzystać z kolekcji niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie dobierać narzędzia i paradygmaty do rozwiązywanego problemu."
+      }
+    ]
+  },
+  "KC": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie anatomię kluczowych zagrożeń Cyber"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wskazać mocne i słabe strony systemów ochrony informacji"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do pracy zespołowej w dziale SOC"
+      }
+    ]
+  },
+  "KIP": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu techniki cyfrowej i architektury systemów komputerowych: układy kombinacyjne i sekwencyjne, architekturę ARM/RISC-V, organizację pamięci i magistral komunikacyjnych. [K_W06]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia mikrokontrolerów i systemów wbudowanych stosowanych w IoT: programowanie bare-metal i RTOS-based, interfejsy peryferyjne (I2C, SPI, UART, CAN), zarządzanie energią. [K_W18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia w zakresie Internetu Rzeczy: protokoły komunikacyjne warstwy aplikacji (MQTT, CoAP, HTTP/REST), architektury IoT (edge, fog, cloud), bezpieczeństwo urządzeń IoT. [K_W26]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować proste układy cyfrowe, napisać program w asemblerze dla mikrokontrolera oraz zintegrować peryferyjne moduły sprzętowe z systemem wbudowanym. [K_U12]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany IoT: skonfigurować interfejsy sensorów i aktuatorów, zaimplementować stos komunikacyjny i zapewnić niezawodność systemu. [K_U23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem inżynierski w dziedzinie IoT, zaprojektować rozwiązanie i zrealizować prototyp z użyciem dostępnych platform (ESP32, Raspberry Pi, Arduino). [K_U33]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowania technologii IoT na rzecz rozwoju innowacyjnych rozwiązań w przemyśle, rolnictwie, medycynie i inteligentnych miastach. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pogłębiania wiedzy z dynamicznie rozwijającego się obszaru systemów wbudowanych i Internetu Rzeczy. [K_K03]"
+      }
+    ]
+  },
+  "KLI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna różnice między zarządzaniem (management) a przywództwem (leadership) w kontekście inżynierii oprogramowania."
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie psychologiczne aspekty dynamiki grupowej (model Tuckmana) oraz motywacji pracowników wiedzy."
+      },
+      {
+        "keu": "",
+        "peu": "Student posiada wiedzę na temat różnych stylów przywództwa i potrafi dopasować je do dojrzałości zespołu."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI."
+      },
+      {
+        "keu": "",
+        "peu": "Student umie identyfikować źródła konfliktów w zespole i dobierać odpowiednie strategie ich rozwiązywania."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi moderować spotkania zespołowe, dbając o zaangażowanie wszystkich członków (facilitation)."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą."
+      }
+    ]
+  },
+  "KMR": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  jak oszacować ekonomiczne i społeczne tło projektu informatycznego. Potrafi ustalić finansową opłacalność lub jej brak, a także ocenić skalowalność projektu i jego potencjał rozwojowy."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  sposoby oszacowania nakładów finansowych i pozafinansowych związanych z prowadzeniem działalności gospodarczej.  Rozróżnia potencjał naukowy od komercyjnego i potrafi opracować ścieżki finansowania w zależności od potencjału, którym dysponuje projekt."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi  ustalać kosztorys projektu oraz jego budżet, po uwzględnieniu spodziewanych/zakładanych przychodów.  Potrafi planować i rozdzielać prace w ramach zespołu, opracowywać założenia dla działań związanych z rozwojem rynku i pozyskiwaniem klientów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  przygotować biznesplan w oparciu o metodologię  Business Model Canvas, a także przygotować prezentację relacyjną lub sprzedażową projektu."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  stosowania technik empatycznych (m.in. mapa apatii, design thinking) dzięki którym jest w stanie lepiej zrozumieć pragnienia i potrzeby interesariuszy projektu."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  definiowania problemów oraz stosowania technik pozwalających na szybką walidację sposobów rozwiązania zdefiniowanych problemów, pod kątem ich opłacalności i skuteczności."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  opracowania narracji opartaej na języku korzyści (m.in. definiować unique selling point projektu) a także przygotowania prezentacji relacyjnej lub sprzedażowej projektu."
+      }
+    ]
+  },
+  "KSI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie cykl życia kontenera oraz zasady tworzenia efektywnych obrazów Dockera z użyciem instrukcji Dockerfile: FROM, RUN, COPY, ENV, EXPOSE, ENTRYPOINT, CMD."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie mechanizmy sieciowe Dockera (bridge, host, overlay, macvlan) oraz sposoby persystowania danych (volumes, bind mounts, tmpfs)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie przeznaczenie i budowę pliku docker-compose.yml: definiowanie usług, sieci, woluminów, zmiennych środowiskowych i zależności między serwisami."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę Kubernetes: komponenty warstwy sterowania (API Server, etcd, Scheduler, Controller Manager) oraz węzłów roboczych (kubelet, kube-proxy, container runtime)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment, Service (ClusterIP, NodePort, LoadBalancer), ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, Ingress."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady skalowania aplikacji w Kubernetes: skalowanie manualne, Horizontal Pod Autoscaler (HPA) oraz rolling update i rollback."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zagadnienia bezpieczeństwa kontenerów: zasadę najmniejszych uprawnień, skanowanie obrazów pod kątem podatności (Trivy, Snyk), zarządzanie sekretami oraz polityki sieciowe (NetworkPolicy)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy CI/CD w kontekście konteneryzacji: budowanie i publikowanie obrazów w potoku CI (GitHub Actions, GitLab CI), strategie wdrożeń (rolling, blue-green, canary)."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi napisać poprawny plik Dockerfile dla aplikacji webowej (Node.js, Python lub Java), stosując best practices: multi-stage build, minimalizację warstw, użytkownik non-root, .dockerignore."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zbudować, otagować i opublikować obraz Docker w rejestrze Docker Hub oraz w prywatnym rejestrze."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować plik docker-compose.yml dla środowiska wielokontenerowego (aplikacja webowa + baza danych + cache), uruchamiać, zatrzymywać i debugować usługi."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować sieci i woluminy Dockera w celu zapewnienia izolacji i persystencji danych między kontenerami."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wdrożyć aplikację na lokalny klaster Kubernetes (Minikube lub k3s), tworząc manifesty YAML dla obiektów Deployment, Service i Ingress."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować ConfigMap i Secret w Kubernetes oraz przekazywać zmienne środowiskowe i pliki konfiguracyjne do podów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przeprowadzić rolling update i rollback wdrożenia w Kubernetes oraz monitorować stan klastra poleceniami kubectl (get, describe, logs, exec, top)."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować Horizontal Pod Autoscaler i zweryfikować działanie automatycznego skalowania pod obciążeniem."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować prosty potok CI/CD (GitHub Actions) automatycznie budujący i publikujący obraz Docker po każdym push do repozytorium."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zidentyfikować i usunąć podstawowe problemy z kontenerami (crashloopbackoff, brak zasobów, błędy konfiguracji sieci) przy użyciu narzędzi diagnostycznych."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do stosowania podejścia Infrastructure as Code, traktując pliki konfiguracyjne (Dockerfile, docker-compose.yml, manifesty Kubernetes) jako integralną część kodu źródłowego przechowywanego w systemie kontroli wersji."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny zasadności konteneryzacji w danym projekcie, uwzględniając koszty utrzymania infrastruktury, złożoność operacyjną i wymagania bezpieczeństwa."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu technologii chmurowych i DevOps, śledząc dokumentację, blogi techniczne i społeczność open source (CNCF)."
+      }
+    ]
+  },
+  "LANG1": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim w kontekście zawodowym i akademickim."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2+."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "LANG2": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim na poziomie C1."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie w środowisku zawodowym i akademickim na poziomie B2+/C1."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "LANG3": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi swobodnie konstruować wypowiedzi pisemne i ustne w języku angielskim na poziomie C1, w tym pisać pracę dyplomową."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem angielskim na poziomie C1 w środowisku zawodowym i akademickim."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do uczestnictwa w międzynarodowych projektach i konferencjach naukowych."
+      }
+    ]
+  },
+  "LANG4": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów."
+      }
+    ]
+  },
+  "LLP": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu architektury i organizacji systemów komputerowych: model von Neumanna, pipeline, pamięć podręczna (cache), architekturę wielordzeniową i zestawy instrukcji (x86-64, ARM). [K_W06]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady programowania na poziomie asemblera: reprezentacje liczb (U2, IEEE 754), arytmetykę binarną, tryby adresowania, wywołania systemowe i konwencje wywoływania funkcji. [K_W06]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować proste układy kombinacyjne i sekwencyjne, obliczyć reprezentacje liczb całkowitych i zmiennoprzecinkowych oraz napisać programy w asemblerze x86-64 realizujące zadane algorytmy. [K_U12]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi analizować kod maszynowy i asemblerowy wygenerowany przez kompilator C/C++, identyfikować optymalizacje i rozumieć niskopoziomowe aspekty wykonania programu. [K_U12]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu architektury procesorów i programowania niskopoziomowego w oparciu o dokumentację producentów i literaturę branżową. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do stosowania wiedzy o niskopoziomowej architekturze systemów przy projektowaniu wydajnego i bezpiecznego oprogramowania. [K_K05]"
+      }
+    ]
+  },
+  "M3D": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi wymodelować obiekty w technice low-poly oraz high-poly"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi oteksturować obiekt metodami tekstur proceduralnych"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi rozwinąć siatkę obiektu we współrzędnych UV"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do współpracy i dzielenia się swoją wiedzą"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności"
+      }
+    ]
+  },
+  "MAD": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcia logiki oraz język kwantyfikatorów. Zna i rozumie reguły wnioskowania przeprowadzania prostych dowodów. Student zna i rozumie  pojęcia zbioru, relacji, relacji równoważności, obrazu i przeciwobrazu zbioru i złożenie relacji w zbiorach dyskretnych. Student zna i rozumie pojęcia z arytmetyki modularnej. Student zna i rozumie podstawowe twierdzenia teorii liczb oraz jej znaczenie w informatyce. Student zna i rozumie  pojęcia kombinatoryki, prawdopodobieństwa, prawdopodobieństwa warunkowego i całkowitego oraz zmiennej losowej, wartości oczekiwanej i wariancji. Student zna i rozumie  pojęcia z algebry Boole’a oraz funkcji boolowskich."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie idee rekurencji. Student zna i rozumie podstawowe struktury danych (stosy, kolejki, drzewa)."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi wykonywać działania na zbiorach. Student potrafi definiować i rozpoznawać relacje, relacje równoważności. Potrafi wykonywać na nich działania. Student potrafi zapisać i odczytać zdanie logiczne zapisane również za pomocą kwantyfikatorów. Student potrafi sprawdzać, czy zdanie logiczne jest tautologią. Student potrafi uzasadnić, że dana reguła jest regułą dowodzenia oraz wykorzystać indukcję matematyczną. Student potrafi wykonywać obliczenia w arytmetyce modularnej z zastosowaniem do reprezentacji liczb i arytmetyki wykorzystywanej w komputerach. Student potrafi rozwiązywać zadania wymagające podstawowych pojęć z zakresu kombinatoryki i prawdopodobieństwa (w tym prawdopodobieństwa warunkowego i całkowitego). Student potrafi znaleźć rozkład zmiennej losowej i sprawdzić czy zmienne losowe są niezależne. Student potrafi obliczyć wartość oczekiwaną oraz wariancję zmiennej losowej. Student potrafi wykonywać działania w algebrze Boole’a. Student potrafi zapisać funkcję boolowską w postaciach normalnych.  Student potrafi, na podstawie twierdzeń z teorii liczb, przeprowadzić kodowanie w kryptosystemie RSA. Student potrafi odnaleźć elementy przeciwne i odwrotne w pierścieniach/ciałach Zk (również przy pomocy rozszerzonego algorytmu Euklidesa). Student potrafi przeprowadzić test pierwszości. Student potrafi posługiwać się algorytmami wykorzystującymi stosy, kolejki lub drzewa. Potrafi przeszukać drzewa binarne oraz drzewa operacji arytmetycznych. Student potrafi zastosować idee rekurencji w różnych kontekstach."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+      }
+    ]
+  },
+  "MAS": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN"
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "MFL": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych w Flutter, w tym widżety, drzewo widżetów, cykl życia aplikacji oraz podstawy języka Dart."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w Flutter, budować interfejs użytkownika, zarządzać stanem aplikacji, obsługiwać nawigację oraz komunikować się z zewnętrznym API."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, korzystać z dokumentacji technicznej oraz dbać o jakość i czytelność kodu."
+      }
+    ]
+  },
+  "MNE": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji wieloplatformowych w .NET MAUI, w tym architekturę MVVM, widoki, powiązania danych oraz cykl życia aplikacji."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację w .NET MAUI, tworzyć interfejs użytkownika w XAML, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na różnych platformach."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji wieloplatformowej, korzystać z dokumentacji technicznej oraz dbać o jakość i czytelność kodu."
+      }
+    ]
+  },
+  "MRN": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych oraz architekturą React Native, w tym komponenty, stan, właściwości oraz cykl życia aplikacji."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w React Native, korzystać z komponentów interfejsu, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na emulatorze lub urządzeniu mobilnym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu."
+      }
+    ]
+  },
+  "MUN": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji i gier 3D w Unity, w tym sceny, obiekty, komponenty, system fizyki oraz cykl życia aplikacji."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować prostą grę lub aplikację 3D w Unity, tworzyć i konfigurować sceny, skrypty w C#, obsługiwać interakcje użytkownika oraz uruchamiać projekt na wybranej platformie."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi samodzielnie planować realizację projektu interaktywnego, pracować z dokumentacją techniczną oraz dbać o jakość i czytelność kodu i zasobów projektu."
+      }
+    ]
+  },
+  "NAI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Zna i rozumie zastosowanie pojęć matematycznych w sztucznej inteligencji"
+      },
+      {
+        "keu": "",
+        "peu": "Zna i rozumie zastosowanie losowości w rozwiązywaniu problemów obliczeniowych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zidentyfikować problemy obliczeniowe które nie nadają się do rozwiązania klasycznymi algorytmami. Wie kiedy zastosować metody przybliżone."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi rozwiązywać problemy z wykorzystaniem narzędzi sztucznej inteligencji"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "NIM1": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "NIM2": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować wypowiedzi pisemne i ustne w języku niemieckim w kontekście zawodowym i codziennym."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie B1/B1+."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "NIM3": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "NIM4": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+      }
+    ]
+  },
+  "PAI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia DDD (m.in. model domenowy, encje, wartości, agregaty, repozytoria, bounded context) oraz potrafi uzasadnić ich użycie."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie założenia architektury oktogonalnej oraz zasady separacji warstw i zależności w systemie."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy SOA oraz typowe style integracji usług (API, komunikacja synchroniczna/asynchroniczna – zależnie od programu zajęć)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie mechanizmy uwierzytelniania i autoryzacji w aplikacjach internetowych, w tym OAuth 2.1 na poziomie koncepcji i przepływów."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie rolę testów integracyjnych i end-to-end w cyklu wytwarzania oraz podstawy automatyzacji w CI."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować backend zgodny z DDD i architekturą oktogonalną, z czytelnym podziałem na warstwy oraz granice kontekstów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować i zintegrować frontend z backendem poprzez API oraz zadbać o podstawowe aspekty bezpieczeństwa sesji/tokenów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować OAuth 2.1 w aplikacji (konfiguracja i integracja po stronie aplikacji – zgodnie z założeniami kursu)."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować środowisko uruchomieniowe w kontenerach (np. Docker + Compose), w tym zależności typu baza danych i usługi pomocnicze."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi napisać testy integracyjne dla kluczowych przypadków oraz testy E2E dla scenariuszy użytkownika i uruchamiać je automatycznie."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do pracy zespołowej nad produktem programistycznym, w tym do komunikacji, podziału zadań i przeglądu kodu."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do odpowiedzialnego podejścia do jakości: testowania, utrzymania spójności architektury i dokumentowania rozwiązań."
+      }
+    ]
+  },
+  "PBA": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "PG1": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna zasady projektowania pętli rozgrywki (gameplay loop) oraz mechanizmów retencji gracza."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna psychologiczne podstawy projektowania gier (flow, motywacja, pętle dopaminowe)."
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie różnicę między mechaniką (Mechanics), dynamiką (Dynamics) a estetyką (Aesthetics) w modelu MDA."
+      },
+      {
+        "keu": "",
+        "peu": "Student posiada wiedzę na temat metodologii testów korygujących i zbierania feedbacku od testerów."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i przeprowadzić sesję prototypowania papierowego w celu sprawdzenia balansu gry."
+      },
+      {
+        "keu": "",
+        "peu": "Student umie szybko budować makiety poziomów (greyboxing/whiteboxing) w celu testowania tempa i nawigacji."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyizolować pojedynczą mechanikę (\"core hook\") i sprawdzić jej atrakcyjność przed rozpoczęciem pełnej produkcji."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student wykazuje postawę badawczą – traktuje błędy w prototypie jako cenne źródło danych, a nie porażkę programistyczną."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi argumentować decyzje projektowe w oparciu o wyniki testów z użytkownikami."
+      }
+    ]
+  },
+  "PG2": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student ma zaawansowaną wiedzę o psychologii gracza i projektowaniu doświadczeń (UX w grach)."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna trendy rynkowe, modele biznesowe (F2P, Premium) i podstawowe techniki marketingu gier (Steam page, hook)."
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie proces budowania spójności wizualnej (Art Direction) i dźwiękowej w grach."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować intuicyjny interfejs użytkownika (UI) oraz systemy HUD."
+      },
+      {
+        "keu": "",
+        "peu": "Student umie przygotować strategię promocji swojego projektu, w tym analizę grupy docelowej i unikalnych cech sprzedaży (USP)."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zarządzać złożonym projektem gry, priorytetyzując funkcjonalności zgodnie z harmonogramem produkcji."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi prezentować swój projekt w formie \"pitchingu\", argumentując wybory projektowe i biznesowe."
+      },
+      {
+        "keu": "",
+        "peu": "Student wykazuje świadomość znaczenia inkluzywności i dostępności (accessibility) w projektowaniu gier."
+      }
+    ]
+  },
+  "PJN": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi: zrozumieć zaawansowane pojęcia związane z wybraną specjalizacją w NLP, co pozwala na rozwijanie innowacyjnych rozwiązań oraz adaptację aktualnych technologii w praktyce. Wiedza ta umożliwia studentom angażowanie się w badania i rozwój w dziedzinie NLP."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi: zastosować zaawansowane pojęcia z zakresu programowania, co jest niezbędne przy tworzeniu, testowaniu i uruchamianiu aplikacji wykorzystujących NLP. Umiejętność programowania w różnych językach oraz znajomość technik i narzędzi programistycznych jest kluczowa w realizacji projektów związanych z NLP."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi: pozyskiwać i analizować specjalistyczne informacje z literatury oraz źródeł internetowych w obszarze NLP. Umiejętność krytycznej analizy i syntezy informacji jest niezbędna do rozwoju projektów oraz badań naukowych w dziedzinie przetwarzania języka naturalnego."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi: analizować i wyjaśniać zjawiska związane z NLP, a także tworzyć modele rzeczywiste. Umiejętność weryfikacji modeli i ich zastosowania do predykcji stanów jest kluczowa w rozwoju aplikacji i systemów opartych na NLP."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi: samodzielnie uczyć się przez całe życie, co jest niezbędne w szybko rozwijającej się dziedzinie NLP. Techniki i narzędzia w tej dziedzinie stale ewoluują, więc umiejętność ciągłego kształcenia się jest kluczowa dla rozwoju zawodowego."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi: współdziałać w zespole, co jest ważne w projektach związanych z NLP, gdzie często wymagane są różnorodne umiejętności i kompetencje. Praca zespołowa sprzyja innowacyjności i efektywności w realizacji złożonych zadań."
+      }
+    ]
+  },
+  "POJ": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia programowania obiektowego w C#: klasy, interfejsy, dziedziczenie, polimorfizm, enkapsulacja, typy generyczne, kolekcje, delegaty i zdarzenia, obsługa wyjątków i serializacja. [K_W10]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie wybrane wzorce projektowe (Creational, Structural, Behavioral) i rozumie ich zastosowanie w budowie rozszerzalnego, testowalnego kodu w .NET. [K_W10]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi ocenić poprawność konstrukcji obiektowych i zaprojektować hierarchię klas, zastosować odpowiedni wzorzec projektowy i zaimplementować program obiektowy w C# spełniający specyfikację. [K_U15]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować i zdebugować program obiektowy w C# z użyciem środowiska Visual Studio/Rider i platformy .NET. [K_U16]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie, systematycznie poszerzając wiedzę o nowych możliwościach platformy .NET i języka C#. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny jakości kodu obiektowego i stosowania dobrych praktyk (SOLID, Clean Code) w projektach programistycznych. [K_K05]"
+      }
+    ]
+  },
+  "POZ": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe zasady planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej i analizy wykonalności z uwzględnieniem aspektów społecznych i ryzyka. [K_W17]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki: ochronę własności intelektualnej, prawo autorskie, odpowiedzialność zawodową i zagadnienia prywatności danych. [K_W19]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie ogólne zasady prowadzenia działalności gospodarczej w branży IT, w tym tworzenia startupów i innowacyjnych przedsięwzięć informatycznych. [K_W20]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przeanalizować projekt informatyczny pod kątem jego wpływu na otoczenie społeczne i ekonomicznego uzasadnienia realizacji. [K_U26]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia dla różnych interesariuszy. [K_U25]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do przekazywania informacji i opinii o projektach informatycznych w sposób powszechnie zrozumiały, z uwzględnieniem potrzeb różnych grup odbiorców. [K_K02]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do myślenia i działania w sposób przedsiębiorczy i innowacyjny w kontekście tworzenia przedsięwzięć informatycznych. [K_K07]"
+      }
+    ]
+  },
+  "PPS": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie funkcje, biblioteki i podstawową składnię Arduino.  Student zna i rozumie jak działa kompilator AVR dla mikrokontrolerów Arduino. Student ma znajomość języków programowania takich jak Ladder Logic, Structured Text. Student zna i rozumie niskopoziomowe programowanie oraz zarządzanie energią w MSP430. Student zna i rozumie funkcje niskopoziomowe oraz wie jak zoptymalizować kod dla mikrokontrolerów o ograniczonych zasobach (Atiny)."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi programować sekwencje zdarzeń w sterownikach programowalnych PLC. Student potrafi wykorzystywać C++/Python do szybkiego prototypowania oraz NodeJS do tworzenia aplikacji sieciowych. Student potrafi wykorzystać języki programowania takie jak Ladder Logic, Structured Text  oraz potrafi zaprogramować sekwencję zdarzeń.  Student potrafi zaprogramować i zoptymalizować mikrokontrolery o ograniczonych zasobach (Atiny)"
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "PRG1": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. [K_W10]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. [K_W04]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi czytać ze zrozumieniem programy w C#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. [K_U10]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C# do rozwiązania konkretnego zadania. [K_U15]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C# i .NET w oparciu o dokumentację techniczną i zasoby online. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. [K_K05]"
+      }
+    ]
+  },
+  "PRI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie cechy najistotniejszych cykli wytwarzania/ewolucji oprogramowania"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie składnię rdzeniowych diagramów języka UML"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie ograniczenia występujące w procesie wytwarzania oprogramowania"
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie wagę wymagań systemowych w procesie wytwarzania oprogramowania"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie techniki specyfikowania wymagań. Student zna i rozumie umiejscowienie poszczególnych elementów testowania w zależności od obranego cyklu"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafizaprojektować małoskalowe rozwiązanie IT w sposób holistyczny"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafikorzystać z narzędzi klasy CASE na poziomie średniozaawansowanym"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi specyfikować wymagania systemowe"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafiprojektować algorytmikę przypadków użycia oraz interakcje pomiędzy składowymi przypadku użycia. Student potrafi projektować architekturę systemu wyrażoną klasami. Student potrafi iteracyjnie udoskonalać komponenty projektowe systemu"
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "PRIN": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe zagadnienia planowania przedsięwzięcia informatycznego: wstępną ocenę ekonomiczną, analizę wykonalności, aspekty społeczne i środowiskowe projektu IT. [K_W17]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki: odpowiedzialność zawodowa, prawo autorskie, licencjonowanie oprogramowania i ochrona własności intelektualnej. [K_W19]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie ogólne zasady tworzenia przedsiębiorczości w IT: modele biznesowe, formy prawne działalności, zasady komercjalizacji rozwiązań informatycznych i pozyskiwania finansowania. [K_W20]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pracować w zespole projektowym, szacować czas i koszty realizacji zadań oraz budować harmonogram prac zapewniający terminową realizację projektu informatycznego. [K_U05]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i wytworzyć dokumentację przedsięwzięcia informatycznego (studium wykonalności, analiza ryzyka, wstępna wycena) z uwzględnieniem aspektów etycznych i prawnych. [K_U26]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uwzględnić aspekty etyczne, prawne i społeczne w planowanym przedsięwzięciu informatycznym i ocenić potencjalne zagrożenia. [K_U25]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego, działając zgodnie z zasadami etyki zawodowej. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do efektywnej współpracy w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań projektowych. [K_K04]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do przekazywania społeczeństwu informacji na temat konsekwencji i odpowiedzialności związanej z działalnością inżynierską w IT. [K_K02]"
+      }
+    ]
+  },
+  "PRO": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających;"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców;"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić  proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ustalania priorytetów zadań."
+      }
+    ]
+  },
+  "PRZ1": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania"
+      },
+      {
+        "keu": "",
+        "peu": "zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania"
+      },
+      {
+        "keu": "",
+        "peu": "rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML"
+      },
+      {
+        "keu": "",
+        "peu": "umie korzystać z wzorców programowych i standardowych API"
+      },
+      {
+        "keu": "",
+        "peu": "ma wiedzę o narzędziach i środowiskach wspomagających"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "ma wiedzę dotyczącą procesów inżynierii wymagań"
+      },
+      {
+        "keu": "",
+        "peu": "rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań"
+      },
+      {
+        "keu": "",
+        "peu": "ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi"
+      },
+      {
+        "keu": "",
+        "peu": "Student ma wiedzę z zakresu procesów walidacji i testowania"
+      },
+      {
+        "keu": "",
+        "peu": "Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego"
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym"
+      },
+      {
+        "keu": "",
+        "peu": "Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi pracować w zespole pełniąc w nim uzgodnione role"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi oszacować czas potrzebny na realizację zadania"
+      },
+      {
+        "keu": "",
+        "peu": "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu"
+      },
+      {
+        "keu": "",
+        "peu": "ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi dobrać model procesu i narzędzia dla jego wytworzenia"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi pełnić przypadające nań role projektowe i wykonawcze"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi współpracować z innymi członkami grupy i otoczeniem projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "stosuje w projekcie rozwiązania innowacyjne"
+      },
+      {
+        "keu": "",
+        "peu": "dostrzega i ocenia aspekty komercjalizacji projektu"
+      }
+    ]
+  },
+  "PRZ2": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Ma wiedzę wymaganą do oceny społecznych skutków realizacji wdrożenia projektu informatycznego"
+      },
+      {
+        "keu": "",
+        "peu": "Rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi pracować w zespole pełniąc w nim uzgodnione role"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi oszacować czas potrzebny na realizację zadania"
+      },
+      {
+        "keu": "",
+        "peu": "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego"
+      },
+      {
+        "keu": "",
+        "peu": "Student"
+      },
+      {
+        "keu": "",
+        "peu": "jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej"
+      },
+      {
+        "keu": "",
+        "peu": "Student"
+      },
+      {
+        "keu": "",
+        "peu": "jest gotów do samodzielnego uczenia się przez całe życie"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi pełnić przypadające nań role projektowe i wykonawcze"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi współpracować z innymi członkami grupy i otoczeniem projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student"
+      },
+      {
+        "keu": "",
+        "peu": "potrafi właściwie zaplanować kolejność i realizację zadań projektowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student"
+      },
+      {
+        "keu": "",
+        "peu": "dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych"
+      },
+      {
+        "keu": "",
+        "peu": "Student:"
+      },
+      {
+        "keu": "",
+        "peu": "stosuje w projekcie rozwiązania innowacyjne"
+      },
+      {
+        "keu": "",
+        "peu": "dostrzega i ocenia aspekty komercjalizacji projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student"
+      },
+      {
+        "keu": "",
+        "peu": "jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych"
+      }
+    ]
+  },
+  "PSEM": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych"
+      }
+    ]
+  },
+  "PTT": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia prototypowania urządzeń IoT: dobór platformy sprzętowej, szybkie wytwarzanie PCB i obudów metodami addytywnymi (druk 3D), metodyki Agile Hardware Development. [K_W18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia Internetu Rzeczy: architektury połączeń (MQTT, CoAP), integrację z platformami chmurowymi (AWS IoT, Azure IoT Hub, Google Cloud IoT), zbieranie i wizualizację danych (Grafana, InfluxDB). [K_W26]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zrealizować pełny cykl prototypowania urządzenia IoT: od projektu elektronicznego i oprogramowania wbudowanego, przez testy, do wdrożenia i monitorowania w środowisku produkcyjnym. [K_U23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem inżynierski w obszarze IoT i zaproponować rozwiązanie, dobierając odpowiednią platformę sprzętową, protokół komunikacyjny i usługi chmurowe. [K_U33]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowań technologii IoT i prototypowania na rzecz rozwoju innowacyjnych produktów i rozwiązań społecznych. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do myślenia i działania w sposób innowacyjny, iteracyjnego doskonalenia prototypów na podstawie feedbacku użytkowników. [K_K07]"
+      }
+    ]
+  },
+  "PUI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy pracy intelektualnej i zespołowej, dzięki czemu będzie mógł wytwarzać lepsze"
+      },
+      {
+        "keu": "",
+        "peu": "oprogramowanie."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie skutki, jakie przynosi niewłaściwie zaplanowany i realizowany projekt."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie wyzwania oraz zagrożenia, z"
+      },
+      {
+        "keu": "",
+        "peu": "którymi będzie się mierzyć w zakresie modułu pracy"
+      },
+      {
+        "keu": "",
+        "peu": "zespołowej. Zna i rozumie sposoby wykorzystywania"
+      },
+      {
+        "keu": "",
+        "peu": "właściwych narzędzia i metod służących zwiększaniu prawdopodobieństwa realizacji projektu inżynierskiego z sukcesem."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować swoją wiedzę przenosząc ją na gruntpraktycznych umiejętności w zakresie podstaw planowania i realizacji swojej pracy w projekcie informatycznym"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi odpowiednio dobierać źródła informacji"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wytwarzać oprogramowanie i produkty technologiczne z uwzględnieniem aspektu pracy zespołowej"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do rozumienia wpływu umiejętności nietechnicznych na efektywność i wydajność pracy inżyniera."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do   podejmowania starań, aby przekazać informacje i opinie w sposób powszechnie zrozumiały oraz rozumie  wagę roli informatyki we współczesnym świecie."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego kształcenia i doskonalenia (także w aspekcie pozatechnicznym) umiejętności"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do swojejroli (jako inżyniera) w pracach zespołu, w tym interdyscyplinarnego"
+      }
+    ]
+  },
+  "RBD": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady modelowania danych (model związków i encji ERD, model relacyjny) oraz teorię normalizacji baz danych (1NF–BCNF) i jej znaczenie dla integralności i wydajności systemu. [K_W13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane możliwości języka SQL: podzapytania, złączenia (JOIN), widoki, procedury składowane, wyzwalacze i transakcje z różnymi poziomami izolacji. [K_W13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę i zasady działania popularnych systemów RDBMS (PostgreSQL, MySQL, SQL Server), mechanizmy indeksowania i optymalizacji zapytań. [K_W13]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować schemat relacyjnej bazy danych na podstawie wymagań, stosując normalizację, klucze obce i ograniczenia integralności. [K_U18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi pisać złożone zapytania SQL (w tym agregacje, podzapytania, złączenia wielu tabel) oraz implementować procedury składowane i wyzwalacze. [K_U18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zarządzać transakcjami, konfigurować uprawnienia użytkowników oraz przeprowadzać tworzenie kopii zapasowych i odtwarzanie bazy danych. [K_U18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i zrealizować migrację danych oraz integrację bazy danych z aplikacją backendową. [K_U27]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego projektowania i optymalizacji rozwiązań bazodanowych w projektach inżynierskich z uwzględnieniem wymagań wydajnościowych i bezpieczeństwa danych. [K_K05]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do ciągłego poszerzania wiedzy o nowych technologiach bazodanowych, w tym NoSQL i bazach czasu rzeczywistego. [K_K03]"
+      }
+    ]
+  },
+  "RTO": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie specyfikę systemów czasu rzeczywistego (SCR): definicję twardego i miękkiego czasu rzeczywistego, wymagania dotyczące deterministyczności, niezawodności i bezpieczeństwa. [K_W18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architektury RTOS (FreeRTOS, Zephyr, QNX): harmonogramowanie zadań (RM, EDF), zarządzanie przerwaniami, komunikację między zadaniami (kolejki, semafory, zdarzenia) i analizę czasu wykonania (WCET). [K_W26]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zastosowania systemów czasu rzeczywistego w automatyce przemysłowej, robotyce, medycynie i Internecie Rzeczy oraz powiązane standardy bezpieczeństwa (IEC 61131, DO-178). [K_W18]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować aplikację czasu rzeczywistego z użyciem RTOS, w tym zaplanować harmonogram zadań, zaimplementować synchronizację i spełnić ograniczenia czasowe. [K_U23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem specyficzny dla systemu IoT/RT, zaprojektować jego rozwiązanie z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa systemu wbudowanego. [K_U33]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować informatykę na rzecz rozwiązywania problemów automatyki i robotyki, przenosząc dobre praktyki projektowania systemów czasu rzeczywistego. [K_K01]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowania systemów czasu rzeczywistego w rozwiązaniach przemysłowych i IoT, z uwzględnieniem wymogów certyfikacji i bezpieczeństwa. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania wiedzy o nowych architekturach RTOS i standardach przemysłowych. [K_K03]"
+      }
+    ]
+  },
+  "SAD": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia probabilistyki i statystyki: rozkłady prawdopodobieństwa, procesy stochastyczne, łańcuchy Markowa, teorię kolejek i metody Monte Carlo w kontekście zastosowań informatycznych. [K_W12]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie metody statystycznej analizy danych: estymację parametryczną i nieparametryczną, testowanie hipotez, regresję liniową i podstawy analizy bayesowskiej. [K_W12]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować aparat matematyczny statystyki do analizy danych informatycznych, implementować modele probabilistyczne i interpretować wyniki analiz statystycznych. [K_U07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi posługiwać się narzędziami analityki danych (Python: NumPy, SciPy, pandas, matplotlib) do eksploracji i wizualizacji danych oraz budowy podstawowych modeli predykcyjnych. [K_U07]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowania metod statystycznych w analizie danych na rzecz rozwiązywania problemów naukowych i inżynierskich. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie, aktualizując wiedzę z zakresu statystyki i analizy danych. [K_K03]"
+      }
+    ]
+  },
+  "SAI": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi  opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do  wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji"
+      }
+    ]
+  },
+  "SGD": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "SGK": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna współczesne silniki gier oraz rozumie różnice projektowe między Unity 6, Unreal Engine i Godot w kontekście skali i typu projektu"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna podstawowe sposoby optymalizacji projektów"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna proces przygotowania gry do publikacji"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student jest w stanie zaprojektować zaimplementować architekturę gry"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować build produkcyjny"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student potrafi współpracować nad projektem w ramach niewielkiego zespołu"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi korzystać z dokumentacji technicznej"
+      }
+    ]
+  },
+  "SITA": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "SKO1": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką w kontekście projektowania sieci komputerowych. [K_W03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej, architektury systemów komputerowych i sieci LAN/WAN: protokoły komunikacyjne (Ethernet, TCP/IP, IPv6), mechanizmy routingu i switchingu oraz zagadnienia bezpieczeństwa sieciowego. [K_W08]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN umożliwiającą realizację kluczowych usług sieciowych (DNS, DHCP, HTTP/HTTPS) z zachowaniem zasad bezpieczeństwa informacji. [K_U14]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do uczenia się przez całe życie i inspirowania innych do pogłębiania wiedzy o sieciach komputerowych i bezpieczeństwie. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy w obszarze infrastruktury sieciowej. [K_K07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do efektywnej komunikacji z interesariuszami technicznymi i biznesowymi w zakresie projektowania i administrowania sieciami. [K_K08]"
+      }
+    ]
+  },
+  "SOP": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie procesami, wątkami i pamięcią wirtualną, mechanizmy współbieżności oraz organizację systemu plików w popularnych systemach (Linux, Windows). [K_W07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie algorytmy szeregowania procesów (FCFS, SJF, Round-Robin, priorytety) i rozumie ich wpływ na wydajność systemu w różnych scenariuszach obciążenia. [K_W07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie klasyczne problemy synchronizacji (sekcja krytyczna, producent-konsument, czytelnicy-pisarze) oraz mechanizmy ich rozwiązania: semafory, muteksy, zmienne warunkowe, monitory. [K_W07]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym Linux (zarządzanie użytkownikami, uprawnieniami, usługami systemd, przestrzenią dyskową i siecią). [K_U13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi implementować programy wielowątkowe/wieloprocesowe w języku C/C++ z użyciem POSIX API (pthread, fork/exec, pipe, sygnały) oraz identyfikować i eliminować wyścigi danych i zakleszczenia. [K_U13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi dobrać i skonfigurować system operacyjny do wymagań aplikacji, z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa. [K_U13]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego rozwiązywania problemów administracyjnych i konfiguracyjnych systemów operacyjnych, korzystając z dokumentacji i zasobów społeczności open-source. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do świadomego wyboru narzędzi i konfiguracji systemowych z uwzględnieniem ich wpływu na bezpieczeństwo i niezawodność systemu informatycznego. [K_K06]"
+      }
+    ]
+  },
+  "SWB": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane zagadnienia projektowania systemów wbudowanych: dobór mikrokontrolera/procesora, organizacja pamięci, zarządzanie energią (tryby uśpienia, dynamiczne skalowanie napięcia/częstotliwości) i certyfikacja bezpieczeństwa (IEC 61508). [K_W18]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia IoT w kontekście systemów wbudowanych: stosy protokołów sieciowych dla urządzeń IoT (Zigbee, Z-Wave, LoRaWAN, NB-IoT), OTA updates i zarządzanie flotą urządzeń. [K_W26]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi przeanalizować wymagania i zsyntezować architekturę systemu wbudowanego, oprogramować go w C/C++ z użyciem HAL (STM32 HAL, ESP-IDF), zintegrować peryferia i przetestować niezawodność. [K_U23]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i zaimplementować komunikację między systemem wbudowanym a chmurą (MQTT broker, REST API, WebSocket) z zachowaniem wymagań bezpieczeństwa. [K_U33]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do zastosowania systemów wbudowanych w rozwiązaniach IoT i automatyce przemysłowej z uwzględnieniem aspektów bezpieczeństwa i niezawodności. [K_K01]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego poszerzania kompetencji z zakresu nowych platform sprzętowych i metodyk projektowania systemów wbudowanych. [K_K03]"
+      }
+    ]
+  },
+  "TBS": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie metodologię i narzędzia używane do identyfikacji i eksploatacji luk w zabezpieczeniach (testy penetracyjne). Student rozumie działanie  ataków SQL Injection oraz zna metody ich wykrywania i zapobiegania. Student zna i rozumie sposoby wykrywania i zabezpieczania przed atakami XSS."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi korzystać z narzędzia Metasploit do testowania systemów. Student potrafi implementować i testować mechanizmy kontroli dostępu.  Student potrafi przeprowadzić testy BlackBox na rzeczywistych systemach."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "TIN": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia protokołów internetowych: HTTP/HTTPS, REST, WebSocket, DNS, OAuth 2.0, CORS, zasady bezpieczeństwa webowego (XSS, CSRF, SQL injection) i architektury aplikacji internetowych (SPA, SSR, PWA). [K_W09]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu aplikacji internetowych: wzorce architektoniczne (MVC, MVP, MVVM, Clean Architecture), programowanie asynchroniczne (Promises, async/await) i nowoczesne frameworki frontend (React/Angular/Vue). [K_W21]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi ocenić przydatność różnych technologii webowych i wybrać odpowiednie środowisko do realizacji aplikacji internetowej zgodnie ze specyfikacją. [K_U15]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wytworzyć warstwową aplikację webową (frontend + backend + baza danych) z użyciem nowoczesnego stosu technologicznego, z uwzględnieniem bezpieczeństwa, wydajności i responsywności. [K_U24]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zdiagnozować problem specyficzny dla aplikacji webowej i zaprojektować jego rozwiązanie z doborem odpowiednich narzędzi i technologii. [K_U28]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się nowych technologii webowych w dynamicznie zmieniającym się ekosystemie i regularnego aktualizowania swoich kompetencji. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do współpracy w zespole nad aplikacją webową, przyjmując różne role i korzystając z narzędzi zarządzania projektem i wersjami kodu. [K_K04]"
+      }
+    ]
+  },
+  "UKOS": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie zasobami, organizację współbieżności, systemy plików i mechanizmy bezpieczeństwa w środowiskach Windows i Linux. [K_W07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu sieci komputerowych: modele OSI/TCP-IP, konfigurację protokołów sieciowych, usługi katalogowe (Active Directory/LDAP) oraz wirtualizację sieci. [K_W08]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym (Windows Server / Linux) w środowisku wirtualnym lub fizycznym, zarządzając użytkownikami, uprawnieniami i usługami. [K_U13]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaprojektować i skonfigurować infrastrukturę sieciową LAN/WAN, w tym usługi DHCP, DNS, NAT, firewall, a także przeprowadzić podstawową analizę ruchu sieciowego. [K_U14]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia kompletnego systemu informatycznego (system operacyjny, baza danych, aplikacja webowa). [K_U27]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego uczenia się nowych technologii systemowych i sieciowych w oparciu o dokumentację techniczną i zasoby społeczności. [K_K03]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do odpowiedzialnego zarządzania infrastrukturą informatyczną z uwzględnieniem zasad bezpieczeństwa i ochrony danych. [K_K06]"
+      }
+    ]
+  },
+  "WDZ": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych."
+      }
+    ]
+  },
+  "WF": {
+    "wiedza": [],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "student jest gotów do nauki o kulturzefizycznej"
+      },
+      {
+        "keu": "",
+        "peu": "krytycznej oceny posiadanej wiedzy i odbieranych treści uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięganiaopinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu"
+      },
+      {
+        "keu": "",
+        "peu": "tworzenia i rozwijania wzorów właściwegopostępowania w środowisku pracy i życiapodejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, wktórych uczestniczy."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu."
+      },
+      {
+        "keu": "",
+        "peu": "Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych."
+      },
+      {
+        "keu": "",
+        "peu": "Znaomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych."
+      },
+      {
+        "keu": "",
+        "peu": "Stosowanie zasady „czystej gry” i sportowego kibicowania."
+      }
+    ]
+  },
+  "WPR": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student potrafi  czytać ze zrozumieniem kod języków skryptowych,  tworzyć skrypty  oraz zweryfikować poprawność utworzonego kodu."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi projektować aplikacje  zgodnie z paradygmatem strukturalnym i obiektowym. Student posiada podstawową wiedzę na temat protokołu HTTP oraz tworzenia bezpiecznych aplikacji internetowych i bazodanowych."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna odpowiednie narzędzia wspomagające tworzenie skryptów oraz wspomagające projektowanie aplikacji internetowych, bazodanowych"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi wybrać odpowiednie środowisko programistyczne i inne narzędzia, które wspomagają w projektowaniu aplikacji oraz potrafi dobrać model procesu wytwarzania aplikacji  do specyfiki przedsięwzięcia. Student potrafi posługiwać się wybranym środowiskiem oraz analizować poprawność działania stworzonej aplikacji."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi wykorzystać odpowiednie biblioteki do tworzenia aplikacji oraz wykorzystać narzędzia, które umożliwiają tworzenie,  debbugowanie i uruchomienie projektów programistycznych. Student potrafi przedstawić stworzoną aplikację oraz omówić jej sposób działania."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować środowisko potrzebne do stworzenia skryptów i aplikacji internetowej i bazodanowej, tzn. posiada wiedzę na temat konfiguracji bazy danych oraz oprogramowania, które jest potrzebne do tworzenie projektu programistycznego."
+      }
+    ],
+    "kompetencje_spoleczne": []
+  },
+  "ZIC": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie koncepcję Infrastructure as Code (IaC): zasady deklaratywnego i imperatywnego podejścia do definiowania infrastruktury, korzyści z wersjonowania i powtarzalności środowisk."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę i model działania Terraform: providers, resources, data sources, state (lokalny i zdalny), moduły, workspace oraz cykl plan–apply–destroy."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady zarządzania konfiguracją z użyciem Ansible: architektura (control node, managed nodes, inventory), playbooks, role, zmienne, szablony Jinja2 i idempotentność operacji."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie model usług chmurowych (IaaS, PaaS, SaaS) oraz globalną infrastrukturę AWS: regiony, strefy dostępności, VPC, subnety, grupy bezpieczeństwa."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie kluczowe usługi AWS wykorzystywane w automatyzacji infrastruktury: EC2, S3, RDS, IAM, ELB, Auto Scaling, Route 53, CloudWatch, ECR/ECS."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie architekturę OpenStack: komponenty (Nova, Neutron, Cinder, Glance, Keystone, Swift, Heat) i ich odpowiedniki w usługach AWS."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie przeznaczenie i możliwości LocalStack jako lokalnego emulatora usług AWS, umożliwiającego testowanie infrastruktury bez dostępu do chmury publicznej i bez kosztów."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady bezpiecznego zarządzania dostępem w chmurze: IAM (użytkownicy, role, polityki, least privilege), zarządzanie kluczami i sekretami (AWS Secrets Manager, HashiCorp Vault), szyfrowanie zasobów."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie strategie zarządzania stanem infrastruktury: remote state (S3 + DynamoDB), state locking, import istniejących zasobów, techniki refaktoryzacji konfiguracji Terraform."
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy monitorowania i obserwowalności infrastruktury chmurowej: metryki, logi, alerty (CloudWatch, Prometheus, Grafana) oraz koncepcję SLI/SLO/SLA."
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi zainstalować i skonfigurować środowisko pracy z Terraform, Ansible i LocalStack oraz nawiązać połączenie z klastrem OpenStack."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi napisać konfigurację Terraform definiującą sieć (VPC, subnety, routing, security groups), maszyny wirtualne oraz zarządzane usługi bazodanowe w AWS lub ich odpowiedniki w LocalStack."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi stosować moduły Terraform do organizowania i wielokrotnego użycia konfiguracji infrastruktury, zarządzać stanem zdalnym w S3 z blokadą w DynamoDB."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi napisać playbook Ansible instalujący i konfigurujący serwer aplikacyjny (np. Nginx + Node.js/Python) na zdalnych hostach, stosując role, zmienne i szablony Jinja2."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zintegrować Terraform z Ansible w celu automatycznego provisionowania maszyn i ich konfigurowania w jednym potoku wdrożeniowym."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uruchomić LocalStack i za pomocą AWS CLI oraz Terraform przetestować lokalnie infrastrukturę obejmującą S3, SQS, Lambda, DynamoDB i EC2."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi tworzyć i zarządzać zasobami OpenStack (instancje, sieci, woluminy, floating IP, security groups) z poziomu CLI (openstack client) oraz za pomocą szablonów Heat."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować zarządzanie dostępem IAM w AWS: tworzyć użytkowników, role i polityki uprawnień zgodnie z zasadą najmniejszych uprawnień."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi skonfigurować monitoring infrastruktury: tworzyć alarmy CloudWatch, eksportować metryki do Prometheus i wizualizować je w Grafana."
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zbudować potok CI/CD (GitHub Actions) automatycznie weryfikujący (terraform plan, ansible-lint) i wdrażający zmiany infrastruktury po zatwierdzeniu pull requesta."
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do traktowania infrastruktury jako kodu – przechowywania konfiguracji w systemie kontroli wersji, przeprowadzania code review zmian infrastrukturalnych i stosowania standardów branżowych (formatowanie, dokumentacja modułów)."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do świadomego zarządzania kosztami chmury publicznej: rozumie model rozliczeń pay-as-you-go, potrafi szacować koszty planowanych zasobów i stosować mechanizmy ograniczania wydatków (budgets, reserved instances, auto scaling)."
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu dynamicznie rozwijającego się ekosystemu chmurowego, śledzenia dokumentacji dostawców (AWS, OpenStack, HashiCorp) i certyfikowania swoich kompetencji (AWS Cloud Practitioner, Terraform Associate)."
+      }
+    ]
+  },
+  "ZPR": {
+    "wiedza": [
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. [K_W14]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. [K_W17]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. [K_W19]"
+      },
+      {
+        "keu": "",
+        "peu": "Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. [K_W20]"
+      }
+    ],
+    "umiejetnosci": [
+      {
+        "keu": "",
+        "peu": "Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). [K_U05]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. [K_U26]"
+      },
+      {
+        "keu": "",
+        "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. [K_U25]"
+      }
+    ],
+    "kompetencje_spoleczne": [
+      {
+        "keu": "",
+        "peu": "Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. [K_K04]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. [K_K07]"
+      },
+      {
+        "keu": "",
+        "peu": "Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. [K_K08]"
+      }
+    ]
+  }
+}

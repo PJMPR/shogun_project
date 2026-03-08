@@ -72,27 +72,95 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających;",
-        "Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi.",
-        "Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania.",
-        "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności."
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających;",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W15",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W16",
+          "peu": "Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie.",
-        "Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego.",
-        "Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów.",
-        "Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów.",
-        "Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
-        "Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania.",
-        "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji.",
-        "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość.",
-        "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów.",
-        "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców;",
-        "Student potrafi zaplanować i przeprowadzić  proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)."
+        {
+          "keu": "K_U01",
+          "peu": "Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U08",
+          "peu": "Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U19",
+          "peu": "Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U20",
+          "peu": "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U21",
+          "peu": "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U22",
+          "peu": "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców;",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi zaplanować i przeprowadzić  proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające).",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy.",
-        "Student jest gotów do ustalania priorytetów zadań."
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do ustalania priorytetów zadań.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

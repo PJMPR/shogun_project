@@ -1,149 +1,161 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "niestacjonarny",
-        "wersja_z_dnia": "27.02.2026",
-        "nazwa_przedmiotu": "Wprowadzenie do React Native",
-        "kod_przedmiotu": "MRN",
-        "rok_studiow": 2,
-        "semestr_studiow": 3,
-        "obligatoryjny": false,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 8,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 8
-        },
-        "odpowiedzialny_za_przedmiot": "do ustalenia",
-        "ects": 2,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 16,
-            "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50,
-            "praca_wlasna_studenta": "Projektowanie i implementacja aplikacji mobilnej w React Native; obsługa stanu i nawigacji; integracja z API; przygotowanie dokumentacji projektu."
-        },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład z prezentacją oprogramowania"
-            ],
-            "cwiczenia_laboratorium": [
-                "metoda projektów (projekt praktyczny)",
-                "rozwiązywanie zadań"
-            ]
-        },
-        "zaliczenie": {
-            "Wykład": {
-                "sposob": "Nieoceniany"
-            },
-            "Laboratorium": {
-                "sposob": "Zaliczenie z oceną"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [],
-            "cwiczenia_laboratorium": [
-                "prezentacja projektu i dokumentacji",
-                "ocena sporządzonego oprogramowania"
-            ]
-        },
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "Programowanie aplikacji internetowych",
-                "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
-            }
-        ],
-        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia aplikacji mobilnych z wykorzystaniem frameworka React Native. Studenci poznają architekturę aplikacji opartych na komponentach, zarządzanie stanem, nawigację oraz integrację z natywnymi funkcjami urządzeń mobilnych. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych, wieloplatformowych aplikacji mobilnych na systemy Android i iOS.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "Dokumentacja React Native: https://reactnative.dev/docs",
-                    "Dokumentacja Expo: https://docs.expo.dev",
-                    "Dokumentacja React: https://react.dev"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "Materiały edukacyjne społeczności React Native"
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych oraz architekturą React Native, w tym komponenty, stan, właściwości oraz cykl życia aplikacji."
-            ],
-            "umiejetnosci": [
-                "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w React Native, korzystać z komponentów interfejsu, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na emulatorze lub urządzeniu mobilnym."
-            ],
-            "kompetencje_spoleczne": [
-                "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu."
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Wprowadzenie do aplikacji mobilnych i React Native",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Środowisko pracy, Expo i konfiguracja projektu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Komponenty, JSX oraz właściwości komponentów",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Zarządzanie stanem i obsługa zdarzeń",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Stylowanie interfejsu i layout aplikacji",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Nawigacja pomiędzy ekranami",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Komunikacja z API i obsługa danych zdalnych",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Dostęp do funkcji urządzenia mobilnego",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Debugowanie i testowanie aplikacji mobilnych",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of mobile application development using the React Native framework. Students learn the architecture of component-based applications, state management, navigation, and integration with native mobile device features. The classes are practical in nature and prepare students to independently create simple cross-platform mobile applications for Android and iOS.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "27.02.2026",
+    "nazwa_przedmiotu": "Wprowadzenie do React Native",
+    "kod_przedmiotu": "MRN",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 8,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 8
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 16,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Projektowanie i implementacja aplikacji mobilnej w React Native; obsługa stanu i nawigacji; integracja z API; przygotowanie dokumentacji projektu."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "rozwiązywanie zadań"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "prezentacja projektu i dokumentacji",
+        "ocena sporządzonego oprogramowania"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia aplikacji mobilnych z wykorzystaniem frameworka React Native. Studenci poznają architekturę aplikacji opartych na komponentach, zarządzanie stanem, nawigację oraz integrację z natywnymi funkcjami urządzeń mobilnych. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych, wieloplatformowych aplikacji mobilnych na systemy Android i iOS.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Dokumentacja React Native: https://reactnative.dev/docs",
+          "Dokumentacja Expo: https://docs.expo.dev",
+          "Dokumentacja React: https://react.dev"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Materiały edukacyjne społeczności React Native"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W21",
+          "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych oraz architekturą React Native, w tym komponenty, stan, właściwości oraz cykl życia aplikacji.",
+          "metoda_weryfikacji": ""
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U24",
+          "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w React Native, korzystać z komponentów interfejsu, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na emulatorze lub urządzeniu mobilnym.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do aplikacji mobilnych i React Native",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Środowisko pracy, Expo i konfiguracja projektu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Komponenty, JSX oraz właściwości komponentów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Zarządzanie stanem i obsługa zdarzeń",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Stylowanie interfejsu i layout aplikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Nawigacja pomiędzy ekranami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Komunikacja z API i obsługa danych zdalnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Dostęp do funkcji urządzenia mobilnego",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Debugowanie i testowanie aplikacji mobilnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of mobile application development using the React Native framework. Students learn the architecture of component-based applications, state management, navigation, and integration with native mobile device features. The classes are practical in nature and prepare students to independently create simple cross-platform mobile applications for Android and iOS.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

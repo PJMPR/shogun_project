@@ -1,278 +1,346 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdańsku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "niestacjonarny",
-        "wersja_z_dnia": "26.02.2026",
-        "nazwa_przedmiotu": "Architektura mikroserwisowa i mikrofrontendowa",
-        "kod_przedmiotu": "AMM",
-        "rok_studiow": 3,
-        "semestr_studiow": 5,
-        "obligatoryjny": false,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 16,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 16
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "26.02.2026",
+    "nazwa_przedmiotu": "Architektura mikroserwisowa i mikrofrontendowa",
+    "kod_przedmiotu": "AMM",
+    "rok_studiow": 3,
+    "semestr_studiow": 5,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 16
+    },
+    "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 32,
+      "praca_wlasna_studenta_h": 93,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": "Projektowanie i implementacja mikroserwisów oraz mikrofrontendów z użyciem Docker, Kubernetes i Module Federation; dokumentacja architektury systemu; przygotowanie projektu końcowego."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "rozwiązywanie zadań",
+        "praca w grupach"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Egzamin"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "egzamin pisemny z zadaniami problemowymi"
+      ],
+      "cwiczenia_laboratorium": [
+        "raport z wykonanego zadania",
+        "prezentacja projektu i dokumentacji",
+        "obrona projektu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "PAI – Programowanie aplikacji internetowych",
+        "wymagania": "Umiejętność tworzenia aplikacji webowych z użyciem Node.js/JavaScript oraz podstawowa znajomość protokołu HTTP i REST API."
+      },
+      {
+        "nazwa": "SOP – Systemy operacyjne",
+        "wymagania": "Podstawowa znajomość systemów operacyjnych Linux, obsługi terminala, procesów i zarządzania siecią."
+      },
+      {
+        "nazwa": "TIN – Technologie internetu",
+        "wymagania": "Znajomość HTML, CSS, JavaScript po stronie klienta."
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z nowoczesnymi architekturami systemów rozproszonych, ze szczególnym uwzględnieniem wzorca mikroserwisów oraz mikrofrontendów. Student nabywa umiejętność projektowania, implementowania i wdrażania systemów złożonych z niezależnych, komunikujących się usług, a także budowania skalowalnych interfejsów użytkownika złożonych z autonomicznych modułów frontendowych. Przedmiot kształci kompetencje niezbędne w środowisku przemysłowym, gdzie systemy monolityczne są stopniowo zastępowane przez elastyczne architektury chmurowe.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "S. Newman: \"Budowanie mikroserwisów. Projektowanie drobnoziarnistych systemów\", Helion, Gliwice 2022 (Building Microservices, 2nd ed., O'Reilly 2021).",
+          "C. Richardson: \"Mikrousługi. Wzorce projektowe i wdrażanie aplikacji\", Helion, Gliwice 2020 (Microservices Patterns, Manning 2018).",
+          "L. Jackson: \"Mikrofrontendy w akcji\", tłum. własne na podstawie \"Micro Frontends in Action\", Manning 2020.",
+          "B. Burns, J. Beda, K. Hightower: \"Kubernetes. Tworzenie niezawodnych systemów rozproszonych\", Helion, Gliwice 2023."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "M. Fowler: artykuły na martinfowler.com dot. mikroserwisów, event sourcingu i CQRS.",
+          "dokumentacja oficjalna: Webpack Module Federation (webpack.js.org), Docker (docs.docker.com), Kubernetes (kubernetes.io/docs).",
+          "M. Kleppmann: \"Przetwarzanie danych w dużej skali. Niezawodność, skalowalność i łatwość konserwacji systemów\", Helion 2021."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie różnice między architekturą monolityczną a mikroserwisową: zalety, wady, kryteria wyboru oraz typowe scenariusze migracji.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
-        "ects": 5,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 32,
-            "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125,
-            "praca_wlasna_studenta": "Projektowanie i implementacja mikroserwisów oraz mikrofrontendów z użyciem Docker, Kubernetes i Module Federation; dokumentacja architektury systemu; przygotowanie projektu końcowego."
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie zasady dekompozycji systemu na mikroserwisy z użyciem Domain-Driven Design (DDD), bounded context i reguł spójności domenowej.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład z prezentacją oprogramowania"
-            ],
-            "cwiczenia_laboratorium": [
-                "metoda projektów (projekt praktyczny)",
-                "rozwiązywanie zadań",
-                "praca w grupach"
-            ]
+        {
+          "keu": "K_W08",
+          "peu": "Student zna i rozumie mechanizmy komunikacji między mikroserwisami: wywołania synchroniczne (REST, gRPC) oraz asynchroniczne (message broker: RabbitMQ, Kafka) i potrafi wskazać zastosowania każdego z podejść.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "zaliczenie": {
-            "Wykład": {
-                "sposob": "Egzamin"
-            },
-            "Laboratorium": {
-                "sposob": "Zaliczenie z oceną"
-            }
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie wzorce architektoniczne stosowane w mikroserwisach: API Gateway, Service Discovery, Circuit Breaker, Saga, CQRS, Event Sourcing.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "kryteria_oceny": {
-            "wyklad": [
-                "egzamin pisemny z zadaniami problemowymi"
-            ],
-            "cwiczenia_laboratorium": [
-                "raport z wykonanego zadania",
-                "prezentacja projektu i dokumentacji",
-                "obrona projektu"
-            ]
+        {
+          "keu": "K_W21",
+          "peu": "Student zna i rozumie koncepcję mikrofrontendów: podział aplikacji frontendowej na niezależne moduły wdrażane i rozwijane przez oddzielne zespoły, w tym podejście Module Federation (Webpack 5).",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "PAI – Programowanie aplikacji internetowych",
-                "wymagania": "Umiejętność tworzenia aplikacji webowych z użyciem Node.js/JavaScript oraz podstawowa znajomość protokołu HTTP i REST API."
-            },
-            {
-                "nazwa": "SOP – Systemy operacyjne",
-                "wymagania": "Podstawowa znajomość systemów operacyjnych Linux, obsługi terminala, procesów i zarządzania siecią."
-            },
-            {
-                "nazwa": "TIN – Technologie internetu",
-                "wymagania": "Znajomość HTML, CSS, JavaScript po stronie klienta."
-            }
-        ],
-        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z nowoczesnymi architekturami systemów rozproszonych, ze szczególnym uwzględnieniem wzorca mikroserwisów oraz mikrofrontendów. Student nabywa umiejętność projektowania, implementowania i wdrażania systemów złożonych z niezależnych, komunikujących się usług, a także budowania skalowalnych interfejsów użytkownika złożonych z autonomicznych modułów frontendowych. Przedmiot kształci kompetencje niezbędne w środowisku przemysłowym, gdzie systemy monolityczne są stopniowo zastępowane przez elastyczne architektury chmurowe.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "S. Newman: \"Budowanie mikroserwisów. Projektowanie drobnoziarnistych systemów\", Helion, Gliwice 2022 (Building Microservices, 2nd ed., O'Reilly 2021).",
-                    "C. Richardson: \"Mikrousługi. Wzorce projektowe i wdrażanie aplikacji\", Helion, Gliwice 2020 (Microservices Patterns, Manning 2018).",
-                    "L. Jackson: \"Mikrofrontendy w akcji\", tłum. własne na podstawie \"Micro Frontends in Action\", Manning 2020.",
-                    "B. Burns, J. Beda, K. Hightower: \"Kubernetes. Tworzenie niezawodnych systemów rozproszonych\", Helion, Gliwice 2023."
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "M. Fowler: artykuły na martinfowler.com dot. mikroserwisów, event sourcingu i CQRS.",
-                    "dokumentacja oficjalna: Webpack Module Federation (webpack.js.org), Docker (docs.docker.com), Kubernetes (kubernetes.io/docs).",
-                    "M. Kleppmann: \"Przetwarzanie danych w dużej skali. Niezawodność, skalowalność i łatwość konserwacji systemów\", Helion 2021."
-                ]
-            }
+        {
+          "keu": "K_W08",
+          "peu": "Student zna i rozumie podstawy konteneryzacji (Docker) i orkiestracji (Kubernetes) w kontekście wdrażania i skalowania mikroserwisów.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie różnice między architekturą monolityczną a mikroserwisową: zalety, wady, kryteria wyboru oraz typowe scenariusze migracji.",
-                "Student zna i rozumie zasady dekompozycji systemu na mikroserwisy z użyciem Domain-Driven Design (DDD), bounded context i reguł spójności domenowej.",
-                "Student zna i rozumie mechanizmy komunikacji między mikroserwisami: wywołania synchroniczne (REST, gRPC) oraz asynchroniczne (message broker: RabbitMQ, Kafka) i potrafi wskazać zastosowania każdego z podejść.",
-                "Student zna i rozumie wzorce architektoniczne stosowane w mikroserwisach: API Gateway, Service Discovery, Circuit Breaker, Saga, CQRS, Event Sourcing.",
-                "Student zna i rozumie koncepcję mikrofrontendów: podział aplikacji frontendowej na niezależne moduły wdrażane i rozwijane przez oddzielne zespoły, w tym podejście Module Federation (Webpack 5).",
-                "Student zna i rozumie podstawy konteneryzacji (Docker) i orkiestracji (Kubernetes) w kontekście wdrażania i skalowania mikroserwisów.",
-                "Student zna i rozumie zagadnienia bezpieczeństwa w architekturze mikroserwisowej: uwierzytelnianie i autoryzacja (OAuth 2.0/JWT) na poziomie API Gateway, szyfrowanie komunikacji wewnętrznej."
-            ],
-            "umiejetnosci": [
-                "Student potrafi zaprojektować architekturę systemu opartego na mikroserwisach, dokonując dekompozycji domeny biznesowej, identyfikując granice serwisów i definiując kontrakty API.",
-                "Student potrafi zaimplementować co najmniej trzy współpracujące mikroserwisy w technologii Node.js/Express lub Spring Boot, stosując komunikację synchroniczną (REST) i asynchroniczną (message broker).",
-                "Student potrafi skonteneryzować mikroserwisy za pomocą Dockera, tworzyć pliki Dockerfile i konfiguracje Docker Compose do uruchamiania całego systemu lokalnie.",
-                "Student potrafi zaprojektować i zaimplementować aplikację mikrofrontendową z użyciem Webpack Module Federation, integrując co najmniej dwa niezależne moduły frontendowe w ramach wspólnego shell-a.",
-                "Student potrafi skonfigurować i wdrożyć API Gateway (np. NGINX, Kong lub własny w Node.js) obsługujące routing, load balancing i uwierzytelnianie.",
-                "Student potrafi zidentyfikować wąskie gardła i punkty awarii w architekturze mikroserwisowej oraz zastosować wzorzec Circuit Breaker i mechanizmy retry/fallback.",
-                "Student potrafi przygotować podstawową konfigurację klastra Kubernetes (Deployment, Service, Ingress) i wdrożyć na nim skonteneryzowany system mikroserwisowy."
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do pracy w modelu organizacyjnym opartym na autonomicznych zespołach (tzw. team topologies), rozumiejąc wpływ struktury zespołu na architekturę systemu (prawo Conwaya).",
-                "Student jest gotów do krytycznej oceny zasadności stosowania architektury mikroserwisowej w danym projekcie, uwzględniając koszty złożoności operacyjnej i organizacyjnej.",
-                "Student jest gotów do samodzielnego śledzenia aktualnych trendów w inżynierii oprogramowania i infrastrukturze chmurowej oraz aktualizowania swojej wiedzy w oparciu o dokumentację techniczną i społeczność open source."
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "W01. Architektura monolityczna vs. mikroserwisowa – ewolucja podejść do budowy systemów. Definicja mikroserwisu. Zalety i wady. Kiedy stosować mikroserwisy, a kiedy monolit jest lepszym wyborem.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "W02. Domain-Driven Design jako podstawa dekompozycji. Bounded Context, ubiquitous language, agregaty, encje, obiekty wartości. Identyfikowanie granic mikroserwisów.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "W03. Komunikacja synchroniczna: REST i gRPC. Projektowanie kontraktów API (OpenAPI/Swagger). Wersjonowanie API. Zasady idempotentności.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "W04. Komunikacja asynchroniczna: message brokery (RabbitMQ, Apache Kafka). Wzorce: Publish/Subscribe, Event-Driven Architecture. Porównanie brokerów.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "W05. Wzorzec API Gateway: routing, load balancing, autentykacja, rate limiting. Service Discovery: podejście client-side i server-side (Consul, Eureka).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "W06. Odporność na błędy: wzorzec Circuit Breaker (Resilience4j, Hystrix), retry, timeout, bulkhead. Distributed tracing (Jaeger, Zipkin). Centralne logowanie (ELK Stack).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "W07. Zarządzanie danymi w mikroserwisach: database-per-service, eventual consistency, wzorce Saga (choreography vs. orchestration) i CQRS.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "W08. Event Sourcing: przechowywanie stanu jako sekwencji zdarzeń. Zalety i ograniczenia. Integracja z CQRS.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "W09. Mikrofrontendy: motywacja, definicja, podejścia integracji (build-time, run-time, iframe, Web Components, Module Federation). Porównanie podejść.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "W10. Webpack 5 Module Federation w szczegółach: host, remote, shared dependencies, dynamic imports. Wzorzec Shell Application.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "W11. Routing i zarządzanie stanem w aplikacjach mikrofrontendowych. Komunikacja między modułami: Custom Events, shared state, Event Bus.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "W12. Konteneryzacja: Docker w ekosystemie mikroserwisów. Dockerfile best practices, multi-stage build, sieci Docker, volumes. Docker Compose dla środowisk developerskich.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "W13. Kubernetes: architektura klastra (control plane, worker node). Obiekty: Pod, Deployment, Service, ConfigMap, Secret, Ingress. Skalowanie horyzontalne (HPA).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 14,
-                "wyklad": "W14. Bezpieczeństwo w architekturze mikroserwisowej: OAuth 2.0 i JWT na poziomie API Gateway, mTLS dla komunikacji wewnętrznej, zarządzanie sekretami (Vault).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 15,
-                "wyklad": "W15. Wzorce organizacyjne: Conway's Law, Team Topologies (stream-aligned, enabling, complicated subsystem, platform teams). Strategie migracji z monolitu: Strangler Fig Pattern. Podsumowanie kursu.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 16,
-                "wyklad": "L01. Konfiguracja środowiska: Docker Desktop, Node.js, VS Code. Uruchomienie pierwszego mikroserwisu w Node.js/Express. Dockeryzacja. Testowanie endpointów (Postman/curl).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 17,
-                "wyklad": "L02. Projektowanie systemu – dekompozycja domeny wybranej aplikacji (np. sklep internetowy) na mikroserwisy metodą Event Storming. Definiowanie kontraktów REST (OpenAPI).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 18,
-                "wyklad": "L03. Implementacja mikroserwisu nr 1 (np. serwis produktów) – REST API, walidacja, obsługa błędów, testy jednostkowe (Jest).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 19,
-                "wyklad": "L04. Implementacja mikroserwisu nr 2 (np. serwis zamówień) – komunikacja synchroniczna (REST) z serwisem produktów. Obsługa scenariuszy błędów.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 20,
-                "wyklad": "L05. Konfiguracja RabbitMQ w Docker Compose. Implementacja komunikacji asynchronicznej między serwisami (zdarzenie OrderPlaced → serwis notyfikacji).",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 21,
-                "wyklad": "L06. Implementacja API Gateway w NGINX lub jako mikroserwis Node.js – routing do serwisów backendu, uwierzytelnianie JWT, rate limiting.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 22,
-                "wyklad": "L07. Wzorzec Circuit Breaker z użyciem biblioteki opossum (Node.js). Symulowanie awarii serwisu i testowanie mechanizmów fallback.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 23,
-                "wyklad": "L08. Podstawy Webpack Module Federation – konfiguracja hosta i remotu. Pierwszy mikrofrontend wystawiający komponent React/Vue.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 24,
-                "wyklad": "L09. Budowa aplikacji Shell – integracja co najmniej dwóch niezależnych modułów mikrofrontendowych. Dynamiczne ładowanie modułów.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 25,
-                "wyklad": "L10. Routing w aplikacji mikrofrontendowej. Komunikacja między modułami przy użyciu Custom Events i współdzielonego Event Bus.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 26,
-                "wyklad": "L11. Przygotowanie pełnego środowiska Docker Compose: backend (mikroserwisy + broker + baza danych) + frontend (shell + moduły). Demonstracja pełnej aplikacji.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 27,
-                "wyklad": "L12. Wdrożenie na Kubernetes (lokalnie: Minikube lub k3s) – tworzenie manifestów Deployment i Service dla każdego mikroserwisu. Konfiguracja Ingress.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 28,
-                "wyklad": "L13. Skalowanie i monitorowanie w Kubernetes – HPA, metryki (kubectl top), probes (liveness, readiness). Podstawy Helm: pakietowanie aplikacji jako Helm chart.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 29,
-                "wyklad": "L14. Przegląd i obrona projektów końcowych – prezentacja architektury, demonstracja działającego systemu, dyskusja decyzji projektowych.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 30,
-                "wyklad": "L15. Podsumowanie zajęć laboratoryjnych, omówienie wyników projektów, wskazówki do dalszego rozwoju (cloud providers: AWS ECS/EKS, GCP GKE, Azure AKS).",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with modern distributed systems architectures, with particular emphasis on the microservices and microfrontends approach. Students acquire the ability to design, implement, and deploy systems composed of independent, communicating services, as well as to build scalable user interfaces composed of autonomous frontend modules. The course develops competencies required in industry, where monolithic systems are gradually being replaced by flexible cloud architectures.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+        {
+          "keu": "K_W23",
+          "peu": "Student zna i rozumie zagadnienia bezpieczeństwa w architekturze mikroserwisowej: uwierzytelnianie i autoryzacja (OAuth 2.0/JWT) na poziomie API Gateway, szyfrowanie komunikacji wewnętrznej.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U19",
+          "peu": "Student potrafi zaprojektować architekturę systemu opartego na mikroserwisach, dokonując dekompozycji domeny biznesowej, identyfikując granice serwisów i definiując kontrakty API.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U28",
+          "peu": "Student potrafi zaimplementować co najmniej trzy współpracujące mikroserwisy w technologii Node.js/Express lub Spring Boot, stosując komunikację synchroniczną (REST) i asynchroniczną (message broker).",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi skonteneryzować mikroserwisy za pomocą Dockera, tworzyć pliki Dockerfile i konfiguracje Docker Compose do uruchamiania całego systemu lokalnie.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U24",
+          "peu": "Student potrafi zaprojektować i zaimplementować aplikację mikrofrontendową z użyciem Webpack Module Federation, integrując co najmniej dwa niezależne moduły frontendowe w ramach wspólnego shell-a.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U28",
+          "peu": "Student potrafi skonfigurować i wdrożyć API Gateway (np. NGINX, Kong lub własny w Node.js) obsługujące routing, load balancing i uwierzytelnianie.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U21",
+          "peu": "Student potrafi zidentyfikować wąskie gardła i punkty awarii w architekturze mikroserwisowej oraz zastosować wzorzec Circuit Breaker i mechanizmy retry/fallback.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi przygotować podstawową konfigurację klastra Kubernetes (Deployment, Service, Ingress) i wdrożyć na nim skonteneryzowany system mikroserwisowy.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do pracy w modelu organizacyjnym opartym na autonomicznych zespołach (tzw. team topologies), rozumiejąc wpływ struktury zespołu na architekturę systemu (prawo Conwaya).",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny zasadności stosowania architektury mikroserwisowej w danym projekcie, uwzględniając koszty złożoności operacyjnej i organizacyjnej.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego śledzenia aktualnych trendów w inżynierii oprogramowania i infrastrukturze chmurowej oraz aktualizowania swojej wiedzy w oparciu o dokumentację techniczną i społeczność open source.",
+          "metoda_weryfikacji": "raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "W01. Architektura monolityczna vs. mikroserwisowa – ewolucja podejść do budowy systemów. Definicja mikroserwisu. Zalety i wady. Kiedy stosować mikroserwisy, a kiedy monolit jest lepszym wyborem.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "W02. Domain-Driven Design jako podstawa dekompozycji. Bounded Context, ubiquitous language, agregaty, encje, obiekty wartości. Identyfikowanie granic mikroserwisów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "W03. Komunikacja synchroniczna: REST i gRPC. Projektowanie kontraktów API (OpenAPI/Swagger). Wersjonowanie API. Zasady idempotentności.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "W04. Komunikacja asynchroniczna: message brokery (RabbitMQ, Apache Kafka). Wzorce: Publish/Subscribe, Event-Driven Architecture. Porównanie brokerów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "W05. Wzorzec API Gateway: routing, load balancing, autentykacja, rate limiting. Service Discovery: podejście client-side i server-side (Consul, Eureka).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "W06. Odporność na błędy: wzorzec Circuit Breaker (Resilience4j, Hystrix), retry, timeout, bulkhead. Distributed tracing (Jaeger, Zipkin). Centralne logowanie (ELK Stack).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "W07. Zarządzanie danymi w mikroserwisach: database-per-service, eventual consistency, wzorce Saga (choreography vs. orchestration) i CQRS.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "W08. Event Sourcing: przechowywanie stanu jako sekwencji zdarzeń. Zalety i ograniczenia. Integracja z CQRS.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "W09. Mikrofrontendy: motywacja, definicja, podejścia integracji (build-time, run-time, iframe, Web Components, Module Federation). Porównanie podejść.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "W10. Webpack 5 Module Federation w szczegółach: host, remote, shared dependencies, dynamic imports. Wzorzec Shell Application.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "W11. Routing i zarządzanie stanem w aplikacjach mikrofrontendowych. Komunikacja między modułami: Custom Events, shared state, Event Bus.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "W12. Konteneryzacja: Docker w ekosystemie mikroserwisów. Dockerfile best practices, multi-stage build, sieci Docker, volumes. Docker Compose dla środowisk developerskich.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "W13. Kubernetes: architektura klastra (control plane, worker node). Obiekty: Pod, Deployment, Service, ConfigMap, Secret, Ingress. Skalowanie horyzontalne (HPA).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "W14. Bezpieczeństwo w architekturze mikroserwisowej: OAuth 2.0 i JWT na poziomie API Gateway, mTLS dla komunikacji wewnętrznej, zarządzanie sekretami (Vault).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "W15. Wzorce organizacyjne: Conway's Law, Team Topologies (stream-aligned, enabling, complicated subsystem, platform teams). Strategie migracji z monolitu: Strangler Fig Pattern. Podsumowanie kursu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "L01. Konfiguracja środowiska: Docker Desktop, Node.js, VS Code. Uruchomienie pierwszego mikroserwisu w Node.js/Express. Dockeryzacja. Testowanie endpointów (Postman/curl).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "L02. Projektowanie systemu – dekompozycja domeny wybranej aplikacji (np. sklep internetowy) na mikroserwisy metodą Event Storming. Definiowanie kontraktów REST (OpenAPI).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 18,
+        "wyklad": "L03. Implementacja mikroserwisu nr 1 (np. serwis produktów) – REST API, walidacja, obsługa błędów, testy jednostkowe (Jest).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 19,
+        "wyklad": "L04. Implementacja mikroserwisu nr 2 (np. serwis zamówień) – komunikacja synchroniczna (REST) z serwisem produktów. Obsługa scenariuszy błędów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 20,
+        "wyklad": "L05. Konfiguracja RabbitMQ w Docker Compose. Implementacja komunikacji asynchronicznej między serwisami (zdarzenie OrderPlaced → serwis notyfikacji).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 21,
+        "wyklad": "L06. Implementacja API Gateway w NGINX lub jako mikroserwis Node.js – routing do serwisów backendu, uwierzytelnianie JWT, rate limiting.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 22,
+        "wyklad": "L07. Wzorzec Circuit Breaker z użyciem biblioteki opossum (Node.js). Symulowanie awarii serwisu i testowanie mechanizmów fallback.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 23,
+        "wyklad": "L08. Podstawy Webpack Module Federation – konfiguracja hosta i remotu. Pierwszy mikrofrontend wystawiający komponent React/Vue.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 24,
+        "wyklad": "L09. Budowa aplikacji Shell – integracja co najmniej dwóch niezależnych modułów mikrofrontendowych. Dynamiczne ładowanie modułów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 25,
+        "wyklad": "L10. Routing w aplikacji mikrofrontendowej. Komunikacja między modułami przy użyciu Custom Events i współdzielonego Event Bus.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 26,
+        "wyklad": "L11. Przygotowanie pełnego środowiska Docker Compose: backend (mikroserwisy + broker + baza danych) + frontend (shell + moduły). Demonstracja pełnej aplikacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 27,
+        "wyklad": "L12. Wdrożenie na Kubernetes (lokalnie: Minikube lub k3s) – tworzenie manifestów Deployment i Service dla każdego mikroserwisu. Konfiguracja Ingress.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 28,
+        "wyklad": "L13. Skalowanie i monitorowanie w Kubernetes – HPA, metryki (kubectl top), probes (liveness, readiness). Podstawy Helm: pakietowanie aplikacji jako Helm chart.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 29,
+        "wyklad": "L14. Przegląd i obrona projektów końcowych – prezentacja architektury, demonstracja działającego systemu, dyskusja decyzji projektowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 30,
+        "wyklad": "L15. Podsumowanie zajęć laboratoryjnych, omówienie wyników projektów, wskazówki do dalszego rozwoju (cloud providers: AWS ECS/EKS, GCP GKE, Azure AKS).",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with modern distributed systems architectures, with particular emphasis on the microservices and microfrontends approach. Students acquire the ability to design, implement, and deploy systems composed of independent, communicating services, as well as to build scalable user interfaces composed of autonomous frontend modules. The course develops competencies required in industry, where monolithic systems are gradually being replaced by flexible cloud architectures.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

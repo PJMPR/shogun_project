@@ -74,16 +74,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student ma rozszerzoną wiedzę z zakresu mechaniki klasycznej, termodynamiki, elektrostatyki i elektromagnetyzmu oraz optyki i akustyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka. [K_W02]",
-        "Student zna i rozumie zasady tworzenia i weryfikacji modeli fizycznych oraz metody numeryczne przybliżonego rozwiązywania równań fizycznych. [K_W02]"
+        {
+          "keu": "K_W02",
+          "peu": "Student ma rozszerzoną wiedzę z zakresu mechaniki klasycznej, termodynamiki, elektrostatyki i elektromagnetyzmu oraz optyki i akustyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka. [K_W02]",
+          "metoda_weryfikacji": "kolokwium"
+        },
+        {
+          "keu": "K_W02",
+          "peu": "Student zna i rozumie zasady tworzenia i weryfikacji modeli fizycznych oraz metody numeryczne przybliżonego rozwiązywania równań fizycznych. [K_W02]",
+          "metoda_weryfikacji": "kolokwium"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi analizować i wyjaśniać zjawiska fizyczne, budować i weryfikować modele matematyczne układów fizycznych oraz posługiwać się narzędziami symulacyjnymi. [K_U08]",
-        "Student potrafi zaplanować i przeprowadzić eksperyment fizyczny (pomiar lub symulację), dobrać metody pomiarowe i sprzęt, opracować wyniki z uwzględnieniem błędu pomiarowego. [K_U09]"
+        {
+          "keu": "K_U08",
+          "peu": "Student potrafi analizować i wyjaśniać zjawiska fizyczne, budować i weryfikować modele matematyczne układów fizycznych oraz posługiwać się narzędziami symulacyjnymi. [K_U08]",
+          "metoda_weryfikacji": "kolokwium, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U09",
+          "peu": "Student potrafi zaplanować i przeprowadzić eksperyment fizyczny (pomiar lub symulację), dobrać metody pomiarowe i sprzęt, opracować wyniki z uwzględnieniem błędu pomiarowego. [K_U09]",
+          "metoda_weryfikacji": "kolokwium, raport z wykonanego zadania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do stosowania modelowania fizycznego i symulacji w rozwiązywaniu złożonych problemów inżynierskich z zakresu informatyki. [K_K01]",
-        "Student jest gotów do samodzielnego uczenia się przez całe życie i poszerzania wiedzy fizycznej jako podstawy nowoczesnych technologii informatycznych. [K_K03]"
+        {
+          "keu": "K_K01",
+          "peu": "Student jest gotów do stosowania modelowania fizycznego i symulacji w rozwiązywaniu złożonych problemów inżynierskich z zakresu informatyki. [K_K01]",
+          "metoda_weryfikacji": "kolokwium, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie i poszerzania wiedzy fizycznej jako podstawy nowoczesnych technologii informatycznych. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, raport z wykonanego zadania"
+        }
       ]
     },
     "tresci_programowe": [

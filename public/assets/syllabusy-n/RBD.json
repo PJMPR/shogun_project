@@ -66,19 +66,55 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie zasady modelowania danych (model związków i encji ERD, model relacyjny) oraz teorię normalizacji baz danych (1NF–BCNF) i jej znaczenie dla integralności i wydajności systemu. [K_W13]",
-        "Student zna i rozumie zaawansowane możliwości języka SQL: podzapytania, złączenia (JOIN), widoki, procedury składowane, wyzwalacze i transakcje z różnymi poziomami izolacji. [K_W13]",
-        "Student zna i rozumie architekturę i zasady działania popularnych systemów RDBMS (PostgreSQL, MySQL, SQL Server), mechanizmy indeksowania i optymalizacji zapytań. [K_W13]"
+        {
+          "keu": "K_W13",
+          "peu": "Student zna i rozumie zasady modelowania danych (model związków i encji ERD, model relacyjny) oraz teorię normalizacji baz danych (1NF–BCNF) i jej znaczenie dla integralności i wydajności systemu. [K_W13]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W13",
+          "peu": "Student zna i rozumie zaawansowane możliwości języka SQL: podzapytania, złączenia (JOIN), widoki, procedury składowane, wyzwalacze i transakcje z różnymi poziomami izolacji. [K_W13]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W13",
+          "peu": "Student zna i rozumie architekturę i zasady działania popularnych systemów RDBMS (PostgreSQL, MySQL, SQL Server), mechanizmy indeksowania i optymalizacji zapytań. [K_W13]",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi zaprojektować schemat relacyjnej bazy danych na podstawie wymagań, stosując normalizację, klucze obce i ograniczenia integralności. [K_U18]",
-        "Student potrafi pisać złożone zapytania SQL (w tym agregacje, podzapytania, złączenia wielu tabel) oraz implementować procedury składowane i wyzwalacze. [K_U18]",
-        "Student potrafi zarządzać transakcjami, konfigurować uprawnienia użytkowników oraz przeprowadzać tworzenie kopii zapasowych i odtwarzanie bazy danych. [K_U18]",
-        "Student potrafi zaplanować i zrealizować migrację danych oraz integrację bazy danych z aplikacją backendową. [K_U27]"
+        {
+          "keu": "K_U18",
+          "peu": "Student potrafi zaprojektować schemat relacyjnej bazy danych na podstawie wymagań, stosując normalizację, klucze obce i ograniczenia integralności. [K_U18]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U18",
+          "peu": "Student potrafi pisać złożone zapytania SQL (w tym agregacje, podzapytania, złączenia wielu tabel) oraz implementować procedury składowane i wyzwalacze. [K_U18]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U18",
+          "peu": "Student potrafi zarządzać transakcjami, konfigurować uprawnienia użytkowników oraz przeprowadzać tworzenie kopii zapasowych i odtwarzanie bazy danych. [K_U18]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi zaplanować i zrealizować migrację danych oraz integrację bazy danych z aplikacją backendową. [K_U27]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego projektowania i optymalizacji rozwiązań bazodanowych w projektach inżynierskich z uwzględnieniem wymagań wydajnościowych i bezpieczeństwa danych. [K_K05]",
-        "Student jest gotów do ciągłego poszerzania wiedzy o nowych technologiach bazodanowych, w tym NoSQL i bazach czasu rzeczywistego. [K_K03]"
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do samodzielnego projektowania i optymalizacji rozwiązań bazodanowych w projektach inżynierskich z uwzględnieniem wymagań wydajnościowych i bezpieczeństwa danych. [K_K05]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego poszerzania wiedzy o nowych technologiach bazodanowych, w tym NoSQL i bazach czasu rzeczywistego. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia"
+        }
       ]
     },
     "tresci_programowe": [

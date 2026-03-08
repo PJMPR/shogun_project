@@ -82,15 +82,35 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika.",
-        "Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych."
+        {
+          "keu": "K_W24",
+          "peu": "Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika.",
+          "metoda_weryfikacji": "sprawdziany wstępne „wejściówki\""
+        },
+        {
+          "keu": "K_W24",
+          "peu": "Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych.",
+          "metoda_weryfikacji": "sprawdziany wstępne „wejściówki\""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne.",
-        "Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych.",
-        "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego."
+        {
+          "keu": "K_U31",
+          "peu": "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne.",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U31",
+          "peu": "Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych.",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U31",
+          "peu": "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego.",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia"
+        }
       ],
-      "kompetencje_spoleczne": null
+      "kompetencje_spoleczne": []
     },
     "tresci_programowe": [
       {

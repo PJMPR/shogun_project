@@ -67,13 +67,25 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych."
+        {
+          "keu": "K_W10",
+          "peu": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

@@ -130,10 +130,25 @@ export class NiestacjonarneProgramComponent implements OnInit {
     return type;
   }
 
-  asArray(val: string | string[] | undefined | null): string[] {
+  asArray(val: any): string[] {
+    if (!val) return [];
+    if (Array.isArray(val)) return val.map((i: any) => typeof i === 'object' ? (i.peu ?? '') : i);
+    return [val];
+  }
+
+  isEfektyObjects(val: any): boolean {
+    return Array.isArray(val) && val.length > 0 && typeof val[0] === 'object' && 'peu' in val[0];
+  }
+
+  asEfektyItems(val: any): { keu: string; peu: string; metoda_weryfikacji: string }[] {
+    return Array.isArray(val) ? val : [];
+  }
+
+  normalizeEfekty(val: any): any[] {
     if (!val) return [];
     if (Array.isArray(val)) return val;
-    return [val];
+    if (typeof val === 'string') return val.trim() ? [val] : [];
+    return [];
   }
 
   getZaliczenieEntries(z: Record<string, { sposob: string }> | undefined): { forma: string; sposob: string }[] {

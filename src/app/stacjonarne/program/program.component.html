@@ -397,29 +397,36 @@
           <!-- 8. Efekty kształcenia -->
           @if (s.efekty_ksztalcenia) {
             <p-panel header="Efekty kształcenia" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
-              @if (asArray(s.efekty_ksztalcenia.wiedza).length) {
-                <p class="efekty-kategoria"><i class="pi pi-lightbulb"></i> Wiedza</p>
-                <ul class="sylabus-list">
-                  @for (e of asArray(s.efekty_ksztalcenia.wiedza); track $index) {
-                    <li>{{ e }}</li>
+              @for (kat of [
+                { label: 'Wiedza', icon: 'pi pi-lightbulb', val: s.efekty_ksztalcenia.wiedza },
+                { label: 'Umiejętności', icon: 'pi pi-cog', val: s.efekty_ksztalcenia.umiejetnosci },
+                { label: 'Kompetencje społeczne', icon: 'pi pi-users', val: s.efekty_ksztalcenia.kompetencje_spoleczne }
+              ]; track kat.label) {
+                @if (normalizeEfekty(kat.val).length) {
+                  <p class="efekty-kategoria"><i [class]="kat.icon"></i> {{ kat.label }}</p>
+                  @if (isEfektyObjects(kat.val)) {
+                    <p-table [value]="asEfektyItems(kat.val)" styleClass="p-datatable-sm efekty-table" [showGridlines]="true">
+                      <ng-template pTemplate="header">
+                        <tr>
+                          <th style="width:110px">Kod KEU</th>
+                          <th>Przedmiotowy efekt uczenia się</th>
+                          <th style="width:220px">Metoda weryfikacji</th>
+                        </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-row>
+                        <tr>
+                          <td class="text-center"><strong>{{ row.keu || '–' }}</strong></td>
+                          <td>{{ row.peu }}</td>
+                          <td>{{ row.metoda_weryfikacji || '–' }}</td>
+                        </tr>
+                      </ng-template>
+                    </p-table>
+                  } @else {
+                    <ul class="sylabus-list">
+                      @for (e of asArray(kat.val); track $index) { <li>{{ e }}</li> }
+                    </ul>
                   }
-                </ul>
-              }
-              @if (asArray(s.efekty_ksztalcenia.umiejetnosci).length) {
-                <p class="efekty-kategoria"><i class="pi pi-cog"></i> Umiejętności</p>
-                <ul class="sylabus-list">
-                  @for (e of asArray(s.efekty_ksztalcenia.umiejetnosci); track $index) {
-                    <li>{{ e }}</li>
-                  }
-                </ul>
-              }
-              @if (asArray(s.efekty_ksztalcenia.kompetencje_spoleczne).length) {
-                <p class="efekty-kategoria"><i class="pi pi-users"></i> Kompetencje społeczne</p>
-                <ul class="sylabus-list">
-                  @for (e of asArray(s.efekty_ksztalcenia.kompetencje_spoleczne); track $index) {
-                    <li>{{ e }}</li>
-                  }
-                </ul>
+                }
               }
             </p-panel>
           }

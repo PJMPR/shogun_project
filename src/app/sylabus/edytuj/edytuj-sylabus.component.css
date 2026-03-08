@@ -171,6 +171,52 @@
 .es-textarea-sm { font-size: 0.85rem; }
 .es-add-btn { margin-top: 0.25rem; }
 
+/* Tabela efektów kształcenia */
+.es-efekty-table {
+  display: grid;
+  border: 1px solid var(--p-surface-200);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.es-efekty-header,
+.es-efekty-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 180px 40px;
+  border-bottom: 1px solid var(--p-surface-200);
+}
+
+.es-efekty-header {
+  background: var(--p-surface-100);
+}
+
+.es-efekty-row:last-child { border-bottom: none; }
+
+.es-efekty-header > span {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--p-surface-600);
+  border-right: 1px solid var(--p-surface-200);
+}
+
+.es-efekty-header > span:last-child { border-right: none; }
+
+.es-efekty-row > div {
+  padding: 0.35rem 0.4rem;
+  border-right: 1px solid var(--p-surface-200);
+}
+
+.es-efekty-row > div:last-child { border-right: none; align-items: center; justify-content: center; display: flex; }
+
+.es-efekty-col-keu  { }
+.es-efekty-col-peu  { }
+.es-efekty-col-met  { }
+.es-efekty-col-btn  { }
+
+.es-input-sm { font-size: 0.85rem; }
+
 .es-action-bar {
   display: flex;
   gap: 1rem;

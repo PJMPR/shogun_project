@@ -71,12 +71,28 @@
     "efekty_ksztalcenia": {
       "wiedza": [],
       "umiejetnosci": [
-        "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej.",
-        "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1."
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT.",
-        "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów."
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ]
     },
     "tresci_programowe": [

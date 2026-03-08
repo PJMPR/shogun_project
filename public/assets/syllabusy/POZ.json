@@ -1,178 +1,206 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "stacjonarny",
-        "wersja_z_dnia": "19.02.2026",
-        "nazwa_przedmiotu": "Zarządzanie własnym przedsięwzięciem",
-        "kod_przedmiotu": "POZ",
-        "rok_studiow": null,
-        "semestr_studiow": 3,
-        "obligatoryjny": false,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 15,
-            "cwiczenia_lektorat_seminarium": 15,
-            "laboratorium_projekt": null
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Zarządzanie własnym przedsięwzięciem",
+    "kod_przedmiotu": "POZ",
+    "rok_studiow": null,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": 15,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "dr Albert Śledzianowski",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Praca nad planem biznesowym własnego przedsięwzięcia; analiza przypadków biznesowych; przygotowanie prezentacji multimedialnej; przygotowanie do kolokwium z treści wykładów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład konwersatoryjny (z elementami dyskusji)"
+      ],
+      "cwiczenia_laboratorium": [
+        "praca w grupach",
+        "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+        "dyskusja"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "kolokwium"
+      ],
+      "cwiczenia_laboratorium": [
+        "ocena pracy podczas ćwiczenia",
+        "prezentacja elementu zespołowej pracy semestralnej"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "brak",
+        "wymagania": "brak"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest omówienie podstawowych kwestii ekonomicznych: gospodarka, system ekonomiczny i społeczny; pieniądz i rynek; uwarunkowania technologiczne, etyczne i prawne; gospodarka oparta na informacji i na wiedzy; marketing; podstawy rachunkowości; formy prowadzenia działalności gospodarczej; zakładanie i zarządzanie firmą",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "\"Mikroekonomia\" - David Begg, Rudiger Dornbusch, Stanley Fischer, PWE (2014)"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "1. „Banki i rynki finansowe. Od zaufania publicznego do kasyna” - Zbyszek Grocholski",
+          "2. \"Wolny wybór\" – Milton Friedman",
+          "3. „Mapa i terytorium” - Alan Greenspan",
+          "4. “Kapitał XXI wieku” – Thomas Piketty",
+          "5. „Makro i mikroekonimia” – Wydawnictwo PWN"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie podstawowe zasady planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej i analizy wykonalności z uwzględnieniem aspektów społecznych i ryzyka. [K_W17]",
+          "metoda_weryfikacji": "kolokwium"
         },
-        "odpowiedzialny_za_przedmiot": "dr Albert Śledzianowski",
-        "ects": 2,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 30,
-            "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50,
-            "praca_wlasna_studenta": "Praca nad planem biznesowym własnego przedsięwzięcia; analiza przypadków biznesowych; przygotowanie prezentacji multimedialnej; przygotowanie do kolokwium z treści wykładów."
+        {
+          "keu": "K_W19",
+          "peu": "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki: ochronę własności intelektualnej, prawo autorskie, odpowiedzialność zawodową i zagadnienia prywatności danych. [K_W19]",
+          "metoda_weryfikacji": "kolokwium"
         },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład konwersatoryjny (z elementami dyskusji)"
-            ],
-            "cwiczenia_laboratorium": [
-                "praca w grupach",
-                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
-                "dyskusja"
-            ]
-        },
-        "zaliczenie": {
-            "Ćwiczenia": {
-                "sposob": "Zaliczenie z oceną"
-            },
-            "Wykład": {
-                "sposob": "Nieoceniany"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [
-                "kolokwium"
-            ],
-            "cwiczenia_laboratorium": [
-                "ocena pracy podczas ćwiczenia",
-                "prezentacja elementu zespołowej pracy semestralnej"
-            ]
-        },
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "brak",
-                "wymagania": "brak"
-            }
-        ],
-        "cel_dydaktyczny": "Celem przedmiotu jest omówienie podstawowych kwestii ekonomicznych: gospodarka, system ekonomiczny i społeczny; pieniądz i rynek; uwarunkowania technologiczne, etyczne i prawne; gospodarka oparta na informacji i na wiedzy; marketing; podstawy rachunkowości; formy prowadzenia działalności gospodarczej; zakładanie i zarządzanie firmą",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "\"Mikroekonomia\" - David Begg, Rudiger Dornbusch, Stanley Fischer, PWE (2014)"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "1. „Banki i rynki finansowe. Od zaufania publicznego do kasyna” - Zbyszek Grocholski",
-                    "2. \"Wolny wybór\" – Milton Friedman",
-                    "3. „Mapa i terytorium” - Alan Greenspan",
-                    "4. “Kapitał XXI wieku” – Thomas Piketty",
-                    "5. „Makro i mikroekonimia” – Wydawnictwo PWN"
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie podstawowe zasady planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej i analizy wykonalności z uwzględnieniem aspektów społecznych i ryzyka. [K_W17]",
-                "Student zna i rozumie podstawowe problemy etyczne i prawne informatyki: ochronę własności intelektualnej, prawo autorskie, odpowiedzialność zawodową i zagadnienia prywatności danych. [K_W19]",
-                "Student zna i rozumie ogólne zasady prowadzenia działalności gospodarczej w branży IT, w tym tworzenia startupów i innowacyjnych przedsięwzięć informatycznych. [K_W20]"
-            ],
-            "umiejetnosci": [
-                "Student potrafi przeanalizować projekt informatyczny pod kątem jego wpływu na otoczenie społeczne i ekonomicznego uzasadnienia realizacji. [K_U26]",
-                "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia dla różnych interesariuszy. [K_U25]"
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do przekazywania informacji i opinii o projektach informatycznych w sposób powszechnie zrozumiały, z uwzględnieniem potrzeb różnych grup odbiorców. [K_K02]",
-                "Student jest gotów do myślenia i działania w sposób przedsiębiorczy i innowacyjny w kontekście tworzenia przedsięwzięć informatycznych. [K_K07]"
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Pojęcia podstawowe: rynek, popyt i podaż.Nowoczesny system ekonomiczny ispołeczny. Ekonomia, technologia i etyka.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Rynek, Konkurencja. Wartość i powstawanieceny. Pieniądz. Pieniądz w świecie IT.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Państwo a gospodarka. Podatki. Inflacja.Bezrobocie. Rola pieniądza w gospodarce.Rola rządu. Prawa i obowiązki przedsiębiorcyi obywatela.Zarządzanie czasem. Wykresy Gantta",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Nowoczesna makrogospodarka . Gospodarka globalna. Strategie rozwoju światowego.Kryzysy ekonomiczne i kryzysy finansowe.Rozwój gospodarczy i rozwój społeczny.Modele rozwoju ekonomicznego.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Ożywianie i schładzanie gospodarki.Gospodarka USA vs gospodarka UE. Strategializbońska. Japonia. Chiny i Indie. Korporacje ifirmy międzynarodowe. Przejęcia wrogie iprzyjazne. Przepływ kapitału i inwestycje FDI.Kryzysy finansowe.Budżetowanie przedsięwzięć i rachunek cash flow.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Giełda jako przykład organizacji rynkuinformacji.Planowanie działań i formułowanie strategii.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Gospodarka oparta na wiedzy. Firmainnowacyjna. Rynek e-usług. Handelelektroniczny.Logistyka (MRP)",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Podstawy marketingu. Misja i wizja firmy.Budowa wizerunku. Budowa produktu.Marketing. Analiza business case.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Marketing: reklama a zarządzanie rynkiem.Kanały informacyjne. Grupa targetowa.Komunikacja wewnętrzna i komunikacja zewnętrzna. Kampanie marketingowe.Nowoczesny marketing. Marketing w świecieglobalnej wymiany komunikacji.Budowanie kampanii marketingowej",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Marketing. Logotypy i system identyfikacjiwizualnej. Kampanie społeczne. Firmaodpowiedzialna społecznie. Reagowanie nasytuacje kryzysowe.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "Budowa i zarządzanie własnegoprzedsiębiorstwa. Formy prowadzeniadziałalności gospodarczej.Symulator ekonomiczny.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "Podstawy rachunkowości finansowej. Bilansspółki. Wycena firmy. Rachunkowośćzarządcza. Rachunek ekonomiczny firmy.Rachunkowość i cash flow.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "Umocowanie prawne przedsiębiorcy.Elementy prawa dla menedżerów. Podstawyprawa dla informatyków. Kodeks cywilny.Kodeks spółek handlowych.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 14,
-                "wyklad": "Ustawa o prawie autorskim. Analiza przypadków prawnych.",
-                "cwiczenia": ""
-            }
-        ],
-        "cel_dydaktyczny_eng": "The aim of the course is to discuss fundamental economic issues: the economy, the economic and social system; money and the market; technological, ethical, and legal determinants; the information- and knowledge-based economy; marketing; the basics of accounting; forms of business activity; and establishing and managing a company.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
+        {
+          "keu": "K_W20",
+          "peu": "Student zna i rozumie ogólne zasady prowadzenia działalności gospodarczej w branży IT, w tym tworzenia startupów i innowacyjnych przedsięwzięć informatycznych. [K_W20]",
+          "metoda_weryfikacji": "kolokwium"
         }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi przeanalizować projekt informatyczny pod kątem jego wpływu na otoczenie społeczne i ekonomicznego uzasadnienia realizacji. [K_U26]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U25",
+          "peu": "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia dla różnych interesariuszy. [K_U25]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K02",
+          "peu": "Student jest gotów do przekazywania informacji i opinii o projektach informatycznych w sposób powszechnie zrozumiały, z uwzględnieniem potrzeb różnych grup odbiorców. [K_K02]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K07",
+          "peu": "Student jest gotów do myślenia i działania w sposób przedsiębiorczy i innowacyjny w kontekście tworzenia przedsięwzięć informatycznych. [K_K07]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Pojęcia podstawowe: rynek, popyt i podaż.Nowoczesny system ekonomiczny ispołeczny. Ekonomia, technologia i etyka.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Rynek, Konkurencja. Wartość i powstawanieceny. Pieniądz. Pieniądz w świecie IT.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Państwo a gospodarka. Podatki. Inflacja.Bezrobocie. Rola pieniądza w gospodarce.Rola rządu. Prawa i obowiązki przedsiębiorcyi obywatela.Zarządzanie czasem. Wykresy Gantta",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Nowoczesna makrogospodarka . Gospodarka globalna. Strategie rozwoju światowego.Kryzysy ekonomiczne i kryzysy finansowe.Rozwój gospodarczy i rozwój społeczny.Modele rozwoju ekonomicznego.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Ożywianie i schładzanie gospodarki.Gospodarka USA vs gospodarka UE. Strategializbońska. Japonia. Chiny i Indie. Korporacje ifirmy międzynarodowe. Przejęcia wrogie iprzyjazne. Przepływ kapitału i inwestycje FDI.Kryzysy finansowe.Budżetowanie przedsięwzięć i rachunek cash flow.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Giełda jako przykład organizacji rynkuinformacji.Planowanie działań i formułowanie strategii.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Gospodarka oparta na wiedzy. Firmainnowacyjna. Rynek e-usług. Handelelektroniczny.Logistyka (MRP)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Podstawy marketingu. Misja i wizja firmy.Budowa wizerunku. Budowa produktu.Marketing. Analiza business case.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Marketing: reklama a zarządzanie rynkiem.Kanały informacyjne. Grupa targetowa.Komunikacja wewnętrzna i komunikacja zewnętrzna. Kampanie marketingowe.Nowoczesny marketing. Marketing w świecieglobalnej wymiany komunikacji.Budowanie kampanii marketingowej",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Marketing. Logotypy i system identyfikacjiwizualnej. Kampanie społeczne. Firmaodpowiedzialna społecznie. Reagowanie nasytuacje kryzysowe.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Budowa i zarządzanie własnegoprzedsiębiorstwa. Formy prowadzeniadziałalności gospodarczej.Symulator ekonomiczny.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Podstawy rachunkowości finansowej. Bilansspółki. Wycena firmy. Rachunkowośćzarządcza. Rachunek ekonomiczny firmy.Rachunkowość i cash flow.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Umocowanie prawne przedsiębiorcy.Elementy prawa dla menedżerów. Podstawyprawa dla informatyków. Kodeks cywilny.Kodeks spółek handlowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Ustawa o prawie autorskim. Analiza przypadków prawnych.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to discuss fundamental economic issues: the economy, the economic and social system; money and the market; technological, ethical, and legal determinants; the information- and knowledge-based economy; marketing; the basics of accounting; forms of business activity; and establishing and managing a company.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

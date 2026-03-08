@@ -67,13 +67,25 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna podstawowe konstrukcje języka Java, typy danych, instrukcje sterujące oraz zasady programowania obiektowego. Rozumie działanie maszyny wirtualnej JVM oraz rolę bibliotek standardowych."
+        {
+          "keu": "K_W10",
+          "peu": "Student zna podstawowe konstrukcje języka Java, typy danych, instrukcje sterujące oraz zasady programowania obiektowego. Rozumie działanie maszyny wirtualnej JVM oraz rolę bibliotek standardowych.",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Java, projektować klasy i ich relacje, obsługiwać wyjątki oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem."
+        {
+          "keu": "K_U16",
+          "peu": "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Java, projektować klasy i ich relacje, obsługiwać wyjątki oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy."
+        {
+          "keu": "K_K05",
+          "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

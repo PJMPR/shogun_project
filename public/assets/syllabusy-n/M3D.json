@@ -76,17 +76,45 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja"
+        {
+          "keu": "K_W25",
+          "peu": "Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi wymodelować obiekty w technice low-poly oraz high-poly",
-        "Student potrafi oteksturować obiekt metodami tekstur proceduralnych",
-        "Student potrafi rozwinąć siatkę obiektu we współrzędnych UV",
-        "Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych"
+        {
+          "keu": "K_U32",
+          "peu": "Student potrafi wymodelować obiekty w technice low-poly oraz high-poly",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        },
+        {
+          "keu": "K_U32",
+          "peu": "Student potrafi oteksturować obiekt metodami tekstur proceduralnych",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        },
+        {
+          "keu": "K_U32",
+          "peu": "Student potrafi rozwinąć siatkę obiektu we współrzędnych UV",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        },
+        {
+          "keu": "K_U32",
+          "peu": "Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do współpracy i dzielenia się swoją wiedzą",
-        "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności"
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do współpracy i dzielenia się swoją wiedzą",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej"
+        }
       ]
     },
     "tresci_programowe": [

@@ -1046,18 +1046,6 @@ class SyllabusBuilder:
         s = self.s
         efekty = s.get('efekty_ksztalcenia', {})
 
-        # Kryteria oceny do kolumny "Metody weryfikacji"
-        kryteria_raw = s.get('kryteria_oceny', {})
-        if isinstance(kryteria_raw, dict):
-            kryt_wyklad = kryteria_raw.get('wyklad', []) or []
-            kryt_cw = kryteria_raw.get('cwiczenia_laboratorium', []) or []
-            kryt_all = list(dict.fromkeys(kryt_wyklad + kryt_cw))  # unikalne, zachowując kolejność
-        elif isinstance(kryteria_raw, list):
-            kryt_all = kryteria_raw
-        else:
-            kryt_all = []
-        weryfikacja_str = '; '.join(kryt_all) if kryt_all else ''
-
         sections = [
             ('18.  Wiedza nabywana / dostarczana uczestnikom w trakcie realizacji przedmiotu', 'wiedza'),
             ('19.  Umiejętności nabywane podczas realizacji przedmiotu', 'umiejetnosci'),
@@ -1065,8 +1053,7 @@ class SyllabusBuilder:
         ]
 
         for section_title, key in sections:
-            items = efekty.get(key, [])
-            kody_kierunkowe = self._kody_kierunkowe.get(key, [])
+            items = efekty.get(key, []) or []
 
             table = self.doc.add_table(rows=0, cols=3)
             _set_table_borders(table)
@@ -1092,25 +1079,25 @@ class SyllabusBuilder:
                 _run_in_cell(row.cells[i], h, bold=True, size=Pt(9))
 
             if items:
-                for idx, item in enumerate(items):
+                for item in items:
                     row = table.add_row()
-                    kod_kier = kody_kierunkowe[idx] if idx < len(kody_kierunkowe) else ''
-                    _value_cell(row.cells[0], kod_kier)
-                    _value_cell(row.cells[1], item)
-                    _value_cell(row.cells[2], weryfikacja_str)
+                    if isinstance(item, dict):
+                        keu = str(item.get('keu') or '')
+                        peu = str(item.get('peu') or '')
+                        metoda = str(item.get('metoda_weryfikacji') or '')
+                    else:
+                        # fallback: stary format — item jest stringiem
+                        keu = ''
+                        peu = str(item)
+                        metoda = ''
+                    _value_cell(row.cells[0], keu)
+                    _value_cell(row.cells[1], peu)
+                    _value_cell(row.cells[2], metoda)
             else:
-                if kody_kierunkowe:
-                    for kod_kier in kody_kierunkowe:
-                        row = table.add_row()
-                        _value_cell(row.cells[0], kod_kier)
-                        _value_cell(row.cells[1], '')
-                        _value_cell(row.cells[2], weryfikacja_str)
-                else:
-                    for _ in range(3):
-                        row = table.add_row()
-                        _value_cell(row.cells[0], '')
-                        _value_cell(row.cells[1], '')
-                        _value_cell(row.cells[2], weryfikacja_str)
+                row = table.add_row()
+                _value_cell(row.cells[0], '')
+                _value_cell(row.cells[1], '')
+                _value_cell(row.cells[2], '')
 
     # -------------------------------------------------------------------------
     # Sekcja 21 — Wymagania laboratorium

@@ -71,12 +71,28 @@
     "efekty_ksztalcenia": {
       "wiedza": [],
       "umiejetnosci": [
-        "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje.",
-        "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym."
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi konstruować rozbudowane wypowiedzi pisemne i ustne w języku angielskim, w tym dokumentację techniczną, raporty i prezentacje.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi posługiwać się językiem angielskim w mowie i piśmie na poziomie B2/B2+, swobodnie komunikując się w środowisku zawodowym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich.",
-        "Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First)."
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych i akademickich.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego samokształcenia oraz podjęcia certyfikacji językowej (np. Cambridge B2 First).",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
       ]
     },
     "tresci_programowe": [

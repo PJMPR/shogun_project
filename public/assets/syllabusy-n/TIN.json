@@ -65,17 +65,45 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe pojęcia protokołów internetowych: HTTP/HTTPS, REST, WebSocket, DNS, OAuth 2.0, CORS, zasady bezpieczeństwa webowego (XSS, CSRF, SQL injection) i architektury aplikacji internetowych (SPA, SSR, PWA). [K_W09]",
-        "Student zna i rozumie zaawansowane pojęcia z zakresu aplikacji internetowych: wzorce architektoniczne (MVC, MVP, MVVM, Clean Architecture), programowanie asynchroniczne (Promises, async/await) i nowoczesne frameworki frontend (React/Angular/Vue). [K_W21]"
+        {
+          "keu": "K_W09",
+          "peu": "Student zna i rozumie podstawowe pojęcia protokołów internetowych: HTTP/HTTPS, REST, WebSocket, DNS, OAuth 2.0, CORS, zasady bezpieczeństwa webowego (XSS, CSRF, SQL injection) i architektury aplikacji internetowych (SPA, SSR, PWA). [K_W09]",
+          "metoda_weryfikacji": "kolokwium"
+        },
+        {
+          "keu": "K_W21",
+          "peu": "Student zna i rozumie zaawansowane pojęcia z zakresu aplikacji internetowych: wzorce architektoniczne (MVC, MVP, MVVM, Clean Architecture), programowanie asynchroniczne (Promises, async/await) i nowoczesne frameworki frontend (React/Angular/Vue). [K_W21]",
+          "metoda_weryfikacji": "kolokwium"
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi ocenić przydatność różnych technologii webowych i wybrać odpowiednie środowisko do realizacji aplikacji internetowej zgodnie ze specyfikacją. [K_U15]",
-        "Student potrafi wytworzyć warstwową aplikację webową (frontend + backend + baza danych) z użyciem nowoczesnego stosu technologicznego, z uwzględnieniem bezpieczeństwa, wydajności i responsywności. [K_U24]",
-        "Student potrafi zdiagnozować problem specyficzny dla aplikacji webowej i zaprojektować jego rozwiązanie z doborem odpowiednich narzędzi i technologii. [K_U28]"
+        {
+          "keu": "K_U15",
+          "peu": "Student potrafi ocenić przydatność różnych technologii webowych i wybrać odpowiednie środowisko do realizacji aplikacji internetowej zgodnie ze specyfikacją. [K_U15]",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_U24",
+          "peu": "Student potrafi wytworzyć warstwową aplikację webową (frontend + backend + baza danych) z użyciem nowoczesnego stosu technologicznego, z uwzględnieniem bezpieczeństwa, wydajności i responsywności. [K_U24]",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_U28",
+          "peu": "Student potrafi zdiagnozować problem specyficzny dla aplikacji webowej i zaprojektować jego rozwiązanie z doborem odpowiednich narzędzi i technologii. [K_U28]",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego uczenia się nowych technologii webowych w dynamicznie zmieniającym się ekosystemie i regularnego aktualizowania swoich kompetencji. [K_K03]",
-        "Student jest gotów do współpracy w zespole nad aplikacją webową, przyjmując różne role i korzystając z narzędzi zarządzania projektem i wersjami kodu. [K_K04]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego uczenia się nowych technologii webowych w dynamicznie zmieniającym się ekosystemie i regularnego aktualizowania swoich kompetencji. [K_K03]",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do współpracy w zespole nad aplikacją webową, przyjmując różne role i korzystając z narzędzi zarządzania projektem i wersjami kodu. [K_K04]",
+          "metoda_weryfikacji": "ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
+        }
       ]
     },
     "tresci_programowe": [

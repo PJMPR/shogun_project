@@ -72,11 +72,25 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN",
-        "Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk."
+        {
+          "keu": "K_W14",
+          "peu": "Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk.",
+          "metoda_weryfikacji": "egzamin pisemny z zadaniami problemowymi"
+        }
       ],
-      "umiejetnosci": "Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T.",
-      "kompetencje_spoleczne": null
+      "umiejetnosci": [
+        {
+          "keu": "K_U20",
+          "peu": "Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T.",
+          "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania"
+        }
+      ],
+      "kompetencje_spoleczne": []
     },
     "tresci_programowe": [
       {

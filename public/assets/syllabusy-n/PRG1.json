@@ -65,16 +65,40 @@
     },
     "efekty_ksztalcenia": {
       "wiedza": [
-        "Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. [K_W10]",
-        "Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. [K_W04]"
+        {
+          "keu": "K_W10",
+          "peu": "Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. [K_W10]",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W04",
+          "peu": "Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. [K_W04]",
+          "metoda_weryfikacji": ""
+        }
       ],
       "umiejetnosci": [
-        "Student potrafi czytać ze zrozumieniem programy w C#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. [K_U10]",
-        "Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C# do rozwiązania konkretnego zadania. [K_U15]"
+        {
+          "keu": "K_U10",
+          "peu": "Student potrafi czytać ze zrozumieniem programy w C#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. [K_U10]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_U15",
+          "peu": "Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C# do rozwiązania konkretnego zadania. [K_U15]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        }
       ],
       "kompetencje_spoleczne": [
-        "Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C# i .NET w oparciu o dokumentację techniczną i zasoby online. [K_K03]",
-        "Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. [K_K05]"
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C# i .NET w oparciu o dokumentację techniczną i zasoby online. [K_K03]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. [K_K05]",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania"
+        }
       ]
     },
     "tresci_programowe": [

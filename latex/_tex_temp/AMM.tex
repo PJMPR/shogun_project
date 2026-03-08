@@ -172,33 +172,65 @@ Celem przedmiotu jest zapoznanie studentów z nowoczesnymi architekturami system
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{itemize}
-  \item Student zna i rozumie różnice między architekturą monolityczną a mikroserwisową: zalety, wady, kryteria wyboru oraz typowe scenariusze migracji.
-  \item Student zna i rozumie zasady dekompozycji systemu na mikroserwisy z użyciem Domain-Driven Design (DDD), bounded context i reguł spójności domenowej.
-  \item Student zna i rozumie mechanizmy komunikacji między mikroserwisami: wywołania synchroniczne (REST, gRPC) oraz asynchroniczne (message broker: RabbitMQ, Kafka) i potrafi wskazać zastosowania każdego z podejść.
-  \item Student zna i rozumie wzorce architektoniczne stosowane w mikroserwisach: API Gateway, Service Discovery, Circuit Breaker, Saga, CQRS, Event Sourcing.
-  \item Student zna i rozumie koncepcję mikrofrontendów: podział aplikacji frontendowej na niezależne moduły wdrażane i rozwijane przez oddzielne zespoły, w tym podejście Module Federation (Webpack 5).
-  \item Student zna i rozumie podstawy konteneryzacji (Docker) i orkiestracji (Kubernetes) w kontekście wdrażania i skalowania mikroserwisów.
-  \item Student zna i rozumie zagadnienia bezpieczeństwa w architekturze mikroserwisowej: uwierzytelnianie i autoryzacja (OAuth 2.0/JWT) na poziomie API Gateway, szyfrowanie komunikacji wewnętrznej.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_W14 & Student zna i rozumie różnice między architekturą monolityczną a mikroserwisową: zalety, wady, kryteria wyboru oraz typowe scenariusze migracji. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W14 & Student zna i rozumie zasady dekompozycji systemu na mikroserwisy z użyciem Domain-Driven Design (DDD), bounded context i reguł spójności domenowej. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie mechanizmy komunikacji między mikroserwisami: wywołania synchroniczne (REST, gRPC) oraz asynchroniczne (message broker: RabbitMQ, Kafka) i potrafi wskazać zastosowania każdego z podejść. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W14 & Student zna i rozumie wzorce architektoniczne stosowane w mikroserwisach: API Gateway, Service Discovery, Circuit Breaker, Saga, CQRS, Event Sourcing. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W21 & Student zna i rozumie koncepcję mikrofrontendów: podział aplikacji frontendowej na niezależne moduły wdrażane i rozwijane przez oddzielne zespoły, w tym podejście Module Federation (Webpack 5). & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie podstawy konteneryzacji (Docker) i orkiestracji (Kubernetes) w kontekście wdrażania i skalowania mikroserwisów. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W23 & Student zna i rozumie zagadnienia bezpieczeństwa w architekturze mikroserwisowej: uwierzytelnianie i autoryzacja (OAuth 2.0/JWT) na poziomie API Gateway, szyfrowanie komunikacji wewnętrznej. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+\end{longtable}
 
 \subsection*{Umiejętności}
-\begin{itemize}
-  \item Student potrafi zaprojektować architekturę systemu opartego na mikroserwisach, dokonując dekompozycji domeny biznesowej, identyfikując granice serwisów i definiując kontrakty API.
-  \item Student potrafi zaimplementować co najmniej trzy współpracujące mikroserwisy w technologii Node.js/Express lub Spring Boot, stosując komunikację synchroniczną (REST) i asynchroniczną (message broker).
-  \item Student potrafi skonteneryzować mikroserwisy za pomocą Dockera, tworzyć pliki Dockerfile i konfiguracje Docker Compose do uruchamiania całego systemu lokalnie.
-  \item Student potrafi zaprojektować i zaimplementować aplikację mikrofrontendową z użyciem Webpack Module Federation, integrując co najmniej dwa niezależne moduły frontendowe w ramach wspólnego shell-a.
-  \item Student potrafi skonfigurować i wdrożyć API Gateway (np. NGINX, Kong lub własny w Node.js) obsługujące routing, load balancing i uwierzytelnianie.
-  \item Student potrafi zidentyfikować wąskie gardła i punkty awarii w architekturze mikroserwisowej oraz zastosować wzorzec Circuit Breaker i mechanizmy retry/fallback.
-  \item Student potrafi przygotować podstawową konfigurację klastra Kubernetes (Deployment, Service, Ingress) i wdrożyć na nim skonteneryzowany system mikroserwisowy.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_U19 & Student potrafi zaprojektować architekturę systemu opartego na mikroserwisach, dokonując dekompozycji domeny biznesowej, identyfikując granice serwisów i definiując kontrakty API. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U28 & Student potrafi zaimplementować co najmniej trzy współpracujące mikroserwisy w technologii Node.js/Express lub Spring Boot, stosując komunikację synchroniczną (REST) i asynchroniczną (message broker). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi skonteneryzować mikroserwisy za pomocą Dockera, tworzyć pliki Dockerfile i konfiguracje Docker Compose do uruchamiania całego systemu lokalnie. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U24 & Student potrafi zaprojektować i zaimplementować aplikację mikrofrontendową z użyciem Webpack Module Federation, integrując co najmniej dwa niezależne moduły frontendowe w ramach wspólnego shell-a. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U28 & Student potrafi skonfigurować i wdrożyć API Gateway (np. NGINX, Kong lub własny w Node.js) obsługujące routing, load balancing i uwierzytelnianie. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U21 & Student potrafi zidentyfikować wąskie gardła i punkty awarii w architekturze mikroserwisowej oraz zastosować wzorzec Circuit Breaker i mechanizmy retry/fallback. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi przygotować podstawową konfigurację klastra Kubernetes (Deployment, Service, Ingress) i wdrożyć na nim skonteneryzowany system mikroserwisowy. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \subsection*{Kompetencje społeczne}
-\begin{itemize}
-  \item Student jest gotów do pracy w modelu organizacyjnym opartym na autonomicznych zespołach (tzw. team topologies), rozumiejąc wpływ struktury zespołu na architekturę systemu (prawo Conwaya).
-  \item Student jest gotów do krytycznej oceny zasadności stosowania architektury mikroserwisowej w danym projekcie, uwzględniając koszty złożoności operacyjnej i organizacyjnej.
-  \item Student jest gotów do samodzielnego śledzenia aktualnych trendów w inżynierii oprogramowania i infrastrukturze chmurowej oraz aktualizowania swojej wiedzy w oparciu o dokumentację techniczną i społeczność open source.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_K04 & Student jest gotów do pracy w modelu organizacyjnym opartym na autonomicznych zespołach (tzw. team topologies), rozumiejąc wpływ struktury zespołu na architekturę systemu (prawo Conwaya). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K05 & Student jest gotów do krytycznej oceny zasadności stosowania architektury mikroserwisowej w danym projekcie, uwzględniając koszty złożoności operacyjnej i organizacyjnej. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K03 & Student jest gotów do samodzielnego śledzenia aktualnych trendów w inżynierii oprogramowania i infrastrukturze chmurowej oraz aktualizowania swojej wiedzy w oparciu o dokumentację techniczną i społeczność open source. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \section{Kryteria oceny}
 

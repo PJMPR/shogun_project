@@ -172,39 +172,77 @@ Celem przedmiotu jest zapoznanie studentów z metodologią Infrastructure as Cod
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{itemize}
-  \item Student zna i rozumie koncepcję Infrastructure as Code (IaC): zasady deklaratywnego i imperatywnego podejścia do definiowania infrastruktury, korzyści z wersjonowania i powtarzalności środowisk.
-  \item Student zna i rozumie architekturę i model działania Terraform: providers, resources, data sources, state (lokalny i zdalny), moduły, workspace oraz cykl plan–apply–destroy.
-  \item Student zna i rozumie zasady zarządzania konfiguracją z użyciem Ansible: architektura (control node, managed nodes, inventory), playbooks, role, zmienne, szablony Jinja2 i idempotentność operacji.
-  \item Student zna i rozumie model usług chmurowych (IaaS, PaaS, SaaS) oraz globalną infrastrukturę AWS: regiony, strefy dostępności, VPC, subnety, grupy bezpieczeństwa.
-  \item Student zna i rozumie kluczowe usługi AWS wykorzystywane w automatyzacji infrastruktury: EC2, S3, RDS, IAM, ELB, Auto Scaling, Route 53, CloudWatch, ECR/ECS.
-  \item Student zna i rozumie architekturę OpenStack: komponenty (Nova, Neutron, Cinder, Glance, Keystone, Swift, Heat) i ich odpowiedniki w usługach AWS.
-  \item Student zna i rozumie przeznaczenie i możliwości LocalStack jako lokalnego emulatora usług AWS, umożliwiającego testowanie infrastruktury bez dostępu do chmury publicznej i bez kosztów.
-  \item Student zna i rozumie zasady bezpiecznego zarządzania dostępem w chmurze: IAM (użytkownicy, role, polityki, least privilege), zarządzanie kluczami i sekretami (AWS Secrets Manager, HashiCorp Vault), szyfrowanie zasobów.
-  \item Student zna i rozumie strategie zarządzania stanem infrastruktury: remote state (S3 + DynamoDB), state locking, import istniejących zasobów, techniki refaktoryzacji konfiguracji Terraform.
-  \item Student zna i rozumie podstawy monitorowania i obserwowalności infrastruktury chmurowej: metryki, logi, alerty (CloudWatch, Prometheus, Grafana) oraz koncepcję SLI/SLO/SLA.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_W08 & Student zna i rozumie koncepcję Infrastructure as Code (IaC): zasady deklaratywnego i imperatywnego podejścia do definiowania infrastruktury, korzyści z wersjonowania i powtarzalności środowisk. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie architekturę i model działania Terraform: providers, resources, data sources, state (lokalny i zdalny), moduły, workspace oraz cykl plan–apply–destroy. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie zasady zarządzania konfiguracją z użyciem Ansible: architektura (control node, managed nodes, inventory), playbooks, role, zmienne, szablony Jinja2 i idempotentność operacji. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie model usług chmurowych (IaaS, PaaS, SaaS) oraz globalną infrastrukturę AWS: regiony, strefy dostępności, VPC, subnety, grupy bezpieczeństwa. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie kluczowe usługi AWS wykorzystywane w automatyzacji infrastruktury: EC2, S3, RDS, IAM, ELB, Auto Scaling, Route 53, CloudWatch, ECR/ECS. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie architekturę OpenStack: komponenty (Nova, Neutron, Cinder, Glance, Keystone, Swift, Heat) i ich odpowiedniki w usługach AWS. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie przeznaczenie i możliwości LocalStack jako lokalnego emulatora usług AWS, umożliwiającego testowanie infrastruktury bez dostępu do chmury publicznej i bez kosztów. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W23 & Student zna i rozumie zasady bezpiecznego zarządzania dostępem w chmurze: IAM (użytkownicy, role, polityki, least privilege), zarządzanie kluczami i sekretami (AWS Secrets Manager, HashiCorp Vault), szyfrowanie zasobów. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie strategie zarządzania stanem infrastruktury: remote state (S3 + DynamoDB), state locking, import istniejących zasobów, techniki refaktoryzacji konfiguracji Terraform. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+  K\_W08 & Student zna i rozumie podstawy monitorowania i obserwowalności infrastruktury chmurowej: metryki, logi, alerty (CloudWatch, Prometheus, Grafana) oraz koncepcję SLI/SLO/SLA. & egzamin pisemny z zadaniami problemowymi \\
+  \hline
+\end{longtable}
 
 \subsection*{Umiejętności}
-\begin{itemize}
-  \item Student potrafi zainstalować i skonfigurować środowisko pracy z Terraform, Ansible i LocalStack oraz nawiązać połączenie z klastrem OpenStack.
-  \item Student potrafi napisać konfigurację Terraform definiującą sieć (VPC, subnety, routing, security groups), maszyny wirtualne oraz zarządzane usługi bazodanowe w AWS lub ich odpowiedniki w LocalStack.
-  \item Student potrafi stosować moduły Terraform do organizowania i wielokrotnego użycia konfiguracji infrastruktury, zarządzać stanem zdalnym w S3 z blokadą w DynamoDB.
-  \item Student potrafi napisać playbook Ansible instalujący i konfigurujący serwer aplikacyjny (np. Nginx + Node.js/Python) na zdalnych hostach, stosując role, zmienne i szablony Jinja2.
-  \item Student potrafi zintegrować Terraform z Ansible w celu automatycznego provisionowania maszyn i ich konfigurowania w jednym potoku wdrożeniowym.
-  \item Student potrafi uruchomić LocalStack i za pomocą AWS CLI oraz Terraform przetestować lokalnie infrastrukturę obejmującą S3, SQS, Lambda, DynamoDB i EC2.
-  \item Student potrafi tworzyć i zarządzać zasobami OpenStack (instancje, sieci, woluminy, floating IP, security groups) z poziomu CLI (openstack client) oraz za pomocą szablonów Heat.
-  \item Student potrafi skonfigurować zarządzanie dostępem IAM w AWS: tworzyć użytkowników, role i polityki uprawnień zgodnie z zasadą najmniejszych uprawnień.
-  \item Student potrafi skonfigurować monitoring infrastruktury: tworzyć alarmy CloudWatch, eksportować metryki do Prometheus i wizualizować je w Grafana.
-  \item Student potrafi zbudować potok CI/CD (GitHub Actions) automatycznie weryfikujący (terraform plan, ansible-lint) i wdrażający zmiany infrastruktury po zatwierdzeniu pull requesta.
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_U27 & Student potrafi zainstalować i skonfigurować środowisko pracy z Terraform, Ansible i LocalStack oraz nawiązać połączenie z klastrem OpenStack. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi napisać konfigurację Terraform definiującą sieć (VPC, subnety, routing, security groups), maszyny wirtualne oraz zarządzane usługi bazodanowe w AWS lub ich odpowiedniki w LocalStack. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi stosować moduły Terraform do organizowania i wielokrotnego użycia konfiguracji infrastruktury, zarządzać stanem zdalnym w S3 z blokadą w DynamoDB. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi napisać playbook Ansible instalujący i konfigurujący serwer aplikacyjny (np. Nginx + Node.js/Python) na zdalnych hostach, stosując role, zmienne i szablony Jinja2. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi zintegrować Terraform z Ansible w celu automatycznego provisionowania maszyn i ich konfigurowania w jednym potoku wdrożeniowym. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U27 & Student potrafi uruchomić LocalStack i za pomocą AWS CLI oraz Terraform przetestować lokalnie infrastrukturę obejmującą S3, SQS, Lambda, DynamoDB i EC2. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi tworzyć i zarządzać zasobami OpenStack (instancje, sieci, woluminy, floating IP, security groups) z poziomu CLI (openstack client) oraz za pomocą szablonów Heat. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi skonfigurować zarządzanie dostępem IAM w AWS: tworzyć użytkowników, role i polityki uprawnień zgodnie z zasadą najmniejszych uprawnień. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi skonfigurować monitoring infrastruktury: tworzyć alarmy CloudWatch, eksportować metryki do Prometheus i wizualizować je w Grafana. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_U14 & Student potrafi zbudować potok CI/CD (GitHub Actions) automatycznie weryfikujący (terraform plan, ansible-lint) i wdrażający zmiany infrastruktury po zatwierdzeniu pull requesta. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \subsection*{Kompetencje społeczne}
-\begin{itemize}
-  \item Student jest gotów do traktowania infrastruktury jako kodu – przechowywania konfiguracji w systemie kontroli wersji, przeprowadzania code review zmian infrastrukturalnych i stosowania standardów branżowych (formatowanie, dokumentacja modułów).
-  \item Student jest gotów do świadomego zarządzania kosztami chmury publicznej: rozumie model rozliczeń pay-as-you-go, potrafi szacować koszty planowanych zasobów i stosować mechanizmy ograniczania wydatków (budgets, reserved instances, auto scaling).
-  \item Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu dynamicznie rozwijającego się ekosystemu chmurowego, śledzenia dokumentacji dostawców (AWS, OpenStack, HashiCorp) i certyfikowania swoich kompetencji (AWS Cloud Practitioner, Terraform Associate).
-\end{itemize}
+\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+\endhead
+  \hline
+  K\_K05 & Student jest gotów do traktowania infrastruktury jako kodu – przechowywania konfiguracji w systemie kontroli wersji, przeprowadzania code review zmian infrastrukturalnych i stosowania standardów branżowych (formatowanie, dokumentacja modułów). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K06 & Student jest gotów do świadomego zarządzania kosztami chmury publicznej: rozumie model rozliczeń pay-as-you-go, potrafi szacować koszty planowanych zasobów i stosować mechanizmy ograniczania wydatków (budgets, reserved instances, auto scaling). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+  K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu dynamicznie rozwijającego się ekosystemu chmurowego, śledzenia dokumentacji dostawców (AWS, OpenStack, HashiCorp) i certyfikowania swoich kompetencji (AWS Cloud Practitioner, Terraform Associate). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \hline
+\end{longtable}
 
 \section{Kryteria oceny}
 
