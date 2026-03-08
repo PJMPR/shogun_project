@@ -1,154 +1,154 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "niestacjonarny",
-        "wersja_z_dnia": "19.02.2026",
-        "nazwa_przedmiotu": "Sieci komputerowe",
-        "kod_przedmiotu": "SKO1",
-        "rok_studiow": 2,
-        "semestr_studiow": 4,
-        "obligatoryjny": true,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 16,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 24
-        },
-        "odpowiedzialny_za_przedmiot": "Mgr inż. Agata Puchalska",
-        "ects": 5,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 40,
-            "praca_wlasna_studenta_h": 110,
-            "calkowita_liczba_godzin_h": 150,
-            "praca_wlasna_studenta": "Samodzielna konfiguracja sieci w symulatorze Cisco Packet Tracer; ćwiczenia z adresacji IP; przygotowanie do kolokwium i egzaminu z sieci komputerowych."
-        },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład konwersatoryjny (z elementami dyskusji)"
-            ],
-            "cwiczenia_laboratorium": [
-                "rozwiązywanie zadań",
-                "warsztaty"
-            ]
-        },
-        "zaliczenie": {
-            "Wykład": {
-                "sposob": "Egzamin"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [
-                "egzamin pisemny"
-            ],
-            "cwiczenia_laboratorium": [
-                "kolokwium",
-                "ocena pracy podczas ćwiczenia"
-            ]
-        },
-        "cel_dydaktyczny": "Przedmiot poświęcony jest prezentacji zasad funkcjonowania  współczesnych sieci teleinformatycznych w oparciu o model warstwowy OSI. Omawiane są funkcje poszczególnych  warstw OSI i powiązań między nimi, używane technologie, standardy, protokoły. Studenci nabywają umiejętności niezbędne do opracowania  projektu sieci LAN  łącznie z konfiguracją IPv4 i IPv6, hermetyzacją  routerów i przełączników ,  routingiem i podstawowym zabezpieczeniem urządzeń przed atakami z  sieci Inside  i Outside .",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "Materiały szkoleniowe „CCNAv7: Introduction to Networks”umieszczone na platformie netacad.com"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "Szkolenia  online „Securac\"",
-                    "„Wprowadzenie do bezpieczeństwa IT „ Michał Sajdak"
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie podstawowe pojęcia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką w kontekście projektowania sieci komputerowych. [K_W03]",
-                "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej, architektury systemów komputerowych i sieci LAN/WAN: protokoły komunikacyjne (Ethernet, TCP/IP, IPv6), mechanizmy routingu i switchingu oraz zagadnienia bezpieczeństwa sieciowego. [K_W08]"
-            ],
-            "umiejetnosci": [
-                "Student potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN umożliwiającą realizację kluczowych usług sieciowych (DNS, DHCP, HTTP/HTTPS) z zachowaniem zasad bezpieczeństwa informacji. [K_U14]"
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do uczenia się przez całe życie i inspirowania innych do pogłębiania wiedzy o sieciach komputerowych i bezpieczeństwie. [K_K03]",
-                "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy w obszarze infrastruktury sieciowej. [K_K07]",
-                "Student jest gotów do efektywnej komunikacji z interesariuszami technicznymi i biznesowymi w zakresie projektowania i administrowania sieciami. [K_K08]"
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Komunikacja w sieci komputerowej , elementy sieci, podziały sieci , podstawowe zjawiska w sieciach komputerowych, modele sieci komputerowych . Cechy współczesnych sieci komputerowych , najnowsze trendy w sieciach komp.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Media sieciowe, rodzaje mediów,  parametry, zastosowanie",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Urządzenia sieciowe – ewolucja , charakterystyka, zastosowanie . Metody dostępu do urządzeń sieciowych, hermetyzacja, tryby pracy urządzeń",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Technologia Ethernet, ramka Ethernet,  topologie logiczne i fizyczne w sieci LAN, WAN, algorytm CSMA/CD, CSMA/CA , rodzaje transmisji w sieci ( unicast, multicast, broadcast ) ,  protokół MAC, ARP",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Anatomia adresu IP v4 , rodzaje  IPv4, rodzaje adresów IPv4   planowanie adresów  sieci wewnątrz organizacji metodą VLSM oraz ze stałą maską.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Anatomia adresu IP v6 , rodzaje  IPv6,  rodzaje adresów IPv6, dynamiczne i statyczne przydzielanie adresów IPv6. Porównanie IPv4 via IPv6, protokół ICMP dla IPv4 via ICMP dla IPv6",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Routing statyczny a dynamiczny, tablica routingu hosta, routera, brama domyślna, trasa ostatniej szansy",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Obsługa niezawodnej komunikacji TCP, trójstopniowe uzgadnianie, kontrola przepływu, dynamiczne wymiary okien. Protokół TCP a UDP.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Usługi i protokoły warstwy aplikacji ( DNS, HTTP, HTTPS, Telnet, SSH , FTP, DHCP, SMTP, POP3, IMAP, S ) – charakterystyka, wykorzystanie , konfiguracja",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Metody zarządzania siecią LAN",
-                "cwiczenia": ""
-            }
-        ],
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "Uzytkowanie Komputerow i Podstawy Systemow Operacyjnych (UKOS)",
-                "wymagania": "Rozumienie pojec z zakresu systemow operacyjnych; znajomosc regulaminu BHP pracowni; podstawowa wiedza o organizacji systemu komputerowego i architekturze warstwowej; rozumienie pojec z zakresu sieci komputerowych i protokolow komunikacyjnych"
-            },
-            {
-                "nazwa": "Wstep do informatyki i architektury komputerow",
-                "wymagania": "Podstawy organizacji systemu komputerowego"
-            }
-        ],
-        "cel_dydaktyczny_eng": "The course is devoted to presenting the principles of operation of contemporary ICT networks based on the OSI layered model. The functions of individual OSI layers and the relationships between them, as well as the technologies, standards, and protocols used, are discussed. Students acquire the skills necessary to prepare a LAN network design, including IPv4 and IPv6 configuration, router and switch encapsulation, routing, and basic protection of devices against attacks from inside and outside networks.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
-        }
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Sieci komputerowe",
+    "kod_przedmiotu": "SKO1",
+    "rok_studiow": 2,
+    "semestr_studiow": 4,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 24
+    },
+    "odpowiedzialny_za_przedmiot": "Mgr inż. Agata Puchalska",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 40,
+      "praca_wlasna_studenta_h": 85,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": "Samodzielna konfiguracja sieci w symulatorze Cisco Packet Tracer; ćwiczenia z adresacji IP; przygotowanie do kolokwium i egzaminu z sieci komputerowych."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład konwersatoryjny (z elementami dyskusji)"
+      ],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Egzamin"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "egzamin pisemny"
+      ],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "ocena pracy podczas ćwiczenia"
+      ]
+    },
+    "cel_dydaktyczny": "Przedmiot poświęcony jest prezentacji zasad funkcjonowania  współczesnych sieci teleinformatycznych w oparciu o model warstwowy OSI. Omawiane są funkcje poszczególnych  warstw OSI i powiązań między nimi, używane technologie, standardy, protokoły. Studenci nabywają umiejętności niezbędne do opracowania  projektu sieci LAN  łącznie z konfiguracją IPv4 i IPv6, hermetyzacją  routerów i przełączników ,  routingiem i podstawowym zabezpieczeniem urządzeń przed atakami z  sieci Inside  i Outside .",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Materiały szkoleniowe „CCNAv7: Introduction to Networks”umieszczone na platformie netacad.com"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Szkolenia  online „Securac\"",
+          "„Wprowadzenie do bezpieczeństwa IT „ Michał Sajdak"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        "Student zna i rozumie podstawowe pojęcia z zakresu elektrotechniki, elektroniki i miernictwa oraz ich powiązania z informatyką w kontekście projektowania sieci komputerowych. [K_W03]",
+        "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej, architektury systemów komputerowych i sieci LAN/WAN: protokoły komunikacyjne (Ethernet, TCP/IP, IPv6), mechanizmy routingu i switchingu oraz zagadnienia bezpieczeństwa sieciowego. [K_W08]"
+      ],
+      "umiejetnosci": [
+        "Student potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN umożliwiającą realizację kluczowych usług sieciowych (DNS, DHCP, HTTP/HTTPS) z zachowaniem zasad bezpieczeństwa informacji. [K_U14]"
+      ],
+      "kompetencje_spoleczne": [
+        "Student jest gotów do uczenia się przez całe życie i inspirowania innych do pogłębiania wiedzy o sieciach komputerowych i bezpieczeństwie. [K_K03]",
+        "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy w obszarze infrastruktury sieciowej. [K_K07]",
+        "Student jest gotów do efektywnej komunikacji z interesariuszami technicznymi i biznesowymi w zakresie projektowania i administrowania sieciami. [K_K08]"
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Komunikacja w sieci komputerowej , elementy sieci, podziały sieci , podstawowe zjawiska w sieciach komputerowych, modele sieci komputerowych . Cechy współczesnych sieci komputerowych , najnowsze trendy w sieciach komp.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Media sieciowe, rodzaje mediów,  parametry, zastosowanie",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Urządzenia sieciowe – ewolucja , charakterystyka, zastosowanie . Metody dostępu do urządzeń sieciowych, hermetyzacja, tryby pracy urządzeń",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Technologia Ethernet, ramka Ethernet,  topologie logiczne i fizyczne w sieci LAN, WAN, algorytm CSMA/CD, CSMA/CA , rodzaje transmisji w sieci ( unicast, multicast, broadcast ) ,  protokół MAC, ARP",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Anatomia adresu IP v4 , rodzaje  IPv4, rodzaje adresów IPv4   planowanie adresów  sieci wewnątrz organizacji metodą VLSM oraz ze stałą maską.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Anatomia adresu IP v6 , rodzaje  IPv6,  rodzaje adresów IPv6, dynamiczne i statyczne przydzielanie adresów IPv6. Porównanie IPv4 via IPv6, protokół ICMP dla IPv4 via ICMP dla IPv6",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Routing statyczny a dynamiczny, tablica routingu hosta, routera, brama domyślna, trasa ostatniej szansy",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Obsługa niezawodnej komunikacji TCP, trójstopniowe uzgadnianie, kontrola przepływu, dynamiczne wymiary okien. Protokół TCP a UDP.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Usługi i protokoły warstwy aplikacji ( DNS, HTTP, HTTPS, Telnet, SSH , FTP, DHCP, SMTP, POP3, IMAP, S ) – charakterystyka, wykorzystanie , konfiguracja",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Metody zarządzania siecią LAN",
+        "cwiczenia": ""
+      }
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Uzytkowanie Komputerow i Podstawy Systemow Operacyjnych (UKOS)",
+        "wymagania": "Rozumienie pojec z zakresu systemow operacyjnych; znajomosc regulaminu BHP pracowni; podstawowa wiedza o organizacji systemu komputerowego i architekturze warstwowej; rozumienie pojec z zakresu sieci komputerowych i protokolow komunikacyjnych"
+      },
+      {
+        "nazwa": "Wstep do informatyki i architektury komputerow",
+        "wymagania": "Podstawy organizacji systemu komputerowego"
+      }
+    ],
+    "cel_dydaktyczny_eng": "The course is devoted to presenting the principles of operation of contemporary ICT networks based on the OSI layered model. The functions of individual OSI layers and the relationships between them, as well as the technologies, standards, and protocols used, are discussed. Students acquire the skills necessary to prepare a LAN network design, including IPv4 and IPv6 configuration, router and switch encapsulation, routing, and basic protection of devices against attacks from inside and outside networks.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

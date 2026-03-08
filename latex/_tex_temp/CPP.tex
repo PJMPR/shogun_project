@@ -1,5 +1,5 @@
 ﻿% ===========================================================
-%  Sylabus: Programowanie w C/C++ ()
+%  Sylabus: Programowanie w języku C++ (CPP)
 % ===========================================================
 \documentclass[12pt, a4paper]{article}
 
@@ -34,7 +34,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
-\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: }}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: CPP}}
 \fancyfoot[C]{\small\thepage}
 
 \titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
@@ -50,26 +50,26 @@
 \AddToShipoutPictureBG{%
   \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.5] at (current page.center) {%
-      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
     };
   \end{tikzpicture}%
 }
 
 \begin{center}
-  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
   {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
 \end{center}
 
 \begin{infobox}
 \begin{tabularx}{\textwidth}{@{}lX@{}}
-  \textbf{Nazwa przedmiotu:}  & {\bfseries Programowanie w C/C++} \\[3pt]
-  \textbf{Kod przedmiotu:}    &  \\[3pt]
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Programowanie w języku C++} \\[3pt]
+  \textbf{Kod przedmiotu:}    & CPP \\[3pt]
   \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
   \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
-  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 4 \\[3pt]
   \textbf{Charakter:}         & obieralny \\[3pt]
-  \textbf{Odpowiedzialny:}    & dr Tadeusz Puźniakowski, \\[3pt]
-  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+  \textbf{Odpowiedzialny:}    & do ustalenia \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
 \end{tabularx}
 \end{infobox}
 
@@ -90,32 +90,21 @@
 \textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
 \textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
 \hline
-30 h & 30 h & --- & 60 h & 40 h & 100 h & \textbf{4} \\
+8 h & --- & 8 h & 16 h & 21.5 h & 37.5 h & \textbf{1.5} \\
 \hline
 \end{tabular}
 \end{center}
 
 \vspace{4pt}
-\noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne programowanie w C/C++; rozwiązywanie zadań programistycznych; przygotowanie mini-projektów; nauka zarządzania pamięcią i wskaźnikami.
-
-\section{Forma zajęć}
-
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja aplikacji w C++; zarządzanie pamięcią, wskaźniki, szablony; dokumentacja kodu; przygotowanie projektu zaliczeniowego.
 
 \section{Cel dydaktyczny}
 
-Praktyczna umiejętność programowania we współczesnym języku C++. Szczególny nacisk jest położony na tworzenie wydajnego i przejrzystego kodu wykorzystującego aktualne możliwości języka.
+Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku C++ oraz wykształcenie umiejętności tworzenia prostych aplikacji konsolowych z wykorzystaniem klasycznych konstrukcji programistycznych. Zajęcia kładą nacisk na zrozumienie modelu pamięci, poprawne użycie typów danych, funkcji i struktur, a także wprowadzenie do podstaw programowania obiektowego. Przedmiot przygotowuje studentów do dalszej nauki języków kompilowanych oraz pracy nad projektami wymagającymi większej kontroli nad wydajnością i zasobami.
 
 \subsection*{\textit{Wersja w języku angielskim (English version)}}
 
-\textit{Practical ability to program in modern C++. Particular emphasis is placed on creating efficient and clear code that makes use of the current capabilities of the language.}
+\textit{The aim of the course is to familiarize students with the basics of programming in C++ and to develop the ability to create simple console applications using classical programming constructs. The course places emphasis on understanding the memory model, correct use of data types, functions and structures, as well as an introduction to the basics of object-oriented programming. It prepares students for further study of compiled languages and for work on projects requiring greater control over performance and resources.}
 
 
 \section{Przedmioty wprowadzające}
@@ -124,7 +113,7 @@ Praktyczna umiejętność programowania we współczesnym języku C++. Szczegól
   \hline
   \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
   \hline
-  Wstęp do programowania & Umiejętność precyzyjnego wyrażania myśli i algorytmów w postaci programu komputerowego \\
+  Podstawy Programowania & Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C\#) \\
   \hline
 \end{tabularx}
 
@@ -135,31 +124,29 @@ Praktyczna umiejętność programowania we współczesnym języku C++. Szczegól
 \textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
 \endhead
   \hline
-  1. & Utrwalenie i poznanie konstrukcji języka C++, czyli: &  \\
+  1. & Wprowadzenie do języka C++: zastosowania, kompilacja, struktura programu, pierwszy program. &  \\
   \hline
-  2. & Scope(zakresy) &  \\
+  2. & Typy danych, zmienne, stałe, operatory, instrukcje wejścia i wyjścia (cin, cout). &  \\
   \hline
-  3. & Typy danych, w tym także klasy, unie, typy wyliczeniowe i struktury &  \\
+  3. & Instrukcje sterujące: if, switch, pętle for, while, do while. &  \\
   \hline
-  4. & Typy funkcyjne i funkcje lambda &  \\
+  4. & Funkcje: definicja, parametry, wartości zwracane, przeciążanie funkcji. &  \\
   \hline
-  5. & Przypisania strukturalne (structured binding) i typ automatyczny &  \\
+  5. & Tablice i łańcuchy znaków, podstawy pracy z pamięcią. &  \\
   \hline
-  6. & Podstawowe elementy biblioteki STL, w szczególności &  \\
+  6. & Wskaźniki i referencje – wprowadzenie i zastosowania. &  \\
   \hline
-  7. & kolekcje (wektory, mapy, zbiory) &  \\
+  7. & Struktury i typy złożone. &  \\
   \hline
-  8. & biblioteka algorytmów &  \\
+  8. & Dynamiczna alokacja pamięci (new, delete) i podstawy bezpiecznego zarządzania zasobami. &  \\
   \hline
-  9. & biblioteka chrono &  \\
+  9. & Wprowadzenie do programowania obiektowego: klasy i obiekty. &  \\
   \hline
-  10. & wątki, zadania i typ promise &  \\
+  10. &  Konstruktory, destruktory, enkapsulacja. &  \\
   \hline
-  11. & Automatyczna optymalizacja i kwestie wydajności skompilowanego kodu, a także jak różnie napisany kod źródłowy przekłada się na program wykonywalny &  \\
+  11. &  Dziedziczenie i polimorfizm – podstawy. &  \\
   \hline
-  12. & Narzędzia wspomagające pracę z językiem &  \\
-  \hline
-  13. & Podstawy kroskompilacji oraz uruchamiania/kompilowania na sprzęt inny niż hosta &  \\
+  12. &  Biblioteka standardowa STL – wprowadzenie (vector, string). &  \\
   \hline
 \end{longtable}
 
@@ -167,33 +154,25 @@ Praktyczna umiejętność programowania we współczesnym języku C++. Szczegól
 
 \subsection*{Wiedza}
 \begin{itemize}
-  \item Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania.
-  \item Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne
+  \item Student zna podstawowe konstrukcje języka C++, typy danych, instrukcje sterujące oraz zasady działania kompilatora i linkera. Rozumie podstawy zarządzania pamięcią i różnice między typami wartościowymi i referencyjnymi.
 \end{itemize}
 
 \subsection*{Umiejętności}
 \begin{itemize}
-  \item Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi.
-  \item Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim.
-  \item Student potrafi posługiwać się środowiskiem programistycznym języka C++
-  \item Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać.
-  \item Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym.
-  \item Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową.
+  \item Student potrafi tworzyć, kompilować i debugować proste programy w języku C++, korzystać z dokumentacji technicznej, dzielić program na funkcje i pliki źródłowe oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.
 \end{itemize}
 
 \subsection*{Kompetencje społeczne}
 \begin{itemize}
-  \item Student jest gotów do samodzielnego rozwijania swoich umiejętności
-  \item Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania.
+  \item Student potrafi samodzielnie planować pracę nad projektem programistycznym, dbać o jakość i czytelność kodu oraz terminowo realizować powierzone zadania.
 \end{itemize}
 
 \section{Kryteria oceny}
 
 \textbf{Ćwiczenia / Laboratorium:}
 \begin{itemize}
-  \item kolokwium
+  \item prezentacja projektu i dokumentacji
   \item ocena sporządzonego oprogramowania
-  \item prezentacja mini-projektu
 \end{itemize}
 
 
@@ -207,9 +186,8 @@ Praktyczna umiejętność programowania we współczesnym języku C++. Szczegól
 \vspace{4pt}
 \textbf{Ćwiczenia / Laboratorium:}
 \begin{itemize}
-  \item rozwiązywanie zadań
-  \item warsztaty
   \item metoda projektów (projekt praktyczny)
+  \item rozwiązywanie zadań
 \end{itemize}
 \vspace{4pt}
 
@@ -218,13 +196,15 @@ Praktyczna umiejętność programowania we współczesnym języku C++. Szczegól
 
 \textbf{Podstawowa:}
 \begin{itemize}
-  \item Brak danych.
+  \item Bjarne Stroustrup, Programming: Principles and Practice Using C++
+  \item Stephen Prata, C++ Primer Plus
+  \item Dokumentacja C++: https://en.cppreference.com
 \end{itemize}
 
 \textbf{Uzupełniająca:}
 \begin{itemize}
-  \item Skuteczny nowoczesny C++, Scott Meyers, O'Relly/Promise, 2020
-  \item Dokumentacja języka C++ https://en.cppreference.com/
+  \item Scott Meyers, Effective C++
+  \item Herb Sutter, Exceptional C++
 \end{itemize}
 
 \end{document}

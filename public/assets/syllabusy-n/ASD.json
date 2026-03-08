@@ -1,184 +1,184 @@
 {
-    "sylabus": {
-        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
-        "jednostka": "Filia w Gdansku",
-        "kierunek": "INFORMATYKA",
-        "profil": "praktyczny",
-        "tryb_studiow": "niestacjonarny",
-        "wersja_z_dnia": "19.02.2026",
-        "nazwa_przedmiotu": "Algorytmy i struktury danych",
-        "kod_przedmiotu": "ASD",
-        "rok_studiow": 2,
-        "semestr_studiow": 3,
-        "obligatoryjny": true,
-        "forma_i_liczba_godzin_zajec": {
-            "wyklady": 16,
-            "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 24
-        },
-        "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
-        "ects": 4,
-        "godziny": {
-            "z_udzialem_prowadzacego_h": 40,
-            "praca_wlasna_studenta_h": 80,
-            "calkowita_liczba_godzin_h": 120,
-            "praca_wlasna_studenta": "Implementacja algorytmów i struktur danych w wybranym języku programowania; analiza złożoności obliczeniowej; przygotowanie do kolokwiów i egzaminu poprzez rozwiązywanie zadań."
-        },
-        "metody_dydaktyczne": {
-            "wyklad": [
-                "wykład z prezentacją multimedialną",
-                "wykład konwersatoryjny (z elementami dyskusji)"
-            ],
-            "cwiczenia_laboratorium": [
-                "rozwiązywanie zadań",
-                "dyskusja"
-            ]
-        },
-        "zaliczenie": {
-            "Ćwiczenia": {
-                "sposob": "Zaliczenie z oceną"
-            },
-            "Wykład": {
-                "sposob": "Egzamin"
-            }
-        },
-        "kryteria_oceny": {
-            "wyklad": [
-                "egzamin pisemny z zadaniami problemowymi"
-            ],
-            "cwiczenia_laboratorium": [
-                "kolokwium",
-                "sprawdziany wstępne „wejściówki\""
-            ]
-        },
-        "cel_dydaktyczny": "Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne.",
-        "literatura": {
-            "podstawowa": {
-                "pozycje": [
-                    "T. Cormen, Ch. Leiserson, R. Rivest, C. Stein.Wprowadzenie do algorytmów, Wydawnictwo Naukowe PWN,2022"
-                ]
-            },
-            "uzupelniajaca": {
-                "pozycje": [
-                    "Szepietowski.Matematyka dyskretna, Wydawnictwo UG, 2004",
-                    "G. Mirkowska.Algorytmy i struktury danych, Wydawnictwo PJWSTK, 2006",
-                    "G. Mirkowska.Algorytmy i struktury danych – Zadania, Wydawnictwo PJWSTK, 2006",
-                    "Z. Michalewicz.Algorytmy genetyczne + struktury danych = programy ewolucyjne, Wydawnictwo PJWSTK 2003"
-                ]
-            }
-        },
-        "efekty_ksztalcenia": {
-            "wiedza": [
-                "Student zna i rozumie podstawowe pojęcia w zakresie algorytmiki: złożoność czasową i pamięciową algorytmów (notacja O, Omega, Theta), algorytmy sortowania, wyszukiwania i algorytmy grafowe. [K_W04]",
-                "Student zna i rozumie zaawansowane zagadnienia algorytmiczne: algorytmy zachłanne, programowanie dynamiczne, drzewa binarne (BST, AVL, czerwono-czarne), tablice haszujące i algorytmy grafowe (BFS, DFS, Dijkstra, Floyd-Warshall). [K_W05]",
-                "Student zna i rozumie podstawy teorii złożoności obliczeniowej: klasy P i NP, problemy NP-zupełne, metody redukcji, automaty skończone i języki formalne. [K_W05]"
-            ],
-            "umiejetnosci": [
-                "Student potrafi przeanalizować złożoność algorytmu, dobrać i zaimplementować odpowiednie struktury danych oraz algorytmy dla zadanego problemu inżynierskiego w C++/Pythonie/C#. [K_U11]",
-                "Student potrafi zaprojektować i zweryfikować poprawność algorytmu z użyciem logiki Hoare'a oraz oszacować jego koszt obliczeniowy metodami asymptotycznymi. [K_U11]"
-            ],
-            "kompetencje_spoleczne": [
-                "Student jest gotów do stosowania zaawansowanych technik algorytmicznych w rozwiązywaniu złożonych problemów inżynierskich, wykazując się krytycznym myśleniem i precyzją. [K_K05]",
-                "Student jest gotów do samodzielnego uczenia się nowych algorytmów i technik obliczeniowych niezbędnych w pracy inżyniera oprogramowania. [K_K03]"
-            ]
-        },
-        "tresci_programowe": [
-            {
-                "nr_zajec": 1,
-                "wyklad": "Algorytmy iproblemy algorytmiczne; Złożoność czasowa i pamięciowa; przykłady.",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 2,
-                "wyklad": "Analiza złożoności problemu wyszukiwania informacji w kolekcji uporządkowanej i nieuporządkowanej, notacje asymptotyczne",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 3,
-                "wyklad": "Specyfikowanie problemów, własność stopu, problemy nierozstrzygalne",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 4,
-                "wyklad": "Logika Hoare’ai metody dowodzenia własności stopu",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 5,
-                "wyklad": "Proste algorytmy sortujące",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 6,
-                "wyklad": "Quicksort; algorytmy sortujące w czasie liniowym",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 7,
-                "wyklad": "Programowanie dynamiczne i zachłanne",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 8,
-                "wyklad": "Kolejki, stosy, listy i drzewa",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 9,
-                "wyklad": "Tablice z haszowaniem",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 10,
-                "wyklad": "Twierdzenie o rekursji uniwersalnej",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 11,
-                "wyklad": "Drzewa BST, drzewa czerwono-czarne",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 12,
-                "wyklad": "Algorytmy grafowe",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 13,
-                "wyklad": "Podstawy teorii złożoności, klasy złożoności, metody redukcji i problemy zupełne w klasie",
-                "cwiczenia": ""
-            },
-            {
-                "nr_zajec": 14,
-                "wyklad": "Języki formalne – języki regularne, kontekstowe i bezkontekstowe,automaty i gramatyki.",
-                "cwiczenia": ""
-            }
-        ],
-        "przedmioty_wprowadzajace": [
-            {
-                "nazwa": "PRG1 - Programowanie",
-                "wymagania": "Umiejetnosc programowania iteracyjnego i rekursywnego; umiejetnosc liczenia granic, sum szeregow oraz calek funkcji elementarnych; umiejetnosc logicznego wnioskowania"
-            },
-            {
-                "nazwa": "ALG - Algebra liniowa z geometria",
-                "wymagania": "Podstawy algebry liniowej"
-            },
-            {
-                "nazwa": "MAD - Matematyka Dyskretna",
-                "wymagania": "Podstawy matematyki dyskretnej"
-            }
-        ],
-        "cel_dydaktyczny_eng": "Mastery of the analysis of iterative and recursive programs and the use of mathematical tools to analyze algorithmic complexity and knowledge of the complexity of algorithmic problems, complexity classes, and their practical significance; analysis of the complexity of sorting and searching algorithms; trees, stacks, queues, and hash tables; dynamic programming and greedy algorithms.",
-        "informacje_dodatkowe": "",
-        "rynek_pracy": {
-            "dziedzina_gospodarki": "",
-            "zawody": "",
-            "prace_dyplomowe": []
-        },
-        "wymagania_laboratorium": {
-            "pc_params": [],
-            "software": [],
-            "wyposazenie_dodatkowe": []
-        }
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Algorytmy i struktury danych",
+    "kod_przedmiotu": "ASD",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 24
+    },
+    "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 40,
+      "praca_wlasna_studenta_h": 60,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": "Implementacja algorytmów i struktur danych w wybranym języku programowania; analiza złożoności obliczeniowej; przygotowanie do kolokwiów i egzaminu poprzez rozwiązywanie zadań."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład konwersatoryjny (z elementami dyskusji)"
+      ],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "dyskusja"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Egzamin"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "egzamin pisemny z zadaniami problemowymi"
+      ],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "sprawdziany wstępne „wejściówki\""
+      ]
+    },
+    "cel_dydaktyczny": "Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "T. Cormen, Ch. Leiserson, R. Rivest, C. Stein.Wprowadzenie do algorytmów, Wydawnictwo Naukowe PWN,2022"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Szepietowski.Matematyka dyskretna, Wydawnictwo UG, 2004",
+          "G. Mirkowska.Algorytmy i struktury danych, Wydawnictwo PJWSTK, 2006",
+          "G. Mirkowska.Algorytmy i struktury danych – Zadania, Wydawnictwo PJWSTK, 2006",
+          "Z. Michalewicz.Algorytmy genetyczne + struktury danych = programy ewolucyjne, Wydawnictwo PJWSTK 2003"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        "Student zna i rozumie podstawowe pojęcia w zakresie algorytmiki: złożoność czasową i pamięciową algorytmów (notacja O, Omega, Theta), algorytmy sortowania, wyszukiwania i algorytmy grafowe. [K_W04]",
+        "Student zna i rozumie zaawansowane zagadnienia algorytmiczne: algorytmy zachłanne, programowanie dynamiczne, drzewa binarne (BST, AVL, czerwono-czarne), tablice haszujące i algorytmy grafowe (BFS, DFS, Dijkstra, Floyd-Warshall). [K_W05]",
+        "Student zna i rozumie podstawy teorii złożoności obliczeniowej: klasy P i NP, problemy NP-zupełne, metody redukcji, automaty skończone i języki formalne. [K_W05]"
+      ],
+      "umiejetnosci": [
+        "Student potrafi przeanalizować złożoność algorytmu, dobrać i zaimplementować odpowiednie struktury danych oraz algorytmy dla zadanego problemu inżynierskiego w C++/Pythonie/C#. [K_U11]",
+        "Student potrafi zaprojektować i zweryfikować poprawność algorytmu z użyciem logiki Hoare'a oraz oszacować jego koszt obliczeniowy metodami asymptotycznymi. [K_U11]"
+      ],
+      "kompetencje_spoleczne": [
+        "Student jest gotów do stosowania zaawansowanych technik algorytmicznych w rozwiązywaniu złożonych problemów inżynierskich, wykazując się krytycznym myśleniem i precyzją. [K_K05]",
+        "Student jest gotów do samodzielnego uczenia się nowych algorytmów i technik obliczeniowych niezbędnych w pracy inżyniera oprogramowania. [K_K03]"
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Algorytmy iproblemy algorytmiczne; Złożoność czasowa i pamięciowa; przykłady.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Analiza złożoności problemu wyszukiwania informacji w kolekcji uporządkowanej i nieuporządkowanej, notacje asymptotyczne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Specyfikowanie problemów, własność stopu, problemy nierozstrzygalne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Logika Hoare’ai metody dowodzenia własności stopu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Proste algorytmy sortujące",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Quicksort; algorytmy sortujące w czasie liniowym",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Programowanie dynamiczne i zachłanne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Kolejki, stosy, listy i drzewa",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Tablice z haszowaniem",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Twierdzenie o rekursji uniwersalnej",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Drzewa BST, drzewa czerwono-czarne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Algorytmy grafowe",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Podstawy teorii złożoności, klasy złożoności, metody redukcji i problemy zupełne w klasie",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Języki formalne – języki regularne, kontekstowe i bezkontekstowe,automaty i gramatyki.",
+        "cwiczenia": ""
+      }
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "PRG1 - Programowanie",
+        "wymagania": "Umiejetnosc programowania iteracyjnego i rekursywnego; umiejetnosc liczenia granic, sum szeregow oraz calek funkcji elementarnych; umiejetnosc logicznego wnioskowania"
+      },
+      {
+        "nazwa": "ALG - Algebra liniowa z geometria",
+        "wymagania": "Podstawy algebry liniowej"
+      },
+      {
+        "nazwa": "MAD - Matematyka Dyskretna",
+        "wymagania": "Podstawy matematyki dyskretnej"
+      }
+    ],
+    "cel_dydaktyczny_eng": "Mastery of the analysis of iterative and recursive programs and the use of mathematical tools to analyze algorithmic complexity and knowledge of the complexity of algorithmic problems, complexity classes, and their practical significance; analysis of the complexity of sorting and searching algorithms; trees, stacks, queues, and hash tables; dynamic programming and greedy algorithms.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
     }
+  }
 }

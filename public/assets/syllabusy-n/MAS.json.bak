@@ -1,0 +1,119 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Modelowanie i analiza systemów informacyjnych",
+        "kod_przedmiotu": "MAS",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 16,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "Dr. Hab. Marek A Bednarczyk",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 58,
+            "calkowita_liczba_godzin_h": 90,
+            "praca_wlasna_studenta": "Implementacja projektów programistycznych dotyczących analizy leksykalnej i automatów; przygotowanie do kolokwium i egzaminu; tworzenie dokumentacji modeli."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Egzamin"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
+        "cel_dydaktyczny": "Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "- M. Szpyrka, Sieci Petriego w modelowaniu i analizie systemów współbieżnych, Helion, 2008",
+                    "W. Dąbrowski: Modelowanie systemów informatycznych w języku UML, Wydawnictwo Naukowe PWN, 2009"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Cheesman, Komponenty UML, WNT, 2004",
+                    "Wrycza S., Marcinkowski B., Wyrzykowski K.: Język UML 2.0 w modelowaniu systemów informatycznych, Helion, 2005",
+                    "Gawin B., Marcinkowski B.: Symulacja procesów biznesowych. Standardy BPMS i BPMN w praktyce, He-lion, 2013"
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "https://www.omg.org/spec/UML/2.5.1/": "https://www.omg.org/spec/UML/2.5.1/"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN",
+                "Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk."
+            ],
+            "umiejetnosci": "Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T.",
+            "kompetencje_spoleczne": null
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna.",
+                "cwiczenia": ""
+            }
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "PRI - Projektowanie systemow informatycznych",
+                "wymagania": "Umiejetnosc logicznego wnioskowania oraz umiejetnosc programowania"
+            },
+            {
+                "nazwa": "ALG - Algebra liniowa z geometria",
+                "wymagania": "Podstawy algebry liniowej"
+            },
+            {
+                "nazwa": "AM - Analiza matematyczna",
+                "wymagania": "Podstawy analizy matematycznej"
+            },
+            {
+                "nazwa": "MAD - Matematyka Dyskretna",
+                "wymagania": "Podstawy matematyki dyskretnej"
+            }
+        ],
+        "cel_dydaktyczny_eng": "The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}
