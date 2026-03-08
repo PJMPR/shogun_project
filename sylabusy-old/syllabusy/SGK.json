@@ -1,0 +1,153 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "26.02.2026",
+        "nazwa_przedmiotu": "Silniki gier komputerowych",
+        "kod_przedmiotu": "SGK",
+        "rok_studiow": 3,
+        "semestr_studiow": 6,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 30
+        },
+        "odpowiedzialny_za_przedmiot": "Artur Szulist",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Projektowanie i implementacja gry lub aplikacji w wybranym silniku; praca w zespole 2–3 osobowym; optymalizacja zasobów; przygotowanie dokumentacji i prezentacji projektu."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca w grupach"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Egzamin"
+            },
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Wprowadzenie do Unity 3D",
+                "wymagania": "Podstawowa znajomość silnika Unity 3D; Podstawowa znajomość języka C#; Podstawowa znajomość elementów z których składają się gry i aplikacje"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest pogłębienie wiedzy studentów z zakresu współczesnych silników gier na przykładzie Unity 6, z uwzględnieniem porównania z Unreal Engine oraz Godot w kontekście doboru technologii do skali i typu projektu. Studenci poznają zaawansowane systemy silnika Unity, takie jak render pipelines (URP/HDRP/Built-In) i różnice między nimi, architekturę ECS/DOTS i jej wpływ na wydajność, sposoby zarządzania zasobami metodami Asset Bundle, Addresables i Streaming Assets, New Input System i Unity Localization Package. Studenci poznają także dobre praktyki i architektury które wesprą ich przy integracji Unity z zewnętrznymi platformami. ",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Dokumentacja Unity: https://docs.unity.com",
+                    "Unity Learn – oficjalne materiały edukacyjne",
+                    "Dokumentacja C# (MicrosoftLearn)"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Dokumentacja Steam https://partner.steamgames.com/doc/home",
+                    "Dokumentacja GOG https://docs.gog.com/introduction/"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna współczesne silniki gier oraz rozumie różnice projektowe między Unity 6, Unreal Engine i Godot w kontekście skali i typu projektu",
+                "Student zna podstawowe sposoby optymalizacji projektów",
+                "Student zna proces przygotowania gry do publikacji"
+            ],
+            "umiejetnosci": [
+                "Student jest w stanie zaprojektować zaimplementować architekturę gry",
+                "Student potrafi skonfigurować build produkcyjny"
+            ],
+            "kompetencje_spoleczne": [
+                "Student potrafi współpracować nad projektem w ramach niewielkiego zespołu",
+                "Student potrafi korzystać z dokumentacji technicznej"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Przegląd i porównanie silników gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Konfiguracja i zastosowanie URP/HDRP, dobór pipeline'u do projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Architektura ECS/DOTS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Zarządzanie zasobami - Asset Bundles, Steaming Assets i Addressables",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "New Input System",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Lokalizacja projektu - Integracja pakietu lokalizacji Unity",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Architektura projektu, modularność, wzorce projektowe stosowane w produkcji gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Optymalizacja i przygotowanie buildów produkcyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Proces wydawniczy, przygotowanie projektu do publikacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt zaliczeniowy - implementacja i prezentacja",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to deepen students’ knowledge of contemporary game engines using Unity 6 as the main example, with comparisons to Unreal Engine and Godot in the context of selecting technology appropriate to the scale and type of project. Students learn advanced Unity engine systems such as render pipelines (URP/HDRP/Built-In) and the differences between them, the ECS/DOTS architecture and its impact on performance, asset management methods such as Asset Bundles, Addressables, and Streaming Assets, the New Input System, and the Unity Localization Package. Students also learn good practices and architectural approaches that support Unity integration with external platforms.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

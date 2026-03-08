@@ -1,0 +1,184 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Fizyka",
+        "kod_przedmiotu": "FIZ",
+        "rok_studiow": 2,
+        "semestr_studiow": 3,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 16,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 43,
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Przygotowanie sprawozdań z doświadczeń fizycznych; samodzielne rozwiązywanie zadań rachunkowych; powtórzenie materiału przed kolokwiami."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "burza mózgów"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "raport z wykonanego zadania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "ALG – algebra liniowa z geometrią",
+                "wymagania": "Wiedza z zakresu szkoły średniej."
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów informatyki z podstawami fizyki na ogólnym poziomie akademickim, w szczególności (1) poznanie podstawowych wielkości fizycznych w zakresie kinematyki i dynamiki punktu materialnego i bryły sztywnej, (2) poznanie praw dynamiki i prawa powszechnego ciążenia, (3) omówienie zasad zachowania w mechanice, (4) scharakteryzowanie drgań mechanicznych oraz ruchu falowego, (5) zapoznanie z podstawowymi wielkościami charakteryzującymi pole elektryczne i magnetyczne oraz (6) omówienie podstawowych praw termodynamiki",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "D. Halliday, R. Resnick, J. Walter: Podstawy fizyki, PWN 2015.",
+                    "Cz. Bobrowski: Fizyka – krótki kurs, WNT 2003",
+                    "G. Białkowski: Mechanika klasyczna, PWN 1975.",
+                    "K. Wróblewski, J. A. Zakrzewski: Wstęp do fizyki, t. 1-2, PWN 1991.",
+                    "W. Rubinowicz W. Królikowski: Mechanika teoretyczna, PWN 1998."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Halliday, R. Resnick, J. Walker: Fundamentals of Physics, Wiley 2002.",
+                    "Berkeley Physics Course, volumes 1-5, McGraw-Hill Company.",
+                    "W. Christian, M. Belloni: Physlet Physics, Pearson Education, 2004."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student ma rozszerzoną wiedzę z zakresu mechaniki klasycznej, termodynamiki, elektrostatyki i elektromagnetyzmu oraz optyki i akustyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka. [K_W02]",
+                "Student zna i rozumie zasady tworzenia i weryfikacji modeli fizycznych oraz metody numeryczne przybliżonego rozwiązywania równań fizycznych. [K_W02]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi analizować i wyjaśniać zjawiska fizyczne, budować i weryfikować modele matematyczne układów fizycznych oraz posługiwać się narzędziami symulacyjnymi. [K_U08]",
+                "Student potrafi zaplanować i przeprowadzić eksperyment fizyczny (pomiar lub symulację), dobrać metody pomiarowe i sprzęt, opracować wyniki z uwzględnieniem błędu pomiarowego. [K_U09]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do stosowania modelowania fizycznego i symulacji w rozwiązywaniu złożonych problemów inżynierskich z zakresu informatyki. [K_K01]",
+                "Student jest gotów do samodzielnego uczenia się przez całe życie i poszerzania wiedzy fizycznej jako podstawy nowoczesnych technologii informatycznych. [K_K03]"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Kinematyka punktu materialnego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Określenie ruchu (opis położenia punktu w przestrzeni, układ odniesienia, droga, tory ruchów płaskich). Ruch prostoliniowy jednostajny i jednostajnie zmienny (prędkość chwilowa, prędkość średnia, przyspieszenie stałe, przyspieszenie zmienne). Ruch po okręgu (ruch jednostajny po okręgu, ruch niejednostajny po okręgu). Ruchy ciał w polu grawitacyjnym Ziemi (swobodny spadek ciał, rzut pionowy do góry, rzut poziomy, rzut ukośny).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Kinematyka bryły sztywnej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Dynamika punktu materialnego i bryły sztywnej Dynamika punktu materialnego (zasady dynamiki Newtona, klasyfikacja sił, siły bezwładności, masa i ciężar ciała, tarcie, ogólniejsze ujęcie II zasady dynamiki Newtona). Dynamika ruchu obrotowego bryły sztywnej (moment siły, moment bezwładności, energia kinetyczna w ruchu obrotowym, moment pędu, zasada zachowania momentu pędu).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Zasady zachowania w mechanice",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Zasada zachowania energii mechanicznej(siły zachowawcze i niezachowawcze, praca wykonana przez siłę stałą i zmienną, energia kinetyczna, energia potencjalna). Zasada zachowania pędu(pęd punktu materialnego, pęd układu punktów materialnych, zderzenia sprężyste i niesprężyste). Zasada zachowania momentu pędu (moment pędu, prędkość kątowa).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Drgania mechaniczne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Ruch harmoniczny (oscylator harmoniczny prosty, energia w prostym ruchu harmonicznym, wahadło matematyczne, wahadło fizyczne). Drgania harmoniczne tłumione Drgania wymuszone. Rezonans",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Ruch falowy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Ogólna charakterystyka fal mechanicznych (podział fal, mechanizm rozchodzenia się fal ośrodkach sprężystych, równanie fali płaskiej harmonicznej). Zasada Huygensa (ugięcie, odbicie i załamanie fal). Superpozycja fal (graficzne przedstawienie powstawania fali stojącej, powstawanie fali stojącej podczas interferencji fali padającej i odbitej). Fale dźwiękowe (efekt Dopplera).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Termodynamika",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Kalorymetria Gazy (równanie stanu gazu doskonałego, prawa charakteryzujące przemiany gazowe). I zasada termodynamiki (energia wewnętrzna, zastosowanie I zasady termodynamiki do izoprzemian gazu doskonałego, graficzne przedstawienie pracy) II zasada termodynamiki(entropia, sprawność silnika termodynamicznego, cykl Carnota).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Podstawy elektrostatyki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Wielkości charakteryzujące pole elektrostatyczne(ładunek elektryczny, pole elektrostatyczne, natężenie pola, prawo Coulomba, potencjał pola el.). Prawo Gaussa (zastosowanie prawa Gaussa). Kondensatory",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Pole magnetyczne – podstawy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Wektor indukcji magnetycznej Siła Lorentza, Pole magnetyczne w otoczeniu przewodnika z prądem Ruch cząstki naładowanej w polu magnetycznym Prawo Biota-Savarta",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize computer science students with the fundamentals of physics at a general academic level, in particular: (1) basic physical quantities in the field of kinematics and dynamics of a material point and a rigid body, (2) the laws of dynamics and the law of universal gravitation, (3) conservation laws in mechanics, (4) the characteristics of mechanical vibrations and wave motion, (5) the basic quantities describing electric and magnetic fields, and (6) the fundamental laws of thermodynamics.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

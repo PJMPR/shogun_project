@@ -17,11 +17,11 @@
             "laboratorium_projekt": 24
         },
         "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
-        "ects": 5,
+        "ects": 4,
         "godziny": {
             "z_udzialem_prowadzacego_h": 40,
-            "praca_wlasna_studenta_h": 85,
-            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta_h": 80,
+            "calkowita_liczba_godzin_h": 120,
             "praca_wlasna_studenta": "Implementacja algorytmów i struktur danych w wybranym języku programowania; analiza złożoności obliczeniowej; przygotowanie do kolokwiów i egzaminu poprzez rozwiązywanie zadań."
         },
         "metody_dydaktyczne": {

@@ -17,11 +17,11 @@
             "laboratorium_projekt": 16
         },
         "odpowiedzialny_za_przedmiot": "dr Marta Czerwonka (mczerwonka@pjwstk.edu.pl)",
-        "ects": 4,
+        "ects": 3,
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
-            "praca_wlasna_studenta_h": 68,
-            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta_h": 58,
+            "calkowita_liczba_godzin_h": 90,
             "praca_wlasna_studenta": "Analiza wpływu technologii informatycznych na społeczeństwo; przygotowanie prezentacji tematycznej; lektura wskazanych materiałów dotyczących etyki i społecznych aspektów IT."
         },
         "metody_dydaktyczne": {

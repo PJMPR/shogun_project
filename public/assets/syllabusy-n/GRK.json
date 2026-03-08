@@ -17,11 +17,11 @@
             "laboratorium_projekt": 16
         },
         "odpowiedzialny_za_przedmiot": "",
-        "ects": 5,
+        "ects": 4,
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
-            "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta_h": 88,
+            "calkowita_liczba_godzin_h": 120,
             "praca_wlasna_studenta": "Samodzielna praca z narzędziami grafiki komputerowej; ćwiczenia z tworzenia i przetwarzania grafiki; przygotowanie do testu wyboru z zagadnień teorii grafiki."
         },
         "metody_dydaktyczne": {

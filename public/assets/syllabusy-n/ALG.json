@@ -17,11 +17,11 @@
             "laboratorium_projekt": null
         },
         "odpowiedzialny_za_przedmiot": "dr Elżbieta Puźniakowska-Gałuch, ela@pejot.edu.pl",
-        "ects": 5,
+        "ects": 4,
         "godziny": {
             "z_udzialem_prowadzacego_h": 32,
-            "praca_wlasna_studenta_h": 93,
-            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta_h": 88,
+            "calkowita_liczba_godzin_h": 120,
             "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań z algebry liniowej i geometrii analitycznej; powtórzenie materiału przed kolokwiami; ćwiczenie obliczeń macierzowych i wektorowych."
         },
         "metody_dydaktyczne": {

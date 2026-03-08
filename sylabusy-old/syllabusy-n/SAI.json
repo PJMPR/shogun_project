@@ -1,0 +1,211 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "27.02.2026",
+        "nazwa_przedmiotu": "Społeczne aspekty informatyki",
+        "kod_przedmiotu": "SAI",
+        "rok_studiow": 4,
+        "semestr_studiow": 8,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 16,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 16
+        },
+        "odpowiedzialny_za_przedmiot": "dr Marta Czerwonka (mczerwonka@pjwstk.edu.pl)",
+        "ects": 4,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 32,
+            "praca_wlasna_studenta_h": 68,
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Analiza wpływu technologii informatycznych na społeczeństwo; przygotowanie prezentacji tematycznej; lektura wskazanych materiałów dotyczących etyki i społecznych aspektów IT."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład konwersatoryjny (z elementami dyskusji)",
+                "wykład z prezentacją multimedialną"
+            ],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "burza mózgów",
+                "dyskusja",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "prezentacja elementu zespołowej pracy semestralnej"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "PRIN – Procesy Innowacyjne",
+                "wymagania": "Wiedza ogólna na temat technologii"
+            },
+            {
+                "nazwa": "KLI – Kompetencje lidera IT",
+                "wymagania": "Wiedza ogólna na temat technologii"
+            }
+        ],
+        "cel_dydaktyczny": "Zapoznanie ze społecznymi aspektami rozwoju technologii cyfrowych, ich używaniem i nadużywaniem, z uwzględnieniem odpowiedzialności zawodowo-etycznej informatyków, zagadnień prawnych, wpływu technologii na jednostki, grupy zawodowe oraz społeczeństwo. Poruszane są też zagadnienia komunikacji międzyludzkiej i rozwiązywania konfliktów.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Bartyzel, M (2015) Oprogramowanie szyte na miarę. Jak rozmawiać z klientem, który wiecz czego chce. Helion",
+                    "Literatura pomocnicza",
+                    "ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices, Software Engineering Code of Ethics and Professional Practice.",
+                    "Bartyzel, M. (2016). Getting Things Programmed. Droga do efektywności. Wydawnictwo Helion.",
+                    "BCS Code of Conduct (2015) – BCS – The Chartered Institute for IT",
+                    "BCS Code of Practices (2004) – BCS – The Chartered Institute for IT",
+                    "Bond, M. L. (2014). Siła innych. O presji otoczenia, syndromie grupowego myślenia i o tym, jak ludzie wokół na nas wpływają i na wszystkie nasze poczynania. Wydawnictwo Naukowe PWN.",
+                    "Bynum T.W. and Rogerson S. (2003), Computer Ethics and Professional Responsibility. Blackwell Publ.",
+                    "Gotterbarn D. (2001), Reducing Software failures: Addressing the Ethical Risks of the Software Development Lifecycle. Proc. of the 5th International Conference on The Social and Ethical Impacts of ICT ETHICOMP 2001, Gdańsk, June 2001, vol. 2, pp. 10 -19.",
+                    "Gotterbarn, D.W., Bruckman, A., Flick, C., Miller, K. and Wolf, M.J., 2018. ACM code of ethics: a guide for positive action.",
+                    "Gotterbarn, D., Wolf, M.J., Flick, C. and Miller, K., (2018). THINKING PROFESSIONALLY The continual evolution of interest in computing ethics. ACM Inroads, 9(2), pp.10-12.",
+                    "Nowocień, R. (2020). Zespoły wirtualne i rozproszone. Zdalne zarządzanie projektem informatycznym.  Wydawnictwo Helion.",
+                    "Peeling, N. (2010). Negocjacje. Co dobry negocjator wie, robi i mówi. Polskie Wydawnictwo Ekonomiczne.",
+                    "Schein, E. H. (2019). Potęga dobrej komunikacji w zespole. O trudnej sztuce zadawania pytań.   Wydawnictwo Naukowe PWN.",
+                    "Stefaniuk, T. (2014). Komunikacja w zespole wirtualnym. Difin.",
+                    "Szejko S. (2002), Incorporating Ethics into the Software Process. Proc. of the VIth International Conference on The Transformation of Organisations in the Information Age: Social and Ethical Implications, ETHICOMP 2002, Lisbon, 2002, pp. 271 - 279.",
+                    "Szejko S.: Patterns of Ethical Behaviour and Decision Making. Mat. VII konferencji ETHICOMP 2004 \"Challenges for the Citizen of the Information Society”, Syros, Grecja., kwiecień 2004, vol.2, str. 826 – 838.",
+                    "Wróblewski, P. (2020).  Zwinnie do przodu. Poradnik kierownika projektów informatycznych.  Wydawnictwo Helion.",
+                    "Zalewski A., Cegieła R., Sacha K. (2009): Modele i praktyka audytu informatycznego",
+                    "Ustawy:",
+                    "PRAWO WŁASNOŚCI PRZEMYSŁOWEJ (Dz. U. nr 119/2003 poz. 1117 z późn. zm.),",
+                    "PRAWIE AUTORSKIM I PRAWACH POKREWNYCH (Dz.U. z 2016 r. poz. 666),",
+                    "O OCHRONIE BAZ DANYCH (Dz. U. nr 128/2001 poz. 1402 z późn. zm.),",
+                    "OGÓLNE ROZPORZĄDZENIE O OCHRONIE DANYCH (Rozporządzenie 679/2016/UE)"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": []
+            },
+            "dokumentacja_internetowa": {
+                "Rogerson S (2017) Coding ethics into technology http://hncnews.com/coding-ethics-technology": "Rogerson S (2017) Coding ethics into technology http://hncnews.com/coding-ethics-technology"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie jak przeprowadzić analizę wykonalności projektu ze szczególnym uwzględnieniem aspektów ekonomicznych, etycznych i społecznych",
+                "Student zna i rozumie podstawowe problemy społeczno-etyczne związane z technologią informacyjną, rozumie zasady odpowiedzialności zawodowej informatyka"
+            ],
+            "umiejetnosci": [
+                "Student potrafi opracować stosowną dokumentację na potrzeby projektu informatycznego",
+                "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego",
+                "Student potrafi  opracować stosowną dokumentację na potrzeby projektu informatycznego z uwzględnieniem analizy społeczno-prawno-etyczne",
+                "Student potrafi  opracować stosowną dokumentację (np. raport wykonalności) na potrzeby projektu informatycznego"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do  podejmowania dyskusji na temat społeczno-etycznego wpływu informatyki",
+                "Student jest gotów do  podejmowania dyskusji (także poza uczelnią) na temat konsekwencji działalności inżynierskiej oraz związaną z tym odpowiedzialnością",
+                "Student jest gotów do  zaangażowania się w rozwiązywanie problemów etyczno-prawnych w zakresie realizowanego projektu",
+                "Student jest gotów do  wykorzystywania umiejętności miękkich z zakresu komunikacji i adaptacji do sytuacji"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Społeczny kontekst informatyki; odpowiedzialność zawodowa i etyczna. Profesjonalizm w inżynierii oprogramowania. Wprowadzenie do zajęć. Dyskusja tematów związanych ze społecznymi aspektami wykorzystania Internetu Analiza zawartości i zakresu ACM/IEEE Code of Ethics and Professional Practice",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Wyzwania pracy w zespołach zdalnych i rozproszonych.Strategie pracy i narzędzia usprawniające pracę w zespołach zdalnych i rozproszonych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Usprawnianie pracy i rozwiązywanie problemów w zespole informatycznym. Metodyka Scrum.Identyfikacja problemów (projekty inżynierskie)",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Rozszerzona analiza wpływu. Potrzeba, usytuowanie, zakres. Metoda SODIS (Software Development Impact Statement).Prowadzenie analizy rozszerzonej metodą SoDIS",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Ryzyko w projekcie informatycznym. Ryzyko i odpowiedzialność związane z systemami informatycznymi.Wprowadzenie do analizy ryzyka na przykładzie wczesnego etapu projektów inżynierskich",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Obszary styku i zagrożeń; przedsiębiorczość; wiarygodność; zjawiska społeczne i kulturowe, swoboda wypowiedzi, własność intelektualnaĆwiczenie sztuki prezentacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Znaczenie „czynnika ludzkiego” w projekcie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "informatycznym – szanse i zagrożeniaAnaliza studium przypadku produktów, usług i firm informatycznych – czynników decydujących o sukcesie/porażce",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Wybrane aspekty efektywnej pracy zespołowejAnaliza strategii i narzędzi sprzyjających pracy zespołowej",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Psychologiczne aspekty skutecznej komunikacji. Od myślenia abstrakcyjnego do konkretyzacji przekazu.Analiza i projektowanie protokołów komunikacyjnych – zastosowanie w projekcie inżynierskim",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Prezentowanie informacji. StorytellingZasady efektywnej prezentacji danych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Aspekty prawne budowy i działania systemów informatycznych; audyt informatycznyPrzygotowanie i prezentacja seminaryjna tematów związanych z zagadnieniami prywatności i swobód obywatelskich",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Własność intelektualna. Zagadnienia prywatności, swobód obywatelskich (wykład zaproszony)Przygotowanie i prezentacja seminaryjna tematów związanych z aspektami prawnymi budowy i działania systemów informatycznych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Slow Tech Analiza studium przypadków",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Metody i narzędzia analizy aspektów etyki w projekcie informatycznym. Analiza przypadku, podejście proceduralne; wzorce etyczneAnaliza wybranych przypadków metodą Bynuma i Rogersona",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Problemy ochrony i poufności danych",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "Introduction to the social aspects of the development of digital technologies, their use and misuse, taking into account the professional and ethical responsibility of computer scientists, legal issues, and the impact of technology on individuals, professional groups, and society. Issues of interpersonal communication and conflict resolution are also discussed.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

@@ -17,11 +17,11 @@
             "laboratorium_projekt": 8
         },
         "odpowiedzialny_za_przedmiot": "do ustalenia",
-        "ects": 2,
+        "ects": 1.5,
         "godziny": {
             "z_udzialem_prowadzacego_h": 16,
-            "praca_wlasna_studenta_h": 34,
-            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta_h": 29,
+            "calkowita_liczba_godzin_h": 45,
             "praca_wlasna_studenta": "Implementacja aplikacji w języku Java; obsługa wyjątków, kolekcji i operacji I/O; dokumentacja kodu; przygotowanie i prezentacja projektu zaliczeniowego."
         },
         "metody_dydaktyczne": {

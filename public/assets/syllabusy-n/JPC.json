@@ -12,16 +12,16 @@
         "semestr_studiow": 2,
         "obligatoryjny": false,
         "forma_i_liczba_godzin_zajec": {
-            "wyklady": 15,
+            "wyklady": 8,
             "cwiczenia_lektorat_seminarium": null,
-            "laboratorium_projekt": 15
+            "laboratorium_projekt": 8
         },
         "odpowiedzialny_za_przedmiot": "do ustalenia",
-        "ects": 2,
+        "ects": 1.5,
         "godziny": {
-            "z_udzialem_prowadzacego_h": 30,
-            "praca_wlasna_studenta_h": 20,
-            "calkowita_liczba_godzin_h": 50,
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 29,
+            "calkowita_liczba_godzin_h": 45,
             "praca_wlasna_studenta": "Implementacja aplikacji w C++; zarządzanie pamięcią, wskaźniki, szablony; dokumentacja kodu; przygotowanie projektu zaliczeniowego."
         },
         "metody_dydaktyczne": {

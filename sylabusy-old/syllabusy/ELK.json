@@ -1,0 +1,116 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Elektronika",
+        "kod_przedmiotu": "ELK",
+        "rok_studiow": 2,
+        "semestr_studiow": 4,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 15,
+            "laboratorium_projekt": 15
+        },
+        "odpowiedzialny_za_przedmiot": "dr Tadeusz Puźniakowski",
+        "ects": 4,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 40,
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Przygotowanie sprawozdań z ćwiczeń laboratoryjnych z elektroniki; samodzielne analizy układów elektronicznych; przygotowanie do kolokwium."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium"
+            ],
+            "cwiczenia_laboratorium": [
+                "raport z wykonanego zadania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "[BHP] Szkolenie BHP",
+                "wymagania": "Znajomość regulaminu i zasad BHP obowiązujących w laboratorium"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest wyposażenie studentów w podstawową wiedzę z zakresu elektroniki, elektrotechniki i technik pomiarowych. Studenci poznają zasady działania oraz zastosowania elementów i układów elektronicznych, takich jak rezystory, kondensatory, cewki, diody, tranzystory i bramki logiczne. Nauczą się również podstawowych technik pomiarowych i diagnostycznych z użyciem multimetru, oscyloskopu i innych narzędzi pomiarowych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Charles Platt; Elektronika. Od praktyki do teorii. Wydanie III; Hellion, 2022"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Dickon Ross, Cathleen Shamieh, Gordon McComb; Electronics For Dummies; John Wiley & Sons, Ltd., 2010",
+                    "Kimmo Karvinen and Tero Karvinen; Getting Started with Sensors; Maker Media, Inc., 2014",
+                    "Bill Pretty; Getting Started with Electronic Projects; Packt Publishing Ltd., 2015"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie podstawowe prawa i zjawiska elektryczne: prawo Ohma, prawa Kirchhoffa, zasady działania obwodów prądu stałego i przemiennego, elementy pasywne (rezystory, kondensatory, cewki) i podstawy półprzewodnikowe. [K_W02]",
+                "Student zna i rozumie podstawy elektrotechniki i elektroniki w kontekście informatyki: interfejsy elektryczne układów cyfrowych (TTL, CMOS), analogowe układy wzmacniające i konwersja A/D i D/A. [K_W03]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi analizować proste obwody elektryczne, projektować układy kombinacyjne i sekwencyjne, obsługiwać przyrządy pomiarowe (multimetr, oscyloskop) i montować układy na płytce prototypowej. [K_U08]",
+                "Student potrafi zaplanować i przeprowadzić pomiary elektryczne, interpretować wyniki i weryfikować działanie projektowanego układu elektronicznego. [K_U09]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do stosowania wiedzy elektrycznej i elektronicznej w projektowaniu systemów informatycznych z komponentami sprzętowymi. [K_K01]",
+                "Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu elektroniki i elektrotechniki jako podstawy dla inżynierii systemów wbudowanych. [K_K03]"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to provide students with basic knowledge in electronics, electrical engineering, and measurement techniques. Students learn the principles of operation and applications of electronic components and circuits such as resistors, capacitors, coils, diodes, transistors, and logic gates. They also learn the basics of measurement and diagnostic techniques using multimeters, oscilloscopes, and other measuring instruments.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

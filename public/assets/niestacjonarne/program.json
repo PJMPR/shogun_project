@@ -117,7 +117,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 26,
+        "ects": 21,
         "lecture": 88,
         "tutorial": 48,
         "lab": 64
@@ -132,7 +132,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/ALG.json",
           "pdf": "assets/files/niestacjonarne/ALG.pdf",
           "docFile": "assets/files/niestacjonarne/ALG.docx"
@@ -145,7 +145,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/MAD.json",
           "pdf": "assets/files/niestacjonarne/MAD.pdf",
           "docFile": "assets/files/niestacjonarne/MAD.docx"
@@ -158,7 +158,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/RBD.json",
           "pdf": "assets/files/niestacjonarne/RBD.pdf",
           "docFile": "assets/files/niestacjonarne/RBD.docx"
@@ -184,7 +184,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/TIN.json",
           "pdf": "assets/files/niestacjonarne/TIN.pdf",
           "docFile": "assets/files/niestacjonarne/TIN.docx"
@@ -197,7 +197,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG2.json",
           "pdf": "assets/files/niestacjonarne/ANG2.pdf",
           "docFile": "assets/files/niestacjonarne/ANG2.docx"
@@ -207,7 +207,7 @@
     {
       "semester": 3,
       "summary": {
-        "ects": 27,
+        "ects": 21,
         "lecture": 88,
         "tutorial": 16,
         "lab": 104
@@ -222,7 +222,7 @@
           "tutorial": 0,
           "lab": 32,
           "form": "Z",
-          "ects": 6,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PAI.json",
           "pdf": "assets/files/niestacjonarne/PAI.pdf",
           "docFile": "assets/files/niestacjonarne/PAI.docx"
@@ -235,7 +235,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/FIZ.json",
           "pdf": "assets/files/niestacjonarne/FIZ.pdf",
           "docFile": "assets/files/niestacjonarne/FIZ.docx"
@@ -248,7 +248,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SAD.json",
           "pdf": "assets/files/niestacjonarne/SAD.pdf",
           "docFile": "assets/files/niestacjonarne/SAD.docx"
@@ -261,7 +261,7 @@
           "tutorial": 0,
           "lab": 24,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/ASD.json",
           "pdf": "assets/files/niestacjonarne/ASD.pdf",
           "docFile": "assets/files/niestacjonarne/ASD.docx"
@@ -274,7 +274,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SOP.json",
           "pdf": "assets/files/niestacjonarne/SOP.pdf",
           "docFile": "assets/files/niestacjonarne/SOP.docx"
@@ -287,7 +287,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG3.json",
           "pdf": "assets/files/niestacjonarne/ANG3.pdf",
           "docFile": "assets/files/niestacjonarne/ANG3.docx"
@@ -297,7 +297,7 @@
     {
       "semester": 4,
       "summary": {
-        "ects": 25,
+        "ects": 20,
         "lecture": 80,
         "tutorial": 16,
         "lab": 104
@@ -312,7 +312,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/GRK.json",
           "pdf": "assets/files/niestacjonarne/GRK.pdf",
           "docFile": "assets/files/niestacjonarne/GRK.docx"
@@ -325,7 +325,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ELK.json",
           "pdf": "assets/files/niestacjonarne/ELK.pdf",
           "docFile": "assets/files/niestacjonarne/ELK.docx"
@@ -351,7 +351,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/LLP.json",
           "pdf": "assets/files/niestacjonarne/LLP.pdf",
           "docFile": "assets/files/niestacjonarne/LLP.docx"
@@ -364,7 +364,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "electiveGroup": "JP1_2"
         },
         {
@@ -375,7 +375,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "electiveGroup": "JP1_2"
         },
         {
@@ -386,7 +386,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
           "pdf": "assets/files/niestacjonarne/ANG1-3.pdf",
           "docFile": "assets/files/niestacjonarne/ANG1-3.docx"
@@ -396,7 +396,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 24,
+        "ects": 23,
         "lecture": 72,
         "tutorial": 16,
         "lab": 80
@@ -485,7 +485,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK1"
         }
       ]
@@ -493,7 +493,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 25,
+        "ects": 24,
         "lecture": 80,
         "tutorial": 60,
         "lab": 80
@@ -576,7 +576,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK2"
         }
       ]
@@ -584,7 +584,7 @@
     {
       "semester": 7,
       "summary": {
-        "ects": 26,
+        "ects": 24,
         "lecture": 80,
         "tutorial": 24,
         "lab": 96
@@ -646,7 +646,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 3,
           "electiveGroup": "OB_7_1"
         },
         {
@@ -654,10 +654,10 @@
           "type": "O",
           "code": "LEK3",
           "lecture": 0,
-          "tutorial": 60,
+          "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "LEK3"
         }
       ]
@@ -665,7 +665,7 @@
     {
       "semester": 8,
       "summary": {
-        "ects": 26,
+        "ects": 24,
         "lecture": 48,
         "tutorial": 32,
         "lab": 96
@@ -679,8 +679,8 @@
           "lecture": 8,
           "tutorial": 0,
           "lab": 8,
-          "form": "EZ",
-          "ects": 3,
+          "form": "Z",
+          "ects": 2,
           "electiveGroup": "HUM_78"
         },
         {
@@ -691,7 +691,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "electiveGroup": "OB_8_2"
         },
         {
@@ -738,7 +738,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/SAI.json",
           "pdf": "assets/files/niestacjonarne/SAI.pdf",
           "docFile": "assets/files/niestacjonarne/SAI.docx"

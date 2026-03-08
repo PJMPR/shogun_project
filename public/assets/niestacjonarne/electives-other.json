@@ -3,7 +3,7 @@
     {
       "id": "JP1_2",
       "label": "Języki programowania 1 i 2 (wybór 2 z 5)",
-      "semester": 4,
+      "semester": 2,
       "items": [
         {
           "name": "Programowanie w języku Python",
@@ -12,7 +12,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "syllabusFile": "assets/syllabusy-n/JPT.json",
           "pdf": "assets/files/niestacjonarne/JPT.pdf",
           "docFile": "assets/files/niestacjonarne/JPT.docx"
@@ -24,7 +24,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "syllabusFile": "assets/syllabusy-n/JPC.json",
           "pdf": "assets/files/niestacjonarne/JPC.pdf",
           "docFile": "assets/files/niestacjonarne/JPC.docx"
@@ -36,22 +36,10 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "syllabusFile": "assets/syllabusy-n/JJA.json",
           "pdf": "assets/files/niestacjonarne/JJA.pdf",
           "docFile": "assets/files/niestacjonarne/JJA.docx"
-        },
-        {
-          "name": "Programowanie w języku C#",
-          "code": "JCS",
-          "lecture": 8,
-          "tutorial": 0,
-          "lab": 8,
-          "form": "Z",
-          "ects": 2,
-          "syllabusFile": "assets/syllabusy-n/JCS.json",
-          "pdf": "assets/files/niestacjonarne/JCS.pdf",
-          "docFile": "assets/files/niestacjonarne/JCS.docx"
         },
         {
           "name": "Programowanie w języku SCALA",
@@ -60,7 +48,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "syllabusFile": "assets/syllabusy-n/JSC.json",
           "pdf": "assets/files/niestacjonarne/JSC.pdf",
           "docFile": "assets/files/niestacjonarne/JSC.docx"
@@ -72,7 +60,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 2,
+          "ects": 1.5,
           "syllabusFile": "assets/syllabusy-n/JFS.json",
           "pdf": "assets/files/niestacjonarne/JFS.pdf",
           "docFile": "assets/files/niestacjonarne/JFS.docx"
@@ -220,7 +208,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/MAS.json",
           "pdf": "assets/files/niestacjonarne/MAS.pdf",
           "docFile": "assets/files/niestacjonarne/MAS.docx"
@@ -232,7 +220,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/DTH.json",
           "pdf": "assets/files/niestacjonarne/DTH.pdf",
           "docFile": "assets/files/niestacjonarne/DTH.docx"

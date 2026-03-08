@@ -1,0 +1,201 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Budowa i integracja systemów informatycznych",
+        "kod_przedmiotu": "BYT",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 24,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 32
+        },
+        "odpowiedzialny_za_przedmiot": "dr hab. inż. Marta Łabuda",
+        "ects": 6,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 56,
+            "praca_wlasna_studenta_h": 94,
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Studiowanie materiałów z zakresu budowy i integracji systemów informatycznych; przygotowanie do egzaminu pisemnego; analiza dokumentacji technicznej i architektonicznych wzorców integracji."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": []
+        },
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Egzamin"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [
+                "egzamin pisemny z zadaniami problemowymi"
+            ],
+            "cwiczenia_laboratorium": []
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "• Wstęp do informatyki i architektura komputerów",
+                "wymagania": "• Relacyjne bazy danych"
+            },
+            {
+                "nazwa": "• Projektowanie systemów informacyjnych",
+                "wymagania": "• Projekt (stowarzyszony)"
+            },
+            {
+                "nazwa": "• Podstawowa wiedza o organizacji systemu komputerowego i jego architekturze",
+                "wymagania": "• Znajomość obiektowości, znajomość zagadnień analizy i projektowania SI"
+            },
+            {
+                "nazwa": "• Umiejętność posługiwania się notacją UML",
+                "wymagania": "• Rozumienie potrzeb systematyzacji procesu wytwarzania oprogramowania"
+            }
+        ],
+        "cel_dydaktyczny": "Celem cyklu wykładów jest zapoznanie słuchaczy z podstawowymi zagadnieniami inżynierii oprogramowania, w tym z fazami rozwoju i ewolucji oprogramowania oraz metodami podwyższenia jakości oprogramowania. Wykład dotyczy podstawowych aspektów inżynierii oprogramowania i jest zorganizowany według kolejnych faz cyklu powstawania oprogramowania. Omówione są fazy: strategiczna, gromadzenia wymagań, analizy, projektowania, konstrukcji, testowania, instalacji i konserwacji a także jego wdrażanie i pielęgnacji. Wykład przedstawia też zagadnienia związane z architekturą systemów informatycznych i dobrymi praktykami projektowania za pomocą narzędzi CASE. Znaczna waga przypisana jest dyskusji aktualnych modeli cyklu życia oprogramowania i kryteriom doboru strategii jego wytworzenia, jak też wykorzystaniu wzorców projektowych i standardowych API oraz dobrym praktykom projektowania i implementacji systemów, w szczególności: systemy rozproszone, systemy krytyczne, czasu rzeczywistego oraz wielokrotnego użytku. Omawiane na zajęciach tematy obejmują też jakość oprogramowania i jej miary, podstawowe informacje o procesie testowania oprogramowania oraz o zarządzaniu przedsięwzięciem programistycznym, zarządzaniu konfiguracją oprogramowania, implementację, a także problemy outsourcingu informatycznego. Charakteryzuje informatyczne systemy wsparcia procesów biznesowych omawiając ich najważniejsze cechy. Zajęcia są skorelowane z wykładem i projektem przedmiotu Projekt informatyczny (PRO), zapewniając kompleksowość przedstawianych zagadnień inżynierii oprogramowania i dając studentom możliwość samodzielnego, metodycznego przeprowadzenia niedużych projektów informatycznych - od zdefiniowania problemu, poprzez dobór strategii i zaplanowanie jego rozwiązania - do zaprojektowania i wykonania praktycznych elementów produktu, z użyciem wzorców i komponentów projektowych i przeprowadzeniem testów systemowych i walidacyjnych. Wzorcowym modelem jest wykorzystanie technologii obiektowej w cyklu kaskadowym, komponentowym lub zwinnie, nie są wykluczone inne strategie wytwórcze np. dla specyficznego produktu jakim są gry komputerowe.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "1. Krzysztof Sacha,  Inżynieria Oprogramowania, PWN 2022",
+                    "2. Ian Sommerville,  Inżynieria Oprogramowania, wyd.10, PWN 2020",
+                    "3. Max Kanat-Alexander, Zrozumieć oprogramowanie, Helion 2019",
+                    "4. Robert C. Martin, Czysta architektura. Struktura i design oprogramowania. Przewodnik dla profesjonalistów, Helion 2022",
+                    "5. Mike Cohn, Agile. Metodyki zwinne w planowaniu projektów, Helion 2019",
+                    "6. Robert C. Martin, Zwinne wytwarzanie oprogramowania. Najlepsze zasady, wzorce i praktyki, Helion 2017"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "1. Bernd Bruegge,  Allen H. Dutoit, Inżynieria oprogramowania w ujęciu obiektowym UML, wzorce projektowe i Java Helion 2011",
+                    "2. Keeling Michael,Zostań architektem oprogramowania, PWN 2019",
+                    "3. Piotr Gaczkowski, Adrian Ostrowski, Architektura oprogramowania bez tajemnic, Helion 20224.",
+                    "4. Arnon Axelrod, Automatyzacja testów. Kompletny przewodnik dla testerów oprogramowaniaPWN 2022",
+                    "5. Strony domowe do wybranych narzędzi informatycznych. Instrukcje obsługi, przykłady."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, protokołów komunikacyjnych i mechanizmów bezpieczeństwa sieciowego, w tym firewalle, systemy IDS/IPS oraz wirtualne sieci prywatne (VPN). [K_W08]",
+                "Student zna i rozumie zaawansowane zagadnienia relacyjnych baz danych: modelowanie ERD, normalizację, transakcje, indeksy oraz programowanie SQL w kontekście bezpieczeństwa danych. [K_W13]",
+                "Student zna i rozumie zasady inżynierii oprogramowania, wzorce projektowe (GoF), notację UML, cykle wytwórcze (Agile/Scrum) oraz problem jakości oprogramowania i techniczny dług. [K_W14]",
+                "Student zna i rozumie metody i techniki inżynierii wymagań, sposoby tworzenia specyfikacji funkcjonalnych i niefunkcjonalnych oraz narzędzia do modelowania wymagań (m.in. diagramy przypadków użycia). [K_W15]",
+                "Student zna i rozumie zaawansowane metody walidacji i testowania oprogramowania: testy jednostkowe, integracyjne, systemowe i akceptacyjne, a także narzędzia do automatyzacji testów i analizy pokrycia kodu. [K_W16]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi zaprojektować, zainstalować i administrować siecią LAN/WAN z zachowaniem zasad bezpieczeństwa informacji, skonfigurować usługi sieciowe oraz reagować na incydenty bezpieczeństwa. [K_U14]",
+                "Student potrafi sformułować zapytania SQL, zaprojektować schemat relacyjnej bazy danych na podstawie modelu ERD oraz zarządzać transakcjami i uprawnieniami w systemie bazodanowym. [K_U18]",
+                "Student potrafi zaplanować i zrealizować projekt programistyczny metodą obiektową z zastosowaniem wzorców projektowych, narzędzi CI/CD oraz systemów kontroli wersji (Git). [K_U19]",
+                "Student potrafi zaplanować i przeprowadzić pełny proces testowania oprogramowania: opracować plan testów, napisać testy automatyczne (JUnit/NUnit/pytest), wykonać testy regresji i zinterpretować wyniki. [K_U22]",
+                "Student potrafi przeprowadzić inspekcję kodu, zidentyfikować defekty i poprawić jakość oprogramowania zgodnie z przyjętymi standardami (SOLID, Clean Code). [K_U21]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do pracy w zespole deweloperskim w zróżnicowanych rolach (deweloper, tester, analityk), stosując metodyki zwinne i dobre praktyki inżynierii oprogramowania. [K_K04]",
+                "Student jest gotów do samodzielnego poszerzania wiedzy z zakresu bezpieczeństwa systemów informatycznych i nowych technologii wytwarzania oprogramowania. [K_K03]",
+                "Student jest gotów do dostrzegania i profesjonalnego rozwiązywania problemów etycznych i prawnych związanych z bezpieczeństwem danych i odpowiedzialnością inżynierską. [K_K06]"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wykład:",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Przedmiot i zagadnienia inżynierii oprogramowania. Podstawowe motywacje, społeczny kontekst przedsięwzięcia. Modelowanie pojęciowe. Pojęcie metodyki. Modele cyklu życia oprogramowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Przebieg i ocena fazy strategicznej. Planowanie projektu. Projekt informatyczny; podstawowe charakterystyki, pojęcia, udziałowcy projektu; cykl życia i zakres projektu. Planowanie zadań. Identyfikacja problemu; Wzbogacony wizerunek (Rich Picture). Decyzje strategiczne i wizja rozwiązania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Studium Wykonalności projektu informatycznego. Cele, płaszczyzny oceny –techniczna, ekonomiczna, organizacyjna i prawna; ryzyko przedsięwzięcia. Przykłady studiów wykonalności",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Analiza wymagań i proces inżynierii wymagań. Wymagania stawiane oprogramowaniu. Cechy dobrego wymagania. Metody pozyskiwania wymagań, user stories. Podział i klasyfikacja wymagań. Miary i formalne techniki  specyfikowania wymagań.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Strategie i procesy prowadzenia projektów informatycznych; tradycyjne (model kaskadowy, model V, prototypowanie, przyrostowy, spiralny) i nowoczesne cykle wytwarzania oprogramowania (reuse i komponentowość), MDA, ponowna inżynieria, RUP.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Zwinne metodyki wytwarzania oprogramowania. Programowanie ekstremalne. SCRUM: procesy, artefakty, role. Dobór strategii prowadzenia projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Analiza i projektowanie architektury systemów; role, procesy, techniki i produkty w podejściu obiektowym oraz agile. Wzorce analizy i projektowania; Klasyfikacja i przykłady wzorców.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Optymalizacja projektu dla specyfiki produktu. Projektowanie systemów rozproszonych, krytycznych, czasu rzeczywistego i wielokrotnego użytku.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Zarządzanie przedsięwzięciem informatycznym. Infrastruktura - dokumentacja procesu wytwarzania i produktu programistycznego, komunikacja, struktury organizacyjne. Raportowanie. Obszary zarządzania. zarządzanie zespołem. Harmonogramowanie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Implementacja, integracja i wersjonowanie oprogramowania.; środowiska narzędziowe oraz technologie. Zarządzanie konfiguracją oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Pojęcie jakości oprogramowania i dróg jej osiągania. Standardy jakości i dobre praktyki jakości. Zapewnianie jakości oprogramowania. Modele i miary jakości oprogramowania. Wprowadzenie do zarządzania jakością. Inspekcja kodu i analiza bezpieczeństwa. Metody szacowania nakładów. Model COCOMO II.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Testowanie i walidacja oprogramowania. Rodzaje testów testy jednostkowe, integracyjne, systemowe; walidacja i testy akceptacyjne. Typowe fazy i metody testowania. Testy statyczne, funkcjonalne i strukturalne. Czynniki sukcesu i rezultaty testowania. Dokumentowanie testów. Przeglądy oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Instalacja i wdrożenie oprogramowania. Pielęgnacja oprogramowania. Analiza potrzeby wprowadzania modyfikacji. Koszty konserwacji oprogramowania. Kluczowe czynniki sukcesu fazy utrzymania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Outsourcing w inżynierii oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "Informatyczne wsparcie procesów biznesowych. Oprogramowanie klasy CRM, ERP. Architektura systemów ERP. Przykłady dostawców systemów CRM i ERP.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of this lecture series is to familiarize students with the basic issues of software engineering, including the phases of software development and evolution, as well as methods of improving software quality. The lecture concerns the fundamental aspects of software engineering and is organized according to the subsequent phases of the software life cycle. The following phases are discussed: strategy, requirements gathering, analysis, design, construction, testing, installation, maintenance, deployment, and support. The lecture also presents issues related to the architecture of IT systems and good design practices using CASE tools. Significant importance is attached to the discussion of current software life-cycle models and criteria for selecting a development strategy, as well as to the use of design patterns, standard APIs, and good practices in system design and implementation, particularly for distributed systems, critical systems, real-time systems, and reusable systems. Topics discussed in class also include software quality and its metrics, basic information on software testing, software project management, software configuration management, implementation, and outsourcing issues. The course also characterizes IT systems supporting business processes by discussing their most important features. The classes are correlated with the lecture and project course IT Project (PRO), ensuring a comprehensive presentation of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and solution planning, to designing and implementing practical product elements, using patterns and design components, and conducting system and validation tests. The reference model is the use of object technology in waterfall, component-based, or agile cycles, although other development strategies are also possible, e.g. for specific products such as computer games.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "04.03.2026",
+        "nazwa_przedmiotu": "Język angielski 6",
+        "kod_przedmiotu": "LANG2",
+        "rok_studiow": 3,
+        "semestr_studiow": 6,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+        "ects": 3,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 59,
+            "calkowita_liczba_godzin_h": 75,
+            "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka angielskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "analiza tekstów z dyskusją",
+                "rozwiązywanie zadań",
+                "burza mózgów",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                "warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Ćwiczenia": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "kolokwium",
+                "egzamin ustny",
+                "ocena sporządzonego dokumentu"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "LANG1",
+                "wymagania": "Znajomość języka angielskiego na poziomie min. B1."
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest doskonalenie ogólnych sprawności językowych studentów – mówienia,\nsłuchania, czytania i pisania tak, aby studenci mogli docelowo osiągnąć poziom B2 według Europejskiego Systemu Opisu Kształcenia Językowego. Kurs języka angielskiego jest uzupełniony o wprowadzenie elementów języka specjalistycznego, tj. biznesu, informatyki oraz o treści typowo akademickie. Kurs obejmuje m.in., nauczanie specjalistycznego słownictwa, sprawności komunikacyjnych w biznesie, zwłaszcza umiejętności przygotowania i przedstawienia profesjonalnej prezentacji, jak również rozwijanie podstawowych sprawności komunikacyjnych, a szczególnie szybkiego czytania tekstów specjalistycznych zwłaszcza z zakresu informatyki (artykuły prasowe, książki, strony internetowe poświęcone tematyce) i słuchania tekstów o wzrastającym poziomie trudności. Podczas kursu studenci zostają zapoznani z terminologią dotyczącą informatyki, przygotowują się do porozumiewania się na tematy fachowe podczas pracy.\n",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Margaret O’Keeffee, Iwonna Dubicka, Bob Dignem, Mike Hogan, Business Partner A2+-C1; Wydawnictwo PEARSON, 2018"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Cotton D, Falvey D, Kent S, Rogers J, Market Leader 3rd edition (pre-intermediate/ intermediate/ upper-intermediate / advanced), PEARSON 2015.",
+                    "Maksymowicz Roman, Język angielski dla elektroników i informatyków. Wydawnictwo Oświatowe FOSZE."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [
+                "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
+                "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Powtórzenie i utrwalenie materiału. Słownictwo specjalizacyjne – wprowadzenie do tematyki semestru.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Zaawansowane pisanie techniczne: white papers, raporty badawcze, dokumentacja projektowa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Słownictwo: architektura oprogramowania, wzorce projektowe, mikroserwisy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Komunikacja w środowisku pracy zdalnej i rozproszonych zespołów – techniki i narzędzia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Czytanie ze zrozumieniem – zaawansowane artykuły techniczne i naukowe.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Słownictwo: chmura obliczeniowa, DevOps, konteneryzacja.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Akademickie pisanie po angielsku – praca inżynierska: streszczenie, wstęp, metodologia.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Prezentacje konferencyjne – struktura, język, techniki angażowania słuchaczy.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Słownictwo: cyberbezpieczeństwo, kryptografia, zarządzanie ryzykiem.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Przygotowanie do certyfikacji C1: Advanced – Reading and Use of English.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Przygotowanie do certyfikacji C1: Advanced – Writing.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Projekt zaliczeniowy – przygotowanie raportu lub prezentacji technicznej.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Prezentacja projektów, dyskusja i informacja zwrotna.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Powtórzenie materiału.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Kolokwium zaliczeniowe.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "English language instruction at the B2+/C1 level. Students further develop professional communication skills, technical writing, specialist presentations, and participation in international IT projects. The course prepares students for a C1-level certification exam.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}
