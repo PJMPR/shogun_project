@@ -35,6 +35,20 @@
   flex-wrap: nowrap;
 }
 
+.col-code {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.col-form {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
 .doc-btn {
   display: inline-flex;
   align-items: center;
