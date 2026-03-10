@@ -5,9 +5,9 @@
       "semester": 1,
       "summary": {
         "ects": 20,
-        "lecture": 92,
+        "lecture": 84,
         "tutorial": 32,
-        "lab": 72
+        "lab": 64
       },
       "description": "",
       "subjects": [
@@ -28,9 +28,9 @@
           "name": "Podstawy Programowania",
           "type": "M",
           "code": "PRG1",
-          "lecture": 24,
+          "lecture": 16,
           "tutorial": 0,
-          "lab": 32,
+          "lab": 24,
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PRG1.json",
