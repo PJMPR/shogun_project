@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,56 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & --- & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Lektura wskazanych materiałów dotyczących kompetencji liderskich; refleksja i analiza własnych doświadczeń; przygotowanie do aktywnego udziału w konwersatorium.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+\vspace{4pt}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,80 +150,77 @@ Przygotowanie studentów do pełnienia ról liderskich w zespołach technicznych
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership. &  \\
-  \hline
-  2. & Budowanie Zespołu. Rekrutacja ''culture fit'', onboarding i etapy formowania się zespołu. &  \\
-  \hline
-  3. & Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych. &  \\
-  \hline
-  4. & Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka). &  \\
-  \hline
-  5. & Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0). &  \\
-  \hline
-  6. & Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej. &  \\
-  \hline
-  7. & Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Fundamenty Przywództwa. Ewolucja lidera – od dowodzenia i kontroli do Servant Leadership. &  \\
+  \rowcolor{tableRowAlt} 2. & Budowanie Zespołu. Rekrutacja ''culture fit'', onboarding i etapy formowania się zespołu. &  \\
+  \rowcolor{tableRowLight} 3. & Komunikacja Lidera. Asertywność, radykalna szczerość (Radical Candor) i komunikacja w sytuacjach kryzysowych. &  \\
+  \rowcolor{tableRowAlt} 4. & Motywacja i Zarządzanie Wydajnością. Co motywuje programistów? Autonomia, mistrzostwo i cel (Model Pinka). &  \\
+  \rowcolor{tableRowLight} 5. & Facylitacja i Podejmowanie Decyzji. Techniki wspólnego rozwiązywania problemów i delegowanie uprawnień (Management 3.0). &  \\
+  \rowcolor{tableRowAlt} 6. & Inteligencja Emocjonalna. Zarządzanie stresem własnym i zespołu, empatia w pracy zdalnej. &  \\
+  \rowcolor{tableRowLight} 7. & Personal Branding Lidera. Budowanie autorytetu technicznego i osobistego wewnątrz i na zewnątrz organizacji. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W17 & Student zna różnice między zarządzaniem (management) a przywództwem (leadership) w kontekście inżynierii oprogramowania. & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & Student rozumie psychologiczne aspekty dynamiki grupowej (model Tuckmana) oraz motywacji pracowników wiedzy. & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & Student posiada wiedzę na temat różnych stylów przywództwa i potrafi dopasować je do dojrzałości zespołu. & ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W17 & Student zna różnice między zarządzaniem (management) a przywództwem (leadership) w kontekście inżynierii oprogramowania. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W17 & Student rozumie psychologiczne aspekty dynamiki grupowej (model Tuckmana) oraz motywacji pracowników wiedzy. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & Student posiada wiedzę na temat różnych stylów przywództwa i potrafi dopasować je do dojrzałości zespołu. & ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U05 & Student potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI. &  \\
-  \hline
-  K\_U05 & Student umie identyfikować źródła konfliktów w zespole i dobierać odpowiednie strategie ich rozwiązywania. &  \\
-  \hline
-  K\_U05 & Student potrafi moderować spotkania zespołowe, dbając o zaangażowanie wszystkich członków (facilitation). &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi przeprowadzić skuteczną sesję informacji zwrotnej przy użyciu technik takich jak FUKO czy SBI. &  \\
+  \rowcolor{tableRowAlt} K\_U05 & Student umie identyfikować źródła konfliktów w zespole i dobierać odpowiednie strategie ich rozwiązywania. &  \\
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi moderować spotkania zespołowe, dbając o zaangażowanie wszystkich członków (facilitation). &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K06 & Student wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu. &  \\
-  \hline
-  K\_K04 & Student jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą. &  \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Wykład:}
-\begin{itemize}
-  \item ocena pracy podczas ćwiczenia
-\end{itemize}
-\vspace{4pt}
-
+  \rowcolor{tableRowLight} K\_K06 & Student wykazuje postawę etyczną i odpowiedzialność za rozwój oraz dobrostan członków swojego zespołu. &  \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotowy do pełnienia roli mentora i wspierania kultury dzielenia się wiedzą. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne zadania programistyczne z machine learning; implementacja i testowanie modeli predykcyjnych; analiza wyników i dostrajanie hiperparametrów.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Egzamin z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena sporządzonego oprogramowania
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,194 +151,134 @@ Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami ucz
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & 1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python. &  \\
-  \hline
-  2. & 2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta. &  \\
-  \hline
-  3. & 3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów. &  \\
-  \hline
-  4. & 4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie. &  \\
-  \hline
-  5. & 5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych. &  \\
-  \hline
-  6. & 6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji. &  \\
-  \hline
-  7. & 7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout. &  \\
-  \hline
-  8. & 8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych. &  \\
-  \hline
-  9. & 9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji. &  \\
-  \hline
-  10. & 10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU. &  \\
-  \hline
-  11. & 11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play. &  \\
-  \hline
-  12. & 12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym. &  \\
-  \hline
-  13. & 13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble). &  \\
-  \hline
-  14. & 14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping). &  \\
-  \hline
-  15. & 15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód. &  \\
-  \hline
-  16. & // A. lista dotychczas zaproponowanych metod dydaktycznych; można zaproponować inne. &  \\
-  \hline
-  17. & Wykład: &  \\
-  \hline
-  18. & wykład &  \\
-  \hline
-  19. & wykład konwersatoryjny (z elementami dyskusji) &  \\
-  \hline
-  20. & wykład z prezentacją multimedialną &  \\
-  \hline
-  21. & wykład z prezentacją oprogramowania &  \\
-  \hline
-  22. & warsztaty &  \\
-  \hline
-  23. & Ćwiczenia / Laboratorium/Lektorat: &  \\
-  \hline
-  24. & analiza tekstów z dyskusją &  \\
-  \hline
-  25. & metoda projektów (projekt praktyczny) &  \\
-  \hline
-  26. & praca w grupach &  \\
-  \hline
-  27. & dyskusja &  \\
-  \hline
-  28. & rozwiązywanie zadań &  \\
-  \hline
-  29. & burza mózgów &  \\
-  \hline
-  30. & mind map &  \\
-  \hline
-  31. & puzzle learning &  \\
-  \hline
-  32. & studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży &  \\
-  \hline
-  33. & praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych &  \\
-  \hline
-  34. & warsztaty &  \\
-  \hline
-  35. & // B. lista dotychczas zaproponowanych metod weryfikacji; można zaproponować inne. &  \\
-  \hline
-  36. & sprawdziany wstępne „wejściówki” &  \\
-  \hline
-  37. & kolokwium &  \\
-  \hline
-  38. & kolokwium końcowe &  \\
-  \hline
-  39. & egzamin pisemny &  \\
-  \hline
-  40. & egzamin pisemny - test wyboru &  \\
-  \hline
-  41. & egzamin pisemny - tekst z lukami &  \\
-  \hline
-  42. & egzamin pisemny z zadaniami problemowymi &  \\
-  \hline
-  43. & egzamin pisemny ze studium przypadku &  \\
-  \hline
-  44. & egzamin ustny &  \\
-  \hline
-  45. & końcowe sprawozdanie z pracy w zespole &  \\
-  \hline
-  46. & prezentacja samodzielnej pracy semestralnej &  \\
-  \hline
-  47. & prezentacja elementu zespołowej pracy semestralnej &  \\
-  \hline
-  48. & prezentacja projektu i dokumentacji &  \\
-  \hline
-  49. & prezentacja mini-projektu &  \\
-  \hline
-  50. & obrona projektu &  \\
-  \hline
-  51. & rezultaty gry strategicznej &  \\
-  \hline
-  52. & ocena pracy podczas ćwiczenia &  \\
-  \hline
-  53. & raport z wykonanego zadania &  \\
-  \hline
-  54. & ocena sporządzonego dokumentu &  \\
-  \hline
-  55. & ocena sporządzonego oprogramowania &  \\
-  \hline
-  56. & wskazanie źródeł użytych materiałów &  \\
-  \hline
-  57. & kwestionariusz wywiadu &  \\
-  \hline
-  58. & sprawozdanie z rozmowy &  \\
-  \hline
-  59. & zapisanie na ścieżkę certyfikacyjną &  \\
-  \hline
-  60. & //C. ECTS sposób obliczania &  \\
-  \hline
-  61. & 1 punkt ECTS przyznawany jest za 25-30 godzin pracy studenta. W obliczanie punktów ECTS włącza się: &  \\
-  \hline
-  62. & liczbę godzin poszczególnych przedmiotów w danym semestrze; &  \\
-  \hline
-  63. & czas, jaki student poświęcił na indywidualną naukę (w tym przygotowanie do zajęć, zbieranie materiałów czy pisanie prac zaliczeniowych); &  \\
-  \hline
-  64. & czas, jaki student poświęcił na przygotowanie do egzaminu i zaliczenie danego przedmiotu; &  \\
-  \hline
-  65. & liczbę godzin praktyk studenckich. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & 1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python. &  \\
+  \rowcolor{tableRowAlt} 2. & 2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta. &  \\
+  \rowcolor{tableRowLight} 3. & 3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów. &  \\
+  \rowcolor{tableRowAlt} 4. & 4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie. &  \\
+  \rowcolor{tableRowLight} 5. & 5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych. &  \\
+  \rowcolor{tableRowAlt} 6. & 6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji. &  \\
+  \rowcolor{tableRowLight} 7. & 7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout. &  \\
+  \rowcolor{tableRowAlt} 8. & 8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych. &  \\
+  \rowcolor{tableRowLight} 9. & 9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji. &  \\
+  \rowcolor{tableRowAlt} 10. & 10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU. &  \\
+  \rowcolor{tableRowLight} 11. & 11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play. &  \\
+  \rowcolor{tableRowAlt} 12. & 12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym. &  \\
+  \rowcolor{tableRowLight} 13. & 13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble). &  \\
+  \rowcolor{tableRowAlt} 14. & 14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping). &  \\
+  \rowcolor{tableRowLight} 15. & 15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód. &  \\
+  \rowcolor{tableRowAlt} 16. & // A. lista dotychczas zaproponowanych metod dydaktycznych; można zaproponować inne. &  \\
+  \rowcolor{tableRowLight} 17. & Wykład: &  \\
+  \rowcolor{tableRowAlt} 18. & wykład &  \\
+  \rowcolor{tableRowLight} 19. & wykład konwersatoryjny (z elementami dyskusji) &  \\
+  \rowcolor{tableRowAlt} 20. & wykład z prezentacją multimedialną &  \\
+  \rowcolor{tableRowLight} 21. & wykład z prezentacją oprogramowania &  \\
+  \rowcolor{tableRowAlt} 22. & warsztaty &  \\
+  \rowcolor{tableRowLight} 23. & Ćwiczenia / Laboratorium/Lektorat: &  \\
+  \rowcolor{tableRowAlt} 24. & analiza tekstów z dyskusją &  \\
+  \rowcolor{tableRowLight} 25. & metoda projektów (projekt praktyczny) &  \\
+  \rowcolor{tableRowAlt} 26. & praca w grupach &  \\
+  \rowcolor{tableRowLight} 27. & dyskusja &  \\
+  \rowcolor{tableRowAlt} 28. & rozwiązywanie zadań &  \\
+  \rowcolor{tableRowLight} 29. & burza mózgów &  \\
+  \rowcolor{tableRowAlt} 30. & mind map &  \\
+  \rowcolor{tableRowLight} 31. & puzzle learning &  \\
+  \rowcolor{tableRowAlt} 32. & studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży &  \\
+  \rowcolor{tableRowLight} 33. & praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych &  \\
+  \rowcolor{tableRowAlt} 34. & warsztaty &  \\
+  \rowcolor{tableRowLight} 35. & // B. lista dotychczas zaproponowanych metod weryfikacji; można zaproponować inne. &  \\
+  \rowcolor{tableRowAlt} 36. & sprawdziany wstępne „wejściówki” &  \\
+  \rowcolor{tableRowLight} 37. & kolokwium &  \\
+  \rowcolor{tableRowAlt} 38. & kolokwium końcowe &  \\
+  \rowcolor{tableRowLight} 39. & egzamin pisemny &  \\
+  \rowcolor{tableRowAlt} 40. & egzamin pisemny - test wyboru &  \\
+  \rowcolor{tableRowLight} 41. & egzamin pisemny - tekst z lukami &  \\
+  \rowcolor{tableRowAlt} 42. & egzamin pisemny z zadaniami problemowymi &  \\
+  \rowcolor{tableRowLight} 43. & egzamin pisemny ze studium przypadku &  \\
+  \rowcolor{tableRowAlt} 44. & egzamin ustny &  \\
+  \rowcolor{tableRowLight} 45. & końcowe sprawozdanie z pracy w zespole &  \\
+  \rowcolor{tableRowAlt} 46. & prezentacja samodzielnej pracy semestralnej &  \\
+  \rowcolor{tableRowLight} 47. & prezentacja elementu zespołowej pracy semestralnej &  \\
+  \rowcolor{tableRowAlt} 48. & prezentacja projektu i dokumentacji &  \\
+  \rowcolor{tableRowLight} 49. & prezentacja mini-projektu &  \\
+  \rowcolor{tableRowAlt} 50. & obrona projektu &  \\
+  \rowcolor{tableRowLight} 51. & rezultaty gry strategicznej &  \\
+  \rowcolor{tableRowAlt} 52. & ocena pracy podczas ćwiczenia &  \\
+  \rowcolor{tableRowLight} 53. & raport z wykonanego zadania &  \\
+  \rowcolor{tableRowAlt} 54. & ocena sporządzonego dokumentu &  \\
+  \rowcolor{tableRowLight} 55. & ocena sporządzonego oprogramowania &  \\
+  \rowcolor{tableRowAlt} 56. & wskazanie źródeł użytych materiałów &  \\
+  \rowcolor{tableRowLight} 57. & kwestionariusz wywiadu &  \\
+  \rowcolor{tableRowAlt} 58. & sprawozdanie z rozmowy &  \\
+  \rowcolor{tableRowLight} 59. & zapisanie na ścieżkę certyfikacyjną &  \\
+  \rowcolor{tableRowAlt} 60. & //C. ECTS sposób obliczania &  \\
+  \rowcolor{tableRowLight} 61. & 1 punkt ECTS przyznawany jest za 25-30 godzin pracy studenta. W obliczanie punktów ECTS włącza się: &  \\
+  \rowcolor{tableRowAlt} 62. & liczbę godzin poszczególnych przedmiotów w danym semestrze; &  \\
+  \rowcolor{tableRowLight} 63. & czas, jaki student poświęcił na indywidualną naukę (w tym przygotowanie do zajęć, zbieranie materiałów czy pisanie prac zaliczeniowych); &  \\
+  \rowcolor{tableRowAlt} 64. & czas, jaki student poświęcił na przygotowanie do egzaminu i zaliczenie danego przedmiotu; &  \\
+  \rowcolor{tableRowLight} 65. & liczbę godzin praktyk studenckich. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W12 & Student zna i rozumie zaawansowane pojęcia probabilistyki i statystyki: rozkłady prawdopodobieństwa, estymację, testy hipotez i ich zastosowanie w uczeniu maszynowym. [K\_W12] &  \\
-  \hline
-  K\_W12 & Student zna i rozumie zasady działania i zastosowania algorytmów uczenia maszynowego: regresja, klasyfikacja (SVM, drzewa decyzyjne, lasy losowe), klasteryzacja, redukcja wymiarowości (PCA) i metody ewaluacji modeli. [K\_W12] &  \\
-  \hline
-  K\_W22 & Student zna i rozumie zaawansowane pojęcia w zakresie sztucznej inteligencji: głębokie sieci neuronowe (CNN, RNN, Transformer), transfer learning i zasady odpowiedzialnej AI. [K\_W22] &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W12 & Student zna i rozumie zaawansowane pojęcia probabilistyki i statystyki: rozkłady prawdopodobieństwa, estymację, testy hipotez i ich zastosowanie w uczeniu maszynowym. {[}K\_W12{]} &  \\
+  \rowcolor{tableRowAlt} K\_W12 & Student zna i rozumie zasady działania i zastosowania algorytmów uczenia maszynowego: regresja, klasyfikacja (SVM, drzewa decyzyjne, lasy losowe), klasteryzacja, redukcja wymiarowości (PCA) i metody ewaluacji modeli. {[}K\_W12{]} &  \\
+  \rowcolor{tableRowLight} K\_W22 & Student zna i rozumie zaawansowane pojęcia w zakresie sztucznej inteligencji: głębokie sieci neuronowe (CNN, RNN, Transformer), transfer learning i zasady odpowiedzialnej AI. {[}K\_W22{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U07 & Student potrafi zastosować aparat matematyczny (rachunek różniczkowy, algebrę liniową, statystykę) do implementacji i analizy algorytmów uczenia maszynowego w Pythonie (scikit-learn, PyTorch/TensorFlow). [K\_U07] & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U29 & Student potrafi zdiagnozować problem z obszaru sztucznej inteligencji, zaprojektować pipeline danych, wytrenować, ocenić i zoptymalizować model ML/DL na danych rzeczywistych. [K\_U29] & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U07 & Student potrafi zastosować aparat matematyczny (rachunek różniczkowy, algebrę liniową, statystykę) do implementacji i analizy algorytmów uczenia maszynowego w Pythonie (scikit-learn, PyTorch/TensorFlow). {[}K\_U07{]} & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U29 & Student potrafi zdiagnozować problem z obszaru sztucznej inteligencji, zaprojektować pipeline danych, wytrenować, ocenić i zoptymalizować model ML/DL na danych rzeczywistych. {[}K\_U29{]} & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K01 & Student jest gotów do zastosowania sztucznej inteligencji na rzecz rozwiązywania problemów naukowych i społecznych z uwzględnieniem zasad etycznej AI. [K\_K01] & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego śledzenia postępów w dziedzinie ML/AI i adaptowania nowych metod w praktyce inżynierskiej. [K\_K03] & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item ocena sporządzonego oprogramowania
-  \item ocena pracy podczas ćwiczenia
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowania sztucznej inteligencji na rzecz rozwiązywania problemów naukowych i społecznych z uwzględnieniem zasad etycznej AI. {[}K\_K01{]} & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego śledzenia postępów w dziedzinie ML/AI i adaptowania nowych metod w praktyce inżynierskiej. {[}K\_K03{]} & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

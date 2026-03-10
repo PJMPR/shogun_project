@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,56 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & --- & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Lektura wskazanych materiałów z psychologii i komunikacji interpersonalnej; refleksja nad własnymi kompetencjami inżynierskimi; przygotowanie do aktywnego uczestnictwa w konwersatoriach.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+\vspace{4pt}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,108 +150,98 @@ Studenci kierunków inżynierskich, w tym informatyki, często nie dostrzegają 
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Wiedza z zakresu szkoły ponadpodstawowej & Umiejętność poszukiwania i selekcji informacji \\
-  Krytyczna analiza treści & Dokonywanie syntezy treści, tworzenie konkluzji \\
-  Pozytywne nastawienie do rozwijania umiejętności pozatechnicznych, w szczególności pracy zespołowej & Prowadzenia dyskusji wspartej argumentami \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wiedza z zakresu szkoły ponadpodstawowej & Umiejętność poszukiwania i selekcji informacji \\
+  \rowcolor{tableRowAlt} Krytyczna analiza treści & Dokonywanie syntezy treści, tworzenie konkluzji \\
+  \rowcolor{tableRowLight} Pozytywne nastawienie do rozwijania umiejętności pozatechnicznych, w szczególności pracy zespołowej & Prowadzenia dyskusji wspartej argumentami \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & 1. Dużo więcej niż technologiczny stos. Dlaczego i jak zmieniają się wymagania branży informatycznej dotyczące kompetencji inżynierów.Znaczenie kompetencji pozatechnicznych, motywacji, organizacji pracy i umiejętności pracy zespołowej dla rozwoju zawodowego &  \\
-  \hline
-  2. & 2. Współczesne podejście do rozwoju i kariery w branży IT. Co robić, by zwiększać swoje szanse na praktyki, staż, pracę? Czy wiesz jak się uczyć? Krzywa uczenia się juniora vs. seniora. Metapoznanie. Motywacja. Style poznawcze i strategie uczenia się. &  \\
-  \hline
-  3. & 3. Mózg jako kluczowe narzędzie pracy inżyniera. Jak o nie dbać, by służyło długo i efektywnie? Jak osiągać stan koncentracji i poprawiać myślenie analityczne? Metody i narzędzia wspierające tryb pracy głębokiej i radzenie sobie z brakiem skupienia. Mit wielozadaniowości. &  \\
-  \hline
-  4. & 4. O wpływie kawy, muzyki i powiadomień. Strategie podnoszenia wydajności pracy nad projektem &  \\
-  \hline
-  5. & informatycznym. Techniki zarządzania czasem, organizacji zadań, monitorowania postępów. Czemu służy retrospektywa i jak ją przeprowadzać? Prokrastynacja. Intuicja kontra wzory. Czy inżynier może myśleć &  \\
-  \hline
-  6. & twórczo? Stan flow i strategie rozwiązywania problemów. Metody i narzędzia wspierające kreatywne aspekty pracy inżyniera. &  \\
-  \hline
-  7. & 5. Radzenie sobie ze stresem i wypaleniem w trakcie realizacji projektu informatycznego. Higiena pracy intelektualnej. Zasady cyfrowej higieny. Dlaczego drużyny składające się z samych gwiazd niemal zawsze wypadają poniżej oczekiwań? Skuteczne sposoby budowania zespołów inżynierskich. &  \\
-  \hline
-  8. & 6. Jak nie wpaść w pułapkę próżniactwa społecznego, myślenia grupowego oraz nie ulegać błędom poznawczym w trakcie realizacji projektu. Zasady skutecznej współpracy. Praca zespołowa jako doświadczenie efektywnego uczenia się od siebie nawzajem. Dlaczego i jak komunikować pomysły, odmienne zdanie, niezadowolenie z prac, problemy? W jaki sposób zadawać pytania i prosić o wsparcie? Informacja zwrotna i konstruktywna krytyka. &  \\
-  \hline
-  9. & 7. Jak koordynować pracę i rozwiązywać problemy w zespole informatycznym? Metodyka pracy zespołów wirtualnych i rozproszonych. Zdalne zarządzanie zespołowym projektem informatycznym. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & 1. Dużo więcej niż technologiczny stos. Dlaczego i jak zmieniają się wymagania branży informatycznej dotyczące kompetencji inżynierów.Znaczenie kompetencji pozatechnicznych, motywacji, organizacji pracy i umiejętności pracy zespołowej dla rozwoju zawodowego &  \\
+  \rowcolor{tableRowAlt} 2. & 2. Współczesne podejście do rozwoju i kariery w branży IT. Co robić, by zwiększać swoje szanse na praktyki, staż, pracę? Czy wiesz jak się uczyć? Krzywa uczenia się juniora vs. seniora. Metapoznanie. Motywacja. Style poznawcze i strategie uczenia się. &  \\
+  \rowcolor{tableRowLight} 3. & 3. Mózg jako kluczowe narzędzie pracy inżyniera. Jak o nie dbać, by służyło długo i efektywnie? Jak osiągać stan koncentracji i poprawiać myślenie analityczne? Metody i narzędzia wspierające tryb pracy głębokiej i radzenie sobie z brakiem skupienia. Mit wielozadaniowości. &  \\
+  \rowcolor{tableRowAlt} 4. & 4. O wpływie kawy, muzyki i powiadomień. Strategie podnoszenia wydajności pracy nad projektem &  \\
+  \rowcolor{tableRowLight} 5. & informatycznym. Techniki zarządzania czasem, organizacji zadań, monitorowania postępów. Czemu służy retrospektywa i jak ją przeprowadzać? Prokrastynacja. Intuicja kontra wzory. Czy inżynier może myśleć &  \\
+  \rowcolor{tableRowAlt} 6. & twórczo? Stan flow i strategie rozwiązywania problemów. Metody i narzędzia wspierające kreatywne aspekty pracy inżyniera. &  \\
+  \rowcolor{tableRowLight} 7. & 5. Radzenie sobie ze stresem i wypaleniem w trakcie realizacji projektu informatycznego. Higiena pracy intelektualnej. Zasady cyfrowej higieny. Dlaczego drużyny składające się z samych gwiazd niemal zawsze wypadają poniżej oczekiwań? Skuteczne sposoby budowania zespołów inżynierskich. &  \\
+  \rowcolor{tableRowAlt} 8. & 6. Jak nie wpaść w pułapkę próżniactwa społecznego, myślenia grupowego oraz nie ulegać błędom poznawczym w trakcie realizacji projektu. Zasady skutecznej współpracy. Praca zespołowa jako doświadczenie efektywnego uczenia się od siebie nawzajem. Dlaczego i jak komunikować pomysły, odmienne zdanie, niezadowolenie z prac, problemy? W jaki sposób zadawać pytania i prosić o wsparcie? Informacja zwrotna i konstruktywna krytyka. &  \\
+  \rowcolor{tableRowLight} 9. & 7. Jak koordynować pracę i rozwiązywać problemy w zespole informatycznym? Metodyka pracy zespołów wirtualnych i rozproszonych. Zdalne zarządzanie zespołowym projektem informatycznym. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W17 & Student zna i rozumie podstawy pracy intelektualnej i zespołowej, dzięki czemu będzie mógł wytwarzać lepsze & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W08 & oprogramowanie. & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & Student zna i rozumie skutki, jakie przynosi niewłaściwie zaplanowany i realizowany projekt. & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & Student zna i rozumie wyzwania oraz zagrożenia, z & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & którymi będzie się mierzyć w zakresie modułu pracy & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W08 & zespołowej. Zna i rozumie sposoby wykorzystywania & ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_W17 & właściwych narzędzia i metod służących zwiększaniu prawdopodobieństwa realizacji projektu inżynierskiego z sukcesem. & ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie podstawy pracy intelektualnej i zespołowej, dzięki czemu będzie mógł wytwarzać lepsze & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W08 & oprogramowanie. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie skutki, jakie przynosi niewłaściwie zaplanowany i realizowany projekt. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna i rozumie wyzwania oraz zagrożenia, z & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & którymi będzie się mierzyć w zakresie modułu pracy & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W08 & zespołowej. Zna i rozumie sposoby wykorzystywania & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & właściwych narzędzia i metod służących zwiększaniu prawdopodobieństwa realizacji projektu inżynierskiego z sukcesem. & ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U05 & Student potrafi zastosować swoją wiedzę przenosząc ją na gruntpraktycznych umiejętności w zakresie podstaw planowania i realizacji swojej pracy w projekcie informatycznym &  \\
-  \hline
-  K\_U01 & Student potrafi odpowiednio dobierać źródła informacji &  \\
-  \hline
-  K\_U19 & Student potrafi wytwarzać oprogramowanie i produkty technologiczne z uwzględnieniem aspektu pracy zespołowej &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi zastosować swoją wiedzę przenosząc ją na gruntpraktycznych umiejętności w zakresie podstaw planowania i realizacji swojej pracy w projekcie informatycznym &  \\
+  \rowcolor{tableRowAlt} K\_U01 & Student potrafi odpowiednio dobierać źródła informacji &  \\
+  \rowcolor{tableRowLight} K\_U19 & Student potrafi wytwarzać oprogramowanie i produkty technologiczne z uwzględnieniem aspektu pracy zespołowej &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K05 & Student jest gotów do rozumienia wpływu umiejętności nietechnicznych na efektywność i wydajność pracy inżyniera. &  \\
-  \hline
-  K\_K02 & Student jest gotów do   podejmowania starań, aby przekazać informacje i opinie w sposób powszechnie zrozumiały oraz rozumie  wagę roli informatyki we współczesnym świecie. &  \\
-  \hline
-  K\_K03 & Student jest gotów do ciągłego kształcenia i doskonalenia (także w aspekcie pozatechnicznym) umiejętności &  \\
-  \hline
-  K\_K04 & Student jest gotów do swojejroli (jako inżyniera) w pracach zespołu, w tym interdyscyplinarnego &  \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Wykład:}
-\begin{itemize}
-  \item ocena pracy podczas ćwiczenia
-\end{itemize}
-\vspace{4pt}
-
+  \rowcolor{tableRowLight} K\_K05 & Student jest gotów do rozumienia wpływu umiejętności nietechnicznych na efektywność i wydajność pracy inżyniera. &  \\
+  \rowcolor{tableRowAlt} K\_K02 & Student jest gotów do   podejmowania starań, aby przekazać informacje i opinie w sposób powszechnie zrozumiały oraz rozumie  wagę roli informatyki we współczesnym świecie. &  \\
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do ciągłego kształcenia i doskonalenia (także w aspekcie pozatechnicznym) umiejętności &  \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotów do swojejroli (jako inżyniera) w pracach zespołu, w tym interdyscyplinarnego &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

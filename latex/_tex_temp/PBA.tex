@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,109 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Analiza przypadków projektowania bezpiecznych architektur; samodzielne ćwiczenia modelowania zagrożeń (threat modeling); przygotowanie do kolokwium pisemnego.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Egzamin \\
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Ten kurs ma na celu dostarczenie studentom kompleksowej wiedzy oraz umiejętności niezbędnych do projektowania i utrzymania bezpiecznych systemów informatycznych. Dzięki połączeniu wykładów teoretycznych z praktycznymi ćwiczeniami studenci będą lepiej przygotowani do stawiania czoła wyzwaniom związanym z bezpieczeństwem IT w rzeczywistym świecie.  Studenci poznają podstawowe pojęcia i zasady bezpieczeństwa informatycznego, takie jak poufność, integralność oraz dostępność danych. Nauczą się projektować systemy i infrastrukturę informatyczną odporną na różnorodne zagrożenia i ataki. Celem kursu jest również zrozumienie mechanizmów zarządzania tożsamością oraz kontroli dostępu, w tym wdrażania polityk bezpieczeństwa.  Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, które pomagają zapobiegać wprowadzaniu luk bezpieczeństwa już na etapie rozwoju oprogramowania. Studenci nauczą się także reagować na incydenty bezpieczeństwa, w tym przeprowadzać ich analizę oraz sporządzać raporty dotyczące naruszeń.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments.  Students learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies.  The course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and preparing breach reports.}
-
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Wybór organizacji. &  \\
-  \hline
-  2. & Definicja celów biznesowych. &  \\
-  \hline
-  3. & Utworzenie diagramów przepływu danych (DFD). &  \\
-  \hline
-  4. & Procesowy opis organizacji zgodnie z ISO 9001. &  \\
-  \hline
-  5. & Utworzenie architektury IT. &  \\
-  \hline
-  6. & Koncepcja komunikacji, sprzętu i oprogramowania. &  \\
-  \hline
-  7. & Klasyfikacja informacji oraz struktura zarządzania. &  \\
-  \hline
-  8. & Identyfikacja zasobów organizacji. &  \\
-  \hline
-  9. & Utworzenie deklaracji stosowania. &  \\
-  \hline
-  10. & Identyfikacja zagrożeń dla architektury IT. &  \\
-  \hline
-  11. & Identyfikacja podatności powiązanych z zagrożeniami. &  \\
-  \hline
-  12. & Szacowanie ryzyka dla zidentyfikowanych zagrożeń. &  \\
-  \hline
-  13. & Tworzenie rekomendacji po analizie ryzyka. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W23 & Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR. & kolokwium końcowe \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U30 & Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować. & kolokwium końcowe, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -190,6 +144,75 @@ Ten kurs ma na celu dostarczenie studentom kompleksowej wiedzy oraz umiejętnoś
   \item raport z wykonanego zadania
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Ten kurs ma na celu dostarczenie studentom kompleksowej wiedzy oraz umiejętności niezbędnych do projektowania i utrzymania bezpiecznych systemów informatycznych. Dzięki połączeniu wykładów teoretycznych z praktycznymi ćwiczeniami studenci będą lepiej przygotowani do stawiania czoła wyzwaniom związanym z bezpieczeństwem IT w rzeczywistym świecie.  Studenci poznają podstawowe pojęcia i zasady bezpieczeństwa informatycznego, takie jak poufność, integralność oraz dostępność danych. Nauczą się projektować systemy i infrastrukturę informatyczną odporną na różnorodne zagrożenia i ataki. Celem kursu jest również zrozumienie mechanizmów zarządzania tożsamością oraz kontroli dostępu, w tym wdrażania polityk bezpieczeństwa.  Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, które pomagają zapobiegać wprowadzaniu luk bezpieczeństwa już na etapie rozwoju oprogramowania. Studenci nauczą się także reagować na incydenty bezpieczeństwa, w tym przeprowadzać ich analizę oraz sporządzać raporty dotyczące naruszeń.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments.  Students learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies.  The course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and preparing breach reports.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wybór organizacji. &  \\
+  \rowcolor{tableRowAlt} 2. & Definicja celów biznesowych. &  \\
+  \rowcolor{tableRowLight} 3. & Utworzenie diagramów przepływu danych (DFD). &  \\
+  \rowcolor{tableRowAlt} 4. & Procesowy opis organizacji zgodnie z ISO 9001. &  \\
+  \rowcolor{tableRowLight} 5. & Utworzenie architektury IT. &  \\
+  \rowcolor{tableRowAlt} 6. & Koncepcja komunikacji, sprzętu i oprogramowania. &  \\
+  \rowcolor{tableRowLight} 7. & Klasyfikacja informacji oraz struktura zarządzania. &  \\
+  \rowcolor{tableRowAlt} 8. & Identyfikacja zasobów organizacji. &  \\
+  \rowcolor{tableRowLight} 9. & Utworzenie deklaracji stosowania. &  \\
+  \rowcolor{tableRowAlt} 10. & Identyfikacja zagrożeń dla architektury IT. &  \\
+  \rowcolor{tableRowLight} 11. & Identyfikacja podatności powiązanych z zagrożeniami. &  \\
+  \rowcolor{tableRowAlt} 12. & Szacowanie ryzyka dla zidentyfikowanych zagrożeń. &  \\
+  \rowcolor{tableRowLight} 13. & Tworzenie rekomendacji po analizie ryzyka. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR. & kolokwium końcowe \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować. & kolokwium końcowe, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

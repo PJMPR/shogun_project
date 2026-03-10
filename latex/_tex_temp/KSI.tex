@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,176 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Konteneryzacja aplikacji webowych z użyciem Docker i Docker Compose; konfiguracja klastra Kubernetes; przygotowanie sprawozdań i projektu końcowego.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Nieoceniany \\
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacji webowych oraz orkiestracji kontenerów w środowiskach produkcyjnych. Student poznaje ekosystem Docker – od budowania obrazów, przez zarządzanie sieciami i woluminami, po automatyzację środowisk wielokontenerowych z użyciem Docker Compose. W dalszej części kursu student zapoznaje się z Kubernetes jako standardem orkiestracji kontenerów w chmurze, ucząc się wdrażania, skalowania i monitorowania aplikacji. Przedmiot przygotowuje do pracy w nowoczesnych środowiskach DevOps i chmurowych (AWS, GCP, Azure).
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The aim of the course is to familiarize students with techniques for containerizing web applications and orchestrating containers in production environments. Students learn the Docker ecosystem—from building images, through managing networks and volumes, to automating multi-container environments with Docker Compose. In the later part of the course, students are introduced to Kubernetes as the standard for cloud container orchestration, learning how to deploy, scale, and monitor applications. The course prepares students for work in modern DevOps and cloud environments (AWS, GCP, Azure).}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  SOP – Systemy operacyjne & Podstawowa znajomość systemów operacyjnych Linux: obsługa terminala, zarządzanie procesami, uprawnienia, sieci. \\
-  PAI – Programowanie aplikacji internetowych & Umiejętność tworzenia aplikacji webowych w Node.js lub innym frameworku backendowym; znajomość protokołu HTTP. \\
-  TIN – Technologie internetu & Podstawowa znajomość architektury aplikacji webowych po stronie klienta i serwera. \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI. &  \\
-  \hline
-  2. & Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore. &  \\
-  \hline
-  3. & Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze. &  \\
-  \hline
-  4. & Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera. &  \\
-  \hline
-  5. & Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych. &  \\
-  \hline
-  6. & Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec. &  \\
-  \hline
-  7. & Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne. &  \\
-  \hline
-  8. & Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s. &  \\
-  \hline
-  9. & Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces. &  \\
-  \hline
-  10. & Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra. &  \\
-  \hline
-  11. & Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy. &  \\
-  \hline
-  12. & Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych. &  \\
-  \hline
-  13. & Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler. &  \\
-  \hline
-  14. & Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault. &  \\
-  \hline
-  15. & CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W08 & Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie cykl życia kontenera oraz zasady tworzenia efektywnych obrazów Dockera z użyciem instrukcji Dockerfile: FROM, RUN, COPY, ENV, EXPOSE, ENTRYPOINT, CMD. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie mechanizmy sieciowe Dockera (bridge, host, overlay, macvlan) oraz sposoby persystowania danych (volumes, bind mounts, tmpfs). & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie przeznaczenie i budowę pliku docker-compose.yml: definiowanie usług, sieci, woluminów, zmiennych środowiskowych i zależności między serwisami. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie architekturę Kubernetes: komponenty warstwy sterowania (API Server, etcd, Scheduler, Controller Manager) oraz węzłów roboczych (kubelet, kube-proxy, container runtime). & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment, Service (ClusterIP, NodePort, LoadBalancer), ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, Ingress. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie zasady skalowania aplikacji w Kubernetes: skalowanie manualne, Horizontal Pod Autoscaler (HPA) oraz rolling update i rollback. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W23 & Student zna i rozumie zagadnienia bezpieczeństwa kontenerów: zasadę najmniejszych uprawnień, skanowanie obrazów pod kątem podatności (Trivy, Snyk), zarządzanie sekretami oraz polityki sieciowe (NetworkPolicy). & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W08 & Student zna i rozumie podstawy CI/CD w kontekście konteneryzacji: budowanie i publikowanie obrazów w potoku CI (GitHub Actions, GitLab CI), strategie wdrożeń (rolling, blue-green, canary). & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U27 & Student potrafi napisać poprawny plik Dockerfile dla aplikacji webowej (Node.js, Python lub Java), stosując best practices: multi-stage build, minimalizację warstw, użytkownik non-root, .dockerignore. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi zbudować, otagować i opublikować obraz Docker w rejestrze Docker Hub oraz w prywatnym rejestrze. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi skonfigurować plik docker-compose.yml dla środowiska wielokontenerowego (aplikacja webowa + baza danych + cache), uruchamiać, zatrzymywać i debugować usługi. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi skonfigurować sieci i woluminy Dockera w celu zapewnienia izolacji i persystencji danych między kontenerami. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi wdrożyć aplikację na lokalny klaster Kubernetes (Minikube lub k3s), tworząc manifesty YAML dla obiektów Deployment, Service i Ingress. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi skonfigurować ConfigMap i Secret w Kubernetes oraz przekazywać zmienne środowiskowe i pliki konfiguracyjne do podów. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi przeprowadzić rolling update i rollback wdrożenia w Kubernetes oraz monitorować stan klastra poleceniami kubectl (get, describe, logs, exec, top). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi skonfigurować Horizontal Pod Autoscaler i zweryfikować działanie automatycznego skalowania pod obciążeniem. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U14 & Student potrafi skonfigurować prosty potok CI/CD (GitHub Actions) automatycznie budujący i publikujący obraz Docker po każdym push do repozytorium. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_U27 & Student potrafi zidentyfikować i usunąć podstawowe problemy z kontenerami (crashloopbackoff, brak zasobów, błędy konfiguracji sieci) przy użyciu narzędzi diagnostycznych. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K05 & Student jest gotów do stosowania podejścia Infrastructure as Code, traktując pliki konfiguracyjne (Dockerfile, docker-compose.yml, manifesty Kubernetes) jako integralną część kodu źródłowego przechowywanego w systemie kontroli wersji. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_K05 & Student jest gotów do krytycznej oceny zasadności konteneryzacji w danym projekcie, uwzględniając koszty utrzymania infrastruktury, złożoność operacyjną i wymagania bezpieczeństwa. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu technologii chmurowych i DevOps, śledząc dokumentację, blogi techniczne i społeczność open source (CNCF). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -258,6 +145,125 @@ Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacj
   \item obrona projektu
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie studentów z technikami konteneryzacji aplikacji webowych oraz orkiestracji kontenerów w środowiskach produkcyjnych. Student poznaje ekosystem Docker – od budowania obrazów, przez zarządzanie sieciami i woluminami, po automatyzację środowisk wielokontenerowych z użyciem Docker Compose. W dalszej części kursu student zapoznaje się z Kubernetes jako standardem orkiestracji kontenerów w chmurze, ucząc się wdrażania, skalowania i monitorowania aplikacji. Przedmiot przygotowuje do pracy w nowoczesnych środowiskach DevOps i chmurowych (AWS, GCP, Azure).
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with techniques for containerizing web applications and orchestrating containers in production environments. Students learn the Docker ecosystem—from building images, through managing networks and volumes, to automating multi-container environments with Docker Compose. In the later part of the course, students are introduced to Kubernetes as the standard for cloud container orchestration, learning how to deploy, scale, and monitor applications. The course prepares students for work in modern DevOps and cloud environments (AWS, GCP, Azure).}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} SOP – Systemy operacyjne & Podstawowa znajomość systemów operacyjnych Linux: obsługa terminala, zarządzanie procesami, uprawnienia, sieci. \\
+  \rowcolor{tableRowAlt} PAI – Programowanie aplikacji internetowych & Umiejętność tworzenia aplikacji webowych w Node.js lub innym frameworku backendowym; znajomość protokołu HTTP. \\
+  \rowcolor{tableRowLight} TIN – Technologie internetu & Podstawowa znajomość architektury aplikacji webowych po stronie klienta i serwera. \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wirtualizacja a konteneryzacja – historia, różnice i zastosowania. Architektura Dockera: daemon, klient, obrazy, kontenery, rejestry. Instalacja i podstawowe polecenia CLI. &  \\
+  \rowcolor{tableRowAlt} 2. & Dockerfile – budowanie własnych obrazów. Instrukcje: FROM, RUN, COPY, ADD, ENV, ARG, EXPOSE, WORKDIR, ENTRYPOINT, CMD. Warstwy obrazu i cache. Plik .dockerignore. &  \\
+  \rowcolor{tableRowLight} 3. & Zaawansowane techniki budowania obrazów: multi-stage build, minimalizacja rozmiaru, obrazy bazowe (Alpine, Distroless), skanowanie podatności (Trivy). Publikowanie w Docker Hub i prywatnym rejestrze. &  \\
+  \rowcolor{tableRowAlt} 4. & Sieci Dockera: tryby bridge, host, none, overlay, macvlan. Komunikacja między kontenerami. Tworzenie własnych sieci. Resolucja DNS wewnątrz sieci Dockera. &  \\
+  \rowcolor{tableRowLight} 5. & Persystencja danych: volumes zarządzane, bind mounts, tmpfs. Cykl życia voluminów. Współdzielenie danych między kontenerami. Backup i przywracanie danych. &  \\
+  \rowcolor{tableRowAlt} 6. & Docker Compose – definiowanie środowisk wielousługowych. Składnia pliku docker-compose.yml: services, networks, volumes, environment, depends\_on, healthcheck. Polecenia compose up/down/logs/exec. &  \\
+  \rowcolor{tableRowLight} 7. & Zaawansowane Docker Compose: profile, rozszerzenia YAML (anchors), override files, skalowanie usług. Środowiska developerskie vs. produkcyjne. &  \\
+  \rowcolor{tableRowAlt} 8. & Wprowadzenie do orkiestracji kontenerów. Architektura Kubernetes: control plane (API Server, etcd, Scheduler, Controller Manager) i węzły robocze (kubelet, kube-proxy). Instalacja lokalna: Minikube, k3s. &  \\
+  \rowcolor{tableRowLight} 9. & Podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment. Manifesty YAML. Kubectl: get, describe, apply, delete, logs, exec. Namespaces. &  \\
+  \rowcolor{tableRowAlt} 10. & Serwisy Kubernetes: ClusterIP, NodePort, LoadBalancer, ExternalName. Ingress i Ingress Controller (NGINX). Eksponowanie aplikacji na zewnątrz klastra. &  \\
+  \rowcolor{tableRowLight} 11. & Konfiguracja i sekrety w Kubernetes: ConfigMap, Secret (Opaque, TLS, docker-registry). Przekazywanie konfiguracji do podów przez zmienne środowiskowe i woluminy. &  \\
+  \rowcolor{tableRowAlt} 12. & Persystencja w Kubernetes: PersistentVolume (PV), PersistentVolumeClaim (PVC), StorageClass. StatefulSet vs. Deployment dla aplikacji stanowych. &  \\
+  \rowcolor{tableRowLight} 13. & Skalowanie i aktualizacje: Horizontal Pod Autoscaler (HPA), resource requests i limits, rolling update, rollback, PodDisruptionBudget. Podstawy Vertical Pod Autoscaler. &  \\
+  \rowcolor{tableRowAlt} 14. & Bezpieczeństwo kontenerów i klastra: zasada najmniejszych uprawnień, SecurityContext, NetworkPolicy, RBAC (Role, ClusterRole, RoleBinding), zarządzanie sekretami z Vault. &  \\
+  \rowcolor{tableRowLight} 15. & CI/CD w ekosystemie kontenerowym: budowanie i publikowanie obrazów w GitHub Actions / GitLab CI. Strategie wdrożeń: rolling, blue-green, canary. Helm – pakietowanie i wdrażanie aplikacji. Przegląd usług zarządzanych: AWS ECS/EKS, GCP GKE, Azure AKS. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W08 & Student zna i rozumie koncepcję wirtualizacji na poziomie systemu operacyjnego oraz różnice między maszynami wirtualnymi a kontenerami pod względem izolacji, wydajności i przenośności. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W08 & Student zna i rozumie architekturę Dockera: daemon, klient, rejestr obrazów (Docker Hub, prywatny registry), warstwy obrazu i mechanizm union filesystem. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W08 & Student zna i rozumie cykl życia kontenera oraz zasady tworzenia efektywnych obrazów Dockera z użyciem instrukcji Dockerfile: FROM, RUN, COPY, ENV, EXPOSE, ENTRYPOINT, CMD. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W08 & Student zna i rozumie mechanizmy sieciowe Dockera (bridge, host, overlay, macvlan) oraz sposoby persystowania danych (volumes, bind mounts, tmpfs). & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W08 & Student zna i rozumie przeznaczenie i budowę pliku docker-compose.yml: definiowanie usług, sieci, woluminów, zmiennych środowiskowych i zależności między serwisami. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W08 & Student zna i rozumie architekturę Kubernetes: komponenty warstwy sterowania (API Server, etcd, Scheduler, Controller Manager) oraz węzłów roboczych (kubelet, kube-proxy, container runtime). & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W08 & Student zna i rozumie podstawowe obiekty Kubernetes: Pod, ReplicaSet, Deployment, Service (ClusterIP, NodePort, LoadBalancer), ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, Ingress. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W08 & Student zna i rozumie zasady skalowania aplikacji w Kubernetes: skalowanie manualne, Horizontal Pod Autoscaler (HPA) oraz rolling update i rollback. & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie zagadnienia bezpieczeństwa kontenerów: zasadę najmniejszych uprawnień, skanowanie obrazów pod kątem podatności (Trivy, Snyk), zarządzanie sekretami oraz polityki sieciowe (NetworkPolicy). & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W08 & Student zna i rozumie podstawy CI/CD w kontekście konteneryzacji: budowanie i publikowanie obrazów w potoku CI (GitHub Actions, GitLab CI), strategie wdrożeń (rolling, blue-green, canary). & egzamin pisemny z zadaniami problemowymi \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi napisać poprawny plik Dockerfile dla aplikacji webowej (Node.js, Python lub Java), stosując best practices: multi-stage build, minimalizację warstw, użytkownik non-root, .dockerignore. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi zbudować, otagować i opublikować obraz Docker w rejestrze Docker Hub oraz w prywatnym rejestrze. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi skonfigurować plik docker-compose.yml dla środowiska wielokontenerowego (aplikacja webowa + baza danych + cache), uruchamiać, zatrzymywać i debugować usługi. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi skonfigurować sieci i woluminy Dockera w celu zapewnienia izolacji i persystencji danych między kontenerami. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi wdrożyć aplikację na lokalny klaster Kubernetes (Minikube lub k3s), tworząc manifesty YAML dla obiektów Deployment, Service i Ingress. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi skonfigurować ConfigMap i Secret w Kubernetes oraz przekazywać zmienne środowiskowe i pliki konfiguracyjne do podów. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi przeprowadzić rolling update i rollback wdrożenia w Kubernetes oraz monitorować stan klastra poleceniami kubectl (get, describe, logs, exec, top). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi skonfigurować Horizontal Pod Autoscaler i zweryfikować działanie automatycznego skalowania pod obciążeniem. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowLight} K\_U14 & Student potrafi skonfigurować prosty potok CI/CD (GitHub Actions) automatycznie budujący i publikujący obraz Docker po każdym push do repozytorium. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi zidentyfikować i usunąć podstawowe problemy z kontenerami (crashloopbackoff, brak zasobów, błędy konfiguracji sieci) przy użyciu narzędzi diagnostycznych. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student jest gotów do stosowania podejścia Infrastructure as Code, traktując pliki konfiguracyjne (Dockerfile, docker-compose.yml, manifesty Kubernetes) jako integralną część kodu źródłowego przechowywanego w systemie kontroli wersji. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do krytycznej oceny zasadności konteneryzacji w danym projekcie, uwzględniając koszty utrzymania infrastruktury, złożoność operacyjną i wymagania bezpieczeństwa. & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu technologii chmurowych i DevOps, śledząc dokumentację, blogi techniczne i społeczność open source (CNCF). & raport z wykonanego zadania, prezentacja projektu i dokumentacji, obrona projektu \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

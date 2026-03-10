@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,124 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja i konfiguracja protokołów komunikacyjnych IoT (MQTT, CoAP); realizacja projektu z urządzeniami IoT; przygotowanie do kolokwium teoretyczno-praktycznego.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Egzamin \\
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency.}
-
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS. &  \\
-  \hline
-  2. & Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug. &  \\
-  \hline
-  3. & Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU. &  \\
-  \hline
-  4. & Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput. &  \\
-  \hline
-  5. & Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń. &  \\
-  \hline
-  6. & MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie. &  \\
-  \hline
-  7. & CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania. &  \\
-  \hline
-  8. & Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja. &  \\
-  \hline
-  9. & Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja. &  \\
-  \hline
-  10. & Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W06 & Student zna i rozumie zaawansowane pojęcia z zakresu techniki cyfrowej i architektury systemów komputerowych: układy kombinacyjne i sekwencyjne, architekturę ARM/RISC-V, organizację pamięci i magistral komunikacyjnych. [K\_W06] & kolokwium \\
-  \hline
-  K\_W18 & Student zna i rozumie zaawansowane zagadnienia mikrokontrolerów i systemów wbudowanych stosowanych w IoT: programowanie bare-metal i RTOS-based, interfejsy peryferyjne (I2C, SPI, UART, CAN), zarządzanie energią. [K\_W18] & kolokwium \\
-  \hline
-  K\_W26 & Student zna i rozumie zaawansowane pojęcia w zakresie Internetu Rzeczy: protokoły komunikacyjne warstwy aplikacji (MQTT, CoAP, HTTP/REST), architektury IoT (edge, fog, cloud), bezpieczeństwo urządzeń IoT. [K\_W26] & kolokwium \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U12 & Student potrafi zaprojektować proste układy cyfrowe, napisać program w asemblerze dla mikrokontrolera oraz zintegrować peryferyjne moduły sprzętowe z systemem wbudowanym. [K\_U12] & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
-  \hline
-  K\_U23 & Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany IoT: skonfigurować interfejsy sensorów i aktuatorów, zaimplementować stos komunikacyjny i zapewnić niezawodność systemu. [K\_U23] & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
-  \hline
-  K\_U33 & Student potrafi zdiagnozować problem inżynierski w dziedzinie IoT, zaprojektować rozwiązanie i zrealizować prototyp z użyciem dostępnych platform (ESP32, Raspberry Pi, Arduino). [K\_U33] & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K01 & Student jest gotów do zastosowania technologii IoT na rzecz rozwoju innowacyjnych rozwiązań w przemyśle, rolnictwie, medycynie i inteligentnych miastach. [K\_K01] & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z dynamicznie rozwijającego się obszaru systemów wbudowanych i Internetu Rzeczy. [K\_K03] & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -205,6 +144,92 @@ Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy�
   \item prezentacja projektu i dokumentacji
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem dydaktycznym przedmiotu „Komunikacja i protokoły dla Internetu Rzeczy” jest zrozumienie, jak urządzenia IoT wymieniają dane w różnych warstwach komunikacji oraz jak dobrać protokół do wymagań aplikacji (zasięg, energia, przepustowość, niezawodność, bezpieczeństwo). Student nauczy się projektować komunikację urządzenie-chmura oraz urządzenie-urządzenie, przygotowywać formaty danych i zapewniać interoperacyjność systemu. Rozwinie praktyczne umiejętności konfiguracji i testowania transmisji, diagnozowania problemów sieciowych oraz oceny jakości łącza i opóźnień.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The educational objective of the course 'Communication and Protocols for the Internet of Things' is to understand how IoT devices exchange data across different communication layers and how to select a protocol depending on application requirements such as range, energy consumption, throughput, reliability, and security. Students learn how to design device-to-cloud and device-to-device communication, prepare data formats, and ensure system interoperability. They also develop practical skills in configuring and testing transmission, diagnosing network problems, and assessing link quality and latency.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Architektury IoT i warstwy komunikacji: urządzenie–edge–chmura, topologie, wymagania QoS. &  \\
+  \rowcolor{tableRowAlt} 2. & Łącza fizyczne i magistrale: UART, I²C, SPI, RS-485/CAN – zastosowania, ograniczenia, debug. &  \\
+  \rowcolor{tableRowLight} 3. & Sieci IP w IoT: IPv4/IPv6, podstawy routingu, DHCP vs statyczne, NAT, DNS, NTP, MTU. &  \\
+  \rowcolor{tableRowAlt} 4. & Wi-Fi i BLE w praktyce: tryby pracy, zasięg/energia, parowanie, advertising, GATT, throughput. &  \\
+  \rowcolor{tableRowLight} 5. & Protokoły transportowe: UDP vs TCP, retransmisje, opóźnienia, keep-alive, problem „zrywanych” połączeń. &  \\
+  \rowcolor{tableRowAlt} 6. & MQTT: broker, topics, QoS 0/1/2, retained, LWT, sesje, wzorce pub/sub i skalowanie. &  \\
+  \rowcolor{tableRowLight} 7. & CoAP i HTTP/REST: modele request/response vs obserwacja, kody, cache, proxy, zastosowania. &  \\
+  \rowcolor{tableRowAlt} 8. & Format danych i interoperacyjność: JSON/CBOR/Protobuf, schematy, wersjonowanie, idempotencja. &  \\
+  \rowcolor{tableRowLight} 9. & Bezpieczeństwo komunikacji: TLS/DTLS, uwierzytelnianie (certyfikaty/tokeny), klucze, aktualizacje i rotacja. &  \\
+  \rowcolor{tableRowAlt} 10. & Diagnostyka i testy: sniffing (np. Wireshark), logowanie, pomiary latency/jitter/packet loss, scenariusze awarii i retry/backoff. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W06 & Student zna i rozumie zaawansowane pojęcia z zakresu techniki cyfrowej i architektury systemów komputerowych: układy kombinacyjne i sekwencyjne, architekturę ARM/RISC-V, organizację pamięci i magistral komunikacyjnych. {[}K\_W06{]} & kolokwium \\
+  \rowcolor{tableRowAlt} K\_W18 & Student zna i rozumie zaawansowane zagadnienia mikrokontrolerów i systemów wbudowanych stosowanych w IoT: programowanie bare-metal i RTOS-based, interfejsy peryferyjne (I2C, SPI, UART, CAN), zarządzanie energią. {[}K\_W18{]} & kolokwium \\
+  \rowcolor{tableRowLight} K\_W26 & Student zna i rozumie zaawansowane pojęcia w zakresie Internetu Rzeczy: protokoły komunikacyjne warstwy aplikacji (MQTT, CoAP, HTTP/REST), architektury IoT (edge, fog, cloud), bezpieczeństwo urządzeń IoT. {[}K\_W26{]} & kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U12 & Student potrafi zaprojektować proste układy cyfrowe, napisać program w asemblerze dla mikrokontrolera oraz zintegrować peryferyjne moduły sprzętowe z systemem wbudowanym. {[}K\_U12{]} & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowAlt} K\_U23 & Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany IoT: skonfigurować interfejsy sensorów i aktuatorów, zaimplementować stos komunikacyjny i zapewnić niezawodność systemu. {[}K\_U23{]} & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowLight} K\_U33 & Student potrafi zdiagnozować problem inżynierski w dziedzinie IoT, zaprojektować rozwiązanie i zrealizować prototyp z użyciem dostępnych platform (ESP32, Raspberry Pi, Arduino). {[}K\_U33{]} & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowania technologii IoT na rzecz rozwoju innowacyjnych rozwiązań w przemyśle, rolnictwie, medycynie i inteligentnych miastach. {[}K\_K01{]} & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z dynamicznie rozwijającego się obszaru systemów wbudowanych i Internetu Rzeczy. {[}K\_K03{]} & ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

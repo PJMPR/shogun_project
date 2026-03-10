@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & --- & 8 h & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Tworzenie planu zarządzania projektem informatycznym w grupie; analiza realnych projektów IT; przygotowanie prezentacji planu zarządzania; opracowanie dokumentacji projektowej.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,136 +151,111 @@ Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projekt
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Inzynieria oprogramowania & Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Inzynieria oprogramowania & Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wprowadzenie do zarządzania projektami IT &  \\
-  \hline
-  2. & Definicje, cele i zakres zarządzania projektami. &  \\
-  \hline
-  3. & Cykl życia projektu IT. &  \\
-  \hline
-  4. & Case study: Denver International Airport Baggage System - analiza błędów i wnioski. &  \\
-  \hline
-  5. & Metodologie zarządzania projektami &  \\
-  \hline
-  6. & Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania. &  \\
-  \hline
-  7. & Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu. &  \\
-  \hline
-  8. & Motywacja i zarządzanie zespołami IT &  \\
-  \hline
-  9. & Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej. &  \\
-  \hline
-  10. & Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację. &  \\
-  \hline
-  11. & Budowanie efektywnych zespołów, role i odpowiedzialności. &  \\
-  \hline
-  12. & Planowanie projektu &  \\
-  \hline
-  13. & Etapy planowania projektu, analiza sytuacji, SMART goals, WBS. &  \\
-  \hline
-  14. & Identyfikacja i analiza ryzyka. &  \\
-  \hline
-  15. & Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania. &  \\
-  \hline
-  16. & Ćwiczenia: planowanie projektu z użyciem ''Ninja Planning Card''. &  \\
-  \hline
-  17. & Realizacja i kontrola projektu &  \\
-  \hline
-  18. & Zarządzanie czasem, budżetem i zasobami. &  \\
-  \hline
-  19. & Monitoring postępów projektu, raportowanie, analiza odchyleń. &  \\
-  \hline
-  20. & Zarządzanie zmianą, kontrola jakości. &  \\
-  \hline
-  21. & Zamykanie projektu &  \\
-  \hline
-  22. & Ocena projektu, dokumentacja, lessons learned. &  \\
-  \hline
-  23. & Prezentacja wyników projektu. &  \\
-  \hline
-  24. & Dodatkowe zagadnienia &  \\
-  \hline
-  25. & PRINCE2, Six Sigma - wprowadzenie. &  \\
-  \hline
-  26. & Teorie X, Y, Z - style zarządzania. &  \\
-  \hline
-  27. & Cargo Cults - unikanie bezmyślnego naśladowania. &  \\
-  \hline
-  28. & Etyka w zarządzaniu projektami IT. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do zarządzania projektami IT &  \\
+  \rowcolor{tableRowAlt} 2. & Definicje, cele i zakres zarządzania projektami. &  \\
+  \rowcolor{tableRowLight} 3. & Cykl życia projektu IT. &  \\
+  \rowcolor{tableRowAlt} 4. & Case study: Denver International Airport Baggage System - analiza błędów i wnioski. &  \\
+  \rowcolor{tableRowLight} 5. & Metodologie zarządzania projektami &  \\
+  \rowcolor{tableRowAlt} 6. & Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania. &  \\
+  \rowcolor{tableRowLight} 7. & Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu. &  \\
+  \rowcolor{tableRowAlt} 8. & Motywacja i zarządzanie zespołami IT &  \\
+  \rowcolor{tableRowLight} 9. & Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej. &  \\
+  \rowcolor{tableRowAlt} 10. & Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację. &  \\
+  \rowcolor{tableRowLight} 11. & Budowanie efektywnych zespołów, role i odpowiedzialności. &  \\
+  \rowcolor{tableRowAlt} 12. & Planowanie projektu &  \\
+  \rowcolor{tableRowLight} 13. & Etapy planowania projektu, analiza sytuacji, SMART goals, WBS. &  \\
+  \rowcolor{tableRowAlt} 14. & Identyfikacja i analiza ryzyka. &  \\
+  \rowcolor{tableRowLight} 15. & Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania. &  \\
+  \rowcolor{tableRowAlt} 16. & Ćwiczenia: planowanie projektu z użyciem ''Ninja Planning Card''. &  \\
+  \rowcolor{tableRowLight} 17. & Realizacja i kontrola projektu &  \\
+  \rowcolor{tableRowAlt} 18. & Zarządzanie czasem, budżetem i zasobami. &  \\
+  \rowcolor{tableRowLight} 19. & Monitoring postępów projektu, raportowanie, analiza odchyleń. &  \\
+  \rowcolor{tableRowAlt} 20. & Zarządzanie zmianą, kontrola jakości. &  \\
+  \rowcolor{tableRowLight} 21. & Zamykanie projektu &  \\
+  \rowcolor{tableRowAlt} 22. & Ocena projektu, dokumentacja, lessons learned. &  \\
+  \rowcolor{tableRowLight} 23. & Prezentacja wyników projektu. &  \\
+  \rowcolor{tableRowAlt} 24. & Dodatkowe zagadnienia &  \\
+  \rowcolor{tableRowLight} 25. & PRINCE2, Six Sigma - wprowadzenie. &  \\
+  \rowcolor{tableRowAlt} 26. & Teorie X, Y, Z - style zarządzania. &  \\
+  \rowcolor{tableRowLight} 27. & Cargo Cults - unikanie bezmyślnego naśladowania. &  \\
+  \rowcolor{tableRowAlt} 28. & Etyka w zarządzaniu projektami IT. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W14 & Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. [K\_W14] &  \\
-  \hline
-  K\_W17 & Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. [K\_W17] &  \\
-  \hline
-  K\_W19 & Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. [K\_W19] &  \\
-  \hline
-  K\_W20 & Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. [K\_W20] &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W14 & Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. {[}K\_W14{]} &  \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. {[}K\_W17{]} &  \\
+  \rowcolor{tableRowLight} K\_W19 & Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. {[}K\_W19{]} &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. {[}K\_W20{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U05 & Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). [K\_U05] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. [K\_U26] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. [K\_U25] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). {[}K\_U05{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. {[}K\_U26{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. {[}K\_U25{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K04 & Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. [K\_K04] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_K07 & Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. [K\_K07] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_K08 & Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. [K\_K08] & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item prezentacja projektu i dokumentacji
-  \item ocena pracy podczas ćwiczenia
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. {[}K\_K04{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K07 & Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. {[}K\_K07{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_K08 & Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. {[}K\_K08{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

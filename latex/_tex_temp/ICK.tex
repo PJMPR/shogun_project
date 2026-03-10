@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,144 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Projektowanie interfejsów użytkownika z zastosowaniem metod HCI; tworzenie prototypów i makiet; przeprowadzanie testów użyteczności; przygotowanie dokumentacji projektowej.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami projektowania interakcji człowieka z komputerem, tworzenia użytecznych interfejsów użytkownika oraz wykorzystania podejścia UCD (User-Centred Design) w projektowaniu, testowaniu i doskonaleniu użyteczności systemów informatycznych.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The aim of the course is to develop students’ knowledge and skills in the field of human–computer interaction (HCI) design by introducing the theory and methodology of creating useful, accessible, and efficient user interfaces, with particular emphasis on user needs analysis, user journey design, information architecture, prototyping, and usability evaluation in accordance with the principles of the User-Centred Design (UCD) approach. The course has a theoretical and practical character and includes the analysis of existing interactive systems as well as the design and testing of students’ own solutions based on accepted standards and good practices.}
-
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Wprowadzenie do projektowania interakcji człowiek–komputer (HCI) – zakres, definicja i znaczenie. &  \\
-  \hline
-  2. & Historia rozwoju interfejsów oraz ewolucja modeli interakcji. &  \\
-  \hline
-  3. & Model człowiek–interfejs–system w projektowaniu systemów informatycznych. &  \\
-  \hline
-  4. & Charakterystyka użytkowników oraz analiza kontekstu użycia. &  \\
-  \hline
-  5. & Ograniczenia poznawcze i motoryczne użytkowników w projektowaniu interfejsów. &  \\
-  \hline
-  6. & Percepcja i uwaga użytkownika – rola hierarchii wizualnej w projektowaniu. &  \\
-  \hline
-  7. & Identyfikacja błędów projektowych (analiza „bad design”). &  \\
-  \hline
-  8. & Heurystyki użyteczności oraz klasyczne zasady projektowania interfejsów. &  \\
-  \hline
-  9. & Zasady projektowania graficznych interfejsów użytkownika (GUI). &  \\
-  \hline
-  10. & Wymagania i standardy projektowania interfejsów WWW i mobilnych. &  \\
-  \hline
-  11. & Projektowanie interakcji dla usług cyfrowych i systemów złożonych. &  \\
-  \hline
-  12. & Interfejsy multimodalne – głos, gest, systemy inteligentne i rozwiązania typu „smart”. &  \\
-  \hline
-  13. & Organizacja pracy projektowej – podział na zespoły i wybór tematu projektu. &  \\
-  \hline
-  14. & Analiza konkurencji, rynku docelowego oraz uzasadnienie biznesowe rozwiązania. &  \\
-  \hline
-  15. & Współpraca z klientem i użytkownikiem – identyfikacja i specyfikacja wymagań. &  \\
-  \hline
-  16. & Podejście User-Centred Design (UCD) w procesie projektowym. &  \\
-  \hline
-  17. & Elementy Design Thinking – empatyzacja i definiowanie problemu projektowego. &  \\
-  \hline
-  18. & Generowanie i wartościowanie koncepcji rozwiązań. &  \\
-  \hline
-  19. & Analiza potrzeb użytkowników oraz opracowanie person. &  \\
-  \hline
-  20. & Wizja produktu i projekt koncepcyjny systemu. &  \\
-  \hline
-  21. & Opracowanie i mapowanie historyjek użytkownika. &  \\
-  \hline
-  22. & Projektowanie interakcji – tworzenie user flow oraz priorytetyzacja funkcjonalności. &  \\
-  \hline
-  23. & Prototypowanie wstępne (Lo-Fi) oraz prototypowanie cyfrowe (Hi-Fi). &  \\
-  \hline
-  24. & Scenariusze testowe, testy użyteczności oraz analiza wyników badań użytkowników. &  \\
-  \hline
-  25. & Iteracyjne doskonalenie projektu oraz prezentacja końcowych prototypów interfejsu użytkownika. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-   & Student zna i rozumie zasady projektowania interakcji użytkownik-system w klasycznych i zwinnych projektach informatycznych & kolokwium \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-   & Student potrafi stosować właściwe formy organizacji współpracy z użytkownikami podczas realizacji przedsięwzięć informatycznych & prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-   & Student jest gotów współdziałania i współpracy w zespołach projektowych & prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -226,6 +145,102 @@ Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami proj
   \item ocena pracy podczas ćwiczenia
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami projektowania interakcji człowieka z komputerem, tworzenia użytecznych interfejsów użytkownika oraz wykorzystania podejścia UCD (User-Centred Design) w projektowaniu, testowaniu i doskonaleniu użyteczności systemów informatycznych.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to develop students’ knowledge and skills in the field of human–computer interaction (HCI) design by introducing the theory and methodology of creating useful, accessible, and efficient user interfaces, with particular emphasis on user needs analysis, user journey design, information architecture, prototyping, and usability evaluation in accordance with the principles of the User-Centred Design (UCD) approach. The course has a theoretical and practical character and includes the analysis of existing interactive systems as well as the design and testing of students’ own solutions based on accepted standards and good practices.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do projektowania interakcji człowiek–komputer (HCI) – zakres, definicja i znaczenie. &  \\
+  \rowcolor{tableRowAlt} 2. & Historia rozwoju interfejsów oraz ewolucja modeli interakcji. &  \\
+  \rowcolor{tableRowLight} 3. & Model człowiek–interfejs–system w projektowaniu systemów informatycznych. &  \\
+  \rowcolor{tableRowAlt} 4. & Charakterystyka użytkowników oraz analiza kontekstu użycia. &  \\
+  \rowcolor{tableRowLight} 5. & Ograniczenia poznawcze i motoryczne użytkowników w projektowaniu interfejsów. &  \\
+  \rowcolor{tableRowAlt} 6. & Percepcja i uwaga użytkownika – rola hierarchii wizualnej w projektowaniu. &  \\
+  \rowcolor{tableRowLight} 7. & Identyfikacja błędów projektowych (analiza „bad design”). &  \\
+  \rowcolor{tableRowAlt} 8. & Heurystyki użyteczności oraz klasyczne zasady projektowania interfejsów. &  \\
+  \rowcolor{tableRowLight} 9. & Zasady projektowania graficznych interfejsów użytkownika (GUI). &  \\
+  \rowcolor{tableRowAlt} 10. & Wymagania i standardy projektowania interfejsów WWW i mobilnych. &  \\
+  \rowcolor{tableRowLight} 11. & Projektowanie interakcji dla usług cyfrowych i systemów złożonych. &  \\
+  \rowcolor{tableRowAlt} 12. & Interfejsy multimodalne – głos, gest, systemy inteligentne i rozwiązania typu „smart”. &  \\
+  \rowcolor{tableRowLight} 13. & Organizacja pracy projektowej – podział na zespoły i wybór tematu projektu. &  \\
+  \rowcolor{tableRowAlt} 14. & Analiza konkurencji, rynku docelowego oraz uzasadnienie biznesowe rozwiązania. &  \\
+  \rowcolor{tableRowLight} 15. & Współpraca z klientem i użytkownikiem – identyfikacja i specyfikacja wymagań. &  \\
+  \rowcolor{tableRowAlt} 16. & Podejście User-Centred Design (UCD) w procesie projektowym. &  \\
+  \rowcolor{tableRowLight} 17. & Elementy Design Thinking – empatyzacja i definiowanie problemu projektowego. &  \\
+  \rowcolor{tableRowAlt} 18. & Generowanie i wartościowanie koncepcji rozwiązań. &  \\
+  \rowcolor{tableRowLight} 19. & Analiza potrzeb użytkowników oraz opracowanie person. &  \\
+  \rowcolor{tableRowAlt} 20. & Wizja produktu i projekt koncepcyjny systemu. &  \\
+  \rowcolor{tableRowLight} 21. & Opracowanie i mapowanie historyjek użytkownika. &  \\
+  \rowcolor{tableRowAlt} 22. & Projektowanie interakcji – tworzenie user flow oraz priorytetyzacja funkcjonalności. &  \\
+  \rowcolor{tableRowLight} 23. & Prototypowanie wstępne (Lo-Fi) oraz prototypowanie cyfrowe (Hi-Fi). &  \\
+  \rowcolor{tableRowAlt} 24. & Scenariusze testowe, testy użyteczności oraz analiza wyników badań użytkowników. &  \\
+  \rowcolor{tableRowLight} 25. & Iteracyjne doskonalenie projektu oraz prezentacja końcowych prototypów interfejsu użytkownika. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight}  & Student zna i rozumie zasady projektowania interakcji użytkownik-system w klasycznych i zwinnych projektach informatycznych & kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight}  & Student potrafi stosować właściwe formy organizacji współpracy z użytkownikami podczas realizacji przedsięwzięć informatycznych & prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight}  & Student jest gotów współdziałania i współpracy w zespołach projektowych & prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,119 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 18 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja projektu programistycznego z symulacji i gier decyzyjnych; przygotowanie do kartkówek z części teoretycznej; eksperymenty z modelami decyzyjnymi.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie z oceną \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Przedmiot ''Symulacje i gry decyzyjne'' ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The course 'Simulations and Decision Games' aims to familiarize students with selected decision-support methods, develop the ability to build decision models using software, and develop the ability to make decisions in dynamic decision-making environments. In its practical component, the course also allows students to learn how to create games with an emphasis on designing logic and strategy.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Brak formalnego przedmiotu wprowadzajacego & Wiedza z zakresu szkoly sredniej (algebra liniowa); ukonczenie kursu Animacja 3D lub posiadanie certyfikatu BFCT (Blender Foundation Certified Trainer) \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne. &  \\
-  \hline
-  2. & Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną. &  \\
-  \hline
-  3. & Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3. &  \\
-  \hline
-  4. & Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach. &  \\
-  \hline
-  5. & Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie. &  \\
-  \hline
-  6. & Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą. &  \\
-  \hline
-  7. & Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie. &  \\
-  \hline
-  8. & Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji. &  \\
-  \hline
-  9. & Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych &  \\
-  \hline
-  10. & Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W24 & Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika. & sprawdziany wstępne „wejściówki'' \\
-  \hline
-  K\_W24 & Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych. & sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U31 & Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -200,6 +144,86 @@ Przedmiot ''Symulacje i gry decyzyjne'' ma na celu: zapoznanie studentów z wybr
   \item ocena pracy podczas ćwiczenia
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Przedmiot ''Symulacje i gry decyzyjne'' ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The course 'Simulations and Decision Games' aims to familiarize students with selected decision-support methods, develop the ability to build decision models using software, and develop the ability to make decisions in dynamic decision-making environments. In its practical component, the course also allows students to learn how to create games with an emphasis on designing logic and strategy.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Brak formalnego przedmiotu wprowadzajacego & Wiedza z zakresu szkoly sredniej (algebra liniowa); ukonczenie kursu Animacja 3D lub posiadanie certyfikatu BFCT (Blender Foundation Certified Trainer) \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne. &  \\
+  \rowcolor{tableRowAlt} 2. & Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną. &  \\
+  \rowcolor{tableRowLight} 3. & Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3. &  \\
+  \rowcolor{tableRowAlt} 4. & Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach. &  \\
+  \rowcolor{tableRowLight} 5. & Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie. &  \\
+  \rowcolor{tableRowAlt} 6. & Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą. &  \\
+  \rowcolor{tableRowLight} 7. & Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie. &  \\
+  \rowcolor{tableRowAlt} 8. & Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji. &  \\
+  \rowcolor{tableRowLight} 9. & Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych &  \\
+  \rowcolor{tableRowAlt} 10. & Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W24 & Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika. & sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowAlt} K\_W24 & Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych. & sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U31 & Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

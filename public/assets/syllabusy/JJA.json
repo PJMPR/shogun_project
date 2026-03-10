@@ -35,7 +35,10 @@
       ]
     },
     "zaliczenie": {
-      "Projekt": {
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      },
+      "Ćwiczenia": {
         "sposob": "Zaliczenie z oceną"
       }
     },

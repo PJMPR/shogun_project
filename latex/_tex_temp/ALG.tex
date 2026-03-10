@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & 16 h & --- & 24 h & 76 h & 100 h & \textbf{4} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań z algebry liniowej i geometrii analitycznej; powtórzenie materiału przed kolokwiami; ćwiczenie obliczeń macierzowych i wektorowych.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie z oceną \\
-  Wykład & Egzamin pisemny \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin pisemny \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item sprawdziany wstępne „wejściówki''
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,86 +151,86 @@ Celem kształcenia jest nabycie umiejętności posługiwania się aparatem teori
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  matematyka z zakresu szkoły średniej & --- \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} matematyka z zakresu szkoły średniej & --- \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych. &  \\
-  \hline
-  2. & Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone). &  \\
-  \hline
-  3. & Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych. &  \\
-  \hline
-  4. & Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych). &  \\
-  \hline
-  5. & Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera. &  \\
-  \hline
-  6. & Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych. &  \\
+  \rowcolor{tableRowAlt} 2. & Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone). &  \\
+  \rowcolor{tableRowLight} 3. & Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych. &  \\
+  \rowcolor{tableRowAlt} 4. & Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych). &  \\
+  \rowcolor{tableRowLight} 5. & Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera. &  \\
+  \rowcolor{tableRowAlt} 6. & Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W01 & Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych. &  \\
-  \hline
-  K\_W01 & Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych. &  \\
-  \hline
-  K\_W01 & Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W01 & Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych. &  \\
+  \rowcolor{tableRowAlt} K\_W01 & Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych. &  \\
+  \rowcolor{tableRowLight} K\_W01 & Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D. &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U07 & Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-  K\_U07 & Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-  K\_U07 & Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U07 & Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowAlt} K\_U07 & Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowLight} K\_U07 & Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium
-  \item sprawdziany wstępne „wejściówki''
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

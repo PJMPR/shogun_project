@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 --- & 16 h & --- & 16 h & 47 h & 63 h & \textbf{2.5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Nauka pisma japońskiego (hiragana, katakana, kanji); ćwiczenia gramatyczne i słownikowe; przygotowanie do kolokwiów i testów; ćwiczenie konwersacji.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item egzamin ustny
+  \item ocena sporządzonego dokumentu
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,82 +151,59 @@ Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  JAP1 & Znajomość zagadnień z JAP1 \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} JAP1 & Znajomość zagadnień z JAP1 \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & 1.Nauka znaków katakany a,i,u,e,o , ka,ki,ku,ke,ko,ga,gi,gu,ge,go, sa,shi,su,se,so,za,ji,zu,ze,zo wybrane nowe kanji &  \\
-  \hline
-  2. & 2.  Nauka znaków katakany ta,chi,tsu,te,to,da,di,du,de,do ,na,ni,nu,ne,no / wybrane nowe kanji &  \\
-  \hline
-  3. & 3. Nauka znaków katakany ha,hi,fu,he,ho,ba,bi,bu,be,bo,pa,pi,pu,pe,po / wybrane nowe kanji &  \\
-  \hline
-  4. & 4. Nauka znaków katakany ma,mi,mu,me,mo, ya,yu,yo, ra,ri,ru,re,ro,wa,wo,n   / TEST (zdania z życia codziennego). &  \\
-  \hline
-  5. & 5.  Dodatki do znaków katakany  (VA) (VI)  (VE)  (VO) WI WE  WO FA FI FE FO . &  \\
-  \hline
-  6. & 6.  Forma -te (omówienie wszystkich grup) / czas teraźniejszy – przyszły i przeszły (+zaprzeczenie) – powtórzenie /budowanie zdań. &  \\
-  \hline
-  7. & 7.  Dodatki do znaków katakany  TSA TSI TSE TSO SHE JE CHE TWU TI DWU DI . &  \\
-  \hline
-  8. & 8.  Forma -tekudasai, Forma -tekara, Forma te (do łączenia czasowników), praca pisemna (wypracowanie) – opisać osobę z obrazka. &  \\
-  \hline
-  9. & 9.  Forma -tekudasai, Forma -tekara, Forma te (do łączenia czasowników) – budowanie zdań. &  \\
-  \hline
-  10. & 10.  Choroby i objawy i związane z tym znaki kanji &  \\
-  \hline
-  11. & 11.  Lekcja pisania listu formalnego – praca pisemna. &  \\
-  \hline
-  12. & 12.  Partykuła kara/made, powtórzenie godzin, budowanie zdań opisujących od kiedy do kiedy dany obiekt jest otwarty. &  \\
-  \hline
-  13. & 13.  Kolory i rodzina i wszystkie kanji z tym tematem związane &  \\
-  \hline
-  14. & 14.  Rodzina – opisanie swojej rodziny / Słuchanie (słownictwo związane z rodziną). &  \\
-  \hline
-  15. & 15.  Opisanie domu towarowego i produktów znajdujących się w tym obiekcie, nauka liczenia pięter . &  \\
-  \hline
-  16. & 16. Wybrane nowe znaki kanji &  \\
-  \hline
-  17. & 17. Słownictwo związane z ubiorem itp. i czasowniki zakładania. &  \\
-  \hline
-  18. & 18. Słuchanie: jeden dzień bohatera, zakupy, hobby. &  \\
-  \hline
-  19. & 19.  Słuchanie: porównania i opinia. &  \\
-  \hline
-  20. & 20.  Nowe znaki knaji i budowanie z nimi zdań. &  \\
-  \hline
-  21. & 21. Liczebniki i budowanie z nimi zdań + nowe znaki kanji. &  \\
-  \hline
-  22. & 22. Konstrukcja yori nohōga,motto ichiban ,nowe znaki kanji, ciekawostka: różne święta i dni wolne. &  \\
-  \hline
-  23. & 23.To co potrafimy i to czego nie potrafimy , czytanka o mieście w Brazylii , zadanie ze słuchu . &  \\
-  \hline
-  24. & 24.  Rozmowa na poczcie – jak wysłać list i przesyłkę i związane z tym słownictwo( paczka, polecony, przesyłka morska itp.), nowy czasownik: kakaru. &  \\
-  \hline
-  25. & 25.  Wszystkie zastosowania partykuły de i budowanie zdań, ciekawostka o ogrodach japońskich. &  \\
-  \hline
-  26. & 26.  Czytanka o ninja i związane z tym słownictwo, nowe kanji. &  \\
-  \hline
-  27. & 27.  Omawianie różnych dialogów, zalety i wady  (Fast food), nowe słowa, interpretacja zdjęcia po japońsku. &  \\
-  \hline
-  28. & 28.  Rozmowa na temat zainteresowań i wspomnień, nowe kanji, czytanka o miastach w Japonii. &  \\
-  \hline
-  29. & 29.  Froma nai i budowanie z zdań, powtórzenie materiału z całego semestru. &  \\
-  \hline
-  30. & 30.  Kolokwium zaliczeniowe. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & 1.Nauka znaków katakany a,i,u,e,o , ka,ki,ku,ke,ko,ga,gi,gu,ge,go, sa,shi,su,se,so,za,ji,zu,ze,zo wybrane nowe kanji &  \\
+  \rowcolor{tableRowAlt} 2. & 2.  Nauka znaków katakany ta,chi,tsu,te,to,da,di,du,de,do ,na,ni,nu,ne,no / wybrane nowe kanji &  \\
+  \rowcolor{tableRowLight} 3. & 3. Nauka znaków katakany ha,hi,fu,he,ho,ba,bi,bu,be,bo,pa,pi,pu,pe,po / wybrane nowe kanji &  \\
+  \rowcolor{tableRowAlt} 4. & 4. Nauka znaków katakany ma,mi,mu,me,mo, ya,yu,yo, ra,ri,ru,re,ro,wa,wo,n   / TEST (zdania z życia codziennego). &  \\
+  \rowcolor{tableRowLight} 5. & 5.  Dodatki do znaków katakany  (VA) (VI)  (VE)  (VO) WI WE  WO FA FI FE FO . &  \\
+  \rowcolor{tableRowAlt} 6. & 6.  Forma -te (omówienie wszystkich grup) / czas teraźniejszy – przyszły i przeszły (+zaprzeczenie) – powtórzenie /budowanie zdań. &  \\
+  \rowcolor{tableRowLight} 7. & 7.  Dodatki do znaków katakany  TSA TSI TSE TSO SHE JE CHE TWU TI DWU DI . &  \\
+  \rowcolor{tableRowAlt} 8. & 8.  Forma -tekudasai, Forma -tekara, Forma te (do łączenia czasowników), praca pisemna (wypracowanie) – opisać osobę z obrazka. &  \\
+  \rowcolor{tableRowLight} 9. & 9.  Forma -tekudasai, Forma -tekara, Forma te (do łączenia czasowników) – budowanie zdań. &  \\
+  \rowcolor{tableRowAlt} 10. & 10.  Choroby i objawy i związane z tym znaki kanji &  \\
+  \rowcolor{tableRowLight} 11. & 11.  Lekcja pisania listu formalnego – praca pisemna. &  \\
+  \rowcolor{tableRowAlt} 12. & 12.  Partykuła kara/made, powtórzenie godzin, budowanie zdań opisujących od kiedy do kiedy dany obiekt jest otwarty. &  \\
+  \rowcolor{tableRowLight} 13. & 13.  Kolory i rodzina i wszystkie kanji z tym tematem związane &  \\
+  \rowcolor{tableRowAlt} 14. & 14.  Rodzina – opisanie swojej rodziny / Słuchanie (słownictwo związane z rodziną). &  \\
+  \rowcolor{tableRowLight} 15. & 15.  Opisanie domu towarowego i produktów znajdujących się w tym obiekcie, nauka liczenia pięter . &  \\
+  \rowcolor{tableRowAlt} 16. & 16. Wybrane nowe znaki kanji &  \\
+  \rowcolor{tableRowLight} 17. & 17. Słownictwo związane z ubiorem itp. i czasowniki zakładania. &  \\
+  \rowcolor{tableRowAlt} 18. & 18. Słuchanie: jeden dzień bohatera, zakupy, hobby. &  \\
+  \rowcolor{tableRowLight} 19. & 19.  Słuchanie: porównania i opinia. &  \\
+  \rowcolor{tableRowAlt} 20. & 20.  Nowe znaki knaji i budowanie z nimi zdań. &  \\
+  \rowcolor{tableRowLight} 21. & 21. Liczebniki i budowanie z nimi zdań + nowe znaki kanji. &  \\
+  \rowcolor{tableRowAlt} 22. & 22. Konstrukcja yori nohōga,motto ichiban ,nowe znaki kanji, ciekawostka: różne święta i dni wolne. &  \\
+  \rowcolor{tableRowLight} 23. & 23.To co potrafimy i to czego nie potrafimy , czytanka o mieście w Brazylii , zadanie ze słuchu . &  \\
+  \rowcolor{tableRowAlt} 24. & 24.  Rozmowa na poczcie – jak wysłać list i przesyłkę i związane z tym słownictwo( paczka, polecony, przesyłka morska itp.), nowy czasownik: kakaru. &  \\
+  \rowcolor{tableRowLight} 25. & 25.  Wszystkie zastosowania partykuły de i budowanie zdań, ciekawostka o ogrodach japońskich. &  \\
+  \rowcolor{tableRowAlt} 26. & 26.  Czytanka o ninja i związane z tym słownictwo, nowe kanji. &  \\
+  \rowcolor{tableRowLight} 27. & 27.  Omawianie różnych dialogów, zalety i wady  (Fast food), nowe słowa, interpretacja zdjęcia po japońsku. &  \\
+  \rowcolor{tableRowAlt} 28. & 28.  Rozmowa na temat zainteresowań i wspomnień, nowe kanji, czytanka o miastach w Japonii. &  \\
+  \rowcolor{tableRowLight} 29. & 29.  Froma nai i budowanie z zdań, powtórzenie materiału z całego semestru. &  \\
+  \rowcolor{tableRowAlt} 30. & 30.  Kolokwium zaliczeniowe. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
@@ -204,40 +213,36 @@ Nauczanie języka japońskiego od podstaw. Student  opanowuje język japoński w
 \end{itemize}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-   & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight}  & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K03 & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-  K\_K03 & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium
-  \item egzamin ustny
-  \item ocena sporządzonego dokumentu
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

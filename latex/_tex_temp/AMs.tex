@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & 16 h & --- & 24 h & 76 h & 100 h & \textbf{4} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań z analizy matematycznej; przygotowanie do kolokwiów poprzez ćwiczenie obliczeń granic, pochodnych i całek; korzystanie z materiałów dydaktycznych.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie z oceną \\
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item sprawdziany wstępne „wejściówki''
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,84 +151,85 @@ Celem przedmiotu jest zapoznanie studenta z podstawowymi pojęciami aparatu rach
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Algebra liniowa z geometrią & Wiedza z zakresu szkoły średniej. \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Algebra liniowa z geometrią & Wiedza z zakresu szkoły średniej. \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Liczby rzeczywiste. Konstrukcja. Własności. &  \\
-  \hline
-  2. & Szeregi liczbowe. Definicja. Kryteria zbieżności. Szeregi naprzemienne. &  \\
-  \hline
-  3. & Ciągi liczbowe. Monotoniczność, ograniczoność, zbieżność. Metody obliczania granic ciągów liczbowych. Zastosowania. &  \\
-  \hline
-  4. & Funkcje (w szczególności wykładnicze i logarytmiczne).  Granice funkcji w punkcie. Monotoniczność, ograniczoność, ciągłość. Zastosowania. &  \\
-  \hline
-  5. & Pochodne funkcji jednej zmiennej. Definicja, podstawowe własności, podstawowe wzory.  Twierdzenia rachunku różniczkowego. Zastosowanie rachunku różniczkowego. Badanie przebiegu zmienności funkcji. Twierdzenie de l’Hospitala.  Wzór Taylora i Maclaurina. &  \\
-  \hline
-  6. & Całka nieoznaczona. Definicja funkcji pierwotnej. Kryteria całkowalności funkcji. Podstawowe metody obliczania całek nieoznaczonych. Całkowanie funkcji wymiernych oraz niewymiernych. &  \\
-  \hline
-  7. & Całka Riemanna. Definicja za pomocą granicy ciągu sum całkowych. Metody obliczania całki Riemanna. Zastosowanie całek oznaczonych. &  \\
-  \hline
-  8. & Rozwijanie funkcji w szereg potęgowy. Zastosowanie rozwinięcia w szereg potęgowy w rachunku różniczkowym. &  \\
-  \hline
-  9. & Równania różniczkowe zwyczajne. Podstawowe metody i zastosowanie. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Liczby rzeczywiste. Konstrukcja. Własności. &  \\
+  \rowcolor{tableRowAlt} 2. & Szeregi liczbowe. Definicja. Kryteria zbieżności. Szeregi naprzemienne. &  \\
+  \rowcolor{tableRowLight} 3. & Ciągi liczbowe. Monotoniczność, ograniczoność, zbieżność. Metody obliczania granic ciągów liczbowych. Zastosowania. &  \\
+  \rowcolor{tableRowAlt} 4. & Funkcje (w szczególności wykładnicze i logarytmiczne).  Granice funkcji w punkcie. Monotoniczność, ograniczoność, ciągłość. Zastosowania. &  \\
+  \rowcolor{tableRowLight} 5. & Pochodne funkcji jednej zmiennej. Definicja, podstawowe własności, podstawowe wzory.  Twierdzenia rachunku różniczkowego. Zastosowanie rachunku różniczkowego. Badanie przebiegu zmienności funkcji. Twierdzenie de l’Hospitala.  Wzór Taylora i Maclaurina. &  \\
+  \rowcolor{tableRowAlt} 6. & Całka nieoznaczona. Definicja funkcji pierwotnej. Kryteria całkowalności funkcji. Podstawowe metody obliczania całek nieoznaczonych. Całkowanie funkcji wymiernych oraz niewymiernych. &  \\
+  \rowcolor{tableRowLight} 7. & Całka Riemanna. Definicja za pomocą granicy ciągu sum całkowych. Metody obliczania całki Riemanna. Zastosowanie całek oznaczonych. &  \\
+  \rowcolor{tableRowAlt} 8. & Rozwijanie funkcji w szereg potęgowy. Zastosowanie rozwinięcia w szereg potęgowy w rachunku różniczkowym. &  \\
+  \rowcolor{tableRowLight} 9. & Równania różniczkowe zwyczajne. Podstawowe metody i zastosowanie. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W01 & Student zna i rozumie pojęcie ciągu liczbowego, granicy ciągu, ciągu ograniczonego, monotonicznego. Student zna i rozumie pojęcia i własności funkcji (w szczególności funkcji wykładniczej, logarytmicznej, trygonometrycznej, cyklometrycznej), granicy funkcji, funkcji monotonicznej, ograniczonej, funkcji ciągłej. Zna i rozumie definicję, własności i twierdzenia dotyczące pochodnych funkcji jednej zmiennej. Zna i rozumie definicję oraz sposoby obliczania całek nieoznaczonych i oznaczonych. Zna i rozumie definicje szeregów liczbowych oraz kryteria zbieżności szeregów liczbowych. Student zna metody numerycznego obliczania pochodnych oraz całek oznaczonych. Student zna i rozumie pojęcie szeregu potęgowego.  Student zna i rozumie zastosowanie równań różniczkowych zwyczajnych oraz zna podstawowe metody ich rozwiązywania. Student zna i rozumie sposoby przeprowadzania prostych dowodów twierdzeń matematycznych. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W01 & Student zna i rozumie pojęcie ciągu liczbowego, granicy ciągu, ciągu ograniczonego, monotonicznego. Student zna i rozumie pojęcia i własności funkcji (w szczególności funkcji wykładniczej, logarytmicznej, trygonometrycznej, cyklometrycznej), granicy funkcji, funkcji monotonicznej, ograniczonej, funkcji ciągłej. Zna i rozumie definicję, własności i twierdzenia dotyczące pochodnych funkcji jednej zmiennej. Zna i rozumie definicję oraz sposoby obliczania całek nieoznaczonych i oznaczonych. Zna i rozumie definicje szeregów liczbowych oraz kryteria zbieżności szeregów liczbowych. Student zna metody numerycznego obliczania pochodnych oraz całek oznaczonych. Student zna i rozumie pojęcie szeregu potęgowego.  Student zna i rozumie zastosowanie równań różniczkowych zwyczajnych oraz zna podstawowe metody ich rozwiązywania. Student zna i rozumie sposoby przeprowadzania prostych dowodów twierdzeń matematycznych. &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U07 & Student potrafi wyznaczać granice ciągów liczbowych oraz funkcji jednej zmiennej. Potrafi sprawdzić czy funkcja jest ciągła.  Potrafi liczyć pochodne. Zna interpretację geometryczną pochodnej i twierdzeń z nią związaną. Potrafi stosować  regułę de L'Hospitala. Potrafi  wyznaczać wielomian Taylora.  Potrafi zastosować twierdzenie Rolle’a, Lagrange’a i Cauchy’ego. Potrafi  obliczać ekstrema lokalne i globalne funkcji jednej zmiennej.  Potrafi przeprowadzić badanie przebiegu zmienności funkcji. Potrafi liczyć całki oznaczone i nieoznaczone jednej zmiennej oraz wykorzystywać je do zagadnień geometrycznych. Student potrafi opisać związek twierdzeń rachunku różniczkowego i całkowego jednej zamiennej z wybranymi metodami numerycznymi. Student potrafi użyć twierdzenie Taylora do obliczania przybliżonej wartości wyrażenia. Student potrafi określić rząd równania różniczkowego zwyczajnego oraz rozwiązać równanie różniczkowe zwyczajne pierwszego rzędu oraz zagadnienie Cauchy,ego związane z tymi równaniami. Student potrafi przeprowadzić elementarny dowód twierdzenia. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U07 & Student potrafi wyznaczać granice ciągów liczbowych oraz funkcji jednej zmiennej. Potrafi sprawdzić czy funkcja jest ciągła.  Potrafi liczyć pochodne. Zna interpretację geometryczną pochodnej i twierdzeń z nią związaną. Potrafi stosować  regułę de L'Hospitala. Potrafi  wyznaczać wielomian Taylora.  Potrafi zastosować twierdzenie Rolle’a, Lagrange’a i Cauchy’ego. Potrafi  obliczać ekstrema lokalne i globalne funkcji jednej zmiennej.  Potrafi przeprowadzić badanie przebiegu zmienności funkcji. Potrafi liczyć całki oznaczone i nieoznaczone jednej zmiennej oraz wykorzystywać je do zagadnień geometrycznych. Student potrafi opisać związek twierdzeń rachunku różniczkowego i całkowego jednej zamiennej z wybranymi metodami numerycznymi. Student potrafi użyć twierdzenie Taylora do obliczania przybliżonej wartości wyrażenia. Student potrafi określić rząd równania różniczkowego zwyczajnego oraz rozwiązać równanie różniczkowe zwyczajne pierwszego rzędu oraz zagadnienie Cauchy,ego związane z tymi równaniami. Student potrafi przeprowadzić elementarny dowód twierdzenia. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst. & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium
-  \item sprawdziany wstępne „wejściówki''
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

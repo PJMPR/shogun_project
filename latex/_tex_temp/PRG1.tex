@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 24 h & --- & 32 h & 56 h & 69 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań programistycznych; implementacja projektu programistycznego; przygotowanie do kolokwiów; ćwiczenia algorytmiczne.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item ocena pracy podczas ćwiczenia
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,97 +151,85 @@ Celem zajęć jest opanowanie przez studentów podstaw klasycznych technik progr
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Pojęcie algorytmu. Sposoby przedstawiania algorytmów. Zmienne, typy, operator przypisania, instrukcje Console.WriteLine i Console.ReadLine, pierwszy program w C\#. &  \\
-  \hline
-  2. & Wprowadzenie do środowiska .NET i Visual Studio. Tworzenie projektu, edycja kodu źródłowego, kompilacja, uruchamianie i debugowanie aplikacji konsolowych. Implementacja prostych obliczeń matematycznych. &  \\
-  \hline
-  3. & Instrukcja warunkowa if, if else, zagnieżdżona instrukcja if. Instrukcja switch. &  \\
-  \hline
-  4. & Implementacja programów wymagających użycia instrukcji warunkowych i wielowariantowych. &  \\
-  \hline
-  5. & Pętle for, while, do while. Różnice i zastosowania. Zagnieżdżanie pętli. Instrukcje break i continue. &  \\
-  \hline
-  6. & Implementacja programów wymagających użycia pętli. &  \\
-  \hline
-  7. & Typy całkowite i zmiennoprzecinkowe. Typ znakowy i logiczny. Konwersje typów i rzutowania. Kwalifikator const. Operatory arytmetyczne, relacyjne i logiczne. Priorytety operatorów. &  \\
-  \hline
-  8. & Implementacja programów z wykorzystaniem zmiennych różnych typów oraz operatorów. &  \\
-  \hline
-  9. & Tablice jednowymiarowe i wielowymiarowe. Inicjalizacja tablic. Podstawowe algorytmy sortowania. &  \\
-  \hline
-  10. & Implementacja programów wykorzystujących tablice jednowymiarowe i wielowymiarowe. &  \\
-  \hline
-  11. & Metody. Przekazywanie parametrów. Zwracanie wartości. Metody void. Przeciążanie metod. Metody biblioteczne. &  \\
-  \hline
-  12. & Definiowanie i stosowanie metod. Implementacja aplikacji wykorzystujących metody. &  \\
-  \hline
-  13. & Rekurencja. Wady i zalety stosowania rekurencji. Klasa string i jej metody. &  \\
-  \hline
-  14. & Implementacja programów wykorzystujących rekurencję oraz operacje na łańcuchach znakowych. &  \\
-  \hline
-  15. & Typy referencyjne i wartościowe. Wprowadzenie do kolekcji: List, ArrayList. Zarządzanie pamięcią w .NET. Garbage Collector. &  \\
-  \hline
-  16. & Implementacja programów wykorzystujących kolekcje i dynamiczne struktury danych. &  \\
-  \hline
-  17. & Wstęp do testowania jednostkowego &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Pojęcie algorytmu. Sposoby przedstawiania algorytmów. Zmienne, typy, operator przypisania, instrukcje Console.WriteLine i Console.ReadLine, pierwszy program w C\#. &  \\
+  \rowcolor{tableRowAlt} 2. & Wprowadzenie do środowiska .NET i Visual Studio. Tworzenie projektu, edycja kodu źródłowego, kompilacja, uruchamianie i debugowanie aplikacji konsolowych. Implementacja prostych obliczeń matematycznych. &  \\
+  \rowcolor{tableRowLight} 3. & Instrukcja warunkowa if, if else, zagnieżdżona instrukcja if. Instrukcja switch. &  \\
+  \rowcolor{tableRowAlt} 4. & Implementacja programów wymagających użycia instrukcji warunkowych i wielowariantowych. &  \\
+  \rowcolor{tableRowLight} 5. & Pętle for, while, do while. Różnice i zastosowania. Zagnieżdżanie pętli. Instrukcje break i continue. &  \\
+  \rowcolor{tableRowAlt} 6. & Implementacja programów wymagających użycia pętli. &  \\
+  \rowcolor{tableRowLight} 7. & Typy całkowite i zmiennoprzecinkowe. Typ znakowy i logiczny. Konwersje typów i rzutowania. Kwalifikator const. Operatory arytmetyczne, relacyjne i logiczne. Priorytety operatorów. &  \\
+  \rowcolor{tableRowAlt} 8. & Implementacja programów z wykorzystaniem zmiennych różnych typów oraz operatorów. &  \\
+  \rowcolor{tableRowLight} 9. & Tablice jednowymiarowe i wielowymiarowe. Inicjalizacja tablic. Podstawowe algorytmy sortowania. &  \\
+  \rowcolor{tableRowAlt} 10. & Implementacja programów wykorzystujących tablice jednowymiarowe i wielowymiarowe. &  \\
+  \rowcolor{tableRowLight} 11. & Metody. Przekazywanie parametrów. Zwracanie wartości. Metody void. Przeciążanie metod. Metody biblioteczne. &  \\
+  \rowcolor{tableRowAlt} 12. & Definiowanie i stosowanie metod. Implementacja aplikacji wykorzystujących metody. &  \\
+  \rowcolor{tableRowLight} 13. & Rekurencja. Wady i zalety stosowania rekurencji. Klasa string i jej metody. &  \\
+  \rowcolor{tableRowAlt} 14. & Implementacja programów wykorzystujących rekurencję oraz operacje na łańcuchach znakowych. &  \\
+  \rowcolor{tableRowLight} 15. & Typy referencyjne i wartościowe. Wprowadzenie do kolekcji: List, ArrayList. Zarządzanie pamięcią w .NET. Garbage Collector. &  \\
+  \rowcolor{tableRowAlt} 16. & Implementacja programów wykorzystujących kolekcje i dynamiczne struktury danych. &  \\
+  \rowcolor{tableRowLight} 17. & Wstęp do testowania jednostkowego &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W10 & Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C\#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. [K\_W10] &  \\
-  \hline
-  K\_W04 & Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. [K\_W04] &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W10 & Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C\#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. {[}K\_W10{]} &  \\
+  \rowcolor{tableRowAlt} K\_W04 & Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. {[}K\_W04{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U10 & Student potrafi czytać ze zrozumieniem programy w C\#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. [K\_U10] & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U15 & Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C\# do rozwiązania konkretnego zadania. [K\_U15] & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U10 & Student potrafi czytać ze zrozumieniem programy w C\#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. {[}K\_U10{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U15 & Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C\# do rozwiązania konkretnego zadania. {[}K\_U15{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C\# i .NET w oparciu o dokumentację techniczną i zasoby online. [K\_K03] & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_K05 & Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. [K\_K05] & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium
-  \item ocena pracy podczas ćwiczenia
-  \item ocena sporządzonego oprogramowania
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C\# i .NET w oparciu o dokumentację techniczną i zasoby online. {[}K\_K03{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. {[}K\_K05{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

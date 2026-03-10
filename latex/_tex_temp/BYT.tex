@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,56 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 24 h & --- & 32 h & 56 h & 94 h & 150 h & \textbf{6} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Studiowanie materiałów z zakresu budowy i integracji systemów informatycznych; przygotowanie do egzaminu pisemnego; analiza dokumentacji technicznej i architektonicznych wzorców integracji.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item egzamin pisemny z zadaniami problemowymi
+\end{itemize}
+\vspace{4pt}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,121 +150,105 @@ Celem cyklu wykładów jest zapoznanie słuchaczy z podstawowymi zagadnieniami i
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  • Wstęp do informatyki i architektura komputerów & • Relacyjne bazy danych \\
-  • Projektowanie systemów informacyjnych & • Projekt (stowarzyszony) \\
-  • Podstawowa wiedza o organizacji systemu komputerowego i jego architekturze & • Znajomość obiektowości, znajomość zagadnień analizy i projektowania SI \\
-  • Umiejętność posługiwania się notacją UML & • Rozumienie potrzeb systematyzacji procesu wytwarzania oprogramowania \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} • Wstęp do informatyki i architektura komputerów & • Relacyjne bazy danych \\
+  \rowcolor{tableRowAlt} • Projektowanie systemów informacyjnych & • Projekt (stowarzyszony) \\
+  \rowcolor{tableRowLight} • Podstawowa wiedza o organizacji systemu komputerowego i jego architekturze & • Znajomość obiektowości, znajomość zagadnień analizy i projektowania SI \\
+  \rowcolor{tableRowAlt} • Umiejętność posługiwania się notacją UML & • Rozumienie potrzeb systematyzacji procesu wytwarzania oprogramowania \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wykład: &  \\
-  \hline
-  2. & Przedmiot i zagadnienia inżynierii oprogramowania. Podstawowe motywacje, społeczny kontekst przedsięwzięcia. Modelowanie pojęciowe. Pojęcie metodyki. Modele cyklu życia oprogramowania &  \\
-  \hline
-  3. & Przebieg i ocena fazy strategicznej. Planowanie projektu. Projekt informatyczny; podstawowe charakterystyki, pojęcia, udziałowcy projektu; cykl życia i zakres projektu. Planowanie zadań. Identyfikacja problemu; Wzbogacony wizerunek (Rich Picture). Decyzje strategiczne i wizja rozwiązania. &  \\
-  \hline
-  4. & Studium Wykonalności projektu informatycznego. Cele, płaszczyzny oceny –techniczna, ekonomiczna, organizacyjna i prawna; ryzyko przedsięwzięcia. Przykłady studiów wykonalności &  \\
-  \hline
-  5. & Analiza wymagań i proces inżynierii wymagań. Wymagania stawiane oprogramowaniu. Cechy dobrego wymagania. Metody pozyskiwania wymagań, user stories. Podział i klasyfikacja wymagań. Miary i formalne techniki  specyfikowania wymagań. &  \\
-  \hline
-  6. & Strategie i procesy prowadzenia projektów informatycznych; tradycyjne (model kaskadowy, model V, prototypowanie, przyrostowy, spiralny) i nowoczesne cykle wytwarzania oprogramowania (reuse i komponentowość), MDA, ponowna inżynieria, RUP. &  \\
-  \hline
-  7. & Zwinne metodyki wytwarzania oprogramowania. Programowanie ekstremalne. SCRUM: procesy, artefakty, role. Dobór strategii prowadzenia projektu. &  \\
-  \hline
-  8. & Analiza i projektowanie architektury systemów; role, procesy, techniki i produkty w podejściu obiektowym oraz agile. Wzorce analizy i projektowania; Klasyfikacja i przykłady wzorców. &  \\
-  \hline
-  9. & Optymalizacja projektu dla specyfiki produktu. Projektowanie systemów rozproszonych, krytycznych, czasu rzeczywistego i wielokrotnego użytku. &  \\
-  \hline
-  10. & Zarządzanie przedsięwzięciem informatycznym. Infrastruktura - dokumentacja procesu wytwarzania i produktu programistycznego, komunikacja, struktury organizacyjne. Raportowanie. Obszary zarządzania. zarządzanie zespołem. Harmonogramowanie. &  \\
-  \hline
-  11. & Implementacja, integracja i wersjonowanie oprogramowania.; środowiska narzędziowe oraz technologie. Zarządzanie konfiguracją oprogramowania. &  \\
-  \hline
-  12. & Pojęcie jakości oprogramowania i dróg jej osiągania. Standardy jakości i dobre praktyki jakości. Zapewnianie jakości oprogramowania. Modele i miary jakości oprogramowania. Wprowadzenie do zarządzania jakością. Inspekcja kodu i analiza bezpieczeństwa. Metody szacowania nakładów. Model COCOMO II. &  \\
-  \hline
-  13. & Testowanie i walidacja oprogramowania. Rodzaje testów testy jednostkowe, integracyjne, systemowe; walidacja i testy akceptacyjne. Typowe fazy i metody testowania. Testy statyczne, funkcjonalne i strukturalne. Czynniki sukcesu i rezultaty testowania. Dokumentowanie testów. Przeglądy oprogramowania. &  \\
-  \hline
-  14. & Instalacja i wdrożenie oprogramowania. Pielęgnacja oprogramowania. Analiza potrzeby wprowadzania modyfikacji. Koszty konserwacji oprogramowania. Kluczowe czynniki sukcesu fazy utrzymania. &  \\
-  \hline
-  15. & Outsourcing w inżynierii oprogramowania. &  \\
-  \hline
-  16. & Informatyczne wsparcie procesów biznesowych. Oprogramowanie klasy CRM, ERP. Architektura systemów ERP. Przykłady dostawców systemów CRM i ERP. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wykład: &  \\
+  \rowcolor{tableRowAlt} 2. & Przedmiot i zagadnienia inżynierii oprogramowania. Podstawowe motywacje, społeczny kontekst przedsięwzięcia. Modelowanie pojęciowe. Pojęcie metodyki. Modele cyklu życia oprogramowania &  \\
+  \rowcolor{tableRowLight} 3. & Przebieg i ocena fazy strategicznej. Planowanie projektu. Projekt informatyczny; podstawowe charakterystyki, pojęcia, udziałowcy projektu; cykl życia i zakres projektu. Planowanie zadań. Identyfikacja problemu; Wzbogacony wizerunek (Rich Picture). Decyzje strategiczne i wizja rozwiązania. &  \\
+  \rowcolor{tableRowAlt} 4. & Studium Wykonalności projektu informatycznego. Cele, płaszczyzny oceny –techniczna, ekonomiczna, organizacyjna i prawna; ryzyko przedsięwzięcia. Przykłady studiów wykonalności &  \\
+  \rowcolor{tableRowLight} 5. & Analiza wymagań i proces inżynierii wymagań. Wymagania stawiane oprogramowaniu. Cechy dobrego wymagania. Metody pozyskiwania wymagań, user stories. Podział i klasyfikacja wymagań. Miary i formalne techniki  specyfikowania wymagań. &  \\
+  \rowcolor{tableRowAlt} 6. & Strategie i procesy prowadzenia projektów informatycznych; tradycyjne (model kaskadowy, model V, prototypowanie, przyrostowy, spiralny) i nowoczesne cykle wytwarzania oprogramowania (reuse i komponentowość), MDA, ponowna inżynieria, RUP. &  \\
+  \rowcolor{tableRowLight} 7. & Zwinne metodyki wytwarzania oprogramowania. Programowanie ekstremalne. SCRUM: procesy, artefakty, role. Dobór strategii prowadzenia projektu. &  \\
+  \rowcolor{tableRowAlt} 8. & Analiza i projektowanie architektury systemów; role, procesy, techniki i produkty w podejściu obiektowym oraz agile. Wzorce analizy i projektowania; Klasyfikacja i przykłady wzorców. &  \\
+  \rowcolor{tableRowLight} 9. & Optymalizacja projektu dla specyfiki produktu. Projektowanie systemów rozproszonych, krytycznych, czasu rzeczywistego i wielokrotnego użytku. &  \\
+  \rowcolor{tableRowAlt} 10. & Zarządzanie przedsięwzięciem informatycznym. Infrastruktura - dokumentacja procesu wytwarzania i produktu programistycznego, komunikacja, struktury organizacyjne. Raportowanie. Obszary zarządzania. zarządzanie zespołem. Harmonogramowanie. &  \\
+  \rowcolor{tableRowLight} 11. & Implementacja, integracja i wersjonowanie oprogramowania.; środowiska narzędziowe oraz technologie. Zarządzanie konfiguracją oprogramowania. &  \\
+  \rowcolor{tableRowAlt} 12. & Pojęcie jakości oprogramowania i dróg jej osiągania. Standardy jakości i dobre praktyki jakości. Zapewnianie jakości oprogramowania. Modele i miary jakości oprogramowania. Wprowadzenie do zarządzania jakością. Inspekcja kodu i analiza bezpieczeństwa. Metody szacowania nakładów. Model COCOMO II. &  \\
+  \rowcolor{tableRowLight} 13. & Testowanie i walidacja oprogramowania. Rodzaje testów testy jednostkowe, integracyjne, systemowe; walidacja i testy akceptacyjne. Typowe fazy i metody testowania. Testy statyczne, funkcjonalne i strukturalne. Czynniki sukcesu i rezultaty testowania. Dokumentowanie testów. Przeglądy oprogramowania. &  \\
+  \rowcolor{tableRowAlt} 14. & Instalacja i wdrożenie oprogramowania. Pielęgnacja oprogramowania. Analiza potrzeby wprowadzania modyfikacji. Koszty konserwacji oprogramowania. Kluczowe czynniki sukcesu fazy utrzymania. &  \\
+  \rowcolor{tableRowLight} 15. & Outsourcing w inżynierii oprogramowania. &  \\
+  \rowcolor{tableRowAlt} 16. & Informatyczne wsparcie procesów biznesowych. Oprogramowanie klasy CRM, ERP. Architektura systemów ERP. Przykłady dostawców systemów CRM i ERP. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W08 & Student zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, protokołów komunikacyjnych i mechanizmów bezpieczeństwa sieciowego, w tym firewalle, systemy IDS/IPS oraz wirtualne sieci prywatne (VPN). [K\_W08] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W13 & Student zna i rozumie zaawansowane zagadnienia relacyjnych baz danych: modelowanie ERD, normalizację, transakcje, indeksy oraz programowanie SQL w kontekście bezpieczeństwa danych. [K\_W13] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W14 & Student zna i rozumie zasady inżynierii oprogramowania, wzorce projektowe (GoF), notację UML, cykle wytwórcze (Agile/Scrum) oraz problem jakości oprogramowania i techniczny dług. [K\_W14] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W15 & Student zna i rozumie metody i techniki inżynierii wymagań, sposoby tworzenia specyfikacji funkcjonalnych i niefunkcjonalnych oraz narzędzia do modelowania wymagań (m.in. diagramy przypadków użycia). [K\_W15] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W16 & Student zna i rozumie zaawansowane metody walidacji i testowania oprogramowania: testy jednostkowe, integracyjne, systemowe i akceptacyjne, a także narzędzia do automatyzacji testów i analizy pokrycia kodu. [K\_W16] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W08 & Student zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, protokołów komunikacyjnych i mechanizmów bezpieczeństwa sieciowego, w tym firewalle, systemy IDS/IPS oraz wirtualne sieci prywatne (VPN). {[}K\_W08{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W13 & Student zna i rozumie zaawansowane zagadnienia relacyjnych baz danych: modelowanie ERD, normalizację, transakcje, indeksy oraz programowanie SQL w kontekście bezpieczeństwa danych. {[}K\_W13{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W14 & Student zna i rozumie zasady inżynierii oprogramowania, wzorce projektowe (GoF), notację UML, cykle wytwórcze (Agile/Scrum) oraz problem jakości oprogramowania i techniczny dług. {[}K\_W14{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W15 & Student zna i rozumie metody i techniki inżynierii wymagań, sposoby tworzenia specyfikacji funkcjonalnych i niefunkcjonalnych oraz narzędzia do modelowania wymagań (m.in. diagramy przypadków użycia). {[}K\_W15{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W16 & Student zna i rozumie zaawansowane metody walidacji i testowania oprogramowania: testy jednostkowe, integracyjne, systemowe i akceptacyjne, a także narzędzia do automatyzacji testów i analizy pokrycia kodu. {[}K\_W16{]} & egzamin pisemny z zadaniami problemowymi \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U14 & Student potrafi zaprojektować, zainstalować i administrować siecią LAN/WAN z zachowaniem zasad bezpieczeństwa informacji, skonfigurować usługi sieciowe oraz reagować na incydenty bezpieczeństwa. [K\_U14] &  \\
-  \hline
-  K\_U18 & Student potrafi sformułować zapytania SQL, zaprojektować schemat relacyjnej bazy danych na podstawie modelu ERD oraz zarządzać transakcjami i uprawnieniami w systemie bazodanowym. [K\_U18] &  \\
-  \hline
-  K\_U19 & Student potrafi zaplanować i zrealizować projekt programistyczny metodą obiektową z zastosowaniem wzorców projektowych, narzędzi CI/CD oraz systemów kontroli wersji (Git). [K\_U19] &  \\
-  \hline
-  K\_U22 & Student potrafi zaplanować i przeprowadzić pełny proces testowania oprogramowania: opracować plan testów, napisać testy automatyczne (JUnit/NUnit/pytest), wykonać testy regresji i zinterpretować wyniki. [K\_U22] &  \\
-  \hline
-  K\_U21 & Student potrafi przeprowadzić inspekcję kodu, zidentyfikować defekty i poprawić jakość oprogramowania zgodnie z przyjętymi standardami (SOLID, Clean Code). [K\_U21] &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U14 & Student potrafi zaprojektować, zainstalować i administrować siecią LAN/WAN z zachowaniem zasad bezpieczeństwa informacji, skonfigurować usługi sieciowe oraz reagować na incydenty bezpieczeństwa. {[}K\_U14{]} &  \\
+  \rowcolor{tableRowAlt} K\_U18 & Student potrafi sformułować zapytania SQL, zaprojektować schemat relacyjnej bazy danych na podstawie modelu ERD oraz zarządzać transakcjami i uprawnieniami w systemie bazodanowym. {[}K\_U18{]} &  \\
+  \rowcolor{tableRowLight} K\_U19 & Student potrafi zaplanować i zrealizować projekt programistyczny metodą obiektową z zastosowaniem wzorców projektowych, narzędzi CI/CD oraz systemów kontroli wersji (Git). {[}K\_U19{]} &  \\
+  \rowcolor{tableRowAlt} K\_U22 & Student potrafi zaplanować i przeprowadzić pełny proces testowania oprogramowania: opracować plan testów, napisać testy automatyczne (JUnit/NUnit/pytest), wykonać testy regresji i zinterpretować wyniki. {[}K\_U22{]} &  \\
+  \rowcolor{tableRowLight} K\_U21 & Student potrafi przeprowadzić inspekcję kodu, zidentyfikować defekty i poprawić jakość oprogramowania zgodnie z przyjętymi standardami (SOLID, Clean Code). {[}K\_U21{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K04 & Student jest gotów do pracy w zespole deweloperskim w zróżnicowanych rolach (deweloper, tester, analityk), stosując metodyki zwinne i dobre praktyki inżynierii oprogramowania. [K\_K04] &  \\
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego poszerzania wiedzy z zakresu bezpieczeństwa systemów informatycznych i nowych technologii wytwarzania oprogramowania. [K\_K03] &  \\
-  \hline
-  K\_K06 & Student jest gotów do dostrzegania i profesjonalnego rozwiązywania problemów etycznych i prawnych związanych z bezpieczeństwem danych i odpowiedzialnością inżynierską. [K\_K06] &  \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Wykład:}
-\begin{itemize}
-  \item egzamin pisemny z zadaniami problemowymi
-\end{itemize}
-\vspace{4pt}
-
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do pracy w zespole deweloperskim w zróżnicowanych rolach (deweloper, tester, analityk), stosując metodyki zwinne i dobre praktyki inżynierii oprogramowania. {[}K\_K04{]} &  \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego poszerzania wiedzy z zakresu bezpieczeństwa systemów informatycznych i nowych technologii wytwarzania oprogramowania. {[}K\_K03{]} &  \\
+  \rowcolor{tableRowLight} K\_K06 & Student jest gotów do dostrzegania i profesjonalnego rozwiązywania problemów etycznych i prawnych związanych z bezpieczeństwem danych i odpowiedzialnością inżynierską. {[}K\_K06{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 --- & 16 h & --- & 16 h & 47 h & 63 h & \textbf{2.5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Przygotowywanie prac pisemnych (listy formalne/nieformalne, eseje, raporty); nauka słownictwa i gramatyki; przygotowanie do kolokwiów i testów; samodzielne ćwiczenia z wymową i konwersacją.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Lektorat & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Lektorat & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item egzamin ustny
+  \item ocena sporządzonego dokumentu
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,118 +151,77 @@ Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angi
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Jezyk angielski (szkola srednia) & Znajomosc jezyka angielskiego na poziomie min. A2+/B1 \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Jezyk angielski (szkola srednia) & Znajomosc jezyka angielskiego na poziomie min. A2+/B1 \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & 1. Zagadnienia z matematyki np. &  \\
-  \hline
-  2. & algebra, &  \\
-  \hline
-  3. & liczby naturalne, &  \\
-  \hline
-  4. & liczby rzeczywiste, &  \\
-  \hline
-  5. & liczby całkowite, &  \\
-  \hline
-  6. & liczby wymierne, &  \\
-  \hline
-  7. & działania wykonywane na liczbach, &  \\
-  \hline
-  8. & notacja pozycyjna, &  \\
-  \hline
-  9. & figury geometryczne, &  \\
-  \hline
-  10. & macierze, &  \\
-  \hline
-  11. & typy danych, &  \\
-  \hline
-  12. & tryb całkowitoliczbowy, &  \\
-  \hline
-  13. & tryb zmiennoprzecinkowy, &  \\
-  \hline
-  14. & tekstowe typy danych etc. &  \\
-  \hline
-  15. & 2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np. &  \\
-  \hline
-  16. & debatowanie, &  \\
-  \hline
-  17. & wywieranie wpływu, &  \\
-  \hline
-  18. & podejmowanie decyzji, &  \\
-  \hline
-  19. & komunikacja w biznesie, &  \\
-  \hline
-  20. & marki, &  \\
-  \hline
-  21. & zatrudnienie, &  \\
-  \hline
-  22. & etyka zawodowa, &  \\
-  \hline
-  23. & team building, &  \\
-  \hline
-  24. & style zarządzania,  rynki międzynarodowe etc. &  \\
-  \hline
-  25. & 3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych. &  \\
-  \hline
-  26. & 4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np). &  \\
-  \hline
-  27. & zastosowanie komputerów w życiu codziennym, &  \\
-  \hline
-  28. & systemy operacyjne, &  \\
-  \hline
-  29. & mikroprocesory, &  \\
-  \hline
-  30. & bazy danych, &  \\
-  \hline
-  31. & Internet, &  \\
-  \hline
-  32. & wirusy komputerowe, &  \\
-  \hline
-  33. & gry komputerowe, sieci komputerowe, &  \\
-  \hline
-  34. & nowe technologie, &  \\
-  \hline
-  35. & języki programowania, &  \\
-  \hline
-  36. & oprogramowanie komputerowe etc.) &  \\
-  \hline
-  37. & 5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy. &  \\
-  \hline
-  38. & 6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki. &  \\
-  \hline
-  39. & 7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy. &  \\
-  \hline
-  40. & 8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu. &  \\
-  \hline
-  41. & 9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze &  \\
-  \hline
-  42. & środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje. &  \\
-  \hline
-  43. & 10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów. &  \\
-  \hline
-  44. & 11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K\_U01 &  \\
-  \hline
-  45. & 12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.( &  \\
-  \hline
-  46. & 13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading\&Listening. &  \\
-  \hline
-  47. & 14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.) &  \\
-  \hline
-  48. & 15. Colloquium / Podsumowanie semestru. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & 1. Zagadnienia z matematyki np. &  \\
+  \rowcolor{tableRowAlt} 2. & algebra, &  \\
+  \rowcolor{tableRowLight} 3. & liczby naturalne, &  \\
+  \rowcolor{tableRowAlt} 4. & liczby rzeczywiste, &  \\
+  \rowcolor{tableRowLight} 5. & liczby całkowite, &  \\
+  \rowcolor{tableRowAlt} 6. & liczby wymierne, &  \\
+  \rowcolor{tableRowLight} 7. & działania wykonywane na liczbach, &  \\
+  \rowcolor{tableRowAlt} 8. & notacja pozycyjna, &  \\
+  \rowcolor{tableRowLight} 9. & figury geometryczne, &  \\
+  \rowcolor{tableRowAlt} 10. & macierze, &  \\
+  \rowcolor{tableRowLight} 11. & typy danych, &  \\
+  \rowcolor{tableRowAlt} 12. & tryb całkowitoliczbowy, &  \\
+  \rowcolor{tableRowLight} 13. & tryb zmiennoprzecinkowy, &  \\
+  \rowcolor{tableRowAlt} 14. & tekstowe typy danych etc. &  \\
+  \rowcolor{tableRowLight} 15. & 2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np. &  \\
+  \rowcolor{tableRowAlt} 16. & debatowanie, &  \\
+  \rowcolor{tableRowLight} 17. & wywieranie wpływu, &  \\
+  \rowcolor{tableRowAlt} 18. & podejmowanie decyzji, &  \\
+  \rowcolor{tableRowLight} 19. & komunikacja w biznesie, &  \\
+  \rowcolor{tableRowAlt} 20. & marki, &  \\
+  \rowcolor{tableRowLight} 21. & zatrudnienie, &  \\
+  \rowcolor{tableRowAlt} 22. & etyka zawodowa, &  \\
+  \rowcolor{tableRowLight} 23. & team building, &  \\
+  \rowcolor{tableRowAlt} 24. & style zarządzania,  rynki międzynarodowe etc. &  \\
+  \rowcolor{tableRowLight} 25. & 3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych. &  \\
+  \rowcolor{tableRowAlt} 26. & 4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np). &  \\
+  \rowcolor{tableRowLight} 27. & zastosowanie komputerów w życiu codziennym, &  \\
+  \rowcolor{tableRowAlt} 28. & systemy operacyjne, &  \\
+  \rowcolor{tableRowLight} 29. & mikroprocesory, &  \\
+  \rowcolor{tableRowAlt} 30. & bazy danych, &  \\
+  \rowcolor{tableRowLight} 31. & Internet, &  \\
+  \rowcolor{tableRowAlt} 32. & wirusy komputerowe, &  \\
+  \rowcolor{tableRowLight} 33. & gry komputerowe, sieci komputerowe, &  \\
+  \rowcolor{tableRowAlt} 34. & nowe technologie, &  \\
+  \rowcolor{tableRowLight} 35. & języki programowania, &  \\
+  \rowcolor{tableRowAlt} 36. & oprogramowanie komputerowe etc.) &  \\
+  \rowcolor{tableRowLight} 37. & 5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy. &  \\
+  \rowcolor{tableRowAlt} 38. & 6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki. &  \\
+  \rowcolor{tableRowLight} 39. & 7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy. &  \\
+  \rowcolor{tableRowAlt} 40. & 8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu. &  \\
+  \rowcolor{tableRowLight} 41. & 9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze &  \\
+  \rowcolor{tableRowAlt} 42. & środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje. &  \\
+  \rowcolor{tableRowLight} 43. & 10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów. &  \\
+  \rowcolor{tableRowAlt} 44. & 11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K\_U01 &  \\
+  \rowcolor{tableRowLight} 45. & 12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.( &  \\
+  \rowcolor{tableRowAlt} 46. & 13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading\&Listening. &  \\
+  \rowcolor{tableRowLight} 47. & 14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.) &  \\
+  \rowcolor{tableRowAlt} 48. & 15. Colloquium / Podsumowanie semestru. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
@@ -240,50 +231,41 @@ Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angi
 \end{itemize}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-   & Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi posługiwać się językiem formalnym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi komunikować się w języku angielskim w życiu codziennym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight}  & Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi posługiwać się językiem formalnym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi komunikować się w języku angielskim w życiu codziennym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-   & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-   & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium
-  \item egzamin ustny
-  \item ocena sporządzonego dokumentu
-\end{itemize}
-
+  \rowcolor{tableRowLight}  & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

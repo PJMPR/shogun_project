@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielna praca nad modelami 3D dla gier; budowanie portfolio ćwiczeń semestralnych; realizacja projektu końcowego z modelowania 3D; eksploracja narzędzi (Blender, Maya).
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Nieoceniany \\
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena sporządzonego oprogramowania
+  \item prezentacja samodzielnej pracy semestralnej
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,100 +151,93 @@ Celem przedmiotu jest przygotowanie studentów do pracy w branży Gamedev w char
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Niezbędna jest ogólna znajomość obsługi komputera. & --- \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Niezbędna jest ogólna znajomość obsługi komputera. & --- \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & 1. Wprowadzenie do podstaw obsługi Blendera. &  \\
-  \hline
-  2. & 2. Modelowanie w trybie obiektowym. &  \\
-  \hline
-  3. & 3. Modyfikatory. &  \\
-  \hline
-  4. & 4. Modelowanie w trybie edycji. &  \\
-  \hline
-  5. & 5. Modelowanie high-poly w trybie rzeźbienia. &  \\
-  \hline
-  6. & 6. Oświetlenie. &  \\
-  \hline
-  7. & 7. Materiały. &  \\
-  \hline
-  8. & 8. Tekstury proceduralne. &  \\
-  \hline
-  9. & 9. Mapowanie tekstur i przestrzenie współrzędnych. &  \\
-  \hline
-  10. & 10. Tekstury bitmapowe. &  \\
-  \hline
-  11. & 11. Wypalanie tekstur. &  \\
-  \hline
-  12. & 12. Optymalizacja sceny 3D i rendering. &  \\
-  \hline
-  13. & 13. Komponowanie (compositing). &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & 1. Wprowadzenie do podstaw obsługi Blendera. &  \\
+  \rowcolor{tableRowAlt} 2. & 2. Modelowanie w trybie obiektowym. &  \\
+  \rowcolor{tableRowLight} 3. & 3. Modyfikatory. &  \\
+  \rowcolor{tableRowAlt} 4. & 4. Modelowanie w trybie edycji. &  \\
+  \rowcolor{tableRowLight} 5. & 5. Modelowanie high-poly w trybie rzeźbienia. &  \\
+  \rowcolor{tableRowAlt} 6. & 6. Oświetlenie. &  \\
+  \rowcolor{tableRowLight} 7. & 7. Materiały. &  \\
+  \rowcolor{tableRowAlt} 8. & 8. Tekstury proceduralne. &  \\
+  \rowcolor{tableRowLight} 9. & 9. Mapowanie tekstur i przestrzenie współrzędnych. &  \\
+  \rowcolor{tableRowAlt} 10. & 10. Tekstury bitmapowe. &  \\
+  \rowcolor{tableRowLight} 11. & 11. Wypalanie tekstur. &  \\
+  \rowcolor{tableRowAlt} 12. & 12. Optymalizacja sceny 3D i rendering. &  \\
+  \rowcolor{tableRowLight} 13. & 13. Komponowanie (compositing). &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W25 & Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W25 & Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U32 & Student potrafi wymodelować obiekty w technice low-poly oraz high-poly & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-  K\_U32 & Student potrafi oteksturować obiekt metodami tekstur proceduralnych & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-  K\_U32 & Student potrafi rozwinąć siatkę obiektu we współrzędnych UV & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-  K\_U32 & Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U32 & Student potrafi wymodelować obiekty w technice low-poly oraz high-poly & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_U32 & Student potrafi oteksturować obiekt metodami tekstur proceduralnych & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+  \rowcolor{tableRowLight} K\_U32 & Student potrafi rozwinąć siatkę obiektu we współrzędnych UV & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_U32 & Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K04 & Student jest gotów do współpracy i dzielenia się swoją wiedzą & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-  K\_K03 & Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item ocena sporządzonego oprogramowania
-  \item prezentacja samodzielnej pracy semestralnej
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do współpracy i dzielenia się swoją wiedzą & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności & ocena sporządzonego oprogramowania, prezentacja samodzielnej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

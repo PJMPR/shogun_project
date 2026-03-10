@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,128 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne ćwiczenia z systemów operacyjnych (zarządzanie procesami, pamięcią, systemem plików); realizacja projektu zespołowego; przygotowanie do kolokwium i egzaminu.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem dydaktycznym przedmiotu SOP (Systemy Operacyjne i Programowanie) jest zapoznanie studentów z zaawansowanymi mechanizmami systemów operacyjnych, szczególnie w kontekście zarządzania procesami, pamięcią oraz synchronizacją w środowiskach wielowątkowych i wieloprocesorowych. Kurs kładzie nacisk na praktyczne aspekty pracy z systemem Linux, obejmujące m.in. zarządzanie zasobami, wątki, przerwania, semafory i mutexy.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The educational objective of the course SOP (Operating Systems and Programming) is to familiarize students with advanced operating system mechanisms, particularly in the context of process management, memory management, and synchronization in multithreaded and multiprocessor environments. The course places emphasis on practical aspects of working with the Linux system, including resource management, threads, interrupts, semaphores, and mutexes.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  UKOS & Umiejętność korzystania z systemu linux, znajomość podstaw działania systemu operacyjnego \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Podstawy systemów operacyjnychWprowadzenie do kluczowych zagadnień związanych z systemami operacyjnymi, takich jak procesy, zarządzanie pamięcią, systemy plików, mechanizmy wejścia-wyjścia. Studenci zdobywają wiedzę na temat organizacji i współbieżności systemów operacyjnych, ze szczególnym naciskiem na powszechnie stosowane systemy, takie jak Linux. &  \\
-  \hline
-  2. & Wątki i zarządzanie procesamiOmówienie sposobów zarządzania procesami i wątkami w systemach operacyjnych. Studenci uczą się, jak działają wątki, procesy, oraz jakie mechanizmy synchronizacji są stosowane w celu unikania problemów takich jak deadlock czy starvation. Przykłady obejmują implementację mutexów i semaforów. &  \\
-  \hline
-  3. & Synchronizacja i rozwiązywanie problemów sekcji krytycznychZajęcia poświęcone rozwiązywaniu problemów synchronizacji i współbieżności, takich jak problem producenta-konsumenta oraz problem czytelników i pisarzy. Studenci uczą się wykorzystywać mechanizmy synchronizacji (mutexy, semafory) w systemach operacyjnych. &  \\
-  \hline
-  4. & Algorytmy szeregowania zadańOmówienie algorytmów szeregowania zadań, takich jak FCFS, SJF, RR, oraz ich zastosowanie w rzeczywistych systemach operacyjnych. Studenci nauczą się dobierać odpowiedni algorytm do specyfiki aplikacji. &  \\
-  \hline
-  5. & Instalacja i konfiguracja systemu operacyjnegoPraktyczne ćwiczenia z instalacji systemu operacyjnego (np. Linux), w tym instalacja komponentów takich jak baza danych i aplikacje współpracujące. Zajęcia obejmują konfigurację systemu oraz jego administrację. &  \\
-  \hline
-  6. & Zarządzanie pamięciąPrzegląd metod zarządzania pamięcią w systemach operacyjnych, takich jak stronicowanie, segmentacja, oraz zarządzanie pamięcią wirtualną. Studenci uczą się, jak systemy operacyjne efektywnie przydzielają zasoby pamięciowe procesom. &  \\
-  \hline
-  7. & Projektowanie prostych systemów operacyjnychNa zajęciach studenci realizują projekt polegający na zaprojektowaniu i uruchomieniu prostego systemu operacyjnego z elementami, takimi jak zarządzanie procesami, szeregowanie zadań oraz podstawowa obsługa plików. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W07 & Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie procesami, wątkami i pamięcią wirtualną, mechanizmy współbieżności oraz organizację systemu plików w popularnych systemach (Linux, Windows). [K\_W07] & egzamin pisemny \\
-  \hline
-  K\_W07 & Student zna i rozumie algorytmy szeregowania procesów (FCFS, SJF, Round-Robin, priorytety) i rozumie ich wpływ na wydajność systemu w różnych scenariuszach obciążenia. [K\_W07] & egzamin pisemny \\
-  \hline
-  K\_W07 & Student zna i rozumie klasyczne problemy synchronizacji (sekcja krytyczna, producent-konsument, czytelnicy-pisarze) oraz mechanizmy ich rozwiązania: semafory, muteksy, zmienne warunkowe, monitory. [K\_W07] & egzamin pisemny \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U13 & Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym Linux (zarządzanie użytkownikami, uprawnieniami, usługami systemd, przestrzenią dyskową i siecią). [K\_U13] & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U13 & Student potrafi implementować programy wielowątkowe/wieloprocesowe w języku C/C++ z użyciem POSIX API (pthread, fork/exec, pipe, sygnały) oraz identyfikować i eliminować wyścigi danych i zakleszczenia. [K\_U13] & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U13 & Student potrafi dobrać i skonfigurować system operacyjny do wymagań aplikacji, z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa. [K\_U13] & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego rozwiązywania problemów administracyjnych i konfiguracyjnych systemów operacyjnych, korzystając z dokumentacji i zasobów społeczności open-source. [K\_K03] & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_K06 & Student jest gotów do świadomego wyboru narzędzi i konfiguracji systemowych z uwzględnieniem ich wpływu na bezpieczeństwo i niezawodność systemu informatycznego. [K\_K06] & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -209,6 +144,100 @@ Celem dydaktycznym przedmiotu SOP (Systemy Operacyjne i Programowanie) jest zapo
   \item ocena sporządzonego oprogramowania
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem dydaktycznym przedmiotu SOP (Systemy Operacyjne i Programowanie) jest zapoznanie studentów z zaawansowanymi mechanizmami systemów operacyjnych, szczególnie w kontekście zarządzania procesami, pamięcią oraz synchronizacją w środowiskach wielowątkowych i wieloprocesorowych. Kurs kładzie nacisk na praktyczne aspekty pracy z systemem Linux, obejmujące m.in. zarządzanie zasobami, wątki, przerwania, semafory i mutexy.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The educational objective of the course SOP (Operating Systems and Programming) is to familiarize students with advanced operating system mechanisms, particularly in the context of process management, memory management, and synchronization in multithreaded and multiprocessor environments. The course places emphasis on practical aspects of working with the Linux system, including resource management, threads, interrupts, semaphores, and mutexes.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} UKOS & Umiejętność korzystania z systemu linux, znajomość podstaw działania systemu operacyjnego \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Podstawy systemów operacyjnychWprowadzenie do kluczowych zagadnień związanych z systemami operacyjnymi, takich jak procesy, zarządzanie pamięcią, systemy plików, mechanizmy wejścia-wyjścia. Studenci zdobywają wiedzę na temat organizacji i współbieżności systemów operacyjnych, ze szczególnym naciskiem na powszechnie stosowane systemy, takie jak Linux. &  \\
+  \rowcolor{tableRowAlt} 2. & Wątki i zarządzanie procesamiOmówienie sposobów zarządzania procesami i wątkami w systemach operacyjnych. Studenci uczą się, jak działają wątki, procesy, oraz jakie mechanizmy synchronizacji są stosowane w celu unikania problemów takich jak deadlock czy starvation. Przykłady obejmują implementację mutexów i semaforów. &  \\
+  \rowcolor{tableRowLight} 3. & Synchronizacja i rozwiązywanie problemów sekcji krytycznychZajęcia poświęcone rozwiązywaniu problemów synchronizacji i współbieżności, takich jak problem producenta-konsumenta oraz problem czytelników i pisarzy. Studenci uczą się wykorzystywać mechanizmy synchronizacji (mutexy, semafory) w systemach operacyjnych. &  \\
+  \rowcolor{tableRowAlt} 4. & Algorytmy szeregowania zadańOmówienie algorytmów szeregowania zadań, takich jak FCFS, SJF, RR, oraz ich zastosowanie w rzeczywistych systemach operacyjnych. Studenci nauczą się dobierać odpowiedni algorytm do specyfiki aplikacji. &  \\
+  \rowcolor{tableRowLight} 5. & Instalacja i konfiguracja systemu operacyjnegoPraktyczne ćwiczenia z instalacji systemu operacyjnego (np. Linux), w tym instalacja komponentów takich jak baza danych i aplikacje współpracujące. Zajęcia obejmują konfigurację systemu oraz jego administrację. &  \\
+  \rowcolor{tableRowAlt} 6. & Zarządzanie pamięciąPrzegląd metod zarządzania pamięcią w systemach operacyjnych, takich jak stronicowanie, segmentacja, oraz zarządzanie pamięcią wirtualną. Studenci uczą się, jak systemy operacyjne efektywnie przydzielają zasoby pamięciowe procesom. &  \\
+  \rowcolor{tableRowLight} 7. & Projektowanie prostych systemów operacyjnychNa zajęciach studenci realizują projekt polegający na zaprojektowaniu i uruchomieniu prostego systemu operacyjnego z elementami, takimi jak zarządzanie procesami, szeregowanie zadań oraz podstawowa obsługa plików. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W07 & Student zna i rozumie zasady działania systemów operacyjnych: zarządzanie procesami, wątkami i pamięcią wirtualną, mechanizmy współbieżności oraz organizację systemu plików w popularnych systemach (Linux, Windows). {[}K\_W07{]} & egzamin pisemny \\
+  \rowcolor{tableRowAlt} K\_W07 & Student zna i rozumie algorytmy szeregowania procesów (FCFS, SJF, Round-Robin, priorytety) i rozumie ich wpływ na wydajność systemu w różnych scenariuszach obciążenia. {[}K\_W07{]} & egzamin pisemny \\
+  \rowcolor{tableRowLight} K\_W07 & Student zna i rozumie klasyczne problemy synchronizacji (sekcja krytyczna, producent-konsument, czytelnicy-pisarze) oraz mechanizmy ich rozwiązania: semafory, muteksy, zmienne warunkowe, monitory. {[}K\_W07{]} & egzamin pisemny \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U13 & Student potrafi zainstalować, skonfigurować i administrować systemem operacyjnym Linux (zarządzanie użytkownikami, uprawnieniami, usługami systemd, przestrzenią dyskową i siecią). {[}K\_U13{]} & kolokwium, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U13 & Student potrafi implementować programy wielowątkowe/wieloprocesowe w języku C/C++ z użyciem POSIX API (pthread, fork/exec, pipe, sygnały) oraz identyfikować i eliminować wyścigi danych i zakleszczenia. {[}K\_U13{]} & kolokwium, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U13 & Student potrafi dobrać i skonfigurować system operacyjny do wymagań aplikacji, z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa. {[}K\_U13{]} & kolokwium, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego rozwiązywania problemów administracyjnych i konfiguracyjnych systemów operacyjnych, korzystając z dokumentacji i zasobów społeczności open-source. {[}K\_K03{]} & kolokwium, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K06 & Student jest gotów do świadomego wyboru narzędzi i konfiguracji systemowych z uwzględnieniem ich wpływu na bezpieczeństwo i niezawodność systemu informatycznego. {[}K\_K06{]} & kolokwium, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

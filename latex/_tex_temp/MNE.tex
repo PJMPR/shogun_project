@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,30 +88,43 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & --- & 8 h & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Projektowanie i implementacja aplikacji mobilnej w .NET MAUI z wzorcem MVVM; integracja z API; nawigacja; przygotowanie dokumentacji projektu.
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -109,86 +137,86 @@ Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia wieloplatform
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Programowanie aplikacji internetowych & Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C\#) \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Programowanie aplikacji internetowych & Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C\#) \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wprowadzenie do .NET MAUI i architektury aplikacji wieloplatformowych &  \\
-  \hline
-  2. & Środowisko pracy i konfiguracja projektu .NET MAUI &  \\
-  \hline
-  3. & Podstawy XAML i budowa interfejsu użytkownika &  \\
-  \hline
-  4. & Wzorzec MVVM i powiązania danych &  \\
-  \hline
-  5. & Layouty i stylowanie aplikacji &  \\
-  \hline
-  6. & Nawigacja pomiędzy widokami &  \\
-  \hline
-  7. & Komunikacja z API i obsługa danych zdalnych &  \\
-  \hline
-  8. & Dostęp do natywnych funkcji urządzenia &  \\
-  \hline
-  9. & Debugowanie i testowanie aplikacji &  \\
-  \hline
-  10. & Projekt zaliczeniowy – implementacja i prezentacja &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do .NET MAUI i architektury aplikacji wieloplatformowych &  \\
+  \rowcolor{tableRowAlt} 2. & Środowisko pracy i konfiguracja projektu .NET MAUI &  \\
+  \rowcolor{tableRowLight} 3. & Podstawy XAML i budowa interfejsu użytkownika &  \\
+  \rowcolor{tableRowAlt} 4. & Wzorzec MVVM i powiązania danych &  \\
+  \rowcolor{tableRowLight} 5. & Layouty i stylowanie aplikacji &  \\
+  \rowcolor{tableRowAlt} 6. & Nawigacja pomiędzy widokami &  \\
+  \rowcolor{tableRowLight} 7. & Komunikacja z API i obsługa danych zdalnych &  \\
+  \rowcolor{tableRowAlt} 8. & Dostęp do natywnych funkcji urządzenia &  \\
+  \rowcolor{tableRowLight} 9. & Debugowanie i testowanie aplikacji &  \\
+  \rowcolor{tableRowAlt} 10. & Projekt zaliczeniowy – implementacja i prezentacja &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W10 & Student zna podstawowe pojęcia związane z tworzeniem aplikacji wieloplatformowych w .NET MAUI, w tym architekturę MVVM, widoki, powiązania danych oraz cykl życia aplikacji. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W10 & Student zna podstawowe pojęcia związane z tworzeniem aplikacji wieloplatformowych w .NET MAUI, w tym architekturę MVVM, widoki, powiązania danych oraz cykl życia aplikacji. &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U16 & Student potrafi zaprojektować i zaimplementować prostą aplikację w .NET MAUI, tworzyć interfejs użytkownika w XAML, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na różnych platformach. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U16 & Student potrafi zaprojektować i zaimplementować prostą aplikację w .NET MAUI, tworzyć interfejs użytkownika w XAML, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na różnych platformach. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K05 & Student potrafi samodzielnie planować realizację projektu aplikacji wieloplatformowej, korzystać z dokumentacji technicznej oraz dbać o jakość i czytelność kodu. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item prezentacja projektu i dokumentacji
-  \item ocena sporządzonego oprogramowania
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K05 & Student potrafi samodzielnie planować realizację projektu aplikacji wieloplatformowej, korzystać z dokumentacji technicznej oraz dbać o jakość i czytelność kodu. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

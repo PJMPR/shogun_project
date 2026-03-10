@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,100 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 43 h & 75 h & \textbf{3} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja projektów programistycznych dotyczących analizy leksykalnej i automatów; przygotowanie do kolokwium i egzaminu; tworzenie dokumentacji modeli.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  PRI - Projektowanie systemow informatycznych & Umiejetnosc logicznego wnioskowania oraz umiejetnosc programowania \\
-  ALG - Algebra liniowa z geometria & Podstawy algebry liniowej \\
-  AM - Analiza matematyczna & Podstawy analizy matematycznej \\
-  MAD - Matematyka Dyskretna & Podstawy matematyki dyskretnej \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W14 & Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W17 & Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk. & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U20 & Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T. & kolokwium, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -181,6 +144,78 @@ Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia d
   \item ocena sporządzonego oprogramowania
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Głównym zadaniem przedmiotu jest ugruntowanie wśród studentów zrozumienia dla rangi modelowania w in-żynierii systemów oraz wyposażenie ich w techniki i narzędzia modelowania systemów przy pomocy formali-zmów takich jak UML, BPMN oraz Sieci Petriego. Jako narzędzia analizy własności systemów studenci zapo-znani zostaną z pojęciem S-niezmienników i T-niezmienników w przypadku Sieci Petriego oraz podstawowymi pojęciami z zakresu logik temporalnych LTL i CTL.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The main objective of the course is to establish students’ understanding of the importance of modeling in systems engineering and to equip them with techniques and tools for modeling systems using formalisms such as UML, BPMN, and Petri nets. As tools for analyzing system properties, students are also introduced to the concepts of S-invariants and T-invariants in Petri nets, as well as basic notions of temporal logics LTL and CTL.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} PRI - Projektowanie systemow informatycznych & Umiejetnosc logicznego wnioskowania oraz umiejetnosc programowania \\
+  \rowcolor{tableRowAlt} ALG - Algebra liniowa z geometria & Podstawy algebry liniowej \\
+  \rowcolor{tableRowLight} AM - Analiza matematyczna & Podstawy analizy matematycznej \\
+  \rowcolor{tableRowAlt} MAD - Matematyka Dyskretna & Podstawy matematyki dyskretnej \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Metody modelowania w inżynierii oprogra-mowania; pojęcia; model a meta model, klasyfi-kacja modeli. Modelowanie danych, struktury i zachowania; przegląd notacji. Modelowanie przebiegu sterowania i przetwarza-nia danych. Zaawansowane modelowanie interakcji w syste-mie z wykorzystaniem d. komunikacji. Opracowanie diagramu komunikacji UML. Transformacje pomiędzy modelami interakcji wyrażonymi d. sekwencji i komunikacji. Modelowanie stanów systemu z wykorzystaniem języka UML. Opracowanie modelu maszyn stanowych z uwzględnienie podstanów i czynności wewnętrznych. Aspekty fizyczne w dokumentowaniu systemu informatycznego. Opracowanie diagramu komponentów. Alokacja komponentów na węzłach. Metody i techniki modelowania biznesowego: BPMN, SPEM UML, rozszerzenia biznesowe procesu RUP. Wyszczególnienie i klasyfikacja procesów bizne-sowych – studium przypadku. Opracowanie dia-gramu procesów biznesowych BPMN. Zaawansowane diagramy procesów biznesowych BPMN. Modelowanie bramek, zdarzeń, dokumentów i interakcji z wykorzystaniem notacji BPMN. Analiza strukturalna i diagramy przepływu da-nych . Modelowanie za pomocą diagramów przepływu danych. Sieci Petriego – struktura i zachowanie dyna-miczne sieci elementarnych. Sieci Petriego –PIPE 2 i inne narzędzia do edy-towania i analizy sieci Petriego. Sieci Petriego typu P/T, graf osiągalności. Modelowanie systemów przy pomocy prostych sieci Petriego. Niezmienniki typu S sieci Petriego. Wyznaczanie niezmienników typu S sieci Petriego. Niezmienniki sieci typu T Petriego. Wyznaczanie niezmienników typu T sieci Petriego. Rozszerzenia sieci Petriego – sieci kolorowane. Rozszerzenia sieci Petriego – sieci z czasem. Wprowadzenie do metod formalnych; zastosowa-nia. Abstrakcyjne Typy Danych vs. specyfikacje model-based – VDM, Z, logika temporalna. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W14 & Student zna i rozumie idee modelowania systemów z po-mocą notacji UML, BPMN oraz Sieci Petriego. Student zna i rozumie idee specyfikacji i weryfikacji syste-mów za pośrednictwem logik temporalnych. Student zna i rozumie składnię rdzeniowych diagramów notacji BPMN & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W17 & Student rozumie pojęcie procesu biznesowego, czynności biznesowych oraz metryk. & egzamin pisemny z zadaniami problemowymi \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U20 & Potrafi modelować systemy przy pomocy poznanych na zajęciach formalizmów. Potrafi dokonać analizy systemów w oparciu o grafy stanów osiągalnych. Potrafi dokonać analizy systemów w oparciu o niezmienniki typu S i niezmienniki typu T. & kolokwium, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

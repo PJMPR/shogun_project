@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,57 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Praca nad opracowaniami koncepcyjnymi z zakresu innowacji; analiza przypadków procesów innowacyjnych; przygotowanie sprawozdań; ćwiczenia obliczeniowe.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Nieoceniany \\
-  Ćwiczenia & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+  \rowcolor{tableRowAlt} Ćwiczenia & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item raport z wykonanego zadania
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,180 +151,133 @@ Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawa
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  POZ - Podstawy Organizacji i Zarzadzania & Znajomosc podstaw organizacji i zarzadzania \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} POZ - Podstawy Organizacji i Zarzadzania & Znajomosc podstaw organizacji i zarzadzania \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wykład &  \\
-  \hline
-  2. & Ćwiczenia &  \\
-  \hline
-  3. & Kreatywność menedżerska &  \\
-  \hline
-  4. & Profil osoby kreatywnej i przedsiębiorczej &  \\
-  \hline
-  5. & Istota i motywy przedsiębiorczości gospodarczej &  \\
-  \hline
-  6. & Tworzenie i analiza ścieżki doświadczeń dla wybranego produktu / usługi (praca z szablonem &  \\
-  \hline
-  7. & customer journey map) &  \\
-  \hline
-  8. & Metody graficzne i analityczne w diagnozowaniu &  \\
-  \hline
-  9. & problemu &  \\
-  \hline
-  10. & Odkrywanie możliwości dla produktu innowacyjnego – studium przypadku &  \\
-  \hline
-  11. & Rozpoznawanie szans rynkowych i możliwości &  \\
-  \hline
-  12. & sytuacyjnych &  \\
-  \hline
-  13. & Analiza rozwoju firm innowacyjnych – macierz &  \\
-  \hline
-  14. & kluczowych czynników &  \\
-  \hline
-  15. & Planowanie rozwoju - elementy analizy strategicznej &  \\
-  \hline
-  16. & Wprowadzenie do Design Thinking &  \\
-  \hline
-  17. & Struktury organizacyjne &  \\
-  \hline
-  18. & Wprowadzenie do pracy zespołowej i projektowej &  \\
-  \hline
-  19. & Trening umiejętności pracy w zespole. &  \\
-  \hline
-  20. & Organizowanie procesów i zarządzanie zasobami &  \\
-  \hline
-  21. & Środowiska do komputerowego &  \\
-  \hline
-  22. & wspomagania pracy projektowej i &  \\
-  \hline
-  23. & zespołowej &  \\
-  \hline
-  24. & Kontrolowanie, doskonalenie i zarządzanie jakością &  \\
-  \hline
-  25. & Identyfikacja potrzeb; wprowadzenie do analizy badań zastanych i jakościowych – wywiad, &  \\
-  \hline
-  26. & obserwacja uczestnicząca, netnografia; mapa empatii, Persony &  \\
-  \hline
-  27. & Mała firma – cykl rozwojowy i czynniki sukcesu &  \\
-  \hline
-  28. & Diagnoza problemu: &  \\
-  \hline
-  29. & Metoda 5 x dlaczego &  \\
-  \hline
-  30. & Metoda Pareto-Lorenza i Diagram &  \\
-  \hline
-  31. & Ishikawy &  \\
-  \hline
-  32. & Rysowanie odręczne &  \\
-  \hline
-  33. & Zarządzanie personelem i motywowanie &  \\
-  \hline
-  34. & Metoda Kano &  \\
-  \hline
-  35. & Wybrane techniki oceny wariantów i wspomagania &  \\
-  \hline
-  36. & decyzji &  \\
-  \hline
-  37. & Indywidualne generowanie pomysłów do problemu (mindmapping, analiza &  \\
-  \hline
-  38. & morfologiczna) &  \\
-  \hline
-  39. & Generowanie pomysłów: burza mózgów, &  \\
-  \hline
-  40. & MindMapping, deBono &  \\
-  \hline
-  41. & Zespołowe generowanie pomysłów: &  \\
-  \hline
-  42. & burza mózgów i metoda 6 kapeluszy &  \\
-  \hline
-  43. & Wybrane techniki oceny wariantów i wspomagania &  \\
-  \hline
-  44. & decyzji &  \\
-  \hline
-  45. & Metody oceny wariantów; testowanie wygenerowanych rozwiązań &  \\
-  \hline
-  46. & Organizacja kreatywnej pracy zespołowej &  \\
-  \hline
-  47. & Ocena potencjału motywacyjnego &  \\
-  \hline
-  48. & personelu; analiza i dopracowywanie własnego CV, SWOT osobisty &  \\
-  \hline
-  49. & Zarządzanie wiedzą i innowacjami w organizacji &  \\
-  \hline
-  50. & Zasady efektywnej komunikacji; &  \\
-  \hline
-  51. & Prezentacja rozwiązań projektowych &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wykład &  \\
+  \rowcolor{tableRowAlt} 2. & Ćwiczenia &  \\
+  \rowcolor{tableRowLight} 3. & Kreatywność menedżerska &  \\
+  \rowcolor{tableRowAlt} 4. & Profil osoby kreatywnej i przedsiębiorczej &  \\
+  \rowcolor{tableRowLight} 5. & Istota i motywy przedsiębiorczości gospodarczej &  \\
+  \rowcolor{tableRowAlt} 6. & Tworzenie i analiza ścieżki doświadczeń dla wybranego produktu / usługi (praca z szablonem &  \\
+  \rowcolor{tableRowLight} 7. & customer journey map) &  \\
+  \rowcolor{tableRowAlt} 8. & Metody graficzne i analityczne w diagnozowaniu &  \\
+  \rowcolor{tableRowLight} 9. & problemu &  \\
+  \rowcolor{tableRowAlt} 10. & Odkrywanie możliwości dla produktu innowacyjnego – studium przypadku &  \\
+  \rowcolor{tableRowLight} 11. & Rozpoznawanie szans rynkowych i możliwości &  \\
+  \rowcolor{tableRowAlt} 12. & sytuacyjnych &  \\
+  \rowcolor{tableRowLight} 13. & Analiza rozwoju firm innowacyjnych – macierz &  \\
+  \rowcolor{tableRowAlt} 14. & kluczowych czynników &  \\
+  \rowcolor{tableRowLight} 15. & Planowanie rozwoju - elementy analizy strategicznej &  \\
+  \rowcolor{tableRowAlt} 16. & Wprowadzenie do Design Thinking &  \\
+  \rowcolor{tableRowLight} 17. & Struktury organizacyjne &  \\
+  \rowcolor{tableRowAlt} 18. & Wprowadzenie do pracy zespołowej i projektowej &  \\
+  \rowcolor{tableRowLight} 19. & Trening umiejętności pracy w zespole. &  \\
+  \rowcolor{tableRowAlt} 20. & Organizowanie procesów i zarządzanie zasobami &  \\
+  \rowcolor{tableRowLight} 21. & Środowiska do komputerowego &  \\
+  \rowcolor{tableRowAlt} 22. & wspomagania pracy projektowej i &  \\
+  \rowcolor{tableRowLight} 23. & zespołowej &  \\
+  \rowcolor{tableRowAlt} 24. & Kontrolowanie, doskonalenie i zarządzanie jakością &  \\
+  \rowcolor{tableRowLight} 25. & Identyfikacja potrzeb; wprowadzenie do analizy badań zastanych i jakościowych – wywiad, &  \\
+  \rowcolor{tableRowAlt} 26. & obserwacja uczestnicząca, netnografia; mapa empatii, Persony &  \\
+  \rowcolor{tableRowLight} 27. & Mała firma – cykl rozwojowy i czynniki sukcesu &  \\
+  \rowcolor{tableRowAlt} 28. & Diagnoza problemu: &  \\
+  \rowcolor{tableRowLight} 29. & Metoda 5 x dlaczego &  \\
+  \rowcolor{tableRowAlt} 30. & Metoda Pareto-Lorenza i Diagram &  \\
+  \rowcolor{tableRowLight} 31. & Ishikawy &  \\
+  \rowcolor{tableRowAlt} 32. & Rysowanie odręczne &  \\
+  \rowcolor{tableRowLight} 33. & Zarządzanie personelem i motywowanie &  \\
+  \rowcolor{tableRowAlt} 34. & Metoda Kano &  \\
+  \rowcolor{tableRowLight} 35. & Wybrane techniki oceny wariantów i wspomagania &  \\
+  \rowcolor{tableRowAlt} 36. & decyzji &  \\
+  \rowcolor{tableRowLight} 37. & Indywidualne generowanie pomysłów do problemu (mindmapping, analiza &  \\
+  \rowcolor{tableRowAlt} 38. & morfologiczna) &  \\
+  \rowcolor{tableRowLight} 39. & Generowanie pomysłów: burza mózgów, &  \\
+  \rowcolor{tableRowAlt} 40. & MindMapping, deBono &  \\
+  \rowcolor{tableRowLight} 41. & Zespołowe generowanie pomysłów: &  \\
+  \rowcolor{tableRowAlt} 42. & burza mózgów i metoda 6 kapeluszy &  \\
+  \rowcolor{tableRowLight} 43. & Wybrane techniki oceny wariantów i wspomagania &  \\
+  \rowcolor{tableRowAlt} 44. & decyzji &  \\
+  \rowcolor{tableRowLight} 45. & Metody oceny wariantów; testowanie wygenerowanych rozwiązań &  \\
+  \rowcolor{tableRowAlt} 46. & Organizacja kreatywnej pracy zespołowej &  \\
+  \rowcolor{tableRowLight} 47. & Ocena potencjału motywacyjnego &  \\
+  \rowcolor{tableRowAlt} 48. & personelu; analiza i dopracowywanie własnego CV, SWOT osobisty &  \\
+  \rowcolor{tableRowLight} 49. & Zarządzanie wiedzą i innowacjami w organizacji &  \\
+  \rowcolor{tableRowAlt} 50. & Zasady efektywnej komunikacji; &  \\
+  \rowcolor{tableRowLight} 51. & Prezentacja rozwiązań projektowych &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W17 & Student zna i rozumie podstawowe zagadnienia planowania przedsięwzięcia informatycznego: wstępną ocenę ekonomiczną, analizę wykonalności, aspekty społeczne i środowiskowe projektu IT. [K\_W17] &  \\
-  \hline
-  K\_W19 & Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki: odpowiedzialność zawodowa, prawo autorskie, licencjonowanie oprogramowania i ochrona własności intelektualnej. [K\_W19] &  \\
-  \hline
-  K\_W20 & Student zna i rozumie ogólne zasady tworzenia przedsiębiorczości w IT: modele biznesowe, formy prawne działalności, zasady komercjalizacji rozwiązań informatycznych i pozyskiwania finansowania. [K\_W20] &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie podstawowe zagadnienia planowania przedsięwzięcia informatycznego: wstępną ocenę ekonomiczną, analizę wykonalności, aspekty społeczne i środowiskowe projektu IT. {[}K\_W17{]} &  \\
+  \rowcolor{tableRowAlt} K\_W19 & Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki: odpowiedzialność zawodowa, prawo autorskie, licencjonowanie oprogramowania i ochrona własności intelektualnej. {[}K\_W19{]} &  \\
+  \rowcolor{tableRowLight} K\_W20 & Student zna i rozumie ogólne zasady tworzenia przedsiębiorczości w IT: modele biznesowe, formy prawne działalności, zasady komercjalizacji rozwiązań informatycznych i pozyskiwania finansowania. {[}K\_W20{]} &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U05 & Student potrafi pracować w zespole projektowym, szacować czas i koszty realizacji zadań oraz budować harmonogram prac zapewniający terminową realizację projektu informatycznego. [K\_U05] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację przedsięwzięcia informatycznego (studium wykonalności, analiza ryzyka, wstępna wycena) z uwzględnieniem aspektów etycznych i prawnych. [K\_U26] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_U25 & Student potrafi uwzględnić aspekty etyczne, prawne i społeczne w planowanym przedsięwzięciu informatycznym i ocenić potencjalne zagrożenia. [K\_U25] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi pracować w zespole projektowym, szacować czas i koszty realizacji zadań oraz budować harmonogram prac zapewniający terminową realizację projektu informatycznego. {[}K\_U05{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację przedsięwzięcia informatycznego (studium wykonalności, analiza ryzyka, wstępna wycena) z uwzględnieniem aspektów etycznych i prawnych. {[}K\_U26{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U25 & Student potrafi uwzględnić aspekty etyczne, prawne i społeczne w planowanym przedsięwzięciu informatycznym i ocenić potencjalne zagrożenia. {[}K\_U25{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K01 & Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego, działając zgodnie z zasadami etyki zawodowej. [K\_K01] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_K04 & Student jest gotów do efektywnej współpracy w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań projektowych. [K\_K04] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-  K\_K02 & Student jest gotów do przekazywania społeczeństwu informacji na temat konsekwencji i odpowiedzialności związanej z działalnością inżynierską w IT. [K\_K02] & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item raport z wykonanego zadania
-  \item ocena pracy podczas ćwiczenia
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego, działając zgodnie z zasadami etyki zawodowej. {[}K\_K01{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotów do efektywnej współpracy w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań projektowych. {[}K\_K04{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_K02 & Student jest gotów do przekazywania społeczeństwu informacji na temat konsekwencji i odpowiedzialności związanej z działalnością inżynierską w IT. {[}K\_K02{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

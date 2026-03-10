@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,173 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne testowanie bezpieczeństwa systemów IT z użyciem wybranych narzędzi; analiza podatności; przygotowanie do kolokwium pisemnego.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania systemów IT, ale także zdobycie praktycznych umiejętności w identyfikacji i naprawie luk w zabezpieczeniach. Dzięki temu studenci będą lepiej przygotowani do zabezpieczania systemów informatycznych w rzeczywistych scenariuszach.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The aim of the course is not only to teach the theoretical foundations of securing IT systems, but also to provide practical skills in identifying and fixing security vulnerabilities. As a result, students are better prepared to secure IT systems in real-world scenarios.}
-
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & 1. Wprowadzenie do testowania bezpieczeństwa &  \\
-  \hline
-  2. & Cel i znaczenie testowania bezpieczeństwa. &  \\
-  \hline
-  3. & 2. Metodologia testów penetracyjnych &  \\
-  \hline
-  4. & Definicja testów penetracyjnych. &  \\
-  \hline
-  5. & Różne podejścia i metodologie. &  \\
-  \hline
-  6. & Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie. &  \\
-  \hline
-  7. & Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach. &  \\
-  \hline
-  8. & 3. Metasploit &  \\
-  \hline
-  9. & Wprowadzenie do narzędzia Metasploit. &  \\
-  \hline
-  10. & Konfiguracja i podstawowe funkcje. &  \\
-  \hline
-  11. & Przykłady wykorzystania Metasploit do testów penetracyjnych. &  \\
-  \hline
-  12. & Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach. &  \\
-  \hline
-  13. & 4. Bezpieczeństwo aplikacji webowych &  \\
-  \hline
-  14. & Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych. &  \\
-  \hline
-  15. & Przykłady ataków i ich skutki. &  \\
-  \hline
-  16. & Techniki zabezpieczania aplikacji webowych. &  \\
-  \hline
-  17. & Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń. &  \\
-  \hline
-  18. & 5. Kontrola dostępu do funkcji i danych &  \\
-  \hline
-  19. & Definicja i znaczenie kontroli dostępu. &  \\
-  \hline
-  20. & Najlepsze praktyki implementacji. &  \\
-  \hline
-  21. & Przykłady problemów i ich rozwiązania. &  \\
-  \hline
-  22. & Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach. &  \\
-  \hline
-  23. & 6. SQL Injection &  \\
-  \hline
-  24. & Mechanizmy ataku SQL Injection. &  \\
-  \hline
-  25. & Metody identyfikacji i zabezpieczania przed SQL Injection. &  \\
-  \hline
-  26. & Przykłady ataków i ich skutki. &  \\
-  \hline
-  27. & Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach. &  \\
-  \hline
-  28. & 7. Cross Site Scripting (XSS) &  \\
-  \hline
-  29. & Typy XSS: reflected, stored, DOM-based. &  \\
-  \hline
-  30. & Techniki wykrywania i zabezpieczania przed XSS. &  \\
-  \hline
-  31. & Przykłady ataków i ich skutki. &  \\
-  \hline
-  32. & Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń. &  \\
-  \hline
-  33. & 8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych. &  \\
-  \hline
-  34. & Techniki bezpiecznego przetwarzania danych. &  \\
-  \hline
-  35. & Przykłady zagrożeń związanych z danymi niezaufanymi. &  \\
-  \hline
-  36. & Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach. &  \\
-  \hline
-  37. & 9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT. &  \\
-  \hline
-  38. & Metody identyfikacji i korekty. &  \\
-  \hline
-  39. & Przykłady konsekwencji błędnej konfiguracji. &  \\
-  \hline
-  40. & Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień. &  \\
-  \hline
-  41. & 10. Testowanie typu Black Box &  \\
-  \hline
-  42. & Definicja i cel testowania typu Black Box. &  \\
-  \hline
-  43. & Techniki i narzędzia używane w testach Black Box. &  \\
-  \hline
-  44. & Przykłady scenariuszy testowych. &  \\
-  \hline
-  45. & Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W23 & Student zna i rozumie metodologię i narzędzia używane do identyfikacji i eksploatacji luk w zabezpieczeniach (testy penetracyjne). Student rozumie działanie  ataków SQL Injection oraz zna metody ich wykrywania i zapobiegania. Student zna i rozumie sposoby wykrywania i zabezpieczania przed atakami XSS. & kolokwium końcowe \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U30 & Student potrafi korzystać z narzędzia Metasploit do testowania systemów. Student potrafi implementować i testować mechanizmy kontroli dostępu.  Student potrafi przeprowadzić testy BlackBox na rzeczywistych systemach. & kolokwium końcowe, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -254,6 +144,107 @@ Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania s
   \item raport z wykonanego zadania
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania systemów IT, ale także zdobycie praktycznych umiejętności w identyfikacji i naprawie luk w zabezpieczeniach. Dzięki temu studenci będą lepiej przygotowani do zabezpieczania systemów informatycznych w rzeczywistych scenariuszach.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is not only to teach the theoretical foundations of securing IT systems, but also to provide practical skills in identifying and fixing security vulnerabilities. As a result, students are better prepared to secure IT systems in real-world scenarios.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & 1. Wprowadzenie do testowania bezpieczeństwa &  \\
+  \rowcolor{tableRowAlt} 2. & Cel i znaczenie testowania bezpieczeństwa. &  \\
+  \rowcolor{tableRowLight} 3. & 2. Metodologia testów penetracyjnych &  \\
+  \rowcolor{tableRowAlt} 4. & Definicja testów penetracyjnych. &  \\
+  \rowcolor{tableRowLight} 5. & Różne podejścia i metodologie. &  \\
+  \rowcolor{tableRowAlt} 6. & Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie. &  \\
+  \rowcolor{tableRowLight} 7. & Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach. &  \\
+  \rowcolor{tableRowAlt} 8. & 3. Metasploit &  \\
+  \rowcolor{tableRowLight} 9. & Wprowadzenie do narzędzia Metasploit. &  \\
+  \rowcolor{tableRowAlt} 10. & Konfiguracja i podstawowe funkcje. &  \\
+  \rowcolor{tableRowLight} 11. & Przykłady wykorzystania Metasploit do testów penetracyjnych. &  \\
+  \rowcolor{tableRowAlt} 12. & Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach. &  \\
+  \rowcolor{tableRowLight} 13. & 4. Bezpieczeństwo aplikacji webowych &  \\
+  \rowcolor{tableRowAlt} 14. & Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych. &  \\
+  \rowcolor{tableRowLight} 15. & Przykłady ataków i ich skutki. &  \\
+  \rowcolor{tableRowAlt} 16. & Techniki zabezpieczania aplikacji webowych. &  \\
+  \rowcolor{tableRowLight} 17. & Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń. &  \\
+  \rowcolor{tableRowAlt} 18. & 5. Kontrola dostępu do funkcji i danych &  \\
+  \rowcolor{tableRowLight} 19. & Definicja i znaczenie kontroli dostępu. &  \\
+  \rowcolor{tableRowAlt} 20. & Najlepsze praktyki implementacji. &  \\
+  \rowcolor{tableRowLight} 21. & Przykłady problemów i ich rozwiązania. &  \\
+  \rowcolor{tableRowAlt} 22. & Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach. &  \\
+  \rowcolor{tableRowLight} 23. & 6. SQL Injection &  \\
+  \rowcolor{tableRowAlt} 24. & Mechanizmy ataku SQL Injection. &  \\
+  \rowcolor{tableRowLight} 25. & Metody identyfikacji i zabezpieczania przed SQL Injection. &  \\
+  \rowcolor{tableRowAlt} 26. & Przykłady ataków i ich skutki. &  \\
+  \rowcolor{tableRowLight} 27. & Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach. &  \\
+  \rowcolor{tableRowAlt} 28. & 7. Cross Site Scripting (XSS) &  \\
+  \rowcolor{tableRowLight} 29. & Typy XSS: reflected, stored, DOM-based. &  \\
+  \rowcolor{tableRowAlt} 30. & Techniki wykrywania i zabezpieczania przed XSS. &  \\
+  \rowcolor{tableRowLight} 31. & Przykłady ataków i ich skutki. &  \\
+  \rowcolor{tableRowAlt} 32. & Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń. &  \\
+  \rowcolor{tableRowLight} 33. & 8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych. &  \\
+  \rowcolor{tableRowAlt} 34. & Techniki bezpiecznego przetwarzania danych. &  \\
+  \rowcolor{tableRowLight} 35. & Przykłady zagrożeń związanych z danymi niezaufanymi. &  \\
+  \rowcolor{tableRowAlt} 36. & Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach. &  \\
+  \rowcolor{tableRowLight} 37. & 9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT. &  \\
+  \rowcolor{tableRowAlt} 38. & Metody identyfikacji i korekty. &  \\
+  \rowcolor{tableRowLight} 39. & Przykłady konsekwencji błędnej konfiguracji. &  \\
+  \rowcolor{tableRowAlt} 40. & Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień. &  \\
+  \rowcolor{tableRowLight} 41. & 10. Testowanie typu Black Box &  \\
+  \rowcolor{tableRowAlt} 42. & Definicja i cel testowania typu Black Box. &  \\
+  \rowcolor{tableRowLight} 43. & Techniki i narzędzia używane w testach Black Box. &  \\
+  \rowcolor{tableRowAlt} 44. & Przykłady scenariuszy testowych. &  \\
+  \rowcolor{tableRowLight} 45. & Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie metodologię i narzędzia używane do identyfikacji i eksploatacji luk w zabezpieczeniach (testy penetracyjne). Student rozumie działanie  ataków SQL Injection oraz zna metody ich wykrywania i zapobiegania. Student zna i rozumie sposoby wykrywania i zabezpieczania przed atakami XSS. & kolokwium końcowe \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi korzystać z narzędzia Metasploit do testowania systemów. Student potrafi implementować i testować mechanizmy kontroli dostępu.  Student potrafi przeprowadzić testy BlackBox na rzeczywistych systemach. & kolokwium końcowe, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

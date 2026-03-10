@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,40 +88,56 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 --- & 16 h & --- & 16 h & 59 h & 75 h & \textbf{3} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Przygotowanie konspektu pracy dyplomowej; realizacja kolejnych zadań wspomagających pracę dyplomową; przygotowanie dwóch prezentacji seminaryjnych; konsultacje z promotorem.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja samodzielnej pracy semestralnej
+  \item ocena sporządzonego dokumentu
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -119,122 +150,105 @@ Celem zajęć jest przygotowanie studentów do opracowania i prezentacji prac dy
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Budowa i integracja oprogramowania BYT & co najmniej równocześnie \\
-  Projekt zespołowy PRZ2 & Społeczne aspekty informatyki SAI \\
-  Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ & przedmioty specjalizacyjne \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Budowa i integracja oprogramowania BYT & co najmniej równocześnie \\
+  \rowcolor{tableRowAlt} Projekt zespołowy PRZ2 & Społeczne aspekty informatyki SAI \\
+  \rowcolor{tableRowLight} Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ & przedmioty specjalizacyjne \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych. &  \\
-  \hline
-  2. & Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu &  \\
-  \hline
-  3. & Przygotowanie I. prezentacji na temat &  \\
-  \hline
-  4. & -problemu i kontekstu pracy dyplomowej, &  \\
-  \hline
-  5. & -wizji, rozwiązania postawionego problemu, &  \\
-  \hline
-  6. & -planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe), &  \\
-  \hline
-  7. & - stanu aktualnego pracy, &  \\
-  \hline
-  8. & -zagrożeń i sposobów przeciwdziałania im &  \\
-  \hline
-  9. & Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu. &  \\
-  \hline
-  10. & Przegląd aktualnej dokumentacji pracy. &  \\
-  \hline
-  11. & Przygotowanie rozwiniętego konspektu pracy. &  \\
-  \hline
-  12. & Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów. &  \\
-  \hline
-  13. & Korekta konspektu. &  \\
-  \hline
-  14. & Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych &  \\
-  \hline
-  15. & Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania &  \\
-  \hline
-  16. & Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy. &  \\
-  \hline
-  17. & Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych. &  \\
+  \rowcolor{tableRowAlt} 2. & Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu &  \\
+  \rowcolor{tableRowLight} 3. & Przygotowanie I. prezentacji na temat &  \\
+  \rowcolor{tableRowAlt} 4. & -problemu i kontekstu pracy dyplomowej, &  \\
+  \rowcolor{tableRowLight} 5. & -wizji, rozwiązania postawionego problemu, &  \\
+  \rowcolor{tableRowAlt} 6. & -planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe), &  \\
+  \rowcolor{tableRowLight} 7. & - stanu aktualnego pracy, &  \\
+  \rowcolor{tableRowAlt} 8. & -zagrożeń i sposobów przeciwdziałania im &  \\
+  \rowcolor{tableRowLight} 9. & Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu. &  \\
+  \rowcolor{tableRowAlt} 10. & Przegląd aktualnej dokumentacji pracy. &  \\
+  \rowcolor{tableRowLight} 11. & Przygotowanie rozwiniętego konspektu pracy. &  \\
+  \rowcolor{tableRowAlt} 12. & Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów. &  \\
+  \rowcolor{tableRowLight} 13. & Korekta konspektu. &  \\
+  \rowcolor{tableRowAlt} 14. & Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych &  \\
+  \rowcolor{tableRowLight} 15. & Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania &  \\
+  \rowcolor{tableRowAlt} 16. & Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy. &  \\
+  \rowcolor{tableRowLight} 17. & Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W19 & Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym. &  \\
-  \hline
-  K\_W20 & Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym &  \\
-  \hline
-  K\_W17 & Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W19 & Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym. &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym &  \\
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U01 & Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U02 & Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U03 & Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U05 & Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U08 & Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U25 & Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U26 & Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_U27 & Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U02 & Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U03 & Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U05 & Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U08 & Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U25 & Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U26 & Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K04 & Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-  K\_K05 & Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item prezentacja samodzielnej pracy semestralnej
-  \item ocena sporządzonego dokumentu
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

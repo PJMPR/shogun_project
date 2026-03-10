@@ -48,6 +48,9 @@ function Escape-Latex([string]$text) {
     $text = $text -replace '~',  '\textasciitilde{}'
     $text = $text -replace '\^', '\textasciicircum{}'
     $text = $text -replace '"',  "''"
+    # Uciekamy [ ] by uniknąć interpretacji jako opcjonalny argument LaTeX
+    $text = $text -replace '\[', '{[}'
+    $text = $text -replace '\]', '{]}'
     return $text
 }
 
@@ -82,11 +85,14 @@ function Generate-Tex($s, [string]$code) {
     # Forma zaliczenia
     $dbs = "\\"   # double backslash dla LaTeX
     $zalRows = ""
+    $zalIdx = 0
     if ($s.zaliczenie) {
         foreach ($key in $s.zaliczenie.PSObject.Properties.Name) {
             $sp = Escape-Latex $s.zaliczenie.$key.sposob
             $fo = Escape-Latex $key
-            $zalRows += "  $fo $amp $sp $dbs$nl"
+            $bg = if ($zalIdx % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
+            $zalRows += "  ${bg}$fo $amp $sp $dbs$nl"
+            $zalIdx++
         }
     }
 
@@ -96,6 +102,7 @@ function Generate-Tex($s, [string]$code) {
 
     # Przedmioty wprowadzajace
     $pwRows = ""
+    $pwIdx = 0
     if ($s.przedmioty_wprowadzajace -and $s.przedmioty_wprowadzajace.Count -gt 0) {
         foreach ($p in $s.przedmioty_wprowadzajace) {
             $pn = Escape-Latex $p.nazwa
@@ -103,30 +110,33 @@ function Generate-Tex($s, [string]$code) {
             if ($pn -or $pw) {
                 $a = if ($pn) { $pn } else { "---" }
                 $b = if ($pw) { $pw } else { "---" }
-                $pwRows += "  $a $amp $b $dbs$nl"
+                $bg = if ($pwIdx % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
+                $pwRows += "  ${bg}$a $amp $b $dbs$nl"
+                $pwIdx++
             }
         }
     }
 
     # Tresci programowe – nowy format: [{nr_zajec, wyklad, cwiczenia}]
     $tresciRows = ""
+    $tresciIdx = 0
     if ($s.tresci_programowe) {
         foreach ($ti in $s.tresci_programowe) {
+            $bg = if ($tresciIdx % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
             if ($ti -is [string]) {
                 # stary format fallback
-                $tresciRows += "  \hline$nl"
-                $tresciRows += "  $(Escape-Latex $ti) $amp $amp $dbs$nl"
+                $tresciRows += "  ${bg}$(Escape-Latex $ti) $amp $amp $dbs$nl"
             } else {
                 $nr   = if ($ti.nr_zajec) { "$($ti.nr_zajec)." } else { "" }
                 $tWyk = Escape-Latex ([string]$ti.wyklad)
                 $tCw  = Escape-Latex ([string]$ti.cwiczenia)
-                $tresciRows += "  \hline$nl"
-                $tresciRows += "  $nr $amp $tWyk $amp $tCw $dbs$nl"
+                $tresciRows += "  ${bg}$nr $amp $tWyk $amp $tCw $dbs$nl"
             }
+            $tresciIdx++
         }
     }
     if (-not $tresciRows) {
-        $tresciRows = "  \hline$nl  1. $amp $amp $dbs$nl"
+        $tresciRows = "  \rowcolor{tableRowLight} 1. $amp $amp $dbs$nl"
     }
 
     # Efekty ksztalcenia — nowy format: lista obiektow {keu, peu, metoda_weryfikacji}
@@ -138,7 +148,9 @@ function Generate-Tex($s, [string]$code) {
         $peuHdr   = "Przedmiotowy efekt uczenia si" + [char]0x0119
         $metHdr   = "Metody weryfikacji"
         $rows = ""
+        $ri = 0
         foreach ($item in $items) {
+            $bg = if ($ri % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
             if ($item -is [string]) {
                 # fallback: stary format
                 $keu  = ""
@@ -149,17 +161,25 @@ function Generate-Tex($s, [string]$code) {
                 $peu  = Escape-Latex ([string]$item.peu)
                 $met  = Escape-Latex ([string]$item.metoda_weryfikacji)
             }
-            $rows += "  \hline$nl  $keu $amp $peu $amp $met $dbs$nl"
+            $rows += "  ${bg}$keu $amp $peu $amp $met $dbs$nl"
+            $ri++
         }
+        $hdr   = "{\color{white}\footnotesize\textbf{\vphantom{Ag}$keuHdr}}"
+        $hdrP  = "{\color{white}\footnotesize\textbf{\vphantom{Ag}$peuHdr}}"
+        $hdrM  = "{\color{white}\footnotesize\textbf{\vphantom{Ag}$metHdr}}"
         $block  = "\subsection*{$label}`n"
-        $block += "\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}`n"
-        $block += "\hline`n"
-        $block += "\rowcolor{tableHeader}`n"
-        $block += "\textbf{$keuHdr} $amp \textbf{$peuHdr} $amp \textbf{$metHdr} $dbs`n"
+        $block += "{\scriptsize`n\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}`n"
+        $block += "\thdrule\toprule`n"
+        $block += "\rowcolor{pjatkRed} $hdr $amp $hdrP $amp $hdrM $dbs`n"
+        $block += "\midrule\thdend`n"
+        $block += "\endfirsthead`n"
+        $block += "\thdrule\toprule`n"
+        $block += "\rowcolor{pjatkRed} $hdr $amp $hdrP $amp $hdrM $dbs`n"
+        $block += "\midrule\thdend`n"
         $block += "\endhead`n"
         $block += $rows
-        $block += "  \hline`n"
-        $block += "\end{longtable}`n`n"
+        $block += "\bottomrule`n"
+        $block += "\end{longtable}}`n`n"
         return $block
     }
 
@@ -313,23 +333,25 @@ function Generate-Tex($s, [string]$code) {
     $zalSection = ""
     if ($zalRows) {
         $zalSection  = "${nl}\section{$formaZajLabel}${nl}${nl}"
-        $zalSection += "\begin{tabular}{ll}${nl}"
-        $zalSection += "  \hline${nl}"
-        $zalSection += "  \textbf{$formaZajLabel} $amp \textbf{$sposobLabel} $dbs${nl}"
-        $zalSection += "  \hline${nl}"
+        $zalSection += "\begin{center}${nl}"
+        $zalSection += "{\scriptsize`n\begin{tabular}{m{5cm}m{8cm}}${nl}"
+        $zalSection += "\thdrule\toprule${nl}"
+        $zalSection += "\rowcolor{pjatkRed} {\color{white}\textbf{$formaZajLabel}} $amp {\color{white}\textbf{$sposobLabel}} $dbs${nl}"
+        $zalSection += "\midrule\thdend${nl}"
         $zalSection += $zalRows
-        $zalSection += "  \hline${nl}\end{tabular}${nl}"
+        $zalSection += "\bottomrule${nl}\end{tabular}}${nl}"
+        $zalSection += "\end{center}${nl}"
     }
 
     $pwSection = ""
     if ($pwRows) {
         $pwSection  = "${nl}\section{$przedmWprow}${nl}${nl}"
-        $pwSection += "\begin{tabularx}{\textwidth}{lX}${nl}"
-        $pwSection += "  \hline${nl}"
-        $pwSection += "  \textbf{Przedmiot} $amp \textbf{Wymagane zagadnienia} $dbs${nl}"
-        $pwSection += "  \hline${nl}"
+        $pwSection += "{\scriptsize`n\begin{tabularx}{\textwidth}{m{5cm}Y}${nl}"
+        $pwSection += "\thdrule\toprule${nl}"
+        $pwSection += "\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} $amp {\color{white}\textbf{Wymagane zagadnienia}} $dbs${nl}"
+        $pwSection += "\midrule\thdend${nl}"
         $pwSection += $pwRows
-        $pwSection += "  \hline${nl}\end{tabularx}${nl}"
+        $pwSection += "\bottomrule${nl}\end{tabularx}}${nl}"
     }
 
     $kompSection = ""  # nieużywane — kompetencje generowane w $kompBlock
@@ -343,6 +365,8 @@ function Generate-Tex($s, [string]$code) {
     $t += "\usepackage[utf8]{inputenc}`n"
     $t += "\usepackage[polish]{babel}`n"
     $t += "\usepackage{lmodern}`n"
+    $t += "\usepackage[scaled=1.0]{helvet}`n"
+    $t += "\renewcommand{\familydefault}{\sfdefault}`n"
     $t += "\usepackage{microtype}`n"
     $t += "\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}`n"
     $t += "\usepackage{xcolor}`n"
@@ -359,11 +383,20 @@ function Generate-Tex($s, [string]$code) {
     $t += "\usepackage{mdframed}`n"
     $t += "\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}`n"
     $t += "\usepackage{eso-pic}`n"
-    $t += "\usepackage{tikz}`n`n"
-    $t += "\definecolor{pjatkRed}{RGB}{180,0,0}`n"
+    $t += "\usepackage{tikz}`n"
+    $t += "\usepackage{tocloft}`n`n"
+    $t += "\definecolor{pjatkRed}{RGB}{220,38,38}`n"
     $t += "\definecolor{pjatkGray}{RGB}{80,80,80}`n"
     $t += "\definecolor{pjatkLightGray}{RGB}{245,245,245}`n"
-    $t += "\definecolor{tableHeader}{RGB}{220,220,220}`n`n"
+    $t += "\definecolor{tableHeader}{RGB}{220,220,220}`n"
+    $t += "\definecolor{tableRowLight}{RGB}{242,243,246}`n"
+    $t += "\definecolor{tableRowAlt}{RGB}{205,209,218}`n`n"
+    $t += "\setlength{\extrarowheight}{3pt}`n"
+    $t += "\renewcommand{\arraystretch}{1.3}`n"
+    $t += "\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}`n"
+    $t += "\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}`n"
+    $t += "% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})`n"
+    $t += "\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}`n`n"
     $t += "\pagestyle{fancy}\fancyhf{}`n"
     $t += "\renewcommand{\headrulewidth}{0.4pt}`n"
     $t += "\renewcommand{\footrulewidth}{0.4pt}`n"
@@ -376,6 +409,8 @@ function Generate-Tex($s, [string]$code) {
     $t += "\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,`n"
     $t += "  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,`n"
     $t += "  innerbottommargin=8pt, roundcorner=4pt]{infobox}`n`n"
+    $t += "% Spis tresci -- linki czarne, bez ramki`n"
+    $t += "\AtBeginDocument{\hypersetup{linkcolor=black}}`n`n"
     $t += "\begin{document}`n`n"
     $t += "\AddToShipoutPictureBG{%`n"
     $t += "  \begin{tikzpicture}[remember picture, overlay]`n"
@@ -401,31 +436,36 @@ function Generate-Tex($s, [string]$code) {
     $t += "  \textbf{Wersja z dnia:}     $amp $wersja $dbs`n"
     $t += "\end{tabularx}`n"
     $t += "\end{infobox}`n`n"
-    $t += "\vspace{1cm}`n`n"
-    $pipe = "|"
+    $t += "\vspace{0.6cm}`n"
+    $t += "{\small\tableofcontents}`n"
+    $t += "\newpage`n`n"
     $t += "\section{$godzZaj}`n`n"
+    $t += "{\scriptsize`n"
     $t += "\begin{center}`n"
-    $t += "\begin{tabular}{${pipe}>{\centering\arraybackslash}p{2.0cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{2.0cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{2.0cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{2.4cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{2.4cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{2.0cm}`n"
-    $t += "                ${pipe}>{\centering\arraybackslash}p{1.4cm}${pipe}}`n"
-    $t += "\hline`n"
-    $t += "\rowcolor{tableHeader}`n"
-    $t += "\textbf{$wyklady} $amp \textbf{$cwiczenia} $amp \textbf{Laboratorium} $amp`n"
-    $t += "\textbf{$zprow} $amp \textbf{$pracaWl} $amp \textbf{$lacznie} $amp \textbf{ECTS} $dbs`n"
-    $t += "\hline`n"
+    $t += "\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}`n"
+    $t += "                >{\centering\arraybackslash}p{2.0cm}`n"
+    $t += "                >{\centering\arraybackslash}p{2.0cm}`n"
+    $t += "                >{\centering\arraybackslash}p{2.4cm}`n"
+    $t += "                >{\centering\arraybackslash}p{2.4cm}`n"
+    $t += "                >{\centering\arraybackslash}p{2.0cm}`n"
+    $t += "                >{\centering\arraybackslash}p{1.4cm}}`n"
+    $t += "\thdrule\toprule`n"
+    $t += "\rowcolor{pjatkRed}`n"
+    $t += "{\color{white}\textbf{$wyklady}} $amp {\color{white}\textbf{$cwiczenia}} $amp {\color{white}\textbf{Laboratorium}} $amp`n"
+    $t += "{\color{white}\textbf{$zprow}} $amp {\color{white}\textbf{$pracaWl}} $amp {\color{white}\textbf{$lacznie}} $amp {\color{white}\textbf{ECTS}} $dbs`n"
+    $t += "\midrule\thdend`n"
+    $t += "\rowcolor{tableRowLight}`n"
     $t += "$wyk $amp $cwi $amp $lab $amp $zP $amp $wl $amp $lac $amp \textbf{$ects} $dbs`n"
-    $t += "\hline`n"
+    $t += "\bottomrule`n"
     $t += "\end{tabular}`n"
-    $t += "\end{center}`n"
+    $t += "\end{center}}`n"
     if ($pracaWlasnaStuOpis) {
         $t += "`n\vspace{4pt}`n"
         $t += "\noindent\textbf{$pracaWlLabel} $pracaWlasnaStuOpis`n"
     }
     $t += "$zalSection`n"
+    $t += "\section{$krytSec}`n`n"
+    $t += "$kryteriaBlock`n`n"
     $t += "\section{Cel dydaktyczny}`n`n"
     $t += "$cel`n`n"
     if ($celEng) {
@@ -434,19 +474,23 @@ function Generate-Tex($s, [string]$code) {
     }
     $t += "$pwSection`n"
     $t += "\section{$tresciSec}`n`n"
-    $t += "\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}`n"
-    $t += "\hline`n"
-    $t += "\textbf{Nr zaj.} $amp \textbf{Wyk" + [char]0x0142 + "ad} $amp \textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia} $dbs\hline`n"
+    $t += "{\scriptsize`n"
+    $t += "\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}`n"
+    $t += "\thdrule\toprule`n"
+    $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
+    $t += "\midrule\thdend`n"
+    $t += "\endfirsthead`n"
+    $t += "\thdrule\toprule`n"
+    $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
+    $t += "\midrule\thdend`n"
     $t += "\endhead`n"
     $t += $tresciRows
-    $t += "  \hline`n"
-    $t += "\end{longtable}`n`n"
+    $t += "\bottomrule`n"
+    $t += "\end{longtable}}`n`n"
     $t += "\section{$efektySec}`n`n"
     $t += $wiedzaBlock
     $t += $umiejBlock
     $t += $kompBlock
-    $t += "\section{$krytSec}`n`n"
-    $t += "$kryteriaBlock`n`n"
     $t += "\section{$metSec}`n`n"
     $t += "$metodyBlock`n`n"
     $t += "\section{$litSec}`n`n"
@@ -471,22 +515,25 @@ function Generate-Tex($s, [string]$code) {
 
         $labTableRows = ""
         for ($ri = 0; $ri -lt $labMaxRows; $ri++) {
+            $bg = if ($ri % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
             $c1 = if ($ri -lt $labPcArr.Count)  { Escape-Latex $labPcArr[$ri]  } else { "" }
             $c2 = if ($ri -lt $labSwArr.Count)  { Escape-Latex $labSwArr[$ri]  } else { "" }
             $c3 = if ($ri -lt $labWypArr.Count) { Escape-Latex $labWypArr[$ri] } else { "" }
-            $labTableRows += "  \hline$nl  $c1 $amp $c2 $amp $c3 $dbs$nl"
+            $labTableRows += "  ${bg}$c1 $amp $c2 $amp $c3 $dbs$nl"
         }
 
         $t += "\section{$labSec}`n`n"
+        $t += "{\scriptsize`n"
         $t += "\begin{center}`n"
-        $t += "\begin{tabular}{|p{4.5cm}|p{4.5cm}|p{4.5cm}|}`n"
-        $t += "\hline`n"
-        $t += "\rowcolor{tableHeader}`n"
-        $t += "\textbf{$labPcLbl} $amp \textbf{$labSwLbl} $amp \textbf{$labWypLbl} $dbs`n"
+        $t += "\begin{tabular}{m{4.5cm}m{4.5cm}m{4.5cm}}`n"
+        $t += "\thdrule\toprule`n"
+        $t += "\rowcolor{pjatkRed}`n"
+        $t += "{\color{white}\textbf{$labPcLbl}} $amp {\color{white}\textbf{$labSwLbl}} $amp {\color{white}\textbf{$labWypLbl}} $dbs`n"
+        $t += "\midrule\thdend`n"
         $t += $labTableRows
-        $t += "  \hline`n"
+        $t += "\bottomrule`n"
         $t += "\end{tabular}`n"
-        $t += "\end{center}`n`n"
+        $t += "\end{center}}`n`n"
     }
 
     # Informacje dodatkowe (tylko jesli niepuste)
@@ -524,7 +571,7 @@ function Generate-Tex($s, [string]$code) {
 
 function Compile-Tex([string]$texPath, [string]$outputDir) {
     $name = [System.IO.Path]::GetFileNameWithoutExtension($texPath)
-    for ($i = 1; $i -le 2; $i++) {
+    for ($i = 1; $i -le 3; $i++) {
         $result = & "$MIKTEX_BIN\pdflatex.exe" `
             -interaction=nonstopmode `
             -halt-on-error `

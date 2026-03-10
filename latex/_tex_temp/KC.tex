@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,134 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 30 h & --- & 30 h & 60 h & 65 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań CTF (Capture the Flag) z kryminalistyki cyfrowej; analiza dowodów cyfrowych; przygotowanie raportów z przeprowadzonych analiz.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Egzamin \\
-  Laboratorium & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Kryminalistyka cyfrowa to dziedzina zajmująca się śledztwem i badaniem dowodów związanych z przestępstwami cyfrowymi. Jest to rodzaj kryminalistyki, która koncentruje się na zdolności do wykorzystywania technologii i nauki do zgromadzenia dowodów, które mogą być przedstawione w sądzie. Kryminalistyka Cyfrowa odgrywa kluczową rolę w walce z cyberprzestępczością, pomagając organom ścigania zrozumieć, jak doszło do przestępstwa, kto może za nie odpowiadać i jakie kroki mogą być podjęte, aby zapobiec przyszłym incydentom. Główne cele dydaktyczne to badanie sieci, czyli umiejętność analizy ruchu sieciowego w celu wykrycia nieprawidłowości lub dowodów na działania przestępcze.Inny cel to analiza logów systemowych, czyli zebranie informacji o tym, co się działo na danym systemie w określonym czasie. Analiza tych logów może pomóc w ustaleniu, co się stało podczas incydentu.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{Digital forensics is a field concerned with the investigation and examination of evidence related to digital crimes. It is a branch of forensic science focused on the ability to use technology and scientific methods to gather evidence that can be presented in court. Digital forensics plays a key role in combating cybercrime by helping law enforcement understand how a crime occurred, who may be responsible, and what steps can be taken to prevent future incidents. The main educational objectives include network investigation, i.e. the ability to analyze network traffic in order to detect irregularities or evidence of criminal activity. Another objective is system log analysis, i.e. collecting information about what occurred on a given system at a specific time. Analyzing such logs can help determine what happened during an incident.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Bezpieczeństwo Systemów Informatycznych & --- \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Wprowadzenie do Kryminalistyki Cyfrowej & [Linux 1] Operacje na plikach \\
-  \hline
-  2. & Bezpieczeństwo protokołów i urządzeń warstwy 1-2 modelu OSI & [Linux 1] Operacje identyfikacji oraz kodowania danych \\
-  \hline
-  3. & Bezpieczeństwo protokołów i urządzeń warstwy 3-4 modelu OSI & [Linux 1] Analiza logów \\
-  \hline
-  4. & Bezpieczeństwo protokołów i urządzeń warstwy 5-7 modelu OSI & [Linux 2] Mechanizmy systemowe i skrypty Bash \\
-  \hline
-  5. & Metody analizy ruchu sieciowego (Network analysis) & [Linux 2] Analiza danych z pliku \\
-  \hline
-  6. & Metody analizy oprogramowania (Software analysis) & [Linux 2] Administracja systemem GNU/Linux \\
-  \hline
-  7. & Metody analizy mediów (Media analysis) & [Linux 2] Zarządzanie procesami \\
-  \hline
-  8. & Metody analizy sprzętu (Hardware analysis) & [Sieci 2] Protokół http \\
-  \hline
-  9. &  & [Sieci 2] Protokół DNS \\
-  \hline
-  10. &  & [Sieci 2] Protokoły poczty \\
-  \hline
-  11. &  & [Sieci 2] Inne protokoły \\
-  \hline
-  12. &  & [Sieci 2] Bezpieczna komunikacja \\
-  \hline
-  13. &  & [Sieci 2] Bezpieczeństwo sieci WiFi \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W23 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber & kolokwium końcowe \\
-  \hline
-  K\_W23 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber & kolokwium końcowe \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U30 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & raport z wykonanego zadania, kolokwium \\
-  \hline
-  K\_U30 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & raport z wykonanego zadania, kolokwium \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K04 & Student jest gotów do pracy zespołowej w dziale SOC & raport z wykonanego zadania, kolokwium \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -215,6 +144,103 @@ Kryminalistyka cyfrowa to dziedzina zajmująca się śledztwem i badaniem dowod�
   \item kolokwium
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Kryminalistyka cyfrowa to dziedzina zajmująca się śledztwem i badaniem dowodów związanych z przestępstwami cyfrowymi. Jest to rodzaj kryminalistyki, która koncentruje się na zdolności do wykorzystywania technologii i nauki do zgromadzenia dowodów, które mogą być przedstawione w sądzie. Kryminalistyka Cyfrowa odgrywa kluczową rolę w walce z cyberprzestępczością, pomagając organom ścigania zrozumieć, jak doszło do przestępstwa, kto może za nie odpowiadać i jakie kroki mogą być podjęte, aby zapobiec przyszłym incydentom. Główne cele dydaktyczne to badanie sieci, czyli umiejętność analizy ruchu sieciowego w celu wykrycia nieprawidłowości lub dowodów na działania przestępcze.Inny cel to analiza logów systemowych, czyli zebranie informacji o tym, co się działo na danym systemie w określonym czasie. Analiza tych logów może pomóc w ustaleniu, co się stało podczas incydentu.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Digital forensics is a field concerned with the investigation and examination of evidence related to digital crimes. It is a branch of forensic science focused on the ability to use technology and scientific methods to gather evidence that can be presented in court. Digital forensics plays a key role in combating cybercrime by helping law enforcement understand how a crime occurred, who may be responsible, and what steps can be taken to prevent future incidents. The main educational objectives include network investigation, i.e. the ability to analyze network traffic in order to detect irregularities or evidence of criminal activity. Another objective is system log analysis, i.e. collecting information about what occurred on a given system at a specific time. Analyzing such logs can help determine what happened during an incident.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Bezpieczeństwo Systemów Informatycznych & --- \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do Kryminalistyki Cyfrowej & {[}Linux 1{]} Operacje na plikach \\
+  \rowcolor{tableRowAlt} 2. & Bezpieczeństwo protokołów i urządzeń warstwy 1-2 modelu OSI & {[}Linux 1{]} Operacje identyfikacji oraz kodowania danych \\
+  \rowcolor{tableRowLight} 3. & Bezpieczeństwo protokołów i urządzeń warstwy 3-4 modelu OSI & {[}Linux 1{]} Analiza logów \\
+  \rowcolor{tableRowAlt} 4. & Bezpieczeństwo protokołów i urządzeń warstwy 5-7 modelu OSI & {[}Linux 2{]} Mechanizmy systemowe i skrypty Bash \\
+  \rowcolor{tableRowLight} 5. & Metody analizy ruchu sieciowego (Network analysis) & {[}Linux 2{]} Analiza danych z pliku \\
+  \rowcolor{tableRowAlt} 6. & Metody analizy oprogramowania (Software analysis) & {[}Linux 2{]} Administracja systemem GNU/Linux \\
+  \rowcolor{tableRowLight} 7. & Metody analizy mediów (Media analysis) & {[}Linux 2{]} Zarządzanie procesami \\
+  \rowcolor{tableRowAlt} 8. & Metody analizy sprzętu (Hardware analysis) & {[}Sieci 2{]} Protokół http \\
+  \rowcolor{tableRowLight} 9. &  & {[}Sieci 2{]} Protokół DNS \\
+  \rowcolor{tableRowAlt} 10. &  & {[}Sieci 2{]} Protokoły poczty \\
+  \rowcolor{tableRowLight} 11. &  & {[}Sieci 2{]} Inne protokoły \\
+  \rowcolor{tableRowAlt} 12. &  & {[}Sieci 2{]} Bezpieczna komunikacja \\
+  \rowcolor{tableRowLight} 13. &  & {[}Sieci 2{]} Bezpieczeństwo sieci WiFi \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber & kolokwium końcowe \\
+  \rowcolor{tableRowAlt} K\_W23 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber & kolokwium końcowe \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & raport z wykonanego zadania, kolokwium \\
+  \rowcolor{tableRowAlt} K\_U30 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & raport z wykonanego zadania, kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do pracy zespołowej w dziale SOC & raport z wykonanego zadania, kolokwium \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

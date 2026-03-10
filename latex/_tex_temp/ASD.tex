@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,142 +88,48 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 24 h & 40 h & 60 h & 100 h & \textbf{4} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja algorytmów i struktur danych w wybranym języku programowania; analiza złożoności obliczeniowej; przygotowanie do kolokwiów i egzaminu poprzez rozwiązywanie zadań.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Ćwiczenia & Zaliczenie z oceną \\
-  Wykład & Egzamin \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{Mastery of the analysis of iterative and recursive programs and the use of mathematical tools to analyze algorithmic complexity and knowledge of the complexity of algorithmic problems, complexity classes, and their practical significance; analysis of the complexity of sorting and searching algorithms; trees, stacks, queues, and hash tables; dynamic programming and greedy algorithms.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  PRG1 - Programowanie & Umiejetnosc programowania iteracyjnego i rekursywnego; umiejetnosc liczenia granic, sum szeregow oraz calek funkcji elementarnych; umiejetnosc logicznego wnioskowania \\
-  ALG - Algebra liniowa z geometria & Podstawy algebry liniowej \\
-  MAD - Matematyka Dyskretna & Podstawy matematyki dyskretnej \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Algorytmy iproblemy algorytmiczne; Złożoność czasowa i pamięciowa; przykłady. &  \\
-  \hline
-  2. & Analiza złożoności problemu wyszukiwania informacji w kolekcji uporządkowanej i nieuporządkowanej, notacje asymptotyczne &  \\
-  \hline
-  3. & Specyfikowanie problemów, własność stopu, problemy nierozstrzygalne &  \\
-  \hline
-  4. & Logika Hoare’ai metody dowodzenia własności stopu &  \\
-  \hline
-  5. & Proste algorytmy sortujące &  \\
-  \hline
-  6. & Quicksort; algorytmy sortujące w czasie liniowym &  \\
-  \hline
-  7. & Programowanie dynamiczne i zachłanne &  \\
-  \hline
-  8. & Kolejki, stosy, listy i drzewa &  \\
-  \hline
-  9. & Tablice z haszowaniem &  \\
-  \hline
-  10. & Twierdzenie o rekursji uniwersalnej &  \\
-  \hline
-  11. & Drzewa BST, drzewa czerwono-czarne &  \\
-  \hline
-  12. & Algorytmy grafowe &  \\
-  \hline
-  13. & Podstawy teorii złożoności, klasy złożoności, metody redukcji i problemy zupełne w klasie &  \\
-  \hline
-  14. & Języki formalne – języki regularne, kontekstowe i bezkontekstowe,automaty i gramatyki. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W04 & Student zna i rozumie podstawowe pojęcia w zakresie algorytmiki: złożoność czasową i pamięciową algorytmów (notacja O, Omega, Theta), algorytmy sortowania, wyszukiwania i algorytmy grafowe. [K\_W04] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W05 & Student zna i rozumie zaawansowane zagadnienia algorytmiczne: algorytmy zachłanne, programowanie dynamiczne, drzewa binarne (BST, AVL, czerwono-czarne), tablice haszujące i algorytmy grafowe (BFS, DFS, Dijkstra, Floyd-Warshall). [K\_W05] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-  K\_W05 & Student zna i rozumie podstawy teorii złożoności obliczeniowej: klasy P i NP, problemy NP-zupełne, metody redukcji, automaty skończone i języki formalne. [K\_W05] & egzamin pisemny z zadaniami problemowymi \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U11 & Student potrafi przeanalizować złożoność algorytmu, dobrać i zaimplementować odpowiednie struktury danych oraz algorytmy dla zadanego problemu inżynierskiego w C++/Pythonie/C\#. [K\_U11] & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-  K\_U11 & Student potrafi zaprojektować i zweryfikować poprawność algorytmu z użyciem logiki Hoare'a oraz oszacować jego koszt obliczeniowy metodami asymptotycznymi. [K\_U11] & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K05 & Student jest gotów do stosowania zaawansowanych technik algorytmicznych w rozwiązywaniu złożonych problemów inżynierskich, wykazując się krytycznym myśleniem i precyzją. [K\_K05] & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-  K\_K03 & Student jest gotów do samodzielnego uczenia się nowych algorytmów i technik obliczeniowych niezbędnych w pracy inżyniera oprogramowania. [K\_K03] & kolokwium, sprawdziany wstępne „wejściówki'' \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -223,6 +144,108 @@ Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wy
   \item sprawdziany wstępne „wejściówki''
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Opanowanie umiejętności analizy programów iteracyjnych i rekursywnych oraz wykorzystania aparatu matematycznego do analizy złożoności algorytmówi wiedzy na temat złożoności problemów algorytmicznych, klas złożoności i ich praktycznegoznaczenia; analiza złożoności algorytmów sortujących i wyszukujących; drzewa, stosy, kolejki itablice z haszowaniem; programowanie dynamiczne i algorytmy zachłanne.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Mastery of the analysis of iterative and recursive programs and the use of mathematical tools to analyze algorithmic complexity and knowledge of the complexity of algorithmic problems, complexity classes, and their practical significance; analysis of the complexity of sorting and searching algorithms; trees, stacks, queues, and hash tables; dynamic programming and greedy algorithms.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} PRG1 - Programowanie & Umiejetnosc programowania iteracyjnego i rekursywnego; umiejetnosc liczenia granic, sum szeregow oraz calek funkcji elementarnych; umiejetnosc logicznego wnioskowania \\
+  \rowcolor{tableRowAlt} ALG - Algebra liniowa z geometria & Podstawy algebry liniowej \\
+  \rowcolor{tableRowLight} MAD - Matematyka Dyskretna & Podstawy matematyki dyskretnej \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Algorytmy iproblemy algorytmiczne; Złożoność czasowa i pamięciowa; przykłady. &  \\
+  \rowcolor{tableRowAlt} 2. & Analiza złożoności problemu wyszukiwania informacji w kolekcji uporządkowanej i nieuporządkowanej, notacje asymptotyczne &  \\
+  \rowcolor{tableRowLight} 3. & Specyfikowanie problemów, własność stopu, problemy nierozstrzygalne &  \\
+  \rowcolor{tableRowAlt} 4. & Logika Hoare’ai metody dowodzenia własności stopu &  \\
+  \rowcolor{tableRowLight} 5. & Proste algorytmy sortujące &  \\
+  \rowcolor{tableRowAlt} 6. & Quicksort; algorytmy sortujące w czasie liniowym &  \\
+  \rowcolor{tableRowLight} 7. & Programowanie dynamiczne i zachłanne &  \\
+  \rowcolor{tableRowAlt} 8. & Kolejki, stosy, listy i drzewa &  \\
+  \rowcolor{tableRowLight} 9. & Tablice z haszowaniem &  \\
+  \rowcolor{tableRowAlt} 10. & Twierdzenie o rekursji uniwersalnej &  \\
+  \rowcolor{tableRowLight} 11. & Drzewa BST, drzewa czerwono-czarne &  \\
+  \rowcolor{tableRowAlt} 12. & Algorytmy grafowe &  \\
+  \rowcolor{tableRowLight} 13. & Podstawy teorii złożoności, klasy złożoności, metody redukcji i problemy zupełne w klasie &  \\
+  \rowcolor{tableRowAlt} 14. & Języki formalne – języki regularne, kontekstowe i bezkontekstowe,automaty i gramatyki. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W04 & Student zna i rozumie podstawowe pojęcia w zakresie algorytmiki: złożoność czasową i pamięciową algorytmów (notacja O, Omega, Theta), algorytmy sortowania, wyszukiwania i algorytmy grafowe. {[}K\_W04{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowAlt} K\_W05 & Student zna i rozumie zaawansowane zagadnienia algorytmiczne: algorytmy zachłanne, programowanie dynamiczne, drzewa binarne (BST, AVL, czerwono-czarne), tablice haszujące i algorytmy grafowe (BFS, DFS, Dijkstra, Floyd-Warshall). {[}K\_W05{]} & egzamin pisemny z zadaniami problemowymi \\
+  \rowcolor{tableRowLight} K\_W05 & Student zna i rozumie podstawy teorii złożoności obliczeniowej: klasy P i NP, problemy NP-zupełne, metody redukcji, automaty skończone i języki formalne. {[}K\_W05{]} & egzamin pisemny z zadaniami problemowymi \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U11 & Student potrafi przeanalizować złożoność algorytmu, dobrać i zaimplementować odpowiednie struktury danych oraz algorytmy dla zadanego problemu inżynierskiego w C++/Pythonie/C\#. {[}K\_U11{]} & kolokwium, sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowAlt} K\_U11 & Student potrafi zaprojektować i zweryfikować poprawność algorytmu z użyciem logiki Hoare'a oraz oszacować jego koszt obliczeniowy metodami asymptotycznymi. {[}K\_U11{]} & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student jest gotów do stosowania zaawansowanych technik algorytmicznych w rozwiązywaniu złożonych problemów inżynierskich, wykazując się krytycznym myśleniem i precyzją. {[}K\_K05{]} & kolokwium, sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego uczenia się nowych algorytmów i technik obliczeniowych niezbędnych w pracy inżyniera oprogramowania. {[}K\_K03{]} & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

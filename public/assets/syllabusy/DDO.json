@@ -34,7 +34,14 @@
                 "rozwiązywanie zadań"
             ]
         },
-        "zaliczenie": {},
+      "zaliczenie": {
+        "Wykład": {
+          "sposob": "Nieoceniany"
+        },
+        "Ćwiczenia": {
+          "sposob": "Zaliczenie z oceną"
+        }
+      },
         "kryteria_oceny": {
             "wyklad": [],
             "cwiczenia_laboratorium": [

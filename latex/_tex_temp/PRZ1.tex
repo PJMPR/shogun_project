@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,58 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 32 h & 48 h & 102 h & 150 h & \textbf{6} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Realizacja przydzielonych zadań w projekcie zespołowym; dokumentowanie postępów; przygotowanie wydania (release) produktu; współpraca z zespołem projektowym.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+  \item prezentacja elementu zespołowej pracy semestralnej
+  \item raport z wykonanego zadania
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,185 +152,136 @@ W ramach przedmiotu studenci obierają i realizują pod opieką promotora zespo�
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Projekt informatyczny (PRI) & Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi \\
-  Budowa i integracja oprogramowania (BYT) & Podstawy inżynierii oprogramowania \\
-  Przedmioty specjalizacyjne & Wiedza specjalizacyjna \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Projekt informatyczny (PRI) & Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi \\
+  \rowcolor{tableRowAlt} Budowa i integracja oprogramowania (BYT) & Podstawy inżynierii oprogramowania \\
+  \rowcolor{tableRowLight} Przedmioty specjalizacyjne & Wiedza specjalizacyjna \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW) &  \\
-  \hline
-  2. & Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu &  \\
-  \hline
-  3. & Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP) &  \\
-  \hline
-  4. & Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP). &  \\
-  \hline
-  5. & Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej &  \\
-  \hline
-  6. & Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac &  \\
-  \hline
-  7. & Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac &  \\
-  \hline
-  8. & Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem. &  \\
-  \hline
-  9. & Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW) &  \\
+  \rowcolor{tableRowAlt} 2. & Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu &  \\
+  \rowcolor{tableRowLight} 3. & Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP) &  \\
+  \rowcolor{tableRowAlt} 4. & Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP). &  \\
+  \rowcolor{tableRowLight} 5. & Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej &  \\
+  \rowcolor{tableRowAlt} 6. & Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac &  \\
+  \rowcolor{tableRowLight} 7. & Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac &  \\
+  \rowcolor{tableRowAlt} 8. & Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem. &  \\
+  \rowcolor{tableRowLight} 9. & Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W13 & Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi &  \\
-  \hline
-  K\_W17 & Student: &  \\
-  \hline
-  K\_W14 & ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania &  \\
-  \hline
-  K\_W14 & zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania &  \\
-  \hline
-  K\_W14 & rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML &  \\
-  \hline
-  K\_W14 & umie korzystać z wzorców programowych i standardowych API &  \\
-  \hline
-  K\_W14 & ma wiedzę o narzędziach i środowiskach wspomagających &  \\
-  \hline
-  K\_W17 & Student: &  \\
-  \hline
-  K\_W15 & ma wiedzę dotyczącą procesów inżynierii wymagań &  \\
-  \hline
-  K\_W15 & rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań &  \\
-  \hline
-  K\_W15 & ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi &  \\
-  \hline
-  K\_W16 & Student ma wiedzę z zakresu procesów walidacji i testowania &  \\
-  \hline
-  K\_W17 & Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego &  \\
-  \hline
-  K\_W20 & Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym &  \\
-  \hline
-  K\_W17 & Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W13 & Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi &  \\
+  \rowcolor{tableRowAlt} K\_W17 & Student: &  \\
+  \rowcolor{tableRowLight} K\_W14 & ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania &  \\
+  \rowcolor{tableRowAlt} K\_W14 & zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania &  \\
+  \rowcolor{tableRowLight} K\_W14 & rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML &  \\
+  \rowcolor{tableRowAlt} K\_W14 & umie korzystać z wzorców programowych i standardowych API &  \\
+  \rowcolor{tableRowLight} K\_W14 & ma wiedzę o narzędziach i środowiskach wspomagających &  \\
+  \rowcolor{tableRowAlt} K\_W17 & Student: &  \\
+  \rowcolor{tableRowLight} K\_W15 & ma wiedzę dotyczącą procesów inżynierii wymagań &  \\
+  \rowcolor{tableRowAlt} K\_W15 & rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań &  \\
+  \rowcolor{tableRowLight} K\_W15 & ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi &  \\
+  \rowcolor{tableRowAlt} K\_W16 & Student ma wiedzę z zakresu procesów walidacji i testowania &  \\
+  \rowcolor{tableRowLight} K\_W17 & Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym &  \\
+  \rowcolor{tableRowLight} K\_W17 & Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U01 & Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U02 & Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U03 & Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U04 & Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U05 & potrafi pracować w zespole pełniąc w nim uzgodnione role & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U05 & potrafi oszacować czas potrzebny na realizację zadania & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U05 & planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U20 & ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U20 & ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U09 & Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U13 & Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U15 & Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U16 & posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U16 & potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U18 & Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U19 & potrafi dobrać model procesu i narzędzia dla jego wytworzenia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U20 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U21 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U22 & Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U24 & Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U26 & Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U27 & Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_U27 & Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U02 & Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U03 & Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U04 & Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U05 & potrafi pracować w zespole pełniąc w nim uzgodnione role & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U05 & potrafi oszacować czas potrzebny na realizację zadania & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U05 & planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U20 & ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U20 & ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U09 & Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U13 & Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U15 & Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U16 & posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U16 & potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U18 & Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U19 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U19 & potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U19 & potrafi dobrać model procesu i narzędzia dla jego wytworzenia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U20 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U21 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U22 & Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U24 & Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U26 & Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K05 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K04 & potrafi pełnić przypadające nań role projektowe i wykonawcze & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K04 & potrafi współpracować z innymi członkami grupy i otoczeniem projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K05 & Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K06 & Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K05 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K07 & stosuje w projekcie rozwiązania innowacyjne & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-  K\_K08 & dostrzega i ocenia aspekty komercjalizacji projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item ocena pracy podczas ćwiczenia
-  \item prezentacja elementu zespołowej pracy semestralnej
-  \item raport z wykonanego zadania
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K05 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_K04 & potrafi pełnić przypadające nań role projektowe i wykonawcze & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_K04 & potrafi współpracować z innymi członkami grupy i otoczeniem projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_K06 & Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student: & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowLight} K\_K07 & stosuje w projekcie rozwiązania innowacyjne & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_K08 & dostrzega i ocenia aspekty komercjalizacji projektu & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

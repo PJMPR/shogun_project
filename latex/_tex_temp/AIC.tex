@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,58 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Analiza rzeczywistych przypadków incydentów cyberbezpieczeństwa; przygotowanie raportu z analizy wybranego incydentu; samodzielne ćwiczenia z narzędziami do analizy zagrożeń.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Laboratorium & Zaliczenie z oceną \\
-  Wykład & Nieoceniany \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium końcowe
+  \item rezultaty gry strategicznej
+  \item raport z wykonanego zadania
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,107 +152,90 @@ Analiza incydentów cyberbezpieczeństwa to proces badania i oceny zdarzeń, kt�
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Wykład: &  \\
-  \hline
-  2. & Anatomia zagrożenia – Ransomware (wg. ENISA) &  \\
-  \hline
-  3. & Anatomia zagrożenia – Malware (wg. ENISA) &  \\
-  \hline
-  4. & Anatomia zagrożenia – Cryptojacking (wg. ENISA) &  \\
-  \hline
-  5. & Anatomia zagrożenia - E-mail related threats (wg. ENISA) &  \\
-  \hline
-  6. & Anatomia zagrożenia - Threats against data (wg. ENISA) &  \\
-  \hline
-  7. & Anatomia zagrożenia - Threats against availability and integrity (wg. ENISA) &  \\
-  \hline
-  8. & Anatomia zagrożenia - Disinformation – misinformation (wg. ENISA) &  \\
-  \hline
-  9. & Anatomia zagrożenia - Non-malicious threats (wg. ENISA) &  \\
-  \hline
-  10. & Laboratoria: &  \\
-  \hline
-  11. & Zapoznanie się z organizacją oraz utworzenie Zespołów SOC &  \\
-  \hline
-  12. & Atak 1: Atak typu Ransomware, Poziom 1– Reakcja i prewencja &  \\
-  \hline
-  13. & Atak 2: Atak typu Malware. Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  14. & Atak 3: Atak typu Cryptojacking, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  15. & Atak 4: Atak typu E-mail related threats, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  16. & Atak 5: Atak typu Threats against data, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  17. & Atak 6: Atak typu Threats against availability and integrity, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  18. & Atak 7: Atak typu Disinformation – misinformation, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  19. & Atak 8: Atak typu Non-malicious threats, Poziom 1 – Reakcja i prewencja &  \\
-  \hline
-  20. & Atak 9: Atak typu Zaawansowany wektor ataku 1, Poziom 2  – Reakcja i prewencja &  \\
-  \hline
-  21. & Atak 10: Atak typu Zaawansowany wektor ataku 2, Poziom 2  – Reakcja i prewencja &  \\
-  \hline
-  22. & Atak 11: Atak typu Zaawansowany wektor ataku 3, Poziom 2  – Reakcja i prewencja &  \\
-  \hline
-  23. & Atak 12 : Atak typu Zaawansowany wektor ataku 4, Poziom 2  – Reakcja i prewencja &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Wykład: &  \\
+  \rowcolor{tableRowAlt} 2. & Anatomia zagrożenia – Ransomware (wg. ENISA) &  \\
+  \rowcolor{tableRowLight} 3. & Anatomia zagrożenia – Malware (wg. ENISA) &  \\
+  \rowcolor{tableRowAlt} 4. & Anatomia zagrożenia – Cryptojacking (wg. ENISA) &  \\
+  \rowcolor{tableRowLight} 5. & Anatomia zagrożenia - E-mail related threats (wg. ENISA) &  \\
+  \rowcolor{tableRowAlt} 6. & Anatomia zagrożenia - Threats against data (wg. ENISA) &  \\
+  \rowcolor{tableRowLight} 7. & Anatomia zagrożenia - Threats against availability and integrity (wg. ENISA) &  \\
+  \rowcolor{tableRowAlt} 8. & Anatomia zagrożenia - Disinformation – misinformation (wg. ENISA) &  \\
+  \rowcolor{tableRowLight} 9. & Anatomia zagrożenia - Non-malicious threats (wg. ENISA) &  \\
+  \rowcolor{tableRowAlt} 10. & Laboratoria: &  \\
+  \rowcolor{tableRowLight} 11. & Zapoznanie się z organizacją oraz utworzenie Zespołów SOC &  \\
+  \rowcolor{tableRowAlt} 12. & Atak 1: Atak typu Ransomware, Poziom 1– Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 13. & Atak 2: Atak typu Malware. Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowAlt} 14. & Atak 3: Atak typu Cryptojacking, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 15. & Atak 4: Atak typu E-mail related threats, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowAlt} 16. & Atak 5: Atak typu Threats against data, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 17. & Atak 6: Atak typu Threats against availability and integrity, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowAlt} 18. & Atak 7: Atak typu Disinformation – misinformation, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 19. & Atak 8: Atak typu Non-malicious threats, Poziom 1 – Reakcja i prewencja &  \\
+  \rowcolor{tableRowAlt} 20. & Atak 9: Atak typu Zaawansowany wektor ataku 1, Poziom 2  – Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 21. & Atak 10: Atak typu Zaawansowany wektor ataku 2, Poziom 2  – Reakcja i prewencja &  \\
+  \rowcolor{tableRowAlt} 22. & Atak 11: Atak typu Zaawansowany wektor ataku 3, Poziom 2  – Reakcja i prewencja &  \\
+  \rowcolor{tableRowLight} 23. & Atak 12 : Atak typu Zaawansowany wektor ataku 4, Poziom 2  – Reakcja i prewencja &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W23 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber &  \\
-  \hline
-  K\_W23 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber &  \\
+  \rowcolor{tableRowAlt} K\_W23 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U30 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
-  \hline
-  K\_U30 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U30 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K04 & Student jest gotów do pracy zespołowej w dziale SOC & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item kolokwium końcowe
-  \item rezultaty gry strategicznej
-  \item raport z wykonanego zadania
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do pracy zespołowej w dziale SOC & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

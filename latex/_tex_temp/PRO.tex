@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,168 +88,47 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 16 h & --- & 16 h & 32 h & 43 h & 75 h & \textbf{3} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Realizacja kolejnych komponentów projektu dyplomowego; dokumentowanie produktów projektowych; przygotowanie do obrony projektu; weryfikacja i testowanie oprogramowania.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Projekt & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
-
-\section{Cel dydaktyczny}
-
-Celem zajęć jest zwiększenie umiejętności związanych z podstawowymi zagadnieniami i praktyką planowania i prowadzenia projektu informatycznego, w szczególności – projektu mającego na celu wytworzenie produktu programowego w technologii obiektowej oraz zdobycie przez studentów doświadczeń pracy w zespole. Zajęcia projektowe są skorelowane z wykładem przedmiotu Budowa i integracja systemów (BYT), zapewniając kompleksowość przedstawianych zagadnień inżynierii oprogramowania i dając studentom możliwość samodzielnego, metodycznego przeprowadzenia niedużych projektów informatycznych – od zdefiniowania problemu, poprzez dobór strategii i zaplanowanie jego rozwiązania do wykonania praktycznych elementów produktu, z użyciem wzorców i komponentów projektowych oraz przeprowadzeniem testów systemowych i walidacyjnych, a także ich udokumentowaniem. Wzorcowym projektem jest wykorzystanie technologii obiektowej w cyklu kaskadowym lub komponentowym, oraz zwinne strategie realizacji projektów. Istotnymi czynnikami doboru tematów są praktyczna przydatność, a także, w miarę możliwości, zapewnienie współpracy studentów z rzeczywistym klientem projektu. Tematy są prowadzone są w 2-4 osobowych grupach.
-
-\subsection*{\textit{Wersja w języku angielskim (English version)}}
-
-\textit{The aim of the classes is to enhance skills related to the fundamental issues and practice of planning and managing an IT project, in particular a project aimed at producing a software product using object-oriented technology, and to provide students with experience in teamwork. The project classes are coordinated with the lecture course Systems Construction and Integration (BYT), ensuring a comprehensive treatment of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and planning of the solution, to implementation of practical product elements using patterns and design components, as well as conducting system and validation tests and documenting them. The reference project model is the use of object technology in a waterfall or component-based cycle, as well as agile project implementation strategies. Important factors in topic selection include practical usefulness and, where possible, cooperation with a real project client. Topics are carried out in groups of 2–4 students.}
-
-
-\section{Przedmioty wprowadzające}
-
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Programowanie 2 (POJ) & Umiejetnosc programowania obiektowego na poziomie podstawowym \\
-  Wstep do informatyki i architektury komputerow (UKOS) & Wiedza o organizacji systemu komputerowego oraz architekturze \\
-  Relacyjne bazy danych (RBD) & Znajomosc projektowania baz danych \\
-  Projektowanie systemow informatycznych (PRI) & Znajomosc zagadnien analizy i projektowania SI i notacji UML; wczesniejsze lub rownoczesne zrozumienie zagadnien planowania i prowadzenia projektu informatycznego \\
-  \hline
-\end{tabularx}
-
-\section{Treści programowe}
-
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
-\endhead
-  \hline
-  1. & Projekt &  \\
-  \hline
-  2. & Konstrukcja aplikacji w oparciu o przyjętą metodykę, wzorce (analityczne, projektowe) frameworki i komponenty + dokumentacja projektu &  \\
-  \hline
-  3. & 1. Wprowadzenie, zasady zaliczenia przedmiotu. Założenia prac projektowych, ich prowadzenia i dokumentowania. Zapoznanie się z dostępnym środowiskiem. Dyskusja nad sformułowaniami projektów i grup projektowych. Opis projektu, założenia projektowe Analiza dokumentacji przykładowych rozwiązań projektowych. &  \\
-  \hline
-  4. & 2. Praca nad projektem: Identyfikacja problemu. Kontekst i udziałowcy problemu; klient projektu. Wzbogacony wizerunek, definicja i wizja systemu, zakres systemu, rodzaj produktu. Przygotowanie Dokumentu Założeń Wstępnych &  \\
-  \hline
-  5. & 3. Specyfikacja wymagań na system, podział i analiza wymagań. User stories. Studium wykonalności projektu; analiza organizacyjna, mikro i makrootoczenie projektu; dyskusja wariantów rozwiązania. Dobór strategii realizacji projektu w zależności od rodzaju produktu. Debata &  \\
-  \hline
-  6. & 4. Modelowanie systemu (przypadki użycia, diagramy sekwencji i/lub czynności). Logiczny diagram klas &  \\
-  \hline
-  7. & 5. Modelowanie systemu. Architektura systemu: podział na podsystemy i komponenty. Projekt bazy danych. &  \\
-  \hline
-  8. & 6. Harmonogram prac implementacyjnych, integracji, testowania oraz dodatkowej dokumentacji z podziałem na członków zespołu i ich role. &  \\
-  \hline
-  9. & 7. Konfiguracja środowiska programistycznego i technologicznego. &  \\
-  \hline
-  10. & 8. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu. &  \\
-  \hline
-  11. & 9. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu. &  \\
-  \hline
-  12. & 10. Prace implementacyjne. Wstępna ocena postępów, analiza zagrożeń. &  \\
-  \hline
-  13. & 11. Implementacja i integracja oprogramowania. &  \\
-  \hline
-  14. & 12. Implementacja i integracja. Inspekcja kodu. Analiza bezpieczeństwa. &  \\
-  \hline
-  15. & 13. Ocena i poprawa jakości oprogramowania. Scenariusze testów. Testowanie i walidacja oprogramowania; przygotowanie raportu z przeprowadzonych testów. &  \\
-  \hline
-  16. & 14. Finalizacja prac implementacyjnych i dokumentacyjnych; odbiór techniczny, przygotowanie raportu końcowego. &  \\
-  \hline
-  17. & 15. Prezentacja, omówienie i podsumowanie projektów. Zaliczenie przedmiotu. &  \\
-  \hline
-\end{longtable}
-
-\section{Przedmiotowe efekty uczenia się}
-
-\subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_W14 & Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających; &  \\
-  \hline
-  K\_W15 & Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi. &  \\
-  \hline
-  K\_W16 & Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania. &  \\
-  \hline
-  K\_W17 & Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności. &  \\
-  \hline
-\end{longtable}
-
-\subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_U01 & Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U03 & Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U05 & Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U08 & Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U16 & Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U19 & Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U20 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U21 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U22 & Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U26 & Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców; & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_U27 & Student potrafi zaplanować i przeprowadzić  proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające). & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
-
-\subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
-\endhead
-  \hline
-  K\_K04 & Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-  K\_K05 & Student jest gotów do ustalania priorytetów zadań. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
-  \hline
-\end{longtable}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Projekt & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
 
 \section{Kryteria oceny}
 
@@ -247,6 +141,122 @@ Celem zajęć jest zwiększenie umiejętności związanych z podstawowymi zagadn
   \item ocena sporządzonego oprogramowania
 \end{itemize}
 
+
+\section{Cel dydaktyczny}
+
+Celem zajęć jest zwiększenie umiejętności związanych z podstawowymi zagadnieniami i praktyką planowania i prowadzenia projektu informatycznego, w szczególności – projektu mającego na celu wytworzenie produktu programowego w technologii obiektowej oraz zdobycie przez studentów doświadczeń pracy w zespole. Zajęcia projektowe są skorelowane z wykładem przedmiotu Budowa i integracja systemów (BYT), zapewniając kompleksowość przedstawianych zagadnień inżynierii oprogramowania i dając studentom możliwość samodzielnego, metodycznego przeprowadzenia niedużych projektów informatycznych – od zdefiniowania problemu, poprzez dobór strategii i zaplanowanie jego rozwiązania do wykonania praktycznych elementów produktu, z użyciem wzorców i komponentów projektowych oraz przeprowadzeniem testów systemowych i walidacyjnych, a także ich udokumentowaniem. Wzorcowym projektem jest wykorzystanie technologii obiektowej w cyklu kaskadowym lub komponentowym, oraz zwinne strategie realizacji projektów. Istotnymi czynnikami doboru tematów są praktyczna przydatność, a także, w miarę możliwości, zapewnienie współpracy studentów z rzeczywistym klientem projektu. Tematy są prowadzone są w 2-4 osobowych grupach.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the classes is to enhance skills related to the fundamental issues and practice of planning and managing an IT project, in particular a project aimed at producing a software product using object-oriented technology, and to provide students with experience in teamwork. The project classes are coordinated with the lecture course Systems Construction and Integration (BYT), ensuring a comprehensive treatment of software engineering issues and giving students the opportunity to independently and methodically carry out small IT projects—from problem definition, through strategy selection and planning of the solution, to implementation of practical product elements using patterns and design components, as well as conducting system and validation tests and documenting them. The reference project model is the use of object technology in a waterfall or component-based cycle, as well as agile project implementation strategies. Important factors in topic selection include practical usefulness and, where possible, cooperation with a real project client. Topics are carried out in groups of 2–4 students.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Programowanie 2 (POJ) & Umiejetnosc programowania obiektowego na poziomie podstawowym \\
+  \rowcolor{tableRowAlt} Wstep do informatyki i architektury komputerow (UKOS) & Wiedza o organizacji systemu komputerowego oraz architekturze \\
+  \rowcolor{tableRowLight} Relacyjne bazy danych (RBD) & Znajomosc projektowania baz danych \\
+  \rowcolor{tableRowAlt} Projektowanie systemow informatycznych (PRI) & Znajomosc zagadnien analizy i projektowania SI i notacji UML; wczesniejsze lub rownoczesne zrozumienie zagadnien planowania i prowadzenia projektu informatycznego \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Projekt &  \\
+  \rowcolor{tableRowAlt} 2. & Konstrukcja aplikacji w oparciu o przyjętą metodykę, wzorce (analityczne, projektowe) frameworki i komponenty + dokumentacja projektu &  \\
+  \rowcolor{tableRowLight} 3. & 1. Wprowadzenie, zasady zaliczenia przedmiotu. Założenia prac projektowych, ich prowadzenia i dokumentowania. Zapoznanie się z dostępnym środowiskiem. Dyskusja nad sformułowaniami projektów i grup projektowych. Opis projektu, założenia projektowe Analiza dokumentacji przykładowych rozwiązań projektowych. &  \\
+  \rowcolor{tableRowAlt} 4. & 2. Praca nad projektem: Identyfikacja problemu. Kontekst i udziałowcy problemu; klient projektu. Wzbogacony wizerunek, definicja i wizja systemu, zakres systemu, rodzaj produktu. Przygotowanie Dokumentu Założeń Wstępnych &  \\
+  \rowcolor{tableRowLight} 5. & 3. Specyfikacja wymagań na system, podział i analiza wymagań. User stories. Studium wykonalności projektu; analiza organizacyjna, mikro i makrootoczenie projektu; dyskusja wariantów rozwiązania. Dobór strategii realizacji projektu w zależności od rodzaju produktu. Debata &  \\
+  \rowcolor{tableRowAlt} 6. & 4. Modelowanie systemu (przypadki użycia, diagramy sekwencji i/lub czynności). Logiczny diagram klas &  \\
+  \rowcolor{tableRowLight} 7. & 5. Modelowanie systemu. Architektura systemu: podział na podsystemy i komponenty. Projekt bazy danych. &  \\
+  \rowcolor{tableRowAlt} 8. & 6. Harmonogram prac implementacyjnych, integracji, testowania oraz dodatkowej dokumentacji z podziałem na członków zespołu i ich role. &  \\
+  \rowcolor{tableRowLight} 9. & 7. Konfiguracja środowiska programistycznego i technologicznego. &  \\
+  \rowcolor{tableRowAlt} 10. & 8. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu. &  \\
+  \rowcolor{tableRowLight} 11. & 9. Prace implementacyjne. Realizacja zadań projektowych wg. Harmonogramu. &  \\
+  \rowcolor{tableRowAlt} 12. & 10. Prace implementacyjne. Wstępna ocena postępów, analiza zagrożeń. &  \\
+  \rowcolor{tableRowLight} 13. & 11. Implementacja i integracja oprogramowania. &  \\
+  \rowcolor{tableRowAlt} 14. & 12. Implementacja i integracja. Inspekcja kodu. Analiza bezpieczeństwa. &  \\
+  \rowcolor{tableRowLight} 15. & 13. Ocena i poprawa jakości oprogramowania. Scenariusze testów. Testowanie i walidacja oprogramowania; przygotowanie raportu z przeprowadzonych testów. &  \\
+  \rowcolor{tableRowAlt} 16. & 14. Finalizacja prac implementacyjnych i dokumentacyjnych; odbiór techniczny, przygotowanie raportu końcowego. &  \\
+  \rowcolor{tableRowLight} 17. & 15. Prezentacja, omówienie i podsumowanie projektów. Zaliczenie przedmiotu. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W14 & Student zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma wiedzę o typowych narzędziach i środowiskach wspomagających; &  \\
+  \rowcolor{tableRowAlt} K\_W15 & Student zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi. &  \\
+  \rowcolor{tableRowLight} K\_W16 & Student zna i rozumie kluczowe pojęcia z zakresu walidacji i testowania oprogramowania. &  \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności. &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji,  a także wyciągać wnioski oraz formułować i uzasadniać opinie. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U03 & Student potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U08 & Student potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U16 & Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz debuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U19 & Student potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U20 & Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U21 & Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U22 & Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców; & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi zaplanować i przeprowadzić  proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające). & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do ustalania priorytetów zadań. & prezentacja projektu i dokumentacji, obrona projektu, raport z wykonanego zadania, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 

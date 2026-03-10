@@ -7,6 +7,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{xcolor}
@@ -24,11 +26,21 @@
 \usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
 \usepackage{eso-pic}
 \usepackage{tikz}
+\usepackage{tocloft}
 
-\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkRed}{RGB}{220,38,38}
 \definecolor{pjatkGray}{RGB}{80,80,80}
 \definecolor{pjatkLightGray}{RGB}{245,245,245}
 \definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -44,6 +56,9 @@
 \newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
   innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
   innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
 
 \begin{document}
 
@@ -73,41 +88,56 @@
 \end{tabularx}
 \end{infobox}
 
-\vspace{1cm}
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
 
 \section{Godziny zajęć i punkty ECTS}
 
+{\scriptsize
 \begin{center}
-\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.4cm}
-                |>{\centering\arraybackslash}p{2.0cm}
-                |>{\centering\arraybackslash}p{1.4cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
-\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
-\hline
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
 8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
-\hline
+\bottomrule
 \end{tabular}
-\end{center}
+\end{center}}
 
 \vspace{4pt}
 \noindent\textbf{Zadania do samodzielnej realizacji:} Praca w grupie nad planem komercjalizacji projektu informatycznego; przygotowanie prezentacji multimedialnej; analiza rynku i strategii wejścia na rynek.
 
 \section{Forma zajęć}
 
-\begin{tabular}{ll}
-  \hline
-  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
-  \hline
-  Wykład & Nieoceniany \\
-  Ćwiczenia & Zaliczenie z oceną \\
-  \hline
-\end{tabular}
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+  \rowcolor{tableRowAlt} Ćwiczenia & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja elementu zespołowej pracy semestralnej
+\end{itemize}
+
 
 \section{Cel dydaktyczny}
 
@@ -120,111 +150,99 @@ Celem przedmiotu jest poznanie  procesu tworzenia od podstaw przedsięwzięcia t
 
 \section{Przedmioty wprowadzające}
 
-\begin{tabularx}{\textwidth}{lX}
-  \hline
-  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
-  \hline
-  Wiedza z zakresu szkoły średniej. & --- \\
-  \hline
-\end{tabularx}
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wiedza z zakresu szkoły średniej. & --- \\
+\bottomrule
+\end{tabularx}}
 
 \section{Treści programowe}
 
-\begin{longtable}{|p{1.5cm}|p{6.5cm}|p{6.5cm}|}
-\hline
-\textbf{Nr zaj.} & \textbf{Wykład} & \textbf{Ćwiczenia / Laboratorium / Pracownia} \\\hline
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Wykład}} & {\color{white}\textbf{Ćwiczenia / Laboratorium / Pracownia}} \\
+\midrule\thdend
 \endhead
-  \hline
-  1. & Get rich’ or die trying – wprowadzenie do tematyki prowadzenia własnej firmy, ustalanie celów finansowych oraz rozwojowych dla własnej kariery zawodowej, porównanie zalet i wad pracy najemnej oraz samozatrudnienia. Analiza przykładów – tj. dobrych i złych praktyk w zakresie komercjalizacji, próba ustalenia przyczyn porażki lub sukcesu wybranych przykładów biznesowych. &  \\
-  \hline
-  2. & Wprowadzenie do tematyki modeli biznesowych. Dlaczego startupu upadają, konwersja, eliminacja niepewności, pretotypowanie (wg. podejścia A.Savoia) oraz testowanie projektów biznesowych. Case study urządzenia „iPod” firmy Apple Inc.Tworzenie zespołu projektowego, dobieranie funkcji w zespole ustalanie przewag i braków kompetencyjnych zespołu. &  \\
-  \hline
-  3. & 3Współczesne modele biznesoweTworzenie założeń dla oferty. Definiowane jej przy użyciu tzw. języka korzyści, doskonalenie umiejętności pozycjonowania oferty w formie unique selling point. &  \\
-  \hline
-  4. & Określenie charakterystyki behawioralnej docelowych odbiorców projektu. Rozróżnianie pojęć klienta-nabywcy i klienta-użytkownika. &  \\
-  \hline
-  5. & Market fitting i scenariuszowanie. Student poznaje pojęcie produktu całościowego oraz  sposoby analizy wstępnej oferty, pod kątem  dopasowania do potrzeb rynku. Omawiana jest również tematyka innowacji liniowej i nieliniowej oraz jej wpływu na dotychczasowe nawyki użytkowników.Tworzenie scenariuszy &  \\
-  \hline
-  6. & sprzedażowych dla różnych segmentów klientów (na podstawie charakterystyki behawioralnej)  i &  \\
-  \hline
-  7. & wybór najatrakcyjniejszego segmentu innowatorów. &  \\
-  \hline
-  8. & Design Thinking przy użyciu Value Proposition Canvas – omówienie zasad przeprowadzenia ćwiczenia. Na podstawie wybranego w poprzednim bloku segmentu tworzenie Propozycji Wartości, ostatecznie ustalając zakres oferty w kontekście jej atrakcyjności. Praca nad kwantyfikacją proponowanych &  \\
-  \hline
-  9. & wartości do postaci mierzalnych parametrów stanowiących podstawę do późniejszej &  \\
-  \hline
-  10. & narracji marketingowej. &  \\
-  \hline
-  11. & 7Business Model Canvas cz. I. – omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „propozycja wartości”, „klienci”, „relacje” szablonu &  \\
-  \hline
-  12. & Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „kanały dotarcia” oraz „przychody”.  W ramach omówienia, również sposoby ustalania ścieżek generowania tzw. lead’ów oraz szacowanie budżetu  dla tego działania w oparciu o takie parametry jak CAC, CHURN czy LTV.Wykonanie ćwiczenia w ramach zespołów projektowych, przy użyciu szablonów. &  \\
-  \hline
-  13. & Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „partnerzy”, „kluczowe aktywności”, „kluczowe zasoby”, „koszty.” &  \\
-  \hline
-  14. & End of freemium – case study Spotify, jako modelu biznesowego o ograniczonej funkcjonalności i jego konsekwencjach w zakresie rozwoju/opłacalności przedsięwzięcia.   Prace uzupełniające na szablonach, wyszukiwanie danych rynkowych i informacji o wielkości rynku, jego wysyceniu oraz działaniach konkurencji. &  \\
-  \hline
-  15. & Prezentacje podsumowujące ćwiczenie Business Model Canvas wykonywane przez zespoły projektowe. Analiza dostrzeżonych błędów oraz rekomendacje w zakresie poprawek. &  \\
-  \hline
-  16. & Fred Flinstone i ciasto winogronowe – case study nieudanego przedsięwzięcia biznesowego wraz ustaleniem przyczyn porażki. Modele ustalania ceny.Rewizja opracowanych modeli biznesowych pod kątem ich dochodowości i perspektyw rozwojowych. Ustalenie założeń cenowych w oparciu o poznane modele ustalania ceny. &  \\
-  \hline
-  17. & Dlaczego Twój produkt nie sprzeda się za granicą?!” &  \\
-  \hline
-  18. & czyli najczęstsze błędy popełniane przy wchodzeniu na obce rynki. Omówienie założeń dla procesu eksportowania wraz z analizą najczęstszych błędów popełnianych przez polskich przedsiębiorców. Wskazanie trendów w eksporcie oraz ich znaczenia dla polityki dywersyfikacji rynków zbytu.   Dyskusja nad możliwymi założeniami eksportowymi dla projektów opracowywanych w ramach przedmiotu. Wyszukiwanie źródeł informacji o procesie podejmowania decyzji zakupowych w innych państwach. &  \\
-  \hline
-  19. & Uczelniana komercjalizacja – wizja a realia. Rozróżnianie potencjału naukowego/wynalazczego a komercyjnego/wdrożeniowego projektów innowacyjnych. Omówienie tzw. cyklu przyjmowania innowacji oraz trendów wdrożeniowych na podstawie analiz „Hype Cycle for Emerging Technologies” Gartner Inc. Analiza opłacalności komercjalizacji akademickiej na wybranych rynkach. Analiza wybranych przykładów prezentacji promujących projekty startupowe. Przygotowanie prezentacji zaliczeniowych w formie tzw. pitchu. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} 1. & Get rich’ or die trying – wprowadzenie do tematyki prowadzenia własnej firmy, ustalanie celów finansowych oraz rozwojowych dla własnej kariery zawodowej, porównanie zalet i wad pracy najemnej oraz samozatrudnienia. Analiza przykładów – tj. dobrych i złych praktyk w zakresie komercjalizacji, próba ustalenia przyczyn porażki lub sukcesu wybranych przykładów biznesowych. &  \\
+  \rowcolor{tableRowAlt} 2. & Wprowadzenie do tematyki modeli biznesowych. Dlaczego startupu upadają, konwersja, eliminacja niepewności, pretotypowanie (wg. podejścia A.Savoia) oraz testowanie projektów biznesowych. Case study urządzenia „iPod” firmy Apple Inc.Tworzenie zespołu projektowego, dobieranie funkcji w zespole ustalanie przewag i braków kompetencyjnych zespołu. &  \\
+  \rowcolor{tableRowLight} 3. & 3Współczesne modele biznesoweTworzenie założeń dla oferty. Definiowane jej przy użyciu tzw. języka korzyści, doskonalenie umiejętności pozycjonowania oferty w formie unique selling point. &  \\
+  \rowcolor{tableRowAlt} 4. & Określenie charakterystyki behawioralnej docelowych odbiorców projektu. Rozróżnianie pojęć klienta-nabywcy i klienta-użytkownika. &  \\
+  \rowcolor{tableRowLight} 5. & Market fitting i scenariuszowanie. Student poznaje pojęcie produktu całościowego oraz  sposoby analizy wstępnej oferty, pod kątem  dopasowania do potrzeb rynku. Omawiana jest również tematyka innowacji liniowej i nieliniowej oraz jej wpływu na dotychczasowe nawyki użytkowników.Tworzenie scenariuszy &  \\
+  \rowcolor{tableRowAlt} 6. & sprzedażowych dla różnych segmentów klientów (na podstawie charakterystyki behawioralnej)  i &  \\
+  \rowcolor{tableRowLight} 7. & wybór najatrakcyjniejszego segmentu innowatorów. &  \\
+  \rowcolor{tableRowAlt} 8. & Design Thinking przy użyciu Value Proposition Canvas – omówienie zasad przeprowadzenia ćwiczenia. Na podstawie wybranego w poprzednim bloku segmentu tworzenie Propozycji Wartości, ostatecznie ustalając zakres oferty w kontekście jej atrakcyjności. Praca nad kwantyfikacją proponowanych &  \\
+  \rowcolor{tableRowLight} 9. & wartości do postaci mierzalnych parametrów stanowiących podstawę do późniejszej &  \\
+  \rowcolor{tableRowAlt} 10. & narracji marketingowej. &  \\
+  \rowcolor{tableRowLight} 11. & 7Business Model Canvas cz. I. – omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „propozycja wartości”, „klienci”, „relacje” szablonu &  \\
+  \rowcolor{tableRowAlt} 12. & Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „kanały dotarcia” oraz „przychody”.  W ramach omówienia, również sposoby ustalania ścieżek generowania tzw. lead’ów oraz szacowanie budżetu  dla tego działania w oparciu o takie parametry jak CAC, CHURN czy LTV.Wykonanie ćwiczenia w ramach zespołów projektowych, przy użyciu szablonów. &  \\
+  \rowcolor{tableRowLight} 13. & Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „partnerzy”, „kluczowe aktywności”, „kluczowe zasoby”, „koszty.” &  \\
+  \rowcolor{tableRowAlt} 14. & End of freemium – case study Spotify, jako modelu biznesowego o ograniczonej funkcjonalności i jego konsekwencjach w zakresie rozwoju/opłacalności przedsięwzięcia.   Prace uzupełniające na szablonach, wyszukiwanie danych rynkowych i informacji o wielkości rynku, jego wysyceniu oraz działaniach konkurencji. &  \\
+  \rowcolor{tableRowLight} 15. & Prezentacje podsumowujące ćwiczenie Business Model Canvas wykonywane przez zespoły projektowe. Analiza dostrzeżonych błędów oraz rekomendacje w zakresie poprawek. &  \\
+  \rowcolor{tableRowAlt} 16. & Fred Flinstone i ciasto winogronowe – case study nieudanego przedsięwzięcia biznesowego wraz ustaleniem przyczyn porażki. Modele ustalania ceny.Rewizja opracowanych modeli biznesowych pod kątem ich dochodowości i perspektyw rozwojowych. Ustalenie założeń cenowych w oparciu o poznane modele ustalania ceny. &  \\
+  \rowcolor{tableRowLight} 17. & Dlaczego Twój produkt nie sprzeda się za granicą?!” &  \\
+  \rowcolor{tableRowAlt} 18. & czyli najczęstsze błędy popełniane przy wchodzeniu na obce rynki. Omówienie założeń dla procesu eksportowania wraz z analizą najczęstszych błędów popełnianych przez polskich przedsiębiorców. Wskazanie trendów w eksporcie oraz ich znaczenia dla polityki dywersyfikacji rynków zbytu.   Dyskusja nad możliwymi założeniami eksportowymi dla projektów opracowywanych w ramach przedmiotu. Wyszukiwanie źródeł informacji o procesie podejmowania decyzji zakupowych w innych państwach. &  \\
+  \rowcolor{tableRowLight} 19. & Uczelniana komercjalizacja – wizja a realia. Rozróżnianie potencjału naukowego/wynalazczego a komercyjnego/wdrożeniowego projektów innowacyjnych. Omówienie tzw. cyklu przyjmowania innowacji oraz trendów wdrożeniowych na podstawie analiz „Hype Cycle for Emerging Technologies” Gartner Inc. Analiza opłacalności komercjalizacji akademickiej na wybranych rynkach. Analiza wybranych przykładów prezentacji promujących projekty startupowe. Przygotowanie prezentacji zaliczeniowych w formie tzw. pitchu. &  \\
+\bottomrule
+\end{longtable}}
 
 \section{Przedmiotowe efekty uczenia się}
 
 \subsection*{Wiedza}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_W17 & Student zna i rozumie  jak oszacować ekonomiczne i społeczne tło projektu informatycznego. Potrafi ustalić finansową opłacalność lub jej brak, a także ocenić skalowalność projektu i jego potencjał rozwojowy. &  \\
-  \hline
-  K\_W20 & Student zna i rozumie  sposoby oszacowania nakładów finansowych i pozafinansowych związanych z prowadzeniem działalności gospodarczej.  Rozróżnia potencjał naukowy od komercyjnego i potrafi opracować ścieżki finansowania w zależności od potencjału, którym dysponuje projekt. &  \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie  jak oszacować ekonomiczne i społeczne tło projektu informatycznego. Potrafi ustalić finansową opłacalność lub jej brak, a także ocenić skalowalność projektu i jego potencjał rozwojowy. &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student zna i rozumie  sposoby oszacowania nakładów finansowych i pozafinansowych związanych z prowadzeniem działalności gospodarczej.  Rozróżnia potencjał naukowy od komercyjnego i potrafi opracować ścieżki finansowania w zależności od potencjału, którym dysponuje projekt. &  \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Umiejętności}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_U26 & Student potrafi  ustalać kosztorys projektu oraz jego budżet, po uwzględnieniu spodziewanych/zakładanych przychodów.  Potrafi planować i rozdzielać prace w ramach zespołu, opracowywać założenia dla działań związanych z rozwojem rynku i pozyskiwaniem klientów. & prezentacja elementu zespołowej pracy semestralnej \\
-  \hline
-  K\_U26 & Student potrafi  przygotować biznesplan w oparciu o metodologię  Business Model Canvas, a także przygotować prezentację relacyjną lub sprzedażową projektu. & prezentacja elementu zespołowej pracy semestralnej \\
-  \hline
-\end{longtable}
+  \rowcolor{tableRowLight} K\_U26 & Student potrafi  ustalać kosztorys projektu oraz jego budżet, po uwzględnieniu spodziewanych/zakładanych przychodów.  Potrafi planować i rozdzielać prace w ramach zespołu, opracowywać założenia dla działań związanych z rozwojem rynku i pozyskiwaniem klientów. & prezentacja elementu zespołowej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi  przygotować biznesplan w oparciu o metodologię  Business Model Canvas, a także przygotować prezentację relacyjną lub sprzedażową projektu. & prezentacja elementu zespołowej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
 
 \subsection*{Kompetencje społeczne}
-\begin{longtable}{|p{1.6cm}|p{9.0cm}|p{4.2cm}|}
-\hline
-\rowcolor{tableHeader}
-\textbf{Kod KEU} & \textbf{Przedmiotowy efekt uczenia się} & \textbf{Metody weryfikacji} \\
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
 \endhead
-  \hline
-  K\_K08 & Student jest gotów do  stosowania technik empatycznych (m.in. mapa apatii, design thinking) dzięki którym jest w stanie lepiej zrozumieć pragnienia i potrzeby interesariuszy projektu. & prezentacja elementu zespołowej pracy semestralnej \\
-  \hline
-  K\_K05 & Student jest gotów do  definiowania problemów oraz stosowania technik pozwalających na szybką walidację sposobów rozwiązania zdefiniowanych problemów, pod kątem ich opłacalności i skuteczności. & prezentacja elementu zespołowej pracy semestralnej \\
-  \hline
-  K\_K08 & Student jest gotów do  opracowania narracji opartaej na języku korzyści (m.in. definiować unique selling point projektu) a także przygotowania prezentacji relacyjnej lub sprzedażowej projektu. & prezentacja elementu zespołowej pracy semestralnej \\
-  \hline
-\end{longtable}
-
-\section{Kryteria oceny}
-
-\textbf{Ćwiczenia / Laboratorium:}
-\begin{itemize}
-  \item prezentacja elementu zespołowej pracy semestralnej
-\end{itemize}
-
+  \rowcolor{tableRowLight} K\_K08 & Student jest gotów do  stosowania technik empatycznych (m.in. mapa apatii, design thinking) dzięki którym jest w stanie lepiej zrozumieć pragnienia i potrzeby interesariuszy projektu. & prezentacja elementu zespołowej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do  definiowania problemów oraz stosowania technik pozwalających na szybką walidację sposobów rozwiązania zdefiniowanych problemów, pod kątem ich opłacalności i skuteczności. & prezentacja elementu zespołowej pracy semestralnej \\
+  \rowcolor{tableRowLight} K\_K08 & Student jest gotów do  opracowania narracji opartaej na języku korzyści (m.in. definiować unique selling point projektu) a także przygotowania prezentacji relacyjnej lub sprzedażowej projektu. & prezentacja elementu zespołowej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
 
 \section{Metody dydaktyczne}
 
