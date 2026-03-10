@@ -4,8 +4,8 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 23,
-        "lecture": 124,
+        "ects": 20,
+        "lecture": 84,
         "tutorial": 48,
         "lab": 64
       },
@@ -41,11 +41,11 @@
           "name": "Warsztat programisty",
           "type": "M",
           "code": "WPR",
-          "lecture": 16,
+          "lecture": 0,
           "tutorial": 0,
-          "lab": 16,
+          "lab": 24,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/WPR.json",
           "pdf": "assets/files/niestacjonarne/WPR.pdf",
           "docFile": "assets/files/niestacjonarne/WPR.docx"
@@ -75,19 +75,6 @@
           "syllabusFile": "assets/syllabusy-n/HKJ.json",
           "pdf": "assets/files/niestacjonarne/HKJ.pdf",
           "docFile": "assets/files/niestacjonarne/HKJ.docx"
-        },
-        {
-          "name": "Wstęp do zarządzania",
-          "type": "M",
-          "code": "WDZ",
-          "lecture": 16,
-          "tutorial": 16,
-          "lab": 0,
-          "form": "Z",
-          "ects": 2,
-          "syllabusFile": "assets/syllabusy-n/WDZ.json",
-          "pdf": "assets/files/niestacjonarne/WDZ.pdf",
-          "docFile": "assets/files/niestacjonarne/WDZ.docx"
         },
         {
           "name": "Język angielski 1",
