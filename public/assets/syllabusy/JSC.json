@@ -12,15 +12,15 @@
     "semestr_studiow": 2,
     "obligatoryjny": false,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 15,
+      "wyklady": 10,
       "cwiczenia_lektorat_seminarium": null,
       "laboratorium_projekt": 15
     },
     "odpowiedzialny_za_przedmiot": "do ustalenia",
     "ects": 2,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 30,
-      "praca_wlasna_studenta_h": 20,
+      "z_udzialem_prowadzacego_h": 25,
+      "praca_wlasna_studenta_h": 25,
       "calkowita_liczba_godzin_h": 50,
       "praca_wlasna_studenta": "Implementacja aplikacji w języku Scala z wykorzystaniem paradygmatów funkcyjnego i obiektowego; dokumentacja kodu; przygotowanie projektu zaliczeniowego."
     },

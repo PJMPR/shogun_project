@@ -8,7 +8,7 @@
         {
           "name": "Programowanie w języku Python",
           "code": "JPT",
-          "lecture": 15,
+          "lecture": 10,
           "tutorial": 0,
           "lab": 15,
           "form": "Z",
@@ -20,7 +20,7 @@
         {
           "name": "Programowanie w języku C++",
           "code": "JCP",
-          "lecture": 15,
+          "lecture": 10,
           "tutorial": 0,
           "lab": 15,
           "form": "Z",
@@ -32,7 +32,7 @@
         {
           "name": "Programowanie w języku JAVA",
           "code": "JJA",
-          "lecture": 15,
+          "lecture": 10,
           "tutorial": 0,
           "lab": 15,
           "form": "Z",
@@ -44,7 +44,7 @@
         {
           "name": "Programowanie w języku SCALA",
           "code": "JSC",
-          "lecture": 15,
+          "lecture": 10,
           "tutorial": 0,
           "lab": 15,
           "form": "Z",
@@ -56,7 +56,7 @@
         {
           "name": "Programowanie w języku F#",
           "code": "JFS",
-          "lecture": 15,
+          "lecture": 10,
           "tutorial": 0,
           "lab": 15,
           "form": "Z",

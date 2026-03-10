@@ -14,11 +14,6 @@
           "reason": "Zmiana języka wiodącego z C++ na C#. C++ zachowywał się różnie w zależności od systemu operacyjnego, co utrudniało naukę. C# działa spójnie, nie wymaga dodatkowych frameworków, posiada jednolity system zarządzania projektami i pakietami oraz znajduje zastosowanie w aplikacjach internetowych, grach komputerowych i CI/CD."
         },
         {
-          "subject": "Wstęp do zarządzania",
-          "type": "nowy",
-          "reason": "Przedmiot wprowadzony w celu ujednolicenia programów studiów dla studentów przenoszących się między uczelniami."
-        },
-        {
           "subject": "Warsztat programisty",
           "type": "nowy",
           "reason": "Odpowiedź na braki kompetencyjne w zakresie narzędzi programistycznych, debugowania, pracy zespołowej z Git, wykorzystania AI w pracy programisty oraz budowania portfolio projektów informatycznych."
