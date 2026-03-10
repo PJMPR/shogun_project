@@ -230,7 +230,7 @@
       "semester": 3,
       "summary": {
         "ects": 29.5,
-        "lecture": 185,
+        "lecture": 175,
         "tutorial": 90,
         "lab": 195
       },
@@ -272,6 +272,19 @@
           "electiveGroup": "SBD1_2"
         },
         {
+          "name": "Programowanie systemowe",
+          "type": "M",
+          "code": "LLP",
+          "lecture": 20,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/syllabusy/LLP.json",
+          "pdf": "assets/files/stacjonarne/LLP.pdf",
+          "docFile": "assets/files/stacjonarne/LLP.docx"
+        },
+        {
           "name": "Fizyka",
           "type": "M",
           "code": "FIZ",
@@ -296,19 +309,6 @@
           "syllabusFile": "assets/syllabusy/SAD.json",
           "pdf": "assets/files/stacjonarne/SAD.pdf",
           "docFile": "assets/files/stacjonarne/SAD.docx"
-        },
-        {
-          "name": "Narzędzia sztucznej inteligencji",
-          "type": "M",
-          "code": "NAI",
-          "lecture": 30,
-          "tutorial": 0,
-          "lab": 30,
-          "form": "Z",
-          "ects": 4,
-          "syllabusFile": "assets/syllabusy/NAI.json",
-          "pdf": "assets/files/stacjonarne/NAI.pdf",
-          "docFile": "assets/files/stacjonarne/NAI.docx"
         },
         {
           "name": "Systemy operacyjne",
@@ -355,7 +355,7 @@
       "semester": 4,
       "summary": {
         "ects": 30.5,
-        "lecture": 185,
+        "lecture": 195,
         "tutorial": 120,
         "lab": 180
       },
@@ -414,17 +414,17 @@
           "docFile": "assets/files/stacjonarne/SKOA.docx"
         },
         {
-          "name": "Programowanie systemowe",
+          "name": "Narzędzia sztucznej inteligencji",
           "type": "M",
-          "code": "LLP",
-          "lecture": 20,
+          "code": "NAI",
+          "lecture": 30,
           "tutorial": 0,
           "lab": 30,
           "form": "Z",
           "ects": 4,
-          "syllabusFile": "assets/syllabusy/LLP.json",
-          "pdf": "assets/files/stacjonarne/LLP.pdf",
-          "docFile": "assets/files/stacjonarne/LLP.docx"
+          "syllabusFile": "assets/syllabusy/NAI.json",
+          "pdf": "assets/files/stacjonarne/NAI.pdf",
+          "docFile": "assets/files/stacjonarne/NAI.docx"
         },
         {
           "name": "Bezpieczeństwo systemów informacyjnych",
