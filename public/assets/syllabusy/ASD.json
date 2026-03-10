@@ -197,13 +197,11 @@
       }
     ],
     "cel_dydaktyczny_eng": "Mastery of the analysis of iterative and recursive programs and the use of mathematical tools to analyze algorithmic complexity and knowledge of the complexity of algorithmic problems, complexity classes, and their practical significance; analysis of the complexity of sorting and searching algorithms; trees, stacks, queues, and hash tables; dynamic programming and greedy algorithms.",
-    "informacje_dodatkowe": "test",
+    "informacje_dodatkowe": "",
     "rynek_pracy": {
-      "dziedzina_gospodarki": "test",
-      "zawody": "test",
+      "dziedzina_gospodarki": "",
+      "zawody": "",
       "prace_dyplomowe": [
-        "test",
-        "test2"
       ]
     },
     "wymagania_laboratorium": {
