@@ -4,7 +4,7 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 25,
+        "ects": 23,
         "lecture": 124,
         "tutorial": 90,
         "lab": 105
@@ -230,7 +230,7 @@
       "semester": 3,
       "summary": {
         "ects": 30,
-        "lecture": 195,
+        "lecture": 185,
         "tutorial": 90,
         "lab": 195
       },
@@ -240,11 +240,11 @@
           "name": "Programowanie aplikacji internetowych",
           "type": "M",
           "code": "PAI",
-          "lecture": 30,
+          "lecture": 20,
           "tutorial": 0,
           "lab": 45,
           "form": "Z",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy/PAI.json",
           "pdf": "assets/files/stacjonarne/PAI.pdf",
           "docFile": "assets/files/stacjonarne/PAI.docx"
