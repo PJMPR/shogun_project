@@ -105,9 +105,9 @@
       "semester": 2,
       "summary": {
         "ects": 21,
-        "lecture": 88,
+        "lecture": 80,
         "tutorial": 48,
-        "lab": 64
+        "lab": 56
       },
       "description": "",
       "subjects": [
@@ -154,9 +154,9 @@
           "name": "Programowanie obiektowe",
           "type": "M",
           "code": "POJ",
-          "lecture": 24,
+          "lecture": 16,
           "tutorial": 0,
-          "lab": 32,
+          "lab": 24,
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/POJ.json",
