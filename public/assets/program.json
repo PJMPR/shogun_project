@@ -88,16 +88,6 @@
           "syllabusFile": "assets/syllabusy/ANG1.json",
           "pdf": "assets/files/stacjonarne/ANG1.pdf",
           "docFile": "assets/files/stacjonarne/ANG1.docx"
-        },
-        {
-          "name": "Szkolenie BHP",
-          "type": "M",
-          "code": "BHP",
-          "lecture": 4,
-          "tutorial": 0,
-          "lab": 0,
-          "form": "Z",
-          "ects": 0
         }
       ]
     },
