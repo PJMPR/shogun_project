@@ -17,11 +17,11 @@
       "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
-    "ects": 1,
+    "ects": 2,
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
-      "praca_wlasna_studenta_h": 0,
-      "calkowita_liczba_godzin_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
       "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka niemieckiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
     },
     "metody_dydaktyczne": {
