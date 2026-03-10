@@ -12,15 +12,15 @@
     "semestr_studiow": 2,
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 16,
+      "wyklady": 8,
       "cwiczenia_lektorat_seminarium": 16,
       "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "dr Elżbieta Puźniakowska-Gałuch, ela@pejot.edu.pl",
     "ects": 4,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 68,
+      "z_udzialem_prowadzacego_h": 24,
+      "praca_wlasna_studenta_h": 76,
       "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań z algebry liniowej i geometrii analitycznej; powtórzenie materiału przed kolokwiami; ćwiczenie obliczeń macierzowych i wektorowych."
     },
