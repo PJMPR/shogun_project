@@ -355,7 +355,7 @@
       "semester": 4,
       "summary": {
         "ects": 30.5,
-        "lecture": 195,
+        "lecture": 185,
         "tutorial": 120,
         "lab": 180
       },
@@ -417,7 +417,7 @@
           "name": "Programowanie systemowe",
           "type": "M",
           "code": "LLP",
-          "lecture": 30,
+          "lecture": 20,
           "tutorial": 0,
           "lab": 30,
           "form": "Z",

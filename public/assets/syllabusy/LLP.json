@@ -12,15 +12,15 @@
     "semestr_studiow": 4,
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 30,
+      "wyklady": 20,
       "cwiczenia_lektorat_seminarium": null,
       "laboratorium_projekt": 30
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Michał Hyla",
     "ects": 4,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 60,
-      "praca_wlasna_studenta_h": 40,
+      "z_udzialem_prowadzacego_h": 50,
+      "praca_wlasna_studenta_h": 50,
       "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Samodzielna implementacja programów systemowych; ćwiczenia z systemowych wywołań API; przygotowanie do kolokwiów; praca z narzędziami debugowania na poziomie systemu."
     },
