@@ -12,16 +12,16 @@
     "semestr_studiow": 1,
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 16,
+      "wyklady": 0,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 16
+      "laboratorium_projekt": 24
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
-    "ects": 4,
+    "ects": 3,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 68,
-      "calkowita_liczba_godzin_h": 100,
+      "z_udzialem_prowadzacego_h": 24,
+      "praca_wlasna_studenta_h": 51,
+      "calkowita_liczba_godzin_h": 75,
       "praca_wlasna_studenta": "Realizacja zadań laboratoryjnych poza zajęciami; praca nad projektem semestralnym; ćwiczenia z narzędzi programistycznych (Git, IDE, debugger); przygotowanie do kolokwium."
     },
     "metody_dydaktyczne": {
