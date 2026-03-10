@@ -4,10 +4,10 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 26,
-        "lecture": 184,
+        "ects": 25,
+        "lecture": 124,
         "tutorial": 120,
-        "lab": 120
+        "lab": 105
       },
       "description": "",
       "subjects": [
@@ -30,7 +30,7 @@
           "code": "PRG1",
           "lecture": 30,
           "tutorial": 0,
-          "lab": 60,
+          "lab": 45,
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy/PRG1.json",
@@ -38,23 +38,10 @@
           "docFile": "assets/files/stacjonarne/PRG1.docx"
         },
         {
-          "name": "Wstęp do zarządzania",
-          "type": "M",
-          "code": "WDZ",
-          "lecture": 30,
-          "tutorial": 30,
-          "lab": 0,
-          "form": "Z",
-          "ects": 3,
-          "syllabusFile": "assets/syllabusy/WDZ.json",
-          "pdf": "assets/files/stacjonarne/WDZ.pdf",
-          "docFile": "assets/files/stacjonarne/WDZ.docx"
-        },
-        {
           "name": "Warsztat programisty",
           "type": "M",
           "code": "WPR",
-          "lecture": 30,
+          "lecture": 0,
           "tutorial": 0,
           "lab": 30,
           "form": "Z",
@@ -118,9 +105,9 @@
       "semester": 2,
       "summary": {
         "ects": 28,
-        "lecture": 150,
+        "lecture": 180,
         "tutorial": 150,
-        "lab": 90
+        "lab": 120
       },
       "description": "",
       "subjects": [
@@ -243,9 +230,9 @@
       "semester": 3,
       "summary": {
         "ects": 30,
-        "lecture": 165,
+        "lecture": 195,
         "tutorial": 90,
-        "lab": 255
+        "lab": 195
       },
       "description": "",
       "subjects": [
@@ -255,7 +242,7 @@
           "code": "PAI",
           "lecture": 30,
           "tutorial": 0,
-          "lab": 60,
+          "lab": 45,
           "form": "Z",
           "ects": 5,
           "syllabusFile": "assets/syllabusy/PAI.json",
@@ -369,8 +356,8 @@
       "summary": {
         "ects": 30,
         "lecture": 195,
-        "tutorial": 90,
-        "lab": 195
+        "tutorial": 120,
+        "lab": 180
       },
       "description": "",
       "subjects": [
@@ -504,9 +491,9 @@
       "semester": 5,
       "summary": {
         "ects": 26,
-        "lecture": 150,
+        "lecture": 180,
         "tutorial": 75,
-        "lab": 135
+        "lab": 150
       },
       "description": "",
       "subjects": [

@@ -14,13 +14,13 @@
     "forma_i_liczba_godzin_zajec": {
       "wyklady": 30,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 60
+      "laboratorium_projekt": 45
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
     "ects": 5,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 90,
-      "praca_wlasna_studenta_h": 35,
+      "z_udzialem_prowadzacego_h": 75,
+      "praca_wlasna_studenta_h": 50,
       "calkowita_liczba_godzin_h": 125,
       "praca_wlasna_studenta": "Implementacja projektu semestralnego z DDD i architekturą oktogonalną; pisanie testów integracyjnych i E2E; konfiguracja konteneryzacji; przygotowanie do kolokwium z architektury."
     },
