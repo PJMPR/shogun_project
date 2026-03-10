@@ -120,23 +120,41 @@ function Generate-Tex($s, [string]$code) {
     # Tresci programowe – nowy format: [{nr_zajec, wyklad, cwiczenia}]
     $tresciRows = ""
     $tresciIdx = 0
+    $hasCwiczenia = $false
     if ($s.tresci_programowe) {
+        foreach ($ti in $s.tresci_programowe) {
+            if ($ti -isnot [string] -and [string]$ti.cwiczenia -and ([string]$ti.cwiczenia).Trim() -ne '') {
+                $hasCwiczenia = $true
+                break
+            }
+        }
         foreach ($ti in $s.tresci_programowe) {
             $bg = if ($tresciIdx % 2 -eq 0) { "\rowcolor{tableRowLight} " } else { "\rowcolor{tableRowAlt} " }
             if ($ti -is [string]) {
-                # stary format fallback
-                $tresciRows += "  ${bg}$(Escape-Latex $ti) $amp $amp $dbs$nl"
+                if ($hasCwiczenia) {
+                    $tresciRows += "  ${bg}$(Escape-Latex $ti) $amp $amp $dbs$nl"
+                } else {
+                    $tresciRows += "  ${bg}$(Escape-Latex $ti) $amp $dbs$nl"
+                }
             } else {
                 $nr   = if ($ti.nr_zajec) { "$($ti.nr_zajec)." } else { "" }
                 $tWyk = Escape-Latex ([string]$ti.wyklad)
-                $tCw  = Escape-Latex ([string]$ti.cwiczenia)
-                $tresciRows += "  ${bg}$nr $amp $tWyk $amp $tCw $dbs$nl"
+                if ($hasCwiczenia) {
+                    $tCw  = Escape-Latex ([string]$ti.cwiczenia)
+                    $tresciRows += "  ${bg}$nr $amp $tWyk $amp $tCw $dbs$nl"
+                } else {
+                    $tresciRows += "  ${bg}$nr $amp $tWyk $dbs$nl"
+                }
             }
             $tresciIdx++
         }
     }
     if (-not $tresciRows) {
-        $tresciRows = "  \rowcolor{tableRowLight} 1. $amp $amp $dbs$nl"
+        if ($hasCwiczenia) {
+            $tresciRows = "  \rowcolor{tableRowLight} 1. $amp $amp $dbs$nl"
+        } else {
+            $tresciRows = "  \rowcolor{tableRowLight} 1. $amp $dbs$nl"
+        }
     }
 
     # Efekty ksztalcenia — nowy format: lista obiektow {keu, peu, metoda_weryfikacji}
@@ -475,15 +493,28 @@ function Generate-Tex($s, [string]$code) {
     $t += "$pwSection`n"
     $t += "\section{$tresciSec}`n`n"
     $t += "{\scriptsize`n"
-    $t += "\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}`n"
-    $t += "\thdrule\toprule`n"
-    $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
-    $t += "\midrule\thdend`n"
-    $t += "\endfirsthead`n"
-    $t += "\thdrule\toprule`n"
-    $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
-    $t += "\midrule\thdend`n"
-    $t += "\endhead`n"
+    if ($hasCwiczenia) {
+        $t += "\begin{longtable}{m{1.5cm}m{6.5cm}m{6.5cm}}`n"
+        $t += "\thdrule\toprule`n"
+        $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
+        $t += "\midrule\thdend`n"
+        $t += "\endfirsthead`n"
+        $t += "\thdrule\toprule`n"
+        $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{Wyk" + [char]0x0142 + "ad}} $amp {\color{white}\textbf{" + [char]0x0106 + "wiczenia / Laboratorium / Pracownia}} $dbs`n"
+        $t += "\midrule\thdend`n"
+        $t += "\endhead`n"
+    } else {
+        $tresciProg = "Tre" + [char]0x015B + "ci programowe"
+        $t += "\begin{longtable}{m{1.5cm}m{14.5cm}}`n"
+        $t += "\thdrule\toprule`n"
+        $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{$tresciProg}} $dbs`n"
+        $t += "\midrule\thdend`n"
+        $t += "\endfirsthead`n"
+        $t += "\thdrule\toprule`n"
+        $t += "\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} $amp {\color{white}\textbf{$tresciProg}} $dbs`n"
+        $t += "\midrule\thdend`n"
+        $t += "\endhead`n"
+    }
     $t += $tresciRows
     $t += "\bottomrule`n"
     $t += "\end{longtable}}`n`n"

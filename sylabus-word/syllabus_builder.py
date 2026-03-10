@@ -871,72 +871,116 @@ class SyllabusBuilder:
         s = self.s
         tresci = s.get('tresci_programowe', [])
 
-        table = self.doc.add_table(rows=0, cols=3)
-        _set_table_borders(table)
-        _set_table_width(table, self.doc)
+        # Sprawdź czy są jakiekolwiek dane dla ćwiczeń/laboratorium
+        has_cw = any(
+            str(t.get('cwiczenia') or '').strip()
+            for t in tresci if isinstance(t, dict)
+        )
 
-        # Ustaw szerokości kolumn: Nr zajęć wąska (1.2 cm), reszta po równo
-        # Robimy to przez ustawienie preferowanych szerokości w XML
-        def _set_col_width(table, col_widths_cm):
-            from docx.oxml import OxmlElement
-            from docx.oxml.ns import qn as _qn
-            tbl = table._tbl
-            tblPr = tbl.find(_qn('w:tblPr'))
-            # usuń istniejący tblGrid jeśli jest
-            existing = tbl.find(_qn('w:tblGrid'))
-            if existing is not None:
-                tbl.remove(existing)
-            tblGrid = OxmlElement('w:tblGrid')
-            for w_cm in col_widths_cm:
-                gridCol = OxmlElement('w:gridCol')
-                # 1 cm = 567 twips
-                gridCol.set(_qn('w:w'), str(int(w_cm * 567)))
-                tblGrid.append(gridCol)
-            tbl.insert(list(tbl).index(tblPr) + 1 if tblPr is not None else 0, tblGrid)
+        if has_cw:
+            # --- Tryb 3-kolumnowy (wykład + ćwiczenia) ---
+            table = self.doc.add_table(rows=0, cols=3)
+            _set_table_borders(table)
+            _set_table_width(table, self.doc)
 
-        _set_col_width(table, [1.2, 8.0, 7.5])
+            def _set_col_width(table, col_widths_cm):
+                from docx.oxml import OxmlElement
+                from docx.oxml.ns import qn as _qn
+                tbl = table._tbl
+                tblPr = tbl.find(_qn('w:tblPr'))
+                existing = tbl.find(_qn('w:tblGrid'))
+                if existing is not None:
+                    tbl.remove(existing)
+                tblGrid = OxmlElement('w:tblGrid')
+                for w_cm in col_widths_cm:
+                    gridCol = OxmlElement('w:gridCol')
+                    gridCol.set(_qn('w:w'), str(int(w_cm * 567)))
+                    tblGrid.append(gridCol)
+                tbl.insert(list(tbl).index(tblPr) + 1 if tblPr is not None else 0, tblGrid)
 
-        # Nagłówek scalony
-        row = table.add_row()
-        header_cell = row.cells[0]
-        for i in range(1, 3):
-            header_cell = header_cell.merge(row.cells[i])
-        _set_cell_bg(header_cell, COLOR_HEADER_BG)
-        _run_in_cell(header_cell, '15.  Treści programowe poszczególnych zajęć:', bold=True, size=FONT_SIZE_LABEL)
+            _set_col_width(table, [1.2, 8.0, 7.5])
 
-        # Nagłówki kolumn
-        row = table.add_row()
-        col_headers = ['Nr zajęć', 'Wykład', 'Ćwiczenia / Laboratorium / Pracownia']
-        for i, h in enumerate(col_headers):
-            _set_cell_bg(row.cells[i], COLOR_HEADER_BG)
-            _run_in_cell(row.cells[i], h, bold=True, size=Pt(8))
+            row = table.add_row()
+            header_cell = row.cells[0]
+            for i in range(1, 3):
+                header_cell = header_cell.merge(row.cells[i])
+            _set_cell_bg(header_cell, COLOR_HEADER_BG)
+            _run_in_cell(header_cell, '15.  Treści programowe poszczególnych zajęć:', bold=True, size=FONT_SIZE_LABEL)
 
-        def _get_val(item, key):
-            if isinstance(item, dict):
-                return str(item.get(key) or '')
-            return ''
+            row = table.add_row()
+            col_headers = ['Nr zajęć', 'Wykład', 'Ćwiczenia / Laboratorium / Pracownia']
+            for i, h in enumerate(col_headers):
+                _set_cell_bg(row.cells[i], COLOR_HEADER_BG)
+                _run_in_cell(row.cells[i], h, bold=True, size=Pt(8))
 
-        if tresci:
-            for i, tresc in enumerate(tresci):
-                row = table.add_row()
-                if isinstance(tresc, dict):
-                    nr = str(tresc.get('nr_zajec', i + 1)) + '.'
-                    wyk = str(tresc.get('wyklad') or '')
-                    cw = str(tresc.get('cwiczenia') or '')
-                else:
-                    # stary format – string
-                    nr = f'{i+1}.'
-                    wyk = str(tresc)
-                    cw = ''
-                _value_cell(row.cells[0], nr)
-                _value_cell(row.cells[1], wyk)
-                _value_cell(row.cells[2], cw)
+            if tresci:
+                for i, tresc in enumerate(tresci):
+                    row = table.add_row()
+                    if isinstance(tresc, dict):
+                        nr  = str(tresc.get('nr_zajec', i + 1)) + '.'
+                        wyk = str(tresc.get('wyklad') or '')
+                        cw  = str(tresc.get('cwiczenia') or '')
+                    else:
+                        nr = f'{i+1}.'; wyk = str(tresc); cw = ''
+                    _value_cell(row.cells[0], nr)
+                    _value_cell(row.cells[1], wyk)
+                    _value_cell(row.cells[2], cw)
+            else:
+                for i in range(1, 9):
+                    row = table.add_row()
+                    _value_cell(row.cells[0], f'{i}.')
+                    _value_cell(row.cells[1], '')
+                    _value_cell(row.cells[2], '')
+
         else:
-            for i in range(1, 9):
-                row = table.add_row()
-                _value_cell(row.cells[0], f'{i}.')
-                _value_cell(row.cells[1], '')
-                _value_cell(row.cells[2], '')
+            # --- Tryb 2-kolumnowy (tylko treści programowe) ---
+            table = self.doc.add_table(rows=0, cols=2)
+            _set_table_borders(table)
+            _set_table_width(table, self.doc)
+
+            def _set_col_width2(table, col_widths_cm):
+                from docx.oxml import OxmlElement
+                from docx.oxml.ns import qn as _qn
+                tbl = table._tbl
+                tblPr = tbl.find(_qn('w:tblPr'))
+                existing = tbl.find(_qn('w:tblGrid'))
+                if existing is not None:
+                    tbl.remove(existing)
+                tblGrid = OxmlElement('w:tblGrid')
+                for w_cm in col_widths_cm:
+                    gridCol = OxmlElement('w:gridCol')
+                    gridCol.set(_qn('w:w'), str(int(w_cm * 567)))
+                    tblGrid.append(gridCol)
+                tbl.insert(list(tbl).index(tblPr) + 1 if tblPr is not None else 0, tblGrid)
+
+            _set_col_width2(table, [1.2, 15.5])
+
+            row = table.add_row()
+            header_cell = row.cells[0].merge(row.cells[1])
+            _set_cell_bg(header_cell, COLOR_HEADER_BG)
+            _run_in_cell(header_cell, '15.  Treści programowe poszczególnych zajęć:', bold=True, size=FONT_SIZE_LABEL)
+
+            row = table.add_row()
+            _set_cell_bg(row.cells[0], COLOR_HEADER_BG)
+            _set_cell_bg(row.cells[1], COLOR_HEADER_BG)
+            _run_in_cell(row.cells[0], 'Nr zajęć', bold=True, size=Pt(8))
+            _run_in_cell(row.cells[1], 'Treści programowe', bold=True, size=Pt(8))
+
+            if tresci:
+                for i, tresc in enumerate(tresci):
+                    row = table.add_row()
+                    if isinstance(tresc, dict):
+                        nr  = str(tresc.get('nr_zajec', i + 1)) + '.'
+                        wyk = str(tresc.get('wyklad') or '')
+                    else:
+                        nr = f'{i+1}.'; wyk = str(tresc)
+                    _value_cell(row.cells[0], nr)
+                    _value_cell(row.cells[1], wyk)
+            else:
+                for i in range(1, 9):
+                    row = table.add_row()
+                    _value_cell(row.cells[0], f'{i}.')
+                    _value_cell(row.cells[1], '')
 
     # -------------------------------------------------------------------------
     # Sekcja 16 — Elektroniczne materiały dydaktyczne
