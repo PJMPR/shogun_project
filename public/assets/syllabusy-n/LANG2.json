@@ -17,11 +17,11 @@
       "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
-    "ects": 2,
+    "ects": 2.5,
     "godziny": {
       "z_udzialem_prowadzacego_h": 16,
-      "praca_wlasna_studenta_h": 34,
-      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta_h": 47,
+      "calkowita_liczba_godzin_h": 63,
       "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka angielskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
     },
     "metody_dydaktyczne": {
