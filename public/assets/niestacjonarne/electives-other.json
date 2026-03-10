@@ -97,16 +97,16 @@
           "docFile": "assets/files/niestacjonarne/DGR.docx"
         },
         {
-          "name": "Wprowadzenie do baz słownikowych",
-          "code": "DSL",
+          "name": "Wprowadzenie do baz danych w chmurze",
+          "code": "DCH",
           "lecture": 8,
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
           "ects": 2,
-          "syllabusFile": "assets/syllabusy-n/DSL.json",
-          "pdf": "assets/files/niestacjonarne/DSL.pdf",
-          "docFile": "assets/files/niestacjonarne/DSL.docx"
+          "syllabusFile": "assets/syllabusy-n/DCH.json",
+          "pdf": "assets/files/niestacjonarne/DCH.pdf",
+          "docFile": "assets/files/niestacjonarne/DCH.docx"
         }
       ]
     },
