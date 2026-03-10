@@ -14,13 +14,13 @@
     "forma_i_liczba_godzin_zajec": {
       "wyklady": 24,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 24
+      "laboratorium_projekt": 32
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
     "ects": 5,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 48,
-      "praca_wlasna_studenta_h": 77,
+      "z_udzialem_prowadzacego_h": 56,
+      "praca_wlasna_studenta_h": 69,
       "calkowita_liczba_godzin_h": 125,
       "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań programistycznych; implementacja projektu programistycznego; przygotowanie do kolokwiów; ćwiczenia algorytmiczne."
     },
