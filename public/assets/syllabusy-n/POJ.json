@@ -12,16 +12,16 @@
     "semestr_studiow": 2,
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 24,
+      "wyklady": 16,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 32
+      "laboratorium_projekt": 24
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
-    "ects": 3,
+    "ects": 4,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 56,
-      "praca_wlasna_studenta_h": 19,
-      "calkowita_liczba_godzin_h": 75,
+      "z_udzialem_prowadzacego_h": 50,
+      "praca_wlasna_studenta_h": 60,
+      "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Samodzielne programowanie w C# z zastosowaniem paradygmatu obiektowego; wykonywanie zadań domowych; przygotowanie do kolejnych zajęć laboratoryjnych."
     },
     "metody_dydaktyczne": {
