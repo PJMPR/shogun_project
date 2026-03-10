@@ -89,7 +89,14 @@
           "metoda_weryfikacji": "kolokwium, ocena sporządzonego oprogramowania, prezentacja projektu i dokumentacji"
         }
       ],
-      "kompetencje_spoleczne": []
+      "kompetencje_spoleczne": [
+
+        {
+          "keu": "K_K01",
+          "peu": "Student jest gotów do prowadzenia portfolio własnych projektów informatycznych na platformie GitHub oraz do ich prezentowania i udostępniania z myślą o wspieraniu rozwoju nauki i społeczeństwa informacyjnego.",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji"
+        }
+      ]
     },
     "tresci_programowe": [
       {

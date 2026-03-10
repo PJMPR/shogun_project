@@ -403,6 +403,7 @@
         "kod_efektu": "K_W24",
         "tresc": "zna i rozumie zaawansowane pojęcia w zakresie inżynierii gier komputerowych, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii",
         "kody": [
+          "MUN",
           "SGD",
           "PG1",
           "PG2"
@@ -1031,6 +1032,7 @@
         "kod_efektu": "K_U33",
         "tresc": "potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania.",
         "kody": [
+          "SWB",
           "PTT",
           "RTO",
           "KIP"
@@ -1048,6 +1050,7 @@
         "kod_efektu": "K_K01",
         "tresc": "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
         "kody": [
+          "WPR",
           "PRIN",
           "COV",
           "PTT",
@@ -1157,7 +1160,8 @@
         "tresc": "jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy",
         "kody": [
           "ZPR",
-          "POZ"
+          "POZ",
+          "PRZ1"
         ],
         "mnsiw": [
           {
