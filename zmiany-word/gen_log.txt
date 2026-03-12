@@ -1,0 +1,2 @@
+[logo] pjlogo.pdf -> PNG przez PyMuPDF OK (2427x367px)
+[OK] Dokument zapisany: C:\Users\adamu\WebstormProjects\pj-studies\zmiany-word\program_studiow_2026-27_zmiany_PJATK.docx

@@ -361,7 +361,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/LANG1.json",
           "pdf": "assets/files/stacjonarne/LANG1.pdf",
           "docFile": "assets/files/stacjonarne/LANG1.docx"
@@ -373,7 +373,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/NIM1.json",
           "pdf": "assets/files/stacjonarne/NIM1.pdf",
           "docFile": "assets/files/stacjonarne/NIM1.docx"
@@ -385,7 +385,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/HIS1.json",
           "pdf": "assets/files/stacjonarne/HIS1.pdf",
           "docFile": "assets/files/stacjonarne/HIS1.docx"
@@ -397,7 +397,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/JAP1.json",
           "pdf": "assets/files/stacjonarne/JAP1.pdf",
           "docFile": "assets/files/stacjonarne/JAP1.docx"
@@ -416,7 +416,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/LANG2.json",
           "pdf": "assets/files/stacjonarne/LANG2.pdf",
           "docFile": "assets/files/stacjonarne/LANG2.docx"
@@ -440,7 +440,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/HIS2.json",
           "pdf": "assets/files/stacjonarne/HIS2.pdf",
           "docFile": "assets/files/stacjonarne/HIS2.docx"
@@ -452,7 +452,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/JAP2.json",
           "pdf": "assets/files/stacjonarne/JAP2.pdf",
           "docFile": "assets/files/stacjonarne/JAP2.docx"
@@ -471,7 +471,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/LANG3.json",
           "pdf": "assets/files/stacjonarne/LANG3.pdf",
           "docFile": "assets/files/stacjonarne/LANG3.docx"
@@ -483,7 +483,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/NIM3.json",
           "pdf": "assets/files/stacjonarne/NIM3.pdf",
           "docFile": "assets/files/stacjonarne/NIM3.docx"
@@ -495,7 +495,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/HIS3.json",
           "pdf": "assets/files/stacjonarne/HIS3.pdf",
           "docFile": "assets/files/stacjonarne/HIS3.docx"
@@ -507,7 +507,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/JAP3.json",
           "pdf": "assets/files/stacjonarne/JAP3.pdf",
           "docFile": "assets/files/stacjonarne/JAP3.docx"

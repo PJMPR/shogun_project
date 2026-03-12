@@ -4,7 +4,7 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 20.5,
+        "ects": 21,
         "lecture": 84,
         "tutorial": 32,
         "lab": 72
@@ -84,7 +84,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG1.json",
           "pdf": "assets/files/niestacjonarne/ANG1.pdf",
           "docFile": "assets/files/niestacjonarne/ANG1.docx"
@@ -104,7 +104,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 21.5,
+        "ects": 21,
         "lecture": 72,
         "tutorial": 48,
         "lab": 56
@@ -184,7 +184,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG2.json",
           "pdf": "assets/files/niestacjonarne/ANG2.pdf",
           "docFile": "assets/files/niestacjonarne/ANG2.docx"
@@ -194,7 +194,7 @@
     {
       "semester": 3,
       "summary": {
-        "ects": 20.5,
+        "ects": 20,
         "lecture": 80,
         "tutorial": 16,
         "lab": 96
@@ -274,7 +274,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG3.json",
           "pdf": "assets/files/niestacjonarne/ANG3.pdf",
           "docFile": "assets/files/niestacjonarne/ANG3.docx"
@@ -284,7 +284,7 @@
     {
       "semester": 4,
       "summary": {
-        "ects": 20.5,
+        "ects": 21,
         "lecture": 80,
         "tutorial": 16,
         "lab": 104
@@ -373,7 +373,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
           "pdf": "assets/files/niestacjonarne/ANG1-3.pdf",
           "docFile": "assets/files/niestacjonarne/ANG1-3.docx"
@@ -383,7 +383,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 23.5,
+        "ects": 23,
         "lecture": 72,
         "tutorial": 16,
         "lab": 80
@@ -472,7 +472,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK1"
         }
       ]
@@ -480,7 +480,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 24.5,
+        "ects": 24,
         "lecture": 80,
         "tutorial": 60,
         "lab": 80
@@ -563,7 +563,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK2"
         }
       ]
@@ -571,7 +571,7 @@
     {
       "semester": 7,
       "summary": {
-        "ects": 24.5,
+        "ects": 24,
         "lecture": 80,
         "tutorial": 24,
         "lab": 96
@@ -647,7 +647,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK3"
         }
       ]
@@ -655,7 +655,7 @@
     {
       "semester": 8,
       "summary": {
-        "ects": 24.5,
+        "ects": 24,
         "lecture": 48,
         "tutorial": 32,
         "lab": 96
@@ -744,7 +744,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK4"
         }
       ]

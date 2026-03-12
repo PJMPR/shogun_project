@@ -4,7 +4,7 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 22.5,
+        "ects": 23,
         "lecture": 124,
         "tutorial": 90,
         "lab": 105
@@ -84,7 +84,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/ANG1.json",
           "pdf": "assets/files/stacjonarne/ANG1.pdf",
           "docFile": "assets/files/stacjonarne/ANG1.docx"
@@ -104,7 +104,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 28.5,
+        "ects": 28,
         "lecture": 180,
         "tutorial": 150,
         "lab": 120
@@ -219,7 +219,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/ANG2.json",
           "pdf": "assets/files/stacjonarne/ANG2.pdf",
           "docFile": "assets/files/stacjonarne/ANG2.docx"
@@ -229,7 +229,7 @@
     {
       "semester": 3,
       "summary": {
-        "ects": 29.5,
+        "ects": 29,
         "lecture": 175,
         "tutorial": 90,
         "lab": 195
@@ -344,7 +344,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy/ANG3.json",
           "pdf": "assets/files/stacjonarne/ANG3.pdf",
           "docFile": "assets/files/stacjonarne/ANG3.docx"
@@ -354,7 +354,7 @@
     {
       "semester": 4,
       "summary": {
-        "ects": 30.5,
+        "ects": 29,
         "lecture": 195,
         "tutorial": 120,
         "lab": 180
@@ -434,7 +434,7 @@
           "tutorial": 15,
           "lab": 15,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/BSI.json",
           "pdf": "assets/files/stacjonarne/BSI.pdf",
           "docFile": "assets/files/stacjonarne/BSI.docx"
@@ -482,7 +482,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK1"
         }
       ]
@@ -490,7 +490,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 26.5,
+        "ects": 26,
         "lecture": 180,
         "tutorial": 75,
         "lab": 150
@@ -590,7 +590,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 2,
           "electiveGroup": "LEK2"
         }
       ]
@@ -598,7 +598,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 20.5,
+        "ects": 21,
         "lecture": 90,
         "tutorial": 60,
         "lab": 135
@@ -660,7 +660,7 @@
           "tutorial": 60,
           "lab": 0,
           "form": "Z",
-          "ects": 2.5,
+          "ects": 3,
           "electiveGroup": "LEK3"
         }
       ]

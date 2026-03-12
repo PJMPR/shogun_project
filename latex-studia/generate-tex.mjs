@@ -448,7 +448,7 @@ function buildDocument(tryb, semesters, elSpec, elOth, ef) {
   \\textbf{Forma studiów:}        & ${forma} \\\\[3pt]
   \\textbf{Liczba semestrów:}     & ${semCount} \\\\[3pt]
   \\textbf{Język wykładowy:}      & polski \\\\[3pt]
-  \\textbf{Łączna liczba ECTS:}   & ${totalEcts} + 30 (praktyki zawodowe) \\\\[3pt]
+  \\textbf{Łączna liczba ECTS:}   & ${totalEcts} + 32 (praktyki zawodowe) \\\\[3pt]
   \\textbf{Rok akademicki:}       & 2026/2027 \\\\
 \\end{tabularx}
 \\end{infobox}
@@ -527,7 +527,7 @@ ${planStudiow(semesters, elOth)}
 
 \\subsection*{Wymiar, zasady i forma odbywania praktyk zawodowych}
 
-Wszyscy studenci studiów pierwszego stopnia na kierunku Informatyka zobowiązani są do zrealizowania praktyk zawodowych w wymiarze \\textbf{720 godzin zegarowych (960 godzin lekcyjnych)}. Praktykom zawodowym przypisano \\textbf{30 punktów ECTS}.
+Wszyscy studenci studiów pierwszego stopnia na kierunku Informatyka zobowiązani są do zrealizowania praktyk zawodowych w wymiarze \\textbf{720 godzin zegarowych (960 godzin lekcyjnych)}. Praktykom zawodowym przypisano \\textbf{32 punkty ECTS}.
 
 Praktyki mogą odbywać się w trakcie roku akademickiego w kraju i za granicą, o ile nie utrudniają przebiegu studiów. Student może skorzystać z ofert zamieszczonych na portalu Akademickiego Biura Karier lub zaproponować pracodawcę, który zgadza się na przeprowadzenie praktyki. Charakter praktyki musi odpowiadać programowi nauczania i umożliwiać osiągnięcie założonych efektów uczenia się.
 
