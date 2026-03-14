@@ -17,11 +17,11 @@
       "laboratorium_projekt": 16
     },
     "odpowiedzialny_za_przedmiot": "dr hab. Bartosz Marcinkowski",
-    "ects": 6,
+    "ects": 4,
     "godziny": {
       "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 118,
-      "calkowita_liczba_godzin_h": 150,
+      "praca_wlasna_studenta_h": 68,
+      "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Projektowanie systemu informacyjnego z użyciem narzędzi CASE; tworzenie diagramów UML i dokumentacji; przygotowanie do kolokwium końcowego; prezentacja projektu."
     },
     "metody_dydaktyczne": {

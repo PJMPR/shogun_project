@@ -480,7 +480,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 24,
+        "ects": 22,
         "lecture": 80,
         "tutorial": 60,
         "lab": 80
@@ -495,7 +495,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 6,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/PRI.json",
           "pdf": "assets/files/niestacjonarne/PRI.pdf",
           "docFile": "assets/files/niestacjonarne/PRI.docx"
