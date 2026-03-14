@@ -331,7 +331,7 @@ function charTabela(isSt, semCount, semesters, elOth) {
   out += row('Tytuł zawodowy nadawany absolwentom:', 'inżynier');
   out += `\\midrule\n`;
   out += row('Łączna liczba godzin zajęć:', `${totalH}`);
-  out += row('Liczba punktów ECTS z dziedziny nauk humanistycznych lub społecznych:', '15');
+  out += row('Liczba punktów ECTS z dziedziny nauk humanistycznych lub społecznych:', '12');
   out += row('Liczba godzin zajęć z bezpośrednim udziałem prowadzących i studentów:', `${totalKontakt}`);
   out += row('Łączna liczba punktów ECTS przyporządkowana zajęciom kształtującym umiejętności praktyczne:', `${ectsPrakt}`);
   out += row('Liczba punktów ECTS uzyskiwana w ramach zajęć do wyboru:', '66');

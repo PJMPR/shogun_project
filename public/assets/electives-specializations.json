@@ -24,7 +24,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/KSI.json",
           "pdf": "assets/files/stacjonarne/KSI.pdf",
           "docFile": "assets/files/stacjonarne/KSI.docx"
@@ -81,7 +81,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/AIC.json",
           "pdf": "assets/files/stacjonarne/AIC.pdf",
           "docFile": "assets/files/stacjonarne/AIC.docx"
@@ -138,7 +138,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/M3D.json",
           "pdf": "assets/files/stacjonarne/M3D.pdf",
           "docFile": "assets/files/stacjonarne/M3D.docx"
@@ -195,7 +195,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/FDL.json",
           "pdf": "assets/files/stacjonarne/FDL.pdf",
           "docFile": "assets/files/stacjonarne/FDL.docx"
@@ -252,7 +252,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "syllabusFile": "assets/syllabusy/RTO.json",
           "pdf": "assets/files/stacjonarne/RTO.pdf",
           "docFile": "assets/files/stacjonarne/RTO.docx"

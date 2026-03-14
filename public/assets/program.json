@@ -531,7 +531,7 @@
           "tutorial": 15,
           "lab": 15,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy/SWB.json",
           "pdf": "assets/files/stacjonarne/SWB.pdf",
           "docFile": "assets/files/stacjonarne/SWB.docx"
@@ -568,7 +568,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4,
+          "ects": 5,
           "electiveGroup": "SPEC_5"
         },
         {
