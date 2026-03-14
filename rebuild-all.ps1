@@ -105,12 +105,48 @@ try {
 }
 
 # ==========================================================================
+# KROK 4 - Git add, commit, push
+# ==========================================================================
+Write-Step "KROK 4/4: Git add / commit / push  (origin)"
+
+try {
+    Set-Location $ROOT
+
+    # Sprawdz czy jest co commitowac
+    $status = git status --porcelain
+    if (-not $status) {
+        Write-Host "  Brak zmian do zakomitowania (working tree clean)" -ForegroundColor Yellow
+    } else {
+        # Buduj opis commita
+        $modeDesc  = switch ($Mode) { "s" { "stacjonarne" } "n" { "niestacjonarne" } default { "all" } }
+        $codesDesc = if ($CodesArray.Count -gt 0) { " [$($CodesArray -join ',')]" } else { "" }
+        $commitMsg = "rebuild: $modeDesc$codesDesc"
+
+        Write-Host "  Commit: $commitMsg" -ForegroundColor White
+
+        git add -A
+        if ($LASTEXITCODE -ne 0) { throw "git add zakonczyl sie kodem $LASTEXITCODE" }
+
+        git commit -m $commitMsg
+        if ($LASTEXITCODE -ne 0) { throw "git commit zakonczyl sie kodem $LASTEXITCODE" }
+
+        git push
+        if ($LASTEXITCODE -ne 0) { throw "git push zakonczyl sie kodem $LASTEXITCODE" }
+
+        Write-OK "Git push - gotowe"
+    }
+} catch {
+    Write-ERR "Git - BLAD: $_"
+    $errors += "KROK 4 (git push): $_"
+}
+
+# ==========================================================================
 # Podsumowanie
 # ==========================================================================
 Write-Host ""
 Write-Host ("=" * 66) -ForegroundColor Cyan
 if ($errors.Count -eq 0) {
-    Write-Host "  ZAKONCZONE POMYSLNIE (wszystkie 3 kroki)" -ForegroundColor Green
+    Write-Host "  ZAKONCZONE POMYSLNIE (wszystkie 4 kroki)" -ForegroundColor Green
 } else {
     Write-Host "  ZAKONCZONE Z BLEDAMI:" -ForegroundColor Red
     foreach ($e in $errors) {

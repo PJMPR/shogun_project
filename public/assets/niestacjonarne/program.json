@@ -206,10 +206,10 @@
     {
       "semester": 3,
       "summary": {
-        "ects": 20,
-        "lecture": 80,
-        "tutorial": 16,
-        "lab": 96
+        "ects": 19,
+        "lecture": 72,
+        "tutorial": 32,
+        "lab": 80
       },
       "description": "",
       "subjects": [
@@ -240,17 +240,17 @@
           "docFile": "assets/files/niestacjonarne/FIZ.docx"
         },
         {
-          "name": "Statystyczna analiza danych",
+          "name": "Statystyczna analiza danych 1",
           "type": "M",
           "code": "SAD",
-          "lecture": 16,
-          "tutorial": 0,
-          "lab": 16,
-          "form": "EZ",
-          "ects": 4,
-          "syllabusFile": "assets/syllabusy-n/SAD.json",
-          "pdf": "assets/files/niestacjonarne/SAD.pdf",
-          "docFile": "assets/files/niestacjonarne/SAD.docx"
+          "lecture": 8,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy-n/SAD1.json",
+          "pdf": "assets/files/niestacjonarne/SAD1.pdf",
+          "docFile": "assets/files/niestacjonarne/SAD1.docx"
         },
         {
           "name": "Algorytmy i struktury danych",
@@ -296,13 +296,25 @@
     {
       "semester": 4,
       "summary": {
-        "ects": 22,
-        "lecture": 80,
-        "tutorial": 16,
+        "ects": 25,
+        "lecture": 88,
+        "tutorial": 32,
         "lab": 104
       },
       "description": "",
-      "subjects": [
+      "subjects": [      {
+        "name": "Statystyczna analiza danych 2",
+        "type": "M",
+        "code": "SAD",
+        "lecture": 8,
+        "tutorial": 16,
+        "lab": 0,
+        "form": "EZ",
+        "ects": 3,
+        "syllabusFile": "assets/syllabusy-n/SAD2.json",
+        "pdf": "assets/files/niestacjonarne/SAD2.pdf",
+        "docFile": "assets/files/niestacjonarne/SAD2.docx"
+      },
         {
           "name": "Grafika komputerowa",
           "type": "M",
@@ -583,10 +595,10 @@
     {
       "semester": 7,
       "summary": {
-        "ects": 24,
-        "lecture": 80,
+        "ects": 22,
+        "lecture": 72,
         "tutorial": 24,
-        "lab": 96
+        "lab": 80
       },
       "description": "",
       "subjects": [
@@ -594,11 +606,11 @@
           "name": "Budowa i Integracja Systemów Informacyjnych",
           "type": "O",
           "code": "BYT",
-          "lecture": 24,
+          "lecture": 16,
           "tutorial": 0,
-          "lab": 32,
+          "lab": 16,
           "form": "EZ",
-          "ects": 6,
+          "ects": 4,
           "electiveGroup": "BYT",
           "syllabusFile": "assets/syllabusy-n/BYT.json",
           "pdf": "assets/files/niestacjonarne/BYT.pdf",

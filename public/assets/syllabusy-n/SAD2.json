@@ -6,22 +6,22 @@
     "profil": "praktyczny",
     "tryb_studiow": "niestacjonarny",
     "wersja_z_dnia": "19.02.2026",
-    "nazwa_przedmiotu": "Statystyczna analiza danych",
+    "nazwa_przedmiotu": "Statystyczna analiza danych 2",
     "kod_przedmiotu": "SAD",
     "rok_studiow": 2,
     "semestr_studiow": 3,
     "obligatoryjny": false,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 16,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 16
+      "wyklady": 8,
+      "cwiczenia_lektorat_seminarium": 16,
+      "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "Dr Monika Wrzosek",
-    "ects": 4,
+    "ects": 3,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 68,
-      "calkowita_liczba_godzin_h": 100,
+      "z_udzialem_prowadzacego_h": 24,
+      "praca_wlasna_studenta_h": 51,
+      "calkowita_liczba_godzin_h": 75,
       "praca_wlasna_studenta": "Samodzielna analiza zbiorów danych statystycznych; ćwiczenia z narzędzi statystycznych (R, Python); przygotowanie do kolokwiów laboratoryjnych i egzaminu pisemnego."
     },
     "metody_dydaktyczne": {

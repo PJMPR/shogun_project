@@ -12,16 +12,16 @@
     "semestr_studiow": 7,
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 24,
+      "wyklady": 16,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 32
+      "laboratorium_projekt": 16
     },
     "odpowiedzialny_za_przedmiot": "dr hab. inż. Marta Łabuda",
-    "ects": 6,
+    "ects": 4,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 56,
-      "praca_wlasna_studenta_h": 94,
-      "calkowita_liczba_godzin_h": 150,
+      "z_udzialem_prowadzacego_h": 32,
+      "praca_wlasna_studenta_h": 68,
+      "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Studiowanie materiałów z zakresu budowy i integracji systemów informatycznych; przygotowanie do egzaminu pisemnego; analiza dokumentacji technicznej i architektonicznych wzorców integracji."
     },
     "metody_dydaktyczne": {
