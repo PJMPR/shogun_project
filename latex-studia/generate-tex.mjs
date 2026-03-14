@@ -312,6 +312,7 @@ function charTabela(isSt, semCount, semesters, elOth) {
     }
   }
 
+  ectsPrakt = Math.ceil(ectsPrakt);
   const row = (label, value) =>
     `  {\\small ${label}} & {\\small\\textbf{${value}}} \\\\\n`;
 
