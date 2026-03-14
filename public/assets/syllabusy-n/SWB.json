@@ -13,8 +13,8 @@
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
       "wyklady": 16,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 16
+      "cwiczenia_lektorat_seminarium": 8,
+      "laboratorium_projekt": 8
     },
     "odpowiedzialny_za_przedmiot": "dr Paweł Syty",
     "ects": 4,

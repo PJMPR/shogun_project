@@ -331,7 +331,7 @@
           "docFile": "assets/files/niestacjonarne/SKOA.docx"
         },
         {
-          "name": "Programowanie Sprzętowe",
+          "name": "Programowanie systemowe",
           "type": "M",
           "code": "LLP",
           "lecture": 16,
@@ -351,7 +351,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "electiveGroup": "JP1_2"
         },
         {
@@ -362,7 +362,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "electiveGroup": "JP1_2"
         },
         {
@@ -411,7 +411,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/NAI.json",
           "pdf": "assets/files/niestacjonarne/NAI.pdf",
           "docFile": "assets/files/niestacjonarne/NAI.docx"
@@ -421,8 +421,8 @@
           "type": "M",
           "code": "SWB",
           "lecture": 16,
-          "tutorial": 0,
-          "lab": 16,
+          "tutorial": 8,
+          "lab": 8,
           "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SWB.json",

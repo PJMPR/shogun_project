@@ -17,11 +17,11 @@
       "laboratorium_projekt": 8
     },
     "odpowiedzialny_za_przedmiot": "do ustalenia",
-    "ects": 1.5,
+    "ects": 2,
     "godziny": {
       "z_udzialem_prowadzacego_h": 16,
-      "praca_wlasna_studenta_h": 25,
-      "calkowita_liczba_godzin_h": 41,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
       "praca_wlasna_studenta": "Implementacja aplikacji w C++; zarządzanie pamięcią, wskaźniki, szablony; dokumentacja kodu; przygotowanie projektu zaliczeniowego."
     },
     "metody_dydaktyczne": {

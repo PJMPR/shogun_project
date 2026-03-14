@@ -12,7 +12,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JPT.json",
           "pdf": "assets/files/niestacjonarne/JPT.pdf",
           "docFile": "assets/files/niestacjonarne/JPT.docx"
@@ -24,7 +24,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JPC.json",
           "pdf": "assets/files/niestacjonarne/JPC.pdf",
           "docFile": "assets/files/niestacjonarne/JPC.docx"
@@ -36,7 +36,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JJA.json",
           "pdf": "assets/files/niestacjonarne/JJA.pdf",
           "docFile": "assets/files/niestacjonarne/JJA.docx"
@@ -48,7 +48,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JSC.json",
           "pdf": "assets/files/niestacjonarne/JSC.pdf",
           "docFile": "assets/files/niestacjonarne/JSC.docx"
@@ -60,7 +60,7 @@
           "tutorial": 0,
           "lab": 8,
           "form": "Z",
-          "ects": 1.5,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/JFS.json",
           "pdf": "assets/files/niestacjonarne/JFS.pdf",
           "docFile": "assets/files/niestacjonarne/JFS.docx"
@@ -69,7 +69,7 @@
     },
     {
       "id": "SBD1_2",
-      "label": "Systemy bazy danych 1 i 2 (wybór 2 z 3)",
+      "label": "Systemy baz danych 1 i 2 (wybór 2 z 3)",
       "semester": 5,
       "items": [
         {

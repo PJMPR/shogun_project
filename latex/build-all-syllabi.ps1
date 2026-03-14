@@ -20,7 +20,7 @@ $MIKTEX_BIN = "C:\Users\adamu\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
 $env:PATH   = "$MIKTEX_BIN;$env:PATH"
 
 $SCRIPT_DIR = $PSScriptRoot
-$PROJECT    = "..\"
+$PROJECT    = (Resolve-Path "$SCRIPT_DIR\..").Path
 $ASSETS_S   = "$PROJECT\public\assets\syllabusy"
 $ASSETS_N   = "$PROJECT\public\assets\syllabusy-n"
 $OUTPUT_S   = "$PROJECT\public\assets\files\stacjonarne"

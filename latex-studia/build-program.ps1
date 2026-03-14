@@ -20,19 +20,28 @@ function Compile-Tex([string]$texFile, [string]$outD) {
     $name = [System.IO.Path]::GetFileNameWithoutExtension($texFile)
     Write-Host "`n==> Kompilacja: $name" -ForegroundColor Cyan
 
+    # pdflatex rozwiazuje sciezki wzgledem CWD, nie lokalizacji pliku .tex.
+    # Wchodzimy do katalogu z plikiem .tex, zeby ../latex/... dzialalo poprawnie.
+    $prevLocation = Get-Location
+    Set-Location (Split-Path $texFile -Parent)
+    $texFileName = Split-Path $texFile -Leaf
+
     for ($i = 1; $i -le 2; $i++) {
         $result = & "$MIKTEX_BIN\pdflatex.exe" `
             -interaction=nonstopmode `
             -halt-on-error `
             "-output-directory=$outD" `
-            "$texFile" 2>&1
+            "$texFileName" 2>&1
 
         if ($LASTEXITCODE -ne 0) {
+            Set-Location $prevLocation
             Write-Host "    BLAD (przebieg $i):" -ForegroundColor Red
             $result | Select-String "^!" | ForEach-Object { Write-Host "    $_" -ForegroundColor Yellow }
             return $false
         }
     }
+
+    Set-Location $prevLocation
 
     # Sprzatanie
     foreach ($ext in @("aux","log","out","toc","lof","lot")) {
@@ -55,4 +64,22 @@ function Compile-Tex([string]$texFile, [string]$outD) {
 Compile-Tex "$root\program_stacjonarne.tex"    $outDir
 Compile-Tex "$root\program_niestacjonarne.tex" $outDir
 
+# 3) Kopiuj PDF-y do public/assets/files
+$publicFilesDir = "$root\..\public\assets\files"
+New-Item -ItemType Directory -Force -Path $publicFilesDir | Out-Null
+
+Write-Host "`n==> Kopiowanie PDF-ow do public\assets\files..." -ForegroundColor Cyan
+$copied = 0
+Get-ChildItem "$outDir\*.pdf" | ForEach-Object {
+    $dest = "$publicFilesDir\$($_.Name)"
+    Copy-Item $_.FullName -Destination $dest -Force
+    $size = [math]::Round($_.Length / 1KB, 1)
+    Write-Host "    OK: $($_.Name) ($size KB)  ->  public\assets\files\" -ForegroundColor Green
+    $copied++
+}
+if ($copied -eq 0) {
+    Write-Host "    WARN: brak PDF-ow do skopiowania" -ForegroundColor Yellow
+}
+
 Write-Host "`nGotowe! PDF-y w: $outDir" -ForegroundColor Green
+Write-Host "        Kopia w: $publicFilesDir" -ForegroundColor Green

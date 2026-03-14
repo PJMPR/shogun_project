@@ -67,13 +67,38 @@ def generate_single(json_path: Path, output_dir: Path) -> bool:
 
 
 def main():
-    # Opcjonalne filtry kodów z argumentów wiersza poleceń
-    filter_codes = set(arg.upper() for arg in sys.argv[1:]) if len(sys.argv) > 1 else None
+    # Parsowanie argumentów: opcjonalny --mode s|n|all oraz kody pozycyjne
+    args = sys.argv[1:]
+    mode = 'all'
+    filter_codes = None
+
+    positional = []
+    i = 0
+    while i < len(args):
+        if args[i] == '--mode' and i + 1 < len(args):
+            mode = args[i + 1].lower()
+            i += 2
+        else:
+            positional.append(args[i])
+            i += 1
+
+    if positional:
+        filter_codes = set(a.upper() for a in positional)
 
     total_ok = 0
     total_err = 0
 
+    # Filtrowanie katalogów według trybu
+    filtered_map = {}
     for input_dir, output_dir in INPUT_OUTPUT_MAP.items():
+        is_n = 'syllabusy-n' in str(input_dir)
+        if mode == 's' and is_n:
+            continue
+        if mode == 'n' and not is_n:
+            continue
+        filtered_map[input_dir] = output_dir
+
+    for input_dir, output_dir in filtered_map.items():
         if not input_dir.exists():
             print(f'\n[SKIP] Katalog nie istnieje, pomijam: {input_dir}')
             continue
