@@ -20,8 +20,8 @@
     "ects": 1.5,
     "godziny": {
       "z_udzialem_prowadzacego_h": 16,
-      "praca_wlasna_studenta_h": 21.5,
-      "calkowita_liczba_godzin_h": 37.5,
+      "praca_wlasna_studenta_h": 25,
+      "calkowita_liczba_godzin_h": 41,
       "praca_wlasna_studenta": "Implementacja aplikacji w C++; zarządzanie pamięcią, wskaźniki, szablony; dokumentacja kodu; przygotowanie projektu zaliczeniowego."
     },
     "metody_dydaktyczne": {

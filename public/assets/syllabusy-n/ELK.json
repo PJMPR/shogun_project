@@ -13,14 +13,14 @@
     "obligatoryjny": true,
     "forma_i_liczba_godzin_zajec": {
       "wyklady": 16,
-      "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 16
+      "cwiczenia_lektorat_seminarium": 12,
+      "laboratorium_projekt": 12
     },
     "odpowiedzialny_za_przedmiot": "dr Tadeusz Puźniakowski",
-    "ects": 3,
+    "ects": 4,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 43,
+      "z_udzialem_prowadzacego_h": 40,
+      "praca_wlasna_studenta_h": 35,
       "calkowita_liczba_godzin_h": 75,
       "praca_wlasna_studenta": "Przygotowanie sprawozdań z ćwiczeń laboratoryjnych z elektroniki; samodzielne analizy układów elektronicznych; przygotowanie do kolokwium."
     },

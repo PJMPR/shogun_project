@@ -309,10 +309,10 @@
           "type": "M",
           "code": "ELK",
           "lecture": 16,
-          "tutorial": 0,
-          "lab": 16,
+          "tutorial": 12,
+          "lab": 12,
           "form": "Z",
-          "ects": 3,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/ELK.json",
           "pdf": "assets/files/niestacjonarne/ELK.pdf",
           "docFile": "assets/files/niestacjonarne/ELK.docx"
@@ -373,7 +373,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3,
+          "ects": 2,
           "syllabusFile": "assets/syllabusy-n/ANG1-3.json",
           "pdf": "assets/files/niestacjonarne/ANG1-3.pdf",
           "docFile": "assets/files/niestacjonarne/ANG1-3.docx"

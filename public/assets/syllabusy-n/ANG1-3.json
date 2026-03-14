@@ -7,7 +7,7 @@
     "tryb_studiow": "niestacjonarny",
     "wersja_z_dnia": "19.02.2026",
     "nazwa_przedmiotu": "JĘZYK ANGIELSKI",
-    "kod_przedmiotu": "",
+    "kod_przedmiotu": "ANG4",
     "rok_studiow": null,
     "semestr_studiow": null,
     "obligatoryjny": true,
@@ -17,11 +17,11 @@
       "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
-    "ects": 3,
+    "ects": 2,
     "godziny": {
       "z_udzialem_prowadzacego_h": 16,
-      "praca_wlasna_studenta_h": 59,
-      "calkowita_liczba_godzin_h": 75,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
       "praca_wlasna_studenta": "Przygotowywanie prac pisemnych (listy formalne/nieformalne, eseje, raporty); nauka słownictwa i gramatyki; przygotowanie do kolokwiów i testów; samodzielne ćwiczenia z wymową i konwersacją."
     },
     "metody_dydaktyczne": {
