@@ -4,7 +4,7 @@
     {
       "semester": 1,
       "summary": {
-        "ects": 21,
+        "ects": 24,
         "lecture": 84,
         "tutorial": 40,
         "lab": 72
@@ -117,7 +117,7 @@
       "semester": 2,
       "summary": {
         "ects": 20,
-        "lecture": 72,
+        "lecture": 64,
         "tutorial": 48,
         "lab": 56
       },
@@ -166,7 +166,7 @@
           "name": "Programowanie obiektowe",
           "type": "M",
           "code": "POJ",
-          "lecture": 24,
+          "lecture": 16,
           "tutorial": 0,
           "lab": 24,
           "form": "Z",
