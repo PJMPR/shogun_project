@@ -407,7 +407,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 22,
+        "ects": 21,
         "lecture": 72,
         "tutorial": 16,
         "lab": 80
@@ -448,7 +448,7 @@
           "tutorial": 8,
           "lab": 8,
           "form": "Z",
-          "ects": 4,
+          "ects": 3,
           "syllabusFile": "assets/syllabusy-n/SWB.json",
           "pdf": "assets/files/niestacjonarne/SWB.pdf",
           "docFile": "assets/files/niestacjonarne/SWB.docx"
@@ -679,7 +679,7 @@
     {
       "semester": 8,
       "summary": {
-        "ects": 24,
+        "ects": 25,
         "lecture": 48,
         "tutorial": 32,
         "lab": 96
@@ -755,7 +755,7 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 3,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/SAI.json",
           "pdf": "assets/files/niestacjonarne/SAI.pdf",
           "docFile": "assets/files/niestacjonarne/SAI.docx"
