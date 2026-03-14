@@ -6,8 +6,8 @@
     "profil": "praktyczny",
     "tryb_studiow": "niestacjonarny",
     "wersja_z_dnia": "19.02.2026",
-    "nazwa_przedmiotu": "Matematyka dyskretna",
-    "kod_przedmiotu": "MAD",
+    "nazwa_przedmiotu": "Matematyka dyskretna 1",
+    "kod_przedmiotu": "MAD1",
     "rok_studiow": 1,
     "semestr_studiow": 2,
     "obligatoryjny": true,
@@ -17,11 +17,11 @@
       "laboratorium_projekt": null
     },
     "odpowiedzialny_za_przedmiot": "dr Elżbieta Puźniakowska-Gałuch",
-    "ects": 4,
+    "ects": 3,
     "godziny": {
       "z_udzialem_prowadzacego_h": 24,
-      "praca_wlasna_studenta_h": 76,
-      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta_h": 51,
+      "calkowita_liczba_godzin_h": 75,
       "praca_wlasna_studenta": "Samodzielne rozwiązywanie zadań z matematyki dyskretnej; ćwiczenia z kombinatoryki, teorii grafów i logiki; przygotowanie do kolokwiów i egzaminu."
     },
     "metody_dydaktyczne": {
@@ -38,7 +38,7 @@
         "sposob": "Zaliczenie z oceną"
       },
       "Wykład": {
-        "sposob": "Egzamin"
+        "sposob": "Nieoceniany"
       }
     },
     "kryteria_oceny": {

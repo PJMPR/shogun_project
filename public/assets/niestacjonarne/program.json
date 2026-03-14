@@ -6,7 +6,7 @@
       "summary": {
         "ects": 21,
         "lecture": 84,
-        "tutorial": 32,
+        "tutorial": 40,
         "lab": 72
       },
       "description": "",
@@ -23,14 +23,26 @@
           "syllabusFile": "assets/syllabusy-n/AMs.json",
           "pdf": "assets/files/niestacjonarne/AMs.pdf",
           "docFile": "assets/files/niestacjonarne/AMs.docx"
+        },       {
+          "name": "Matematyka Dyskretna 1",
+          "type": "M",
+          "code": "MAD1",
+          "lecture": 8,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy-n/MAD1.json",
+          "pdf": "assets/files/niestacjonarne/MAD1.pdf",
+          "docFile": "assets/files/niestacjonarne/MAD1.docx"
         },
         {
           "name": "Podstawy Programowania",
           "type": "M",
           "code": "PRG1",
-          "lecture": 24,
+          "lecture": 16,
           "tutorial": 0,
-          "lab": 32,
+          "lab": 24,
           "form": "EZ",
           "ects": 5,
           "syllabusFile": "assets/syllabusy-n/PRG1.json",
@@ -104,7 +116,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 21,
+        "ects": 20,
         "lecture": 72,
         "tutorial": 48,
         "lab": 56
@@ -125,17 +137,17 @@
           "docFile": "assets/files/niestacjonarne/ALG.docx"
         },
         {
-          "name": "Matematyka Dyskretna",
+          "name": "Matematyka Dyskretna 2",
           "type": "M",
-          "code": "MAD",
+          "code": "MAD2",
           "lecture": 8,
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 4,
-          "syllabusFile": "assets/syllabusy-n/MAD.json",
-          "pdf": "assets/files/niestacjonarne/MAD.pdf",
-          "docFile": "assets/files/niestacjonarne/MAD.docx"
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy-n/MAD2.json",
+          "pdf": "assets/files/niestacjonarne/MAD2.pdf",
+          "docFile": "assets/files/niestacjonarne/MAD2.docx"
         },
         {
           "name": "Relacyjne bazy danych",
