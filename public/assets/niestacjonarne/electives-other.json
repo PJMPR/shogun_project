@@ -224,6 +224,18 @@
           "syllabusFile": "assets/syllabusy-n/DTH.json",
           "pdf": "assets/files/niestacjonarne/DTH.pdf",
           "docFile": "assets/files/niestacjonarne/DTH.docx"
+        },
+        {
+          "name": "Administrowanie systemami operacyjnymi",
+          "code": "ADM",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy-n/ADM.json",
+          "pdf": "assets/files/niestacjonarne/ADM.pdf",
+          "docFile": "assets/files/niestacjonarne/ADM.docx"
         }
       ]
     },

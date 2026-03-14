@@ -4,7 +4,7 @@
     "jednostka": "Filia w Gdańsku",
     "kierunek": "INFORMATYKA",
     "profil": "praktyczny",
-    "tryb_studiow": "stacjonarny",
+    "tryb_studiow": "niestacjonarny",
     "wersja_z_dnia": "03.03.2026",
     "nazwa_przedmiotu": "Administracja systemami operacyjnymi",
     "kod_przedmiotu": "ADM",
@@ -12,16 +12,16 @@
     "semestr_studiow": 6,
     "obligatoryjny": false,
     "forma_i_liczba_godzin_zajec": {
-      "wyklady": 30,
+      "wyklady": 16,
       "cwiczenia_lektorat_seminarium": null,
-      "laboratorium_projekt": 30
+      "laboratorium_projekt": 16
     },
     "odpowiedzialny_za_przedmiot": "mgr Antoni Ulenberg",
-    "ects": 5,
+    "ects": 3,
     "godziny": {
-      "z_udzialem_prowadzacego_h": 60,
-      "praca_wlasna_studenta_h": 40,
-      "calkowita_liczba_godzin_h": 100,
+      "z_udzialem_prowadzacego_h": 32,
+      "praca_wlasna_studenta_h": 38,
+      "calkowita_liczba_godzin_h": 75,
       "praca_wlasna_studenta": "Samodzielna konfiguracja środowiska wirtualnego z systemem Windows Server; wykonywanie zadań administracyjnych (Active Directory, GPO, DNS, DHCP) poza zajęciami; przygotowanie sprawozdań z laboratoriów."
     },
     "metody_dydaktyczne": {

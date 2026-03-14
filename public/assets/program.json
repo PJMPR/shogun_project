@@ -598,7 +598,7 @@
     {
       "semester": 6,
       "summary": {
-        "ects": 21,
+        "ects": 20,
         "lecture": 90,
         "tutorial": 60,
         "lab": 135
@@ -638,7 +638,7 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5,
+          "ects": 4,
           "electiveGroup": "OB_6_1"
         },
         {
@@ -668,7 +668,7 @@
     {
       "semester": 7,
       "summary": {
-        "ects": 22,
+        "ects": 23,
         "lecture": 90,
         "tutorial": 120,
         "lab": 90
@@ -721,7 +721,7 @@
           "tutorial": 0,
           "lab": 60,
           "form": "Z",
-          "ects": 4,
+          "ects": 5,
           "electiveGroup": "PRZ2",
           "syllabusFile": "assets/syllabusy/PRZ2.json",
           "pdf": "assets/files/stacjonarne/PRZ2.pdf",
