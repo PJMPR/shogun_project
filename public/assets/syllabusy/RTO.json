@@ -38,6 +38,9 @@
     "zaliczenie": {
       "Laboratorium": {
         "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Egzamin"
       }
     },
     "kryteria_oceny": {

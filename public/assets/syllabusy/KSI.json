@@ -17,11 +17,11 @@
       "laboratorium_projekt": 30
     },
     "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
-    "ects": 5,
+    "ects": 4,
     "godziny": {
       "z_udzialem_prowadzacego_h": 60,
-      "praca_wlasna_studenta_h": 65,
-      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Konteneryzacja aplikacji webowych z użyciem Docker i Docker Compose; konfiguracja klastra Kubernetes; przygotowanie sprawozdań i projektu końcowego."
     },
     "metody_dydaktyczne": {
@@ -36,7 +36,7 @@
     },
     "zaliczenie": {
       "Wykład": {
-        "sposob": "Nieoceniany"
+        "sposob": "Egzamin"
       },
       "Laboratorium": {
         "sposob": "Zaliczenie z oceną"
