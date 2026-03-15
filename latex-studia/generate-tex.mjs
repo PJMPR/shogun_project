@@ -286,9 +286,9 @@ function specjalizacje(elSpec) {
     out += `${hdr('Przedmiot')} & ${hdr('Sem.')} & ${hdr('Wyk.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
     out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
     out += `${hdr('Przedmiot')} & ${hdr('Sem.')} & ${hdr('Wyk.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
-    (sp.subjects || []).forEach((s, idx) => {
+    (sp.items || []).forEach((item, idx) => {
       const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
-      out += `${bg}${esc(s.name)} & ${s.semester||''} & ${s.lecture||0} & ${s.lab||0} & {\\scriptsize ${esc(formLabel(s.form))}} & ${s.ects||0} \\\\\n`;
+      out += `${bg}${esc(item.name)} & ${item.semester||''} & ${item.lecture||0} & ${item.lab||0} & {\\scriptsize ${esc(formLabel(item.form))}} & ${item.ects||0} \\\\\n`;
     });
     out += `\\bottomrule\n\\end{longtable}}\n\n`;
   }
@@ -298,20 +298,31 @@ function specjalizacje(elSpec) {
 // ── Przedmioty obieralne ──────────────────────────────────────────────────────
 function obieralne(elOth) {
   if (!elOth || !elOth.groups || elOth.groups.length === 0) return '';
+  // grupy pomijane w rozdziale "Przedmioty obieralne"
+  const SKIP = new Set([
+    // specjalizacyjne (stacjonarne i niestacjonarne)
+    'SPEC_5','SPEC_6','SPEC_7','SPEC_8',
+    // projekty zespołowe i proseminarium
+    'PRZ1','PRZ2','PSEM','BYT',
+    // duplikaty lektoratów (zostaje tylko LEK1)
+    'LEK2','LEK3','LEK4','LEK5',
+  ]);
   let out = '';
-  for (const grp of elOth.groups) {
+  for (const grp of (elOth.groups || [])) {
+    if (SKIP.has(grp.id)) continue;
+    if (!grp.items || grp.items.length === 0) continue;
     const label = grp.label || grp.id;
     out += `\\subsection*{${esc(label)}}\n`;
-    out += `\\addcontentsline{toc}{subsection}{${esc(label.replace(/\s*\(.*?\)\s*$/, '').trim())}}\n\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(trimLabel(label))}}\n\n`;
     out += `{\\scriptsize\n\\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
     out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
     const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
     out += `${hdr('Przedmiot')} & ${hdr('Kod')} & ${hdr('Wyk.')} & ${hdr('Ćw.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
     out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
     out += `${hdr('Przedmiot')} & ${hdr('Kod')} & ${hdr('Wyk.')} & ${hdr('Ćw.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
-    (grp.items || []).forEach((s, idx) => {
+    grp.items.forEach((item, idx) => {
       const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
-      out += `${bg}${esc(s.name)} & ${esc(s.code||'--')} & ${s.lecture||0} & ${s.tutorial||0} & ${s.lab||0} & {\\scriptsize ${esc(formLabel(s.form))}} & ${s.ects||0} \\\\\n`;
+      out += `${bg}${esc(item.name)} & ${esc(item.code||'--')} & ${item.lecture||0} & ${item.tutorial||0} & ${item.lab||0} & {\\scriptsize ${esc(formLabel(item.form))}} & ${item.ects||0} \\\\\n`;
     });
     out += `\\bottomrule\n\\end{longtable}}\n\n`;
   }
