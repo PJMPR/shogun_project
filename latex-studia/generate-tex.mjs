@@ -16,6 +16,81 @@ const elOthS    = JSON.parse(readFileSync(`${BASE}/electives-other.json`, 'utf8'
 const elOthN    = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-other.json`, 'utf8'));
 const efekty    = JSON.parse(readFileSync(`${BASE}/efekty_ksztalcenia.json`, 'utf8'));
 
+// --- Wczytaj opcjonalny dodatek AI (ai-program.json) -----------------
+let aiProgram = null;
+try {
+  aiProgram = JSON.parse(readFileSync(`${BASE}/ai-program.json`, 'utf8'));
+} catch (e) {
+  aiProgram = null; // brak pliku -> brak dodatku
+}
+
+function escNL(s) {
+  if (s === null || s === undefined) return '';
+  return esc(String(s)).replace(/\r?\n/g, '\\par ');
+}
+
+// ── Nagłówek longtable w stylu PJATK (czerwone tło, biały tekst) ─────────────
+function aiTableHeader(cols) {
+  const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${esc(t)}}}`;
+  const row = cols.map(hdr).join(' & ');
+  let h = `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n${row} \\\\\n\\midrule\\thdend\n`;
+  h += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n${row} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+  return h;
+}
+
+function aiChapter(ai) {
+  if (!ai) return '';
+  let out = '';
+  out += '\n\\newpage\n';
+  out += `\\section*{${esc(ai.title || '')}}\n`;
+  out += `\\addcontentsline{toc}{section}{${esc(ai.title || '')}}\n\n`;
+  if (ai.subtitle) out += `\\subsection*{${esc(ai.subtitle)}}\n\\vspace{0.3cm}\n`;
+
+  const sum = (ai.sections || []).find(s => s.id === 'summary');
+  if (sum && sum.text) out += `\\noindent ${escNL(sum.text)}\n\\bigskip\n`;
+
+  for (const s of (ai.sections || [])) {
+    if (s.id === 'summary') continue;
+    out += `\\subsection*{${esc(s.title || s.id)}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(s.title || s.id)}}\n\n`;
+    if (s.text) out += `\\noindent ${escNL(s.text)}\n\\medskip\n`;
+
+    // framework (etapy) → longtable: Etap | Nazwa | Wytyczne
+    if (s.framework && Array.isArray(s.framework)) {
+      out += `{\\scriptsize\n\\begin{longtable}{m{0.8cm}m{3.5cm}m{10cm}}\n`;
+      out += aiTableHeader(['Etap', 'Nazwa', 'Wytyczne dla studenta']);
+      s.framework.forEach((f, idx) => {
+        const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+        out += `${bg}${f.stage || idx+1} & \\textbf{${esc(f.name)}} & ${escNL(f.guidance || f.description || '')} \\\\\n`;
+      });
+      out += `\\bottomrule\n\\end{longtable}}\n\\medskip\n`;
+    }
+
+    // items (przykłady zadań) → longtable: Zadanie | Opis
+    if (s.items && Array.isArray(s.items)) {
+      out += `{\\scriptsize\n\\begin{longtable}{m{4.5cm}m{10cm}}\n`;
+      out += aiTableHeader(['Zadanie', 'Opis i instrukcja']);
+      s.items.forEach((it, idx) => {
+        const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+        out += `${bg}\\textbf{${esc(it.name)}} & ${escNL(it.instruction || it.description || it.example || '')} \\\\\n`;
+      });
+      out += `\\bottomrule\n\\end{longtable}}\n\\medskip\n`;
+    }
+
+    // matrix (ocenianie) → longtable: 3 kolumny
+    if (s.matrix && Array.isArray(s.matrix)) {
+      out += `{\\scriptsize\n\\begin{longtable}{m{4.5cm}m{5.5cm}m{4.5cm}}\n`;
+      out += aiTableHeader(['Kryterium', 'Ocena automatyczna (narzędzie SI)', 'Ocena prowadzącego']);
+      s.matrix.forEach((row, idx) => {
+        const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+        out += `${bg}${esc(row[0])} & ${esc(row[1])} & ${esc(row[2]||'')} \\\\\n`;
+      });
+      out += `\\bottomrule\n\\end{longtable}}\n\\medskip\n`;
+    }
+  }
+  return out;
+}
+
 // ── LaTeX escape ──────────────────────────────────────────────────────────────
 function esc(s) {
   if (s === null || s === undefined) return '';
@@ -27,7 +102,7 @@ function esc(s) {
     .replace(/#/g,   '\\#')
     .replace(/_/g,   '\\_')
     .replace(/\{/g,  '\\{')
-    .replace(/\}/g,  '\\}')
+    .replace(/}/g,  '\\}')
     .replace(/~/g,   '\\textasciitilde{}')
     .replace(/\^/g,  '\\textasciicircum{}')
     .replace(/„/g,   ',,')
@@ -200,16 +275,20 @@ function planStudiow(semesters, elOth) {
 
 // ── Specjalizacje ─────────────────────────────────────────────────────────────
 function specjalizacje(elSpec) {
+  if (!elSpec || !elSpec.specializations || elSpec.specializations.length === 0) return '';
   let out = '';
-  for (const spec of elSpec.specializations) {
-    out += `\\subsection*{${esc(spec.name)}}\n`;
-    out += `\\addcontentsline{toc}{subsection}{${esc(spec.name)}}\n\n`;
+  for (const sp of elSpec.specializations) {
+    out += `\\subsection*{${esc(sp.name)}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(sp.name)}}\n\n`;
     out += `{\\scriptsize\n\\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
-    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Sem.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n`;
-    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Sem.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
-    spec.items.forEach((item, idx) => {
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
+    out += `${hdr('Przedmiot')} & ${hdr('Sem.')} & ${hdr('Wyk.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    out += `${hdr('Przedmiot')} & ${hdr('Sem.')} & ${hdr('Wyk.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+    (sp.subjects || []).forEach((s, idx) => {
       const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
-      out += `${bg}${esc(item.name)} & ${item.semester} & ${item.lecture} & ${item.lab} & {\\scriptsize ${esc(formLabel(item.form))}} & ${item.ects} \\\\\n`;
+      out += `${bg}${esc(s.name)} & ${s.semester||''} & ${s.lecture||0} & ${s.lab||0} & {\\scriptsize ${esc(formLabel(s.form))}} & ${s.ects||0} \\\\\n`;
     });
     out += `\\bottomrule\n\\end{longtable}}\n\n`;
   }
@@ -218,27 +297,21 @@ function specjalizacje(elSpec) {
 
 // ── Przedmioty obieralne ──────────────────────────────────────────────────────
 function obieralne(elOth) {
-  // grupy pomijane w rozdziale "Przedmioty obieralne"
-  const SKIP = new Set([
-    // specjalizacyjne (stacjonarne i niestacjonarne)
-    'SPEC_5','SPEC_6','SPEC_7','SPEC_8',
-    // projekty zespołowe i proseminarium
-    'PRZ1','PRZ2','PSEM','BYT',
-    // duplikaty lektoratów (zostaje tylko LEK1)
-    'LEK2','LEK3','LEK4','LEK5',
-  ]);
+  if (!elOth || !elOth.groups || elOth.groups.length === 0) return '';
   let out = '';
-  for (const g of (elOth.groups || [])) {
-    if (SKIP.has(g.id)) continue;
-    if (!g.items || g.items.length === 0) continue;
-    out += `\\subsection*{${esc(g.label)}}\n`;
-    out += `\\addcontentsline{toc}{subsection}{${esc(trimLabel(g.label))}}\n\n`;
+  for (const grp of elOth.groups) {
+    const label = grp.label || grp.id;
+    out += `\\subsection*{${esc(label)}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(label.replace(/\s*\(.*?\)\s*$/, '').trim())}}\n\n`;
     out += `{\\scriptsize\n\\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
-    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Ćw.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n`;
-    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Przedmiot}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Kod}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Wyk.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Ćw.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Lab.}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Zaliczenie}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}ECTS}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
-    g.items.forEach((item, idx) => {
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
+    out += `${hdr('Przedmiot')} & ${hdr('Kod')} & ${hdr('Wyk.')} & ${hdr('Ćw.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    out += `${hdr('Przedmiot')} & ${hdr('Kod')} & ${hdr('Wyk.')} & ${hdr('Ćw.')} & ${hdr('Lab.')} & ${hdr('Zaliczenie')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+    (grp.items || []).forEach((s, idx) => {
       const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
-      out += `${bg}${esc(item.name)} & ${esc(item.code)} & ${item.lecture||0} & ${item.tutorial||0} & ${item.lab||0} & {\\scriptsize ${esc(formLabel(item.form))}} & ${item.ects} \\\\\n`;
+      out += `${bg}${esc(s.name)} & ${esc(s.code||'--')} & ${s.lecture||0} & ${s.tutorial||0} & ${s.lab||0} & {\\scriptsize ${esc(formLabel(s.form))}} & ${s.ects||0} \\\\\n`;
     });
     out += `\\bottomrule\n\\end{longtable}}\n\n`;
   }
@@ -495,7 +568,7 @@ Warunkiem ukończenia studiów jest zaliczenie wszystkich przedmiotów przewidzi
 
 W ramach studiów student wybiera jedną z pięciu specjalizacji:
 \\begin{itemize}
-  \\item Architektury oprogramowania i DevOps
+  \\item Architektury oprogramowania i technologie DevOps
   \\item Cyberbezpieczeństwo
   \\item Inżynieria gier komputerowych
   \\item Sztuczna inteligencja
@@ -563,10 +636,19 @@ ${specjalizacje(elSpec)}
 `;
 }
 
-// ── Zapis ──────────────────────────────────────────────────────────────────────
-const texS = buildDocument('stacjonarny',    programS.semesters, elSpecS, elOthS, efekty);
-const texN = buildDocument('niestacjonarny', programN.semesters, elSpecN, elOthN, efekty);
+// --- Zapis z dodatkiem AI: dołączamy wygenerowany rozdział przed \n\\end{document}
+function injectAI(tex) {
+  if (!aiProgram) return tex;
+  const marker = `\\end{document}`;
+  const aiTex = aiChapter(aiProgram);
+  if (!aiTex) return tex;
+  return tex.replace(marker, aiTex + '\n' + marker);
+}
 
+const texS = injectAI(buildDocument('stacjonarny',    programS.semesters, elSpecS, elOthS, efekty));
+const texN = injectAI(buildDocument('niestacjonarny', programN.semesters, elSpecN, elOthN, efekty));
+
+// Ensure no literal backslash-n sequences remain in output (they should be real newlines)
 writeFileSync(`${__dir}/program_stacjonarne.tex`,    texS, 'utf8');
 writeFileSync(`${__dir}/program_niestacjonarne.tex`, texN, 'utf8');
 
