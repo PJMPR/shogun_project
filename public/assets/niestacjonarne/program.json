@@ -242,7 +242,7 @@
         {
           "name": "Statystyczna analiza danych 1",
           "type": "M",
-          "code": "SAD",
+          "code": "SAD1",
           "lecture": 8,
           "tutorial": 16,
           "lab": 0,
@@ -305,7 +305,7 @@
       "subjects": [      {
         "name": "Statystyczna analiza danych 2",
         "type": "M",
-        "code": "SAD",
+        "code": "SAD2",
         "lecture": 8,
         "tutorial": 16,
         "lab": 0,
