@@ -20,8 +20,8 @@
           "lab": 0,
           "form": "EZ",
           "ects": 4,
-          "syllabusFile": "assets/syllabusy-n/AMs.json",
-          "pdf": "assets/files/niestacjonarne/AMs.pdf",
+          "syllabusFile": "assets/syllabusy-n/AM.json",
+          "pdf": "assets/files/niestacjonarne/AM.pdf",
           "docFile": "assets/files/niestacjonarne/AMs.docx"
         },
         {
