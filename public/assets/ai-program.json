@@ -75,11 +75,6 @@
         ["Jakość architektury","Narzędzie SI: wstępna analiza","Wykładowca: finalna ocena"],
         ["Oryginalność rozwiązania","Narzędzie SI: nie","Wykładowca: kluczowe kryterium"]
       ]
-    },
-    {
-      "id": "engagement",
-      "title": "Angażowanie studentów: pierwsze minuty zajęć",
-      "text": "Zalecane formaty: krótkie filmy instruktażowe, narracja o kodzie, zadanie generowane przez narzędzie sztucznej inteligencji. Krótkie, dynamiczne otwarcie zajęć zwiększa zaangażowanie i przygotowuje studentów do pracy praktycznej."
     }
   ]
 }
