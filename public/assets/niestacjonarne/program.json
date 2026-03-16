@@ -117,7 +117,7 @@
     {
       "semester": 2,
       "summary": {
-        "ects": 20,
+        "ects": 21,
         "lecture": 64,
         "tutorial": 48,
         "lab": 56
@@ -145,7 +145,7 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 3,
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/MAD2.json",
           "pdf": "assets/files/niestacjonarne/MAD2.pdf",
           "docFile": "assets/files/niestacjonarne/MAD2.docx"
@@ -409,7 +409,7 @@
     {
       "semester": 5,
       "summary": {
-        "ects": 21,
+        "ects": 20,
         "lecture": 72,
         "tutorial": 16,
         "lab": 80
@@ -436,7 +436,7 @@
           "lecture": 16,
           "tutorial": 0,
           "lab": 16,
-          "form": "EZ",
+          "form": "Z",
           "ects": 4,
           "syllabusFile": "assets/syllabusy-n/NAI.json",
           "pdf": "assets/files/niestacjonarne/NAI.pdf",
@@ -462,8 +462,8 @@
           "lecture": 16,
           "tutorial": 0,
           "lab": 16,
-          "form": "EZ",
-          "ects": 5,
+          "form": "Z",
+          "ects": 4,
           "syllabusFile": "assets/syllabusy-n/ICK.json",
           "pdf": "assets/files/niestacjonarne/ICK.pdf",
           "docFile": "assets/files/niestacjonarne/ICK.docx"

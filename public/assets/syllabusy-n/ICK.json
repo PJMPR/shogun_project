@@ -17,11 +17,11 @@
       "laboratorium_projekt": 16
     },
     "odpowiedzialny_za_przedmiot": "",
-    "ects": 5,
+    "ects": 4,
     "godziny": {
       "z_udzialem_prowadzacego_h": 32,
-      "praca_wlasna_studenta_h": 93,
-      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta_h": 68,
+      "calkowita_liczba_godzin_h": 100,
       "praca_wlasna_studenta": "Projektowanie interfejsów użytkownika z zastosowaniem metod HCI; tworzenie prototypów i makiet; przeprowadzanie testów użyteczności; przygotowanie dokumentacji projektowej."
     },
     "metody_dydaktyczne": {
