@@ -1,5 +1,5 @@
 # fix-pw.ps1 - naprawia przedmioty_wprowadzajace we wszystkich blednych JSON
-Set-Location "C:\Users\adamu\WebstormProjects\pj-studies"
+Set-Location $PSScriptRoot
 
 function Fix-Json {
     param([string]$path, [array]$newPW)

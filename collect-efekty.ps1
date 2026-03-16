@@ -1,6 +1,7 @@
-$srcS = "C:\Users\adamu\WebstormProjects\pj-studies\public\assets\syllabusy"
-$srcN = "C:\Users\adamu\WebstormProjects\pj-studies\public\assets\syllabusy-n"
-$out  = "C:\Users\adamu\WebstormProjects\pj-studies\public\assets\efekty_ksztalcenia.json"
+$PROJECT = (Resolve-Path "$PSScriptRoot").Path
+$srcS = "$PROJECT\public\assets\syllabusy"
+$srcN = "$PROJECT\public\assets\syllabusy-n"
+$out  = "$PROJECT\public\assets\efekty_ksztalcenia.json"
 
 $wiedza = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
 $umiej  = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)

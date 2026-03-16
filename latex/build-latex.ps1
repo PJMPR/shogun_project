@@ -10,7 +10,21 @@ param(
     [switch]$Open
 )
 
-$MIKTEX_BIN = "C:\Users\adamu\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
+# Wykryj lokalizację MiKTeX: najpierw sprawdź PATH, potem profil użytkownika
+$MIKTEX_BIN = ""
+$pdflatexInPath = Get-Command pdflatex -ErrorAction SilentlyContinue
+if ($pdflatexInPath) {
+    $MIKTEX_BIN = Split-Path $pdflatexInPath.Source
+} else {
+    $candidate = "$env:USERPROFILE\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
+    if (Test-Path "$candidate\pdflatex.exe") {
+        $MIKTEX_BIN = $candidate
+    }
+}
+if ($MIKTEX_BIN -eq "") {
+    Write-Host "BLAD: Nie znaleziono pdflatex.exe. Zainstaluj MiKTeX lub dodaj go do PATH." -ForegroundColor Red
+    exit 1
+}
 $env:PATH = "$MIKTEX_BIN;$env:PATH"
 
 $LATEX_DIR   = "$PSScriptRoot\syllabusy"

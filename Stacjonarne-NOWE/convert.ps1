@@ -1,7 +1,7 @@
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-$inputDir = "C:\Users\adamu\WebstormProjects\pj-studies\Stacjonarne-NOWE"
-$outputDir = "C:\Users\adamu\WebstormProjects\pj-studies\Stacjonarne-NOWE\json"
+$inputDir = $PSScriptRoot
+$outputDir = "$PSScriptRoot\json"
 if (-not (Test-Path $outputDir)) { New-Item -ItemType Directory -Path $outputDir | Out-Null }
 
 function Get-DocxLines($path) {

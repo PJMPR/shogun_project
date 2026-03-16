@@ -2,7 +2,7 @@
 # Polskie znaki wstawiane przez char codes lub bezposrednio w danych JSON
 
 $ErrorActionPreference = "Stop"
-Set-Location "C:\Users\adamu\WebstormProjects\pj-studies"
+Set-Location $PSScriptRoot
 
 function Fix-Json {
     param([string]$path, [array]$newPW)
