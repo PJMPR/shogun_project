@@ -23,7 +23,8 @@
           "syllabusFile": "assets/syllabusy-n/AMs.json",
           "pdf": "assets/files/niestacjonarne/AMs.pdf",
           "docFile": "assets/files/niestacjonarne/AMs.docx"
-        },       {
+        },
+        {
           "name": "Matematyka Dyskretna 1",
           "type": "M",
           "code": "MAD1",
@@ -302,19 +303,20 @@
         "lab": 104
       },
       "description": "",
-      "subjects": [      {
-        "name": "Statystyczna analiza danych 2",
-        "type": "M",
-        "code": "SAD2",
-        "lecture": 8,
-        "tutorial": 16,
-        "lab": 0,
-        "form": "EZ",
-        "ects": 3,
-        "syllabusFile": "assets/syllabusy-n/SAD2.json",
-        "pdf": "assets/files/niestacjonarne/SAD2.pdf",
-        "docFile": "assets/files/niestacjonarne/SAD2.docx"
-      },
+      "subjects": [
+        {
+          "name": "Statystyczna analiza danych 2",
+          "type": "M",
+          "code": "SAD2",
+          "lecture": 8,
+          "tutorial": 16,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 3,
+          "syllabusFile": "assets/syllabusy-n/SAD2.json",
+          "pdf": "assets/files/niestacjonarne/SAD2.pdf",
+          "docFile": "assets/files/niestacjonarne/SAD2.docx"
+        },
         {
           "name": "Grafika komputerowa",
           "type": "M",
