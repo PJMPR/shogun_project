@@ -21,21 +21,26 @@
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
       "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
     },
     "metody_dydaktyczne": {
-
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
     },
     "zaliczenie": {
       "Projekt": {
         "sposob": "Zaliczenie z oceną"
       }
     },
-    "kryteria_oceny": [
-      "Projekt realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność modelu danych, efektywność operacji wyszukiwania, spójność kluczy i wartości, uzasadnienie wyborów technologicznych oraz dokumentację",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność modelu danych, efektywność operacji wyszukiwania, spójność kluczy i wartości, uzasadnienie wyborów technologicznych oraz dokumentację",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
     "przedmioty_wprowadzajace": [
       {
         "nazwa": "Relacyjne bazy danych",
@@ -59,21 +64,80 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe pojęcia związane z bazami słownikowymi oraz rozumie różnice pomiędzy modelem klucz–wartość a innymi modelami baz danych.",
-      "umiejetnosci": "Student potrafi zaprojektować prosty system oparty na bazie słownikowej, wykonywać operacje zapisu i odczytu danych, ocenić wydajność oraz zintegrować bazę słownikową z aplikacją.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, uzasadniać wybór bazy słownikowej oraz dbać o jakość dokumentacji projektowej."
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia związane z bazami słownikowymi oraz rozumie różnice pomiędzy modelem klucz–wartość a innymi modelami baz danych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zaprojektować prosty system oparty na bazie słownikowej, wykonywać operacje zapisu i odczytu danych, ocenić wydajność oraz zintegrować bazę słownikową z aplikacją.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, uzasadniać wybór bazy słownikowej oraz dbać o jakość dokumentacji projektowej.",
+          "metoda_weryfikacji": ""
+        }
+      ]
     },
     "tresci_programowe": [
-      "Wprowadzenie do baz słownikowych i ich zastosowań",
-      "Model klucz–wartość i jego charakterystyka",
-      "Porównanie baz słownikowych z innymi modelami baz danych",
-      "Podstawowe operacje zapisu i odczytu danych",
-      "Struktury danych w bazach słownikowych",
-      "Spójność danych i modele replikacji",
-      "Wydajność i skalowalność baz klucz–wartość",
-      "Zastosowanie baz słownikowych jako cache",
-      "Integracja bazy słownikowej z aplikacją",
-      "Projekt zaliczeniowy – implementacja i prezentacja"
-    ]
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do baz słownikowych i ich zastosowań",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Model klucz–wartość i jego charakterystyka",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Porównanie baz słownikowych z innymi modelami baz danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Podstawowe operacje zapisu i odczytu danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Struktury danych w bazach słownikowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Spójność danych i modele replikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Wydajność i skalowalność baz klucz–wartość",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Zastosowanie baz słownikowych jako cache",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Integracja bazy słownikowej z aplikacją",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
   }
 }

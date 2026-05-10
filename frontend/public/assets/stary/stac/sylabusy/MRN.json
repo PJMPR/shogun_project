@@ -21,21 +21,26 @@
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
       "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
     },
     "metody_dydaktyczne": {
-
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
     },
     "zaliczenie": {
       "Projekt": {
         "sposob": "Zaliczenie z oceną"
       }
     },
-    "kryteria_oceny": [
-      "Projekt aplikacji mobilnej realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność działania aplikacji, strukturę komponentów, obsługę stanu i nawigacji, integrację z API oraz jakość kodu",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt aplikacji mobilnej realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność działania aplikacji, strukturę komponentów, obsługę stanu i nawigacji, integrację z API oraz jakość kodu",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
     "przedmioty_wprowadzajace": [
       {
         "nazwa": "Programowanie aplikacji internetowych",
@@ -59,21 +64,80 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych oraz architekturą React Native, w tym komponenty, stan, właściwości oraz cykl życia aplikacji.",
-      "umiejetnosci": "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w React Native, korzystać z komponentów interfejsu, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na emulatorze lub urządzeniu mobilnym.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu."
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji mobilnych oraz architekturą React Native, w tym komponenty, stan, właściwości oraz cykl życia aplikacji.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację mobilną w React Native, korzystać z komponentów interfejsu, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na emulatorze lub urządzeniu mobilnym.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji mobilnej, pracować z dokumentacją techniczną oraz dbać o czytelność i jakość kodu.",
+          "metoda_weryfikacji": ""
+        }
+      ]
     },
     "tresci_programowe": [
-      "Wprowadzenie do aplikacji mobilnych i React Native",
-      "Środowisko pracy, Expo i konfiguracja projektu",
-      "Komponenty, JSX oraz właściwości komponentów",
-      "Zarządzanie stanem i obsługa zdarzeń",
-      "Stylowanie interfejsu i layout aplikacji",
-      "Nawigacja pomiędzy ekranami",
-      "Komunikacja z API i obsługa danych zdalnych",
-      "Dostęp do funkcji urządzenia mobilnego",
-      "Debugowanie i testowanie aplikacji mobilnych",
-      "Projekt zaliczeniowy – implementacja i prezentacja"
-    ]
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do aplikacji mobilnych i React Native",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Środowisko pracy, Expo i konfiguracja projektu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Komponenty, JSX oraz właściwości komponentów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Zarządzanie stanem i obsługa zdarzeń",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Stylowanie interfejsu i layout aplikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Nawigacja pomiędzy ekranami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Komunikacja z API i obsługa danych zdalnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Dostęp do funkcji urządzenia mobilnego",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Debugowanie i testowanie aplikacji mobilnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
   }
 }

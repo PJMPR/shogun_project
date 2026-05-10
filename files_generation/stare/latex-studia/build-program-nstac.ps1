@@ -1,8 +1,8 @@
-# build-program.ps1
-# Generuje program_stacjonarny_stary.pdf ze starego programu stacjonarnego
-# Dane JSON: public/assets/stary/stac/
+# build-program-nstac.ps1
+# Generuje program_niestacjonarny_stary.pdf ze starego programu niestacjonarnego
+# Dane JSON: public/assets/stary/nstac/
 
-$MIKTEX_BIN = "C:\Users\adamu\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
+$MIKTEX_BIN = "C:\Users\aurbanow\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
 $env:PATH   = "$MIKTEX_BIN;$env:PATH"
 
 $root   = $PSScriptRoot
@@ -12,8 +12,8 @@ New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
 # 1) Wygeneruj plik .tex z JSON
 Write-Host "==> Generowanie pliku .tex..." -ForegroundColor Cyan
-node "$root\generate-tex.mjs"
-if ($LASTEXITCODE -ne 0) { Write-Error "Blad generate-tex.mjs"; exit 1 }
+node "$root\generate-tex-nstac.mjs"
+if ($LASTEXITCODE -ne 0) { Write-Error "Blad generate-tex-nstac.mjs"; exit 1 }
 Write-Host "    OK" -ForegroundColor Green
 
 function Compile-Tex([string]$texFile, [string]$outD) {
@@ -52,6 +52,6 @@ function Compile-Tex([string]$texFile, [string]$outD) {
 }
 
 # 2) Kompiluj
-Compile-Tex "$root\program_stacjonarny_stary.tex" $outDir
+Compile-Tex "$root\program_niestacjonarny_stary.tex" $outDir
 
 Write-Host "`nGotowe! PDF w: $outDir" -ForegroundColor Green

@@ -477,12 +477,13 @@ Warunkiem ukończenia studiów jest zaliczenie wszystkich przedmiotów przewidzi
 
 \\subsection{Specjalizacje}
 
-W ramach studiów student wybiera jedną z czterech specjalizacji:
+W ramach studiów student wybiera jedną z pięciu specjalizacji:
 \\begin{itemize}
   \\item Aplikacje internetowe
   \\item Cyberbezpieczeństwo
   \\item Inżynieria gier komputerowych
   \\item Sztuczna inteligencja
+  \\item Internet rzeczy
 \\end{itemize}
 
 \\newpage

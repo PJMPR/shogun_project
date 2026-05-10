@@ -21,21 +21,26 @@
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
       "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
     },
     "metody_dydaktyczne": {
-
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
     },
     "zaliczenie": {
       "Projekt": {
         "sposob": "Zaliczenie z oceną"
       }
     },
-    "kryteria_oceny": [
-      "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, wykorzystanie paradygmatu funkcyjnego oraz dokumentację",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, wykorzystanie paradygmatu funkcyjnego oraz dokumentację",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
     "przedmioty_wprowadzajace": [
       {
         "nazwa": "Podstawy Programowania",
@@ -59,21 +64,80 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe konstrukcje języka F#, paradygmat funkcyjny oraz zasady tworzenia aplikacji na platformie .NET.",
-      "umiejetnosci": "Student potrafi tworzyć, uruchamiać i testować proste aplikacje w języku F#, definiować funkcje, korzystać z typów niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie stosować paradygmat funkcyjny w praktyce."
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe konstrukcje języka F#, paradygmat funkcyjny oraz zasady tworzenia aplikacji na platformie .NET.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi tworzyć, uruchamiać i testować proste aplikacje w języku F#, definiować funkcje, korzystać z typów niemutowalnych oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz świadomie stosować paradygmat funkcyjny w praktyce.",
+          "metoda_weryfikacji": ""
+        }
+      ]
     },
     "tresci_programowe": [
-      "Wprowadzenie do języka F# i platformy .NET oraz konfiguracja środowiska",
-      "Podstawowe typy danych, wyrażenia i niemutowalność",
-      "Funkcje, funkcje anonimowe i funkcje wyższego rzędu",
-      "Kolekcje i operacje funkcyjne (map, filter, fold)",
-      "Definiowanie własnych typów danych i rekordów",
-      "Dopasowanie wzorców (pattern matching)",
-      "Typy opcyjne i obsługa błędów",
-      "Integracja F# z bibliotekami .NET",
-      "Dobre praktyki programowania funkcyjnego",
-      "Projekt programistyczny – implementacja i prezentacja"
-    ]
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do języka F# i platformy .NET oraz konfiguracja środowiska",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Podstawowe typy danych, wyrażenia i niemutowalność",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Funkcje, funkcje anonimowe i funkcje wyższego rzędu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Kolekcje i operacje funkcyjne (map, filter, fold)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Definiowanie własnych typów danych i rekordów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Dopasowanie wzorców (pattern matching)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Typy opcyjne i obsługa błędów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Integracja F# z bibliotekami .NET",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Dobre praktyki programowania funkcyjnego",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt programistyczny – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "pj-sylabi-db-init",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Skrypty inicjalizujące bazę MongoDB pj_sylabi",
+  "scripts": {
+    "init": "node init-db.mjs"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

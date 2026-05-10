@@ -294,6 +294,63 @@
           "syllabusFile": "assets/stary/nstac/sylabusy/PJN.json"
         }
       ]
+    },
+    {
+      "name": "Internet rzeczy",
+      "items": [
+        {
+          "semester": 6,
+          "name": "Szybkie prototypowanie",
+          "code": "RTO",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/RTO.json",
+          "pdf": "assets/files/niestacjonarne/RTO.pdf",
+          "docFile": "assets/files/niestacjonarne/RTO.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Systemy czasu rzeczywistego",
+          "code": "PTT",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PTT.json",
+          "pdf": "assets/files/niestacjonarne/PTT.pdf",
+          "docFile": "assets/files/niestacjonarne/PTT.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Komunikacja i protokoły dla Internetu Rzeczy",
+          "code": "KIP",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/KIP.json",
+          "pdf": "assets/files/niestacjonarne/KIP.pdf",
+          "docFile": "assets/files/niestacjonarne/KIP.docx"
+        },
+        {
+          "semester": 8,
+          "name": "Programowanie platform sprzętowych",
+          "code": "PPS",
+          "lecture": 16,
+          "tutorial": 0,
+          "lab": 16,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy-n/PPS.json",
+          "pdf": "assets/files/niestacjonarne/PPS.pdf",
+          "docFile": "assets/files/niestacjonarne/PPS.docx"
+        }
+      ]
     }
   ]
 }

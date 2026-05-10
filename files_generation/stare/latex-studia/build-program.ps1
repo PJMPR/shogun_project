@@ -2,7 +2,7 @@
 # Generuje program_stacjonarny_stary.pdf ze starego programu stacjonarnego
 # Dane JSON: public/assets/stary/stac/
 
-$MIKTEX_BIN = "C:\Users\adamu\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
+$MIKTEX_BIN = "C:\Users\aurbanow\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
 $env:PATH   = "$MIKTEX_BIN;$env:PATH"
 
 $root   = $PSScriptRoot

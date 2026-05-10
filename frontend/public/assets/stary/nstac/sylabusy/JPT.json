@@ -21,21 +21,26 @@
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
       "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
     },
     "metody_dydaktyczne": {
-
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
     },
     "zaliczenie": {
       "Projekt": {
         "sposob": "Zaliczenie z oceną"
       }
     },
-    "kryteria_oceny": [
-      "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność działania, jakość kodu, strukturę programu, dokumentację oraz prezentację rozwiązania",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność działania, jakość kodu, strukturę programu, dokumentację oraz prezentację rozwiązania",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
     "przedmioty_wprowadzajace": [
       {
         "nazwa": "Podstawy Programowania",
@@ -59,22 +64,85 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych.",
-      "umiejetnosci": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy."
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe konstrukcje języka Python, typy danych, instrukcje sterujące oraz standardowe biblioteki. Rozumie zasady czytelnego zapisu kodu i znaczenie dobrych praktyk programistycznych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi tworzyć i testować proste programy w języku Python, korzystać z dokumentacji, dzielić program na funkcje i moduły oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować pracę nad projektem programistycznym, terminowo realizować zadania oraz prezentować efekty swojej pracy.",
+          "metoda_weryfikacji": ""
+        }
+      ]
     },
     "tresci_programowe": [
-      "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
-      "Typy danych: int, float, bool, string, operatory i konwersje typów.",
-      "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
-      "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
-      "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
-      "Moduły i pakiety, korzystanie z bibliotek standardowych.",
-      "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
-      "Wyjątki i obsługa błędów.",
-      "Wprowadzenie do programowania obiektowego w Pythonie.",
-      " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
-      " Testowanie i debugowanie prostych programów."
-    ]
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do języka Python: zastosowania, środowisko pracy, interpreter, pierwsze programy.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Typy danych: int, float, bool, string, operatory i konwersje typów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Instrukcje sterujące: if, for, while, zakresy, instrukcje break i continue.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Struktury danych: listy, krotki, słowniki, zbiory – operacje i zastosowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Funkcje: definicja, parametry, wartości zwracane, zakres zmiennych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Moduły i pakiety, korzystanie z bibliotek standardowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Obsługa plików: odczyt i zapis danych, formaty tekstowe.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Wyjątki i obsługa błędów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Wprowadzenie do programowania obiektowego w Pythonie.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": " Dobre praktyki: PEP8, czytelność kodu, komentarze i dokumentacja.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": " Testowanie i debugowanie prostych programów.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
   }
 }

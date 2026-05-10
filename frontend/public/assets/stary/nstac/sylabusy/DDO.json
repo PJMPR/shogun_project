@@ -21,21 +21,26 @@
     "godziny": {
       "z_udzialem_prowadzacego_h": 30,
       "praca_wlasna_studenta_h": 20,
-      "calkowita_liczba_godzin_h": 50
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
     },
     "metody_dydaktyczne": {
-
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
     },
     "zaliczenie": {
       "Projekt": {
         "sposob": "Zaliczenie z oceną"
       }
     },
-    "kryteria_oceny": [
-      "Projekt realizowany indywidualnie lub w parach – 100%",
-      "Ocena projektu obejmuje: poprawność modelu danych, jakość zapytań, poprawność operacji CRUD, uzasadnienie wyborów projektowych oraz dokumentację",
-      "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
-    ],
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność modelu danych, jakość zapytań, poprawność operacji CRUD, uzasadnienie wyborów projektowych oraz dokumentację",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
     "przedmioty_wprowadzajace": [
       {
         "nazwa": "Relacyjne bazy danych",
@@ -59,21 +64,80 @@
       }
     },
     "efekty_ksztalcenia": {
-      "wiedza": "Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów.",
-      "umiejetnosci": "Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją.",
-      "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji."
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia związane z bazami dokumentowymi, rozumie różnice pomiędzy modelami relacyjnymi i nierelacyjnymi oraz zna zasady przechowywania danych w postaci dokumentów.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zaprojektować prosty model danych w bazie dokumentowej, wykonywać operacje CRUD, formułować zapytania oraz zintegrować bazę dokumentową z prostą aplikacją.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, argumentować wybór technologii oraz dbać o jakość i czytelność dokumentacji.",
+          "metoda_weryfikacji": ""
+        }
+      ]
     },
     "tresci_programowe": [
-      "Wprowadzenie do baz danych NoSQL i ich klasyfikacja",
-      "Model dokumentowy i format JSON",
-      "Porównanie baz relacyjnych i dokumentowych",
-      "Projektowanie struktury dokumentów i kolekcji",
-      "Podstawowe operacje CRUD",
-      "Zapytania i filtrowanie danych",
-      "Indeksy i podstawy optymalizacji",
-      "Agregacje i przetwarzanie danych",
-      "Integracja bazy dokumentowej z aplikacją",
-      "Projekt zaliczeniowy – implementacja i prezentacja"
-    ]
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do baz danych NoSQL i ich klasyfikacja",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Model dokumentowy i format JSON",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Porównanie baz relacyjnych i dokumentowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Projektowanie struktury dokumentów i kolekcji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Podstawowe operacje CRUD",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Zapytania i filtrowanie danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Indeksy i podstawy optymalizacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Agregacje i przetwarzanie danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Integracja bazy dokumentowej z aplikacją",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
   }
 }

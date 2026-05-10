@@ -47,6 +47,17 @@
         Studia niestacjonarne
       </a>
 
+      <p class="nav-section-label">Obsady</p>
+      <a
+        routerLink="/obsady"
+        routerLinkActive="nav-link-active"
+        class="nav-link"
+        (click)="isMobile() && sidebarVisible.set(false)"
+      >
+        <i class="pi pi-users"></i>
+        Obsady
+      </a>
+
       <p class="nav-section-label">Sylabusy</p>
       <a
         routerLink="/sylabus/nowy"

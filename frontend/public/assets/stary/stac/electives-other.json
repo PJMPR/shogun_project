@@ -12,7 +12,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/EEC.json"
         },
         {
           "name": "Filozofia i etyka dla inżynierów",
@@ -21,7 +22,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/FEI.json"
         },
         {
           "name": "Psychologia umiejętności inżynierskich",
@@ -30,7 +32,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/PUI.json"
         }
       ]
     },
@@ -46,7 +49,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRIN.json"
         },
         {
           "name": "Zarządzanie własnym przedsięwzięciem",
@@ -55,7 +59,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/POZ.json"
         },
         {
           "name": "Komercjalizacja projektów informatycznych",
@@ -64,7 +69,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/KMR.json"
         }
       ]
     },
@@ -80,7 +86,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRIN.json"
         },
         {
           "name": "Zarządzanie własnym przedsięwzięciem",
@@ -89,7 +96,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/POZ.json"
         },
         {
           "name": "Komercjalizacja projektów informatycznych",
@@ -98,7 +106,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/KMR.json"
         }
       ]
     },
@@ -114,7 +123,8 @@
           "tutorial": 30,
           "lab": 0,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/ASD.json"
         },
         {
           "name": "algorytmika praktyczna",
@@ -123,7 +133,8 @@
           "tutorial": 30,
           "lab": 0,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/APs.json"
         }
       ]
     },
@@ -139,7 +150,8 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/SBD.json"
         },
         {
           "name": "Bazy NoSQL",
@@ -148,7 +160,8 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/NSQL.json"
         }
       ]
     },
@@ -164,7 +177,8 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/MAS.json"
         },
         {
           "name": "Zastosowania języków formalnych",
@@ -173,7 +187,8 @@
           "tutorial": 0,
           "lab": 30,
           "form": "EZ",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/ZJF.json"
         }
       ]
     },
@@ -189,7 +204,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/SGD.json"
         },
         {
           "name": "Zarządzanie projektem informatycznym",
@@ -198,7 +214,8 @@
           "tutorial": 15,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/ZPR.json"
         }
       ]
     }

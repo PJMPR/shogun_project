@@ -26,5 +26,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./sylabus/edytuj/edytuj-sylabus.component').then((m) => m.EdytujSylabusComponent),
   },
+  {
+    path: 'obsady',
+    loadComponent: () =>
+      import('./obsady/obsady.component').then((m) => m.ObsadyComponent),
+  },
   { path: '', redirectTo: 'stacjonarne/program', pathMatch: 'full' },
 ];

@@ -19,7 +19,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/ALG.json"
         },
         {
           "name": "Historia i kultura Japonii",
@@ -29,7 +30,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/HKJ.json"
         },
         {
           "name": "Podstawy programowania",
@@ -39,7 +41,8 @@
           "tutorial": 0,
           "lab": 32,
           "form": "Z",
-          "ects": 6
+          "ects": 6,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRG1.json"
         },
         {
           "name": "Użytkowanie komputerów i Podstawy Systemów Operacyjnych",
@@ -49,7 +52,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/UKOS.json"
         },
         {
           "name": "Przedmiot obieralny humanistyczny/społeczny 1.",
@@ -70,7 +74,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "EZ",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/WIA.json"
         },
         {
           "name": "Język angielski",
@@ -80,7 +85,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         }
       ]
     },
@@ -102,7 +108,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/AMs.json"
         },
         {
           "name": "Matematyka dyskretna 1",
@@ -112,7 +119,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/MAD.json"
         },
         {
           "name": "Programowanie obiektowe w Javie",
@@ -122,7 +130,8 @@
           "tutorial": 0,
           "lab": 32,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/JJA.json"
         },
         {
           "name": "Wstęp do informatyki i architektury komputerów 2",
@@ -132,7 +141,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/WIA2.json"
         },
         {
           "name": "Systemy operacyjne",
@@ -142,7 +152,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SOP.json"
         },
         {
           "name": "Język angielski",
@@ -152,7 +163,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         }
       ]
     },
@@ -174,7 +186,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/MAD.json"
         },
         {
           "name": "Relacyjne bazy danych",
@@ -184,7 +197,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/RBD.json"
         },
         {
           "name": "Fizyka",
@@ -194,7 +208,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/FIZ.json"
         },
         {
           "name": "Metody programowania",
@@ -204,7 +219,8 @@
           "tutorial": 0,
           "lab": 24,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/MPR.json"
         },
         {
           "name": "Przedmiot obieralny humanistyczny/społeczny 2.",
@@ -225,7 +241,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         },
         {
           "name": "Technologie Internetu",
@@ -235,7 +252,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/TIN.json"
         }
       ]
     },
@@ -268,7 +286,8 @@
           "tutorial": 0,
           "lab": 24,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SKOA.json"
         },
         {
           "name": "Java zaawansowana",
@@ -278,7 +297,8 @@
           "tutorial": 0,
           "lab": 24,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/JAZ.json"
         },
         {
           "name": "Projektowanie systemów informacyjnych",
@@ -288,7 +308,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRI.json"
         },
         {
           "name": "Warsztaty programistyczne",
@@ -298,7 +319,8 @@
           "tutorial": 0,
           "lab": 24,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/WPR.json"
         },
         {
           "name": "Język angielski",
@@ -308,7 +330,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 1
+          "ects": 1,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         },
         {
           "name": "Praktyka 1",
@@ -318,7 +341,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 10
+          "ects": 10,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRK1.json"
         }
       ]
     },
@@ -340,7 +364,8 @@
           "tutorial": 0,
           "lab": 32,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/GRK.json"
         },
         {
           "name": "Budowa i integracja systemów informatycznych",
@@ -350,7 +375,8 @@
           "tutorial": 0,
           "lab": 32,
           "form": "EZ",
-          "ects": 5
+          "ects": 5,
+          "syllabusFile": "assets/stary/nstac/sylabusy/BYT.json"
         },
         {
           "name": "Elektronika",
@@ -360,7 +386,8 @@
           "tutorial": 12,
           "lab": 12,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/ELK.json"
         },
         {
           "name": "Interakcja człowiek - komputer",
@@ -370,7 +397,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/ICK.json"
         },
         {
           "name": "Lektorat",
@@ -380,7 +408,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         }
       ]
     },
@@ -402,7 +431,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SAD.json"
         },
         {
           "name": "Systemy wbudowane",
@@ -412,7 +442,8 @@
           "tutorial": 8,
           "lab": 8,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SWB.json"
         },
         {
           "name": "Systemy baz danych",
@@ -445,7 +476,7 @@
           "lab": 16,
           "form": "EZ",
           "ects": 5,
-          "electiveGroup": "SPEC1_S6"
+          "electiveGroup": "SPEC_6"
         },
         {
           "name": "Przedmiot obieralny - specjalizacji",
@@ -456,7 +487,7 @@
           "lab": 16,
           "form": "Z",
           "ects": 4,
-          "electiveGroup": "SPECOB_S6"
+          "electiveGroup": "SPEC_6"
         },
         {
           "name": "Lektorat",
@@ -466,7 +497,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK1-4-ANG.json"
         },
         {
           "name": "Praktyka 2",
@@ -476,7 +508,8 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 10
+          "ects": 10,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRK2.json"
         }
       ]
     },
@@ -498,7 +531,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "EZ",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SAD.json"
         },
         {
           "name": "Narzędzia sztucznej inteligencji",
@@ -508,7 +542,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/NAI.json"
         },
         {
           "name": "Projekt zespołowy 1",
@@ -518,7 +553,8 @@
           "tutorial": 0,
           "lab": 32,
           "form": "Z",
-          "ects": 6
+          "ects": 6,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRZ1.json"
         },
         {
           "name": "Bezpieczeństwo systemów informacyjnych",
@@ -528,7 +564,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/BSI.json"
         },
         {
           "name": "Przedmiot specjalizacyjny 2",
@@ -539,7 +576,7 @@
           "lab": 24,
           "form": "EZ",
           "ects": 5,
-          "electiveGroup": "SPEC2_S7"
+          "electiveGroup": "SPEC_7"
         },
         {
           "name": "Lektorat",
@@ -549,7 +586,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK4-ANG.json"
         }
       ]
     },
@@ -582,7 +620,8 @@
           "tutorial": 0,
           "lab": 40,
           "form": "Z",
-          "ects": 6
+          "ects": 6,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRZ2.json"
         },
         {
           "name": "Społeczne aspekty informatyki",
@@ -592,7 +631,8 @@
           "tutorial": 0,
           "lab": 16,
           "form": "Z",
-          "ects": 4
+          "ects": 4,
+          "syllabusFile": "assets/stary/nstac/sylabusy/SAI.json"
         },
         {
           "name": "Lektorat",
@@ -602,7 +642,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 2
+          "ects": 2,
+          "syllabusFile": "assets/stary/nstac/sylabusy/LEK4-ANG.json"
         },
         {
           "name": "Przedmiot obieralny humanistyczny/społeczny 3.",
@@ -624,7 +665,7 @@
           "lab": 16,
           "form": "EZ",
           "ects": 5,
-          "electiveGroup": "MONO_S8"
+          "electiveGroup": "SPEC_8"
         },
         {
           "name": "Proseminarium",
@@ -634,7 +675,8 @@
           "tutorial": 16,
           "lab": 0,
           "form": "Z",
-          "ects": 3
+          "ects": 3,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PSEM.json"
         },
         {
           "name": "Praktyka 3",
@@ -644,10 +686,10 @@
           "tutorial": 0,
           "lab": 0,
           "form": "Z",
-          "ects": 12
+          "ects": 12,
+          "syllabusFile": "assets/stary/nstac/sylabusy/PRK3.json"
         }
       ]
     }
   ]
 }
-
