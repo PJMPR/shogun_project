@@ -1,0 +1,120 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Technologie backendowe",
+                    "kod_przedmiotu":  "TBK",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Mateusz Miotk",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "projekt praktyczny",
+                                           "Kryteria oceny",
+                                           "60% Kolokwium",
+                                           "40% Projekt programistyczny"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Użytkowanie komputerów",
+                                                         "wymagania":  "Systemy operacyjne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu",
+                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
+                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość protokołu HTTP",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot \"Technologie Backendowe\" został stworzony z myślą o rozwijaniu umiejętności z zakresu zaawansowanego programowania w języku JavaScript, z wykorzystaniem Node.js i przykładowego narzędzia do tworzenia środowiska po stronie serwera za pomocą protokołu HTTP, w celu tworzenia efektywnych i skalowalnych aplikacji internetowych. Program nauczania skupia się na głębokim zrozumieniu protokołu HTTP i wzorca REST API, co pozwala na efektywne projektowanie i implementację interfejsów API, odpowiadających za komunikację między frontendem a backendem.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "E. Brown, Web Development with Node and Express, 2nd Edition, O’Reilly Media, 2019.",
+                                                                          "S. Brandshaw, E. Brazil, K. Chodorow, MongoDB: The Definitive Guilde, O’Reilly Media, 2020."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "F, Dogilo, REST API Development with Node.js, Apress, 2018.",
+                                                                             "D. Herron, Node.js Web Development, Fifth Edition, Apress, 2020.",
+                                                                             "A. Mend, Learning Node.js Development, Packt Publishing, 2018.",
+                                                                             "F. Zammetti, Modern Full Stack Development using Typescript, React, Node.js, Webpack and Docker, Apress, 2020."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student potrafi wyjaśnić, jak są zbudowane współczesne aplikacje internetowe, włączając w to rolę i funkcje backendu.",
+                                                              "Student demonstruje głębokie zrozumienie składni, struktur i możliwości języka JavaScript w kontekście programowania backendowego.",
+                                                              "Student potrafi wyjaśnić, jak działają żądania i odpowiedzi HTTP, a także zidentyfikować i opisać różne metody, kody odpowiedzi i nagłówki.",
+                                                              "Student umie zdefiniować i opisać wzorzec REST API, jego zasady i konwencje, a także zastosowania w budowie aplikacji internetowych.",
+                                                              "Student rozumie, jak działa nierelacyjna baza danych, potrafi zidentyfikować główne cechy bazy dokumentowej i zastosować je w praktyce.",
+                                                              "Student rozumie kluczowe zagadnienia związane ze skalowalnością i wydajnością aplikacji internetowych, oraz umie zastosować praktyki optymalizacji.",
+                                                              "Student rozumie zaawansowane pojęcia w zakresie technologii backendowych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student umie zaprojektować i zaimplementować funkcjonalny i optymalizowany backend aplikacji internetowej, wykorzystując zaawansowane techniki programowania.",
+                                                                    "Student potrafi wykorzystać protokół HTTP do konstrukcji i obsługi żądań i odpowiedzi w kontekście aplikacji internetowej.",
+                                                                    "Student umie tworzyć złożone REST API, uwzględniając dobre praktyki i zasady projektowania interfejsów API.",
+                                                                    "Student potrafi wykonywać operacje CRUD na dokumentowej bazie danych, z wykorzystaniem odpowiednich metod i narzędzi.",
+                                                                    "Student potrafi stworzyć i przetestować backend aplikacji internetowej za pomocą poznanych narzędzi."
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do jest gotów do samodzielnego uczenia się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "Historia techologii backendowych. Język JavaScript.",
+                                              "Budowa i działanie serwera Node.js. Narzędzie npm",
+                                              "Menadżer pakietów oraz modułów w Node.js",
+                                              "Asynchroniczność na podstawie działania serwera Node.js",
+                                              "Protokół HTTP/HTTPS. Tworzenie aplikacji webowej na bazie tego protokołu.",
+                                              "Pojęcie szablonu w aplikacji backendowej (handlebars). Obsługa formularzy",
+                                              "Ciasteczka oraz sesje. Pojęcie Middleware.",
+                                              "Wprowadzenie do dokumentowej bazy danych",
+                                              "Operacje CRUD w dokumentowej bazie dancyh",
+                                              "Funkcje agregujące w dokumentowej bazie dancyh",
+                                              "Pojęcie indeksowania w dokumentowej bazie dancyh",
+                                              "Replikacja danych w dokumentowej bazie dancyh",
+                                              "Protokół HTTP. Wzorzec REST API w JavaScript",
+                                              "Tworzenie aplikacji typu REST API z wykorzystania JavaScript oraz dokumentowej bazie danych",
+                                              "Pojęcie bezpieczeństwa w aplikacjach typu REST API",
+                                              "Testowanie aplikacji typu REST API"
+                                          ]
+                }
+}

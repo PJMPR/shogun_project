@@ -1,0 +1,314 @@
+﻿% ===========================================================
+%  Sylabus: JĘZYK ANGIELSKI (ANG4)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ANG4}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries JĘZYK ANGIELSKI} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ANG4 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     &  /  \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Studium Języków Obcych \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+--- & 16 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Przygotowywanie prac pisemnych (listy formalne/nieformalne, eseje, raporty); nauka słownictwa i gramatyki; przygotowanie do kolokwiów i testów; samodzielne ćwiczenia z wymową i konwersacją.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Lektorat & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item egzamin ustny
+  \item ocena sporządzonego dokumentu
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angielskiego uzupełnionego o wprowadzenie elementów języka specjalistycznego, tj. biznesu, grafiki, sztuki nowych mediów oraz o treści typowo akademickie na poziomie docelowym B2. Studenci z wejściowym poziomem minimum B2 osiągają poziom C1 lub C2. Kurs obejmuje nauczanie specjalistycznego słownictwa, sprawności komunikacyjnych w biznesie, zwłaszcza umiejętności przygotowania i przedstawienia profesjonalnej prezentacji, jak również rozwijanie podstawowych sprawności komunikacyjnych, a szczególnie szybkiego czytania tekstów specjalistycznych zwłaszcza z zakresu grafiki (artykuły prasowe, książki, strony internetowe poświęcone tematyce) i słuchania tekstów o wzrastającym poziomie trudności. Podczas kursu studenci zostają zapoznani z terminologią dotyczącą grafiki, przygotowują się do porozumiewania się na tematy fachowe podczas pracy. Abstrakt po angielsku: The aim of the course is to pass the knowledge enhancing the basic English  lexis of the specific aspects of business and the studied area (graphic design), teach communication skills and raise the awareness of cross-cultural circumstances in business communication, as well as to revise and expand general language skills to the B2-C2 level (depending on the initial language level of students). Communicative skills in business are transferable to the native language. Secondary education graduates are usually deficient in this matter. These skills and abilities are indispensable in the modern working environment, irrespective of the sector and area of specialization.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to teach students general English supplemented with elements of specialist language, i.e. business, graphics, new media arts, and typically academic content, at the target B2 level. Students entering the course with at least B2 proficiency achieve C1 or C2 level. The course includes specialist vocabulary, communication skills in business, especially the ability to prepare and deliver a professional presentation, as well as the development of basic communication skills, particularly rapid reading of specialist texts, especially in the field of graphics (press articles, books, websites devoted to the subject), and listening to texts of increasing difficulty. During the course, students become familiar with graphics-related terminology and prepare to communicate on professional topics at work. Abstract in English: The aim of the course is to develop students’ knowledge by expanding their general English vocabulary with elements specific to business and the field of study (graphic design), to teach communication skills, and to raise awareness of cross-cultural aspects of business communication, as well as to revise and expand general language competence to the B2–C2 level, depending on the students’ initial proficiency. Business communication skills are transferable to one’s native language. Secondary-school graduates are usually deficient in this area. These skills and abilities are indispensable in the modern work environment, regardless of sector and field of specialization.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Jezyk angielski (szkola srednia) & Znajomosc jezyka angielskiego na poziomie min. A2+/B1 \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & 1. Zagadnienia z matematyki np. \\
+  \rowcolor{tableRowAlt} 2. & algebra, \\
+  \rowcolor{tableRowLight} 3. & liczby naturalne, \\
+  \rowcolor{tableRowAlt} 4. & liczby rzeczywiste, \\
+  \rowcolor{tableRowLight} 5. & liczby całkowite, \\
+  \rowcolor{tableRowAlt} 6. & liczby wymierne, \\
+  \rowcolor{tableRowLight} 7. & działania wykonywane na liczbach, \\
+  \rowcolor{tableRowAlt} 8. & notacja pozycyjna, \\
+  \rowcolor{tableRowLight} 9. & figury geometryczne, \\
+  \rowcolor{tableRowAlt} 10. & macierze, \\
+  \rowcolor{tableRowLight} 11. & typy danych, \\
+  \rowcolor{tableRowAlt} 12. & tryb całkowitoliczbowy, \\
+  \rowcolor{tableRowLight} 13. & tryb zmiennoprzecinkowy, \\
+  \rowcolor{tableRowAlt} 14. & tekstowe typy danych etc. \\
+  \rowcolor{tableRowLight} 15. & 2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np. \\
+  \rowcolor{tableRowAlt} 16. & debatowanie, \\
+  \rowcolor{tableRowLight} 17. & wywieranie wpływu, \\
+  \rowcolor{tableRowAlt} 18. & podejmowanie decyzji, \\
+  \rowcolor{tableRowLight} 19. & komunikacja w biznesie, \\
+  \rowcolor{tableRowAlt} 20. & marki, \\
+  \rowcolor{tableRowLight} 21. & zatrudnienie, \\
+  \rowcolor{tableRowAlt} 22. & etyka zawodowa, \\
+  \rowcolor{tableRowLight} 23. & team building, \\
+  \rowcolor{tableRowAlt} 24. & style zarządzania,  rynki międzynarodowe etc. \\
+  \rowcolor{tableRowLight} 25. & 3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych. \\
+  \rowcolor{tableRowAlt} 26. & 4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np). \\
+  \rowcolor{tableRowLight} 27. & zastosowanie komputerów w życiu codziennym, \\
+  \rowcolor{tableRowAlt} 28. & systemy operacyjne, \\
+  \rowcolor{tableRowLight} 29. & mikroprocesory, \\
+  \rowcolor{tableRowAlt} 30. & bazy danych, \\
+  \rowcolor{tableRowLight} 31. & Internet, \\
+  \rowcolor{tableRowAlt} 32. & wirusy komputerowe, \\
+  \rowcolor{tableRowLight} 33. & gry komputerowe, sieci komputerowe, \\
+  \rowcolor{tableRowAlt} 34. & nowe technologie, \\
+  \rowcolor{tableRowLight} 35. & języki programowania, \\
+  \rowcolor{tableRowAlt} 36. & oprogramowanie komputerowe etc.) \\
+  \rowcolor{tableRowLight} 37. & 5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy. \\
+  \rowcolor{tableRowAlt} 38. & 6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki. \\
+  \rowcolor{tableRowLight} 39. & 7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy. \\
+  \rowcolor{tableRowAlt} 40. & 8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu. \\
+  \rowcolor{tableRowLight} 41. & 9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze \\
+  \rowcolor{tableRowAlt} 42. & środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje. \\
+  \rowcolor{tableRowLight} 43. & 10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów. \\
+  \rowcolor{tableRowAlt} 44. & 11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych. K\_U01 \\
+  \rowcolor{tableRowLight} 45. & 12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.( \\
+  \rowcolor{tableRowAlt} 46. & 13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading\&Listening. \\
+  \rowcolor{tableRowLight} 47. & 14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.) \\
+  \rowcolor{tableRowAlt} 48. & 15. Colloquium / Podsumowanie semestru. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight}  & Student potrafi pozyskiwać informacje z różnych źródeł bez naruszania praw autorskich. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi zrozumieć, przeanalizować i tłumaczyć teksty techniczne w języku angielskim. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi posługiwać się językiem formalnym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi poprawnie komunikować się w języku angielskim w środowisku akademickim i zawodowym używając fachowego słownictwa korzystając z narzędzi telekomunikacyjnych i prezentacji multimedialnych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi komunikować się w języku angielskim w życiu codziennym. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight}  & Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight}  & Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt}  & Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych. & kolokwium, egzamin ustny, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item analiza tekstów z dyskusją
+  \item rozwiązywanie zadań
+  \item burza mózgów
+  \item mind map
+  \item praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item 1.Margaret O’Keeffee, Iwonna Dubicka, Bob Dignem, Mike Hogan, Business Partner A2+-C1; Wydawnictwo PEARSON, 2018
+  \item Cotton D, Falvey D, Kent S, Rogers J, Market Leader 3rd edition (pre-intermediate/ intermediate/ upper-intermediate / advanced), PEARSON 2015.
+  \item 2. Maksymowicz Roman, Język angielski dla elektroników i informatyków. Wydawnictwo Oświatowe FOSZE.
+  \item 3. Błaszczyk Beata, English 4 IT. Praktyczny kurs języka angielskiego dla specjalistów i nie tylko. Helion, 2017.
+  \item 4. Maciejewska J, Kucharska-Raczunas A, Information Technology for students of technical studies. Wydawnictwo Politechniki Gdańskiej.
+  \item 5. Esteras, S.R. i Fabre, E. M. Professional English in Use, ICT. Cambridge, 2007.
+  \item 6. Esteras, S. R. Infotech,  English for computer users. Cambridge, 2008.
+  \item 7. Maciejewska, J, Kucharska-Raczunas A, English for Information Technology, Wydawnictwo Politechniki Gdańskiej, 2012.
+  \item 8. Mascull Bill, Business Vocabulary in Use, Cambridge University Press, 2004.
+  \item 9. Glendinning Eric H, Oxford English for Information Technology 2nd ed, Oxford Univeristy Press, 2006.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item 1. R. Murphy, English Grammar in Use, Cambridge University Press, Cambridge 2011.
+  \item 2. G. Gójska, Technical English Grammar, Wydawnictwo Politechniki Gdańskiej, Gdańsk 2000.
+  \item 3. I. Mokwa - Tarnowska, Technical Writing in English, Wydawnictwo Politechniki Gdańskiej, Gdańsk 2006.
+  \item 4. Badger, I. ed. English for Work, Everyday Technical English. Pearson Longman: Harlow, 2003.
+  \item 5. Bonamy, D. Technical English. Pearson Longman: Harlow, 2011.
+  \item 6. Brieger, N. i Pohl, A. Technical English Vocabulary and Grammar, Summertown Publishing: Oxford, 2007.
+  \item 7.Fitzgerald P, McCullagh M, Tabor C, English for ICT Studies in Higher Education Studies, Garnet Education, 2011.
+  \item 8. Comfort J, Effective Presentations, Oxford University Press - kurs video na poziomie średnim plus.
+  \item 9. Skrypty, artykuły popularnonaukowe i naukowe
+  \item 10. http://shebang.pl/
+\end{itemize}
+
+\end{document}

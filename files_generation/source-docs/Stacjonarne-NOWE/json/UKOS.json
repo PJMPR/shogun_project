@@ -1,0 +1,88 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Użytkowanie Komputerów i Podstawy Systemów Operacyjnych",
+                    "kod_przedmiotu":  "UKOS",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Michał Hyla",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Laboratorium/:",
+                                           "Praca indywidualna ze skryptem",
+                                           "Praca grupowa",
+                                           "Warsztat",
+                                           "Kryteria oceny",
+                                           "Laboratorium: 2 kolokwia, prace domowe"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Nie dotyczy",
+                                                         "wymagania":  "Nie dotyczy"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Cele dydaktyczne przedmiotu obejmują zapoznanie studentów z podstawami pracy w systemie Linux, w tym z obsługą wiersza poleceń oraz automatyzacją zadań za pomocą skryptów bash. Kluczowe jest również zrozumienie działania systemów kontroli wersji (np. git), co pomaga w efektywnej pracy zespołowej w projektach programistycznych. Cele poboczne obejmują bardziej praktyczne umiejętności, takie jak tworzenie funkcji i skryptów automatyzujących codzienne zadania programistyczne, praca z plikami, pakowanie danych, oraz korzystanie z narzędzi takich jak Midnight Commander czy FTP​",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Sosna Ł. Linux. Komendy i polecenia. VI ed. Gliwice: Helion; 2023.",
+                                                                          "Negus C. Linux. Biblia. 10th ed. Gliwice: Helion; 2021."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Tanenbaum AS, Bos H. Systemy operacyjne. 4th ed. Gliwice: Helion; 2023."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie zasady działania architektury systemów komputerowych oraz systemu Linux.",
+                                                              "Student zna podstawowe pojęcia dotyczące systemów operacyjnych, ich budowy i działania",
+                                                              "Student rozumie zasady działania sieci komputerowych, protokołów komunikacyjnych i zagadnień bezpieczeństwa."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student jest w stenie bezpiecznie korzystać z komputera",
+                                                                    "Student potrafi zainstalować, skonfigurować i administrować system operacyjny",
+                                                                    "Student potrafi zainstalować kompletny system (OS, baza danych, aplikacje) i go uruchomić"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do systemu Linux oraz interfejsu wiersza poleceń (CLI)Studenci poznają podstawowe pojęcia dotyczące systemów operacyjnych, obsługi systemu Linux oraz podstawowych komend CLI.",
+                                              "Praca z systemami plików i zarządzanie nimiStudenci zdobywają umiejętności w zakresie pracy z systemami plików, tworzenia, usuwania i zarządzania plikami oraz katalogami w systemie Linux.",
+                                              "Skrypty BashTworzenie i uruchamianie skryptów Bash, automatyzacja zadań systemowych, praca z pętlami, funkcjami i warunkami.",
+                                              "Zarządzanie procesami w systemie operacyjnymOmówienie zarządzania procesami w systemie Linux, monitorowanie ich działania, manipulowanie zadaniami i zarządzanie współbieżnością.",
+                                              "Kontrola wersji z użyciem GITPraktyczne wprowadzenie do systemów kontroli wersji, takich jak GIT, oraz zarządzanie wersjami oprogramowania.",
+                                              "Architektura systemów wieloprocesorowychZrozumienie architektury systemów komputerowych, w tym wieloprocesorowych, oraz zarządzanie współbieżnością.",
+                                              "Podstawy sieci komputerowych i bezpieczeństwaStudenci poznają technologie sieciowe, protokoły komunikacyjne oraz podstawowe zagadnienia związane z bezpieczeństwem.",
+                                              "Instalacja i konfiguracja systemów operacyjnychProces instalacji i konfiguracji systemów operacyjnych, a także podstawowa administracja systemami.",
+                                              "Problemy synchronizacji zadańRozwiązywanie klasycznych problemów synchronizacji zadań, dobór algorytmów szeregowania i analiza ich efektywności.",
+                                              "Symulacja komputerowa i analiza systemów operacyjnychStudenci wykonują symulacje komputerowe w celu analizy działania systemów operacyjnych oraz ich parametrów."
+                                          ]
+                }
+}

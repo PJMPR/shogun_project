@@ -1,0 +1,119 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Interakcja Człowiek-Komputer",
+                    "kod_przedmiotu":  "ICK",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Liczba punktów ECTS : 4",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Laboratorium/",
+                                           "- ćwiczenia zawiązane z tematyką wykładu, opracowania obliczeniowe i koncepcyjne, ocena sporządzonego sprawozdania",
+                                           "-  kolokwium pisemne"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami projektowania interakcji człowieka z komputerem, tworzenia użytecznych interfejsów użytkownika oraz wykorzystania podejścia UCD (User-Centred Design) w projektowaniu, testowaniu i doskonaleniu użyteczności systemów informatycznych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Sikorski M. (2017). Interakcja człowiek-komputer. Wyd. PJWSTK Warszawa."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Badura C. (2019). UXUI. Design Zoptymalizowany. Wyd. Helion."
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Sikorski  M. (2021) Interaction Design in Agile IT Projects. Wyd. Politechnika Gdańska.  URL":  "https://pbc.gda.pl/dlibra/publication/102691/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie zasady projektowania interakcji użytkownik-system w klasycznych i zwinnych projektach informatycznych",
+                                               "umiejetnosci":  "Student potrafi stosować właściwe formy organizacji współpracy z użytkownikami podczas realizacji przedsięwzięć informatycznych",
+                                               "kompetencje_spoleczne":  "Student jest gotów współdziałania i współpracy w zespołach projektowych"
+                                           },
+                    "tresci_programowe":  [
+                                              "#",
+                                              "Wykład",
+                                              "Laboratorium",
+                                              "1",
+                                              "HCI – wprowadzenie, Charakterystyki użytkownika",
+                                              "Bad Design – Identyfikacja błędów w interfejsach użytkownika",
+                                              "2",
+                                              "Interfejs GUI – wytyczne i zasady projektowania",
+                                              "Podział na grupy i wybór tematu dla projektu,  , analiza konkurencji, rynek docelowy i uzasadnienie biznesowe",
+                                              "3",
+                                              "Współpraca z klientem/użytkownikiem  w projektach IT – określanie wymagań. Design Thinking (DT) w projektach IT.",
+                                              "Generowanie pomysłów, wartościowanie pomysłów",
+                                              "4",
+                                              "Poznawanie potrzeb użytkowników – potrzeby i oczekiwania",
+                                              "Empatyzacja – wywiady na bazie kanw DT",
+                                              "5",
+                                              "Interfejs WWW i mobilny – wymagania i zasady projektowania",
+                                              "Persony, analiza potrzeb użytkowników",
+                                              "6",
+                                              "Wizja produktu i projekt koncepcyjny",
+                                              "Opracowanie historyjek użytkownika",
+                                              "7",
+                                              "Historyjki użytkownika i ich mapowanie",
+                                              "Mapowanie historyjek użytkownika",
+                                              "8",
+                                              "Projekt interakcji – user flow, priorytety dla funkcjonalności",
+                                              "User flow, BPMN",
+                                              "9",
+                                              "Prototypy wstępne",
+                                              "Prototypowanie Lo-Fi – prototypowanie papierowe cz. 2",
+                                              "10",
+                                              "Opracowanie prototypów cyfrowych",
+                                              "Prototypowanie Lo-Fi – prototypowanie papierowe cz. 2",
+                                              "11",
+                                              "Testy użyteczności",
+                                              "Prototypowanie cyfrowe (Hi-Fi)",
+                                              "12",
+                                              "Pozyskiwanie, analizowanie i prezentowanie  danych z badań od użytkowników",
+                                              "Prototypowanie cyfrowe (Hi-Fi)",
+                                              "13",
+                                              "Interfejsy multimodalne - wirtualni agenci, interfejsy głosowe",
+                                              "Scenariusze testowe",
+                                              "14",
+                                              "Projektowanie interakcji z użytkownikiem dla usług cyfrowych",
+                                              "Testy użyteczności",
+                                              "15",
+                                              "Projektowanie interakcji dla rozwiązań typu „smart”",
+                                              "Prezentacja wykonanych prototypów interfejsu użytkownika"
+                                          ]
+                }
+}

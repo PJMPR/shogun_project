@@ -1,0 +1,83 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Relacyjne Bazy Danych",
+                    "kod_przedmiotu":  "RBD",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  45,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Adam Urbanowicz aurbanow@pjwstk.edu.pl",
+                    "ects":  6,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  75,
+                                    "praca_wlasna_studenta_h":  75,
+                                    "calkowita_liczba_godzin_h":  150
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Kolokwium",
+                                           "Znajomość zagadnień przedstawionych na wykładach."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Student potrafi przygotować schemat bazy danych w języku SQL, gotową do implementacji w dowolnym systemie zarządzania bazami danych, spełniającą oczekiwania klienta, poprawną z punktu widzenia postaci normalnych i wyposażoną w dokumentacje techniczną (w tym diagram ERD, objaśnienia ew. procedur wyzwalanych).",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "R. Elmasari, S. B. Navathe, Wprowadzenie do systemów baz danych, Helion, 2019",
+                                                                          "L. Banachowski, Relacyjne bazy danych, Wydawnictwo PJWSTK"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "K. Hansen, Praktyczna nauka SQL dla Oracle. Wykorzystaj ogromne możliwości bazy danych Oracle, Helion, 2022"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student ma uporządkowaną wiedzę obejmującą kluczowe zagadnienia w zakresie zarządzania informacją i modelowania danych; szczegółowo zna zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma znajomość aktualnie stosowanych systemów baz danych",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi stworzyć model związków encji (ERD) dla przykładowego wycinka rzeczywistości a następnie wykorzystać ten model w budowie prostej bazy danych.",
+                                                                    "Student posiada umiejętność formułowania zapytań w języku SQL i",
+                                                                    "konstruowania schematu relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawowe cechy relacyjnych baz danych",
+                                              "Zalety i wady relacyjnych i nierelacyjnych organizacji baz danych",
+                                              "Znaczenie zależności funkcyjnych i postaci normalnych przy projektowaniu schematu bazy danych.",
+                                              "Podstawowe elementy i znaczenie diagramów związków encji (ERD) przy projektowaniu schematu bazy danych.",
+                                              "Podstawowe konstrukcje języka SQL.",
+                                              "Interfejs ODBC.",
+                                              "Elementy programistyczne w bazie danych, procedury wyzwalane, definicje, przykłady zastosowań.",
+                                              "Reguły integralności w bazie danych, przykłady występowania, sposoby realizacji w języku SQL",
+                                              "Podstawowe zasady optymalizacji zapytań, w tym rodzaje i znaczenie indeksów w bazie danych",
+                                              "Problemy współbieżnego dostępu do baz danych, rozwiązania tych problemów (transakcje, blokady).",
+                                              "Inne rodzaje baz danych: bazy dokumentowe, bazy grafowe."
+                                          ]
+                }
+}

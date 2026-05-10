@@ -1,0 +1,100 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Zastosowanie sztucznej inteligencji",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "Przedstawienie implementacji zagadnień poruszanych na wykładzie z wykorzystaniem interaktywnego środowiska wykonawczego języka python - Google Colab Notebooks",
+                                           "Zadania wykonywane samodzielnie przez studentów z wykorzystaniem interaktywnego środowiska wykonawczego języka python - Google Colab Notebooks",
+                                           "Kryteria oceny",
+                                           "Ocena z projektu i aktywności studenta na zajęciach."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Machine Learning",
+                                                         "wymagania":  "Znajomość budowy podstawowych architektur sztucznych sieci neuronowych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość podstawowych funkcji aktywacji wykorzystywanych w sztucznych sieciach neuronowych",
+                                                         "wymagania":  "Znajomość podstawowych architektur splotowych sieci neuronowych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość podstawowych architektur rekurencyjnych sieci neuronowych",
+                                                         "wymagania":  "Znajomość wybranych algorytmów uczenia maszynowego (k-means, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, klasyfikator Bayesowski)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów z algorytmami sztucznej inteligencji, wykorzystywanymi aktualnie w badaniach naukowych i przemyśle, w szczególności zrozumienie i implementacja architektur sztucznych sieci neuronywch wykorzystywanych w analizie obrazu, analizie danych danych tabelarycznych i przetwarzaniu języka naturalnego. Do celów pośrednich przedmiotu należy również nauka wyszukiwania informacji na temat najnowszych osiągnięć z dziedziny sztucznej inteligencji oraz otwarty zbiorów danych przydatnych w analizie danego zagadnienia.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep learning. MIT press, 2016",
+                                                                          "Yang, Qiang, et al. Transfer learning. Cambridge University Press, 2020"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Goldberg, Yoav, and Graeme Hirst. \"Neural Network Methods in Natural Language Processing. Morgan & Claypool Publishers(2017).\""
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie opis matematyczny sztucznych sieci neuronowych z wykorzystaniem elementów algebry. Zna i rozumie algorytmy optymalizacji funkcji błędu z wykorzystaniem metod gradientowych.",
+                                                              "Student zna i rozumie wykorzystywane w przemyśle i badaniach naukowych algorytmy uczenia maszynowego i modele sieci neuronowych",
+                                                              "Zna sposoby  planowania i przeprowadzania eksperymentów w wykorzystaniem sieci neuronowych oraz ocenić ich wyniki.",
+                                                              "Student zna i rozumie pojęcia z zastosowania z zakresu AI od strony oprogramowania."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować aparat matematyczny w kontekście AI.",
+                                                                    "Student potrafi wykorzystać odpowiednie narzędzia sztucznych sieci neuronowych celem implemantacji algorytmów AI."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do sztucznej inteligencji, Wprowadzenie do języka Python, implementacja klasycznych algorytmów uczenia maszynowego z wykorzystaniem biblioteki sklearn",
+                                              "Wprowadzenie do sieci neuronowych. Wprowadzenie do biblioteki Pytorch Lightning i Pytorch, implementacja prostych architektur sieci neuronowych",
+                                              "Regularyzacja sieci neuronowych. Regularyzacja sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja algorytmów batch normalization i dropout",
+                                              "Wprowadzenie do splotowych sieci neuronowych, architektury splotowych sieci neuronowych, algorytmy segmentacji i klasyfikacji obrazu",
+                                              "Implementacja prostych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, implementacja generatorów danych obrazowych, implementacja zaawansowanych splotowych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch, wykorzystanie transferu wiedzy z modeli dostępnych w TIMM, implementacja algorytmów segmentacji i klasyfikacji obrazów z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
+                                              "Wprowadzenie do przetwarzania języka naturalnego, rekurencyjne sieci neuronowe, architektury typy transformer i mechanizm atencji w sieciach neuronowych, modelowanie języka naturalnego, transfer wiedzy w przetwarzaniu języka naturalnego",
+                                              "Wykorzystanie wektorów słów używając bibliotek Gensim i Flair, wizualizacja wektorów słów z wykorzystaniem algorytmu t-SNE, implementacja rekurencyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch w szczególności sieci typu BiLSTM w zagadnieniach klasyfikacji i oznaczania tekstu, implementacja sieci typu transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja pre-trenowanych modeli języka z wykorzystaniem biblioteki Huggingface Transformers",
+                                              "Optymalizacja hiper parametrów sieci neuronowych, generacyjne sieci neuronowe i wyjaśnialna sztuczna inteligencja",
+                                              "Implementacja algorytmów automatycznego doboru hiperparametów sieci neuronowych. Implementacja generacyjnych sieci neuronowych z wykorzystaniem biblioteki Pytorch Lightning/Pytorch. Implementacja algorytmów wyjaśniania predykcji sieci neuronowych z wykorzystaniem bibliotek Dalex i Lime",
+                                              "Kapsułowe sieci neuronowe i analiza obrazu w wykorzystaniem architektury typu transformer",
+                                              "Implementacja kapsułowych sieci neuronowych i modelu Vision Transformer z wykorzystaniem biblioteki Pytorch Lightning/Pytorch",
+                                              "Metody nauki nienadzorowanej jako mechanizm pretreningu sieci neuronowych"
+                                          ]
+                }
+}

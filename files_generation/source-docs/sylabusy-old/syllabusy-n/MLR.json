@@ -1,0 +1,177 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Machine learning",
+        "kod_przedmiotu": "",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "dr inż. Paweł Syty",
+        "ects": 4,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 40,
+            "calkowita_liczba_godzin_h": 100,
+            "praca_wlasna_studenta": "Samodzielne zadania programistyczne z machine learning; praca nad indywidualnym zadaniem zaliczeniowym; analiza i interpretacja wyników modeli predykcyjnych."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Celem przedmiotu jest zaznajomienie studentów z wybranymi zagadnieniami uczenia maszynowego (w tym elementami uczenia głębokiego), głównie z wykorzystaniem sieci neuronowych (w tym sieci splotowych), a także z metodami programowania wybranych metod oraz praktycznym wykorzystaniem gotowych narzędzi i bibliotek.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Daniel T. Larose „Metody i modele eksploracji danych”, PWN 2022",
+                    "Aurélien Géron, „Uczenie maszynowe z użyciem Scikit-Learn i TensorFlow”, Helion 2020",
+                    "Robert Johansson „Matematyczny Python. Obliczenia naukowe i analiza danych z użyciem NumPy, SciPy i Matplotlib”, Helion 2021",
+                    "Sebastian Raschka, Vahid Mirjalili „Python. Machine learning i deep learning. Biblioteki scikit-learn i TensorFlow 2”, Helion 2021",
+                    "Aileen Nielsen, „Szeregi czasowe. Praktyczna analiza i predykcja z wykorzystaniem statystyki i uczenia maszynowego”, Helion 2020"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Joel Grus, „Data science od podstaw. Analiza danych w Pythonie”, Helion 2020",
+                    "Dokumentacja pakietów Keras i Tensorflow"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie podstawowe zastosowania wybranych algorytmów uczenia maszynowego (sieci neuronowe, SVM, drzewa decyzyjne, algorytmy ewolucyjne) w rozwiązywaniu rzeczywistych problemów inżynierskich. [K_W12]",
+                "Student zna i rozumie znaczenie jakości i przygotowania danych w procesie uczenia maszynowego: czyszczenie danych, inżynieria cech, podziały train/val/test i techniki regularyzacji zapobiegające przeuczeniu. [K_W12]",
+                "Student zna i rozumie zaawansowane metody przechowywania i strumieniowania danych dla uczenia maszynowego: bazy wektorowe, kolejki (Kafka), formaty danych (Parquet, HDF5). [K_W12]"
+            ],
+            "umiejetnosci": [
+                "Student potrafi wybrać odpowiedni algorytm ML do rozwiązania problemu biznesowego, poprawnie przygotować dane (pipeline), wytrenować model, dostroić hiperparametry i przeprowadzić analizę wyników. [K_U29]",
+                "Student potrafi implementować i porównywać algorytmy uczenia maszynowego w Pythonie (scikit-learn, PyTorch/Keras) oraz oceniać ich skuteczność na zestawach danych rzeczywistych. [K_U29]"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do ciągłego podnoszenia kompetencji zawodowych w obszarze ML/AI, śledzenia literatury naukowej i wdrażania nowych metod. [K_K03]",
+                "Student jest gotów do zastosowania uczenia maszynowego na rzecz rozwiązywania problemów społecznych i naukowych z uwzględnieniem etycznych aspektów AI. [K_K01]"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with selected issues in machine learning (including elements of deep learning), mainly using neural networks (including convolutional neural networks), as well as methods for programming selected techniques and the practical use of ready-made tools and libraries.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

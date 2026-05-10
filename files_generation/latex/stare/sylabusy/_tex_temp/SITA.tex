@@ -1,0 +1,221 @@
+﻿% ===========================================================
+%  Sylabus: Projektowanie bezpiecznych architektur (SITA)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SITA}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Projektowanie bezpiecznych architektur} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SITA \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr Adam Kassenberg \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 65 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Tenkursmanaceludostarczeniestudentomkompleksowejwiedzyiumiejętnościniezbędnychdoprojektowaniaiutrzymaniabezpiecznychsystemówinformatycznych.Dziękipołączeniuteoretycznychwykładówipraktycznychćwiczeń,studencibędąlepiejprzygotowanidostawieniaczoławyzwaniomzwiązanymzbezpieczeństwemITw rzeczywistym świecie. Studencibędąpoznawaćpodstawowepojęciaizasadybezpieczeństwainformatycznego,takiejakpoufność,integralność idostępność danych. Nauczą się,jakprojektowaćsystemyi infrastruktury informatyczne, które są odporne na różnorodne zagrożenia i ataki. Celem kursu będzie również zrozumienie mechanizmów zarządzania tożsamością i kontrolądostępu,wtymwdrażaniepolitykzabezpieczeń. Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, aby zapobiegać wprowadzaniu luk bezpieczeństwa w fazie rozwoju oprogramowania. Studencibędąuczyćsię,jakreagowaćnaincydentybezpieczeństwa,wtymjakprzeprowadzać analizy i raportować naruszenia.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item 1. Wybór organizacji
+  \item Analiza różnych typów organizacji.
+  \item Przykłady typowych struktur organizacyjnych.
+  \item 2. Definicja celów biznesowych
+  \item Jak określić cele biznesowe organizacji.
+  \item Rola celów biznesowych w projektowaniu architektur IT.
+  \item Ćwiczenia praktyczne: Definiowanie celów biznesowych dla wybranej organizacji.
+  \item 3. Utworzenie diagramu przepływów DFD
+  \item Wprowadzenie do diagramów przepływów danych (DFD).
+  \item Tworzenie DFD dla wybranej organizacji.
+  \item Ćwiczenia praktyczne: Rysowanie DFD na podstawie zebranych danych.
+  \item 4. Procesowy opis organizacji wg ISO 9001
+  \item Wprowadzenie do standardu ISO 9001.
+  \item Opis procesów organizacyjnych zgodnie z ISO 9001.
+  \item Ćwiczenia praktyczne: Tworzenie procesowego opisu organizacji.
+  \item 5. Utworzenie architektury IT
+  \item Zasady projektowania architektur IT.
+  \item Elementy składowe architektury IT.
+  \item Ćwiczenia praktyczne: Projektowanie architektury IT dla wybranej organizacji.
+  \item 6. Koncepcja komunikacji, sprzętu oraz oprogramowania
+  \item Planowanie komunikacji w organizacji.
+  \item Wybór sprzętu i oprogramowania.
+  \item Ćwiczenia praktyczne: Opracowanie koncepcji komunikacji, sprzętu i oprogramowania.
+  \item 7. Klasyfikacja informacji, struktura zarządzania
+  \item Klasyfikacja informacji w organizacji.
+  \item Tworzenie struktury zarządzania informacją.
+  \item Ćwiczenia praktyczne: Klasyfikacja informacji i tworzenie struktury zarządzania.
+  \item 8. Identyfikacja zasobów organizacji
+  \item Identyfikacja i katalogowanie zasobów.
+  \item Zarządzanie zasobami organizacji.
+  \item Ćwiczenia praktyczne: Tworzenie katalogu zasobów organizacji.
+  \item 9. Utworzenie deklaracji stosowania
+  \item Definicja i znaczenie deklaracji stosowania.
+  \item Tworzenie deklaracji dla wybranej organizacji.
+  \item 10. Identyfikacja zagrożeń dla architektury
+  \item Typowe zagrożenia dla architektur IT.
+  \item Metody identyfikacji zagrożeń.
+  \item Ćwiczenia praktyczne: Analiza przypadków i identyfikacja zagrożeń.
+  \item 11. Identyfikacja podatności dla zagrożeń
+  \item Definicja podatności.
+  \item Metody identyfikacji podatności w systemach IT.
+  \item Ćwiczenia praktyczne: Identyfikacja podatności w wybranej architekturze IT.
+  \item 12. Szacowanie ryzyka dla wyodrębnionych zagrożeń
+  \item Metody szacowania ryzyka.
+  \item Przykłady zastosowania metod szacowania ryzyka.
+  \item Ćwiczenia praktyczne: Szacowanie ryzyka dla wybranych zagrożeń.
+  \item 13. Tworzenie rekomendacji po analizie ryzyka
+  \item Jak tworzyć rekomendacje bezpieczeństwa.
+  \item Przykłady rekomendacji po analizie ryzyka.
+  \item Ćwiczenia praktyczne: Tworzenie rekomendacji dla wybranej architektury IT.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Studium przypadków
+  \item Kryteria oceny
+  \item Kolokwium pisemne.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item "Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson
+  \item "Threat Modeling: Designing for Security", Adam Shostack
+  \item "Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks", Robert Hansen
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item "Black Hat Python: Python Programming for Hackers and Pentesters" autorstwa Justin Seitz
+  \item "SQL Injection Attacks and Defense" autorstwa Justin Clarke
+\end{itemize}
+
+\end{document}

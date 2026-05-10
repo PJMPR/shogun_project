@@ -1,0 +1,53 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+        "jednostka": "Filia w Gdańsku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Zarządzanie infrastrukturą chmurową",
+        "kod_przedmiotu": "ZIC",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 30
+        },
+        "odpowiedzialny_za_przedmiot": "",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125
+        },
+        "metody_dydaktyczne": {},
+        "zaliczenie": {
+            "Wykład": {
+                "sposob": "Egzamin"
+            },
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [],
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": []
+            },
+            "uzupelniajaca": {
+                "pozycje": []
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [],
+            "umiejetnosci": [],
+            "kompetencje_spoleczne": []
+        },
+        "tresci_programowe": []
+    }
+}

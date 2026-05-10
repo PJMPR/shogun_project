@@ -1,0 +1,85 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Język japoński – Lektorat 2",
+        "kod_przedmiotu": "LEK2",
+        "rok_studiow": 3,
+        "semestr_studiow": 6,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych – Yugo Azuma",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {
+            "lektorat": "Analiza tekstów z dyskusją, metoda projektów, praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty."
+        },
+        "zaliczenie": {
+            "Lektorat": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język japoński LEK1",
+                "wymagania": "Znajomość obu podstawowych japońskich alfabetów (hiragana, katakana), umiejętność przedstawienia się i podstawowa gramatyka."
+            }
+        ],
+        "cel_dydaktyczny": "Kontynuacja nauczania języka japońskiego na poziomie JLPT N5. Student rozszerza słownictwo i struktury gramatyczne, poznaje podstawowe kanji oraz utrwala umiejętność opisu miejsc i czynności w życiu codziennym.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne – przygotowane przez lektora Yugo Azumę na podstawie własnych pomysłów oraz różnych książek.",
+                    "Minna no nihongo I – główny podręcznik, wyd. 2, 3A Network, Japonia."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Materiały online wskazane przez lektora."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": null,
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N5."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Pytania z zaimkami wskazującymi. Nauka pozostałych znaków katakany.",
+            "Forma pytań wyboru desuka…desuka. Dalsza nauka partykuły no. Kanji: 一、二、三、四、五、六、七、八、九、十.",
+            "Dalsza nauka partykuły no – pytania o przynależność rzeczy do osób. Kanji: 人、名、方、本.",
+            "Dodatkowe zaimki wskazujące. Kanji: 日、何、大、学. Powtórka z poprzednich zajęć.",
+            "Powtórka ze wszystkich zajęć od początku (ćwiczenia, słuchanie, pisanie). Kanji: 社、員、会、先.",
+            "Zaimki miejsca. Słownictwo związane z miejscem. Pytajnik miejsca (formalny i nieformalny). Kanji: 生、行、来、車.",
+            "Wyjaśnianie, gdzie znajdują się osoby. Słownictwo: przedmioty życia codziennego i zakupy. Sufiks liczenia pięter -kai. Powtórka kanji – czytanie.",
+            "Kolokwium zaliczeniowe."
+        ]
+    }
+}
+

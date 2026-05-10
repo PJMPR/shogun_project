@@ -1,0 +1,173 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Metaheurystyki",
+        "kod_przedmiotu": "",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "dr Tadeusz Puźniakowski",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja zadań z metaheurystyk w C++ (algorytmy ewolucyjne, symulowane wyżarzanie itp.); prowadzenie repozytorium git; obrona kolejnych zadań zaliczeniowych."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Egzamin"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena sporządzonego oprogramowania",
+                "ocena pracy podczas ćwiczenia"
+            ]
+        },
+        "cel_dydaktyczny": "Kurs traktuje o metodach metaheurystycznych. Jest to przegląd technik z tej dziedziny wraz z metodami testowania i porównywania różnych podejść do problemu optymalizacyjnego. Student zapozna się z właściwościami oraz zastosowaniem algorytmów heurystycznych. Wiedza wykładowa zostanie przetrenowana na laboratoriach, które pozwolą w sposób bardziej praktyczny zapoznać się z tematem i przygotują studenta do podejmowania decyzji odnośnie zastosowania metod metaheurystycznych lub wybrania innych technik odpowiednich do danego zadania..",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Iwona Karcz-Dulęba, \"Nowoczesne metody optymalizacji globalnej\", Wydawnictow EXIT, 2022",
+                    "Jarosław Arabas, \"Wykłady z algorytmów genetycznych\", 2004, Wydawnictwo WNT"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "„Algorytmy Genetyczne i ich zastosowania”, D. E. Goldberg, WNT, 1998",
+                    "„Algorytmy Genetyczne + Struktury Danych = programy ewolucyjne”, Z. Michalewicz, WNT, 1996"
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "„Knowledge-Based Systems”, wydanie 231,2021, Elsevier, wielu autorów, ISSN: 0950-7051, https://www.sciencedirect.com/journal/knowledge-based-systems/vol/231/suppl/C": "„Knowledge-Based Systems”, wydanie 231,2021, Elsevier, wielu autorów, ISSN: 0950-7051, https://www.sciencedirect.com/journal/knowledge-based-systems/vol/231/suppl/C"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Student zna i rozumie pojęcia związane z algorytmami heurystycznymi takie jak funkcja celu, funkcja selekcji, automatyczne dostosowanie zasięgu mutacji, programowanie genetyczne, metoda tabu, krzywa zbieżności. Student potrafi zidentyfikować problemy które można rozwiązać za pomocą algorytmów z dziedziny metaheurystyk. Student potrafi także zastosować metody statystyczne od analizy i porównani różnych metod rozwiązania tego samego problemu.",
+                "Student zna i rozumie metody pracy na zbiorach danych."
+            ],
+            "umiejetnosci": [
+                "Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym",
+                "Student potrafi  zastosować metody testowania i porównywania metod heurystycznych."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+                "Student jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Złożoność obliczeniowa",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Zagadnienia optymalizacyjne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Metoda dokładna",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Algorytm losowego próbkowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Algorytm wspinaczkowy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Algorytm Tabu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Symulowane Wyżarzanie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Algorytm genetyczny",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Metody zrównoleglania obliczeń dla Algorytmu Genetycznego",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Strategia Ewolucyjna",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Programowanie Genetyczne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "Metody testowania i porównywania metod heurystycznych",
+                "cwiczenia": ""
+            }
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Algorytmy i struktury danych (ASD)",
+                "wymagania": "Podstawy projektowania i analizy algorytmow; podstawy jezyka C++"
+            },
+            {
+                "nazwa": "Analiza matematyczna (AM)",
+                "wymagania": "Podstawy analizy matematycznej"
+            },
+            {
+                "nazwa": "Matematyka dyskretna (MAD)",
+                "wymagania": "Podstawy matematyki dyskretnej"
+            }
+        ],
+        "cel_dydaktyczny_eng": "The course covers metaheuristic methods. It provides an overview of techniques in this field, together with methods for testing and comparing different approaches to optimization problems. Students become familiar with the properties and applications of heuristic algorithms. The theoretical knowledge is reinforced in laboratory classes, which provide a more practical understanding of the subject and prepare students to decide whether metaheuristic methods or other techniques are more appropriate for a given task.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

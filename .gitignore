@@ -4,10 +4,10 @@
 /tmp
 /out-tsc
 /bazel-out
-/dist
+frontend/dist/
 
 # Node
-/node_modules
+frontend/node_modules/
 npm-debug.log
 yarn-error.log
 
@@ -30,7 +30,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+frontend/.angular/
 .sass-cache/
 /connect.lock
 /coverage
@@ -44,5 +44,7 @@ __screenshots__/
 Thumbs.db
 
 # LaTeX output
-/latex/output/
+files_generation/latex/output/
+files_generation/latex/sylabusy/output/
+files_generation/latex-studia/output/
 

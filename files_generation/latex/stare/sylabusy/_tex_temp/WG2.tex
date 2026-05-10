@@ -1,0 +1,257 @@
+﻿% ===========================================================
+%  Sylabus: Wytwarzanie gier 2 (WG2)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: WG2}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Wytwarzanie gier 2} \\[3pt]
+  \textbf{Kod przedmiotu:}    & WG2 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Lic. Aleksandr Polin (alex.polin@pjwstk.edu.pl) \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 65 h & 125 h & \textbf{} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem kursu jest pogłębienie wiedzy i umiejętności studentów w zakresie tworzenia gier, skupiając się na zaawansowanych technikach projektowania gier, optymalizacji, marketingu i analizie rynku. Studenci zdobędą praktyczne doświadczenie w tworzeniu gier, które będą działać płynnie na różnych platformach, a także nauczą się, jak skutecznie promować swoje produkty na rynku gier.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Wytwarzanie gier 1 (WG1) & Znajomość podstawowych zagadnień projektowania gier, tworzenia dokumentacji gier, Unreal Engine, animacji i dźwięku w grach. Umiejętność pracy w zespole i podstawy zarządzania projektami gier. \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie i powtórka z WG1
+  \item Przypomnienie najważniejszych zagadnień z Wytwarzania gier 1.
+  \item Omówienie przykładowych projektów z poprzedniego semestru, analiza mocnych i słabych stron.
+  \item Trendy na rynku gier, nowości technologiczne.
+  \item Analityka gier
+  \item Rodzaje danych zbieranych w grach i ich znaczenie.
+  \item Narzędzia analityczne i ich zastosowanie w optymalizacji gier.
+  \item Interpretacja danych, wyciąganie wniosków i podejmowanie decyzji na podstawie analizy.
+  \item Marketing gier
+  \item Wprowadzenie do marketingu w grach.
+  \item Definiowanie grupy docelowej, tworzenie persony gracza.
+  \item Kanały marketingowe dla gier, strategie promocji.
+  \item Rynek gier: VR, PC, Konsole
+  \item Omówienie specyfiki, zalet i wad tworzenia gier na różne platformy.
+  \item Trendy na poszczególnych rynkach, analiza konkurencji.
+  \item Wybór platformy docelowej dla gry, dostosowanie projektu do specyfiki rynku.
+  \item Zaawansowane techniki projektowania gier
+  \item Projektowanie narracji w grach, budowanie świata gry.
+  \item Tworzenie angażującej rozgrywki, projektowanie wyzwań i nagród.
+  \item Balansowanie gry, zapewnienie odpowiedniego poziomu trudności.
+  \item Optymalizacja gier
+  \item Zaawansowana optymalizacja gier na platformy PC i konsolowe.
+  \item Optymalizacja grafiki, dźwięku i kodu gry.
+  \item Narzędzia do profilowania i optymalizacji, dobre praktyki.
+  \item Zwiastuny gier i kampanie społecznościowe
+  \item Tworzenie zwiastunów gier przyciągających uwagę graczy.
+  \item Prowadzenie kampanii w mediach społecznościowych, budowanie zaangażowania.
+  \item Współpraca z influencerami, marketing szeptany.
+  \item Psychologia gier: kierowanie uwagą gracza
+  \item Techniki narracji wizualnej w grach, budowanie napięcia i emocji.
+  \item Prowadzenie gracza przez świat gry, projektowanie intuicyjnego interfejsu.
+  \item Wykorzystanie dźwięku i muzyki do budowania atmosfery.
+  \item Sztuka w grach: kadrowanie i kompozycja
+  \item Podstawy kompozycji obrazu, stosowanie zasad kadrowania w grach.
+  \item Język filmu: ujęcia, montaż, ruch kamery.
+  \item Analiza udanych przykładów, inspiracje z innych mediów.
+  \item Tworzenie gier jako biznes
+  \item Modele biznesowe w grach: free-to-play, premium, subskrypcje.
+  \item Monetyzacja gier, projektowanie systemu mikropłatności.
+  \item Aspekty prawne tworzenia gier, prawa autorskie.
+  \item Budowanie relacji z partnerami
+  \item Nawiązywanie kontaktów z wydawcami, platformami dystrybucji cyfrowej.
+  \item Sposoby pozyskiwania funduszy na tworzenie gier, crowdfunding.
+  \item Prezentacja projektu gry, przygotowanie materiałów prasowych.
+  \item Budowanie i utrzymywanie społeczności
+  \item Sposoby budowania zaangażowanej społeczności wokół gry.
+  \item Komunikacja z graczami, moderacja forów i grup dyskusyjnych.
+  \item Organizowanie konkursów i eventów, zarządzanie feedbackiem.
+  \item Prezentacja projektów
+  \item Prezentacja postępów prac nad projektami gier.
+  \item Omówienie wyzwań i rozwiązań, analiza i feedback od prowadzącego i grupy.
+  \item Dzień gier
+  \item Prezentacja finalnych wersji gier.
+  \item Testowanie gier przez studentów i zaproszonych gości.
+  \item Wręczenie nagród, podsumowanie semestru.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry.
+  \item Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową.
+  \item Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu.
+  \item Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych.
+  \item Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego.
+  \item Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych.
+  \item Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev.
+  \item Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier.
+  \item Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier.
+  \item Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony
+  \item burza mózgów
+  \item rozwiązywanie zadań
+  \item analiza przypadków
+  \item prezentacje
+  \item praca w Unreal Engine
+  \item Kryteria oceny
+  \item Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:
+  \item Styl (1-10)
+  \item Rozgrywka (1-10)
+  \item Zabawa (1-10)
+  \item Kreatywność (1-10)
+  \item Ukończenie (1-10)
+  \item Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:
+  \item Wysiłek (1-10).
+  \item Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item "Game Analytics: Maximizing the Value of Player Data" by Magy Seif El-Nasr, Anders Drachen, Alessandro Canossa (2016)
+  \item “Video Game Marketing: A student textbook” by Zackariasson Peter (2016)
+  \item "Augmented Reality: Where We Will All Live" by Dr. Jon Peddie (2023)
+  \item "The Game Console: A Photographic History from Atari to Xbox" by Evan Amos (2018)
+  \item "Game Engine Architecture" by Jason Gregory (2017)
+  \item "Unreal Engine VR Cookbook: Developing Virtual Reality with UE4" by Mitch McCaffrey (2017)
+  \item “Unreal Engine 5 Game Development with C++ Scripting: Become a professional game developer and create fully functional, high-quality games” by Zhenyu George Li (2023)
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item "Behavioral Science in the Wild" by Mazar Nina (2022)
+  \item "The Psychology of Video Games" by Jamie Madigan (Podcast)
+  \item "100 Principles of Game Design" by Despain, Wendy (2012)
+  \item "Game Design Workshop: A Playcentric Approach to Creating Innovative Games" by Tracy Fullerton (2018)
+  \item "The Indie Game Developer Handbook" by Richard Hill-Whittall (2015)
+  \item "Blood, Sweat, and Pixels: The Triumphant, Turbulent Stories Behind How Video Games Are Made" by Jason Schreier (2017)
+\end{itemize}
+
+\end{document}

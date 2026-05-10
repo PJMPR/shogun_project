@@ -1,0 +1,151 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Specjalizacyjny Projekt Zespołowy 1",
+                    "kod_przedmiotu":  "SPRZ1",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  60,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr hab. Marek A. Bednarczyk",
+                    "ects":  6,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  75,
+                                    "praca_wlasna_studenta_h":  75,
+                                    "calkowita_liczba_godzin_h":  150
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "Burza mózgów",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Ocena ustalana przez opiekuna projektu na podstawie jakości, metodyki i stopnia zrealizowania planowanego produktu (wydania), jego dokumentacji oraz wkładu i zaangażowania studenta w pracę zespołu"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Projekt informatyczny PRI",
+                                                         "wymagania":  "Budowa i integracja oprogramowania BYT"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Przedmioty specjalizacyjne",
+                                                         "wymagania":  "Znajomość analizy wymagań i projektowania obiektowego"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość notacji UML",
+                                                         "wymagania":  "Umiejętność programowania oraz konstrukcji baz danych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość narzędziWiedza specjalizacyjna",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "W ramach przedmiotu studenci obierają i realizują pod opieką promotora zespołowy projekt inżynierski w zakresie powiązanym tematycznie z wybraną specjalizacją. Ich rozwiązanie praktycznego problemu winno wykorzystywać adekwatne podejście realizacyjne, jak i nowoczesne, dobrze dobrane technologie, a obok różnych wymiarów technicznych, powinno też uwzględniać aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, Udokumentowane, opracowane w ramach przedsięwzięcia rozwiązanie jest kontynuowane w ramach Projektu zespołowego 2 i, wraz z opisem wkładu własnego, stanowi treść dyplomowej pracy inżynierskiej; może też stanowić produkt „preinkubacyjny”.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Sommerville, I. (2021). Inżynieria oprogramowania. Wydanie X. Wydawnictwo Naukowe PWN",
+                                                                          "Żeliński, J. (2016). Analiza biznesowa. Praktyczne modelowanie organizacji.Onepress",
+                                                                          "Wrycza, S., Marcinkowski, B., Maślankowski, J. (2012). UML 2.x. Ćwiczenia zaawansowane.Helion"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Dokumentacja środowisk i narzędzi",
+                                                                             "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK",
+                                                                             "Górski, J. (2000, red.). Inżynieria oprogramowania w projekcie informatycznym. MIKOMSzejko, St. (2002, red). Metody wytwarzania oprogramowania. MIKOM"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student ma uporządkowaną wiedzę obejmującą zagadnienia reprezentacji danych i zarządzania nimi",
+                                                              "Student:",
+                                                              "ma uporządkowaną wiedzę, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania",
+                                                              "zna zasady zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania",
+                                                              "rozumie rolę modelowania i ma szczegółową wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML",
+                                                              "umie korzystać z wzorców programowych i standardowych API",
+                                                              "ma wiedzę o narzędziach i środowiskach wspomagających",
+                                                              "Student:",
+                                                              "ma wiedzę dotyczącą procesów inżynierii wymagań",
+                                                              "rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań",
+                                                              "ma szczegółową wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi",
+                                                              "Student ma wiedzę z zakresu procesów walidacji i testowania",
+                                                              "Student ma wiedzę wymaganą przy konstrukcji planu projektu informatycznego",
+                                                              "Student rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym",
+                                                              "Student rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego",
+                                                                    "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego",
+                                                                    "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+                                                                    "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia",
+                                                                    "Student:",
+                                                                    "potrafi pracować w zespole pełniąc w nim uzgodnione role",
+                                                                    "potrafi oszacować czas potrzebny na realizację zadania",
+                                                                    "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
+                                                                    "Student:",
+                                                                    "ma umiejętność analizowania obserwowanych zjawisk i w celu identyfikacji wymagańwobec projektu",
+                                                                    "ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu doboru konstrukcji projektowych",
+                                                                    "Student potrafi dokonać eksperymentu i ocenić jego rezultaty dla wyboru rozwiązania projektowego właściwej jakości",
+                                                                    "Student potrafi dobrać, sparametryzować, wykorzystywać i administrować systemem operacyjnym właściwym dla rozwiązania projektowego",
+                                                                    "Student potrafi dobrać właściwe podejście programistyczne, dobrać, sparametryzować i wykorzystywać środowisko właściwe dla rozwiązania projektowego",
+                                                                    "Student:",
+                                                                    "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu",
+                                                                    "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych",
+                                                                    "Student potrafi zaprojektować i zrealizować bazę danych na potrzeby projektu",
+                                                                    "Student:",
+                                                                    "potrafi zaprojektować i zrealizować prosty systemoprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami",
+                                                                    "potrafi dobrać model procesu i narzędzia dla jego wytworzenia",
+                                                                    "Student potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji na potrzeby projektu",
+                                                                    "Student potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość",
+                                                                    "Student potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów",
+                                                                    "Student potrafi zaprojektować i zrealizować aplikację webową na potrzeby projektu",
+                                                                    "Student potrafi uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia",
+                                                                    "Student potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców",
+                                                                    "Student potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu",
+                                                                    "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student:",
+                                                                             "potrafi pełnić przypadające nań role projektowe i wykonawcze",
+                                                                             "potrafi współpracować z innymi członkami grupy i otoczeniem projektu",
+                                                                             "Student potrafi właściwie zaplanować kolejność i realizację zadań projektowych",
+                                                                             "Student dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych",
+                                                                             "Student:",
+                                                                             "stosuje w projekcie rozwiązania innowacyjne",
+                                                                             "dostrzega i ocenia aspekty komercjalizacji projektu"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie. Zasady prowadzenia i oceniania projektu zespołowego; program, wymagania i organizacja dyplomowego projektu inżynierskiego w PJATK; udziałowcy projektu i ich role; zasady realizacji i zaliczenia przedmiotu. Podział na grupy projektowe, przykładowe projekty zespołowe; wybór tematów; analiza problemu i jego kontekstu; praca z Klientem; przygotowanie Dokumentu Założeń Wstępnych (DZW)",
+                                              "Realizacja projektów o specyfice stricte programistycznej. Dobór strategii realizacji projektu. Organizacja zespołu i infrastruktura projektu. Artefakty projektowe. Planowanie projektu; określenie celów i zakresu projektu, infrastruktury, dyskusja i dobór strategii realizacji. Praca z Klientem. Analiza rozwiązań konkurencyjnych i dróg alternatywnych. Opracowanie raportu",
+                                              "Realizacja projektów ujmujących rozbudowany komponent sprzętowy. Strategie w projektach sprzętowo-programowych. Przydział ról i związanych z tym obowiązków, ustalenie harmonogramu działań projektowych. Infrastruktura komunikacyjna i dokumentacyjna; zasady raportowania i nadzoru jakości. Przygotowanie Wstępnego Planu Projektu (WPP)",
+                                              "Kontrola jakości. Poziomy testowania; projektowanie i dokumentowanie scenariuszy testowych; wzorce. Dokumentowanie i raportowanie testów; szablony. Dyskusja Wstępnego Planu Projektu (WPP).",
+                                              "Dalsze kroki zależą od przyjętej metodyki prac and wydaniem; poniżej przedstawiono dla obiektowego podejścia wg metodyki kaskadowej",
+                                              "Analiza wymagań; praca z Klientem. Analiza i specyfikacja wymagań; przygotowanie dokumentu SWS. Kontrola postępów prac",
+                                              "Zagadnienia finalizacji projektu; raport końcowy projektu; nakład pracy i wkład własny w pracę zespołu. Przygotowanie dokumentu SWS i PU; Aspekty własności intelektualnej w projektach dyplomowych. Projektowanie aplikacji – projekt logiczny; diagram klas; podejmowane decyzje projektowe – dokumentacja. Kontrola postępów prac Redagowanie książki projektowej. Style, przypisy, odwołania, praca z literaturą. Projektowanie szczegółowe; przygotowanie środowiska implementacji i implementacja modułów I wydania; projekt interfejsu i bazy danych. Kontrola postępów prac",
+                                              "Typowe problemy i błędy w projektach i książkach dyplomowych. Implementacja modułów projektu; testowanie i walidacja; raportowanie testów; praca z Klientem.",
+                                              "Prezentacja produktu – prototypów komponentów systemowych realizujących tematy prac inż. zespołów projektowych"
+                                          ]
+                }
+}

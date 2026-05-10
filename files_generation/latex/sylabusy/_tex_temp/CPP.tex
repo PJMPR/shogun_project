@@ -1,0 +1,254 @@
+﻿% ===========================================================
+%  Sylabus: Programowanie w języku C++ (CPP)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: CPP}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Programowanie w języku C++} \\[3pt]
+  \textbf{Kod przedmiotu:}    & CPP \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 4 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Adam Urbanowicz \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+8 h & --- & 8 h & 16 h & 21.5 h & 37.5 h & \textbf{1.5} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja aplikacji w C++; zarządzanie pamięcią, wskaźniki, szablony; dokumentacja kodu; przygotowanie projektu zaliczeniowego.
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku C++ oraz wykształcenie umiejętności tworzenia prostych aplikacji konsolowych z wykorzystaniem klasycznych konstrukcji programistycznych. Zajęcia kładą nacisk na zrozumienie modelu pamięci, poprawne użycie typów danych, funkcji i struktur, a także wprowadzenie do podstaw programowania obiektowego. Przedmiot przygotowuje studentów do dalszej nauki języków kompilowanych oraz pracy nad projektami wymagającymi większej kontroli nad wydajnością i zasobami.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with the basics of programming in C++ and to develop the ability to create simple console applications using classical programming constructs. The course places emphasis on understanding the memory model, correct use of data types, functions and structures, as well as an introduction to the basics of object-oriented programming. It prepares students for further study of compiled languages and for work on projects requiring greater control over performance and resources.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Podstawy Programowania & Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C\#) \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do języka C++: zastosowania, kompilacja, struktura programu, pierwszy program. \\
+  \rowcolor{tableRowAlt} 2. & Typy danych, zmienne, stałe, operatory, instrukcje wejścia i wyjścia (cin, cout). \\
+  \rowcolor{tableRowLight} 3. & Instrukcje sterujące: if, switch, pętle for, while, do while. \\
+  \rowcolor{tableRowAlt} 4. & Funkcje: definicja, parametry, wartości zwracane, przeciążanie funkcji. \\
+  \rowcolor{tableRowLight} 5. & Tablice i łańcuchy znaków, podstawy pracy z pamięcią. \\
+  \rowcolor{tableRowAlt} 6. & Wskaźniki i referencje – wprowadzenie i zastosowania. \\
+  \rowcolor{tableRowLight} 7. & Struktury i typy złożone. \\
+  \rowcolor{tableRowAlt} 8. & Dynamiczna alokacja pamięci (new, delete) i podstawy bezpiecznego zarządzania zasobami. \\
+  \rowcolor{tableRowLight} 9. & Wprowadzenie do programowania obiektowego: klasy i obiekty. \\
+  \rowcolor{tableRowAlt} 10. &  Konstruktory, destruktory, enkapsulacja. \\
+  \rowcolor{tableRowLight} 11. &  Dziedziczenie i polimorfizm – podstawy. \\
+  \rowcolor{tableRowAlt} 12. &  Biblioteka standardowa STL – wprowadzenie (vector, string). \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W10 & Student zna podstawowe konstrukcje języka C++, typy danych, instrukcje sterujące oraz zasady działania kompilatora i linkera. Rozumie podstawy zarządzania pamięcią i różnice między typami wartościowymi i referencyjnymi. &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U16 & Student potrafi tworzyć, kompilować i debugować proste programy w języku C++, korzystać z dokumentacji technicznej, dzielić program na funkcje i pliki źródłowe oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student potrafi samodzielnie planować pracę nad projektem programistycznym, dbać o jakość i czytelność kodu oraz terminowo realizować powierzone zadania. & prezentacja projektu i dokumentacji, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład z prezentacją oprogramowania
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item metoda projektów (projekt praktyczny)
+  \item rozwiązywanie zadań
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Bjarne Stroustrup, Programming: Principles and Practice Using C++
+  \item Stephen Prata, C++ Primer Plus
+  \item Dokumentacja C++: https://en.cppreference.com
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Scott Meyers, Effective C++
+  \item Herb Sutter, Exceptional C++
+\end{itemize}
+
+\end{document}

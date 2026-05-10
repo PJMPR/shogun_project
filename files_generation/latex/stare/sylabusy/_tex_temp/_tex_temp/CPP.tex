@@ -1,0 +1,191 @@
+﻿% ===========================================================
+%  Sylabus: Programowanie w C/C++ ()
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: }}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/_tex_temp/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/_tex_temp/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Programowanie w C/C++} \\[3pt]
+  \textbf{Kod przedmiotu:}    &  \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Tadeusz Puźniakowski, \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 40 h & 100 h & \textbf{4} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Praktyczna umiejętność programowania we współczesnym języku C++. Szczególny nacisk jest położony na tworzenie wydajnego i przejrzystego kodu wykorzystującego aktualne możliwości języka.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Wstęp do programowania & Umiejętność precyzyjnego wyrażania myśli i algorytmów w postaci programu komputerowego \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Utrwalenie i poznanie konstrukcji języka C++, czyli:
+  \item Scope(zakresy)
+  \item Typy danych, w tym także klasy, unie, typy wyliczeniowe i struktury
+  \item Typy funkcyjne i funkcje lambda
+  \item Przypisania strukturalne (structured binding) i typ automatyczny
+  \item Podstawowe elementy biblioteki STL, w szczególności
+  \item kolekcje (wektory, mapy, zbiory)
+  \item biblioteka algorytmów
+  \item biblioteka chrono
+  \item wątki, zadania i typ promise
+  \item Automatyczna optymalizacja i kwestie wydajności skompilowanego kodu, a także jak różnie napisany kod źródłowy przekłada się na program wykonywalny
+  \item Narzędzia wspomagające pracę z językiem
+  \item Podstawy kroskompilacji oraz uruchamiania/kompilowania na sprzęt inny niż hosta
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania.
+  \item Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi.
+  \item Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim.
+  \item Student potrafi posługiwać się środowiskiem programistycznym języka C++
+  \item Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać.
+  \item Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym.
+  \item Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do samodzielnego rozwijania swoich umiejętności
+  \item Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item Kryteria oceny
+  \item prezentacja mini projektów
+  \item kolokwium praktyczne składające się z kilku zadań programistycznych
+  \item brak
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Skuteczny nowoczesny C++, Scott Meyers, O'Relly/Promise, 2020
+\end{itemize}
+
+\end{document}

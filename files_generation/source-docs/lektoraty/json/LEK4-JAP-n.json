@@ -1,0 +1,86 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Język japoński – Lektorat 4",
+        "kod_przedmiotu": "LEK4",
+        "rok_studiow": 4,
+        "semestr_studiow": 8,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych – Yugo Azuma",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {
+            "lektorat": "Analiza tekstów z dyskusją, metoda projektów, praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty."
+        },
+        "zaliczenie": {
+            "Lektorat": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język japoński LEK3",
+                "wymagania": "Znajomość materiału z poprzednich semestrów – hiragana, katakana, podstawowe kanji, odmiana czasowników w formie masu."
+            }
+        ],
+        "cel_dydaktyczny": "Semestr końcowy nauczania języka japońskiego na poziomie JLPT N5. Student utrwala i rozszerza opanowany materiał, poznaje nowe struktury gramatyczne i słownictwo niezbędne do zdania egzaminu JLPT N5 oraz do komunikacji w środowisku zawodowym z japońskojęzycznymi partnerami biznesowymi.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne – przygotowane przez lektora Yugo Azumę na podstawie własnych pomysłów oraz różnych książek.",
+                    "Minna no nihongo I – główny podręcznik, wyd. 2, 3A Network, Japonia."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Materiały online wskazane przez lektora.",
+                    "JLPT N5 practice materials: jlpt.jp."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": null,
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N5."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Powtórka z poprzedniego semestru. Utrwalenie odmiany czasowników forma masu/masen/mashita/masendeshita.",
+            "Zaproszenia i propozycje – forma masenka. Słownictwo: aktywności, sport, hobby.",
+            "Opisywanie czynności jednoczesnych i sekwencyjnych – forma te. Kanji: 読、聞、話、食.",
+            "Przymiotniki i/na – odmiana, tworzenie zdań opisowych. Słownictwo: wygląd, charakter, opisy miejsc.",
+            "Porównania – yori, no hō ga. Opisywanie preferencji. Słownictwo: praca i środowisko zawodowe.",
+            "Zdanie przyczynowe – kara. Wyrażanie powodów i uzasadnień. Kanji: 見、思、言、分.",
+            "Słownictwo branżowe z obszaru IT w języku japońskim. Podstawowe zwroty w środowisku biznesowym.",
+            "Powtórka całego materiału. Symulacja egzaminu JLPT N5. Kolokwium zaliczeniowe."
+        ]
+    }
+}
+

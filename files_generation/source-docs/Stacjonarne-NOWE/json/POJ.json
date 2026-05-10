@@ -1,0 +1,90 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie Obiektowe w Javie",
+                    "kod_przedmiotu":  "POJ",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr inż. Eryk Sobczak",
+                    "ects":  3,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  15,
+                                    "calkowita_liczba_godzin_h":  75
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Ocena pracy podczas ćwiczenia – ocena zadań wykonanych przez studentów oddanych do końca zajęć.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "PRG1",
+                                                         "wymagania":  "znajomość i umiejętność stosowania podstaw programowania strukturalnego (instrukcja warunkowa, pętle, tablice, funkcje i procedury)"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem zajęć jest zapoznanie studentów z podstawowymi koncepcjami programowania obiektowego na przykładzie języka Java. Omawiane są pojęcia interfejs, klasa, obiekt, dziedziczenie, polimorfizm. Prezentowane są koncepcje i praktyka związana z wykorzystaniem biblioteki kolekcji, wyjątków, programowania zdarzeniowego.",
+                    "literatura":  {
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Horstmann C.S. - Core Java, Volume II, Advanced Features 11th edition, Pearson, 2019"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie podstawowe konstrukcje programistyczne oraz struktury danych, jak też ich podstawowe implementacje",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi ocenić poprawność konstrukcji obiektowych w programach w języku Java.",
+                                                                    "Potrafi skonstruować, i uruchomić program obiektowy w języku Java",
+                                                                    "Student potrafi znajdować błędy w tworzonych programach obiektowych przy użyciu  wybranych środowisk uruchomieniowych.",
+                                                                    "Potrafi korzystać z biblioteki pakietów dostarczanej z Java JDK.",
+                                                                    "Student potrafi korzystać ze środowiska developerskiego przeznaczonego do tworzenia programów w języku Java, potrafi również zaplanować prostą hierarchie klas a także zastosować prostsze wzorce obiektowe zależnie od przedstawionego problemu"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do programowania w Javie, omówienie z przykładami typów danych, definicja zmiennych, instrukcje sterujące. Tworzenie prostych programów z wykorzystaniem metody głównej psvm",
+                                              "Przedstawienie metod statycznych oraz tablic i ich praktyczne zastosowanie; interakcja człowiek – komputer za pomocą biblioteki Scanner",
+                                              "Programowanie obiektowe – definicja klas, tworzenie nowych obiektów, wykorzystanie konstruktorów. Implementacja klas zawierających konstruktory, tworzenie metod niestatycznych",
+                                              "Enkapsulacja, modyfikatory dostępu, zasady przechowywania zmiennych w pamięci – stos i sterta.",
+                                              "Dziedziczenie – rozróżnienie pojęć ‘Overriding’ oraz ‘Overloading’ , nadpisywanie metod po klasie Object",
+                                              "Klasy abstrakcyjne, polimorfizm, kompozycja",
+                                              "Metody ze zmienną liczbą parametrów (VarArgs) oraz omówienie wyjątków",
+                                              "Wyrażenia regularne w Javie, działania na plikach",
+                                              "Interfejsy w Javie, nowości wprowadzone w JDK8 i późniejszych, Interfejs Comparable",
+                                              "Kolekcje – Listy, Mapy, Sety.",
+                                              "Elementy graficzne w języku Java – Swing i JavaFX",
+                                              "Omówienie wzorców projektowych i elementów programowanie funkcyjnego w Javie"
+                                          ]
+                }
+}

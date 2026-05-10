@@ -1,0 +1,102 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Matematyka dyskretna",
+                    "kod_przedmiotu":  "MAD",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Elżbieta Puźniakowska-Gałuch",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Kolokwia sprawdzające wiedzę podczas semestru. Do zaliczenia wymagane jest uzyskanie ponad 50% punktów możliwych do zdobycia.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Materiał wykładu całego kursu MAD objęty jest egzaminem pisemnym. Zaliczenie od 50% punktów możliwych do zdobycia.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "matematyka z zakresu szkoły średniej",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie z podstawowym aparatem matematycznym i podstawowymi pojęciami matematyki dyskretnej. Rachunek zdań, teoria zbiorów, kombinatoryka, rachunek prawdopodobieństwa, teoria liczb, stosy, kolejki, drzewa, grafy.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "H. Furmańczyk, K. Horodecki, P. Żyliński, „Matematyka dyskretna dla studentów kierunku informatyka”, Wyd. UG (2010)",
+                                                                          "A. Szepietowski, „Matematyka dyskretna”, Wyd. UG (2004)",
+                                                                          "Ross, Kenneth, „Matematyka dyskretna”, 2006, Wydaw. Naukowe PWN"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "H. Lewis, R. Zax, „Matematyka dyskretna. Niezbędnik dla informatyków”, Wydawnictwo Naukowe PWN (2021)",
+                                                                             "M.Kacprzak, G. Mirkowska, „Matematyka Dyskretna” (w systemie Edu PJWSTK)"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia logiki oraz język kwantyfikatorów. Zna i rozumie reguły wnioskowania przeprowadzania prostych dowodów. Student zna i rozumie  pojęcia zbioru, relacji, relacji równoważności, obrazu i przeciwobrazu zbioru i złożenie relacji w zbiorach dyskretnych. Student zna i rozumie pojęcia z arytmetyki modularnej. Student zna i rozumie podstawowe twierdzenia teorii liczb oraz jej znaczenie w informatyce. Student zna i rozumie  pojęcia kombinatoryki, prawdopodobieństwa, prawdopodobieństwa warunkowego i całkowitego oraz zmiennej losowej, wartości oczekiwanej i wariancji. Student zna i rozumie  pojęcia z algebry Boole’a oraz funkcji boolowskich.",
+                                                              "Student zna i rozumie idee rekurencji. Student zna i rozumie podstawowe struktury danych (stosy, kolejki, drzewa)."
+                                                          ],
+                                               "umiejetnosci":  "Student potrafi wykonywać działania na zbiorach. Student potrafi definiować i rozpoznawać relacje, relacje równoważności. Potrafi wykonywać na nich działania. Student potrafi zapisać i odczytać zdanie logiczne zapisane również za pomocą kwantyfikatorów. Student potrafi sprawdzać, czy zdanie logiczne jest tautologią. Student potrafi uzasadnić, że dana reguła jest regułą dowodzenia oraz wykorzystać indukcję matematyczną. Student potrafi wykonywać obliczenia w arytmetyce modularnej z zastosowaniem do reprezentacji liczb i arytmetyki wykorzystywanej w komputerach. Student potrafi rozwiązywać zadania wymagające podstawowych pojęć z zakresu kombinatoryki i prawdopodobieństwa (w tym prawdopodobieństwa warunkowego i całkowitego). Student potrafi znaleźć rozkład zmiennej losowej i sprawdzić czy zmienne losowe są niezależne. Student potrafi obliczyć wartość oczekiwaną oraz wariancję zmiennej losowej. Student potrafi wykonywać działania w algebrze Boole’a. Student potrafi zapisać funkcję boolowską w postaciach normalnych.  Student potrafi, na podstawie twierdzeń z teorii liczb, przeprowadzić kodowanie w kryptosystemie RSA. Student potrafi odnaleźć elementy przeciwne i odwrotne w pierścieniach/ciałach Zk (również przy pomocy rozszerzonego algorytmu Euklidesa). Student potrafi przeprowadzić test pierwszości. Student potrafi posługiwać się algorytmami wykorzystującymi stosy, kolejki lub drzewa. Potrafi przeszukać drzewa binarne oraz drzewa operacji arytmetycznych. Student potrafi zastosować idee rekurencji w różnych kontekstach.",
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawy logiki.",
+                                              "Podstawy teorii mnogości.",
+                                              "Arytmetyka komputerowa.",
+                                              "Kombinatoryka.",
+                                              "Rachunek prawdopodobieństwa wraz ze zmiennymi losowymi.",
+                                              "Algebra Boole’a oraz funkcje i sieci boolowskie.",
+                                              "Arytmetyka modulo.",
+                                              "Teoria liczb.",
+                                              "Stosy, kolejki, drzewa.",
+                                              "Rekurencja."
+                                          ]
+                }
+}

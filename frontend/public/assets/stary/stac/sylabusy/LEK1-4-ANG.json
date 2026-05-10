@@ -1,0 +1,167 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "JĘZYK ANGIELSKI",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  null,
+                    "semestr_studiow":  null,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  null,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Studium Języków Obcych",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  0,
+                                    "calkowita_liczba_godzin_h":  60
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Lektorat":  {
+                                                        "sposob":  "Zaliczenie z oceną"
+                                                    }
+                                   },
+                    "kryteria_oceny":  [
+                                           "analiza tekstów z dyskusją",
+                                           "rozwiązywanie zadań",
+                                           "burza mózgów",
+                                           "mind map",
+                                           "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "obecność na zajęciach- max. 4  nieusprawiedliwione nieobecności w czasie semestru (zwolnienia lekarskie przedstawiane na bieżąco)",
+                                           "prace pisemne- min. jedna praca na semestr-w zależności od poziomu i tempa pracy grupy",
+                                           "formal/ informal letter/ e-mail",
+                                           "covering letter",
+                                           "CV",
+                                           "report",
+                                           "memo",
+                                           "discursive essay",
+                                           "postcard",
+                                           "note",
+                                           "portfolio",
+                                           "kolokwia/ test/ kartkówki na podstawie opracowanego materiału -  min. 2 na semestr",
+                                           "wypowiedź ustna- (o rodzaju decyduje lektor)",
+                                           "news report",
+                                           "newspaper article presentation",
+                                           "multimedia presentation",
+                                           "group projects",
+                                           "przygotowywanie prac domowych",
+                                           "aktywne uczestnictwo w zajęciach",
+                                           "bieżąca obserwacja pracy studenta",
+                                           "Kryteria zaliczenia:",
+                                           "uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/ testy",
+                                           "pozytywna (min. 3.0) ocena łączna za pozostałe formy"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Język angielski ANG1-3",
+                                                         "wymagania":  "Znajomość języka angielskiego na poziomie min.B1."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Abstrakt po polsku: Celem kursu jest nauczanie studentów ogólnego języka angielskiego uzupełnionego o wprowadzenie elementów języka specjalistycznego, tj. biznesu, grafiki, sztuki nowych mediów oraz o treści typowo akademickie na poziomie docelowym B2. Studenci z wejściowym poziomem minimum B2 osiągają poziom C1 lub C2. Kurs obejmuje nauczanie specjalistycznego słownictwa, sprawności komunikacyjnych w biznesie, zwłaszcza umiejętności przygotowania i przedstawienia profesjonalnej prezentacji, jak również rozwijanie podstawowych sprawności komunikacyjnych, a szczególnie szybkiego czytania tekstów specjalistycznych zwłaszcza z zakresu grafiki (artykuły prasowe, książki, strony internetowe poświęcone tematyce) i słuchania tekstów o wzrastającym poziomie trudności. Podczas kursu studenci zostają zapoznani z terminologią dotyczącą grafiki, przygotowują się do porozumiewania się na tematy fachowe podczas pracy. Abstrakt po angielsku: The aim of the course is to pass the knowledge enhancing the basic English  lexis of the specific aspects of business and the studied area (graphic design), teach communication skills and raise the awareness of cross-cultural circumstances in business communication, as well as to revise and expand general language skills to the B2-C2 level (depending on the initial language level of students). Communicative skills in business are transferable to the native language. Secondary education graduates are usually deficient in this matter. These skills and abilities are indispensable in the modern working environment, irrespective of the sector and area of specialization.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "1.Margaret O’Keeffee, Iwonna Dubicka, Bob Dignem, Mike Hogan, Business Partner A2+-C1; Wydawnictwo PEARSON, 2018",
+                                                                          "2. Cotton D, Falvey D, Kent S, Rogers J, Market Leader 3rd edition (pre-intermediate/ intermediate/ upper-intermediate / advanced), PEARSON 2015.",
+                                                                          "3. Maksymowicz Roman, Język angielski dla elektroników i informatyków. Wydawnictwo Oświatowe FOSZE.",
+                                                                          "4. Błaszczyk Beata, English 4 IT. Praktyczny kurs języka angielskiego dla specjalistów i nie tylko. Helion, 2017.",
+                                                                          "5. Maciejewska J, Kucharska-Raczunas A, Information Technology for students of technical studies. Wydawnictwo Politechniki Gdańskiej.",
+                                                                          "6. Esteras, S.R. i Fabre, E. M. Professional English in Use, ICT. Cambridge, 2007.",
+                                                                          "7. Esteras, S. R. Infotech,  English for computer users. Cambridge, 2008.",
+                                                                          "8. Maciejewska, J, Kucharska-Raczunas A, English for Information Technology, Wydawnictwo Politechniki Gdańskiej, 2012.",
+                                                                          "9. Mascull Bill, Business Vocabulary in Use, Cambridge University Press, 2004.",
+                                                                          "10. Glendinning Eric H, Oxford English for Information Technology 2nd ed, Oxford Univeristy Press, 2006."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. R. Murphy, English Grammar in Use, Cambridge University Press, Cambridge 2011.",
+                                                                             "2. G. Gójska, Technical English Grammar, Wydawnictwo Politechniki Gdańskiej, Gdańsk 2000.",
+                                                                             "3. I. Mokwa - Tarnowska, Technical Writing in English, Wydawnictwo Politechniki Gdańskiej, Gdańsk 2006.",
+                                                                             "4. Badger, I. ed. English for Work, Everyday Technical English. Pearson Longman: Harlow, 2003.",
+                                                                             "5. Bonamy, D. Technical English. Pearson Longman: Harlow, 2011.",
+                                                                             "6. Brieger, N. i Pohl, A. Technical English Vocabulary and Grammar, Summertown Publishing: Oxford, 2007.",
+                                                                             "7.Fitzgerald P, McCullagh M, Tabor C, English for ICT Studies in Higher Education Studies, Garnet Education, 2011.",
+                                                                             "8. Comfort J, Effective Presentations, Oxford University Press - kurs video na poziomie średnim plus.",
+                                                                             "9. Skrypty, artykuły popularnonaukowe i naukowe"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "11. http://shebang.pl/":  "11. http://shebang.pl/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  null,
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi pisać abstrakt, streszczenie, pisać wykres, diagram, list motywacyjny i CV wykorzystując słownictwo i struktury gramatyczne w odpowiednim kontekście.",
+                                                                    "Student potrafi konstruować wypowiedź ustną i pisemną poprawną pod względem logicznym i merytorycznym wdrażając słownictwo specjalistyczne i biznesowe."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                                                                             "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Zagadnienia z matematyki np.",
+                                              "algebra,",
+                                              "liczby naturalne,",
+                                              "liczby rzeczywiste,",
+                                              "liczby całkowite,",
+                                              "liczby wymierne,",
+                                              "działania wykonywane na liczbach,",
+                                              "notacja pozycyjna,",
+                                              "figury geometryczne,",
+                                              "macierze,",
+                                              "typy danych,",
+                                              "tryb całkowitoliczbowy,",
+                                              "tryb zmiennoprzecinkowy,",
+                                              "tekstowe typy danych etc.",
+                                              "2.Zagadnienia biznesowe (w zależności od poziomu zaawansowania grupy) np.",
+                                              "debatowanie,",
+                                              "wywieranie wpływu,",
+                                              "podejmowanie decyzji,",
+                                              "komunikacja w biznesie,",
+                                              "marki,",
+                                              "zatrudnienie,",
+                                              "etyka zawodowa,",
+                                              "team building,",
+                                              "style zarządzania,  rynki międzynarodowe etc.",
+                                              "3. Teksty specjalistyczne o tematyce związanej z informatyką, technologią.  Pogłębianie umiejętności czytania ze zrozumieniem tekstów bazujących na oryginalnych materiałach źródłowych.",
+                                              "4. Zagadnienia z zakresu informatyki (w zależności od poziomu zaawansowania grupy np).",
+                                              "zastosowanie komputerów w życiu codziennym,",
+                                              "systemy operacyjne,",
+                                              "mikroprocesory,",
+                                              "bazy danych,",
+                                              "Internet,",
+                                              "wirusy komputerowe,",
+                                              "gry komputerowe, sieci komputerowe,",
+                                              "nowe technologie,",
+                                              "języki programowania,",
+                                              "oprogramowanie komputerowe etc.)",
+                                              "5. Pogłębianie znajomości podstawowych oraz specjalistycznych wyrażeń i zwrotów z zakresu języka technicznego, akademickiego i świata pracy.",
+                                              "6.Ćwiczenie złożonych struktur leksykalnych, omówienie właściwości fizycznych materii, kształtów, wprowadzenie terminologii matematycznej, interpretacja rysunków, diagramów, opis procesu. Wprowadzenie słownictwa specjalistycznego z dziedziny informatyki.",
+                                              "7.Realizowanie gramatyki w zakresie wymaganym dla danego poziomu znajomości języka. Nauczanie struktur niezbędnych do komunikacji werbalnej i pisemnej w środowisku akademickim i świata pracy.",
+                                              "8.Pisanie różnorodnych tekstów, niezbędnych w pracy i na uczelni, np.: raportu, życiorysu zawodowego, wiadomości email, streszczenia, notatki, abstraktu, instrukcji, objaśnienia procesu.",
+                                              "9. Słuchanie w oparciu o materiały przedstawiające sytuacje związane ze",
+                                              "środowiskiem pracy, akademickim i życiem codziennym, np.: rozmowy telefoniczne, wywiady, sytuacje związane z obsługą klienta, wykłady oraz prezentacje.",
+                                              "10. Komunikacja w świecie pracy i społeczności akademickiej, np: prezentacje, rozmowa kwalifikacyjna, rozmowy formalne i nieformalne, negocjacje, przedstawianie argumentów, rozwiązywanie problemów, case studies, prowadzenie spotkań formalnych, itp. Ćwiczenie wymowy i prawidłowego akcentowania wyrazów.",
+                                              "11. Analiza i rozumienie języka specjalistycznego oraz tłumaczenie krótkich tekstów technicznych.",
+                                              "12. Nauka prezentowania w języku angielskim, w tym używania adekwatnych konstrukcji językowych i odpowiedniego słownictwa, analiza technik prezentowania, zapoznanie się z prawidłową strukturą prezentacji i odpowiednim włączaniem materiałów wizualnych, przygotowanie kilkuminutowej prezentacji o tematyce związanej z kierunkiem studiów, wybraną specjalizacją i zainteresowaniami.",
+                                              "13. Ćwiczenie umiejętności językowych (mówienie, słuchania, pisania i czytania oraz wzbogacanie słownictwa i gramatyki pod kątem przygotowania studentów do egzaminów międzynarodowych Cambridge ESOL (BEC, FCE, CAE, CPE, IELTS) oraz TOEIC Reading&Listening.",
+                                              "14. Wypowiedzi ustne studentów (prezentacje multimedialne, artykuły prasowe,  prezentacje projektów etc.)",
+                                              "15. Colloquium / Podsumowanie semestru."
+                                          ]
+                }
+}

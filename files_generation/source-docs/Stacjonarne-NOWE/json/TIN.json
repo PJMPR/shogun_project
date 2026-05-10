@@ -1,0 +1,107 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Technologie internetu",
+                    "kod_przedmiotu":  "TIN",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  0,
+                                                        "laboratorium_projekt":  30
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "projekt praktyczny",
+                                           "Kryteria oceny",
+                                           "50% Kolokwium pisemne",
+                                           "50% Projekt praktyczny"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Warsztaty programistyczne",
+                                                         "wymagania":  "Bazy danych"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość HTML, obsługi bazy danych za pomocą języka zapytań",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie studentów z nowoczesnymi technologiami internetowymi, które są kluczowe dla tworzenia i zarządzania dynamicznymi stronami oraz aplikacjami internetowymi. Zdobycie wiedzy na temat tworzenia responsywnych interfejsów, wykorzystania zaawansowanych technik CSS oraz programowania w języku JavaScript, w tym programowania funkcyjnego i obiektowego. Przedmiot obejmuje także tematykę asynchronicznego programowania, modyfikacji elementów DOM oraz korzystania z narzędzi sieciowych, takich jak HTTP i WebSocket. Dodatkowo, studenci poznają podstawy pracy z popularnym narzędziem do budowy aplikacji serwerowych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "D. Herron, Node.js Web Development, Fifth Edition, Apress, 2020.",
+                                                                          "E. Brown, Web Development with Node and Express, 2nd Edition, O’Reilly Media, 2019."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "F. Zammetti, Modern Full Stack Development using Typescript, React, Node.js, Webpack and Docker, Apress, 2020."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student rozumie podstawowe technologie internetowe oraz ich rolę w tworzeniu nowoczesnych stron i aplikacji internetowych.",
+                                                              "Student potrafi wyjaśnić zasady responsywności stron internetowych oraz zastosować odpowiednie techniki do ich implementacji.",
+                                                              "Student rozumie działanie preprocesorów CSS i potrafi wykorzystać je do optymalizacji oraz organizacji kodu CSS.",
+                                                              "Student rozumie zasady działania języka JavaScript, w tym zmienne, operatory oraz funkcje, i potrafi zastosować je w praktycznych zadaniach.",
+                                                              "Student potrafi wyjaśnić zasady asynchronicznego programowania w JavaScript i zastosować je w praktyce.",
+                                                              "Student rozumie podstawy działania narzędzi serwerowych, takich jak Node.js i potrafi je zastosować w kontekście budowy aplikacji internetowych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student umie zastosować frameworki CSS w celu tworzenia złożonych i estetycznych interfejsów użytkownika.",
+                                                                    "Student potrafi wyjaśnić pojęcia programowania funkcyjnego oraz obiektowego w JavaScript i zastosować je w kodzie.",
+                                                                    "Student umie pisać i optymalizować kod w języku JavaScript, stosując zmienne, operatory oraz funkcje.",
+                                                                    "Student umie wykorzystać narzędzia sieciowe w JavaScript, w tym obsługę protokołów HTTP i WebSocket, do budowy dynamicznych aplikacji internetowych."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do efektywnej współpracy w zespole projektowym, wnosząc wkład w tworzenie oraz rozwój aplikacji internetowych.",
+                                                                             "Student jest gotów do krytycznego oceniania własnych umiejętności i poszerzania wiedzy w zakresie nowoczesnych technologii internetowych, podejmując inicjatywy samokształcenia.",
+                                                                             "Student jest gotów do rozwiązywania problemów programistycznych w sposób kreatywny i efektywny, korzystając z nowoczesnych narzędzi i technologii.",
+                                                                             "Student jest gotów do stosowania najlepszych praktyk programistycznych oraz standardów branżowych przy tworzeniu rozwiązań internetowych, dbając o ich jakość i bezpieczeństwo."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Przegląd technologii internetowych i ich rola w tworzeniu nowoczesnych stron internetowych.",
+                                              "Zasady responsywności stron internetowych i ich implementacja.",
+                                              "Techniki zaawansowanego stylowania CSS oraz organizacja i optymalizacja kodu.",
+                                              "Zastosowanie narzędzi do tworzenia układów i stylizacji stron internetowych.",
+                                              "Wprowadzenie do języka JavaScript: zmienne oraz operatory.",
+                                              "Funkcje i paradygmat programowania funkcyjnego w języku JavaScript.",
+                                              "Programowanie obiektowe w JavaScript oraz manipulacja obiektami.",
+                                              "Zarządzanie zdarzeniami w JavaScript oraz modyfikacja struktury DOM.",
+                                              "Asynchroniczne programowanie w JavaScript: podstawy i praktyczne zastosowania.",
+                                              "Zaawansowane techniki programowania w JavaScript: rozprzestrzenianie i destrukturyzacja.",
+                                              "Wprowadzenie do mechanizmów obsługi zdarzeń w aplikacjach internetowych.",
+                                              "Obsługa komunikacji sieciowej w JavaScript, w tym zapytania HTTP i mechanizmy komunikacji w czasie rzeczywistym.",
+                                              "Podstawy pracy z technologiami serwerowymi oraz budowa aplikacji internetowych.",
+                                              "Wprowadzenie do tworzenia aplikacji internetowych z wykorzystaniem popularnych narzędzi serwerowych."
+                                          ]
+                }
+}

@@ -1,0 +1,104 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Komercjalizacja projektów informatycznych",
+                    "kod_przedmiotu":  "KMR",
+                    "rok_studiow":  null,
+                    "semestr_studiow":  null,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Rafał Kruczkowski kruczkowski@pjwstk.edu.pl",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "desk research (wyszukiwanie informacji rynkowych w formie „białego wywiadu”)",
+                                           "canvassing",
+                                           "analiza przypadków",
+                                           "Kryteria oceny",
+                                           "Prezentacja zaliczeniowa zespołu projektowego wykonana w formie 10-minutowej prezentacji multimedialnej. Istnieje możliwość poprawy w formie eseju na wskazany przez prowadzącego temat.",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wiedza z zakresu szkoły średniej.",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest poznanie  procesu tworzenia od podstaw przedsięwzięcia typu start-up. Student zapoznaje się z tematyką modeli biznesowych oraz komercjalizacji rozwiązań innowacyjnych, a następnie rozpoczyna praktyczne stosowanie przyswojonej wiedzy na bazie projektu inżynierskiego.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "“Tworzenie modeli biznesowych. Podręcznik wizjonera”, A. Osterwalder, Y. Pigneur, Onepress, 2012",
+                                                                          "“Przedsiębiorczość zdyscyplinowana Od startupu do sukcesu w 24 krokach”, B. Aulet,, Helion, 2014"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "blog autorski: steveblank.com, S.Blank",
+                                                                             "materiały i ćwiczenia zawarte na stronie: strategyzer.com, Strategyzer AG"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie  jak oszacować ekonomiczne i społeczne tło projektu informatycznego. Potrafi ustalić finansową opłacalność lub jej brak, a także ocenić skalowalność projektu i jego potencjał rozwojowy.",
+                                                              "Student zna i rozumie  sposoby oszacowania nakładów finansowych i pozafinansowych związanych z prowadzeniem działalności gospodarczej.  Rozróżnia potencjał naukowy od komercyjnego i potrafi opracować ścieżki finansowania w zależności od potencjału, którym dysponuje projekt."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi  ustalać kosztorys projektu oraz jego budżet, po uwzględnieniu spodziewanych/zakładanych przychodów.  Potrafi planować i rozdzielać prace w ramach zespołu, opracowywać założenia dla działań związanych z rozwojem rynku i pozyskiwaniem klientów.",
+                                                                    "Student potrafi  przygotować biznesplan w oparciu o metodologię  Business Model Canvas, a także przygotować prezentację relacyjną lub sprzedażową projektu."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do  stosowania technik empatycznych (m.in. mapa apatii, design thinking) dzięki którym jest w stanie lepiej zrozumieć pragnienia i potrzeby interesariuszy projektu.",
+                                                                             "Student jest gotów do  definiowania problemów oraz stosowania technik pozwalających na szybką walidację sposobów rozwiązania zdefiniowanych problemów, pod kątem ich opłacalności i skuteczności.",
+                                                                             "Student jest gotów do  opracowania narracji opartaej na języku korzyści (m.in. definiować unique selling point projektu) a także przygotowania prezentacji relacyjnej lub sprzedażowej projektu."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1Get rich’ or die trying – wprowadzenie do tematyki prowadzenia własnej firmy, ustalanie celów finansowych oraz rozwojowych dla własnej kariery zawodowej, porównanie zalet i wad pracy najemnej oraz samozatrudnienia. Analiza przykładów – tj. dobrych i złych praktyk w zakresie komercjalizacji, próba ustalenia przyczyn porażki lub sukcesu wybranych przykładów biznesowych.",
+                                              "2Wprowadzenie do tematyki modeli biznesowych. Dlaczego startupu upadają, konwersja, eliminacja niepewności, pretotypowanie (wg. podejścia A.Savoia) oraz testowanie projektów biznesowych. Case study urządzenia „iPod” firmy Apple Inc.Tworzenie zespołu projektowego, dobieranie funkcji w zespole ustalanie przewag i braków kompetencyjnych zespołu.",
+                                              "3Współczesne modele biznesoweTworzenie założeń dla oferty. Definiowane jej przy użyciu tzw. języka korzyści, doskonalenie umiejętności pozycjonowania oferty w formie unique selling point.",
+                                              "4Określenie charakterystyki behawioralnej docelowych odbiorców projektu. Rozróżnianie pojęć klienta-nabywcy i klienta-użytkownika.",
+                                              "5Market fitting i scenariuszowanie. Student poznaje pojęcie produktu całościowego oraz  sposoby analizy wstępnej oferty, pod kątem  dopasowania do potrzeb rynku. Omawiana jest również tematyka innowacji liniowej i nieliniowej oraz jej wpływu na dotychczasowe nawyki użytkowników.Tworzenie scenariuszy",
+                                              "sprzedażowych dla różnych segmentów klientów (na podstawie charakterystyki behawioralnej)  i",
+                                              "wybór najatrakcyjniejszego segmentu innowatorów.",
+                                              "6Design Thinking przy użyciu Value Proposition Canvas – omówienie zasad przeprowadzenia ćwiczenia. Na podstawie wybranego w poprzednim bloku segmentu tworzenie Propozycji Wartości, ostatecznie ustalając zakres oferty w kontekście jej atrakcyjności. Praca nad kwantyfikacją proponowanych",
+                                              "wartości do postaci mierzalnych parametrów stanowiących podstawę do późniejszej",
+                                              "narracji marketingowej.",
+                                              "7Business Model Canvas cz. I. – omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „propozycja wartości”, „klienci”, „relacje” szablonu",
+                                              "8Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „kanały dotarcia” oraz „przychody”.  W ramach omówienia, również sposoby ustalania ścieżek generowania tzw. lead’ów oraz szacowanie budżetu  dla tego działania w oparciu o takie parametry jak CAC, CHURN czy LTV.Wykonanie ćwiczenia w ramach zespołów projektowych, przy użyciu szablonów.",
+                                              "9Omówienie zasad przeprowadzenia ćwiczenia w odniesieniu do pozycji: „partnerzy”, „kluczowe aktywności”, „kluczowe zasoby”, „koszty.”",
+                                              "10End of freemium – case study Spotify, jako modelu biznesowego o ograniczonej funkcjonalności i jego konsekwencjach w zakresie rozwoju/opłacalności przedsięwzięcia.   Prace uzupełniające na szablonach, wyszukiwanie danych rynkowych i informacji o wielkości rynku, jego wysyceniu oraz działaniach konkurencji.",
+                                              "11Prezentacje podsumowujące ćwiczenie Business Model Canvas wykonywane przez zespoły projektowe. Analiza dostrzeżonych błędów oraz rekomendacje w zakresie poprawek.",
+                                              "12Fred Flinstone i ciasto winogronowe – case study nieudanego przedsięwzięcia biznesowego wraz ustaleniem przyczyn porażki. Modele ustalania ceny.Rewizja opracowanych modeli biznesowych pod kątem ich dochodowości i perspektyw rozwojowych. Ustalenie założeń cenowych w oparciu o poznane modele ustalania ceny.",
+                                              "13Dlaczego Twój produkt nie sprzeda się za granicą?!”",
+                                              "czyli najczęstsze błędy popełniane przy wchodzeniu na obce rynki. Omówienie założeń dla procesu eksportowania wraz z analizą najczęstszych błędów popełnianych przez polskich przedsiębiorców. Wskazanie trendów w eksporcie oraz ich znaczenia dla polityki dywersyfikacji rynków zbytu.   Dyskusja nad możliwymi założeniami eksportowymi dla projektów opracowywanych w ramach przedmiotu. Wyszukiwanie źródeł informacji o procesie podejmowania decyzji zakupowych w innych państwach.",
+                                              "14Uczelniana komercjalizacja – wizja a realia. Rozróżnianie potencjału naukowego/wynalazczego a komercyjnego/wdrożeniowego projektów innowacyjnych. Omówienie tzw. cyklu przyjmowania innowacji oraz trendów wdrożeniowych na podstawie analiz „Hype Cycle for Emerging Technologies” Gartner Inc. Analiza opłacalności komercjalizacji akademickiej na wybranych rynkach. Analiza wybranych przykładów prezentacji promujących projekty startupowe. Przygotowanie prezentacji zaliczeniowych w formie tzw. pitchu."
+                                          ]
+                }
+}

@@ -1,0 +1,234 @@
+﻿% ===========================================================
+%  Sylabus: wychowanie fizyczne (WF)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: WF}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries wychowanie fizyczne} \\[3pt]
+  \textbf{Kod przedmiotu:}    & WF \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     &  /  \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    &  \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+--- & 30 h & --- & 30 h & --- & 30 h & \textbf{0} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Aktywność fizyczna poza zajęciami (np. zajęcia sportowe spoza oferty uczelni); dbanie o kondycję fizyczną; uzyskanie zaświadczenia z zajęć zewnętrznych w razie potrzeby.
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+kształtowanie zdolności rozpoznawania i oceny własnej sprawności fizycznej i rozwoju fizycznego, zachęcanie do uczestnictwa w sportowych i rekreacyjnych formach aktywności fizycznej, poznanie i umiejętne stosowanie zasad bezpieczeństwa podczas aktywności fizycznej, zrozumienie związku aktywności fizycznej ze zdrowiem oraz kształtowanie umiejętności praktykowania zachowań prozdrowotnych. Zajęcia na basenie, saunie ,siłowni, sali gimnastycznej
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Developing the ability to recognize and assess one’s own physical fitness and physical development, encouraging participation in sports and recreational forms of physical activity, learning and applying safety rules during physical activity, understanding the relationship between physical activity and health, and developing the ability to practice health-promoting behaviors. Classes take place in the swimming pool, sauna, gym, and sports hall.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} ----------------------------------------------------------- & ------------------------------------------------------------------ \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wszechstronny rozwój organizmu, korygowanie wad postawy, przez odpowiedni dobór środków i metod stymulujących i korygujących rozwój i funkcjonowanie układu ruchowego, sercowo-naczyniowego, oddechowego i nerwowego. \\
+  \rowcolor{tableRowAlt} 2. & Rozwój sprawności kondycyjnej i koordynacyjnej oraz dostarczenie studentom wiadomości i umiejętności umożliwiających samokontrolę, samoocenę i samodzielne podejmowanie działań w tym zakresie. \\
+  \rowcolor{tableRowLight} 3. & Wykształcenie umiejętności ruchowych przydatnych w aktywności zdrowotnej, utylitarnej, rekreacyjnej i sportowej. \\
+  \rowcolor{tableRowAlt} 4. & Wyposażenie studentów w niezbędną wiedzę i umiejętności umożliwiające bezpieczną organizację zajęć ruchowych w różnych warunkach środowiskowych, indywidualnie, w grupie rówieśniczej oraz w rodzinie. \\
+  \rowcolor{tableRowLight} 5. & Ukształtowanie postawy świadomego i permanentnego uczestnictwa studentów w różnych formach aktywności sportowo-rekreacyjnych w czasie nauki oraz po jej ukończeniu dla zachowania zdrowia fizycznego i psychicznego. \\
+  \rowcolor{tableRowAlt} 6. & Kształtowanie postaw osobowościowych: poczucia własnej wartości, szacunku dla innych osób, zwłaszcza słabszych i mniej sprawnych. \\
+  \rowcolor{tableRowLight} 7. & Kształtowanie współdziałania w zespole, grupie, akceptacji siebie i innych, kultury kibicowania, stosowania zasady „fair play” w sporcie i w życiu. \\
+  \rowcolor{tableRowAlt} 8. & Szczegółowy program przedmiotu w rozbiciu na tygodnie/bloki tematyczne jest dostępny u prowadzącego zajęcia i koordynatora WF(uzależniony jest od semestru i form realizacji WF) \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U04 & student jest gotów do nauki o kulturzefizycznej & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U04 & krytycznej oceny posiadanej wiedzy i odbieranych treści uznawania znaczenia wiedzy w rozwiązywaniu problemów poznawczych i praktycznych oraz zasięganiaopinii ekspertów w przypadku trudności z samodzielnym rozwiązaniem problemu & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U05 & tworzenia i rozwijania wzorów właściwegopostępowania w środowisku pracy i życiapodejmowania inicjatyw, krytycznej oceny siebie oraz zespołów i organizacji, wktórych uczestniczy. & ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K03 & Znajomość tematyki: rozwój fizyczny, rozwój sprawności fizycznej, zdrowy styl życia, higiena, hartowanie organizmu. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K06 & Znajomość i przestrzeganie zasad bezpieczeństwa na obiektach sportowych. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_K06 & Znaomość regulaminów, przepisów i zasad poznanych dyscyplin sportowych. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K04 & Stosowanie zasady „czystej gry” i sportowego kibicowania. & ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item praca w grupach
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\end{document}

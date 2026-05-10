@@ -1,0 +1,270 @@
+﻿% ===========================================================
+%  Sylabus: Analiza Incydentów Cyberbezpieczeństwa (AIC)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: AIC}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Analiza Incydentów Cyberbezpieczeństwa} \\[3pt]
+  \textbf{Kod przedmiotu:}    & AIC \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Paweł Lelental \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Analiza rzeczywistych przypadków incydentów cyberbezpieczeństwa; przygotowanie raportu z analizy wybranego incydentu; samodzielne ćwiczenia z narzędziami do analizy zagrożeń.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium końcowe
+  \item rezultaty gry strategicznej
+  \item raport z wykonanego zadania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Analiza incydentów cyberbezpieczeństwa to proces badania i oceny zdarzeń, które mogą stanowić naruszenie cyberbezpieczeństwa. Celem jest zrozumienie, jak doszło do incydentu, jakie są jego skutki, jak można go zażegnać i jak zapobiegać podobnym incydentom w przyszłości. W całym tym procesie kluczowe jest posiadanie odpowiednich umiejętności analizy systemów i sieci, a także do podejmowania szybkich i skutecznych działań w celu zminimalizowania wpływu incydentów na cyberbezpieczeństwo.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Cybersecurity incident analysis is the process of investigating and assessing events that may constitute a cybersecurity breach. The objective is to understand how the incident occurred, what its consequences are, how it can be mitigated, and how similar incidents can be prevented in the future. Throughout this process, it is essential to possess the appropriate skills in system and network analysis, as well as the ability to take rapid and effective action to minimize the impact of incidents on cybersecurity.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wykład: \\
+  \rowcolor{tableRowAlt} 2. & Anatomia zagrożenia – Ransomware (wg. ENISA) \\
+  \rowcolor{tableRowLight} 3. & Anatomia zagrożenia – Malware (wg. ENISA) \\
+  \rowcolor{tableRowAlt} 4. & Anatomia zagrożenia – Cryptojacking (wg. ENISA) \\
+  \rowcolor{tableRowLight} 5. & Anatomia zagrożenia - E-mail related threats (wg. ENISA) \\
+  \rowcolor{tableRowAlt} 6. & Anatomia zagrożenia - Threats against data (wg. ENISA) \\
+  \rowcolor{tableRowLight} 7. & Anatomia zagrożenia - Threats against availability and integrity (wg. ENISA) \\
+  \rowcolor{tableRowAlt} 8. & Anatomia zagrożenia - Disinformation – misinformation (wg. ENISA) \\
+  \rowcolor{tableRowLight} 9. & Anatomia zagrożenia - Non-malicious threats (wg. ENISA) \\
+  \rowcolor{tableRowAlt} 10. & Laboratoria: \\
+  \rowcolor{tableRowLight} 11. & Zapoznanie się z organizacją oraz utworzenie Zespołów SOC \\
+  \rowcolor{tableRowAlt} 12. & Atak 1: Atak typu Ransomware, Poziom 1– Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 13. & Atak 2: Atak typu Malware. Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowAlt} 14. & Atak 3: Atak typu Cryptojacking, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 15. & Atak 4: Atak typu E-mail related threats, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowAlt} 16. & Atak 5: Atak typu Threats against data, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 17. & Atak 6: Atak typu Threats against availability and integrity, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowAlt} 18. & Atak 7: Atak typu Disinformation – misinformation, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 19. & Atak 8: Atak typu Non-malicious threats, Poziom 1 – Reakcja i prewencja \\
+  \rowcolor{tableRowAlt} 20. & Atak 9: Atak typu Zaawansowany wektor ataku 1, Poziom 2  – Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 21. & Atak 10: Atak typu Zaawansowany wektor ataku 2, Poziom 2  – Reakcja i prewencja \\
+  \rowcolor{tableRowAlt} 22. & Atak 11: Atak typu Zaawansowany wektor ataku 3, Poziom 2  – Reakcja i prewencja \\
+  \rowcolor{tableRowLight} 23. & Atak 12 : Atak typu Zaawansowany wektor ataku 4, Poziom 2  – Reakcja i prewencja \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie anatomię kluczowych zagrożeń Cyber &  \\
+  \rowcolor{tableRowAlt} K\_W23 & Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+  \rowcolor{tableRowAlt} K\_U30 & Student potrafi wskazać mocne i słabe strony systemów ochrony informacji & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do pracy zespołowej w dziale SOC & kolokwium końcowe, rezultaty gry strategicznej, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item warsztaty
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+  \item rozwiązywanie zadań
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item William Stallings, Lawrie Brown - Bezpieczeństwo systemów informatycznych. Zasady i praktyka. (ang. Computer Security: Principles and Practice), Wydanie IV. Tom 1 i 2, Helion 2019
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item https://www.enisa.europa.eu/publications/enisa-threat-landscape-methodology?v2=1
+  \item https://www.enisa.europa.eu/publications/enisa-threat-landscape-2021?v2=1
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,113 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Trendy w rozwoju API",
+                    "kod_przedmiotu":  "TAPI",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Mateusz Miotk",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "projekt praktyczny",
+                                           "Kryteria oceny",
+                                           "50% Projekt programistyczny",
+                                           "50% Prezentacja projektu oraz dokumentacji",
+                                           "40% Ocena z laboratorium",
+                                           "60% Egzamin z zagadnień poruszanych na wykładzie"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Technologie Frontendowe",
+                                                         "wymagania":  "Technologie Backendowe"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu",
+                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
+                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość protokołu HTTP",
+                                                         "wymagania":  "Znajomość pojęć z zakresu tworzenia aplikacji internetowej z podziałem na frontend oraz backend."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot \"Trendy w rozwoju API\" ma na celu zaznajomienie studentów z aktualnymi kierunkami rozwoju i innowacjami w dziedzinie tworzenia API dla aplikacji internetowych. Studenci zdobędą wiedzę teoretyczną i praktyczną na temat najnowszych standardów, protokołów i narzędzi używanych do projektowania, implementacji i zarządzania interfejsami API. Uczestnicy będą mieli okazję zgłębić tematykę takich kwestii jak: bezpieczeństwo API, skalowalność, wydajność oraz dobre praktyki programistyczne. Poznają również różnorodność stylów API, w tym REST, GraphQL, gRPC i inne, analizując ich zalety i wady oraz zastosowania w różnych kontekstach projektowych. Kolejnym istotnym elementem przedmiotu jest praca grupowa, która ma na celu rozwijanie umiejętności współpracy, komunikacji i innowacyjnego myślenia. Studenci będą mieli za zadanie zanalizować i opracować materiał dotyczący wybranej technologii z zakresu tworzenia API, co pozwoli na pogłębienie wiedzy i umiejętności praktycznych w konkretnym obszarze.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "M. Amundsen, RESTful Web API Patterns and Practices Cookbook, O’Reilly Media, 2023.",
+                                                                          "S. Buna, GraphQL in Action, Manning Publications, 2021.",
+                                                                          "A. Freeman, Essential TypeScript, Apress, 2019.",
+                                                                          "J. S. Ponelat, Designing APIs with Swagger and OpenAPI, Manning Publications, 2021."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "F, Dogilo, REST API Development with Node.js, Apress, 2018.",
+                                                                             "JJ. Geewax, API Design Patterns, Manning Publications, 2021."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student rozumie podstawowe koncepcje i zasady rządzące współczesnymi API, w tym ich role i zastosowania w różnych typach aplikacji internetowych.",
+                                                              "Student rozumie metody zapewniania jakości i testowania API, włączając w to testy jednostkowe, integracyjne oraz testy obciążenia.",
+                                                              "Student rozumie kwestie związane z zabezpieczaniem API, w tym uwierzytelnianie, autoryzację oraz ochronę przed powszechnymi zagrożeniami i atakami.",
+                                                              "Student rozumie etyczne i prawne aspekty tworzenia i zarządzania API, w tym prywatność, ochronę danych i zgodność z regulacjami prawnymi."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student umie projektować interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność.",
+                                                                    "Student umie analizować i oceniać różne style i architektury API (takie jak REST, GraphQL, gRPC), rozumiejąc ich zalety, wady i najlepsze zastosowania.",
+                                                                    "Student umie efektywnie komunikować się w zespole programistycznym, współtworzyć dokumentację API i udostępniać informacje o API zespołowi i interesariuszom.",
+                                                                    "Student umie wykorzystywać narzędzia i technologie wspierające proces tworzenia, wdrażania i monitorowania API, zwiększając efektywność i jakość pracy.",
+                                                                    "Student umie projektować zaawansowane interfejsy API, z wykorzystaniem odpowiednich metod, protokołów i standardów, aby zapewnić ich wydajność, bezpieczeństwo i skalowalność."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do jest gotów do samodzielnego uczenia się przez całe życie",
+                                                                             "Student potrafi pracować w zespole nad wspólnym projektem związanym z tworzeniem API, wykazując się umiejętnościami analitycznymi, kreatywnymi i komunikacyjnymi."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do API (Application Programming Interface). Przegląd różnych typów API (REST, SOAP, GraphQL, gRPC, itd.). Znaczenie i role API w rozwoju aplikacji internetowych",
+                                              "Konwencje, normy i najlepsze praktyki w tworzeniu REST API",
+                                              "GraphQL - wprowadzenie i porównanie z REST. Tworzenie prostych API z wykorzystaniem GraphQL",
+                                              "Wprowadzenie do gRPC. Porównanie gRPC z REST i GraphQL, zalety i wady",
+                                              "Rola i znaczenie dokumentacji API. Narzędzia do tworzenia dokumentacji API - OpenAPI, Swagger, Postman",
+                                              "Język TypeScript",
+                                              "Inne znane technologie wspierające proces budowania aplikacji internetowych."
+                                          ]
+                }
+}

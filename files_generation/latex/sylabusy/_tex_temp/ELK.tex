@@ -1,0 +1,265 @@
+﻿% ===========================================================
+%  Sylabus: Elektronika (ELK)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ELK}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Elektronika} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ELK \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 4 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Tadeusz Puźniakowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & 12 h & 12 h & 40 h & 35 h & 75 h & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Przygotowanie sprawozdań z ćwiczeń laboratoryjnych z elektroniki; samodzielne analizy układów elektronicznych; przygotowanie do kolokwium.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item kolokwium
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item raport z wykonanego zadania
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest wyposażenie studentów w podstawową wiedzę z zakresu elektroniki, elektrotechniki i technik pomiarowych. Studenci poznają zasady działania oraz zastosowania elementów i układów elektronicznych, takich jak rezystory, kondensatory, cewki, diody, tranzystory i bramki logiczne. Nauczą się również podstawowych technik pomiarowych i diagnostycznych z użyciem multimetru, oscyloskopu i innych narzędzi pomiarowych.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to provide students with basic knowledge in electronics, electrical engineering, and measurement techniques. Students learn the principles of operation and applications of electronic components and circuits such as resistors, capacitors, coils, diodes, transistors, and logic gates. They also learn the basics of measurement and diagnostic techniques using multimeters, oscilloscopes, and other measuring instruments.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} {[}BHP{]} Szkolenie BHP & Znajomość regulaminu i zasad BHP obowiązujących w laboratorium \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych. \\
+  \rowcolor{tableRowAlt} 2. & Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych. \\
+  \rowcolor{tableRowLight} 3. & Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W02 & Student zna i rozumie podstawowe prawa i zjawiska elektryczne: prawo Ohma, prawa Kirchhoffa, zasady działania obwodów prądu stałego i przemiennego, elementy pasywne (rezystory, kondensatory, cewki) i podstawy półprzewodnikowe. {[}K\_W02{]} & kolokwium \\
+  \rowcolor{tableRowAlt} K\_W03 & Student zna i rozumie podstawy elektrotechniki i elektroniki w kontekście informatyki: interfejsy elektryczne układów cyfrowych (TTL, CMOS), analogowe układy wzmacniające i konwersja A/D i D/A. {[}K\_W03{]} & kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U08 & Student potrafi analizować proste obwody elektryczne, projektować układy kombinacyjne i sekwencyjne, obsługiwać przyrządy pomiarowe (multimetr, oscyloskop) i montować układy na płytce prototypowej. {[}K\_U08{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U09 & Student potrafi zaplanować i przeprowadzić pomiary elektryczne, interpretować wyniki i weryfikować działanie projektowanego układu elektronicznego. {[}K\_U09{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do stosowania wiedzy elektrycznej i elektronicznej w projektowaniu systemów informatycznych z komponentami sprzętowymi. {[}K\_K01{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego pogłębiania wiedzy z zakresu elektroniki i elektrotechniki jako podstawy dla inżynierii systemów wbudowanych. {[}K\_K03{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Charles Platt; Elektronika. Od praktyki do teorii. Wydanie III; Hellion, 2022
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Dickon Ross, Cathleen Shamieh, Gordon McComb; Electronics For Dummies; John Wiley \& Sons, Ltd., 2010
+  \item Kimmo Karvinen and Tero Karvinen; Getting Started with Sensors; Maker Media, Inc., 2014
+  \item Bill Pretty; Getting Started with Electronic Projects; Packt Publishing Ltd., 2015
+\end{itemize}
+
+\end{document}

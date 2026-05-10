@@ -1,0 +1,103 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie 1",
+                    "kod_przedmiotu":  "PRG1",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  60,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr inż. Michał Hyla",
+                    "ects":  6,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  90,
+                                    "praca_wlasna_studenta_h":  60,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań programistycznych",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Zadania laboratoryjne (czas oddawania: następne zajęcia) - 20%",
+                                           "Kolokwia (dwa): 60%",
+                                           "Projekt programistyczny: 20%",
+                                           "Brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem zajęć jest opanowanie przez studentów podstaw klasycznych technik programowania strukturalnego na bazie języka C++. Wprowadzone zostają również elementy programowania obiektowego. Zajęcia mają na celu rozwijanie umiejętności abstrakcyjnego myślenia i rozwiązywania prostych problemów programistycznych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Jerzy Grębosz, Opus magnum C++11. Wydanie II, Helion, 2020",
+                                                                          "Tony Gaddis, Język C++. Owoce programowania. Wydanie IX, Helion"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Stephen Prata, Język C++. Szkoła programowania. Wydanie VI. Helion, 2012",
+                                                                             "Stephan Roth, Czysty kod w C++17. Oprogramowanie łatwe w utrzymaniu. Helion 2018"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Wymienia zasady programowania strukturalnego i proceduralnego w tym technik iteracji, rekurencji, organizacji pamięci, arytmetyki wskaźników. Opisuje podstawowe algorytmy wyszukiwania i sortowania danych.",
+                                               "umiejetnosci":  "Pozyskuje informacje dotyczące programowania z dokumentacji technicznej, literatury i Internetu. Konstruuje rozwiązanie prostych zadań programistycznych wymagających użycia rozgałęzień, pętli lub rekurencji, funkcji z odpowiednim sposobem przekazywania parametrów, tablic, łańcuchów znakowych, struktur. Testuje poprawność wykonywanego oprogramowania, wykorzystuje zintegrowane środowisko programistyczne do skonfigurowania, edytowania i testowania programów konsolowych.",
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Lp.",
+                                              "Wykład",
+                                              "Laboratorium",
+                                              "1",
+                                              "Pojęcie algorytmu. Sposoby przedstawianiaalgorytmów. Zmienne, typy, operatorprzypisania, polecenia cout i cin, pierwszyprogram.",
+                                              "Wprowadzenie do wybranego środowiska wytwórczego, tworzenie projektu, edycja koduźródłowego, kompilacja projektu, usuwaniebłędów i uruchamianie. Implementacja programówrealizujących proste obliczenia matematyczne.",
+                                              "2",
+                                              "Instrukcja warunkowa if, if else,zagnieżdżona instrukcja if. Operatorwarunkowy.",
+                                              "Implementacja programów, które wymagają użyciainstrukcji warunkowej i zagnieżdżonej instrukcjiwarunkowej.",
+                                              "3",
+                                              "Pętla for, while, do while. Różnice,zastosowania. Zagnieżdżanie pętli.Instrukcja break i continue. Instrukcjaswitch.",
+                                              "Implementacja programów, które wymagają użyciapętli.",
+                                              "4",
+                                              "Typy całkowite i zmiennoprzecinkowe. Typznakowy. Tabela ASCII. Typ logiczny. Konwersje typów, rzutowania. Operatorsizeof. Kwalifikator const. Instrukcjatypedef. Typy wyliczeniowe.Operatory arytmetyczne, relacyjne ilogiczne. Złożone operatory przypisania.Operatory inkrementacji i dekrementacji.Operatory bitowe. Priorytety i łącznośćoperatorów.",
+                                              "Implementacja programów z wykorzystaniemzmiennych różnych typów oraz operatorów.",
+                                              "5",
+                                              "Tablice jednowymiarowe. Elementy tablic,inicjalizacja. Tablice znakowe. Wybranealgorytmy sortujące. Tablicewielowymiarowe.",
+                                              "Implementacja programów, które wymagają użyciatablic jednowymiarowych i dwuwymiarowych.",
+                                              "6",
+                                              "Funkcje. Przesyłanie parametrów ( przezwartość i przez referencję), zwracanierezultatów, wywoływanie. Wartość void.Tablice jako argumenty funkcji. Funkcjainline. Funkcje biblioteczne. Przeciążaniefunkcji.",
+                                              "Definiowanie i stosowanie funkcji. Implementacja aplikacji wykorzystującejfunkcje.",
+                                              "7",
+                                              "Rekurencja w programowaniu. Wady izalety stosowania rekurencji. Przykładyalgorytmów rekurencyjnych.Definiowane i operacje na obiektach klasystring.",
+                                              "Implementacja programów z wykorzystaniemrekurencji.Implementacja programów z wykorzystaniemobiektów klasy string.",
+                                              "8",
+                                              "Wskaźniki. Tablice i wskaźniki.Dynamiczne przydzielanie pamięci –operatory new i delete.",
+                                              "Implementacja programów z wykorzystaniemwskaźników. Użycie wskaźników do działań natablicach. Tworzenie zmiennych i tablicdynamicznych i działania na obiektachdynamicznych.",
+                                              "9",
+                                              "Struktury. Struktury zagnieżdżone.Wskaźniki do struktur. Tablice struktur.Stosy, kolejki, listy.",
+                                              "Definiowanie zmiennych i tablic typówstrukturalnych. Implementacja funkcji operującychna strukturach. Implementacja listjednokierunkowych oraz funkcji na nichoperujących.",
+                                              "10",
+                                              "Elementy programowania obiektowego.Klasy i obiekty. Pola i funkcje składowe.Ukrywanie informacji. Konstruktor idestruktor. Dziedziczenie.",
+                                              "Implementacja prostych programówzorientowanych obiektowo."
+                                          ]
+                }
+}

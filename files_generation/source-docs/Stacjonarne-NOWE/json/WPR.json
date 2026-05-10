@@ -1,0 +1,93 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Warsztaty programistyczne",
+                    "kod_przedmiotu":  "WPR",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  60,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski",
+                    "ects":  3,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  15,
+                                    "calkowita_liczba_godzin_h":  75
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań",
+                                           "warsztaty",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat/Seminarium",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Procentowy udział o ocenie ostatecznej:",
+                                           "laboratorium- 20%",
+                                           "projektu- 50%",
+                                           "kolokwium- 30%",
+                                           "Uzyskanie pozytywnej oceny od 50% zdobytych punktów, które są pomnożone przez odpowiednie wagi procentowe, przy czym z kolokwium,  należy uzyskać co najmniej 40% punktów."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Programowanie 1 – PRG1",
+                                                         "wymagania":  "Użytkowanie komputerów – UKO"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Relacyjne bazy danych - RBD (może być prowadzony równolegle)",
+                                                         "wymagania":  "Programowanie obiektowe w Javie - POJ (może być prowadzony  równolegle)"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Student powinien umieć programować w stopniu podstawowym (potrzebnym do zaliczenia przedmiotu PRG1), posługiwać się systemami operacyjnymi (w stopniu potrzebny do zaliczenia na przedmiocie UKO) oraz posługiwać się systemem kontroli wersji.",
+                                                         "wymagania":  "W końcowej fazie zajęć student powinien zostać zaznajomiony z podstawowymi poleceniami SQL, koncepcji tabeli, encji  itp. (RBD może być prowadzony równolegle z WPR), oraz podstawami paradygmatu obiektowego (POJ może być prowadzony równolegle z WPR)."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów korzystania z platformy PHP jako jednej z najpopularniejszych technologii tworzenia aplikacji internetowych  oraz  utrwalenia podstaw HTML 5, i protokołu HTTP. W końcowej fazie zajęć wykorzystywane są  również podstawy języka SQL - do łączności z bazami danych. Student kończący przedmiot WPR potrafi samodzielnie zaprojektować dynamiczny serwis WWW, wraz z aplikacjami mu towarzyszącymi, oraz skonfigurować serwer do pracy hostingowej.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Dokumentacja języka: www.php.net",
+                                                                          "w3schools.com",
+                                                                          "Larry Ullman ,PHP i MySQL. Dynamiczne strony WWW. Szybki start, Helion 2018"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student potrafi  czytać ze zrozumieniem kod języków skryptowych,  tworzyć skrypty  oraz zweryfikować poprawność utworzonego kodu.",
+                                                              "Student potrafi projektować aplikacje  zgodnie z paradygmatem strukturalnym i obiektowym. Student posiada podstawową wiedzę na temat protokołu HTTP oraz tworzenia bezpiecznych aplikacji internetowych i bazodanowych.",
+                                                              "Student zna odpowiednie narzędzia wspomagające tworzenie skryptów oraz wspomagające projektowanie aplikacji internetowych, bazodanowych"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wybrać odpowiednie środowisko programistyczne i inne narzędzia, które wspomagają w projektowaniu aplikacji oraz potrafi dobrać model procesu wytwarzania aplikacji  do specyfiki przedsięwzięcia. Student potrafi posługiwać się wybranym środowiskiem oraz analizować poprawność działania stworzonej aplikacji.",
+                                                                    "Student potrafi wykorzystać odpowiednie biblioteki do tworzenia aplikacji oraz wykorzystać narzędzia, które umożliwiają tworzenie,  debbugowanie i uruchomienie projektów programistycznych. Student potrafi przedstawić stworzoną aplikację oraz omówić jej sposób działania.",
+                                                                    "Student potrafi skonfigurować środowisko potrzebne do stworzenia skryptów i aplikacji internetowej i bazodanowej, tzn. posiada wiedzę na temat konfiguracji bazy danych oraz oprogramowania, które jest potrzebne do tworzenie projektu programistycznego."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Hipertekstowy język znaczników (HTML) i kaskadowy arkusz stylów (CSS).",
+                                              "Wprowadzenie do języka PHP (operacje logiczne, i arytmetyczne, instrukcje sterujące, funkcje itp.).",
+                                              "Ciągi znaków, tablice w PHP.",
+                                              "Wyrażenia regularne w PHP",
+                                              "Formularze - obsługa żądań przy pomocy metod GET i POST oraz wysyłanie plików w PHP",
+                                              "Ciasteczka, sesje w PHP",
+                                              "Paradygmat obiektowy w PHP",
+                                              "Łącze do baz danych w PHP"
+                                          ]
+                }
+}

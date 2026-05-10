@@ -1,0 +1,259 @@
+﻿% ===========================================================
+%  Sylabus: Metody Design Thinking w projektowaniu systemów IT (DTH)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: DTH}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Metody Design Thinking w projektowaniu systemów IT} \\[3pt]
+  \textbf{Kod przedmiotu:}    & DTH \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 8 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & Aleksandr Polin \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 16 h & 32 h & 43 h & 75 h & \textbf{3} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielna praca nad projektem z zastosowaniem metod Design Thinking; tworzenie person, map empatii i prototypów rozwiązań; przygotowanie dokumentacji projektu.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+  \rowcolor{tableRowAlt} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Zapoznanie studentów z metodologią Design Thinking jako usystematyzowanym podejściem do rozwiązywania problemów i tworzenia innowacyjnych rozwiązań IT. Student nauczy się, jak budować produkty (aplikacje, systemy, gry) w oparciu o głęboką empatię wobec użytkownika, szybkie prototypowanie rozwiązań o niskiej wierności oraz proces ciągłej iteracji na podstawie otrzymanego feedbacku.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Introduction to Design Thinking methodology as a structured approach to solving problems and creating innovative IT solutions. Students learn how to build products (applications, systems, games) based on deep empathy for the user, rapid low-fidelity prototyping, and a process of continuous iteration based on received feedback.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Projektowanie systemów informacyjnych (PRI) & Rozumienie cyklu życia oprogramowania i podstawowych diagramów procesów. \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Fundamenty Design Thinking. Geneza metody, ''Double Diamond'' i różnica między myśleniem dywergencyjnym a konwergencyjnym. \\
+  \rowcolor{tableRowAlt} 2. & Etap Empatii. Techniki obserwacji, wywiady pogłębione i mapowanie podróży użytkownika (Customer Journey Map). \\
+  \rowcolor{tableRowLight} 3. & Definiowanie problemu. Synteza danych, tworzenie Person i identyfikacja realnych bólów (pains) oraz zysków (gains) użytkownika. \\
+  \rowcolor{tableRowAlt} 4. & Generowanie pomysłów (Ideate). Techniki burzy mózgów (np. Brainwriting, SCAMPER) i selekcja pomysłów za pomocą macierzy priorytetów. \\
+  \rowcolor{tableRowLight} 5. & Prototypowanie w IT. Szybkie makiety lo-fi, prototypowanie usług (Service Blueprint) i rola MVP. \\
+  \rowcolor{tableRowAlt} 6. & Testowanie i Iteracja. Planowanie scenariuszy testowych, zbieranie feedbacku i powrót do wcześniejszych faz procesu. \\
+  \rowcolor{tableRowLight} 7. & Wdrożenie i prezentacja. Storytelling jako narzędzie prezentacji pomysłu biznesowego/technicznego. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W15 & Student zna pięć etapów procesu Design Thinking (Empathize, Define, Ideate, Prototype, Test). &  \\
+  \rowcolor{tableRowAlt} K\_W15 & Student rozumie różnice między projektowaniem skoncentrowanym na technologii a projektowaniem skoncentrowanym na człowieku (Human-Centered Design). &  \\
+  \rowcolor{tableRowLight} K\_W15 & Student posiada wiedzę o technikach kreatywnego rozwiązywania problemów i moderowania sesji ideacyjnych. &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U20 & Student potrafi samodzielnie przygotować i przeprowadzić wywiad z użytkownikiem oraz stworzyć na jego podstawie mapę empatii i personę. & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U20 & Student umie zdefiniować ''Point of View'' (POV) i sformułować pytania typu ''How Might We'' w celu znalezienia innowacyjnych rozwiązań. & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U20 & Student potrafi tworzyć prototypy ''low-fidelity'' (np. makiety papierowe, storyboarding) i wykorzystywać je do zbierania wczesnego feedbacku. & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K06 & Student wykazuje postawę otwartości na krytykę i potrafi porzucić własne założenia na rzecz realnych potrzeb użytkownika. & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotowy do moderowania procesów grupowych, dbając o bezpieczeństwo psychologiczne i kreatywność zespołu. & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item Wykład
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Lewrick M. Link P. Leifer L., The Design Thinking Playbook: Mindful Digital Transformation of Teams, Products, Services, Businesses and Ecosystems, Wiley John + Sons 2018
+  \item Brown T., Change by Design: How Design Thinking Transforms Organizations and Inspires Innovation, Harper Collins Publ. USA 2019
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Norman D., The Design of Everyday Things, Hachette Book Group USA 2013
+\end{itemize}
+
+\end{document}

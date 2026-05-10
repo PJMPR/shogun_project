@@ -1,0 +1,285 @@
+﻿% ===========================================================
+%  Sylabus: Projektowanie bezpiecznych architektur (SITA)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SITA}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Projektowanie bezpiecznych architektur} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SITA \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr Adam Kassenberg \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+30 h & 30 h & --- & 60 h & 65 h & 125 h & \textbf{5} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Analiza przypadków projektowania bezpiecznych architektur IT; modelowanie zagrożeń i ryzyk; przygotowanie do kolokwium pisemnego.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item kolokwium końcowe
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium końcowe
+  \item raport z wykonanego zadania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Tenkursmanaceludostarczeniestudentomkompleksowejwiedzyiumiejętnościniezbędnychdoprojektowaniaiutrzymaniabezpiecznychsystemówinformatycznych.Dziękipołączeniuteoretycznychwykładówipraktycznychćwiczeń,studencibędąlepiejprzygotowanidostawieniaczoławyzwaniomzwiązanymzbezpieczeństwemITw rzeczywistym świecie. Studencibędąpoznawaćpodstawowepojęciaizasadybezpieczeństwainformatycznego,takiejakpoufność,integralność idostępność danych. Nauczą się,jakprojektowaćsystemyi infrastruktury informatyczne, które są odporne na różnorodne zagrożenia i ataki. Celem kursu będzie również zrozumienie mechanizmów zarządzania tożsamością i kontrolądostępu,wtymwdrażaniepolitykzabezpieczeń. Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, aby zapobiegać wprowadzaniu luk bezpieczeństwa w fazie rozwoju oprogramowania. Studencibędąuczyćsię,jakreagowaćnaincydentybezpieczeństwa,wtymjakprzeprowadzać analizy i raportować naruszenia.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments. Students learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies. The course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and reporting breaches.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & 1. Wybór organizacji \\
+  \rowcolor{tableRowAlt} 2. & Analiza różnych typów organizacji. \\
+  \rowcolor{tableRowLight} 3. & Przykłady typowych struktur organizacyjnych. \\
+  \rowcolor{tableRowAlt} 4. & 2. Definicja celów biznesowych \\
+  \rowcolor{tableRowLight} 5. & Jak określić cele biznesowe organizacji. \\
+  \rowcolor{tableRowAlt} 6. & Rola celów biznesowych w projektowaniu architektur IT. \\
+  \rowcolor{tableRowLight} 7. & Ćwiczenia praktyczne: Definiowanie celów biznesowych dla wybranej organizacji. \\
+  \rowcolor{tableRowAlt} 8. & 3. Utworzenie diagramu przepływów DFD \\
+  \rowcolor{tableRowLight} 9. & Wprowadzenie do diagramów przepływów danych (DFD). \\
+  \rowcolor{tableRowAlt} 10. & Tworzenie DFD dla wybranej organizacji. \\
+  \rowcolor{tableRowLight} 11. & Ćwiczenia praktyczne: Rysowanie DFD na podstawie zebranych danych. \\
+  \rowcolor{tableRowAlt} 12. & 4. Procesowy opis organizacji wg ISO 9001 \\
+  \rowcolor{tableRowLight} 13. & Wprowadzenie do standardu ISO 9001. \\
+  \rowcolor{tableRowAlt} 14. & Opis procesów organizacyjnych zgodnie z ISO 9001. \\
+  \rowcolor{tableRowLight} 15. & Ćwiczenia praktyczne: Tworzenie procesowego opisu organizacji. \\
+  \rowcolor{tableRowAlt} 16. & 5. Utworzenie architektury IT \\
+  \rowcolor{tableRowLight} 17. & Zasady projektowania architektur IT. \\
+  \rowcolor{tableRowAlt} 18. & Elementy składowe architektury IT. \\
+  \rowcolor{tableRowLight} 19. & Ćwiczenia praktyczne: Projektowanie architektury IT dla wybranej organizacji. \\
+  \rowcolor{tableRowAlt} 20. & 6. Koncepcja komunikacji, sprzętu oraz oprogramowania \\
+  \rowcolor{tableRowLight} 21. & Planowanie komunikacji w organizacji. \\
+  \rowcolor{tableRowAlt} 22. & Wybór sprzętu i oprogramowania. \\
+  \rowcolor{tableRowLight} 23. & Ćwiczenia praktyczne: Opracowanie koncepcji komunikacji, sprzętu i oprogramowania. \\
+  \rowcolor{tableRowAlt} 24. & 7. Klasyfikacja informacji, struktura zarządzania \\
+  \rowcolor{tableRowLight} 25. & Klasyfikacja informacji w organizacji. \\
+  \rowcolor{tableRowAlt} 26. & Tworzenie struktury zarządzania informacją. \\
+  \rowcolor{tableRowLight} 27. & Ćwiczenia praktyczne: Klasyfikacja informacji i tworzenie struktury zarządzania. \\
+  \rowcolor{tableRowAlt} 28. & 8. Identyfikacja zasobów organizacji \\
+  \rowcolor{tableRowLight} 29. & Identyfikacja i katalogowanie zasobów. \\
+  \rowcolor{tableRowAlt} 30. & Zarządzanie zasobami organizacji. \\
+  \rowcolor{tableRowLight} 31. & Ćwiczenia praktyczne: Tworzenie katalogu zasobów organizacji. \\
+  \rowcolor{tableRowAlt} 32. & 9. Utworzenie deklaracji stosowania \\
+  \rowcolor{tableRowLight} 33. & Definicja i znaczenie deklaracji stosowania. \\
+  \rowcolor{tableRowAlt} 34. & Tworzenie deklaracji dla wybranej organizacji. \\
+  \rowcolor{tableRowLight} 35. & 10. Identyfikacja zagrożeń dla architektury \\
+  \rowcolor{tableRowAlt} 36. & Typowe zagrożenia dla architektur IT. \\
+  \rowcolor{tableRowLight} 37. & Metody identyfikacji zagrożeń. \\
+  \rowcolor{tableRowAlt} 38. & Ćwiczenia praktyczne: Analiza przypadków i identyfikacja zagrożeń. \\
+  \rowcolor{tableRowLight} 39. & 11. Identyfikacja podatności dla zagrożeń \\
+  \rowcolor{tableRowAlt} 40. & Definicja podatności. \\
+  \rowcolor{tableRowLight} 41. & Metody identyfikacji podatności w systemach IT. \\
+  \rowcolor{tableRowAlt} 42. & Ćwiczenia praktyczne: Identyfikacja podatności w wybranej architekturze IT. \\
+  \rowcolor{tableRowLight} 43. & 12. Szacowanie ryzyka dla wyodrębnionych zagrożeń \\
+  \rowcolor{tableRowAlt} 44. & Metody szacowania ryzyka. \\
+  \rowcolor{tableRowLight} 45. & Przykłady zastosowania metod szacowania ryzyka. \\
+  \rowcolor{tableRowAlt} 46. & Ćwiczenia praktyczne: Szacowanie ryzyka dla wybranych zagrożeń. \\
+  \rowcolor{tableRowLight} 47. & 13. Tworzenie rekomendacji po analizie ryzyka \\
+  \rowcolor{tableRowAlt} 48. & Jak tworzyć rekomendacje bezpieczeństwa. \\
+  \rowcolor{tableRowLight} 49. & Przykłady rekomendacji po analizie ryzyka. \\
+  \rowcolor{tableRowAlt} 50. & Ćwiczenia praktyczne: Tworzenie rekomendacji dla wybranej architektury IT. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W23 & Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR. & kolokwium końcowe \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U30 & Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować. & kolokwium końcowe, raport z wykonanego zadania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+  \item rozwiązywanie zadań
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item ''Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson
+  \item ''Threat Modeling: Designing for Security'', Adam Shostack
+  \item ''Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks'', Robert Hansen
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item ''Black Hat Python: Python Programming for Hackers and Pentesters'' autorstwa Justin Seitz
+  \item ''SQL Injection Attacks and Defense'' autorstwa Justin Clarke
+\end{itemize}
+
+\end{document}

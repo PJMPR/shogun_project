@@ -1,0 +1,181 @@
+﻿% ===========================================================
+%  Sylabus: Elektronika (ELK)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ELK}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Elektronika} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ELK \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 4 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Tadeusz Puźniakowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Wykład & Nieoceniany \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest wyposażenie studentów w podstawową wiedzę z zakresu elektroniki, elektrotechniki i technik pomiarowych. Studenci poznają zasady działania oraz zastosowania elementów i układów elektronicznych, takich jak rezystory, kondensatory, cewki, diody, tranzystory i bramki logiczne. Nauczą się również podstawowych technik pomiarowych i diagnostycznych z użyciem multimetru, oscyloskopu i innych narzędzi pomiarowych.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  [BHP] Szkolenie BHP & Znajomość regulaminu i zasad BHP obowiązujących w laboratorium \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych.
+  \item Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych.
+  \item Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie pojęcia z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w  tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu.
+  \item Student zna i rozumie pojęcia w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi zaplanować i dobrać właściwe metody i  urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item ----------
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item wykład z elementami dyskusji
+  \item z prezentacją multimedialną
+  \item Ćwiczenia / Laboratorium/Lektorat:
+  \item rozwiązywanie zadań projektowych
+  \item analiza przypadków
+  \item badania symulacyjne
+  \item Ćwiczenia/Laboratorium
+  \item Kryteria oceny
+  \item Sprawozdania z przeprowadzonych ćwiczeń
+  \item Bez dostarczenia sprawozdań ze wszystkich zajęć laboratoryjnych, które przewidują taką formę pracy, nie ma możliwości uzyskania oceny pozytywnej z zajęć laboratoryjnych.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Charles Platt; Elektronika. Od praktyki do teorii. Wydanie III; Hellion, 2022
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Dickon Ross, Cathleen Shamieh, Gordon McComb; Electronics For Dummies; John Wiley \& Sons, Ltd., 2010
+  \item Kimmo Karvinen and Tero Karvinen; Getting Started with Sensors; Maker Media, Inc., 2014
+  \item Bill Pretty; Getting Started with Electronic Projects; Packt Publishing Ltd., 2015
+\end{itemize}
+
+\end{document}

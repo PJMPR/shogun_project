@@ -1,0 +1,179 @@
+﻿% ===========================================================
+%  Sylabus: Wstęp do Zarządzania (WDZ)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: WDZ}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Wstęp do Zarządzania} \\[3pt]
+  \textbf{Kod przedmiotu:}    & WDZ \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & stacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr. Radosław Stojek \\[3pt]
+  \textbf{Wersja z dnia:}     & 20.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & 30 h & --- & 60 h & 30 h & 90 h & \textbf{3} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Ćwiczenia & Zaliczenie z oceną \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest wprowadzenie studentów kierunku Informatyka w podstawowe pojęcia i praktyki zarządzania organizacją oraz pracą zespołów projektowych, ze szczególnym uwzględnieniem realiów branży IT. Student poznaje rolę menedżera, podstawowe funkcje zarządzania (planowanie, organizowanie, przewodzenie, kontrola), zasady pracy zespołowej, komunikacji i podejmowania decyzji, a także wybrane metody zarządzania projektami i produktami w środowisku wytwarzania oprogramowania. Zajęcia rozwijają umiejętność analizy problemów organizacyjnych, przygotowania prostych planów działań oraz prezentowania wyników pracy w formie projektu.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie: pojęcie zarządzania, organizacja i jej otoczenie; specyfika branży IT.
+  \item Funkcje zarządzania: planowanie, organizowanie, przewodzenie, kontrola – przykłady z projektów informatycznych.
+  \item Cele i mierniki: SMART/OKR (wprowadzenie), priorytetyzacja i podejmowanie decyzji.
+  \item Struktury organizacyjne i role w IT (zespół wytwórczy, product, project, ops); odpowiedzialność i zakres kompetencji.
+  \item Praca zespołowa: role zespołowe, normy współpracy, kontrakt zespołowy, odpowiedzialność zbiorowa.
+  \item Komunikacja w zespole: kanały komunikacji, feedback, dokumentowanie ustaleń, spotkania efektywne.
+  \item Konflikt i negocjacje: źródła konfliktów, techniki rozwiązywania, eskalacja i deeskalacja.
+  \item Motywacja i zaangażowanie: potrzeby, motywatory, środowisko pracy w IT, kultura organizacyjna.
+  \item Zarządzanie czasem i zadaniami: plan tygodnia, praca w sprintach (intuicja), ograniczenia WIP (wprowadzenie).
+  \item  Wprowadzenie do zarządzania projektami: zakres, czas, koszt, jakość, ryzyko; interesariusze.
+  \item  Metodyki zwinne w IT: Agile (wartości i zasady), Scrum/Kanban – role i artefakty (wprowadzenie).
+  \item  Ryzyko i jakość: identyfikacja ryzyk, proste rejestry ryzyk, przeglądy jakości i kryteria akceptacji.
+  \item  Etyka i odpowiedzialność w zarządzaniu: prywatność, bezpieczeństwo, AI w organizacji (wprowadzenie).
+  \item  Warsztat projektowy: analiza przypadku, plan działań, podział ról, przygotowanie prezentacji projektu.
+  \item  Prezentacje projektów i podsumowanie: omówienie wniosków, retrospektywa, zalecenia do dalszego rozwoju.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student definiuje podstawowe pojęcia zarządzania (organizacja, proces, cel, zasoby, interesariusze) oraz opisuje funkcje zarządzania i podstawowe role w zespołach IT. Zna podstawowe podejścia do zarządzania projektami i produktami (m.in. klasyczne i zwinne) oraz rozumie znaczenie komunikacji, motywacji i kontroli jakości w pracy zespołowej.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi przygotować prosty plan działań (cele, zakres, ryzyka, zasoby, harmonogram w zarysie) dla przedsięwzięcia informatycznego. Dobiera podstawowe narzędzia pracy zespołowej (podział zadań, priorytety, przepływ informacji), analizuje problemy organizacyjne i proponuje usprawnienia. Potrafi opracować i zaprezentować wyniki projektu w zespole, uzasadniając podjęte decyzje.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student potrafi współpracować w zespole, przyjmować role i odpowiedzialności, komunikować się w sposób rzeczowy i respektujący różnorodność opinii. Rozumie potrzebę etycznego działania, terminowości i dbałości o jakość w realizacji zadań.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Ćwiczenia:
+  \item zadania wykonywane na zajęciach (indywidualne i zespołowe) - 40\%
+  \item projekt zespołowy (opracowanie i prezentacja) - 60\%
+  \item Warunek zaliczenia: oddanie projektu oraz uzyskanie co najmniej 50\% punktów łącznie.
+  \item Wymagana obecność i aktywność: dopuszczalne 2 nieobecności nieusprawiedliwione; pozostałe do odrobienia.
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item R. Griffin, Podstawy zarządzania organizacjami
+  \item H. Kerzner, Project Management: A Systems Approach (wybrane rozdziały)
+  \item P. Drucker, Praktyka zarządzania (wybrane rozdziały)
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item M. C. Lencioni, Pięć dysfunkcji pracy zespołowej
+  \item D. Pink, Drive. Kompletnie nowe spojrzenie na motywację
+  \item Scrum Guide (aktualna wersja) – materiały referencyjne
+\end{itemize}
+
+\end{document}

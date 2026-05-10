@@ -1,0 +1,142 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Historia i Kultura Japonii",
+                    "kod_przedmiotu":  "HKJ",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  3,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Liczba punktów ECTS : 2",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Zaliczenie z oceną"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Kryteria oceny",
+                                           "Kolokwium końcowe pisemne.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie studentów z historią i kulturą Japonii, z najważniejszymi osiągnięciami w dziedzinie sztuki i estetyki. Zaznajomienie z tradycjami, zwyczajami, normami zachowań społecznych, problemami współczesnego społeczeństwa japońskiego oraz współczesną i dawną architekturą.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Marszałek-Kawa, J., Gawłowski, R. (red.) (2013) Kulturowe i edukacyjne oblicza współczesnej Azji, Wydawnictwo Adam Marszałek, Toruń.",
+                                                                          "Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.",
+                                                                          "Takei, N. (2001) Getting closer to Japan. Japanese culture, ASK., Ltd., Tokyo."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Doi, T. (1973) The Anatomy of Dependence, Kodansha International, Tokyo.",
+                                                                             "Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.",
+                                                                             "Higuchi, T. (1988) The Visual and Spatial Structure of Landscapes, The MIT Press, Cambridge, MA.",
+                                                                             "Holgate, A. (1992) Aesthetics of built form, Oxford University Press, Oxford.",
+                                                                             "Keene, D. (1971) Appreciations of Japanese culture, Kodansha International, Tokyo.",
+                                                                             "Kubiak Ho-Chi, B. (2009) Estetyka i sztuka japońska,Universitas, Kraków.",
+                                                                             "Mizuno, K., Wright, T. (2013) Samadhi on Zen gardens – dynamism and tranquility, Mitsumura Suiko Shoin, Kyoto.",
+                                                                             "Mukai, K. (2008) A guidebook to Japan and its customs, Nihon Bungeisha, Tokyo.",
+                                                                             "Nakagawa, T. (2005) The Japanese House in space, memory, and language, International House of Japan, Tokyo.",
+                                                                             "Para, A.D. (2001) Getting closer to Japan. Living in Japan, ASK., Ltd., Tokyo.",
+                                                                             "Richie, D. (2007) A tractate on Japanese aesthetics, Stone Bridges Press, Berkley.",
+                                                                             "Wright, T, Mizuno, K. (2000) Zen gardens – Kyoto’s nature enclosed, Mitsumura Suiko Shoin Publishing, Kyoto.",
+                                                                             "Bognar, B. (1985) Contemporary Japanese architecture, Van Nostrand, New York.",
+                                                                             "Kido, E. M. (2011) The new Japanese architecture, Studies on modern architecture. Vol. 4 (Kucharzewska, J. ed.), Wyd. UMK, Torun, 147-209.",
+                                                                             "Kido, E. M., Cywiński, Z., Kawaguchi, H. (2021)Tradition and modernity in the structural art of steel‐glass structures in Japan, Steel Construction, Vol. 14, No. 1, pp. 55-63.",
+                                                                             "Kuma, K (2020) Five purr-fect points for a new public space, The National Museum of Modern Art, Tokyo.",
+                                                                             "Kuma K.: Earth, The Japan Architect, nr 109, 2018.",
+                                                                             "Kuma, K.: Return to Materials, The Japan Architect, nr 109, 2018.",
+                                                                             "Kuma, K.: Stone, The Japan Architect, nr 109, 2018.",
+                                                                             "Kuma, K.: Metal, The Japan Architect, nr 109, 2018.",
+                                                                             "Kuma, K. Membrane/fiber, The Japan Architect, nr 109, 2018.",
+                                                                             "Nakagawa, T. (2005) The Japanese House in space, memory, and language, International House of Japan, Tokyo.",
+                                                                             "Young, D., Young, M. (2019) The art of Japanese architecture. History, culture, design, Tuttle Publishing, Tokyo.",
+                                                                             "Bognar, B. (1985) Contemporary Japanese architecture, Van Nostrand, New York.",
+                                                                             "Cooper Marcus, C. & C. Francis (Ed.) (1997) People places, Wiley & Sons, Ontario.",
+                                                                             "Cullen, G. (1994) The concise townscape, Butterworth-Heinemann, Burlington.",
+                                                                             "Francis, M. (2003) Urban open space, Island press, Washington DC.",
+                                                                             "Gehl, J. & Lars, G. (2000) New city spaces, The Danish Architectural press, Copenhagen.",
+                                                                             "Karan, P.P, Stapleton K. (ed.) (1997) The Japanese City, The University Press of Kentucky, Kentucky.",
+                                                                             "Kido, E.M. (2012) Elements of the urbanscape in Tokyo,Commission of Architecture, Urban Planning and Landscape Studies, Polish Academy of Sciences, Vol. 8/1, pp. 75-92.",
+                                                                             "Kido, E. M. (2011) The new Japanese architecture, Studies on modern architecture. Vol. 4 (Kucharzewska, J. ed.), Wyd. UMK, Torun, 147-209.",
+                                                                             "Laurie. M. & Laurie, A. (2002) An introduction to landscape architecture, Pearson Professional Education.",
+                                                                             "Lynch, K. (1960) The Image of the City, MIT Press, Cambridge MA.",
+                                                                             "Moughtin, J.C. (2003) Urban design - street and square, Butterworth-Heinemann, Oxford.",
+                                                                             "Sorensen, A. (2004) The Making of Urban Japan: Cities and Planning from Edo to the Twenty First century, Routledge, London and New York.",
+                                                                             "Turner, T. (2000) City as landscape, E. & F.N. Spon, London.",
+                                                                             "Woolley, H. (200) Urban open spaces, Taylor & Francis, London.",
+                                                                             "Edwards, B. (1997) The Modern Stations: New Approaches to Station Architecture, E&FN Spoon, London.",
+                                                                             "Kido, E.M. (2010) Structural art and aesthetics of impressive mega-stations, Proc. 34th IABSE Symposium, summery 420-421 pp., full version CD A-404.",
+                                                                             "Kido, E. M. (2015) New large urban and regional railway stations reflecting new age, WECC Kyoto 2015 Abstract Book, 168 (summery), CD-ROM, 5-1-5 (full paper),1.",
+                                                                             "Kido, E.M. (2016) Railway stations – the borderline between architecture and structure, in Cruz P. J.S. (ed.) ICSA Structures and Architecture beyond their limits, pp. 371-372 (abstract), CD-ROM pp. 1310-1317 (full version).",
+                                                                             "Kido, E. M. (2016) Aesthetics of railway stations in Europe and Japan, Institute for Transport Policy Studies & CTI Engineering, Tokyo.",
+                                                                             "Kido, E.M. (2019) 「高架鉄道景観デザイン並びに鉄道高架下の空間利用」（Aesthetic design and use of space under the elevated railways）、土木施工4(60), 116-120．",
+                                                                             "Meeks, C.L.V. (1995) The Railroad Station: An Architectural History, Dover Publications, New York.",
+                                                                             "Steguweit, C. (1997) The new railways – a complex design task, JRTR, No. 10, 1997, pp.22-29.",
+                                                                             "Kido E.M. (1997) Aesthetics and philosophy in bridge design in Japan, “Journal of Architectural Engineering”, ASCE, No. 3, Vol. 1, 42-53.",
+                                                                             "Kido, E. M. (2016) Aesthetics of railway stations in Europe and Japan, Institute for Transport Policy Studies & CTI Engineering, Tokyo.",
+                                                                             "Kido, E.M. (2011) Architecture and art at subway stations, RESCO, Vol. 9, pp. 56-69.",
+                                                                             "Kido, E.M. (2016) Art, advertisements and signs, as a part of aesthetic design, RESCO, Vol. 15, 38-55.",
+                                                                             "Mizuno, K. (2017) Subway stations around the world. Seigensha, Tokyo."
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "http://www.skyscrapercenter.com/building/toshima-ecomusee-town/19545 (2018.03.23).":  "http://www.skyscrapercenter.com/building/toshima-ecomusee-town/19545 (2018.03.23)."
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  null,
+                                               "umiejetnosci":  "Student potrafipozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski oraz potrafi  formułować i uzasadniać opinie na tematy poruszane na wykładzie",
+                                               "kompetencje_spoleczne":  "Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii"
+                                           },
+                    "tresci_programowe":  [
+                                              "Kultura i etykieta biznesu w Japonii (1) – Jak zdobyć zaufanie Japończyka. – Dobre pierwsze wrażenie. - Przedstawianie się (jiko shōkai) i wymiana wizytówek (meishi kōkan). - Nawiązywanie i podtrzymywanie kontaktu. – Podstawowa japońska etykieta biznesu. - Japońska gospodarka. - Rynek pracy w Japonii, zmiany w modelach zatrudnienia – nowy system zarządzania, formy zatrudnienia.",
+                                              "Kultura i etykieta biznesu w Japonii (2)- Charakterystyka pracy w Japonii. - Kobiety w japońskich firmach. - Przedsiębiorstwa japońskie (kaizen, hōrensō). – Pracownicy. -Wartości, symbole, postawy w japońskich firmach. Przebieg spotkania biznesowego – uchiawase. - Negocjacje – kōshō, podejmowanie decyzji i rozwiązywanie sporów. - Metody pracy w japońskich korporacjach. - Szkolenia w japońskich firmach. - Japoński styl negocjacji i jego korzenie. - Etapy negocjacji. - Czego unikać w czasie negocjacji. - Rozwiązywanie sporów",
+                                              "Japonia w relacjach zagranicznych oraz informacje ogólne i elementy kultury japońskiej - Firmy zagraniczne w Japonii. - Efektywny biznes w Japonii. - Rynek pracy w Japonii. - Japońskie firmy w Polsce. – Różnice kulturowe pomiędzy Japonią, Chinami i Koreą. Lokalizacja Japonii na świecie i elementy kultury japońskiej. – Japonia na świecie i elementy kultury japońskiej – różnice kulturowe. - Podróż do Japonii. - Regiony japońskie – Honshū, Hokkaidō, Kyūshū, Shikoku, - Życie w Japonii – zasady dot. wręczania prezentów, podpisywanie dokumentów, wynajem mieszkania, dojazd do pracy.",
+                                              "Geneza i historia animacji i mangi - Wczesny rozwój animacji i mangi. - Ważne dzieła i ich wpływ kulturowy. - Popularność i rozpowszechnianie w Japonii i za granicą.",
+                                              "Gatunki i cechy charakterystyczne mangi i anime - Wyjaśnienie gatunków takich jak shōnen, shōjo, seinen, dla dorosłych itp. - Projekty postaci i style ekspresji. - Przykłady dzieł reprezentatywnych i ich charakterystyka. - Przemysłowy i ekonomiczny wpływ anime i mangi.",
+                                              "Wielkość i rozwój rynku animacji i mangi - Działalność związana z licencjonowaniem i rozwojem produktów. - Wpływ gospodarczy animacji i mangi oraz ich wkład w rozwój przemysłu. -Kultura i społeczności fanów",
+                                              "Estetyka japońska: percepcja natury, estetyka, architektura tradycyjna i ogrody - Postrzeganie natury. - Pola ryżowe. - Kluczowe krajobrazy. - Doświadczenie krajobrazowe hakkei. - Japońskie religie natury. - Pojęcie piękna i kształtowanie się estetyki japońskiej. - Cechy kluczowe estetyki japońskiej – sugestia, nieregularność, prostota, nietrwałość. - Pojęcia estetyczne: wabi-sabi, miyabi, aware, iki, yūgen. – Przejawy estetyki w życiu codziennym: życie w harmonii z naturą, ceremonia herbaty, ikebana, bonsai, kaiseki ryōri, architektura tradycyjna, ogrody japońskie.",
+                                              "Architektura japońska: miasta i prowincji, współcześni architekci – Kengō Kuma i inni",
+                                              "Przejście od architektury tradycyjnej do nowoczesnej. - Istotne cechy architektury tradycyjnej. - Okres Meiji i łączenie styli. - Architektura współczesna: powojenny metabolism, postmodernizm, architektura okresu „bubble economy” oraz post-bubble. -Architektura miast i prowincji: nowa architektura komercyjna w Tokio, nowe projekty rozwoju obszarów miejskich, obiekty kultury i dworce na prowincji. - Kengō Kuma i „architektura materiałów”.",
+                                              "Koleje 2 Japonii: ewolucja i estetyka dworców kolejowych w Japonii, japońskie pociągi",
+                                              "Początki kolei w Japonii i 3 fazy rozwoju. - Estetyka dworców kolei i dworców kolejowych w Japonii. - Renesans dworców” i aktualne trendy w projektowaniu dworców w Japonii: „station-city” i „station-tower” w aglomeracjach miejskich, charakterystyka regionalnych „station-gate”, nowe stacje Shinkansena. – Zagadnienia renowacji i adaptacji dworów kolejowych.",
+                                              "Estetyka infrastruktury w Japonii: architekt in inżynier w Japonii, historia estetyki infrastruktury w Japonii, czynniki estetyczne",
+                                              "Przejawy estetyki japońskiej w architekturze współczesnej i budownictwie. - Definicja i znaczenie estetyki, estetyka infrastruktury, znaczenie designu i designer, pojęcie estetyki w dziedzinach architektury i inżynierii lądowej. - Historia estetycznego projektowania infrastruktury w Japonii. - Zasady estetyki kolei. - Estetyka i ekonomia. - Czynniki i zagadnienia estetycznego projektowania infrastruktury w Japonii.",
+                                              "Przestrzeń publiczna w Japonii: przykłady kolei na estakadach, placów dworcowych, sztuka publiczna",
+                                              "Zagadnienia kolei na estakadach. – Zagadnienia placów dworcowych. - Pojęcie sztuki w przestrzeni publicznej (dworce kolejowe, place dworcowe i przestrzeń pod estakadami kolejowymi. - Sztuka w tranzycie. - Estetyka kolei – związek estetyki z innymi rodzajami infrastruktury. - Sztuka i kultura na dworcach kolejowych w Japonii.",
+                                              "Powstanie i charakterystyka kultury otaku. - Znaczenie zajęć związanych z cosplay i doujin. - Rola wydarzeń i społeczności - globalny wpływ i interakcja.",
+                                              "Popularność i wpływ anime i mangi za granicą. - Interakcja i komunikacja z międzynarodowymi fanami - Akceptacja kulturowa i znaczenie interakcji międzynarodowych.",
+                                              "Wprowadzenie do historii japońskiej",
+                                              "Podsumowanie wszystkich zagadnień, kolokwium końcowe."
+                                          ]
+                }
+}

@@ -1,0 +1,282 @@
+﻿% ===========================================================
+%  Sylabus: Systemy wbudowane (SWB)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SWB}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Systemy wbudowane} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SWB \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 5 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Paweł Syty \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & 8 h & 8 h & 32 h & 43 h & 75 h & \textbf{3} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne zadania praktyczne z systemów wbudowanych; realizacja zadania indywidualnego; programowanie mikrokontrolerów i integracja z peryferiami.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item kolokwium
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zaznajomienie studentów z budową i podstawowymi metodami projektowania i programowania systemów wbudowanych (ang. embedded systems), głównie o opartych o mikrokontrolery, czyli specjalizowanych systemów informatycznych, odpowiadających za wykonywanie ściśle określonych zadań - zwykle związanych z monitorowaniem i sterowaniem. Omówione zostaną fizyczne podstawy funkcjonowania czujników (receptorów) i elementów wykonawczych (efektorów / aktuatorów), jako podstawowych składników tego typu systemów.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with the structure and basic methods of designing and programming embedded systems, mainly those based on microcontrollers, i.e. specialized IT systems responsible for performing strictly defined tasks, usually related to monitoring and control. The physical principles of operation of sensors (receptors) and actuators, as the basic components of such systems, are also discussed.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Zagadnienia ogólne \\
+  \rowcolor{tableRowAlt} 2. & • Definicja systemu wbudowanego, historia, zastosowania \\
+  \rowcolor{tableRowLight} 3. & • Architektury mikroprocesorów i mikrokontrolerów. Rodziny mikrokontrolerów \\
+  \rowcolor{tableRowAlt} 4. & • Modelowanie systemów czasu rzeczywistego, system przerwań \\
+  \rowcolor{tableRowLight} 5. & • Szyny komunikacyjne (SPI, I2C, 1-wire) \\
+  \rowcolor{tableRowAlt} 6. & • Systemy monitoringu domowego (Home Assistant, Domoticz itp.) \\
+  \rowcolor{tableRowLight} 7. & • Wstęp do Internetu Rzeczy (IoT), protokoły komunikacyjne (ZigBee, Z-Wave, MQTT) \\
+  \rowcolor{tableRowAlt} 8. & • Przykładowe realizacje \\
+  \rowcolor{tableRowLight} 9. & Omówienie wybranych platform sprzętowych \\
+  \rowcolor{tableRowAlt} 10. & • Arduino (Uno, Mega, Nano, Pro Mini itp.) – platforma oparta na 8-bitowych mikrokontrolerach z rodziny Atmel AVR \\
+  \rowcolor{tableRowLight} 11. & • Raspberry Pi – rodzina 32/64-bitowych jednopłytkowych minikomputerów opartych na mikroprocesorach z rodziny ARM (11, Cortex) \\
+  \rowcolor{tableRowAlt} 12. & • ESP8266 / ESP32 – 32-bitowy mikrokontroler RISC z wbudowaną transmisją WiFi / Wifi+Bluetooth, przez co przydatny do połączenia systemu z siecią Internet \\
+  \rowcolor{tableRowLight} 13. & • Raspberry Pi Pico – płytka mikrokontrolera, zbudowana na bazie chipu RP2040 \\
+  \rowcolor{tableRowAlt} 14. & • STM32 – rodzina 32-bitowych mikrokontrolerów z rodziny ARM Cortex \\
+  \rowcolor{tableRowLight} 15. & Omówienie wybranych języków programowania – w zakresie niezbędnym do programowania systemów wbudowanych \\
+  \rowcolor{tableRowAlt} 16. & • Pochodna języka C/C++ – programowanie Arduino / ESP8266 / ESP32 \\
+  \rowcolor{tableRowLight} 17. & • C/C++ – programowanie STM32 \\
+  \rowcolor{tableRowAlt} 18. & • Python – skryptowy język ogólnego zastosowania, szczególnie wygodny w programowaniu dla Raspberry Pi, omówiony w kontekście wielowątkowości, sterowania zdalnymi urządzeniami i podstaw projektowania graficznego interfejsu użytkownika \\
+  \rowcolor{tableRowLight} 19. & • MicroPython – wersja języka Python dla mikrokontrolerów – Raspberry Pi Pico \\
+  \rowcolor{tableRowAlt} 20. & Omówienie zasad funkcjonowania, podłączenia itp. osprzętu pomocniczego (5.5h) \\
+  \rowcolor{tableRowLight} 21. & • Czujniki / sensory: termometry, barometry, czujniki odległości, deszczu, ruchu, koloru, dźwięku, urządzenia GPS, kamery itp. \\
+  \rowcolor{tableRowAlt} 22. & • Aktuatory / efektory / elementy wykonawcze: silniki, wyświetlacze LCD/LED/OLED itp. \\
+  \rowcolor{tableRowLight} 23. & • Urządzenia do komunikacji: GSM, RFID/NFC itp. \\
+  \rowcolor{tableRowAlt} 24. & • Inne: zegary czasu rzeczywistego, konwertery napięć i poziomów logicznych itp. \\
+  \rowcolor{tableRowLight} 25. & Omówienie wybranych środowisk programistycznych i narzędzi \\
+  \rowcolor{tableRowAlt} 26. & • Arduino IDE – środowisko programistyczne dla Arduino i ESP8266, wraz z niezbędnymi bibliotekami \\
+  \rowcolor{tableRowLight} 27. & • TinkerCAD – serwis WWW do modelowania i symulowania urządzeń wbudowanych \\
+  \rowcolor{tableRowAlt} 28. & • Fritzing – projektowanie obwodów i układów \\
+  \rowcolor{tableRowLight} 29. & • Arduino Cloud – środowisko programistyczne w chmurze \\
+  \rowcolor{tableRowAlt} 30. & • ThingSpeak – serwisy WWW, umożliwiający zbieranie i prezentowanie danych pomiarowych \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W18 & Student zna i rozumie zaawansowane zagadnienia projektowania systemów wbudowanych: dobór mikrokontrolera/procesora, organizacja pamięci, zarządzanie energią (tryby uśpienia, dynamiczne skalowanie napięcia/częstotliwości) i certyfikacja bezpieczeństwa (IEC 61508). {[}K\_W18{]} & kolokwium \\
+  \rowcolor{tableRowAlt} K\_W26 & Student zna i rozumie zaawansowane pojęcia IoT w kontekście systemów wbudowanych: stosy protokołów sieciowych dla urządzeń IoT (Zigbee, Z-Wave, LoRaWAN, NB-IoT), OTA updates i zarządzanie flotą urządzeń. {[}K\_W26{]} & kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U23 & Student potrafi przeanalizować wymagania i zsyntezować architekturę systemu wbudowanego, oprogramować go w C/C++ z użyciem HAL (STM32 HAL, ESP-IDF), zintegrować peryferia i przetestować niezawodność. {[}K\_U23{]} & ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U33 & Student potrafi zaprojektować i zaimplementować komunikację między systemem wbudowanym a chmurą (MQTT broker, REST API, WebSocket) z zachowaniem wymagań bezpieczeństwa. {[}K\_U33{]} & ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowania systemów wbudowanych w rozwiązaniach IoT i automatyce przemysłowej z uwzględnieniem aspektów bezpieczeństwa i niezawodności. {[}K\_K01{]} & ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego poszerzania kompetencji z zakresu nowych platform sprzętowych i metodyk projektowania systemów wbudowanych. {[}K\_K03{]} & ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład z prezentacją oprogramowania
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item A. Peck, Raspberry Pi Zero W. Kontrolery, czujniki, sterowniki i gadżety. Helion, 2019W. Wrotek, Arduino od podstaw. Helion, 2023
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\end{document}

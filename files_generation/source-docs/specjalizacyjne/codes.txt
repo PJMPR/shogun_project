@@ -1,0 +1,29 @@
+﻿AAI          kod=         nazwa=Zastosowanie sztucznej inteligencji
+AIC          kod=AIC      nazwa=Analiza Incydentów Cyberbezpieczeństwa
+ANK          kod=ANK      nazwa=Animacje komputerowe
+COV          kod=COV      nazwa=Computer Vision
+CPP          kod=         nazwa=Programowanie w C/C++
+DEV          kod=DEV      nazwa=Technologie DevOps
+DOT          kod=DOT      nazwa=Technologie .NET
+FDL          kod=FDL      nazwa=Future of Deep Learning
+IML          kod=         nazwa=Wprowadzenie do machine learning
+KCs          kod=KC       nazwa=Kryminalistyka Cyfrowa
+KNO          kod=KNO      nazwa=Knowledge Representation
+KPIR         kod=KPIR     nazwa=Komunikacja i protokoły dla Internetu rzeczy
+M3D          kod=M3D      nazwa=Modelowanie 3D dla gier
+MHE          kod=         nazwa=Metaheurystyki
+MLR          kod=         nazwa=Machine learning
+OGL          kod=OGL      nazwa=Programowanie grafiki 3D w OpenGL
+PJN          kod=PJN      nazwa=Przetwarzanie Języka Naturalnego
+PPS          kod=         nazwa=Programowanie platform sprzętowych
+S3D          kod=S3D      nazwa=Symulacje 3D
+SCR          kod=SCR      nazwa=Systemy czasu rzeczywistego
+SITA         kod=SITA     nazwa=Projektowanie bezpiecznych architektur
+SPR          kod=SPR      nazwa=Szybkie Prototypowanie
+TAPI         kod=TAPI     nazwa=Trendy w rozwoju API
+TBK          kod=TBK      nazwa=Technologie backendowe
+TBS          kod=TBS      nazwa=Testowanie bezpieczeństwa systemów IT
+TFN          kod=TFN      nazwa=Technologie frontendowe
+WG1          kod=WG1      nazwa=Wytwarzanie gier 1
+WG2          kod=WG2      nazwa=Wytwarzanie gier 2
+ZZGA         kod=         nazwa=Zaawansowane zastosowania grafiki i animacji

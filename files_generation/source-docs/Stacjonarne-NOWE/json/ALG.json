@@ -1,0 +1,102 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Algebra liniowa i geometria",
+                    "kod_przedmiotu":  "ALG",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Elżbieta Puźniakowska-Gałuch, ela@pejot.edu.pl",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin pisemny"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Rozwiązywanie zadań na tablicy",
+                                           "rozwiązywanie zadań na tablicy",
+                                           "dykusja",
+                                           "Kryteria oceny",
+                                           "Zaliczenie ćwiczeń na podstawie dwóch kolokwiów (do 10 zadań). Student jest zobowiązany uzyskać wynik powyżej 50% możliwych do zdobycia sumarycznie z obu kolokwiów.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "matematyka z zakresu szkoły średniej",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kształcenia jest nabycie umiejętności posługiwania się aparatem teorii mnogości, liczb zespolonych, pierścieni wielomianów; formułowania problemów w terminach macierzy i wykonywania operacji na macierzach; rozwiązywania układu równań liniowych; znajomości podstawowych struktur algebraicznych. Omawiane są również podstawowe zagadnienia geometrii analitycznej na płaszczyźnie i w przestrzeni trójwymiarowej.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "1. T. Jurlewicz, Z. Skoczylas, \" Algebra i geometria analityczna. Definicje, twierdzenia, wzory.\", wydanie z 2021 roku i nowsze.2. T. Jurlewicz, Z. Skoczylas, \"Algebra liniowa 2. Definicje, twierdzenia, wzory.\", wydanie z 2005 roku i nowsze.",
+                                                                          "3. T. Jurlewicz, Z. Skoczylas, \"Algebra i geometria analityczna. Przykłady i zadania\", wydanie z 2021 roku i nowsze.4. T. Jurlewicz, Z. Skoczylas, \"Algebra liniowa 2. Przykłady i zadania\", wydanie z 2001 roku i nowsze."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. Przemysław Kajetanowicz, Jędrzej Wierzejewski, Algebra z geometrią analityczną Wydawnictwo PWN, 2008, ISBN 978-83-01-15493-6 2008.",
+                                                                             "2. Henryk Arodź, Krzysztof Rościszewski, Algebra i geometria analityczna w zadaniach Wydawnictwo Znak, 2005, ISBN 83-240-0547-1 2005.",
+                                                                             "3. Aleksiej I. Kostrikin, Zbiór zadań z algebry Wydawnictwo PWN, 2005, ISBN 83-01-14539-0"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych.",
+                                                              "Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.",
+                                                              "Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej.",
+                                                                    "Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.",
+                                                                    "Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne."
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+                                           },
+                    "tresci_programowe":  [
+                                              "Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych.",
+                                              "Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone).",
+                                              "Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych.",
+                                              "Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych).",
+                                              "Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera.",
+                                              "Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D."
+                                          ]
+                }
+}

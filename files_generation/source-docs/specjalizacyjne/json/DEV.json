@@ -1,0 +1,115 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Technologie DevOps",
+                    "kod_przedmiotu":  "DEV",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mmiotk@pjwstk.edu.pl",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "projekt praktyczny",
+                                           "Kryteria oceny",
+                                           "100% Kolokwium pisemne zawierające do 10 zadań.",
+                                           "40% Ocena z laboratorium",
+                                           "60% Egzamin"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Użytkowanie komputerów",
+                                                         "wymagania":  "Systemy operacyjne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Technologie internetu",
+                                                         "wymagania":  "Umiejętność posługiwania się emulatorem terminala w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość struktur plików i katalogów w systemie operacyjnym",
+                                                         "wymagania":  "Znajomość pojęcia procesu w systemie operacyjnym"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość protokołu HTTP",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie się z techniką konteneryzacji na podstawie narzędzia Docker oraz Kubernetes. Efektem przedmiotu ma być możliwość utworzenia aplikacji typu REST API, która będzie spakowana za pomocą wyżej wymienionych narzędzi.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "S. Kane, Docker: Up & Running, O’Reilly, 2024.",
+                                                                          "J. Nickloff, S. Kuenzli, Docker in Action, Manning Publications, 2019.",
+                                                                          "G. Schenker, Learn Docker – Fundamentals of Docker 19.x, Packt Publishing, 2020.",
+                                                                          "E. Stoneman, Learn Docker in a Month of Lunches, Manning Publications, 2020."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "A. Davis, Bootstraping Microservices with Docker, Kubernetes and Terraform, Manning Publications, 2021.",
+                                                                             "E. Fouda, A Complete Guide to Docker for Operations and Development, Apress, 2022.",
+                                                                             "F. Zammetti, Modern Full Stack Development using Typescript, React, Node.js, Webpack and Docker, Apress, 2020."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia w zakresie pojęcia wirtualizacji i konteneryzacji z wykorzystaniem sieci komputerowych, ich technologii oraz protokołów komunikacyjnych.",
+                                                              "Student zna i rozumie pojęcia występujące w procesie konteneryzacji na przykładzie narzędzia Docker. Zna i rozumie proces tworzenia, skonteneryzowanych bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie pojęcia związane z orchestracją i monitorowaniem takiej aplikacji"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi potrafi ocenić przydatność wirtualizacji i konteneryzacji i związanych z nimi środowisk",
+                                                                    "Student potrafi potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikcję utworzoną w procesie konteneryzacji za pomocą plików Dockerfile.",
+                                                                    "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy narzędzia Docker utworzyć kontener i umieścić go w technologii chmurowej.",
+                                                                    "Student potrafi zaplanować i przeprowadzić automatyczny proces tworzenia aplikacji z wykorzystaniem pojęcia konteneryzacji i związanych z nimi narzędzi."
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego uczenia się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do idei konteneryzacji",
+                                              "Praca oraz monitorowanie kontenerów",
+                                              "Tworzenie obrazów do użycia w kontenerze. Konteneryzacja istniejących aplikacji.",
+                                              "Wolumeny oraz rejestry  w kontenerze",
+                                              "Tworzenie obrazów za pomocą technik multietapowych",
+                                              "Konfiguracja zasobów oraz sieci w kontenerach",
+                                              "Debugowanie kontenerów",
+                                              "Zarządzanie kontenerami na przykładzie narzędzia Docker Compose",
+                                              "Architektura konteneryzacji aplikacji",
+                                              "Pojęcie Continuous Integration",
+                                              "Narzędzie Jenkins jako przykład narzędzia do używania CI/CD",
+                                              "Zasada ciągłej interakcji (CI)",
+                                              "Proces wdrażania aplikcji za pomocą narzędzia Ansible",
+                                              "Proces monitorowania aplikacji w cyklu produkcyjnym",
+                                              "Uruchomienie kontenerezowanej aplikacji w chmurze"
+                                          ]
+                }
+}

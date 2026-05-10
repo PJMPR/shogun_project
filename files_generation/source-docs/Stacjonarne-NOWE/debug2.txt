@@ -1,0 +1,2 @@
+﻿Type=Object[] Len=106 mi=30
+Line30=[ Metody dydaktyczne ] Line31=[Forma i sposób zaliczenia oraz podstawowe kryteria oceny lub wymagania egzaminacyjne] Line32=[Wykład:] Line33=[wykład z prezentacją multimedialną]

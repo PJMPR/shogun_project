@@ -1,0 +1,95 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Kryminalistyka Cyfrowa",
+                    "kod_przedmiotu":  "KC",
+                    "rok_studiow":  null,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Główne cele dydaktyczne to badanie sieci, czyli umiejętność analizy ruchu sieciowego w celu wykrycia nieprawidłowości lub dowodów na działania przestępcze.Inny cel to analiza logów systemowych, czyli zebranie informacji o tym, co się działo na danym systemie w określonym czasie. Analiza tych logów może pomóc w ustaleniu, co się stało podczas incydentu.",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Zadania CTF",
+                                           "Laboratoria",
+                                           "Kryteria oceny",
+                                           "Laboratorium/Projekt",
+                                           "raport z wykonanych zadań laboratoryjnych, kolokwia",
+                                           "Kryteria oceny:niedostateczny: < 50% możliwych do zdobycia punktów dostateczny  :     50%-60% możliwych do zdobycia punktów dostateczny+ :    61%- 70% możliwych do zdobycia punktówdobry :                71%-80% możliwych do zdobycia punktówdobry +:              81%-90% możliwych do zdobycia punktów bardzo dobry  :   >90%  możliwych do zdobycia punktów",
+                                           "Kryteria oceny:niedostateczny: < 50% poprawnie rozwiązanych zadań egz.dostateczny  :     50%-60% poprawnie rozwiązanych zadań egz.dostateczny+ :    61%- 70% poprawnie rozwiązanych zadań egz.dobry :                71%-80% poprawnie rozwiązanych zadań egz.dobry +:              81%-90% poprawnie rozwiązanych zadań egz.bardzo dobry  :   >90%  poprawnie rozwiązanych zadań zaliczeniowych egz."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Kryminalistyka cyfrowa to dziedzina zajmująca się śledztwem i badaniem dowodów związanych z przestępstwami cyfrowymi. Jest to rodzaj kryminalistyki, która koncentruje się na zdolności do wykorzystywania technologii i nauki do zgromadzenia dowodów, które mogą być przedstawione w sądzie. Kryminalistyka Cyfrowa odgrywa kluczową rolę w walce z cyberprzestępczością, pomagając organom ścigania zrozumieć, jak doszło do przestępstwa, kto może za nie odpowiadać i jakie kroki mogą być podjęte, aby zapobiec przyszłym incydentom. Główne cele dydaktyczne to badanie sieci, czyli umiejętność analizy ruchu sieciowego w celu wykrycia nieprawidłowości lub dowodów na działania przestępcze.Inny cel to analiza logów systemowych, czyli zebranie informacji o tym, co się działo na danym systemie w określonym czasie. Analiza tych logów może pomóc w ustaleniu, co się stało podczas incydentu.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "William Stallings, Lawrie Brown - Bezpieczeństwo systemów informatycznych. Zasady i praktyka. (ang. Computer Security: Principles and Practice), Wydanie IV. Tom 1 i 2, Helion 2019"
+                                                                      ]
+                                                      },
+                                       "dokumentacja_internetowa":  {
+                                                                        "https://www.enisa.europa.eu/topics/training-and-exercises/trainings-for-cybersecurity-specialists/online-training-material/documents/digital-forensics-handbook":  "https://www.enisa.europa.eu/topics/training-and-exercises/trainings-for-cybersecurity-specialists/online-training-material/documents/digital-forensics-handbook",
+                                                                        "https://www.enisa.europa.eu/topics/training-and-exercises/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-handbook":  "https://www.enisa.europa.eu/topics/training-and-exercises/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-handbook"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie anatomię kluczowych zagrożeń Cyber",
+                                                              "Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń",
+                                                                    "Student potrafi wskazać mocne i słabe strony systemów ochrony informacji"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do pracy zespołowej w dziale SOC"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wykład:",
+                                              "Wprowadzenie do Kryminalistyki Cyfrowej",
+                                              "Bezpieczeństwo protokołów i urządzeń warstwy 1-2 modelu OSI",
+                                              "Bezpieczeństwo protokołów i urządzeń warstwy 3-4 modelu OSI",
+                                              "Bezpieczeństwo protokołów i urządzeń warstwy 5-7 modelu OSI",
+                                              "Metody analizy ruchu sieciowego (Network analysis)",
+                                              "Metody analizy oprogramowania (Software analysis)",
+                                              "Metody analizy mediów (Media analysis)",
+                                              "Metody analizy sprzętu (Hardware analysis)",
+                                              "Ćwiczenia:",
+                                              "[Linux 1] Operacje na plikach",
+                                              "[Linux 1] Operacje identyfikacji oraz kodowania danych",
+                                              "[Linux 1] Analiza logów",
+                                              "[Linux 2] Mechanizmy systemowe i skrypty Bash",
+                                              "[Linux 2] Analiza danych z pliku",
+                                              "[Linux 2] Administracja systemem GNU/Linux",
+                                              "[Linux 2] Zarządzanie procesami",
+                                              "[Sieci 2] Protokół http",
+                                              "[Sieci 2] Protokół DNS",
+                                              "[Sieci 2] Protokoły poczty",
+                                              "[Sieci 2] Inne protokoły",
+                                              "[Sieci 2] Bezpieczna komunikacja",
+                                              "[Sieci 2] Bezpieczeństwo sieci WiFi"
+                                          ]
+                }
+}

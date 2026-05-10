@@ -1,0 +1,189 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Projekt Zespołowy 2",
+        "kod_przedmiotu": "PRZ2",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 0,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 40
+        },
+        "odpowiedzialny_za_przedmiot": "dr hab. Marek A. Bednarczyk",
+        "ects": 6,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 40,
+            "praca_wlasna_studenta_h": 110,
+            "calkowita_liczba_godzin_h": 150,
+            "praca_wlasna_studenta": "Kontynuacja i finalizacja projektu dyplomowego; opracowanie dokumentacji końcowej; przygotowanie prezentacji finalnej i obrony przed komisją."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "obrona projektu",
+                "ocena sporządzonego dokumentu",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Projekt zespołowy 1 (PRZ1)",
+                "wymagania": "Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi; wiedza specjalizacyjna"
+            },
+            {
+                "nazwa": "Proseminarium (PSEM)",
+                "wymagania": "Równocześnie lub poprzedzająco"
+            },
+            {
+                "nazwa": "Przedmioty specjalizacyjne",
+                "wymagania": "Wiedza specjalizacyjna z wybranej specjalizacji"
+            },
+            {
+                "nazwa": "Społeczne Aspekty Informatyki (SAI)",
+                "wymagania": "Komercjalizacja projektów informatycznych (KMR) / Planowanie, organizacja i zarządzanie przedsiębiorstwem (POZ)"
+            }
+        ],
+        "cel_dydaktyczny": "W ramach przedmiotu studenci kontynuują projekt podjęty w ramach Projektu zespołowego PRZ1, tematycznie związany z realizowaną specjalizacją. Udokumentowane, opracowane w ramach przedmiotu rozwiązanie stanowi element dyplomowej pracy inżynierskiej. Proponowane przez zespół rozwiązanie praktycznego problemu winno być innowacyjne i możliwie wszechstronne, obok różnych wymiarów technicznych uwzględniać też aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, może też stanowić produkt „preinkubacyjny”. Typowo – zależnie od przyjętej strategii -  w ramach PRZ2 realizowane są ewolucyjne przyrosty (kolejne wydania) projektów, powstające na bazie wydania powstałego w ramach PRZ1.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "J. Górski (red.) Inżynieria oprogramowania w projekcie informatycznym. MIKOM, 2000",
+                    "St. Szejko (red). Metody wytwarzania oprogramowania. MIKOM, 2002.",
+                    "Materiały wykładowe i specjalizacyjne"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Dokumentacja środowisk i narzędzi",
+                    "Strony www",
+                    "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": [
+                "Ma wiedzę wymaganą do oceny społecznych skutków realizacji wdrożenia projektu informatycznego",
+                "Rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym",
+                "Student zna i rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+            ],
+            "umiejetnosci": [
+                "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego",
+                "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego",
+                "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+                "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia",
+                "Student:",
+                "potrafi pracować w zespole pełniąc w nim uzgodnione role",
+                "potrafi oszacować czas potrzebny na realizację zadania",
+                "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
+                "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
+            ],
+            "kompetencje_spoleczne": [
+                "Student:",
+                "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+                "Student",
+                "jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej",
+                "Student",
+                "jest gotów do samodzielnego uczenia się przez całe życie",
+                "Student:",
+                "potrafi pełnić przypadające nań role projektowe i wykonawcze",
+                "potrafi współpracować z innymi członkami grupy i otoczeniem projektu",
+                "Student",
+                "potrafi właściwie zaplanować kolejność i realizację zadań projektowych",
+                "Student",
+                "dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych",
+                "Student:",
+                "stosuje w projekcie rozwiązania innowacyjne",
+                "dostrzega i ocenia aspekty komercjalizacji projektu",
+                "Student",
+                "jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych"
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Przegląd stanu projektu i jego dokumentacji; dyskusja zakresu analizy biznesowej lub społecznej projektu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Dyskusja (i ewentualnie zmiana) strategii realizacji, ról i zadań członków zespołu. Planowanie realizacji kolejnych wydań systemu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Iteracyjnie: analiza i modelowanie kolejnego przyrostu+kontrola postępów prac projektowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Iteracyjnie: projektowanie rozwiązań kolejnego przyrostu+kontrola postępów prac projektowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Iteracyjnie: implementacja modułów kolejnego przyrostu przez członków zespołu projektowego+kontrola postępów prac projektowych i dokumentacyjnych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Iteracyjnie: testowanie przyrostu. Uzgodnienie zbioru danych walidujących całość produktu.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Integracja modułów wykonanych przez poszczególnych członków zespołów; uruchamianie.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Walidacja rezultatów projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Dokumentowanie wyników projektu i wkładu pracy członków zespołu; raport końcowy",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Prezentacje systemów realizujących tematy prac inż. zespołów projektowych.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "As part of the course, students continue the project started in Team Project PRZ1, thematically related to their specialization. The documented solution developed within the course constitutes part of the engineering diploma thesis. The solution proposed by the team to a practical problem should be innovative and as comprehensive as possible, taking into account, in addition to various technical dimensions, also economic, ergonomic, legal, and social aspects; it may also serve as a 'pre-incubation' product. Typically, depending on the adopted strategy, PRZ2 involves evolutionary increments (subsequent releases) of projects based on the release created in PRZ1.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

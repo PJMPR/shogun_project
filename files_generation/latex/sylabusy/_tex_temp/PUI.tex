@@ -1,0 +1,305 @@
+﻿% ===========================================================
+%  Sylabus: Psychologia Umiejętności Inżynierskich (PUI)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PUI}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Psychologia Umiejętności Inżynierskich} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PUI \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & mczerwonka@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Lektura wskazanych materiałów z psychologii i komunikacji interpersonalnej; refleksja nad własnymi kompetencjami inżynierskimi; przygotowanie do aktywnego uczestnictwa w konwersatoriach.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Cel dydaktyczny}
+
+Studenci kierunków inżynierskich, w tym informatyki, często nie dostrzegają potrzeby rozwijania swoich umiejętności pozatechnicznych, w literaturze określanych jako tzw. soft skills. Co więcej, znaczenie i waga, np. kompetencji komunikacyjnych czy pracy zespołowej, jest przez kandydatów na inżynierów, niejednokrotnie deprecjonowana bądź umniejszana. Tymczasem wymagania pracodawców w branży IT zmieniły się dość istotnie w stosunku do tego, co było oczekiwane jeszcze kilka lat temu. Umiejętność skutecznej organizacji pracy własnej, skupienia, czy rozwiązywania problemów (także we współpracy z innymi) jest już nie tylko atutem, ale niekiedy warunkiem decydującym o przyjęciu do firmy czy projektu. Kurs jest autorską propozycją skierowaną do studentów uczących się na kierunku informatyka. W ramach przedmiotu kształtowana jest świadomość i nawyki dotyczące rozwijania zasobów osobistych odnoszących się do motywacji, potencjału intelektualnego oraz funkcjonowania w zespole. Studenci uzyskują wiedzę i umiejętności na temat kluczowych kompetencji pozatechnicznych, niezbędnych do efektywnej realizacji zespołowych projektów informatycznych, a także budowania przewagi konkurencyjnej na rynku pracy. Zastosowane podejście uwzględnia specyfikę profilu kształcenia inżyniera, dając studentom podstawę do wykorzystywania poznanych umiejętności w praktyce. W ramach modułu praca samodzielna studenci poznają wiele technik i narzędzi optymalizujących realizację zadań, wykonywanych często pod presją czasu i oczekiwań, wymagające koncentracji uwagi, wyszukiwania błędów czy poszukiwania nowych pomysłów i rozwiązań. Ponadto będą w stanie skuteczniej planować własny rozwój w branży IT, rozumiejąc potrzebę ciągłego zdobywania umiejętności i dokształcania się. W ramach modułu praca zespołowa studenci identyfikują kluczowe wyzwania i problemy, z jakimi będą się mierzyć w trakcie realizacji projektów. Poznają także strategie poprawiające wydajność pracy z innymi – w kontekście komunikacji, podziału i szacowania zadań, odpowiedzialności. Ważnym elementem przedmiotu jest gościnny udział absolwentów Wydziału oraz przedstawicieli firm z branży informatycznej, którzy będą dzielić się swoim doświadczeniem, adekwatnie do tematyki danego wykładu.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Students of engineering programs, including computer science, often fail to recognize the need to develop their non-technical skills, referred to in the literature as so-called soft skills. Moreover, the significance and importance of, for example, communication skills or teamwork are often downplayed or underestimated by future engineers. Meanwhile, employers’ expectations in the IT industry have changed significantly compared with what was expected just a few years ago. The ability to effectively organize one’s own work, maintain focus, and solve problems, also in cooperation with others, is no longer merely an advantage, but in some cases a deciding factor in being accepted into a company or project. The course is an original proposal addressed to students studying computer science. Within the course, awareness and habits related to developing personal resources concerning motivation, intellectual potential, and functioning in a team are shaped. Students gain knowledge and skills regarding key non-technical competencies necessary for the effective completion of team IT projects, as well as for building a competitive advantage on the labor market. The adopted approach takes into account the specific profile of engineering education, giving students a foundation for applying the acquired skills in practice. As part of the independent work module, students become familiar with many techniques and tools that optimize the completion of tasks often performed under time pressure and demanding expectations, requiring concentration, error detection, or the search for new ideas and solutions. In addition, they will be able to plan their own development in the IT industry more effectively, understanding the need for continuous acquisition of skills and further education. As part of the teamwork module, students identify key challenges and problems they will face during project implementation. They also learn strategies that improve efficiency in working with others—in the context of communication, task division and estimation, and responsibility. An important element of the course is the guest participation of Faculty graduates and representatives of IT companies, who share their experience in line with the topic of a given lecture.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wiedza z zakresu szkoły ponadpodstawowej & Umiejętność poszukiwania i selekcji informacji \\
+  \rowcolor{tableRowAlt} Krytyczna analiza treści & Dokonywanie syntezy treści, tworzenie konkluzji \\
+  \rowcolor{tableRowLight} Pozytywne nastawienie do rozwijania umiejętności pozatechnicznych, w szczególności pracy zespołowej & Prowadzenia dyskusji wspartej argumentami \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & 1. Dużo więcej niż technologiczny stos. Dlaczego i jak zmieniają się wymagania branży informatycznej dotyczące kompetencji inżynierów.Znaczenie kompetencji pozatechnicznych, motywacji, organizacji pracy i umiejętności pracy zespołowej dla rozwoju zawodowego \\
+  \rowcolor{tableRowAlt} 2. & 2. Współczesne podejście do rozwoju i kariery w branży IT. Co robić, by zwiększać swoje szanse na praktyki, staż, pracę? Czy wiesz jak się uczyć? Krzywa uczenia się juniora vs. seniora. Metapoznanie. Motywacja. Style poznawcze i strategie uczenia się. \\
+  \rowcolor{tableRowLight} 3. & 3. Mózg jako kluczowe narzędzie pracy inżyniera. Jak o nie dbać, by służyło długo i efektywnie? Jak osiągać stan koncentracji i poprawiać myślenie analityczne? Metody i narzędzia wspierające tryb pracy głębokiej i radzenie sobie z brakiem skupienia. Mit wielozadaniowości. \\
+  \rowcolor{tableRowAlt} 4. & 4. O wpływie kawy, muzyki i powiadomień. Strategie podnoszenia wydajności pracy nad projektem \\
+  \rowcolor{tableRowLight} 5. & informatycznym. Techniki zarządzania czasem, organizacji zadań, monitorowania postępów. Czemu służy retrospektywa i jak ją przeprowadzać? Prokrastynacja. Intuicja kontra wzory. Czy inżynier może myśleć \\
+  \rowcolor{tableRowAlt} 6. & twórczo? Stan flow i strategie rozwiązywania problemów. Metody i narzędzia wspierające kreatywne aspekty pracy inżyniera. \\
+  \rowcolor{tableRowLight} 7. & 5. Radzenie sobie ze stresem i wypaleniem w trakcie realizacji projektu informatycznego. Higiena pracy intelektualnej. Zasady cyfrowej higieny. Dlaczego drużyny składające się z samych gwiazd niemal zawsze wypadają poniżej oczekiwań? Skuteczne sposoby budowania zespołów inżynierskich. \\
+  \rowcolor{tableRowAlt} 8. & 6. Jak nie wpaść w pułapkę próżniactwa społecznego, myślenia grupowego oraz nie ulegać błędom poznawczym w trakcie realizacji projektu. Zasady skutecznej współpracy. Praca zespołowa jako doświadczenie efektywnego uczenia się od siebie nawzajem. Dlaczego i jak komunikować pomysły, odmienne zdanie, niezadowolenie z prac, problemy? W jaki sposób zadawać pytania i prosić o wsparcie? Informacja zwrotna i konstruktywna krytyka. \\
+  \rowcolor{tableRowLight} 9. & 7. Jak koordynować pracę i rozwiązywać problemy w zespole informatycznym? Metodyka pracy zespołów wirtualnych i rozproszonych. Zdalne zarządzanie zespołowym projektem informatycznym. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie podstawy pracy intelektualnej i zespołowej, dzięki czemu będzie mógł wytwarzać lepsze & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W08 & oprogramowanie. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie skutki, jakie przynosi niewłaściwie zaplanowany i realizowany projekt. & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna i rozumie wyzwania oraz zagrożenia, z & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & którymi będzie się mierzyć w zakresie modułu pracy & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_W08 & zespołowej. Zna i rozumie sposoby wykorzystywania & ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_W17 & właściwych narzędzia i metod służących zwiększaniu prawdopodobieństwa realizacji projektu inżynierskiego z sukcesem. & ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi zastosować swoją wiedzę przenosząc ją na gruntpraktycznych umiejętności w zakresie podstaw planowania i realizacji swojej pracy w projekcie informatycznym &  \\
+  \rowcolor{tableRowAlt} K\_U01 & Student potrafi odpowiednio dobierać źródła informacji &  \\
+  \rowcolor{tableRowLight} K\_U19 & Student potrafi wytwarzać oprogramowanie i produkty technologiczne z uwzględnieniem aspektu pracy zespołowej &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student jest gotów do rozumienia wpływu umiejętności nietechnicznych na efektywność i wydajność pracy inżyniera. &  \\
+  \rowcolor{tableRowAlt} K\_K02 & Student jest gotów do   podejmowania starań, aby przekazać informacje i opinie w sposób powszechnie zrozumiały oraz rozumie  wagę roli informatyki we współczesnym świecie. &  \\
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do ciągłego kształcenia i doskonalenia (także w aspekcie pozatechnicznym) umiejętności &  \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotów do swojejroli (jako inżyniera) w pracach zespołu, w tym interdyscyplinarnego &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład konwersatoryjny (z elementami dyskusji)
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Bartyzel, M. (2016). Getting Things Programmed. Droga do efektywności. Wydawnictwo Helion.
+  \item Newport, C. (2018). Praca głęboka. Jak odnieść sukces w świecie, w którym ciągle coś nas rozprasza.
+  \item Wydawnictwo StudioEMKA
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item 1. Bartyzel, M. (2015). Oprogramowanie szyte na miarę. Jak rozmawiać z klientem, który (nie) wie,
+  \item czego chce. Wydawnictwo Helion.
+  \item 2. Belbin M. (2010). Nie tylko zespół. Oficyna Ekonomiczna.
+  \item 3. Biancuzzi, F., \& Warden, S. (2010). Wielkie umysły programowania. Jak myślą i pracują twórcy
+  \item najważniejszych języków. Wydawnictwo Helion.
+  \item 4. Bond, M. L. (2014). Siła innych. O presji otoczenia, syndromie grupowego myślenia i o tym, jak
+  \item ludzie wokół na nas wpływają i na wszystkie nasze poczynania. Wydawnictwo Naukowe PWN.
+  \item 5. Duarte, N. (2012). Współbrzmienie. Znajdź wspólny język z odbiorcami Twojej prezentacji.
+  \item Wydawnictwo Helion.
+  \item 6. Fiore, N. (2008). Nawyk samodyscypliny. Zaprogramuj wewnętrznego stróża. Wydawnictwo Sensus.
+  \item 7. Fitzpatrick, B.W, \& Collins-Sussman, B. (2018). Debugging Teams. Przez współpracę do lepszej
+  \item produktywności. Wydawnictwo Helion
+  \item 8. Gelert M., \& Nowak C. (2008). Zespół. Gdańskie Wydawnictwo Psychologiczne.
+  \item 9. Goldberg, E. (2018). Kreatywność. Mózg w dobie innowacji. Wydawnictwo Naukowe PWN.
+  \item 10. Henning, B. (2020). Mózgobrednie. 20 i pół mitu o mózgu i jak on naprawdę działa. Feeria Science.
+  \item 11. Kahneman, D. (2020). Pułapki myślenia. O myśleniu szybkim i wolnym. Media Rodzina.
+  \item 12. Kelley, T., \& Kelley, D. (2019). Twórcza odwaga. Otwórz się na Design Thinking. MIT biznes.
+  \item 13. Lopp, M. (2019). Zarządzanie ludźmi w zespołach IT. Zabawne historie z życia menedżera.
+  \item Wydawnictwo Helion.
+  \item 14. Nordengen, K. (2019). Mózg ćwiczy, czyli jak utrzymać umysł w dobrej formie. Wydawnictwo
+  \item Marginesy.
+  \item 15. Nordengen, K. (2018). Mózg rządzi. Twój niezastąpiony narząd. Wydawnictwo Marginesy.
+  \item 16. Norris, D. (2020). Kreatywność i nienawiść. Twórz jak ludzie sukcesu. Wydawnictwo OnePress.
+  \item 17. Nowocień, R. (2020). Zespoły wirtualne i rozproszone. Zdalne zarządzanie projektem
+  \item informatycznym. Wydawnictwo Helion.
+  \item 18. Sapolksy, D.M. (2020). Dlaczego zebry nie mają wrzodów. Psychofizjologia stresu. Wydawnictwo
+  \item Naukowe PWN.
+  \item 19. Schein, E. H. (2019). Potęga dobrej komunikacji w zespole. O trudnej sztuce zadawania pytań.
+  \item Wydawnictwo Naukowe PWN.
+  \item 20. Scott, S. J. (2008). Nawyk nieodwlekania. Proste sposoby pokonania prokrastynacji. Wydawnictwo
+  \item Sensus.
+  \item 21. Shenk, J. W. (2016). Siła duetów. Jak relacje rozbudzają kreatywność. Wydawnictwo Naukowe
+  \item PWN.
+  \item 22. Stefaniuk, T. (2014). Komunikacja w zespole wirtualnym. Difin.
+  \item 23. Wróblewski, P. (2020). Zwinnie do przodu. Poradnik kierownika projektów informatycznych.
+  \item Wydawnictwo Helion.
+\end{itemize}
+
+\end{document}

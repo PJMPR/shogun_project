@@ -1,0 +1,133 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Projektowanie bezpiecznych architektur",
+                    "kod_przedmiotu":  "SITA",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Adam Kassenberg",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Studium przypadków",
+                                           "Kryteria oceny",
+                                           "Kolokwium pisemne.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Tenkursmanaceludostarczeniestudentomkompleksowejwiedzyiumiejętnościniezbędnychdoprojektowaniaiutrzymaniabezpiecznychsystemówinformatycznych.Dziękipołączeniuteoretycznychwykładówipraktycznychćwiczeń,studencibędąlepiejprzygotowanidostawieniaczoławyzwaniomzwiązanymzbezpieczeństwemITw rzeczywistym świecie. Studencibędąpoznawaćpodstawowepojęciaizasadybezpieczeństwainformatycznego,takiejakpoufność,integralność idostępność danych. Nauczą się,jakprojektowaćsystemyi infrastruktury informatyczne, które są odporne na różnorodne zagrożenia i ataki. Celem kursu będzie również zrozumienie mechanizmów zarządzania tożsamością i kontrolądostępu,wtymwdrażaniepolitykzabezpieczeń. Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, aby zapobiegać wprowadzaniu luk bezpieczeństwa w fazie rozwoju oprogramowania. Studencibędąuczyćsię,jakreagowaćnaincydentybezpieczeństwa,wtymjakprzeprowadzać analizy i raportować naruszenia.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson",
+                                                                          "\"Threat Modeling: Designing for Security\", Adam Shostack",
+                                                                          "\"Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks\", Robert Hansen"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "\"Black Hat Python: Python Programming for Hackers and Pentesters\" autorstwa Justin Seitz",
+                                                                             "\"SQL Injection Attacks and Defense\" autorstwa Justin Clarke"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR.",
+                                               "umiejetnosci":  "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować.",
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Wybór organizacji",
+                                              "Analiza różnych typów organizacji.",
+                                              "Przykłady typowych struktur organizacyjnych.",
+                                              "2. Definicja celów biznesowych",
+                                              "Jak określić cele biznesowe organizacji.",
+                                              "Rola celów biznesowych w projektowaniu architektur IT.",
+                                              "Ćwiczenia praktyczne: Definiowanie celów biznesowych dla wybranej organizacji.",
+                                              "3. Utworzenie diagramu przepływów DFD",
+                                              "Wprowadzenie do diagramów przepływów danych (DFD).",
+                                              "Tworzenie DFD dla wybranej organizacji.",
+                                              "Ćwiczenia praktyczne: Rysowanie DFD na podstawie zebranych danych.",
+                                              "4. Procesowy opis organizacji wg ISO 9001",
+                                              "Wprowadzenie do standardu ISO 9001.",
+                                              "Opis procesów organizacyjnych zgodnie z ISO 9001.",
+                                              "Ćwiczenia praktyczne: Tworzenie procesowego opisu organizacji.",
+                                              "5. Utworzenie architektury IT",
+                                              "Zasady projektowania architektur IT.",
+                                              "Elementy składowe architektury IT.",
+                                              "Ćwiczenia praktyczne: Projektowanie architektury IT dla wybranej organizacji.",
+                                              "6. Koncepcja komunikacji, sprzętu oraz oprogramowania",
+                                              "Planowanie komunikacji w organizacji.",
+                                              "Wybór sprzętu i oprogramowania.",
+                                              "Ćwiczenia praktyczne: Opracowanie koncepcji komunikacji, sprzętu i oprogramowania.",
+                                              "7. Klasyfikacja informacji, struktura zarządzania",
+                                              "Klasyfikacja informacji w organizacji.",
+                                              "Tworzenie struktury zarządzania informacją.",
+                                              "Ćwiczenia praktyczne: Klasyfikacja informacji i tworzenie struktury zarządzania.",
+                                              "8. Identyfikacja zasobów organizacji",
+                                              "Identyfikacja i katalogowanie zasobów.",
+                                              "Zarządzanie zasobami organizacji.",
+                                              "Ćwiczenia praktyczne: Tworzenie katalogu zasobów organizacji.",
+                                              "9. Utworzenie deklaracji stosowania",
+                                              "Definicja i znaczenie deklaracji stosowania.",
+                                              "Tworzenie deklaracji dla wybranej organizacji.",
+                                              "10. Identyfikacja zagrożeń dla architektury",
+                                              "Typowe zagrożenia dla architektur IT.",
+                                              "Metody identyfikacji zagrożeń.",
+                                              "Ćwiczenia praktyczne: Analiza przypadków i identyfikacja zagrożeń.",
+                                              "11. Identyfikacja podatności dla zagrożeń",
+                                              "Definicja podatności.",
+                                              "Metody identyfikacji podatności w systemach IT.",
+                                              "Ćwiczenia praktyczne: Identyfikacja podatności w wybranej architekturze IT.",
+                                              "12. Szacowanie ryzyka dla wyodrębnionych zagrożeń",
+                                              "Metody szacowania ryzyka.",
+                                              "Przykłady zastosowania metod szacowania ryzyka.",
+                                              "Ćwiczenia praktyczne: Szacowanie ryzyka dla wybranych zagrożeń.",
+                                              "13. Tworzenie rekomendacji po analizie ryzyka",
+                                              "Jak tworzyć rekomendacje bezpieczeństwa.",
+                                              "Przykłady rekomendacji po analizie ryzyka.",
+                                              "Ćwiczenia praktyczne: Tworzenie rekomendacji dla wybranej architektury IT."
+                                          ]
+                }
+}

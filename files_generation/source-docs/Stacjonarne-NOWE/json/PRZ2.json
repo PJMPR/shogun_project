@@ -1,0 +1,140 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Projekt Zespołowy 2",
+                    "kod_przedmiotu":  "PRZ2",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  60,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr hab. Marek A. Bednarczyk",
+                    "ects":  6,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  90,
+                                    "calkowita_liczba_godzin_h":  150
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Praca stanowi kontynuację projektu podjętego w ramach zajęć PRZ1",
+                                           "Praca w kilkuosobowych grupach, pokrywających się z zespołami projektu dyplomowego",
+                                           "Uwzględnienie w projekcie aspektów społecznych i komercyjnych",
+                                           "Realizacja wspierana przez zajęcia Proseminarium PSEM",
+                                           "Wsparcie szablonami dokumentacji",
+                                           "Kryteria oceny",
+                                           "Projekt zespołowy",
+                                           "wykonanie i przedłożenie udokumentowanej pracy – projektu dyplomowego",
+                                           "przedstawienie finalnej prezentacji projektu z omówieniem pełnionych ról i wkładu pracy",
+                                           "Akceptacja promotora projektu dopuszczająca do obrony przed komisją",
+                                           "Ocena ustalana przez opiekuna projektu i recenzenta na podstawie jakości, metodyki i stopnia zrealizowania planowanego produktu (wydania), jego dokumentacji oraz wkładu i zaangażowania studenta w pracę zespołu"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Projekt zespołowy PRZ1",
+                                                         "wymagania":  "Proseminarium PSEM - równocześnie"
+                                                     },
+                                                     {
+                                                         "nazwa":  "poprzedzająco lub równocześnie",
+                                                         "wymagania":  "przedmioty specjalizacyjne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Społeczne Aspekty Informatyki SAI",
+                                                         "wymagania":  "Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość analizy wymagań i projektowania obiektowego, znajomość notacji UML",
+                                                         "wymagania":  "Umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Wiedza specjalizacyjna",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "W ramach przedmiotu studenci kontynuują projekt podjęty w ramach Projektu zespołowego PRZ1, tematycznie związany z realizowaną specjalizacją. Udokumentowane, opracowane w ramach przedmiotu rozwiązanie stanowi element dyplomowej pracy inżynierskiej. Proponowane przez zespół rozwiązanie praktycznego problemu winno być innowacyjne i możliwie wszechstronne, obok różnych wymiarów technicznych uwzględniać też aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, może też stanowić produkt „preinkubacyjny”. Typowo – zależnie od przyjętej strategii -  w ramach PRZ2 realizowane są ewolucyjne przyrosty (kolejne wydania) projektów, powstające na bazie wydania powstałego w ramach PRZ1.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "J. Górski (red.) Inżynieria oprogramowania w projekcie informatycznym. MIKOM, 2000",
+                                                                          "St. Szejko (red). Metody wytwarzania oprogramowania. MIKOM, 2002.",
+                                                                          "Materiały wykładowe i specjalizacyjne"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Dokumentacja środowisk i narzędzi",
+                                                                             "Strony www",
+                                                                             "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Ma wiedzę wymaganą do oceny społecznych skutków realizacji wdrożenia projektu informatycznego",
+                                                              "Rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym",
+                                                              "Student zna i rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego",
+                                                                    "Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego",
+                                                                    "Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+                                                                    "Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia",
+                                                                    "Student:",
+                                                                    "potrafi pracować w zespole pełniąc w nim uzgodnione role",
+                                                                    "potrafi oszacować czas potrzebny na realizację zadania",
+                                                                    "planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów",
+                                                                    "Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student:",
+                                                                             "jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+                                                                             "Student",
+                                                                             "jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej",
+                                                                             "Student",
+                                                                             "jest gotów do samodzielnego uczenia się przez całe życie",
+                                                                             "Student:",
+                                                                             "potrafi pełnić przypadające nań role projektowe i wykonawcze",
+                                                                             "potrafi współpracować z innymi członkami grupy i otoczeniem projektu",
+                                                                             "Student",
+                                                                             "potrafi właściwie zaplanować kolejność i realizację zadań projektowych",
+                                                                             "Student",
+                                                                             "dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych",
+                                                                             "Student:",
+                                                                             "stosuje w projekcie rozwiązania innowacyjne",
+                                                                             "dostrzega i ocenia aspekty komercjalizacji projektu",
+                                                                             "Student",
+                                                                             "jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Przegląd stanu projektu i jego dokumentacji; dyskusja zakresu analizy biznesowej lub społecznej projektu.",
+                                              "Dyskusja (i ewentualnie zmiana) strategii realizacji, ról i zadań członków zespołu. Planowanie realizacji kolejnych wydań systemu",
+                                              "Iteracyjnie: analiza i modelowanie kolejnego przyrostu+kontrola postępów prac projektowych",
+                                              "Iteracyjnie: projektowanie rozwiązań kolejnego przyrostu+kontrola postępów prac projektowych",
+                                              "Iteracyjnie: implementacja modułów kolejnego przyrostu przez członków zespołu projektowego+kontrola postępów prac projektowych i dokumentacyjnych",
+                                              "Iteracyjnie: testowanie przyrostu. Uzgodnienie zbioru danych walidujących całość produktu.",
+                                              "Integracja modułów wykonanych przez poszczególnych członków zespołów; uruchamianie.",
+                                              "Walidacja rezultatów projektu",
+                                              "Dokumentowanie wyników projektu i wkładu pracy członków zespołu; raport końcowy",
+                                              "Prezentacje systemów realizujących tematy prac inż. zespołów projektowych."
+                                          ]
+                }
+}

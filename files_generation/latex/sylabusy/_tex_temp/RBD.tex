@@ -1,0 +1,260 @@
+﻿% ===========================================================
+%  Sylabus: Relacyjne Bazy Danych (RBD)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: RBD}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Relacyjne Bazy Danych} \\[3pt]
+  \textbf{Kod przedmiotu:}    & RBD \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 2 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Adam Urbanowicz aurbanow@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Projektowanie i implementacja zapytań SQL; modelowanie relacyjnych baz danych (normalizacja, diagramy ER); przygotowanie do kolokwium.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Student potrafi przygotować schemat bazy danych w języku SQL, gotową do implementacji w dowolnym systemie zarządzania bazami danych, spełniającą oczekiwania klienta, poprawną z punktu widzenia postaci normalnych i wyposażoną w dokumentacje techniczną (w tym diagram ERD, objaśnienia ew. procedur wyzwalanych).
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Students are able to prepare a database schema in SQL, ready for implementation in any database management system, meeting client expectations, correct from the point of view of normalization, and equipped with technical documentation (including an ERD diagram and explanations of any triggers or procedures used).}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Podstawowe cechy relacyjnych baz danych \\
+  \rowcolor{tableRowAlt} 2. & Zalety i wady relacyjnych i nierelacyjnych organizacji baz danych \\
+  \rowcolor{tableRowLight} 3. & Znaczenie zależności funkcyjnych i postaci normalnych przy projektowaniu schematu bazy danych. \\
+  \rowcolor{tableRowAlt} 4. & Podstawowe elementy i znaczenie diagramów związków encji (ERD) przy projektowaniu schematu bazy danych. \\
+  \rowcolor{tableRowLight} 5. & Podstawowe konstrukcje języka SQL. \\
+  \rowcolor{tableRowAlt} 6. & Interfejs ODBC. \\
+  \rowcolor{tableRowLight} 7. & Elementy programistyczne w bazie danych, procedury wyzwalane, definicje, przykłady zastosowań. \\
+  \rowcolor{tableRowAlt} 8. & Reguły integralności w bazie danych, przykłady występowania, sposoby realizacji w języku SQL \\
+  \rowcolor{tableRowLight} 9. & Podstawowe zasady optymalizacji zapytań, w tym rodzaje i znaczenie indeksów w bazie danych \\
+  \rowcolor{tableRowAlt} 10. & Problemy współbieżnego dostępu do baz danych, rozwiązania tych problemów (transakcje, blokady). \\
+  \rowcolor{tableRowLight} 11. & Inne rodzaje baz danych: bazy dokumentowe, bazy grafowe. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W13 & Student zna i rozumie zasady modelowania danych (model związków i encji ERD, model relacyjny) oraz teorię normalizacji baz danych (1NF–BCNF) i jej znaczenie dla integralności i wydajności systemu. {[}K\_W13{]} &  \\
+  \rowcolor{tableRowAlt} K\_W13 & Student zna i rozumie zaawansowane możliwości języka SQL: podzapytania, złączenia (JOIN), widoki, procedury składowane, wyzwalacze i transakcje z różnymi poziomami izolacji. {[}K\_W13{]} &  \\
+  \rowcolor{tableRowLight} K\_W13 & Student zna i rozumie architekturę i zasady działania popularnych systemów RDBMS (PostgreSQL, MySQL, SQL Server), mechanizmy indeksowania i optymalizacji zapytań. {[}K\_W13{]} &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U18 & Student potrafi zaprojektować schemat relacyjnej bazy danych na podstawie wymagań, stosując normalizację, klucze obce i ograniczenia integralności. {[}K\_U18{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U18 & Student potrafi pisać złożone zapytania SQL (w tym agregacje, podzapytania, złączenia wielu tabel) oraz implementować procedury składowane i wyzwalacze. {[}K\_U18{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U18 & Student potrafi zarządzać transakcjami, konfigurować uprawnienia użytkowników oraz przeprowadzać tworzenie kopii zapasowych i odtwarzanie bazy danych. {[}K\_U18{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi zaplanować i zrealizować migrację danych oraz integrację bazy danych z aplikacją backendową. {[}K\_U27{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student jest gotów do samodzielnego projektowania i optymalizacji rozwiązań bazodanowych w projektach inżynierskich z uwzględnieniem wymagań wydajnościowych i bezpieczeństwa danych. {[}K\_K05{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do ciągłego poszerzania wiedzy o nowych technologiach bazodanowych, w tym NoSQL i bazach czasu rzeczywistego. {[}K\_K03{]} & kolokwium, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład z prezentacją oprogramowania
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item R. Elmasari, S. B. Navathe, Wprowadzenie do systemów baz danych, Helion, 2019
+  \item L. Banachowski, Relacyjne bazy danych, Wydawnictwo PJWSTK
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item K. Hansen, Praktyczna nauka SQL dla Oracle. Wykorzystaj ogromne możliwości bazy danych Oracle, Helion, 2022
+\end{itemize}
+
+\end{document}

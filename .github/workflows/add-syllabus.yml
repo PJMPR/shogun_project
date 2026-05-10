@@ -85,17 +85,18 @@ jobs:
 
       - name: Przetwarzanie sylabusu (JSON → TEX → PDF + aktualizacja programu)
         run: |
-          chmod +x cicd/scripts/process-syllabus.sh
-          chmod +x cicd/scripts/generate-tex.sh
-          chmod +x cicd/scripts/compile-pdf.sh
-          chmod +x cicd/scripts/update-program-json.sh
-          bash cicd/scripts/process-syllabus.sh /tmp/input_syllabus.json
+          chmod +x files_generation/cicd/scripts/process-syllabus.sh
+          chmod +x files_generation/cicd/scripts/generate-tex.sh
+          chmod +x files_generation/cicd/scripts/compile-pdf.sh
+          chmod +x files_generation/cicd/scripts/update-program-json.sh
+          bash files_generation/cicd/scripts/process-syllabus.sh /tmp/input_syllabus.json
 
       - name: Generowanie pliku Word (JSON → DOCX)
         run: |
           CODE="${{ steps.validate.outputs.syllabus_code }}"
-          cd sylabus-word
+          cd files_generation/sylabus-word
           /opt/syllabus-venv/bin/python generate_syllabus.py "$CODE"
+          cd ../..
 
       - name: Weryfikacja wygenerowanych plików
         run: |
@@ -103,13 +104,13 @@ jobs:
           TRYB="${{ steps.validate.outputs.syllabus_tryb }}"
 
           if echo "$TRYB" | grep -qi "niestacjonar"; then
-            JSON_PATH="public/assets/syllabusy-n/${CODE}.json"
-            PDF_PATH="public/assets/files/niestacjonarne/${CODE}.pdf"
-            DOC_PATH="public/assets/files/niestacjonarne/${CODE}.docx"
+            JSON_PATH="frontend/public/assets/syllabusy-n/${CODE}.json"
+            PDF_PATH="frontend/public/assets/files/niestacjonarne/${CODE}.pdf"
+            DOC_PATH="frontend/public/assets/files/niestacjonarne/${CODE}.docx"
           else
-            JSON_PATH="public/assets/syllabusy/${CODE}.json"
-            PDF_PATH="public/assets/files/stacjonarne/${CODE}.pdf"
-            DOC_PATH="public/assets/files/stacjonarne/${CODE}.docx"
+            JSON_PATH="frontend/public/assets/syllabusy/${CODE}.json"
+            PDF_PATH="frontend/public/assets/files/stacjonarne/${CODE}.pdf"
+            DOC_PATH="frontend/public/assets/files/stacjonarne/${CODE}.docx"
           fi
 
           [[ -f "$JSON_PATH" ]] || (echo "BŁĄD: Brak JSON: $JSON_PATH" >&2; exit 1)
@@ -124,16 +125,16 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add public/assets/syllabusy/ \
-                  public/assets/syllabusy-n/ \
-                  public/assets/files/stacjonarne/ \
-                  public/assets/files/niestacjonarne/ \
-                  public/assets/program.json \
-                  public/assets/niestacjonarne/program.json \
-                  public/assets/electives-other.json \
-                  public/assets/electives-specializations.json \
-                  public/assets/niestacjonarne/electives-other.json \
-                  public/assets/niestacjonarne/electives-specializations.json \
+          git add frontend/public/assets/syllabusy/ \
+                  frontend/public/assets/syllabusy-n/ \
+                  frontend/public/assets/files/stacjonarne/ \
+                  frontend/public/assets/files/niestacjonarne/ \
+                  frontend/public/assets/program.json \
+                  frontend/public/assets/niestacjonarne/program.json \
+                  frontend/public/assets/electives-other.json \
+                  frontend/public/assets/electives-specializations.json \
+                  frontend/public/assets/niestacjonarne/electives-other.json \
+                  frontend/public/assets/niestacjonarne/electives-specializations.json \
                   || true
 
           if git diff --cached --quiet; then

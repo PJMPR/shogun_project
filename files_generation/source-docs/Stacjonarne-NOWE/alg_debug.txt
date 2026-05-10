@@ -1,0 +1,106 @@
+﻿Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku
+Kierunek: INFORMATYKA
+Profil: praktyczny
+Tryb studiów:stacjonarny
+Wersja z dnia: 15.02.2025
+Nazwa przedmiotu:
+Algebra liniowa i geometria
+Kod przedmiotu:
+ALG
+Rok studiów:I
+Semestr studiów:  1
+Przedmiot obligatoryjny
+Forma i liczba godzin zajęć:
+Wykłady
+Ćwiczenia
+Laboratorium / Projekt
+30
+30
+
+Odpowiedzialny za przedmiot:
+dr Elżbieta Puźniakowska-Gałuch, ela@pejot.edu.pl
+
+Liczba punktów ECTS : 5
+Liczba godzin/ECTS dydaktycznych z udziałem prowadzącego:60h/2,5 ECTS
+
+
+Liczba godzin/ECTS przeznaczonych na pracę własną studenta:65h/2,5 ECTS
+
+
+Całkowita liczba godzin:125
+ Metody dydaktyczne 
+Forma i sposób zaliczenia oraz podstawowe kryteria oceny lub wymagania egzaminacyjne
+Wykład:
+wykład z prezentacją multimedialną
+Rozwiązywanie zadań na tablicy
+
+Ćwiczenia:
+rozwiązywanie zadań na tablicy
+dykusja
+
+
+
+Element przedmiotu 
+Sposób zaliczenia 
+
+Ćwiczenia
+Zaliczenie z oceną
+
+Wykład
+Egzamin pisemny
+
+ Kryteria oceny 
+Ćwiczenia
+Zaliczenie ćwiczeń na podstawie dwóch kolokwiów (do 10 zadań). Student jest zobowiązany uzyskać wynik powyżej 50% możliwych do zdobycia sumarycznie z obu kolokwiów.
+Skala ocen:
+Poniżej 50% - ndst
+Od 50% - dst
+Od 60% - dst+
+Od 70% - db
+Od 80% - db+
+Od 90% - bdb
+Wykład
+Egzamin pisemny z zadaniami problemowymi sprawdzający wiedzę pozyskaną na wykładzie (do 10 zadań). Na zaliczenie wykładu student jest zobowiązany uzyskać wynik powyżej 50% możliwych punktów. Skala ocen:
+Poniżej 50% - ndst
+Od 50% - dst
+Od 60% - dst+
+Od 70% - db
+Od 80% - db+
+Od 90% - bdb
+Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową.
+Określenie przedmiotów wprowadzających wraz z wymogami wstępnymi
+Nazwa przedmiotu poprzedzającego
+Wymagane zagadnienia/umiejętności niezbędne w realizacji danego przedmiotu
+
+matematyka z zakresu szkoły średniej
+
+Cel dydaktyczny przedmiotu 
+Celem kształcenia jest nabycie umiejętności posługiwania się aparatem teorii mnogości, liczb zespolonych, pierścieni wielomianów; formułowania problemów w terminach macierzy i wykonywania operacji na macierzach; rozwiązywania układu równań liniowych; znajomości podstawowych struktur algebraicznych. Omawiane są również podstawowe zagadnienia geometrii analitycznej na płaszczyźnie i w przestrzeni trójwymiarowej.
+ Wykaz literatury: 
+Literatura podstawowa (wymagana do ostatecznego zaliczenia zajęć, zdania egzaminu wykorzystywana podczas zajęć oraz studiowana samodzielnie przez studenta): 
+1. T. Jurlewicz, Z. Skoczylas, " Algebra i geometria analityczna. Definicje, twierdzenia, wzory.", wydanie z 2021 roku i nowsze.2. T. Jurlewicz, Z. Skoczylas, "Algebra liniowa 2. Definicje, twierdzenia, wzory.", wydanie z 2005 roku i nowsze.
+3. T. Jurlewicz, Z. Skoczylas, "Algebra i geometria analityczna. Przykłady i zadania", wydanie z 2021 roku i nowsze.4. T. Jurlewicz, Z. Skoczylas, "Algebra liniowa 2. Przykłady i zadania", wydanie z 2001 roku i nowsze.
+Literatura uzupełniająca
+1. Przemysław Kajetanowicz, Jędrzej Wierzejewski, Algebra z geometrią analityczną Wydawnictwo PWN, 2008, ISBN 978-83-01-15493-6 2008.
+2. Henryk Arodź, Krzysztof Rościszewski, Algebra i geometria analityczna w zadaniach Wydawnictwo Znak, 2005, ISBN 83-240-0547-1 2005.
+3. Aleksiej I. Kostrikin, Zbiór zadań z algebry Wydawnictwo PWN, 2005, ISBN 83-01-14539-0
+Efekty kształcenia dla przedmiotu 
+Wiedza :
+Student zna i rozumie  jak zastosować pojęcia algebry i geometrii analitycznej  do problemów informatycznych.
+Student zna i rozumie pojęcie zbioru liczb zespolonych.Student zna i rozumie pojęcie wielomianu, funkcji wymiernej i ułamków prostych w zbiorze liczb rzeczywistych i zespolonych.Student zna i rozumie pojęcie macierzy rzeczywistej i zespolonej  oraz ich klasyfikację. Zna i rozumie sposób wykonywania działań na macierzach  i ich zastosowanie do przekształceń liniowych oraz rozwiązywania układów równań liniowych.
+Student zna i rozumie metody rozwiązywania układów równań liniowych rzeczywistych i zespolonych.Student zna i rozumie analityczne sposoby opisywania obiektów w przestrzeni 2D i 3D.
+Umiejętności :
+Student potrafi wykonywać operacje na liczbach zespolonych w postaci algebraicznej i trygonometrycznej. 
+Student potrafi wykonywać działania na wielomianach oraz funkcjach wymiernych rzeczywistych i zespolonych.
+Student potrafi wykonywać działania na macierzach rzeczywistych i zespolonych. Potrafi obliczać macierz odwrotną różnymi metodami. Student potrafi obliczyć macierz przekształcenia liniowego oraz składać przekształcenia liniowe. Student potrafi obliczyć wyznacznik macierzy kwadratowej i go zastosować do różnych zagadnień.Student potrafi rozwiązywać układy równań liniowych kilkoma metodami. Student potrafi  posługiwać się aparatem geometrii analitycznej 2D i 3D. Potrafi obliczyć iloczyn skalarny, wektorowy i mieszany. Student potrafi wykorzystać te pojęcia do obiektów w przestrzeni 3D. Student potrafi używać różnych postaci równań prostych, płaszczyzn oraz obliczyć rzuty prostokątne i ukośne.
+Kompetencje społeczne:
+Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst.
+Treści programowe
+Liczby zespolone. Interpretacja geometryczna. Postać kartezjańska.  Postać trygonometryczna. Potęgi i pierwiastki liczb zespolonych.
+Działania na wielomianach. Mnożenie , dzielenie wielomianów.  Pierwiastki wielomianów rzeczywistych i zespolonych (wzory Cardana). Funkcje wymierne, ułamki proste (rzeczywiste i zespolone).
+Macierze. Podstawowe operacje na macierzach.  Macierze odwrotne (metoda bezwyznacznikowa). Macierze przekształceń liniowych.
+Wyznaczniki (różne definicje).  Rozwinięcie Laplace’a oraz inne metody obliczania wyznaczników dowolnych stopni.  Macierze odwrotne (za pomocą macierzy dopełnień algebraicznych).
+Układy równań liniowych. Metoda eliminacji Gaussa. Wzory Cramera.
+Geometria analityczna w 2D.  Wektory w 3D. Iloczyn skalarny, wektorowy i mieszany.  Prosta i płaszczyzna w przestrzeni 3D.
+
+

@@ -1,0 +1,217 @@
+﻿% ===========================================================
+%  Sylabus: Testowanie bezpieczeństwa systemów IT (TBS)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: TBS}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Testowanie bezpieczeństwa systemów IT} \\[3pt]
+  \textbf{Kod przedmiotu:}    & TBS \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr Adam Kassenberg \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 30 h & 60 h & 65 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania systemów IT, ale także zdobycie praktycznych umiejętności w identyfikacji i naprawie luk w zabezpieczeniach. Dzięki temu studenci będą lepiej przygotowani do zabezpieczania systemów informatycznych w rzeczywistych scenariuszach.
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item 1. Wprowadzenie do testowania bezpieczeństwa
+  \item Cel i znaczenie testowania bezpieczeństwa.
+  \item 2. Metodologia testów penetracyjnych
+  \item Definicja testów penetracyjnych.
+  \item Różne podejścia i metodologie.
+  \item Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie.
+  \item Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach.
+  \item 3. Metasploit
+  \item Wprowadzenie do narzędzia Metasploit.
+  \item Konfiguracja i podstawowe funkcje.
+  \item Przykłady wykorzystania Metasploit do testów penetracyjnych.
+  \item Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach.
+  \item 4. Bezpieczeństwo aplikacji webowych
+  \item Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych.
+  \item Przykłady ataków i ich skutki.
+  \item Techniki zabezpieczania aplikacji webowych.
+  \item Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń.
+  \item 5. Kontrola dostępu do funkcji i danych
+  \item Definicja i znaczenie kontroli dostępu.
+  \item Najlepsze praktyki implementacji.
+  \item Przykłady problemów i ich rozwiązania.
+  \item Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach.
+  \item 6. SQL Injection
+  \item Mechanizmy ataku SQL Injection.
+  \item Metody identyfikacji i zabezpieczania przed SQL Injection.
+  \item Przykłady ataków i ich skutki.
+  \item Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach.
+  \item 7. Cross Site Scripting (XSS)
+  \item Typy XSS: reflected, stored, DOM-based.
+  \item Techniki wykrywania i zabezpieczania przed XSS.
+  \item Przykłady ataków i ich skutki.
+  \item Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń.
+  \item 8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych.
+  \item Techniki bezpiecznego przetwarzania danych.
+  \item Przykłady zagrożeń związanych z danymi niezaufanymi.
+  \item Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach.
+  \item 9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT.
+  \item Metody identyfikacji i korekty.
+  \item Przykłady konsekwencji błędnej konfiguracji.
+  \item Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień.
+  \item 10. Testowanie typu Black Box
+  \item Definicja i cel testowania typu Black Box.
+  \item Techniki i narzędzia używane w testach Black Box.
+  \item Przykłady scenariuszy testowych.
+  \item Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie metodologię i narzędzia używane do identyfikacji i eksploatacji luk w zabezpieczeniach (testy penetracyjne). Student rozumie działanie  ataków SQL Injection oraz zna metody ich wykrywania i zapobiegania. Student zna i rozumie sposoby wykrywania i zabezpieczania przed atakami XSS.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi korzystać z narzędzia Metasploit do testowania systemów. Student potrafi implementować i testować mechanizmy kontroli dostępu.  Student potrafi przeprowadzić testy BlackBox na rzeczywistych systemach.
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Studium przypadków
+  \item Zadania problemowe
+  \item Kryteria oceny
+  \item Kolokwium pisemne.
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+  \item Skala ocen:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item "Metasploit: The Penetration Tester's Guide, David Kennedy, Jim O'Gorman, Justin Brown i Peter Kim
+  \item "The Web Application Hacker's Handbook: Finding and Exploiting Security Flaws", Dafydd Stuttard, Marcus Pinto
+  \item "Hacking: The Art of Exploitation", Jon Erickson
+  \item "Black Hat Python: Python Programming for Hackers and Pentesters", Justin Seitz
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item "SQL Injection Attacks and Defense", Justin Clarke
+\end{itemize}
+
+\end{document}

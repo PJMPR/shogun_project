@@ -1,0 +1,85 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Język japoński – Lektorat 3",
+        "kod_przedmiotu": "LEK3",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych – Yugo Azuma",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {
+            "lektorat": "Analiza tekstów z dyskusją, metoda projektów, praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty."
+        },
+        "zaliczenie": {
+            "Lektorat": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 2 nieusprawiedliwione nieobecności w semestrze.",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język japoński LEK2",
+                "wymagania": "Znajomość dwóch podstawowych japońskich alfabetów (hiragana, katakana), umiejętność przedstawienia się i znajomość podstawowej gramatyki/słownictwa opisującego miejsca."
+            }
+        ],
+        "cel_dydaktyczny": "Kontynuacja nauczania języka japońskiego na poziomie JLPT N5. Student poszerza zasób kanji, poznaje system godzin i dat, odmianę czasowników w formie masu oraz utrwala słownictwo związane z życiem codziennym i środowiskiem miejskim. Przedmiot przygotowuje do egzaminu JLPT N5.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały własne – przygotowane przez lektora Yugo Azumę na podstawie własnych pomysłów oraz różnych książek.",
+                    "Minna no nihongo I – główny podręcznik, wyd. 2, 3A Network, Japonia."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Materiały online wskazane przez lektora."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": null,
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku japońskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem japońskim w mowie i piśmie na poziomie JLPT N5."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Powtórka z poprzedniego semestru.",
+            "Liczby 100, 1000, 10000, 100000. Sufiks -en (jen 円). Pytania o cenę. Zwroty: robienie zakupów. Kanji: 百、千、万、円.",
+            "Powtórka z poprzednich zajęć. Warsztaty.",
+            "Godziny i minuty, rano i wieczorem, dni tygodnia. Kanji: 毎、時、分、半.",
+            "Przedział czasu. Harmonogram dnia i czasowniki. Miejsca. Kanji: 国、月、火、水.",
+            "Harmonogram dnia – jak długo zajmuje czynność. Forma masu, masen, mashita, masendeshita. Kanji: 木、金、土、書.",
+            "Powtórka z poprzednich zajęć. Powtórka kanji – czytanie. Słownictwo: miasto. Partykuła he.",
+            "Warsztaty i ćwiczenie mówienia."
+        ]
+    }
+}
+

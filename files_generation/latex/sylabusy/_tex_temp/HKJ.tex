@@ -1,0 +1,263 @@
+﻿% ===========================================================
+%  Sylabus: Historia i Kultura Japonii (HKJ)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: HKJ}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Historia i Kultura Japonii} \\[3pt]
+  \textbf{Kod przedmiotu:}    & HKJ \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    &  \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+32 h & --- & --- & 32 h & 18 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Nauka zagadnień z historii i kultury Japonii; przygotowanie do kolokwium końcowego; samodzielne studia literatury i materiałów dotyczących kultury japońskiej.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item kolokwium końcowe
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Cel dydaktyczny}
+
+Zapoznanie studentów z historią i kulturą Japonii, z najważniejszymi osiągnięciami w dziedzinie sztuki i estetyki. Zaznajomienie z tradycjami, zwyczajami, normami zachowań społecznych, problemami współczesnego społeczeństwa japońskiego oraz współczesną i dawną architekturą.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Introduction to the history and culture of Japan, including its most important achievements in the field of art and aesthetics. Familiarization with traditions, customs, norms of social behavior, problems of contemporary Japanese society, as well as modern and historical architecture.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Kultura i etykieta biznesu w Japonii (1) - Jak zdobyć zaufanie Japończyka. Dobre pierwsze wrażenie. Przedstawianie się i wymiana wizytówek. Nawiązywanie i podtrzymywanie kontaktu. Podstawowa japońska etykieta biznesu. Japońska gospodarka. Rynek pracy w Japonii. \\
+  \rowcolor{tableRowAlt} 2. & Kultura i etykieta biznesu w Japonii (2) - Charakterystyka pracy w Japonii. Kobiety w japońskich firmach. Przedsiębiorstwa japońskie (kaizen). Wartości, symbole, postawy w japońskich firmach. Przebieg spotkania biznesowego. Negocjacje i podejmowanie decyzji. \\
+  \rowcolor{tableRowLight} 3. & Japonia w relacjach zagranicznych - Firmy zagraniczne w Japonii. Efektywny biznes w Japonii. Różnice kulturowe pomiędzy Japonią, Chinami i Koreą. Lokalizacja Japonii na świecie i elementy kultury japońskiej. \\
+  \rowcolor{tableRowAlt} 4. & Geneza i historia animacji i mangi - Wczesny rozwój animacji i mangi. Ważne dzieła i ich wpływ kulturowy. Popularność i rozpowszechnianie w Japonii i za granicą. \\
+  \rowcolor{tableRowLight} 5. & Gatunki i cechy charakterystyczne mangi i anime - Gatunki shōnen, shōjo, seinen. Projekty postaci i style ekspresji. Przemysłowy i ekonomiczny wpływ anime i mangi. \\
+  \rowcolor{tableRowAlt} 6. & Wielkość i rozwój rynku animacji i mangi - Działalność związana z licencjonowaniem i rozwojem produktów. Wpływ gospodarczy animacji i mangi. \\
+  \rowcolor{tableRowLight} 7. & Estetyka japońska - Percepcja natury. Pojęcie piękna i kształtowanie się estetyki japońskiej. Cechy kluczowe estetyki japońskiej: sugestia, nieregularność, prostota, nietrwałość. Pojęcia estetyczne: wabi-sabi, miyabi, aware, iki, yūgen. \\
+  \rowcolor{tableRowAlt} 8. & Architektura japońska - Miasta i prowincji, współcześni architekci. Przejście od architektury tradycyjnej do nowoczesnej. Architektura współczesna: powojenny metabolism, postmodernizm. \\
+  \rowcolor{tableRowLight} 9. & Koleje japońskie - Ewolucja i estetyka dworców kolejowych w Japonii. Japońskie pociągi. \\
+  \rowcolor{tableRowAlt} 10. & Estetyka infrastruktury w Japonii - Architekt i inżynier w Japonii. Historia estetyki infrastruktury. Zasady estetyki kolei. \\
+  \rowcolor{tableRowLight} 11. & Przestrzeń publiczna w Japonii - Przykłady kolei na estakadach, placów dworcowych, sztuka publiczna. \\
+  \rowcolor{tableRowAlt} 12. & Kultura otaku - Powstanie i charakterystyka. Znaczenie cosplay i doujin. Rola wydarzeń i społeczności - globalny wpływ. \\
+  \rowcolor{tableRowLight} 13. & Popularność i wpływ anime i mangi za granicą - Interakcja z międzynarodowymi fanami. Akceptacja kulturowa. \\
+  \rowcolor{tableRowAlt} 14. & Wprowadzenie do historii japońskiej. \\
+  \rowcolor{tableRowLight} 15. & Podsumowanie wszystkich zagadnień, kolokwium końcowe. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W19 & Student zna i rozumie podstawowe fakty z historii i kultury Japonii. & kolokwium końcowe \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna najważniejsze pojęcia estetyki japońskiej. & kolokwium końcowe \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi pozyskiwać specjalistyczne informacje z literatury na temat kultury i historii Japonii. &  \\
+  \rowcolor{tableRowAlt} K\_U04 & Student potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski. &  \\
+  \rowcolor{tableRowLight} K\_U19 & Student potrafi formułować i uzasadniać opinie na tematy poruszane na wykładzie. &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do uczenia się przez całe życie w kontekście nowej wiedzy dotyczącej kultury Japonii. &  \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Marszałek-Kawa, J., Gawłowski, R. (red.) (2013) Kulturowe i edukacyjne oblicza współczesnej Azji, Wydawnictwo Adam Marszałek, Toruń.
+  \item Nishigake, H., Dillon, T. (2009) An illustrated English-Japanese Dictionary of Japanese life, Shogakukan, Tokyo.
+  \item Takei, N. (2001) Getting closer to Japan. Japanese culture, ASK., Ltd., Tokyo.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Doi, T. (1973) The Anatomy of Dependence, Kodansha International, Tokyo.
+  \item Keene, D. (1971) Appreciations of Japanese culture, Kodansha International, Tokyo.
+  \item Kubiak Ho-Chi, B. (2009) Estetyka i sztuka japońska, Universitas, Kraków.
+  \item Mukai, K. (2008) A guidebook to Japan and its customs, Nihon Bungeisha, Tokyo.
+  \item Richie, D. (2007) A tractate on Japanese aesthetics, Stone Bridges Press, Berkley.
+  \item Young, D., Young, M. (2019) The art of Japanese architecture, Tuttle Publishing, Tokyo.
+  \item Lynch, K. (1960) The Image of the City, MIT Press, Cambridge MA.
+  \item Meeks, C.L.V. (1995) The Railroad Station: An Architectural History, Dover Publications, New York.
+  \item Mizuno, K. (2017) Subway stations around the world, Seigensha, Tokyo.
+\end{itemize}
+
+\end{document}

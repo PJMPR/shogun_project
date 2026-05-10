@@ -1,0 +1,122 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Zarządzanie projektem informatycznym",
+                    "kod_przedmiotu":  "ZPR",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  15
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr. Aleksandr Polin (alex.polin@pjwstk.edu.pl)",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Wykład z elementami dyskusji,",
+                                           "prezentacja multimedialna,",
+                                           "case study,",
+                                           "wykład zaproszony.",
+                                           "dyskusja,",
+                                           "burza mózgów,",
+                                           "rozwiązywanie zadań,",
+                                           "analiza przypadków,",
+                                           "prezentacje.",
+                                           "Zaliczenie",
+                                           "Kryteria oceny",
+                                           "Studenci tworzą i prezentują projekt planu zarządzania projektem informatycznym, wybranego przez grupę.",
+                                           "Oceniane są: kompletność planu, zastosowanie teorii z wykładów, realizm, innowacyjność, jakość prezentacji.",
+                                           "Ocena grupowa i indywidualna (uwzględniająca wkład).",
+                                           "Nie dotyczy."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Znajomość podstawowych pojęć z zakresu inżynierii oprogramowania, cyklu życia oprogramowania.",
+                                                         "wymagania":  "Umiejętność pracy w zespole."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Dąbrowski, M. Wieczne opóźnienie. Zarządzanie projektami IT. OnePress, 2021.",
+                                                                          "Schwalbe, Kathy. Information Technology Project Management. 9th ed. Cengage Learning, 2019",
+                                                                          "Kisielnicki, J., Zarządzanie projektami, Nieoczywiste"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "PMI. A Guide to the Project Management Body of Knowledge (PMBOK® Guide). 7th ed. Project Management Institute, 2021.",
+                                                                             "Sutherland, Jeff. Scrum: The Art of Doing Twice the Work in Half the Time. Crown Business, 2014."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania.",
+                                                              "Zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności.",
+                                                              "Zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Potrafi pracować w zespole, oszacować czas i koszty realizacji zadania, planować i realizować harmonogram prac.",
+                                                                    "Potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją projektu informatycznego."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Jest gotów do współdziałań i współpracy w zespole, przyjmując różne role.",
+                                                                             "Jest gotów do działania w sposób przedsiębiorczy."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do zarządzania projektami IT",
+                                              "Definicje, cele i zakres zarządzania projektami.",
+                                              "Cykl życia projektu IT.",
+                                              "Case study: Denver International Airport Baggage System - analiza błędów i wnioski.",
+                                              "Metodologie zarządzania projektami",
+                                              "Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania.",
+                                              "Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu.",
+                                              "Motywacja i zarządzanie zespołami IT",
+                                              "Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej.",
+                                              "Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację.",
+                                              "Budowanie efektywnych zespołów, role i odpowiedzialności.",
+                                              "Planowanie projektu",
+                                              "Etapy planowania projektu, analiza sytuacji, SMART goals, WBS.",
+                                              "Identyfikacja i analiza ryzyka.",
+                                              "Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania.",
+                                              "Ćwiczenia: planowanie projektu z użyciem \"Ninja Planning Card\".",
+                                              "Realizacja i kontrola projektu",
+                                              "Zarządzanie czasem, budżetem i zasobami.",
+                                              "Monitoring postępów projektu, raportowanie, analiza odchyleń.",
+                                              "Zarządzanie zmianą, kontrola jakości.",
+                                              "Zamykanie projektu",
+                                              "Ocena projektu, dokumentacja, lessons learned.",
+                                              "Prezentacja wyników projektu.",
+                                              "Dodatkowe zagadnienia",
+                                              "PRINCE2, Six Sigma - wprowadzenie.",
+                                              "Teorie X, Y, Z - style zarządzania.",
+                                              "Cargo Cults - unikanie bezmyślnego naśladowania.",
+                                              "Etyka w zarządzaniu projektami IT."
+                                          ]
+                }
+}

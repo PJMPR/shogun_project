@@ -1,0 +1,14 @@
+﻿==> Generowanie plikow .tex...
+OK: program_stacjonarne.tex
+OK: program_niestacjonarne.tex
+    OK
+
+==> Kompilacja: program_stacjonarne
+    OK: program_stacjonarne.pdf (271.7 KB)
+True
+
+==> Kompilacja: program_niestacjonarne
+    OK: program_niestacjonarne.pdf (272.3 KB)
+True
+
+Gotowe! PDF-y w: C:\Users\adamu\WebstormProjects\pj-studies\latex-studia\output

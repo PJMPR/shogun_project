@@ -1,0 +1,106 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japońska Akademia Technik Komputerowych Filia w Gdańsku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "15.02.2025",
+    "nazwa_przedmiotu": "Java Zaawansowana",
+    "kod_przedmiotu": "JAZ",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 45
+    },
+    "odpowiedzialny_za_przedmiot": "Mgr inż. Adam Urbanowicz",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład konwersatoryjny",
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "praca w grupach",
+        "dyskusja",
+        "rozwiązywanie zadań",
+        "burza mózgów"
+      ]
+    },
+    "zaliczenie": {
+      "laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "wyklad": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": [
+      "Kolokwium",
+      "Projekt zaliczeniowy"
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "POJ – Programowaniu obiektowe w Javie",
+        "wymagania": "POJ- zakres całego przedmiotu"
+      }
+    ],
+    "cel_dydaktyczny": "Podstawowym celem przedmiotu jest zapoznanie słuchaczy z zaawansowanymi konstrukcjami języka Javy. Innym ważnym celem jest zapoznanie słuchaczy z architekturą serwisów internetowych zbudowanych przy pomocy narzędzia Spring Framework.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Spring w akcji. Wydanie V, Craig Walls, 2019, ISBN  9788328356061"
+        ]
+      },
+      "dokumentacja_internetowa": {
+        "java": "https://docs.oracle.com/en/java/javase/index.html",
+        "spring_framework": "https://docs.spring.io/spring-framework/reference/"
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        "Student zna i rozumie pojęcia w zakresie konstrukcji programistycznych, rekurencji oraz struktur danych, jak też ich podstawowych implementacji",
+        "Student zna i rozumie pojęcia w zakresie głównych protokołach internetowych, zasadach tworzenia bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie podstawowe techniki, wzorce projektowe i technologie towarzyszące wytwarzaniu takich aplikacji",
+        "Student zna i rozumie zaawansowane pojęcia z zakresu programowania, konstrukcji programów, ich implementacji, testowania i uruchamiania, a także ma podstawową wiedzę w zakresie języków, poziomów i paradygmatów programowania, w tym obiektowego; zna i rozumie pojęcia z zakresu aktualnych metod, technik i narzędzi stosowanych podczas tworzenia, testowania i uruchamiania oprogramowania"
+      ],
+      "umiejetnosci": [
+        "Student potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania",
+        "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+        "Student potrafi sformułować zapytania w języku SQL i skonstruowaś schemat relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych",
+        "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy odpowiednio dobranych technologii"
+      ],
+      "kompetencje_spoleczne": null
+    },
+    "tresci_programowe": [
+      "Zapoznanie się ze środowiskiem programistycznym.",
+      "Debugowanie i analiza kodu.",
+      "Typy generyczne języka JAVA",
+      "Wyrażenia LAMBDA (funkcje strzałkowe).",
+      "Wzorce projektowe: Metoda Fabrykująca oraz Fabryka.",
+      "Strumienie na kolekcjach obiektów w JAVIE",
+      "Wzorce projektowe: Strategia, Filtr",
+      "Refleksje w języku JAVA",
+      "Wzorce projektowe: Fasada",
+      "Adnotacje w języku JAVA",
+      "Wzorce projektowe: Polityka",
+      "Spring Framework: Architektura aplikacji w technologii Spring.",
+      "Wzorce projektowe: Wstrzykiwanie zależności (Dependency Injection) i Kontener IoC (Inversion of Control)",
+      "Spring Framework: komunikacja z zewnętrznymi serwisami REST, definiowanie obiektów DTO (Data Transfer Objects)",
+      "Wzorce projektowe: Pośrednik (Proxy)",
+      "Spring Framework: Budowanie aplikacji wielomodułowych. Modelowanie obiektowo-releacyjne (ORM)",
+      "Wzorce projektowe: Repozytorium",
+      "Spring Framework: Kontrolery REST. Projektowanie zasobów REST.",
+      "Spring Framework: Wprowadzenie do SOA (Systemy zorientowane serwisowo)"
+    ]
+  }
+}

@@ -1,0 +1,293 @@
+﻿% ===========================================================
+%  Sylabus: Projekt Zespołowy 2 (PRZ2)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRZ2}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Projekt Zespołowy 2} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRZ2 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr hab. Marek A. Bednarczyk \\[3pt]
+  \textbf{Wersja z dnia:}     & 15.02.2025 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+--- & --- & 40 h & 40 h & 110 h & 150 h & \textbf{6} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Kontynuacja i finalizacja projektu dyplomowego; opracowanie dokumentacji końcowej; przygotowanie prezentacji finalnej i obrony przed komisją.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item obrona projektu
+  \item ocena sporządzonego dokumentu
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+W ramach przedmiotu studenci kontynuują projekt podjęty w ramach Projektu zespołowego PRZ1, tematycznie związany z realizowaną specjalizacją. Udokumentowane, opracowane w ramach przedmiotu rozwiązanie stanowi element dyplomowej pracy inżynierskiej. Proponowane przez zespół rozwiązanie praktycznego problemu winno być innowacyjne i możliwie wszechstronne, obok różnych wymiarów technicznych uwzględniać też aspekty ekonomiki, ergonomii, aspekty prawne i społeczne, może też stanowić produkt „preinkubacyjny”. Typowo – zależnie od przyjętej strategii -  w ramach PRZ2 realizowane są ewolucyjne przyrosty (kolejne wydania) projektów, powstające na bazie wydania powstałego w ramach PRZ1.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{As part of the course, students continue the project started in Team Project PRZ1, thematically related to their specialization. The documented solution developed within the course constitutes part of the engineering diploma thesis. The solution proposed by the team to a practical problem should be innovative and as comprehensive as possible, taking into account, in addition to various technical dimensions, also economic, ergonomic, legal, and social aspects; it may also serve as a 'pre-incubation' product. Typically, depending on the adopted strategy, PRZ2 involves evolutionary increments (subsequent releases) of projects based on the release created in PRZ1.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Projekt zespołowy 1 (PRZ1) & Znajomość analizy wymagań i projektowania obiektowego; znajomość notacji UML; umiejętność programowania oraz konstrukcji baz danych; znajomość narzędzi; wiedza specjalizacyjna \\
+  \rowcolor{tableRowAlt} Proseminarium (PSEM) & Równocześnie lub poprzedzająco \\
+  \rowcolor{tableRowLight} Przedmioty specjalizacyjne & Wiedza specjalizacyjna z wybranej specjalizacji \\
+  \rowcolor{tableRowAlt} Społeczne Aspekty Informatyki (SAI) & Komercjalizacja projektów informatycznych (KMR) / Planowanie, organizacja i zarządzanie przedsiębiorstwem (POZ) \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Przegląd stanu projektu i jego dokumentacji; dyskusja zakresu analizy biznesowej lub społecznej projektu. \\
+  \rowcolor{tableRowAlt} 2. & Dyskusja (i ewentualnie zmiana) strategii realizacji, ról i zadań członków zespołu. Planowanie realizacji kolejnych wydań systemu \\
+  \rowcolor{tableRowLight} 3. & Iteracyjnie: analiza i modelowanie kolejnego przyrostu+kontrola postępów prac projektowych \\
+  \rowcolor{tableRowAlt} 4. & Iteracyjnie: projektowanie rozwiązań kolejnego przyrostu+kontrola postępów prac projektowych \\
+  \rowcolor{tableRowLight} 5. & Iteracyjnie: implementacja modułów kolejnego przyrostu przez członków zespołu projektowego+kontrola postępów prac projektowych i dokumentacyjnych \\
+  \rowcolor{tableRowAlt} 6. & Iteracyjnie: testowanie przyrostu. Uzgodnienie zbioru danych walidujących całość produktu. \\
+  \rowcolor{tableRowLight} 7. & Integracja modułów wykonanych przez poszczególnych członków zespołów; uruchamianie. \\
+  \rowcolor{tableRowAlt} 8. & Walidacja rezultatów projektu \\
+  \rowcolor{tableRowLight} 9. & Dokumentowanie wyników projektu i wkładu pracy członków zespołu; raport końcowy \\
+  \rowcolor{tableRowAlt} 10. & Prezentacje systemów realizujących tematy prac inż. zespołów projektowych. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W19 & Ma wiedzę wymaganą do oceny społecznych skutków realizacji wdrożenia projektu informatycznego &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Rozumie aspekty komercjalizacji i innowacyjności projektu, jak i jego powiązania z otoczeniem biznesowym &  \\
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi pozyskać i integrować informacje przydatne dla realizacji projektu dyplomowego & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U02 & Student potrafi uzyskać z otoczenia oraz dyskutować informację pozyskaną lub wypracowaną dla realizacji projektu dyplomowego & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U03 & Student potrafi przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U04 & Student potrafi wyszukać i wdrożyć w projekcie nowe techniki i narzędzia & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U19 & Student: & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U05 & potrafi pracować w zespole pełniąc w nim uzgodnione role & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U05 & potrafi oszacować czas potrzebny na realizację zadania & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U05 & planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_U27 & Student potrafi odnieść i zastosować wiedzę specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu projektowego & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K05 & Student: & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K01 & jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K05 & Student & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K02 & jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K05 & Student & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K03 & jest gotów do samodzielnego uczenia się przez całe życie & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K05 & Student: & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K04 & potrafi pełnić przypadające nań role projektowe i wykonawcze & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K04 & potrafi współpracować z innymi członkami grupy i otoczeniem projektu & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K05 & potrafi właściwie zaplanować kolejność i realizację zadań projektowych & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K06 & dostrzega w projekcie problemy i prawidłowo, zgodnie z zasadami profesjonalizmu zawodowego rozwiązuje i podejmuje decyzje z zakresu problemów etycznych i prawnych & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student: & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K07 & stosuje w projekcie rozwiązania innowacyjne & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K07 & dostrzega i ocenia aspekty komercjalizacji projektu & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowLight} K\_K05 & Student & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K08 & jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych & prezentacja projektu i dokumentacji, obrona projektu, ocena sporządzonego dokumentu, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item metoda projektów (projekt praktyczny)
+  \item praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item J. Górski (red.) Inżynieria oprogramowania w projekcie informatycznym. MIKOM, 2000
+  \item St. Szejko (red). Metody wytwarzania oprogramowania. MIKOM, 2002.
+  \item Materiały wykładowe i specjalizacyjne
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Dokumentacja środowisk i narzędzi
+  \item Strony www
+  \item Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK
+\end{itemize}
+
+\end{document}

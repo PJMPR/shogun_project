@@ -1,0 +1,143 @@
+% ============================================================
+%  pjatk.sty  –  wspólny szablon PJATK Filia w Gdańsku
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pjatk}[2026/02/19 PJATK style]
+
+% --- Kodowanie i język ----------------------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[polish]{babel}
+
+% --- Czcionki -------------------------------------------------
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+
+% --- Marginesy ------------------------------------------------
+\RequirePackage[
+  a4paper,
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm
+]{geometry}
+
+% --- Kolory ---------------------------------------------------
+\RequirePackage{xcolor}
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{240,240,240}
+\definecolor{pjatkDarkGray}{RGB}{50,50,50}
+
+% --- Grafika --------------------------------------------------
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+
+% --- Tabele ---------------------------------------------------
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+\RequirePackage{multirow}
+\RequirePackage{array}
+\RequirePackage{colortbl}
+
+% --- Listy ----------------------------------------------------
+\RequirePackage{enumitem}
+\setlist{noitemsep, topsep=4pt}
+
+% --- Nagłówki i stopki ----------------------------------------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{Polsko-Japońska Akademia Technik Komputerowych}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Filia w Gdańsku}}
+\fancyfoot[C]{\small\textcolor{pjatkGray}{\thepage}}
+
+% --- Sekcje ---------------------------------------------------
+\RequirePackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{pjatkRed}}
+  {\thesection.}{0.5em}{}[\color{pjatkRed}\titlerule]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{pjatkDarkGray}}
+  {\thesubsection.}{0.5em}{}
+
+% --- Hiperłącza -----------------------------------------------
+\RequirePackage[
+  colorlinks=true,
+  linkcolor=pjatkRed,
+  urlcolor=pjatkRed,
+  citecolor=pjatkRed,
+  pdftitle={Sylabus PJATK},
+  pdfauthor={PJATK Filia w Gdańsku}
+]{hyperref}
+
+% --- Ramka informacyjna (nagłówek sylabusu) -------------------
+\RequirePackage{mdframed}
+\newmdenv[
+  linecolor=pjatkRed,
+  linewidth=1.5pt,
+  backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  roundcorner=4pt
+]{infobox}
+
+% --- Pole danych (etykieta: wartość) --------------------------
+\newcommand{\pole}[2]{%
+  \noindent\textbf{\textcolor{pjatkGray}{#1:}}\quad #2\par\smallskip
+}
+
+% --- Sekcja sylabusu (numerowana automatycznie) ---------------
+\newcounter{sylsec}
+\newcommand{\sylsection}[1]{%
+  \stepcounter{sylsec}%
+  \vspace{8pt}%
+  \noindent{\large\bfseries\textcolor{pjatkRed}{\thesylsec.\enspace #1}}%
+  \vspace{4pt}\par
+  \noindent\textcolor{pjatkRed}{\rule{\linewidth}{0.6pt}}\par
+  \vspace{4pt}%
+}
+
+% --- Strona tytułowa sylabusu ---------------------------------
+\newcommand{\sylabustitle}[6]{%
+  % #1 Nazwa przedmiotu
+  % #2 Kod
+  % #3 Tryb studiów
+  % #4 Semestr
+  % #5 Rok studiów
+  % #6 Wersja z dnia
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+      \vspace*{1cm}
+      \includegraphics[width=5cm]{szablony/pjatk-logo}\\[1cm]
+      {\Large\bfseries Polsko-Japońska Akademia Technik Komputerowych\\[0.3cm]
+       \large Filia w Gdańsku}\\[2cm]
+      {\LARGE\bfseries\color{pjatkRed} SYLABUS}\\[0.5cm]
+      {\large Kierunek: Informatyka \textbar\ Profil: praktyczny}\\[2cm]
+      \begin{infobox}
+        \begin{tabularx}{\textwidth}{lX}
+          \textbf{Nazwa przedmiotu:} & {\large\bfseries #1} \\[4pt]
+          \textbf{Kod przedmiotu:}   & #2 \\[4pt]
+          \textbf{Tryb studiów:}     & #3 \\[4pt]
+          \textbf{Semestr:}          & #4 \\[4pt]
+          \textbf{Rok studiów:}      & #5 \\[4pt]
+          \textbf{Wersja z dnia:}    & #6 \\
+        \end{tabularx}
+      \end{infobox}
+    \end{center}
+    \vfill
+    \begin{center}
+      \small\textcolor{pjatkGray}{Gdańsk, \the\year}
+    \end{center}
+  \end{titlepage}
+  \setcounter{page}{1}%
+  \setcounter{sylsec}{0}%
+}
+
+\endinput
+

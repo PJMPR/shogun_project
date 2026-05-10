@@ -1,0 +1,101 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Komunikacja i protokoły dla Internetu rzeczy",
+                    "kod_przedmiotu":  "KPIR",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "badania symulacyjne",
+                                           "Kryteria oceny",
+                                           "Laboratorium/",
+                                           "- pozytywna ocena za mikroprojekty,",
+                                           "- pozytywna ocena za ćwiczenia laboratoryjne,",
+                                           "- egzamin pisemny składający się z co najwyżej dziesięciu zadań"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Analiza Matematyczna, Algebra Liniowa i Geometria, Fizyka, Użytkowanie komputerów, Wstęp do informatyki i architektury komputerów, Programowanie 1,  Elektronika.",
+                                                         "wymagania":  "Umiejętność programowania w języku typu C, C++ lub Java."
+                                                     },
+                                                     {
+                                                         "nazwa":  "Znajomość regulaminu i zasad BHP obowiązujących w laboratorium.",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem głównym przedmiotu jest przedstawienie budowy i działania systemów Internetu rzeczy a w szczególności metod i sposobów komunikowania w tym protokołów, które umożliwią wymianę informacji między czujnikami, efektorami i sterownikami.Cechą systemów Internetu rzeczy jest wykorzystywanie urządzeń o obniżonym poborze mocy oraz działanie w warunkach wymagających zapewnienia bezpieczeństwa transmisji i przetwarzania danych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Gary Smart, “Practical Python Programming for IoT. Build advanced IoT projects using a Raspberry Pi 4, MQTT, RESTful APIs, WebSockets, and Python 3”, SBN Ebooka: 978-18-389-8283-6, 9781838982836, 2020",
+                                                                          "Joey Bernal, Bharath Sridhar, “Industrial IoT for Architects and Engineers. Architecting secure, robust, and scalable industrial IoT solutions with AWS”, ISBN Ebooka: 978-18-032-4619-2, 9781803246192, 2023",
+                                                                          "Michael Roshak, “Artificial Intelligence for IoT Cookbook. Over 70 recipes for building AI solutions for smart homes, industrial IoT, and smart cities”, ISBN Ebooka: 978-18-389-8649-0, 9781838986490, 2021",
+                                                                          "Vedat Ozan Oner, Developing IoT Projects with ESP32. Automate your home or business with inexpensive Wi-Fi devices, ISBN Ebooka: 978-18-386-4280-8, 9781838642808, 2021",
+                                                                          "Gaston C. Hillar, “Hands-On MQTT Programming with Python. Work with the lightweight IoT protocol in Python”, ISBN Ebooka: 978-17-891-3781-1, 9781789137811, 2018"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Wybrane serwisy internetowe"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektura wieloprocesorowych oraz programowania na poziomie assemblera",
+                                                              "Student zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zaprojektować złożone układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera",
+                                                                    "Student potrafi przeanalizować, zsyntezować i oprogramować system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego zgłębiania wiedzy z zakresu systemów wbudowanych oraz dzielenia się nią"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie i sprawy organizacyjne. Wprowadzenie do zajęć projektowych i laboratoryjnych.",
+                                              "System wbudowany a system IoT.Analiza dedykowane systemu IoT w  CISCO PacketTracer.",
+                                              "Urządzenia i układy IoT.",
+                                              "Projekt prostego systemu IoT w CISCO Packet Tracer.",
+                                              "Architektura systemów IoT.",
+                                              "Projekt systemu IoT z wykorzystaniem wybranego mikrokontrolera lub komputera jednoukładowego.",
+                                              "Typy protokołów IoT.",
+                                              "Konfiguracja i oprogramowanie systemu IoT.",
+                                              "Zaawansowany protokół kolejkowania wiadomości.",
+                                              "Walidacja i testowanie systemy IoT.",
+                                              "Standardy komunikacyjne dla IoT.",
+                                              "Wdrożenie i prezentacja systemu IoT."
+                                          ]
+                }
+}

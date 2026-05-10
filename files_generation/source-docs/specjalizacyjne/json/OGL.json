@@ -1,0 +1,128 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie grafiki 3D w OpenGL",
+                    "kod_przedmiotu":  "OGL",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Liczba punktów ECTS : 4",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Laboratorium/",
+                                           "Zaliczenie ćwiczeń polega na zbieraniu punktów:",
+                                           "50% możliwych punktów daje ocenę 3",
+                                           "60% punktów daje ocenę 3½",
+                                           "70% — ocenę 4",
+                                           "80% — 4½",
+                                           "90% i więcej — 5",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "• Algebra liniowa i geometria  (ALG)",
+                                                         "wymagania":  "• Analiza matematyczna  (AM)"
+                                                     },
+                                                     {
+                                                         "nazwa":  "• Algorytmy i struktury danych (ASD)",
+                                                         "wymagania":  "• Grafika komputerowa (GRK)"
+                                                     },
+                                                     {
+                                                         "nazwa":  "• programowanie w C/C++",
+                                                         "wymagania":  "• operacje na macierzach"
+                                                     },
+                                                     {
+                                                         "nazwa":  "• przekształcenia liniowe",
+                                                         "wymagania":  "• podstawy OpenGL"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kształcenia jest nabycie umiejętności wykorzystanie zaawansowanych możliwości biblioteki OpenGL",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "S. R. Buss: 3D Computer Graphics: A Mathematical Introduction with OpenGL, Revision draft Draft A.10.b. May 28, 2019.",
+                                                                          "The Khronos Group: OpenGL API Documentation Overview 2024"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Graham Sellers, Vulkan Programming Guide, Pearson Education, 2016",
+                                                                             "Graham Sellers, Richard S. Wright Jr., Nicholas HaemelOpenGL. Księga eksperta. Wydanie VII Helion2016"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Alexander Overvoorde, Vulkan Tutorial, https://vulkan-tutorial.com, 2023":  "Alexander Overvoorde, Vulkan Tutorial, https://vulkan-tutorial.com, 2023"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer",
+                                                              "Student zna i rozumie zaawansowane pojęcia w zakresie programowania grafiki 3W, stosowanych aktualnie narzędzi i technologii"
+                                                          ],
+                                               "umiejetnosci":  "Student potrafi zaprojektować i zaprogramować zaawansowaną aplikację 3W z wykorzystaniem współczesnych narzędzi i technologii",
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego uczenia się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wykład",
+                                              "Modelowanie oświetenia",
+                                              "Obiekt buforu ramki",
+                                              "Shadery geometrii",
+                                              "Teselacja",
+                                              "Import modeli 3W w OpenGL",
+                                              "Modelowanie nieba (Skybox)",
+                                              "Modelowanie mgły",
+                                              "Modelowanie przezroczystości. Sprajty punktowe",
+                                              "Sprajty punktowe",
+                                              "Modelowanie nierówności",
+                                              "Shadery obliczeniowe",
+                                              "Modelowanie systemu cząstek",
+                                              "Podstawy API Vulkan",
+                                              "Bufory w API Vulkan",
+                                              "Teksturowanie w API Vulkan",
+                                              "Laboratorium",
+                                              "Modelowanie oświetenia",
+                                              "Mapowanie cienia",
+                                              "Modelowanie krzywych Béziera",
+                                              "Modelowanie płatów Béziera",
+                                              "Import modeli 3W w OpenGL",
+                                              "Modelowanie nieba (Skybox)",
+                                              "Modelowanie mgły",
+                                              "Modelowanie przezroczystości. Sprajty punktowe",
+                                              "Sprajty punktowe",
+                                              "Modelowanie nierówności",
+                                              "Modelowanie głębi ostrości",
+                                              "Modelowanie systemu cząstek",
+                                              "Podstawy API Vulkan",
+                                              "Bufory w API Vulkan",
+                                              "Teksturowanie w API Vulkan"
+                                          ]
+                }
+}

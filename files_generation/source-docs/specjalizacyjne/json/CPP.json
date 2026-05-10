@@ -1,0 +1,95 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie w C/C++",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski,",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "prezentacja mini projektów",
+                                           "kolokwium praktyczne składające się z kilku zadań programistycznych",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wstęp do programowania",
+                                                         "wymagania":  "Umiejętność precyzyjnego wyrażania myśli i algorytmów w postaci programu komputerowego"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Praktyczna umiejętność programowania we współczesnym języku C++. Szczególny nacisk jest położony na tworzenie wydajnego i przejrzystego kodu wykorzystującego aktualne możliwości języka.",
+                    "literatura":  {
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Skuteczny nowoczesny C++, Scott Meyers, O'Relly/Promise, 2020"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Dokumentacja języka C++ https://en.cppreference.com/":  "Dokumentacja języka C++ https://en.cppreference.com/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania.",
+                                                              "Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi.",
+                                                                    "Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim.",
+                                                                    "Student potrafi posługiwać się środowiskiem programistycznym języka C++",
+                                                                    "Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać.",
+                                                                    "Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym.",
+                                                                    "Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do samodzielnego rozwijania swoich umiejętności",
+                                                                             "Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Utrwalenie i poznanie konstrukcji języka C++, czyli:",
+                                              "Scope(zakresy)",
+                                              "Typy danych, w tym także klasy, unie, typy wyliczeniowe i struktury",
+                                              "Typy funkcyjne i funkcje lambda",
+                                              "Przypisania strukturalne (structured binding) i typ automatyczny",
+                                              "Podstawowe elementy biblioteki STL, w szczególności",
+                                              "kolekcje (wektory, mapy, zbiory)",
+                                              "biblioteka algorytmów",
+                                              "biblioteka chrono",
+                                              "wątki, zadania i typ promise",
+                                              "Automatyczna optymalizacja i kwestie wydajności skompilowanego kodu, a także jak różnie napisany kod źródłowy przekłada się na program wykonywalny",
+                                              "Narzędzia wspomagające pracę z językiem",
+                                              "Podstawy kroskompilacji oraz uruchamiania/kompilowania na sprzęt inny niż hosta"
+                                          ]
+                }
+}

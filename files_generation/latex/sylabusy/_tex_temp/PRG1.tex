@@ -1,0 +1,264 @@
+﻿% ===========================================================
+%  Sylabus: Podstawy Programowania (PRG1)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRG1}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Podstawy Programowania} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRG1 \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Adam Urbanowicz \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 24 h & 40 h & 85 h & 125 h & \textbf{5} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań programistycznych; implementacja projektu programistycznego; przygotowanie do kolokwiów; ćwiczenia algorytmiczne.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item ocena pracy podczas ćwiczenia
+  \item ocena sporządzonego oprogramowania
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem zajęć jest opanowanie przez studentów podstaw klasycznych technik programowania strukturalnego na bazie języka C\#. Wprowadzone zostają również elementy programowania obiektowego. Zajęcia mają na celu rozwijanie umiejętności abstrakcyjnego myślenia oraz rozwiązywania prostych problemów programistycznych z wykorzystaniem platformy .NET i aplikacji konsolowych.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the classes is to help students master the basics of classical structured programming techniques using C\# as the foundation. Elements of object-oriented programming are also introduced. The classes are intended to develop abstract thinking and the ability to solve simple programming problems using the .NET platform and console applications.}
+
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Pojęcie algorytmu. Sposoby przedstawiania algorytmów. Zmienne, typy, operator przypisania, instrukcje Console.WriteLine i Console.ReadLine, pierwszy program w C\#. \\
+  \rowcolor{tableRowAlt} 2. & Wprowadzenie do środowiska .NET i Visual Studio. Tworzenie projektu, edycja kodu źródłowego, kompilacja, uruchamianie i debugowanie aplikacji konsolowych. Implementacja prostych obliczeń matematycznych. \\
+  \rowcolor{tableRowLight} 3. & Instrukcja warunkowa if, if else, zagnieżdżona instrukcja if. Instrukcja switch. \\
+  \rowcolor{tableRowAlt} 4. & Implementacja programów wymagających użycia instrukcji warunkowych i wielowariantowych. \\
+  \rowcolor{tableRowLight} 5. & Pętle for, while, do while. Różnice i zastosowania. Zagnieżdżanie pętli. Instrukcje break i continue. \\
+  \rowcolor{tableRowAlt} 6. & Implementacja programów wymagających użycia pętli. \\
+  \rowcolor{tableRowLight} 7. & Typy całkowite i zmiennoprzecinkowe. Typ znakowy i logiczny. Konwersje typów i rzutowania. Kwalifikator const. Operatory arytmetyczne, relacyjne i logiczne. Priorytety operatorów. \\
+  \rowcolor{tableRowAlt} 8. & Implementacja programów z wykorzystaniem zmiennych różnych typów oraz operatorów. \\
+  \rowcolor{tableRowLight} 9. & Tablice jednowymiarowe i wielowymiarowe. Inicjalizacja tablic. Podstawowe algorytmy sortowania. \\
+  \rowcolor{tableRowAlt} 10. & Implementacja programów wykorzystujących tablice jednowymiarowe i wielowymiarowe. \\
+  \rowcolor{tableRowLight} 11. & Metody. Przekazywanie parametrów. Zwracanie wartości. Metody void. Przeciążanie metod. Metody biblioteczne. \\
+  \rowcolor{tableRowAlt} 12. & Definiowanie i stosowanie metod. Implementacja aplikacji wykorzystujących metody. \\
+  \rowcolor{tableRowLight} 13. & Rekurencja. Wady i zalety stosowania rekurencji. Klasa string i jej metody. \\
+  \rowcolor{tableRowAlt} 14. & Implementacja programów wykorzystujących rekurencję oraz operacje na łańcuchach znakowych. \\
+  \rowcolor{tableRowLight} 15. & Typy referencyjne i wartościowe. Wprowadzenie do kolekcji: List, ArrayList. Zarządzanie pamięcią w .NET. Garbage Collector. \\
+  \rowcolor{tableRowAlt} 16. & Implementacja programów wykorzystujących kolekcje i dynamiczne struktury danych. \\
+  \rowcolor{tableRowLight} 17. & Wstęp do testowania jednostkowego \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W10 & Student zna i rozumie podstawowe zasady programowania strukturalnego i obiektowego w języku C\#: typy danych, instrukcje sterujące, metody, rekurencję, tablice, kolekcje generyczne i zarządzanie pamięcią w środowisku .NET. {[}K\_W10{]} &  \\
+  \rowcolor{tableRowAlt} K\_W04 & Student zna i rozumie podstawowe algorytmy wyszukiwania i sortowania danych oraz ich złożoność obliczeniową, a także wie, jak dobierać odpowiednie struktury danych. {[}K\_W04{]} &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U10 & Student potrafi czytać ze zrozumieniem programy w C\#, samodzielnie pisać, kompilować, uruchamiać i debugować aplikacje konsolowe realizujące zadane wymagania. {[}K\_U10{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_U15 & Student potrafi dobrać odpowiednie środowisko programistyczne (.NET/Visual Studio/Rider) i ocenić przydatność różnych konstrukcji języka C\# do rozwiązania konkretnego zadania. {[}K\_U15{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego poszerzania kompetencji programistycznych w C\# i .NET w oparciu o dokumentację techniczną i zasoby online. {[}K\_K03{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do krytycznej oceny własnego kodu i przyjmowania feedbacku w celu poprawy jego jakości i czytelności. {[}K\_K05{]} & kolokwium, ocena pracy podczas ćwiczenia, ocena sporządzonego oprogramowania \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład z prezentacją oprogramowania
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item metoda projektów (projekt praktyczny)
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Andrew Troelsen, Phil Japikse, Pro C\# 10 with .NET 6, Apress, 2022
+  \item Ian Griffiths, Programming C\# 10, O'Reilly Media, 2022
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Jon Skeet, C\# in Depth, Fourth Edition, Manning Publications, 2019
+  \item Robert C. Martin, Czysty kod. Podręcznik dobrego programisty, Helion, 2010
+\end{itemize}
+
+\end{document}

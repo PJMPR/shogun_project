@@ -1,0 +1,86 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Future of Deep Learning",
+                    "kod_przedmiotu":  "FDL",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
+                                           "Seminarium (ostatnie 5 zajęć).",
+                                           "Laboratorium oraz Seminarium",
+                                           "Kryteria oceny",
+                                           "Ocena zadań laboratoryjnych.  Prezentacja seminaryjna",
+                                           "Wykład:Brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Algebra liniowa z geometrią",
+                                                         "wymagania":  "Podstawowe operacje na macierzach"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie z najnowocześniejszymi kierunkami rozwoju sztucznej inteligencji i rozwiązaniami state-of-the-art. Wprowadzenie do pracy nad rzeczywistymi problemami naukowymi / przemysłowymi.",
+                    "literatura":  {
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Huyen, Chip. “Designing Machine Learning Systems” O’Reilly 2022.",
+                                                                             "Amidi, Afshine, Amidi, Shervine, Super Study Guide"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 1-4":  "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdziały: 1-6, 13, 19Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 1-4"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie zaawansowane koncepcje uczenia maszynowego i głębokiego uczenia, ich implementację w językach programowania takich jak Python, oraz kluczowe techniki, jak self-supervised learning, foundation models i modele językowe. Posiada wiedzę o metodologii badań, testach statystycznych, optymalizacji modeli i zastosowaniach AI w różnych dziedzinach. Rozumie zasady Responsible AI, transfer learning oraz tworzenia modeli wielozadaniowych i multimodalnych.Student zna i rozumie zastosowanie głębokiego uczenia w grafice, multimediach i interakcji człowiek-komputer. Obejmuje to modele generatywne, architektury multimodalne oraz metody AI w analizie i tworzeniu treści wizualnych i dźwiękowych. Rozumie techniki uczenia maszynowego w widzeniu komputerowym, przetwarzaniu mowy i języka naturalnego. Zna koncepcje transfer learning, oraz optymalizacji modeli dla aplikacji czasu rzeczywistego. Ta wiedza pozwala na innowacyjne łączenie AI z tradycyjnymi technikami w projektowaniu zaawansowanych interfejsów i treści multimedialnych.Student zna i rozumie zaawansowane koncepcje w dziedzinie głębokiego uczenia, w tym architekturę i zastosowania modeli podstawowych, techniki self-supervised learning, transfer learning oraz modele multimodalne i multitask. Rozumie zasady optymalizacji i skalowania dużych modeli językowych, metody interpretacji i wyjaśnialności AI oraz koncepcje Responsible AI. Zna aktualne narzędzia i technologie stosowane w badaniach nad AI, w tym frameworki do automatyzacji uczenia maszynowego i techniki efektywnego treningu na dużych zbiorach danych. Posiada wiedzę o najnowszych trendach i wyzwaniach w rozwoju sztucznej inteligencji, umożliwiającą mu krytyczną analizę i twórcze rozwiązywanie złożonych problemów w tej dziedzinie.",
+                                               "umiejetnosci":  "Student potrafi samodzielnie planować i realizować proces ciągłego uczenia się w dziedzinie głębokiego uczenia, wykorzystując różnorodne źródła wiedzy, takie jak publikacje naukowe, kursy online, webinaria i konferencje branżowe. Umie efektywnie korzystać z platform e-learningowych i repozytoriów kodu (np. GitHub) do zgłębiania najnowszych technik i implementacji modeli AI. Potrafi śledzić i analizować postępy w dziedzinie poprzez regularną lekturę artykułów naukowych i technicznych blogów. Jest zdolny do samodzielnego przeprowadzania eksperymentów z nowymi architekturami modeli i technikami uczenia, wykorzystując dostępne narzędzia i frameworki. Umie oceniać i adaptować nowe metody do własnych projektów, rozwijając tym samym swoje kompetencje zawodowe w dynamicznie zmieniającym się obszarze sztucznej inteligencji.Student potrafi efektywnie współpracować w zespole nad projektami z zakresu głębokiego uczenia, dzieląc się wiedzą i umiejętnościami. Umie precyzyjnie oszacować czas i zasoby obliczeniowe potrzebne do treningu, optymalizacji i wdrożenia zaawansowanych modeli AI, uwzględniając specyfikę różnych architektur (np. transformery, modele multitask). Potrafi planować i realizować harmonogram prac badawczo-rozwojowych w obszarze AI, obejmujący fazy od przygotowania danych, przez eksperymentowanie z różnymi technikami (np. transfer learning, fine-tuning), po ewaluację i interpretację wyników. Jest w stanie zarządzać procesem iteracyjnego doskonalenia modeli, uwzględniając ograniczenia czasowe i budżetowe projektu. Umie koordynować zadania w zespole, efektywnie wykorzystując narzędzia do współpracy i kontroli wersji, zapewniając terminową realizację złożonych projektów AI.Student potrafi zdiagnozować złożone problemy w dziedzinie głębokiego uczenia, takie jak nieefektywność modeli na dużych zbiorach danych czy trudności w generalizacji wiedzy. Umie zaprojektować innowacyjne rozwiązania, dobierając odpowiednie architektury (np. modele foundation, sieci multimodalne) i techniki (np. self-supervised learning, transfer learning). Potrafi określić i zrealizować etapy implementacji, obejmujące przygotowanie danych, wybór odpowiednich metryk, trening modelu, jego optymalizację i ewaluację. Jest w stanie dobrać adekwatne narzędzia i frameworki (np. PyTorch) oraz zaplanować eksperymenty z wykorzystaniem metod optymalizacji hiperparametrów czy skalowania modeli. Umie zastosować metody interpretacji wyników i zapewnić zgodność z zasadami Responsible AI. Potrafi iteracyjnie udoskonalać rozwiązanie, analizując wyniki i adaptując najnowsze osiągnięcia w dziedzinie do specyfiki rozwiązywanego problemu.",
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do wykorzystania zaawansowanych technik głębokiego uczenia na rzecz rozwoju nauki i społeczeństwa informacyjnego. Jest gotów do zastosowania modeli foundation i architektury multimodalnych do rozwiązywania złożonych problemów w różnych dziedzinach, takich jak medycyna (np. analiza obrazów medycznych), ochrona środowiska (np. monitorowanie zmian klimatycznych) czy edukacja (np. spersonalizowane systemy nauczania). Jest przygotowany do tworzenia innowacyjnych rozwiązań AI, które usprawniają procesy decyzyjne i automatyzację w przemyśle i administracji publicznej. Jest gotów do rozumienia etycznych implikacji wdrażania systemów AI i jest gotów do stosowania zasad Responsible AI, zapewniając transparentność, fairness i prywatność danych. Jest gotów do uczestniczenia w interdyscyplinarnych projektach badawczych, łącząc wiedzę z zakresu głębokiego uczenia z innymi dziedzinami nauki, przyczyniając się do postępu technologicznego i społecznego.",
+                                                                             "Student jest gotów do określenia priorytetów w realizacji zadań z zakresu głębokiego uczenia, uwzględniając kluczowe aspekty rozwoju nowoczesnych systemów AI. Potrafi hierarchizować etapy projektu, stawiając na pierwszym miejscu prawidłowe zdefiniowanie problemu i przygotowanie wysokiej jakości danych. Umie priorytetyzować wybór odpowiedniej architektury modelu (np. transformery, modele multimodalne) i technik uczenia (np. transfer learning, self-supervised learning) w zależności od specyfiki zadania. Jest gotów do nadania wysokiego priorytetu optymalizacji wydajności i skalowalności modelu, uwzględniając ograniczenia zasobów obliczeniowych. Jest gotów do rozumienia wagi implementacji metod interpretacji i wyjaśnialności AI oraz zasad Responsible AI, stawiając je wysoko w hierarchii zadań. Jest gotów oceniać, które eksperymenty i iteracje są kluczowe dla sukcesu projektu, efektywnie zarządzając czasem i zasobami w dynamicznym środowisku badawczo-rozwojowym AI."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawy uczenia maszynowego",
+                                              "Self-supervised learning.",
+                                              "Foundation models.",
+                                              "Modele języka.",
+                                              "Testy statystyczne.",
+                                              "Organizacja eksperymentów.",
+                                              "Testy statystyczne.",
+                                              "Responsible AI.",
+                                              "AI w medycynie.",
+                                              "Analiza literatury.",
+                                              "Jak pisać artykuły naukowe.",
+                                              "Transfer learning.",
+                                              "Optymalizacja modeli.",
+                                              "Multitask learning i multimodal learning."
+                                          ]
+                }
+}

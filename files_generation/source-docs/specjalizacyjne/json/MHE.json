@@ -1,0 +1,103 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Metaheurystyki",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "Laboratorium/Projekt",
+                                           "Niewielkie praktyczne zadania programistyczne składające się na duży projekt powstający w sposób przyrostowy. Każde zadanie jest oceniane pozytywnie lub nie i  punktowane w zależności od terminu dostarczenia. Projekt prowadzony z wykorzystaniem narzędzia git. Podstawowy język programowania to C++. Każde zadanie musi być obronione.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Algorytmy i struktury danych, podstawy języka C++, Analiza matematyczna, Matematyka dyskretna",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Kurs traktuje o metodach metaheurystycznych. Jest to przegląd technik z tej dziedziny wraz z metodami testowania i porównywania różnych podejść do problemu optymalizacyjnego. Student zapozna się z właściwościami oraz zastosowaniem algorytmów heurystycznych. Wiedza wykładowa zostanie przetrenowana na laboratoriach, które pozwolą w sposób bardziej praktyczny zapoznać się z tematem i przygotują studenta do podejmowania decyzji odnośnie zastosowania metod metaheurystycznych lub wybrania innych technik odpowiednich do danego zadania..",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Iwona Karcz-Dulęba, \"Nowoczesne metody optymalizacji globalnej\", Wydawnictow EXIT, 2022",
+                                                                          "Jarosław Arabas, \"Wykłady z algorytmów genetycznych\", 2004, Wydawnictwo WNT"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "„Algorytmy Genetyczne i ich zastosowania”, D. E. Goldberg, WNT, 1998",
+                                                                             "„Algorytmy Genetyczne + Struktury Danych = programy ewolucyjne”, Z. Michalewicz, WNT, 1996"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "„Knowledge-Based Systems”, wydanie 231,2021, Elsevier, wielu autorów, ISSN: 0950-7051, https://www.sciencedirect.com/journal/knowledge-based-systems/vol/231/suppl/C":  "„Knowledge-Based Systems”, wydanie 231,2021, Elsevier, wielu autorów, ISSN: 0950-7051, https://www.sciencedirect.com/journal/knowledge-based-systems/vol/231/suppl/C"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia związane z algorytmami heurystycznymi takie jak funkcja celu, funkcja selekcji, automatyczne dostosowanie zasięgu mutacji, programowanie genetyczne, metoda tabu, krzywa zbieżności. Student potrafi zidentyfikować problemy które można rozwiązać za pomocą algorytmów z dziedziny metaheurystyk. Student potrafi także zastosować metody statystyczne od analizy i porównani różnych metod rozwiązania tego samego problemu.",
+                                                              "Student zna i rozumie metody pracy na zbiorach danych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym",
+                                                                    "Student potrafi  zastosować metody testowania i porównywania metod heurystycznych."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+                                                                             "Student jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Złożoność obliczeniowa",
+                                              "Zagadnienia optymalizacyjne",
+                                              "Metoda dokładna",
+                                              "Algorytm losowego próbkowania",
+                                              "Algorytm wspinaczkowy",
+                                              "Algorytm Tabu",
+                                              "Symulowane Wyżarzanie",
+                                              "Algorytm genetyczny",
+                                              "Metody zrównoleglania obliczeń dla Algorytmu Genetycznego",
+                                              "Strategia Ewolucyjna",
+                                              "Programowanie Genetyczne",
+                                              "Metody testowania i porównywania metod heurystycznych"
+                                          ]
+                }
+}

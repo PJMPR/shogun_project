@@ -1,0 +1,77 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Programowanie platform sprzętowych",
+                    "kod_przedmiotu":  "PPS",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  30
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Adam Muc",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Prezentacja multimedialna z elementami dyskusji",
+                                           "Prezentacja gotowych rozwiązań",
+                                           "Rozwiązywanie zadań",
+                                           "Praca nad projektem",
+                                           "Kryteria oceny",
+                                           "Wykonanie indywidualnego projektu."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Kurs ma na celu wykształcenie umiejętności projektowania, programowania i optymalizacji różnorodnych platform sprzętowych, co jest nieocenione w dzisiejszej technologicznej rzeczywistości. Wprowadzenie do typowych platform, na których można rozpoczynać projekty z IoT. Są one także wykorzystywane w gotowych produktach.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"Mikrokontrolery - podstawowe architektury\" ,  Mariusz Nowak",
+                                                                          "\"Wprowadzenie do mikrokontrolerów AVR: od elektroniki do programowania\", Filip Sala i Marzena Sala-Tefelska"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "\"Zrozumieć małe mikrokontrolery\",  M. Sibigtroth"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie funkcje, biblioteki i podstawową składnię Arduino.  Student zna i rozumie jak działa kompilator AVR dla mikrokontrolerów Arduino. Student ma znajomość języków programowania takich jak Ladder Logic, Structured Text. Student zna i rozumie niskopoziomowe programowanie oraz zarządzanie energią w MSP430. Student zna i rozumie funkcje niskopoziomowe oraz wie jak zoptymalizować kod dla mikrokontrolerów o ograniczonych zasobach (Atiny).",
+                                               "umiejetnosci":  "Student potrafi programować sekwencje zdarzeń w sterownikach programowalnych PLC. Student potrafi wykorzystywać C++/Python do szybkiego prototypowania oraz NodeJS do tworzenia aplikacji sieciowych. Student potrafi wykorzystać języki programowania takie jak Ladder Logic, Structured Text  oraz potrafi zaprogramować sekwencję zdarzeń.  Student potrafi zaprogramować i zoptymalizować mikrokontrolery o ograniczonych zasobach (Atiny)",
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Programowanie platform cyfrowych i peryferiów",
+                                              "Arduino: Arduion IDE + gcc-avr",
+                                              "Raspberry Pi: C++, Python, NodeJS (2 do wyboru)",
+                                              "MSP 430",
+                                              "PLC",
+                                              "Weryfikacja wybranych algorytmów dla potrzeb IoT w środowisku Ptolemy",
+                                              "Atiny"
+                                          ]
+                }
+}

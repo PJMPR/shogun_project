@@ -1,0 +1,87 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Symulacje 3D",
+                    "kod_przedmiotu":  "S3D",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Piotr Arłukowicz",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "praca indywidualna przy komputerze",
+                                           "Kryteria oceny",
+                                           "Projekty (oceny cząstkowe otrzymywane w trakcie semestru)",
+                                           "Wykonanie i obrona pracy zaliczeniowej."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Grafika komputerowa",
+                                                         "wymagania":  "Znajomość Blendera"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Tematyka przedmiotu realizowana jest w oparciu o silniki symulacji dostępne w oprogramowaniu Open-Source (Blender). Poruszane zagadnienia to symulacje układów z bezwładnością i tarciem w modelu brył sztywnych, symulacje brył elastycznych z deformowalną powierzchnią, symulacje odzieży i tkanin, symulacje cząsteczkowe w modelach Newtonian, Fluid, Boids i Keyed, oraz symulacje ognia, dymu, wybuchów, iskier, kurzu, mgły i innych zjawisk wolumetrycznych. Dodatkowo omówione będą zagadnienia z dziedziny Dynamic Paint, gdzie układ symulacyjny wpływa na system symulowany, przykładowo: symulowanie fal na wodzie, zniszczeń, deformacji, odbić, zmiany gęstości ośrodka, itp. Przedmiot rozszerza i ubogaca wiedzę wyniesioną z przedmiotu Grafika Komputerowa.",
+                    "literatura":  {
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "każda książka o Blenderze w wersji 4.2"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Polski Kurs Blendera, http://polskikursblendera.pl/":  "Polski Kurs Blendera, http://polskikursblendera.pl/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie zasady projektowania aplikacji graficznych i prezentacji multimedialnych, jak też współczesne techniki i narzędzia graficzne",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi  porozumiewać się w języku polskim i angielskim  w środowisku zawodowy.",
+                                                                    "Student potrafi  wykonywać aplikacje graficzne za pomocą Blendera."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "1Symulacje Rigid-BodyTworzenie obiektów Rigid-Body i symulowanie ich zderzeń i ewolucji w systemie. Sprawdzanie, kto zbuduje najbardziej wytrzymałą konstrukcję.",
+                                              "2Wykorzystanie driverów i motorów do sterowania więzami sztywnymi i łamalnymiĆwiczenia z burzenia budynków.",
+                                              "3Symulacje Soft-BodyBryły elastyczne o różnej sztywności, bryły odkształcające się po kolizji.",
+                                              "4Zaawansowane ustawienia symulacji soft-bodyTworzenie kolizji samochodów.",
+                                              "5Symulacje ClothSymulowanie odzieży - skórzanej, gumowej, jedwabnej, dżinsowej i innej. Kolizje wewnętrzne",
+                                              "6Symulowanie odzieży na modelu ludzkim.",
+                                              "Od prostych ćwiczeń takich jak flaga do ubrania ludzi.",
+                                              "7Symulacje cząsteczkoweSymulowanie w modelach Newtonian, Boids, Fluid i Keyed. Animacje cząsteczkowe.",
+                                              "8Tworzenie animacji napisów i elementów graficznych z cząstek.Animacja wybuchających sztucznych ogni.",
+                                              "9Symulacje trawy, włosów, futra i układów podobnych do nich.Włosy czesane, dynamicznie reagujące na obiekty na scenie, kolidujące ze sobą, edycja i układanie włosów.",
+                                              "10Tworzenie trawnika lub pola zboża.Animacja trawy lub kłosów zboża w wielkiej skali.",
+                                              "11Symulacje cieczy. Ciecze gęste, miód, czekolada, syrop. Dodawanie i usuwanie cieczy.Ćwiczenia z budowania scen w których występują symulacje płynów.",
+                                              "12Symulacje cieczy ze zmienną gęstością.Efekt kropli wpadającej do wody.",
+                                              "13Symulacje dymu, ognia, wybuchy.Wysadzanie modelu uczelni lub inne ćwiczenia.",
+                                              "14Zaawansowane przypadki symulacji ognia i dymy.Ćwiczenie spalania kartki papieru."
+                                          ]
+                }
+}

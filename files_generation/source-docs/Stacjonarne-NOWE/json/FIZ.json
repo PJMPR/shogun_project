@@ -1,0 +1,112 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Fizyka",
+                    "kod_przedmiotu":  "FIZ",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  15
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "",
+                    "ects":  3,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  45,
+                                    "praca_wlasna_studenta_h":  30,
+                                    "calkowita_liczba_godzin_h":  75
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium:",
+                                           "rozwiązywanie zadań",
+                                           "burza mózgów",
+                                           "Ćwiczenia/Laboratorium",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Cztery krótkie kolokwia sprawdzające wiedzę praktyczną w formie krótkich zadań do rozwiązania oraz 4 sprawozdania pisemne z przeprowadzonych doświadczeń fizycznych.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Brak egzaminu"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "ALG – algebra liniowa z geometrią",
+                                                         "wymagania":  "Wiedza z zakresu szkoły średniej."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów informatyki z podstawami fizyki na ogólnym poziomie akademickim, w szczególności (1) poznanie podstawowych wielkości fizycznych w zakresie kinematyki i dynamiki punktu materialnego i bryły sztywnej, (2) poznanie praw dynamiki i prawa powszechnego ciążenia, (3) omówienie zasad zachowania w mechanice, (4) scharakteryzowanie drgań mechanicznych oraz ruchu falowego, (5) zapoznanie z podstawowymi wielkościami charakteryzującymi pole elektryczne i magnetyczne oraz (6) omówienie podstawowych praw termodynamiki",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "D. Halliday, R. Resnick, J. Walter: Podstawy fizyki, PWN 2015.",
+                                                                          "Cz. Bobrowski: Fizyka – krótki kurs, WNT 2003",
+                                                                          "G. Białkowski: Mechanika klasyczna, PWN 1975.",
+                                                                          "K. Wróblewski, J. A. Zakrzewski: Wstęp do fizyki, t. 1-2, PWN 1991.",
+                                                                          "W. Rubinowicz W. Królikowski: Mechanika teoretyczna, PWN 1998."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Halliday, R. Resnick, J. Walker: Fundamentals of Physics, Wiley 2002.",
+                                                                             "Berkeley Physics Course, volumes 1-5, McGraw-Hill Company.",
+                                                                             "W. Christian, M. Belloni: Physlet Physics, Pearson Education, 2004."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student ma wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki.",
+                                                              "Dodatkowo:",
+                                                              "rozumie rolę eksperymentu fizycznego, matematycznych modeli teoretycznych przybliżających rzeczywistość oraz symulacji komputerowych w metodologii badań naukowych; ma świadomość ograniczeń technologicznych, aparaturowych i metodologicznych w badaniach naukowych;",
+                                                              "wie, jak zaplanować i wykonać prosty eksperyment fizyczny oraz przeanalizować otrzymane wyniki; zna elementy teorii niepewności pomiarowych w zastosowaniu do eksperymentów fizycznych;"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student ma umiejętność analizowania i wyjaśniania obserwowanych zjawisk; tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów",
+                                                                    "Dodatkowo:",
+                                                                    "użytkuje komputer w zakresie koniecznym do wyszukiwania informacji, komunikowania się, organizowania i wstępnej analizy danych, sporządzania raportów i prezentacji wyników;",
+                                                                    "posługuje się terminologią z zakresu fizyki oraz nomenklaturą poszczególnych dyscyplin z nią związanych;",
+                                                                    "stosuje podstawowe metody matematyczne, statystyczne i techniki informatyczne do opisu zjawisk i analizy danych;",
+                                                                    "Student potrafi zaplanować i dobrać właściwe metody i urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student rozumie potrzebę uczenia się przez całe życie; potrafi inspirować i organizować proces uczenia się innych osób"
+                                           },
+                    "tresci_programowe":  [
+                                              "Kinematyka punktu materialnego",
+                                              "Określenie ruchu (opis położenia punktu w przestrzeni, układ odniesienia, droga, tory ruchów płaskich). Ruch prostoliniowy jednostajny i jednostajnie zmienny (prędkość chwilowa, prędkość średnia, przyspieszenie stałe, przyspieszenie zmienne). Ruch po okręgu (ruch jednostajny po okręgu, ruch niejednostajny po okręgu). Ruchy ciał w polu grawitacyjnym Ziemi (swobodny spadek ciał, rzut pionowy do góry, rzut poziomy, rzut ukośny).",
+                                              "Kinematyka bryły sztywnej",
+                                              "Dynamika punktu materialnego i bryły sztywnej Dynamika punktu materialnego (zasady dynamiki Newtona, klasyfikacja sił, siły bezwładności, masa i ciężar ciała, tarcie, ogólniejsze ujęcie II zasady dynamiki Newtona). Dynamika ruchu obrotowego bryły sztywnej (moment siły, moment bezwładności, energia kinetyczna w ruchu obrotowym, moment pędu, zasada zachowania momentu pędu).",
+                                              "Zasady zachowania w mechanice",
+                                              "Zasada zachowania energii mechanicznej(siły zachowawcze i niezachowawcze, praca wykonana przez siłę stałą i zmienną, energia kinetyczna, energia potencjalna). Zasada zachowania pędu(pęd punktu materialnego, pęd układu punktów materialnych, zderzenia sprężyste i niesprężyste). Zasada zachowania momentu pędu (moment pędu, prędkość kątowa).",
+                                              "Drgania mechaniczne",
+                                              "Ruch harmoniczny (oscylator harmoniczny prosty, energia w prostym ruchu harmonicznym, wahadło matematyczne, wahadło fizyczne). Drgania harmoniczne tłumione Drgania wymuszone. Rezonans",
+                                              "Ruch falowy",
+                                              "Ogólna charakterystyka fal mechanicznych (podział fal, mechanizm rozchodzenia się fal ośrodkach sprężystych, równanie fali płaskiej harmonicznej). Zasada Huygensa (ugięcie, odbicie i załamanie fal). Superpozycja fal (graficzne przedstawienie powstawania fali stojącej, powstawanie fali stojącej podczas interferencji fali padającej i odbitej). Fale dźwiękowe (efekt Dopplera).",
+                                              "Termodynamika",
+                                              "Kalorymetria Gazy (równanie stanu gazu doskonałego, prawa charakteryzujące przemiany gazowe). I zasada termodynamiki (energia wewnętrzna, zastosowanie I zasady termodynamiki do izoprzemian gazu doskonałego, graficzne przedstawienie pracy) II zasada termodynamiki(entropia, sprawność silnika termodynamicznego, cykl Carnota).",
+                                              "Podstawy elektrostatyki",
+                                              "Wielkości charakteryzujące pole elektrostatyczne(ładunek elektryczny, pole elektrostatyczne, natężenie pola, prawo Coulomba, potencjał pola el.). Prawo Gaussa (zastosowanie prawa Gaussa). Kondensatory",
+                                              "Pole magnetyczne – podstawy",
+                                              "Wektor indukcji magnetycznej Siła Lorentza, Pole magnetyczne w otoczeniu przewodnika z prądem Ruch cząstki naładowanej w polu magnetycznym Prawo Biota-Savarta"
+                                          ]
+                }
+}

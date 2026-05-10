@@ -1,0 +1,341 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Projektowanie bezpiecznych architektur",
+        "kod_przedmiotu": "SITA",
+        "rok_studiow": 4,
+        "semestr_studiow": 7,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "mgr Adam Kassenberg",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Analiza przypadków projektowania bezpiecznych architektur IT; modelowanie zagrożeń i ryzyk; przygotowanie do kolokwium pisemnego."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład konwersatoryjny (z elementami dyskusji)"
+            ],
+            "cwiczenia_laboratorium": [
+                "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                "rozwiązywanie zadań"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Egzamin"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [
+                "kolokwium końcowe"
+            ],
+            "cwiczenia_laboratorium": [
+                "kolokwium końcowe",
+                "raport z wykonanego zadania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Tenkursmanaceludostarczeniestudentomkompleksowejwiedzyiumiejętnościniezbędnychdoprojektowaniaiutrzymaniabezpiecznychsystemówinformatycznych.Dziękipołączeniuteoretycznychwykładówipraktycznychćwiczeń,studencibędąlepiejprzygotowanidostawieniaczoławyzwaniomzwiązanymzbezpieczeństwemITw rzeczywistym świecie. Studencibędąpoznawaćpodstawowepojęciaizasadybezpieczeństwainformatycznego,takiejakpoufność,integralność idostępność danych. Nauczą się,jakprojektowaćsystemyi infrastruktury informatyczne, które są odporne na różnorodne zagrożenia i ataki. Celem kursu będzie również zrozumienie mechanizmów zarządzania tożsamością i kontrolądostępu,wtymwdrażaniepolitykzabezpieczeń. Kurs obejmuje techniki i najlepsze praktyki bezpiecznego programowania, aby zapobiegać wprowadzaniu luk bezpieczeństwa w fazie rozwoju oprogramowania. Studencibędąuczyćsię,jakreagowaćnaincydentybezpieczeństwa,wtymjakprzeprowadzać analizy i raportować naruszenia.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "\"Security Engineering: A Guide to Building Dependable Distributed Systems”, Ross Anderson",
+                    "\"Threat Modeling: Designing for Security\", Adam Shostack",
+                    "\"Cross Site Scripting (XSS) Attacks: Understanding and Preventing XSS Attacks\", Robert Hansen"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "\"Black Hat Python: Python Programming for Hackers and Pentesters\" autorstwa Justin Seitz",
+                    "\"SQL Injection Attacks and Defense\" autorstwa Justin Clarke"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna i rozumie pojęcia takie jak poufność, integralność, dostępność danych. Student zna i rozumie zasady tworzenia bezpiecznych systemów infrastruktury informatycznej. Student zna i rozumie najlepsze praktyki kodowania, które minimalizują ryzyko wprowadzenia luk w bezpieczeństwie. Student zna i rozumie techniki zabezpieczania danych takie jak szyfrowanie, backup i monitoring. Student zna i rozumie międzynarodowe standardy bezpieczeństwa IT, takie jak ISO/IEC 27001 czy GDPR.",
+            "umiejetnosci": "Student potrafi identyfikować zagrożenia i oceniać ryzyko związane z różnymi systemami IT. Student potrafi zaimplementować mechanizmy kontroli dostępu i zarządzania tożsamością. Student potrafi zarządzać incydentami cyberbezpieczeństwa, analizować naruszenia i raportować.",
+            "kompetencje_spoleczne": null
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "1. Wybór organizacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Analiza różnych typów organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Przykłady typowych struktur organizacyjnych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "2. Definicja celów biznesowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Jak określić cele biznesowe organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Rola celów biznesowych w projektowaniu architektur IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Ćwiczenia praktyczne: Definiowanie celów biznesowych dla wybranej organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "3. Utworzenie diagramu przepływów DFD",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Wprowadzenie do diagramów przepływów danych (DFD).",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Tworzenie DFD dla wybranej organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 11,
+                "wyklad": "Ćwiczenia praktyczne: Rysowanie DFD na podstawie zebranych danych.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 12,
+                "wyklad": "4. Procesowy opis organizacji wg ISO 9001",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 13,
+                "wyklad": "Wprowadzenie do standardu ISO 9001.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 14,
+                "wyklad": "Opis procesów organizacyjnych zgodnie z ISO 9001.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 15,
+                "wyklad": "Ćwiczenia praktyczne: Tworzenie procesowego opisu organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 16,
+                "wyklad": "5. Utworzenie architektury IT",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 17,
+                "wyklad": "Zasady projektowania architektur IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 18,
+                "wyklad": "Elementy składowe architektury IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 19,
+                "wyklad": "Ćwiczenia praktyczne: Projektowanie architektury IT dla wybranej organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 20,
+                "wyklad": "6. Koncepcja komunikacji, sprzętu oraz oprogramowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 21,
+                "wyklad": "Planowanie komunikacji w organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 22,
+                "wyklad": "Wybór sprzętu i oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 23,
+                "wyklad": "Ćwiczenia praktyczne: Opracowanie koncepcji komunikacji, sprzętu i oprogramowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 24,
+                "wyklad": "7. Klasyfikacja informacji, struktura zarządzania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 25,
+                "wyklad": "Klasyfikacja informacji w organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 26,
+                "wyklad": "Tworzenie struktury zarządzania informacją.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 27,
+                "wyklad": "Ćwiczenia praktyczne: Klasyfikacja informacji i tworzenie struktury zarządzania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 28,
+                "wyklad": "8. Identyfikacja zasobów organizacji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 29,
+                "wyklad": "Identyfikacja i katalogowanie zasobów.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 30,
+                "wyklad": "Zarządzanie zasobami organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 31,
+                "wyklad": "Ćwiczenia praktyczne: Tworzenie katalogu zasobów organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 32,
+                "wyklad": "9. Utworzenie deklaracji stosowania",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 33,
+                "wyklad": "Definicja i znaczenie deklaracji stosowania.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 34,
+                "wyklad": "Tworzenie deklaracji dla wybranej organizacji.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 35,
+                "wyklad": "10. Identyfikacja zagrożeń dla architektury",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 36,
+                "wyklad": "Typowe zagrożenia dla architektur IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 37,
+                "wyklad": "Metody identyfikacji zagrożeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 38,
+                "wyklad": "Ćwiczenia praktyczne: Analiza przypadków i identyfikacja zagrożeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 39,
+                "wyklad": "11. Identyfikacja podatności dla zagrożeń",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 40,
+                "wyklad": "Definicja podatności.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 41,
+                "wyklad": "Metody identyfikacji podatności w systemach IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 42,
+                "wyklad": "Ćwiczenia praktyczne: Identyfikacja podatności w wybranej architekturze IT.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 43,
+                "wyklad": "12. Szacowanie ryzyka dla wyodrębnionych zagrożeń",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 44,
+                "wyklad": "Metody szacowania ryzyka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 45,
+                "wyklad": "Przykłady zastosowania metod szacowania ryzyka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 46,
+                "wyklad": "Ćwiczenia praktyczne: Szacowanie ryzyka dla wybranych zagrożeń.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 47,
+                "wyklad": "13. Tworzenie rekomendacji po analizie ryzyka",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 48,
+                "wyklad": "Jak tworzyć rekomendacje bezpieczeństwa.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 49,
+                "wyklad": "Przykłady rekomendacji po analizie ryzyka.",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 50,
+                "wyklad": "Ćwiczenia praktyczne: Tworzenie rekomendacji dla wybranej architektury IT.",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "This course aims to provide students with comprehensive knowledge and skills necessary for designing and maintaining secure IT systems. By combining theoretical lectures with practical exercises, students are better prepared to face cybersecurity challenges in real-world environments. Students learn the basic concepts and principles of information security, such as confidentiality, integrity, and availability of data. They learn how to design IT systems and infrastructure resistant to a variety of threats and attacks. The course also aims to develop an understanding of identity management and access control mechanisms, including the implementation of security policies. The course covers secure programming techniques and best practices that help prevent vulnerabilities from being introduced already at the software development stage. Students also learn how to respond to security incidents, including conducting incident analysis and reporting breaches.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

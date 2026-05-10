@@ -1,0 +1,109 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Computer Vision",
+                    "kod_przedmiotu":  "COV",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Case study - prezentacja oprogramowania (ostatnie 4 zajęcia).",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
+                                           "Projekt zespołowy (ostatnie 5 zajęć).",
+                                           "Laboratorium oraz Projekt",
+                                           "Kryteria oceny",
+                                           "Ocena zadań laboratoryjnych",
+                                           "Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50% laboratorium, 50% projekt."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Narzędzia Sztucznej Inteligencji",
+                                                         "wymagania":  "Future of Deep Learning"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Algebra liniowa z geometrią",
+                                                         "wymagania":  "Praca ze środowiskami: Colab, HuggingFace, metryki, zadania uczenia maszynowego"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Podstawy działania sieci neuronowej, transfer learning, self-supervised learning, foundation models, podstawy pracy w PyTorchu",
+                                                         "wymagania":  "Podstawowe operacje na macierzach"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 14, 17"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Foley, James D., et al. \"Computer graphics: Principles and practice, in c.\" Color Research and Application 22.1 (1997): 65-65. Rozdział 5."
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdział: 7, 11, 14, 22":  "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdział: 7, 11, 14, 22",
+                                                                        "Szeliski, Richard. Computer vision: algorithms and applications. Springer Nature, 2022. https://szeliski.org/Book/":  "Szeliski, Richard. Computer vision: algorithms and applications. Springer Nature, 2022. https://szeliski.org/Book/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie:zaawansowane koncepcje i techniki przetwarzania obrazów cyfrowych, w tym metody segmentacji obrazu, detekcji krawędzi i wykrywania obiektów; posiada wiedzę na temat zastosowania splotowych i transformerowych sieci neuronowych w zadaniach klasyfikacji, detekcji, segmentacji i generowania obrazów; rozumie zasady działania algorytmów przetwarzających obrazy 2D i 3D oraz sekwence wideo; zna podstawy przetwarzania obrazów w czasie rzeczywistym i optymalizacji wydajności algorytmów computer vision; jest zaznajomiony z bibliotekami i frameworkami takimi jak OpenCV, PyTorch i HuggingFace stosowanymi w implementacji rozwiązań z zakresu widzenia komputerowego; rozumie wyzwania związane z przetwarzaniem dużych zbiorów danych obrazowych i metody ich efektywnego składowania i analizy.",
+                                                              "Student zna i rozumie:kluczowe zagadnienia i metody z zakresu computer vision, w tym techniki przetwarzania i analizy obrazów cyfrowych; rozumie podstawy algorytmów segmentacji obrazu, detekcji krawędzi i cech charakterystycznych; zna metody rozpoznawania obiektów i twarzy w obrazach oraz sekwencjach wideo; jest zaznajomiony z technikami rekonstrukcji trójwymiarowej sceny z obrazów dwuwymiarowych; zna podstawy deep learningu w zastosowaniu do zadań widzenia komputerowego, w tym architekturę i zastosowania sieci neuronowych splotowych in transformerowych ; jest świadomy wyzwań związanych z przetwarzaniem obrazów w czasie rzeczywistym i optymalizacją wydajności algorytmów wizyjnych.",
+                                                              "Student zna i rozumie:zaawansowane pojęcia i techniki w dziedzinie computer vision; rozumie głębokie modele uczenia maszynowego stosowane w analizie obrazów, w tym architektury sieci neuronowych takie jak CNN, R-CNN, YOLO, autoencoder, GAN, modele dyfuzyjne, transformery do obrazów; zna zaawansowane metody detekcji i segmentacji obiektów, w tym techniki segmentacji semantycznej i instancyjnej; rozumie zasady działania systemów śledzenia wielu obiektów (multi-object tracking) w czasie rzeczywistym; jest zaznajomiony z technikami generowania i manipulacji obrazów przy użyciu modeli generatywnych, takich jak GANy i dyfuzyjne; zna metody uczenia się bez nadzoru i samonadzorowanego w kontekście analizy obrazów; rozumie problematykę interpretacji i wyjaśnialności modeli wizyjnych; zna zaawansowane techniki przetwarzania obrazów medycznych i przemysłowych; rozumie zasady działania i zastosowania systemów widzenia maszynowego w robotyce i pojazdach autonomicznych; jest zaznajomiony z aktualnymi narzędziami i bibliotekami takimi jak PyTorch, czy OpenCV, stosowanymi w zaawansowanych projektach computer vision."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi:",
+                                                                    "samodzielnie poszerzać wiedzę z zakresu computer vision, wykorzystując platformy e-learningowe jak Coursera czy edX czy kursy na platformie YouTube; implementować i testować algorytmy wizyjne, korzystając z otwartych repozytoriów kodu; śledzić postępy w dziedzinie poprzez lekturę artykułów naukowych i uczestnictwo w webinarach; efektywnie rozwiązywać problemy techniczne przy użyciu forów specjalistycznych; tworzyć własne projekty wizyjne i dzielić się nimi online; uczestniczyć w wirtualnych grupach studyjnych, rozwijając praktyczne umiejętności w dziedzinie przetwarzania obrazów i sztucznej inteligencji.",
+                                                                    "Student potrafi:współpracować w zespole nad projektami computer vision; trafnie oszacować czas i zasoby potrzebne do implementacji algorytmów przetwarzania obrazu; tworzyć realistyczne harmonogramy projektów wizyjnych, uwzględniające etapy od zbierania danych po testowanie; zarządzać priorytetami w złożonych zadaniach, jak systemy rozpoznawania twarzy; efektywnie komunikować postępy techniczne zespołowi; dostosowywać plan do zmian, utrzymując terminowość dostaw; przewidywać i zarządzać ryzykiem w projektach uczenia maszynowego dla analizy obrazów.",
+                                                                    "Student potrafi:zdiagnozować złożone problemy w dziedzinie computer vision, takie jak niska dokładność detekcji obiektów w trudnych warunkach oświetleniowych; zaprojektować rozwiązanie wykorzystujące zaawansowane techniki, np. transfer learning czy data augmentation; dobrać odpowiednie narzędzia, jak PyTorch czy TensorFlow, oraz zestaw danych do treningu; określić etapy implementacji, od preprocessingu obrazów po fine-tuning modelu; zrealizować projekt, iteracyjnie optymalizując wyniki poprzez dostrajanie hiperparametrów i analizę błędów; ocenić efektywność rozwiązania przy użyciu odpowiednich metryk i testów; zaadaptować wdrożone rozwiązanie do wymagań czasu rzeczywistego lub ograniczeń sprzętowych."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do:wykorzystania technik computer vision w rozwoju innowacyjnych rozwiązań naukowych i społecznych; zastosowania algorytmów przetwarzania obrazów w medycynie, np. do automatycznej analizy zdjęć rentgenowskich czy wykrywania nowotworów; wdrażania systemów rozpoznawania twarzy, z uwzględnieniem aspektów etycznych; tworzenia zaawansowanych systemów wizyjnych dla pojazdów autonomicznych, przyczyniając się do rozwoju inteligentnego transportu; implementacji rozwiązań augmented reality w edukacji i przemyśle; rozwijania technologii computer vision wspierających osoby z niepełnosprawnościami wzroku; projektowania systemów monitoringu środowiska wykorzystujących analizę obrazów satelitarnych; aktywnego udziału w otwartych projektach badawczych, dzieląc się wiedzą i kodem z globalną społecznością naukową.",
+                                                                             "Student jest gotów do:ustalenia kluczowych priorytetów w projektach computer vision, takich jak wybór optymalnej architektury sieci neuronowej dla danego zadania wizyjnego; określenia krytycznych etapów w procesie rozwoju systemu rozpoznawania obrazów, od przygotowania danych po optymalizację modelu; priorytetyzacji zadań w zespole pracującym nad złożonym projektem widzenia maszynowego, uwzględniając terminy i zasoby; identyfikacji najważniejszych metryk oceny wydajności algorytmów przetwarzania obrazu w kontekście wymagań projektu; ustalenia kolejności implementacji funkcji w systemie analizy wideo, zaczynając od najbardziej istotnych dla użytkownika końcowego; określenia priorytetów w optymalizacji czasu wykonania algorytmów wizyjnych dla aplikacji czasu rzeczywistego; efektywnego zarządzania czasem i zasobami w procesie treningu i walidacji modeli deep learning do zadań wizyjnych."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawowe operacje przetwarzania obrazu. Zapoznanie z biblioteką OpenCV.",
+                                              "Podstawy działania sieci splotowej.",
+                                              "Zaawansowane architektury bazujące na sieciach splotowych (LeNet, AlexNet, VGG, Inception).",
+                                              "Zaawansowane architektury bazujące na sieciach splotowych (ResNet, DenseNet, MobileNet, SqueezeNet, EfficientNet). Transfer Learning.",
+                                              "Detekcja obrazu. Architektura modeli typu YOLO.",
+                                              "Segmentacja obrazu. Metryki do segmentacji oraz najbardziej znane architektury.",
+                                              "Autoencoder oraz Variation Autoencoder.",
+                                              "Generative Adversarial Networks.",
+                                              "Image transformer.",
+                                              "Stable Diffusion.",
+                                              "Segment Anything oraz DINO.",
+                                              "Generowanie obrazu. Style Transfer.",
+                                              "Rekonstrukcja 3D na podstawie obrazu 2D.",
+                                              "Detekcja pozy. Rozpoznawanie twarzy."
+                                          ]
+                }
+}

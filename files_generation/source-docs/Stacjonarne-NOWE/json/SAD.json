@@ -1,0 +1,103 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Statystyczna analiza danych",
+                    "kod_przedmiotu":  "SAD",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Monika Wrzosek",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Laboratorium–dwa kolokwia",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Wykład– egzamin pisemny",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Analiza matematyczna, Programowanie",
+                                                         "wymagania":  "Elementy rachunku różniczkowego i całkowego, podstawy programowania."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studentów ze sposobami prezentacji i analizy danych oraz narzędziami modelowania probabilistycznego; przedstawienie metod statystyki matematycznej i wnioskowania statystycznego oraz nabycieprzez studentów praktycznych umiejętności wykorzystania oprogramowania do statystycznej analizy danych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Michael Baron, Probability and Statistics for Computer Scientists, 3rd edition. American University Chapman & Hall/CRC, 2019."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Koronacki J., Mielniczuk J., Statystyka dla studentów kierunków technicznych i przyrodniczych, WNT, 2018.",
+                                                                             "Plucińska A., Pluciński E., Probabilistyka, PWN, 2017."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student ma wiedzę z zakresu rachunku prawdopodobieństwa, statystyki matematycznej i analizy danych wykorzystywaną w rozwiązywaniu prostych zadań inżynierskich w informatyce.",
+                                                              "Student zna podstawowe pojęcia i metody wnioskowania statystycznego oraz ich zastosowania w praktyce informatycznej."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować poznane metody statystyki opisowej, modelowania probabilistycznego i wnioskowania statystycznego do rozwiązywania zadań informatycznych.",
+                                                                    "Student potrafi przeprowadzić analizę prostego problemu analizy danych, dokonać wyboru narzędzi oraz przedstawić i zinterpretować uzyskane wyniki przy użyciu odpowiedniego oprogramowania."
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do poszerzania kompetencji w zakresie statystycznej analizy danych."
+                                           },
+                    "tresci_programowe":  [
+                                              "Prawdopodobieństwo klasyczne i warunkowe. Niezależność zdarzeń. Prawdopodobieństwo całkowite. Wzór Bayesa. Niezawodność systemu.",
+                                              "Zmienne losowe dyskretne, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady dwumianowy, ujemny dwumianowy i Poissona.",
+                                              "Zmienne losowe ciągłe, gęstość, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady jednostajny, geometryczny, wykładniczy, gamma i normalny. Centralne twierdzenie graniczne.",
+                                              "Zmienne losowe dwuwymiarowa. Rozkłady brzegowe. Niezależność zmiennych losowych.",
+                                              "Zastosowania metody Monte Carlo.",
+                                              "Elementy procesów stochastycznych. Łańcuchy Markowa.",
+                                              "Elementy teorii kolejek.",
+                                              "Statystyka opisowa.Miary położenia, rozproszenia, asymetrii, koncentracji.",
+                                              "Estymacja punktowa i przedziałowa parametrów rozkładów.",
+                                              "Testowanie hipotez statystycznych.",
+                                              "Model regresji liniowej."
+                                          ]
+                }
+}

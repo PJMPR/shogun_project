@@ -1,0 +1,88 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Język hiszpański – Lektorat 4",
+        "kod_przedmiotu": "LEK4",
+        "rok_studiow": 4,
+        "semestr_studiow": 8,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych – M. Nowosielska",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {
+            "lektorat": "Analiza tekstów z dyskusją, metoda projektów, praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty."
+        },
+        "zaliczenie": {
+            "Lektorat": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 4 nieusprawiedliwione nieobecności w semestrze (zwolnienia lekarskie przedstawiane na bieżąco).",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Język hiszpański LEK3",
+                "wymagania": "Znajomość języka hiszpańskiego na poziomie A2+."
+            }
+        ],
+        "cel_dydaktyczny": "Semestr końcowy nauczania języka hiszpańskiego na poziomie A2. Student utrwala i rozszerza opanowany materiał, doskonaląc umiejętności komunikacyjne niezbędne w środowisku zawodowym. Kurs przygotowuje do certyfikacji DELE A2.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 2, Wydawnictwo DRACO, 2020."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",
+                    "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023.",
+                    "https://www.profedeele.es/",
+                    "https://www.ver-taal.com/",
+                    "https://www.rae.es/ – Słownik języka hiszpańskiego."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": null,
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie A2."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Powtórka z poprzednich semestrów. Czasy przeszłe – utrwalenie: Pretérito Perfecto Compuesto vs. Simple.",
+            "Opisywanie przyzwyczajeń i stanów w przeszłości – Pretérito Imperfecto. Porównanie z Pretérito Indefinido.",
+            "Wyrażanie przyszłości – Futuro Simple: odmiana, użycie, przepowiednie i plany. Słownictwo: technologia przyszłości.",
+            "Zdania warunkowe typu 1 – si + presente + futuro. Słownictwo: projekty informatyczne, praca zdalna.",
+            "Komunikacja zawodowa po hiszpańsku: pisanie e-maili, raportów. Zwroty formalne i nieformalne.",
+            "Słownictwo IT w języku hiszpańskim: aplicación, base de datos, nube, red, seguridad informática.",
+            "Przygotowanie do certyfikacji DELE A2 – ćwiczenia z testów egzaminacyjnych.",
+            "Projekt zaliczeniowy – prezentacja lub rozmowa zawodowa. Kolokwium zaliczeniowe."
+        ]
+    }
+}
+

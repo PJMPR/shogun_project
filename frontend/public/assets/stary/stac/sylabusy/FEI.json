@@ -1,0 +1,107 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Filozofia i etyka dla inżynierów",
+                    "kod_przedmiotu":  "FEI",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  1,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Marta Czerwonka",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Zaliczenie z oceną"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "analiza przypadków",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "nie dotyczy",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Nie dotyczy.",
+                                           "Ocena aktywności na konwersatorium + wypowiedź pisemna (esej). Podstawą oceny jest aktywność na konwersatorium, która decyduje o ocenie.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Osoby, które chcą uzupełnić brakujące punkty (np. z powodu nieobecności na wykładzie), mogą napisać esej na wyznaczony temat."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wiedza z zakresu szkoły średniej.",
+                                                         "wymagania":  "Umiejętność krytycznej analizy, prowadzenia dyskusji wspartej argumentami, przygotowanie wypowiedzi pisemnej"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Filozofia dla inżynierów wyposaża Studentów w kompendium wiedzy cywilizacyjnej, dotyczącej przede wszystkim postrzegania świata i swojej w nim roli. Jest to kształcenie zgodne z duchem epoki nauki – oświecenia, w którym rolę człowieka postrzegano jako świadomego i kierującego się racjonalnym oglądem aktora świata, dążącego do jego zrozumienia i wyjaśnienia. Moduł Filozofii dla Inżynierów daje współczesnemu inżynierowi szerokość pola widzenia, otwiera go na głębsze zrozumienie swojej roli, pozwala mu zrozumieć ideę metody naukowej i naukowego postrzegania świata. Jest to także praktyczne przygotowanie do pracy, w której istnieje odpowiedzialność twórcy oprogramowania, narzędzia czy metody – wobec samego siebie i przede wszystkim: wobec społeczeństwa. Przedmiot przygotowuje także do tworzenia oprogramowania z zakresu symulacji zachowań, modelowania wyborów, systemów agentowych i wnioskowania rozproszonego.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Władysław Tatarkiewicz HISTORIA FILOZOFII"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Platon PAŃSTWO",
+                                                                             "Kartezjusz ROZPRAWA O METODZIE"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie społeczne aspekty przedsięwzięcia informatycznego",
+                                                              "Student zna i rozumie wyzwania współczesnego świata, zwłaszcza w odniesieniu do wyzwań technologicznych oraz postrzegania otoczenia ekonomicznego."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi korzystać z szerokiego spektrum wiedzy technicznej i humanistycznej, łącząc umiejętności czysto inżynierskie z rozumieniem swojej odpowiedzialności jako elementu społeczeństwa",
+                                                                    "Student potrafi odpowiednio dobierać źródła.",
+                                                                    "Student potrafi rozumieć potrzeby klienta oraz otaczających go ludzi nie tylko w kontekście ekonomicznym, ale także ogólnoludzkim."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do rozumienia wpływu informatyki na rozwój różnych dziedzin życia",
+                                                                             "Student jest gotów do świadomego wykorzystania dziedzictwa ludzkości w tworzeniu nowych jakości, jest aktywnym i świadomym podmiotem społecznym.",
+                                                                             "Student jest gotów do ciągłego doszkalania się.",
+                                                                             "Student jest gotów do przekładania etyki na cyberkulturę."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1Wprowadzenie do filozofii. Czym jest filozofia i skąd się wzięła? Inżynierskie podejście do filozofii: próba zrozumienia świata.",
+                                              "2Przyczyna. Arche. Budowa świata. Kosmos jako realizacja jednej Zasady. Wszechświat jako pole badawcze. Rozum czy empiria? Starożytne widzenie metody naukowej.",
+                                              "3Od jońskich filozofów przyrody do szkoły ateńskiej - pytanie o istotę wszechrzeczy. Tales - filozof-inżynier. Czy filozof może być praktykiem?",
+                                              "4Pytania ontologiczne: co to jest byt? Platon i Arystoteles. Starożytność a problem poznawalności świata. Sens badania empirycznego.",
+                                              "5Człowiek jako istota. Zagadka stworzenia, zagadka kreatywności. Sokrates. Sens człowieczeństwa. Szczęście – jako cel. Cynizm i hedonizm.",
+                                              "6Człowiek i jego rola wobec Wszechświata. Rola i zadania inżyniera. Odpowiedzialność twórcy. Problem Golema. Uczeń czarnoksiężnika – dylemat moralności nauki i poznania.",
+                                              "7Człowiek żyjący w otoczeniu. Istota społeczeństwa. Inżynieria społeczna i inżynierowie dusz. Wybór jednostkowy i jego wpływ na otoczenie. Inżynierskie modelowanie wyboru etycznego.",
+                                              "8Wspólnota społeczna - pytania o istotę odpowiedzialności i współodpowiedzialności. Społeczeństwo uczące się. Zbiorowe podejmowanie wyborów i zbiorowa odpowiedzialność. Równość czy różność – problem paradygmatu stosunków między jednostkami.",
+                                              "9Władza, odpowiedzialność, kierowanie zespołem a etyka. Wolność a bezpieczeństwo. Czy państwo jest tyranem? Między demokracją a demokraturą.",
+                                              "10Etyczna i praktyczna odpowiedzialność za czyn. Sens czynu. Istota prawa. Źródła prawa. Informatyk w świecie prawników.",
+                                              "11Prawo jako koncepcja organizacji społeczeństwa. Krótka historia doktryn prawnych. Inżynier w świecie prawnym.",
+                                              "12Dobro, zło, moralność. Czy istnieją inne etyki? Czy istnieje etyka mechaniczna. Ewolucja etyki.",
+                                              "13Prawa robotyki Asimova. Koncepcja autonomicznej inteligencji. Odpowiedzialność twórcy Golema. Paradygmat ucznia czarnoksiężnika.",
+                                              "14Koncepcje filozofii współczesnej - przegląd."
+                                          ]
+                }
+}

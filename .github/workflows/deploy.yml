@@ -46,15 +46,17 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        working-directory: frontend
         run: npm ci
 
       - name: Build
+        working-directory: frontend
         run: npm run build:gh-pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/pj-studies/browser
+          path: frontend/dist/pj-studies/browser
 
   deploy:
     environment:

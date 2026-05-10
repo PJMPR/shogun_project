@@ -1,0 +1,81 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Elektronika",
+                    "kod_przedmiotu":  "ELK",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  15
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski",
+                    "ects":  3,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  15,
+                                    "calkowita_liczba_godzin_h":  75
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji",
+                                           "z prezentacją multimedialną",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań projektowych",
+                                           "analiza przypadków",
+                                           "badania symulacyjne",
+                                           "Ćwiczenia/Laboratorium",
+                                           "Kryteria oceny",
+                                           "Sprawozdania z przeprowadzonych ćwiczeń",
+                                           "Bez dostarczenia sprawozdań ze wszystkich zajęć laboratoryjnych, które przewidują taką formę pracy, nie ma możliwości uzyskania oceny pozytywnej z zajęć laboratoryjnych."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "[BHP] Szkolenie BHP",
+                                                         "wymagania":  "Znajomość regulaminu i zasad BHP obowiązujących w laboratorium"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest wyposażenie studentów w podstawową wiedzę z zakresu elektroniki, elektrotechniki i technik pomiarowych. Studenci poznają zasady działania oraz zastosowania elementów i układów elektronicznych, takich jak rezystory, kondensatory, cewki, diody, tranzystory i bramki logiczne. Nauczą się również podstawowych technik pomiarowych i diagnostycznych z użyciem multimetru, oscyloskopu i innych narzędzi pomiarowych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Charles Platt; Elektronika. Od praktyki do teorii. Wydanie III; Hellion, 2022"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Dickon Ross, Cathleen Shamieh, Gordon McComb; Electronics For Dummies; John Wiley & Sons, Ltd., 2010",
+                                                                             "Kimmo Karvinen and Tero Karvinen; Getting Started with Sensors; Maker Media, Inc., 2014",
+                                                                             "Bill Pretty; Getting Started with Electronic Projects; Packt Publishing Ltd., 2015"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w  tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu.",
+                                                              "Student zna i rozumie pojęcia w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki."
+                                                          ],
+                                               "umiejetnosci":  "Student potrafi zaplanować i dobrać właściwe metody i  urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP.",
+                                               "kompetencje_spoleczne":  "----------"
+                                           },
+                    "tresci_programowe":  [
+                                              "Zrozumienie podstawowych pojęć z zakresu elektroniki – Studenci poznają podstawowe prawa i zjawiska elektryczne, takie jak prąd, napięcie, rezystancja oraz zasady działania prostych obwodów elektrycznych.",
+                                              "Poznanie i zastosowanie elementów elektronicznych – Celem jest nauka rozpoznawania, interpretowania oraz  stosowania różnych elementów elektronicznych w praktycznych układach; Nabycie umiejętności projektowania i analizy prostych obwodów – Studenci nauczą się projektować i analizować układy elektroniczne, sekwencyjne i kombinacyjne uwzględniając prawa Kirchhoffa, dzielniki napięcia oraz  zastosowanie wzmacniaczy i innych elementów półprzewodnikowych.",
+                                              "Rozwój umiejętności posługiwania się przyrządami pomiarowymi – Praktyczne ćwiczenia pozwolą na  opanowanie obsługi urządzeń takich jak multimetr i oscyloskop, co jest niezbędne do diagnozowania i  analizy działania układów.; Rozwijanie umiejętności montażu układów – Celem jest nauczenie studentów technik lutowania, poprawnego montażu elementów elektronicznych oraz praktycznego doboru metod  i urządzeń, co jest kluczowe dla realizacji projektów elektronicznych."
+                                          ]
+                }
+}

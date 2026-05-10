@@ -1,0 +1,112 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "stacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Knowledge Representation",
+        "kod_przedmiotu": "KNO",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 0,
+            "laboratorium_projekt": 30
+        },
+        "odpowiedzialny_za_przedmiot": "dr Tadeusz Puźniakowski",
+        "ects": null,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Implementacja systemów reprezentacji wiedzy (ontologie, reguły logiczne); rozwiązywanie zadań programistycznych z zakresu KR; przygotowanie raportów z wykonanych zadań."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "rozwiązywanie zadań",
+                "metoda projektów (projekt praktyczny)"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Nieoceniany"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "ocena pracy podczas ćwiczenia",
+                "ocena sporządzonego oprogramowania",
+                "raport z wykonanego zadania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Podstawy programowania",
+                "wymagania": "Podstawowe umiejętności programistyczne"
+            },
+            {
+                "nazwa": "Matematyka dyskretna",
+                "wymagania": "Znajomość podstaw logiki"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zaznajomienie studentów z różnymi formami reprezentacji wiedzy i systemów wnioskowania, które mogą być wykorzystane przez systemy informatyczne rozwiązywania problemów.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały wykładowe"
+                ]
+            },
+            "dokumentacja_internetowa": {
+                "Dokumentacja TensorFlow https://www.tensorflow.org/api_docs/python/tf/": "Dokumentacja TensorFlow https://www.tensorflow.org/api_docs/python/tf/"
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna i rozumie pojęcia związane z tematem reprezentacji wiedzy i wnioskowania w dziedzinie sztucznej inteligencji, a także ich  zastosowania w praktyce informatycznej; zna i rozumie podstawowe pojęcia z zakresu narzędzi wspomagających rozwiązywanie problemów inżynierskich w obszarze tych zagadnień",
+            "umiejetnosci": [
+                "Student potrafi zastosować reguły logiki i rachunku zdań do reprezentacji wiedzy o problemie i rozwiązania go z użyciem reguł wnioskowania.  Student potrafi dobrać odpowiedni model (np. system zdań logicznych, sieć semantyczną, system rozmyty) dla zadanego problemu, zaprojektować go i zaimplementować.",
+                "Student potrafi wykorzystać dostępne technologie dla reprezentacji wiedzy i wnioskowania w rozwiązywaniu zadanego problemu."
+            ],
+            "kompetencje_spoleczne": null
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Podstawy głębokich sieci neuronowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Praktyczne zapoznanie się z biblioteką TensorFlow jako przykład narzedzia wspomagającego tworzenie głębokich sieci neuronowych",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Dopasowanie reprezentacji danych dla DNN i ich wykorzystanie w celu utworzenia modeli predykcyjnych",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with various forms of knowledge representation and inference systems that can be used by IT systems for problem solving.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

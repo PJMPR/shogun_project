@@ -1,0 +1,101 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Technologie .NET",
+                    "kod_przedmiotu":  "DOT",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tomasz Borzyszkowski",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        }
+                                   },
+                    "kryteria_oceny":  [
+                                           "z prezentacją multimedialna",
+                                           "z prezentacją oprogramowania",
+                                           "rozwiązywanie zadań",
+                                           "brak",
+                                           "Kryteria oceny",
+                                           "ocena praktycznego zastosowania kwestii omawianych na wykładach. W ramach każdej jednostki laboratoryjnej studenci otrzymują do wykonania zadania programistyczne. Przedmiot zalicza otrzymanie minimum 50% punktów.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Programowanie obiektowe w Javie",
+                                                         "wymagania":  "Znajomość zasad programowania obiektowego oraz podstaw języków C++ oraz Java"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot ma na celu zapoznanie studentów z podstawami języka C# oraz z wybranymi bibliotekami związanymi z technologiami .Net (np. ASP.NET).",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Ian Griffiths, C# 10. Programowanie. Tworzenie aplikacji Windows, internetowych i biurowych. Helion, 2023.",
+                                                                          "Andrew Stellman, Jennifer Greene, C#. Rusz głową! Wydanie IV. Helion, 2022."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Adam Freeman, ASP.NET Core 3. Zaawansowane programowanie. Wydanie VIII. Helion, 2021."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie konstrukcje programistyczne w języku C#.",
+                                                              "Student zna i rozumie:",
+                                                              "paradygmaty programowania obiektowego w języku C#",
+                                                              "wykorzystanie właściwości i indeksatorów",
+                                                              "wykorzystanie i tworzenie atrybutów oraz korzystanie z mechanizmu refleksji",
+                                                              "wykorzystanie delegacji i obsługi zdarzeń",
+                                                              "wykorzystanie serializacji",
+                                                              "Student zna i rozumie poznane pojęcia w stopniu zaawansowanym."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi czytać ze zrozumieniem programy w języku C#. Potrafi je pisać, weryfikować i uruchamiać.",
+                                                                    "Student potrafi ocenić przydatność paradygmatów programistycznych języka C# do rozwiązania zadań laboratoryjnych oraz dobrać odpowiednie środowisko programistyczne.",
+                                                                    "Student potrafi  zaprojektować i wytworzyć oprogramowanie, zgodnie z  paradygmatami programistycznymi języka C# oraz przetestować i zdebuggować program. W zależności od specyfiki zadania, potrafi zaplanować etapy wytwarzania oprogramowania oraz dobrać narzędzia programistyczne wspomagające ten proces.",
+                                                                    "Student potrafi zastosować poznane pojęcia celem stworzenia działającego rozwiązania napisanego w jeżyku C#."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do Visual Studio i języka C#",
+                                              "Postawy programowania obiektowego w C#: definiowanie klas i obiektów, ukrywanie informacji w klasach języka C#, modyfikatory dostępu, klasy częściowe, porównanie właściwości struktur i klas, konstruktory i destruktory obiektów, inicjalizowanie struktur, dziedziczenie i przesłanianie metod",
+                                              "Konstrukcje programistyczne: definicja właściwości i indeksatorów, składowe statyczne, przeciążanie operatorów",
+                                              "Techniki zaawansowane: atrybuty i mechanizm refleksji, delegacje i obsługa zdarzeń, serializacja",
+                                              "Wprowadzenie do tworzenia serwisów webowych w technologii ASP.",
+                                              "Informacje dodatkowe",
+                                              "Wymagana instalacja współczesnej wersji kompilatora .Net wraz z odpowiednim wsparciem edycji kodu i jego uruchamiania.",
+                                              "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
+                                              "Zrozumienie zagadnień realizowanych w ramach tego przedmiotu jest niezbędne do wykonywania zawodów: programisty oraz architekta oprogramowania w firmach wykorzystujących bibliotekę .Net."
+                                          ]
+                }
+}

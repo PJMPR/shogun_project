@@ -1,0 +1,258 @@
+﻿% ===========================================================
+%  Sylabus: Analiza matematyczna (AM)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: AM}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Analiza matematyczna} \\[3pt]
+  \textbf{Kod przedmiotu:}    & AM \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 1 / 1 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Prof. Dr hab. Tomasz Szarek \\[3pt]
+  \textbf{Wersja z dnia:}     & 16.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+8 h & 16 h & --- & 24 h & 76 h & 100 h & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Samodzielne rozwiązywanie zadań z analizy matematycznej; przygotowanie do kolokwiów poprzez ćwiczenie obliczeń granic, pochodnych i całek; korzystanie z materiałów dydaktycznych.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Egzamin \\
+  \rowcolor{tableRowAlt} Ćwiczenia & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item kolokwium
+  \item sprawdziany wstępne „wejściówki''
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie studenta z podstawowymi pojęciami aparatu rachunku różniczkowego z zakresu funkcji rzeczywistych jednej zmiennej takich jak: granice ciągów, granice funkcji jednej zmiennej, funkcje ciągłe, pochodne, całki nieoznaczona i oznaczone, szeregi liczbowe, szeregi funkcyjne oraz równania różniczkowe. Przedstawione są podstawowe zastosowania  pochodnych i całek m.in. do wyznaczania przybliżeń, ekstremów,  czy  liczenia pola lub objętości. Wskazane są związki z ekonomią, optymalizacja technologiami  informatycznymi.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to familiarize students with the basic concepts of differential calculus for real-valued functions of one variable, such as sequence limits, limits of functions of one variable, continuous functions, derivatives, indefinite and definite integrals, numerical series, functional series, and differential equations. Basic applications of derivatives and integrals are presented, including approximations, extrema, and the calculation of area and volume. Connections with economics and optimization in information technologies are also indicated.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Algebra liniowa z geometrią & Wiedza z zakresu szkoły średniej. \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Liczby rzeczywiste. Konstrukcja. Własności. \\
+  \rowcolor{tableRowAlt} 2. & Szeregi liczbowe. Definicja. Kryteria zbieżności. Szeregi naprzemienne. \\
+  \rowcolor{tableRowLight} 3. & Ciągi liczbowe. Monotoniczność, ograniczoność, zbieżność. Metody obliczania granic ciągów liczbowych. Zastosowania. \\
+  \rowcolor{tableRowAlt} 4. & Funkcje (w szczególności wykładnicze i logarytmiczne).  Granice funkcji w punkcie. Monotoniczność, ograniczoność, ciągłość. Zastosowania. \\
+  \rowcolor{tableRowLight} 5. & Pochodne funkcji jednej zmiennej. Definicja, podstawowe własności, podstawowe wzory.  Twierdzenia rachunku różniczkowego. Zastosowanie rachunku różniczkowego. Badanie przebiegu zmienności funkcji. Twierdzenie de l’Hospitala.  Wzór Taylora i Maclaurina. \\
+  \rowcolor{tableRowAlt} 6. & Całka nieoznaczona. Definicja funkcji pierwotnej. Kryteria całkowalności funkcji. Podstawowe metody obliczania całek nieoznaczonych. Całkowanie funkcji wymiernych oraz niewymiernych. \\
+  \rowcolor{tableRowLight} 7. & Całka Riemanna. Definicja za pomocą granicy ciągu sum całkowych. Metody obliczania całki Riemanna. Zastosowanie całek oznaczonych. \\
+  \rowcolor{tableRowAlt} 8. & Rozwijanie funkcji w szereg potęgowy. Zastosowanie rozwinięcia w szereg potęgowy w rachunku różniczkowym. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W01 & Student zna i rozumie pojęcie ciągu liczbowego, granicy ciągu, ciągu ograniczonego, monotonicznego. Student zna i rozumie pojęcia i własności funkcji (w szczególności funkcji wykładniczej, logarytmicznej, trygonometrycznej, cyklometrycznej), granicy funkcji, funkcji monotonicznej, ograniczonej, funkcji ciągłej. Zna i rozumie definicję, własności i twierdzenia dotyczące pochodnych funkcji jednej zmiennej. Zna i rozumie definicję oraz sposoby obliczania całek nieoznaczonych i oznaczonych. Zna i rozumie definicje szeregów liczbowych oraz kryteria zbieżności szeregów liczbowych. Student zna metody numerycznego obliczania pochodnych oraz całek oznaczonych. Student zna i rozumie pojęcie szeregu potęgowego.  Student zna i rozumie zastosowanie równań różniczkowych zwyczajnych oraz zna podstawowe metody ich rozwiązywania. Student zna i rozumie sposoby przeprowadzania prostych dowodów twierdzeń matematycznych. &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U07 & Student potrafi wyznaczać granice ciągów liczbowych oraz funkcji jednej zmiennej. Potrafi sprawdzić czy funkcja jest ciągła.  Potrafi liczyć pochodne. Zna interpretację geometryczną pochodnej i twierdzeń z nią związaną. Potrafi stosować  regułę de L'Hospitala. Potrafi  wyznaczać wielomian Taylora.  Potrafi zastosować twierdzenie Rolle’a, Lagrange’a i Cauchy’ego. Potrafi  obliczać ekstrema lokalne i globalne funkcji jednej zmiennej.  Potrafi przeprowadzić badanie przebiegu zmienności funkcji. Potrafi liczyć całki oznaczone i nieoznaczone jednej zmiennej oraz wykorzystywać je do zagadnień geometrycznych. Student potrafi opisać związek twierdzeń rachunku różniczkowego i całkowego jednej zamiennej z wybranymi metodami numerycznymi. Student potrafi użyć twierdzenie Taylora do obliczania przybliżonej wartości wyrażenia. Student potrafi określić rząd równania różniczkowego zwyczajnego oraz rozwiązać równanie różniczkowe zwyczajne pierwszego rzędu oraz zagadnienie Cauchy,ego związane z tymi równaniami. Student potrafi przeprowadzić elementarny dowód twierdzenia. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K03 & Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst. & kolokwium, sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item dyskusja
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item 1. W. Krysicki, L. Włodarski:, „Analiza matematyczna w zadaniach” część 1, PWN (2022 i nowsze).
+  \item 2. M. Gewert, Z. Skoczylas, “ Analiza Matematyczna 1, Przykłady i zadania ”, GiS Wroclaw (2021)
+  \item 3.  M. Gewert, Z. Skoczylas, “ Analiza Matematyczna 1, Definicje, twierdzenia, wzory''”, GiS Wrocław (2008 i nowsze)
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item 1. B. Sozański, I. Dziedzic, '' Algebra i Analiza w zagadnieniach ekonomicznych'', Bila (2009)
+  \item 2.  M. Sullivan, '' Brief  Calculus, an Applied Approach'', John Wiley \& Sons (2005)
+\end{itemize}
+
+\end{document}

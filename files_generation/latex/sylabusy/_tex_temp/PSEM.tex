@@ -1,0 +1,278 @@
+﻿% ===========================================================
+%  Sylabus: Proseminarium (PSEM)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PSEM}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Proseminarium} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PSEM \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 8 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Dr hab. Marek A. Bednarczyk, prof. PJATK \\[3pt]
+  \textbf{Wersja z dnia:}     & 27.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+--- & 16 h & --- & 16 h & 59 h & 75 h & \textbf{3} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Przygotowanie konspektu pracy dyplomowej; realizacja kolejnych zadań wspomagających pracę dyplomową; przygotowanie dwóch prezentacji seminaryjnych; konsultacje z promotorem.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja samodzielnej pracy semestralnej
+  \item ocena sporządzonego dokumentu
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem zajęć jest przygotowanie studentów do opracowania i prezentacji prac dyplomowych, zdyscyplinowanie ich w procesie zespołowej realizacji prac oraz przygotowanie do egzaminu dyplomowego. Zajęcia są prowadzone i dyskutowane w grupach specjalizacyjnych i obejmują przygotowanie, seminaryjną prezentację oraz dyskusję rozwiązań i decyzji przyjmowanych w trakcie wykonania prac dyplomowych. Istotny element kształcący stanowi analiza i dyskusja rozwiązań konstrukcyjnych, ról i zadań udziałowców projektu oraz społecznego lub biznesowego kontekstu prac.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the classes is to prepare students for developing and presenting diploma theses, to discipline them in the process of team-based completion of the work, and to prepare them for the diploma examination. The classes are conducted and discussed in specialization groups and include preparation, seminar presentation, and discussion of solutions and decisions adopted during the completion of diploma theses. An important educational element is the analysis and discussion of design solutions, the roles and tasks of project stakeholders, and the social or business context of the work.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Budowa i integracja oprogramowania BYT & co najmniej równocześnie \\
+  \rowcolor{tableRowAlt} Projekt zespołowy PRZ2 & Społeczne aspekty informatyki SAI \\
+  \rowcolor{tableRowLight} Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ & przedmioty specjalizacyjne \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych. \\
+  \rowcolor{tableRowAlt} 2. & Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu \\
+  \rowcolor{tableRowLight} 3. & Przygotowanie I. prezentacji na temat \\
+  \rowcolor{tableRowAlt} 4. & -problemu i kontekstu pracy dyplomowej, \\
+  \rowcolor{tableRowLight} 5. & -wizji, rozwiązania postawionego problemu, \\
+  \rowcolor{tableRowAlt} 6. & -planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe), \\
+  \rowcolor{tableRowLight} 7. & - stanu aktualnego pracy, \\
+  \rowcolor{tableRowAlt} 8. & -zagrożeń i sposobów przeciwdziałania im \\
+  \rowcolor{tableRowLight} 9. & Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu. \\
+  \rowcolor{tableRowAlt} 10. & Przegląd aktualnej dokumentacji pracy. \\
+  \rowcolor{tableRowLight} 11. & Przygotowanie rozwiniętego konspektu pracy. \\
+  \rowcolor{tableRowAlt} 12. & Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów. \\
+  \rowcolor{tableRowLight} 13. & Korekta konspektu. \\
+  \rowcolor{tableRowAlt} 14. & Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych \\
+  \rowcolor{tableRowLight} 15. & Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania \\
+  \rowcolor{tableRowAlt} 16. & Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy. \\
+  \rowcolor{tableRowLight} 17. & Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W19 & Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym. &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym &  \\
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U01 & Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U02 & Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U03 & Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U05 & Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U08 & Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U25 & Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowLight} K\_U26 & Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_U27 & Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu. & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+  \rowcolor{tableRowAlt} K\_K05 & Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych & prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item metoda projektów (projekt praktyczny)
+  \item praca w grupach
+  \item dyskusja
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Materiały wykładowe i specjalizacyjne
+  \item Regulaminy i instrukcje dyplomowania PJATK
+  \item Materiały i wzorce udostępniane przez prowadzącego Proseminarium
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,281 @@
+﻿% ===========================================================
+%  Sylabus: Zarządzanie własnym przedsięwzięciem (POZ)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: POZ}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Zarządzanie własnym przedsięwzięciem} \\[3pt]
+  \textbf{Kod przedmiotu:}    & POZ \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Albert Śledzianowski \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Praca nad planem biznesowym własnego przedsięwzięcia; analiza przypadków biznesowych; przygotowanie prezentacji multimedialnej; przygotowanie do kolokwium z treści wykładów.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item kolokwium
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+  \item prezentacja elementu zespołowej pracy semestralnej
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest omówienie podstawowych kwestii ekonomicznych: gospodarka, system ekonomiczny i społeczny; pieniądz i rynek; uwarunkowania technologiczne, etyczne i prawne; gospodarka oparta na informacji i na wiedzy; marketing; podstawy rachunkowości; formy prowadzenia działalności gospodarczej; zakładanie i zarządzanie firmą
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The aim of the course is to discuss fundamental economic issues: the economy, the economic and social system; money and the market; technological, ethical, and legal determinants; the information- and knowledge-based economy; marketing; the basics of accounting; forms of business activity; and establishing and managing a company.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} brak & brak \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Pojęcia podstawowe: rynek, popyt i podaż.Nowoczesny system ekonomiczny ispołeczny. Ekonomia, technologia i etyka. \\
+  \rowcolor{tableRowAlt} 2. & Rynek, Konkurencja. Wartość i powstawanieceny. Pieniądz. Pieniądz w świecie IT. \\
+  \rowcolor{tableRowLight} 3. & Państwo a gospodarka. Podatki. Inflacja.Bezrobocie. Rola pieniądza w gospodarce.Rola rządu. Prawa i obowiązki przedsiębiorcyi obywatela.Zarządzanie czasem. Wykresy Gantta \\
+  \rowcolor{tableRowAlt} 4. & Nowoczesna makrogospodarka . Gospodarka globalna. Strategie rozwoju światowego.Kryzysy ekonomiczne i kryzysy finansowe.Rozwój gospodarczy i rozwój społeczny.Modele rozwoju ekonomicznego. \\
+  \rowcolor{tableRowLight} 5. & Ożywianie i schładzanie gospodarki.Gospodarka USA vs gospodarka UE. Strategializbońska. Japonia. Chiny i Indie. Korporacje ifirmy międzynarodowe. Przejęcia wrogie iprzyjazne. Przepływ kapitału i inwestycje FDI.Kryzysy finansowe.Budżetowanie przedsięwzięć i rachunek cash flow. \\
+  \rowcolor{tableRowAlt} 6. & Giełda jako przykład organizacji rynkuinformacji.Planowanie działań i formułowanie strategii. \\
+  \rowcolor{tableRowLight} 7. & Gospodarka oparta na wiedzy. Firmainnowacyjna. Rynek e-usług. Handelelektroniczny.Logistyka (MRP) \\
+  \rowcolor{tableRowAlt} 8. & Podstawy marketingu. Misja i wizja firmy.Budowa wizerunku. Budowa produktu.Marketing. Analiza business case. \\
+  \rowcolor{tableRowLight} 9. & Marketing: reklama a zarządzanie rynkiem.Kanały informacyjne. Grupa targetowa.Komunikacja wewnętrzna i komunikacja zewnętrzna. Kampanie marketingowe.Nowoczesny marketing. Marketing w świecieglobalnej wymiany komunikacji.Budowanie kampanii marketingowej \\
+  \rowcolor{tableRowAlt} 10. & Marketing. Logotypy i system identyfikacjiwizualnej. Kampanie społeczne. Firmaodpowiedzialna społecznie. Reagowanie nasytuacje kryzysowe. \\
+  \rowcolor{tableRowLight} 11. & Budowa i zarządzanie własnegoprzedsiębiorstwa. Formy prowadzeniadziałalności gospodarczej.Symulator ekonomiczny. \\
+  \rowcolor{tableRowAlt} 12. & Podstawy rachunkowości finansowej. Bilansspółki. Wycena firmy. Rachunkowośćzarządcza. Rachunek ekonomiczny firmy.Rachunkowość i cash flow. \\
+  \rowcolor{tableRowLight} 13. & Umocowanie prawne przedsiębiorcy.Elementy prawa dla menedżerów. Podstawyprawa dla informatyków. Kodeks cywilny.Kodeks spółek handlowych. \\
+  \rowcolor{tableRowAlt} 14. & Ustawa o prawie autorskim. Analiza przypadków prawnych. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie podstawowe zasady planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej i analizy wykonalności z uwzględnieniem aspektów społecznych i ryzyka. {[}K\_W17{]} & kolokwium \\
+  \rowcolor{tableRowAlt} K\_W19 & Student zna i rozumie podstawowe problemy etyczne i prawne informatyki: ochronę własności intelektualnej, prawo autorskie, odpowiedzialność zawodową i zagadnienia prywatności danych. {[}K\_W19{]} & kolokwium \\
+  \rowcolor{tableRowLight} K\_W20 & Student zna i rozumie ogólne zasady prowadzenia działalności gospodarczej w branży IT, w tym tworzenia startupów i innowacyjnych przedsięwzięć informatycznych. {[}K\_W20{]} & kolokwium \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U26 & Student potrafi przeanalizować projekt informatyczny pod kątem jego wpływu na otoczenie społeczne i ekonomicznego uzasadnienia realizacji. {[}K\_U26{]} & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia dla różnych interesariuszy. {[}K\_U25{]} & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K02 & Student jest gotów do przekazywania informacji i opinii o projektach informatycznych w sposób powszechnie zrozumiały, z uwzględnieniem potrzeb różnych grup odbiorców. {[}K\_K02{]} & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej \\
+  \rowcolor{tableRowAlt} K\_K07 & Student jest gotów do myślenia i działania w sposób przedsiębiorczy i innowacyjny w kontekście tworzenia przedsięwzięć informatycznych. {[}K\_K07{]} & ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item praca w grupach
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+  \item dyskusja
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item ''Mikroekonomia'' - David Begg, Rudiger Dornbusch, Stanley Fischer, PWE (2014)
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item 1. „Banki i rynki finansowe. Od zaufania publicznego do kasyna” - Zbyszek Grocholski
+  \item 2. ''Wolny wybór'' – Milton Friedman
+  \item 3. „Mapa i terytorium” - Alan Greenspan
+  \item 4. “Kapitał XXI wieku” – Thomas Piketty
+  \item 5. „Makro i mikroekonimia” – Wydawnictwo PWN
+\end{itemize}
+
+\end{document}

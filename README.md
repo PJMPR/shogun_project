@@ -1,59 +1,64 @@
-# PjStudies
+# GD_WI_PRG_26-27 – Monorepo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Repozytorium programów i sylabusów studiów PJATK (rok 2026/27).
 
-## Development server
+## Struktura monorepo
 
-To start a local development server, run:
-
-```bash
-ng serve
+```
+frontend/            # Aplikacja Angular (przeglądarka sylabusów)
+files_generation/    # Narzędzia generujące PDF, DOCX, JSON
+backend/             # Przyszłe API (placeholder)
+database/            # Przyszłe schematy BD (placeholder)
+.github/workflows/   # CI/CD: deploy do GitHub Pages + dodawanie sylabusów
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Frontend (Angular)
 
 ```bash
-ng generate component component-name
+cd frontend
+npm ci
+npm start            # dev server: http://localhost:4200
+npm run build:gh-pages   # production build dla GitHub Pages
+npm test             # testy jednostkowe (Vitest)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Generowanie dokumentów
 
+### PDF sylabusów (Windows + MiKTeX)
+```powershell
+cd files_generation/latex
+.\build-all-syllabi.ps1         # wszystkie
+.\build-all-syllabi.ps1 -Mode s # tylko stacjonarne
+.\build-all-syllabi.ps1 -Mode n # tylko niestacjonarne
+```
+
+### PDF programu studiów (Windows + MiKTeX)
+```powershell
+cd files_generation/latex-studia
+.\build-program.ps1
+```
+
+### Pliki Word (DOCX) sylabusów
 ```bash
-ng generate --help
+cd files_generation/sylabus-word
+python generate_syllabus.py       # wszystkie
+python generate_syllabus.py AM    # wybrany kod
 ```
 
-## Building
-
-To build the project run:
-
+### Indeks sylabusów (JSON)
 ```bash
-ng build
+cd files_generation
+node scripts/generate-syllabus-index.mjs
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+### Mapa KEU
 ```bash
-ng test
+cd files_generation
+node _gen_keu_map.mjs
 ```
 
-## Running end-to-end tests
+## CI/CD
 
-For end-to-end (e2e) testing, run:
+- **Deploy do GitHub Pages** – automatyczny przy push do `main` (workflow `deploy.yml`)
+- **Dodaj / zaktualizuj sylabus** – ręczne uruchomienie z JSON jako wejściem (workflow `add-syllabus.yml`)
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

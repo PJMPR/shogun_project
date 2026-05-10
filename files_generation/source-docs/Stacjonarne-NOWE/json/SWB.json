@@ -1,0 +1,104 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Systemy wbudowane",
+                    "kod_przedmiotu":  "SWB",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  15
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Paweł Syty",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "rozwiązywanie zadań",
+                                           "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "Ocena praktycznego zastosowania kwestii omawianych na wykładach. Studenci otrzymują zadania praktyczne do wykonania podczas zajęć (do zdobycia maks. 25 punktów, z gradacją 0.5 p.) oraz zadanie indywidualne (do zdobycia maks. 25 punktów) – w sumie 50 punktów. Zajęcia zalicza otrzymanie co najmniej 25 punktów."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zaznajomienie studentów z budową i podstawowymi metodami projektowania i programowania systemów wbudowanych (ang. embedded systems), głównie o opartych o mikrokontrolery, czyli specjalizowanych systemów informatycznych, odpowiadających za wykonywanie ściśle określonych zadań - zwykle związanych z monitorowaniem i sterowaniem. Omówione zostaną fizyczne podstawy funkcjonowania czujników (receptorów) i elementów wykonawczych (efektorów / aktuatorów), jako podstawowych składników tego typu systemów.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "A. Peck, Raspberry Pi Zero W. Kontrolery, czujniki, sterowniki i gadżety. Helion, 2019W. Wrotek, Arduino od podstaw. Helion, 2023"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna architektury systemów komputerowe (w tym mikrokontrolerowych) i rozumie zasady projektowania systemów cyfrowych, opartych o mikrokontrolery.",
+                                                              "Student zna i rozumie podstawowe metody projektowania i implementacji systemów wbudowanych",
+                                                              "Student zna i rozumie zasady funkcjonowania wybranych składników systemu wbudowanego"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zaprojektować proste układy cyfrowe sekwencyjne i kombinatoryczne oraz je oprogramować.",
+                                                                    "Student potrafi  wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia systemu wbudowanego",
+                                                                    "Student potrafi zaprojektować, zbudować i oprogramować proste, specjalizowane systemy wbudowane oparte na wybranych mikrokontrolerach."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Zagadnienia ogólne",
+                                              "• Definicja systemu wbudowanego, historia, zastosowania",
+                                              "• Architektury mikroprocesorów i mikrokontrolerów. Rodziny mikrokontrolerów",
+                                              "• Modelowanie systemów czasu rzeczywistego, system przerwań",
+                                              "• Szyny komunikacyjne (SPI, I2C, 1-wire)",
+                                              "• Systemy monitoringu domowego (Home Assistant, Domoticz itp.)",
+                                              "• Wstęp do Internetu Rzeczy (IoT), protokoły komunikacyjne (ZigBee, Z-Wave, MQTT)",
+                                              "• Przykładowe realizacje",
+                                              "Omówienie wybranych platform sprzętowych",
+                                              "• Arduino (Uno, Mega, Nano, Pro Mini itp.) – platforma oparta na 8-bitowych mikrokontrolerach z rodziny Atmel AVR",
+                                              "• Raspberry Pi – rodzina 32/64-bitowych jednopłytkowych minikomputerów opartych na mikroprocesorach z rodziny ARM (11, Cortex)",
+                                              "• ESP8266 / ESP32 – 32-bitowy mikrokontroler RISC z wbudowaną transmisją WiFi / Wifi+Bluetooth, przez co przydatny do połączenia systemu z siecią Internet",
+                                              "• Raspberry Pi Pico – płytka mikrokontrolera, zbudowana na bazie chipu RP2040",
+                                              "• STM32 – rodzina 32-bitowych mikrokontrolerów z rodziny ARM Cortex",
+                                              "Omówienie wybranych języków programowania – w zakresie niezbędnym do programowania systemów wbudowanych",
+                                              "• Pochodna języka C/C++ – programowanie Arduino / ESP8266 / ESP32",
+                                              "• C/C++ – programowanie STM32",
+                                              "• Python – skryptowy język ogólnego zastosowania, szczególnie wygodny w programowaniu dla Raspberry Pi, omówiony w kontekście wielowątkowości, sterowania zdalnymi urządzeniami i podstaw projektowania graficznego interfejsu użytkownika",
+                                              "• MicroPython – wersja języka Python dla mikrokontrolerów – Raspberry Pi Pico",
+                                              "Omówienie zasad funkcjonowania, podłączenia itp. osprzętu pomocniczego (5.5h)",
+                                              "• Czujniki / sensory: termometry, barometry, czujniki odległości, deszczu, ruchu, koloru, dźwięku, urządzenia GPS, kamery itp.",
+                                              "• Aktuatory / efektory / elementy wykonawcze: silniki, wyświetlacze LCD/LED/OLED itp.",
+                                              "• Urządzenia do komunikacji: GSM, RFID/NFC itp.",
+                                              "• Inne: zegary czasu rzeczywistego, konwertery napięć i poziomów logicznych itp.",
+                                              "Omówienie wybranych środowisk programistycznych i narzędzi",
+                                              "• Arduino IDE – środowisko programistyczne dla Arduino i ESP8266, wraz z niezbędnymi bibliotekami",
+                                              "• TinkerCAD – serwis WWW do modelowania i symulowania urządzeń wbudowanych",
+                                              "• Fritzing – projektowanie obwodów i układów",
+                                              "• Arduino Cloud – środowisko programistyczne w chmurze",
+                                              "• ThingSpeak – serwisy WWW, umożliwiający zbieranie i prezentowanie danych pomiarowych"
+                                          ]
+                }
+}

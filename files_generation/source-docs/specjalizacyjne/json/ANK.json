@@ -1,0 +1,111 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Animacje komputerowe",
+                    "kod_przedmiotu":  "ANK",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Piotr Arłukowicz",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Projekt końcowy na prawach egzaminu"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "prezentacja na żywo",
+                                           "wykład z elementami dyskusji",
+                                           "studium przypadku",
+                                           "najlepsze praktyki",
+                                           "praca samodzielna ucznia nad zadaniami i mini-projektami",
+                                           "projekt semestralny",
+                                           "Projekt końcowy na prawach egzaminu",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Projekt",
+                                           "Student musi wykonać zgodnie z regułami sztuki kluczowe ćwiczenia prezentowane w trakcie semestru. Sprawdzana jest zgodność z zasadami ale dopuszczane są inwencja twórcza oraz kreatywność (dziedzina jest twórcza). Tworzone jest w ciągu semestru portfolio rozwojowe pokazujące eksperymenty własne i ścieżkę osiągnięć, które są następnie na końcu zajęć oceniane.",
+                                           "Student zobowiązany jest przedstawić większy projekt własny w którym wykorzystuje poznane techniki modelowania. Projekty są negocjowane indywidualnie już podczas semestru i można je przygotowywać w trakcie jego trwania."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Niezbędna jest ogólna znajomość obsługi komputera.",
+                                                         "wymagania":  "M3D lub G3D"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Bardzo zalecane jest wcześniejsze skończenie kursu Grafiki komputerowej lub Modelowania 3D dla gier.",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest przygotowanie studentów do bardziej wszechstronnej pracy w branży Gamedev w charakterze twórców dynamicznych treści cyfrowych związanych z animacją w różnych jej odmianach. Nacisk kładziony jest na wykorzystanie mechanizmów parametrycznych i hierarchicznych, tworzenie rigów 3D oraz związane z nimi tematy takie jak 12 podstaw animacji Disneya, przechwytywanie ruchu, symulowanie ruchu, upraszczanie i edycja krzywych ruchu, tworzenie mechanik i mechanizmów z elementami obliczeń inżynierskich i skryptowania oraz zarządzanie danymi dynamicznymi, takimi jak mockupy, pozy, klucze kształtów i sterowniki/więzy ograniczające.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "2. Realizing 3D Animation in Blender: Master the fundamentals of 3D animation in Blender, from keyframing to character movement, ISBN-13: 978-1801077217",
+                                                                          "3. A Complete Guide to Character Rigging for Games Using Blender, ISBN-13: ‎978-1032203003"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. Mind-Melding Unity and Blender for 3D Game Development: Unleash the power of Unity and Blender to create amazing games, ISBN-13: ‎978-1801071550",
+                                                                             "2. Beginner’s Guide to Creating Characters in Blender, ISBN-13: ‎978-1912843138",
+                                                                             "3. Learn Blender Simulations the Right Way: Create attractive and realistic animations with Mantaflow, rigid and soft bodies, and Dynamic Paint, ISBN-13: ‎978-1803234151"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "1. Manual do Blendera":  "https://docs.blender.org/manual/en/latest/index.html",
+                                                                        "4. Tworzenie gier w Blenderze":  "https://mikepan.com/GameEngineBook/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcia takie jak animacja, klatki kluczowe, więzy, easing, drivery, antycypacja, squash/stretch, rodzaje symulacji, kluczowanie, parametryczne zmiany kształtu, mocupy, motion-capture, rig, armature, dopesheet, edytor akcji, NLA, i inne",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wymodelować ruchy obiektów po zadanej, oczekiwanej trajektorii w przestrzeni 3D",
+                                                                    "Student potrafi utworzyć animację w oparciu o rig z kości lub innych obiektów powiązanych hierarchicznie",
+                                                                    "Student potrafi tworzyć animacje zależne oraz parametryczne, włącznie z obliczaniem parametrów ruchu (np. prędkości kół zębatych w przekładni planetarnej, itp.)",
+                                                                    "Student potrafi zastosować mockupy z zewnętrznych baz motion-capture i stworzyć z nich animację złożoną z różnych nakładających się na siebie akcji"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do współpracy i dzielenia się swoją wiedzą",
+                                                                             "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Wprowadzenie do podstaw animacji metodą klatek kluczowych, animacja w wielu wymiarach.",
+                                              "2. Animacja typu straight-ahead piłki spadającej ze schodów ze zderzeniami doskonale sprężystymi.",
+                                              "3. Modyfikatory animacji, dopesheet, edytor krzywych ruchu (graph editor).",
+                                              "4. Modelowanie animacji: prędkość, dynamika, tworzenie wrażenia energii ruchu i charakteru obiektu.",
+                                              "5. Dwanaście zasad animacji wg Disneya – podstawowe principia.",
+                                              "6. Animacje zależne: układ słoneczny, zastosowanie więzów (constraints).",
+                                              "7. Animacja uniwersalna za pomocą driverów – tworzenie skomplikowanego układu kół zębatych.",
+                                              "8. Wstęp do armatur – podstawy tworzenia rigów.",
+                                              "9. Rig piłki i realizacja zasady squash/stretch.",
+                                              "10. Rig falującego ogona, pojęcie secondary animation, przekazanie energii, punkt działania.",
+                                              "11. Inverse kinematics, rig ręki, kombinacja FK+IK.",
+                                              "12. Rig stopy (opcjonalnie) lub biped rig, wstęp do walkcycle.",
+                                              "13. Walkcycle i stosowanie referencji animacji",
+                                              "14. Edytor NLA, akcje, biblioteka póz, animacje z motion-capture.",
+                                              "15. Tworzenie zaawansowanej wieloskładnikowej animacji pełnego aktora na przykładzie profesjonalnych rigów przemysłowych (np. blenrig5 lub innych)."
+                                          ]
+                }
+}

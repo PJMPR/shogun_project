@@ -1,0 +1,62 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Praktyka 3",
+                    "kod_przedmiotu":  "PRK3",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  360,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Michał Hyla",
+                    "ects":  12,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  0,
+                                    "praca_wlasna_studenta_h":  360,
+                                    "calkowita_liczba_godzin_h":  360
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+
+                                   },
+                    "kryteria_oceny":  [
+                                           "Nie dotyczy",
+                                           "Praktyka zawodowa",
+                                           "Zaliczenie bez oceny",
+                                           "Kryteria oceny",
+                                           "Sprawozdanie z praktyk, w razie konieczności dodatkowa weryfikacja z pracodawcą"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Nie dotyczy",
+                                                         "wymagania":  "Nie dotyczy"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu jest umożliwienie studentom zdobycia praktycznych doświadczeń w rzeczywistym środowisku pracy. Studenci mają okazję wykorzystać i pogłębić swoją wiedzę teoretyczną zdobytą na uczelni, poprzez wykonywanie zadań związanych z ich przyszłym zawodem. Praktyka rozwija także umiejętności interpersonalne, zdolność pracy w zespole oraz adaptacji do wymagań rynku pracy, co zwiększa ich konkurencyjność na rynku. Głównym celem jest zatem integracja wiedzy akademickiej z praktyką zawodową w realnych warunkach.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Nie dotyczy"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zdobywa zaawansowaną wiedzę na temat zarządzania zespołami, metod wdrażania innowacji i strategii biznesowych w IT. Rozumie procesy związane z podejmowaniem decyzji strategicznych, analizą ryzyka oraz skalowaniem działalności przedsiębiorstwa. Poznaje wpływ technologii na rozwój rynku oraz wyzwania związane z bezpieczeństwem i regulacjami prawnymi",
+                                               "umiejetnosci":  "Student potrafi efektywnie planować i zarządzać projektami IT, uwzględniając aspekty finansowe i organizacyjne. Wykazuje inicjatywę w poszukiwaniu nowych rozwiązań technologicznych i ich wdrażaniu w praktyce. Umie analizować złożone problemy, podejmować decyzje w warunkach niepewności oraz proponować innowacyjne usprawnienia w procesach biznesowych",
+                                               "kompetencje_spoleczne":  "Student rozwija umiejętność myślenia strategicznego i przedsiębiorczości, inicjując działania na rzecz rozwoju organizacji. Podejmuje odpowiedzialność za podejmowane decyzje i potrafi rozwiązywać złożone problemy zgodnie z zasadami profesjonalizmu. Potrafi ustalać priorytety oraz skutecznie zarządzać zadaniami w dynamicznym środowisku biznesowym"
+                                           },
+                    "tresci_programowe":  [
+                                              "Nie dotyczy"
+                                          ]
+                }
+}

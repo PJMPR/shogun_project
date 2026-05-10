@@ -1,0 +1,98 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Analiza Incydentów Cyberbezpieczeństwa",
+                    "kod_przedmiotu":  "AIC",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr inż. Paweł Lelental",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "burza mózgów",
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "Laboratorium/Projekt",
+                                           "rezultaty gry strategicznej, kolokwium końcowe",
+                                           "Kryteria oceny:niedostateczny: < 50% możliwych do zdobycia punktów dostateczny  :     50%-60% możliwych do zdobycia punktów dostateczny+ :    61%- 70% możliwych do zdobycia punktówdobry :                71%-80% możliwych do zdobycia punktówdobry +:              81%-90% możliwych do zdobycia punktów bardzo dobry  :   >90%  możliwych do zdobycia punktów",
+                                           "Zaliczenie – kolokwium końcowe z Laboratoriów"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Analiza incydentów cyberbezpieczeństwa to proces badania i oceny zdarzeń, które mogą stanowić naruszenie cyberbezpieczeństwa. Celem jest zrozumienie, jak doszło do incydentu, jakie są jego skutki, jak można go zażegnać i jak zapobiegać podobnym incydentom w przyszłości. W całym tym procesie kluczowe jest posiadanie odpowiednich umiejętności analizy systemów i sieci, a także do podejmowania szybkich i skutecznych działań w celu zminimalizowania wpływu incydentów na cyberbezpieczeństwo.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "William Stallings, Lawrie Brown - Bezpieczeństwo systemów informatycznych. Zasady i praktyka. (ang. Computer Security: Principles and Practice), Wydanie IV. Tom 1 i 2, Helion 2019"
+                                                                      ]
+                                                      },
+                                       "dokumentacja_internetowa":  {
+                                                                        "https://www.enisa.europa.eu/publications/enisa-threat-landscape-methodology?v2=1":  "https://www.enisa.europa.eu/publications/enisa-threat-landscape-methodology?v2=1",
+                                                                        "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2021?v2=1":  "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2021?v2=1"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie anatomię kluczowych zagrożeń Cyber",
+                                                              "Student zna i rozumie podstawowe środki ochrony i reakcji na kluczowe zagrożenia Cyber"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi przygotować zestaw środków ochrony informacji odpowiednich dla różnych typów zagrożeń",
+                                                                    "Student potrafi wskazać mocne i słabe strony systemów ochrony informacji"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do pracy zespołowej w dziale SOC"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wykład:",
+                                              "Anatomia zagrożenia – Ransomware (wg. ENISA)",
+                                              "Anatomia zagrożenia – Malware (wg. ENISA)",
+                                              "Anatomia zagrożenia – Cryptojacking (wg. ENISA)",
+                                              "Anatomia zagrożenia - E-mail related threats (wg. ENISA)",
+                                              "Anatomia zagrożenia - Threats against data (wg. ENISA)",
+                                              "Anatomia zagrożenia - Threats against availability and integrity (wg. ENISA)",
+                                              "Anatomia zagrożenia - Disinformation – misinformation (wg. ENISA)",
+                                              "Anatomia zagrożenia - Non-malicious threats (wg. ENISA)",
+                                              "Laboratoria:",
+                                              "Zapoznanie się z organizacją oraz utworzenie Zespołów SOC",
+                                              "Atak 1: Atak typu Ransomware, Poziom 1– Reakcja i prewencja",
+                                              "Atak 2: Atak typu Malware. Poziom 1 – Reakcja i prewencja",
+                                              "Atak 3: Atak typu Cryptojacking, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 4: Atak typu E-mail related threats, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 5: Atak typu Threats against data, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 6: Atak typu Threats against availability and integrity, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 7: Atak typu Disinformation – misinformation, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 8: Atak typu Non-malicious threats, Poziom 1 – Reakcja i prewencja",
+                                              "Atak 9: Atak typu Zaawansowany wektor ataku 1, Poziom 2  – Reakcja i prewencja",
+                                              "Atak 10: Atak typu Zaawansowany wektor ataku 2, Poziom 2  – Reakcja i prewencja",
+                                              "Atak 11: Atak typu Zaawansowany wektor ataku 3, Poziom 2  – Reakcja i prewencja",
+                                              "Atak 12 : Atak typu Zaawansowany wektor ataku 4, Poziom 2  – Reakcja i prewencja"
+                                          ]
+                }
+}

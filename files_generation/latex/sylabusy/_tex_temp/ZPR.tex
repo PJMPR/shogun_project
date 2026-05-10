@@ -1,0 +1,288 @@
+﻿% ===========================================================
+%  Sylabus: Zarządzanie projektem informatycznym (ZPR)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: ZPR}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Zarządzanie projektem informatycznym} \\[3pt]
+  \textbf{Kod przedmiotu:}    & ZPR \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 8 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr. Aleksandr Polin (alex.polin@pjwstk.edu.pl) \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+8 h & --- & 8 h & 16 h & 34 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Tworzenie planu zarządzania projektem informatycznym w grupie; analiza realnych projektów IT; przygotowanie prezentacji planu zarządzania; opracowanie dokumentacji projektowej.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item prezentacja projektu i dokumentacji
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Zapoznanie studentów z kluczowymi koncepcjami i praktykami zarządzania projektami informatycznymi. Wyposażenie studentów w umiejętności planowania, organizowania, kierowania i kontroli projektów IT. Zrozumienie specyfiki zarządzania zespołami IT, motywacji i komunikacji.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{Introduction to the key concepts and practices of IT project management. Equipping students with the skills to plan, organize, lead, and control IT projects. Understanding the specifics of managing IT teams, motivation, and communication.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Inzynieria oprogramowania & Znajomosc podstawowych pojec z zakresu inzynierii oprogramowania i cyklu zycia oprogramowania; umiejetnosc pracy w zespole \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do zarządzania projektami IT \\
+  \rowcolor{tableRowAlt} 2. & Definicje, cele i zakres zarządzania projektami. \\
+  \rowcolor{tableRowLight} 3. & Cykl życia projektu IT. \\
+  \rowcolor{tableRowAlt} 4. & Case study: Denver International Airport Baggage System - analiza błędów i wnioski. \\
+  \rowcolor{tableRowLight} 5. & Metodologie zarządzania projektami \\
+  \rowcolor{tableRowAlt} 6. & Waterfall, Agile, Scrum, Kanban - omówienie, porównanie, zastosowania. \\
+  \rowcolor{tableRowLight} 7. & Scrum vs. Scream - rozpoznawanie i unikanie patologii w zarządzaniu. \\
+  \rowcolor{tableRowAlt} 8. & Motywacja i zarządzanie zespołami IT \\
+  \rowcolor{tableRowLight} 9. & Teorie motywacji, rola motywacji wewnętrznej i zewnętrznej. \\
+  \rowcolor{tableRowAlt} 10. & Algorytmiczne vs. Heurystyczne zadania - wpływ na motywację. \\
+  \rowcolor{tableRowLight} 11. & Budowanie efektywnych zespołów, role i odpowiedzialności. \\
+  \rowcolor{tableRowAlt} 12. & Planowanie projektu \\
+  \rowcolor{tableRowLight} 13. & Etapy planowania projektu, analiza sytuacji, SMART goals, WBS. \\
+  \rowcolor{tableRowAlt} 14. & Identyfikacja i analiza ryzyka. \\
+  \rowcolor{tableRowLight} 15. & Case study: Manhattan Project vs. Maginot Line - dobre i złe praktyki planowania. \\
+  \rowcolor{tableRowAlt} 16. & Ćwiczenia: planowanie projektu z użyciem ''Ninja Planning Card''. \\
+  \rowcolor{tableRowLight} 17. & Realizacja i kontrola projektu \\
+  \rowcolor{tableRowAlt} 18. & Zarządzanie czasem, budżetem i zasobami. \\
+  \rowcolor{tableRowLight} 19. & Monitoring postępów projektu, raportowanie, analiza odchyleń. \\
+  \rowcolor{tableRowAlt} 20. & Zarządzanie zmianą, kontrola jakości. \\
+  \rowcolor{tableRowLight} 21. & Zamykanie projektu \\
+  \rowcolor{tableRowAlt} 22. & Ocena projektu, dokumentacja, lessons learned. \\
+  \rowcolor{tableRowLight} 23. & Prezentacja wyników projektu. \\
+  \rowcolor{tableRowAlt} 24. & Dodatkowe zagadnienia \\
+  \rowcolor{tableRowLight} 25. & PRINCE2, Six Sigma - wprowadzenie. \\
+  \rowcolor{tableRowAlt} 26. & Teorie X, Y, Z - style zarządzania. \\
+  \rowcolor{tableRowLight} 27. & Cargo Cults - unikanie bezmyślnego naśladowania. \\
+  \rowcolor{tableRowAlt} 28. & Etyka w zarządzaniu projektami IT. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W14 & Student zna i rozumie zaawansowane koncepcje inżynierii oprogramowania: modele procesów wytwórczych (Waterfall, Scrum, Kanban, SAFe), zarządzanie konfiguracją i zmianą oraz ewolucję oprogramowania. {[}K\_W14{]} &  \\
+  \rowcolor{tableRowAlt} K\_W17 & Student zna i rozumie zasady planowania przedsięwzięcia informatycznego: szacowanie kosztów i czasu (metoda punktów funkcyjnych, Planning Poker), zarządzanie ryzykiem i budżetem projektu. {[}K\_W17{]} &  \\
+  \rowcolor{tableRowLight} K\_W19 & Student zna i rozumie podstawowe problemy etyczne i prawne informatyki, w tym prawo autorskie, ochronę danych osobowych (RODO), odpowiedzialność zawodową i kodeksy etyki informatycznej. {[}K\_W19{]} &  \\
+  \rowcolor{tableRowAlt} K\_W20 & Student zna i rozumie podstawy prowadzenia działalności gospodarczej w sektorze IT: modele biznesowe, startupy technologiczne, outsourcing, innowacyjność i komercjalizacja oprogramowania. {[}K\_W20{]} &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi pracować efektywnie w zespole projektowym, szacować nakłady pracy, budować harmonogram (Gantt, backlog, sprint planning) i monitorować postęp projektu z użyciem narzędzi (Jira, GitHub Projects). {[}K\_U05{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację projektową: kartę projektu, analizę ryzyka, specyfikację wymagań i raport końcowy z uwzględnieniem aspektów ekonomicznych i społecznych. {[}K\_U26{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U25 & Student potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego i ocenić związane z nim zagrożenia. {[}K\_U25{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K04 & Student jest gotów do efektywnej współpracy w zespole deweloperskim, przyjmując różne role (Scrum Master, Product Owner, deweloper) i biorąc odpowiedzialność za przydzielone zadania. {[}K\_K04{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K07 & Student jest gotów do myślenia przedsiębiorczego i innowacyjnego w kontekście projektów informatycznych, dostrzegając możliwości komercjalizacji rozwiązań. {[}K\_K07{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_K08 & Student jest gotów do przekazywania informacji na temat projektu interesariuszom technicznym i nietechnicznym w sposób zrozumiały i skuteczny. {[}K\_K08{]} & prezentacja projektu i dokumentacji, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item metoda projektów (projekt praktyczny)
+  \item praca w grupach
+  \item dyskusja
+  \item burza mózgów
+  \item studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Dąbrowski, M. Wieczne opóźnienie. Zarządzanie projektami IT. OnePress, 2021.
+  \item Schwalbe, Kathy. Information Technology Project Management. 9th ed. Cengage Learning, 2019
+  \item Kisielnicki, J., Zarządzanie projektami, Nieoczywiste
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item PMI. A Guide to the Project Management Body of Knowledge (PMBOK® Guide). 7th ed. Project Management Institute, 2021.
+  \item Sutherland, Jeff. Scrum: The Art of Doing Twice the Work in Half the Time. Crown Business, 2014.
+\end{itemize}
+
+\end{document}

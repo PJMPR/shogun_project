@@ -1,0 +1,184 @@
+﻿% ===========================================================
+%  Sylabus: Systemy Operacyjne (SOP)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SOP}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Systemy Operacyjne} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SOP \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 3 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & Mgr inż. Michał Hyla \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem dydaktycznym przedmiotu SOP (Systemy Operacyjne i Programowanie) jest zapoznanie studentów z zaawansowanymi mechanizmami systemów operacyjnych, szczególnie w kontekście zarządzania procesami, pamięcią oraz synchronizacją w środowiskach wielowątkowych i wieloprocesorowych. Kurs kładzie nacisk na praktyczne aspekty pracy z systemem Linux, obejmujące m.in. zarządzanie zasobami, wątki, przerwania, semafory i mutexy.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  UKOS & Umiejętność korzystania z systemu linux, znajomość podstaw działania systemu operacyjnego \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Podstawy systemów operacyjnychWprowadzenie do kluczowych zagadnień związanych z systemami operacyjnymi, takich jak procesy, zarządzanie pamięcią, systemy plików, mechanizmy wejścia-wyjścia. Studenci zdobywają wiedzę na temat organizacji i współbieżności systemów operacyjnych, ze szczególnym naciskiem na powszechnie stosowane systemy, takie jak Linux.
+  \item Wątki i zarządzanie procesamiOmówienie sposobów zarządzania procesami i wątkami w systemach operacyjnych. Studenci uczą się, jak działają wątki, procesy, oraz jakie mechanizmy synchronizacji są stosowane w celu unikania problemów takich jak deadlock czy starvation. Przykłady obejmują implementację mutexów i semaforów.
+  \item Synchronizacja i rozwiązywanie problemów sekcji krytycznychZajęcia poświęcone rozwiązywaniu problemów synchronizacji i współbieżności, takich jak problem producenta-konsumenta oraz problem czytelników i pisarzy. Studenci uczą się wykorzystywać mechanizmy synchronizacji (mutexy, semafory) w systemach operacyjnych.
+  \item Algorytmy szeregowania zadańOmówienie algorytmów szeregowania zadań, takich jak FCFS, SJF, RR, oraz ich zastosowanie w rzeczywistych systemach operacyjnych. Studenci nauczą się dobierać odpowiedni algorytm do specyfiki aplikacji.
+  \item Instalacja i konfiguracja systemu operacyjnegoPraktyczne ćwiczenia z instalacji systemu operacyjnego (np. Linux), w tym instalacja komponentów takich jak baza danych i aplikacje współpracujące. Zajęcia obejmują konfigurację systemu oraz jego administrację.
+  \item Zarządzanie pamięciąPrzegląd metod zarządzania pamięcią w systemach operacyjnych, takich jak stronicowanie, segmentacja, oraz zarządzanie pamięcią wirtualną. Studenci uczą się, jak systemy operacyjne efektywnie przydzielają zasoby pamięciowe procesom.
+  \item Projektowanie prostych systemów operacyjnychNa zajęciach studenci realizują projekt polegający na zaprojektowaniu i uruchomieniu prostego systemu operacyjnego z elementami, takimi jak zarządzanie procesami, szeregowanie zadań oraz podstawowa obsługa plików.
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie pojęcia z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności; zna i rozumie powszechnie stosowane systemy.
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Studentpotrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować
+  \item Studentpotrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Programowanie na żywo
+  \item Warsztaty
+  \item Rozwiązywanie zadań
+  \item Projekt zespołowy
+  \item Kryteria oceny
+  \item Laboratorium: Kolokwium, Ocena projektu;
+  \item Wykład: Egzamin pisemny
+  \item Skala ocen dotycząca laboratoriów oraz wykładu:
+  \item Poniżej 50\% - ndst
+  \item Od 50\% - dst
+  \item Od 60\% - dst+
+  \item Od 70\% - db
+  \item Od 80\% - db+
+  \item Od 90\% - bdb
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Tanenbaum AS, Bos H. Systemy operacyjne. V ed. Gliwice: Helion; 2023.
+  \item Stallings W. Systemy operacyjne: architektura, funkcjonowanie i projektowanie. IX ed. Gliwice: Helion; 2023.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Negus C. Linux. Biblia. X ed. Gliwice: Helion; 2023.
+\end{itemize}
+
+\end{document}

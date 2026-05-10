@@ -1,0 +1,29 @@
+﻿AAI          kod=       sem=7 W= 30 C= 30 L=    ECTS=5 | Zastosowanie sztucznej inteligencji
+AIC          kod=AIC    sem=5 W= 30 C= 30 L=    ECTS=4 | Analiza Incydentów Cyberbezpieczeństwa
+ANK          kod=ANK    sem=6 W= 30 C= 30 L=    ECTS=5 | Animacje komputerowe
+COV          kod=COV    sem=6 W= 30 C= 30 L=    ECTS=5 | Computer Vision
+CPP          kod=       sem=5 W= 30 C= 30 L=    ECTS=4 | Programowanie w C/C++
+DEV          kod=DEV    sem=6 W= 30 C= 30 L=    ECTS=5 | Technologie DevOps
+DOT          kod=DOT    sem=6 W= 30 C= 30 L=    ECTS=4 | Technologie .NET
+FDL          kod=FDL    sem=5 W= 30 C= 30 L=    ECTS=4 | Future of Deep Learning
+IML          kod=       sem=5 W= 30 C= 30 L=    ECTS=5 | Wprowadzenie do machine learning
+KCs          kod=KC     sem=5 W= 30 C= 30 L=    ECTS=5 | Kryminalistyka Cyfrowa
+KNO          kod=KNO    sem=5 W= 30 C=  0 L= 30 ECTS= | Knowledge Representation
+KPIR         kod=KPIR   sem=6 W= 30 C= 30 L=    ECTS=5 | Komunikacja i protokoły dla Internetu rzeczy
+M3D          kod=M3D    sem=5 W= 30 C= 30 L=    ECTS=4 | Modelowanie 3D dla gier
+MHE          kod=       sem=5 W= 30 C= 30 L=    ECTS=5 | Metaheurystyki
+MLR          kod=       sem=5 W= 30 C= 30 L=    ECTS=4 | Machine learning
+OGL          kod=OGL    sem=5 W= 30 C= 30 L=    ECTS=4 | Programowanie grafiki 3D w OpenGL
+PJN          kod=PJN    sem=7 W= 30 C= 30 L=    ECTS= | Przetwarzanie Języka Naturalnego
+PPS          kod=       sem=5 W= 30 C= 30 L=    ECTS=5 | Programowanie platform sprzętowych
+S3D          kod=S3D    sem=5 W= 30 C= 30 L=    ECTS=5 | Symulacje 3D
+SCR          kod=SCR    sem=5 W= 30 C= 30 L=    ECTS=4 | Systemy czasu rzeczywistego
+SITA         kod=SITA   sem=7 W= 30 C= 30 L=    ECTS=5 | Projektowanie bezpiecznych architektur
+SPR          kod=SPR    sem=8 W= 30 C= 30 L=    ECTS=5 | Szybkie Prototypowanie
+TAPI         kod=TAPI   sem=7 W= 30 C= 30 L=    ECTS=5 | Trendy w rozwoju API
+TBK          kod=TBK    sem=5 W= 30 C= 30 L=    ECTS=4 | Technologie backendowe
+TBS          kod=TBS    sem=6 W= 30 C= 30 L=    ECTS=5 | Testowanie bezpieczeństwa systemów IT
+TFN          kod=TFN    sem=5 W= 30 C= 30 L=    ECTS=5 | Technologie frontendowe
+WG1          kod=WG1    sem=5 W= 30 C= 30 L=    ECTS= | Wytwarzanie gier 1
+WG2          kod=WG2    sem=6 W= 30 C= 30 L=    ECTS= | Wytwarzanie gier 2
+ZZGA         kod=       sem=7 W= 30 C= 30 L=    ECTS=5 | Zaawansowane zastosowania grafiki i animacji

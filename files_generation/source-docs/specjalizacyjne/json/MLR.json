@@ -1,0 +1,98 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Machine learning",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr inż. Paweł Syty",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań",
+                                           "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży",
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "Ocena praktycznego zastosowania zagadnień omawianych na wykładach. Studenci otrzymują zadania programistyczne do wykonania podczas zajęć (do zdobycia maks. 40 punktów, z gradacją 0.5 p.) oraz zadanie indywidualne (do zdobycia maks. 10 punktów). Przedmiot zalicza otrzymanie w sumie co najmniej 25 punktów."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zaznajomienie studentów z wybranymi zagadnieniami uczenia maszynowego (w tym elementami uczenia głębokiego), głównie z wykorzystaniem sieci neuronowych (w tym sieci splotowych), a także z metodami programowania wybranych metod oraz praktycznym wykorzystaniem gotowych narzędzi i bibliotek.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Daniel T. Larose „Metody i modele eksploracji danych”, PWN 2022",
+                                                                          "Aurélien Géron, „Uczenie maszynowe z użyciem Scikit-Learn i TensorFlow”, Helion 2020",
+                                                                          "Robert Johansson „Matematyczny Python. Obliczenia naukowe i analiza danych z użyciem NumPy, SciPy i Matplotlib”, Helion 2021",
+                                                                          "Sebastian Raschka, Vahid Mirjalili „Python. Machine learning i deep learning. Biblioteki scikit-learn i TensorFlow 2”, Helion 2021",
+                                                                          "Aileen Nielsen, „Szeregi czasowe. Praktyczna analiza i predykcja z wykorzystaniem statystyki i uczenia maszynowego”, Helion 2020"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Joel Grus, „Data science od podstaw. Analiza danych w Pythonie”, Helion 2020",
+                                                                             "Dokumentacja pakietów Keras i Tensorflow"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawowe zastosowania wybranych narzędzi uczenia maszynowego",
+                                                              "Student wie, że jakość danych ma kluczowe znaczenie w przypadku uczenia maszynowego",
+                                                              "Student zna i rozumie metody przechowywania danych dla uczenia maszynowego"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi  wybrać odpowiednie narzędzie do rozwiązania problemu zaistniałego w przedsiębiorstwie, a wymagającego użycia uczenia maszynowego",
+                                                                    "Student potrafi  poprawnie przygotować dane i stworzyć na ich podstawie zbiory uczące, walidujące i testowe",
+                                                                    "Student potrafi dobrać właściwe parametry wejściowe, by zoptymalizować działanie wybranych algorytmów.",
+                                                                    "Student potrafi przeprowadzić analizę otrzymanych wyników"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do ciągłego podnoszenia swoich kompetencji zawodowych, osobistych i społecznych oraz zna możliwości dokształcania się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "1.  Historia i definicja uczenia maszynowego. Omówienie zastosowań uczenia maszynowego. Podział metod uczenia maszynowego. Rola danych i ich jakości w uczeniu maszynowym. Przygotowywanie danych do procesu uczenia. Wstęp do języka Python.",
+                                              "2.  Wiedza niedoskonała w uczeniu maszynowym. Metody radzenia sobie z niedoskonałością wiedzy. Wnioskowanie bayesowskie. Logika rozmyta.",
+                                              "3. Podstawy biologiczne sztucznych sieci neuronowych. Układ nerwowy zwierząt i człowieka –  podział i funkcje. Odbiór i przetwarzanie bodźców przez mózg. Neuron – budowa, systematyka. Przejawy życiowe neuronów. Pamięć.  Dyskusja możliwości i ograniczeń związanych z odwzorowywaniem układów biologicznych w postaci sztucznych systemów.",
+                                              "4.  Historia i podstawy sieci neuronowych. Podstawowy model komórki nerwowej – perceptron prosty i jego właściwości. Perceptron prosty jako uogólnienie regresji liniowej. Podstawowe metody uczenia perceptronu. Ograniczenia pojedynczego perceptronu. Łączenie perceptronów w większe struktury. Podstawowa klasyfikacja architektur sztucznych sieci neuronowych. Wstępna klasyfikacja zastosowań sieci neuronowych. Cechy sztucznych sieci neuronowych predestynujące je do zastosowań we współczesnym świecie.",
+                                              "5.  Sieci jednokierunkowe jednowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Mapa wag.  Hiperparametry. Metryki. Kodowanie danych.",
+                                              "6. Sieci jednokierunkowe wielowarstwowe. Budowa, metody uczenia, zastosowania, ograniczenia. Więcej o metodach uczenia sieci – metoda propagacji wstecznej, metoda momentum (w tym metoda Nesterova). Omówienie wybranych optymalizatorów (SGD, RMSprop, Adam). Inicjalizacja modelu. Funkcje aktywacji.",
+                                              "7.  Zdolność uogólniania sieci neuronowej. Miary zdolności uogólniania. Twierdzenie Kołmogorowa. Zbiór uczący (treningowy), walidujący i testowy. Przeuczenie i niedouczenie sieci. Metody regularyzacji. Dobór optymalnej architektury sieci. Proces redukcji wymiaru sieci. Warstwy Dropout.",
+                                              "8. Sieci splotowe. Budowa, metody uczenia, zastosowania, ograniczenia. Operacja splotu (konwolucja). Warstwy łączące (pooling). Filtry.  Biblioteka OpenCV. Metody i architektury sieci neuronowych do rozpoznawania obrazów. Sieci typu Lenet, VGGNet. Klasyfikacja wieloetykietowa. Augmentacja danych.",
+                                              "9. Sieci autoasocjacyjne. Transfer learning. Walidacja krzyżowa. Elementy wyjaśnialnej sztucznej inteligencji.",
+                                              "10. Sieci rekurencyjne. Budowa, metody uczenia, zastosowania, ograniczenia. Pamięci asocjacyjne. Komórki LSTM i GRU.",
+                                              "11. Strategie gier dwuosobowych. Algorytm MINIMAX.  Funkcja heurystyczna. Przycinanie alfa-beta. Idea self-play.",
+                                              "12. Automaty komórkowe ze szczególnym uwzględnieniem ich zastosowania w uczeniu maszynowym.",
+                                              "13. Pozostałe metody uczenia maszynowego: k-najbliższych sąsiadów, maszyna wektorów nośnych (SVM), drzewo decyzyjne, las losowy, algorytmy ewolucyjne, liniowe modele mieszane. Metody zespołowe (ensemble).",
+                                              "14. Elementy uczenia nienadzorowanego. Analiza skupień. Algorytm centroidów (k-means). Analiza szeregów czasowych. Algorytm k-shape i DTW (Dynamic Time Warping).",
+                                              "15. Elementy języka Prolog. Zapis predykatów. Wnioskowanie wstecz i w przód."
+                                          ]
+                }
+}

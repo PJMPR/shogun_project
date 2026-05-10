@@ -1,0 +1,129 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Testowanie bezpieczeństwa systemów IT",
+                    "kod_przedmiotu":  "TBS",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mgr Adam Kassenberg",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Studium przypadków",
+                                           "Zadania problemowe",
+                                           "Kryteria oceny",
+                                           "Kolokwium pisemne.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kursu jest nie tylko nauka teoretycznych podstaw zabezpieczania systemów IT, ale także zdobycie praktycznych umiejętności w identyfikacji i naprawie luk w zabezpieczeniach. Dzięki temu studenci będą lepiej przygotowani do zabezpieczania systemów informatycznych w rzeczywistych scenariuszach.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"Metasploit: The Penetration Tester's Guide, David Kennedy, Jim O'Gorman, Justin Brown i Peter Kim",
+                                                                          "\"The Web Application Hacker's Handbook: Finding and Exploiting Security Flaws\", Dafydd Stuttard, Marcus Pinto",
+                                                                          "\"Hacking: The Art of Exploitation\", Jon Erickson",
+                                                                          "\"Black Hat Python: Python Programming for Hackers and Pentesters\", Justin Seitz"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "\"SQL Injection Attacks and Defense\", Justin Clarke"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie metodologię i narzędzia używane do identyfikacji i eksploatacji luk w zabezpieczeniach (testy penetracyjne). Student rozumie działanie  ataków SQL Injection oraz zna metody ich wykrywania i zapobiegania. Student zna i rozumie sposoby wykrywania i zabezpieczania przed atakami XSS.",
+                                               "umiejetnosci":  "Student potrafi korzystać z narzędzia Metasploit do testowania systemów. Student potrafi implementować i testować mechanizmy kontroli dostępu.  Student potrafi przeprowadzić testy BlackBox na rzeczywistych systemach.",
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Wprowadzenie do testowania bezpieczeństwa",
+                                              "Cel i znaczenie testowania bezpieczeństwa.",
+                                              "2. Metodologia testów penetracyjnych",
+                                              "Definicja testów penetracyjnych.",
+                                              "Różne podejścia i metodologie.",
+                                              "Etapy testów penetracyjnych: rozpoznanie, skanowanie, uzyskiwanie dostępu, utrzymanie dostępu, analiza i raportowanie.",
+                                              "Ćwiczenia praktyczne: Rozpoznanie i skanowanie w rzeczywistych scenariuszach.",
+                                              "3. Metasploit",
+                                              "Wprowadzenie do narzędzia Metasploit.",
+                                              "Konfiguracja i podstawowe funkcje.",
+                                              "Przykłady wykorzystania Metasploit do testów penetracyjnych.",
+                                              "Ćwiczenia praktyczne: Wykorzystanie Metasploit do eksploatacji luk w zabezpieczeniach.",
+                                              "4. Bezpieczeństwo aplikacji webowych",
+                                              "Najczęstsze zagrożenia i luki w zabezpieczeniach aplikacji webowych.",
+                                              "Przykłady ataków i ich skutki.",
+                                              "Techniki zabezpieczania aplikacji webowych.",
+                                              "Ćwiczenia praktyczne: Symulacja ataków na aplikacje webowe i implementacja zabezpieczeń.",
+                                              "5. Kontrola dostępu do funkcji i danych",
+                                              "Definicja i znaczenie kontroli dostępu.",
+                                              "Najlepsze praktyki implementacji.",
+                                              "Przykłady problemów i ich rozwiązania.",
+                                              "Ćwiczenia praktyczne: Implementacja mechanizmów kontroli dostępu w aplikacjach.",
+                                              "6. SQL Injection",
+                                              "Mechanizmy ataku SQL Injection.",
+                                              "Metody identyfikacji i zabezpieczania przed SQL Injection.",
+                                              "Przykłady ataków i ich skutki.",
+                                              "Ćwiczenia praktyczne: Wykrywanie i naprawa luk typu SQL Injection w aplikacjach.",
+                                              "7. Cross Site Scripting (XSS)",
+                                              "Typy XSS: reflected, stored, DOM-based.",
+                                              "Techniki wykrywania i zabezpieczania przed XSS.",
+                                              "Przykłady ataków i ich skutki.",
+                                              "Ćwiczenia praktyczne: Symulacja ataków XSS i implementacja zabezpieczeń.",
+                                              "8. Obsługa danych z niezaufanego źródła Znaczenie walidacji danych.",
+                                              "Techniki bezpiecznego przetwarzania danych.",
+                                              "Przykłady zagrożeń związanych z danymi niezaufanymi.",
+                                              "Ćwiczenia praktyczne: Implementacja walidacji danych w aplikacjach.",
+                                              "9. Błędy konfiguracji Najczęstsze błędy konfiguracji systemów IT.",
+                                              "Metody identyfikacji i korekty.",
+                                              "Przykłady konsekwencji błędnej konfiguracji.",
+                                              "Ćwiczenia praktyczne: Audyt konfiguracji systemów i implementacja poprawnych ustawień.",
+                                              "10. Testowanie typu Black Box",
+                                              "Definicja i cel testowania typu Black Box.",
+                                              "Techniki i narzędzia używane w testach Black Box.",
+                                              "Przykłady scenariuszy testowych.",
+                                              "Ćwiczenia praktyczne: Przeprowadzanie testów Black Box na rzeczywistych systemach."
+                                          ]
+                }
+}

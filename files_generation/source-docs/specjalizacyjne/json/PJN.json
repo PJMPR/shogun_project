@@ -1,0 +1,145 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Przetwarzanie Języka Naturalnego",
+                    "kod_przedmiotu":  "PJN",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Tadeusz Puźniakowski",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Case study - prezentacja oprogramowania (ostatnie 4 zajęcia).",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "Rozwiązywanie zadań w Google Colab (pierwsze 10 zajęć).",
+                                           "Projekt zespołowy (ostatnie 5 zajęć).",
+                                           "Laboratorium oraz Projekt",
+                                           "Kryteria oceny",
+                                           "Ocena zadań laboratoryjnych",
+                                           "Prezentacja projektu zespołowego w trakcie sesji posterowej, jakość kodu i dokumentacji. 50% laboratorium, 50% projekt.",
+                                           "Skala ocen",
+                                           "51%-60%3",
+                                           "61%-70%3,5",
+                                           "71%-80%4",
+                                           "81%-90%4,5",
+                                           "91%-100%5"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Narzędzia Sztucznej Inteligencji",
+                                                         "wymagania":  "Future of Deep Learning"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Algebra liniowa z geometrią",
+                                                         "wymagania":  "Praca ze środowiskami: Colab, HuggingFace, metryki, zadania uczenia maszynowego"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Podstawy działania sieci neuronowej, transfer learning, self-supervised learning, foundation models, podstawy pracy w PyTorchu",
+                                                         "wymagania":  "Podstawowe operacje na macierzach"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Zapoznanie z podstawowymi problemami wizji komputerowej, metodami ich rozwiązywania oraz oceny przygotowywanych rozwiązań.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. \" O'Reilly Media, Inc.\", 2022.  Rozdział 14, 17"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Foley, James D., et al. \"Computer graphics: Principles and practice, in c.\" Color Research and Application 22.1 (1997): 65-65. Rozdział 5."
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdział: 7, 11, 14, 22":  "Zhang, Aston, et al. Dive into deep learning. Cambridge University Press, 2023. https://d2l.ai/ Rozdział: 7, 11, 14, 22",
+                                                                        "Szeliski, Richard. Computer vision: algorithms and applications. Springer Nature, 2022. https://szeliski.org/Book/":  "Szeliski, Richard. Computer vision: algorithms and applications. Springer Nature, 2022. https://szeliski.org/Book/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP.",
+                                                              "Student potrafi: zrozumieć podstawowe zagadnienia probabilistyki i statystyki, co jest niezbędne do analizy danych tekstowych i tworzenia modeli językowych w NLP. Wiedza ta pozwala na skuteczne modelowanie i interpretację wyników, co jest kluczowe w praktycznych zastosowaniach NLP.",
+                                                              "Student potrafi: zrozumieć zaawansowane pojęcia związane z wybraną specjalizacją w NLP, co pozwala na rozwijanie innowacyjnych rozwiązań oraz adaptację aktualnych technologii w praktyce. Wiedza ta umożliwia studentom angażowanie się w badania i rozwój w dziedzinie NLP.",
+                                                              "Student potrafi: zastosować zaawansowane pojęcia z zakresu programowania, co jest niezbędne przy tworzeniu, testowaniu i uruchamianiu aplikacji wykorzystujących NLP. Umiejętność programowania w różnych językach oraz znajomość technik i narzędzi programistycznych jest kluczowa w realizacji projektów związanych z NLP."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi: pozyskiwać i analizować specjalistyczne informacje z literatury oraz źródeł internetowych w obszarze NLP. Umiejętność krytycznej analizy i syntezy informacji jest niezbędna do rozwoju projektów oraz badań naukowych w dziedzinie przetwarzania języka naturalnego.",
+                                                                    "Student potrafi: analizować i wyjaśniać zjawiska związane z NLP, a także tworzyć modele rzeczywiste. Umiejętność weryfikacji modeli i ich zastosowania do predykcji stanów jest kluczowa w rozwoju aplikacji i systemów opartych na NLP."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student potrafi: samodzielnie uczyć się przez całe życie, co jest niezbędne w szybko rozwijającej się dziedzinie NLP. Techniki i narzędzia w tej dziedzinie stale ewoluują, więc umiejętność ciągłego kształcenia się jest kluczowa dla rozwoju zawodowego.",
+                                                                             "Student potrafi: współdziałać w zespole, co jest ważne w projektach związanych z NLP, gdzie często wymagane są różnorodne umiejętności i kompetencje. Praca zespołowa sprzyja innowacyjności i efektywności w realizacji złożonych zadań."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do NLP",
+                                              "•Historia NLP: od pierwszych prób do współczesnych zastosowań",
+                                              "•Kluczowe zadania w NLP: analiza sentymentu, tłumaczenie maszynowe, rozpoznawanie nazwanych encji (NER)",
+                                              "Tokenizacja i Wektory Słów",
+                                              "•Metody tokenizacji: podejścia oparte na regułach i uczeniu maszynowym",
+                                              "•Wektoryzacja słów: Word2Vec, GloVe, FastText",
+                                              "Rekurencyjne Sieci Neuronowe (RNN)",
+                                              "•Architektura RNN i jej zastosowania w NLP",
+                                              "•Problemy z RNN: zanikanie gradientu, eksplozja gradientu",
+                                              "•Wprowadzenie do LSTM i GRU",
+                                              "Transformery",
+                                              "•Wprowadzenie do architektury transformera",
+                                              "•Zastosowania transformera w NLP",
+                                              "Wariacje Transformerów",
+                                              "•BERT, GPT, T5: różnice i zastosowania",
+                                              "•Jak dostosować architekturę transformera do różnych zadań",
+                                              "Modele Języka",
+                                              "•Budowa modeli językowych",
+                                              "•Zastosowania i wyzwania związane z modelami językowymi",
+                                              "Enkodery",
+                                              "•Rola enkoderów w modelach transformacyjnych",
+                                              "•Przykłady zastosowań enkoderów w różnych zadaniach NLP",
+                                              "Fine-Tuning",
+                                              "•Proces dostrajania modeli pretrenowanych",
+                                              "•Techniki fine-tuningu dla różnych zadań NLP",
+                                              "Kompresja Modeli",
+                                              "•Wprowadzenie do kompresji modeli: skwantyzowanie, prunning",
+                                              "•Korzyści i wyzwania związane z kompresją",
+                                              "Stworzenie Skwantyzowanej Wersji Modelu",
+                                              "•Praktyczne podejście do kompresji modeli",
+                                              "•Implementacja skwantyzacji na przykładzie wybranego modelu",
+                                              "Pair Programming - Rozpoznawanie Nazwanych Encji (NER)",
+                                              "•Wprowadzenie do NER",
+                                              "•Przykład implementacji NER za pomocą Lightning Transformers",
+                                              "•Warsztaty praktyczne",
+                                              "Pair Programming - Chatbot",
+                                              "•Projektowanie chatbota: wymagania i architektura",
+                                              "•Implementacja chatbota na przykładzie Chartum",
+                                              "•Warsztaty praktyczne",
+                                              "Przykłady Aplikacji NLP",
+                                              "•Przegląd rzeczywistych zastosowań NLP w różnych branżach",
+                                              "•Studium przypadku: analiza skuteczności modeli NLP w zastosowaniach komercyjnych",
+                                              "Podsumowanie i Dyskusja",
+                                              "•Przegląd kluczowych zagadnień omówionych w kursie",
+                                              "•Dyskusja na temat przyszłości NLP i jego wpływu na różne dziedziny"
+                                          ]
+                }
+}

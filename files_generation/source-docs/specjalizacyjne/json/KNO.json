@@ -1,0 +1,81 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Knowledge Representation",
+                    "kod_przedmiotu":  "KNO",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  0,
+                                                        "laboratorium_projekt":  30
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Tadeusz Puźniakowski",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Rozwiązywanie zadań programistycznych",
+                                           "Kryteria oceny",
+                                           "ocena pracy podczas laboratoriów",
+                                           "ocena sporządzonych programów/skryptów",
+                                           "raport z wykonanego zadania",
+                                           "prezentacja rozwiązań zadań",
+                                           "Nie dotyczy"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Podstawy programowania",
+                                                         "wymagania":  "Podstawowe umiejętności programistyczne"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Matematyka dyskretna",
+                                                         "wymagania":  "Znajomość podstaw logiki"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zaznajomienie studentów z różnymi formami reprezentacji wiedzy i systemów wnioskowania, które mogą być wykorzystane przez systemy informatyczne rozwiązywania problemów.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Materiały wykładowe"
+                                                                      ]
+                                                      },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Dokumentacja TensorFlow https://www.tensorflow.org/api_docs/python/tf/":  "Dokumentacja TensorFlow https://www.tensorflow.org/api_docs/python/tf/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcia związane z tematem reprezentacji wiedzy i wnioskowania w dziedzinie sztucznej inteligencji, a także ich  zastosowania w praktyce informatycznej; zna i rozumie podstawowe pojęcia z zakresu narzędzi wspomagających rozwiązywanie problemów inżynierskich w obszarze tych zagadnień",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować reguły logiki i rachunku zdań do reprezentacji wiedzy o problemie i rozwiązania go z użyciem reguł wnioskowania.  Student potrafi dobrać odpowiedni model (np. system zdań logicznych, sieć semantyczną, system rozmyty) dla zadanego problemu, zaprojektować go i zaimplementować.",
+                                                                    "Student potrafi wykorzystać dostępne technologie dla reprezentacji wiedzy i wnioskowania w rozwiązywaniu zadanego problemu."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawy głębokich sieci neuronowych",
+                                              "Praktyczne zapoznanie się z biblioteką TensorFlow jako przykład narzedzia wspomagającego tworzenie głębokich sieci neuronowych",
+                                              "Dopasowanie reprezentacji danych dla DNN i ich wykorzystanie w celu utworzenia modeli predykcyjnych"
+                                          ]
+                }
+}

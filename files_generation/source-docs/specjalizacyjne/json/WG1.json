@@ -1,0 +1,140 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Wytwarzanie gier 1",
+                    "kod_przedmiotu":  "WG1",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Lic. Aleksandr Polin (alex.polin@pjwstk.edu.pl)",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "prezentacje",
+                                           "praca w Unreal Engine",
+                                           "Kryteria oceny",
+                                           "Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:",
+                                           "Styl (1-10)",
+                                           "Rozgrywka (1-10)",
+                                           "Zabawa (1-10)",
+                                           "Kreatywność (1-10)",
+                                           "Ukończenie (1-10)",
+                                           "Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:",
+                                           "Wysiłek (1-10).",
+                                           "Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+
+                                                 ],
+                    "cel_dydaktyczny":  "Celem tego kursu jest zanurzenie studentów w cyklu tworzenia gier, od projektu koncepcyjnego po kontrolę jakości, zaszczepienie dogłębnego zrozumienia praktyk branżowych, narzędzi (takich jak Unreal Engine) i kluczowych procesów niezbędnych do udanej kariery w branży gier.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"Rules of Play: Game Design Fundamentals\" by Katie Salen and Eric Zimmerman (2003)",
+                                                                          "\"The Art of Game Design: A Book of Lenses\" by Jesse Schell (2008)",
+                                                                          "\"Level Up! The Guide to Great Video Game Design\" by Scott Rogers (2010)",
+                                                                          "\"Unreal Engine 4 for Design Visualization: Developing Stunning Interactive Visualizations, Animations, and Renderings\" by Tom Shannon (2017)",
+                                                                          "\"Game Engine Architecture\" by Jason Gregory (2018)",
+                                                                          "\"Introduction to Game Development\" by Steve Rabin (2009)",
+                                                                          "\"A Theory of Fun for Game Design\" by Raph Koster (2012)",
+                                                                          "Unreal Engine Educator Resources"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "\"David Perry on Game Design: A Brainstorming ToolBox\" by David Perry and Rusel DeMaria (2009)",
+                                                                             "\"Challenges for Game Designers\" by Brenda Romero and Ian Schreiber (2008)",
+                                                                             "\"Character Development and Storytelling for Games\" by Lee Sheldon (2004)",
+                                                                             "\"Game Design: Theory and Practice\" by Richard Rouse III (2001)",
+                                                                             "\"Game Feel: A Game Designer's Guide to Virtual Sensation\" by Steve Swink (2008)",
+                                                                             "\"Game Mechanics: Advanced Game Design\" by Ernest W. Adams and Joris Dormans (2012)",
+                                                                             "Freese, Maria & Lukosch, Heide. (2023). The Funnel of Game Design – An Adaptive Game Design Approach for Complex Systems. Simulation & Gaming. 55. 10.1177/10468781231222524.",
+                                                                             "Hammar, Emil & Canossa, Alessandro & Juul, Jesper & Debus, Michael & Pfau, Johannes & El-Nasr, Magy & Azadvar, Ahmad. (2023). From Teams to Games: Connecting Game Development to Game Characteristics. 336-340. 10.1007/978-3-031-48050-8_23.",
+                                                                             "Zehnder, S. M., & Lipscomb, S. D. (2006). The Role of Music in Video Games. In P. Vorderer & J. Bryant (Eds.), Playing video games: Motives, responses, and consequences (pp. 241–258). Lawrence Erlbaum Associates Publishers.",
+                                                                             "Ermi, Laura & Mäyrä, Frans. (2005). Player-Centred Game Design: Experiences in Using Scenario Study to Inform Mobile Game Design.. Game Studies. 5."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry.",
+                                                              "Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową.",
+                                                                    "Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu.",
+                                                                    "Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych.",
+                                                                    "Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego.",
+                                                                    "Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych.",
+                                                                             "Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev.",
+                                                                             "Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier.",
+                                                                             "Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier.",
+                                                                             "Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie do branży tworzenia gier. Prezentowanie historii gier z przykładami unikalnych i nieoczekiwanych ciekawych faktów na temat gier.",
+                                              "Dyskusja na temat branży gier, osobistych doświadczeń uczniów z grami, wpływu gier na życie i tego, czego można się spodziewać pracując w tej branży.",
+                                              "Wprowadzenie do projektowania gier. Dlaczego istnieje i jak to rozumieć.",
+                                              "Projektowanie małej gry przy użyciu wyłącznie pióra i papieru. Granie i ulepszanie swoich gier.",
+                                              "Projektowanie puzzli, jako głównego interaktywnego elementu zabawy. Jak łamigłówki angażują graczy.",
+                                              "Projektowanie układanki przy użyciu dostarczonych ograniczeń i testowanie pojawiających się mechanik gry w małych grupach.",
+                                              "Wprowadzenie do Unreal Engine. Przegląd układu i funkcji UE 5.",
+                                              "Wykonanie pierwszego planu UE mechaniki gry z wykorzystaniem elementów interaktywnych.",
+                                              "Podstawy silnika Unreal Engine. Ciąg dalszy przedstawiania silnika studentom. Wyjaśnienie rozwoju opartego na planach za pomocą interaktywnych przykładów.",
+                                              "Studenci doskonalą i rozwijają pierwszy projekt stworzony podczas poprzedniego ćwiczenia, wykorzystując nową wiedzę zdobytą na wykładzie.",
+                                              "Podstawowe zasady projektowania poziomu podstawowego i Asset Pipeline w UE5.",
+                                              "Uczniowie korzystają z dostarczonych zasobów i niestandardowych materiałów, aby konfigurować i wykorzystywać własne projekty oraz projektować układ poziomów.",
+                                              "Dokumentacja gry i dlaczego jest to ważne.",
+                                              "Napisanie krótkiego opisu gry na podanym przykładzie.",
+                                              "GDD. Przegląd i ocena GDD znanych gier.",
+                                              "Pisanie GDD. Uczniowie korzystają z dostarczonego przykładu GDD i pracują w grupach, aby stworzyć własne dokumenty.",
+                                              "Praca w zespole i zarządzanie projektem gry.",
+                                              "Omówienie ról zespołowych i zarządzania sytuacją, kontynuacja pracy w zespołach, nad grami.",
+                                              "Wprowadzenie do animacji w UE5. Rzuć okiem na możliwe potoki animacji i narzędzia dostępne w Unreal Engine.",
+                                              "Implementacja podstawowych animacji w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
+                                              "Zrozumienie wpływu projektowania dźwięku w grach i sposobu implementacji dźwięków w UE5.",
+                                              "Implementacja podstawowych dźwięków w UE z wykorzystaniem dostarczonych materiałów i przykładów.",
+                                              "Zapewnienie jakości gier. Jak zespoły zapewniają jakość i dbałość o szczegóły.",
+                                              "Testowanie dostarczonej przykładowej gry i przygotowanie raportu o błędzie.",
+                                              "Praktyki HR w tworzeniu gier. Oczekiwania firm zajmujących się tworzeniem gier i czego szukają u potencjalnych kandydatów.",
+                                              "Napisanie osobistego CV na podanym przykładzie.",
+                                              "Zarządzanie zasobami studia gier. Ukryte koszty i dlaczego tak trudno osiągnąć równowagę pomiędzy zyskami a zabawą.",
+                                              "Praca w grupach w celu przygotowania analizy rynkowej dostarczonej gry, przedstawienia planu ulepszeń z prośbą o dodatkowe inwestycje, analizy konkurencji i oceny innych grup uczniów.",
+                                              "Pełne podsumowanie kursu. Powracanie do poprzednich lekcji, odświeżanie wiedzy i podkreślanie najważniejszych aspektów.",
+                                              "Omawianie projektów gier zespołowych, ulepszanie i dopracowywanie projektów."
+                                          ]
+                }
+}

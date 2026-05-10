@@ -1,0 +1,62 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Praktyka 1",
+                    "kod_przedmiotu":  "PRK1",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  300,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Michał Hyla",
+                    "ects":  10,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  0,
+                                    "praca_wlasna_studenta_h":  300,
+                                    "calkowita_liczba_godzin_h":  300
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+
+                                   },
+                    "kryteria_oceny":  [
+                                           "Nie dotyczy",
+                                           "Praktyka zawodowa",
+                                           "Zaliczenie bez oceny",
+                                           "Kryteria oceny",
+                                           "Sprawozdanie z praktyk, w razie konieczności dodatkowa weryfikacja z pracodawcą"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Nie dotyczy",
+                                                         "wymagania":  "Nie dotyczy"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu jest umożliwienie studentom zdobycia praktycznych doświadczeń w rzeczywistym środowisku pracy. Studenci mają okazję wykorzystać i pogłębić swoją wiedzę teoretyczną zdobytą na uczelni, poprzez wykonywanie zadań związanych z ich przyszłym zawodem. Praktyka rozwija także umiejętności interpersonalne, zdolność pracy w zespole oraz adaptacji do wymagań rynku pracy, co zwiększa ich konkurencyjność na rynku. Głównym celem jest zatem integracja wiedzy akademickiej z praktyką zawodową w realnych warunkach.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Nie dotyczy"
+                                                                      ]
+                                                      }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Podczas praktyki student pogłębia znajomość procesów funkcjonowania firm IT, analizując strategie zarządzania projektami, modele biznesowe oraz zasady ochrony własności intelektualnej i aspektów prawnych w branży. Zdobywa wiedzę na temat kosztorysowania, planowania zasobów oraz metod pracy zespołowej w środowisku komercyjnym",
+                                               "umiejetnosci":  "Podczas praktyki student rozwija umiejętności poprzez samodzielne planowanie procesu nauki i zdobywanie wiedzy z różnych źródeł, w tym dokumentacji technicznej, kursów online i konsultacji z pracownikami firmy. Uczy się korzystania z narzędzi stosowanych w branży IT oraz adaptuje się do nowych technologii i metod pracy. Analizuje własne postępy, identyfikuje luki w umiejętnościach i podejmuje działania w celu ich uzupełnienia. W sprawozdaniu podsumowuje zdobyte kompetencje i wskazuje dalsze kierunki rozwoju, co przygotowuje go do ciągłego doskonalenia zawodowego.",
+                                               "kompetencje_spoleczne":  "Podczas praktyki student rozwija kompetencje społeczne poprzez świadome uczenie się i korzystanie z różnych źródeł wiedzy. Pracując w zespole, uczy się współdziałania i przyjmowania różnych ról, takich jak wykonawca lub klient. Zdobywa umiejętność określania priorytetów w realizacji zadań, dbając o odpowiedzialność i terminowość. W sprawozdaniu końcowym ocenia swoje doświadczenia, identyfikuje obszary do dalszego rozwoju i analizuje swoje postępy w zakresie współpracy i organizacji pracy"
+                                           },
+                    "tresci_programowe":  [
+                                              "Nie dotyczy"
+                                          ]
+                }
+}

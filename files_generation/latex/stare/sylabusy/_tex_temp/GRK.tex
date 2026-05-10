@@ -1,0 +1,219 @@
+﻿% ===========================================================
+%  Sylabus: Grafika Komputerowa (GRK)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: GRK}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Grafika Komputerowa} \\[3pt]
+  \textbf{Kod przedmiotu:}    & GRK \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 2 / 4 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    &  \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+16 h & --- & 16 h & 32 h & 93 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem kształcenia jest nabycie umiejętności tworzenia obrazów z wykorzystaniem standardowego API graficznego (biblioteki OpenGL i renderera Blender) oraz realizacji podstawowych transformacji obrazów 2- i 3-wymiarowych.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  • Algebra liniowa i geometria  (ALG) & • Analiza matematyczna  (AM) \\
+  • Algorytmy i struktury danych (ASD) & • programowanie w C/C++ \\
+  • operacje na macierzach & • przekształcenia liniowe \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wykład:
+  \item Percepcja wizualna i modele barw
+  \item Algorytmy rastrowe
+  \item Formaty plików graficznych i kompresja obrazów
+  \item Biblioteka LibPNG. Wizualizacja danych
+  \item Biblioteka Jpeglib.
+  \item Geometria Liniowa 3W
+  \item Geometria Afiniczna 3W.
+  \item Rzutowanie
+  \item Podstawy oświetlenia
+  \item Podstawy teksturowania
+  \item Podstawy OpenGL i GLSL
+  \item Transformacje w OpenGL
+  \item Podstawy teksturowania w OpenGL,
+  \item Podstawy Krzywych i powierzchni Béziera
+  \item Metoda śledzenia promieni
+  \item Ćwiczenia:
+  \item Podstawy Blendera
+  \item Podstawy edycji masha.
+  \item Materiały i tekstury
+  \item Ustawienia środowiska
+  \item Podstawy Animacji. System cząstek
+  \item Postprocessing
+  \item Format svg.
+  \item Algorytmy rastrowe.
+  \item Filtry punktowe
+  \item Geometryczne przekształcenie obrazów
+  \item Podstawy OpenGL
+  \item Przekształcenia w OpenGL
+  \item Teksturowanie w OpenGL
+  \item Oświetlenie w OpenGL
+  \item Modelowanie za pomocą krzywych i powierzchni Béziera
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Zna i rozumie pojęcia z zakresu matematyki niezbędne do modelowania i przetwarzania barw oraz obiektów 2D, 3D. Zna i rozumie pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym
+  \item Student potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania
+  \item Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.
+  \item Student potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzenia graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest jest gotów do samodzielnego uczenia się przez całe życie
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item Ćwiczenia / Laboratorium/Lektorat:
+  \item rozwiązywanie zadań
+  \item Kryteria oceny
+  \item Zaliczenie ćwiczeń polega na zbieraniu punktów:
+  \item 50\% możliwych punktów daje ocenę 3
+  \item 60\% punktów daje ocenę 3½
+  \item 70\% — ocenę 4
+  \item 80\% — 4½
+  \item 90\% i więcej — 5
+  \item Test wyboru, 20 pytań. Każda poprawna odpowiedź warta jest 1 punkt. Zasady zaliczenia: 19–20 punktów: 5, 17–18 punktów: 4 12 , 14–16 punktów: 4, 11–13 punktów: 3 12 , 8–10 punktów: 3. Mniej niż 8 punktów: 2
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item M. Jankowski: Elementy grafiki komputerowej. WNT 2006.
+  \item S. R. Buss: 3D Computer Graphics: A Mathematical Introduction with OpenGL.Revision draft Draft A.10.b. May 28, 2019.
+  \item Przemyslaw Kiciak: Podstawy modelowania krzywych i powierzchni, Wydawnictwo Naukowe PWN, 2019
+  \item Przemyslaw Kiciak: OpenGL i GLSL, Część III Gandalf.com.pl, Wydawnictwo Naukowe PWN, 2019
+  \item Graham Sellers, Richard S. Wright Jr., Nicholas Haemel, OpenGL. Księga eksperta. Wydanie VII Helion 2016
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Jim Chronister: Blender Basics Classroom Tutorial Book. 4th edition, 2011
+  \item Wojciech Mokrzycki: Wprowadzenie do przetwarzania informacji wizualnej, tom I. Percepcja, akwizycja, wizualizacja EXIT2010978-83-60434-76-5
+  \item David Austin: What is JPEG? Notices of the AMS, Volume 55, Number 2, pages 226–229, 2008.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,97 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Analiza matematyczna",
+                    "kod_przedmiotu":  "AM",
+                    "rok_studiow":  1,
+                    "semestr_studiow":  2,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Elżbieta Puźniakowska-Gałuch, ela@pjwstk.edu.pl",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Rozwiązywanie zadań na tablicy",
+                                           "rozwiązywanie zadań na tablicy",
+                                           "dykusja",
+                                           "Kryteria oceny",
+                                           "Dwa kolokwia pisemne (każde kolokwium do 10 zadań). Możliwe dodatkowe aktywności takie jak kartkówki, aktywność.  Student jest zobowiązany uzyskać wynik powyżej 50% możliwych do zdobycia sumarycznie z obu kolokwiów.",
+                                           "Skala ocen:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb",
+                                           "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Algebra liniowa z geometrią",
+                                                         "wymagania":  "Wiedza z zakresu szkoły średniej."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie studenta z podstawowymi pojęciami aparatu rachunku różniczkowego z zakresu funkcji rzeczywistych jednej zmiennej takich jak: granice ciągów, granice funkcji jednej zmiennej, funkcje ciągłe, pochodne, całki nieoznaczona i oznaczone, szeregi liczbowe, szeregi funkcyjne oraz równania różniczkowe. Przedstawione są podstawowe zastosowania  pochodnych i całek m.in. do wyznaczania przybliżeń, ekstremów,  czy  liczenia pola lub objętości. Wskazane są związki z ekonomią, optymalizacja technologiami  informatycznymi.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "1. W. Krysicki, L. Włodarski:, „Analiza matematyczna w zadaniach” część 1, PWN (2022 i nowsze).",
+                                                                          "2. M. Gewert, Z. Skoczylas, “ Analiza Matematyczna 1, Przykłady i zadania ”, GiS Wroclaw (2021)",
+                                                                          "3.  M. Gewert, Z. Skoczylas, “ Analiza Matematyczna 1, Definicje, twierdzenia, wzory\"”, GiS Wrocław (2008 i nowsze)"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. B. Sozański, I. Dziedzic, \" Algebra i Analiza w zagadnieniach ekonomicznych\", Bila (2009)",
+                                                                             "2.  M. Sullivan, \" Brief  Calculus, an Applied Approach\", John Wiley & Sons (2005)"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcie ciągu liczbowego, granicy ciągu, ciągu ograniczonego, monotonicznego. Student zna i rozumie pojęcia i własności funkcji (w szczególności funkcji wykładniczej, logarytmicznej, trygonometrycznej, cyklometrycznej), granicy funkcji, funkcji monotonicznej, ograniczonej, funkcji ciągłej. Zna i rozumie definicję, własności i twierdzenia dotyczące pochodnych funkcji jednej zmiennej. Zna i rozumie definicję oraz sposoby obliczania całek nieoznaczonych i oznaczonych. Zna i rozumie definicje szeregów liczbowych oraz kryteria zbieżności szeregów liczbowych. Student zna metody numerycznego obliczania pochodnych oraz całek oznaczonych. Student zna i rozumie pojęcie szeregu potęgowego.  Student zna i rozumie zastosowanie równań różniczkowych zwyczajnych oraz zna podstawowe metody ich rozwiązywania. Student zna i rozumie sposoby przeprowadzania prostych dowodów twierdzeń matematycznych.",
+                                               "umiejetnosci":  "Student potrafi wyznaczać granice ciągów liczbowych oraz funkcji jednej zmiennej. Potrafi sprawdzić czy funkcja jest ciągła.  Potrafi liczyć pochodne. Zna interpretację geometryczną pochodnej i twierdzeń z nią związaną. Potrafi stosować  regułę de L'Hospitala. Potrafi  wyznaczać wielomian Taylora.  Potrafi zastosować twierdzenie Rolle’a, Lagrange’a i Cauchy’ego. Potrafi  obliczać ekstrema lokalne i globalne funkcji jednej zmiennej.  Potrafi przeprowadzić badanie przebiegu zmienności funkcji. Potrafi liczyć całki oznaczone i nieoznaczone jednej zmiennej oraz wykorzystywać je do zagadnień geometrycznych. Student potrafi opisać związek twierdzeń rachunku różniczkowego i całkowego jednej zamiennej z wybranymi metodami numerycznymi. Student potrafi użyć twierdzenie Taylora do obliczania przybliżonej wartości wyrażenia. Student potrafi określić rząd równania różniczkowego zwyczajnego oraz rozwiązać równanie różniczkowe zwyczajne pierwszego rzędu oraz zagadnienie Cauchy,ego związane z tymi równaniami. Student potrafi przeprowadzić elementarny dowód twierdzenia.",
+                                               "kompetencje_spoleczne":  "Student jest gotów do samodzielnego pozyskiwania informacji z różnych źródeł i przełożenia ich na potrzebny kontekst."
+                                           },
+                    "tresci_programowe":  [
+                                              "Liczby rzeczywiste. Konstrukcja. Własności.",
+                                              "Szeregi liczbowe. Definicja. Kryteria zbieżności. Szeregi naprzemienne.",
+                                              "Ciągi liczbowe. Monotoniczność, ograniczoność, zbieżność. Metody obliczania granic ciągów liczbowych. Zastosowania.",
+                                              "Funkcje (w szczególności wykładnicze i logarytmiczne).  Granice funkcji w punkcie. Monotoniczność, ograniczoność, ciągłość. Zastosowania.",
+                                              "Pochodne funkcji jednej zmiennej. Definicja, podstawowe własności, podstawowe wzory.  Twierdzenia rachunku różniczkowego. Zastosowanie rachunku różniczkowego. Badanie przebiegu zmienności funkcji. Twierdzenie de l’Hospitala.  Wzór Taylora i Maclaurina.",
+                                              "Całka nieoznaczona. Definicja funkcji pierwotnej. Kryteria całkowalności funkcji. Podstawowe metody obliczania całek nieoznaczonych. Całkowanie funkcji wymiernych oraz niewymiernych.",
+                                              "Całka Riemanna. Definicja za pomocą granicy ciągu sum całkowych. Metody obliczania całki Riemanna. Zastosowanie całek oznaczonych.",
+                                              "Rozwijanie funkcji w szereg potęgowy. Zastosowanie rozwinięcia w szereg potęgowy w rachunku różniczkowym.",
+                                              "Równania różniczkowe zwyczajne. Podstawowe metody i zastosowanie."
+                                          ]
+                }
+}

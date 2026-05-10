@@ -1,0 +1,115 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Proseminarium",
+                    "kod_przedmiotu":  "PSEM",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr hab. Marek A. Bednarczyk, prof. PJATK",
+                    "ects":  3,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  45,
+                                    "calkowita_liczba_godzin_h":  75
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Seminarium":  {
+                                                          "sposob":  "Zaliczenie z oceną"
+                                                      }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Nie dotyczy",
+                                           "Seminarium:",
+                                           "seminaryjna prezentacja i dyskusja rozwiązań projektu",
+                                           "realizacja kolejnych zadań wspomaga-jących przygotowanie pracy dyplomo-wej, poprzedzanych omówieniem przez prowadzącego zajęcia",
+                                           "praca w 2-3 osobowych grupach, pokrywających się z zespołami projektu dyplomowego i w ścisłym kontakcie z promotorami prac dyplomowych",
+                                           "Nie dotyczy",
+                                           "Kryteria oceny",
+                                           "ocena na podstawie dwu prezentacji i dyskusji pracy dyplomowej, opracowanego konspektu oraz dokumentacji pracy, a także obecności i aktywności na zajęciach",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Budowa i integracja oprogramowania BYT",
+                                                         "wymagania":  "co najmniej równocześnie"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Projekt zespołowy PRZ2",
+                                                         "wymagania":  "Społeczne aspekty informatyki SAI"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ",
+                                                         "wymagania":  "przedmioty specjalizacyjne"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem zajęć jest przygotowanie studentów do opracowania i prezentacji prac dyplomowych, zdyscyplinowanie ich w procesie zespołowej realizacji prac oraz przygotowanie do egzaminu dyplomowego. Zajęcia są prowadzone i dyskutowane w grupach specjalizacyjnych i obejmują przygotowanie, seminaryjną prezentację oraz dyskusję rozwiązań i decyzji przyjmowanych w trakcie wykonania prac dyplomowych. Istotny element kształcący stanowi analiza i dyskusja rozwiązań konstrukcyjnych, ról i zadań udziałowców projektu oraz społecznego lub biznesowego kontekstu prac.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Materiały wykładowe i specjalizacyjne",
+                                                                          "Regulaminy i instrukcje dyplomowania PJATK",
+                                                                          "Materiały i wzorce udostępniane przez prowadzącego Proseminarium"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym.",
+                                                              "Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym",
+                                                              "Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego"
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego",
+                                                                    "Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania",
+                                                                    "Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+                                                                    "Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów.",
+                                                                    "Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych",
+                                                                    "Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia",
+                                                                    "Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców",
+                                                                    "Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu.",
+                                                                             "Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych.",
+                                              "Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu",
+                                              "Przygotowanie I. prezentacji na temat",
+                                              "-problemu i kontekstu pracy dyplomowej,",
+                                              "-wizji, rozwiązania postawionego problemu,",
+                                              "-planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe),",
+                                              "- stanu aktualnego pracy,",
+                                              "-zagrożeń i sposobów przeciwdziałania im",
+                                              "Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu.",
+                                              "Przegląd aktualnej dokumentacji pracy.",
+                                              "Przygotowanie rozwiniętego konspektu pracy.",
+                                              "Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów.",
+                                              "Korekta konspektu.",
+                                              "Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych",
+                                              "Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania",
+                                              "Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy.",
+                                              "Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie"
+                                          ]
+                }
+}

@@ -1,0 +1,127 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Grafika Komputerowa",
+                    "kod_przedmiotu":  "GRK",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Określenie przedmiotów wprowadzających wraz z wymogami wstępnymi",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "rozwiązywanie zadań",
+                                           "Kryteria oceny",
+                                           "Zaliczenie ćwiczeń polega na zbieraniu punktów:",
+                                           "50% możliwych punktów daje ocenę 3",
+                                           "60% punktów daje ocenę 3½",
+                                           "70% — ocenę 4",
+                                           "80% — 4½",
+                                           "90% i więcej — 5",
+                                           "Test wyboru, 20 pytań. Każda poprawna odpowiedź warta jest 1 punkt. Zasady zaliczenia: 19–20 punktów: 5, 17–18 punktów: 4 12 , 14–16 punktów: 4, 11–13 punktów: 3 12 , 8–10 punktów: 3. Mniej niż 8 punktów: 2"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "• Algebra liniowa i geometria  (ALG)",
+                                                         "wymagania":  "• Analiza matematyczna  (AM)"
+                                                     },
+                                                     {
+                                                         "nazwa":  "• Algorytmy i struktury danych (ASD)",
+                                                         "wymagania":  "• programowanie w C/C++"
+                                                     },
+                                                     {
+                                                         "nazwa":  "• operacje na macierzach",
+                                                         "wymagania":  "• przekształcenia liniowe"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kształcenia jest nabycie umiejętności tworzenia obrazów z wykorzystaniem standardowego API graficznego (biblioteki OpenGL i renderera Blender) oraz realizacji podstawowych transformacji obrazów 2- i 3-wymiarowych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "M. Jankowski: Elementy grafiki komputerowej. WNT 2006.",
+                                                                          "S. R. Buss: 3D Computer Graphics: A Mathematical Introduction with OpenGL.Revision draft Draft A.10.b. May 28, 2019.",
+                                                                          "Przemyslaw Kiciak: Podstawy modelowania krzywych i powierzchni, Wydawnictwo Naukowe PWN, 2019",
+                                                                          "Przemyslaw Kiciak: OpenGL i GLSL, Część III Gandalf.com.pl, Wydawnictwo Naukowe PWN, 2019",
+                                                                          "Graham Sellers, Richard S. Wright Jr., Nicholas Haemel, OpenGL. Księga eksperta. Wydanie VII Helion 2016"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Jim Chronister: Blender Basics Classroom Tutorial Book. 4th edition, 2011",
+                                                                             "Wojciech Mokrzycki: Wprowadzenie do przetwarzania informacji wizualnej, tom I. Percepcja, akwizycja, wizualizacja EXIT2010978-83-60434-76-5",
+                                                                             "David Austin: What is JPEG? Notices of the AMS, Volume 55, Number 2, pages 226–229, 2008."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Zna i rozumie pojęcia z zakresu matematyki niezbędne do modelowania i przetwarzania barw oraz obiektów 2D, 3D. Zna i rozumie pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym",
+                                                                    "Student potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania",
+                                                                    "Student potrafi wyspecyfikować,  zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+                                                                    "Student potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzenia graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji"
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest jest gotów do samodzielnego uczenia się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "Wykład:",
+                                              "Percepcja wizualna i modele barw",
+                                              "Algorytmy rastrowe",
+                                              "Formaty plików graficznych i kompresja obrazów",
+                                              "Biblioteka LibPNG. Wizualizacja danych",
+                                              "Biblioteka Jpeglib.",
+                                              "Geometria Liniowa 3W",
+                                              "Geometria Afiniczna 3W.",
+                                              "Rzutowanie",
+                                              "Podstawy oświetlenia",
+                                              "Podstawy teksturowania",
+                                              "Podstawy OpenGL i GLSL",
+                                              "Transformacje w OpenGL",
+                                              "Podstawy teksturowania w OpenGL,",
+                                              "Podstawy Krzywych i powierzchni Béziera",
+                                              "Metoda śledzenia promieni",
+                                              "Ćwiczenia:",
+                                              "Podstawy Blendera",
+                                              "Podstawy edycji masha.",
+                                              "Materiały i tekstury",
+                                              "Ustawienia środowiska",
+                                              "Podstawy Animacji. System cząstek",
+                                              "Postprocessing",
+                                              "Format svg.",
+                                              "Algorytmy rastrowe.",
+                                              "Filtry punktowe",
+                                              "Geometryczne przekształcenie obrazów",
+                                              "Podstawy OpenGL",
+                                              "Przekształcenia w OpenGL",
+                                              "Teksturowanie w OpenGL",
+                                              "Oświetlenie w OpenGL",
+                                              "Modelowanie za pomocą krzywych i powierzchni Béziera"
+                                          ]
+                }
+}

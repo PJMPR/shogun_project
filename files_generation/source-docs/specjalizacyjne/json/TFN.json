@@ -1,0 +1,130 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Technologie frontendowe",
+                    "kod_przedmiotu":  "TFN",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "mmiotk@pjwstk.edu.pl",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "projekt praktyczny",
+                                           "Kryteria oceny",
+                                           "50% Kolokwium",
+                                           "50% Projekt praktyczny",
+                                           "40% Ocena z laboratorium",
+                                           "60% Egzamin"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Warsztaty programistyczne",
+                                                         "wymagania":  "Technologie internetu"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Dobra znajomość HTML, CSS oraz JavaScript",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest zapoznanie się z nowoczesnymi technologiami, technikami oraz narzędziami do wytwarzania graficznego interfejsu użytkownikach w aplikacjach webowych.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "E. Porcello and A. Banks, Learning react: Modern patterns for developing react apps, O’Reilly Media, Incorporated, 2020.",
+                                                                          "A. Prabhu, Beggining CSS Preprocessors. With Sass, Compass and Less, Apress, 2015.",
+                                                                          "C. Rippon, Learn react with typescript 3: Beginner’s guide to modern react web development with typescript 3, Packt Publishing, 2018.",
+                                                                          "M.T. Thomas, React in action, Manning Publications, 2018.",
+                                                                          "F. Zammetti, Modern full-stack development: Using typescript, react, node.js, webpack, and docker, Apress, 2020."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "A. Boduch and R. Derks, React and react native: A complete hands-on guide to modern web and mobile development with react.js, Packt Publishing, 2020.",
+                                                                             "E. Brown, Web Development with Node and Express, O'Reilly Media, Incorporated, 2020.",
+                                                                             "A. Freeman, Pro react 16, Apress, 2019.",
+                                                                             "D. Griffits and D. Griffits, React Cookbook. Recipes for Mastering the React Framework, O'Reily, 2021.",
+                                                                             "G. Lim, Beginning react with hooks, Independently Published, 2020.",
+                                                                             "C.S. Roldán, React cookbook: Create dynamic web apps with react using redux, webpack, node.js, and graphql, Packt Publishing, 2018.",
+                                                                             "R. Wieruch, The road to react: Your journey to master plain yet pragmatic react.js, Independently Published, 2017."
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Node.js, https://nodejs.org/en/":  "Node.js, https://nodejs.org/en/",
+                                                                        "React – a javascript library for building user interfaces, https://reactjs.org/":  "React – a javascript library for building user interfaces, https://reactjs.org/",
+                                                                        "Reactjs tutorial - tutorialspoint, https://www.tutorialspoint.com/reactjs/index.htm":  "Reactjs tutorial - tutorialspoint, https://www.tutorialspoint.com/reactjs/index.htm",
+                                                                        "W3schools online web tutorials, https://www.w3schools.com/":  "W3schools online web tutorials, https://www.w3schools.com/",
+                                                                        "Frontend developer handbook - https://frontendmasters.com/books/front-end-handbook":  "Frontend developer handbook - https://frontendmasters.com/books/front-end-handbook"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia związane z pojęciem Frontend Development. Student zna i rozumie pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku.",
+                                                              "Student zna i rozumie zaawansowane  pojęcia związane z pojęciem Frontend Development. Student zna i rozumie zaawansowane pojęcie preprocesora CSS oraz tworzenia aplikacji webowej z wykorzystaniem narzędzia Node.js oraz przykładowego narzędzia w tym środowisku.",
+                                                              "Student zna i rozumie elementy programowania funkcyjnego na przykładzie języka JavaScript. Student zna i rozumie techniki oraz metody programistyczne wykorzystywane w języku JavaScript.",
+                                                              "Student zna i rozumie pojęcia z zakresu tworzenia interaktywnych aplikacji internetowych, umożliwiających komunikację typu człowiek-komputer."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi ocenić przydatność różnych podejść programistycznych na podstawie języka JavaScript i związanych z nimi środowisk na przykładzie narzędzia Node.js",
+                                                                    "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikację webową; potrafi korzystać z bibliotek przy użyciu narzędzia npm, środowisk programistycznych, integrujących i uruchomieniowych.",
+                                                                    "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku.",
+                                                                    "Student potrafi wytworzyć zaawansowaną warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne , przy pomocy narzędzia Node.js oraz wybranego narzędzia w tym środowisku."
+                                                                ],
+                                               "kompetencje_spoleczne":  "Student jest gotów do jest gotów do samodzielnego uczenia się przez całe życie"
+                                           },
+                    "tresci_programowe":  [
+                                              "Historia frontendu. Język znaczników HTML i CSS",
+                                              "Użycie preprocesorów CSS jako alternatywa pisania stylów w aplikacjach webowych",
+                                              "Animacje oraz inne technologie wspierające proces pisania interfejsów użytkownika za pomocą CSS",
+                                              "Pojęcie responsywności oraz dostępności w aplikacjach webowych",
+                                              "Architektura aplikacji SPA: Środowisko Node.js",
+                                              "Wprowadzenie do frameworka budowania aplikacji webowych w środowisku Node.js",
+                                              "Format JSX. Integracja CSS w aplikacji.",
+                                              "Pojęcie stanu aplikacji w aplikacjach webowych",
+                                              "Formularze oraz ich walidacja w aplikacjach webowych",
+                                              "Inne rodzaje hooków i dobre praktyki w tworzeniu aplikacji webowych",
+                                              "Integracja danych w aplikacjach webowych",
+                                              "Trasowanie aplikacji w aplikacjach webowych",
+                                              "Testowanie aplikacji frontendowych",
+                                              "Technologia suspense w aplikacjach webowych",
+                                              "Metody optymalizacji w aplikacjach webowych",
+                                              "Informacje dodatkowe",
+                                              "Wymagane oprogramowanie w laboratoriach: Serwer Node.js.",
+                                              "Uzasadnienie dla prowadzenia przedmiotu/współpraca z rynkiem pracy",
+                                              "A. W jakiego typu firmach będą potrzebne umiejętności nabyte w trakcie zajęć:",
+                                              "Wszystkie firmy zajmujące się budowanie serwisów internetowych.",
+                                              "B. W jakich zawodach wiedza i umiejętności są istotne:",
+                                              "Wiedza i umiejętności z tworzenia interaktywnych interfejsów użytkownika jest bardzo przydatna we",
+                                              "wszystkich zawodach informatycznych."
+                                          ]
+                }
+}

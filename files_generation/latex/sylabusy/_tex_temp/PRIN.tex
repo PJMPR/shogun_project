@@ -1,0 +1,311 @@
+﻿% ===========================================================
+%  Sylabus: Procesy Innowacyjne (PRIN)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: PRIN}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Procesy Innowacyjne} \\[3pt]
+  \textbf{Kod przedmiotu:}    & PRIN \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 8 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Albert Śledzianowski, albertsledzianowski@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+8 h & 8 h & --- & 16 h & 34 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Praca nad opracowaniami koncepcyjnymi z zakresu innowacji; analiza przypadków procesów innowacyjnych; przygotowanie sprawozdań; ćwiczenia obliczeniowe.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Wykład & Nieoceniany \\
+  \rowcolor{tableRowAlt} Ćwiczenia & Zaliczenie z oceną \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item raport z wykonanego zadania
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawami zarządzania firmą innowacyjną oraz organizacyjnymi podstawami jej funkcjonowania Zapoznanie studentów z technikami analizy i pobudzania kreatywności oraz twórczego rozwiązywania problemów inżynierskich.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The course 'Innovation Processes' aims to familiarize students with the basics of managing an innovative company and the organizational foundations of its operation, as well as with techniques for analyzing and stimulating creativity and for creatively solving engineering problems.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} POZ - Podstawy Organizacji i Zarzadzania & Znajomosc podstaw organizacji i zarzadzania \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wykład \\
+  \rowcolor{tableRowAlt} 2. & Ćwiczenia \\
+  \rowcolor{tableRowLight} 3. & Kreatywność menedżerska \\
+  \rowcolor{tableRowAlt} 4. & Profil osoby kreatywnej i przedsiębiorczej \\
+  \rowcolor{tableRowLight} 5. & Istota i motywy przedsiębiorczości gospodarczej \\
+  \rowcolor{tableRowAlt} 6. & Tworzenie i analiza ścieżki doświadczeń dla wybranego produktu / usługi (praca z szablonem \\
+  \rowcolor{tableRowLight} 7. & customer journey map) \\
+  \rowcolor{tableRowAlt} 8. & Metody graficzne i analityczne w diagnozowaniu \\
+  \rowcolor{tableRowLight} 9. & problemu \\
+  \rowcolor{tableRowAlt} 10. & Odkrywanie możliwości dla produktu innowacyjnego – studium przypadku \\
+  \rowcolor{tableRowLight} 11. & Rozpoznawanie szans rynkowych i możliwości \\
+  \rowcolor{tableRowAlt} 12. & sytuacyjnych \\
+  \rowcolor{tableRowLight} 13. & Analiza rozwoju firm innowacyjnych – macierz \\
+  \rowcolor{tableRowAlt} 14. & kluczowych czynników \\
+  \rowcolor{tableRowLight} 15. & Planowanie rozwoju - elementy analizy strategicznej \\
+  \rowcolor{tableRowAlt} 16. & Wprowadzenie do Design Thinking \\
+  \rowcolor{tableRowLight} 17. & Struktury organizacyjne \\
+  \rowcolor{tableRowAlt} 18. & Wprowadzenie do pracy zespołowej i projektowej \\
+  \rowcolor{tableRowLight} 19. & Trening umiejętności pracy w zespole. \\
+  \rowcolor{tableRowAlt} 20. & Organizowanie procesów i zarządzanie zasobami \\
+  \rowcolor{tableRowLight} 21. & Środowiska do komputerowego \\
+  \rowcolor{tableRowAlt} 22. & wspomagania pracy projektowej i \\
+  \rowcolor{tableRowLight} 23. & zespołowej \\
+  \rowcolor{tableRowAlt} 24. & Kontrolowanie, doskonalenie i zarządzanie jakością \\
+  \rowcolor{tableRowLight} 25. & Identyfikacja potrzeb; wprowadzenie do analizy badań zastanych i jakościowych – wywiad, \\
+  \rowcolor{tableRowAlt} 26. & obserwacja uczestnicząca, netnografia; mapa empatii, Persony \\
+  \rowcolor{tableRowLight} 27. & Mała firma – cykl rozwojowy i czynniki sukcesu \\
+  \rowcolor{tableRowAlt} 28. & Diagnoza problemu: \\
+  \rowcolor{tableRowLight} 29. & Metoda 5 x dlaczego \\
+  \rowcolor{tableRowAlt} 30. & Metoda Pareto-Lorenza i Diagram \\
+  \rowcolor{tableRowLight} 31. & Ishikawy \\
+  \rowcolor{tableRowAlt} 32. & Rysowanie odręczne \\
+  \rowcolor{tableRowLight} 33. & Zarządzanie personelem i motywowanie \\
+  \rowcolor{tableRowAlt} 34. & Metoda Kano \\
+  \rowcolor{tableRowLight} 35. & Wybrane techniki oceny wariantów i wspomagania \\
+  \rowcolor{tableRowAlt} 36. & decyzji \\
+  \rowcolor{tableRowLight} 37. & Indywidualne generowanie pomysłów do problemu (mindmapping, analiza \\
+  \rowcolor{tableRowAlt} 38. & morfologiczna) \\
+  \rowcolor{tableRowLight} 39. & Generowanie pomysłów: burza mózgów, \\
+  \rowcolor{tableRowAlt} 40. & MindMapping, deBono \\
+  \rowcolor{tableRowLight} 41. & Zespołowe generowanie pomysłów: \\
+  \rowcolor{tableRowAlt} 42. & burza mózgów i metoda 6 kapeluszy \\
+  \rowcolor{tableRowLight} 43. & Wybrane techniki oceny wariantów i wspomagania \\
+  \rowcolor{tableRowAlt} 44. & decyzji \\
+  \rowcolor{tableRowLight} 45. & Metody oceny wariantów; testowanie wygenerowanych rozwiązań \\
+  \rowcolor{tableRowAlt} 46. & Organizacja kreatywnej pracy zespołowej \\
+  \rowcolor{tableRowLight} 47. & Ocena potencjału motywacyjnego \\
+  \rowcolor{tableRowAlt} 48. & personelu; analiza i dopracowywanie własnego CV, SWOT osobisty \\
+  \rowcolor{tableRowLight} 49. & Zarządzanie wiedzą i innowacjami w organizacji \\
+  \rowcolor{tableRowAlt} 50. & Zasady efektywnej komunikacji; \\
+  \rowcolor{tableRowLight} 51. & Prezentacja rozwiązań projektowych \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W17 & Student zna i rozumie podstawowe zagadnienia planowania przedsięwzięcia informatycznego: wstępną ocenę ekonomiczną, analizę wykonalności, aspekty społeczne i środowiskowe projektu IT. {[}K\_W17{]} &  \\
+  \rowcolor{tableRowAlt} K\_W19 & Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki: odpowiedzialność zawodowa, prawo autorskie, licencjonowanie oprogramowania i ochrona własności intelektualnej. {[}K\_W19{]} &  \\
+  \rowcolor{tableRowLight} K\_W20 & Student zna i rozumie ogólne zasady tworzenia przedsiębiorczości w IT: modele biznesowe, formy prawne działalności, zasady komercjalizacji rozwiązań informatycznych i pozyskiwania finansowania. {[}K\_W20{]} &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U05 & Student potrafi pracować w zespole projektowym, szacować czas i koszty realizacji zadań oraz budować harmonogram prac zapewniający terminową realizację projektu informatycznego. {[}K\_U05{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U26 & Student potrafi zaplanować i wytworzyć dokumentację przedsięwzięcia informatycznego (studium wykonalności, analiza ryzyka, wstępna wycena) z uwzględnieniem aspektów etycznych i prawnych. {[}K\_U26{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U25 & Student potrafi uwzględnić aspekty etyczne, prawne i społeczne w planowanym przedsięwzięciu informatycznym i ocenić potencjalne zagrożenia. {[}K\_U25{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego, działając zgodnie z zasadami etyki zawodowej. {[}K\_K01{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_K04 & Student jest gotów do efektywnej współpracy w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań projektowych. {[}K\_K04{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_K02 & Student jest gotów do przekazywania społeczeństwu informacji na temat konsekwencji i odpowiedzialności związanej z działalnością inżynierską w IT. {[}K\_K02{]} & raport z wykonanego zadania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item analiza tekstów z dyskusją
+  \item rozwiązywanie zadań
+  \item burza mózgów
+  \item praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych
+  \item warsztaty
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Kosieradzka, A., Szopiński, T., Stanisławiak, E., Głażewska, I., Kąkol, U., Smagowicz, J. (2021). Metody i techniki pobudzania kreatywności w organizacji i zarządzaniu. Warszawa: PWN. ISBN 978-83-01-21845-0.
+  \item Kosieradzka, A. (2019). Zarządzanie produktywnością w przedsiębiorstwie. Kraków: edu-Libri. ISBN 978-83-63804-04-6.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Szmidt, K. J. (2021). Teoria i praktyka twórczości: Od badań do edukacji kreatywnej. Łódź: Wydawnictwo Uniwersytetu Łódzkiego. ISBN: 978-83-8142-929-0
+  \item Penc-Pietrzak, I. (2019). Kreatywność w zarządzaniu. Nowe wyzwania dla liderów organizacji. Warszawa: Difin. ISBN: 978-83-8085-882-2
+  \item Trzebiński, J., \& Siemieńska, R. (2020). Twórcze rozwiązywanie problemów: Podstawy teoretyczne i zastosowania praktyczne. Warszawa: PWN. ISBN: 978-83-01-21489-7
+  \item Nęcka, E., Orzechowski, J., \& Słabosz, A. (2019). Kreatywność: Procesy poznawcze, osobowość, środowisko. Warszawa: PWN. ISBN: 978-83-01-20526-0
+\end{itemize}
+
+\end{document}

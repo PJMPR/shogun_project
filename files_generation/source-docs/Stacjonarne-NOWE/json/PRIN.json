@@ -1,0 +1,139 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Procesy Innowacyjne",
+                    "kod_przedmiotu":  "PRIN",
+                    "rok_studiow":  null,
+                    "semestr_studiow":  null,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  15,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Albert Śledzianowski, albertsledzianowski@pjwstk.edu.pl",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "analiza tekstów z dyskusją",
+                                           "rozwiązywanie zadań",
+                                           "burza mózgów",
+                                           "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+                                           "warsztaty",
+                                           "Kryteria oceny",
+                                           "ćwiczenia związane z tematyką wykładu",
+                                           "opracowania obliczeniowe i koncepcyjne",
+                                           "ocena sporządzonego sprawozdania",
+                                           "brak"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "POZ – Podstawy Organizacji i Zarządzania znajomość podstaw organizacji i zarządzania",
+                                                         "wymagania":  "Znajomość podstaw organizacji i zarządzania"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot “Procesy innowacyjne” ma na celu: Zapoznanie studentów z podstawami zarządzania firmą innowacyjną oraz organizacyjnymi podstawami jej funkcjonowania Zapoznanie studentów z technikami analizy i pobudzania kreatywności oraz twórczego rozwiązywania problemów inżynierskich.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Kosieradzka, A., Szopiński, T., Stanisławiak, E., Głażewska, I., Kąkol, U., Smagowicz, J. (2021). Metody i techniki pobudzania kreatywności w organizacji i zarządzaniu. Warszawa: PWN. ISBN 978-83-01-21845-0.",
+                                                                          "Kosieradzka, A. (2019). Zarządzanie produktywnością w przedsiębiorstwie. Kraków: edu-Libri. ISBN 978-83-63804-04-6."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Szmidt, K. J. (2021). Teoria i praktyka twórczości: Od badań do edukacji kreatywnej. Łódź: Wydawnictwo Uniwersytetu Łódzkiego. ISBN: 978-83-8142-929-0",
+                                                                             "Penc-Pietrzak, I. (2019). Kreatywność w zarządzaniu. Nowe wyzwania dla liderów organizacji. Warszawa: Difin. ISBN: 978-83-8085-882-2",
+                                                                             "Trzebiński, J., & Siemieńska, R. (2020). Twórcze rozwiązywanie problemów: Podstawy teoretyczne i zastosowania praktyczne. Warszawa: PWN. ISBN: 978-83-01-21489-7",
+                                                                             "Nęcka, E., Orzechowski, J., & Słabosz, A. (2019). Kreatywność: Procesy poznawcze, osobowość, środowisko. Warszawa: PWN. ISBN: 978-83-01-20526-0"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności",
+                                                              "Student zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki; zna i rozumie podstawowe pojęcia z zakresu ochrony własności intelektualnej oraz prawa patentowego i autorskiego; zna i rozumie pozatechniczne aspekty informatyki, powiązanie przedsięwzięć informatycznych z ich otoczeniem i zagrożenia stąd płynące",
+                                                              "Student zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, szczególnie przedsięwzięć informatycznych i rozumie rolę jej innowacyjności. Zna i rozumie ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych."
+                                                          ],
+                                               "umiejetnosci":  "Student potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi zaplanować, opracować i zrealizować harmonogram prac zapewniający dotrzymanie terminów",
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego",
+                                                                             "Student jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy",
+                                                                             "Student jest gotów do określenia priorytetów służących realizacji zadania"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wykład",
+                                              "Ćwiczenia",
+                                              "Kreatywność menedżerska",
+                                              "Profil osoby kreatywnej i przedsiębiorczej",
+                                              "Istota i motywy przedsiębiorczości gospodarczej",
+                                              "Tworzenie i analiza ścieżki doświadczeń dla wybranego produktu / usługi (praca z szablonem",
+                                              "customer journey map)",
+                                              "Metody graficzne i analityczne w diagnozowaniu",
+                                              "problemu",
+                                              "Odkrywanie możliwości dla produktu innowacyjnego – studium przypadku",
+                                              "Rozpoznawanie szans rynkowych i możliwości",
+                                              "sytuacyjnych",
+                                              "Analiza rozwoju firm innowacyjnych – macierz",
+                                              "kluczowych czynników",
+                                              "Planowanie rozwoju - elementy analizy strategicznej",
+                                              "Wprowadzenie do Design Thinking",
+                                              "Struktury organizacyjne",
+                                              "Wprowadzenie do pracy zespołowej i projektowej",
+                                              "Trening umiejętności pracy w zespole.",
+                                              "Organizowanie procesów i zarządzanie zasobami",
+                                              "Środowiska do komputerowego",
+                                              "wspomagania pracy projektowej i",
+                                              "zespołowej",
+                                              "Kontrolowanie, doskonalenie i zarządzanie jakością",
+                                              "Identyfikacja potrzeb; wprowadzenie do analizy badań zastanych i jakościowych – wywiad,",
+                                              "obserwacja uczestnicząca, netnografia; mapa empatii, Persony",
+                                              "Mała firma – cykl rozwojowy i czynniki sukcesu",
+                                              "Diagnoza problemu:",
+                                              "Metoda 5 x dlaczego",
+                                              "Metoda Pareto-Lorenza i Diagram",
+                                              "Ishikawy",
+                                              "Rysowanie odręczne",
+                                              "Zarządzanie personelem i motywowanie",
+                                              "Metoda Kano",
+                                              "Wybrane techniki oceny wariantów i wspomagania",
+                                              "decyzji",
+                                              "Indywidualne generowanie pomysłów do problemu (mindmapping, analiza",
+                                              "morfologiczna)",
+                                              "Generowanie pomysłów: burza mózgów,",
+                                              "MindMapping, deBono",
+                                              "Zespołowe generowanie pomysłów:",
+                                              "burza mózgów i metoda 6 kapeluszy",
+                                              "Wybrane techniki oceny wariantów i wspomagania",
+                                              "decyzji",
+                                              "Metody oceny wariantów; testowanie wygenerowanych rozwiązań",
+                                              "Organizacja kreatywnej pracy zespołowej",
+                                              "Ocena potencjału motywacyjnego",
+                                              "personelu; analiza i dopracowywanie własnego CV, SWOT osobisty",
+                                              "Zarządzanie wiedzą i innowacjami w organizacji",
+                                              "Zasady efektywnej komunikacji;",
+                                              "Prezentacja rozwiązań projektowych"
+                                          ]
+                }
+}

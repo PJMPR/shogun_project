@@ -1,0 +1,88 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "15.02.2025",
+        "nazwa_przedmiotu": "Język hiszpański – Lektorat 1",
+        "kod_przedmiotu": "LEK1",
+        "rok_studiow": 3,
+        "semestr_studiow": 5,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": null,
+            "cwiczenia_lektorat_seminarium": 16,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Studium Języków Obcych – M. Nowosielska",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50
+        },
+        "metody_dydaktyczne": {
+            "lektorat": "Analiza tekstów z dyskusją, metoda projektów, praca w grupach, dyskusja, rozwiązywanie zadań, burza mózgów, mind map, praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych, warsztaty."
+        },
+        "zaliczenie": {
+            "Lektorat": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": [
+            "Obecność na zajęciach – max. 4 nieusprawiedliwione nieobecności w semestrze (zwolnienia lekarskie przedstawiane na bieżąco).",
+            "Prace pisemne – min. jedna praca na semestr.",
+            "Kolokwia/testy/kartkówki na podstawie opracowanego materiału – min. 2 na semestr.",
+            "Wypowiedź ustna (o rodzaju decyduje lektor).",
+            "Przygotowywanie prac domowych oraz aktywne uczestnictwo w zajęciach.",
+            "Kryteria zaliczenia: uzyskanie przynajmniej 51% możliwych punktów za prace pisemne/testy oraz pozytywna (min. 3.0) ocena łączna za pozostałe formy."
+        ],
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Brak wymagań wstępnych",
+                "wymagania": "Brak wymagań wstępnych w zakresie języka hiszpańskiego."
+            }
+        ],
+        "cel_dydaktyczny": "Nauczanie języka hiszpańskiego na poziomie A1/A2. Student opanowuje język hiszpański w stopniu pozwalającym na podstawową komunikację językową w sytuacjach dnia codziennego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descubre 1, Wydawnictwo DRACO, 2020."
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019.",
+                    "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023.",
+                    "https://www.profedeele.es/",
+                    "https://www.ver-taal.com/",
+                    "https://www.rae.es/ – Słownik języka hiszpańskiego."
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": null,
+            "umiejetnosci": [
+                "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpańskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+                "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym A1/A2."
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+                "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych."
+            ]
+        },
+        "tresci_programowe": [
+            "Powitania i pożegnania, alfabet, wymowa, liczby 1–20. Przedstawianie się. Zaimki osobowe, czasownik ser.",
+            "Narodowości i języki, rodzaj gramatyczny rzeczownika, rodzajnik nieokreślony. Czasownik llamarse.",
+            "Rodzina i opis osób – przymiotniki, rodzaj i liczba. Czasownik tener. Liczby 21–100.",
+            "Dom i meble – słownictwo, rodzajnik określony, liczba mnoga. Czasownik estar (lokalizacja).",
+            "Jedzenie i picie – podstawowe produkty, zamawianie w restauracji. Czasowniki regularne -ar/-er/-ir.",
+            "Miasto i orientacja w przestrzeni – słownictwo, pytanie o drogę i udzielanie wskazówek.",
+            "Czynności codzienne – rozkład dnia. Czasowniki nieregularne (e→ie, o→ue). Godziny.",
+            "Kolokwium zaliczeniowe."
+        ]
+    }
+}
+

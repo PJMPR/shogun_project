@@ -1,0 +1,270 @@
+﻿% ===========================================================
+%  Sylabus: Symulacje i gry decyzyjne (SGD)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: SGD}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Symulacje i gry decyzyjne} \\[3pt]
+  \textbf{Kod przedmiotu:}    & SGD \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 8 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & dr Elżbieta Puźniakowska-Gałuch, ela@pjwstk.edu.pl,  dr Tadeusz Puźniakowski,   pantadeusz@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 16 h & 32 h & 18 h & 50 h & \textbf{2} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Implementacja projektu programistycznego z symulacji i gier decyzyjnych; przygotowanie do kartkówek z części teoretycznej; eksperymenty z modelami decyzyjnymi.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Ćwiczenia & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wykład & Nieoceniany \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item sprawdziany wstępne „wejściówki''
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena sporządzonego oprogramowania
+  \item ocena pracy podczas ćwiczenia
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Przedmiot ''Symulacje i gry decyzyjne'' ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The course 'Simulations and Decision Games' aims to familiarize students with selected decision-support methods, develop the ability to build decision models using software, and develop the ability to make decisions in dynamic decision-making environments. In its practical component, the course also allows students to learn how to create games with an emphasis on designing logic and strategy.}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Brak formalnego przedmiotu wprowadzajacego & Wiedza z zakresu szkoly sredniej (algebra liniowa); ukonczenie kursu Animacja 3D lub posiadanie certyfikatu BFCT (Blender Foundation Certified Trainer) \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne. \\
+  \rowcolor{tableRowAlt} 2. & Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną. \\
+  \rowcolor{tableRowLight} 3. & Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3. \\
+  \rowcolor{tableRowAlt} 4. & Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach. \\
+  \rowcolor{tableRowLight} 5. & Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie. \\
+  \rowcolor{tableRowAlt} 6. & Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą. \\
+  \rowcolor{tableRowLight} 7. & Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie. \\
+  \rowcolor{tableRowAlt} 8. & Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji. \\
+  \rowcolor{tableRowLight} 9. & Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych \\
+  \rowcolor{tableRowAlt} 10. & Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W24 & Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika. & sprawdziany wstępne „wejściówki'' \\
+  \rowcolor{tableRowAlt} K\_W24 & Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych. & sprawdziany wstępne „wejściówki'' \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowAlt} K\_U31 & Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+  \rowcolor{tableRowLight} K\_U31 & Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego. & ocena sporządzonego oprogramowania, ocena pracy podczas ćwiczenia \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item wykład z prezentacją multimedialną
+  \item wykład konwersatoryjny (z elementami dyskusji)
+\end{itemize}
+\vspace{4pt}
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item rozwiązywanie zadań
+  \item metoda projektów (projekt praktyczny)
+  \item burza mózgów
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item - Deulofeu J., Dylemat więźniów i zwycięskie strategie. Teoria gier., RBA, 2022
+  \item - Watson J. Stategia. Wprowadzenie do teorii gier. WNT Warszawa 2004.
+  \item - Gajda J.B., Prognozowanie i symulacja a decyzje gospodarcze, Wyd. C.H.Beck, Warszawa 2001
+  \item - Rymarczyk M. (red.): Gry, symulacje, sieci. Wyd. WBS Poznań, 1997.
+  \item - Poundstone, W. (1992), Prisoner's Dilemma: John von Neumann, Game Theory and the Puzzle of the Bomb
+  \item - Maynard-Smith, J. (1982), Evolution and the theory of games
+  \item - Axelrod R. Advancing the Art of Simulation in the Social Sciences
+  \item -Hucara Ł., „Projektowanie i programowanie gier video”, Wydawnictwo PJWSTK, 2011
+  \item -Edams E., „Projektowanie gier”, Helion 2011
+  \item - Dokumentacja biblioteki SDL2 dostępna online na stronie projektu – jest najbardziej aktualna
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item - Orlin B., Math Games with Bad Drawings: 75 ¼ Simple, Challenging, Go-Anywhere Games – And Why They Matter,  Black Dog \& Leventhal, 2022
+  \item - DeLoura M. ,  Game programming gems 1 - 6– seria książek
+  \item - Nystrom R, 2014, Game programming patterns
+  \item - Materiały ze strony
+  \item - Zalecany jest darmowy kurs internetowy
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,163 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Wytwarzanie gier 2",
+                    "kod_przedmiotu":  "WG2",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Lic. Aleksandr Polin (alex.polin@pjwstk.edu.pl)",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną, wykład zaproszony",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "prezentacje",
+                                           "praca w Unreal Engine",
+                                           "Kryteria oceny",
+                                           "Studenci prezentują swoje projekty (gry) i są oceniani przez publiczność punktowo:",
+                                           "Styl (1-10)",
+                                           "Rozgrywka (1-10)",
+                                           "Zabawa (1-10)",
+                                           "Kreatywność (1-10)",
+                                           "Ukończenie (1-10)",
+                                           "Studenci opowiadają także o swoim wkładzie w projekt i przyznają sobie punkty za:",
+                                           "Wysiłek (1-10).",
+                                           "Następnie obliczana jest ocena grupowa. Każda osoba z grupy określa, czy jej ocena końcowa powinna być taka sama jak ocena grupowa, czy też powinna otrzymać ocenę wyższą lub niższą. Ocena ta staje się oceną końcową dla każdego ucznia."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wytwarzanie gier 1 (WG1)",
+                                                         "wymagania":  "Znajomość podstawowych zagadnień projektowania gier, tworzenia dokumentacji gier, Unreal Engine, animacji i dźwięku w grach. Umiejętność pracy w zespole i podstawy zarządzania projektami gier."
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem kursu jest pogłębienie wiedzy i umiejętności studentów w zakresie tworzenia gier, skupiając się na zaawansowanych technikach projektowania gier, optymalizacji, marketingu i analizie rynku. Studenci zdobędą praktyczne doświadczenie w tworzeniu gier, które będą działać płynnie na różnych platformach, a także nauczą się, jak skutecznie promować swoje produkty na rynku gier.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "\"Game Analytics: Maximizing the Value of Player Data\" by Magy Seif El-Nasr, Anders Drachen, Alessandro Canossa (2016)",
+                                                                          "“Video Game Marketing: A student textbook” by Zackariasson Peter (2016)",
+                                                                          "\"Augmented Reality: Where We Will All Live\" by Dr. Jon Peddie (2023)",
+                                                                          "\"The Game Console: A Photographic History from Atari to Xbox\" by Evan Amos (2018)",
+                                                                          "\"Game Engine Architecture\" by Jason Gregory (2017)",
+                                                                          "\"Unreal Engine VR Cookbook: Developing Virtual Reality with UE4\" by Mitch McCaffrey (2017)",
+                                                                          "“Unreal Engine 5 Game Development with C++ Scripting: Become a professional game developer and create fully functional, high-quality games” by Zhenyu George Li (2023)"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "\"Behavioral Science in the Wild\" by Mazar Nina (2022)",
+                                                                             "\"The Psychology of Video Games\" by Jamie Madigan (Podcast)",
+                                                                             "\"100 Principles of Game Design\" by Despain, Wendy (2012)",
+                                                                             "\"Game Design Workshop: A Playcentric Approach to Creating Innovative Games\" by Tracy Fullerton (2018)",
+                                                                             "\"The Indie Game Developer Handbook\" by Richard Hill-Whittall (2015)",
+                                                                             "\"Blood, Sweat, and Pixels: The Triumphant, Turbulent Stories Behind How Video Games Are Made\" by Jason Schreier (2017)"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Jest w stanie zastosować teorie i zasady projektowania graficznego oraz interfejsów użytkownika do tworzenia intuicyjnych i angażujących elementów gry.",
+                                                              "Potrafi przeprowadzić kompleksowe testy gry, identyfikując i dokumentując błędy, co przyczynia się do wydania produktu o wysokiej jakości."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Wie, jak koncepcyjnie zaprojektować grę, zastosować narzędzia projektowe jak Unreal Engine i przeprowadzić analizę rynkową.",
+                                                                    "Posiada kompetencje do tworzenia kompleksowej dokumentacji projektowej, która komunikuje kluczowe aspekty rozwoju gry międzynarodowej publiczności i zespołowi projektowemu.",
+                                                                    "Demonstruje zdolność do ciągłego doskonalenia swoich umiejętności deweloperskich, korzystając z różnorodnych źródeł informacji i nowoczesnych metod edukacyjnych.",
+                                                                    "Jest wyposażony w umiejętności niezbędne do przeprowadzania skutecznych testów gier, identyfikowania błędów i zapewniania jakości produktu końcowego.",
+                                                                    "Demonstruje umiejętność tworzenia elementów gry przy użyciu Unreal Engine, w tym blueprintów i animacji."
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Wykazuje gotowość do ciągłego rozwijania kompetencji i samokształcenia, co jest kluczowe w szybko zmieniającej się branży gier komputerowych.",
+                                                                             "Jest gotów do aktywnego uczestnictwa w procesie produkcyjnym gier, pełniąc różnorodne role w zespole deweloperskim i adaptując się do dynamiki projektu gamedev.",
+                                                                             "Jest przygotowany do efektywnego zarządzania czasem i zasobami, określając priorytety w celu skutecznej realizacji zadań w procesie tworzenia gier.",
+                                                                             "Rozumie i angażuje się w analizę oraz rozwiązywanie kwestii etycznych i prawnych związanych z projektowaniem i tworzeniem gier.",
+                                                                             "Demonstruje umiejętności komunikacyjne potrzebne do efektywnego dialogu z różnorodnymi interesariuszami projektu gamedev, w tym inwestorami, w celu tworzenia wartości dodanej dla produktu."
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Wprowadzenie i powtórka z WG1",
+                                              "Przypomnienie najważniejszych zagadnień z Wytwarzania gier 1.",
+                                              "Omówienie przykładowych projektów z poprzedniego semestru, analiza mocnych i słabych stron.",
+                                              "Trendy na rynku gier, nowości technologiczne.",
+                                              "Analityka gier",
+                                              "Rodzaje danych zbieranych w grach i ich znaczenie.",
+                                              "Narzędzia analityczne i ich zastosowanie w optymalizacji gier.",
+                                              "Interpretacja danych, wyciąganie wniosków i podejmowanie decyzji na podstawie analizy.",
+                                              "Marketing gier",
+                                              "Wprowadzenie do marketingu w grach.",
+                                              "Definiowanie grupy docelowej, tworzenie persony gracza.",
+                                              "Kanały marketingowe dla gier, strategie promocji.",
+                                              "Rynek gier: VR, PC, Konsole",
+                                              "Omówienie specyfiki, zalet i wad tworzenia gier na różne platformy.",
+                                              "Trendy na poszczególnych rynkach, analiza konkurencji.",
+                                              "Wybór platformy docelowej dla gry, dostosowanie projektu do specyfiki rynku.",
+                                              "Zaawansowane techniki projektowania gier",
+                                              "Projektowanie narracji w grach, budowanie świata gry.",
+                                              "Tworzenie angażującej rozgrywki, projektowanie wyzwań i nagród.",
+                                              "Balansowanie gry, zapewnienie odpowiedniego poziomu trudności.",
+                                              "Optymalizacja gier",
+                                              "Zaawansowana optymalizacja gier na platformy PC i konsolowe.",
+                                              "Optymalizacja grafiki, dźwięku i kodu gry.",
+                                              "Narzędzia do profilowania i optymalizacji, dobre praktyki.",
+                                              "Zwiastuny gier i kampanie społecznościowe",
+                                              "Tworzenie zwiastunów gier przyciągających uwagę graczy.",
+                                              "Prowadzenie kampanii w mediach społecznościowych, budowanie zaangażowania.",
+                                              "Współpraca z influencerami, marketing szeptany.",
+                                              "Psychologia gier: kierowanie uwagą gracza",
+                                              "Techniki narracji wizualnej w grach, budowanie napięcia i emocji.",
+                                              "Prowadzenie gracza przez świat gry, projektowanie intuicyjnego interfejsu.",
+                                              "Wykorzystanie dźwięku i muzyki do budowania atmosfery.",
+                                              "Sztuka w grach: kadrowanie i kompozycja",
+                                              "Podstawy kompozycji obrazu, stosowanie zasad kadrowania w grach.",
+                                              "Język filmu: ujęcia, montaż, ruch kamery.",
+                                              "Analiza udanych przykładów, inspiracje z innych mediów.",
+                                              "Tworzenie gier jako biznes",
+                                              "Modele biznesowe w grach: free-to-play, premium, subskrypcje.",
+                                              "Monetyzacja gier, projektowanie systemu mikropłatności.",
+                                              "Aspekty prawne tworzenia gier, prawa autorskie.",
+                                              "Budowanie relacji z partnerami",
+                                              "Nawiązywanie kontaktów z wydawcami, platformami dystrybucji cyfrowej.",
+                                              "Sposoby pozyskiwania funduszy na tworzenie gier, crowdfunding.",
+                                              "Prezentacja projektu gry, przygotowanie materiałów prasowych.",
+                                              "Budowanie i utrzymywanie społeczności",
+                                              "Sposoby budowania zaangażowanej społeczności wokół gry.",
+                                              "Komunikacja z graczami, moderacja forów i grup dyskusyjnych.",
+                                              "Organizowanie konkursów i eventów, zarządzanie feedbackiem.",
+                                              "Prezentacja projektów",
+                                              "Prezentacja postępów prac nad projektami gier.",
+                                              "Omówienie wyzwań i rozwiązań, analiza i feedback od prowadzącego i grupy.",
+                                              "Dzień gier",
+                                              "Prezentacja finalnych wersji gier.",
+                                              "Testowanie gier przez studentów i zaproszonych gości.",
+                                              "Wręczenie nagród, podsumowanie semestru."
+                                          ]
+                }
+}

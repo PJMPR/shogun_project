@@ -1,0 +1,101 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Modelowanie 3D dla gier",
+                    "kod_przedmiotu":  "M3D",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  5,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Piotr Arłukowicz",
+                    "ects":  4,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  40,
+                                    "calkowita_liczba_godzin_h":  100
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "prezentacja na żywo",
+                                           "wykład z elementami dyskusji",
+                                           "studium przypadku",
+                                           "najlepsze praktyki",
+                                           "Ćwiczenia / Laboratorium/Lektorat:",
+                                           "praca samodzielna ucznia nad zadaniami i mini-projektami",
+                                           "projekt semestralny",
+                                           "Kryteria oceny",
+                                           "Student musi wykonać zgodnie z regułami sztuki kluczowe ćwiczenia prezentowane w trakcie semestru. Sprawdzana jest zgodność z zasadami ale dopuszczane są inwencja twórcza oraz kreatywność (dziedzina jest twórcza). Tworzone jest w ciągu semestru portfolio rozwojowe pokazujące eksperymenty własne i ścieżkę osiągnięć, które są następnie na końcu zajęć oceniane.",
+                                           "Student zobowiązany jest przedstawić większy projekt własny w którym wykorzystuje poznane techniki modelowania. Projekty są negocjowane indywidualnie już podczas semestru i można je przygotowywać w trakcie jego trwania."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Niezbędna jest ogólna znajomość obsługi komputera.",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem przedmiotu jest przygotowanie studentów do pracy w branży Gamedev w charakterze twórców treści cyfrowych. Nacisk kładziony jest na modelowanie 3D oraz związane z nim tematy takie jak teksturowanie, tworzenie materiałów, wypalanie, techniki optymalizacyjne i strategie związane z tworzeniem gier.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "2. Blender 3D For Beginners: The Complete Guide: The Complete Beginner’s Guide to Getting Started with Navigating, Modeling, Animating, Texturing, Lighting, Compositing and Rendering within Blender, ISBN-13: ‎978-1523238811"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "1. Mind-Melding Unity and Blender for 3D Game Development: Unleash the power of Unity and Blender to create amazing games, ISBN-13: ‎978-1801071550"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "1. Manual do Blendera":  "https://docs.blender.org/manual/en/latest/index.html",
+                                                                        "3. Tworzenie gier w Blenderze":  "https://mikepan.com/GameEngineBook/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcia takie jak modelowanie, low-poly, mid-poly, high-poly, teksturowanie, cieniowanie, mapowanie, przestrzenie współrzędnych, komponowanie, wypalanie, optymalizacja",
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi wymodelować obiekty w technice low-poly oraz high-poly",
+                                                                    "Student potrafi oteksturować obiekt metodami tekstur proceduralnych",
+                                                                    "Student potrafi rozwinąć siatkę obiektu we współrzędnych UV",
+                                                                    "Student potrafi wypalić tekstury proceduralne do tekstur bitmapowych"
+                                                                ],
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do współpracy i dzielenia się swoją wiedzą",
+                                                                             "Student jest gotów do dalszej nauki i pogłębiania swojej wiedzy i umiejętności"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "1. Wprowadzenie do podstaw obsługi Blendera.",
+                                              "2. Modelowanie w trybie obiektowym.",
+                                              "3. Modyfikatory.",
+                                              "4. Modelowanie w trybie edycji.",
+                                              "5. Modelowanie high-poly w trybie rzeźbienia.",
+                                              "6. Oświetlenie.",
+                                              "7. Materiały.",
+                                              "8. Tekstury proceduralne.",
+                                              "9. Mapowanie tekstur i przestrzenie współrzędnych.",
+                                              "10. Tekstury bitmapowe.",
+                                              "11. Wypalanie tekstur.",
+                                              "12. Optymalizacja sceny 3D i rendering.",
+                                              "13. Komponowanie (compositing)."
+                                          ]
+                }
+}

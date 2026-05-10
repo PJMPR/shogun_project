@@ -1,0 +1,265 @@
+﻿% ===========================================================
+%  Sylabus: Systemy czasu rzeczywistego (RTO)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+
+\setlength{\extrarowheight}{3pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{3pt}}}
+% Kolumna Y = tabularx X ale z wyrownaniem pionowym do srodka (jak m{})
+\newcolumntype{Y}{>{\arraybackslash}m{\dimexpr\linewidth-5cm-2\tabcolsep\relax}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: RTO}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+% Spis tresci -- linki czarne, bez ramki
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/PJATK/git/GD_WI_PRG_26-27/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Systemy czasu rzeczywistego} \\[3pt]
+  \textbf{Kod przedmiotu:}    & RTO \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 3 / 6 \\[3pt]
+  \textbf{Charakter:}         & obieralny \\[3pt]
+  \textbf{Odpowiedzialny:}    & mgr inż. Michał Hyla \\[3pt]
+  \textbf{Wersja z dnia:}     & 08.03.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+{\small\tableofcontents}
+\newpage
+
+\section{Godziny zajęć i punkty ECTS}
+
+{\scriptsize
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.4cm}
+                >{\centering\arraybackslash}p{2.0cm}
+                >{\centering\arraybackslash}p{1.4cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\textbf{Wykłady}} & {\color{white}\textbf{Ćwiczenia}} & {\color{white}\textbf{Laboratorium}} &
+{\color{white}\textbf{Z prowadzącym}} & {\color{white}\textbf{Praca własna}} & {\color{white}\textbf{Łącznie}} & {\color{white}\textbf{ECTS}} \\
+\midrule\thdend
+\rowcolor{tableRowLight}
+16 h & --- & 16 h & 32 h & 68 h & 100 h & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\end{center}}
+
+\vspace{4pt}
+\noindent\textbf{Zadania do samodzielnej realizacji:} Realizacja projektów zespołowych z systemów czasu rzeczywistego; implementacja i testowanie algorytmów real-time; przygotowanie dokumentacji projektowej.
+
+\section{Forma zajęć}
+
+\begin{center}
+{\scriptsize
+\begin{tabular}{m{5cm}m{8cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Forma zajęć}} & {\color{white}\textbf{Sposób zaliczenia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Laboratorium & Zaliczenie z oceną \\
+  \rowcolor{tableRowAlt} Wyklad & Egzamin \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\section{Kryteria oceny}
+
+\textbf{Ćwiczenia / Laboratorium:}
+\begin{itemize}
+  \item ocena pracy podczas ćwiczenia
+  \item prezentacja projektu i dokumentacji
+\end{itemize}
+
+
+\section{Cel dydaktyczny}
+
+Celem dydaktycznym przedmiotu „Systemy czasu rzeczywistego” jest zrozumienie zasad projektowania oprogramowania deterministycznego oraz praktyczne opanowanie pracy z FreeRTOS w systemach wbudowanych IoT. Student nauczy się modelować zadania, dobierać priorytety i parametry planowania, a także analizować czasy wykonania i źródła opóźnień wpływające na dotrzymanie deadline’ów. W trakcie kursu rozwinie umiejętności bezpiecznej komunikacji i synchronizacji między zadaniami (kolejki, semafory, mutexy, event groups) oraz diagnozowania problemów typowych dla RTOS (race conditions, deadlock, priority inversion)
+
+\subsection*{\textit{Wersja w języku angielskim (English version)}}
+
+\textit{The educational objective of the course 'Real-Time Systems' is to understand the principles of designing deterministic software and to gain practical mastery of working with FreeRTOS in embedded IoT systems. Students learn how to model tasks, choose priorities and scheduling parameters, and analyze execution times and sources of delays affecting the ability to meet deadlines. During the course, they develop skills in safe communication and synchronization between tasks (queues, semaphores, mutexes, event groups) and in diagnosing problems typical of RTOS environments (race conditions, deadlocks, priority inversion).}
+
+
+\section{Przedmioty wprowadzające}
+
+{\scriptsize
+\begin{tabularx}{\textwidth}{m{5cm}Y}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Przedmiot}} & {\color{white}\textbf{Wymagane zagadnienia}} \\
+\midrule\thdend
+  \rowcolor{tableRowLight} Systemy Operacyjne & Współbieżność \\
+\bottomrule
+\end{tabularx}}
+
+\section{Treści programowe}
+
+{\scriptsize
+\begin{longtable}{m{1.5cm}m{14.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\textbf{Nr zaj.}} & {\color{white}\textbf{Treści programowe}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} 1. & Wprowadzenie do RT i FreeRTOS: pojęcia deterministyczności, jitter, deadline, zadania vs przerwania. \\
+  \rowcolor{tableRowAlt} 2. & Scheduler FreeRTOS: priorytety, wywłaszczanie, time-slicing, stany zadań, dobór konfiguracji. \\
+  \rowcolor{tableRowLight} 3. & Zarządzanie czasem: tick, opóźnienia i timeouty, vTaskDelay/Until, timery programowe. \\
+  \rowcolor{tableRowAlt} 4. & Komunikacja między zadaniami: kolejki, stream/message buffers, wzorce producent–konsument. \\
+  \rowcolor{tableRowLight} 5. & Synchronizacja i sekcje krytyczne: semafory, mutexy, recursive mutex, problem priority inversion. \\
+  \rowcolor{tableRowAlt} 6. & Event Groups i Task Notifications: sygnalizacja zdarzeń, szybkie mechanizmy synchronizacji. \\
+  \rowcolor{tableRowLight} 7. & Przerwania w FreeRTOS: ISR-safe API, kolejki z ISR, zarządzanie latencją i czasem obsługi. \\
+  \rowcolor{tableRowAlt} 8. & Pamięć w FreeRTOS: stos zadania, heap (strategie), alokacja dynamiczna, fragmentacja, diagnostyka. \\
+  \rowcolor{tableRowLight} 9. & Debugowanie i obserwowalność: trace, runtime stats, watchdog, analiza zakleszczeń i przepełnień stosu. \\
+  \rowcolor{tableRowAlt} 10. & Projekt RTOS end-to-end: architektura aplikacji, podział na moduły, testy funkcjonalne i czasowe, kryteria zaliczenia. \\
+\bottomrule
+\end{longtable}}
+
+\section{Przedmiotowe efekty uczenia się}
+
+\subsection*{Wiedza}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_W18 & Student zna i rozumie specyfikę systemów czasu rzeczywistego (SCR): definicję twardego i miękkiego czasu rzeczywistego, wymagania dotyczące deterministyczności, niezawodności i bezpieczeństwa. {[}K\_W18{]} &  \\
+  \rowcolor{tableRowAlt} K\_W26 & Student zna i rozumie architektury RTOS (FreeRTOS, Zephyr, QNX): harmonogramowanie zadań (RM, EDF), zarządzanie przerwaniami, komunikację między zadaniami (kolejki, semafory, zdarzenia) i analizę czasu wykonania (WCET). {[}K\_W26{]} &  \\
+  \rowcolor{tableRowLight} K\_W18 & Student zna i rozumie zastosowania systemów czasu rzeczywistego w automatyce przemysłowej, robotyce, medycynie i Internecie Rzeczy oraz powiązane standardy bezpieczeństwa (IEC 61131, DO-178). {[}K\_W18{]} &  \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Umiejętności}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_U23 & Student potrafi zaprojektować i zaimplementować aplikację czasu rzeczywistego z użyciem RTOS, w tym zaplanować harmonogram zadań, zaimplementować synchronizację i spełnić ograniczenia czasowe. {[}K\_U23{]} & ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowAlt} K\_U33 & Student potrafi zdiagnozować problem specyficzny dla systemu IoT/RT, zaprojektować jego rozwiązanie z uwzględnieniem wymagań czasu rzeczywistego i bezpieczeństwa systemu wbudowanego. {[}K\_U33{]} & ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowLight} K\_K01 & Student potrafi zastosować informatykę na rzecz rozwiązywania problemów automatyki i robotyki, przenosząc dobre praktyki projektowania systemów czasu rzeczywistego. {[}K\_K01{]} & ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Kompetencje społeczne}
+{\scriptsize
+\begin{longtable}{m{1.6cm}m{9.0cm}m{4.2cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Kod KEU}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Przedmiotowy efekt uczenia się}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Metody weryfikacji}} \\
+\midrule\thdend
+\endhead
+  \rowcolor{tableRowLight} K\_K01 & Student jest gotów do zastosowania systemów czasu rzeczywistego w rozwiązaniach przemysłowych i IoT, z uwzględnieniem wymogów certyfikacji i bezpieczeństwa. {[}K\_K01{]} & ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji \\
+  \rowcolor{tableRowAlt} K\_K03 & Student jest gotów do samodzielnego poszerzania wiedzy o nowych architekturach RTOS i standardach przemysłowych. {[}K\_K03{]} & ocena pracy podczas ćwiczenia, prezentacja projektu i dokumentacji \\
+\bottomrule
+\end{longtable}}
+
+\section{Metody dydaktyczne}
+
+\textbf{Wykład:}
+\begin{itemize}
+  \item Wykład
+  \item Wykład z prezentacją multimedialną
+  \item Wykład z prezentacją urządzeń
+  \item Dyskusja
+  \item Zespołowe rozwiązywanie problemów
+\end{itemize}
+\vspace{4pt}
+
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item Brak danych.
+\end{itemize}
+
+\end{document}

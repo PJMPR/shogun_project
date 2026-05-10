@@ -1,0 +1,2 @@
+﻿L32=[Wykład:] len=7 matchWyk=True
+L37=[rozwiązywanie zadań na tablicy] len=30 matchCwicz=False

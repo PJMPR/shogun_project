@@ -1,0 +1,136 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "19.02.2026",
+        "nazwa_przedmiotu": "Szybkie Prototypowanie",
+        "kod_przedmiotu": "SPR",
+        "rok_studiow": 4,
+        "semestr_studiow": 8,
+        "obligatoryjny": true,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 30,
+            "cwiczenia_lektorat_seminarium": 30,
+            "laboratorium_projekt": null
+        },
+        "odpowiedzialny_za_przedmiot": "Dr Tadeusz Puźniakowski",
+        "ects": 5,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 60,
+            "praca_wlasna_studenta_h": 65,
+            "calkowita_liczba_godzin_h": 125,
+            "praca_wlasna_studenta": "Samodzielna praca nad projektami prototypowania; implementacja prototypów z użyciem wybranych technologii; przygotowanie prezentacji i obrony projektu."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty",
+                "rozwiązywanie zadań"
+            ]
+        },
+        "zaliczenie": {
+            "Laboratorium": {
+                "sposob": "Zaliczenie z oceną"
+            },
+            "Wykład": {
+                "sposob": "Egzamin"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja mini-projektu",
+                "obrona projektu"
+            ]
+        },
+        "przedmioty_wprowadzajace": [],
+        "cel_dydaktyczny": "Zapoznanie studentów z podstawowymi technikami szybkiego prototypowania.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Materiały wykładowe i ćwiczeniowe opracowane przez prowadzących",
+                    "Dokumentacja oprogramowania Blender",
+                    "Dokumentacja Arduino",
+                    "Dokumentacja i materiały do Tinkercad"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna i rozumie podstawowe pojęcia z zakresu grafiki 3D, projektowania, przygotowania prototypów fizycznych urządzeń",
+            "umiejetnosci": [
+                "Student potrafi biegle posługiwać się dokumentacją w języku polskim i angielskim",
+                "Student potrafi samodzielnie przygotować modele 3D oraz odpowiednie pliki STL i gcode za pomocą adekwatnych narzędzi do druku 3D uwzględniając specyfikę technologii FDM ze szczególnym uwzględnieniem wpływu orientacji obiektu na jego wytrzymałość"
+            ],
+            "kompetencje_spoleczne": [
+                "Student jest gotów do zastosowania informatyki na rzecz rozwoju nauki poprzez umiejętność szybkiego tworzenia prototypów fizycznych obiektów",
+                "Student jest gotów do myślenia w sposób innowacyjny."
+            ]
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Pojęcie szybkiego portotypowania, podstawowe narzędzia i techniki",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Projektowanie obiektów do druku 3D z wykorzystaniem narzędzia Tinkercad",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Projektowanie obiektów do druku 3D z wykorzystaniem narzędzia Blender",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Przygotowanie projektu do druku 3D",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Właściwości wydrukowanego elementu – wpływ orientacji drukowanego elementu na jego właściwości fizyczne",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Omówienie różnych technik druku 3d – SLA, SLS, FDM",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Omówienie różnych popularnych materiałów do druku 3D",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Praktyczna umiejętność wymiarowania obiektów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Praktyczna realizacja projektu w oparciu o prototypy",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "Introduction to the basic techniques of rapid prototyping.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}

@@ -1,0 +1,201 @@
+﻿% ===========================================================
+%  Sylabus: Technologie DevOps (DEV)
+% ===========================================================
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage[colorlinks=true, linkcolor=red!70!black, urlcolor=red!70!black]{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\definecolor{pjatkRed}{RGB}{180,0,0}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,220,220}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Filia w Gdańsku \textbar\ Informatyka}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Sylabus: DEV}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\setlist{noitemsep, topsep=3pt, parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed, linewidth=1.2pt, backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=8pt,
+  innerbottommargin=8pt, roundcorner=4pt]{infobox}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.5] at (current page.center) {%
+      \includegraphics[width=14cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_sygnet_transparent-eps-converted-to}%
+    };
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \includegraphics[height=2cm]{C:/Users/adamu/WebstormProjects/pj-studies/latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} SYLABUS PRZEDMIOTU}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Nazwa przedmiotu:}  & {\bfseries Technologie DevOps} \\[3pt]
+  \textbf{Kod przedmiotu:}    & DEV \\[3pt]
+  \textbf{Kierunek / Profil:} & Informatyka / praktyczny \\[3pt]
+  \textbf{Tryb studiów:}      & niestacjonarny \\[3pt]
+  \textbf{Rok / Semestr:}     & 4 / 7 \\[3pt]
+  \textbf{Charakter:}         & obowiązkowy \\[3pt]
+  \textbf{Odpowiedzialny:}    & mmiotk@pjwstk.edu.pl \\[3pt]
+  \textbf{Wersja z dnia:}     & 19.02.2026 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{1cm}
+
+\section{Godziny zajęć i punkty ECTS}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.4cm}
+                |>{\centering\arraybackslash}p{2.0cm}
+                |>{\centering\arraybackslash}p{1.4cm}|}
+\hline
+\rowcolor{tableHeader}
+\textbf{Wykłady} & \textbf{Ćwiczenia} & \textbf{Laboratorium} &
+\textbf{Z prowadzącym} & \textbf{Praca własna} & \textbf{Łącznie} & \textbf{ECTS} \\
+\hline
+30 h & --- & 30 h & 60 h & 65 h & 125 h & \textbf{5} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Forma zajęć}
+
+\begin{tabular}{ll}
+  \hline
+  \textbf{Forma zajęć} & \textbf{Sposób zaliczenia} \\
+  \hline
+  Laboratorium & Zaliczenie z oceną \\
+  Wykład & Egzamin \\
+  \hline
+\end{tabular}
+
+\section{Cel dydaktyczny}
+
+Celem przedmiotu jest zapoznanie się z techniką konteneryzacji na podstawie narzędzia Docker oraz Kubernetes. Efektem przedmiotu ma być możliwość utworzenia aplikacji typu REST API, która będzie spakowana za pomocą wyżej wymienionych narzędzi.
+
+\section{Przedmioty wprowadzające}
+
+\begin{tabularx}{\textwidth}{lX}
+  \hline
+  \textbf{Przedmiot} & \textbf{Wymagane zagadnienia} \\
+  \hline
+  Uzytkowanie komputerow (UKOS) & Znajomosc struktur plikow i katalogow; znajomosc pojecia procesu w systemie operacyjnym; umiejetnosc poslugiwania sie emulatorem terminala \\
+  Systemy operacyjne (SOP) & Podstawy administracji systemem operacyjnym \\
+  Technologie internetu (TIN) & Znajomosc protokolu HTTP; znajomosc pojec z zakresu tworzenia aplikacji internetowych \\
+  \hline
+\end{tabularx}
+
+\section{Treści programowe}
+
+\begin{enumerate}
+  \item Wprowadzenie do idei konteneryzacji
+  \item Praca oraz monitorowanie kontenerów
+  \item Tworzenie obrazów do użycia w kontenerze. Konteneryzacja istniejących aplikacji.
+  \item Wolumeny oraz rejestry  w kontenerze
+  \item Tworzenie obrazów za pomocą technik multietapowych
+  \item Konfiguracja zasobów oraz sieci w kontenerach
+  \item Debugowanie kontenerów
+  \item Zarządzanie kontenerami na przykładzie narzędzia Docker Compose
+  \item Architektura konteneryzacji aplikacji
+  \item Pojęcie Continuous Integration
+  \item Narzędzie Jenkins jako przykład narzędzia do używania CI/CD
+  \item Zasada ciągłej interakcji (CI)
+  \item Proces wdrażania aplikcji za pomocą narzędzia Ansible
+  \item Proces monitorowania aplikacji w cyklu produkcyjnym
+  \item Uruchomienie kontenerezowanej aplikacji w chmurze
+\end{enumerate}
+
+\section{Efekty kształcenia}
+
+\subsection*{Wiedza}
+\begin{itemize}
+  \item Student zna i rozumie pojęcia w zakresie pojęcia wirtualizacji i konteneryzacji z wykorzystaniem sieci komputerowych, ich technologii oraz protokołów komunikacyjnych.
+  \item Student zna i rozumie pojęcia występujące w procesie konteneryzacji na przykładzie narzędzia Docker. Zna i rozumie proces tworzenia, skonteneryzowanych bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie pojęcia związane z orchestracją i monitorowaniem takiej aplikacji
+\end{itemize}
+
+\subsection*{Umiejętności}
+\begin{itemize}
+  \item Student potrafi potrafi ocenić przydatność wirtualizacji i konteneryzacji i związanych z nimi środowisk
+  \item Student potrafi potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikcję utworzoną w procesie konteneryzacji za pomocą plików Dockerfile.
+  \item Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy narzędzia Docker utworzyć kontener i umieścić go w technologii chmurowej.
+  \item Student potrafi zaplanować i przeprowadzić automatyczny proces tworzenia aplikacji z wykorzystaniem pojęcia konteneryzacji i związanych z nimi narzędzi.
+\end{itemize}
+
+\subsection*{Kompetencje społeczne}
+\begin{itemize}
+  \item Student jest gotów do samodzielnego uczenia się przez całe życie
+\end{itemize}
+
+\section{Kryteria oceny}
+
+\begin{itemize}
+  \item wykład z elementami dyskusji z prezentacją multimedialną
+  \item burza mózgów
+  \item rozwiązywanie zadań
+  \item analiza przypadków
+  \item projekt praktyczny
+  \item Kryteria oceny
+  \item 100\% Kolokwium pisemne zawierające do 10 zadań.
+  \item 40\% Ocena z laboratorium
+  \item 60\% Egzamin
+\end{itemize}
+
+\section{Metody dydaktyczne}
+
+Wykład, laboratoria, praca własna studenta.
+
+\section{Literatura}
+
+\textbf{Podstawowa:}
+\begin{itemize}
+  \item S. Kane, Docker: Up \& Running, O’Reilly, 2024.
+  \item J. Nickloff, S. Kuenzli, Docker in Action, Manning Publications, 2019.
+  \item G. Schenker, Learn Docker – Fundamentals of Docker 19.x, Packt Publishing, 2020.
+  \item E. Stoneman, Learn Docker in a Month of Lunches, Manning Publications, 2020.
+\end{itemize}
+
+\textbf{Uzupełniająca:}
+\begin{itemize}
+  \item A. Davis, Bootstraping Microservices with Docker, Kubernetes and Terraform, Manning Publications, 2021.
+  \item E. Fouda, A Complete Guide to Docker for Operations and Development, Apress, 2022.
+  \item F. Zammetti, Modern Full Stack Development using Typescript, React, Node.js, Webpack and Docker, Apress, 2020.
+\end{itemize}
+
+\end{document}

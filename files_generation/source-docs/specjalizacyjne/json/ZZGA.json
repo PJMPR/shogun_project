@@ -1,0 +1,94 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Zaawansowane zastosowania grafiki i animacji",
+                    "kod_przedmiotu":  "",
+                    "rok_studiow":  4,
+                    "semestr_studiow":  7,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Dr Piotr Arłukowicz",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "praca indywidualna przy komputerze",
+                                           "Kryteria oceny",
+                                           "Projekty (oceny cząstkowe otrzymywane w trakcie semestru)",
+                                           "Wykonanie i obrona pracy zaliczeniowej."
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Grafika komputerowa",
+                                                         "wymagania":  "Symulacje 3D"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Animacje komputerowe",
+                                                         "wymagania":  "Ukończenie przedmiotów  Grafika komputerowa,  Symulacje 3D i  Animacje komputerowe"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot przeznaczony jest dla zaawansowanych i jako taki stanowi wyjątkową pozycję w ofercie polskich uczelni, ponieważ niewiele z nich oferuje tak zaawansowane zajęcia. Tematyką przedmiotu jest tworzenie efektów specjalnych rozumianych jako \"practical effects\" (niewidoczne efekty) oraz \"special effects\" (widoczne efekty). Techniki, które zostaną zaprezentowane, wykorzystywane są w studiach w Los Angeles w trakcie prac nad wielkimi produkcjami. Practical effects polegają na takiej modyfikacji obrazu, aby nie było widać modyfikacji. Możliwości jest tutaj bardzo wiele i każdy temat jest unikalny. Podczas tego kursu przewidywana jest praca nad efektami specjalnymi takimi jak: dodawanie ptaków w tle, wstawianie dymu i ognia, usuwanie niechcianych elementów (znaków, napisów, itp), tworzenie tłumu z garstki osób, animowanie wybuchów, pęknięć, zmiana wyglądu, itp. W trakcie zajęć zapoznamy się z technikami takimi jak kluczowanie (greenscreen), rotoscoping (animowane maski), object tracking (śledzenie obiektów w 3d), camera tracking (fotogrammometryczne wyliczanie ruchu kamery na podstawie ruchów kadru), planar tracking (przydatne do modyfikacji powierzchni płaskich w nagranym filmie), oraz różne techniki tzw. rekonstrukcji sceny. Jeżeli starczy czasu, przyjrzymy się możliwościom montażu i color-gradingu filmów a także innym technikom takim jak matte painting lub motion capture (możemy wykorzystać darmowe biblioteki ruchu z Carnegie Mellon University).",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Secrets of Hollywood Special Effects, by Robert McCarthy"
+                                                                      ]
+                                                      },
+                                       "dokumentacja_internetowa":  {
+                                                                        "Lista książek o efektach specjalnych":  "https://www.goodreads.com/shelf/show/special-effects"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie kluczowe zagadnienia i metody w zakresie grafiki, multimediów i komunikacji człowiek-komputer.",
+                                                              "Student zna i rozumie sposoby programowania grafiki dwu- i trójwymiarowej."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi  zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym.",
+                                                                    "Student potrafi  dobrać algorytm przetwarzania i kompresji obrazu."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "1Przypomnienie wiadomości i wstęp do tworzenia efektów specjalnych w BlenderzePraktyczne ćwiczenia z renderowania, przypomnienie pracy z nodami i maskami",
+                                              "2Stabilizacja obrazu. Obraz nagrany za pomocą komórki lub ręcznej kamery ma zostać ustabilizowany za pomocą narzędzi dostępnych w Blenderze.Stabilizacja obrazu - generowanie proxy, obsługa VSE, deembedyzacja materiału filmowego, tracking, postprocessing.",
+                                              "3Stabilizacja obrazu rozmytego i różne trudne przypadki gdy zawodzi podstawowa technika - stabilizacja zoomu, panoramy, hyperlapsów, timelapsów, itp.Tworzenie hyperlapsu i jego stabilizacja manualna oraz za pomocą technik śledzenia wzorców.",
+                                              "4Usuwanie obiektów ze sceny. Jest to najczęściej wykonywana operacja i gdy jest dobrze zrobiona, powinna być całkowicie niewidoczna. Na filmie nagranym za pomocą kamery będziemy usuwali niektóre elementy nieruchome.Usuwanie statycznych elementów sceny, za pomocą kombinacji metod - rotoskopia, tracking, maskowanie, postprocessing.",
+                                              "5Usuwanie obiektów ze sceny, które są ruchome lub ulegają zmianom (wyglądu, położenia, oświetlenia, itp).Usuwanie dynamicznych elementów sceny, za pomocą kombinacji metod - zaawansowana rotoskopia, tracking masek, itp.",
+                                              "6Dodawanie obiektów do sceny.Dodawanie ognia na ręku, błysku w oku lub inne tego typu proste i efektowne ćwiczenia.",
+                                              "7Dodawanie obiektów do sceny.Wkomponowanie w scenę obiektów ruchomych, analiza i montaż scen z materiałów dostępnych na hollywoodcamerawork.com",
+                                              "8Zmiana obiektów na scenie. Przykładowo, może to być zmiana numeru tablicy rejestracyjnej widocznego w kadrze samochodu, zmiana koloru oczu, lub całkowita zmiana tła.Patchwork na nagranym materiale, za pomocą masek i zmiany HSV w przypadku kolorów, lub dodanie innych efektów, które mogą tego wymagać.",
+                                              "9Rozkład sceny na plany i praca na niezależnych źródłach.Przećwiczymy dekompozycję wizualną, w której podstawą rozdziału planów będzie rotoskopia. W efekcie można stworzyć wrażenie perspektywy która nie istnieje.",
+                                              "10Praca na obrazie kluczowanym. Greenscreen - techniki podstawowe.Poznajemy jak działa zielony ekran na przykładzie nagranych własnoręcznie materiałów.",
+                                              "11Walka z greenscreenem - rozwiązywanie częstych problemów: niejednolite oświetlenie, zły odcień ubrań, przedmioty błyszczące i odbijające zielone tło, przedmioty przezroczysteĆwiczenia z trudnych przypadków: kluczowanie szkła, metalu, przejrzystych tkanin, rozmytego ruchu, itp.",
+                                              "12Koloryzacja i kompozycja barwna, nieliniowe przestrzenie kolorów i kompresja barw.Koloryzacja filmu, ‘film look’, podstawowe techniki.",
+                                              "13Montaż filmowy; typy ujęć; typy cięć; zastosowania, mattepainting, compositingĆwiczenia z montażu filmów.",
+                                              "14Mattee painting, CompositingĆwiczenia z koloryzacji oraz podmiany/wzbogacania tła.",
+                                              "15Własne efekty specjalne - np. duplikacja postaci, obiekty fantomowe, zmiana odbicia w lustrze, itp."
+                                          ]
+                }
+}

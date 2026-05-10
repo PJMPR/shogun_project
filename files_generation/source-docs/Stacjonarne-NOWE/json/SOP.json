@@ -1,0 +1,91 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Systemy Operacyjne",
+                    "kod_przedmiotu":  "SOP",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Michał Hyla",
+                    "ects":  5,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Laboratorium":  {
+                                                            "sposob":  "Zaliczenie z oceną"
+                                                        },
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Programowanie na żywo",
+                                           "Warsztaty",
+                                           "Rozwiązywanie zadań",
+                                           "Projekt zespołowy",
+                                           "Kryteria oceny",
+                                           "Laboratorium: Kolokwium, Ocena projektu;",
+                                           "Wykład: Egzamin pisemny",
+                                           "Skala ocen dotycząca laboratoriów oraz wykładu:",
+                                           "Poniżej 50% - ndst",
+                                           "Od 50% - dst",
+                                           "Od 60% - dst+",
+                                           "Od 70% - db",
+                                           "Od 80% - db+",
+                                           "Od 90% - bdb"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "UKOS",
+                                                         "wymagania":  "Umiejętność korzystania z systemu linux, znajomość podstaw działania systemu operacyjnego"
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Celem dydaktycznym przedmiotu SOP (Systemy Operacyjne i Programowanie) jest zapoznanie studentów z zaawansowanymi mechanizmami systemów operacyjnych, szczególnie w kontekście zarządzania procesami, pamięcią oraz synchronizacją w środowiskach wielowątkowych i wieloprocesorowych. Kurs kładzie nacisk na praktyczne aspekty pracy z systemem Linux, obejmujące m.in. zarządzanie zasobami, wątki, przerwania, semafory i mutexy.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Tanenbaum AS, Bos H. Systemy operacyjne. V ed. Gliwice: Helion; 2023.",
+                                                                          "Stallings W. Systemy operacyjne: architektura, funkcjonowanie i projektowanie. IX ed. Gliwice: Helion; 2023."
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Negus C. Linux. Biblia. X ed. Gliwice: Helion; 2023."
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  "Student zna i rozumie pojęcia z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności; zna i rozumie powszechnie stosowane systemy.",
+                                               "umiejetnosci":  [
+                                                                    "Studentpotrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować",
+                                                                    "Studentpotrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające)"
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Podstawy systemów operacyjnychWprowadzenie do kluczowych zagadnień związanych z systemami operacyjnymi, takich jak procesy, zarządzanie pamięcią, systemy plików, mechanizmy wejścia-wyjścia. Studenci zdobywają wiedzę na temat organizacji i współbieżności systemów operacyjnych, ze szczególnym naciskiem na powszechnie stosowane systemy, takie jak Linux.",
+                                              "Wątki i zarządzanie procesamiOmówienie sposobów zarządzania procesami i wątkami w systemach operacyjnych. Studenci uczą się, jak działają wątki, procesy, oraz jakie mechanizmy synchronizacji są stosowane w celu unikania problemów takich jak deadlock czy starvation. Przykłady obejmują implementację mutexów i semaforów.",
+                                              "Synchronizacja i rozwiązywanie problemów sekcji krytycznychZajęcia poświęcone rozwiązywaniu problemów synchronizacji i współbieżności, takich jak problem producenta-konsumenta oraz problem czytelników i pisarzy. Studenci uczą się wykorzystywać mechanizmy synchronizacji (mutexy, semafory) w systemach operacyjnych.",
+                                              "Algorytmy szeregowania zadańOmówienie algorytmów szeregowania zadań, takich jak FCFS, SJF, RR, oraz ich zastosowanie w rzeczywistych systemach operacyjnych. Studenci nauczą się dobierać odpowiedni algorytm do specyfiki aplikacji.",
+                                              "Instalacja i konfiguracja systemu operacyjnegoPraktyczne ćwiczenia z instalacji systemu operacyjnego (np. Linux), w tym instalacja komponentów takich jak baza danych i aplikacje współpracujące. Zajęcia obejmują konfigurację systemu oraz jego administrację.",
+                                              "Zarządzanie pamięciąPrzegląd metod zarządzania pamięcią w systemach operacyjnych, takich jak stronicowanie, segmentacja, oraz zarządzanie pamięcią wirtualną. Studenci uczą się, jak systemy operacyjne efektywnie przydzielają zasoby pamięciowe procesom.",
+                                              "Projektowanie prostych systemów operacyjnychNa zajęciach studenci realizują projekt polegający na zaprojektowaniu i uruchomieniu prostego systemu operacyjnego z elementami, takimi jak zarządzanie procesami, szeregowanie zadań oraz podstawowa obsługa plików."
+                                          ]
+                }
+}

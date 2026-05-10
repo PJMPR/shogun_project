@@ -1,0 +1,104 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Sieci komputerowe",
+                    "kod_przedmiotu":  "SKO1",
+                    "rok_studiow":  2,
+                    "semestr_studiow":  4,
+                    "obligatoryjny":  true,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  30,
+                                                        "cwiczenia_lektorat_seminarium":  30,
+                                                        "laboratorium_projekt":  null
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "Mgr inż. Agata Puchalska",
+                    "ects":  null,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  60,
+                                    "praca_wlasna_studenta_h":  65,
+                                    "calkowita_liczba_godzin_h":  125
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Wykład":  {
+                                                      "sposob":  "Egzamin"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "Ćwiczenia / Laboratorium:",
+                                           "rozwiązywanie zadań",
+                                           "ćwiczenia projektowe realizowane praktycznie na urządzeniach Cisco na wyposażeniu laboratorium",
+                                           "projektowanie sieci w wykorzystaniem   symulatora sieci Cisco Packet Tracer",
+                                           "Ćwiczenia/Laboratorium",
+                                           "Kryteria oceny",
+                                           "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+                                           "Ocenę stanowi 40% kolokwium z zakresu przyznawania  adresów IP v4 i v 6  , 40%  ćwiczenia praktyczne na urządzeniach Cisco  lub na symulatorze sieci Cisco Packet Tracer  wykonywane w trakcie zajęć, 20% aktywność",
+                                           "Ocenę stanowi 45% wyniku uzyskanego na egzaminie,45% ocen otrzymywanych systematycznie w trakcie trwania semestru z tytułu realizacji modułów tematycznych(egzaminycząstkowe), 10% aktywność"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Użytkowanie Komputerów i Podstawy Systemów Operacyjnych",
+                                                         "wymagania":  "Wstęp do informatyki i architektury komputerów"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Wymagane zagadnienia/umiejętności niezbędne w realizacji danego przedmiotu",
+                                                         "wymagania":  "Znajomość regulaminu i zasad BHP pracowni informatycznej i sieciowej"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Rozumienie pojęć z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności",
+                                                         "wymagania":  "Rozumienie  pojęć z zakresu  sieci komputerowych,  technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji"
+                                                     },
+                                                     {
+                                                         "nazwa":  "Podstawowa wiedza o organizacji systemu komputerowego i architekturze warstwowej",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot poświęcony jest prezentacji zasad funkcjonowania  współczesnych sieci teleinformatycznych w oparciu o model warstwowy OSI. Omawiane są funkcje poszczególnych  warstw OSI i powiązań między nimi, używane technologie, standardy, protokoły. Studenci nabywają umiejętności niezbędne do opracowania  projektu sieci LAN  łącznie z konfiguracją IPv4 i IPv6, hermetyzacją  routerów i przełączników ,  routingiem i podstawowym zabezpieczeniem urządzeń przed atakami z  sieci Inside  i Outside .",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "Materiały szkoleniowe „CCNAv7: Introduction to Networks”umieszczone na platformie netacad.com"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "Szkolenia  online „Securac\"",
+                                                                             "„Wprowadzenie do bezpieczeństwa IT „ Michał Sajdak"
+                                                                         ]
+                                                         }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie pojęcia  z zakresu elektrotechniki, elektroniki i miernictwa; powiązania informatyki z tymi obszarami",
+                                                              "Student zna i rozumie zagadnienia z zakresu techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych",
+                                                              "Student zna i rozumie zagadnienia z zakresu sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki"
+                                                          ],
+                                               "umiejetnosci":  "Student potrafi   zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN, która umożliwia także realizację kluczowych usług sieciowych z zachowaniem zasad bezpieczeństwa informacji",
+                                               "kompetencje_spoleczne":  [
+                                                                             "Student jest gotów do uczenia się przez całe życie; potrafi inspirować i organizować proces uczenia się innych osób",
+                                                                             "Student jest gotów do określenia priorytetów służących realizacji zadania",
+                                                                             "Student jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy",
+                                                                             "Student jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych"
+                                                                         ]
+                                           },
+                    "tresci_programowe":  [
+                                              "Komunikacja w sieci komputerowej , elementy sieci, podziały sieci , podstawowe zjawiska w sieciach komputerowych, modele sieci komputerowych . Cechy współczesnych sieci komputerowych , najnowsze trendy w sieciach komp.",
+                                              "Media sieciowe, rodzaje mediów,  parametry, zastosowanie",
+                                              "Urządzenia sieciowe – ewolucja , charakterystyka, zastosowanie . Metody dostępu do urządzeń sieciowych, hermetyzacja, tryby pracy urządzeń",
+                                              "Technologia Ethernet, ramka Ethernet,  topologie logiczne i fizyczne w sieci LAN, WAN, algorytm CSMA/CD, CSMA/CA , rodzaje transmisji w sieci ( unicast, multicast, broadcast ) ,  protokół MAC, ARP",
+                                              "Anatomia adresu IP v4 , rodzaje  IPv4, rodzaje adresów IPv4   planowanie adresów  sieci wewnątrz organizacji metodą VLSM oraz ze stałą maską.",
+                                              "Anatomia adresu IP v6 , rodzaje  IPv6,  rodzaje adresów IPv6, dynamiczne i statyczne przydzielanie adresów IPv6. Porównanie IPv4 via IPv6, protokół ICMP dla IPv4 via ICMP dla IPv6",
+                                              "Routing statyczny a dynamiczny, tablica routingu hosta, routera, brama domyślna, trasa ostatniej szansy",
+                                              "Obsługa niezawodnej komunikacji TCP, trójstopniowe uzgadnianie, kontrola przepływu, dynamiczne wymiary okien. Protokół TCP a UDP.",
+                                              "Usługi i protokoły warstwy aplikacji ( DNS, HTTP, HTTPS, Telnet, SSH , FTP, DHCP, SMTP, POP3, IMAP, S ) – charakterystyka, wykorzystanie , konfiguracja",
+                                              "Metody zarządzania siecią LAN"
+                                          ]
+                }
+}

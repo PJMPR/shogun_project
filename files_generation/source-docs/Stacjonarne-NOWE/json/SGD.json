@@ -1,0 +1,110 @@
+﻿{
+    "sylabus":  {
+                    "uczelnia":  "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+                    "jednostka":  "Filia w Gdansku",
+                    "kierunek":  "INFORMATYKA",
+                    "profil":  "praktyczny",
+                    "tryb_studiow":  "stacjonarny",
+                    "wersja_z_dnia":  "15.02.2025",
+                    "nazwa_przedmiotu":  "Symulacje i gry decyzyjne",
+                    "kod_przedmiotu":  "SGD",
+                    "rok_studiow":  3,
+                    "semestr_studiow":  6,
+                    "obligatoryjny":  false,
+                    "forma_i_liczba_godzin_zajec":  {
+                                                        "wyklady":  15,
+                                                        "cwiczenia_lektorat_seminarium":  null,
+                                                        "laboratorium_projekt":  15
+                                                    },
+                    "odpowiedzialny_za_przedmiot":  "dr Elżbieta Puźniakowska-Gałuch, ela@pjwstk.edu.pl,  dr Tadeusz Puźniakowski,   pantadeusz@pjwstk.edu.pl",
+                    "ects":  2,
+                    "godziny":  {
+                                    "z_udzialem_prowadzacego_h":  30,
+                                    "praca_wlasna_studenta_h":  20,
+                                    "calkowita_liczba_godzin_h":  50
+                                },
+                    "metody_dydaktyczne":  {
+
+                                           },
+                    "zaliczenie":  {
+                                       "Ćwiczenia":  {
+                                                         "sposob":  "Zaliczenie z oceną"
+                                                     },
+                                       "Wykład":  {
+                                                      "sposob":  "Nieoceniany"
+                                                  }
+                                   },
+                    "kryteria_oceny":  [
+                                           "wykład z elementami dyskusji z prezentacją multimedialną",
+                                           "burza mózgów",
+                                           "rozwiązywanie zadań",
+                                           "analiza przypadków",
+                                           "Kryteria oceny",
+                                           "Kilka kartkówek. Na zaliczenie części teoretycznej ćwiczeń student jest zobowiązany uzyskać wynik powyżej 50% możliwych punktów.  Istnieje możliwość poprawy kartkówek na dziewiątych zajęciach.",
+                                           "Projekt programistyczny.",
+                                           "Ustalenie oceny zaliczeniowej na podstawie ocen cząstkowych otrzymanych w  trakcie trwania semestru"
+                                       ],
+                    "przedmioty_wprowadzajace":  [
+                                                     {
+                                                         "nazwa":  "Wiedza z zakresu szkoły średniej. Algebra liniowa.",
+                                                         "wymagania":  ""
+                                                     },
+                                                     {
+                                                         "nazwa":  "Wymagane jest ukończenie kursu Animacja 3D lub posiadanie certyﬁkatu BFCT (Blender Foundation Certiﬁed Trainer).",
+                                                         "wymagania":  ""
+                                                     }
+                                                 ],
+                    "cel_dydaktyczny":  "Przedmiot \"Symulacje i gry decyzyjne\" ma na celu: zapoznanie studentów z wybranymi metodami wspomagania decyzji nabycie umiejętności budowy modeli decyzyjnych z pomocą oprogramowania nabycie umiejętności podejmowania decyzji w dynamicznych środowiskach decyzyjnych. Symulacje i gry decyzyjne to przedmiot, gdzie studenci w części praktycznej mogą nauczyć się jak tworzyć gry z naciskiem na projektowanie logiki i strategii.",
+                    "literatura":  {
+                                       "podstawowa":  {
+                                                          "pozycje":  [
+                                                                          "- Deulofeu J., Dylemat więźniów i zwycięskie strategie. Teoria gier., RBA, 2022",
+                                                                          "- Watson J. Stategia. Wprowadzenie do teorii gier. WNT Warszawa 2004.",
+                                                                          "- Gajda J.B., Prognozowanie i symulacja a decyzje gospodarcze, Wyd. C.H.Beck, Warszawa 2001",
+                                                                          "- Rymarczyk M. (red.): Gry, symulacje, sieci. Wyd. WBS Poznań, 1997.",
+                                                                          "- Poundstone, W. (1992), Prisoner's Dilemma: John von Neumann, Game Theory and the Puzzle of the Bomb",
+                                                                          "- Maynard-Smith, J. (1982), Evolution and the theory of games",
+                                                                          "- Axelrod R. Advancing the Art of Simulation in the Social Sciences",
+                                                                          "-Hucara Ł., „Projektowanie i programowanie gier video”, Wydawnictwo PJWSTK, 2011",
+                                                                          "-Edams E., „Projektowanie gier”, Helion 2011",
+                                                                          "- Dokumentacja biblioteki SDL2 dostępna online na stronie projektu – jest najbardziej aktualna"
+                                                                      ]
+                                                      },
+                                       "uzupelniajaca":  {
+                                                             "pozycje":  [
+                                                                             "- Orlin B., Math Games with Bad Drawings: 75 ¼ Simple, Challenging, Go-Anywhere Games – And Why They Matter,  Black Dog & Leventhal, 2022",
+                                                                             "- DeLoura M. ,  Game programming gems 1 - 6– seria książek",
+                                                                             "- Nystrom R, 2014, Game programming patterns"
+                                                                         ]
+                                                         },
+                                       "dokumentacja_internetowa":  {
+                                                                        "- Materiały ze strony":  "http://mst.mimuw.edu.pl/lecture.php?lecture=wtg",
+                                                                        "- Zalecany jest darmowy kurs internetowy":  "http://polskikursblendera.pl/"
+                                                                    }
+                                   },
+                    "efekty_ksztalcenia":  {
+                                               "wiedza":  [
+                                                              "Student zna i rozumie podstawowe zasady symulacji komputerowych. Zna elementy silnika.",
+                                                              "Student zna i rozumie, jak zastosować pojęcia teorii gier w różnych problemach decyzyjnych oraz grach przedstawianych w różnych formach.  Zna podstawowe zasady symulacji komputerowych."
+                                                          ],
+                                               "umiejetnosci":  [
+                                                                    "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne.  Potrafi przeprowadzać proste wnioskowanie statystyczne.",
+                                                                    "Student potrafi zaprogramować prosty silnik gry komputerowej. Rozumie sposoby realizacji fizyki w grach komputerowych i jest w stanie stworzyć własny prosty silnik fizyczny. Rozumie metody tworzenia prostych efektów cząsteczkowych.",
+                                                                    "Student potrafi formułować i  rozwiązywać gry w postaci normalnej i ekstensywnej. Potrafi rozwiązywać problemy decyzyjne. Potrafi przeprowadzić symulację takiej gry lub problemu decyzyjnego."
+                                                                ],
+                                               "kompetencje_spoleczne":  null
+                                           },
+                    "tresci_programowe":  [
+                                              "Modele decyzyjne statyczne. Przykłady reprezentacji problemów decyzyjnych. Postać normalna,  drzewa decyzyjne.",
+                                              "Tablice decyzyjne, drzewa decyzyjne. Punkty równowagi w sensie Pareto. Gry o sumie zerowej.  Twierdzenie o minimaksie. Strategia optymalna. Gry 2 na 2. Gry 2 na n i n na 2. Rozwiązywanie gier metodą graficzną.",
+                                              "Strategie mieszane i czyste. Punkty równowagi Nasha w strategiach czystych i mieszanych. Zastosowanie modelu w rzeczywistości. Strategie zdominowane i dominujące.   Rozwiązywanie gier 3 na 3.",
+                                              "Programowanie liniowe. Dualność. Algorytm sympleks. Gry z ograniczeniami.  Zastosowanie programowania liniowego w rzeczywistych zagadnieniach.",
+                                              "Gry w postaci ekstensywnej. Gry grane wielokrotnie. Nauka w grach powtarzanych wielokrotnie.",
+                                              "Gry nieskończone. Punkty równowagi w grach powtarzanych nieskończenie wiele razy. Gry powtarzane ze zredukowaną wypłatą. Twierdzenie dla gier ze zredukowaną wypłatą.",
+                                              "Twierdzenie o indukcji wstecznej. Problemy decyzyjne.  Gry Bayesowskie.",
+                                              "Podstawowe elementy silnika gry komputerowej – pętla gry, zarządzanie czasem symulacji.",
+                                              "Poznaje podstawy biblioteki SDL2, która jest stosowana w branży gier komputerowych",
+                                              "Poznaje podstawy symulacji fizycznej – modelowanie zmian świata gry wraz z prostą fizyką."
+                                          ]
+                }
+}

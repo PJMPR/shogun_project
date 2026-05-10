@@ -1,0 +1,141 @@
+{
+    "sylabus": {
+        "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+        "jednostka": "Filia w Gdansku",
+        "kierunek": "INFORMATYKA",
+        "profil": "praktyczny",
+        "tryb_studiow": "niestacjonarny",
+        "wersja_z_dnia": "20.02.2026",
+        "nazwa_przedmiotu": "Wprowadzenie do Unity 3D",
+        "kod_przedmiotu": "MUN",
+        "rok_studiow": 2,
+        "semestr_studiow": 3,
+        "obligatoryjny": false,
+        "forma_i_liczba_godzin_zajec": {
+            "wyklady": 8,
+            "cwiczenia_lektorat_seminarium": null,
+            "laboratorium_projekt": 8
+        },
+        "odpowiedzialny_za_przedmiot": "do ustalenia",
+        "ects": 2,
+        "godziny": {
+            "z_udzialem_prowadzacego_h": 16,
+            "praca_wlasna_studenta_h": 34,
+            "calkowita_liczba_godzin_h": 50,
+            "praca_wlasna_studenta": "Projektowanie i implementacja gry lub aplikacji interaktywnej w Unity 3D; praca ze skryptami C#; zarządzanie scenami i obiektami; przygotowanie dokumentacji projektu."
+        },
+        "metody_dydaktyczne": {
+            "wyklad": [
+                "wykład z prezentacją multimedialną",
+                "wykład z prezentacją oprogramowania"
+            ],
+            "cwiczenia_laboratorium": [
+                "metoda projektów (projekt praktyczny)",
+                "warsztaty"
+            ]
+        },
+        "zaliczenie": {
+            "Projekt": {
+                "sposob": "Zaliczenie z oceną"
+            }
+        },
+        "kryteria_oceny": {
+            "wyklad": [],
+            "cwiczenia_laboratorium": [
+                "prezentacja projektu i dokumentacji",
+                "ocena sporządzonego oprogramowania"
+            ]
+        },
+        "przedmioty_wprowadzajace": [
+            {
+                "nazwa": "Programowanie aplikacji internetowych",
+                "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+            }
+        ],
+        "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia gier i aplikacji interaktywnych 3D z wykorzystaniem silnika Unity oraz języka C#. Studenci poznają architekturę silnika, pracę z obiektami sceny, komponentami, systemem fizyki oraz podstawami interakcji użytkownika. Zajęcia mają charakter praktyczny i przygotowują do samodzielnej realizacji prostych projektów 3D, również z myślą o platformach mobilnych.",
+        "literatura": {
+            "podstawowa": {
+                "pozycje": [
+                    "Dokumentacja Unity: https://docs.unity.com",
+                    "Unity Learn – oficjalne materiały edukacyjne",
+                    "Dokumentacja C# (Microsoft Learn)"
+                ]
+            },
+            "uzupelniajaca": {
+                "pozycje": [
+                    "Jesse Schell, The Art of Game Design (wybrane rozdziały)",
+                    "Will Goldstone, Unity Game Development Essentials"
+                ]
+            }
+        },
+        "efekty_ksztalcenia": {
+            "wiedza": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji i gier 3D w Unity, w tym sceny, obiekty, komponenty, system fizyki oraz cykl życia aplikacji.",
+            "umiejetnosci": "Student potrafi zaprojektować i zaimplementować prostą grę lub aplikację 3D w Unity, tworzyć i konfigurować sceny, skrypty w C#, obsługiwać interakcje użytkownika oraz uruchamiać projekt na wybranej platformie.",
+            "kompetencje_spoleczne": "Student potrafi samodzielnie planować realizację projektu interaktywnego, pracować z dokumentacją techniczną oraz dbać o jakość i czytelność kodu i zasobów projektu."
+        },
+        "tresci_programowe": [
+            {
+                "nr_zajec": 1,
+                "wyklad": "Wprowadzenie do Unity i silników gier",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 2,
+                "wyklad": "Środowisko Unity Editor i struktura projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 3,
+                "wyklad": "Sceny, obiekty i komponenty",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 4,
+                "wyklad": "Skrypty w C# i cykl życia obiektów",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 5,
+                "wyklad": "Transformacje, kamery i oświetlenie",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 6,
+                "wyklad": "Podstawy fizyki i kolizji",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 7,
+                "wyklad": "Sterowanie i interakcja użytkownika",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 8,
+                "wyklad": "Zarządzanie zasobami i prefabrykaty",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 9,
+                "wyklad": "Debugowanie i testowanie projektu",
+                "cwiczenia": ""
+            },
+            {
+                "nr_zajec": 10,
+                "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+                "cwiczenia": ""
+            }
+        ],
+        "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basics of creating games and interactive 3D applications using the Unity engine and the C# language. Students learn the architecture of the engine, working with scene objects, components, the physics system, and the basics of user interaction. The classes are practical in nature and prepare students to independently complete simple 3D projects, also with mobile platforms in mind.",
+        "informacje_dodatkowe": "",
+        "rynek_pracy": {
+            "dziedzina_gospodarki": "",
+            "zawody": "",
+            "prace_dyplomowe": []
+        },
+        "wymagania_laboratorium": {
+            "pc_params": [],
+            "software": [],
+            "wyposazenie_dodatkowe": []
+        }
+    }
+}
