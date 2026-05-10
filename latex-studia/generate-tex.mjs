@@ -8,13 +8,19 @@ import { fileURLToPath } from 'url';
 const __dir = dirname(fileURLToPath(import.meta.url));
 const BASE  = `${__dir}/../public/assets`;
 
-const programS  = JSON.parse(readFileSync(`${BASE}/program.json`, 'utf8'));
-const programN  = JSON.parse(readFileSync(`${BASE}/niestacjonarne/program.json`, 'utf8'));
-const elSpecS   = JSON.parse(readFileSync(`${BASE}/electives-specializations.json`, 'utf8'));
-const elSpecN   = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-specializations.json`, 'utf8'));
-const elOthS    = JSON.parse(readFileSync(`${BASE}/electives-other.json`, 'utf8'));
-const elOthN    = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-other.json`, 'utf8'));
-const efekty    = JSON.parse(readFileSync(`${BASE}/efekty_ksztalcenia.json`, 'utf8'));
+const programS    = JSON.parse(readFileSync(`${BASE}/program.json`, 'utf8'));
+const programN    = JSON.parse(readFileSync(`${BASE}/niestacjonarne/program.json`, 'utf8'));
+const programSen  = JSON.parse(readFileSync(`${BASE}/program-en.json`, 'utf8'));
+const programNen  = JSON.parse(readFileSync(`${BASE}/niestacjonarne/program-en.json`, 'utf8'));
+const elSpecS     = JSON.parse(readFileSync(`${BASE}/electives-specializations.json`, 'utf8'));
+const elSpecN     = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-specializations.json`, 'utf8'));
+const elSpecSen   = JSON.parse(readFileSync(`${BASE}/electives-specializations-en.json`, 'utf8'));
+const elSpecNen   = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-specializations-en.json`, 'utf8'));
+const elOthS      = JSON.parse(readFileSync(`${BASE}/electives-other.json`, 'utf8'));
+const elOthN      = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-other.json`, 'utf8'));
+const elOthSen    = JSON.parse(readFileSync(`${BASE}/electives-other-en.json`, 'utf8'));
+const elOthNen    = JSON.parse(readFileSync(`${BASE}/niestacjonarne/electives-other-en.json`, 'utf8'));
+const efekty      = JSON.parse(readFileSync(`${BASE}/efekty_ksztalcenia.json`, 'utf8'));
 
 // --- Wczytaj opcjonalny dodatek AI (ai-program.json) -----------------
 let aiProgram = null;
@@ -647,6 +653,467 @@ ${specjalizacje(elSpec)}
 `;
 }
 
+// ── English helpers ───────────────────────────────────────────────────────────
+function formLabelEn(f) {
+  if (f === 'EZ') return 'exam';
+  if (f === 'Z')  return 'credit';
+  return f || '';
+}
+
+const MNISW_OPIS_EN = {
+  'P6S_WG': 'General knowledge -- foundations of exact and technical sciences relevant to computer science',
+  'P6S_WK': 'Field knowledge -- theories, principles and methods specific to computer science',
+  'P6S_UW': 'Skills -- applying knowledge to solve computer science problems',
+  'P6S_UK': 'Skills -- communicating within the field of specialisation',
+  'P6S_UO': 'Skills -- planning and organising individual and team work',
+  'P6S_UU': 'Skills -- self-directed lifelong learning',
+  'P6S_KK': 'Competences -- critical assessment of possessed knowledge',
+  'P6S_KO': 'Competences -- responsible fulfilment of professional roles',
+  'P6S_KR': 'Competences -- defining and accepting professional responsibility',
+  'InzA_W': 'Engineering knowledge -- design and development methodologies for systems (eng.)',
+  'InzA_U': 'Engineering skills -- design and implementation of systems (eng.)',
+};
+
+function efektySectionEn(ef) {
+  const ec = ef.efekty_ksztalcenia;
+  const mnisw = getUniqueMnisw(ec);
+  let out = '';
+
+  if (mnisw.length > 0) {
+    out += `\\subsection*{Reference to the Polish Qualifications Framework (PQF)}\n\n`;
+    out += `{\\scriptsize\n\\begin{longtable}{m{2.8cm}m{12cm}}\n`;
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}PQF Code}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Characteristic}} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}PQF Code}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Characteristic}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+    mnisw.forEach((m, idx) => {
+      const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+      out += `${bg}${esc(m.kod)} & ${esc(MNISW_OPIS_EN[m.kod] || '---')} \\\\\n`;
+    });
+    out += `\\bottomrule\n\\end{longtable}}\n\n\\bigskip\n`;
+  }
+
+  out += `\\subsection*{K -- Knowledge}\n\n${efektyListEn(ec.wiedza, 'K')}`;
+  out += `\\subsection*{S -- Skills}\n\n${efektyListEn(ec.umiejetnosci, 'S')}`;
+  out += `\\subsection*{C -- Social Competences}\n\n${efektyListEn(ec.kompetencje_spoleczne, 'C')}`;
+  return out;
+}
+
+function efektyListEn(items, prefix) {
+  let out = `{\\scriptsize\n\\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}\n`;
+  out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Code}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Learning outcome}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}PQF codes}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Courses}} \\\\\n\\midrule\\thdend\n`;
+  out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed} {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Code}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Learning outcome}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}PQF codes}} & {\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}Courses}} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+  items.forEach((item, i) => {
+    const kod  = item.kod_efektu || `${prefix}${String(i+1).padStart(2,'0')}`;
+    const bg   = (i % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+    const prk  = item.mnsiw
+      ? [...new Map(item.mnsiw.map(m => [m.kod + (m.inzynierskie ? '_inz' : ''), m])).values()]
+          .map(m => m.inzynierskie ? `${esc(m.kod)} {\\scriptsize (eng.)}` : esc(m.kod))
+          .join(', ')
+      : '';
+    const kodyPrzedm = item.kody ? item.kody.map(k => esc(k)).join(', ') : '';
+    out += `${bg}${esc(kod)} & ${esc(item.tresc)} & {\\scriptsize ${prk}} & {\\scriptsize ${kodyPrzedm}} \\\\\n`;
+  });
+  out += `\\bottomrule\n\\end{longtable}}\n\n`;
+  return out;
+}
+
+function planStudiowEn(semesters, elOth) {
+  const groupMap = {};
+  for (const g of (elOth.groups || [])) groupMap[g.id] = g;
+  let out = '';
+
+  for (const sem of semesters) {
+    const printed0 = new Set();
+    let rowCount = 2;
+    for (const subj of sem.subjects) {
+      if (subj.type === 'O' && subj.electiveGroup) {
+        if (!printed0.has(subj.electiveGroup)) { printed0.add(subj.electiveGroup); rowCount++; }
+      } else { rowCount++; }
+    }
+    const neededLines = Math.ceil(rowCount * 1.9) + 3;
+    if (sem.semester === 5 || sem.semester === 7) {
+      out += `\\clearpage\n`;
+    } else {
+      out += `\\Needspace{${neededLines}\\baselineskip}\n`;
+    }
+    out += `\\subsection*{Semester ${sem.semester}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{Semester ${sem.semester}}\n\n`;
+    out += `{\\scriptsize\n\\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}\n`;
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
+    out += `${hdr('Course name')} & ${hdr('Type')} & ${hdr('Code')} & ${hdr('Lec.')} & ${hdr('Tut.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    out += `${hdr('Course name')} & ${hdr('Type')} & ${hdr('Code')} & ${hdr('Lec.')} & ${hdr('Tut.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+
+    const printed = new Set();
+    let rowIdx = 0;
+
+    for (const subj of sem.subjects) {
+      const grpId = subj.electiveGroup;
+      const grp   = grpId ? groupMap[grpId] : null;
+      rowIdx++;
+      const zebraColor = (rowIdx % 2 === 0) ? 'tableRowAlt' : 'tableRowLight';
+
+      if (subj.type === 'O' && grpId && !printed.has(grpId)) {
+        printed.add(grpId);
+        const gs   = sem.subjects.filter(s => s.electiveGroup === grpId);
+        const tL   = gs.reduce((a,s)=>a+(s.lecture||0),0);
+        const tT   = gs.reduce((a,s)=>a+(s.tutorial||0),0);
+        const tLb  = gs.reduce((a,s)=>a+(s.lab||0),0);
+        const tE   = gs.reduce((a,s)=>a+(s.ects||0),0);
+        const form = gs[0]?.form || '-';
+        const rawLbl = grp ? grp.label : subj.name;
+        const lbl    = esc(trimLabel(rawLbl));
+        const typ    = grpId.startsWith('SPEC') ? 'specialisation' : 'elective';
+        out += `\\rowcolor{tableElective} ${lbl} & {\\scriptsize ${typ}} & -- & ${tL} & ${tT} & ${tLb} & {\\scriptsize ${esc(formLabelEn(form))}} & ${tE} \\\\\n`;
+      } else if (subj.type === 'O' && !grpId) {
+        const bg = zebraColor ? `\\rowcolor{${zebraColor}} ` : '';
+        out += `${bg}${esc(subj.name)} & {\\scriptsize elective} & ${esc(subj.code)} & ${subj.lecture||0} & ${subj.tutorial||0} & ${subj.lab||0} & {\\scriptsize ${esc(formLabelEn(subj.form))}} & ${subj.ects||0} \\\\\n`;
+      } else if (subj.type !== 'O') {
+        const bg = zebraColor ? `\\rowcolor{${zebraColor}} ` : '';
+        out += `${bg}${esc(subj.name)} & {\\scriptsize compulsory} & ${esc(subj.code)} & ${subj.lecture||0} & ${subj.tutorial||0} & ${subj.lab||0} & {\\scriptsize ${esc(formLabelEn(subj.form))}} & ${subj.ects||0} \\\\\n`;
+      }
+    }
+    const s = sem.summary;
+    out += `\\midrule[\\heavyrulewidth]\n\\rowcolor{tableSummary} \\textbf{Semester ${sem.semester} total} & & & \\textbf{${s.lecture}} & \\textbf{${s.tutorial}} & \\textbf{${s.lab}} & & \\textbf{${s.ects}} \\\\\n\\bottomrule\n`;
+    out += `\\end{longtable}}\n\n`;
+  }
+
+  const tL  = semesters.reduce((a,s)=>a+s.summary.lecture,0);
+  const tT  = semesters.reduce((a,s)=>a+s.summary.tutorial,0);
+  const tLb = semesters.reduce((a,s)=>a+s.summary.lab,0);
+  const tE  = semesters.reduce((a,s)=>a+s.summary.ects,0);
+  out += `\\subsection*{Summary}\n\\addcontentsline{toc}{subsection}{Study plan summary}\n\n`;
+  out += `\\begin{tabular}{lrrrr}\n\\toprule\n`;
+  out += `\\rowcolor{pjatkRed} {\\color{white}} & {\\color{white}\\textbf{Lectures}} & {\\color{white}\\textbf{Tutorials}} & {\\color{white}\\textbf{Laboratories}} & {\\color{white}\\textbf{ECTS}} \\\\\n\\midrule\n`;
+  out += `\\textbf{TOTAL} & \\textbf{${tL}} & \\textbf{${tT}} & \\textbf{${tLb}} & \\textbf{${tE}} \\\\\n\\bottomrule\n\\end{tabular}\n\n`;
+  return out;
+}
+
+function specjalizacjeEn(elSpec) {
+  if (!elSpec || !elSpec.specializations || elSpec.specializations.length === 0) return '';
+  let out = '';
+  for (const sp of elSpec.specializations) {
+    out += `\\subsection*{${esc(sp.name)}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(sp.name)}}\n\n`;
+    out += `{\\scriptsize\n\\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
+    out += `${hdr('Course')} & ${hdr('Sem.')} & ${hdr('Lec.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    out += `${hdr('Course')} & ${hdr('Sem.')} & ${hdr('Lec.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+    (sp.items || []).forEach((item, idx) => {
+      const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+      out += `${bg}${esc(item.name)} & ${item.semester||''} & ${item.lecture||0} & ${item.lab||0} & {\\scriptsize ${esc(formLabelEn(item.form))}} & ${item.ects||0} \\\\\n`;
+    });
+    out += `\\bottomrule\n\\end{longtable}}\n\n`;
+  }
+  return out;
+}
+
+function obieralneEn(elOth) {
+  if (!elOth || !elOth.groups || elOth.groups.length === 0) return '';
+  const SKIP = new Set([
+    'SPEC_5','SPEC_6','SPEC_7','SPEC_8',
+    'PRZ1','PRZ2','PSEM','BYT',
+    'LEK2','LEK3','LEK4','LEK5',
+  ]);
+  let out = '';
+  for (const grp of (elOth.groups || [])) {
+    if (SKIP.has(grp.id)) continue;
+    if (!grp.items || grp.items.length === 0) continue;
+    const label = grp.label || grp.id;
+    out += `\\subsection*{${esc(label)}}\n`;
+    out += `\\addcontentsline{toc}{subsection}{${esc(trimLabel(label))}}\n\n`;
+    out += `{\\scriptsize\n\\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}\n`;
+    out += `\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    const hdr = (t) => `{\\color{white}\\footnotesize\\textbf{\\vphantom{Ag}${t}}}`;
+    out += `${hdr('Course')} & ${hdr('Code')} & ${hdr('Lec.')} & ${hdr('Tut.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n`;
+    out += `\\endfirsthead\n\\thdrule\\toprule\n\\rowcolor{pjatkRed}\n`;
+    out += `${hdr('Course')} & ${hdr('Code')} & ${hdr('Lec.')} & ${hdr('Tut.')} & ${hdr('Lab.')} & ${hdr('Assessment')} & ${hdr('ECTS')} \\\\\n\\midrule\\thdend\n\\endhead\n`;
+    grp.items.forEach((item, idx) => {
+      const bg = (idx % 2 === 1) ? `\\rowcolor{tableRowAlt} ` : `\\rowcolor{tableRowLight} `;
+      out += `${bg}${esc(item.name)} & ${esc(item.code||'--')} & ${item.lecture||0} & ${item.tutorial||0} & ${item.lab||0} & {\\scriptsize ${esc(formLabelEn(item.form))}} & ${item.ects||0} \\\\\n`;
+    });
+    out += `\\bottomrule\n\\end{longtable}}\n\n`;
+  }
+  return out;
+}
+
+function charTabelaEn(isSt, semCount, semesters, elOth) {
+  const forma = isSt ? 'Full-time studies' : 'Part-time studies';
+
+  const totalH = semesters.reduce((a,s) => a + s.summary.lecture + s.summary.tutorial + s.summary.lab, 0);
+
+  const humCodes = new Set(['HKJ','WDZ','SAI']);
+  const humGroups = new Set(
+    (elOth.groups||[]).filter(g => g.id.startsWith('HUM')).map(g => g.id)
+  );
+  let ectsHum = 0;
+  for (const s of semesters) {
+    for (const subj of s.subjects) {
+      if (humCodes.has(subj.code)) { ectsHum += subj.ects||0; continue; }
+    }
+  }
+  for (const g of (elOth.groups||[])) {
+    if (g.id.startsWith('HUM') && g.items && g.items.length > 0) { ectsHum += 2; }
+  }
+
+  const totalKontakt = totalH;
+
+  let ectsPrakt = 0;
+  const pracGroups = new Set();
+  for (const s of semesters) {
+    for (const subj of s.subjects) {
+      if ((subj.lab||0) > 0 || subj.code === 'PRO') {
+        if (subj.electiveGroup) {
+          if (!pracGroups.has(subj.electiveGroup)) {
+            pracGroups.add(subj.electiveGroup);
+            ectsPrakt += subj.ects||0;
+          }
+        } else {
+          ectsPrakt += subj.ects||0;
+        }
+      }
+    }
+  }
+  ectsPrakt = Math.ceil(ectsPrakt);
+
+  const row = (label, value) =>
+    `  {\\small ${label}} & {\\small\\textbf{${value}}} \\\\\n`;
+
+  let out = `{\\renewcommand{\\arraystretch}{1.4}\n`;
+  out += `\\begin{tabularx}{\\textwidth}{@{}Xp{8.5cm}@{}}\n`;
+  out += `\\toprule\n`;
+  out += row('Programme name:', 'Computer Science');
+  out += row('Level:', 'First-cycle (Bachelor with Engineering title)');
+  out += row('Profile:', 'Practical');
+  out += row('Mode:', forma);
+  out += row('Language of instruction:', 'Polish');
+  out += row('Discipline:', 'Information and Communication Technology in Technical and Engineering Sciences');
+  out += `\\midrule\n`;
+  out += row('Number of semesters:', `${semCount}`);
+  out += row('ECTS credits required to graduate:', '210');
+  out += row('Professional title conferred:', 'Engineer');
+  out += `\\midrule\n`;
+  out += row('Total number of contact hours:', `${totalH}`);
+  out += row('ECTS credits in humanities/social sciences:', '12');
+  out += row('Contact hours with academic staff:', `${totalKontakt}`);
+  out += row('ECTS credits assigned to practical-skills courses:', `${ectsPrakt}`);
+  out += row('ECTS credits obtained through elective courses:', '66');
+  out += `\\bottomrule\n`;
+  out += `\\end{tabularx}}\n\n\\bigskip\n`;
+  return out;
+}
+
+function buildDocumentEn(tryb, semesters, elSpec, elOth, ef) {
+  const isSt      = tryb === 'stacjonarny';
+  const formaEN   = isSt ? 'full-time' : 'part-time';
+  const semCount  = semesters.length;
+  const totalEcts = semesters.reduce((a,s) => a + s.summary.ects, 0);
+  const logoPdf   = '../latex/PJATK_pl_poziom_1';
+  const sygnetPdf = '../latex/PJATK_pl_sygnet';
+
+  return `% ============================================================
+%  Study Programme -- ${formaEN}  PJATK Gdansk Branch
+% ============================================================
+\\documentclass[12pt,a4paper]{article}
+
+\\usepackage[T1]{fontenc}
+\\usepackage[utf8]{inputenc}
+\\usepackage[english]{babel}
+\\usepackage{lmodern}
+\\usepackage[scaled=1.0]{helvet}
+\\renewcommand{\\familydefault}{\\sfdefault}
+\\usepackage{microtype}
+\\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\\usepackage{xcolor}
+\\usepackage{graphicx}
+\\usepackage{booktabs}
+\\usepackage{tabularx}
+\\usepackage{longtable}
+\\usepackage{multirow}
+\\usepackage{array}
+\\usepackage{colortbl}
+\\usepackage{enumitem}
+\\usepackage{fancyhdr}
+\\usepackage{titlesec}
+\\usepackage{mdframed}
+\\usepackage{eso-pic}
+\\usepackage{tikz}
+\\usepackage{tocloft}
+\\usepackage{needspace}
+\\usepackage[colorlinks=true,linkcolor=red!70!black,urlcolor=red!70!black]{hyperref}
+
+\\AtBeginDocument{\\hypersetup{linkcolor=black}}
+
+\\definecolor{pjatkRed}{RGB}{220,38,38}
+\\definecolor{pjatkGray}{RGB}{80,80,80}
+\\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\\definecolor{tableHeader}{RGB}{220,223,230}
+\\definecolor{tableRowLight}{RGB}{242,243,246}
+\\definecolor{tableRowAlt}{RGB}{205,209,218}
+\\definecolor{tableElective}{RGB}{255,235,235}
+\\definecolor{tableChild}{RGB}{255,245,245}
+\\definecolor{tableSummary}{RGB}{195,199,210}
+\\definecolor{descBorder}{RGB}{220,38,38}
+
+\\setlength{\\extrarowheight}{4pt}
+\\renewcommand{\\arraystretch}{1.35}
+
+\\newcommand{\\thdrule}{\\noalign{\\global\\setlength{\\extrarowheight}{0pt}}}
+\\newcommand{\\thdend}{\\noalign{\\global\\setlength{\\extrarowheight}{4pt}}}
+
+\\setlength{\\headheight}{14pt}
+\\pagestyle{fancy}\\fancyhf{}
+\\renewcommand{\\headrulewidth}{0.4pt}
+\\renewcommand{\\footrulewidth}{0.4pt}
+\\fancyhead[L]{\\small\\textcolor{pjatkGray}{PJATK -- Gdansk Branch \\textbar\\ Computer Science}}
+\\fancyhead[R]{\\small\\textcolor{pjatkGray}{Study Programme -- ${formaEN}}}
+\\fancyfoot[C]{\\small\\thepage}
+
+\\titleformat{\\section}{\\large\\bfseries\\color{pjatkRed}}{\\thesection.}{0.5em}{}
+  [\\color{pjatkRed}\\rule{\\linewidth}{0.8pt}]
+\\titleformat{\\subsection}{\\normalsize\\bfseries\\color{pjatkGray}}{\\thesubsection.}{0.5em}{}
+\\setlist{noitemsep,topsep=3pt,parsep=2pt}
+
+\\newmdenv[linecolor=pjatkRed,linewidth=1.2pt,backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=8pt,
+  innerbottommargin=8pt,roundcorner=4pt]{infobox}
+
+% =============================================================
+\\begin{document}
+
+\\AddToShipoutPictureBG{%
+  \\begin{tikzpicture}[remember picture,overlay]
+    \\node[opacity=0.35,anchor=south] at (current page.south){%
+      \\includegraphics[width=10cm]{${sygnetPdf}}};
+  \\end{tikzpicture}}
+
+\\begin{center}
+  \\includegraphics[height=2cm]{${logoPdf}}\\\\[0.8cm]
+  {\\LARGE\\bfseries\\color{pjatkRed} STUDY PROGRAMME}\\\\[0.8cm]
+\\end{center}
+
+\\begin{infobox}
+\\begin{tabularx}{\\textwidth}{@{}lX@{}}
+  \\textbf{Institution:}              & Polish-Japanese Academy of Information Technology \\\\[3pt]
+  \\textbf{Faculty / Branch:}         & Faculty of Information Technology, Gdansk Branch \\\\[3pt]
+  \\textbf{Programme / Profile:}      & Computer Science / practical \\\\[3pt]
+  \\textbf{Level:}                    & first-cycle (engineering) \\\\[3pt]
+  \\textbf{Mode:}                     & ${formaEN} \\\\[3pt]
+  \\textbf{Number of semesters:}      & ${semCount} \\\\[3pt]
+  \\textbf{Language of instruction:}  & Polish \\\\[3pt]
+  \\textbf{Total ECTS credits:}       & ${totalEcts} + 32 (work placement) \\\\[3pt]
+  \\textbf{Academic year:}            & 2026/2027 \\\\
+\\end{tabularx}
+\\end{infobox}
+
+\\vspace{0.6cm}
+\\begin{mdframed}[linecolor=pjatkGray,linewidth=0.6pt,backgroundcolor=white,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=6pt,innerbottommargin=6pt]
+{\\small\\textbf{Legal basis:}\\\\[4pt]
+Art.~53 and Art.~67 of the Act -- Law on Higher Education and Science of 20 July 2018 (Journal of Laws 2018, item~1668), the Regulation of the Minister of Science and Higher Education of 27 September 2018 on higher education studies, and the Regulation of the Minister of Science and Higher Education of 14 November 2018 on second-level characteristics of learning outcomes for qualifications at levels 6--8 of the Polish Qualifications Framework.}
+\\end{mdframed}
+
+\\vspace{1cm}
+\\thispagestyle{empty}
+\\newpage
+\\setcounter{page}{1}
+
+\\tableofcontents
+\\newpage
+
+% =============================================================
+\\section{Programme characteristics}
+
+${charTabelaEn(isSt, semCount, semesters, elOth)}
+
+\\newpage
+
+The \\textbf{Computer Science} programme at the Gdansk Branch of the Polish-Japanese Academy of Information Technology (PJATK) has a \\textbf{practical} profile and lasts \\textbf{${semCount} semesters}. Graduates are awarded the professional title of \\textbf{Engineer of Computer Science}.
+
+\\subsection{Objectives and scope of education}
+
+The aim of the programme is to equip students with the knowledge, skills and social competences necessary for independently designing, developing and maintaining information systems. The curriculum covers, among other areas: object-oriented and functional programming, databases, computer networks, operating systems, artificial intelligence, computer graphics, information security, and project management.
+
+\\subsection{Admission requirements}
+
+Applicants are required to hold a secondary school leaving certificate (\\textit{matura}).
+
+\\subsection{Graduation requirements}
+
+Students must complete all courses listed in the study plan, obtain at least \\textbf{210 ECTS credits}, and successfully defend their engineering thesis.
+
+\\subsection{Specialisations}
+
+Within the programme, each student chooses one of five specialisations:
+\\begin{itemize}
+  \\item Software Architecture and DevOps Technologies
+  \\item Cybersecurity
+  \\item Computer Game Engineering
+  \\item Artificial Intelligence
+  \\item Internet of Things
+\\end{itemize}
+
+\\newpage
+
+% =============================================================
+\\section{Programme learning outcomes}
+
+The tables below present the full set of learning outcomes defined in the Regulation of the Minister of Science and Higher Education of 14 November 2018 on second-level characteristics of learning outcomes for qualifications at levels 6--8 of the Polish Qualifications Framework, issued pursuant to Art.~68(3) of the Act, setting out the education standards for the study programme presented herein.
+
+${efektySectionEn(ef)}
+
+\\newpage
+
+% =============================================================
+\\section{Study plan}
+
+\\bigskip
+
+${planStudiowEn(semesters, elOth)}
+
+\\newpage
+
+% =============================================================
+\\section{Work placement}
+
+\\subsection*{Scope, rules and form of work placement}
+
+All first-cycle Computer Science students are required to complete a work placement of \\textbf{720 hours (960 academic hours)}. The placement is assigned \\textbf{32 ECTS credits}.
+
+Placements may be completed during the academic year, in Poland or abroad, provided they do not interfere with studies. Students may use offers posted on the Academic Career Office portal or propose their own employer, subject to approval. The nature of the placement must be consistent with the curriculum and enable the achievement of the defined learning outcomes.
+
+Placements may be paid or unpaid. The Academy does not cover any costs related to their organisation.
+
+The person responsible for verifying and signing off placements on behalf of PJATK is the \\textbf{Rector's Representative for Student Placements}.
+
+Settlement is based on a placement report and supplementary attachments. Paid employment, internships or volunteering may be counted as a placement if the duties performed enable the achievement of the defined learning outcomes and the student holds student status during that period.
+
+Placement settlement documents must be submitted via the \\textit{Placements} module in the GAKKO system within the relevant settlement deadline before the thesis defence. Placements are not credited if formal requirements are not met.
+
+Detailed information on work placements can be found in the \\textbf{Student Placement Regulations}.
+
+\\newpage
+
+% =============================================================
+\\section{Elective courses}
+
+${obieralneEn(elOth)}
+
+\\newpage
+
+% =============================================================
+\\section{Specialisations}
+
+Each student chooses one specialisation for the entire duration of their studies. Specialisation courses are delivered in the semesters indicated in the tables below.
+
+${specjalizacjeEn(elSpec)}
+
+\\end{document}
+`;
+}
+
 // --- Zapis z dodatkiem AI: dołączamy wygenerowany rozdział przed \n\\end{document}
 function injectAI(tex) {
   if (!aiProgram) return tex;
@@ -656,11 +1123,14 @@ function injectAI(tex) {
   return tex.replace(marker, aiTex + '\n' + marker);
 }
 
-const texS = injectAI(buildDocument('stacjonarny',    programS.semesters, elSpecS, elOthS, efekty));
-const texN = injectAI(buildDocument('niestacjonarny', programN.semesters, elSpecN, elOthN, efekty));
+const texS   = injectAI(buildDocument('stacjonarny',    programS.semesters,   elSpecS,   elOthS,   efekty));
+const texN   = injectAI(buildDocument('niestacjonarny', programN.semesters,   elSpecN,   elOthN,   efekty));
+const texSen =          buildDocumentEn('stacjonarny',  programSen.semesters, elSpecSen, elOthSen, efekty);
+const texNen =          buildDocumentEn('niestacjonarny', programNen.semesters, elSpecNen, elOthNen, efekty);
 
-// Ensure no literal backslash-n sequences remain in output (they should be real newlines)
-writeFileSync(`${__dir}/program_stacjonarne.tex`,    texS, 'utf8');
-writeFileSync(`${__dir}/program_niestacjonarne.tex`, texN, 'utf8');
+writeFileSync(`${__dir}/program_stacjonarne.tex`,        texS,   'utf8');
+writeFileSync(`${__dir}/program_niestacjonarne.tex`,     texN,   'utf8');
+writeFileSync(`${__dir}/program_stacjonarne_en.tex`,     texSen, 'utf8');
+writeFileSync(`${__dir}/program_niestacjonarne_en.tex`,  texNen, 'utf8');
 
-process.stdout.write('OK: program_stacjonarne.tex\nOK: program_niestacjonarne.tex\n');
+process.stdout.write('OK: program_stacjonarne.tex\nOK: program_niestacjonarne.tex\nOK: program_stacjonarne_en.tex\nOK: program_niestacjonarne_en.tex\n');

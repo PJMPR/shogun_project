@@ -114,11 +114,16 @@ function Compile-Tex([string]$texFile, [string]$outD) {
     }
 }
 
-# 2) Kompiluj
+# 2) Kompiluj (PL)
 if (-not (Compile-Tex (Join-Path $root 'program_stacjonarne.tex') $outDir)) { Write-Host "Kompilacja program_stacjonarne.tex nie powiodla sie." -ForegroundColor Red; exit 6 }
 if (-not (Compile-Tex (Join-Path $root 'program_niestacjonarne.tex') $outDir)) { Write-Host "Kompilacja program_niestacjonarne.tex nie powiodla sie." -ForegroundColor Red; exit 7 }
 
-# 3) Kopiuj PDF-y do public/assets/files
+# 3) Kompiluj (EN)
+Write-Host "`n==> Kompilacja wersji anglojezycznych..." -ForegroundColor Cyan
+if (-not (Compile-Tex (Join-Path $root 'program_stacjonarne_en.tex') $outDir)) { Write-Host "Kompilacja program_stacjonarne_en.tex nie powiodla sie." -ForegroundColor Red; exit 8 }
+if (-not (Compile-Tex (Join-Path $root 'program_niestacjonarne_en.tex') $outDir)) { Write-Host "Kompilacja program_niestacjonarne_en.tex nie powiodla sie." -ForegroundColor Red; exit 9 }
+
+# 4) Kopiuj PDF-y do public/assets/files
 $publicFilesDir = Join-Path $root '..\public\assets\files' -Resolve
 New-Item -ItemType Directory -Force -Path $publicFilesDir | Out-Null
 

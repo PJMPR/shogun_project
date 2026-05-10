@@ -1,0 +1,867 @@
+% ============================================================
+%  Study Programme -- part-time  PJATK Gdansk Branch
+% ============================================================
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{tocloft}
+\usepackage{needspace}
+\usepackage[colorlinks=true,linkcolor=red!70!black,urlcolor=red!70!black]{hyperref}
+
+\AtBeginDocument{\hypersetup{linkcolor=black}}
+
+\definecolor{pjatkRed}{RGB}{220,38,38}
+\definecolor{pjatkGray}{RGB}{80,80,80}
+\definecolor{pjatkLightGray}{RGB}{245,245,245}
+\definecolor{tableHeader}{RGB}{220,223,230}
+\definecolor{tableRowLight}{RGB}{242,243,246}
+\definecolor{tableRowAlt}{RGB}{205,209,218}
+\definecolor{tableElective}{RGB}{255,235,235}
+\definecolor{tableChild}{RGB}{255,245,245}
+\definecolor{tableSummary}{RGB}{195,199,210}
+\definecolor{descBorder}{RGB}{220,38,38}
+
+\setlength{\extrarowheight}{4pt}
+\renewcommand{\arraystretch}{1.35}
+
+\newcommand{\thdrule}{\noalign{\global\setlength{\extrarowheight}{0pt}}}
+\newcommand{\thdend}{\noalign{\global\setlength{\extrarowheight}{4pt}}}
+
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{pjatkGray}{PJATK -- Gdansk Branch \textbar\ Computer Science}}
+\fancyhead[R]{\small\textcolor{pjatkGray}{Study Programme -- part-time}}
+\fancyfoot[C]{\small\thepage}
+
+\titleformat{\section}{\large\bfseries\color{pjatkRed}}{\thesection.}{0.5em}{}
+  [\color{pjatkRed}\rule{\linewidth}{0.8pt}]
+\titleformat{\subsection}{\normalsize\bfseries\color{pjatkGray}}{\thesubsection.}{0.5em}{}
+\setlist{noitemsep,topsep=3pt,parsep=2pt}
+
+\newmdenv[linecolor=pjatkRed,linewidth=1.2pt,backgroundcolor=pjatkLightGray,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=8pt,
+  innerbottommargin=8pt,roundcorner=4pt]{infobox}
+
+% =============================================================
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[opacity=0.35,anchor=south] at (current page.south){%
+      \includegraphics[width=10cm]{../latex/PJATK_pl_sygnet}};
+  \end{tikzpicture}}
+
+\begin{center}
+  \includegraphics[height=2cm]{../latex/PJATK_pl_poziom_1}\\[0.8cm]
+  {\LARGE\bfseries\color{pjatkRed} STUDY PROGRAMME}\\[0.8cm]
+\end{center}
+
+\begin{infobox}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Institution:}              & Polish-Japanese Academy of Information Technology \\[3pt]
+  \textbf{Faculty / Branch:}         & Faculty of Information Technology, Gdansk Branch \\[3pt]
+  \textbf{Programme / Profile:}      & Computer Science / practical \\[3pt]
+  \textbf{Level:}                    & first-cycle (engineering) \\[3pt]
+  \textbf{Mode:}                     & part-time \\[3pt]
+  \textbf{Number of semesters:}      & 8 \\[3pt]
+  \textbf{Language of instruction:}  & Polish \\[3pt]
+  \textbf{Total ECTS credits:}       & 178 + 32 (work placement) \\[3pt]
+  \textbf{Academic year:}            & 2026/2027 \\
+\end{tabularx}
+\end{infobox}
+
+\vspace{0.6cm}
+\begin{mdframed}[linecolor=pjatkGray,linewidth=0.6pt,backgroundcolor=white,
+  innerleftmargin=10pt,innerrightmargin=10pt,innertopmargin=6pt,innerbottommargin=6pt]
+{\small\textbf{Legal basis:}\\[4pt]
+Art.~53 and Art.~67 of the Act -- Law on Higher Education and Science of 20 July 2018 (Journal of Laws 2018, item~1668), the Regulation of the Minister of Science and Higher Education of 27 September 2018 on higher education studies, and the Regulation of the Minister of Science and Higher Education of 14 November 2018 on second-level characteristics of learning outcomes for qualifications at levels 6--8 of the Polish Qualifications Framework.}
+\end{mdframed}
+
+\vspace{1cm}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\tableofcontents
+\newpage
+
+% =============================================================
+\section{Programme characteristics}
+
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{@{}Xp{8.5cm}@{}}
+\toprule
+  {\small Programme name:} & {\small\textbf{Computer Science}} \\
+  {\small Level:} & {\small\textbf{First-cycle (Bachelor with Engineering title)}} \\
+  {\small Profile:} & {\small\textbf{Practical}} \\
+  {\small Mode:} & {\small\textbf{Part-time studies}} \\
+  {\small Language of instruction:} & {\small\textbf{Polish}} \\
+  {\small Discipline:} & {\small\textbf{Information and Communication Technology in Technical and Engineering Sciences}} \\
+\midrule
+  {\small Number of semesters:} & {\small\textbf{8}} \\
+  {\small ECTS credits required to graduate:} & {\small\textbf{210}} \\
+  {\small Professional title conferred:} & {\small\textbf{Engineer}} \\
+\midrule
+  {\small Total number of contact hours:} & {\small\textbf{1512}} \\
+  {\small ECTS credits in humanities/social sciences:} & {\small\textbf{12}} \\
+  {\small Contact hours with academic staff:} & {\small\textbf{1512}} \\
+  {\small ECTS credits assigned to practical-skills courses:} & {\small\textbf{119}} \\
+  {\small ECTS credits obtained through elective courses:} & {\small\textbf{66}} \\
+\bottomrule
+\end{tabularx}}
+
+\bigskip
+
+
+\newpage
+
+The \textbf{Computer Science} programme at the Gdansk Branch of the Polish-Japanese Academy of Information Technology (PJATK) has a \textbf{practical} profile and lasts \textbf{8 semesters}. Graduates are awarded the professional title of \textbf{Engineer of Computer Science}.
+
+\subsection{Objectives and scope of education}
+
+The aim of the programme is to equip students with the knowledge, skills and social competences necessary for independently designing, developing and maintaining information systems. The curriculum covers, among other areas: object-oriented and functional programming, databases, computer networks, operating systems, artificial intelligence, computer graphics, information security, and project management.
+
+\subsection{Admission requirements}
+
+Applicants are required to hold a secondary school leaving certificate (\textit{matura}).
+
+\subsection{Graduation requirements}
+
+Students must complete all courses listed in the study plan, obtain at least \textbf{210 ECTS credits}, and successfully defend their engineering thesis.
+
+\subsection{Specialisations}
+
+Within the programme, each student chooses one of five specialisations:
+\begin{itemize}
+  \item Software Architecture and DevOps Technologies
+  \item Cybersecurity
+  \item Computer Game Engineering
+  \item Artificial Intelligence
+  \item Internet of Things
+\end{itemize}
+
+\newpage
+
+% =============================================================
+\section{Programme learning outcomes}
+
+The tables below present the full set of learning outcomes defined in the Regulation of the Minister of Science and Higher Education of 14 November 2018 on second-level characteristics of learning outcomes for qualifications at levels 6--8 of the Polish Qualifications Framework, issued pursuant to Art.~68(3) of the Act, setting out the education standards for the study programme presented herein.
+
+\subsection*{Reference to the Polish Qualifications Framework (PQF)}
+
+{\scriptsize
+\begin{longtable}{m{2.8cm}m{12cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Characteristic}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Characteristic}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} P6S\_KK & Competences -- critical assessment of possessed knowledge \\
+\rowcolor{tableRowAlt} P6S\_KO & Competences -- responsible fulfilment of professional roles \\
+\rowcolor{tableRowLight} P6S\_KR & Competences -- defining and accepting professional responsibility \\
+\rowcolor{tableRowAlt} P6S\_UK & Skills -- communicating within the field of specialisation \\
+\rowcolor{tableRowLight} P6S\_UO & Skills -- planning and organising individual and team work \\
+\rowcolor{tableRowAlt} P6S\_UW & Skills -- applying knowledge to solve computer science problems \\
+\rowcolor{tableRowLight} P6S\_WG & General knowledge -- foundations of exact and technical sciences relevant to computer science \\
+\rowcolor{tableRowAlt} P6S\_WK & Field knowledge -- theories, principles and methods specific to computer science \\
+\bottomrule
+\end{longtable}}
+
+\bigskip
+\subsection*{K -- Knowledge}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} K\_W01 & ma rozszerzoną i pogłębioną więdzę w zakresie matematyki, algebry, analizy matematycznej, geometrii liniowej, statystycznej analizy danych oraz matematyki dyskretnej w zakresie wymaganym dla realizacji złożonych zadań inżynierskich w dziedzinie informatyki & {\scriptsize P6S\_WG} & {\scriptsize MAD, ALG, SAD} \\
+\rowcolor{tableRowAlt} K\_W02 & ma roszerzoną wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki & {\scriptsize P6S\_WG} & {\scriptsize FIZ, ELK} \\
+\rowcolor{tableRowLight} K\_W03 & ma uporządkowaną, podbudowaną teorerycznie wiedzę ogólna w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami i możliwość przenoszenia dobrych praktyk wypracowanych w tych obszarach na grunt informatyki. & {\scriptsize P6S\_WG} & {\scriptsize ELK} \\
+\rowcolor{tableRowAlt} K\_W04 & zna i rozumie podstawowe pojęcia w zakresie konstrukcji programistycznych, rekurencji oraz struktur danych, jak też ich implementacji & {\scriptsize P6S\_WG} & {\scriptsize ASD, MAD, GRK} \\
+\rowcolor{tableRowLight} K\_W05 & ma uporządkowaną i podbudowaną teoretycznie wiedzę w zakresie kluczowych zagadnień z zakresu algorytmów i złożoności obliczeniowej jak również abstrakcyjnych struktur i metod ich implementacji; zna i rozumie zagadnienia nierozstrzygalne i obliczeniowo trudne; zna i rozumie problem weryfikacji poprawności programów & {\scriptsize P6S\_WG} & {\scriptsize ASD, MAD, GRK} \\
+\rowcolor{tableRowAlt} K\_W06 & zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}, P6S\_WK} & {\scriptsize LLP, KIP} \\
+\rowcolor{tableRowLight} K\_W07 & zna i rozumie zaawansowane pojęcia z zakresu kluczowych zagadnień dotyczących systemów operacyjnych -- zasady ich działania, konstrukcji, organizacji współbieżności; zna i rozumie powszechnie stosowane systemy. & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize SOP, UKOS} \\
+\rowcolor{tableRowAlt} K\_W08 & zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize DEV, BYT, UKOS} \\
+\rowcolor{tableRowLight} K\_W09 & zna i rozumie podstawowe pojęcia w zakresie głównych protokołów internetowych, zasad tworzenia bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie podstawowe techniki, wzorce projektowe i technologie towarzyszące wytwarzaniu takich aplikacji & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize TIN, PAI} \\
+\rowcolor{tableRowAlt} K\_W10 & zna i rozumie zaawansowane pojęcia z zakresu programowania, konstrukcji programów, ich implementacji, testowania i uruchamiania, a także ma podstawową wiedzę w zakresie języków, poziomów i paradygmatów programowania, w tym obiektowego; zna i rozumie pojęcia z zakresu aktualnych metod, technik i narzędzi stosowanych podczas tworzenia, testowania i uruchamiania oprogramowania & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize POJ, TIN, PRO} \\
+\rowcolor{tableRowLight} K\_W11 & zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer & {\scriptsize P6S\_WG} & {\scriptsize GRK, ICK} \\
+\rowcolor{tableRowAlt} K\_W12 & zna i rozumie zaawansowane pojęcia w zakresie zagadnień probabilistyki i statystyki oraz sztucznej inteligencji, a także ich zastosowania w praktyce informatycznej; zna i rozumie podstawowe pojecia z zakresu narzędzi wspomagających rozwiązywanie problemów inżynierskich w obszarze tych zagadnień & {\scriptsize P6S\_WG} & {\scriptsize IML, NAI, SAD} \\
+\rowcolor{tableRowLight} K\_W13 & zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień w zarządzania informacją i modelowania danych; zna i rozumie zaawansowane zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma dogłębną znajomość aktualnie stosowanych systemów baz danych & {\scriptsize P6S\_WG, P6S\_WK} & {\scriptsize RBD, BYT} \\
+\rowcolor{tableRowAlt} K\_W14 & zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową, podbudowaną teoretycznie wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma podsawową wiedzę o typowych narzędziach i środowiskach wspomagających; & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}, P6S\_WK} & {\scriptsize BYT, PRO, PRI, ZPR, PAI} \\
+\rowcolor{tableRowLight} K\_W15 & zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi; & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize PRI, BYT, PRO, RTO} \\
+\rowcolor{tableRowAlt} K\_W16 & ma rozszerzoną wiedzę z zakresu walidacji i testowania oprogramowania & {\scriptsize P6S\_WG} & {\scriptsize BYT, PRO, PAI} \\
+\rowcolor{tableRowLight} K\_W17 & zna i rozumie podstawowe pojęcia z zakresu planowania przedsięwzięcia informatycznego, wstępnej oceny ekonomicznej, aspektów społecznych oraz analizy wykonalności & {\scriptsize P6S\_WK} & {\scriptsize PRIN, ZPR, PRO, SAI} \\
+\rowcolor{tableRowAlt} K\_W18 & zna i rozumie zaawansowane pojęcia z zakresu mikrokontrolerów i systemów wbudowanych oraz metodyk ich projektowania; rozumie powiązanie informatyki z problemami automatyki i robotyki oraz potrzebę przenoszenia ich dobrych praktyk na grunt informatyki & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize SWB, KIP, PTT, RTO, PPS} \\
+\rowcolor{tableRowLight} K\_W19 & zna i rozumie podstawowe problemy etyczne, społeczne i zawodowe informatyki, rozumie odpowiedzialność związaną z działalnością w obszarze informatyki; zna i rozumie podstawowe pojęcia z zakresu ochrony własności intelektualnej oraz prawa patentowego i autorskiego; zna i rozumie pozatechniczne aspekty informatyki, powiązanie przedsięwzięć informatycznych z ich otoczeniem i zagrożenia stąd płynące & {\scriptsize P6S\_WK} & {\scriptsize POZ, PRIN, SAI, ZPR} \\
+\rowcolor{tableRowAlt} K\_W20 & zna i rozumie podstawowe pojęcia dotyczące prowadzenia działalności gospodarczej, szczególnie przedsięwzięć informatycznych i rozumie rolę jej innowacyjności; zna i rozumie ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości, szczególnie w zakresie zastosowań rozwiązań informatycznych & {\scriptsize P6S\_WK} & {\scriptsize POZ, PRIN, ZPR} \\
+\rowcolor{tableRowLight} K\_W21 & zna i rozumie zaawansowane pojęcia w zakresie aplikacji internetowych, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize PAI, TIN} \\
+\rowcolor{tableRowAlt} K\_W22 & zna i rozumie zaawansowane pojęcia w zakresie sztucznej inteligencji, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG} & {\scriptsize IML, NAI} \\
+\rowcolor{tableRowLight} K\_W23 & zna i rozumie zaawansowane pojęcia w zakresie cyberbezpieczeństwa, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG, P6S\_WK, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize BSI, AIC, KC} \\
+\rowcolor{tableRowAlt} K\_W24 & zna i rozumie zaawansowane pojęcia w zakresie inżynierii gier komputerowych, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize MUN, SGD, PG1, PG2} \\
+\rowcolor{tableRowLight} K\_W25 & zna i rozumie zaawansowane pojęcia w zakresie grafiki komputerowej, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize GRK, M3D, ICK} \\
+\rowcolor{tableRowAlt} K\_W26 & zna i rozumie zaawansowane pojęcia w zakresie internetu rzeczy, jej problemów, rozwiązań oraz stosowanych aktualnie narzędzi i technologii & {\scriptsize P6S\_WG, P6S\_WG {\scriptsize (eng.)}} & {\scriptsize PTT, RTO, KIP, SWB} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{S -- Skills}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} K\_U01 & potrafi pozyskiwać specjalistyczne informacje z literatury, baz danych, systemów patentowych, Internetu oraz innych źródeł, w języku polskim i angielskim w zakresie informatyki; potrafi dokonywać oceny, krytycznej analizy i syntezy tych informacji, a także wyciągać wnioski oraz formułować i uzasadniać opinie & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize PRO, PJN, COV, HKJ} \\
+\rowcolor{tableRowAlt} K\_U02 & potrafi porozumiewać się z apomocą specjalistycznej terminologii w języku polskim i angielskim przy użyciu różnych technik, w tym narzędzi telekomunikacyjnych i prezentacji multimedialnych, w środowisku zawodowym oraz w innych środowiskach & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize ANG1, ANG2, ANG3} \\
+\rowcolor{tableRowLight} K\_U03 & potrafi przygotować w języku polskim i języku obcym dobrze udokumentowane opracowanie problemów z zakresu informatyki lub dokumentację realizacji zadania inżynierskiego & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize ANG1, ANG2, ANG3, PRO} \\
+\rowcolor{tableRowAlt} K\_U04 & potrafi zaplanować i przeprowadzić proces samokształcenia się, m.in. w celu podnoszenia kompetencji zawodowych; potrafi korzystać z różnych źródeł i technik kształcenia zdalnego dla podnoszenia swoich kwalifikacji & {\scriptsize P6S\_UK} & {\scriptsize PRO, TIN, COV, PJN, M3D, HKJ, ANG1, ANG2, ANG3} \\
+\rowcolor{tableRowLight} K\_U05 & potrafi pracować w zespole; potrafi oszacować czas i koszty potrzebne na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów & {\scriptsize P6S\_UO} & {\scriptsize PRO, ZPR, COV} \\
+\rowcolor{tableRowAlt} K\_U06 & potrafi posługiwać się językiem obcym, w zakresie informatyki, na poziomie zgodnym z wymaganiami określonymi dla poziomu B2 Europejskiego Systemu Opisu Kształcenia Językowego & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize ANG1, ANG2, ANG3} \\
+\rowcolor{tableRowLight} K\_U07 & potrafi zastosować aparat matematyczny do interpretowania pojęć z zakresu informatyki oraz rozwiązywania problemów o charakterze informatycznym & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize ALG, MAD, SAD, GRK} \\
+\rowcolor{tableRowAlt} K\_U08 & potrafi analizować i wyjaśniać obserwowane zjawiska; tworzyć i weryfikować modeli świata rzeczywistego oraz posługiwać się nimi w celu predykcji zdarzeń i stanów; potrafi posłużyć się właściwe dobranymi środowiskami programistycznymi, symulatorami oraz narzędziami wspomagania komputerowego do symulacji, projektowania i analizy prostych systemów & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize FIZ} \\
+\rowcolor{tableRowLight} K\_U09 & potrafi zaplanować i dobrać właściwe metody i urządzenia do przeprowadzenia eksperymentu w postaci pomiaru lub symulacji komputerowej, w celu weryfikacji działania oraz identyfikacji parametrów i właściwości systemu, z zachowaniem zasad BHP & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize FIZ} \\
+\rowcolor{tableRowAlt} K\_U10 & potrafi czytać ze zrozumieniem proste programy celem ich weryfikacji, a także ich pisania i uruchamiania & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize WPR, PRO} \\
+\rowcolor{tableRowLight} K\_U11 & potrafi przeanalizować złożoność algorytmów, wykorzystać podstawowe techniki algorytmicznych z uwzględnieniem ich złożoności; potrafi dobrać i zaimplementować struktury danych adekwatne do rozwiązywanego problemu & {\scriptsize P6S\_UW} & {\scriptsize ASD, GRK, MAD} \\
+\rowcolor{tableRowAlt} K\_U12 & potrafi zaprojektować proste układy sekwencyjne i kombinacyjne, obliczyć reprezentacje liczb całkowitych i rzeczywistych oraz wykonać podstawowe operacji arytmetyczne na tych reprezentacjach, a także pisać proste programy na poziomie asemblera & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize LLP, KIP} \\
+\rowcolor{tableRowLight} K\_U13 & potrafi dobrać system operacyjny i wykorzystywać oferowane przezeń funkcje i możliwości do rozwiązywania klasycznych problemów synchronizacji; potrafi dobrać algorytm szeregowania zadań do specyfiki aplikacji jak też zainstalować i skonfigurować typowy system operacyjny oraz nim administrować & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize SOP, UKOS} \\
+\rowcolor{tableRowAlt} K\_U14 & potrafi zaprojektować, zainstalować i administrować siecią LAN z interfejsami WAN, która umożliwia także realizację kluczowych usług sieciowych z zachowaniem zasad bezpieczeństwa informacji & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize DEV, UKOS, BYT} \\
+\rowcolor{tableRowLight} K\_U15 & potrafi ocenić przydatność różnych podejść programistycznych i związanych z nimi środowisk & {\scriptsize P6S\_UW} & {\scriptsize POJ, WPR, TIN} \\
+\rowcolor{tableRowAlt} K\_U16 & potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize PRO, BYT, PAI} \\
+\rowcolor{tableRowLight} K\_U17 & potrafi operować w oknie aplikacji obrazem dwu- i trójwymiarowym (generacja i przetwarzanie) za pomocą standardowego API graficznego oraz stworzenia graficzny interfejs użytkownika, używając właściwych metod i narzędzi, a także przeprowadzić testy użyteczności aplikacji & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize GRK, ICK} \\
+\rowcolor{tableRowAlt} K\_U18 & potrafi sformułować zapytania w języku SQL i skonstruować schemat relacyjnej bazy danych na podstawie modelu ERD lub modelu klas; potrafi tworzyć transakcje w języku programowania i zarządzać bazą danych & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize RBD, BYT} \\
+\rowcolor{tableRowLight} K\_U19 & potrafi zaplanować i zrealizować prosty system oprogramowania zgodnie z metodyką obiektową, posługując się wzorcami programowymi, standardami i dobrymi praktykami programistycznymi; potrafi dobrać model procesu wytwarzania oprogramowania do specyfiki przedsięwzięcia, a także dobrać narzędzia wspomagające budowę oprogramowania & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize PRO, ZPR, BYT} \\
+\rowcolor{tableRowAlt} K\_U20 & potrafi zaplanować i przeprowadzić procesy pozyskiwania, analizy, specyfikacji i modelowania wymagań wobec oprogramowania oraz ich pielęgnacji & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize PRI, BYT, PRO} \\
+\rowcolor{tableRowLight} K\_U21 & potrafi dokonać przeglądu projektu oprogramowania i poprawić jego jakość & {\scriptsize P6S\_UW} & {\scriptsize BYT, PRO} \\
+\rowcolor{tableRowAlt} K\_U22 & potrafi zaplanować i przeprowadzić proces integracji, oceny i realizacji planu testowania oraz dokonać diagnozy defektów & {\scriptsize P6S\_UW} & {\scriptsize BYT, PRO, PAI} \\
+\rowcolor{tableRowLight} K\_U23 & potrafi przeanalizować, zsyntezować i oprogramować prosty system wbudowany, z uwzględnieniem zasad bezpieczeństwa i niezawodności oraz sporządzić jego dokumentację & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize SWB, KIP, PPS} \\
+\rowcolor{tableRowAlt} K\_U24 & potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy odpowiednio dobranych technologii & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize TIN, PAI} \\
+\rowcolor{tableRowLight} K\_U25 & potrafi uwzględnić społeczny, etyczny i prawny kontekst przedsięwzięcia informatycznego oraz ocenić związane z nim zagrożenia & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize SAI, ZPR, BYT} \\
+\rowcolor{tableRowAlt} K\_U26 & potrafi zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego przedsięwzięcia informatycznego, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców; & {\scriptsize P6S\_UK, P6S\_UW} & {\scriptsize SAI, ZPR, PRIN} \\
+\rowcolor{tableRowLight} K\_U27 & potrafi zaplanować i przeprowadzić proces instalacji i uruchomienia całości prostego systemu (system operacyjny, baza danych, aplikacja, oprogramowanie współdziałające) & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize PRO, UKOS, RBD} \\
+\rowcolor{tableRowAlt} K\_U28 & potrafi zdiagnozować problem specyficzny dla aplikacji internetowych, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW {\scriptsize (eng.)}} & {\scriptsize PAI, TIN} \\
+\rowcolor{tableRowLight} K\_U29 & potrafi zdiagnozować problem specyficzny dla sztucznej inteligencji, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW} & {\scriptsize IML, NAI} \\
+\rowcolor{tableRowAlt} K\_U30 & potrafi zdiagnozować problem specyficzny dla cyberbezpieczeństwa, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW {\scriptsize (eng.)}} & {\scriptsize BSI, AIC, KC} \\
+\rowcolor{tableRowLight} K\_U31 & potrafi zdiagnozować problem specyficzny dla inżynierii gier komputerowych, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize SGD, PG1, PG2} \\
+\rowcolor{tableRowAlt} K\_U32 & potrafi zdiagnozować problem specyficzny dla grafiki komputerowej, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW, P6S\_UW {\scriptsize (eng.)}} & {\scriptsize GRK, M3D, ICK} \\
+\rowcolor{tableRowLight} K\_U33 & potrafi zdiagnozować problem specyficzny dla internetu rzeczy, zaprojektować jego rozwiązanie, dobrać środki oraz określić i zrealizować kroki prowadzące do implementacji przyjętego rozwiązania. & {\scriptsize P6S\_UW {\scriptsize (eng.)}} & {\scriptsize SWB, PTT, RTO, KIP} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{C -- Social Competences}
+
+{\scriptsize
+\begin{longtable}{m{1cm}m{8.8cm}m{2.1cm}m{2.5cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed} {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Learning outcome}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}PQF codes}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Courses}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} K\_K01 & jest gotów do zastosowań informatyki na rzecz rozwoju nauki i społeczeństwa informacyjnego & {\scriptsize P6S\_KO} & {\scriptsize WPR, PRIN, COV, PTT, RTO} \\
+\rowcolor{tableRowAlt} K\_K02 & jest gotów do przekazywania społeczeństwu informacji i opinii dotyczących osiągnięć techniki i innych aspektów działalności inżynierskiej & {\scriptsize P6S\_KO} & {\scriptsize POZ, PRIN, SAI} \\
+\rowcolor{tableRowLight} K\_K03 & jest gotów do samodzielnego uczenia się przez całe życie & {\scriptsize P6S\_KR} & {\scriptsize PRO, TIN, COV, PJN, M3D, HKJ, ANG1, ANG2, ANG3} \\
+\rowcolor{tableRowAlt} K\_K04 & jest gotów do współdziałań i współpracy w zespole, przyjmując różne role, m.in. zamawiającego, klienta, analityka, projektanta, wykonawcy & {\scriptsize P6S\_KR} & {\scriptsize PRO, PRIN, ZPR, M3D, TIN, PJN, COV, PAI} \\
+\rowcolor{tableRowLight} K\_K05 & jest gotów do określenia priorytetów służących realizacji zadania & {\scriptsize P6S\_KR, P6S\_KK} & {\scriptsize PRO, COV} \\
+\rowcolor{tableRowAlt} K\_K06 & jest gotów do dostrzegania problemów i prawidłowego, zgodnego z zasadami profesjonalizmu zawodowego ich rozwiązywania, a także do podjęcia decyzji z zakresu problemów etycznych i prawnych & {\scriptsize P6S\_KR, P6S\_KO} & {\scriptsize SAI, COV} \\
+\rowcolor{tableRowLight} K\_K07 & jest gotów do myślenia i działania w sposób innowacyjny i przedsiębiorczy & {\scriptsize P6S\_KO} & {\scriptsize ZPR, POZ, PRZ1} \\
+\rowcolor{tableRowAlt} K\_K08 & jest gotów do komunikacji w skuteczny sposób z inwestorami z różnych środowisk, pozyskując od nich wiedzę tworzącą wartość dodaną przedsięwzięć informatycznych & {\scriptsize P6S\_KO} & {\scriptsize POZ, PRIN, SAI, PG2} \\
+\bottomrule
+\end{longtable}}
+
+
+
+\newpage
+
+% =============================================================
+\section{Study plan}
+
+\bigskip
+
+\Needspace{22\baselineskip}
+\subsection*{Semester 1}
+\addcontentsline{toc}{subsection}{Semester 1}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Mathematical Analysis & {\scriptsize compulsory} & AM & 8 & 16 & 0 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowAlt} Discrete Mathematics 1 & {\scriptsize compulsory} & MAD1 & 8 & 16 & 0 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowLight} Introduction to Programming & {\scriptsize compulsory} & PRG1 & 16 & 0 & 24 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Programmer's Toolbox & {\scriptsize compulsory} & WPR & 0 & 0 & 24 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowLight} Computer Usage and Fundamentals of Operating Systems & {\scriptsize compulsory} & UKOS & 16 & 0 & 16 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowAlt} History and Culture of Japan & {\scriptsize compulsory} & HKJ & 32 & 0 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} English 1 & {\scriptsize compulsory} & ANG1 & 0 & 16 & 0 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowAlt} Health and Safety Training & {\scriptsize compulsory} & BHP & 4 & 0 & 0 & {\scriptsize credit} & 0 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 1 total} & & & \textbf{84} & \textbf{40} & \textbf{72} & & \textbf{24} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{19\baselineskip}
+\subsection*{Semester 2}
+\addcontentsline{toc}{subsection}{Semester 2}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Linear Algebra and Geometry & {\scriptsize compulsory} & ALG & 8 & 16 & 0 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowAlt} Discrete Mathematics 2 & {\scriptsize compulsory} & MAD2 & 8 & 16 & 0 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowLight} Relational Databases & {\scriptsize compulsory} & RBD & 16 & 0 & 16 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowAlt} Object-Oriented Programming & {\scriptsize compulsory} & POJ & 16 & 0 & 24 & {\scriptsize credit} & 4 \\
+\rowcolor{tableRowLight} Internet Technologies & {\scriptsize compulsory} & TIN & 16 & 0 & 16 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowAlt} English 2 & {\scriptsize compulsory} & ANG2 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 2 total} & & & \textbf{64} & \textbf{48} & \textbf{56} & & \textbf{21} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{19\baselineskip}
+\subsection*{Semester 3}
+\addcontentsline{toc}{subsection}{Semester 3}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Web Application Programming & {\scriptsize compulsory} & PAI & 16 & 0 & 24 & {\scriptsize credit} & 4 \\
+\rowcolor{tableRowAlt} Physics & {\scriptsize compulsory} & FIZ & 16 & 0 & 16 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Statistical Data Analysis 1 & {\scriptsize compulsory} & SAD1 & 8 & 16 & 0 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowAlt} Algorithms and Data Structures & {\scriptsize compulsory} & ASD & 16 & 0 & 24 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowLight} Operating Systems & {\scriptsize compulsory} & SOP & 16 & 0 & 16 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowAlt} English 3 & {\scriptsize compulsory} & ANG3 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 3 total} & & & \textbf{72} & \textbf{32} & \textbf{80} & & \textbf{19} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{21\baselineskip}
+\subsection*{Semester 4}
+\addcontentsline{toc}{subsection}{Semester 4}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Statistical Data Analysis 2 & {\scriptsize compulsory} & SAD2 & 8 & 16 & 0 & {\scriptsize exam} & 3 \\
+\rowcolor{tableRowAlt} Computer Graphics & {\scriptsize compulsory} & GRK & 16 & 0 & 16 & {\scriptsize exam} & 4 \\
+\rowcolor{tableRowLight} Electronics & {\scriptsize compulsory} & ELK & 16 & 12 & 12 & {\scriptsize credit} & 4 \\
+\rowcolor{tableRowAlt} Computer Networks & {\scriptsize compulsory} & SKOA & 16 & 0 & 24 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} Systems Programming & {\scriptsize compulsory} & LLP & 16 & 0 & 16 & {\scriptsize credit} & 3 \\
+\rowcolor{tableElective} Programming Languages 1 and 2 & {\scriptsize elective} & -- & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableRowAlt} English 4 & {\scriptsize compulsory} & ANG4 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 4 total} & & & \textbf{88} & \textbf{32} & \textbf{104} & & \textbf{25} \\
+\bottomrule
+\end{longtable}}
+
+\clearpage
+\subsection*{Semester 5}
+\addcontentsline{toc}{subsection}{Semester 5}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Information Systems Security & {\scriptsize compulsory} & BSI & 8 & 0 & 16 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowAlt} Artificial Intelligence Tools & {\scriptsize compulsory} & NAI & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableRowLight} Embedded Systems & {\scriptsize compulsory} & SWB & 16 & 8 & 8 & {\scriptsize credit} & 3 \\
+\rowcolor{tableRowAlt} Human-Computer Interaction & {\scriptsize compulsory} & ICK & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableElective} Database Systems 1 and 2 & {\scriptsize elective} & -- & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableElective} Foreign Language Course & {\scriptsize elective} & -- & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 5 total} & & & \textbf{72} & \textbf{16} & \textbf{80} & & \textbf{20} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{17\baselineskip}
+\subsection*{Semester 6}
+\addcontentsline{toc}{subsection}{Semester 6}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Information Systems Design & {\scriptsize compulsory} & PRI & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableElective} Mobile Application Technologies 1 and 2 & {\scriptsize elective} & -- & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableElective} Specialisation Subjects & {\scriptsize specialisation} & -- & 32 & 0 & 32 & {\scriptsize exam} & 10 \\
+\rowcolor{tableElective} Elective Humanities/Social Subject 1 & {\scriptsize elective} & -- & 16 & 0 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableElective} Foreign Language Course & {\scriptsize elective} & -- & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 6 total} & & & \textbf{80} & \textbf{60} & \textbf{80} & & \textbf{22} \\
+\bottomrule
+\end{longtable}}
+
+\clearpage
+\subsection*{Semester 7}
+\addcontentsline{toc}{subsection}{Semester 7}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Building and Integration of Information Systems & {\scriptsize compulsory} & BYT & 16 & 0 & 16 & {\scriptsize exam} & 4 \\
+\rowcolor{tableElective} Specialisation Subjects & {\scriptsize specialisation} & -- & 16 & 0 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableElective} Team Project 1 & {\scriptsize elective} & -- & 16 & 0 & 32 & {\scriptsize credit} & 6 \\
+\rowcolor{tableElective} Elective Humanities/Social Subjects 2 and 3 & {\scriptsize elective} & -- & 8 & 8 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableElective} Elective Subject 1 & {\scriptsize elective} & -- & 16 & 0 & 16 & {\scriptsize exam} & 3 \\
+\rowcolor{tableElective} Foreign Language Course & {\scriptsize elective} & -- & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 7 total} & & & \textbf{72} & \textbf{24} & \textbf{80} & & \textbf{22} \\
+\bottomrule
+\end{longtable}}
+
+\Needspace{21\baselineskip}
+\subsection*{Semester 8}
+\addcontentsline{toc}{subsection}{Semester 8}
+
+{\scriptsize
+\begin{longtable}{m{5.0cm}m{1.9cm}m{0.75cm}m{0.85cm}m{0.85cm}m{0.85cm}m{1.45cm}m{0.9cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course name}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Type}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableElective} Elective Humanities/Social Subjects 2 and 3 & {\scriptsize elective} & -- & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableElective} Elective Subject 2 & {\scriptsize elective} & -- & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableElective} Pre-seminar & {\scriptsize elective} & -- & 0 & 16 & 0 & {\scriptsize credit} & 3 \\
+\rowcolor{tableElective} Specialisation Subjects & {\scriptsize specialisation} & -- & 16 & 0 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableElective} Team Project 2 & {\scriptsize elective} & -- & 0 & 0 & 40 & {\scriptsize credit} & 6 \\
+\rowcolor{tableRowAlt} Social Aspects of Computer Science & {\scriptsize compulsory} & SAI & 16 & 0 & 16 & {\scriptsize credit} & 4 \\
+\rowcolor{tableElective} Foreign Language Course & {\scriptsize elective} & -- & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\midrule[\heavyrulewidth]
+\rowcolor{tableSummary} \textbf{Semester 8 total} & & & \textbf{48} & \textbf{32} & \textbf{96} & & \textbf{25} \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Summary}
+\addcontentsline{toc}{subsection}{Study plan summary}
+
+\begin{tabular}{lrrrr}
+\toprule
+\rowcolor{pjatkRed} {\color{white}} & {\color{white}\textbf{Lectures}} & {\color{white}\textbf{Tutorials}} & {\color{white}\textbf{Laboratories}} & {\color{white}\textbf{ECTS}} \\
+\midrule
+\textbf{TOTAL} & \textbf{580} & \textbf{284} & \textbf{648} & \textbf{178} \\
+\bottomrule
+\end{tabular}
+
+
+
+\newpage
+
+% =============================================================
+\section{Work placement}
+
+\subsection*{Scope, rules and form of work placement}
+
+All first-cycle Computer Science students are required to complete a work placement of \textbf{720 hours (960 academic hours)}. The placement is assigned \textbf{32 ECTS credits}.
+
+Placements may be completed during the academic year, in Poland or abroad, provided they do not interfere with studies. Students may use offers posted on the Academic Career Office portal or propose their own employer, subject to approval. The nature of the placement must be consistent with the curriculum and enable the achievement of the defined learning outcomes.
+
+Placements may be paid or unpaid. The Academy does not cover any costs related to their organisation.
+
+The person responsible for verifying and signing off placements on behalf of PJATK is the \textbf{Rector's Representative for Student Placements}.
+
+Settlement is based on a placement report and supplementary attachments. Paid employment, internships or volunteering may be counted as a placement if the duties performed enable the achievement of the defined learning outcomes and the student holds student status during that period.
+
+Placement settlement documents must be submitted via the \textit{Placements} module in the GAKKO system within the relevant settlement deadline before the thesis defence. Placements are not credited if formal requirements are not met.
+
+Detailed information on work placements can be found in the \textbf{Student Placement Regulations}.
+
+\newpage
+
+% =============================================================
+\section{Elective courses}
+
+\subsection*{Programming Languages 1 and 2 (choose 2 of 5)}
+\addcontentsline{toc}{subsection}{Programming Languages 1 and 2}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Programming in Python & JPT & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Programming in C++ & JCP & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Programming in Java & JJA & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Programming in Scala & JSC & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Programming in F\# & JFS & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Database Systems 1 and 2 (choose 2 of 3)}
+\addcontentsline{toc}{subsection}{Database Systems 1 and 2}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Introduction to Document Databases & DDO & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Introduction to Graph Databases & DGR & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Introduction to Cloud Databases & DCH & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Mobile Application Technologies 1 and 2 (choose 2 of 4)}
+\addcontentsline{toc}{subsection}{Mobile Application Technologies 1 and 2}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Introduction to React Native & MRN & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Introduction to Flutter & MFL & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Introduction to .NET MAUI & MNE & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Introduction to Unity 3D & MUN & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Elective Humanities/Social Subject 1}
+\addcontentsline{toc}{subsection}{Elective Humanities/Social Subject 1}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Psychology of Engineering Skills & PUI & 16 & 0 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} IT Leadership Competencies & KLI & 16 & 0 & 0 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Elective Subject 1}
+\addcontentsline{toc}{subsection}{Elective Subject 1}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Information Systems Modelling and Analysis & MAS & 16 & 0 & 16 & {\scriptsize exam} & 3 \\
+\rowcolor{tableRowAlt} Design Thinking Methods in IT Systems Design & DTH & 16 & 0 & 16 & {\scriptsize exam} & 3 \\
+\rowcolor{tableRowLight} Operating Systems Administration & ADM & 16 & 0 & 16 & {\scriptsize exam} & 3 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Elective Subject 2}
+\addcontentsline{toc}{subsection}{Elective Subject 2}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Simulations and Decision Games & SGD & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} IT Project Management & ZPR & 8 & 0 & 8 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Elective Humanities/Social Subjects 2 and 3 (choose 2 of 3)}
+\addcontentsline{toc}{subsection}{Elective Humanities/Social Subjects 2 and 3}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Managing Your Own Venture & POZ & 8 & 8 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Innovation Processes & PRIN & 8 & 8 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Commercialisation of IT Projects & KMR & 8 & 8 & 0 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Foreign Language Course (choice of language)}
+\addcontentsline{toc}{subsection}{Foreign Language Course}
+
+{\scriptsize
+\begin{longtable}{m{5.5cm}m{0.8cm}m{1cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Code}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Tut.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} English & LANG1 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} German & NIM1 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowLight} Spanish & HIS1 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\rowcolor{tableRowAlt} Japanese & JAP1 & 0 & 16 & 0 & {\scriptsize credit} & 2 \\
+\bottomrule
+\end{longtable}}
+
+
+
+\newpage
+
+% =============================================================
+\section{Specialisations}
+
+Each student chooses one specialisation for the entire duration of their studies. Specialisation courses are delivered in the semesters indicated in the tables below.
+
+\subsection*{Software Architecture and DevOps Technologies}
+\addcontentsline{toc}{subsection}{Software Architecture and DevOps Technologies}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Microservice and Microfrontend Architecture & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Containerisation of Web Services & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} DevOps Technologies & 7 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Cloud Infrastructure Management & 8 & 16 & 16 & {\scriptsize exam} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Cybersecurity}
+\addcontentsline{toc}{subsection}{Cybersecurity}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Digital Forensics & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Cybersecurity Incident Analysis & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} IT Security Testing & 7 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Secure IT Architecture Design & 8 & 16 & 16 & {\scriptsize exam} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Computer Game Engineering}
+\addcontentsline{toc}{subsection}{Computer Game Engineering}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Computer Game Prototyping & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} 3D Modelling for Games & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} Computer Game Engines & 7 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Computer Game Design & 8 & 16 & 16 & {\scriptsize exam} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Artificial Intelligence}
+\addcontentsline{toc}{subsection}{Artificial Intelligence}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Introduction to Machine Learning & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Modern Deep Learning Methods & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} Computer Vision & 7 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Natural Language Processing & 8 & 16 & 16 & {\scriptsize exam} & 5 \\
+\bottomrule
+\end{longtable}}
+
+\subsection*{Internet of Things}
+\addcontentsline{toc}{subsection}{Internet of Things}
+
+{\scriptsize
+\begin{longtable}{m{6.5cm}m{0.7cm}m{1cm}m{1cm}m{1.7cm}m{0.7cm}}
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endfirsthead
+\thdrule\toprule
+\rowcolor{pjatkRed}
+{\color{white}\footnotesize\textbf{\vphantom{Ag}Course}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Sem.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lec.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Lab.}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}Assessment}} & {\color{white}\footnotesize\textbf{\vphantom{Ag}ECTS}} \\
+\midrule\thdend
+\endhead
+\rowcolor{tableRowLight} Rapid Prototyping & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Real-Time Systems & 6 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowLight} IoT Communication and Protocols & 7 & 16 & 16 & {\scriptsize exam} & 5 \\
+\rowcolor{tableRowAlt} Hardware Platform Programming & 8 & 16 & 16 & {\scriptsize exam} & 5 \\
+\bottomrule
+\end{longtable}}
+
+
+
+\end{document}
