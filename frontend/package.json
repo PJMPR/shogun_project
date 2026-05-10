@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:gh-pages": "ng build --configuration production --base-href /GD_WI_PRG_26-27/",
+    "build:gh-pages": "ng build --configuration production --base-href /PJ_Program_Planner/",
     "build:prod": "ng build --configuration production --base-href ./",
     "preview": "npx serve dist/pj-studies/browser",
     "deploy": "ng build --configuration production --base-href ./ && npx gh-pages -d dist/pj-studies/browser",
