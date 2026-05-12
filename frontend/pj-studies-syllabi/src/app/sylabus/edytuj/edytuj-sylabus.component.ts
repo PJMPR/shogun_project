@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 import { BaseHrefService } from '../../shared/base-href.service';
+import { ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -21,7 +22,6 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SylabusPreviewComponent } from '../../shared/sylabus-preview/sylabus-preview.component';
 import {
   SylabusData,
-  SylabusFile,
   ProgramData,
   ElectivesOtherData,
   ElectivesSpecializationsData,
@@ -165,6 +165,7 @@ export class EdytujSylabusComponent implements OnInit {
   metodyWeryfikacjiOptions: { label: string; value: string }[] = [];
 
   constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
+  private readonly shogunApi = inject(ShogunApiService);
 
   ngOnInit(): void {
     this.loadSubjectOptions();
@@ -199,28 +200,21 @@ export class EdytujSylabusComponent implements OnInit {
 
   private loadSubjectOptions(): void {
     this.loadingOptions = true;
-    const baseUrl = this.selectedTryb === 'stacjonarny'
-      ? this.baseHref.assetUrl('')
-      : this.baseHref.assetUrl('niestacjonarne/');
+    const tryb = this.selectedTryb as 'stacjonarny' | 'niestacjonarny';
 
     forkJoin({
-      program:  this.http.get<ProgramData>(`${baseUrl}program.json`),
-      elOther:  this.http.get<ElectivesOtherData>(`${baseUrl}electives-other.json`),
-      elSpec:   this.http.get<ElectivesSpecializationsData>(`${baseUrl}electives-specializations.json`),
-      sylIndex: this.http.get<Record<string, string>>(`${baseUrl}syllabus-index.json`),
+      program: this.shogunApi.getProgramData(tryb, false),
+      elOther: this.shogunApi.getElectivesOther(tryb, false),
+      elSpec:  this.shogunApi.getElectivesSpec(tryb, false),
     }).subscribe({
-      next: ({ program, elOther, elSpec, sylIndex }) => {
+      next: ({ program, elOther, elSpec }) => {
         const opts: SubjectOption[] = [];
-        const seen = new Set<string>();   // dedup po "kod|nazwa"
+        const seen = new Set<string>();
 
-        const resolveSyllabus = (code: string, existingSyllabusFile?: string): string | null => {
-          if (existingSyllabusFile) return existingSyllabusFile;
-          if (!code || code === '-') return null;
-          return sylIndex[code] ?? null;
-        };
+        const hasCode = (code: string): boolean => !!code && code !== '-' && code !== '—';
 
         const add = (
-          name: string, code: string, existingSyllabusFile: string | undefined,
+          name: string, code: string, _syllabusFile: string | undefined,
           sem: number, lecture: number, tutorial: number, lab: number,
           ects: number, form: string, type: string
         ) => {
@@ -228,21 +222,22 @@ export class EdytujSylabusComponent implements OnInit {
           if (seen.has(key)) return;
           seen.add(key);
 
-          const syllabusFile = resolveSyllabus(code, existingSyllabusFile);
-          const dispCode = code && code !== '-' ? code : '—';
+          const hasSyl = hasCode(code);
+          const dispCode = hasSyl ? code : '—';
 
           opts.push({
-            label: syllabusFile
+            label: hasSyl
               ? `${dispCode} – ${name}`
               : `${dispCode} – ${name} ⚠ brak sylabusa`,
             value: key,
             code: dispCode,
             name,
-            syllabusFile,
-            hasSylabus: !!syllabusFile,
+            syllabusFile: null,
+            hasSylabus: hasSyl,
             semester: sem,
             lecture, tutorial, lab, ects, form, type,
           });
+
         };
 
         // program.json — wszystkie przedmioty ze wszystkich semestrów
@@ -286,24 +281,29 @@ export class EdytujSylabusComponent implements OnInit {
     if (!this.selectedSubjectOption) return;
     const opt = this.selectedSubjectOption;
 
-    if (!opt.hasSylabus || !opt.syllabusFile) {
-      this.loadError = `Brak pliku sylabusa dla przedmiotu "${opt.name}". Możesz go utworzyć na stronie "Nowy sylabus".`;
+    if (!opt.hasSylabus || !opt.code || opt.code === '—') {
+      this.loadError = `Brak kodu przedmiotu dla "${opt.name}". Możesz go utworzyć na stronie "Nowy sylabus".`;
       return;
     }
 
     this.loadingSylabus = true;
     this.loadError = '';
     this.loadedSylabus = null;
-    this.originalSyllabusFile = opt.syllabusFile;
+    this.originalSyllabusFile = opt.code;
 
-    this.http.get<SylabusFile>(opt.syllabusFile).subscribe({
-      next: (file) => {
-        this.loadedSylabus = file.sylabus;
-        this.populateForm(file.sylabus);
+    this.shogunApi.getSyllabus(opt.code, this.selectedTryb).subscribe({
+      next: (sylabus) => {
+        if (!sylabus) {
+          this.loadError = `Nie znaleziono sylabusa dla przedmiotu "${opt.name}" (${opt.code}).`;
+          this.loadingSylabus = false;
+          return;
+        }
+        this.loadedSylabus = sylabus;
+        this.populateForm(sylabus);
         this.loadingSylabus = false;
       },
       error: () => {
-        this.loadError = `Nie udało się załadować sylabusa: ${opt.syllabusFile}`;
+        this.loadError = `Nie udało się załadować sylabusa dla kodu "${opt.code}".`;
         this.loadingSylabus = false;
       },
     });

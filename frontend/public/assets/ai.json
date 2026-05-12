@@ -1,0 +1,220 @@
+{
+  "document": {
+    "title": "Strategia integracji AI w dydaktyce informatyki",
+    "subtitle": "Wytyczne metodyczne dla Polsko-Japońskiej Akademii Technik Komputerowych w Gdańsku",
+    "version": "1.0",
+    "date": "2025-11",
+    "institution": "Polsko-Japońska Akademia Technik Komputerowych w Gdańsku",
+    "language": "pl",
+    "document_type": "guidelines",
+    "sections": [
+      {
+        "id": "wprowadzenie",
+        "title": "Wprowadzenie",
+        "summary": "Wytyczne przedstawiają kompleksowe podejście do świadomej integracji narzędzi sztucznej inteligencji (AI) w procesie dydaktycznym na Wydziale Informatyki PJATK Gdańsk. Dokument opiera się na badaniach z zakresu pedagogiki AI oraz praktycznych doświadczeniach z wdrażania technologii w nauczaniu informatyki.",
+        "strategic_goal": "Przygotowanie absolwentów informatyki do pracy w środowisku, w którym AI jest standardowym narzędziem deweloperskim, przy jednoczesnym zachowaniu i rozwijaniu kompetencji: krytycznego myślenia, twórczego rozwiązywania złożonych problemów technicznych oraz etycznej oceny."
+      },
+      {
+        "id": "nauczanie-odwrocone-z-wykorzystaniem-ai",
+        "number": 1,
+        "title": "Nauczanie odwrócone z wykorzystaniem AI",
+        "subtitle": "Model Flipped Classroom w informatyce",
+        "description": "Podstawowa wiedza teoretyczna powinna być dostępna studentom przed zajęciami w formach multimedialnych, umożliwiając wykorzystanie czasu kontaktowego na praktyczne programowanie, code review i rozwiązywanie problemów.",
+        "pre_class_materials": [
+          {
+            "type": "wyklad_video",
+            "duration": "15-20 min",
+            "description": "Prezentacja teorii z wykorzystaniem przykładów kodowania na żywo"
+          },
+          {
+            "type": "podcast_ekspercki",
+            "duration": "10-15 min",
+            "description": "Pogłębienie praktycznego kontekstu przez praktyków IT"
+          },
+          {
+            "type": "quiz_ai_powered",
+            "tools": [
+              "Moodle",
+              "Kahoot",
+              "Quizlet AI"
+            ],
+            "description": "Automatyczna weryfikacja zrozumienia"
+          },
+          {
+            "type": "zadania_przygotowawcze",
+            "description": "Mini-projekty do rozwiązania przed zajęciami"
+          }
+        ],
+        "in_class_focus": [
+          "Rozwiązywanie rzeczywistych problemów programistycznych z wykorzystaniem AI jako asystenta programowania",
+          "Code review i pair programming – analiza kodu wygenerowanego przez AI",
+          "Dyskusja nad dylematami etycznymi i ograniczeniami AI w developmencie",
+          "Praca zespołowa nad złożonymi projektami wymagającymi architektury systemów",
+          "Feedback i indywidualne konsultacje z wykładowcą"
+        ]
+      },
+      {
+        "id": "ai-jako-narzedzie-deweloperskie",
+        "number": 2,
+        "title": "AI jako narzędzie deweloperskie",
+        "subtitle": "Nauczanie współpracy programista-AI",
+        "description": "Kluczową kompetencją współczesnej dydaktyki informatyki jest umiejętność efektywnego wykorzystania AI jako partnera programistycznego przy jednoczesnym zachowaniu krytycznego myślenia i odpowiedzialności za kod.",
+        "framework": {
+          "fundamental_principle": "Student zawsze odpowiada za finalny kod i jego działanie. AI to narzędzie, nie magiczny generator rozwiązań.",
+          "success_indicator": "Studenci potrafią wskazać minimum trzy potencjalne błędy lub nieoptymalne rozwiązania w kodzie wygenerowanym przez AI.",
+          "stages": [
+            {
+              "stage": 1,
+              "name": "Definicja problemu",
+              "student_task": "Sformułowanie wymagań, specyfikacja funkcjonalności",
+              "ai_role": "Brainstorming, sugestie podejść architektonicznych"
+            },
+            {
+              "stage": 2,
+              "name": "Implementacja",
+              "student_task": "Wybór algorytmu, projektowanie struktury kodu",
+              "ai_role": "Generowanie boilerplate, proponowanie rozwiązań"
+            },
+            {
+              "stage": 3,
+              "name": "Weryfikacja",
+              "student_task": "Code review, testowanie, refactoring",
+              "ai_role": "Detekcja potencjalnych bugów, sugestie testów"
+            },
+            {
+              "stage": 4,
+              "name": "Optymalizacja",
+              "student_task": "Analiza wydajności, ocena rozwiązania, dokumentacja",
+              "ai_role": "Asystent w profilowaniu, sugestie optymalizacji"
+            }
+          ]
+        }
+      },
+      {
+        "id": "zadania-odporne-na-ai",
+        "number": 3,
+        "title": "Zadania odporne na AI: rozwój myślenia krytycznego",
+        "subtitle": "Filozofia zadań AI-resistant",
+        "description": "W dydaktyce, gdzie AI coraz lepiej radzi sobie z rutynowym kodowaniem, kluczowe stają się kompetencje wymagające głębokiego rozumienia architektury systemów, syntezy wielowymiarowej wiedzy technicznej i oryginalnego myślenia.",
+        "human_competency_task_types": [
+          {
+            "name": "Projektowanie architektury systemów realnych",
+            "description": "Analiza wymagań złożonego systemu w kontekście specyficznych ograniczeń technicznych i biznesowych",
+            "example": "Zaprojektuj architekturę systemu bookingowego dla trójmiejskich escape roomów, uwzględniając integrację z lokalnymi systemami płatności (BLIK, Przelewy24), obsługę rezerwacji grupowych oraz specyfikę sezonowości turystycznej. Uzasadnij wybór technologii i przedstaw trade-offs."
+          },
+          {
+            "name": "Dylematy etyczne w technologii",
+            "description": "Problemy wymagające rozważenia wartości, norm społecznych i długofalowych konsekwencji",
+            "example": "Projektujesz system moderacji treści dla polskiej platformy społecznościowej. Jak zbalansować wolność słowa z ochroną przed mową nienawiści? Zaprojektuj algorytm decyzyjny i uzasadnij, dlaczego AI nie może w pełni zastąpić ludzkiej oceny w tym kontekście."
+          },
+          {
+            "name": "Debug i analiza kodu legacy",
+            "description": "Integracja wiedzy o różnych paradygmatach i wzorcach projektowych",
+            "example": "Otrzymujesz legacy codebase w PHP 5.6 bez dokumentacji. System obsługuje rezerwacje hoteli w Gdańsku. Przeprowadź audyt techniczny, zidentyfikuj technical debt, zaproponuj plan migracji do współczesnego stack'u. Dokumentuj proces myślenia i trade-offs."
+          },
+          {
+            "name": "Meta-analiza AI w developmencie",
+            "description": "Krytyczna ocena możliwości i ograniczeń AI jako narzędzia programistycznego",
+            "example": "Przeprowadź eksperyment: poproś trzy różne modele AI (GitHub Copilot, ChatGPT, Claude) o implementację tego samego algorytmu sortowania z optymalizacją pamięciową. Porównaj wygenerowany kod pod kątem wydajności, czytelności i poprawności. Co to mówi o wiarygodności AI w programowaniu?"
+          },
+          {
+            "name": "Gry komputerowe i game design",
+            "description": "Projekt mechanik wymagających zrozumienia psychologii gracza",
+            "example": "Zaprojektuj mechanikę progressu dla gry mobile RPG inspirowanej kulturą kaszubską. System musi angażować graczy przez minimum 6 miesięcy bez pay-to-win. Zaimplementuj prototyp w Unity i uzasadnij decyzje projektowe w kontekście game design patterns."
+          }
+        ]
+      },
+      {
+        "id": "system-oceniania-i-feedback",
+        "number": 4,
+        "title": "System oceniania i feedback w erze AI",
+        "subtitle": "Hybrydowy model oceniania Human + AI",
+        "description": "Automatyzacja elementów rutynowych pozwala wykładowcom poświęcić więcej czasu na spersonalizowany, rozwojowy feedback w obszarach krytycznych.",
+        "principle": "AI nie zastępuje wykładowcy, lecz uwalnia jego czas na feedback wysokiej wartości.",
+        "assessment_split": [
+          {
+            "aspect": "Poprawność składni",
+            "ai_assessment": "TAK – linter, kompilator",
+            "lecturer_assessment": "Wyrywkowa kontrola"
+          },
+          {
+            "aspect": "Testy jednostkowe",
+            "ai_assessment": "TAK – automatyczne CI/CD",
+            "lecturer_assessment": "NIE"
+          },
+          {
+            "aspect": "Jakość architektury",
+            "ai_assessment": "Wstępna analiza + sugestie",
+            "lecturer_assessment": "TAK – finalna ocena"
+          },
+          {
+            "aspect": "Oryginalność rozwiązania",
+            "ai_assessment": "NIE",
+            "lecturer_assessment": "TAK – kluczowe kryterium"
+          },
+          {
+            "aspect": "Detekcja AI-generated code",
+            "ai_assessment": "TAK – GPTZero, CodeDetect",
+            "lecturer_assessment": "Interpretacja + code review ze studentem"
+          }
+        ]
+      },
+      {
+        "id": "angazowanie-studentow",
+        "number": 5,
+        "title": "Angażowanie studentów: pierwsze minuty zajęć",
+        "subtitle": "Zasada angażującego startu",
+        "description": "Pierwsze 3–5 minut zajęć decydują o poziomie zaangażowania studentów przez kolejne 90 minut. Warto wykorzystywać dynamiczne formaty multimedialne do natychmiastowego zakotwiczenia uwagi.",
+        "recommended_formats": [
+          {
+            "name": "Short-Form Video",
+            "duration": "60-120 sek",
+            "examples": [
+              "live coding challenge",
+              "wizualizacja algorytmu",
+              "demo efektownej aplikacji"
+            ]
+          },
+          {
+            "name": "Podcast audio",
+            "duration": "2-3 min",
+            "examples": [
+              "fragment wywiadu z tech leadem",
+              "case study z produkcyjnego środowiska",
+              "kontrowersja technologiczna"
+            ]
+          },
+          {
+            "name": "Code Story",
+            "description": "Interaktywna wizualizacja bug'a w produkcji i procesu jego naprawy"
+          },
+          {
+            "name": "AI-Generated Challenge",
+            "description": "Hipotetyczny problem programistyczny wygenerowany przez AI, który studenci będą debugować"
+          }
+        ]
+      },
+      {
+        "id": "przedmioty-i-specjalizacje-pjatk",
+        "number": 6,
+        "title": "Przedmioty i specjalizacje PJATK",
+        "description": "Strategia AI w dydaktyce obejmuje wszystkie kluczowe przedmioty na kierunku Informatyka.",
+        "core_courses": [
+          "Programowanie (Python, Java, C++)",
+          "Algorytmy i struktury danych",
+          "Relacyjne bazy danych",
+          "Systemy operacyjne",
+          "Sieci komputerowe"
+        ],
+        "specializations_year_3": [
+          "Cyberbezpieczeństwo",
+          "Architektury oprogramowania i technologie DevOps",
+          "Inżynieria Gier Komputerowych",
+          "Architektury oprogramowania i technologie DevOps",
+          "Sztuczna Inteligencja",
+          "Internet Rzeczy (IoT)"
+        ]
+      }
+    ]
+  }
+}

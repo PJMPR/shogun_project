@@ -1,0 +1,186 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "26.02.2026",
+    "nazwa_przedmiotu": "Wstęp do zarządzania",
+    "kod_przedmiotu": "WDZ",
+    "rok_studiow": 1,
+    "semestr_studiow": 1,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": 16,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "mgr Adam Urbanowicz",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 32,
+      "praca_wlasna_studenta_h": 18,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Realizacja projektu zespołowego z analizy wybranej organizacji; przygotowanie do kolokwium z treści wykładów; lektura wskazanych materiałów z zarządzania."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "Wykład z prezentacją multimedialną, analiza przypadków, dyskusja."
+      ],
+      "cwiczenia": [
+        "Ćwiczenia warsztatowe: praca w grupach, analiza przypadków biznesowych, krótkie prezentacje zespołowe."
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      },
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "ocena pracy podczas ćwiczenia",
+        "prezentacja elementu zespołowej pracy semestralnej"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Brak wymagań wstępnych",
+        "wymagania": "Wiedza ogólna z zakresu szkoły średniej."
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawowymi pojęciami i koncepcjami zarządzania organizacją. Student poznaje funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola), struktury organizacyjne, style przywództwa oraz elementy zarządzania projektami i zespołami. Przedmiot stanowi wprowadzenie do rozumienia środowiska biznesowego, w którym funkcjonują projekty informatyczne, i kształtuje u studentów świadomość menedżerską niezbędną w pracy inżyniera IT.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "R. W. Griffin: \"Podstawy zarządzania organizacjami\", PWN, Warszawa 2017.",
+          "J. A. F. Stoner, R. E. Freeman, D. R. Gilbert: \"Kierowanie\", PWE, Warszawa 2011.",
+          "P. Drucker: \"Praktyka zarządzania\", MT Biznes, Warszawa 2021."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "H. Mintzberg: \"Zarządzanie\", Wolters Kluwer, Warszawa 2012.",
+          "A. Koźmiński, W. Piotrowski (red.): \"Zarządzanie. Teoria i praktyka\", PWN, Warszawa 2013."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu zarządzania: organizacja, menedżer, funkcje zarządzania (planowanie, organizowanie, kierowanie, kontrola) oraz otoczenie organizacji.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie podstawowe typy struktur organizacyjnych (liniowa, funkcjonalna, macierzowa, projektowa) oraz czynniki wpływające na ich dobór.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie wybrane koncepcje przywództwa, style kierowania i metody motywowania pracowników.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zidentyfikować i opisać funkcje zarządzania w konkretnej organizacji oraz wskazać jej strukturę organizacyjną i styl kierowania.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi zastosować podstawowe narzędzia analizy strategicznej (analiza SWOT) do oceny sytuacji wybranej organizacji lub projektu informatycznego.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi pracować w zespole, planować podział zadań i prezentować wyniki pracy grupowej w formie krótkiej prezentacji.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do współdziałania w zespole, przyjmowania różnych ról i odpowiedzialnego wywiązywania się z powierzonych zadań.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny działania organizacji i dostrzegania znaczenia efektywnego zarządzania dla sukcesu przedsięwzięć informatycznych.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, prezentacja elementu zespołowej pracy semestralnej"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Organizacja i zarządzanie – podstawowe pojęcia. Czym jest zarządzanie? Menedżer i jego role (Mintzberg). Ewolucja myśli zarządczej: szkoła klasyczna, behawioralna, ilościowa, systemowa.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Otoczenie organizacji: otoczenie ogólne (makrootoczenie) i otoczenie zadaniowe. Analiza PEST. Interesariusze organizacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Planowanie jako funkcja zarządzania: rodzaje planów, cele organizacyjne, zarządzanie przez cele (MBO). Analiza SWOT jako narzędzie planowania strategicznego.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Organizowanie: projekt struktury organizacyjnej, podział pracy, rozpiętość kierowania, centralizacja i decentralizacja. Typy struktur: liniowa, funkcjonalna, dywizjonalna, macierzowa, projektowa.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Kierowanie ludźmi: przywództwo i style kierowania (autokratyczny, demokratyczny, laissez-faire). Teorie motywacji (Maslow, Herzberg, teoria oczekiwań Vrooma). Komunikacja w organizacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Kontrola jako funkcja zarządzania: rodzaje kontroli, etapy procesu kontroli, controlling. Zarządzanie przez jakość (TQM) – wprowadzenie.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Wprowadzenie do zarządzania projektami: projekt a działalność operacyjna, cykl życia projektu, trójkąt projektowy (zakres, czas, koszt). Metodyki zarządcze: waterfall, Agile/Scrum – przegląd.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Zarządzanie zespołem projektowym: role w zespole (model Belbina), budowanie i etapy rozwoju zespołu (model Tuckmana), konflikty i sposoby ich rozwiązywania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Kultura organizacyjna: pojęcie, elementy, typologie (Quinn, Hofstede). Wpływ kultury organizacyjnej na efektywność zespołu i firmy informatycznej.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Przedsiębiorczość i innowacje w organizacji: rodzaje innowacji, ekosystem startupowy, modele biznesowe – wprowadzenie (Business Model Canvas). Społeczna odpowiedzialność biznesu (CSR).",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to familiarize students with the basic concepts and principles of organizational management. Students learn the functions of management (planning, organizing, leading, controlling), organizational structures, leadership styles, and elements of project and team management. The course serves as an introduction to understanding the business environment in which IT projects operate and develops managerial awareness necessary in the work of an IT engineer.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

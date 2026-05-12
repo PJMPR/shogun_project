@@ -1,0 +1,188 @@
+{
+  "programChanges": [
+    {
+      "semester": 1,
+      "changes": [
+        {
+          "subject": "Analiza matematyczna",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie z semestru 2 w celu spełnienia zaleceń Polskiej Komisji Akredytacyjnej (PKA)."
+        },
+        {
+          "subject": "Podstawy programowania",
+          "type": "zmiana",
+          "reason": "Zmiana języka wiodącego z C++ na C#. C++ zachowywał się różnie w zależności od systemu operacyjnego, co utrudniało naukę. C# działa spójnie, nie wymaga dodatkowych frameworków, posiada jednolity system zarządzania projektami i pakietami oraz znajduje zastosowanie w aplikacjach internetowych, grach komputerowych i CI/CD."
+        },
+        {
+          "subject": "Warsztat programisty",
+          "type": "nowy",
+          "reason": "Odpowiedź na braki kompetencyjne w zakresie narzędzi programistycznych, debugowania, pracy zespołowej z Git, wykorzystania AI w pracy programisty oraz budowania portfolio projektów informatycznych."
+        },
+        {
+          "subject": "Użytkowanie komputerów i podstawy systemów operacyjnych",
+          "type": "zmiana",
+          "reason": "Zmiana sylabusu, dodanie wykładu oraz zakończenie przedmiotu egzaminem. Część treści przeniesiono do przedmiotu Warsztat programisty, a studenci wcześniej poznają zagadnienia związane z systemami operacyjnymi."
+        },
+        {
+          "subject": "Wstęp do architektury komputerów 1",
+          "type": "usunięcie",
+          "reason": "Przedmiot był wyłącznie wykładowy i bardziej adekwatny dla innego profilu studiów (zaszłość po profilu ogólnoakademickim)."
+        },
+        {
+          "subject": "Historia i kultura Japonii",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie na semestr 1 w celu zwolnienia miejsca na inne przedmioty w semestrze 3."
+        }
+      ]
+    },
+    {
+      "semester": 2,
+      "changes": [ {
+        "subject": "Warsztaty programistyczne",
+        "type": "usunięcie",
+        "reason": "Przedmiot koncentrował się wokół technologii PHP. W programie były  ogólnie 4 przedmioty warsztatowe, które uczyły tworzenia aplikacji internetowych (baza danych + api + UI). Zdecydowano się na wprowadzenie jednego przedmiotu warsztatowego, który będzie realizowany przez cały semestr 3, a jego treści będą obejmowały wszystkie te obszary."
+      },
+        {
+          "subject": "Algebra liniowa i geometria",
+          "type": "przeniesienie",
+          "reason": "Zmiana wynikająca z zaleceń Polskiej Komisji Akredytacyjnej (PKA)."
+        },
+        {
+          "subject": "Matematyka dyskretna",
+          "type": "przeniesienie",
+          "reason": "Zmiana wynikająca z zaleceń Polskiej Komisji Akredytacyjnej (PKA)."
+        },
+        {
+          "subject": "Języki programowania 1 i 2",
+          "type": "nowy",
+          "reason": "Wprowadzenie przedmiotów obieralnych umożliwiających poznanie różnych paradygmatów programowania oraz ich zastosowań w sztucznej inteligencji, grach, IoT, aplikacjach internetowych i analizie danych."
+        },
+        {
+          "subject": "Programowanie obiektowe",
+          "type": "zmiana",
+          "reason": "Zmiana nazwy przedmiotu oraz języka programowania w celu lepszego dopasowania do aktualnych standardów rynkowych."
+        },
+        {
+          "subject": "Technologie internetu",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie na semestr 2, aby student wcześniej zdobył kompetencje w zakresie tworzenia aplikacji internetowych oraz mógł szybciej budować portfolio projektów."
+        }
+      ]
+    },
+    {
+      "semester": 3,
+      "changes": [
+        {
+          "subject": "Metody programowania oraz Java zaawansowana",
+          "type": "usunięcie",
+          "reason": "Przedmioty powielały sporo treści programowych - utworzono nowy przedmiot z większa ilością godzin przeznaczonych na wykład i laboratoria."
+        },
+        {
+          "subject": "Programowanie aplikacji internetowych",
+          "type": "nowy",
+          "reason": "Przedmiot powstał z połączenia Metod programowania i Javy zaawansowanej, które powielały treści. Dodatkowo zmieniono technologię wiodącą z Javy na C#."
+        },
+        {
+          "subject": "Fizyka",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie w celu lepszej reorganizacji programu studiów."
+        },
+        {
+          "subject": "Statystyczna analiza danych",
+          "type": "przeniesienie",
+          "reason": "Zmiana wynikająca z zaleceń PKA. Przedmiot kluczowy dla sztucznej inteligencji, który nie powinien być realizowany na ostatnim semestrze."
+        },
+        {
+          "subject": "Algorytmy i struktury danych",
+          "type": "przeniesienie",
+          "reason": "Zmiana wynikająca z zaleceń PKA oraz potrzeby lepszej sekwencji kształcenia."
+        },
+        {
+          "subject": "Systemy operacyjne",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie w celu lepszej reorganizacji programu studiów."
+        },
+        {
+          "subject": "Systemy baz danych 1 i 2",
+          "type": "nowy",
+          "reason": "Wprowadzenie przedmiotów obieralnych umożliwiających poznanie różnych rodzajów baz danych NoSQL oraz ich praktycznych zastosowań."
+        }
+      ]
+    },
+    {
+      "semester": 4,
+      "changes": [
+        {
+          "subject": "Programowanie systemowe",
+          "type": "nowy",
+          "reason": "Nowy przedmiot w miejsce Wstępu do architektury komputerów 2. Lepsze odzwierciedlenie treści programowych oraz wprowadzenie do programowania systemowego i IoT."
+        },
+        {
+          "subject": "Bezpieczeństwo systemów informacyjnych",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie na wcześniejszy semestr, aby przedmiot bazowy dla specjalizacji Cyberbezpieczeństwo był realizowany przed wyborem specjalizacji."
+        },
+        {
+          "subject": "Technologie aplikacji mobilnych 1 i 2",
+          "type": "nowy",
+          "reason": "Wprowadzenie przedmiotów obieralnych poświęconych tworzeniu aplikacji mobilnych, które wcześniej były marginalizowane w programie studiów."
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "changes": [
+        {
+          "subject": "Interakcja człowiek–komputer",
+          "type": "przeniesienie",
+          "reason": "Przeniesienie przed rozpoczęciem projektów dyplomowych, aby studenci poznali zasady projektowania interfejsów użytkownika."
+        },
+        {
+          "subject": "Architektury oprogramowania i DevOps",
+          "type": "zmiana",
+          "reason": "Nowa specjalizacja w miejsce Aplikacji internetowych. Odpowiedź na rozwój AI, potrzebę umiejęności projektowania aplikacji zorientowanych serwisowo, korzystania z technologii DevOps oraz projektowania procesów CI/CD."
+        },
+        {
+          "subject": "Prototypowanie gier komputerowych",
+          "type": "zmiana",
+          "reason": "Zmiana nazwy z Wytwarzania gier komputerowych w celu lepszego dopasowania do treści programowych."
+        },
+        {
+          "subject": "Przedmiot obieralny humanistyczno-społeczny 1",
+          "type": "zmiana",
+          "reason": "Przeniesienie Psychologii umiejętności inżynierskich na semestr 5 oraz wprowadzenie nowego przedmiotu Kompetencje lidera IT."
+        }
+      ]
+    },
+    {
+      "semester": 6,
+      "changes": [
+        {
+          "subject": "Silniki gier komputerowych",
+          "type": "nowy",
+          "reason": "Nowy przedmiot specjalizacji Inżynieria gier komputerowych odpowiadający wymaganiom rynku pracy."
+        },
+        {
+          "subject": "Metody Design Thinking w projektowaniu systemów IT",
+          "type": "nowy",
+          "reason": "Wprowadzenie przedmiotu obieralnego rozwijającego kompetencje projektowe niezbędne w tworzeniu nowoczesnych systemów IT."
+        }
+      ]
+    },
+    {
+      "semester": 7,
+      "changes": [
+        {
+          "subject": "Zarządzanie infrastrukturą chmurową",
+          "type": "nowy",
+          "reason": "Wprowadzenie przedmiotu w ramach specjalizacji Architektury oprogramowania i DevOps, kładącego nacisk na chmurę i Infrastructure as Code."
+        },
+        {
+          "subject": "Projektowanie gier komputerowych",
+          "type": "zmiana",
+          "reason": "Zmiana nazwy z Wytwarzania gier 2 w celu lepszego dopasowania do treści programowych."
+        }
+      ]
+    }
+  ]
+}

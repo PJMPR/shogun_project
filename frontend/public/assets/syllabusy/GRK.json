@@ -1,0 +1,228 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "08.03.2026",
+    "nazwa_przedmiotu": "Grafika Komputerowa",
+    "kod_przedmiotu": "GRK",
+    "rok_studiow": 2,
+    "semestr_studiow": 4,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "dr hab. Aleksander Denisiuk",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 65,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": "Samodzielna praca z narzędziami grafiki komputerowej; ćwiczenia z tworzenia i przetwarzania grafiki; przygotowanie do testu wyboru z zagadnień teorii grafiki."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "metoda projektów (projekt praktyczny)"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Egzamin"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "egzamin pisemny - test wyboru"
+      ],
+      "cwiczenia_laboratorium": [
+        "ocena pracy podczas ćwiczenia"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Algebra liniowa i geometria  (ALG)",
+        "wymagania": "operacje na macierzach"
+      },
+      {
+        "nazwa": "Algorytmy i struktury danych (ASD)",
+        "wymagania": ""
+      },
+      {
+        "nazwa": "Analiza matematyczna  (AM)",
+        "wymagania": "przekształcenia liniowe"
+      },
+      {
+        "nazwa": "Podstawy programowania w C++",
+        "wymagania": "programowanie w C/C++"
+      }
+    ],
+    "cel_dydaktyczny": "Celem kształcenia jest nabycie umiejętności tworzenia obrazów z wykorzystaniem standardowego API graficznego (biblioteki OpenGL i renderera Blender) oraz realizacji podstawowych transformacji obrazów 2- i 3-wymiarowych.",
+    "cel_dydaktyczny_eng": "The aim of the course is to acquire the ability to create images using standard graphics APIs (the OpenGL library and the Blender renderer) and to perform basic 2D and 3D image transformations.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "M. Jankowski: Elementy grafiki komputerowej. WNT 2006.",
+          "S. R. Buss: 3D Computer Graphics: A Mathematical Introduction with OpenGL.Revision draft Draft A.10.b. May 28, 2019.",
+          "Przemyslaw Kiciak: Podstawy modelowania krzywych i powierzchni, Wydawnictwo Naukowe PWN, 2019",
+          "Przemyslaw Kiciak: OpenGL i GLSL, Część III Gandalf.com.pl, Wydawnictwo Naukowe PWN, 2019",
+          "Graham Sellers, Richard S. Wright Jr., Nicholas Haemel, OpenGL. Księga eksperta. Wydanie VII Helion 2016"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Jim Chronister: Blender Basics Classroom Tutorial Book. 4th edition, 2011",
+          "Wojciech Mokrzycki: Wprowadzenie do przetwarzania informacji wizualnej, tom I. Percepcja, akwizycja, wizualizacja EXIT2010978-83-60434-76-5",
+          "David Austin: What is JPEG? Notices of the AMS, Volume 55, Number 2, pages 226–229, 2008."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie matematyczne podstawy grafiki komputerowej: algebrę liniową (wektory, macierze transformacji, układy współrzędnych), geometrię obliczeniową i podstawy optyki geometrycznej. [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        },
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie zasady działania potoku renderowania GPU (vertex/fragment shader, rasteryzacja, z-buffer, blending) oraz podstawowe algorytmy syntezy obrazu: rzutowanie, oświetlenie (Phong, PBR), cieniowanie. [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        },
+        {
+          "keu": "K_W11",
+          "peu": "Student zna i rozumie podstawowe pojęcia z zakresu komunikacji człowiek-komputer: zasady użyteczności, projektowanie interfejsu graficznego (GUI) i zasady dostępności (WCAG). [K_W11]",
+          "metoda_weryfikacji": "egzamin pisemny - test wyboru"
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U07",
+          "peu": "Student potrafi zastosować aparat matematyczny (algebrę liniową, geometrię obliczeniową) do rozwiązywania problemów z zakresu grafiki komputerowej i transformacji przestrzennych. [K_U07]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U17",
+          "peu": "Student potrafi zaprogramować aplikację grafiki 2D i 3D z użyciem nowoczesnego API (OpenGL 4.x / Vulkan / WebGL) lub silnika (Unity/Godot), implementując shadery i efekty postprocessingu. [K_U17]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_U17",
+          "peu": "Student potrafi zaprojektować i zaimplementować graficzny interfejs użytkownika z uwzględnieniem zasad użyteczności i przeprowadzić podstawowe testy użyteczności. [K_U17]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do samodzielnego rozwijania kompetencji w dynamicznie zmieniającym się obszarze grafiki komputerowej i GPU computing. [K_K03]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do krytycznej oceny rozwiązań graficznych pod kątem wydajności, jakości wizualnej i dostępności dla użytkownika końcowego. [K_K05]",
+          "metoda_weryfikacji": "ocena pracy podczas ćwiczenia"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Percepcja wizualna i modele barw",
+        "cwiczenia": "Podstawy Blendera"
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Algorytmy rastrowe",
+        "cwiczenia": "Podstawy edycji masha."
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Formaty plików graficznych i kompresja obrazów",
+        "cwiczenia": "Podstawy Krzywych i powierzchni Béziera"
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Biblioteka LibPNG. Wizualizacja danych",
+        "cwiczenia": "Metoda śledzenia promieni"
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Biblioteka Jpeglib.",
+        "cwiczenia": "Podstawy edycji masha."
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Geometria Liniowa 3W",
+        "cwiczenia": "Materiały i tekstury"
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Geometria Afiniczna 3W.",
+        "cwiczenia": "Ustawienia środowiska"
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Rzutowanie",
+        "cwiczenia": "Podstawy Animacji. System cząstek"
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Podstawy oświetlenia",
+        "cwiczenia": "Postprocessing"
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Podstawy teksturowania",
+        "cwiczenia": "Format svg. Algorytmy rastrowe. Filtry punktowe"
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Podstawy OpenGL i GLSL",
+        "cwiczenia": "Geometryczne przekształcenie obrazów"
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Transformacje w OpenGL",
+        "cwiczenia": "Podstawy OpenGL. Przekształcenia w OpenGL"
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Podstawy teksturowania w OpenGL,",
+        "cwiczenia": "Teksturowanie w OpenGL. "
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Oświetlenie w OpenGL",
+        "cwiczenia": "Oświetlenie w OpenGL"
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Modelowanie za pomocą krzywych i powierzchni Béziera",
+        "cwiczenia": "Modelowanie za pomocą krzywych i powierzchni Béziera"
+      }
+    ],
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

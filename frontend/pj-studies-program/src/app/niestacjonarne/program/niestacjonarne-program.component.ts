@@ -1,6 +1,5 @@
 import { Component, OnInit, computed, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AccordionModule } from 'primeng/accordion';
 import { TabsModule } from 'primeng/tabs';
@@ -15,8 +14,9 @@ import { DividerModule } from 'primeng/divider';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { NiestacjonarneProgramService, SemesterViewModel } from './services/niestacjonarne-program.service';
-import { SubjectRow, SylabusData, SylabusFile, SylabusTrescProgramowa, SylabusKryteriaOceny } from '../../stacjonarne/program/models/program.models';
+import { SubjectRow, SylabusData, SylabusTrescProgramowa, SylabusKryteriaOceny } from '../../stacjonarne/program/models/program.models';
 import { BaseHrefService } from '../../shared/base-href.service';
+import { ShogunApiService } from '../../shared/shogun-api.service';
 import { SylabusFormComponent } from '../../shared/sylabus-form/sylabus-form.component';
 
 @Component({
@@ -63,10 +63,10 @@ export class NiestacjonarneProgramComponent implements OnInit {
   sylabusLoading = signal(false);
 
   private baseHrefService = inject(BaseHrefService);
+  private shogunApi = inject(ShogunApiService);
 
   constructor(
     private programService: NiestacjonarneProgramService,
-    private http: HttpClient,
     private router: Router,
   ) {}
 
@@ -81,8 +81,8 @@ export class NiestacjonarneProgramComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<any>(this.baseHrefService.assetUrl('niestacjonarne/program.json')).subscribe({
-      next: (raw) => { if (raw?.pdf) this.programPdf.set(raw.pdf); },
+    this.shogunApi.getProgramData('niestacjonarny').subscribe({
+      next: (data: any) => { if (data?.pdf) this.programPdf.set(data.pdf); },
     });
     this.programService.loadAll().subscribe({
       next: (data) => {
@@ -103,12 +103,11 @@ export class NiestacjonarneProgramComponent implements OnInit {
     this.sylabus.set(null);
     this.dialogVisible.set(true);
 
-    if (subject.syllabusFile) {
+    if (subject.code) {
       this.sylabusLoading.set(true);
-      const url = this.baseHrefService.assetUrl(subject.syllabusFile);
-      this.http.get<SylabusFile>(url).subscribe({
+      this.shogunApi.getSyllabus(subject.code, 'niestacjonarny').subscribe({
         next: (data) => {
-          this.sylabus.set(data.sylabus);
+          this.sylabus.set(data);
           this.sylabusLoading.set(false);
         },
         error: () => {

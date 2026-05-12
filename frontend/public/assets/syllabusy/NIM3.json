@@ -1,0 +1,188 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "06.03.2026",
+    "nazwa_przedmiotu": "Język niemiecki",
+    "kod_przedmiotu": "NIM3",
+    "rok_studiow": 3,
+    "semestr_studiow": 6,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": null,
+      "cwiczenia_lektorat_seminarium": 60,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
+    "ects": 3,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 15,
+      "calkowita_liczba_godzin_h": 75,
+      "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka niemieckiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "analiza tekstów z dyskusją",
+        "rozwiązywanie zadań",
+        "burza mózgów",
+        "mind map",
+        "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "egzamin ustny",
+        "ocena sporządzonego dokumentu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "NIM2",
+        "wymagania": "Zagadnienia z NIM2"
+      }
+    ],
+    "cel_dydaktyczny": "Nauczanie języka niemieckiego od poziomu A2 do B1. Student  opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Niemczech i krajach niemieckojęzycznych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "DaF Kompakt neu B1 - Birgit Braun, Margit, Doubek, Wydawnictwo Klett"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Nowe repetytorium z gramatyki języka niemieckiego, Stanisław Bęza, Wydawnictwo PWN 2023",
+          "Welttour Deutsch, Sylwia Mróz-Dwornikowska, Wydawnictwo Nowa Era, 2020"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [],
+      "umiejetnosci": [
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku niemieckim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie podstawowym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wiederholung des Konjuktivs. Sprachspiele./ T2- Unser Leben mit neuen Medien.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Was ist Freundcshaft?/ T2- Campus in Deutschalnd. Studieren in Deutschland.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "eine informelle E-mail schreiben. Saetze mut ‘weil’, ‘deshalb’, obwohl’. T2- wer die wahl hat?- HV",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Sätze mit „trotzdem” und „deshalb”. T2- Eine formelle E-mail schreiben. Seinen weg finden.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Frust im Studium. T2: Sätze mit „obwohl”, „trotzdem” – Wiederholung.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Wiedeholung des Wortschatzes. T2- Engagement für Natur und Menschen.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Ostern in Deutschland. T2- WWOOF- Arbeit am Text",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Zaliczenie. T2: Unten im Tal oder oben auf der Alp. – Arbeit mit dem Text.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Eine tolle Erfahrung. T2: sich begrüssen- international",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Siezen, dozen, miteinander reden. T2: Keine Panik-niemand ist perfekt.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "T1: Zaliczenie; Keine Panik- Fehler machen. T2: Eine Stelle in Dresden.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "T1: Silicon Saxony. T2: Geschichten und Gesichter Berlins",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "T1:Berliner Geschichten. T2: warum auswandern?",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "T1: sich informieren. T2: Im Gastland – Österreich",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "T1: Typisch deutsch und österreichisch, T2: Politik in Deutschland.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "German language instruction from A2 to B1 level. Students acquire German proficiency enabling communication in most everyday situations and, to some extent, professional contexts, as well as expressing thoughts and opinions and understanding and producing short written texts and spoken statements on various topics. Students also learn about the culture, history, and everyday life of Germany and other German-speaking countries.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

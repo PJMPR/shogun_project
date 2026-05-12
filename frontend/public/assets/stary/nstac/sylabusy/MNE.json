@@ -1,0 +1,143 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "20.02.2026",
+    "nazwa_przedmiotu": "Wprowadzenie do .NET MAUI",
+    "kod_przedmiotu": "MNE",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 15
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Projekt": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt aplikacji mobilnej realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność działania aplikacji, strukturę widoków, wykorzystanie wzorca MVVM, obsługę nawigacji, integrację z API oraz jakość kodu",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Programowanie aplikacji internetowych",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami tworzenia wieloplatformowych aplikacji mobilnych i desktopowych z wykorzystaniem platformy .NET MAUI. Studenci poznają architekturę aplikacji opartych na wzorcu MVVM, budowę interfejsu użytkownika w XAML, zarządzanie stanem oraz integrację aplikacji z natywnymi funkcjami systemów Android, iOS i Windows. Zajęcia mają charakter praktyczny i przygotowują do samodzielnego tworzenia prostych aplikacji wieloplatformowych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Dokumentacja .NET MAUI: https://learn.microsoft.com/dotnet/maui",
+          "Dokumentacja XAML: https://learn.microsoft.com/dotnet/desktop/wpf/xaml",
+          "Microsoft Learn – materiały .NET MAUI"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Matt Goldman, .NET MAUI in Action",
+          "Materiały społeczności .NET MAUI"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia związane z tworzeniem aplikacji wieloplatformowych w .NET MAUI, w tym architekturę MVVM, widoki, powiązania danych oraz cykl życia aplikacji.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zaprojektować i zaimplementować prostą aplikację w .NET MAUI, tworzyć interfejs użytkownika w XAML, obsługiwać nawigację, komunikować się z zewnętrznym API oraz uruchamiać aplikację na różnych platformach.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować realizację projektu aplikacji wieloplatformowej, korzystać z dokumentacji technicznej oraz dbać o jakość i czytelność kodu.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do .NET MAUI i architektury aplikacji wieloplatformowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Środowisko pracy i konfiguracja projektu .NET MAUI",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Podstawy XAML i budowa interfejsu użytkownika",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Wzorzec MVVM i powiązania danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Layouty i stylowanie aplikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Nawigacja pomiędzy widokami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Komunikacja z API i obsługa danych zdalnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Dostęp do natywnych funkcji urządzenia",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Debugowanie i testowanie aplikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

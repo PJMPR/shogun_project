@@ -1,0 +1,13 @@
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\bin\Release\net10.0\Shogun.Service.Api.Domain.deps.json
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\bin\Release\net10.0\Shogun.Service.Api.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\bin\Release\net10.0\Shogun.Service.Api.Domain.pdb
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.csproj.AssemblyReference.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.AssemblyInfoInputs.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.AssemblyInfo.cs
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.csproj.CoreCompileInputs.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.sourcelink.json
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\refint\Shogun.Service.Api.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\Shogun.Service.Api.Domain.pdb
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api.Domain\obj\Release\net10.0\ref\Shogun.Service.Api.Domain.dll

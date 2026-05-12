@@ -18,7 +18,8 @@ builder.Host.UseSerilog((ctx, services, cfg) =>
 builder.Services.AddControllers()
     .AddJsonOptions(opts =>
     {
-        opts.JsonSerializerOptions.PropertyNamingPolicy = null; // preserve field names
+        opts.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        opts.JsonSerializerOptions.DictionaryKeyPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
     });
 
 builder.Services.AddOpenApi();
@@ -31,10 +32,19 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddHealthChecks()
     .AddCheck("self", () => Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
+});
+
 // ── Build ─────────────────────────────────────────────────────────────────
 var app = builder.Build();
 
 app.UseExceptionHandler();
+app.UseCors();
 app.UseSerilogRequestLogging();
 
 if (app.Environment.IsDevelopment())

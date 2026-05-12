@@ -1,0 +1,237 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Interakcja Człowiek-Komputer",
+    "kod_przedmiotu": "ICK",
+    "rok_studiow": 3,
+    "semestr_studiow": 5,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 16,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 16
+    },
+    "odpowiedzialny_za_przedmiot": "",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 32,
+      "praca_wlasna_studenta_h": 68,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": "Projektowanie interfejsów użytkownika z zastosowaniem metod HCI; tworzenie prototypów i makiet; przeprowadzanie testów użyteczności; przygotowanie dokumentacji projektowej."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład konwersatoryjny (z elementami dyskusji)"
+      ],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "praca w grupach",
+        "warsztaty",
+        "studia przypadków z bazy studiów przypadków opracowanych przez firmy MŚP lub będące efektem staży"
+      ]
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [
+        "kolokwium"
+      ],
+      "cwiczenia_laboratorium": [
+        "prezentacja projektu i dokumentacji",
+        "ocena sporządzonego dokumentu",
+        "ocena pracy podczas ćwiczenia"
+      ]
+    },
+    "przedmioty_wprowadzajace": [],
+    "cel_dydaktyczny": "Celem przedmiotu jest zaznajomienie studentów z podstawowymi zagadnieniami projektowania interakcji człowieka z komputerem, tworzenia użytecznych interfejsów użytkownika oraz wykorzystania podejścia UCD (User-Centred Design) w projektowaniu, testowaniu i doskonaleniu użyteczności systemów informatycznych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Sikorski M. (2017). Interakcja człowiek-komputer. Wyd. PJWSTK Warszawa."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Badura C. (2019). UXUI. Design Zoptymalizowany. Wyd. Helion."
+        ]
+      },
+      "dokumentacja_internetowa": {
+        "Sikorski  M. (2021) Interaction Design in Agile IT Projects. Wyd. Politechnika Gdańska.  URL": "https://pbc.gda.pl/dlibra/publication/102691/"
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie zasady projektowania interakcji użytkownik-system w klasycznych i zwinnych projektach informatycznych",
+          "metoda_weryfikacji": "kolokwium"
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi stosować właściwe formy organizacji współpracy z użytkownikami podczas realizacji przedsięwzięć informatycznych",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student jest gotów współdziałania i współpracy w zespołach projektowych",
+          "metoda_weryfikacji": "prezentacja projektu i dokumentacji, ocena sporządzonego dokumentu, ocena pracy podczas ćwiczenia"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do projektowania interakcji człowiek–komputer (HCI) – zakres, definicja i znaczenie.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Historia rozwoju interfejsów oraz ewolucja modeli interakcji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Model człowiek–interfejs–system w projektowaniu systemów informatycznych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Charakterystyka użytkowników oraz analiza kontekstu użycia.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Ograniczenia poznawcze i motoryczne użytkowników w projektowaniu interfejsów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Percepcja i uwaga użytkownika – rola hierarchii wizualnej w projektowaniu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Identyfikacja błędów projektowych (analiza „bad design”).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Heurystyki użyteczności oraz klasyczne zasady projektowania interfejsów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Zasady projektowania graficznych interfejsów użytkownika (GUI).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Wymagania i standardy projektowania interfejsów WWW i mobilnych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Projektowanie interakcji dla usług cyfrowych i systemów złożonych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Interfejsy multimodalne – głos, gest, systemy inteligentne i rozwiązania typu „smart”.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Organizacja pracy projektowej – podział na zespoły i wybór tematu projektu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Analiza konkurencji, rynku docelowego oraz uzasadnienie biznesowe rozwiązania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Współpraca z klientem i użytkownikiem – identyfikacja i specyfikacja wymagań.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "Podejście User-Centred Design (UCD) w procesie projektowym.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "Elementy Design Thinking – empatyzacja i definiowanie problemu projektowego.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 18,
+        "wyklad": "Generowanie i wartościowanie koncepcji rozwiązań.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 19,
+        "wyklad": "Analiza potrzeb użytkowników oraz opracowanie person.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 20,
+        "wyklad": "Wizja produktu i projekt koncepcyjny systemu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 21,
+        "wyklad": "Opracowanie i mapowanie historyjek użytkownika.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 22,
+        "wyklad": "Projektowanie interakcji – tworzenie user flow oraz priorytetyzacja funkcjonalności.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 23,
+        "wyklad": "Prototypowanie wstępne (Lo-Fi) oraz prototypowanie cyfrowe (Hi-Fi).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 24,
+        "wyklad": "Scenariusze testowe, testy użyteczności oraz analiza wyników badań użytkowników.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 25,
+        "wyklad": "Iteracyjne doskonalenie projektu oraz prezentacja końcowych prototypów interfejsu użytkownika.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to develop students’ knowledge and skills in the field of human–computer interaction (HCI) design by introducing the theory and methodology of creating useful, accessible, and efficient user interfaces, with particular emphasis on user needs analysis, user journey design, information architecture, prototyping, and usability evaluation in accordance with the principles of the User-Centred Design (UCD) approach. The course has a theoretical and practical character and includes the analysis of existing interactive systems as well as the design and testing of students’ own solutions based on accepted standards and good practices.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

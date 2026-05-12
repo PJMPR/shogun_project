@@ -1,0 +1,133 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Narzędzia sztucznej Inteligencji",
+    "kod_przedmiotu": "NAI",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {},
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Ćwiczenia / Laboratorium/Lektorat:",
+        "rozwiązywanie zadań",
+        "Laboratorium/Projekt",
+        "brak",
+        "Kryteria oceny",
+        "LaboratoriumPrezentacje niewielkich projektów praktycznych",
+        "Ocena jest liczona jak średnia z uzyskanych ocen cząstkowych."
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "PRG1, MAD, ALG",
+        "wymagania": "Umiejętność programowania w dowolnym języku programowania, chociaż preferowane języki to C++ oraz Python. Znajomość klasycznych algorytmów i struktur danych"
+      }
+    ],
+    "cel_dydaktyczny": "Zadaniem kursu jest zapoznanie studentów z podstawowymi technikami używanymi w sztucznej inteligencji. Techniki te wchodzą obecnie coraz bardziej do głównego nurtu technologii IT i biorą coraz większy udział w zastosowaniach przemysłowych. Ponadto duża część omawianego materiału ma szerszy zasięg i może pomóc przyszłym inżynierom w rozwiązywaniu problemów informatycznych spoza ścisłej AI.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Wykłady do przedmiotu",
+          "Dokumentacja biblioteki OpenCV",
+          "Dokumentacja biblioteki TensorFlow",
+          "Algorytmy genetyczne + struktury danych = programy ewolucyjne, Zbigniew Michalewicz, 2003, ISBN: 8320428815",
+          "Algorytmy, Almanach, Gorge Heineman, Gary Pollice Stanley Selkow, Helion"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Zna i rozumie zastosowanie pojęć matematycznych w sztucznej inteligencji",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Zna i rozumie zastosowanie losowości w rozwiązywaniu problemów obliczeniowych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zidentyfikować problemy obliczeniowe które nie nadają się do rozwiązania klasycznymi algorytmami. Wie kiedy zastosować metody przybliżone.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi rozwiązywać problemy z wykorzystaniem narzędzi sztucznej inteligencji",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować program; potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": []
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wstęp oraz przypomnienie zagadnień które były na innych przedmiotach, ale są konieczne w dalszym przebiegu tego przedmiotu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Klasyczne rozważania na temat sztucznej inteligencji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Podstawy widzenia maszynowego na przykładzie biblioteki OpenCV",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Przykłady algorytmów heurystycznych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Podstawy sieci neuronowych z punktu widzenia konstrukcji i algorytmów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Podstawy drzew decyzyjnych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Algorytm A* jako przykład efektywnego rozwinięcia klasyczneo algorytmu o zastosowanie heurystyki",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

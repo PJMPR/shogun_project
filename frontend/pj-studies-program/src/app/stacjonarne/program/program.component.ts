@@ -16,8 +16,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TimelineModule } from 'primeng/timeline';
 
 import { ProgramService, SemesterViewModel } from './services/program.service';
-import { SubjectRow, SylabusData, SylabusFile, ProgramChange, ProgramChangesData, SylabusTrescProgramowa, SylabusKryteriaOceny } from './models/program.models';
+import { SubjectRow, SylabusData, ProgramChange, ProgramChangesData, SylabusTrescProgramowa, SylabusKryteriaOceny } from './models/program.models';
 import { BaseHrefService } from '../../shared/base-href.service';
+import { ShogunApiService } from '../../shared/shogun-api.service';
 import { SylabusFormComponent } from '../../shared/sylabus-form/sylabus-form.component';
 
 @Component({
@@ -66,6 +67,7 @@ export class ProgramComponent implements OnInit {
   sylabusLoading = signal(false);
 
   private baseHrefService = inject(BaseHrefService);
+  private shogunApi = inject(ShogunApiService);
 
   constructor(
     private programService: ProgramService,
@@ -83,8 +85,8 @@ export class ProgramComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<any>(this.baseHrefService.assetUrl('program.json')).subscribe({
-      next: (raw) => { if (raw?.pdf) this.programPdf.set(raw.pdf); },
+    this.shogunApi.getProgramData('stacjonarny').subscribe({
+      next: (data: any) => { if (data?.pdf) this.programPdf.set(data.pdf); },
     });
     this.http.get<ProgramChangesData>(this.baseHrefService.assetUrl('changes.json')).subscribe({
       next: (data) => {
@@ -112,12 +114,11 @@ export class ProgramComponent implements OnInit {
     this.sylabus.set(null);
     this.dialogVisible.set(true);
 
-    if (subject.syllabusFile) {
+    if (subject.code) {
       this.sylabusLoading.set(true);
-      const url = this.baseHrefService.assetUrl(subject.syllabusFile);
-      this.http.get<SylabusFile>(url).subscribe({
+      this.shogunApi.getSyllabus(subject.code, 'stacjonarny').subscribe({
         next: (data) => {
-          this.sylabus.set(data.sylabus);
+          this.sylabus.set(data);
           this.sylabusLoading.set(false);
         },
         error: () => {

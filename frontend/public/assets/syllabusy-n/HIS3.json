@@ -1,0 +1,153 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "niestacjonarny",
+    "wersja_z_dnia": "04.03.2026",
+    "nazwa_przedmiotu": "Język hiszpański 3",
+    "kod_przedmiotu": "HIS3",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": null,
+      "cwiczenia_lektorat_seminarium": 16,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Studium Języków Obcych ",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 16,
+      "praca_wlasna_studenta_h": 34,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka hiszpańskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "analiza tekstów z dyskusją",
+        "rozwiązywanie zadań",
+        "burza mózgów",
+        "mind map",
+        "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "egzamin ustny",
+        "ocena sporządzonego dokumentu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "HIS2",
+        "wymagania": "Zagadnienia poznane podczas HIS2"
+      }
+    ],
+    "cel_dydaktyczny": "Nauczanie języka hiszpańskiego od poziomu A1 do A2. Student  opanowuje język hiszpański w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i częściowo zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie krótkich tekstów pisanych i wypowiedzi ustnych na różne tematy. Student poznaje elementy kultury, historii i realiów życia codziennego w Hiszpanii i krajach obszaru języka hiszpańskiego.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "M. Spychała-Wawrzyniak, X. Pascual López, A. Dudziak-Szukała, A. Kaźmierczak, J.C. García González, Descrubre 1, Wydawnictwo DRACO, 2020"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "J. Fernandez, R. Fernández Jódar, X. Pascual López, Praktyczna gramatyka języka hiszpańskiego, Wydawnictwo DRACO, 2019",
+          "D. Vargas Vargas, Vocabulario en acción A1-A2, Wydawnictwo DRACO, 2023"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi konstruować proste wypowiedzi pisemne i ustne w języku hiszpńskim z wykorzystaniem opracowań dydaktycznych zgodnie z zasadami przewidzianymi dla danej formy.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi posługiwać się językiem hiszpańskim w mowie i piśmie na poziomie podstawowym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Zdrowie – części ciała, symptomy, choroby, odczucia fizyczne. Czasownik doler, estar (opis stanu zdrowia).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Zdrowie – wizyta u lekarza, środki lecznicze. Peryfrazy konieczności: deber/tener que + bezokolicznik. Tryb rozkazujący (tú i usted). Hiszpańska służba zdrowia.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Czynności codzienne i czynności zakończone w bliskiej przeszłości – Pretérito Perfecto Compuesto. Imiesłów bierny regularny. Okoliczniki czasu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Przeżycia i doświadczenia – opisywanie dnia w przeszłości. Pretérito Perfecto Compuesto: imiesłów bierny nieregularny.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Doświadczenia życiowe – Pretérito Perfecto Simple, czasowniki regularne. Wyrażanie częstotliwości w przeszłości. Przyimki: en, desde, hace …años.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Opisywanie weekendu w czasie przeszłym – Pretérito Perfecto Simple, czasowniki nieregularne. Sporty ekstremalne i podróże.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Rozmowa kwalifikacyjna, pisanie CV, kształcenie wyższe i zdolności zawodowe.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Wakacje – podróżowanie, zakwaterowanie, transport. Wyrażanie planów na przyszłość. Kolokwium zaliczeniowe.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "Spanish language instruction at the A2+ level. Students acquire language skills enabling them to describe past events, express future plans, and communicate in a professional environment. The course covers past tenses, vocabulary related to health and travel, and elements of the culture of Spanish-speaking countries.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { forkJoin, map, Observable } from 'rxjs';
 import {
   ElectiveGroup,
@@ -13,7 +12,7 @@ import {
   SubjectRow,
   SubjectTreeNode,
 } from '../../../stacjonarne/program/models/program.models';
-import { BaseHrefService } from '../../../shared/base-href.service';
+import { ShogunApiService } from '../../../shared/shogun-api.service';
 
 export interface SemesterViewModel {
   semester: number;
@@ -27,18 +26,13 @@ export interface SemesterViewModel {
 
 @Injectable({ providedIn: 'root' })
 export class NiestacjonarneProgramService {
-  private http = inject(HttpClient);
-  private baseHrefService = inject(BaseHrefService);
-
-  private url(path: string): string {
-    return this.baseHrefService.assetUrl(`niestacjonarne/${path}`);
-  }
+  private api = inject(ShogunApiService);
 
   loadAll(): Observable<SemesterViewModel[]> {
     return forkJoin({
-      program: this.http.get<ProgramData>(this.url('program.json')),
-      other: this.http.get<ElectivesOtherData>(this.url('electives-other.json')),
-      spec: this.http.get<ElectivesSpecializationsData>(this.url('electives-specializations.json')),
+      program: this.api.getProgramData('niestacjonarny'),
+      other:   this.api.getElectivesOther('niestacjonarny'),
+      spec:    this.api.getElectivesSpec('niestacjonarny'),
     }).pipe(
       map(({ program, other, spec }) => this.buildViewModels(program, other, spec))
     );

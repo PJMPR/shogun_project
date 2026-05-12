@@ -1,0 +1,189 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "27.02.2026",
+    "nazwa_przedmiotu": "Lektorat – Język niemiecki (semestr 5)",
+    "kod_przedmiotu": "NIM2",
+    "rok_studiow": 3,
+    "semestr_studiow": 5,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": null,
+      "cwiczenia_lektorat_seminarium": 60,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 10,
+      "calkowita_liczba_godzin_h": 70,
+      "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka niemieckiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "analiza tekstów z dyskusją",
+        "rozwiązywanie zadań",
+        "burza mózgów",
+        "mind map",
+        "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "egzamin ustny",
+        "ocena sporządzonego dokumentu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Lektorat – semestr 4 (LEK1)",
+        "wymagania": "Znajomość języka niemieckiego na poziomie A2/B1."
+      }
+    ],
+    "cel_dydaktyczny": "Nauczanie języka niemieckiego na poziomie B1/B1+. Student opanowuje język niemiecki w stopniu pozwalającym na komunikację językową w większości sytuacji dnia codziennego i zawodowego, wyrażanie myśli i opinii, rozumienie i tworzenie tekstów pisanych i wypowiedzi ustnych na tematy ogólne i branżowe z obszaru informatyki.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Materiały własne przygotowane przez lektora.",
+          "Podręcznik wskazany przez lektora prowadzącego na początku semestru."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "PONS Großwörterbuch Deutsch als Fremdsprache, PONS GmbH.",
+          "Materiały online: Deutsche Welle – Deutsch lernen (dw.com/de/deutsch-lernen), Goethe-Institut (goethe.de)."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [],
+      "umiejetnosci": [
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi konstruować wypowiedzi pisemne i ustne w języku niemieckim w kontekście zawodowym i codziennym.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi posługiwać się językiem niemieckim w mowie i piśmie na poziomie B1/B1+.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych w celach zawodowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do ciągłego samokształcenia własnych kompetencji językowych oraz dostrzega potrzebę podejmowania inicjatyw w dziedzinach biznesowych.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Powtórzenie i diagnoza poziomu. Słownictwo: środowisko pracy i życie studenta.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Gramatyka: Konjunktiv II – wyrażanie życzeń, możliwości i warunków.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Słownictwo IT: sprzęt komputerowy, oprogramowanie, systemy operacyjne.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Komunikacja zawodowa: korespondencja e-mailowa, pisanie podania o pracę.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Gramatyka: Passiv – budowanie i użycie strony biernej w opisach procesów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Słownictwo: internet, sieci komputerowe, bezpieczeństwo danych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Czytanie ze zrozumieniem: artykuły techniczne w języku niemieckim.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Prezentacje w języku niemieckim – struktura i słownictwo.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Słownictwo: programowanie, algorytmy, języki programowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Komunikacja w projekcie: spotkania, raporty, statusy – symulacje.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Kultura i realia gospodarcze Niemiec, Austrii i Szwajcarii – rynek IT.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Przygotowanie do certyfikacji B1 (Goethe-Zertifikat B1) – ćwiczenia.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Projekt zaliczeniowy – prezentacja lub raport w języku niemieckim.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Powtórzenie materiału.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Kolokwium zaliczeniowe.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "German language instruction at the B1/B1+ level. Students acquire German proficiency enabling communication in most everyday and professional situations, expressing thoughts and opinions, and understanding and producing written texts and spoken statements on general topics and specialist topics related to computer science.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

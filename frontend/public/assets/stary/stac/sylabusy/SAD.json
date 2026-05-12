@@ -1,0 +1,175 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Statystyczna analiza danych",
+    "kod_przedmiotu": "SAD",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": 30,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Dr Monika Wrzosek",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 65,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Egzamin"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "Kryteria oceny",
+        "Laboratorium–dwa kolokwia",
+        "Skala ocen:",
+        "Poniżej 50% - ndst",
+        "Od 50% - dst",
+        "Od 60% - dst+",
+        "Od 70% - db",
+        "Od 80% - db+",
+        "Od 90% - bdb",
+        "Wykład– egzamin pisemny",
+        "Skala ocen:",
+        "Poniżej 50% - ndst",
+        "Od 50% - dst",
+        "Od 60% - dst+",
+        "Od 70% - db",
+        "Od 80% - db+",
+        "Od 90% - bdb",
+        "Przed podejściem do egzaminu student musi zaliczyć część ćwiczeniową."
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Analiza matematyczna, Programowanie",
+        "wymagania": "Elementy rachunku różniczkowego i całkowego, podstawy programowania."
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów ze sposobami prezentacji i analizy danych oraz narzędziami modelowania probabilistycznego; przedstawienie metod statystyki matematycznej i wnioskowania statystycznego oraz nabycieprzez studentów praktycznych umiejętności wykorzystania oprogramowania do statystycznej analizy danych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Michael Baron, Probability and Statistics for Computer Scientists, 3rd edition. American University Chapman & Hall/CRC, 2019."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Koronacki J., Mielniczuk J., Statystyka dla studentów kierunków technicznych i przyrodniczych, WNT, 2018.",
+          "Plucińska A., Pluciński E., Probabilistyka, PWN, 2017."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student ma wiedzę z zakresu rachunku prawdopodobieństwa, statystyki matematycznej i analizy danych wykorzystywaną w rozwiązywaniu prostych zadań inżynierskich w informatyce.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia i metody wnioskowania statystycznego oraz ich zastosowania w praktyce informatycznej.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zastosować poznane metody statystyki opisowej, modelowania probabilistycznego i wnioskowania statystycznego do rozwiązywania zadań informatycznych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi przeprowadzić analizę prostego problemu analizy danych, dokonać wyboru narzędzi oraz przedstawić i zinterpretować uzyskane wyniki przy użyciu odpowiedniego oprogramowania.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student jest gotów do poszerzania kompetencji w zakresie statystycznej analizy danych.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Prawdopodobieństwo klasyczne i warunkowe. Niezależność zdarzeń. Prawdopodobieństwo całkowite. Wzór Bayesa. Niezawodność systemu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Zmienne losowe dyskretne, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady dwumianowy, ujemny dwumianowy i Poissona.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Zmienne losowe ciągłe, gęstość, dystrybuanta, wartość oczekiwana i wariancja. Rozkłady jednostajny, geometryczny, wykładniczy, gamma i normalny. Centralne twierdzenie graniczne.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Zmienne losowe dwuwymiarowa. Rozkłady brzegowe. Niezależność zmiennych losowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Zastosowania metody Monte Carlo.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Elementy procesów stochastycznych. Łańcuchy Markowa.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Elementy teorii kolejek.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Statystyka opisowa.Miary położenia, rozproszenia, asymetrii, koncentracji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Estymacja punktowa i przedziałowa parametrów rozkładów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Testowanie hipotez statystycznych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Model regresji liniowej.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

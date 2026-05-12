@@ -1,0 +1,206 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "15.02.2025",
+    "nazwa_przedmiotu": "Programowanie obiektowo-funkcyjne",
+    "kod_przedmiotu": "SKL",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": 15,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Dr hab. Marek A Bednarczyk",
+    "ects": null,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Wykład problemowy, poświęcony analizie kolejnych zagadnień omawianych w ramach przedmiotu",
+        "Ćwiczenia rozszerzone o proste projekty programistyczne poświęcone implementacji różnych analizowanych algorytmów i struktur danych z wykorzystaniem języka Scala oraz biblioteki Akka lub Pekko",
+        "Ćwiczenia/Laboratorium",
+        "Kryteria oceny",
+        "zaliczenie ćwiczeń wymaga zdobycia co najmniej 50% punktów możliwych do zdobycia na kolokwium oraz za zrealizowane projekty programistyczne",
+        "Nie dotyczy"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "PRG1 – Programowanie 1",
+        "wymagania": "POZ – Podstawy programowania obiektowego"
+      },
+      {
+        "nazwa": "JAZ – Java zaawansowana",
+        "wymagania": "WPR – Warsztaty Programistyczne"
+      },
+      {
+        "nazwa": "Umiejętność programowania w obiektowych językach programowania.",
+        "wymagania": "Umiejętność wnioskowania"
+      }
+    ],
+    "cel_dydaktyczny": "Opanowanie zasad łączenia programowania obiektowego z programowaniem funkcyjnym oraz idei aktorów (mikroserwisów). W trakcie zajęć obowiązuje zakaz stosowania technik programistycznych rodem z programowania imperatywnego (zmienne oraz pętle są zabronione). Umiejętność tworzenia oprogramowania typu mikroserwisy w oparciu o bibliotekę Akka implementującą paradygmat programowania opartego o aktorów.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Michael Swaine, Programowanie funkcyjne, PWN, 2021."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Martin Odersky, Lex Spoon, Bill Venners, Programming in Scala, 1st Edition, Artima Press, 2008.",
+          "(dostępne on-line)"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie różnice między paradygmatami: imperatywnym, obiektowym oraz funkcyjnym",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie sposoby implementacji podstawowych struktur danych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie paradygmaty programowania takie jak imperatywny, obiektowy i funkcyjny;",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Zna i rozumie problemy występujące przy programowaniu systemów rozproszonych i współbieżnych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi napisać i czytać ze zrozumieniem proste programy funkcyjne.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi wybrać pomiędzy rozwiązaniami opartymi o podejście map-reduce, a podejściem rekursywnym",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student:",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "posiada umiejętność specyfikowania, projektowania, implementacji, testowania idebuggowania programów w celu realizacji projektu",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "potrafi korzystać z bibliotek, środowisk programistycznych, integrujących i uruchomieniowych",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student:",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "potrafi zaprojektować i zrealizować prosty system oprogramowania na potrzeby projektu, posługując się wzorcami programowymi, standardami i dobrymi praktykami",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "potrafi dobrać model procesu i narzędzia dla jego wytworzenia",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": []
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Programowanie funkcyjne - podstawy",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Klasy i obiekty",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Funkcje wyższego rzędu, zastosowania",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Kolekcje (zbiory, wektory, listy)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Manipulacje na kolekcjach (rekursja)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "System typów w Scali – podstawy; Parametryzacja funkcji typem.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Kolekcji ciąg dalszy (Mapy)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Nierekursywne metody manipulacji na kolekcjach",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Asercje i testy jednostkowe",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Wyrażenia for",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Programowanie rozproszone – paradygmat Aktorów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Aktorzy i współbieżność",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

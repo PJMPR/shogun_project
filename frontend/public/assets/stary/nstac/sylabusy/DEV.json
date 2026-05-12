@@ -1,0 +1,207 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Technologie DevOps",
+    "kod_przedmiotu": "DEV",
+    "rok_studiow": 3,
+    "semestr_studiow": 6,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "mmiotk@pjwstk.edu.pl",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 65,
+      "calkowita_liczba_godzin_h": 125,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Egzamin"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "wykład z elementami dyskusji z prezentacją multimedialną",
+        "burza mózgów",
+        "rozwiązywanie zadań",
+        "analiza przypadków",
+        "projekt praktyczny",
+        "Kryteria oceny",
+        "100% Kolokwium pisemne zawierające do 10 zadań.",
+        "40% Ocena z laboratorium",
+        "60% Egzamin"
+      ]
+    },
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie się z techniką konteneryzacji na podstawie narzędzia Docker oraz Kubernetes. Efektem przedmiotu ma być możliwość utworzenia aplikacji typu REST API, która będzie spakowana za pomocą wyżej wymienionych narzędzi.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "S. Kane, Docker: Up & Running, O’Reilly, 2024.",
+          "J. Nickloff, S. Kuenzli, Docker in Action, Manning Publications, 2019.",
+          "G. Schenker, Learn Docker – Fundamentals of Docker 19.x, Packt Publishing, 2020.",
+          "E. Stoneman, Learn Docker in a Month of Lunches, Manning Publications, 2020."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "A. Davis, Bootstraping Microservices with Docker, Kubernetes and Terraform, Manning Publications, 2021.",
+          "E. Fouda, A Complete Guide to Docker for Operations and Development, Apress, 2022.",
+          "F. Zammetti, Modern Full Stack Development using Typescript, React, Node.js, Webpack and Docker, Apress, 2020."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie pojęcia w zakresie pojęcia wirtualizacji i konteneryzacji z wykorzystaniem sieci komputerowych, ich technologii oraz protokołów komunikacyjnych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie pojęcia występujące w procesie konteneryzacji na przykładzie narzędzia Docker. Zna i rozumie proces tworzenia, skonteneryzowanych bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie pojęcia związane z orchestracją i monitorowaniem takiej aplikacji",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi potrafi ocenić przydatność wirtualizacji i konteneryzacji i związanych z nimi środowisk",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi potrafi wyspecyfikować, zaprojektować, zaimplementować, przetestować oraz zdebuggować aplikcję utworzoną w procesie konteneryzacji za pomocą plików Dockerfile.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi wytworzyć warstwową aplikację webową w oparciu o wybrane wzorce architektoniczne i przy pomocy narzędzia Docker utworzyć kontener i umieścić go w technologii chmurowej.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi zaplanować i przeprowadzić automatyczny proces tworzenia aplikacji z wykorzystaniem pojęcia konteneryzacji i związanych z nimi narzędzi.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student jest gotów do samodzielnego uczenia się przez całe życie",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do idei konteneryzacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Praca oraz monitorowanie kontenerów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Tworzenie obrazów do użycia w kontenerze. Konteneryzacja istniejących aplikacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Wolumeny oraz rejestry  w kontenerze",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Tworzenie obrazów za pomocą technik multietapowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Konfiguracja zasobów oraz sieci w kontenerach",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Debugowanie kontenerów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Zarządzanie kontenerami na przykładzie narzędzia Docker Compose",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Architektura konteneryzacji aplikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Pojęcie Continuous Integration",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Narzędzie Jenkins jako przykład narzędzia do używania CI/CD",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Zasada ciągłej interakcji (CI)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Proces wdrażania aplikcji za pomocą narzędzia Ansible",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Proces monitorowania aplikacji w cyklu produkcyjnym",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Uruchomienie kontenerezowanej aplikacji w chmurze",
+        "cwiczenia": ""
+      }
+    ],
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Uzytkowanie komputerow (UKOS)",
+        "wymagania": "Znajomosc struktur plikow i katalogow; znajomosc pojecia procesu w systemie operacyjnym; umiejetnosc poslugiwania sie emulatorem terminala"
+      },
+      {
+        "nazwa": "Systemy operacyjne (SOP)",
+        "wymagania": "Podstawy administracji systemem operacyjnym"
+      },
+      {
+        "nazwa": "Technologie internetu (TIN)",
+        "wymagania": "Znajomosc protokolu HTTP; znajomosc pojec z zakresu tworzenia aplikacji internetowych"
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

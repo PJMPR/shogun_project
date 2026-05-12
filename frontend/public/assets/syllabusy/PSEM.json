@@ -1,0 +1,249 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "27.02.2026",
+    "nazwa_przedmiotu": "Proseminarium",
+    "kod_przedmiotu": "PSEM",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": null,
+      "cwiczenia_lektorat_seminarium": 30,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Dr hab. Marek A. Bednarczyk, prof. PJATK",
+    "ects": 3,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 45,
+      "calkowita_liczba_godzin_h": 75,
+      "praca_wlasna_studenta": "Przygotowanie konspektu pracy dyplomowej; realizacja kolejnych zadań wspomagających pracę dyplomową; przygotowanie dwóch prezentacji seminaryjnych; konsultacje z promotorem."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "metoda projektów (projekt praktyczny)",
+        "praca w grupach",
+        "dyskusja"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "prezentacja samodzielnej pracy semestralnej",
+        "ocena sporządzonego dokumentu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Budowa i integracja oprogramowania BYT",
+        "wymagania": "co najmniej równocześnie"
+      },
+      {
+        "nazwa": "Projekt zespołowy PRZ2",
+        "wymagania": "Społeczne aspekty informatyki SAI"
+      },
+      {
+        "nazwa": "Komercjalizacja projektów informatycznych KMR / Planowanie, organizacja i zarządzanie przedsiębiorstwem POZ",
+        "wymagania": "przedmioty specjalizacyjne"
+      }
+    ],
+    "cel_dydaktyczny": "Celem zajęć jest przygotowanie studentów do opracowania i prezentacji prac dyplomowych, zdyscyplinowanie ich w procesie zespołowej realizacji prac oraz przygotowanie do egzaminu dyplomowego. Zajęcia są prowadzone i dyskutowane w grupach specjalizacyjnych i obejmują przygotowanie, seminaryjną prezentację oraz dyskusję rozwiązań i decyzji przyjmowanych w trakcie wykonania prac dyplomowych. Istotny element kształcący stanowi analiza i dyskusja rozwiązań konstrukcyjnych, ról i zadań udziałowców projektu oraz społecznego lub biznesowego kontekstu prac.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Materiały wykładowe i specjalizacyjne",
+          "Regulaminy i instrukcje dyplomowania PJATK",
+          "Materiały i wzorce udostępniane przez prowadzącego Proseminarium"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Dokumentacja i materiały biblioteczne wcześniejszych projektów i prac dyplomowych PJATK"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W19",
+          "peu": "Student zna i rozumie  odniesienie podstawowych problemów etycznych, społecznych i zawodowych informatyki względem konkretnego zadania.  Rozumie odniesienie zagadnień ochrony własności intelektualnej oraz prawa patentowego i autorskiego względem konkretnego zadania.  Rozumie aspekty pozatechniczne i, powiązanie przedsięwzięcia informatycznego z jego  otoczeniem społecznym i biznesowym.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W20",
+          "peu": "Student zna i rozumie  wagę innowacyjności i powiązanie przedsięwzięcia informatycznego z jego otoczeniem biznesowym",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W17",
+          "peu": "Student zna i rozumie  Rozumie odniesienie zagadnień specjalizacyjnych do doboru, planowania i wykonania rozwiązania stawianego problemu informatycznego",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U01",
+          "peu": "Student potrafi  pozyskać informacje nieodzowne dla realizacji projektu dyplomowego",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U02",
+          "peu": "Student potrafi  przygotować uzyskać z otoczenia informację nieodzowną do realizacji pracy dyplomowej.  Potrafi zaprezentować i dyskutować przyjęte w pracy dyplomowej rozwiązania",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi  przygotować w języku polskim lub w języku obcym dokumentację rozwiązań realizowanych w pracy dyplomowej",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U05",
+          "peu": "Student potrafi  pracować w zespole pełniąc w nim uzgodnione role.  Potrafi oszacować czas potrzebny na realizację zleconego zadania; potrafi planować, opracować i realizować harmonogram prac zapewniający dotrzymanie terminów.",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U08",
+          "peu": "Student potrafi   analizować obserwowane zjawiska w celu identyfikacji wymagań wobec projektu.  Ma umiejętność tworzenia i weryfikacji modeli świata rzeczywistego oraz posługiwania się nimi w celu identyfikacji wymagań i projektowania rozwiązań projektowych",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U25",
+          "peu": "Student potrafi   uwzględnić społeczny, etyczny i prawny kontekst podejmowanego projektu oraz ocenić związane z nim zagrożenia",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U26",
+          "peu": "Student potrafi  zaplanować i wytworzyć podstawowe dokumenty związane z realizacją prostego projektu, wstępnie ocenić efekty ekonomiczne i społeczne przedsięwzięcia oraz ich wpływ na udziałowców",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Student potrafi  odnieść i zastosować wiedzę  specjalizacyjną do doboru, zaplanowania i wykonania rozwiązania stawianego problemu informatycznego",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do  pełnienia przypadających nań ról projektowych i  wykonawczych oraz współpracowania z innymi członkami grupy i otoczeniem projektu.",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K05",
+          "peu": "Student jest gotów do  właściwego zaplanowania kolejności i realizacji zadań projektowych",
+          "metoda_weryfikacji": "prezentacja samodzielnej pracy semestralnej, ocena sporządzonego dokumentu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Kształt i zawartość pracy dyplomowej; przykłady prac dyplomowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Treść, zakres i przebieg egzaminu dyplomowego; przygotowanie do egzaminu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Przygotowanie I. prezentacji na temat",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "-problemu i kontekstu pracy dyplomowej,",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "-wizji, rozwiązania postawionego problemu,",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "-planu realizacji pracy (zadania, produkty, środowisko wytwórcze, zgrubny harmonogram, udziałowcy, zasady zarządzania, zasady zapewnienia jakości, inne decyzje projektowe),",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "- stanu aktualnego pracy,",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "-zagrożeń i sposobów przeciwdziałania im",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Udział w seminaryjnej prezentacji i dyskusji rozwiązań projektowych. Prezentacja i dyskusja własnego zamierzenia oraz ról udziałowców; odniesienie do skutków społecznych oraz ewentualnej komercjalizacji projektu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Przegląd aktualnej dokumentacji pracy.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Przygotowanie rozwiniętego konspektu pracy.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Prezentacja i dyskusja konspektu pracy; udział w dyskusji innych konspektów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Korekta konspektu.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Prezentacja i dyskusja produktów wykonanych w ramach projektów zespołowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Przygotowanie finalnej prezentacji – odpowiadającej prezentacji na obronie lub uwzględniającej kroki wymagane dla dokończenia zadania",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "Udział w seminaryjnej prezentacji i dyskusji prac. Prezentacja i dyskusja rozwiązań projektowych i konstrukcji własnej pracy oraz pełnionej roli i wkładu poszczególnych realizatorów; napotkane problemy.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "Przedstawienie i dyskusja finalnej dokumentacji pracy dyplomowej oraz wkładu członków zespołu; planowanie sposobu interakcyjnej prezentacji systemu (oprogramowania) na obronie",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the classes is to prepare students for developing and presenting diploma theses, to discipline them in the process of team-based completion of the work, and to prepare them for the diploma examination. The classes are conducted and discussed in specialization groups and include preparation, seminar presentation, and discussion of solutions and decisions adopted during the completion of diploma theses. An important educational element is the analysis and discussion of design solutions, the roles and tasks of project stakeholders, and the social or business context of the work.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

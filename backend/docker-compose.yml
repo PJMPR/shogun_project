@@ -1,14 +1,4 @@
 ﻿services:
-  mongo:
-    image: mongo:7
-    container_name: pj_sylabi_mongo
-    restart: unless-stopped
-    environment:
-      MONGO_INITDB_DATABASE: pj_sylabi
-    ports:
-      - "${MONGO_PORT:-27017}:27017"
-    volumes:
-      - mongo_data:/data/db
 
   api:
     build:
@@ -16,31 +6,49 @@
       dockerfile: Shogun.Service.Api/Dockerfile
     container_name: pj_syllabi_api
     restart: unless-stopped
-    depends_on:
-      - mongo
     environment:
       ASPNETCORE_ENVIRONMENT: Production
       ASPNETCORE_URLS: http://+:8080
-      MONGODB__CONNECTIONSTRING: "mongodb://mongo:27017"
+      MONGODB__CONNECTIONSTRING: "mongodb://${MONGO_USER:-admin}:${MONGO_PASS:-haslo123}@host.docker.internal:27017/?authSource=admin"
       MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
     ports:
       - "${API_PORT:-8080}:8080"
 
-  seed:
+  mfe-host:
     build:
-      context: .
-      dockerfile: Shogun.Service.Api.Seed/Dockerfile
-    container_name: pj_syllabi_seed
-    depends_on:
-      - mongo
-    environment:
-      MONGODB__CONNECTIONSTRING: "mongodb://mongo:27017"
-      MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
-      REPO_ROOT: /repo
-    volumes:
-      - ..:/repo:ro
-    # Run once and exit
-    restart: "no"
+      context: ../frontend/pj-studies-host
+      dockerfile: Dockerfile
+    container_name: pj_mfe_host
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+
+  mfe-program:
+    build:
+      context: ../frontend/pj-studies-program
+      dockerfile: Dockerfile
+    container_name: pj_mfe_program
+    restart: unless-stopped
+    ports:
+      - "4201:80"
+
+  mfe-syllabi:
+    build:
+      context: ../frontend/pj-studies-syllabi
+      dockerfile: Dockerfile
+    container_name: pj_mfe_syllabi
+    restart: unless-stopped
+    ports:
+      - "4202:80"
+
+  mfe-assignements:
+    build:
+      context: ../frontend/pj-studies-assignements
+      dockerfile: Dockerfile
+    container_name: pj_mfe_assignements
+    restart: unless-stopped
+    ports:
+      - "4203:80"
 
 volumes:
   mongo_data:

@@ -1,5 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { forkJoin, map, Observable, of, shareReplay } from 'rxjs';
 
 import {
@@ -12,7 +11,7 @@ import {
   SubjectRow,
   SubjectTreeNode,
 } from '../models/program.models';
-import { BaseHrefService } from '../shared/base-href.service';
+import { ShogunApiService } from '../shared/shogun-api.service';
 
 export interface SemesterViewModel {
   semester: number;
@@ -30,13 +29,6 @@ export interface SemesterConfig {
   rocznik_wprowadzenia: number;
 }
 
-interface ObsadySourceConfig {
-  programUrl: string;
-  electivesOtherUrl: string;
-  electivesSpecUrl: string;
-  syllabusBasePath: string;
-}
-
 interface LoadedProgramSet {
   program: ProgramData;
   other: ElectivesOtherData;
@@ -46,46 +38,9 @@ interface LoadedProgramSet {
 
 @Injectable({ providedIn: 'root' })
 export class ObsadyService {
-  private http = inject(HttpClient);
-  private baseHrefService = inject(BaseHrefService);
+  private api = inject(ShogunApiService);
 
   private cache = new Map<string, Observable<LoadedProgramSet>>();
-
-  private getSourceConfig(
-    program: 'nowy' | 'stary',
-    tryb: 'stacjonarny' | 'niestacjonarny'
-  ): ObsadySourceConfig {
-    if (program === 'nowy' && tryb === 'stacjonarny') {
-      return {
-        programUrl: 'assets/program.json',
-        electivesOtherUrl: 'assets/electives-other.json',
-        electivesSpecUrl: 'assets/electives-specializations.json',
-        syllabusBasePath: '',
-      };
-    } else if (program === 'nowy' && tryb === 'niestacjonarny') {
-      return {
-        programUrl: 'assets/niestacjonarne/program.json',
-        electivesOtherUrl: 'assets/niestacjonarne/electives-other.json',
-        electivesSpecUrl: 'assets/niestacjonarne/electives-specializations.json',
-        syllabusBasePath: '',
-      };
-    } else if (program === 'stary' && tryb === 'stacjonarny') {
-      return {
-        programUrl: 'assets/stary/stac/program.json',
-        electivesOtherUrl: 'assets/stary/stac/electives-other.json',
-        electivesSpecUrl: 'assets/stary/stac/electives-specializations.json',
-        syllabusBasePath: 'assets/stary/stac/sylabusy/',
-      };
-    } else {
-      // stary + niestacjonarny
-      return {
-        programUrl: 'assets/stary/nstac/program.json',
-        electivesOtherUrl: 'assets/stary/nstac/electives-other.json',
-        electivesSpecUrl: 'assets/stary/nstac/electives-specializations.json',
-        syllabusBasePath: 'assets/stary/nstac/sylabusy/',
-      };
-    }
-  }
 
   private loadProgramSet(
     program: 'nowy' | 'stary',
@@ -93,17 +48,17 @@ export class ObsadyService {
   ): Observable<LoadedProgramSet> {
     const cacheKey = `${program}:${tryb}`;
     if (!this.cache.has(cacheKey)) {
-      const config = this.getSourceConfig(program, tryb);
+      const isStary = program === 'stary';
       const obs = forkJoin({
-        prog: this.http.get<ProgramData>(this.baseHrefService.assetUrl(config.programUrl)),
-        other: this.http.get<ElectivesOtherData>(this.baseHrefService.assetUrl(config.electivesOtherUrl)),
-        spec: this.http.get<ElectivesSpecializationsData>(this.baseHrefService.assetUrl(config.electivesSpecUrl)),
+        prog:  this.api.getProgramData(tryb, isStary),
+        other: this.api.getElectivesOther(tryb, isStary),
+        spec:  this.api.getElectivesSpec(tryb, isStary),
       }).pipe(
         map(({ prog, other, spec }) => ({
           program: prog,
           other,
           spec,
-          syllabusBasePath: config.syllabusBasePath,
+          syllabusBasePath: '',
         })),
         shareReplay(1)
       );

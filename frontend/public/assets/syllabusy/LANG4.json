@@ -1,0 +1,153 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "27.02.2026",
+    "nazwa_przedmiotu": "Lektorat – Język angielski (semestr 7)",
+    "kod_przedmiotu": "LANG4",
+    "rok_studiow": 4,
+    "semestr_studiow": 7,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": null,
+      "cwiczenia_lektorat_seminarium": 30,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "Studium Języków Obcych",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": "Nauka słownictwa i gramatyki języka angielskiego; przygotowywanie prac pisemnych; ćwiczenia konwersacyjne; przygotowanie do kolokwiów i testów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "analiza tekstów z dyskusją",
+        "rozwiązywanie zadań",
+        "burza mózgów",
+        "praca grupowa nad projektem z wykorzystaniem nowoczesnych technik informatycznych",
+        "warsztaty"
+      ]
+    },
+    "zaliczenie": {
+      "Ćwiczenia": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "egzamin ustny",
+        "ocena sporządzonego dokumentu"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Lektorat ANG – semestr 6 (LEK3)",
+        "wymagania": "Znajomość języka angielskiego na poziomie C1."
+      }
+    ],
+    "cel_dydaktyczny": "Nauczanie języka angielskiego na poziomie C1/C2. Semestr końcowy lektoratu – student doskonali umiejętności językowe niezbędne do obrony pracy dyplomowej i startu na międzynarodowym rynku pracy w branży IT.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Materiały własne przygotowane przez lektora.",
+          "Materiały przygotowujące do obrony pracy dyplomowej w języku angielskim."
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Oxford Advanced Learner's Dictionary, Oxford University Press.",
+          "Materiały online: BBC Learning English, Cambridge English Online."
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [],
+      "umiejetnosci": [
+        {
+          "keu": "K_U03",
+          "peu": "Student potrafi swobodnie komunikować się w języku angielskim na poziomie C1/C2 w kontekście obrony pracy dyplomowej i rozmowy kwalifikacyjnej.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_U06",
+          "peu": "Student potrafi pisać i redagować dokumenty zawodowe i akademickie w języku angielskim na poziomie C1.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K03",
+          "peu": "Student jest gotów do podjęcia pracy w międzynarodowym środowisku IT.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        },
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotów do permanentnego doskonalenia kompetencji językowych po ukończeniu studiów.",
+          "metoda_weryfikacji": "kolokwium, egzamin ustny, ocena sporządzonego dokumentu"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Przygotowanie do obrony pracy dyplomowej w języku angielskim – struktura, słownictwo, ćwiczenia.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Symulacja obrony pracy dyplomowej – pytania komisji, odpowiedzi, prezentacja wyników.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Rozmowa kwalifikacyjna na stanowisko inżynierskie – zaawansowane symulacje i informacja zwrotna.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Przygotowanie portfolio zawodowego (CV, LinkedIn, portfolio projektów) w języku angielskim.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Komunikacja w środowisku startupowym i korporacyjnym – język negocjacji i prezentacji.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Certyfikacje językowe – omówienie możliwości (IELTS, CAE, CPE, TOEFL).",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Projekt zaliczeniowy – prezentacja lub rozmowa kwalifikacyjna.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Powtórzenie materiału i kolokwium zaliczeniowe.",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "English language instruction at the C1/C2 level. Final semester of the language course—students refine the language skills necessary to defend their diploma thesis and enter the international IT job market.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

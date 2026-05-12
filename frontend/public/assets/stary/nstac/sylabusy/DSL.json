@@ -1,0 +1,143 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "20.02.2026",
+    "nazwa_przedmiotu": "Wprowadzenie do baz słownikowych",
+    "kod_przedmiotu": "DSL",
+    "rok_studiow": 2,
+    "semestr_studiow": 3,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 15
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Projekt": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność modelu danych, efektywność operacji wyszukiwania, spójność kluczy i wartości, uzasadnienie wyborów technologicznych oraz dokumentację",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Relacyjne bazy danych",
+        "wymagania": "Znajomość podstawowych pojęć związanych z bazami danych, umiejętność projektowania prostych modeli relacyjnych oraz pisania podstawowych zapytań SQL"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z koncepcją baz danych słownikowych (klucz–wartość) oraz ich zastosowaniami w nowoczesnych systemach informatycznych. Studenci poznają charakterystykę tego modelu, zasady przechowywania i wyszukiwania danych, a także typowe scenariusze użycia, takie jak cache, sesje użytkowników czy konfiguracje aplikacji. Przedmiot przygotowuje do świadomego doboru baz słownikowych jako elementu architektury systemów informatycznych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Martin Kleppmann, Designing Data-Intensive Applications",
+          "Dokumentacja Redis: https://redis.io/docs",
+          "Dokumentacja Amazon DynamoDB"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Martin Fowler, NoSQL Distilled",
+          "Materiały online producentów baz klucz–wartość"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe pojęcia związane z bazami słownikowymi oraz rozumie różnice pomiędzy modelem klucz–wartość a innymi modelami baz danych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi zaprojektować prosty system oparty na bazie słownikowej, wykonywać operacje zapisu i odczytu danych, ocenić wydajność oraz zintegrować bazę słownikową z aplikacją.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować realizację projektu bazodanowego, uzasadniać wybór bazy słownikowej oraz dbać o jakość dokumentacji projektowej.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do baz słownikowych i ich zastosowań",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Model klucz–wartość i jego charakterystyka",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Porównanie baz słownikowych z innymi modelami baz danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Podstawowe operacje zapisu i odczytu danych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Struktury danych w bazach słownikowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Spójność danych i modele replikacji",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Wydajność i skalowalność baz klucz–wartość",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Zastosowanie baz słownikowych jako cache",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Integracja bazy słownikowej z aplikacją",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt zaliczeniowy – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

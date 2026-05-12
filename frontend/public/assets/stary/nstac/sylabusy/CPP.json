@@ -1,0 +1,193 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Programowanie w C/C++",
+    "kod_przedmiotu": "",
+    "rok_studiow": 3,
+    "semestr_studiow": 5,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": 30,
+      "laboratorium_projekt": null
+    },
+    "odpowiedzialny_za_przedmiot": "dr Tadeusz Puźniakowski,",
+    "ects": 4,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      },
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "Kryteria oceny",
+        "prezentacja mini projektów",
+        "kolokwium praktyczne składające się z kilku zadań programistycznych",
+        "brak"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Wstęp do programowania",
+        "wymagania": "Umiejętność precyzyjnego wyrażania myśli i algorytmów w postaci programu komputerowego"
+      }
+    ],
+    "cel_dydaktyczny": "Praktyczna umiejętność programowania we współczesnym języku C++. Szczególny nacisk jest położony na tworzenie wydajnego i przejrzystego kodu wykorzystującego aktualne możliwości języka.",
+    "literatura": {
+      "uzupelniajaca": {
+        "pozycje": [
+          "Skuteczny nowoczesny C++, Scott Meyers, O'Relly/Promise, 2020"
+        ]
+      },
+      "dokumentacja_internetowa": {
+        "Dokumentacja języka C++ https://en.cppreference.com/": "Dokumentacja języka C++ https://en.cppreference.com/"
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie podstawy zagadnień współbieżności i równoległości wykonania.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student zna i rozumie techniki oraz funkcje dostępne we współczesnym języku C++ takie jak wyrażenia lambda, mutexy, zadania asynchroniczne i inne",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi wydajnie korzystać z dostępnej dokumentacji języka C++ oraz dokumentacji narzędzi.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi korzystać z dokumentacji w języku angielskim (wymagana literatura) i polskim.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi posługiwać się środowiskiem programistycznym języka C++",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi czytać ze zrozumieniem programy, pisać je i uruchamiać.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi rozwiązać zadanie w sposób pozwalający na uruchomienie go w ograniczonym środowisku wykonawczym.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student potrafi dobrać odpowiednie środki do wytworzenia oprogramowania na konkretną platformę sprzętową.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student jest gotów do samodzielnego rozwijania swoich umiejętności",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "",
+          "peu": "Student jest gotów do podjęcia decyzji jakie środki lepiej posłużą do realizacji zadania.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Utrwalenie i poznanie konstrukcji języka C++, czyli:",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Scope(zakresy)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Typy danych, w tym także klasy, unie, typy wyliczeniowe i struktury",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Typy funkcyjne i funkcje lambda",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Przypisania strukturalne (structured binding) i typ automatyczny",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Podstawowe elementy biblioteki STL, w szczególności",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "kolekcje (wektory, mapy, zbiory)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "biblioteka algorytmów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "biblioteka chrono",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "wątki, zadania i typ promise",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Automatyczna optymalizacja i kwestie wydajności skompilowanego kodu, a także jak różnie napisany kod źródłowy przekłada się na program wykonywalny",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Narzędzia wspomagające pracę z językiem",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Podstawy kroskompilacji oraz uruchamiania/kompilowania na sprzęt inny niż hosta",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

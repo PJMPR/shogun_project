@@ -1,0 +1,171 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "19.02.2026",
+    "nazwa_przedmiotu": "Podstawy Programowania",
+    "kod_przedmiotu": "PRG1",
+    "rok_studiow": 1,
+    "semestr_studiow": 1,
+    "obligatoryjny": true,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 60
+    },
+    "odpowiedzialny_za_przedmiot": "mgr inż. Adam Urbanowicz",
+    "ects": 6,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 90,
+      "praca_wlasna_studenta_h": 60,
+      "calkowita_liczba_godzin_h": 150,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Ćwiczenia / Laboratorium/Lektorat:",
+        "rozwiązywanie zadań programistycznych",
+        "Kryteria oceny",
+        "Ćwiczenia/Laboratorium/Projekt/Lektorat",
+        "Zadania laboratoryjne (czas oddawania: następne zajęcia) - 20%",
+        "Kolokwia (dwa): 60%",
+        "Projekt programistyczny: 20%",
+        "Brak"
+      ]
+    },
+    "przedmioty_wprowadzajace": [],
+    "cel_dydaktyczny": "Celem zajęć jest opanowanie przez studentów podstaw klasycznych technik programowania strukturalnego na bazie języka C#. Wprowadzone zostają również elementy programowania obiektowego. Zajęcia mają na celu rozwijanie umiejętności abstrakcyjnego myślenia oraz rozwiązywania prostych problemów programistycznych z wykorzystaniem platformy .NET i aplikacji konsolowych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Andrew Troelsen, Phil Japikse, Pro C# 10 with .NET 6, Apress, 2022",
+          "Ian Griffiths, Programming C# 10, O'Reilly Media, 2022"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Jon Skeet, C# in Depth, Fourth Edition, Manning Publications, 2019",
+          "Robert C. Martin, Czysty kod. Podręcznik dobrego programisty, Helion, 2010"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Wymienia zasady programowania strukturalnego i obiektowego w języku C#, w tym techniki iteracji, rekurencji, organizacji pamięci zarządzanej, obsługi typów wartościowych i referencyjnych. Opisuje podstawowe algorytmy wyszukiwania i sortowania danych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Pozyskuje informacje dotyczące programowania z dokumentacji technicznej, literatury i Internetu. Konstruuje rozwiązania prostych zadań programistycznych w języku C# wymagających użycia instrukcji warunkowych, pętli, rekurencji, metod z odpowiednim sposobem przekazywania parametrów, tablic i kolekcji. Testuje poprawność wykonywanego oprogramowania oraz wykorzystuje zintegrowane środowisko programistyczne do konfigurowania, edytowania i testowania aplikacji konsolowych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": []
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Pojęcie algorytmu. Sposoby przedstawiania algorytmów. Zmienne, typy, operator przypisania, instrukcje Console.WriteLine i Console.ReadLine, pierwszy program w C#.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Wprowadzenie do środowiska .NET i Visual Studio. Tworzenie projektu, edycja kodu źródłowego, kompilacja, uruchamianie i debugowanie aplikacji konsolowych. Implementacja prostych obliczeń matematycznych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Instrukcja warunkowa if, if else, zagnieżdżona instrukcja if. Instrukcja switch.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Implementacja programów wymagających użycia instrukcji warunkowych i wielowariantowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Pętle for, while, do while. Różnice i zastosowania. Zagnieżdżanie pętli. Instrukcje break i continue.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Implementacja programów wymagających użycia pętli.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Typy całkowite i zmiennoprzecinkowe. Typ znakowy i logiczny. Konwersje typów i rzutowania. Kwalifikator const. Operatory arytmetyczne, relacyjne i logiczne. Priorytety operatorów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Implementacja programów z wykorzystaniem zmiennych różnych typów oraz operatorów.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Tablice jednowymiarowe i wielowymiarowe. Inicjalizacja tablic. Podstawowe algorytmy sortowania.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Implementacja programów wykorzystujących tablice jednowymiarowe i wielowymiarowe.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Metody. Przekazywanie parametrów. Zwracanie wartości. Metody void. Przeciążanie metod. Metody biblioteczne.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Definiowanie i stosowanie metod. Implementacja aplikacji wykorzystujących metody.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Rekurencja. Wady i zalety stosowania rekurencji. Klasa string i jej metody.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Implementacja programów wykorzystujących rekurencję oraz operacje na łańcuchach znakowych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Typy referencyjne i wartościowe. Wprowadzenie do kolekcji: List, ArrayList. Zarządzanie pamięcią w .NET. Garbage Collector.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "Implementacja programów wykorzystujących kolekcje i dynamiczne struktury danych.",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "Wstęp do testowania jednostkowego",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}

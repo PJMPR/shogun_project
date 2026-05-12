@@ -1,0 +1,289 @@
+{
+  "specializations": [
+    {
+      "name": "Architektury oprogramowania i technologie DevOps",
+      "items": [
+        {
+          "semester": 5,
+          "name": "Architektura mikroserwisowa i mikrofrontendowa",
+          "code": "AMM",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/AMM.json",
+          "pdf": "assets/files/stacjonarne/AMM.pdf",
+          "docFile": "assets/files/stacjonarne/AMM.docx"
+        },
+        {
+          "semester": 5,
+          "name": "Konteneryzacja serwisów internetowych",
+          "code": "KSI",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/KSI.json",
+          "pdf": "assets/files/stacjonarne/KSI.pdf",
+          "docFile": "assets/files/stacjonarne/KSI.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Technologie DevOps",
+          "code": "DEV",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/DEV.json",
+          "pdf": "assets/files/stacjonarne/DEV.pdf",
+          "docFile": "assets/files/stacjonarne/DEV.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Zarządzanie infrastrukturą chmurową",
+          "code": "ZIC",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/ZIC.json",
+          "pdf": "assets/files/stacjonarne/ZIC.pdf",
+          "docFile": "assets/files/stacjonarne/ZIC.docx"
+        }
+      ]
+    },
+    {
+      "name": "Cyberbezpieczeństwo",
+      "items": [
+        {
+          "semester": 5,
+          "name": "Kryminalistyka cyfrowa",
+          "code": "KC",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/KC.json",
+          "pdf": "assets/files/stacjonarne/KC.pdf",
+          "docFile": "assets/files/stacjonarne/KCs.docx"
+        },
+        {
+          "semester": 5,
+          "name": "Analiza incydentów cyberbezpieczeństwa",
+          "code": "AIC",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/AIC.json",
+          "pdf": "assets/files/stacjonarne/AIC.pdf",
+          "docFile": "assets/files/stacjonarne/AIC.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Testowanie bezpieczeństwa systemów IT",
+          "code": "TBS",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/TBS.json",
+          "pdf": "assets/files/stacjonarne/TBS.pdf",
+          "docFile": "assets/files/stacjonarne/TBS.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Projektowanie bezpiecznych architektur IT",
+          "code": "PBA",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PBA.json",
+          "pdf": "assets/files/stacjonarne/PBA.pdf",
+          "docFile": "assets/files/stacjonarne/PBA.docx"
+        }
+      ]
+    },
+    {
+      "name": "Inżynieria gier komputerowych",
+      "items": [
+        {
+          "semester": 5,
+          "name": "Prototypowanie gier komputerowych",
+          "code": "PG1",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PG1.json",
+          "pdf": "assets/files/stacjonarne/PG1.pdf",
+          "docFile": "assets/files/stacjonarne/PG1.docx"
+        },
+        {
+          "semester": 5,
+          "name": "Modelowanie 3D dla gier",
+          "code": "M3D",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/M3D.json",
+          "pdf": "assets/files/stacjonarne/M3D.pdf",
+          "docFile": "assets/files/stacjonarne/M3D.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Silniki gier komputerowych",
+          "code": "SGK",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/SGK.json",
+          "pdf": "assets/files/stacjonarne/SGK.pdf",
+          "docFile": "assets/files/stacjonarne/SGK.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Projektowanie gier komputerowych",
+          "code": "PG2",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PG2.json",
+          "pdf": "assets/files/stacjonarne/PG2.pdf",
+          "docFile": "assets/files/stacjonarne/PG2.docx"
+        }
+      ]
+    },
+    {
+      "name": "Sztuczna inteligencja",
+      "items": [
+        {
+          "semester": 5,
+          "name": "Wstęp do nauczania maszynowego",
+          "code": "IML",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/IML.json",
+          "pdf": "assets/files/stacjonarne/IML.pdf",
+          "docFile": "assets/files/stacjonarne/IML.docx"
+        },
+        {
+          "semester": 5,
+          "name": "Nowoczesne metody uczenia głębokiego",
+          "code": "FDL",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/FDL.json",
+          "pdf": "assets/files/stacjonarne/FDL.pdf",
+          "docFile": "assets/files/stacjonarne/FDL.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Computer Vision",
+          "code": "COV",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/COV.json",
+          "pdf": "assets/files/stacjonarne/COV.pdf",
+          "docFile": "assets/files/stacjonarne/COV.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Przetwarzanie języka naturalnego",
+          "code": "PJN",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PJN.json",
+          "pdf": "assets/files/stacjonarne/PJN.pdf",
+          "docFile": "assets/files/stacjonarne/PJN.docx"
+        }
+      ]
+    },
+    {
+      "name": "Internet rzeczy",
+      "items": [
+        {
+          "semester": 5,
+          "name": "Szybkie prototypowanie",
+          "code": "PTT",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PTT.json",
+          "pdf": "assets/files/stacjonarne/PTT.pdf",
+          "docFile": "assets/files/stacjonarne/PTT.docx"
+        },
+        {
+          "semester": 5,
+          "name": "Systemy czasu rzeczywistego",
+          "code": "RTO",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/RTO.json",
+          "pdf": "assets/files/stacjonarne/RTO.pdf",
+          "docFile": "assets/files/stacjonarne/RTO.docx"
+        },
+        {
+          "semester": 6,
+          "name": "Komunikacja i protokoły dla Internetu Rzeczy",
+          "code": "KIP",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/KIP.json",
+          "pdf": "assets/files/stacjonarne/KIP.pdf",
+          "docFile": "assets/files/stacjonarne/KIP.docx"
+        },
+        {
+          "semester": 7,
+          "name": "Programowanie platform sprzętowych",
+          "code": "PPS",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/syllabusy/PPS.json",
+          "pdf": "assets/files/stacjonarne/PPS.pdf",
+          "docFile": "assets/files/stacjonarne/PPS.docx"
+        }
+      ]
+    }
+  ]
+}

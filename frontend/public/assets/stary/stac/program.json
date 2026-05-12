@@ -1,0 +1,694 @@
+{
+  "pdf": "Program Studiow_25_26_stacjonarne.docx",
+  "semesters": [
+    {
+      "semester": 1,
+      "summary": {
+        "ects": 24,
+        "lecture": 150,
+        "tutorial": 120,
+        "lab": 90
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Algebra liniowa i geometria",
+          "type": "M",
+          "code": "ALG",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/ALG.json"
+        },
+        {
+          "name": "Matematyka dyskretna",
+          "type": "M",
+          "code": "MAD",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/MAD.json"
+        },
+        {
+          "name": "Użytkowanie komputerów i podstawy systemów operacyjnych",
+          "type": "M",
+          "code": "UKOS",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/UKOS.json"
+        },
+        {
+          "name": "Programowanie 1",
+          "type": "M",
+          "code": "PRG1",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 60,
+          "form": "Z",
+          "ects": 6,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRG1.json"
+        },
+        {
+          "name": "Wstęp do informatyki i architektury komputerów",
+          "type": "M",
+          "code": "WIA",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "E",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/WIA.json"
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny 1.",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S1"
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "ANG1-3",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/ANG1-3.json"
+        }
+      ]
+    },
+    {
+      "semester": 2,
+      "summary": {
+        "ects": 22,
+        "lecture": 105,
+        "tutorial": 135,
+        "lab": 150
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Analiza matematyczna",
+          "type": "M",
+          "code": "AMs",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/AMs.json"
+        },
+        {
+          "name": "Relacyjne bazy danych",
+          "type": "M",
+          "code": "RBD",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 45,
+          "form": "EZ",
+          "ects": 6,
+          "syllabusFile": "assets/stary/stac/sylabusy/RBD.json"
+        },
+        {
+          "name": "Wychowanie fizyczne",
+          "type": "M",
+          "code": "WF1",
+          "lecture": 0,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "Z",
+          "ects": 0,
+          "syllabusFile": "assets/stary/stac/sylabusy/WF1.json"
+        },
+        {
+          "name": "Fizyka",
+          "type": "M",
+          "code": "FIZ",
+          "lecture": 15,
+          "tutorial": 15,
+          "lab": 15,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/FIZ.json"
+        },
+        {
+          "name": "Warsztaty programistyczne",
+          "type": "M",
+          "code": "WPR",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 60,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/WPR.json"
+        },
+        {
+          "name": "Programowanie obiektowe w Javie",
+          "type": "M",
+          "code": "JJA",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/JJA.json"
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "ANG1-3",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/ANG1-3.json"
+        }
+      ]
+    },
+    {
+      "semester": 3,
+      "summary": {
+        "ects": 30,
+        "lecture": 180,
+        "tutorial": 105,
+        "lab": 165
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Algorytmy i struktury danych",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "ASD_S3"
+        },
+        {
+          "name": "Systemy baz danych",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SBD_S3"
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny 1.",
+          "type": "O",
+          "code": "-",
+          "lecture": 15,
+          "tutorial": 15,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S3"
+        },
+        {
+          "name": "Wstęp do informatyki i architektury komputerów 2",
+          "type": "M",
+          "code": "WIA2",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/WIA2.json"
+        },
+        {
+          "name": "Historia i kultura Japonii",
+          "type": "M",
+          "code": "HKJ",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/HKJ.json"
+        },
+        {
+          "name": "Metody programowania",
+          "type": "M",
+          "code": "MPR",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/MPR.json"
+        },
+        {
+          "name": "Java zaawansowana",
+          "type": "M",
+          "code": "JAZ",
+          "lecture": 15,
+          "tutorial": 0,
+          "lab": 45,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/JAZ.json"
+        },
+        {
+          "name": "Język angielski",
+          "type": "M",
+          "code": "ANG1-3",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/ANG1-3.json"
+        },
+        {
+          "name": "Narzędzia sztucznej inteligencji",
+          "type": "M",
+          "code": "NAI",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/NAI.json"
+        }
+      ]
+    },
+    {
+      "semester": 4,
+      "summary": {
+        "ects": 38,
+        "lecture": 180,
+        "tutorial": 75,
+        "lab": 165
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Technologie Internetu",
+          "type": "M",
+          "code": "TIN",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/TIN.json"
+        },
+        {
+          "name": "Grafika komputerowa",
+          "type": "M",
+          "code": "GRK",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/GRK.json"
+        },
+        {
+          "name": "Projektowanie systemów informacyjnych",
+          "type": "M",
+          "code": "PRI",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRI.json"
+        },
+        {
+          "name": "Elektronika",
+          "type": "M",
+          "code": "ELK",
+          "lecture": 30,
+          "tutorial": 15,
+          "lab": 15,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/ELK.json"
+        },
+        {
+          "name": "Systemy operacyjne",
+          "type": "M",
+          "code": "SOP",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/SOP.json"
+        },
+        {
+          "name": "Sieci komputerowe",
+          "type": "M",
+          "code": "SKOA",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/SKOA.json"
+        },
+        {
+          "name": "Praktyka 1",
+          "type": "M",
+          "code": "PRK1",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 10,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRK1.json"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/LEK1-4-ANG.json"
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "summary": {
+        "ects": 23,
+        "lecture": 135,
+        "tutorial": 120,
+        "lab": 135
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Projekt",
+          "type": "M",
+          "code": "PRO",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 45,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRO.json"
+        },
+        {
+          "name": "Budowa i integracja systemów informatycznych",
+          "type": "M",
+          "code": "BYT",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "E",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/BYT.json"
+        },
+        {
+          "name": "Systemy wbudowane",
+          "type": "M",
+          "code": "SWB",
+          "lecture": 30,
+          "tutorial": 15,
+          "lab": 15,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/SWB.json"
+        },
+        {
+          "name": "Bezpieczeństwo systemów informacyjnych",
+          "type": "M",
+          "code": "BSI",
+          "lecture": 15,
+          "tutorial": 15,
+          "lab": 15,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/BSI.json"
+        },
+        {
+          "name": "Przedmiot specjalizacyjny 1",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SPEC_5"
+        },
+        {
+          "name": "Przedmiot obieralny - specjalizacji",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "electiveGroup": "SPEC_5"
+        },
+        {
+          "name": "Wychowanie fizyczne",
+          "type": "M",
+          "code": "WF2",
+          "lecture": 0,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "Z",
+          "ects": 0,
+          "syllabusFile": "assets/stary/stac/sylabusy/WF2.json"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK1-4-ANG",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/LEK1-4-ANG.json"
+        }
+      ]
+    },
+    {
+      "semester": 6,
+      "summary": {
+        "ects": 37,
+        "lecture": 150,
+        "tutorial": 105,
+        "lab": 150
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Przedmiot obieralny 1",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 4,
+          "electiveGroup": "OB1_S6"
+        },
+        {
+          "name": "Przedmiot obieralny 2",
+          "type": "O",
+          "code": "-",
+          "lecture": 15,
+          "tutorial": 15,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "OB2_S6"
+        },
+        {
+          "name": "Interakcja człowiek - komputer",
+          "type": "M",
+          "code": "ICK",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/ICK.json"
+        },
+        {
+          "name": "Przedmiot specjalizacyjny 2",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SPEC_6"
+        },
+        {
+          "name": "Projekt zespołowy 1",
+          "type": "M",
+          "code": "PRZ1",
+          "lecture": 15,
+          "tutorial": 0,
+          "lab": 60,
+          "form": "Z",
+          "ects": 6,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRZ1.json"
+        },
+        {
+          "name": "Społeczne aspekty informatyki",
+          "type": "M",
+          "code": "SAI",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "Z",
+          "ects": 4,
+          "syllabusFile": "assets/stary/stac/sylabusy/SAI.json"
+        },
+        {
+          "name": "Praktyka 2",
+          "type": "M",
+          "code": "PRK2",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 10,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRK2.json"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK4-ANG",
+          "lecture": 0,
+          "tutorial": 60,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/LEK4-ANG.json"
+        }
+      ]
+    },
+    {
+      "semester": 7,
+      "summary": {
+        "ects": 36,
+        "lecture": 90,
+        "tutorial": 105,
+        "lab": 105
+      },
+      "description": "",
+      "subjects": [
+        {
+          "name": "Przedmiot monograficzny specjalizacji",
+          "type": "O",
+          "code": "-",
+          "lecture": 30,
+          "tutorial": 0,
+          "lab": 30,
+          "form": "EZ",
+          "ects": 5,
+          "electiveGroup": "SPEC_7"
+        },
+        {
+          "name": "Statystyczna analiza danych",
+          "type": "M",
+          "code": "SAD",
+          "lecture": 30,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "EZ",
+          "ects": 5,
+          "syllabusFile": "assets/stary/stac/sylabusy/SAD.json"
+        },
+        {
+          "name": "Projekt zespołowy 2",
+          "type": "M",
+          "code": "PRZ2",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 60,
+          "form": "Z",
+          "ects": 6,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRZ2.json"
+        },
+        {
+          "name": "Programowanie obiektowo - funkcyjne",
+          "type": "M",
+          "code": "SKL",
+          "lecture": 15,
+          "tutorial": 0,
+          "lab": 15,
+          "form": "Z",
+          "ects": 2,
+          "syllabusFile": "assets/stary/stac/sylabusy/SKL.json"
+        },
+        {
+          "name": "Proseminarium",
+          "type": "M",
+          "code": "PSEM",
+          "lecture": 0,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "Z",
+          "ects": 3,
+          "syllabusFile": "assets/stary/stac/sylabusy/PSEM.json"
+        },
+        {
+          "name": "Przedmiot obieralny humanistyczny/społeczny",
+          "type": "O",
+          "code": "-",
+          "lecture": 15,
+          "tutorial": 15,
+          "lab": 0,
+          "form": "Z",
+          "ects": 2,
+          "electiveGroup": "HUM_S7"
+        },
+        {
+          "name": "Praktyka 3",
+          "type": "M",
+          "code": "PRK3",
+          "lecture": 0,
+          "tutorial": 0,
+          "lab": 0,
+          "form": "Z",
+          "ects": 12,
+          "syllabusFile": "assets/stary/stac/sylabusy/PRK3.json"
+        },
+        {
+          "name": "Lektorat",
+          "type": "M",
+          "code": "LEK4-ANG",
+          "lecture": 0,
+          "tutorial": 30,
+          "lab": 0,
+          "form": "Z",
+          "ects": 1,
+          "syllabusFile": "assets/stary/stac/sylabusy/LEK4-ANG.json"
+        }
+      ]
+    }
+  ]
+}

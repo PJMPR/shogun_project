@@ -1,0 +1,248 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdańsku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "03.03.2026",
+    "nazwa_przedmiotu": "Administracja systemami operacyjnymi",
+    "kod_przedmiotu": "ADM",
+    "rok_studiow": 3,
+    "semestr_studiow": 6,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 30,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 30
+    },
+    "odpowiedzialny_za_przedmiot": "mgr Antoni Ulenberg",
+    "ects": 5,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 60,
+      "praca_wlasna_studenta_h": 40,
+      "calkowita_liczba_godzin_h": 100,
+      "praca_wlasna_studenta": "Samodzielna konfiguracja środowiska wirtualnego z systemem Windows Server; wykonywanie zadań administracyjnych (Active Directory, GPO, DNS, DHCP) poza zajęciami; przygotowanie sprawozdań z laboratoriów."
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [
+        "wykład z prezentacją multimedialną",
+        "wykład z prezentacją oprogramowania"
+      ],
+      "cwiczenia_laboratorium": [
+        "rozwiązywanie zadań",
+        "warsztaty",
+        "praca w grupach"
+      ]
+    },
+    "zaliczenie": {
+      "Wykład": {
+        "sposob": "Nieoceniany"
+      },
+      "Laboratorium": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "kolokwium",
+        "ocena pracy podczas ćwiczenia",
+        "raport z wykonanego zadania"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Użytkowanie komputerów i podstawy systemów operacyjnych",
+        "wymagania": "Umiejętność obsługi terminala oraz podstawy działania systemów operacyjnych"
+      },
+      {
+        "nazwa": "Sieci komputerowe",
+        "wymagania": "Znajomość podstaw z zakresu funkcjonowania sieci LAN/WAN, adresacja IP, działanie DNS, działanie DHCP"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest przekazanie wiedzy i rozwinięcie umiejętności z zakresu administracji systemami IT w środowisku korporacyjnym, w szczególności instalacji, konfiguracji i zarządzania systemem Windows Server oraz usługami sieciowymi, z uwzględnieniem aspektów bezpieczeństwa i automatyzacji.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": []
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "B. Desmond, J. Richards, R. Allen – Designing, Deploying, and Running Active Directory",
+          "J. Moskowitz – Group Policy"
+        ]
+      },
+      "dokumentacja_internetowa": {
+        "https://learn.microsoft.com/pl-pl/training/modules/introduction-to-ad-ds/": "https://learn.microsoft.com/pl-pl/training/modules/introduction-to-ad-ds/",
+        "https://learn.microsoft.com/pl-pl/training/paths/administer-active-directory-domain-services/": "https://learn.microsoft.com/pl-pl/training/paths/administer-active-directory-domain-services/"
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "K_W07",
+          "peu": "Student posiada wiedzę dotyczącą architektury systemu Windows Server, jego ról i usług oraz zasad instalacji, konfiguracji i aktualizacji systemu serwerowego.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W08",
+          "peu": "Rozumie koncepcję domeny, kontrolera domeny, usług Active Directory, DNS i DHCP oraz mechanizmów zarządzania użytkownikami, grupami i uprawnieniami.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W23",
+          "peu": "Zna podstawy bezpieczeństwa systemów serwerowych, polityk zabezpieczeń, kopii zapasowych i odtwarzania danych.",
+          "metoda_weryfikacji": ""
+        },
+        {
+          "keu": "K_W08",
+          "peu": "Rozumie zasady wirtualizacji, monitorowania wydajności oraz automatyzacji.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "K_U13",
+          "peu": "Student potrafi instalować i konfigurować system Windows Server w środowisku fizycznym i wirtualnym.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U14",
+          "peu": "Konfiguruje domenę oraz usługi katalogowe i sieciowe, zarządza kontami użytkowników, grupami i politykami GPO.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U14",
+          "peu": "Wdraża usługi plikowe i sieciowe, monitoruje działanie systemu oraz diagnozuje i usuwa typowe problemy administracyjne.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U27",
+          "peu": "Wykonuje kopie zapasowe, odtwarza dane oraz automatyzuje zadania administracyjne.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_U30",
+          "peu": "Stosuje mechanizmy zabezpieczeń w celu ochrony danych i infrastruktury.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "K_K04",
+          "peu": "Student jest gotowy do samodzielnej i zespołowej pracy przy utrzymaniu infrastruktury serwerowej.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        },
+        {
+          "keu": "K_K06",
+          "peu": "Przejawia odpowiedzialność za bezpieczeństwo danych, ciągłość działania systemów i poprawność konfiguracji.",
+          "metoda_weryfikacji": "kolokwium, ocena pracy podczas ćwiczenia, raport z wykonanego zadania"
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do systemów serwerowych i administracji IT w środowisku korporacyjnym",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Wirtualizacja środowiska serwerowego",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Architektura i edycje systemu Windows Server",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Instalacja systemu, konfiguracja początkowa oraz aktualizacje",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Zarządzanie lokalnymi użytkownikami, grupami i uprawnieniami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "System plików NTFS, udostępnianie zasobów, uprawnienia do plików i folderów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Wprowadzenie do usług katalogowych i domenowych",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Instalacja i konfiguracja Active Directory Domain Services",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Struktura domen, jednostki organizacyjne (OU), kontrolery domeny",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Zarządzanie użytkownikami, grupami oraz komputerami w domenie",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 11,
+        "wyklad": "Zasady grup (Group Policy) – tworzenie i wdrażanie polityk",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 12,
+        "wyklad": "Usługi sieciowe: DNS, DHCP",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 13,
+        "wyklad": "Role serwera: serwer plików, drukarek, podstawowe usługi aplikacyjne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 14,
+        "wyklad": "Diagnostyka systemu, zarządzanie usługami, procesami i zdarzeniami systemowymi",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 15,
+        "wyklad": "Polityki zabezpieczeń, zapora, aktualizacje, kopie zapasowe",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 16,
+        "wyklad": "Zarządzanie zdalne i narzędzia administracyjne",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 17,
+        "wyklad": "Dobre praktyki administracyjne, dokumentacja i rozwiązywanie problemów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 18,
+        "wyklad": "Podstawy wysokiej dostępności i ciągłości działania usług",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": "The aim of the course is to provide knowledge and develop skills in IT systems administration in a corporate environment, in particular the installation, configuration, and management of Windows Server and network services, with consideration of security and automation aspects.",
+    "informacje_dodatkowe": "",
+    "rynek_pracy": {
+      "dziedzina_gospodarki": "",
+      "zawody": "",
+      "prace_dyplomowe": []
+    },
+    "wymagania_laboratorium": {
+      "pc_params": [],
+      "software": [],
+      "wyposazenie_dodatkowe": []
+    }
+  }
+}

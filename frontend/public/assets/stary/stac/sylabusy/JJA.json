@@ -1,0 +1,143 @@
+{
+  "sylabus": {
+    "uczelnia": "Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku",
+    "jednostka": "Filia w Gdansku",
+    "kierunek": "INFORMATYKA",
+    "profil": "praktyczny",
+    "tryb_studiow": "stacjonarny",
+    "wersja_z_dnia": "20.02.2026",
+    "nazwa_przedmiotu": "Programowanie w języku Java",
+    "kod_przedmiotu": "JJA",
+    "rok_studiow": 1,
+    "semestr_studiow": 2,
+    "obligatoryjny": false,
+    "forma_i_liczba_godzin_zajec": {
+      "wyklady": 15,
+      "cwiczenia_lektorat_seminarium": null,
+      "laboratorium_projekt": 15
+    },
+    "odpowiedzialny_za_przedmiot": "do ustalenia",
+    "ects": 2,
+    "godziny": {
+      "z_udzialem_prowadzacego_h": 30,
+      "praca_wlasna_studenta_h": 20,
+      "calkowita_liczba_godzin_h": 50,
+      "praca_wlasna_studenta": ""
+    },
+    "metody_dydaktyczne": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": []
+    },
+    "zaliczenie": {
+      "Projekt": {
+        "sposob": "Zaliczenie z oceną"
+      }
+    },
+    "kryteria_oceny": {
+      "wyklad": [],
+      "cwiczenia_laboratorium": [
+        "Projekt programistyczny realizowany indywidualnie lub w parach – 100%",
+        "Ocena projektu obejmuje: poprawność działania aplikacji, jakość i czytelność kodu, strukturę projektu, obsługę wyjątków oraz dokumentację",
+        "Warunkiem zaliczenia jest oddanie kompletnego projektu oraz jego pozytywna ocena"
+      ]
+    },
+    "przedmioty_wprowadzajace": [
+      {
+        "nazwa": "Podstawy Programowania",
+        "wymagania": "Znajomość programowania strukturalnego i obiektowego, umiejętność pisania prostych programów w języku wysokiego poziomu (np. Python, Java, C#)"
+      }
+    ],
+    "cel_dydaktyczny": "Celem przedmiotu jest zapoznanie studentów z podstawami programowania w języku Java oraz wykształcenie umiejętności tworzenia prostych aplikacji z wykorzystaniem paradygmatu obiektowego. Zajęcia kładą nacisk na poprawne modelowanie klas, czytelność kodu, obsługę wyjątków oraz wykorzystanie standardowych bibliotek języka Java. Przedmiot przygotowuje studentów do dalszej nauki technologii opartych na JVM oraz do realizacji niewielkich projektów programistycznych.",
+    "literatura": {
+      "podstawowa": {
+        "pozycje": [
+          "Cay S. Horstmann, Core Java, Volume I",
+          "Herbert Schildt, Java: The Complete Reference",
+          "Dokumentacja Java: https://docs.oracle.com/javase"
+        ]
+      },
+      "uzupelniajaca": {
+        "pozycje": [
+          "Joshua Bloch, Effective Java",
+          "Oracle Java Tutorials"
+        ]
+      }
+    },
+    "efekty_ksztalcenia": {
+      "wiedza": [
+        {
+          "keu": "",
+          "peu": "Student zna podstawowe konstrukcje języka Java, typy danych, instrukcje sterujące oraz zasady programowania obiektowego. Rozumie działanie maszyny wirtualnej JVM oraz rolę bibliotek standardowych.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "umiejetnosci": [
+        {
+          "keu": "",
+          "peu": "Student potrafi tworzyć, kompilować i uruchamiać proste aplikacje w języku Java, projektować klasy i ich relacje, obsługiwać wyjątki oraz zaimplementować niewielki projekt programistyczny rozwiązujący praktyczny problem.",
+          "metoda_weryfikacji": ""
+        }
+      ],
+      "kompetencje_spoleczne": [
+        {
+          "keu": "",
+          "peu": "Student potrafi samodzielnie planować i realizować projekt programistyczny, dbać o jakość kodu oraz terminowo prezentować efekty swojej pracy.",
+          "metoda_weryfikacji": ""
+        }
+      ]
+    },
+    "tresci_programowe": [
+      {
+        "nr_zajec": 1,
+        "wyklad": "Wprowadzenie do języka Java, platformy JVM oraz środowiska programistycznego",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 2,
+        "wyklad": "Typy danych, zmienne, operatory oraz instrukcje sterujące",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 3,
+        "wyklad": "Metody, przekazywanie parametrów oraz organizacja kodu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 4,
+        "wyklad": "Tablice oraz kolekcje wprowadzające (List, Set, Map)",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 5,
+        "wyklad": "Podstawy programowania obiektowego: klasy, obiekty, enkapsulacja",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 6,
+        "wyklad": "Konstruktory, dziedziczenie i polimorfizm",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 7,
+        "wyklad": "Obsługa wyjątków i mechanizmy kontroli błędów",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 8,
+        "wyklad": "Operacje wejścia i wyjścia oraz praca z plikami",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 9,
+        "wyklad": "Dobre praktyki programistyczne i czytelność kodu",
+        "cwiczenia": ""
+      },
+      {
+        "nr_zajec": 10,
+        "wyklad": "Projekt programistyczny – implementacja i prezentacja",
+        "cwiczenia": ""
+      }
+    ],
+    "cel_dydaktyczny_eng": ""
+  }
+}
