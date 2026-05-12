@@ -1,0 +1,6 @@
+{
+  "Shogun.Syllabi.Service.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Api",
+  "Shogun.Syllabi.Service.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Application",
+  "Shogun.Syllabi.Service.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Domain",
+  "Shogun.Syllabi.Service.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Infrastructure"
+}

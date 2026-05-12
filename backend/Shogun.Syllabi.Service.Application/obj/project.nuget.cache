@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dpnprOn9nt4=",
+  "success": true,
+  "projectFilePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Application\\Shogun.Syllabi.Service.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adamu\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\mongodb.bson\\3.3.0\\mongodb.bson.3.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

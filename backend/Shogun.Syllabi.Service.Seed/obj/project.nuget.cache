@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jw/uQkiK7SY=",
+  "success": true,
+  "projectFilePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Seed\\Shogun.Syllabi.Service.Seed.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adamu\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.0\\microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.0\\microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\10.0.0\\microsoft.extensions.configuration.environmentvariables.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\10.0.0\\microsoft.extensions.configuration.fileextensions.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.configuration.json\\10.0.0\\microsoft.extensions.configuration.json.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.0\\microsoft.extensions.fileproviders.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\10.0.0\\microsoft.extensions.fileproviders.physical.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\10.0.0\\microsoft.extensions.filesystemglobbing.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\9.0.0\\microsoft.extensions.options.configurationextensions.9.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\mongodb.bson\\3.3.0\\mongodb.bson.3.3.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\mongodb.driver\\3.3.0\\mongodb.driver.3.3.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\serilog\\4.2.0\\serilog.4.2.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\serilog.sinks.console\\6.0.0\\serilog.sinks.console.6.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Pakiet „SharpCompress” 0.30.1 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-6c8g-7p36-r338",
+      "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Seed\\Shogun.Syllabi.Service.Seed.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Seed\\Shogun.Syllabi.Service.Seed.csproj",
+      "libraryId": "SharpCompress",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Pakiet „Snappier” 1.0.0 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-pggp-6c3x-2xmx",
+      "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Seed\\Shogun.Syllabi.Service.Seed.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Syllabi.Service.Seed\\Shogun.Syllabi.Service.Seed.csproj",
+      "libraryId": "Snappier",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

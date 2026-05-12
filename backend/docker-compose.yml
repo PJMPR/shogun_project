@@ -1,0 +1,46 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: pj_sylabi_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: pj_sylabi
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build:
+      context: .
+      dockerfile: Shogun.Syllabi.Service.Api/Dockerfile
+    container_name: pj_syllabi_api
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MONGODB__CONNECTIONSTRING: "mongodb://mongo:27017"
+      MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
+    ports:
+      - "${API_PORT:-8080}:8080"
+
+  seed:
+    build:
+      context: .
+      dockerfile: Shogun.Syllabi.Service.Seed/Dockerfile
+    container_name: pj_syllabi_seed
+    depends_on:
+      - mongo
+    environment:
+      MONGODB__CONNECTIONSTRING: "mongodb://mongo:27017"
+      MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
+      REPO_ROOT: /repo
+    volumes:
+      - ..:/repo:ro
+    # Run once and exit
+    restart: "no"
+
+volumes:
+  mongo_data:

@@ -1,0 +1,13 @@
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\bin\Debug\net10.0\Shogun.Syllabi.Service.Domain.deps.json
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\bin\Debug\net10.0\Shogun.Syllabi.Service.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\bin\Debug\net10.0\Shogun.Syllabi.Service.Domain.pdb
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.csproj.AssemblyReference.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.AssemblyInfoInputs.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.AssemblyInfo.cs
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.csproj.CoreCompileInputs.cache
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.sourcelink.json
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\refint\Shogun.Syllabi.Service.Domain.dll
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\Shogun.Syllabi.Service.Domain.pdb
+D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Domain\obj\Debug\net10.0\ref\Shogun.Syllabi.Service.Domain.dll

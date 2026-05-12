@@ -1,0 +1,168 @@
+@baseUrl = http://localhost:8080
+
+### ── SYLLABI ──────────────────────────────────────────────────────────────────
+
+### List syllabi (page 1, 20 per page)
+GET {{baseUrl}}/api/v1/syllabi
+
+### List syllabi with filters
+GET {{baseUrl}}/api/v1/syllabi?page=1&pageSize=10&tryb_studiow=stacjonarny&is_stary=false
+
+### Full-text search
+GET {{baseUrl}}/api/v1/syllabi?search=programowanie
+
+### Filter by kod_przedmiotu
+GET {{baseUrl}}/api/v1/syllabi?kod_przedmiotu=PRG1
+
+### Sort descending
+GET {{baseUrl}}/api/v1/syllabi?sortBy=kod_przedmiotu&sortDir=desc
+
+### Get single syllabus (replace with real ObjectId)
+GET {{baseUrl}}/api/v1/syllabi/64a1b2c3d4e5f6a7b8c9d0e1
+
+### Create syllabus
+POST {{baseUrl}}/api/v1/syllabi
+Content-Type: application/json
+
+{
+  "kod_przedmiotu": "NEW1",
+  "tryb_studiow": "stacjonarny",
+  "is_stary": false,
+  "_source": null,
+  "sylabus": {
+    "nazwa_przedmiotu": "Nowy Przedmiot",
+    "rok_studiow": 1,
+    "semestr_studiow": 1,
+    "ects": 4
+  }
+}
+
+### Update syllabus (replace id)
+PUT {{baseUrl}}/api/v1/syllabi/64a1b2c3d4e5f6a7b8c9d0e1
+Content-Type: application/json
+
+{
+  "kod_przedmiotu": "NEW1",
+  "tryb_studiow": "niestacjonarny",
+  "is_stary": false,
+  "_source": null,
+  "sylabus": {
+    "nazwa_przedmiotu": "Nowy Przedmiot (zaktualizowany)",
+    "rok_studiow": 1,
+    "semestr_studiow": 2,
+    "ects": 5
+  }
+}
+
+### Delete syllabus (replace id)
+DELETE {{baseUrl}}/api/v1/syllabi/64a1b2c3d4e5f6a7b8c9d0e1
+
+
+### ── PROGRAMS ─────────────────────────────────────────────────────────────────
+
+### List programs
+GET {{baseUrl}}/api/v1/programs
+
+### Filter programs
+GET {{baseUrl}}/api/v1/programs?tryb_studiow=stacjonarny&lang=pl&is_stary=false
+
+### Get single program
+GET {{baseUrl}}/api/v1/programs/64a1b2c3d4e5f6a7b8c9d0e2
+
+### Create program
+POST {{baseUrl}}/api/v1/programs
+Content-Type: application/json
+
+{
+  "tryb_studiow": "stacjonarny",
+  "is_stary": false,
+  "lang": "pl",
+  "_source": null,
+  "data": {
+    "pdf": "assets/files/program_stacjonarne.pdf",
+    "semesters": []
+  }
+}
+
+### Update program
+PUT {{baseUrl}}/api/v1/programs/64a1b2c3d4e5f6a7b8c9d0e2
+Content-Type: application/json
+
+{
+  "tryb_studiow": "stacjonarny",
+  "is_stary": false,
+  "lang": "en",
+  "_source": null,
+  "data": {
+    "pdf": "assets/files/program_stacjonarne_en.pdf",
+    "semesters": []
+  }
+}
+
+### Delete program
+DELETE {{baseUrl}}/api/v1/programs/64a1b2c3d4e5f6a7b8c9d0e2
+
+
+### ── ELECTIVES ────────────────────────────────────────────────────────────────
+
+### List electives
+GET {{baseUrl}}/api/v1/electives
+
+### Filter by elective_type
+GET {{baseUrl}}/api/v1/electives?elective_type=specializations&tryb_studiow=stacjonarny&lang=pl
+
+### Search electives
+GET {{baseUrl}}/api/v1/electives?search=Python
+
+### Get single elective
+GET {{baseUrl}}/api/v1/electives/64a1b2c3d4e5f6a7b8c9d0e3
+
+### Create elective
+POST {{baseUrl}}/api/v1/electives
+Content-Type: application/json
+
+{
+  "elective_type": "other",
+  "tryb_studiow": "stacjonarny",
+  "is_stary": false,
+  "lang": "pl",
+  "_source": null,
+  "data": {
+    "groups": [
+      {
+        "id": "JP1_2",
+        "label": "Języki programowania",
+        "semester": 2,
+        "items": []
+      }
+    ]
+  }
+}
+
+### Update elective
+PUT {{baseUrl}}/api/v1/electives/64a1b2c3d4e5f6a7b8c9d0e3
+Content-Type: application/json
+
+{
+  "elective_type": "specializations",
+  "tryb_studiow": "stacjonarny",
+  "is_stary": false,
+  "lang": "pl",
+  "_source": null,
+  "data": {
+    "specializations": []
+  }
+}
+
+### Delete elective
+DELETE {{baseUrl}}/api/v1/electives/64a1b2c3d4e5f6a7b8c9d0e3
+
+
+### ── HEALTH ───────────────────────────────────────────────────────────────────
+
+GET {{baseUrl}}/health
+
+### ── OPENAPI (dev only) ──────────────────────────────────────────────────────
+
+GET {{baseUrl}}/openapi/v1.json
+GET {{baseUrl}}/scalar/v1
