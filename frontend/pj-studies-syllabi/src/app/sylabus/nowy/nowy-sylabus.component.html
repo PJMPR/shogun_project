@@ -453,7 +453,21 @@
       (onClick)="downloadJson()"
       styleClass="ns-btn"
     />
+    <p-button
+      label="Zapisz do API"
+      icon="pi pi-save"
+      severity="contrast"
+      [loading]="savingToApi"
+      (onClick)="saveToApi()"
+      styleClass="ns-btn"
+    />
   </div>
+  @if (saveApiSuccess) {
+    <p-message severity="success" text="Zapisano pomyślnie w bazie danych." styleClass="ns-api-msg" />
+  }
+  @if (saveApiError) {
+    <p-message severity="error" [text]="saveApiError" styleClass="ns-api-msg" />
+  }
 
 </div>
 

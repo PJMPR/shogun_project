@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { BaseHrefService } from '../../shared/base-href.service';
+import { ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -13,6 +14,7 @@ import { SelectModule } from 'primeng/select';
 import { DialogModule } from 'primeng/dialog';
 import { CheckboxModule } from 'primeng/checkbox';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { MessageModule } from 'primeng/message';
 import { SylabusPreviewComponent } from '../../shared/sylabus-preview/sylabus-preview.component';
 import { SylabusData } from '../../models/program.models';
 
@@ -109,6 +111,7 @@ const JEDNOSTKI = [
     DialogModule,
     CheckboxModule,
     MultiSelectModule,
+    MessageModule,
     SylabusPreviewComponent,
   ],
   templateUrl: './nowy-sylabus.component.html',
@@ -130,6 +133,11 @@ export class NowySylabusComponent implements OnInit {
   importJsonText = '';
   importError = '';
   importDragOver = false;
+
+  // Zapis do API
+  savingToApi = false;
+  saveApiSuccess = false;
+  saveApiError = '';
 
   /** Dostępne opcje z plików JSON */
   metodyWykladOptions: { label: string; value: string }[] = [];
@@ -188,6 +196,7 @@ export class NowySylabusComponent implements OnInit {
   };
 
   constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
+  private readonly shogunApi = inject(ShogunApiService);
 
   ngOnInit(): void {
     this.http.get<any>(this.baseHref.assetUrl('metody_dydaktyczne.json')).subscribe(data => {
@@ -522,6 +531,29 @@ export class NowySylabusComponent implements OnInit {
       lab_software_txt: Array.isArray(wl?.software) ? wl.software.join('\n') : '',
       lab_wyposazenie_txt: Array.isArray(wl?.wyposazenie_dodatkowe) ? wl.wyposazenie_dodatkowe.join('\n') : '',
     };
+  }
+
+  saveToApi(): void {
+    const f = this.form;
+    if (!f.kod_przedmiotu.trim()) {
+      this.saveApiError = 'Podaj kod przedmiotu przed zapisem do API.';
+      return;
+    }
+    const data = (this.buildJson() as any).sylabus;
+    this.savingToApi = true;
+    this.saveApiSuccess = false;
+    this.saveApiError = '';
+
+    this.shogunApi.createSyllabus(f.kod_przedmiotu.trim(), f.tryb_studiow, false, data).subscribe({
+      next: () => {
+        this.savingToApi = false;
+        this.saveApiSuccess = true;
+      },
+      error: (err: any) => {
+        this.savingToApi = false;
+        this.saveApiError = err?.error?.title ?? err?.message ?? 'Błąd zapisu do API.';
+      },
+    });
   }
 
   downloadJson(): void {

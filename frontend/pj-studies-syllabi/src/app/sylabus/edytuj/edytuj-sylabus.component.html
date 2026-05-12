@@ -493,7 +493,20 @@
         [label]="'Pobierz JSON (' + (loadedSylabus.kod_przedmiotu) + '.json)'"
         icon="pi pi-download" severity="success"
         (onClick)="downloadJson()" styleClass="es-btn" />
+      <p-button
+        label="Zapisz do API"
+        icon="pi pi-save"
+        severity="contrast"
+        [loading]="savingToApi"
+        (onClick)="saveToApi()"
+        styleClass="es-btn" />
     </div>
+    @if (saveApiSuccess) {
+      <p-message severity="success" text="Zapisano pomyślnie w bazie danych." styleClass="es-api-msg" />
+    }
+    @if (saveApiError) {
+      <p-message severity="error" [text]="saveApiError" styleClass="es-api-msg" />
+    }
 
   }
 </div>

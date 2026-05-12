@@ -141,9 +141,15 @@ export class EdytujSylabusComponent implements OnInit {
   loadingSylabus = false;
   loadError = '';
   loadedSylabus: SylabusData | null = null;
+  loadedSyllabusId: string | null = null;
   originalSyllabusFile = '';
 
   form: EditForm = this.emptyForm();
+
+  // Zapis do API
+  savingToApi = false;
+  saveApiSuccess = false;
+  saveApiError = '';
 
   // Dialogi
   previewDialogVisible = false;
@@ -289,17 +295,21 @@ export class EdytujSylabusComponent implements OnInit {
     this.loadingSylabus = true;
     this.loadError = '';
     this.loadedSylabus = null;
+    this.loadedSyllabusId = null;
+    this.saveApiSuccess = false;
+    this.saveApiError = '';
     this.originalSyllabusFile = opt.code;
 
-    this.shogunApi.getSyllabus(opt.code, this.selectedTryb).subscribe({
-      next: (sylabus) => {
-        if (!sylabus) {
+    this.shogunApi.getSyllabusWithId(opt.code, this.selectedTryb).subscribe({
+      next: (result) => {
+        if (!result) {
           this.loadError = `Nie znaleziono sylabusa dla przedmiotu "${opt.name}" (${opt.code}).`;
           this.loadingSylabus = false;
           return;
         }
-        this.loadedSylabus = sylabus;
-        this.populateForm(sylabus);
+        this.loadedSyllabusId = result.id;
+        this.loadedSylabus = result.sylabus;
+        this.populateForm(result.sylabus);
         this.loadingSylabus = false;
       },
       error: () => {
@@ -583,6 +593,30 @@ export class EdytujSylabusComponent implements OnInit {
   previewJson(): void {
     this.jsonPreview = JSON.stringify(this.buildJson(), null, 4);
     this.jsonDialogVisible = true;
+  }
+
+  saveToApi(): void {
+    if (!this.loadedSylabus) return;
+    const s = this.loadedSylabus;
+    const data = (this.buildJson() as any).sylabus;
+    this.savingToApi = true;
+    this.saveApiSuccess = false;
+    this.saveApiError = '';
+
+    const obs = this.loadedSyllabusId
+      ? this.shogunApi.updateSyllabus(this.loadedSyllabusId, s.kod_przedmiotu, s.tryb_studiow, false, data)
+      : this.shogunApi.createSyllabus(s.kod_przedmiotu, s.tryb_studiow, false, data);
+
+    obs.subscribe({
+      next: () => {
+        this.savingToApi = false;
+        this.saveApiSuccess = true;
+      },
+      error: (err: any) => {
+        this.savingToApi = false;
+        this.saveApiError = err?.error?.title ?? err?.message ?? 'Błąd zapisu do API.';
+      },
+    });
   }
 
   downloadJson(): void {

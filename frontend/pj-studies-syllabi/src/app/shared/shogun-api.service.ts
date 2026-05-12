@@ -100,4 +100,54 @@ export class ShogunApiService {
       })
       .pipe(map(r => (r.items[0]?.sylabus as any)?.sylabus ?? r.items[0]?.sylabus ?? null));
   }
+
+  getSyllabusWithId(
+    kodPrzedmiotu: string,
+    tryb: string
+  ): Observable<{ id: string; sylabus: SylabusData } | null> {
+    return this.http
+      .get<PagedResult<SyllabusApiItem>>(`${this.base}/api/v1/syllabi`, {
+        params: { kod_przedmiotu: kodPrzedmiotu, tryb_studiow: tryb, pageSize: '1' },
+      })
+      .pipe(
+        map(r => {
+          const item = r.items[0];
+          if (!item) return null;
+          const sylabus: SylabusData = (item.sylabus as any)?.sylabus ?? item.sylabus;
+          if (!sylabus) return null;
+          return { id: item.id, sylabus };
+        })
+      );
+  }
+
+  createSyllabus(
+    kod_przedmiotu: string,
+    tryb_studiow: string,
+    is_stary: boolean,
+    sylabus: object
+  ): Observable<{ id: string }> {
+    return this.http.post<{ id: string }>(`${this.base}/api/v1/syllabi`, {
+      kod_przedmiotu,
+      tryb_studiow,
+      is_stary,
+      _source: null,
+      sylabus,
+    });
+  }
+
+  updateSyllabus(
+    id: string,
+    kod_przedmiotu: string,
+    tryb_studiow: string,
+    is_stary: boolean,
+    sylabus: object
+  ): Observable<unknown> {
+    return this.http.put(`${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`, {
+      kod_przedmiotu,
+      tryb_studiow,
+      is_stary,
+      _source: null,
+      sylabus,
+    });
+  }
 }
