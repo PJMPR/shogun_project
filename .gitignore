@@ -4,10 +4,10 @@
 /tmp
 /out-tsc
 /bazel-out
-frontend/dist/
+**/dist/
 
 # Node
-frontend/node_modules/
+**/node_modules/
 npm-debug.log
 yarn-error.log
 

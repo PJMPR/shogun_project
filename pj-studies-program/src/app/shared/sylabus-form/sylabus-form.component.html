@@ -1,0 +1,239 @@
+<div class="sf-container">
+
+  <!-- Info automatyczne -->
+  <p-panel header="Dane przedmiotu (uzupełniane automatycznie)" styleClass="sf-panel sf-panel-auto" [toggleable]="false">
+    <div class="sf-auto-grid">
+      <span class="sf-auto-label">Nazwa:</span><span class="sf-auto-val">{{ subject.name }}</span>
+      <span class="sf-auto-label">Kod:</span><span class="sf-auto-val">{{ subject.code }}</span>
+      <span class="sf-auto-label">Tryb:</span><span class="sf-auto-val">{{ form.tryb_studiow }}</span>
+      <span class="sf-auto-label">Semestr / Rok:</span><span class="sf-auto-val">{{ semester }} / {{ rokStudiow }}</span>
+      <span class="sf-auto-label">Wykłady / Ćwiczenia / Lab.:</span>
+      <span class="sf-auto-val">{{ subject.lecture }}h / {{ subject.tutorial }}h / {{ subject.lab }}h</span>
+      <span class="sf-auto-label">ECTS:</span><span class="sf-auto-val">{{ subject.ects }}</span>
+      <span class="sf-auto-label">Typ:</span><span class="sf-auto-val">{{ subject.type === 'M' || subject.type === 'Obowiązkowy' ? 'Obowiązkowy' : 'Obieralny' }}</span>
+    </div>
+  </p-panel>
+
+  <!-- 1. Prowadzący -->
+  <p-panel header="1. Odpowiedzialny za przedmiot" styleClass="sf-panel" [toggleable]="false">
+    <div class="sf-field">
+      <label class="sf-label">Imię i nazwisko prowadzącego</label>
+      <input pInputText [(ngModel)]="form.odpowiedzialny" placeholder="np. dr Jan Kowalski" class="sf-input" />
+    </div>
+  </p-panel>
+
+  <!-- 2. Godziny -->
+  <p-panel header="2. Godziny pracy studenta" styleClass="sf-panel" [toggleable]="false">
+    <div class="sf-grid-3">
+      <div class="sf-field">
+        <label class="sf-label">Z udziałem prowadzącego [h]</label>
+        <input pInputText type="number" [(ngModel)]="form.z_udzialem_prowadzacego_h"
+               (ngModelChange)="onRecalcPraca()" class="sf-input" />
+      </div>
+      <div class="sf-field">
+        <label class="sf-label">Całkowita liczba godzin [h]</label>
+        <input pInputText type="number" [(ngModel)]="form.calkowita_liczba_godzin_h"
+               (ngModelChange)="onRecalcPraca()" class="sf-input" />
+      </div>
+      <div class="sf-field">
+        <label class="sf-label">Praca własna studenta [h]</label>
+        <input pInputText type="number" [(ngModel)]="form.praca_wlasna_studenta_h" class="sf-input" readonly />
+        <small class="sf-hint">= całkowita − z prowadzącym</small>
+      </div>
+    </div>
+  </p-panel>
+
+  <!-- 3. Formy zaliczenia -->
+  <p-panel header="3. Forma zaliczenia" styleClass="sf-panel" [toggleable]="false">
+    <div class="sf-grid-3">
+      @if (lectureH > 0) {
+        <div class="sf-field">
+          <label class="sf-label">Wykład</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_wyklad"
+                    optionLabel="label" optionValue="value" styleClass="sf-select" />
+        </div>
+      }
+      @if (tutorialH > 0) {
+        <div class="sf-field">
+          <label class="sf-label">Ćwiczenia / Lektorat</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_cwiczenia"
+                    optionLabel="label" optionValue="value" styleClass="sf-select" />
+        </div>
+      }
+      @if (labH > 0) {
+        <div class="sf-field">
+          <label class="sf-label">Laboratorium / Projekt</label>
+          <p-select [options]="sposobyZaliczenia" [(ngModel)]="form.zaliczenie_laboratorium"
+                    optionLabel="label" optionValue="value" styleClass="sf-select" />
+        </div>
+      }
+    </div>
+  </p-panel>
+
+  <!-- 4. Cel dydaktyczny -->
+  <p-panel header="4. Cel dydaktyczny" styleClass="sf-panel" [toggleable]="false">
+    <div class="sf-field">
+      <textarea pTextarea [(ngModel)]="form.cel_dydaktyczny" rows="4"
+                placeholder="Opisz cel dydaktyczny przedmiotu..." class="sf-textarea"></textarea>
+    </div>
+    <div class="sf-field">
+      <label class="sf-label">
+        <i class="pi pi-globe"></i> Cel dydaktyczny &ndash; wersja w języku angielskim (English version)
+      </label>
+      <textarea pTextarea [(ngModel)]="form.cel_dydaktyczny_eng" rows="4"
+                placeholder="Describe the didactic goal in English..." class="sf-textarea sf-textarea-eng"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 5. Metody dydaktyczne -->
+  <p-panel header="5. Metody dydaktyczne" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    <small class="sf-hint-block">Każda metoda w nowej linii.</small>
+    @if (lectureH > 0) {
+      <div class="sf-field">
+        <label class="sf-label">Wykład</label>
+        <textarea pTextarea [(ngModel)]="form.metody_wyklad_txt" rows="3"
+                  placeholder="np. Wykład problemowy&#10;Prezentacja multimedialna" class="sf-textarea"></textarea>
+      </div>
+    }
+    @if (tutorialH > 0) {
+      <div class="sf-field">
+        <label class="sf-label">Ćwiczenia / Lektorat</label>
+        <textarea pTextarea [(ngModel)]="form.metody_cwiczenia_txt" rows="3"
+                  placeholder="np. Ćwiczenia tablicowe&#10;Praca w grupach" class="sf-textarea"></textarea>
+      </div>
+    }
+    @if (labH > 0) {
+      <div class="sf-field">
+        <label class="sf-label">Laboratorium / Projekt</label>
+        <textarea pTextarea [(ngModel)]="form.metody_laboratorium_txt" rows="3"
+                  placeholder="np. Laboratorium komputerowe&#10;Realizacja projektów" class="sf-textarea"></textarea>
+      </div>
+    }
+  </p-panel>
+
+  <!-- 6. Kryteria oceny -->
+  <p-panel header="6. Kryteria oceny" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    <div class="sf-field">
+      <small class="sf-hint-block">Każde kryterium w nowej linii.</small>
+      <textarea pTextarea [(ngModel)]="form.kryteria_oceny_txt" rows="5"
+                placeholder="np. Student musi uzyskać minimum 50% punktów&#10;Skala ocen: poniżej 50% – ndst..." class="sf-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 7. Przedmioty wprowadzające -->
+  <p-panel header="7. Przedmioty wprowadzające" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    @for (p of form.przedmioty_wprowadzajace; track $index) {
+      <div class="sf-przedmiot-row">
+        <div class="sf-field sf-field-grow">
+          <label class="sf-label">Nazwa przedmiotu</label>
+          <input pInputText [(ngModel)]="p.nazwa" placeholder="np. Podstawy programowania" class="sf-input" />
+        </div>
+        <div class="sf-field sf-field-grow">
+          <label class="sf-label">Wymagane zagadnienia</label>
+          <input pInputText [(ngModel)]="p.wymagania" placeholder="np. Programowanie strukturalne" class="sf-input" />
+        </div>
+        <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                  (onClick)="removePrzedmiot($index)" styleClass="sf-remove-btn" />
+      </div>
+    }
+    <p-button label="Dodaj przedmiot" icon="pi pi-plus" [text]="true" size="small"
+              (onClick)="addPrzedmiot()" styleClass="sf-add-btn" />
+  </p-panel>
+
+  <!-- 8. Efekty kształcenia -->
+  <p-panel header="8. Efekty kształcenia" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    <small class="sf-hint-block">Każdy wiersz to jeden efekt: kod KEU, treść (PEU) i metoda weryfikacji.</small>
+
+    @for (kat of [
+      { label: 'Wiedza', icon: 'pi pi-lightbulb', lista: form.efekty_wiedza,       keuOpts: keuWiedzaOptions },
+      { label: 'Umiejętności', icon: 'pi pi-cog', lista: form.efekty_umiejetnosci, keuOpts: keuUmiejOptions },
+      { label: 'Kompetencje społeczne', icon: 'pi pi-users', lista: form.efekty_kompetencje, keuOpts: keuKompOptions }
+    ]; track kat.label) {
+      <p class="sf-label" style="margin-top:12px"><i [class]="kat.icon"></i> {{ kat.label }}</p>
+      <div class="sf-efekty-table">
+        <div class="sf-efekty-header">
+          <span class="sf-efekty-col-keu">Kod KEU</span>
+          <span class="sf-efekty-col-peu">Przedmiotowy efekt uczenia się (PEU)</span>
+          <span class="sf-efekty-col-met">Metoda weryfikacji</span>
+          <span class="sf-efekty-col-btn"></span>
+        </div>
+        @for (e of kat.lista; track $index) {
+          <div class="sf-efekty-row">
+            <div class="sf-efekty-col-keu">
+              <p-select
+                [options]="kat.keuOpts"
+                [(ngModel)]="e.keu"
+                optionLabel="label"
+                optionValue="value"
+                [filter]="true"
+                filterBy="label"
+                [editable]="true"
+                placeholder="Wybierz KEU..."
+                appendTo="body"
+                styleClass="sf-keu-select"
+              />
+            </div>
+            <div class="sf-efekty-col-peu">
+              <textarea pTextarea [(ngModel)]="e.peu" rows="2" class="sf-textarea sf-textarea-sm"
+                        placeholder="Treść efektu..."></textarea>
+            </div>
+            <div class="sf-efekty-col-met">
+              <p-select
+                [options]="metodyWeryfikacjiOptions"
+                [(ngModel)]="e.metoda_weryfikacji"
+                optionLabel="label"
+                optionValue="value"
+                [editable]="true"
+                placeholder="Wybierz metodę..."
+                appendTo="body"
+                styleClass="sf-met-select"
+              />
+            </div>
+            <div class="sf-efekty-col-btn">
+              <p-button icon="pi pi-trash" severity="danger" [text]="true" size="small"
+                        (onClick)="removeEfekt(kat.lista, $index)" />
+            </div>
+          </div>
+        }
+      </div>
+      <p-button label="Dodaj efekt" icon="pi pi-plus" [text]="true" size="small"
+                (onClick)="addEfekt(kat.lista)" styleClass="sf-add-btn" />
+    }
+  </p-panel>
+
+  <!-- 9. Treści programowe -->
+  <p-panel header="9. Treści programowe" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    <div class="sf-field">
+      <small class="sf-hint-block">Każda pozycja w nowej linii.</small>
+      <textarea pTextarea [(ngModel)]="form.tresci_programowe_txt" rows="6"
+                placeholder="np. Wprowadzenie do algorytmów&#10;Złożoność czasowa i pamięciowa..." class="sf-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- 10. Literatura -->
+  <p-panel header="10. Literatura" styleClass="sf-panel" [toggleable]="true" [collapsed]="true">
+    <small class="sf-hint-block">Każda pozycja w nowej linii.</small>
+    <div class="sf-field">
+      <label class="sf-label">Literatura podstawowa</label>
+      <textarea pTextarea [(ngModel)]="form.literatura_podstawowa_txt" rows="4"
+                placeholder="np. T. Cormen – Wprowadzenie do algorytmów, PWN 2022" class="sf-textarea"></textarea>
+    </div>
+    <div class="sf-field">
+      <label class="sf-label">Literatura uzupełniająca</label>
+      <textarea pTextarea [(ngModel)]="form.literatura_uzupelniajaca_txt" rows="4"
+                placeholder="np. G. Mirkowska – Algorytmy i struktury danych, PJWSTK 2006" class="sf-textarea"></textarea>
+    </div>
+  </p-panel>
+
+  <!-- Przycisk pobierania -->
+  <div class="sf-download-bar">
+    <p-button
+      label="Pobierz plik JSON ({{ subject.code }}.json)"
+      icon="pi pi-download"
+      (onClick)="downloadJson()"
+      styleClass="sf-download-btn"
+    />
+  </div>
+
+</div>
+

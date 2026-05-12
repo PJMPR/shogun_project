@@ -1,0 +1,20 @@
+<div class="pdf-viewer-page">
+  <div class="pdf-toolbar">
+    <img src="assets/pjatk-logo.svg" alt="PJATK" class="toolbar-logo" />
+    <span class="toolbar-title">{{ title }}</span>
+    <a [href]="pdfUrl" download class="toolbar-download" title="Pobierz PDF">
+      <span class="pi pi-download"></span>
+    </a>
+  </div>
+
+  @if (pdfUrl) {
+    <iframe
+      [src]="pdfUrl"
+      class="pdf-frame"
+      type="application/pdf"
+    ></iframe>
+  } @else {
+    <div class="no-pdf">Brak pliku PDF do wyświetlenia.</div>
+  }
+</div>
+

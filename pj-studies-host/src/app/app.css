@@ -1,0 +1,185 @@
+/* ── Layout główny ─────────────────────────────── */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ────────────────────────────────────── */
+.app-sidebar {
+  width: 260px;
+  min-width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 3px solid #dc2626;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transform: translateX(0);
+  transition: transform 0.25s ease;
+  overflow: hidden;
+}
+
+.app-sidebar.sidebar-hidden {
+  transform: translateX(-100%);
+}
+
+/* ── Nagłówek sidebara ──────────────────────────── */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 0.75rem 0.85rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 0.5rem;
+}
+
+.sidebar-logo {
+  width: 160px;
+  height: auto;
+  flex: 1;
+}
+
+/* ── Przycisk zwinięcia (desktop) ───────────────── */
+.sidebar-hide-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s, background 0.15s;
+}
+.sidebar-hide-btn:hover { color: #dc2626; background: #fee2e2; }
+
+/* ── Przycisk pokazania sidebara ────────────────── */
+.sidebar-show-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #1a1a2e;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  color: #e5e7eb;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 0.5rem;
+  z-index: 150;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.25);
+  transition: background 0.15s;
+}
+.sidebar-show-btn:hover { background: #dc2626; }
+
+/* ── Nawigacja ──────────────────────────────────── */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 0.75rem 0.75rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nav-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin: 0 0 0.5rem 0.25rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.nav-link i { font-size: 0.95rem; color: #6b7280; }
+.nav-link:hover { background: #fee2e2; color: #991b1b; }
+.nav-link:hover i { color: #dc2626; }
+.nav-link-active { background: #fee2e2 !important; color: #991b1b !important; font-weight: 600; }
+.nav-link-active i { color: #dc2626 !important; }
+
+/* ── Główna treść ────────────────────────────────── */
+.app-main {
+  margin-left: 263px;
+  flex: 1;
+  min-height: 100vh;
+  background: #f5f5f5;
+  transition: margin-left 0.25s ease;
+}
+
+.app-main.no-sidebar {
+  margin-left: 0;
+}
+
+/* ── Mobile topbar ───────────────────────────────── */
+.mobile-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  z-index: 200;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.topbar-logo {
+  height: 30px;
+  width: auto;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background 0.15s;
+}
+.toggle-btn:hover { background: rgba(255,255,255,0.15); }
+
+/* ── Mobile overlay ──────────────────────────────── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 99;
+}
+
+/* ── Mobile – sidebar nad topbarem ──────────────── */
+@media (max-width: 899px) {
+  .app-main {
+    margin-left: 0 !important;
+    padding-top: 52px;
+  }
+
+  .app-sidebar {
+    top: 0;
+    z-index: 150;
+  }
+}

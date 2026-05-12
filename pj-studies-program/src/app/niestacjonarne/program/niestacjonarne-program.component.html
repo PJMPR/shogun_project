@@ -1,0 +1,405 @@
+<div class="program-page">
+
+  @if (loading()) {
+    <div class="loading-info">Ładowanie danych programu...</div>
+  }
+
+  @if (!loading()) {
+
+    <!-- Podsumowanie wszystkich semestrów -->
+    <div class="total-summary">
+      <div class="page-title-row">
+        <h1 class="page-title">Program studiów – studia niestacjonarne</h1>
+        @if (programPdf()) {
+          <p-button icon="pi pi-file-pdf" label="Pobierz PDF" severity="danger" size="small"
+            (onClick)="openPdf(programPdf()!, 'Program studiów – studia niestacjonarne')" />
+        }
+      </div>
+      <span class="total-summary-title">Podsumowanie programu:</span>
+      <div class="total-summary-items">
+        <div class="total-summary-item">
+          <span class="total-summary-label">Łączne ECTS:</span>
+          <span class="total-summary-value ects-value">{{ totals().ects }}</span>
+        </div>
+        <div class="summary-separator"></div>
+        <div class="total-summary-item">
+          <span class="total-summary-label">Wykłady:</span>
+          <span class="total-summary-value">{{ totals().lecture }} h</span>
+        </div>
+        <div class="total-summary-item">
+          <span class="total-summary-label">Ćwiczenia:</span>
+          <span class="total-summary-value">{{ totals().tutorial }} h</span>
+        </div>
+        <div class="total-summary-item">
+          <span class="total-summary-label">Laboratoria:</span>
+          <span class="total-summary-value">{{ totals().lab }} h</span>
+        </div>
+        <div class="total-summary-item">
+          <span class="total-summary-label">Łącznie godzin:</span>
+          <span class="total-summary-value">{{ totals().lecture + totals().tutorial + totals().lab }} h</span>
+        </div>
+      </div>
+    </div>
+
+    <p-tabs [value]="'1'" [scrollable]="true">
+
+      <!-- Lista zakładek -->
+      <p-tablist>
+        @for (sem of semesters(); track sem.semester) {
+          <p-tab [value]="sem.semester.toString()">
+            Semestr {{ sem.semester }}
+          </p-tab>
+        }
+      </p-tablist>
+
+      <!-- Zawartość zakładek -->
+      <p-tabpanels>
+        @for (sem of semesters(); track sem.semester) {
+          <p-tabpanel [value]="sem.semester.toString()">
+
+
+            <!-- TreeTable z przedmiotami -->
+            <p-treeTable
+              [value]="sem.nodes"
+              [columns]="[]"
+              styleClass="p-treetable-sm semester-table"
+              [showGridlines]="true"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th style="width: 30%">Nazwa przedmiotu</th>
+                  <th style="width: 12%">Typ</th>
+                  <th style="width: 5%">Kod</th>
+                  <th style="width: 6%" class="text-center">Wykład</th>
+                  <th style="width: 6%" class="text-center">Ćwiczenia</th>
+                  <th style="width: 6%" class="text-center">Laborat.</th>
+                  <th style="width: 6%">Forma zal.</th>
+                  <th style="width: 4%" class="text-center">ECTS</th>
+                  <th style="width: 15%"></th>
+                </tr>
+              </ng-template>
+
+              <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                <tr [ttRow]="rowNode" [class.group-row]="rowData.isGroup" [class.child-row]="rowNode.level > 0 && !rowData.isGroup">
+                  <td>
+                    <p-treeTableToggler [rowNode]="rowNode" />
+                    <span [class.group-label]="rowData.isGroup">{{ rowData.name }}</span>
+                  </td>
+                  <td>
+                    @if (!rowData.isGroup || rowData.type === 'Specjalizacja') {
+                      <p-tag
+                        [value]="rowData.type"
+                        [severity]="rowData.type === 'Obowiązkowy' ? 'info' : rowData.type === 'Obieralny specjalizacji' ? 'success' : rowData.type === 'Specjalizacja' ? 'warn' : 'secondary'"
+                        styleClass="type-tag"
+                      />
+                    }
+                  </td>
+                  <td>{{ rowData.code }}</td>
+                  <td class="text-center">{{ rowData.lecture }}</td>
+                  <td class="text-center">{{ rowData.tutorial }}</td>
+                  <td class="text-center">{{ rowData.lab }}</td>
+                  <td>{{ rowData.form }}</td>
+                  <td class="text-center"><strong>{{ rowData.ects }}</strong></td>
+                  <td>
+                    @if (!rowData.isGroup) {
+                      <div class="action-cell">
+                        <p-button
+                          label="Szczegóły"
+                          icon="pi pi-info-circle"
+                          size="small"
+                          severity="primary"
+                          (onClick)="openDetails(rowData, sem.semester)"
+                        />
+            @if (rowData.pdf) {
+              <p-button icon="pi pi-file-pdf" [rounded]="true" [text]="true" severity="danger" size="small"
+                title="Pobierz sylabus (PDF)"
+                (onClick)="openPdf(rowData.pdf, rowData.name)" />
+            }
+            @if (rowData.docFile) {
+              <a [href]="getDocUrl(rowData.docFile)" [download]="rowData.code + '.docx'"
+                class="p-button p-button-rounded p-button-text p-button-sm p-button-info doc-btn"
+                title="Pobierz sylabus (Word)">
+                <span class="doc-icon">W</span>
+              </a>
+            }
+                      </div>
+                    }
+                  </td>
+                </tr>
+              </ng-template>
+            </p-treeTable>
+
+            <!-- Podsumowanie semestru -->
+            <hr class="summary-divider" />
+            <div class="semester-summary">
+              <div class="summary-item">
+                <span class="summary-label">Suma ECTS:</span>
+                <span class="summary-value ects-value">{{ sem.totalEcts }}</span>
+              </div>
+              <div class="summary-separator"></div>
+              <div class="summary-item">
+                <span class="summary-label">Wykłady:</span>
+                <span class="summary-value">{{ sem.totalLecture }} h</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Ćwiczenia:</span>
+                <span class="summary-value">{{ sem.totalTutorial }} h</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Laboratoria:</span>
+                <span class="summary-value">{{ sem.totalLab }} h</span>
+              </div>
+              <div class="summary-item total-hours">
+                <span class="summary-label">Łącznie godzin:</span>
+                <span class="summary-value">{{ sem.totalLecture + sem.totalTutorial + sem.totalLab }} h</span>
+              </div>
+            </div>
+
+          </p-tabpanel>
+        }
+      </p-tabpanels>
+
+    </p-tabs>
+  }
+
+  <!-- Dialog szczegółów przedmiotu -->
+  <p-dialog
+    [visible]="dialogVisible()"
+    (visibleChange)="dialogVisible.set($event)"
+    [header]="dialogTitle()"
+    [modal]="true"
+    [style]="{ width: '860px', maxWidth: '98vw' }"
+    [contentStyle]="{ 'max-height': '80vh', 'overflow-y': 'auto' }"
+    [draggable]="false"
+    [resizable]="false"
+    (onHide)="closeDialog()"
+  >
+    @if (selectedSubject()) {
+      @if (sylabusLoading()) {
+        <div class="sylabus-loading">
+          <p-progressSpinner strokeWidth="4" styleClass="sylabus-spinner" />
+          <span>Ładowanie sylabusa...</span>
+        </div>
+      }
+      @if (!sylabusLoading() && !sylabus() && !selectedSubject()!.syllabusFile) {
+        <app-sylabus-form
+          [subject]="selectedSubject()!"
+          [semester]="selectedSemester()"
+          trybStudiow="niestacjonarny"
+        />
+      }
+      @if (!sylabusLoading() && !sylabus() && selectedSubject()!.syllabusFile) {
+        <app-sylabus-form
+          [subject]="selectedSubject()!"
+          [semester]="selectedSemester()"
+          trybStudiow="niestacjonarny"
+        />
+      }
+      @if (!sylabusLoading() && sylabus(); as s) {
+        <div class="sylabus-container">
+          <p-card styleClass="sylabus-card">
+            <ng-template pTemplate="header">
+              <div class="sylabus-card-header"><i class="pi pi-book"></i><span>Informacje ogólne</span></div>
+            </ng-template>
+            <div class="sylabus-info-grid">
+              <span class="info-label">Kod przedmiotu:</span><span><strong>{{ s.kod_przedmiotu }}</strong></span>
+              <span class="info-label">Kierunek:</span><span>{{ s.kierunek }} · profil {{ s.profil }}</span>
+              <span class="info-label">Tryb studiów:</span><span>{{ s.tryb_studiow }}</span>
+              <span class="info-label">Rok / Semestr:</span><span>{{ s.rok_studiow }} / {{ s.semestr_studiow }}</span>
+              <span class="info-label">Forma:</span><span>{{ s.obligatoryjny ? 'Obowiązkowy' : 'Obieralny' }}</span>
+              @if (s.odpowiedzialny_za_przedmiot) {
+                <span class="info-label">Odpowiedzialny:</span><span>{{ s.odpowiedzialny_za_przedmiot }}</span>
+              }
+              <span class="info-label">Wersja z dnia:</span><span>{{ s.wersja_z_dnia }}</span>
+            </div>
+          </p-card>
+          <p-card styleClass="sylabus-card">
+            <ng-template pTemplate="header">
+              <div class="sylabus-card-header"><i class="pi pi-clock"></i><span>Godziny i punkty ECTS</span></div>
+            </ng-template>
+            <p-table [value]="[s]" styleClass="p-datatable-sm sylabus-hours-table" [showGridlines]="true">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Wykłady</th><th>Ćwiczenia / Lektorat</th><th>Laboratorium / Projekt</th>
+                  <th>Z prowadzącym</th><th>Praca własna</th><th>Łącznie</th><th>ECTS</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-row>
+                <tr>
+                  <td class="text-center">{{ row.forma_i_liczba_godzin_zajec.wyklady ?? '-' }} h</td>
+                  <td class="text-center">{{ row.forma_i_liczba_godzin_zajec.cwiczenia_lektorat_seminarium ?? '-' }} h</td>
+                  <td class="text-center">{{ row.forma_i_liczba_godzin_zajec.laboratorium_projekt ?? '-' }} h</td>
+                  <td class="text-center">{{ row.godziny.z_udzialem_prowadzacego_h ?? '-' }} h</td>
+                  <td class="text-center">{{ row.godziny.praca_wlasna_studenta_h ?? '-' }} h</td>
+                  <td class="text-center">{{ row.godziny.calkowita_liczba_godzin_h ?? '-' }} h</td>
+                  <td class="text-center"><strong>{{ row.ects }}</strong></td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-card>
+          @if (s.cel_dydaktyczny) {
+            <p-panel header="Cel dydaktyczny" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
+              <p class="sylabus-text">{{ s.cel_dydaktyczny }}</p>
+              @if (s.cel_dydaktyczny_eng) {
+                <p class="sylabus-cel-eng-label">
+                  <i class="pi pi-globe"></i> Cel dydaktyczny &ndash; wersja w języku angielskim (English version)
+                </p>
+                <p class="sylabus-text sylabus-text-eng">{{ s.cel_dydaktyczny_eng }}</p>
+              }
+            </p-panel>
+          }
+          @if (getZaliczenieEntries(s.zaliczenie).length > 0) {
+            <p-panel header="Forma zaliczenia" [toggleable]="true" [collapsed]="false" styleClass="sylabus-panel">
+              <p-table [value]="getZaliczenieEntries(s.zaliczenie)" styleClass="p-datatable-sm" [showGridlines]="true">
+                <ng-template pTemplate="header"><tr><th style="width:40%">Forma zajęć</th><th>Sposób zaliczenia</th></tr></ng-template>
+                <ng-template pTemplate="body" let-row><tr><td>{{ row.forma }}</td><td>{{ row.sposob }}</td></tr></ng-template>
+              </p-table>
+            </p-panel>
+          }
+          @if (getKryteriaOceny(s.kryteria_oceny).length > 0 || getKryteriaOcenyObj(s.kryteria_oceny)) {
+            <p-panel header="Kryteria oceny" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              @let ko = getKryteriaOcenyObj(s.kryteria_oceny);
+              @if (ko) {
+                @if (ko.wyklad?.length) {
+                  <p class="metody-forma-label">Wykład:</p>
+                  <ul class="sylabus-list">@for (k of ko.wyklad!; track $index) { <li>{{ k }}</li> }</ul>
+                }
+                @if (ko.cwiczenia_laboratorium?.length) {
+                  <p class="metody-forma-label">Ćwiczenia / Laboratorium:</p>
+                  <ul class="sylabus-list">@for (k of ko.cwiczenia_laboratorium!; track $index) { <li>{{ k }}</li> }</ul>
+                }
+              } @else {
+                <ul class="sylabus-list">@for (k of getKryteriaOceny(s.kryteria_oceny); track $index) { <li>{{ k }}</li> }</ul>
+              }
+            </p-panel>
+          }
+          @if (getMetodyEntries(s.metody_dydaktyczne).length > 0) {
+            <p-panel header="Metody dydaktyczne" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              @for (entry of getMetodyEntries(s.metody_dydaktyczne); track entry.forma) {
+                <p class="metody-forma-label">{{ entry.forma }}:</p>
+                <ul class="sylabus-list">@for (m of entry.metody; track $index) { <li>{{ m }}</li> }</ul>
+              }
+            </p-panel>
+          }
+          @if (s.przedmioty_wprowadzajace?.length) {
+            <p-panel header="Przedmioty wprowadzające" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              <p-table [value]="s.przedmioty_wprowadzajace" styleClass="p-datatable-sm" [showGridlines]="true">
+                <ng-template pTemplate="header"><tr><th style="width:40%">Przedmiot</th><th>Wymagane zagadnienia</th></tr></ng-template>
+                <ng-template pTemplate="body" let-row><tr><td>{{ row.nazwa }}</td><td>{{ row.wymagania || '–' }}</td></tr></ng-template>
+              </p-table>
+            </p-panel>
+          }
+          @if (s.efekty_ksztalcenia) {
+            <p-panel header="Efekty kształcenia" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              @for (kat of [
+                { label: 'Wiedza', icon: 'pi pi-lightbulb', val: s.efekty_ksztalcenia.wiedza },
+                { label: 'Umiejętności', icon: 'pi pi-cog', val: s.efekty_ksztalcenia.umiejetnosci },
+                { label: 'Kompetencje społeczne', icon: 'pi pi-users', val: s.efekty_ksztalcenia.kompetencje_spoleczne }
+              ]; track kat.label) {
+                @if (normalizeEfekty(kat.val).length) {
+                  <p class="efekty-kategoria"><i [class]="kat.icon"></i> {{ kat.label }}</p>
+                  @if (isEfektyObjects(kat.val)) {
+                    <p-table [value]="asEfektyItems(kat.val)" styleClass="p-datatable-sm efekty-table" [showGridlines]="true">
+                      <ng-template pTemplate="header">
+                        <tr>
+                          <th style="width:110px">Kod KEU</th>
+                          <th>Przedmiotowy efekt uczenia się</th>
+                          <th style="width:220px">Metoda weryfikacji</th>
+                        </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-row>
+                        <tr>
+                          <td class="text-center"><strong>{{ row.keu || '–' }}</strong></td>
+                          <td>{{ row.peu }}</td>
+                          <td>{{ row.metoda_weryfikacji || '–' }}</td>
+                        </tr>
+                      </ng-template>
+                    </p-table>
+                  } @else {
+                    <ul class="sylabus-list">@for (e of asArray(kat.val); track $index) { <li>{{ e }}</li> }</ul>
+                  }
+                }
+              }
+            </p-panel>
+          }
+          @if (isTresciObject(s.tresci_programowe)) {
+            <p-panel header="Treści programowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              <p-table [value]="asTresciRows(s.tresci_programowe)" styleClass="p-datatable-sm" [showGridlines]="true">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th style="width:80px">Nr zajęć</th>
+                    <th>Wykład</th>
+                    <th>Ćwiczenia / Laboratorium</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-row>
+                  <tr>
+                    <td class="text-center">{{ row.nr_zajec }}</td>
+                    <td>{{ row.wyklad }}</td>
+                    <td>{{ row.cwiczenia || '–' }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </p-panel>
+          } @else if (s.tresci_programowe?.length) {
+            <p-panel header="Treści programowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              <ol class="sylabus-list">@for (t of s.tresci_programowe; track $index) { <li>{{ t }}</li> }</ol>
+            </p-panel>
+          }
+          @if (s.literatura) {
+            <p-panel header="Literatura" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              @if (s.literatura.podstawowa?.pozycje?.length) {
+                <p class="literatura-typ">Podstawowa:</p>
+                <ul class="sylabus-list">@for (p of s.literatura.podstawowa!.pozycje; track $index) { <li>{{ p }}</li> }</ul>
+              }
+              @if (s.literatura.uzupelniajaca?.pozycje?.length) {
+                <p class="literatura-typ">Uzupełniająca:</p>
+                <ul class="sylabus-list">@for (p of s.literatura.uzupelniajaca!.pozycje; track $index) { <li>{{ p }}</li> }</ul>
+              }
+            </p-panel>
+          }
+          @let wl = $any(s).wymagania_laboratorium;
+          @if (wl && ((wl.pc_params?.length || 0) + (wl.software?.length || 0) + (wl.wyposazenie_dodatkowe?.length || 0) > 0)) {
+            <p-panel header="Wymagania dotyczące laboratorium" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              <p-table [value]="[wl]" styleClass="p-datatable-sm" [showGridlines]="true">
+                <ng-template pTemplate="header">
+                  <tr>
+                    @if (wl.pc_params?.length) { <th>Stanowisko komputerowe</th> }
+                    @if (wl.software?.length) { <th>Oprogramowanie</th> }
+                    @if (wl.wyposazenie_dodatkowe?.length) { <th>Wyposażenie specjalistyczne</th> }
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-row>
+                  <tr>
+                    @if (wl.pc_params?.length) { <td><ul class="sylabus-list-inline">@for (p of wl.pc_params; track $index) { <li>{{ p }}</li> }</ul></td> }
+                    @if (wl.software?.length) { <td><ul class="sylabus-list-inline">@for (p of wl.software; track $index) { <li>{{ p }}</li> }</ul></td> }
+                    @if (wl.wyposazenie_dodatkowe?.length) { <td><ul class="sylabus-list-inline">@for (p of wl.wyposazenie_dodatkowe; track $index) { <li>{{ p }}</li> }</ul></td> }
+                  </tr>
+                </ng-template>
+              </p-table>
+            </p-panel>
+          }
+          @let rp = $any(s).rynek_pracy;
+          @if ($any(s).informacje_dodatkowe || rp?.dziedzina_gospodarki || rp?.zawody || rp?.prace_dyplomowe?.length) {
+            <p-panel header="Informacje dodatkowe" [toggleable]="true" [collapsed]="true" styleClass="sylabus-panel">
+              @if ($any(s).informacje_dodatkowe) { <p class="sylabus-text">{{ $any(s).informacje_dodatkowe }}</p> }
+              @if (rp?.dziedzina_gospodarki || rp?.zawody || rp?.prace_dyplomowe?.length) {
+                <p class="efekty-kategoria"><i class="pi pi-briefcase"></i> Uzasadnienie – współpraca z rynkiem pracy</p>
+                @if (rp?.dziedzina_gospodarki) { <p class="literatura-typ">Dziedziny gospodarki / typy firm:</p><p class="sylabus-text">{{ rp.dziedzina_gospodarki }}</p> }
+                @if (rp?.zawody) { <p class="literatura-typ">Zawody:</p><p class="sylabus-text">{{ rp.zawody }}</p> }
+                @if (rp?.prace_dyplomowe?.length) {
+                  <p class="literatura-typ">Przykładowe tematy prac dyplomowych:</p>
+                  <ul class="sylabus-list">@for (p of rp.prace_dyplomowe; track $index) { <li>{{ p }}</li> }</ul>
+                }
+              }
+            </p-panel>
+          }
+        </div>
+      }
+    }
+    <ng-template pTemplate="footer">
+      <p-button label="Zamknij" icon="pi pi-times" (onClick)="closeDialog()" />
+    </ng-template>
+  </p-dialog>
+</div>
+

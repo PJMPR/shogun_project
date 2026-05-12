@@ -1,0 +1,98 @@
+{
+
+  "name": "pj-studies-program",
+
+  "version": "0.0.0",
+
+  "scripts": {
+
+    "ng": "ng",
+
+    "start": "ng run pj-studies-program:serve-mfe",
+
+    "build": "ng run pj-studies-program:build-mfe",
+
+    "build:prod": "ng run pj-studies-program:build-mfe:production",
+
+    "test": "ng test"
+
+  },
+
+  "prettier": {
+
+    "printWidth": 100,
+
+    "singleQuote": true,
+
+    "overrides": [
+
+      {
+
+        "files": "*.html",
+
+        "options": {
+
+          "parser": "angular"
+
+        }
+
+      }
+
+    ]
+
+  },
+
+  "private": true,
+
+  "packageManager": "npm@11.8.0",
+
+  "dependencies": {
+
+    "@angular-architects/native-federation": "^21.0.0",
+
+    "@angular/animations": "^21.1.5",
+
+    "@angular/cdk": "^21.2.10",
+
+    "@angular/common": "^21.1.0",
+
+    "@angular/compiler": "^21.1.0",
+
+    "@angular/core": "^21.1.0",
+
+    "@angular/forms": "^21.1.0",
+
+    "@angular/platform-browser": "^21.1.0",
+
+    "@angular/router": "^21.1.0",
+
+    "@primeuix/themes": "^2.0.3",
+
+    "chart.js": "^4.5.1",
+
+    "es-module-shims": "^2.8.0",
+
+    "primeicons": "^7.0.0",
+
+    "primeng": "^21.1.1",
+
+    "rxjs": "~7.8.0",
+
+    "tslib": "^2.3.0"
+
+  },
+
+  "devDependencies": {
+
+    "@angular/build": "^21.1.4",
+
+    "@angular/cli": "^21.1.4",
+
+    "@angular/compiler-cli": "^21.1.0",
+
+    "typescript": "~5.9.2"
+
+  }
+
+}
+

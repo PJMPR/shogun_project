@@ -1,0 +1,31 @@
+{
+  "hash": "5cccde2a",
+  "configHash": "15495b81",
+  "lockfileHash": "e5c079de",
+  "browserHash": "780b14e5",
+  "optimized": {
+    "@angular-architects/native-federation": {
+      "src": "../../../../../../node_modules/@angular-architects/native-federation/src/index.js",
+      "file": "@angular-architects_native-federation.js",
+      "fileHash": "9b27595c",
+      "needsInterop": false
+    },
+    "@primeuix/themes": {
+      "src": "../../../../../../node_modules/@primeuix/themes/dist/index.mjs",
+      "file": "@primeuix_themes.js",
+      "fileHash": "b5df80fc",
+      "needsInterop": false
+    },
+    "@primeuix/themes/aura": {
+      "src": "../../../../../../node_modules/@primeuix/themes/dist/aura/index.mjs",
+      "file": "@primeuix_themes_aura.js",
+      "fileHash": "2213a05c",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-VUJOFXKG": {
+      "file": "chunk-VUJOFXKG.js"
+    }
+  }
+}

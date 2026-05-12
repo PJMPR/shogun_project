@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pdf-viewer-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1a1a2e;
+}
+
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: #1a1a2e;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.toolbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+.toolbar-title {
+  color: #e5e7eb;
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.toolbar-download {
+  color: #e5e7eb;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.toolbar-download:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+}
+
+.no-pdf {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+

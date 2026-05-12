@@ -1,0 +1,114 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": false
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "pj-studies-assignements": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/pj-studies-assignements",
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "es-module-shims.js",
+                "input": "node_modules/es-module-shims/dist/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "../frontend/public/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1MB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 4203
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "pj-studies-assignements:build:production"
+            },
+            "development": {
+              "buildTarget": "pj-studies-assignements:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve-mfe": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "pj-studies-assignements:serve:development",
+            "federationConfig": "federation.config.js",
+            "verbose": false
+          },
+          "configurations": {
+            "production": {
+              "target": "pj-studies-assignements:build:production"
+            }
+          }
+        },
+        "build-mfe": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "pj-studies-assignements:build:production",
+            "federationConfig": "federation.config.js",
+            "verbose": false
+          },
+          "configurations": {
+            "production": {
+              "target": "pj-studies-assignements:build:production"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
+  }
+}
