@@ -1,4 +1,4 @@
-services:
+﻿services:
   mongo:
     image: mongo:7
     container_name: pj_sylabi_mongo
@@ -13,7 +13,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: Shogun.Syllabi.Service.Api/Dockerfile
+      dockerfile: Shogun.Service.Api/Dockerfile
     container_name: pj_syllabi_api
     restart: unless-stopped
     depends_on:
@@ -29,7 +29,7 @@ services:
   seed:
     build:
       context: .
-      dockerfile: Shogun.Syllabi.Service.Seed/Dockerfile
+      dockerfile: Shogun.Service.Api.Seed/Dockerfile
     container_name: pj_syllabi_seed
     depends_on:
       - mongo

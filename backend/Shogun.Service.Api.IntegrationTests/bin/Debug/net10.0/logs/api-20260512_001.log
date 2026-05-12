@@ -1,0 +1,98 @@
+2026-05-12 20:37:19.302 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:37:19.310 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:37:19.310 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Api
+2026-05-12 20:37:19.539 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 438.5348 ms
+2026-05-12 20:37:19.554 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 239.3427 ms
+2026-05-12 20:37:19.554 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 455.7169 ms
+2026-05-12 20:37:19.608 +02:00 [INF] HTTP DELETE /api/v1/programs/6a03735f1876395cedc03b4f responded 204 in 46.0140 ms
+2026-05-12 20:37:19.617 +02:00 [INF] HTTP GET /api/v1/electives/6a03735f1876395cedc03b4e responded 200 in 54.9892 ms
+2026-05-12 20:37:19.619 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 4.9709 ms
+2026-05-12 20:37:19.620 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 40.7646 ms
+2026-05-12 20:37:19.626 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 5.1238 ms
+2026-05-12 20:37:19.629 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 2.0952 ms
+2026-05-12 20:37:19.632 +02:00 [INF] HTTP GET /api/v1/programs/6a03735f1876395cedc03b51 responded 200 in 11.6659 ms
+2026-05-12 20:37:19.651 +02:00 [INF] HTTP PUT /api/v1/syllabi/6a03735f1876395cedc03b50 responded 200 in 30.1866 ms
+2026-05-12 20:37:19.658 +02:00 [INF] HTTP GET /api/v1/electives responded 200 in 28.3770 ms
+2026-05-12 20:37:19.661 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.3382 ms
+2026-05-12 20:37:19.665 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.7524 ms
+2026-05-12 20:37:19.668 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.9946 ms
+2026-05-12 20:37:19.675 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 5.6546 ms
+2026-05-12 20:37:19.682 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 3.3932 ms
+2026-05-12 20:37:19.692 +02:00 [INF] HTTP DELETE /api/v1/syllabi/6a03735f1876395cedc03b57 responded 204 in 9.2031 ms
+2026-05-12 20:37:19.716 +02:00 [INF] HTTP GET /api/v1/syllabi/6a03735f1876395cedc03b57 responded 404 in 23.5736 ms
+2026-05-12 20:37:19.734 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 12.8988 ms
+2026-05-12 20:37:19.738 +02:00 [INF] HTTP GET /api/v1/syllabi/6a03735f1876395cedc03b58 responded 200 in 2.7868 ms
+2026-05-12 20:37:19.743 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.4013 ms
+2026-05-12 20:37:19.746 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.1245 ms
+2026-05-12 20:37:19.758 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 12.2572 ms
+2026-05-12 20:37:19.774 +02:00 [INF] HTTP POST /api/v1/syllabi responded 400 in 12.3841 ms
+2026-05-12 20:37:39.882 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:37:39.888 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:37:39.888 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:37:39.905 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:37:39.905 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:37:39.905 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:37:39.906 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Api
+2026-05-12 20:37:39.906 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Api
+2026-05-12 20:37:39.906 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Syllabi.Service.Api
+2026-05-12 20:37:40.328 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 371.7662 ms
+2026-05-12 20:37:40.342 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 388.0101 ms
+2026-05-12 20:37:40.342 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 387.9916 ms
+2026-05-12 20:37:40.392 +02:00 [INF] HTTP DELETE /api/v1/programs/6a0373747f026cd858fdba51 responded 204 in 46.4952 ms
+2026-05-12 20:37:40.401 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 5.9970 ms
+2026-05-12 20:37:40.419 +02:00 [INF] HTTP GET /api/v1/electives/6a0373747f026cd858fdba50 responded 200 in 74.1613 ms
+2026-05-12 20:37:40.422 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 59.4346 ms
+2026-05-12 20:37:40.427 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 4.4686 ms
+2026-05-12 20:37:40.430 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 1.6900 ms
+2026-05-12 20:37:40.431 +02:00 [INF] HTTP GET /api/v1/programs/6a0373747f026cd858fdba53 responded 200 in 11.9439 ms
+2026-05-12 20:37:40.446 +02:00 [INF] HTTP PUT /api/v1/syllabi/6a0373747f026cd858fdba52 responded 200 in 23.1841 ms
+2026-05-12 20:37:40.455 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.3763 ms
+2026-05-12 20:37:40.457 +02:00 [INF] HTTP GET /api/v1/electives responded 200 in 26.9500 ms
+2026-05-12 20:37:40.458 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.3375 ms
+2026-05-12 20:37:40.461 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.0600 ms
+2026-05-12 20:37:40.467 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 6.0001 ms
+2026-05-12 20:37:40.474 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.8571 ms
+2026-05-12 20:37:40.486 +02:00 [INF] HTTP DELETE /api/v1/syllabi/6a0373747f026cd858fdba59 responded 204 in 10.3437 ms
+2026-05-12 20:37:40.508 +02:00 [INF] HTTP GET /api/v1/syllabi/6a0373747f026cd858fdba59 responded 404 in 21.8175 ms
+2026-05-12 20:37:40.524 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 11.1540 ms
+2026-05-12 20:37:40.528 +02:00 [INF] HTTP GET /api/v1/syllabi/6a0373747f026cd858fdba5a responded 200 in 2.7976 ms
+2026-05-12 20:37:40.533 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.6544 ms
+2026-05-12 20:37:40.537 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.6386 ms
+2026-05-12 20:37:40.541 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 4.0353 ms
+2026-05-12 20:37:40.554 +02:00 [INF] HTTP POST /api/v1/syllabi responded 400 in 9.8499 ms
+2026-05-12 20:37:41.044 +02:00 [INF] Application is shutting down...
+2026-05-12 20:48:39.577 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:48:39.582 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:48:39.582 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-12 20:48:39.599 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:48:39.599 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:48:39.599 +02:00 [INF] Hosting environment: Development
+2026-05-12 20:48:39.600 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api
+2026-05-12 20:48:39.600 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api
+2026-05-12 20:48:39.600 +02:00 [INF] Content root path: D:\PJWSTK\git\PJ_Program_Planner\backend\Shogun.Service.Api
+2026-05-12 20:48:39.902 +02:00 [INF] HTTP POST /api/v1/syllabi responded 400 in 243.3415 ms
+2026-05-12 20:48:40.083 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 427.8757 ms
+2026-05-12 20:48:40.083 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 159.0738 ms
+2026-05-12 20:48:40.083 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 427.8592 ms
+2026-05-12 20:48:40.094 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 6.6922 ms
+2026-05-12 20:48:40.150 +02:00 [INF] HTTP DELETE /api/v1/syllabi/6a0376072b689c147d887f6c responded 204 in 62.1667 ms
+2026-05-12 20:48:40.175 +02:00 [INF] HTTP GET /api/v1/programs/6a0376072b689c147d887f6b responded 200 in 87.7871 ms
+2026-05-12 20:48:40.180 +02:00 [INF] HTTP GET /api/v1/syllabi/6a0376072b689c147d887f6c responded 404 in 30.1074 ms
+2026-05-12 20:48:40.185 +02:00 [INF] HTTP POST /api/v1/programs responded 201 in 5.2794 ms
+2026-05-12 20:48:40.189 +02:00 [INF] HTTP GET /api/v1/electives responded 200 in 93.7970 ms
+2026-05-12 20:48:40.196 +02:00 [INF] HTTP DELETE /api/v1/programs/6a0376082b689c147d887f6e responded 204 in 10.3744 ms
+2026-05-12 20:48:40.203 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 19.2235 ms
+2026-05-12 20:48:40.211 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.8260 ms
+2026-05-12 20:48:40.219 +02:00 [INF] HTTP POST /api/v1/electives responded 201 in 3.0510 ms
+2026-05-12 20:48:40.230 +02:00 [INF] HTTP GET /api/v1/electives/6a0376082b689c147d887f70 responded 200 in 10.0561 ms
+2026-05-12 20:48:40.238 +02:00 [INF] HTTP PUT /api/v1/syllabi/6a0376082b689c147d887f6f responded 200 in 25.5282 ms
+2026-05-12 20:48:40.244 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 3.2678 ms
+2026-05-12 20:48:40.249 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.9861 ms
+2026-05-12 20:48:40.255 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 5.4184 ms
+2026-05-12 20:48:40.275 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 13.9342 ms
+2026-05-12 20:48:40.279 +02:00 [INF] HTTP GET /api/v1/syllabi/6a0376082b689c147d887f73 responded 200 in 3.7732 ms
+2026-05-12 20:48:40.285 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 2.3830 ms
+2026-05-12 20:48:40.287 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 1.8230 ms
+2026-05-12 20:48:40.290 +02:00 [INF] HTTP POST /api/v1/syllabi responded 201 in 1.6615 ms
+2026-05-12 20:48:40.293 +02:00 [INF] HTTP GET /api/v1/syllabi responded 200 in 2.7838 ms
+2026-05-12 20:48:40.767 +02:00 [INF] Application is shutting down...

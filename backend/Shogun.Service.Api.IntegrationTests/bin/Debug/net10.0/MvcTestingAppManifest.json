@@ -1,0 +1,6 @@
+{
+  "Shogun.Service.Api.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Application",
+  "Shogun.Service.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api",
+  "Shogun.Service.Api.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Domain",
+  "Shogun.Service.Api.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Infrastructure"
+}
