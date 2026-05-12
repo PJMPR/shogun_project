@@ -169,8 +169,7 @@ export interface SylabusEfekty {
 
 export interface SylabusMetodyDydaktyczne {
   wyklad?: string[];
-  cwiczenia?: string[];
-  laboratorium?: string[];
+  cwiczenia_laboratorium?: string[];
   lektorat?: string[];
   projekt?: string[];
 }

@@ -551,7 +551,7 @@ export class EdytujSylabusComponent implements OnInit {
         kryteria_oceny,
         przedmioty_wprowadzajace: f.przedmioty_wprowadzajace.filter(p => p.nazwa.trim()),
         cel_dydaktyczny: f.cel_dydaktyczny,
-        ...(f.cel_dydaktyczny_eng ? { cel_dydaktyczny_eng: f.cel_dydaktyczny_eng } : {}),
+        cel_dydaktyczny_eng: f.cel_dydaktyczny_eng ?? '',
         literatura: lit,
         efekty_ksztalcenia: {
           wiedza:                f.efekty_wiedza.filter(e => e.peu.trim()),
