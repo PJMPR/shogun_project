@@ -1,5 +1,4 @@
 ﻿using Shogun.Service.Api.Application.DTOs;
-using Shogun.Service.Api.Application.Mapping;
 using Shogun.Service.Api.Domain.Entities;
 using Shogun.Service.Api.Domain.Repositories;
 
@@ -28,11 +27,11 @@ public class SyllabiService
     {
         var entity = new Syllabus
         {
-            kod_przedmiotu = req.kod_przedmiotu,
-            tryb_studiow = req.tryb_studiow,
-            is_stary = req.is_stary,
-            _source = req._source,
-            sylabus = BsonMapper.ToBsonDocument(req.sylabus),
+            SubjectCode = req.SubjectCode,
+            StudyMode = req.StudyMode,
+            IsLegacy = req.IsLegacy,
+            Source = req.Source,
+            Content = req.Content,
         };
         var created = await _repo.CreateAsync(entity, ct);
         return Map(created);
@@ -42,11 +41,11 @@ public class SyllabiService
     {
         var entity = new Syllabus
         {
-            kod_przedmiotu = req.kod_przedmiotu,
-            tryb_studiow = req.tryb_studiow,
-            is_stary = req.is_stary,
-            _source = req._source,
-            sylabus = BsonMapper.ToBsonDocument(req.sylabus),
+            SubjectCode = req.SubjectCode,
+            StudyMode = req.StudyMode,
+            IsLegacy = req.IsLegacy,
+            Source = req.Source,
+            Content = req.Content,
         };
         var updated = await _repo.UpdateAsync(id, entity, ct);
         return updated is null ? null : Map(updated);
@@ -57,9 +56,9 @@ public class SyllabiService
 
     private static SyllabusDto Map(Syllabus s) => new(
         s.Id!,
-        s.kod_przedmiotu,
-        s.tryb_studiow,
-        s.is_stary,
-        s._source,
-        BsonMapper.ToJsonObject(s.sylabus));
+        s.SubjectCode,
+        s.StudyMode,
+        s.IsLegacy,
+        s.Source,
+        s.Content);
 }

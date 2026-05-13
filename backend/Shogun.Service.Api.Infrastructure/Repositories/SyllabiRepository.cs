@@ -54,20 +54,20 @@ public class SyllabiRepository : ISyllabiRepository
         var builder = Builders<Syllabus>.Filter;
         var filters = new List<FilterDefinition<Syllabus>>();
 
-        if (!string.IsNullOrWhiteSpace(q.kod_przedmiotu))
-            filters.Add(builder.Regex(x => x.kod_przedmiotu, new BsonRegularExpression(q.kod_przedmiotu, "i")));
+        if (!string.IsNullOrWhiteSpace(q.SubjectCode))
+            filters.Add(builder.Regex(x => x.SubjectCode, new BsonRegularExpression(q.SubjectCode, "i")));
 
-        if (!string.IsNullOrWhiteSpace(q.tryb_studiow))
-            filters.Add(builder.Eq(x => x.tryb_studiow, q.tryb_studiow));
+        if (!string.IsNullOrWhiteSpace(q.StudyMode))
+            filters.Add(builder.Eq(x => x.StudyMode, q.StudyMode));
 
-        if (q.is_stary.HasValue)
-            filters.Add(builder.Eq(x => x.is_stary, q.is_stary.Value));
+        if (q.IsLegacy.HasValue)
+            filters.Add(builder.Eq(x => x.IsLegacy, q.IsLegacy.Value));
 
         if (!string.IsNullOrWhiteSpace(q.Search))
         {
             var regex = new BsonRegularExpression(q.Search, "i");
             filters.Add(builder.Or(
-                builder.Regex(x => x.kod_przedmiotu, regex),
+                builder.Regex(x => x.SubjectCode, regex),
                 builder.Regex("sylabus.nazwa_przedmiotu", regex),
                 builder.Regex("sylabus.odpowiedzialny_za_przedmiot", regex)
             ));

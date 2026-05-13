@@ -1,10 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
-import { BaseHrefService } from '../../shared/base-href.service';
 import { ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -170,29 +168,31 @@ export class EdytujSylabusComponent implements OnInit {
   /** Opcje metody weryfikacji (z pliku JSON) */
   metodyWeryfikacjiOptions: { label: string; value: string }[] = [];
 
-  constructor(private http: HttpClient, private baseHref: BaseHrefService) {}
+  constructor() {}
   private readonly shogunApi = inject(ShogunApiService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.loadSubjectOptions();
-    this.http.get<any>(this.baseHref.assetUrl('metody_dydaktyczne.json')).subscribe(data => {
-      this.metodyWykladOptions = (data.wyklad as string[]).map((m: string) => ({ label: m, value: m }));
-      this.metodyCwiczeniaOptions = (data.cwiczenia_laboratorium as string[]).map((m: string) => ({ label: m, value: m }));
+    this.shogunApi.getTeachingMethods().subscribe(data => {
+      this.metodyWykladOptions = data.wyklad.map(m => ({ label: m, value: m }));
+      this.metodyCwiczeniaOptions = data.cwiczenia_laboratorium.map(m => ({ label: m, value: m }));
+      this.cdr.detectChanges();
     });
-    this.http.get<any>(this.baseHref.assetUrl('metody_weryfikacji.json')).subscribe(data => {
-      const opts = (data.metody_weryfikacji as string[]).map((m: string) => ({ label: m, value: m }));
+    this.shogunApi.getVerificationMethods().subscribe(data => {
+      const opts = data.metody_weryfikacji.map(m => ({ label: m, value: m }));
       this.krytyriaOptions = opts;
       this.metodyWeryfikacjiOptions = opts;
+      this.cdr.detectChanges();
     });
-    this.http.get<any>(this.baseHref.assetUrl('efekty_ksztalcenia.json')).subscribe(data => {
+    this.shogunApi.getLearningOutcomes().subscribe(data => {
       const ef = data.efekty_ksztalcenia;
-      const toOpts = (arr: any[]) => arr.map((e: any) => ({
-        label: `${e.kod_efektu} – ${e.tresc}`,
-        value: e.kod_efektu,
-      }));
+      const toOpts = (arr: { kod_efektu: string; tresc: string }[]) =>
+        arr.map(e => ({ label: `${e.kod_efektu} – ${e.tresc}`, value: e.kod_efektu }));
       this.keuWiedzaOptions = toOpts(ef.wiedza ?? []);
       this.keuUmiejOptions  = toOpts(ef.umiejetnosci ?? []);
       this.keuKompOptions   = toOpts(ef.kompetencje_spoleczne ?? []);
+      this.cdr.detectChanges();
     });
   }
 
@@ -278,8 +278,9 @@ export class EdytujSylabusComponent implements OnInit {
 
         this.subjectOptions = opts;
         this.loadingOptions = false;
+        this.cdr.detectChanges();
       },
-      error: () => { this.loadingOptions = false; },
+      error: () => { this.loadingOptions = false; this.cdr.detectChanges(); },
     });
   }
 
@@ -305,16 +306,19 @@ export class EdytujSylabusComponent implements OnInit {
         if (!result) {
           this.loadError = `Nie znaleziono sylabusa dla przedmiotu "${opt.name}" (${opt.code}).`;
           this.loadingSylabus = false;
+          this.cdr.detectChanges();
           return;
         }
         this.loadedSyllabusId = result.id;
         this.loadedSylabus = result.sylabus;
         this.populateForm(result.sylabus);
         this.loadingSylabus = false;
+        this.cdr.detectChanges();
       },
       error: () => {
         this.loadError = `Nie udało się załadować sylabusa dla kodu "${opt.code}".`;
         this.loadingSylabus = false;
+        this.cdr.detectChanges();
       },
     });
   }
@@ -611,10 +615,12 @@ export class EdytujSylabusComponent implements OnInit {
       next: () => {
         this.savingToApi = false;
         this.saveApiSuccess = true;
+        this.cdr.detectChanges();
       },
       error: (err: any) => {
         this.savingToApi = false;
         this.saveApiError = err?.error?.title ?? err?.message ?? 'Błąd zapisu do API.';
+        this.cdr.detectChanges();
       },
     });
   }

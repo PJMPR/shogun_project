@@ -19,6 +19,7 @@ import { ProgramService, SemesterViewModel } from './services/program.service';
 import { SubjectRow, SylabusData, ProgramChange, ProgramChangesData, SylabusTrescProgramowa, SylabusKryteriaOceny } from './models/program.models';
 import { BaseHrefService } from '../../shared/base-href.service';
 import { ShogunApiService } from '../../shared/shogun-api.service';
+import { environment } from '../../../environments/environment';
 import { SylabusFormComponent } from '../../shared/sylabus-form/sylabus-form.component';
 
 @Component({
@@ -76,12 +77,12 @@ export class ProgramComponent implements OnInit {
   ) {}
 
   openPdf(pdfPath: string, title: string = 'Program studiów'): void {
-    const url = this.baseHrefService.assetUrl(pdfPath.replace(/^assets\//, ''));
+    const url = `${environment.filesBaseUrl}/${pdfPath.replace(/^assets\/files\//, '')}`;
     this.router.navigate(['/program/pdf-viewer'], { queryParams: { url, title } });
   }
 
   getDocUrl(docPath: string): string {
-    return this.baseHrefService.assetUrl(docPath.replace(/^assets\//, ''));
+    return `${environment.filesBaseUrl}/${docPath.replace(/^assets\/files\//, '')}`;
   }
 
   ngOnInit(): void {

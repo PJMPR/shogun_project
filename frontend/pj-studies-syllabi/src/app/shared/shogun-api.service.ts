@@ -150,4 +150,26 @@ export class ShogunApiService {
       sylabus,
     });
   }
+
+  getTeachingMethods(): Observable<{ wyklad: string[]; cwiczenia_laboratorium: string[] }> {
+    return this.http.get<{ wyklad: string[]; cwiczenia_laboratorium: string[] }>(
+      `${this.base}/api/v1/metadata/teaching-methods`
+    );
+  }
+
+  getVerificationMethods(): Observable<{ metody_weryfikacji: string[] }> {
+    return this.http.get<{ metody_weryfikacji: string[] }>(
+      `${this.base}/api/v1/metadata/verification-methods`
+    );
+  }
+
+  getLearningOutcomes(): Observable<{
+    efekty_ksztalcenia: {
+      wiedza: { kod_efektu: string; tresc: string }[];
+      umiejetnosci: { kod_efektu: string; tresc: string }[];
+      kompetencje_spoleczne: { kod_efektu: string; tresc: string }[];
+    };
+  }> {
+    return this.http.get<any>(`${this.base}/api/v1/metadata/learning-outcomes`);
+  }
 }

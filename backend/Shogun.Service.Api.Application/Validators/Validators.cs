@@ -7,11 +7,11 @@ public class CreateSyllabusRequestValidator : AbstractValidator<CreateSyllabusRe
 {
     public CreateSyllabusRequestValidator()
     {
-        RuleFor(x => x.kod_przedmiotu)
+        RuleFor(x => x.SubjectCode)
             .NotEmpty().WithMessage("kod_przedmiotu is required.")
             .MaximumLength(20).WithMessage("kod_przedmiotu must not exceed 20 characters.");
 
-        RuleFor(x => x.tryb_studiow)
+        RuleFor(x => x.StudyMode)
             .NotEmpty().WithMessage("tryb_studiow is required.")
             .Must(v => v == "stacjonarny" || v == "niestacjonarny")
             .WithMessage("tryb_studiow must be 'stacjonarny' or 'niestacjonarny'.");
@@ -22,11 +22,11 @@ public class UpdateSyllabusRequestValidator : AbstractValidator<UpdateSyllabusRe
 {
     public UpdateSyllabusRequestValidator()
     {
-        RuleFor(x => x.kod_przedmiotu)
+        RuleFor(x => x.SubjectCode)
             .NotEmpty().WithMessage("kod_przedmiotu is required.")
             .MaximumLength(20).WithMessage("kod_przedmiotu must not exceed 20 characters.");
 
-        RuleFor(x => x.tryb_studiow)
+        RuleFor(x => x.StudyMode)
             .NotEmpty().WithMessage("tryb_studiow is required.")
             .Must(v => v == "stacjonarny" || v == "niestacjonarny")
             .WithMessage("tryb_studiow must be 'stacjonarny' or 'niestacjonarny'.");

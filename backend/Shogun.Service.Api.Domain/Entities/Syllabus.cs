@@ -5,7 +5,8 @@ namespace Shogun.Service.Api.Domain.Entities;
 
 /// <summary>
 /// Syllabus document stored in `syllabi` collection.
-/// Fields mirror the MongoDB document exactly (JSON field names preserved).
+/// Property names follow English PascalCase; BsonElement attributes preserve
+/// the original snake_case field names used in MongoDB.
 /// </summary>
 public class Syllabus
 {
@@ -14,18 +15,17 @@ public class Syllabus
     public string? Id { get; set; }
 
     [BsonElement("kod_przedmiotu")]
-    public string kod_przedmiotu { get; set; } = default!;
+    public string SubjectCode { get; set; } = default!;
 
     [BsonElement("tryb_studiow")]
-    public string tryb_studiow { get; set; } = default!;
+    public string StudyMode { get; set; } = default!;
 
     [BsonElement("is_stary")]
-    public bool is_stary { get; set; }
+    public bool IsLegacy { get; set; }
 
     [BsonElement("_source")]
-    public string? _source { get; set; }
+    public string? Source { get; set; }
 
     [BsonElement("sylabus")]
-    [BsonExtraElements]
-    public BsonDocument sylabus { get; set; } = new BsonDocument();
+    public SyllabusContent? Content { get; set; }
 }

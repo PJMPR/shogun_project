@@ -29,11 +29,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "../frontend/public/assets",
-                "output": "assets"
               }
             ],
             "styles": [

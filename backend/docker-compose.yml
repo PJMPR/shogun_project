@@ -1,5 +1,21 @@
 ﻿services:
 
+  proxy:
+    image: nginx:alpine
+    container_name: pj_proxy
+    restart: unless-stopped
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+      - mfe-host
+      - mfe-program
+      - mfe-syllabi
+      - mfe-assignements
+      - files
+
   api:
     build:
       context: .
@@ -11,8 +27,6 @@
       ASPNETCORE_URLS: http://+:8080
       MONGODB__CONNECTIONSTRING: "mongodb://${MONGO_USER:-admin}:${MONGO_PASS:-haslo123}@host.docker.internal:27017/?authSource=admin"
       MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
-    ports:
-      - "${API_PORT:-8080}:8080"
 
   mfe-host:
     build:
@@ -20,8 +34,6 @@
       dockerfile: Dockerfile
     container_name: pj_mfe_host
     restart: unless-stopped
-    ports:
-      - "4200:80"
 
   mfe-program:
     build:
@@ -29,8 +41,6 @@
       dockerfile: Dockerfile
     container_name: pj_mfe_program
     restart: unless-stopped
-    ports:
-      - "4201:80"
 
   mfe-syllabi:
     build:
@@ -38,8 +48,6 @@
       dockerfile: Dockerfile
     container_name: pj_mfe_syllabi
     restart: unless-stopped
-    ports:
-      - "4202:80"
 
   mfe-assignements:
     build:
@@ -47,8 +55,13 @@
       dockerfile: Dockerfile
     container_name: pj_mfe_assignements
     restart: unless-stopped
-    ports:
-      - "4203:80"
+
+  files:
+    image: nginx:alpine
+    container_name: pj_files
+    restart: unless-stopped
+    volumes:
+      - ./files:/usr/share/nginx/html:ro
 
 volumes:
   mongo_data:

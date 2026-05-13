@@ -1,31 +1,32 @@
-﻿using MongoDB.Bson;
+﻿using Shogun.Service.Api.Domain.Entities;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace Shogun.Service.Api.Application.DTOs;
 
 // ─── Syllabus ────────────────────────────────────────────────────────────────
 
 public record SyllabusDto(
-    string id,
-    string kod_przedmiotu,
-    string tryb_studiow,
-    bool is_stary,
-    string? _source,
-    JsonObject? sylabus);
+    [property: JsonPropertyName("id")] string Id,
+    [property: JsonPropertyName("kod_przedmiotu")] string SubjectCode,
+    [property: JsonPropertyName("tryb_studiow")] string StudyMode,
+    [property: JsonPropertyName("is_stary")] bool IsLegacy,
+    [property: JsonPropertyName("_source")] string? Source,
+    [property: JsonPropertyName("sylabus")] SyllabusContent? Content);
 
 public record CreateSyllabusRequest(
-    string kod_przedmiotu,
-    string tryb_studiow,
-    bool is_stary,
-    string? _source,
-    JsonObject? sylabus);
+    [property: JsonPropertyName("kod_przedmiotu")] string SubjectCode,
+    [property: JsonPropertyName("tryb_studiow")] string StudyMode,
+    [property: JsonPropertyName("is_stary")] bool IsLegacy,
+    [property: JsonPropertyName("_source")] string? Source,
+    [property: JsonPropertyName("sylabus")] SyllabusContent? Content);
 
 public record UpdateSyllabusRequest(
-    string kod_przedmiotu,
-    string tryb_studiow,
-    bool is_stary,
-    string? _source,
-    JsonObject? sylabus);
+    [property: JsonPropertyName("kod_przedmiotu")] string SubjectCode,
+    [property: JsonPropertyName("tryb_studiow")] string StudyMode,
+    [property: JsonPropertyName("is_stary")] bool IsLegacy,
+    [property: JsonPropertyName("_source")] string? Source,
+    [property: JsonPropertyName("sylabus")] SyllabusContent? Content);
 
 // ─── Program ─────────────────────────────────────────────────────────────────
 

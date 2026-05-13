@@ -8,9 +8,9 @@ public record SyllabiListQuery(
     string? SortBy = null,
     string SortDir = "asc",
     string? Search = null,
-    string? kod_przedmiotu = null,
-    string? tryb_studiow = null,
-    bool? is_stary = null);
+    string? SubjectCode = null,
+    string? StudyMode = null,
+    bool? IsLegacy = null);
 
 public interface ISyllabiRepository
 {

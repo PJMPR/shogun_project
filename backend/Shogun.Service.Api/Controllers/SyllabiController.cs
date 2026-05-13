@@ -34,12 +34,12 @@ public class SyllabiController : ControllerBase
         [FromQuery] string? sortBy = null,
         [FromQuery] string sortDir = "asc",
         [FromQuery] string? search = null,
-        [FromQuery] string? kod_przedmiotu = null,
-        [FromQuery] string? tryb_studiow = null,
-        [FromQuery] bool? is_stary = null,
+        [FromQuery(Name = "kod_przedmiotu")] string? subjectCode = null,
+        [FromQuery(Name = "tryb_studiow")] string? studyMode = null,
+        [FromQuery(Name = "is_stary")] bool? isLegacy = null,
         CancellationToken ct = default)
     {
-        var query = new SyllabiListQuery(page, pageSize, sortBy, sortDir, search, kod_przedmiotu, tryb_studiow, is_stary);
+        var query = new SyllabiListQuery(page, pageSize, sortBy, sortDir, search, subjectCode, studyMode, isLegacy);
         var result = await _svc.ListAsync(query, ct);
         return Ok(new
         {
@@ -71,7 +71,7 @@ public class SyllabiController : ControllerBase
             return ValidationProblem(new ValidationProblemDetails(validation.ToDictionary()));
 
         var dto = await _svc.CreateAsync(req, ct);
-        return CreatedAtAction(nameof(GetById), new { id = dto.id }, dto);
+        return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto);
     }
 
     /// <summary>Replace an existing syllabus document.</summary>

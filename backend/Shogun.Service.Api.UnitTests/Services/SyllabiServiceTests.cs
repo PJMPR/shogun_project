@@ -4,7 +4,6 @@ using Shogun.Service.Api.Application.DTOs;
 using Shogun.Service.Api.Application.Services;
 using Shogun.Service.Api.Domain.Entities;
 using Shogun.Service.Api.Domain.Repositories;
-using MongoDB.Bson;
 
 namespace Shogun.Service.Api.UnitTests.Services;
 
@@ -29,19 +28,19 @@ public class SyllabiServiceTests
         var entity = new Syllabus
         {
             Id = "64a1b2c3d4e5f6a7b8c9d0e1",
-            kod_przedmiotu = "PRG1",
-            tryb_studiow = "stacjonarny",
-            is_stary = false,
-            sylabus = new BsonDocument { { "rok_studiow", 1 } },
+            SubjectCode = "PRG1",
+            StudyMode = "stacjonarny",
+            IsLegacy = false,
+            Content = new SyllabusContent { StudyYear = 1 },
         };
         _repo.GetByIdAsync("64a1b2c3d4e5f6a7b8c9d0e1", default).Returns(entity);
 
         var dto = await _svc.GetByIdAsync("64a1b2c3d4e5f6a7b8c9d0e1");
 
         dto.Should().NotBeNull();
-        dto!.kod_przedmiotu.Should().Be("PRG1");
-        dto.tryb_studiow.Should().Be("stacjonarny");
-        dto.is_stary.Should().BeFalse();
+        dto!.SubjectCode.Should().Be("PRG1");
+        dto.StudyMode.Should().Be("stacjonarny");
+        dto.IsLegacy.Should().BeFalse();
     }
 
     [Fact]
