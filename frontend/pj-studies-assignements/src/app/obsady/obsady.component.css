@@ -296,3 +296,135 @@
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   Confirmation dialog (conf-*)
+   ════════════════════════════════════════════════════════════════════════ */
+
+.conf-section {
+  margin-bottom: 0.25rem;
+}
+
+.conf-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.conf-icon {
+  font-size: 1.15rem;
+  color: #1e3a5f;
+}
+
+.conf-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Info grid */
+.conf-info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.conf-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.conf-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.conf-value {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+/* Table overrides */
+.conf-code {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.conf-group-row td {
+  background-color: #eff6ff !important;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+.conf-check {
+  color: #16a34a;
+  font-size: 1.1rem;
+}
+
+.conf-mongoid-tag {
+  font-family: monospace;
+  font-size: 0.75rem !important;
+  cursor: help;
+}
+
+/* Availability chips */
+.conf-avail-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.conf-avail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+.conf-avail-icon {
+  color: #3b82f6;
+  font-size: 0.85rem;
+}
+
+.conf-avail-day {
+  font-weight: 600;
+}
+
+.conf-avail-time {
+  color: #6b7280;
+}
+
+/* Notes box */
+.conf-notes {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+/* Season tag size fix */
+.conf-season-tag {
+  font-size: 0.9rem !important;
+  padding: 0.25rem 0.65rem !important;
+}

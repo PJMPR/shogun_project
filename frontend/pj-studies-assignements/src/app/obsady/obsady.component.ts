@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of, catchError } from 'rxjs';
 import { TabsModule } from 'primeng/tabs';
 import { TreeTableModule } from 'primeng/treetable';
 import { ButtonModule } from 'primeng/button';
@@ -10,6 +10,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TagModule } from 'primeng/tag';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TableModule } from 'primeng/table';
+import { DividerModule } from 'primeng/divider';
+import { TooltipModule } from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
 
 import { ObsadyService, SemesterConfig } from './obsady.service';
@@ -17,6 +19,8 @@ import { SemesterViewModel } from './obsady.service';
 import { SubjectRow, SylabusData, SylabusFile } from '../models/program.models';
 import { BaseHrefService } from '../shared/base-href.service';
 import { SylabusPreviewComponent } from '../shared/sylabus-preview/sylabus-preview.component';
+import { AssignmentsApiService, CreateAssignmentPayload } from '../shared/assignments-api.service';
+import { environment } from '../../environments/environment';
 
 export interface SelectedSubjectEntry {
   tryb: 'stacjonarny' | 'niestacjonarny';
@@ -61,6 +65,8 @@ interface SeasonConfig {
     TagModule,
     CheckboxModule,
     TableModule,
+    DividerModule,
+    TooltipModule,
     SylabusPreviewComponent,
   ],
   templateUrl: './obsady.component.html',
@@ -70,6 +76,7 @@ export class ObsadyComponent implements OnInit {
   private http = inject(HttpClient);
   private baseHrefService = inject(BaseHrefService);
   private obsadyService = inject(ObsadyService);
+  readonly assignmentsApi = inject(AssignmentsApiService);
 
   loading = signal(true);
   activeSeason = signal<'zimowy' | 'letni'>('zimowy');
@@ -87,6 +94,10 @@ export class ObsadyComponent implements OnInit {
   selectedKeys = signal<Set<string>>(new Set());
 
   zgloszenieVisible = signal(false);
+  confirmVisible = signal(false);
+  confirmLoading = signal(false);
+  confirmPayload = signal<CreateAssignmentPayload | null>(null);
+  confirmSubmitTime = signal<Date | null>(null);
 
   selectedEntries = computed<SelectedSubjectEntry[]>(() => {
     const keys = this.selectedKeys();
@@ -200,7 +211,93 @@ export class ObsadyComponent implements OnInit {
   }
 
   openZgloszenie(): void {
+    this.assignmentsApi.submitSuccess.set(false);
+    this.assignmentsApi.submitError.set(null);
     this.zgloszenieVisible.set(true);
+  }
+
+  prepareAndConfirm(): void {
+    const season = this.activeSeason();
+    const config = season === 'zimowy' ? this.zimConfig : this.letConfig;
+    const academicYear = config?.nazwa ?? '2026/27';
+    const entries = this.selectedEntries();
+    if (entries.length === 0) return;
+
+    this.confirmLoading.set(true);
+    this.assignmentsApi.submitError.set(null);
+    this.assignmentsApi.submitSuccess.set(false);
+
+    // Old-program subjects use a trailing lowercase 's' convention (e.g. "AMs", "KCs")
+    // but the syllabus document stores "AM", "KC" as kod_przedmiotu.
+    const normCode = (code: string) =>
+      /^[A-Z0-9-]+s$/.test(code) ? code.slice(0, -1) : code;
+
+    const lookups = entries.map(e => {
+      const raw = e.subject.code;
+      if (!raw || raw === '-') return of({ items: [] as { id: string }[] });
+      const code = normCode(raw);
+      return this.http
+        .get<{ items: { id: string }[] }>(
+          `${environment.apiBaseUrl}/api/v1/syllabi` +
+          `?kod_przedmiotu=${encodeURIComponent(code)}` +
+          `&tryb_studiow=${encodeURIComponent(e.tryb)}` +
+          `&pageSize=1`
+        )
+        .pipe(catchError(() => of({ items: [] as { id: string }[] })));
+    });
+
+    forkJoin(lookups).subscribe(results => {
+      const subjects = entries.map((e, i) => {
+        const sel = this.getTypeSelection(e);
+        const mongoId = results[i]?.items?.[0]?.id ?? null;
+        return {
+          mongoId,
+          name: e.subject.name,
+          code: e.subject.code ?? null,
+          trybStudiow: e.tryb,
+          semester: e.semester,
+          hasWyklad: Number(e.subject.lecture ?? 0) > 0 && sel.wyklad,
+          hasCwiczenia: Number(e.subject.tutorial ?? 0) > 0 && sel.cwiczenia,
+          hasLab: Number(e.subject.lab ?? 0) > 0 && sel.lab,
+        };
+      });
+
+      this.confirmPayload.set({
+        semesterType: season,
+        academicYear,
+        notes: this.uwagi || null,
+        subjects,
+        availability: this.availabilityRows()
+          .filter(a => a.day)
+          .map(a => ({ day: a.day, from: a.from, to: a.to })),
+      });
+      this.confirmSubmitTime.set(new Date());
+      this.confirmLoading.set(false);
+      this.confirmVisible.set(true);
+    });
+  }
+
+  confirmAndSubmit(): void {
+    const payload = this.confirmPayload();
+    if (!payload) return;
+
+    this.assignmentsApi.submit(payload).subscribe(() => {
+      this.confirmVisible.set(false);
+      this.zgloszenieVisible.set(false);
+      this.selectedKeys.set(new Set());
+      this.typeSelections.set(new Map());
+      this.availabilityRows.set([{ day: '', from: '08:00', to: '16:00' }]);
+      this.uwagi = '';
+      this.confirmPayload.set(null);
+    });
+  }
+
+  dayLabel(val: string): string {
+    const map: Record<string, string> = {
+      Pn: 'Poniedziałek', Wt: 'Wtorek', Śr: 'Środa',
+      Cz: 'Czwartek', Pt: 'Piątek', Sb: 'Sobota', Nd: 'Niedziela',
+    };
+    return map[val] ?? val;
   }
 
   private zimConfig: SeasonConfig | null = null;

@@ -511,9 +511,202 @@
     }
 
     <ng-template pTemplate="footer">
+      @if (assignmentsApi.submitError()) {
+        <span class="submit-error">{{ assignmentsApi.submitError() }}</span>
+      }
       <p-button label="Zamknij" icon="pi pi-times" severity="secondary" (onClick)="zgloszenieVisible.set(false)" />
-      <p-button label="Wyślij zgłoszenie" icon="pi pi-send" iconPos="right" [disabled]="selectedEntries().length === 0" />
+      <p-button
+        label="Podgląd i wyślij"
+        icon="pi pi-eye"
+        iconPos="right"
+        [disabled]="selectedEntries().length === 0 || confirmLoading()"
+        [loading]="confirmLoading()"
+        (onClick)="prepareAndConfirm()"
+      />
     </ng-template>
   </p-dialog>
 
 </div>
+
+<!-- ════ Dialog potwierdzenia zgłoszenia ════════════════════════════════ -->
+<p-dialog
+  [visible]="confirmVisible()"
+  (visibleChange)="confirmVisible.set($event)"
+  header="Podsumowanie zgłoszenia — sprawdź przed wysłaniem"
+  [modal]="true"
+  [style]="{ width: '88vw', maxWidth: '1050px' }"
+  [contentStyle]="{ 'max-height': '78vh', 'overflow-y': 'auto', padding: '1.5rem 2rem' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="!assignmentsApi.submitting()"
+>
+  @if (confirmPayload(); as payload) {
+
+    <!-- ── Informacje podstawowe ── -->
+    <div class="conf-section">
+      <div class="conf-section-header">
+        <i class="pi pi-calendar-clock conf-icon"></i>
+        <h3 class="conf-section-title">Informacje podstawowe</h3>
+      </div>
+      <div class="conf-info-grid">
+        <div class="conf-info-row">
+          <span class="conf-label">Semestr:</span>
+          <p-tag
+            [value]="payload.semesterType === 'zimowy' ? '❄  Zimowy' : '☀  Letni'"
+            [severity]="payload.semesterType === 'zimowy' ? 'info' : 'warn'"
+            styleClass="conf-season-tag"
+          />
+        </div>
+        <div class="conf-info-row">
+          <span class="conf-label">Rok akademicki:</span>
+          <strong class="conf-value">{{ payload.academicYear }}</strong>
+        </div>
+        <div class="conf-info-row">
+          <span class="conf-label">Data i godzina wysłania:</span>
+          <strong class="conf-value">{{ confirmSubmitTime() | date: 'dd.MM.yyyy, HH:mm:ss' }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <p-divider />
+
+    <!-- ── Przedmioty ── -->
+    <div class="conf-section">
+      <div class="conf-section-header">
+        <i class="pi pi-book conf-icon"></i>
+        <h3 class="conf-section-title">Przedmioty ({{ payload.subjects.length }})</h3>
+      </div>
+      <p-table
+        [value]="payload.subjects"
+        styleClass="p-datatable-sm p-datatable-gridlines"
+        [tableStyle]="{ 'min-width': '42rem' }"
+        rowGroupMode="subheader"
+        groupRowsBy="trybStudiow"
+        sortField="trybStudiow"
+        [sortOrder]="1"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 5%">Sem.</th>
+            <th>Przedmiot</th>
+            <th style="width: 8%">Kod</th>
+            <th style="width: 12%" class="text-center">
+              <span [pTooltip]="'ID dokumentu z bazy MongoDB'">Mongo ID</span>
+            </th>
+            <th style="width: 8%" class="text-center">Wykład</th>
+            <th style="width: 9%" class="text-center">Ćwiczenia</th>
+            <th style="width: 9%" class="text-center">Laborat.</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="groupheader" let-subj>
+          <tr class="conf-group-row">
+            <td colspan="7">
+              <i class="pi pi-users" style="margin-right: 0.4rem;"></i>
+              <strong>{{ subj.trybStudiow === 'stacjonarny' ? 'Studia stacjonarne' : 'Studia niestacjonarne' }}</strong>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-subj>
+          <tr>
+            <td class="text-center"><strong>{{ subj.semester }}</strong></td>
+            <td>{{ subj.name }}</td>
+            <td class="conf-code">{{ subj.code }}</td>
+            <td class="text-center">
+              @if (subj.mongoId) {
+                <p-tag
+                  [value]="subj.mongoId.slice(0, 8) + '…'"
+                  severity="secondary"
+                  styleClass="conf-mongoid-tag"
+                  [pTooltip]="subj.mongoId"
+                  tooltipPosition="top"
+                />
+              } @else {
+                <span class="type-na" pTooltip="Brak pasującego sylabusu" tooltipPosition="top">— brak —</span>
+              }
+            </td>
+            <td class="text-center">
+              @if (subj.hasWyklad) {
+                <i class="pi pi-check-circle conf-check"></i>
+              } @else {
+                <span class="type-na">—</span>
+              }
+            </td>
+            <td class="text-center">
+              @if (subj.hasCwiczenia) {
+                <i class="pi pi-check-circle conf-check"></i>
+              } @else {
+                <span class="type-na">—</span>
+              }
+            </td>
+            <td class="text-center">
+              @if (subj.hasLab) {
+                <i class="pi pi-check-circle conf-check"></i>
+              } @else {
+                <span class="type-na">—</span>
+              }
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    @if (payload.availability.length > 0) {
+      <p-divider />
+
+      <!-- ── Dyspozycyjność ── -->
+      <div class="conf-section">
+        <div class="conf-section-header">
+          <i class="pi pi-clock conf-icon"></i>
+          <h3 class="conf-section-title">Dyspozycyjność</h3>
+        </div>
+        <div class="conf-avail-list">
+          @for (avail of payload.availability; track $index) {
+            <div class="conf-avail-item">
+              <i class="pi pi-calendar-plus conf-avail-icon"></i>
+              <span class="conf-avail-day">{{ dayLabel(avail.day) }}</span>
+              <span class="conf-avail-time">{{ avail.from }} – {{ avail.to }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    @if (payload.notes) {
+      <p-divider />
+
+      <!-- ── Uwagi ── -->
+      <div class="conf-section">
+        <div class="conf-section-header">
+          <i class="pi pi-comment conf-icon"></i>
+          <h3 class="conf-section-title">Uwagi</h3>
+        </div>
+        <div class="conf-notes">{{ payload.notes }}</div>
+      </div>
+    }
+
+  }
+
+  <ng-template pTemplate="footer">
+    @if (assignmentsApi.submitError()) {
+      <span class="submit-error">{{ assignmentsApi.submitError() }}</span>
+    }
+    <p-button
+      label="Wróć do edycji"
+      icon="pi pi-arrow-left"
+      severity="secondary"
+      [disabled]="assignmentsApi.submitting()"
+      (onClick)="confirmVisible.set(false)"
+    />
+    <p-button
+      label="Potwierdź i wyślij"
+      icon="pi pi-send"
+      iconPos="right"
+      severity="success"
+      [loading]="assignmentsApi.submitting()"
+      [disabled]="assignmentsApi.submitting()"
+      (onClick)="confirmAndSubmit()"
+    />
+  </ng-template>
+</p-dialog>

@@ -6,10 +6,12 @@
     restart: unless-stopped
     volumes:
       - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../frontend/public/assets:/usr/share/nginx/assets:ro
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - api
+      - assignments-api
       - mfe-host
       - mfe-program
       - mfe-syllabi
@@ -18,7 +20,7 @@
 
   api:
     build:
-      context: .
+      context: ./Shogun.ProgramData.Service
       dockerfile: Shogun.Service.Api/Dockerfile
     container_name: pj_syllabi_api
     restart: unless-stopped
@@ -27,6 +29,17 @@
       ASPNETCORE_URLS: http://+:8080
       MONGODB__CONNECTIONSTRING: "mongodb://${MONGO_USER:-admin}:${MONGO_PASS:-haslo123}@host.docker.internal:27017/?authSource=admin"
       MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
+
+  assignments-api:
+    build:
+      context: ./Shogun.Assignments
+      dockerfile: Shogun.Assignments.Service.Api/Dockerfile
+    container_name: pj_assignments_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MARIADB__CONNECTIONSTRING: "Server=host.docker.internal;Port=3306;Database=pj_assignments;User Id=root;Password=password;"
 
   mfe-host:
     build:

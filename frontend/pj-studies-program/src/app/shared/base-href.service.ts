@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class BaseHrefService {
@@ -15,12 +16,17 @@ export class BaseHrefService {
   }
 
   /**
-   * Buduje URL do pliku w assets, np. assetUrl('program.json') -> '/GD_WI_PRG_26-27/assets/program.json'
+   * Buduje URL do pliku w assets, np. assetUrl('program.json') -> '/mfe-program/assets/program.json'
+   * Gdy uruchomiony jako MFE wewnątrz shella (baseHref='/')
+   * używa environment.mfeBaseUrl zamiast baseHref z dokumentu.
    */
   assetUrl(path: string): string {
-    // path może zaczynać się od 'assets/' lub być samą nazwą pliku
     const normalized = path.startsWith('assets/') ? path : `assets/${path}`;
-    return `${this.baseHref}${normalized}`;
+    const base = this.baseHref === '/'
+      ? (environment.mfeBaseUrl.endsWith('/') ? environment.mfeBaseUrl : environment.mfeBaseUrl + '/')
+      : this.baseHref;
+    return `${base}${normalized}`;
   }
 }
+
 
