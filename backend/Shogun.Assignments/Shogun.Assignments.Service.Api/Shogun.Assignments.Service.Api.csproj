@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Shogun.Assignments.Service.Api.Infrastructure\Shogun.Assignments.Service.Api.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.5.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />

@@ -1,6 +1,6 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, APP_INITIALIZER, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { providePrimeNG } from 'primeng/config';
@@ -8,6 +8,8 @@ import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
 
 import { routes } from './app.routes';
+import { AuthService } from './auth.service';
+import { authInterceptor } from './auth.interceptor';
 
 const PJATKPreset = definePreset(Aura, {
   semantic: {
@@ -32,8 +34,14 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimationsAsync(),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (auth: AuthService) => () => auth.init(),
+      deps: [AuthService],
+      multi: true,
+    },
     providePrimeNG({
       theme: {
         preset: PJATKPreset,

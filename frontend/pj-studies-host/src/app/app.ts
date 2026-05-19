@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from './auth.service';
 
 const BREAKPOINT = 900;
 
@@ -13,6 +14,8 @@ const BREAKPOINT = 900;
 export class App implements OnInit {
   sidebarVisible = signal(window.innerWidth >= BREAKPOINT);
   isMobile = signal(window.innerWidth < BREAKPOINT);
+
+  constructor(readonly authService: AuthService) {}
 
   ngOnInit(): void {
     this.updateState(window.innerWidth);

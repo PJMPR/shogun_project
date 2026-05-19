@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using Serilog;
 using Shogun.Assignments.Service.Api.Application;
@@ -32,6 +34,23 @@ builder.Services.AddProblemDetails();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
+// ── Keycloak JWT Bearer auth ──────────────────────────────────────────────
+var kcSection = builder.Configuration.GetSection("Keycloak");
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.MetadataAddress = kcSection["MetadataAddress"]!;
+        options.RequireHttpsMetadata = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuers = kcSection.GetSection("ValidIssuers").Get<string[]>(),
+            ValidateAudience = false,
+        };
+    });
+builder.Services.AddAuthorization();
+
 builder.Services.AddHealthChecks()
     .AddCheck("self", () => Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
 
@@ -53,6 +72,8 @@ using (var scope = app.Services.CreateScope())
 
 app.UseExceptionHandler();
 app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseSerilogRequestLogging();
 
 if (app.Environment.IsDevelopment())
@@ -65,7 +86,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.MapControllers();
+app.MapControllers().RequireAuthorization();
 app.MapHealthChecks("/health");
 
 app.Run();

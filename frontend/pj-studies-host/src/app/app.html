@@ -78,6 +78,24 @@
         Edytuj sylabus
       </a>
     </nav>
+
+    <!-- Zalogowany użytkownik -->
+    @if (authService.userProfile()) {
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">
+          <i class="pi pi-user"></i>
+        </div>
+        <div class="sidebar-user-info">
+          <span class="sidebar-user-name">
+            {{ authService.userProfile()!.firstName }} {{ authService.userProfile()!.lastName }}
+          </span>
+          <span class="sidebar-user-email">{{ authService.userProfile()!.email }}</span>
+        </div>
+        <button class="sidebar-logout-btn" (click)="authService.logout()" title="Wyloguj">
+          <i class="pi pi-sign-out"></i>
+        </button>
+      </div>
+    }
   </aside>
 
   <!-- Przycisk pokazania sidebara gdy schowany na desktop -->

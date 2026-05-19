@@ -72,6 +72,8 @@
 
     "es-module-shims": "^2.8.0",
 
+    "keycloak-js": "^26.2.0",
+
     "primeicons": "^7.0.0",
 
     "primeng": "^21.1.1",

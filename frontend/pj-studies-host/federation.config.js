@@ -18,5 +18,6 @@ module.exports = withNativeFederation({
     'chart.js/auto',
     '@angular/cdk/drag-drop',
     '@primeuix/themes',
+    'keycloak-js',
   ],
 });
