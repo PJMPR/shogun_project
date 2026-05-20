@@ -14,5 +14,9 @@ export const routes: Routes = [
     path: 'assignements',
     loadChildren: () => loadRemoteModule('mfe-assignements', './Routes').then(m => m.default),
   },
+  {
+    path: 'users',
+    loadChildren: () => loadRemoteModule('mfe-users', './Routes').then(m => m.default),
+  },
   { path: '', redirectTo: 'program', pathMatch: 'full' },
 ];

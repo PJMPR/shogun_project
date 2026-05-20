@@ -11,6 +11,7 @@ const REALM = 'shogun';
 const CLIENT_ID = 'shogun-web';
 const TOKEN_REFRESH_INTERVAL_MS = 60_000;
 const TOKEN_MIN_VALIDITY_SEC = 60;
+const SESSION_ROLES_KEY = 'shogun_roles';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -36,6 +37,9 @@ export class AuthService {
         lastName: this.keycloak.profile?.lastName ?? '',
         email: this.keycloak.profile?.email ?? '',
       });
+      // Store realm roles in sessionStorage so MFEs can read them
+      const roles = this.keycloak.realmAccess?.roles ?? [];
+      sessionStorage.setItem(SESSION_ROLES_KEY, JSON.stringify(roles));
       this.scheduleTokenRefresh();
     }
   }
@@ -44,7 +48,12 @@ export class AuthService {
     return this.keycloak.token;
   }
 
+  hasRole(role: string): boolean {
+    return this.keycloak.hasRealmRole(role);
+  }
+
   logout(): void {
+    sessionStorage.removeItem(SESSION_ROLES_KEY);
     this.keycloak.logout({ redirectUri: window.location.origin });
   }
 

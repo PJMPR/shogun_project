@@ -135,7 +135,47 @@ if (!allowed.includes(domain)) {
 
 ---
 
-## Krok 6 – Weryfikacja
+## Krok 6 – Klient serwisowy Shogun.Users (`shogun-users-service`)
+
+Serwis `Shogun.Users` wywołuje Keycloak Admin REST API (listowanie użytkowników, odczyt i przypisywanie ról realm-level) używając grantu `client_credentials`. Wymaga osobnego, poufnego klienta z włączonym Service Account.
+
+### 6.1 – Utwórz klienta
+
+1. W realm `shogun` → **Clients → Create client**.
+2. **Client ID:** `shogun-users-service`
+3. **Client type:** OpenID Connect → **Next**
+4. Wyłącz **Standard flow** i **Direct access grants** → **Next**
+5. Włącz **Service accounts roles** (Client Credentials grant) → **Save**.
+
+### 6.2 – Skopiuj Client Secret
+
+1. Zakładka **Credentials** klienta `shogun-users-service`.
+2. Skopiuj wartość pola **Client secret**.
+3. Wklej do `backend/.env`:
+   ```dotenv
+   USERS_SERVICE_CLIENT_SECRET=<skopiowany-secret>
+   ```
+
+### 6.3 – Przyznaj uprawnienia do Admin API
+
+Service account klienta potrzebuje następujących ról z wbudowanego klienta **`realm-management`**:
+
+| Rola | Po co |
+|---|---|
+| `view-users` | Listowanie użytkowników (`GET /admin/realms/shogun/users`) |
+| `manage-users` | Dodawanie / usuwanie mapowań ról (`POST/DELETE …/role-mappings/realm`) |
+| `view-realm` | Odczyt dostępnych ról realm-level (`GET /admin/realms/shogun/roles`) |
+
+Aby przyznać role:
+
+1. Przejdź do **Clients → `shogun-users-service` → Service accounts roles**.
+2. Kliknij **Assign role**.
+3. W filtrze wybierz **Filter by clients** i znajdź `realm-management`.
+4. Zaznacz `view-users`, `manage-users`, `view-realm` → **Assign**.
+
+---
+
+## Krok 7 – Weryfikacja
 
 1. Otwórz **https://shogun.pjwstk.edu.pl:8443** – aplikacja powinna natychmiast przekierować do Keycloak.
 2. Kliknij **Sign in with Google**.

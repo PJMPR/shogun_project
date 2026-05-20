@@ -1,12 +1,9 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
-  name: 'shell',
-  remotes: {
-    'mfe-program':      'http://localhost:4201',
-    'mfe-syllabi':      'http://localhost:4202',
-    'mfe-assignements': 'http://localhost:4203',
-    'mfe-users':        'http://localhost:4204',
+  name: 'mfe-users',
+  exposes: {
+    './Routes': './src/app/remote-entry/entry.routes.ts',
   },
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
@@ -18,7 +15,5 @@ module.exports = withNativeFederation({
     'rxjs/webSocket',
     'chart.js/auto',
     '@angular/cdk/drag-drop',
-    '@primeuix/themes',
-    'keycloak-js',
   ],
 });

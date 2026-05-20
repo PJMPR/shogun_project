@@ -37,10 +37,12 @@
     depends_on:
       - api
       - assignments-api
+      - users-api
       - mfe-host
       - mfe-program
       - mfe-syllabi
       - mfe-assignements
+      - mfe-users
       - files
       - keycloak
 
@@ -75,6 +77,27 @@
     depends_on:
       - keycloak
 
+  users-api:
+    build:
+      context: ./Shogun.Users
+      dockerfile: Shogun.Users.Api/Dockerfile
+    container_name: pj_users_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MARIADB__CONNECTIONSTRING: "Server=host.docker.internal;Port=3306;Database=shogun_users;User Id=root;Password=password;"
+      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
+      KEYCLOAK__ADMINBASEURL: "http://pj_keycloak:8080"
+      KEYCLOAK__REALM: "shogun"
+      KEYCLOAK__CLIENTID: "shogun-users-service"
+      KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET:-}"
+    depends_on:
+      - keycloak
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
   mfe-host:
     build:
       context: ../frontend/pj-studies-host
@@ -101,6 +124,13 @@
       context: ../frontend/pj-studies-assignements
       dockerfile: Dockerfile
     container_name: pj_mfe_assignements
+    restart: unless-stopped
+
+  mfe-users:
+    build:
+      context: ../frontend/pj-studies-users
+      dockerfile: Dockerfile
+    container_name: pj_mfe_users
     restart: unless-stopped
 
   files:

@@ -1,0 +1,236 @@
+<p-toast />
+
+<div class="users-page">
+  <!-- Header -->
+  <div class="page-header">
+    <div class="page-title">
+      <h1><i class="pi pi-users"></i> Zarządzanie użytkownikami</h1>
+      <p class="page-subtitle">Zarządzaj rolami użytkowników systemu Shogun</p>
+    </div>
+    <div class="mock-badge">
+      <i class="pi pi-info-circle"></i> Dane testowe
+    </div>
+  </div>
+
+  <!-- Stats cards -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon stat-total"><i class="pi pi-users"></i></div>
+      <div class="stat-body">
+        <span class="stat-value">{{ stats().total }}</span>
+        <span class="stat-label">Wszyscy</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon stat-admin"><i class="pi pi-shield"></i></div>
+      <div class="stat-body">
+        <span class="stat-value">{{ stats().admins }}</span>
+        <span class="stat-label">Administratorzy</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon stat-coordinator"><i class="pi pi-sitemap"></i></div>
+      <div class="stat-body">
+        <span class="stat-value">{{ stats().coordinators }}</span>
+        <span class="stat-label">Koordynatorzy</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon stat-lecturer"><i class="pi pi-book"></i></div>
+      <div class="stat-body">
+        <span class="stat-value">{{ stats().lecturers }}</span>
+        <span class="stat-label">Wykładowcy</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon stat-norole"><i class="pi pi-exclamation-triangle"></i></div>
+      <div class="stat-body">
+        <span class="stat-value">{{ stats().noRole }}</span>
+        <span class="stat-label">Bez roli</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar + Table -->
+  <div class="table-card">
+    <p-toolbar>
+      <ng-template pTemplate="start">
+        <p-iconfield>
+          <p-inputicon styleClass="pi pi-search" />
+          <input
+            pInputText
+            type="text"
+            placeholder="Szukaj użytkownika..."
+            (input)="onGlobalFilter($event)"
+            style="min-width: 260px"
+          />
+        </p-iconfield>
+      </ng-template>
+      <ng-template pTemplate="end">
+        <h2 class="table-title">Lista użytkowników</h2>
+      </ng-template>
+    </p-toolbar>
+
+    <p-table
+      [value]="filteredUsers()"
+      [paginator]="true"
+      [rows]="5"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      styleClass="p-datatable-gridlines"
+      [tableStyle]="{ 'min-width': '60rem' }"
+      [rowHover]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="lastName" style="width: 24%">
+            Użytkownik <p-sortIcon field="lastName" />
+          </th>
+          <th style="width: 22%">E-mail</th>
+          <th style="width: 28%">Role</th>
+          <th pSortableColumn="lastLogin" style="width: 14%">
+            Ostatnie logowanie <p-sortIcon field="lastLogin" />
+          </th>
+          <th style="width: 6%; text-align: center">Status</th>
+          <th style="width: 6%; text-align: center">Akcje</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-user>
+        <tr [class.row-disabled]="!user.enabled">
+          <td>
+            <div class="user-cell">
+              <div class="avatar" [ngClass]="'avatar-' + (user.roles[0] || 'none')">
+                {{ user.firstName[0] }}{{ user.lastName[0] }}
+              </div>
+              <div class="user-info">
+                <span class="user-fullname">{{ user.firstName }} {{ user.lastName }}</span>
+                <span class="user-username">{{ user.username }}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <span class="email-text">{{ user.email }}</span>
+          </td>
+          <td>
+            <div class="roles-cell">
+              @if (user.roles.length === 0) {
+                <p-tag value="Brak roli" severity="secondary" />
+              }
+              @for (role of user.roles; track role) {
+                <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+              }
+            </div>
+          </td>
+          <td>
+            @if (user.lastLogin) {
+              <div class="date-cell">
+                <span class="date-text">{{ user.lastLogin | date: 'dd.MM.yyyy' }}</span>
+                <span class="time-text">{{ user.lastLogin | date: 'HH:mm' }}</span>
+              </div>
+            } @else {
+              <span class="no-data">— nigdy —</span>
+            }
+          </td>
+          <td style="text-align: center">
+            <p-button
+              [icon]="user.enabled ? 'pi pi-check-circle' : 'pi pi-times-circle'"
+              [severity]="user.enabled ? 'success' : 'danger'"
+              [pTooltip]="user.enabled ? 'Aktywny – kliknij aby dezaktywować' : 'Nieaktywny – kliknij aby aktywować'"
+              tooltipPosition="left"
+              variant="text"
+              size="small"
+              (onClick)="toggleEnabled(user)"
+            />
+          </td>
+          <td style="text-align: center">
+            <p-button
+              icon="pi pi-user-edit"
+              severity="info"
+              variant="text"
+              size="small"
+              pTooltip="Edytuj role"
+              tooltipPosition="left"
+              (onClick)="openEditDialog(user)"
+            />
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6" style="text-align: center; padding: 2.5rem">
+            <i class="pi pi-search" style="font-size: 2rem; color: var(--p-text-muted-color)"></i>
+            <p style="margin-top: 0.5rem; color: var(--p-text-muted-color)">
+              Nie znaleziono użytkowników
+            </p>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<!-- Edit Roles Dialog -->
+<p-dialog
+  [header]="'Role: ' + (selectedUser()?.firstName || '') + ' ' + (selectedUser()?.lastName || '')"
+  [visible]="editDialogVisible()"
+  (visibleChange)="editDialogVisible.set($event)"
+  [modal]="true"
+  [style]="{ width: '480px' }"
+  [closable]="true"
+  [draggable]="false"
+  [resizable]="false"
+  appendTo="body"
+  (onHide)="closeEditDialog()"
+>
+  @if (selectedUser(); as user) {
+    <div class="dialog-content">
+      <div class="user-summary">
+        <div class="avatar avatar-dialog">
+          {{ user.firstName[0] }}{{ user.lastName[0] }}
+        </div>
+        <div>
+          <p class="dialog-username">{{ user.username }}</p>
+          <p class="dialog-email">{{ user.email }}</p>
+        </div>
+      </div>
+
+      <hr class="dialog-divider" />
+
+      <p class="roles-instruction">Wybierz role dla tego użytkownika:</p>
+
+      <div class="role-toggles">
+        @for (role of allRoles; track role) {
+          <button
+            type="button"
+            class="role-toggle"
+            [ngClass]="['role-toggle-' + role, hasRole(role) ? 'active' : '']"
+            (click)="toggleRole(role)"
+          >
+            <i class="pi"
+               [class.pi-shield]="role === 'admin'"
+               [class.pi-sitemap]="role === 'coordinator'"
+               [class.pi-book]="role === 'lecturer'"></i>
+            <span>{{ roleLabel(role) }}</span>
+            <i class="pi check-icon"
+               [class.pi-check-circle]="hasRole(role)"
+               [class.pi-circle]="!hasRole(role)"></i>
+          </button>
+        }
+      </div>
+
+      @if (editRoles().length === 0) {
+        <div class="no-role-warning">
+          <i class="pi pi-exclamation-triangle"></i>
+          Użytkownik nie będzie miał żadnej roli w systemie.
+        </div>
+      }
+    </div>
+  }
+
+  <ng-template pTemplate="footer">
+    <p-button label="Anuluj" severity="secondary" variant="outlined" (onClick)="closeEditDialog()" />
+    <p-button label="Zapisz role" icon="pi pi-save" [loading]="saving()" (onClick)="saveRoles()" />
+  </ng-template>
+</p-dialog>
+

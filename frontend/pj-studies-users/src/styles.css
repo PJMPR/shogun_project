@@ -1,0 +1,107 @@
+/* Global styles for pj-studies-users MFE */
+@import "primeicons/primeicons.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* PrimeNG table globals */
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #e5e7eb !important;
+  color: #374151;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-color: #d1d5db !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  font-size: 0.875rem;
+  padding: 0.65rem 1rem;
+  border-color: #f3f4f6 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) > td {
+  background-color: #f9fafb;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover > td {
+  background-color: #eff6ff !important;
+}
+
+/* ===== CSS CUSTOM PROPERTY OVERRIDES (PrimeNG 21 Aura) ===== */
+:root {
+  --p-dialog-background: #ffffff;
+  --p-dialog-header-background: #ffffff;
+  --p-dialog-content-background: #ffffff;
+  --p-dialog-footer-background: #f9fafb;
+  --p-paginator-background: #ffffff;
+  --p-paginator-nav-button-background: transparent;
+  --p-paginator-border-color: transparent;
+}
+
+/* PrimeNG dialog globals */
+body .p-dialog {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22) !important;
+}
+
+body .p-dialog-header {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding: 1.25rem 1.5rem !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+body .p-dialog-header .p-dialog-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #111827;
+}
+
+body .p-dialog-content {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  padding: 1.5rem !important;
+}
+
+body .p-dialog-footer {
+  background: #f9fafb !important;
+  background-color: #f9fafb !important;
+  border-top: 1px solid #e5e7eb !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 0 0 10px 10px !important;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Toolbar fix */
+.p-toolbar {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.75rem 1.25rem !important;
+}
+
+/* Paginator globals */
+.p-paginator {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-top: 1px solid #e5e7eb !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 1rem !important;
+}

@@ -77,6 +77,19 @@
         <i class="pi pi-pencil"></i>
         Edytuj sylabus
       </a>
+
+      @if (authService.hasRole('admin')) {
+        <p class="nav-section-label">Administracja</p>
+        <a
+          routerLink="/users"
+          routerLinkActive="nav-link-active"
+          class="nav-link"
+          (click)="isMobile() && sidebarVisible.set(false)"
+        >
+          <i class="pi pi-shield"></i>
+          Użytkownicy i role
+        </a>
+      }
     </nav>
 
     <!-- Zalogowany użytkownik -->
