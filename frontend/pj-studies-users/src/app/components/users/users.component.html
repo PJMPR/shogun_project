@@ -1,4 +1,4 @@
-<p-toast />
+﻿<p-toast />
 
 <div class="users-page">
   <!-- Header -->
@@ -6,9 +6,6 @@
     <div class="page-title">
       <h1><i class="pi pi-users"></i> Zarządzanie użytkownikami</h1>
       <p class="page-subtitle">Zarządzaj rolami użytkowników systemu Shogun</p>
-    </div>
-    <div class="mock-badge">
-      <i class="pi pi-info-circle"></i> Dane testowe
     </div>
   </div>
 
@@ -21,27 +18,15 @@
         <span class="stat-label">Wszyscy</span>
       </div>
     </div>
-    <div class="stat-card">
-      <div class="stat-icon stat-admin"><i class="pi pi-shield"></i></div>
-      <div class="stat-body">
-        <span class="stat-value">{{ stats().admins }}</span>
-        <span class="stat-label">Administratorzy</span>
+    @for (role of managedRoles(); track role) {
+      <div class="stat-card">
+        <div class="stat-icon" [ngClass]="'stat-' + role"><i class="pi" [ngClass]="{'pi-shield': role === 'admin', 'pi-sitemap': role === 'coordinator', 'pi-book': role === 'lecturer', 'pi-tag': role !== 'admin' && role !== 'coordinator' && role !== 'lecturer'}"></i></div>
+        <div class="stat-body">
+          <span class="stat-value">{{ stats().roleCounts[role] }}</span>
+          <span class="stat-label">{{ roleLabel(role) }}</span>
+        </div>
       </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon stat-coordinator"><i class="pi pi-sitemap"></i></div>
-      <div class="stat-body">
-        <span class="stat-value">{{ stats().coordinators }}</span>
-        <span class="stat-label">Koordynatorzy</span>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon stat-lecturer"><i class="pi pi-book"></i></div>
-      <div class="stat-body">
-        <span class="stat-value">{{ stats().lecturers }}</span>
-        <span class="stat-label">Wykładowcy</span>
-      </div>
-    </div>
+    }
     <div class="stat-card">
       <div class="stat-icon stat-norole"><i class="pi pi-exclamation-triangle"></i></div>
       <div class="stat-body">
@@ -55,48 +40,79 @@
   <div class="table-card">
     <p-toolbar>
       <ng-template pTemplate="start">
-        <p-iconfield>
-          <p-inputicon styleClass="pi pi-search" />
-          <input
-            pInputText
-            type="text"
-            placeholder="Szukaj użytkownika..."
-            (input)="onGlobalFilter($event)"
-            style="min-width: 260px"
-          />
-        </p-iconfield>
+        <div class="toolbar-start">
+          <p-iconfield>
+            <p-inputicon styleClass="pi pi-search" />
+            <input
+              pInputText
+              type="text"
+              placeholder="Szukaj użytkownika..."
+              (input)="onGlobalFilter($event)"
+              style="min-width: 240px"
+            />
+          </p-iconfield>
+          @if (selectedUsersTable.length > 0) {
+            <p-button
+              [label]="'Przypisz role (' + selectedUsersTable.length + ')'"
+              icon="pi pi-users"
+              severity="info"
+              (onClick)="openEditDialogForSelected()"
+            />
+          }
+        </div>
       </ng-template>
       <ng-template pTemplate="end">
-        <h2 class="table-title">Lista użytkowników</h2>
+        <div class="toolbar-actions">
+          <p-button
+            label="Wycofaj zmiany"
+            icon="pi pi-undo"
+            severity="secondary"
+            variant="outlined"
+            [disabled]="!hasChanges()"
+            (onClick)="discardAllChanges()"
+          />
+          <p-button
+            label="Zapisz zmiany"
+            icon="pi pi-save"
+            severity="success"
+            [disabled]="!hasChanges()"
+            [loading]="saving()"
+            (onClick)="saveAllChanges()"
+          />
+        </div>
       </ng-template>
     </p-toolbar>
 
     <p-table
       [value]="filteredUsers()"
+      [(selection)]="selectedUsersTable"
+      dataKey="id"
+      [loading]="loading()"
       [paginator]="true"
-      [rows]="5"
-      [rowsPerPageOptions]="[5, 10, 20]"
+      [rows]="100"
       styleClass="p-datatable-gridlines"
-      [tableStyle]="{ 'min-width': '60rem' }"
+      [tableStyle]="{ 'min-width': '50rem' }"
       [rowHover]="true"
     >
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="lastName" style="width: 24%">
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox />
+          </th>
+          <th pSortableColumn="lastName" style="width: 21%">
             Użytkownik <p-sortIcon field="lastName" />
           </th>
           <th style="width: 22%">E-mail</th>
-          <th style="width: 28%">Role</th>
-          <th pSortableColumn="lastLogin" style="width: 14%">
-            Ostatnie logowanie <p-sortIcon field="lastLogin" />
-          </th>
-          <th style="width: 6%; text-align: center">Status</th>
-          <th style="width: 6%; text-align: center">Akcje</th>
+          <th style="width: 32%">Role</th>
+          <th style="width: 8%; text-align: center">Akcje</th>
         </tr>
       </ng-template>
 
       <ng-template pTemplate="body" let-user>
-        <tr [class.row-disabled]="!user.enabled">
+        <tr [class.row-disabled]="!user.enabled" [class.row-changed]="isUserChanged(user.id)">
+          <td>
+            <p-tableCheckbox [value]="user" />
+          </td>
           <td>
             <div class="user-cell">
               <div class="avatar" [ngClass]="'avatar-' + (user.roles[0] || 'none')">
@@ -113,34 +129,29 @@
           </td>
           <td>
             <div class="roles-cell">
-              @if (user.roles.length === 0) {
-                <p-tag value="Brak roli" severity="secondary" />
-              }
-              @for (role of user.roles; track role) {
-                <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+              @if (!isUserChanged(user.id)) {
+                @if (user.roles.length === 0) {
+                  <p-tag value="Brak roli" severity="secondary" />
+                }
+                @for (role of user.roles; track role) {
+                  <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+                }
+              } @else {
+                @let diff = getUserRoleDiff(user);
+                @if (diff.unchanged.length === 0 && diff.added.length === 0 && diff.removed.length === 0) {
+                  <p-tag value="Brak roli" severity="secondary" />
+                }
+                @for (role of diff.unchanged; track role) {
+                  <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+                }
+                @for (role of diff.added; track role) {
+                  <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" styleClass="role-tag-added" />
+                }
+                @for (role of diff.removed; track role) {
+                  <span class="role-tag-removed">{{ roleLabel(role) }}</span>
+                }
               }
             </div>
-          </td>
-          <td>
-            @if (user.lastLogin) {
-              <div class="date-cell">
-                <span class="date-text">{{ user.lastLogin | date: 'dd.MM.yyyy' }}</span>
-                <span class="time-text">{{ user.lastLogin | date: 'HH:mm' }}</span>
-              </div>
-            } @else {
-              <span class="no-data">— nigdy —</span>
-            }
-          </td>
-          <td style="text-align: center">
-            <p-button
-              [icon]="user.enabled ? 'pi pi-check-circle' : 'pi pi-times-circle'"
-              [severity]="user.enabled ? 'success' : 'danger'"
-              [pTooltip]="user.enabled ? 'Aktywny – kliknij aby dezaktywować' : 'Nieaktywny – kliknij aby aktywować'"
-              tooltipPosition="left"
-              variant="text"
-              size="small"
-              (onClick)="toggleEnabled(user)"
-            />
           </td>
           <td style="text-align: center">
             <p-button
@@ -148,9 +159,7 @@
               severity="info"
               variant="text"
               size="small"
-              pTooltip="Edytuj role"
-              tooltipPosition="left"
-              (onClick)="openEditDialog(user)"
+              (onClick)="openEditDialogForUser(user)"
             />
           </td>
         </tr>
@@ -158,7 +167,7 @@
 
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="6" style="text-align: center; padding: 2.5rem">
+          <td colspan="5" style="text-align: center; padding: 2.5rem">
             <i class="pi pi-search" style="font-size: 2rem; color: var(--p-text-muted-color)"></i>
             <p style="margin-top: 0.5rem; color: var(--p-text-muted-color)">
               Nie znaleziono użytkowników
@@ -170,9 +179,9 @@
   </div>
 </div>
 
-<!-- Edit Roles Dialog -->
+<!-- Edit / Bulk-assign Roles Dialog -->
 <p-dialog
-  [header]="'Role: ' + (selectedUser()?.firstName || '') + ' ' + (selectedUser()?.lastName || '')"
+  [header]="dialogHeader()"
   [visible]="editDialogVisible()"
   (visibleChange)="editDialogVisible.set($event)"
   [modal]="true"
@@ -183,54 +192,93 @@
   appendTo="body"
   (onHide)="closeEditDialog()"
 >
-  @if (selectedUser(); as user) {
+  @if (dialogUsers().length > 0) {
     <div class="dialog-content">
-      <div class="user-summary">
-        <div class="avatar avatar-dialog">
-          {{ user.firstName[0] }}{{ user.lastName[0] }}
+
+      <!-- User summary (single user only) -->
+      @if (dialogUsers().length === 1) {
+        <div class="user-summary">
+          <div class="avatar avatar-dialog">
+            {{ dialogUsers()[0].firstName[0] }}{{ dialogUsers()[0].lastName[0] }}
+          </div>
+          <div>
+            <p class="dialog-username">{{ dialogUsers()[0].username }}</p>
+            <p class="dialog-email">{{ dialogUsers()[0].email }}</p>
+          </div>
         </div>
-        <div>
-          <p class="dialog-username">{{ user.username }}</p>
-          <p class="dialog-email">{{ user.email }}</p>
+        <hr class="dialog-divider" />
+      }
+
+      <!-- в‘  Role do dodania -->
+      <div class="dialog-section">
+        <h4 class="section-title">
+          <i class="pi pi-plus-circle section-icon-add"></i> Role do dodania
+        </h4>
+
+        <div class="add-role-row">
+          <div class="add-role-select-wrap">
+            <p-select
+              [options]="dialogAvailableRoles()"
+              [(ngModel)]="dialogDropdownRoleValue"
+              [placeholder]="dialogAvailableRoles().length === 0 ? 'Wszystkie role dodane' : 'Wybierz rolę'"
+              [disabled]="dialogAvailableRoles().length === 0"
+              [style]="{ width: '100%' }"
+            />
+          </div>
+          <p-button
+            icon="pi pi-plus"
+            (onClick)="addRoleToDialog()"
+            [disabled]="!dialogDropdownRoleValue || dialogAvailableRoles().length === 0"
+          />
         </div>
+
+        @if (dialogRolesToAdd().length > 0) {
+          <div class="role-chips">
+            @for (role of dialogRolesToAdd(); track role) {
+              <span class="role-chip role-chip-add">
+                <i class="pi pi-plus chip-icon"></i>
+                {{ roleLabel(role) }}
+                <i class="pi pi-times chip-remove" (click)="removeFromAddList(role)"></i>
+              </span>
+            }
+          </div>
+        } @else {
+          <p class="section-empty">Brak ról do dodania</p>
+        }
       </div>
 
       <hr class="dialog-divider" />
 
-      <p class="roles-instruction">Wybierz role dla tego użytkownika:</p>
+      <!-- в‘Ў Role do usuniД™cia -->
+      <div class="dialog-section">
+        <h4 class="section-title">
+          <i class="pi pi-minus-circle section-icon-remove"></i> Role do usunięcia
+        </h4>
 
-      <div class="role-toggles">
-        @for (role of allRoles; track role) {
-          <button
-            type="button"
-            class="role-toggle"
-            [ngClass]="['role-toggle-' + role, hasRole(role) ? 'active' : '']"
-            (click)="toggleRole(role)"
-          >
-            <i class="pi"
-               [class.pi-shield]="role === 'admin'"
-               [class.pi-sitemap]="role === 'coordinator'"
-               [class.pi-book]="role === 'lecturer'"></i>
-            <span>{{ roleLabel(role) }}</span>
-            <i class="pi check-icon"
-               [class.pi-check-circle]="hasRole(role)"
-               [class.pi-circle]="!hasRole(role)"></i>
-          </button>
+        @if (dialogCurrentRoles().length === 0) {
+          <p class="section-empty">Brak ról do usunięcia</p>
+        } @else {
+          <div class="remove-role-list">
+            @for (role of dialogCurrentRoles(); track role) {
+              <label class="remove-role-item">
+                <input
+                  type="checkbox"
+                  class="role-checkbox"
+                  [checked]="dialogRolesToRemove().includes(role)"
+                  (change)="toggleRemoveRole(role)"
+                />
+                <span class="remove-role-label">{{ roleLabel(role) }}</span>
+              </label>
+            }
+          </div>
         }
       </div>
 
-      @if (editRoles().length === 0) {
-        <div class="no-role-warning">
-          <i class="pi pi-exclamation-triangle"></i>
-          Użytkownik nie będzie miał żadnej roli w systemie.
-        </div>
-      }
     </div>
   }
 
   <ng-template pTemplate="footer">
     <p-button label="Anuluj" severity="secondary" variant="outlined" (onClick)="closeEditDialog()" />
-    <p-button label="Zapisz role" icon="pi pi-save" [loading]="saving()" (onClick)="saveRoles()" />
+    <p-button label="Zastosuj" icon="pi pi-check" (onClick)="applyDialogChanges()" />
   </ng-template>
 </p-dialog>
-

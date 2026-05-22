@@ -11,6 +11,13 @@ namespace Shogun.Users.Api.Controllers;
 [Authorize(Policy = "AdminOnly")]
 public class UsersController(IUsersService usersService) : ControllerBase
 {
+    [HttpGet("roles")]
+    public async Task<IActionResult> GetManagedRoles(CancellationToken ct)
+    {
+        var roles = await usersService.GetManagedRolesAsync(ct);
+        return Ok(roles);
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetUsers(CancellationToken ct)
     {

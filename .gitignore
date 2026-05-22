@@ -48,3 +48,9 @@ files_generation/latex/output/
 files_generation/latex/sylabusy/output/
 files_generation/latex-studia/output/
 
+# .NET build artifacts
+**/bin/
+**/obj/
+*.user
+*.suo
+

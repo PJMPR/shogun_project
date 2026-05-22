@@ -110,6 +110,15 @@ public sealed class KeycloakAdminClient(
         response.EnsureSuccessStatusCode();
     }
 
+    public async Task<IReadOnlyList<string>> GetManagedRoleNamesAsync(CancellationToken ct = default)
+    {
+        var roles = await GetRealmRolesAsync(ct);
+        return roles
+            .Where(r => string.Equals(r.Description, "shogun", StringComparison.OrdinalIgnoreCase))
+            .Select(r => r.Name)
+            .ToList();
+    }
+
     private async Task<List<KcRole>> GetRealmRolesAsync(CancellationToken ct)
     {
         var client = await CreateAuthorizedClientAsync(ct);
@@ -131,7 +140,8 @@ public sealed class KeycloakAdminClient(
 
     private sealed class KcRole
     {
-        [JsonPropertyName("id")]   public string Id { get; set; } = string.Empty;
-        [JsonPropertyName("name")] public string Name { get; set; } = string.Empty;
+        [JsonPropertyName("id")]          public string Id { get; set; } = string.Empty;
+        [JsonPropertyName("name")]        public string Name { get; set; } = string.Empty;
+        [JsonPropertyName("description")] public string? Description { get; set; }
     }
 }

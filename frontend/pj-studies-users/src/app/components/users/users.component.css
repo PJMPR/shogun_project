@@ -299,6 +299,146 @@
   color: #1e40af;
 }
 
+/* ===== TOOLBAR LAYOUT ===== */
+.toolbar-start {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== CHANGED ROW ===== */
+.row-changed td {
+  background-color: #fff1f2 !important;
+}
+
+/* ===== DIALOG SECTIONS ===== */
+.dialog-section {
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.section-icon-add  { color: #22c55e; }
+.section-icon-remove { color: #ef4444; }
+
+.add-role-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.add-role-select-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== ROLE CHIPS (to-add list) ===== */
+.role-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.role-chip-add {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.chip-icon { font-size: 0.65rem; }
+
+.chip-remove {
+  cursor: pointer;
+  font-size: 0.65rem;
+  opacity: 0.65;
+  margin-left: 0.15rem;
+  transition: opacity 0.1s;
+}
+.chip-remove:hover { opacity: 1; }
+
+/* ===== REMOVE ROLE SECTION ===== */
+.section-empty {
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+.remove-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.remove-role-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.role-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #ef4444;
+  flex-shrink: 0;
+}
+
+.remove-role-label {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* ===== ROLE DIFF VISUALIZATION ===== */
+/* Added role: outlined/bold */
+:host ::ng-deep .role-tag-added.p-tag {
+  outline: 2px solid #111827;
+  font-weight: 700;
+}
+
+/* Removed role: strikethrough span */
+.role-tag-removed {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 0.55;
+  background: #f3f4f6;
+  color: #374151;
+}
+
 /* ===== PRIMENG TABLE OVERRIDES (::ng-deep) ===== */
 :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
   background-color: #e5e7eb !important;

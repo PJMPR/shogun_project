@@ -109,13 +109,6 @@ if (app.Environment.IsDevelopment())
 app.MapControllers().RequireAuthorization();
 app.MapHealthChecks("/health");
 
-// Ensure database is created on startup
-using (var scope = app.Services.CreateScope())
-{
-    await scope.ServiceProvider.GetRequiredService<Shogun.Users.Infrastructure.Data.UsersDbContext>()
-        .Database.EnsureCreatedAsync();
-}
-
 app.Run();
 
 public partial class Program { }

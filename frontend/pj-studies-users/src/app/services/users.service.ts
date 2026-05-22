@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export interface UserDto {
   id: string;
@@ -12,20 +12,23 @@ export interface UserDto {
   roles: string[];
 }
 
-export const AVAILABLE_ROLES = ['admin', 'coordinator', 'lecturer'] as const;
-export type AppRole = (typeof AVAILABLE_ROLES)[number];
-
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   private readonly baseUrl = '/api-users/api/v1/users';
 
   constructor(private http: HttpClient) {}
 
+  getManagedRoles(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.baseUrl}/roles`);
+  }
+
   getUsers(): Observable<UserDto[]> {
     return this.http.get<UserDto[]>(this.baseUrl);
   }
 
   setUserRoles(userId: string, roles: string[]): Observable<void> {
-    return this.http.put<void>(`${this.baseUrl}/${userId}/roles`, { roles });
+    return this.http
+      .put(`${this.baseUrl}/${userId}/roles`, { roles }, { responseType: 'text' })
+      .pipe(map(() => undefined));
   }
 }

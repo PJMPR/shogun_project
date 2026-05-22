@@ -5,6 +5,9 @@ public interface IKeycloakAdminPort
 {
     Task<IReadOnlyList<KeycloakUserRecord>> GetUsersAsync(CancellationToken ct = default);
 
+    /// <summary>Returns names of realm roles whose description equals "shogun".</summary>
+    Task<IReadOnlyList<string>> GetManagedRoleNamesAsync(CancellationToken ct = default);
+
     Task<IReadOnlyList<string>> GetUserManagedRolesAsync(
         string userId,
         IReadOnlyList<string> managedRoles,
