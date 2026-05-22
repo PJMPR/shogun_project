@@ -1,0 +1,99 @@
+<p-table
+  [value]="users"
+  [selection]="selectedUsers"
+  (selectionChange)="onSelectionChange($event)"
+  selectionMode="multiple"
+  [metaKeySelection]="false"
+  dataKey="id"
+  [loading]="loading"
+  [paginator]="true"
+  [rows]="100"
+  styleClass="users-table p-datatable-gridlines p-datatable-sm"
+  [rowHover]="true"
+  [tableStyle]="{ 'min-width': '56rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th class="select-col"><p-tableHeaderCheckbox /></th>
+      <th pSortableColumn="lastName">Uzytkownik <p-sortIcon field="lastName" /></th>
+      <th>E-mail</th>
+      <th>Role</th>
+      <th style="width: 14rem; text-align: center">Akcje</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-user>
+    <tr [class.row-disabled]="!user.enabled" [class.row-changed]="isUserChanged(user.id)">
+      <td class="select-col"><p-tableCheckbox [value]="user" /></td>
+      <td>
+        <div class="user-cell">
+          <div class="avatar" [ngClass]="'avatar-' + (user.roles[0] || 'none')">
+            {{ user.firstName[0] }}{{ user.lastName[0] }}
+          </div>
+          <div class="user-meta">
+            <div class="user-name">{{ user.firstName }} {{ user.lastName }}</div>
+            <div class="user-username">{{ user.username }}</div>
+          </div>
+        </div>
+      </td>
+      <td>{{ user.email }}</td>
+      <td>
+        <div class="roles-cell">
+          @if (!isUserChanged(user.id)) {
+            @if (user.roles.length === 0) {
+              <p-tag value="Brak roli" severity="secondary" styleClass="role-chip role-chip-none" />
+            }
+            @for (role of user.roles; track role) {
+              <p-tag
+                [value]="roleLabel(role)"
+                [severity]="roleSeverity(role)"
+                [styleClass]="'role-chip role-chip-' + role"
+              />
+            }
+          } @else {
+            @let diff = getUserRoleDiff(user);
+            @for (role of diff.unchanged; track role) {
+              <p-tag
+                [value]="roleLabel(role)"
+                [severity]="roleSeverity(role)"
+                [styleClass]="'role-chip role-chip-' + role"
+              />
+            }
+            @for (role of diff.added; track role) {
+              <p-tag
+                [value]="roleLabel(role)"
+                [severity]="roleSeverity(role)"
+                [styleClass]="'role-chip role-chip-' + role + ' role-tag-added'"
+              />
+            }
+            @for (role of diff.removed; track role) {
+              <span class="role-tag-removed">{{ roleLabel(role) }}</span>
+            }
+            @if (diff.unchanged.length === 0 && diff.added.length === 0 && diff.removed.length === 0) {
+              <p-tag value="Brak roli" severity="secondary" styleClass="role-chip role-chip-none" />
+            }
+          }
+        </div>
+      </td>
+      <td class="actions-col">
+        <p-button
+          icon="pi pi-user-edit"
+          label="Edytuj uprawnienia"
+          severity="warn"
+          size="small"
+          styleClass="edit-permissions-btn"
+          (onClick)="editUser.emit(user)"
+        />
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="5" class="empty-cell">
+        <i class="pi pi-search"></i>
+        <p>Nie znaleziono uzytkownikow</p>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

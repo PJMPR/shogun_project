@@ -1,52 +1,14 @@
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { forkJoin } from 'rxjs';
-import { TableModule } from 'primeng/table';
-import { TagModule } from 'primeng/tag';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { DialogModule } from 'primeng/dialog';
-import { ToastModule } from 'primeng/toast';
-import { ToolbarModule } from 'primeng/toolbar';
-import { MessageService } from 'primeng/api';
-import { TooltipModule } from 'primeng/tooltip';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
-import { SelectModule } from 'primeng/select';
-import { CheckboxModule } from 'primeng/checkbox';
 import { UsersService } from '../../services/users.service';
-
-export interface ManagedUser {
-  id: string;
-  username: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  enabled: boolean;
-  roles: string[];
-}
+import { ManagedUser, SaveMessage } from './users.models';
+import { UsersTableHostComponent } from './components/users-table-host/users-table-host.component';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    TableModule,
-    TagModule,
-    ButtonModule,
-    InputTextModule,
-    DialogModule,
-    ToastModule,
-    ToolbarModule,
-    TooltipModule,
-    IconFieldModule,
-    InputIconModule,
-    SelectModule,
-    CheckboxModule,
-  ],
-  providers: [MessageService],
+  imports: [CommonModule, UsersTableHostComponent],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })
@@ -56,6 +18,7 @@ export class UsersComponent implements OnInit {
   loading = signal(false);
   saving = signal(false);
   globalFilter = signal('');
+  saveMessage = signal<SaveMessage | null>(null);
 
   // Table row selection (regular array for PrimeNG two-way binding)
   selectedUsersTable: ManagedUser[] = [];
@@ -65,10 +28,15 @@ export class UsersComponent implements OnInit {
   dialogUsers = signal<ManagedUser[]>([]);
   dialogRolesToAdd = signal<string[]>([]);
   dialogRolesToRemove = signal<string[]>([]);
-  dialogDropdownRoleValue = '';
 
   // Change tracking – snapshot of roles from backend
   private originalRolesMap = signal<Map<string, string[]>>(new Map());
+
+  // Stable callbacks for child components
+  readonly isUserChangedFn = (userId: string): boolean => this.isUserChanged(userId);
+  readonly getUserRoleDiffFn = (user: ManagedUser) => this.getUserRoleDiff(user);
+  readonly roleLabelFn = (role: string) => this.roleLabel(role);
+  readonly roleSeverityFn = (role: string) => this.roleSeverity(role);
 
   // ──────── Computed ────────
 
@@ -96,11 +64,6 @@ export class UsersComponent implements OnInit {
 
   hasChanges = computed(() => this.changedUserIds().size > 0);
 
-  dialogAvailableRoles = computed(() => {
-    const toAdd = this.dialogRolesToAdd();
-    return this.managedRoles().filter(r => !toAdd.includes(r));
-  });
-
   dialogCurrentRoles = computed(() => {
     const allRoles = new Set<string>();
     for (const u of this.dialogUsers()) for (const r of u.roles) allRoles.add(r);
@@ -114,22 +77,7 @@ export class UsersComponent implements OnInit {
     return `Masowe przypisanie ról (${users.length} użytkowników)`;
   });
 
-  stats = computed(() => {
-    const all = this.users();
-    const roles = this.managedRoles();
-    const roleCounts: Record<string, number> = {};
-    for (const r of roles) roleCounts[r] = all.filter(u => u.roles.includes(r)).length;
-    return {
-      total: all.length,
-      roleCounts,
-      noRole: all.filter(u => u.roles.length === 0 && u.enabled).length,
-    };
-  });
-
-  constructor(
-    private messageService: MessageService,
-    private usersService: UsersService,
-  ) {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
     this.loadRoles();
@@ -143,6 +91,7 @@ export class UsersComponent implements OnInit {
   }
 
   private loadUsers(): void {
+    this.saveMessage.set(null);
     this.loading.set(true);
     this.usersService.getUsers().subscribe({
       next: dtos => {
@@ -162,12 +111,7 @@ export class UsersComponent implements OnInit {
         this.loading.set(false);
       },
       error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Błąd',
-          detail: 'Nie udało się pobrać listy użytkowników.',
-          life: 5000,
-        });
+        this.saveMessage.set({ severity: 'error', text: 'Nie udało się pobrać listy użytkowników.', life: 8000 });
         this.loading.set(false);
       },
     });
@@ -219,28 +163,12 @@ export class UsersComponent implements OnInit {
     this.dialogUsers.set(users);
     this.dialogRolesToAdd.set([]);
     this.dialogRolesToRemove.set([]);
-    this.dialogDropdownRoleValue = this.managedRoles()[0] ?? '';
     this.editDialogVisible.set(true);
   }
 
   closeEditDialog(): void {
     this.editDialogVisible.set(false);
     this.dialogUsers.set([]);
-  }
-
-  addRoleToDialog(): void {
-    const role = this.dialogDropdownRoleValue;
-    if (!role || this.dialogRolesToAdd().includes(role)) return;
-    this.dialogRolesToAdd.update(list => [...list, role]);
-    const remaining = this.dialogAvailableRoles();
-    this.dialogDropdownRoleValue = remaining[0] ?? '';
-  }
-
-  removeFromAddList(role: string): void {
-    this.dialogRolesToAdd.update(list => list.filter(r => r !== role));
-    if (!this.dialogDropdownRoleValue) {
-      this.dialogDropdownRoleValue = this.dialogAvailableRoles()[0] ?? '';
-    }
   }
 
   toggleRemoveRole(role: string): void {
@@ -273,6 +201,7 @@ export class UsersComponent implements OnInit {
   saveAllChanges(): void {
     const changed = this.users().filter(u => this.changedUserIds().has(u.id));
     if (changed.length === 0) return;
+    this.saveMessage.set(null);
     this.saving.set(true);
     forkJoin(changed.map(u => this.usersService.setUserRoles(u.id, u.roles))).subscribe({
       next: () => {
@@ -282,21 +211,15 @@ export class UsersComponent implements OnInit {
           return newMap;
         });
         this.saving.set(false);
-        this.messageService.add({
+        this.saveMessage.set({
           severity: 'success',
-          summary: 'Zapisano',
-          detail: `Zaktualizowano role ${changed.length} użytkownika/ów.`,
-          life: 3000,
+          text: `Zaktualizowano role ${changed.length} użytkownika/ów.`,
+          life: 5000,
         });
       },
       error: () => {
         this.saving.set(false);
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Błąd',
-          detail: 'Nie udało się zapisać zmian.',
-          life: 5000,
-        });
+        this.saveMessage.set({ severity: 'error', text: 'Nie udało się zapisać zmian.', life: 8000 });
       },
     });
   }
@@ -310,10 +233,15 @@ export class UsersComponent implements OnInit {
       }),
     );
     this.selectedUsersTable = [];
+    this.saveMessage.set({ severity: 'info', text: 'Cofnięto niezapisane zmiany.', life: 4000 });
   }
 
-  onGlobalFilter(event: Event): void {
-    this.globalFilter.set((event.target as HTMLInputElement).value);
+  onGlobalFilterChange(value: string): void {
+    this.globalFilter.set(value);
+  }
+
+  clearSaveMessage(): void {
+    this.saveMessage.set(null);
   }
 
   private rolesEqual(a: string[], b: string[]): boolean {

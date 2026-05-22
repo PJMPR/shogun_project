@@ -31,6 +31,8 @@ yarn-error.log
 
 # Miscellaneous
 frontend/.angular/
+frontend/*/.angular/
+**/tsconfig.federation.json
 .sass-cache/
 /connect.lock
 /coverage

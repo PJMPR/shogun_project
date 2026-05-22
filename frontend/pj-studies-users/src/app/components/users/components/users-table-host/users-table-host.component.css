@@ -1,0 +1,74 @@
+.page-message {
+  margin-bottom: 0.8rem;
+}
+
+:host ::ng-deep .page-message .p-message {
+  width: 100%;
+}
+
+.table-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.toolbar-start,
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+:host ::ng-deep .toolbar-start .p-inputtext {
+  min-width: 280px;
+}
+
+:host ::ng-deep .table-card .p-toolbar {
+  padding: 0.9rem 1rem 1rem;
+}
+
+:host ::ng-deep .toolbar-start .p-button,
+:host ::ng-deep .toolbar-actions .p-button {
+  margin: 0.2rem 0;
+  border-radius: 999px;
+  padding: 0.58rem 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+:host ::ng-deep .toolbar-start .p-button:not(:disabled):hover,
+:host ::ng-deep .toolbar-actions .p-button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.18);
+  filter: saturate(1.06);
+}
+
+:host ::ng-deep .toolbar-start .p-button .p-button-icon,
+:host ::ng-deep .toolbar-actions .p-button .p-button-icon {
+  margin-right: 0.5rem;
+}
+
+:host ::ng-deep .toolbar-actions .users-discard-btn.p-button {
+  background: linear-gradient(180deg, #7b8391 0%, #6b7280 100%);
+  border-color: #6b7280;
+  color: #ffffff;
+}
+
+:host ::ng-deep .toolbar-actions .users-discard-btn.p-button:not(:disabled):hover {
+  background: linear-gradient(180deg, #5b6472 0%, #4b5563 100%);
+  border-color: #4b5563;
+}
+
+:host ::ng-deep .toolbar-actions .users-save-btn.p-button {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+:host ::ng-deep .toolbar-actions .users-save-btn.p-button:not(:disabled):hover {
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+  border-color: #1d4ed8;
+}

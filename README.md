@@ -79,6 +79,10 @@ cd backend
 docker compose --env-file .env up -d
 ```
 
+```bash
+docker compose up --build --force-recreate --remove-orphans
+```
+
 Aplikacja dostępna pod: **https://shogun.pjwstk.edu.pl:8443**
 
 | Serwis | URL |
