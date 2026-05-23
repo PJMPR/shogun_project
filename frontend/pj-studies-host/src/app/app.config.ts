@@ -2,7 +2,6 @@ import { ApplicationConfig, APP_INITIALIZER, provideBrowserGlobalErrorListeners 
 import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
@@ -33,7 +32,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
     provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimationsAsync(),
     {
