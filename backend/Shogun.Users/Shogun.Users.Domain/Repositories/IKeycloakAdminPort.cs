@@ -5,6 +5,7 @@ public interface IKeycloakAdminPort
 {
     Task<IReadOnlyList<KeycloakUserRecord>> GetUsersAsync(CancellationToken ct = default);
     Task<KeycloakRoleRecord> GetRealmRoleAsync(string roleName, CancellationToken ct = default);
+    Task<IReadOnlyList<KeycloakRoleRecord>> GetRealmRolesAsync(CancellationToken ct = default);
     Task<IReadOnlyList<KeycloakRoleRecord>> GetManagedRolesAsync(CancellationToken ct = default);
 
     /// <summary>Returns names of realm roles managed by Shogun.</summary>

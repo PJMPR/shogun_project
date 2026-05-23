@@ -1,5 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject, signal } from '@angular/core';
 import Keycloak from 'keycloak-js';
+import { firstValueFrom } from 'rxjs';
 
 export interface UserProfile {
   firstName: string;
@@ -12,10 +14,18 @@ const CLIENT_ID = 'shogun-web';
 const TOKEN_REFRESH_INTERVAL_MS = 60_000;
 const TOKEN_MIN_VALIDITY_SEC = 60;
 const SESSION_ROLES_KEY = 'shogun_roles';
+const SESSION_PROJECTS_KEY = 'shogun_projects';
+
+interface MyProjectsResponse {
+  projects: string[];
+}
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   readonly userProfile = signal<UserProfile | null>(null);
+  readonly projectScopes = signal<string[]>([]);
+
+  private readonly http = inject(HttpClient);
 
   private readonly keycloak = new Keycloak({
     url: `${window.location.origin}/auth`,
@@ -40,6 +50,7 @@ export class AuthService {
       // Store realm roles in sessionStorage so MFEs can read them
       const roles = this.keycloak.realmAccess?.roles ?? [];
       sessionStorage.setItem(SESSION_ROLES_KEY, JSON.stringify(roles));
+      await this.loadProjectScopes();
       this.scheduleTokenRefresh();
     }
   }
@@ -52,9 +63,45 @@ export class AuthService {
     return this.keycloak.hasRealmRole(role);
   }
 
+  hasProjectAccess(project: string): boolean {
+    if (this.hasRole('admin')) return true;
+
+    const wanted = project.trim().toLowerCase();
+    return this.projectScopes().some(scope => scope === wanted);
+  }
+
+  canAccessProgram(): boolean {
+    return this.hasProjectAccess('program');
+  }
+
+  canAccessSyllabi(): boolean {
+    return this.hasProjectAccess('sylabus');
+  }
+
+  canAccessAssignments(): boolean {
+    return this.hasProjectAccess('obsady');
+  }
+
   logout(): void {
     sessionStorage.removeItem(SESSION_ROLES_KEY);
+    sessionStorage.removeItem(SESSION_PROJECTS_KEY);
     this.keycloak.logout({ redirectUri: window.location.origin });
+  }
+
+  private async loadProjectScopes(): Promise<void> {
+    try {
+      const response = await firstValueFrom(this.http.get<MyProjectsResponse>('/api-users/api/v1/me/projects'));
+      const scopes = (response.projects ?? [])
+        .map(scope => scope.trim().toLowerCase())
+        .filter(scope => !!scope);
+
+      this.projectScopes.set(scopes);
+      sessionStorage.setItem(SESSION_PROJECTS_KEY, JSON.stringify(scopes));
+    } catch {
+      // Keep menu conservative on failures: no project links unless scopes are loaded.
+      this.projectScopes.set([]);
+      sessionStorage.setItem(SESSION_PROJECTS_KEY, '[]');
+    }
   }
 
   private scheduleTokenRefresh(): void {

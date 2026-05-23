@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Shogun.Assignments.Service.Api.Application.DTOs;
 using Shogun.Assignments.Service.Api.Application.Services;
 
@@ -6,6 +7,7 @@ namespace Shogun.Assignments.Service.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/assignments")]
+[Authorize(Policy = "AssignmentsAccess")]
 public class AssignmentsController(IAssignmentService service) : ControllerBase
 {
     [HttpPost]

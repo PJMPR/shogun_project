@@ -5,6 +5,8 @@ using Serilog;
 using Shogun.Service.Api.Middleware;
 using Shogun.Service.Api.Application;
 using Shogun.Service.Api.Infrastructure;
+using System.Security.Claims;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,8 +48,39 @@ builder.Services
             ValidIssuers = kcSection.GetSection("ValidIssuers").Get<string[]>(),
             ValidateAudience = false,
         };
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = context =>
+            {
+                var principal = context.Principal;
+                if (principal is null) return Task.CompletedTask;
+
+                var realmAccess = principal.FindFirst("realm_access")?.Value;
+                if (realmAccess is null) return Task.CompletedTask;
+
+                using var doc = JsonDocument.Parse(realmAccess);
+                if (!doc.RootElement.TryGetProperty("roles", out var rolesElement)) return Task.CompletedTask;
+
+                var identity = (ClaimsIdentity)principal.Identity!;
+                foreach (var role in rolesElement.EnumerateArray())
+                {
+                    var roleName = role.GetString();
+                    if (!string.IsNullOrEmpty(roleName))
+                        identity.AddClaim(new Claim(ClaimTypes.Role, roleName));
+                }
+
+                return Task.CompletedTask;
+            },
+        };
     });
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(opts =>
+{
+    opts.AddPolicy("ProgramAccess", policy =>
+        policy.RequireAssertion(ctx => HasProjectAccess(ctx.User, "program")));
+
+    opts.AddPolicy("SyllabiAccess", policy =>
+        policy.RequireAssertion(ctx => HasProjectAccess(ctx.User, "sylabus")));
+});
 
 builder.Services.AddHealthChecks()
     .AddCheck("self", () => Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
@@ -83,6 +116,41 @@ app.MapControllers().RequireAuthorization();
 app.MapHealthChecks("/health");
 
 app.Run();
+
+static bool HasProjectAccess(ClaimsPrincipal user, string project)
+{
+    if (user.IsInRole("admin"))
+        return true;
+
+    var wanted = project.Trim().ToLowerInvariant();
+
+    foreach (var claim in user.FindAll("projects"))
+    {
+        var value = (claim.Value ?? string.Empty).Trim();
+        if (string.IsNullOrWhiteSpace(value))
+            continue;
+
+        if (value.StartsWith("[") && value.EndsWith("]"))
+        {
+            try
+            {
+                var items = JsonSerializer.Deserialize<string[]>(value) ?? [];
+                if (items.Any(i => string.Equals(i?.Trim(), wanted, StringComparison.OrdinalIgnoreCase)))
+                    return true;
+                continue;
+            }
+            catch
+            {
+            }
+        }
+
+        var parts = value.Split([',', ';'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        if (parts.Any(p => string.Equals(p, wanted, StringComparison.OrdinalIgnoreCase)))
+            return true;
+    }
+
+    return false;
+}
 
 // Needed for integration tests
 public partial class Program { }

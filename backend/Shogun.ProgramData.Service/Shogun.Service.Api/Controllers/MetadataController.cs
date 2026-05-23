@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shogun.Service.Api.Controllers;
 
@@ -9,6 +10,7 @@ namespace Shogun.Service.Api.Controllers;
 [ApiController]
 [Route("api/v1/metadata")]
 [Produces("application/json")]
+[Authorize(Policy = "SyllabiAccess")]
 public class MetadataController : ControllerBase
 {
     private static readonly object TeachingMethods = new

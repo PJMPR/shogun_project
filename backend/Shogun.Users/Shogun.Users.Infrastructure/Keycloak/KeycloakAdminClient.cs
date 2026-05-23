@@ -75,9 +75,17 @@ public sealed class KeycloakAdminClient(
         return new KeycloakRoleRecord(role.Name, role.Description, ToDomainAttributes(role.Attributes));
     }
 
+    public async Task<IReadOnlyList<KeycloakRoleRecord>> GetRealmRolesAsync(CancellationToken ct = default)
+    {
+        var roles = await GetRealmRolesInternalAsync(ct);
+        return roles
+            .Select(r => new KeycloakRoleRecord(r.Name, r.Description, ToDomainAttributes(r.Attributes)))
+            .ToList();
+    }
+
     public async Task<IReadOnlyList<KeycloakRoleRecord>> GetManagedRolesAsync(CancellationToken ct = default)
     {
-        var listedRoles = await GetRealmRolesAsync(ct);
+        var listedRoles = await GetRealmRolesInternalAsync(ct);
         return listedRoles
             .Where(IsManagedRole)
             .Select(r => new KeycloakRoleRecord(r.Name, r.Description, ToDomainAttributes(r.Attributes)))
@@ -101,7 +109,7 @@ public sealed class KeycloakAdminClient(
 
     public async Task AddRolesToUserAsync(string userId, IReadOnlyList<string> roleNames, CancellationToken ct = default)
     {
-        var realmRoles = await GetRealmRolesAsync(ct);
+        var realmRoles = await GetRealmRolesInternalAsync(ct);
         var toAssign = realmRoles.Where(r => roleNames.Contains(r.Name)).ToList();
         if (toAssign.Count == 0) return;
 
@@ -113,7 +121,7 @@ public sealed class KeycloakAdminClient(
 
     public async Task RemoveRolesFromUserAsync(string userId, IReadOnlyList<string> roleNames, CancellationToken ct = default)
     {
-        var realmRoles = await GetRealmRolesAsync(ct);
+        var realmRoles = await GetRealmRolesInternalAsync(ct);
         var toRemove = realmRoles.Where(r => roleNames.Contains(r.Name)).ToList();
         if (toRemove.Count == 0) return;
 
@@ -207,7 +215,7 @@ public sealed class KeycloakAdminClient(
         response.EnsureSuccessStatusCode();
     }
 
-    private async Task<List<KcRole>> GetRealmRolesAsync(CancellationToken ct)
+    private async Task<List<KcRole>> GetRealmRolesInternalAsync(CancellationToken ct)
     {
         var client = await CreateAuthorizedClientAsync(ct);
         // Keycloak returns brief role representation by default, which can omit custom fields.

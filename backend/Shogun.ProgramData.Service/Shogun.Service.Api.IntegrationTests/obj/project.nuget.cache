@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVHtIS0/KPo=",
+  "dgSpecHash": "tMWV3zp3+BI=",
   "success": true,
-  "projectFilePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+  "projectFilePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adamu\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
@@ -12,6 +12,7 @@
     "C:\\Users\\adamu\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.0\\microsoft.aspnetcore.authentication.jwtbearer.10.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\10.0.0\\microsoft.aspnetcore.mvc.testing.10.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.aspnetcore.testhost\\10.0.0\\microsoft.aspnetcore.testhost.10.0.0.nupkg.sha512",
@@ -44,6 +45,12 @@
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.options\\10.0.0\\microsoft.extensions.options.10.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.0\\microsoft.extensions.options.configurationextensions.10.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.0.1\\microsoft.identitymodel.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.1\\microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.logging\\8.0.1\\microsoft.identitymodel.logging.8.0.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.0.1\\microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.0.1\\microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.net.test.sdk\\17.13.0\\microsoft.net.test.sdk.17.13.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.13.0\\microsoft.testplatform.objectmodel.17.13.0.nupkg.sha512",
@@ -66,6 +73,7 @@
     "C:\\Users\\adamu\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\ssh.net\\2024.2.0\\ssh.net.2024.2.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.0\\system.diagnostics.eventlog.10.0.0.nupkg.sha512",
+    "C:\\Users\\adamu\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.1\\system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\testcontainers\\4.4.0\\testcontainers.4.4.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\testcontainers.mongodb\\4.4.0\\testcontainers.mongodb.4.4.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
@@ -83,9 +91,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Pakiet „SharpCompress” 0.30.1 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-6c8g-7p36-r338",
-      "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "filePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "libraryId": "SharpCompress",
       "targetGraphs": [
         "net10.0"
@@ -95,9 +103,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Pakiet „Snappier” 1.0.0 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-pggp-6c3x-2xmx",
-      "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "filePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "libraryId": "Snappier",
       "targetGraphs": [
         "net10.0"

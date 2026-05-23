@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shogun.Service.Api.Application.DTOs;
 using Shogun.Service.Api.Application.Services;
@@ -9,6 +10,7 @@ namespace Shogun.Service.Api.Controllers;
 [ApiController]
 [Route("api/v1/programs")]
 [Produces("application/json")]
+[Authorize(Policy = "ProgramAccess")]
 public class ProgramsController : ControllerBase
 {
     private readonly ProgramsService _svc;

@@ -154,11 +154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
+      "projectUniqueName": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
       "projectName": "Shogun.Service.Api.Application",
-      "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
+      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
       "packagesPath": "C:\\Users\\adamu\\.nuget\\packages\\",
-      "outputPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Application\\obj\\",
+      "outputPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adamu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -173,8 +173,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj": {
-              "projectPath": "D:\\PJWSTK\\git\\PJ_Program_Planner\\backend\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj"
+            "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj": {
+              "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj"
             }
           }
         }

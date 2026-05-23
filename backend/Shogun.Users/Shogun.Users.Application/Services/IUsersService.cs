@@ -20,6 +20,7 @@ public interface IUsersService
         CancellationToken ct = default);
 
     Task DeleteManagedRoleAsync(string roleName, CancellationToken ct = default);
+    Task<IReadOnlyList<string>> GetUserProjectsAsync(string userId, CancellationToken ct = default);
     Task<IReadOnlyList<UserDto>> GetUsersAsync(CancellationToken ct = default);
     Task<IReadOnlyList<string>> GetUserRolesAsync(string userId, CancellationToken ct = default);
     Task SetUserRolesAsync(string userId, IReadOnlyList<string> roles, string actorId, CancellationToken ct = default);

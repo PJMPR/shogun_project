@@ -15,6 +15,7 @@ public sealed class UsersService(IKeycloakAdminPort keycloak) : IUsersService
     private const int MaxAttributeValueLength = 200;
     private static readonly Regex RoleNameRegex =
         new("^[A-Za-z0-9][A-Za-z0-9:_-]{1,62}[A-Za-z0-9]$", RegexOptions.Compiled);
+    private static readonly char[] ProjectSeparators = [',', ';'];
 
     public async Task<IReadOnlyList<ManagedRoleDto>> GetManagedRolesAsync(CancellationToken ct = default)
     {
@@ -68,6 +69,25 @@ public sealed class UsersService(IKeycloakAdminPort keycloak) : IUsersService
         var normalized = ValidateRoleName(roleName, nameof(roleName));
         await EnsureRoleIsManagedAsync(normalized, ct);
         await keycloak.DeleteRealmRoleAsync(normalized, ct);
+    }
+
+    public async Task<IReadOnlyList<string>> GetUserProjectsAsync(string userId, CancellationToken ct = default)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
+            throw new ArgumentException("User id cannot be empty.", nameof(userId));
+
+        var realmRoles = await keycloak.GetRealmRolesAsync(ct);
+        var realmRoleNames = realmRoles.Select(r => r.Name).ToList();
+        var userRoles = await keycloak.GetUserManagedRolesAsync(userId, realmRoleNames, ct);
+        var userRoleSet = userRoles.ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        var projects = realmRoles
+            .Where(role => userRoleSet.Contains(role.Name))
+            .SelectMany(ExtractProjects)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        return projects;
     }
 
     public async Task<IReadOnlyList<UserDto>> GetUsersAsync(CancellationToken ct = default)
@@ -271,5 +291,16 @@ public sealed class UsersService(IKeycloakAdminPort keycloak) : IUsersService
         return roleName.Equals("offline_access", StringComparison.OrdinalIgnoreCase)
             || roleName.Equals("uma_authorization", StringComparison.OrdinalIgnoreCase)
             || roleName.StartsWith("default-roles-", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static IEnumerable<string> ExtractProjects(KeycloakRoleRecord role)
+    {
+        if (!role.Attributes.TryGetValue("projects", out var rawValues))
+            return [];
+
+        return rawValues
+            .SelectMany(value => (value ?? string.Empty).Split(ProjectSeparators, StringSplitOptions.RemoveEmptyEntries))
+            .Select(value => value.Trim().ToLowerInvariant())
+            .Where(value => !string.IsNullOrWhiteSpace(value));
     }
 }
