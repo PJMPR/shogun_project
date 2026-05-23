@@ -31,6 +31,7 @@ export class UsersTableHostComponent {
   @Input({ required: true }) getUserRoleDiff!: (user: ManagedUser) => UserRoleDiff;
   @Input({ required: true }) roleLabel!: (role: string) => string;
   @Input({ required: true }) roleSeverity!: (role: string) => 'danger' | 'warn' | 'info' | 'secondary';
+  @Input({ required: true }) roleTooltip!: (role: string) => string | undefined;
 
   @Output() openEditSelected = new EventEmitter<void>();
   @Output() discardChanges = new EventEmitter<void>();

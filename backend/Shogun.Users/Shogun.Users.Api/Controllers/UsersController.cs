@@ -18,6 +18,37 @@ public class UsersController(IUsersService usersService) : ControllerBase
         return Ok(roles);
     }
 
+    [HttpGet("roles/{roleName}")]
+    public async Task<IActionResult> GetManagedRole(string roleName, CancellationToken ct)
+    {
+        var role = await usersService.GetManagedRoleAsync(roleName, ct);
+        return Ok(role);
+    }
+
+    [HttpPost("roles")]
+    public async Task<IActionResult> CreateManagedRole([FromBody] CreateRoleRequest request, CancellationToken ct)
+    {
+        await usersService.CreateManagedRoleAsync(request.Name, request.Description, request.Attributes, ct);
+        return Created(string.Empty, new { name = request.Name });
+    }
+
+    [HttpPut("roles/{roleName}")]
+    public async Task<IActionResult> UpdateManagedRole(
+        string roleName,
+        [FromBody] UpdateRoleRequest request,
+        CancellationToken ct)
+    {
+        await usersService.UpdateManagedRoleAsync(roleName, request.Name, request.Description, request.Attributes, ct);
+        return NoContent();
+    }
+
+    [HttpDelete("roles/{roleName}")]
+    public async Task<IActionResult> DeleteManagedRole(string roleName, CancellationToken ct)
+    {
+        await usersService.DeleteManagedRoleAsync(roleName, ct);
+        return NoContent();
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetUsers(CancellationToken ct)
     {

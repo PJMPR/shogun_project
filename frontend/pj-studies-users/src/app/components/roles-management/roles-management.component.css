@@ -1,0 +1,98 @@
+.roles-page {
+  margin-left: 15px;
+  margin-right: 1rem;
+  padding: 1.5rem 0;
+}
+
+.roles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.roles-header h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  color: #dc2626;
+}
+
+.roles-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.attributes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.role-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.role-form label {
+  font-weight: 600;
+}
+
+.role-form textarea {
+  width: 100%;
+}
+
+.attributes-header {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.attributes-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.attributes-empty {
+  color: var(--p-text-muted-color);
+  margin: 0;
+}
+
+.attributes-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.attribute-row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .roles-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .roles-actions {
+    justify-content: flex-end;
+  }
+
+  .attribute-row {
+    grid-template-columns: 1fr;
+  }
+}

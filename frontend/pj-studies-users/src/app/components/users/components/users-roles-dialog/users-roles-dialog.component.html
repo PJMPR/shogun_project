@@ -19,7 +19,17 @@
     </ng-template>
     <ng-template pTemplate="body" let-role>
       <tr>
-        <td>{{ roleLabel(role) }}</td>
+        <td>
+          <div style="display: flex; flex-direction: column; gap: 0.15rem">
+            <span>{{ roleLabel(role) }}</span>
+            @if (roleDescription(role); as description) {
+              <small style="color: var(--p-text-muted-color)">{{ description }}</small>
+            }
+            @if (roleAttributesText(role); as attributesText) {
+              <small style="color: var(--p-text-muted-color)">Atrybuty: {{ attributesText }}</small>
+            }
+          </div>
+        </td>
         <td style="text-align: center">
           <p-toggleswitch
             [ngModel]="isRoleEnabled(role)"

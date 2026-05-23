@@ -10,3 +10,18 @@ public sealed record UserDto(
     IReadOnlyList<string> Roles);
 
 public sealed record SetRolesRequest(IReadOnlyList<string> Roles);
+
+public sealed record CreateRoleRequest(
+    string Name,
+    string? Description,
+    IReadOnlyDictionary<string, IReadOnlyList<string>>? Attributes);
+
+public sealed record UpdateRoleRequest(
+    string Name,
+    string? Description,
+    IReadOnlyDictionary<string, IReadOnlyList<string>>? Attributes);
+
+public sealed record ManagedRoleDto(
+    string Name,
+    string? Description,
+    IReadOnlyDictionary<string, IReadOnlyList<string>> Attributes);

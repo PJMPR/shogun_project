@@ -14,6 +14,8 @@ public sealed class KeycloakAdminClient(
     IHttpClientFactory httpClientFactory,
     IOptions<KeycloakAdminOptions> options) : IKeycloakAdminPort
 {
+    private const string ManagedRoleMarker = "shogun";
+    private const string ManagedRoleAttributeKey = "managedBy";
     private readonly KeycloakAdminOptions _opts = options.Value;
     private string? _cachedToken;
     private DateTime _tokenExpiry = DateTime.MinValue;
@@ -66,6 +68,22 @@ public sealed class KeycloakAdminClient(
         return users.Select(u => new KeycloakUserRecord(u.Id, u.Username, u.FirstName, u.LastName, u.Email, u.Enabled)).ToList();
     }
 
+    public async Task<KeycloakRoleRecord> GetRealmRoleAsync(string roleName, CancellationToken ct = default)
+    {
+        var role = await GetRealmRoleRepresentationAsync(roleName, ct);
+
+        return new KeycloakRoleRecord(role.Name, role.Description, ToDomainAttributes(role.Attributes));
+    }
+
+    public async Task<IReadOnlyList<KeycloakRoleRecord>> GetManagedRolesAsync(CancellationToken ct = default)
+    {
+        var listedRoles = await GetRealmRolesAsync(ct);
+        return listedRoles
+            .Where(IsManagedRole)
+            .Select(r => new KeycloakRoleRecord(r.Name, r.Description, ToDomainAttributes(r.Attributes)))
+            .ToList();
+    }
+
     // ── Roles ─────────────────────────────────────────────────────────────
 
     public async Task<IReadOnlyList<string>> GetUserManagedRolesAsync(
@@ -112,18 +130,167 @@ public sealed class KeycloakAdminClient(
 
     public async Task<IReadOnlyList<string>> GetManagedRoleNamesAsync(CancellationToken ct = default)
     {
-        var roles = await GetRealmRolesAsync(ct);
-        return roles
-            .Where(r => string.Equals(r.Description, "shogun", StringComparison.OrdinalIgnoreCase))
-            .Select(r => r.Name)
-            .ToList();
+        var managedRoles = await GetManagedRolesAsync(ct);
+        return managedRoles.Select(r => r.Name).ToList();
+    }
+
+    public async Task CreateRealmRoleAsync(
+        string roleName,
+        string description,
+        IReadOnlyDictionary<string, IReadOnlyList<string>> attributes,
+        CancellationToken ct = default)
+    {
+        var client = await CreateAuthorizedClientAsync(ct);
+        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles";
+
+        var payload = new
+        {
+            name = roleName,
+            description,
+            attributes = ToKeycloakAttributes(attributes),
+        };
+        var response = await client.PostAsJsonAsync(url, payload, ct);
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+            throw new InvalidOperationException($"Role '{roleName}' already exists.");
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            throw new UnauthorizedAccessException("Keycloak denied role create. Grant 'manage-realm' to service account.");
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task UpdateRealmRoleAsync(
+        string currentRoleName,
+        string newRoleName,
+        string description,
+        IReadOnlyDictionary<string, IReadOnlyList<string>> attributes,
+        CancellationToken ct = default)
+    {
+        var client = await CreateAuthorizedClientAsync(ct);
+        var rolePath = Uri.EscapeDataString(currentRoleName);
+        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles/{rolePath}";
+
+        var payload = new
+        {
+            name = newRoleName,
+            description,
+            attributes = ToKeycloakAttributes(attributes),
+        };
+        var response = await client.PutAsJsonAsync(url, payload, ct);
+
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            throw new KeyNotFoundException($"Role '{currentRoleName}' was not found.");
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+            throw new InvalidOperationException($"Role '{newRoleName}' already exists.");
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            throw new UnauthorizedAccessException("Keycloak denied role update. Grant 'manage-realm' to service account.");
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task DeleteRealmRoleAsync(string roleName, CancellationToken ct = default)
+    {
+        var client = await CreateAuthorizedClientAsync(ct);
+        var rolePath = Uri.EscapeDataString(roleName);
+        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles/{rolePath}";
+
+        var response = await client.DeleteAsync(url, ct);
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            throw new KeyNotFoundException($"Role '{roleName}' was not found.");
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            throw new UnauthorizedAccessException("Keycloak denied role delete. Grant 'manage-realm' to service account.");
+
+        response.EnsureSuccessStatusCode();
     }
 
     private async Task<List<KcRole>> GetRealmRolesAsync(CancellationToken ct)
     {
         var client = await CreateAuthorizedClientAsync(ct);
-        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles";
+        // Keycloak returns brief role representation by default, which can omit custom fields.
+        // Force full representation so description and attributes are available for UI and filtering.
+        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles?briefRepresentation=false&max=1000";
         return await client.GetFromJsonAsync<List<KcRole>>(url, ct) ?? [];
+    }
+
+    private async Task<KcRole> GetRealmRoleRepresentationAsync(string roleName, CancellationToken ct)
+    {
+        var client = await CreateAuthorizedClientAsync(ct);
+        var rolePath = Uri.EscapeDataString(roleName);
+        var url = $"{_opts.AdminBaseUrl}/auth/admin/realms/{_opts.Realm}/roles/{rolePath}";
+
+        var response = await client.GetAsync(url, ct);
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            throw new KeyNotFoundException($"Role '{roleName}' was not found.");
+
+        if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            throw new UnauthorizedAccessException("Keycloak denied role read. Grant 'view-realm' to service account.");
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KcRole>(cancellationToken: ct)
+            ?? throw new InvalidOperationException($"Role '{roleName}' payload is empty.");
+    }
+
+    private static bool IsManagedRole(KcRole role)
+    {
+        if (role.Attributes is not null &&
+            role.Attributes.TryGetValue(ManagedRoleAttributeKey, out var values) &&
+            values.Any(v => string.Equals(v, ManagedRoleMarker, StringComparison.OrdinalIgnoreCase)))
+        {
+            return true;
+        }
+
+        if (IsManagedRoleDescription(role.Description))
+            return true;
+
+        return !IsSystemRoleName(role.Name);
+    }
+
+    private static bool IsManagedRoleDescription(string? description)
+    {
+        if (string.IsNullOrWhiteSpace(description))
+            return false;
+
+        var normalized = description.Trim();
+        if (normalized.StartsWith("${role_", StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        return true;
+    }
+
+    private static bool IsSystemRoleName(string roleName)
+    {
+        if (string.IsNullOrWhiteSpace(roleName))
+            return true;
+
+        return roleName.Equals("offline_access", StringComparison.OrdinalIgnoreCase)
+            || roleName.Equals("uma_authorization", StringComparison.OrdinalIgnoreCase)
+            || roleName.StartsWith("default-roles-", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static Dictionary<string, List<string>> ToKeycloakAttributes(
+        IReadOnlyDictionary<string, IReadOnlyList<string>> attributes)
+    {
+        return attributes.ToDictionary(
+            kv => kv.Key,
+            kv => kv.Value.ToList(),
+            StringComparer.Ordinal);
+    }
+
+    private static IReadOnlyDictionary<string, IReadOnlyList<string>> ToDomainAttributes(
+        Dictionary<string, List<string>>? attributes)
+    {
+        if (attributes is null || attributes.Count == 0)
+            return new Dictionary<string, IReadOnlyList<string>>();
+
+        return attributes.ToDictionary(
+            kv => kv.Key,
+            kv => (IReadOnlyList<string>)kv.Value,
+            StringComparer.Ordinal);
     }
 
     // ── Private models ────────────────────────────────────────────────────
@@ -143,5 +310,6 @@ public sealed class KeycloakAdminClient(
         [JsonPropertyName("id")]          public string Id { get; set; } = string.Empty;
         [JsonPropertyName("name")]        public string Name { get; set; } = string.Empty;
         [JsonPropertyName("description")] public string? Description { get; set; }
+        [JsonPropertyName("attributes")]  public Dictionary<string, List<string>>? Attributes { get; set; }
     }
 }

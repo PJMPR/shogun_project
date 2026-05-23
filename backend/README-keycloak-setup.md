@@ -165,13 +165,14 @@ Service account klienta potrzebuje następujących ról z wbudowanego klienta **
 | `view-users` | Listowanie użytkowników (`GET /admin/realms/shogun/users`) |
 | `manage-users` | Dodawanie / usuwanie mapowań ról (`POST/DELETE …/role-mappings/realm`) |
 | `view-realm` | Odczyt dostępnych ról realm-level (`GET /admin/realms/shogun/roles`) |
+| `manage-realm` | Tworzenie nowych ról realm-level (`POST /admin/realms/shogun/roles`) |
 
 Aby przyznać role:
 
 1. Przejdź do **Clients → `shogun-users-service` → Service accounts roles**.
 2. Kliknij **Assign role**.
 3. W filtrze wybierz **Filter by clients** i znajdź `realm-management`.
-4. Zaznacz `view-users`, `manage-users`, `view-realm` → **Assign**.
+4. Zaznacz `view-users`, `manage-users`, `view-realm`, `manage-realm` → **Assign**.
 
 ---
 

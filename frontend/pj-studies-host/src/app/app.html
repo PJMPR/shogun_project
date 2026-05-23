@@ -83,11 +83,22 @@
         <a
           routerLink="/users"
           routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
           class="nav-link"
           (click)="isMobile() && sidebarVisible.set(false)"
         >
           <i class="pi pi-shield"></i>
           Użytkownicy i role
+        </a>
+        <a
+          routerLink="/users/roles"
+          routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link"
+          (click)="isMobile() && sidebarVisible.set(false)"
+        >
+          <i class="pi pi-id-card"></i>
+          Role i atrybuty
         </a>
       }
     </nav>

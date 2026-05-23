@@ -13,10 +13,19 @@ internal sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> log
     {
         logger.LogError(exception, "Unhandled exception: {Message}", exception.Message);
 
+        var (status, title) = exception switch
+        {
+            ArgumentException => (StatusCodes.Status400BadRequest, "Bad Request"),
+            UnauthorizedAccessException => (StatusCodes.Status403Forbidden, "Forbidden"),
+            KeyNotFoundException => (StatusCodes.Status404NotFound, "Not Found"),
+            InvalidOperationException => (StatusCodes.Status409Conflict, "Conflict"),
+            _ => (StatusCodes.Status500InternalServerError, "Internal Server Error"),
+        };
+
         var problem = new ProblemDetails
         {
-            Status = StatusCodes.Status500InternalServerError,
-            Title = "Internal Server Error",
+            Status = status,
+            Title = title,
             Detail = exception.Message,
         };
 

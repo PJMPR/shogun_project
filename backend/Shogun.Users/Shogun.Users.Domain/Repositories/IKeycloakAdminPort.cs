@@ -4,8 +4,10 @@ namespace Shogun.Users.Domain.Repositories;
 public interface IKeycloakAdminPort
 {
     Task<IReadOnlyList<KeycloakUserRecord>> GetUsersAsync(CancellationToken ct = default);
+    Task<KeycloakRoleRecord> GetRealmRoleAsync(string roleName, CancellationToken ct = default);
+    Task<IReadOnlyList<KeycloakRoleRecord>> GetManagedRolesAsync(CancellationToken ct = default);
 
-    /// <summary>Returns names of realm roles whose description equals "shogun".</summary>
+    /// <summary>Returns names of realm roles managed by Shogun.</summary>
     Task<IReadOnlyList<string>> GetManagedRoleNamesAsync(CancellationToken ct = default);
 
     Task<IReadOnlyList<string>> GetUserManagedRolesAsync(
@@ -15,6 +17,20 @@ public interface IKeycloakAdminPort
 
     Task AddRolesToUserAsync(string userId, IReadOnlyList<string> roleNames, CancellationToken ct = default);
     Task RemoveRolesFromUserAsync(string userId, IReadOnlyList<string> roleNames, CancellationToken ct = default);
+    Task CreateRealmRoleAsync(
+        string roleName,
+        string description,
+        IReadOnlyDictionary<string, IReadOnlyList<string>> attributes,
+        CancellationToken ct = default);
+
+    Task UpdateRealmRoleAsync(
+        string currentRoleName,
+        string newRoleName,
+        string description,
+        IReadOnlyDictionary<string, IReadOnlyList<string>> attributes,
+        CancellationToken ct = default);
+
+    Task DeleteRealmRoleAsync(string roleName, CancellationToken ct = default);
 }
 
 public sealed record KeycloakUserRecord(
@@ -24,3 +40,8 @@ public sealed record KeycloakUserRecord(
     string? LastName,
     string? Email,
     bool Enabled);
+
+public sealed record KeycloakRoleRecord(
+    string Name,
+    string? Description,
+    IReadOnlyDictionary<string, IReadOnlyList<string>> Attributes);

@@ -8,6 +8,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { FilterService, SelectItem } from 'primeng/api';
+import { TooltipModule } from 'primeng/tooltip';
 import { ManagedUser, UserRoleDiff } from '../../users.models';
 
 type TableUser = ManagedUser & {
@@ -18,7 +19,7 @@ type TableUser = ManagedUser & {
 @Component({
   selector: 'app-users-table',
   standalone: true,
-  imports: [CommonModule, FormsModule, TableModule, TagModule, ButtonModule, AvatarModule, InputTextModule, MultiSelectModule],
+  imports: [CommonModule, FormsModule, TableModule, TagModule, ButtonModule, AvatarModule, InputTextModule, MultiSelectModule, TooltipModule],
   templateUrl: './users-table.component.html',
 })
 export class UsersTableComponent {
@@ -30,6 +31,7 @@ export class UsersTableComponent {
   @Input({ required: true }) getUserRoleDiff!: (user: ManagedUser) => UserRoleDiff;
   @Input({ required: true }) roleLabel!: (role: string) => string;
   @Input({ required: true }) roleSeverity!: (role: string) => 'danger' | 'warn' | 'info' | 'secondary';
+  @Input({ required: true }) roleTooltip!: (role: string) => string | undefined;
 
   @Output() selectedUsersChange = new EventEmitter<ManagedUser[]>();
   @Output() editUser = new EventEmitter<ManagedUser>();

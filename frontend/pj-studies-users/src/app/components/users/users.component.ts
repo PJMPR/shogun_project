@@ -2,30 +2,11 @@ import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
 import { PrimeNG } from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
-import { definePreset } from '@primeuix/themes';
 import { UsersService } from '../../services/users.service';
-import { ManagedUser, SaveMessage } from './users.models';
+import { ManagedRole, ManagedUser, SaveMessage } from './users.models';
 import { UsersTableHostComponent } from './components/users-table-host/users-table-host.component';
 import { UsersRolesDialogComponent } from './components/users-roles-dialog/users-roles-dialog.component';
-
-const USERS_PRESET = definePreset(Aura, {
-  semantic: {
-    primary: {
-      50: '{red.50}',
-      100: '{red.100}',
-      200: '{red.200}',
-      300: '{red.300}',
-      400: '{red.400}',
-      500: '{red.500}',
-      600: '{red.600}',
-      700: '{red.700}',
-      800: '{red.800}',
-      900: '{red.900}',
-      950: '{red.950}',
-    },
-  },
-});
+import { ensureUsersPrimeNgTheme } from '../../shared/users-primeng-theme';
 
 @Component({
   selector: 'app-users',
@@ -37,6 +18,7 @@ const USERS_PRESET = definePreset(Aura, {
 export class UsersComponent implements OnInit {
   users = signal<ManagedUser[]>([]);
   managedRoles = signal<string[]>([]);
+  managedRoleMap = signal<Record<string, ManagedRole>>({});
   loading = signal(false);
   saving = signal(false);
   saveMessage = signal<SaveMessage | null>(null);
@@ -58,6 +40,9 @@ export class UsersComponent implements OnInit {
   readonly roleLabelFn = (role: string) => this.roleLabel(role);
   readonly roleSeverityFn = (role: string) => this.roleSeverity(role);
   readonly isRoleEnabledInDialogFn = (role: string): boolean => this.isRoleEnabledInDialog(role);
+  readonly roleDescriptionFn = (role: string): string | null => this.roleDescription(role);
+  readonly roleAttributesTextFn = (role: string): string | null => this.roleAttributesText(role);
+  readonly roleTooltipFn = (role: string): string | undefined => this.roleTooltip(role);
 
   // ──────── Computed ────────
 
@@ -85,12 +70,7 @@ export class UsersComponent implements OnInit {
     private primeng: PrimeNG,
   ) {
     // Ensure users MFE applies full PrimeNG theme tokens immediately on first load.
-    this.primeng.setConfig({
-      theme: {
-        preset: USERS_PRESET,
-        options: { darkModeSelector: false },
-      },
-    });
+    ensureUsersPrimeNgTheme(this.primeng);
   }
 
   ngOnInit(): void {
@@ -100,7 +80,16 @@ export class UsersComponent implements OnInit {
 
   private loadRoles(): void {
     this.usersService.getManagedRoles().subscribe({
-      next: roles => this.managedRoles.set(roles),
+      next: roles => {
+        const normalized = roles ?? [];
+        this.managedRoles.set(normalized.map(role => role.name));
+
+        const roleMap: Record<string, ManagedRole> = {};
+        for (const role of normalized) {
+          roleMap[role.name] = role;
+        }
+        this.managedRoleMap.set(roleMap);
+      },
     });
   }
 
@@ -160,6 +149,38 @@ export class UsersComponent implements OnInit {
       lecturer: 'info',
     };
     return map[role] ?? 'secondary';
+  }
+
+  roleDescription(role: string): string | null {
+    const description = this.managedRoleMap()[role]?.description?.trim();
+    return description ? description : null;
+  }
+
+  roleAttributesText(role: string): string | null {
+    const attributes = this.managedRoleMap()[role]?.attributes;
+    if (!attributes) return null;
+
+    const chunks = Object.entries(attributes)
+      .filter(([key, values]) => key?.trim() && Array.isArray(values) && values.length > 0)
+      .map(([key, values]) => `${key}: ${values.join(', ')}`);
+
+    return chunks.length > 0 ? chunks.join(' | ') : null;
+  }
+
+  roleTooltip(role: string): string | undefined {
+    const details: string[] = [this.roleLabel(role)];
+    const description = this.roleDescription(role);
+    const attributes = this.roleAttributesText(role);
+
+    if (description) {
+      details.push(`Opis: ${description}`);
+    }
+
+    if (attributes) {
+      details.push(`Atrybuty: ${attributes}`);
+    }
+
+    return details.length > 1 ? details.join('\n') : undefined;
   }
 
   // ──────────── Dialog ────────────

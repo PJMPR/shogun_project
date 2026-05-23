@@ -8,6 +8,12 @@ export interface ManagedUser {
   roles: string[];
 }
 
+export interface ManagedRole {
+  name: string;
+  description?: string;
+  attributes: Record<string, string[]>;
+}
+
 export interface UserRoleDiff {
   added: string[];
   removed: string[];

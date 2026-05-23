@@ -17,6 +17,8 @@ export class UsersRolesDialogComponent {
   @Input({ required: true }) header = 'Role';
   @Input({ required: true }) managedRoles: string[] = [];
   @Input({ required: true }) roleLabel!: (role: string) => string;
+  @Input({ required: true }) roleDescription!: (role: string) => string | null;
+  @Input({ required: true }) roleAttributesText!: (role: string) => string | null;
   @Input({ required: true }) isRoleEnabled!: (role: string) => boolean;
 
   @Output() visibleChange = new EventEmitter<boolean>();

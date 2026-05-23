@@ -1,0 +1,177 @@
+<div class="roles-page">
+  <p-toast />
+  <p-confirmdialog />
+
+  <div class="roles-header">
+    <h1><i class="pi pi-id-card"></i> Zarządzanie rolami</h1>
+    <div class="roles-actions">
+      <p-button
+        label="Odśwież"
+        icon="pi pi-refresh"
+        [outlined]="true"
+        (onClick)="loadRoles()"
+      />
+      <p-button
+        label="Nowa rola"
+        icon="pi pi-plus"
+        (onClick)="openCreateDialog()"
+      />
+    </div>
+  </div>
+
+  <p-table
+    [value]="roles()"
+    [loading]="loading()"
+    [paginator]="true"
+    [rows]="20"
+    [rowsPerPageOptions]="[10, 20, 50]"
+    sortField="name"
+    [tableStyle]="{ 'min-width': '58rem' }"
+    currentPageReportTemplate="Pokazano {first}-{last} z {totalRecords}"
+    [showCurrentPageReport]="true"
+    stripedRows
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name" style="width: 16rem">Nazwa</th>
+        <th>Opis</th>
+        <th style="width: 22rem">Atrybuty</th>
+        <th style="width: 12rem; text-align: right">Akcje</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-role>
+      <tr>
+        <td>
+          <strong>{{ role.name }}</strong>
+        </td>
+        <td>{{ role.description || '-' }}</td>
+        <td>
+          @let entries = roleAttributeEntries(role);
+          @if (entries.length === 0) {
+            <p-tag value="Brak" severity="secondary" />
+          } @else {
+            <div class="attributes-list">
+              @for (entry of entries; track entry.key) {
+                <p-tag [value]="entry.key + ': ' + entry.value" severity="contrast" />
+              }
+            </div>
+          }
+        </td>
+        <td>
+          <div class="row-actions">
+            <p-button
+              icon="pi pi-pencil"
+              [text]="true"
+              severity="warn"
+              pTooltip="Edytuj rolę"
+              (onClick)="openEditDialog(role)"
+            />
+            <p-button
+              icon="pi pi-trash"
+              [text]="true"
+              severity="danger"
+              pTooltip="Usuń rolę"
+              (onClick)="confirmDelete(role)"
+            />
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="4">Brak ról do wyświetlenia.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog
+    [visible]="dialogVisible()"
+    [modal]="true"
+    [draggable]="false"
+    [resizable]="false"
+    [closable]="!saving()"
+    [header]="dialogTitle()"
+    [style]="{ width: '48rem', maxWidth: '95vw' }"
+    (onHide)="closeDialog()"
+  >
+    <div class="role-form">
+      <label for="roleName">Nazwa roli</label>
+      <input
+        id="roleName"
+        pInputText
+        [(ngModel)]="roleName"
+        placeholder="np. program-admin"
+        [disabled]="saving()"
+      />
+
+      <label for="roleDescription">Opis</label>
+      <textarea
+        id="roleDescription"
+        [(ngModel)]="roleDescription"
+        rows="3"
+        class="p-inputtext p-component"
+        placeholder="Krótki opis roli"
+        [disabled]="saving()"
+      ></textarea>
+
+      <div class="attributes-header">
+        <h3>Atrybuty</h3>
+        <p-button
+          label="Dodaj atrybut"
+          icon="pi pi-plus"
+          [text]="true"
+          (onClick)="addAttributeRow()"
+          [disabled]="saving()"
+        />
+      </div>
+
+      <p-message severity="secondary" text="Wartości atrybutów wpisuj po przecinku, np. 'read, write'." />
+
+      @if (attributeRows.length === 0) {
+        <p class="attributes-empty">Brak atrybutów.</p>
+      } @else {
+        <div class="attributes-editor">
+          @for (row of attributeRows; track $index) {
+            <div class="attribute-row">
+              <input
+                pInputText
+                [(ngModel)]="row.key"
+                placeholder="Klucz, np. scope"
+                [disabled]="saving()"
+              />
+              <input
+                pInputText
+                [(ngModel)]="row.values"
+                placeholder="Wartości, np. read, write"
+                [disabled]="saving()"
+              />
+              <p-button
+                icon="pi pi-times"
+                [text]="true"
+                severity="danger"
+                (onClick)="removeAttributeRow($index)"
+                [disabled]="saving()"
+              />
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Anuluj"
+        severity="secondary"
+        [text]="true"
+        [disabled]="saving()"
+        (onClick)="closeDialog()"
+      />
+      <p-button
+        [label]="dialogMode() === 'create' ? 'Dodaj rolę' : 'Zapisz zmiany'"
+        icon="pi pi-check"
+        [loading]="saving()"
+        (onClick)="saveRole()"
+      />
+    </ng-template>
+  </p-dialog>
+</div>

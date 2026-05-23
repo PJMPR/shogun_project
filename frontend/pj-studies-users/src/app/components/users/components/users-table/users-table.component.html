@@ -107,18 +107,38 @@
             <p-tag value="Brak roli" severity="secondary" />
           }
           @for (role of user.roles; track role) {
-            <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+            <p-tag
+              [value]="roleLabel(role)"
+              [severity]="roleSeverity(role)"
+              [pTooltip]="roleTooltip(role)"
+              tooltipPosition="top"
+            />
           }
         } @else {
           @let diff = getUserRoleDiff(user);
           @for (role of diff.unchanged; track role) {
-            <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+            <p-tag
+              [value]="roleLabel(role)"
+              [severity]="roleSeverity(role)"
+              [pTooltip]="roleTooltip(role)"
+              tooltipPosition="top"
+            />
           }
           @for (role of diff.added; track role) {
-            <p-tag [value]="'+ ' + roleLabel(role)" severity="success" />
+            <p-tag
+              [value]="'+ ' + roleLabel(role)"
+              severity="success"
+              [pTooltip]="roleTooltip(role)"
+              tooltipPosition="top"
+            />
           }
           @for (role of diff.removed; track role) {
-            <p-tag [value]="'- ' + roleLabel(role)" severity="secondary" />
+            <p-tag
+              [value]="'- ' + roleLabel(role)"
+              severity="secondary"
+              [pTooltip]="roleTooltip(role)"
+              tooltipPosition="top"
+            />
           }
           @if (diff.unchanged.length === 0 && diff.added.length === 0 && diff.removed.length === 0) {
             <p-tag value="Brak roli" severity="secondary" />
