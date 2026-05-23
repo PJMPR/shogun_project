@@ -6,7 +6,12 @@ module.exports = withNativeFederation({
     './Routes': './src/app/remote-entry/entry.routes.ts',
   },
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({
+      singleton: true,
+      strictVersion: true,
+      requiredVersion: 'auto',
+      includeSecondaries: { skip: ['primeng', '@primeuix', 'primeicons'] },
+    }),
   },
   skip: [
     'rxjs/ajax',
@@ -15,5 +20,19 @@ module.exports = withNativeFederation({
     'rxjs/webSocket',
     'chart.js/auto',
     '@angular/cdk/drag-drop',
+    '@angular/common/upgrade',
+    '@angular/router/upgrade',
+    '@angular/upgrade/static',
+    'primeng',
+    'primeng/',
+    'primeicons',
+    'primeicons/',
+    '@primeuix/',
+    '@primeuix/themes',
+    '@primeuix/themes/tokens',
+    '@primeuix/styled',
+    '@primeuix/styles',
+    '@primeuix/utils',
+    '@primeuix/motion',
   ],
 });

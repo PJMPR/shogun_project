@@ -5,7 +5,8 @@
 
   <app-users-table-host
     [message]="saveMessage()"
-    [users]="filteredUsers()"
+    [users]="users()"
+    [managedRoles]="managedRoles()"
     [loading]="loading()"
     [saving]="saving()"
     [hasChanges]="hasChanges()"
@@ -14,7 +15,6 @@
     [getUserRoleDiff]="getUserRoleDiffFn"
     [roleLabel]="roleLabelFn"
     [roleSeverity]="roleSeverityFn"
-    (searchChange)="onGlobalFilterChange($event)"
     (openEditSelected)="openEditDialogForSelected()"
     (discardChanges)="discardAllChanges()"
     (saveChanges)="saveAllChanges()"
@@ -22,4 +22,16 @@
     (editUser)="openEditDialogForUser($event)"
     (clearMessage)="clearSaveMessage()"
   />
+
+  <app-users-roles-dialog
+    [visible]="editDialogVisible()"
+    [header]="dialogHeader()"
+    [managedRoles]="managedRoles()"
+    [roleLabel]="roleLabelFn"
+    [isRoleEnabled]="isRoleEnabledInDialogFn"
+    (visibleChange)="editDialogVisible.set($event)"
+    (roleToggle)="onRoleToggle($event.role, $event.enabled)"
+    (closeDialog)="closeEditDialog()"
+    (applyChanges)="applyDialogChanges()"
+  ></app-users-roles-dialog>
 </div>

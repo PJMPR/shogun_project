@@ -1,14 +1,36 @@
 import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { forkJoin } from 'rxjs';
+import { PrimeNG } from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
+import { definePreset } from '@primeuix/themes';
 import { UsersService } from '../../services/users.service';
 import { ManagedUser, SaveMessage } from './users.models';
 import { UsersTableHostComponent } from './components/users-table-host/users-table-host.component';
+import { UsersRolesDialogComponent } from './components/users-roles-dialog/users-roles-dialog.component';
+
+const USERS_PRESET = definePreset(Aura, {
+  semantic: {
+    primary: {
+      50: '{red.50}',
+      100: '{red.100}',
+      200: '{red.200}',
+      300: '{red.300}',
+      400: '{red.400}',
+      500: '{red.500}',
+      600: '{red.600}',
+      700: '{red.700}',
+      800: '{red.800}',
+      900: '{red.900}',
+      950: '{red.950}',
+    },
+  },
+});
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [CommonModule, UsersTableHostComponent],
+  imports: [CommonModule, UsersTableHostComponent, UsersRolesDialogComponent],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })
@@ -17,7 +39,6 @@ export class UsersComponent implements OnInit {
   managedRoles = signal<string[]>([]);
   loading = signal(false);
   saving = signal(false);
-  globalFilter = signal('');
   saveMessage = signal<SaveMessage | null>(null);
 
   // Table row selection (regular array for PrimeNG two-way binding)
@@ -26,8 +47,7 @@ export class UsersComponent implements OnInit {
   // Dialog state
   editDialogVisible = signal(false);
   dialogUsers = signal<ManagedUser[]>([]);
-  dialogRolesToAdd = signal<string[]>([]);
-  dialogRolesToRemove = signal<string[]>([]);
+  dialogRoleState = signal<Record<string, boolean>>({});
 
   // Change tracking – snapshot of roles from backend
   private originalRolesMap = signal<Map<string, string[]>>(new Map());
@@ -37,20 +57,9 @@ export class UsersComponent implements OnInit {
   readonly getUserRoleDiffFn = (user: ManagedUser) => this.getUserRoleDiff(user);
   readonly roleLabelFn = (role: string) => this.roleLabel(role);
   readonly roleSeverityFn = (role: string) => this.roleSeverity(role);
+  readonly isRoleEnabledInDialogFn = (role: string): boolean => this.isRoleEnabledInDialog(role);
 
   // ──────── Computed ────────
-
-  filteredUsers = computed(() => {
-    const filter = this.globalFilter().toLowerCase();
-    if (!filter) return this.users();
-    return this.users().filter(
-      u =>
-        u.firstName.toLowerCase().includes(filter) ||
-        u.lastName.toLowerCase().includes(filter) ||
-        u.email.toLowerCase().includes(filter) ||
-        u.username.toLowerCase().includes(filter),
-    );
-  });
 
   changedUserIds = computed(() => {
     const map = this.originalRolesMap();
@@ -64,12 +73,6 @@ export class UsersComponent implements OnInit {
 
   hasChanges = computed(() => this.changedUserIds().size > 0);
 
-  dialogCurrentRoles = computed(() => {
-    const allRoles = new Set<string>();
-    for (const u of this.dialogUsers()) for (const r of u.roles) allRoles.add(r);
-    return [...allRoles];
-  });
-
   dialogHeader = computed(() => {
     const users = this.dialogUsers();
     if (users.length === 0) return 'Role';
@@ -77,7 +80,18 @@ export class UsersComponent implements OnInit {
     return `Masowe przypisanie ról (${users.length} użytkowników)`;
   });
 
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private primeng: PrimeNG,
+  ) {
+    // Ensure users MFE applies full PrimeNG theme tokens immediately on first load.
+    this.primeng.setConfig({
+      theme: {
+        preset: USERS_PRESET,
+        options: { darkModeSelector: false },
+      },
+    });
+  }
 
   ngOnInit(): void {
     this.loadRoles();
@@ -161,37 +175,51 @@ export class UsersComponent implements OnInit {
 
   private openEditDialog(users: ManagedUser[]): void {
     this.dialogUsers.set(users);
-    this.dialogRolesToAdd.set([]);
-    this.dialogRolesToRemove.set([]);
+    const state: Record<string, boolean> = {};
+    for (const role of this.managedRoles()) {
+      state[role] = users.length > 0 && users.every(u => u.roles.includes(role));
+    }
+    this.dialogRoleState.set(state);
     this.editDialogVisible.set(true);
   }
 
   closeEditDialog(): void {
     this.editDialogVisible.set(false);
     this.dialogUsers.set([]);
+    this.dialogRoleState.set({});
   }
 
-  toggleRemoveRole(role: string): void {
-    const current = this.dialogRolesToRemove();
-    if (current.includes(role)) {
-      this.dialogRolesToRemove.set(current.filter(r => r !== role));
-    } else {
-      this.dialogRolesToRemove.set([...current, role]);
-    }
+  isRoleEnabledInDialog(role: string): boolean {
+    return !!this.dialogRoleState()[role];
+  }
+
+  onRoleToggle(role: string, enabled: boolean): void {
+    this.dialogRoleState.update(current => ({ ...current, [role]: enabled }));
   }
 
   /** Applies dialog selections to local table state – does NOT call backend. */
   applyDialogChanges(): void {
-    const toAdd = this.dialogRolesToAdd();
-    const toRemove = this.dialogRolesToRemove();
+    const affectedCount = this.dialogUsers().length;
+    const selectedManagedRoles = this.managedRoles().filter(role => this.dialogRoleState()[role]);
+    const managedRolesSet = new Set(this.managedRoles());
     const targetIds = new Set(this.dialogUsers().map(u => u.id));
+
     this.users.update(allUsers =>
       allUsers.map(u => {
         if (!targetIds.has(u.id)) return u;
-        const newRoles = [...new Set([...u.roles, ...toAdd])].filter(r => !toRemove.includes(r));
+
+        const nonManagedRoles = u.roles.filter(r => !managedRolesSet.has(r));
+        const newRoles = [...new Set([...nonManagedRoles, ...selectedManagedRoles])];
         return { ...u, roles: newRoles };
       }),
     );
+
+    this.saveMessage.set({
+      severity: 'info',
+      text: `Zastosowano ustawienia ról dla ${affectedCount} użytkownika/ów.`,
+      life: 3500,
+    });
+
     this.closeEditDialog();
     this.selectedUsersTable = [];
   }
@@ -234,10 +262,6 @@ export class UsersComponent implements OnInit {
     );
     this.selectedUsersTable = [];
     this.saveMessage.set({ severity: 'info', text: 'Cofnięto niezapisane zmiany.', life: 4000 });
-  }
-
-  onGlobalFilterChange(value: string): void {
-    this.globalFilter.set(value);
   }
 
   clearSaveMessage(): void {

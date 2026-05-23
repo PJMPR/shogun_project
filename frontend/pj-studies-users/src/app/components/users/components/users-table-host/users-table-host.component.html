@@ -1,5 +1,5 @@
 @if (message; as msg) {
-  <div class="page-message">
+  <div>
     <p-message
       [severity]="msg.severity"
       [text]="msg.text"
@@ -10,63 +10,47 @@
   </div>
 }
 
-<div class="table-card">
-  <p-toolbar>
-    <ng-template pTemplate="start">
-      <div class="toolbar-start">
-        <p-iconfield>
-          <p-inputicon styleClass="pi pi-search" />
-          <input
-            pInputText
-            type="text"
-            placeholder="Szukaj uzytkownika..."
-            (input)="onGlobalFilter($event)"
-          />
-        </p-iconfield>
+<p-toolbar>
+  <ng-template pTemplate="start">
+    @if (selectedUsers.length > 0) {
+      <p-button
+        [label]="'Przypisz role (' + selectedUsers.length + ')'"
+        icon="pi pi-users"
+        (onClick)="openEditSelected.emit()"
+      />
+    }
+  </ng-template>
 
-        @if (selectedUsers.length > 0) {
-          <p-button
-            [label]="'Przypisz role (' + selectedUsers.length + ')'"
-            icon="pi pi-users"
-            severity="info"
-            (onClick)="openEditSelected.emit()"
-          />
-        }
-      </div>
-    </ng-template>
+  <ng-template pTemplate="end">
+    <div style="display: flex; gap: 0.9rem; align-items: center">
+      <p-button
+        label="Wycofaj zmiany"
+        icon="pi pi-undo"
+        severity="secondary"
+        [outlined]="false"
+        [disabled]="!hasChanges"
+        (onClick)="discardChanges.emit()"
+      />
+      <p-button
+        label="Zapisz zmiany"
+        icon="pi pi-save"
+        [disabled]="!hasChanges"
+        [loading]="saving"
+        (onClick)="saveChanges.emit()"
+      />
+    </div>
+  </ng-template>
+</p-toolbar>
 
-    <ng-template pTemplate="end">
-      <div class="toolbar-actions">
-        <p-button
-          label="Wycofaj zmiany"
-          icon="pi pi-undo"
-          severity="secondary"
-          styleClass="users-discard-btn"
-          [disabled]="!hasChanges"
-          (onClick)="discardChanges.emit()"
-        />
-        <p-button
-          label="Zapisz zmiany"
-          icon="pi pi-save"
-          severity="info"
-          styleClass="users-save-btn"
-          [disabled]="!hasChanges"
-          [loading]="saving"
-          (onClick)="saveChanges.emit()"
-        />
-      </div>
-    </ng-template>
-  </p-toolbar>
-
-  <app-users-table
-    [users]="users"
-    [loading]="loading"
-    [selectedUsers]="selectedUsers"
-    [isUserChanged]="isUserChanged"
-    [getUserRoleDiff]="getUserRoleDiff"
-    [roleLabel]="roleLabel"
-    [roleSeverity]="roleSeverity"
-    (selectedUsersChange)="selectedUsersChange.emit($event)"
-    (editUser)="editUser.emit($event)"
-  />
-</div>
+<app-users-table
+  [users]="users"
+  [managedRoles]="managedRoles"
+  [loading]="loading"
+  [selectedUsers]="selectedUsers"
+  [isUserChanged]="isUserChanged"
+  [getUserRoleDiff]="getUserRoleDiff"
+  [roleLabel]="roleLabel"
+  [roleSeverity]="roleSeverity"
+  (selectedUsersChange)="selectedUsersChange.emit($event)"
+  (editUser)="editUser.emit($event)"
+/>

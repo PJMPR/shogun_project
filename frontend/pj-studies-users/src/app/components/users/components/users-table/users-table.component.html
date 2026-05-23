@@ -1,99 +1,151 @@
+<div class="card">
 <p-table
-  [value]="users"
+  #dt
+  [value]="tableUsers"
   [selection]="selectedUsers"
   (selectionChange)="onSelectionChange($event)"
   selectionMode="multiple"
+  stripedRows 
   [metaKeySelection]="false"
   dataKey="id"
   [loading]="loading"
   [paginator]="true"
   [rows]="100"
-  styleClass="users-table p-datatable-gridlines p-datatable-sm"
+  [rowsPerPageOptions]="[25, 50, 100]"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Pokazano {first}-{last} z {totalRecords}"
+  sortField="lastName"
   [rowHover]="true"
   [tableStyle]="{ 'min-width': '56rem' }"
 >
-  <ng-template pTemplate="header">
+  <ng-template #header>
     <tr>
-      <th class="select-col"><p-tableHeaderCheckbox /></th>
-      <th pSortableColumn="lastName">Uzytkownik <p-sortIcon field="lastName" /></th>
-      <th>E-mail</th>
-      <th>Role</th>
+      <th pSortableColumn="fullName" style="min-width: 16rem">
+          Uzytkownik
+      </th>
+      <th pSortableColumn="email" style="min-width: 14rem">
+          E-mail
+      </th>
+      <th style="min-width: 14rem">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem">
+          <span>Role</span>
+          <p-columnFilter
+            field="roles"
+            display="menu"
+            matchMode="hasAnyRole"
+            [showMatchModes]="false"
+            [showOperator]="false"
+            [showAddButton]="false"
+            [showClearButton]="true"
+            [showApplyButton]="true"
+          >
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-multiselect
+                [ngModel]="value"
+                [options]="roleFilterOptions"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Wybierz role"
+                [showClear]="true"
+                appendTo="body"
+                (onChange)="filter($event.value)"
+              />
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
       <th style="width: 14rem; text-align: center">Akcje</th>
+    </tr>
+    <tr>
+      <th>
+        <input
+          pInputText
+          type="text"
+          placeholder="Filtruj uzytkownika"
+          style="width: 100%"
+          (input)="dt.filter(($any($event.target).value ?? ''), 'fullName', 'contains')"
+        />
+      </th>
+      <th>
+        <input
+          pInputText
+          type="text"
+          placeholder="Filtruj e-mail"
+          style="width: 100%"
+          (input)="dt.filter(($any($event.target).value ?? ''), 'email', 'contains')"
+        />
+      </th>
+      <th>
+        <input
+          pInputText
+          type="text"
+          placeholder="Filtruj role"
+          style="width: 100%"
+          (input)="dt.filter(($any($event.target).value ?? ''), 'rolesText', 'contains')"
+        />
+      </th>
+      <th></th>
     </tr>
   </ng-template>
 
-  <ng-template pTemplate="body" let-user>
-    <tr [class.row-disabled]="!user.enabled" [class.row-changed]="isUserChanged(user.id)">
-      <td class="select-col"><p-tableCheckbox [value]="user" /></td>
+  <ng-template #body let-user let-rowIndex="rowIndex">
+    <tr [pSelectableRow]="user" [pSelectableRowIndex]="rowIndex">
       <td>
-        <div class="user-cell">
-          <div class="avatar" [ngClass]="'avatar-' + (user.roles[0] || 'none')">
-            {{ user.firstName[0] }}{{ user.lastName[0] }}
-          </div>
-          <div class="user-meta">
-            <div class="user-name">{{ user.firstName }} {{ user.lastName }}</div>
-            <div class="user-username">{{ user.username }}</div>
-          </div>
-        </div>
+        <div>{{ user.firstName }} {{ user.lastName }}</div>
+        <small>{{ user.username }}</small>
+        @if (!user.enabled) {
+          <div><p-tag value="Nieaktywny" severity="secondary" /></div>
+        }
+        @if (isUserChanged(user.id)) {
+          <div><p-tag value="Zmodyfikowany" severity="warn" /></div>
+        }
       </td>
       <td>{{ user.email }}</td>
       <td>
-        <div class="roles-cell">
-          @if (!isUserChanged(user.id)) {
-            @if (user.roles.length === 0) {
-              <p-tag value="Brak roli" severity="secondary" styleClass="role-chip role-chip-none" />
-            }
-            @for (role of user.roles; track role) {
-              <p-tag
-                [value]="roleLabel(role)"
-                [severity]="roleSeverity(role)"
-                [styleClass]="'role-chip role-chip-' + role"
-              />
-            }
-          } @else {
-            @let diff = getUserRoleDiff(user);
-            @for (role of diff.unchanged; track role) {
-              <p-tag
-                [value]="roleLabel(role)"
-                [severity]="roleSeverity(role)"
-                [styleClass]="'role-chip role-chip-' + role"
-              />
-            }
-            @for (role of diff.added; track role) {
-              <p-tag
-                [value]="roleLabel(role)"
-                [severity]="roleSeverity(role)"
-                [styleClass]="'role-chip role-chip-' + role + ' role-tag-added'"
-              />
-            }
-            @for (role of diff.removed; track role) {
-              <span class="role-tag-removed">{{ roleLabel(role) }}</span>
-            }
-            @if (diff.unchanged.length === 0 && diff.added.length === 0 && diff.removed.length === 0) {
-              <p-tag value="Brak roli" severity="secondary" styleClass="role-chip role-chip-none" />
-            }
+        @if (!isUserChanged(user.id)) {
+          @if (user.roles.length === 0) {
+            <p-tag value="Brak roli" severity="secondary" />
           }
-        </div>
+          @for (role of user.roles; track role) {
+            <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+          }
+        } @else {
+          @let diff = getUserRoleDiff(user);
+          @for (role of diff.unchanged; track role) {
+            <p-tag [value]="roleLabel(role)" [severity]="roleSeverity(role)" />
+          }
+          @for (role of diff.added; track role) {
+            <p-tag [value]="'+ ' + roleLabel(role)" severity="success" />
+          }
+          @for (role of diff.removed; track role) {
+            <p-tag [value]="'- ' + roleLabel(role)" severity="secondary" />
+          }
+          @if (diff.unchanged.length === 0 && diff.added.length === 0 && diff.removed.length === 0) {
+            <p-tag value="Brak roli" severity="secondary" />
+          }
+        }
       </td>
-      <td class="actions-col">
-        <p-button
+      <td style="text-align: center" (click)="$event.stopPropagation()">
+        <button
+          type="button"
+          pButton
           icon="pi pi-user-edit"
           label="Edytuj uprawnienia"
           severity="warn"
+          [outlined]="true"
           size="small"
-          styleClass="edit-permissions-btn"
-          (onClick)="editUser.emit(user)"
-        />
+          (click)="onEditButtonClick($event, user)"
+        ></button>
       </td>
     </tr>
   </ng-template>
 
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td colspan="5" class="empty-cell">
-        <i class="pi pi-search"></i>
-        <p>Nie znaleziono uzytkownikow</p>
+      <td colspan="4">
+        Nie znaleziono uzytkownikow.
       </td>
     </tr>
   </ng-template>
 </p-table>
+</div>

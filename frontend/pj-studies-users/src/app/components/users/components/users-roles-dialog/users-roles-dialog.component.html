@@ -1,0 +1,43 @@
+<p-dialog
+  [visible]="visible"
+  [modal]="true"
+  [closable]="true"
+  [dismissableMask]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [style]="{ width: '34rem', maxWidth: '95vw' }"
+  [header]="header"
+  (visibleChange)="visibleChange.emit($event)"
+  (onHide)="closeDialog.emit()"
+>
+  <p-table [value]="managedRoles" size="small" [tableStyle]="{ width: '100%' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Rola</th>
+        <th style="text-align: center; width: 10rem">Wlaczone</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-role>
+      <tr>
+        <td>{{ roleLabel(role) }}</td>
+        <td style="text-align: center">
+          <p-toggleswitch
+            [ngModel]="isRoleEnabled(role)"
+            (ngModelChange)="onRoleToggle(role, $event)"
+            [inputId]="'role-toggle-' + role"
+          />
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="2">Brak dostepnych rol do przypisania.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <ng-template pTemplate="footer">
+    <p-button label="Anuluj" severity="secondary" [text]="true" (onClick)="closeDialog.emit()" />
+    <p-button label="Zastosuj" icon="pi pi-check" (onClick)="applyChanges.emit()" />
+  </ng-template>
+</p-dialog>
