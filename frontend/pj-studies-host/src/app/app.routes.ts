@@ -6,8 +6,10 @@ export const routes: Routes = [
     path: 'program',
     loadChildren: () => loadRemoteModule('mfe-program', './Routes').then(m => m.default),
   },
+  { path: 'syllabi', redirectTo: 'sylabusy', pathMatch: 'full' },
+  { path: 'syllabi/:section', redirectTo: 'sylabusy/:section' },
   {
-    path: 'syllabi',
+    path: 'sylabusy',
     loadChildren: () => loadRemoteModule('mfe-syllabi', './Routes').then(m => m.default),
   },
   {
