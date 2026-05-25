@@ -30,14 +30,47 @@ files_generation/               # Narzędzia generujące PDF, DOCX, JSON
 
 ## Uruchomienie (Docker Compose)
 
-### 1. Przygotowanie bazy danych
+### 1. Przygotowanie baz danych (Docker)
 
-Utwórz bazy na lokalnym serwerze MariaDB:
+Wszystkie wymagane bazy danych uruchamiane są automatycznie przez Docker Compose:
+
+```bash
+cd backend
+docker compose up -d mariadb mongo
+```
+
+#### MariaDB – ręczne utworzenie baz
+
+Po uruchomieniu kontenera MariaDB, utwórz wymagane bazy (np. przez DBeaver, TablePlus lub CLI):
 
 ```sql
 CREATE DATABASE pj_assignments CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE DATABASE shogun_users   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE shogun        CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;  -- dla obsad
 ```
+
+Domyślne dane logowania (zdefiniowane w docker-compose.yml):
+- host: `localhost` lub `127.0.0.1`
+- port: `3306`
+- user: `root`
+- password: `password`
+
+#### MongoDB – inicjalizacja danych
+
+Po uruchomieniu kontenera MongoDB, zainicjuj bazę i kolekcje:
+
+```bash
+cd database/mongo
+npm install
+npm run init
+```
+
+Domyślne dane logowania:
+- host: `localhost` lub `127.0.0.1`
+- port: `27017`
+- user: `admin`
+- password: `haslo123`
+- baza: `pj_sylabi`
 
 ### 2. Plik .env
 
@@ -72,7 +105,8 @@ mkcert shogun.pjwstk.edu.pl
 
 > Po `mkcert -install` certyfikat jest automatycznie zaufany przez Chrome, Edge i Firefox.
 
-### 5. Uruchomienie
+
+### 5. Uruchomienie całego środowiska
 
 ```bash
 cd backend

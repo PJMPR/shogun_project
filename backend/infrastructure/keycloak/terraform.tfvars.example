@@ -1,0 +1,7 @@
+keycloak_url             = "http://localhost:8180"
+keycloak_admin_user      = "${KC_ADMIN_USER}"
+keycloak_admin_pass      = "${KC_ADMIN_PASS}"
+keycloak_admin_client_id = "admin-cli"
+keycloak_admin_client_secret = ""
+google_client_id         = "<uzupelnij>"
+google_client_secret     = "<uzupelnij>"
