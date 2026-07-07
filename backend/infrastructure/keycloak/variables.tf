@@ -1,5 +1,5 @@
 variable "keycloak_url" {
-  description = "Base URL Keycloak (np. http://localhost:8180)"
+  description = "Base URL Keycloak (np. http://127.0.0.1:8180/auth)"
   type        = string
 }
 

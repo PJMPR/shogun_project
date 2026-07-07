@@ -12,9 +12,15 @@ resource "keycloak_openid_client" "shogun_web" {
   access_type                  = "PUBLIC"
   standard_flow_enabled        = true
   direct_access_grants_enabled = false
-  root_url                     = "https://shogun.pjwstk.edu.pl:8443"
-  valid_redirect_uris          = ["https://shogun.pjwstk.edu.pl:8443/*"]
-  web_origins                  = ["https://shogun.pjwstk.edu.pl:8443"]
+  root_url                     = "https://shogun.pjwstk.edu.pl"
+  valid_redirect_uris = [
+    "https://shogun.pjwstk.edu.pl/*",
+    "https://shogun.pja.edu.pl/*",
+  ]
+  web_origins = [
+    "https://shogun.pjwstk.edu.pl",
+    "https://shogun.pja.edu.pl",
+  ]
   consent_required             = true
 }
 

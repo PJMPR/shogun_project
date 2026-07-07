@@ -147,24 +147,34 @@ docker compose -f docker-compose.prod.yml --env-file .env.prod restart proxy
 docker logs pj_keycloak -f
 ```
 
-Keycloak wystawia port `8180` tylko na `127.0.0.1` serwera. Terraform uruchamiaj lokalnie przez tunel SSH:
+Keycloak wystawia port `8180` tylko na `127.0.0.1` serwera. Terraform uruchamiaj na serwerze produkcyjnym, bez tunelu SSH.
 
-```powershell
-ssh -N -L 8180:127.0.0.1:8180 shogun@194.92.77.80
+Jezeli Terraform nie jest jeszcze zainstalowany na serwerze, zainstaluj go:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y gnupg software-properties-common
+wget -O- https://apt.releases.hashicorp.com/gpg | \
+  gpg --dearmor | \
+  sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+  sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt-get update
+sudo apt-get install -y terraform
 ```
 
-W drugim oknie PowerShell, lokalnie w repozytorium:
+Przygotuj konfiguracje Terraform na serwerze:
 
-```powershell
-cd backend\infrastructure\keycloak
-Copy-Item terraform.tfvars.example terraform.tfvars
-notepad terraform.tfvars
+```bash
+cd ~/shogun_project/backend/infrastructure/keycloak
+cp terraform.tfvars.example terraform.tfvars
+nano terraform.tfvars
 ```
 
-Ustaw w `terraform.tfvars`:
+Ustaw w `terraform.tfvars` wartosci z `~/shogun_project/deployment/.env.prod`:
 
 ```hcl
-keycloak_url             = "http://localhost:8180/auth"
+keycloak_url             = "http://127.0.0.1:8180/auth"
 keycloak_admin_user      = "<wartosc KC_ADMIN_USER z .env.prod>"
 keycloak_admin_pass      = "<wartosc KC_ADMIN_PASS z .env.prod>"
 keycloak_admin_client_id = "admin-cli"
@@ -175,14 +185,18 @@ google_client_secret     = "<uzupelnij>"
 
 Nastepnie wykonaj:
 
-```powershell
+```bash
 terraform init
 terraform plan
 terraform apply
 terraform output -raw users_service_client_secret
 ```
 
-Skopiuj wynik `terraform output -raw users_service_client_secret` do `USERS_SERVICE_CLIENT_SECRET` w `~/shogun_project/deployment/.env.prod` na serwerze.
+Skopiuj wynik `terraform output -raw users_service_client_secret` do `USERS_SERVICE_CLIENT_SECRET` w `~/shogun_project/deployment/.env.prod`:
+
+```bash
+nano ~/shogun_project/deployment/.env.prod
+```
 
 ### 3. Deployment reszty serwisow
 
