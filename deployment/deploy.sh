@@ -49,10 +49,10 @@ echo "[*] Aktualizacja repozytorium..."
 cd "$REPO_DIR"
 git pull --ff-only
 
-# 3. Zatrzymanie starych kontenerow (jesli dzialaja)
+# 3. Zatrzymanie starych kontenerow glownego stacka (jesli dzialaja)
 echo ""
 echo "[*] Zatrzymywanie poprzedniej wersji..."
-docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" down --remove-orphans 2>/dev/null || true
+docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" down 2>/dev/null || true
 
 # 4. Uruchomienie nowej wersji
 echo ""

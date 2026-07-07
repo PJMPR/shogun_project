@@ -75,11 +75,7 @@ builder.Services
             },
         };
     });
-builder.Services.AddAuthorization(opts =>
-{
-    opts.AddPolicy("AssignmentsAccess", policy =>
-        policy.RequireAssertion(ctx => HasProjectAccess(ctx.User, "obsady")));
-});
+builder.Services.AddAuthorization();
 
 builder.Services.AddHealthChecks()
     .AddCheck("self", () => Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
@@ -118,40 +114,5 @@ if (app.Environment.IsDevelopment())
 
 app.MapControllers().RequireAuthorization();
 app.MapHealthChecks("/health");
-
-static bool HasProjectAccess(ClaimsPrincipal user, string project)
-{
-    if (user.IsInRole("admin"))
-        return true;
-
-    var wanted = project.Trim().ToLowerInvariant();
-
-    foreach (var claim in user.FindAll("projects"))
-    {
-        var value = (claim.Value ?? string.Empty).Trim();
-        if (string.IsNullOrWhiteSpace(value))
-            continue;
-
-        if (value.StartsWith("[") && value.EndsWith("]"))
-        {
-            try
-            {
-                var items = JsonSerializer.Deserialize<string[]>(value) ?? [];
-                if (items.Any(i => string.Equals(i?.Trim(), wanted, StringComparison.OrdinalIgnoreCase)))
-                    return true;
-                continue;
-            }
-            catch
-            {
-            }
-        }
-
-        var parts = value.Split([',', ';'], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-        if (parts.Any(p => string.Equals(p, wanted, StringComparison.OrdinalIgnoreCase)))
-            return true;
-    }
-
-    return false;
-}
 
 app.Run();

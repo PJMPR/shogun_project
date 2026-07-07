@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   canAccessAssignments(): boolean {
-    return this.hasProjectAccess('obsady');
+    return this.keycloak.authenticated === true;
   }
 
   logout(): void {

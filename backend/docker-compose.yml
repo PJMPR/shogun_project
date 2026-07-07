@@ -1,4 +1,10 @@
-﻿
+﻿# Keycloak jest w osobnym pliku: docker-compose.keycloak.yml
+# Bazy danych są w osobnym pliku: docker-compose.databases.yml
+#
+# Uruchomienie pełnego dev-stacka:
+#   docker compose -f docker-compose.keycloak.yml up -d
+#   docker compose -f docker-compose.yml up -d
+
 services:
 
   # ── MariaDB ──────────────────────────────────────────────────────────────
@@ -28,31 +34,6 @@ services:
   #   volumes:
   #     - mongo_data:/data/db
 
-  # ...existing code...
-
-  # ── Keycloak ──────────────────────────────────────────────────────────────
-  keycloak:
-    image: quay.io/keycloak/keycloak:26.2
-    container_name: pj_keycloak
-    restart: unless-stopped
-    command: start-dev
-    environment:
-      KC_DB: mariadb
-      KC_DB_URL: jdbc:mariadb://host.docker.internal:3306/shogun_users
-      KC_DB_USERNAME: ${KC_DB_USER:-root}
-      KC_DB_PASSWORD: ${KC_DB_PASS:-password}
-      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER:-admin}
-      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASS:-admin_pass}
-      KC_HTTP_PORT: 8080
-      KC_HTTP_RELATIVE_PATH: /auth
-      KC_PROXY_HEADERS: xforwarded
-      KC_HOSTNAME_STRICT: false
-      KC_HTTP_ENABLED: "true"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    ports:
-      - "8180:8080"
-
   proxy:
     image: nginx:alpine
     container_name: pj_proxy
@@ -74,7 +55,6 @@ services:
       - mfe-assignements
       - mfe-users
       - files
-      - keycloak
 
   api:
     build:
@@ -87,10 +67,10 @@ services:
       ASPNETCORE_URLS: http://+:8080
       MONGODB__CONNECTIONSTRING: "mongodb://${MONGO_USER:-admin}:${MONGO_PASS:-haslo123}@host.docker.internal:27017/?authSource=admin"
       MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
-      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__METADATAADDRESS: "http://host.docker.internal:8180/auth/realms/shogun/.well-known/openid-configuration"
       KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
-    depends_on:
-      - keycloak
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   assignments-api:
     build:
@@ -102,10 +82,10 @@ services:
       ASPNETCORE_ENVIRONMENT: Production
       ASPNETCORE_URLS: http://+:8080
       MARIADB__CONNECTIONSTRING: "Server=host.docker.internal;Port=3306;Database=pj_assignments;User Id=root;Password=password;"
-      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__METADATAADDRESS: "http://host.docker.internal:8180/auth/realms/shogun/.well-known/openid-configuration"
       KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
-    depends_on:
-      - keycloak
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   users-api:
     build:
@@ -117,14 +97,12 @@ services:
       ASPNETCORE_ENVIRONMENT: Production
       ASPNETCORE_URLS: http://+:8080
       MARIADB__CONNECTIONSTRING: "Server=host.docker.internal;Port=3306;Database=shogun_users;User Id=root;Password=password;"
-      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__METADATAADDRESS: "http://host.docker.internal:8180/auth/realms/shogun/.well-known/openid-configuration"
       KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
-      KEYCLOAK__ADMINBASEURL: "http://pj_keycloak:8080"
+      KEYCLOAK__ADMINBASEURL: "http://host.docker.internal:8180"
       KEYCLOAK__REALM: "shogun"
       KEYCLOAK__CLIENTID: "shogun-users-service"
       KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET:-}"
-    depends_on:
-      - keycloak
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -170,6 +148,4 @@ services:
     volumes:
       - ./files:/usr/share/nginx/html:ro
 
-volumes:
-  mongo_data:
-  mariadb_data:
+

@@ -7,7 +7,7 @@ namespace Shogun.Assignments.Service.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/assignments")]
-[Authorize(Policy = "AssignmentsAccess")]
+[Authorize]
 public class AssignmentsController(IAssignmentService service) : ControllerBase
 {
     [HttpPost]

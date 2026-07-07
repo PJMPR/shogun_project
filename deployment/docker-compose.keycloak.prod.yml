@@ -1,0 +1,51 @@
+# docker-compose.keycloak.prod.yml
+# Keycloak dla środowiska produkcyjnego.
+#
+# Wymagania:
+#   - Bazy danych działają (docker-compose.databases.prod.yml up)
+#   - Sieć shogun_network istnieje (tworzona przez databases compose)
+#
+# Pierwsze uruchomienie:
+#   docker compose -f docker-compose.keycloak.prod.yml --env-file .env.prod up -d
+#
+# Sprawdzenie stanu:
+#   docker compose -f docker-compose.keycloak.prod.yml --env-file .env.prod ps
+#   docker logs pj_keycloak -f
+#
+# Zatrzymanie:
+#   docker compose -f docker-compose.keycloak.prod.yml --env-file .env.prod stop
+#
+# UWAGA: Port 8180 jest dostępny wyłącznie na localhost serwera (127.0.0.1).
+#        Służy do SSH tunnel dla Terraform — nie jest wystawiony publicznie.
+#        Ruch z Internetu trafia do Keycloak wyłącznie przez nginx (/auth/).
+
+services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.2
+    container_name: pj_keycloak
+    restart: unless-stopped
+    command: start-dev
+    environment:
+      KC_DB: mariadb
+      KC_DB_URL: jdbc:mariadb://pj_mariadb:3306/shogun_users
+      KC_DB_USERNAME: ${KC_DB_USER:-root}
+      KC_DB_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASS}
+      KC_HTTP_PORT: 8080
+      KC_HTTP_RELATIVE_PATH: /auth
+      KC_PROXY_HEADERS: xforwarded
+      KC_HOSTNAME_STRICT: false
+      KC_HTTP_ENABLED: "true"
+    # Dostępny tylko na localhost serwera — do SSH tunnel dla Terraform.
+    # Nie otwieraj tego portu w firewallu.
+    ports:
+      - "127.0.0.1:8180:8080"
+    networks:
+      - shogun
+
+networks:
+  shogun:
+    name: shogun_network
+    external: true  # sieć tworzona przez docker-compose.databases.prod.yml

@@ -1,42 +1,22 @@
 # docker-compose.prod.yml
-# Produkcyjny stack aplikacji Shogun.
-# Bazy danych sa w docker-compose.databases.prod.yml -- uruchom je WCZESNIEJ.
+# Produkcyjny stack aplikacji Shogun bez baz danych i Keycloak.
 #
-# Pierwsze uruchomienie:
-#   docker compose -f docker-compose.databases.prod.yml --env-file .env.prod up -d
-#   docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
+# Bazy danych uruchamia docker-compose.databases.prod.yml.
+# Keycloak uruchamia docker-compose.keycloak.prod.yml.
+# Ten plik uruchamia tylko API, frontend, pliki statyczne i proxy.
 #
-# Redeploy (bazy nieruszone):
+# Redeploy (bazy i Keycloak nieruszone):
 #   ./deploy.sh
 #
 # Wymagania:
 #   1. Bazy musza dzialac (docker-compose.databases.prod.yml up)
-#   2. Siec shogun_network musi istniec (tworzona przez databases compose)
-#   3. Certyfikat TLS w ./certs/
-#   4. Plik .env.prod uzupelniony wartosciami
+#   2. Keycloak musi dzialac (docker-compose.keycloak.prod.yml up)
+#   3. Terraform musi byc zastosowany (realm shogun + client secrets)
+#   4. Siec shogun_network musi istniec (tworzona przez databases compose)
+#   5. Certyfikat TLS w ./certs/
+#   6. Plik .env.prod uzupelniony wartosciami
 
 services:
-
-  # keycloak laczy sie z mariadb przez siec shogun_network
-  keycloak:
-    image: quay.io/keycloak/keycloak:26.2
-    container_name: pj_keycloak
-    restart: unless-stopped
-    command: start-dev
-    environment:
-      KC_DB: mariadb
-      KC_DB_URL: jdbc:mariadb://pj_mariadb:3306/shogun_users
-      KC_DB_USERNAME: ${KC_DB_USER:-root}
-      KC_DB_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER}
-      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASS}
-      KC_HTTP_PORT: 8080
-      KC_HTTP_RELATIVE_PATH: /auth
-      KC_PROXY_HEADERS: xforwarded
-      KC_HOSTNAME_STRICT: false
-      KC_HTTP_ENABLED: "true"
-    networks:
-      - shogun
 
   api:
     build:
@@ -53,8 +33,6 @@ services:
       KEYCLOAK__VALIDISSUERS__0: "https://${DOMAIN}/auth/realms/shogun"
     networks:
       - shogun
-    depends_on:
-      - keycloak
 
   assignments-api:
     build:
@@ -70,8 +48,6 @@ services:
       KEYCLOAK__VALIDISSUERS__0: "https://${DOMAIN}/auth/realms/shogun"
     networks:
       - shogun
-    depends_on:
-      - keycloak
 
   users-api:
     build:
@@ -91,8 +67,6 @@ services:
       KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET}"
     networks:
       - shogun
-    depends_on:
-      - keycloak
 
   mfe-host:
     build:
@@ -171,7 +145,6 @@ services:
       - mfe-assignements
       - mfe-users
       - files
-      - keycloak
 
 networks:
   shogun:
