@@ -36,6 +36,8 @@ interface EfektItem {
 interface FormModel {
   tryb_studiow: string;
   jednostka: string;
+  kierunek: string;
+  profil: string;
   nazwa_przedmiotu: string;
   kod_przedmiotu: string;
   rok_studiow: number | null;
@@ -93,6 +95,16 @@ const JEDNOSTKI = [
   { label: 'Filia w Gdańsku', value: 'Filia w Gdańsku' },
 ];
 
+const KIERUNKI = [
+  { label: 'Informatyka', value: 'Informatyka' },
+  { label: 'Sztuka Nowych Mediów', value: 'Sztuka Nowych Mediów' },
+];
+
+const PROFILE_STUDIOW = [
+  { label: 'Ogólnoakademicki', value: 'ogólnoakademicki' },
+  { label: 'Praktyczny', value: 'praktyczny' },
+];
+
 @Component({
   selector: 'app-nowy-sylabus',
   standalone: true,
@@ -120,6 +132,8 @@ export class NowySylabusComponent implements OnInit {
   sposobyZaliczenia = SPOSOBY_ZALICZENIA;
   trybOptions = TRYBY_STUDIOW;
   jednostkiOptions = JEDNOSTKI;
+  kierunekOptions = KIERUNKI;
+  profilOptions = PROFILE_STUDIOW;
 
   dialogVisible = false;
   jsonPreview = '';
@@ -153,6 +167,8 @@ export class NowySylabusComponent implements OnInit {
   form: FormModel = {
     tryb_studiow: 'stacjonarny',
     jednostka: 'Filia w Gdańsku',
+    kierunek: 'Informatyka',
+    profil: 'praktyczny',
     nazwa_przedmiotu: '',
     kod_przedmiotu: '',
     rok_studiow: null,
@@ -197,6 +213,39 @@ export class NowySylabusComponent implements OnInit {
   private readonly cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
+    this.shogunApi.getStudyModes().subscribe(data => {
+      const toLabel = (mode: string) => {
+        const normalized = mode?.trim().toLowerCase() ?? '';
+        if (normalized.startsWith('stacjon')) return 'Stacjonarny';
+        if (normalized.startsWith('niestacjon')) return 'Niestacjonarny';
+        return mode;
+      };
+      this.trybOptions = (data.tryb_studiow ?? []).map(mode => ({
+        label: toLabel(mode),
+        value: mode,
+      }));
+      this.cdr.detectChanges();
+    });
+
+    this.shogunApi.getFacultyMetadata().subscribe(data => {
+      this.kierunekOptions = (data.elective_type ?? []).map(item => ({
+        label: item,
+        value: item,
+      }));
+      this.profilOptions = (data.profile ?? []).map(item => ({
+        label: item.charAt(0).toUpperCase() + item.slice(1),
+        value: item,
+      }));
+
+      if (this.kierunekOptions.length && !this.kierunekOptions.some(o => o.value === this.form.kierunek)) {
+        this.form.kierunek = this.kierunekOptions[0].value;
+      }
+      if (this.profilOptions.length && !this.profilOptions.some(o => o.value === this.form.profil)) {
+        this.form.profil = this.profilOptions[0].value;
+      }
+      this.cdr.detectChanges();
+    });
+
     this.shogunApi.getTeachingMethods().subscribe(data => {
       this.metodyWykladOptions = data.wyklad.map(m => ({ label: m, value: m }));
       this.metodyCwiczeniaOptions = data.cwiczenia_laboratorium.map(m => ({ label: m, value: m }));
@@ -324,8 +373,8 @@ export class NowySylabusComponent implements OnInit {
       sylabus: {
         uczelnia: 'Polsko-Japonska Akademia Technik Komputerowych Filia w Gdansku',
         jednostka: f.jednostka,
-        kierunek: 'INFORMATYKA',
-        profil: 'praktyczny',
+        kierunek: f.kierunek,
+        profil: f.profil,
         tryb_studiow: f.tryb_studiow,
         wersja_z_dnia: this.today,
         nazwa_przedmiotu: f.nazwa_przedmiotu,
@@ -489,6 +538,8 @@ export class NowySylabusComponent implements OnInit {
     this.form = {
       tryb_studiow: s.tryb_studiow ?? this.form.tryb_studiow,
       jednostka: s.jednostka ?? this.form.jednostka,
+      kierunek: s.kierunek ?? this.form.kierunek,
+      profil: s.profil ?? this.form.profil,
       nazwa_przedmiotu: s.nazwa_przedmiotu ?? '',
       kod_przedmiotu: s.kod_przedmiotu ?? '',
       rok_studiow: s.rok_studiow ?? null,

@@ -45,6 +45,18 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Pliki z sekretami — NIE commitować
+deployment/.env
+deployment/.env.prod
+backend/.env
+**/.env
+!**/.env.example
+!**/.env.prod.example
+**/terraform.tfvars
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.backup
+
 # LaTeX output
 files_generation/latex/output/
 files_generation/latex/sylabusy/output/
@@ -55,4 +67,24 @@ files_generation/latex-studia/output/
 **/obj/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+*.ncrunch*
+*.DotSettings.user
+
+# .NET test results
+**/TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.msCoverageSourceRootsMapping*
+
+# NuGet
+*.nupkg
+**/packages/
+!**/packages/build/
+nuget.config
+
+# deployment binaries
+deployment/plink.exe
 

@@ -18,6 +18,16 @@
         <p-select [options]="jednostkiOptions" [(ngModel)]="form.jednostka"
                   optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
       </div>
+      <div class="ns-field">
+        <label class="ns-label">Kierunek <span class="ns-req">*</span></label>
+        <p-select [options]="kierunekOptions" [(ngModel)]="form.kierunek"
+                  optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+      </div>
+      <div class="ns-field">
+        <label class="ns-label">Profil studiów <span class="ns-req">*</span></label>
+        <p-select [options]="profilOptions" [(ngModel)]="form.profil"
+                  optionLabel="label" optionValue="value" styleClass="ns-select" appendTo="body" />
+      </div>
       <div class="ns-field ns-col-2">
         <label class="ns-label">Nazwa przedmiotu <span class="ns-req">*</span></label>
         <input pInputText [(ngModel)]="form.nazwa_przedmiotu"
@@ -58,8 +68,8 @@
     <p-divider />
     <div class="ns-auto-info">
       <span class="ns-auto-item"><i class="pi pi-lock"></i> Uczelnia: <strong>Polsko-Japońska Akademia Technik Komputerowych</strong></span>
-      <span class="ns-auto-item"><i class="pi pi-lock"></i> Kierunek: <strong>INFORMATYKA</strong></span>
-      <span class="ns-auto-item"><i class="pi pi-lock"></i> Profil: <strong>praktyczny</strong></span>
+      <span class="ns-auto-item"><i class="pi pi-bookmark"></i> Kierunek: <strong>{{ form.kierunek }}</strong></span>
+      <span class="ns-auto-item"><i class="pi pi-id-card"></i> Profil: <strong>{{ form.profil }}</strong></span>
       <span class="ns-auto-item"><i class="pi pi-lock"></i> Wersja z dnia: <strong>{{ today }}</strong></span>
     </div>
   </p-panel>

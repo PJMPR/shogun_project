@@ -1,0 +1,80 @@
+# docker-compose.databases.prod.yml
+# Produkcyjny stack baz danych -- NIGDY nie robic "down --volumes" na produkcji!
+#
+# Pierwsze uruchomienie:
+#   docker compose -f docker-compose.databases.prod.yml --env-file .env.prod up -d
+#
+# Bazy sa w odrebnym compose -- redeployment aplikacji ich nie dotyka.
+# Siec "shogun_network" jest tworzona tutaj i uzywana przez docker-compose.prod.yml.
+
+services:
+
+  # ── MariaDB ──────────────────────────────────────────────────────────────
+  # Bazy: shogun_users (Keycloak + Users API), pj_assignments (Assignments API)
+  mariadb:
+    image: mariadb:11
+    container_name: pj_mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: shogun_users
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ../backend/init-mariadb:/docker-entrypoint-initdb.d:ro
+    networks:
+      - shogun
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ── MongoDB ───────────────────────────────────────────────────────────────
+  # Baza: pj_sylabi (Syllabi API)
+  mongo:
+    image: mongo:7
+    container_name: pj_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - shogun
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # ── Jednorazowy init MongoDB (dane sylabusy) ──────────────────────────────
+  # Uruchamia sie raz przy pierwszym starcie, potem zatrzymuje.
+  # Przy restarcie mongo-init nie nadpisuje istniejacych danych (upsert).
+  mongo-init:
+    image: node:22-alpine
+    container_name: pj_mongo_init
+    working_dir: /app
+    volumes:
+      - ../database/mongo:/app
+      - ../frontend/public/assets:/frontend/public/assets:ro
+    environment:
+      MONGO_URI: "mongodb://${MONGO_USER}:${MONGO_PASS}@pj_mongo:27017/?authSource=admin"
+      MONGO_DB: "${MONGO_DB:-pj_sylabi}"
+    command: sh -c "npm install --silent && node init-db.mjs"
+    networks:
+      - shogun
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: "no"
+
+networks:
+  shogun:
+    name: shogun_network
+
+volumes:
+  mariadb_data:
+  mongo_data:

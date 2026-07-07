@@ -13,6 +13,30 @@ namespace Shogun.Service.Api.Controllers;
 [Authorize(Policy = "SyllabiAccess")]
 public class MetadataController : ControllerBase
 {
+    private static readonly object StudyModes = new
+    {
+        tryb_studiow = new[]
+        {
+            "stacjonarne",
+            "niestacjonarne",
+        },
+    };
+
+    private static readonly object Faculty = new
+    {
+        elective_type = new[]
+        {
+            "Informatyka",
+            "Sztuka Nowych Mediów"
+        },
+
+        profile = new[]
+        {
+            "ogólnoakademicki",
+            "praktyczny",
+        },
+    };
+
     private static readonly object TeachingMethods = new
     {
         wyklad = new[]
@@ -122,6 +146,16 @@ public class MetadataController : ControllerBase
             },
         },
     };
+
+    /// <summary>Returns available teaching methods for lecture and exercises/laboratory forms.</summary>
+    [HttpGet("study-modes")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public IActionResult GetStudyModes() => Ok(StudyModes);
+
+    /// <summary>Returns faculty-related metadata such as elective direction and study profile.</summary>
+    [HttpGet("faculty")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public IActionResult GetFaculty() => Ok(Faculty);
 
     /// <summary>Returns available teaching methods for lecture and exercises/laboratory forms.</summary>
     [HttpGet("teaching-methods")]

@@ -41,6 +41,15 @@ interface SyllabusApiItem {
   sylabus: SylabusData | null;
 }
 
+interface StudyModesMetadata {
+  tryb_studiow: string[];
+}
+
+interface FacultyMetadata {
+  elective_type: string[];
+  profile: string[];
+}
+
 @Injectable({ providedIn: 'root' })
 export class ShogunApiService {
   private readonly http = inject(HttpClient);
@@ -171,5 +180,13 @@ export class ShogunApiService {
     };
   }> {
     return this.http.get<any>(`${this.base}/api/v1/metadata/learning-outcomes`);
+  }
+
+  getStudyModes(): Observable<StudyModesMetadata> {
+    return this.http.get<StudyModesMetadata>(`${this.base}/api/v1/metadata/study-modes`);
+  }
+
+  getFacultyMetadata(): Observable<FacultyMetadata> {
+    return this.http.get<FacultyMetadata>(`${this.base}/api/v1/metadata/faculty`);
   }
 }

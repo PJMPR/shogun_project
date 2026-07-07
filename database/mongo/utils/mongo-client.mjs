@@ -4,8 +4,8 @@
  */
 import { MongoClient } from 'mongodb';
 
-const URI = 'mongodb://admin:haslo123@localhost:27017/?authSource=admin';
-export const DB_NAME = 'pj_sylabi';
+const URI = process.env.MONGO_URI ?? 'mongodb://admin:haslo123@localhost:27017/?authSource=admin';
+export const DB_NAME = process.env.MONGO_DB ?? 'pj_sylabi';
 
 let _client = null;
 
