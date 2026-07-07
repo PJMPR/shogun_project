@@ -138,6 +138,15 @@ docker compose -f docker-compose.keycloak.prod.yml --env-file .env.prod ps
 docker logs pj_keycloak -f
 ```
 
+Keycloak w produkcji powinien startowac komenda `start`, nie `start-dev`. Jezeli kontener byl juz uruchomiony w trybie dev, przelacz go bez usuwania bazy:
+
+```bash
+cd ~/shogun_project/deployment
+docker compose -f docker-compose.keycloak.prod.yml --env-file .env.prod up -d --force-recreate
+docker compose -f docker-compose.prod.yml --env-file .env.prod restart proxy
+docker logs pj_keycloak -f
+```
+
 Keycloak wystawia port `8180` tylko na `127.0.0.1` serwera. Terraform uruchamiaj lokalnie przez tunel SSH:
 
 ```powershell
