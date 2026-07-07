@@ -130,7 +130,8 @@ resource "keycloak_openid_client_service_account_role" "users_service_manage_use
 resource "keycloak_openid_client_service_account_role" "users_service_view_realm" {
   realm_id                = keycloak_realm.shogun.id
   service_account_user_id = keycloak_openid_client.shogun_users_service.service_account_user_id
-  client_id               = data.keycloak_openid_client.realm_management.idterraform
+  client_id               = data.keycloak_openid_client.realm_management.id
+  role                    = data.keycloak_role.view_realm.name
   depends_on              = [keycloak_openid_client.shogun_users_service]
 }
 
