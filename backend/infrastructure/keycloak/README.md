@@ -2,7 +2,7 @@
 
 ## Wymagania
 - Zainstalowany Terraform (https://www.terraform.io/downloads)
-- Uruchomiony lokalnie Keycloak (np. przez Docker, domyślnie http://localhost:8180)
+- Uruchomiony Keycloak dostepny z miejsca uruchamiania Terraform, np. na serwerze produkcyjnym pod `http://127.0.0.1:8180/auth`
 - Uzupełnione dane dostępowe admina Keycloak w pliku .env lub terraform.tfvars
 
 ## Szybki start
@@ -15,7 +15,8 @@
    ```bash
    cp terraform.tfvars.example terraform.tfvars
    ```
-   Uzupełnij wartości (szczególnie google_client_id, google_client_secret).
+   Uzupelnij wartosci (szczegolnie `keycloak_admin_user`, `keycloak_admin_pass`, `google_client_id`, `google_client_secret`).
+   Dla produkcyjnego Keycloak z `deployment/docker-compose.keycloak.prod.yml` ustaw `keycloak_url = "http://127.0.0.1:8180/auth"`.
 3. Zainicjuj projekt:
    ```bash
    terraform init
@@ -40,3 +41,4 @@
 - Hasła i sekrety możesz przekazywać przez terraform.tfvars lub zmienne środowiskowe.
 - Stan (terraform.tfstate) jest lokalny w tym katalogu.
 - Szczegóły konfiguracji znajdziesz w plikach .tf.
+

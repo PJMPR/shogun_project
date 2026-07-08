@@ -10,7 +10,7 @@ namespace Shogun.Service.Api.Controllers;
 [ApiController]
 [Route("api/v1/programs")]
 [Produces("application/json")]
-[Authorize(Policy = "ProgramAccess")]
+[Authorize]
 public class ProgramsController : ControllerBase
 {
     private readonly ProgramsService _svc;
@@ -58,6 +58,7 @@ public class ProgramsController : ControllerBase
 
     /// <summary>Create a new program document.</summary>
     [HttpPost]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(typeof(ProgramDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([FromBody] CreateProgramRequest req, CancellationToken ct = default)
@@ -72,6 +73,7 @@ public class ProgramsController : ControllerBase
 
     /// <summary>Replace an existing program document.</summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(typeof(ProgramDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -87,6 +89,7 @@ public class ProgramsController : ControllerBase
 
     /// <summary>Delete a program document.</summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id, CancellationToken ct = default)

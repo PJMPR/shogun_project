@@ -10,7 +10,7 @@ namespace Shogun.Service.Api.Controllers;
 [ApiController]
 [Route("api/v1/electives")]
 [Produces("application/json")]
-[Authorize(Policy = "ProgramAccess")]
+[Authorize]
 public class ElectivesController : ControllerBase
 {
     private readonly ElectivesService _svc;
@@ -59,6 +59,7 @@ public class ElectivesController : ControllerBase
 
     /// <summary>Create a new elective document.</summary>
     [HttpPost]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(typeof(ElectiveDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([FromBody] CreateElectiveRequest req, CancellationToken ct = default)
@@ -73,6 +74,7 @@ public class ElectivesController : ControllerBase
 
     /// <summary>Replace an existing elective document.</summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(typeof(ElectiveDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -88,6 +90,7 @@ public class ElectivesController : ControllerBase
 
     /// <summary>Delete an elective document.</summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "ProgramAccess")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id, CancellationToken ct = default)

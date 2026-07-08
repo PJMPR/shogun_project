@@ -10,7 +10,7 @@ namespace Shogun.Service.Api.Controllers;
 [ApiController]
 [Route("api/v1/syllabi")]
 [Produces("application/json")]
-[Authorize(Policy = "SyllabiAccess")]
+[Authorize]
 public class SyllabiController : ControllerBase
 {
     private readonly SyllabiService _svc;
@@ -64,6 +64,7 @@ public class SyllabiController : ControllerBase
 
     /// <summary>Create a new syllabus document.</summary>
     [HttpPost]
+    [Authorize(Policy = "SyllabiAccess")]
     [ProducesResponseType(typeof(SyllabusDto), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([FromBody] CreateSyllabusRequest req, CancellationToken ct = default)
@@ -78,6 +79,7 @@ public class SyllabiController : ControllerBase
 
     /// <summary>Replace an existing syllabus document.</summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "SyllabiAccess")]
     [ProducesResponseType(typeof(SyllabusDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -93,6 +95,7 @@ public class SyllabiController : ControllerBase
 
     /// <summary>Delete a syllabus document.</summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "SyllabiAccess")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(string id, CancellationToken ct = default)
