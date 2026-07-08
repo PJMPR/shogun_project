@@ -34,5 +34,5 @@ export const routes: Routes = [
     path: 'brak-dostepu',
     loadComponent: () => import('./access-denied.component').then(m => m.AccessDeniedComponent),
   },
-  { path: '', redirectTo: 'program', pathMatch: 'full' },
+  { path: '', redirectTo: 'assignements', pathMatch: 'full' },
 ];
