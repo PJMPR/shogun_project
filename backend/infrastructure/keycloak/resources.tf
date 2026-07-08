@@ -21,7 +21,7 @@ resource "keycloak_openid_client" "shogun_web" {
     "https://shogun.pjwstk.edu.pl",
     "https://shogun.pja.edu.pl",
   ]
-  consent_required             = true
+  consent_required = false
 }
 
 resource "keycloak_openid_client" "shogun_users_service" {
@@ -47,6 +47,39 @@ resource "keycloak_oidc_google_identity_provider" "google" {
 }
 
 # Mapowania atrybutów Google
+resource "keycloak_authentication_flow" "google_browser" {
+  realm_id    = keycloak_realm.shogun.id
+  alias       = "shogun-google-browser"
+  description = "Browser flow that redirects users directly to Google."
+  provider_id = "basic-flow"
+}
+
+resource "keycloak_authentication_execution" "google_redirector" {
+  realm_id          = keycloak_realm.shogun.id
+  parent_flow_alias = keycloak_authentication_flow.google_browser.alias
+  authenticator     = "identity-provider-redirector"
+  requirement       = "REQUIRED"
+}
+
+resource "keycloak_authentication_execution_config" "google_redirector" {
+  realm_id     = keycloak_realm.shogun.id
+  execution_id = keycloak_authentication_execution.google_redirector.id
+  alias        = "google-redirector"
+
+  config = {
+    defaultProvider = keycloak_oidc_google_identity_provider.google.alias
+  }
+}
+
+resource "keycloak_authentication_bindings" "browser_flow" {
+  realm_id     = keycloak_realm.shogun.id
+  browser_flow = keycloak_authentication_flow.google_browser.alias
+
+  depends_on = [
+    keycloak_authentication_execution_config.google_redirector,
+  ]
+}
+
 resource "keycloak_custom_identity_provider_mapper" "google_email" {
   name                     = "email"
   realm                    = keycloak_realm.shogun.id
