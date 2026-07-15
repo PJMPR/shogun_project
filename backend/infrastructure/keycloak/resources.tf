@@ -1,3 +1,7 @@
+locals {
+  port_suffix = var.app_port != "" ? ":${var.app_port}" : ""
+}
+
 resource "keycloak_realm" "shogun" {
   realm        = "shogun"
   enabled      = true
@@ -12,14 +16,22 @@ resource "keycloak_openid_client" "shogun_web" {
   access_type                  = "PUBLIC"
   standard_flow_enabled        = true
   direct_access_grants_enabled = false
-  root_url                     = "https://shogun.pjwstk.edu.pl"
+  root_url                     = "https://shogun.pjwstk.edu.pl${local.port_suffix}"
   valid_redirect_uris = [
-    "https://shogun.pjwstk.edu.pl/*",
-    "https://shogun.pja.edu.pl/*",
+    "http://localhost:8080/*",
+    "https://localhost:8443/*",
+    "http://127.0.0.1:8080/*",
+    "https://127.0.0.1:8443/*",
+    "https://shogun.pjwstk.edu.pl${local.port_suffix}/*",
+    "https://shogun.pja.edu.pl${local.port_suffix}/*",
   ]
   web_origins = [
-    "https://shogun.pjwstk.edu.pl",
-    "https://shogun.pja.edu.pl",
+    "http://localhost:8080",
+    "https://localhost:8443",
+    "http://127.0.0.1:8080",
+    "https://127.0.0.1:8443",
+    "https://shogun.pjwstk.edu.pl${local.port_suffix}",
+    "https://shogun.pja.edu.pl${local.port_suffix}",
   ]
   consent_required = false
 }

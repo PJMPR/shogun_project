@@ -113,6 +113,15 @@ services:
     networks:
       - shogun
 
+  mfe-lecturers-assignments:
+    build:
+      context: ../frontend/pj-studies-lecturers-assignments
+      dockerfile: Dockerfile
+    container_name: pj_mfe_lecturers_assignments
+    restart: unless-stopped
+    networks:
+      - shogun
+
   files:
     image: nginx:alpine
     container_name: pj_files
@@ -144,6 +153,7 @@ services:
       - mfe-syllabi
       - mfe-assignements
       - mfe-users
+      - mfe-lecturers-assignments
       - files
 
 networks:

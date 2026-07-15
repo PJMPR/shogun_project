@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "FluentValidation/11.11.0": {
@@ -154,11 +154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
+      "projectUniqueName": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
       "projectName": "Shogun.Service.Api.Application",
-      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
+      "projectPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\Shogun.Service.Api.Application.csproj",
       "packagesPath": "C:\\Users\\adamu\\.nuget\\packages\\",
-      "outputPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\obj\\",
+      "outputPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adamu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -171,10 +171,11 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj": {
-              "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj"
+            "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj": {
+              "projectPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj"
             }
           }
         }
@@ -189,10 +190,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "FluentValidation": {
@@ -224,7 +226,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -27,7 +27,6 @@
       icon="pi pi-send"
       iconPos="right"
       size="large"
-      [disabled]="selectedKeys().size === 0"
       (onClick)="openZgloszenie()"
     />
     @if (selectedKeys().size > 0) {
@@ -439,9 +438,9 @@
         </ng-template>
       </p-table>
 
-      <!-- Sekcja 2: Dyspozycyjność -->
+      <!-- Sekcja 2: Dezyderaty -->
       <div class="zgl-section-availability">
-        <h3 class="zgl-section-title">Dyspozycyjność</h3>
+        <h3 class="zgl-section-title">Dezyderaty</h3>
         <p class="zgl-section-hint">Podaj dni tygodnia i godziny, w których możesz prowadzić zajęcia.</p>
 
         <table class="availability-table">
@@ -519,7 +518,7 @@
         label="Podgląd i wyślij"
         icon="pi pi-eye"
         iconPos="right"
-        [disabled]="selectedEntries().length === 0 || confirmLoading()"
+        [disabled]="confirmLoading()"
         [loading]="confirmLoading()"
         (onClick)="prepareAndConfirm()"
       />

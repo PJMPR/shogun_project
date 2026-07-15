@@ -1,0 +1,4 @@
+# Sekrety i certyfikaty -- nie commituj!
+.env.local
+certs/*.pem
+certs/*.key

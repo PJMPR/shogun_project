@@ -17,8 +17,24 @@ public class AssignmentsController(IAssignmentService service) : ControllerBase
         [FromBody] CreateAssignmentDto dto,
         CancellationToken ct)
     {
-        var result = await service.CreateAsync(dto, ct);
+        var result = await service.CreateAsync(dto, User, ct);
         return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+    }
+
+    [HttpGet("me")]
+    [ProducesResponseType(typeof(IReadOnlyList<AssignmentResponseDto>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetMe(CancellationToken ct)
+    {
+        var result = await service.GetMyAsync(User, ct);
+        return Ok(result);
+    }
+
+    [HttpGet("lecturers")]
+    [ProducesResponseType(typeof(IReadOnlyList<AssignmentResponseDto>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetLecturers(CancellationToken ct)
+    {
+        var result = await service.GetLatestPerLecturerAsync(ct);
+        return Ok(result);
     }
 
     [HttpGet("{id:int}")]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zyDcbSfEFOs=",
+  "dgSpecHash": "Mf8ciJAcLrE=",
   "success": true,
-  "projectFilePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.UnitTests\\Shogun.Service.Api.UnitTests.csproj",
+  "projectFilePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.UnitTests\\Shogun.Service.Api.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adamu\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\fluentassertions\\8.3.0\\fluentassertions.8.3.0.nupkg.sha512",

@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Shogun.Assignments.Service.Api.Application.DTOs;
 using Shogun.Assignments.Service.Api.Domain.Entities;
 using Shogun.Assignments.Service.Api.Domain.Repositories;
@@ -6,18 +7,13 @@ namespace Shogun.Assignments.Service.Api.Application.Services;
 
 public class AssignmentService(ILecturerAssignmentRepository repository) : IAssignmentService
 {
-    // Hardcoded lecturer — to be replaced with authentication in the future.
-    private const string LecturerFirstName = "Jan";
-    private const string LecturerLastName = "Kowalski";
-    private const string LecturerEmail = "j.kowalski@pjwstk.edu.pl";
-
-    public async Task<AssignmentResponseDto> CreateAsync(CreateAssignmentDto dto, CancellationToken ct = default)
+    public async Task<AssignmentResponseDto> CreateAsync(CreateAssignmentDto dto, ClaimsPrincipal user, CancellationToken ct = default)
     {
         var entity = new LecturerAssignment
         {
-            LecturerFirstName = LecturerFirstName,
-            LecturerLastName  = LecturerLastName,
-            LecturerEmail     = LecturerEmail,
+            LecturerFirstName = GetFirstName(user),
+            LecturerLastName  = GetLastName(user),
+            LecturerEmail     = GetEmail(user),
             SemesterType      = dto.SemesterType,
             AcademicYear      = dto.AcademicYear,
             Notes             = dto.Notes,
@@ -57,6 +53,36 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
         return entities.Select(MapToDto).ToList();
     }
 
+    public async Task<IReadOnlyList<AssignmentResponseDto>> GetMyAsync(ClaimsPrincipal user, CancellationToken ct = default)
+    {
+        var email = GetEmail(user);
+        var entities = await repository.GetByEmailAsync(email, ct);
+        return entities.Select(MapToDto).ToList();
+    }
+
+    public async Task<IReadOnlyList<AssignmentResponseDto>> GetLatestPerLecturerAsync(CancellationToken ct = default)
+    {
+        var entities = await repository.GetLatestPerLecturerAsync(ct);
+        return entities.Select(MapToDto).ToList();
+    }
+
+    private static string GetEmail(ClaimsPrincipal user) =>
+        user.FindFirst(ClaimTypes.Email)?.Value
+        ?? user.FindFirst("email")?.Value
+        ?? throw new UnauthorizedAccessException("Email claim not found in token.");
+
+    private static string GetFirstName(ClaimsPrincipal user) =>
+        user.FindFirst(ClaimTypes.GivenName)?.Value
+        ?? user.FindFirst("given_name")?.Value
+        ?? user.FindFirst("firstName")?.Value
+        ?? string.Empty;
+
+    private static string GetLastName(ClaimsPrincipal user) =>
+        user.FindFirst(ClaimTypes.Surname)?.Value
+        ?? user.FindFirst("family_name")?.Value
+        ?? user.FindFirst("lastName")?.Value
+        ?? string.Empty;
+
     private static AssignmentResponseDto MapToDto(LecturerAssignment e) => new()
     {
         Id                = e.Id,
@@ -88,3 +114,4 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
         }).ToList(),
     };
 }
+

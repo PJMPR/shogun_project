@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tMWV3zp3+BI=",
+  "dgSpecHash": "5mb9ypVLKJk=",
   "success": true,
-  "projectFilePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+  "projectFilePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adamu\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\adamu\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
@@ -88,12 +88,24 @@
   ],
   "logs": [
     {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
       "code": "NU1902",
       "level": "Warning",
-      "message": "Pakiet „SharpCompress” 0.30.1 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-6c8g-7p36-r338",
-      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "message": "Package 'SharpCompress' 0.30.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6c8g-7p36-r338",
+      "projectPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "warningLevel": 1,
-      "filePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "filePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "libraryId": "SharpCompress",
       "targetGraphs": [
         "net10.0"
@@ -102,10 +114,10 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "Pakiet „Snappier” 1.0.0 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-pggp-6c3x-2xmx",
-      "projectPath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "message": "Package 'Snappier' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-pggp-6c3x-2xmx",
+      "projectPath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "warningLevel": 1,
-      "filePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
+      "filePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.IntegrationTests\\Shogun.Service.Api.IntegrationTests.csproj",
       "libraryId": "Snappier",
       "targetGraphs": [
         "net10.0"

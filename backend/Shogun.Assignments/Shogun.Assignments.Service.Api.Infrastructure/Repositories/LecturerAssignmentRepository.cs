@@ -26,4 +26,29 @@ public class LecturerAssignmentRepository(AssignmentsDbContext db) : ILecturerAs
                 .Include(a => a.Availability)
                 .OrderByDescending(a => a.SubmittedAt)
                 .ToListAsync(ct);
+
+    public async Task<IReadOnlyList<LecturerAssignment>> GetByEmailAsync(string email, CancellationToken ct = default) =>
+        await db.LecturerAssignments
+                .Include(a => a.Subjects)
+                .Include(a => a.Availability)
+                .Where(a => a.LecturerEmail == email)
+                .OrderByDescending(a => a.SubmittedAt)
+                .ToListAsync(ct);
+
+    public async Task<IReadOnlyList<LecturerAssignment>> GetLatestPerLecturerAsync(CancellationToken ct = default)
+    {
+        // For each lecturer email, pick the most recent submission
+        var latestIds = await db.LecturerAssignments
+            .GroupBy(a => a.LecturerEmail)
+            .Select(g => g.OrderByDescending(a => a.SubmittedAt).First().Id)
+            .ToListAsync(ct);
+
+        return await db.LecturerAssignments
+            .Include(a => a.Subjects)
+            .Include(a => a.Availability)
+            .Where(a => latestIds.Contains(a.Id))
+            .OrderBy(a => a.LecturerLastName)
+            .ThenBy(a => a.LecturerFirstName)
+            .ToListAsync(ct);
+    }
 }

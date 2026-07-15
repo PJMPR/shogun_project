@@ -26,6 +26,12 @@ export const routes: Routes = [
     loadChildren: () => loadRemoteModule('mfe-assignements', './Routes').then(m => m.default),
   },
   {
+    path: 'lecturers-assignments',
+    canMatch: [canAccessAssignmentsGuard],
+    loadChildren: () =>
+      loadRemoteModule('mfe-lecturers-assignments', './Routes').then(m => m.default),
+  },
+  {
     path: 'users',
     canMatch: [canAccessAdminGuard],
     loadChildren: () => loadRemoteModule('mfe-users', './Routes').then(m => m.default),

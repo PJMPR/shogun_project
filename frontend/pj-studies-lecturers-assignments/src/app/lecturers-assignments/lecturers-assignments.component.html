@@ -1,0 +1,169 @@
+<section class="desiderata-page">
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Obsady / Dezyderaty</p>
+      <h1>Dezyderaty wykładowców</h1>
+      <p class="lead">
+        Podgląd deklarowanych przedmiotów oraz dyspozycyjności tygodniowej wykładowców.
+      </p>
+    </div>
+  </header>
+
+  @if (loading()) {
+    <div class="loading-wrapper">
+      <p-progressspinner strokeWidth="4" />
+    </div>
+  } @else if (error()) {
+    <div class="error-box">
+      <i class="pi pi-exclamation-triangle"></i>
+      {{ error() }}
+    </div>
+  } @else {
+    <div class="stats-grid">
+      <div class="stat-tile">
+        <span>Wykładowcy</span>
+        <strong>{{ stats().lecturers }}</strong>
+      </div>
+      <div class="stat-tile">
+        <span>Deklaracje przedmiotów</span>
+        <strong>{{ stats().subjects }}</strong>
+      </div>
+      <div class="stat-tile">
+        <span>Zadeklarowane godziny</span>
+        <strong>{{ stats().hours }}</strong>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <aside class="lecturer-list" aria-label="Lista wykładowców">
+        <div class="panel-heading">
+          <h2>Wykładowcy</h2>
+          <span>{{ lecturers().length }} osób</span>
+        </div>
+
+        @for (lecturer of lecturers(); track lecturer.id) {
+          <button
+            type="button"
+            class="lecturer-card"
+            [class.active]="lecturer.id === selectedLecturerId()"
+            (click)="selectLecturer(lecturer.id)"
+          >
+            <span class="lecturer-name">{{ lecturerName(lecturer) }}</span>
+            <span class="lecturer-footer">
+              <span class="lecturer-email">{{ lecturer.lecturerEmail }}</span>
+              <span class="lecturer-date">{{ lecturer.submittedAt | date:'dd.MM.yyyy' }}</span>
+            </span>
+          </button>
+        }
+      </aside>
+
+      @if (selectedLecturer(); as lecturer) {
+        <main class="details">
+          <section class="filters">
+            <span>Tryb studiów:</span>
+            @for (mode of ['Wszystkie', 'Stacjonarne', 'Niestacjonarne']; track mode) {
+              <p-button
+                [label]="mode"
+                size="small"
+                [outlined]="selectedMode() !== mode"
+                severity="secondary"
+                (onClick)="setMode($any(mode))"
+              />
+            }
+          </section>
+
+          <section class="content-grid">
+            <div class="subjects-panel">
+              <div class="panel-heading">
+                <h2>Deklarowane przedmioty</h2>
+                <span>{{ filteredSubjects().length }} pozycji</span>
+              </div>
+
+              @if (filteredSubjects().length === 0) {
+                <p class="empty-info">Brak deklaracji dla wybranego trybu.</p>
+              } @else {
+                <p-table [value]="filteredSubjects()" styleClass="p-datatable-sm">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>Kod</th>
+                      <th>Przedmiot</th>
+                      <th>Tryb</th>
+                      <th>Sem.</th>
+                      <th>Formy</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-subject>
+                    <tr>
+                      <td class="code">{{ subject.code ?? '—' }}</td>
+                      <td>{{ subject.name }}</td>
+                      <td>{{ trybLabel(subject.trybStudiow) }}</td>
+                      <td>{{ subject.semester }}</td>
+                      <td>
+                        <div class="tag-list">
+                          @for (form of subjectForms(subject); track form) {
+                            <p-tag [value]="form" severity="secondary" />
+                          }
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              }
+            </div>
+
+            <div class="schedule-panel">
+              <div class="panel-heading">
+                <h2>Dyspozycyjność tygodniowa</h2>
+                <span>przedziały 15 min &bull; 08:00–22:00</span>
+              </div>
+
+              @if (lecturer.availability.length > 0) {
+                <div class="avail-tags">
+                  @for (a of availabilitySorted(lecturer); track a.day + a.from) {
+                    <span class="avail-tag">
+                      <strong>{{ dayFullLabel(a.day) }}</strong>
+                      {{ a.from }}–{{ a.to }}
+                    </span>
+                  }
+                </div>
+              }
+
+              <div class="schedule">
+                <div class="schedule-corner">Godz.</div>
+                @for (day of days; track day) {
+                  <div class="day-head">{{ day }}</div>
+                }
+
+                @for (slot of slots; track slot.id) {
+                  <div class="slot-label" [class.hour-mark]="slot.id.endsWith(':00')">
+                    @if (slot.id.endsWith(':00')) {
+                      <span>{{ slot.label }}</span>
+                    }
+                  </div>
+                  @for (day of days; track day) {
+                    <div
+                      class="slot-cell"
+                      [class.available]="isAvailable(day, slot.id)"
+                      [attr.aria-label]="day + ' ' + slot.label"
+                    >
+                      @if (isAvailable(day, slot.id)) {
+                        <i class="pi pi-check"></i>
+                      }
+                    </div>
+                  }
+                }
+              </div>
+            </div>
+          </section>
+
+          @if (lecturer.notes) {
+            <div class="notes-bar">
+              <i class="pi pi-comment"></i>
+              <span>{{ lecturer.notes }}</span>
+            </div>
+          }
+        </main>
+      }
+    </div>
+  }
+</section>

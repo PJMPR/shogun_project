@@ -19,7 +19,7 @@ import { SemesterViewModel } from './obsady.service';
 import { SubjectRow, SylabusData, SylabusFile } from '../models/program.models';
 import { BaseHrefService } from '../shared/base-href.service';
 import { SylabusPreviewComponent } from '../shared/sylabus-preview/sylabus-preview.component';
-import { AssignmentsApiService, CreateAssignmentPayload } from '../shared/assignments-api.service';
+import { AssignmentsApiService, CreateAssignmentPayload, AssignmentResponse } from '../shared/assignments-api.service';
 import { environment } from '../../environments/environment';
 
 export interface SelectedSubjectEntry {
@@ -221,7 +221,6 @@ export class ObsadyComponent implements OnInit {
     const config = season === 'zimowy' ? this.zimConfig : this.letConfig;
     const academicYear = config?.nazwa ?? '2026/27';
     const entries = this.selectedEntries();
-    if (entries.length === 0) return;
 
     this.confirmLoading.set(true);
     this.assignmentsApi.submitError.set(null);
@@ -246,7 +245,9 @@ export class ObsadyComponent implements OnInit {
         .pipe(catchError(() => of({ items: [] as { id: string }[] })));
     });
 
-    forkJoin(lookups).subscribe(results => {
+    const source$ = lookups.length > 0 ? forkJoin(lookups) : of([] as { items: { id: string }[] }[]);
+
+    source$.subscribe(results => {
       const subjects = entries.map((e, i) => {
         const sel = this.getTypeSelection(e);
         const mongoId = results[i]?.items?.[0]?.id ?? null;
@@ -284,10 +285,6 @@ export class ObsadyComponent implements OnInit {
     this.assignmentsApi.submit(payload).subscribe(() => {
       this.confirmVisible.set(false);
       this.zgloszenieVisible.set(false);
-      this.selectedKeys.set(new Set());
-      this.typeSelections.set(new Map());
-      this.availabilityRows.set([{ day: '', from: '08:00', to: '16:00' }]);
-      this.uwagi = '';
       this.confirmPayload.set(null);
     });
   }
@@ -302,15 +299,18 @@ export class ObsadyComponent implements OnInit {
 
   private zimConfig: SeasonConfig | null = null;
   private letConfig: SeasonConfig | null = null;
+  private previousAssignments: AssignmentResponse[] = [];
 
   ngOnInit(): void {
     forkJoin({
       zim: this.http.get<SeasonConfig>(this.baseHrefService.assetUrl('semestr_zimowy_2627.json')),
       let: this.http.get<SeasonConfig>(this.baseHrefService.assetUrl('semestr_letni_2627.json')),
+      prev: this.assignmentsApi.getMyAssignments().pipe(catchError(() => of([]))),
     }).subscribe({
-      next: ({ zim, let: letCfg }) => {
+      next: ({ zim, let: letCfg, prev }) => {
         this.zimConfig = zim;
         this.letConfig = letCfg;
+        this.previousAssignments = prev;
         this.loadSeason();
       },
       error: (err) => {
@@ -354,12 +354,59 @@ export class ObsadyComponent implements OnInit {
         this.stacSemesters.set(stac);
         this.niestacSemesters.set(nstac);
         this.loading.set(false);
+        this.prefillFromPreviousAssignment();
       },
       error: (err) => {
         console.error('Błąd ładowania obsad:', err);
         this.loading.set(false);
       },
     });
+  }
+
+  private prefillFromPreviousAssignment(): void {
+    const season = this.activeSeason();
+    const prev = this.previousAssignments
+      .filter(a => a.semesterType === season)
+      .sort((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())[0];
+
+    if (!prev) return;
+
+    const newKeys = new Set<string>();
+    const newTypeSelections = new Map<string, SubjectTypeSelection>();
+
+    for (const sub of prev.subjects) {
+      const tryb = sub.trybStudiow as 'stacjonarny' | 'niestacjonarny';
+      const sems = tryb === 'stacjonarny' ? this.stacSemesters() : this.niestacSemesters();
+      const semVm = sems.find(s => s.semester === sub.semester);
+      if (!semVm) continue;
+
+      const leafRows = this.collectLeafRows(semVm.nodes);
+      const matchingRow = leafRows.find(
+        r => (sub.code && r.code === sub.code) || r.name === sub.name,
+      );
+      if (!matchingRow) continue;
+
+      const key = this.rowKey(tryb, sub.semester, matchingRow);
+      newKeys.add(key);
+      newTypeSelections.set(key, {
+        wyklad: sub.hasWyklad,
+        lab: sub.hasLab,
+        cwiczenia: sub.hasCwiczenia,
+      });
+    }
+
+    this.selectedKeys.set(newKeys);
+    this.typeSelections.set(newTypeSelections);
+
+    if (prev.availability.length > 0) {
+      this.availabilityRows.set(
+        prev.availability.map(a => ({ day: a.day, from: a.from, to: a.to })),
+      );
+    }
+
+    if (prev.notes) {
+      this.uwagi = prev.notes;
+    }
   }
 
   openDetails(subject: SubjectRow, semester: number = 1): void {

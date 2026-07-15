@@ -1,0 +1,44 @@
+# docker-compose.keycloak.yml
+# Keycloak dla srodowiska lokalnego.
+#
+# Wymagania:
+#   - Bazy danych dzialaja (docker-compose.databases.yml up)
+#   - Siec shogun_local_network istnieje
+#
+# Uruchomienie:
+#   docker compose -f docker-compose.keycloak.yml --env-file .env.local up -d
+#
+# Keycloak Admin Console:
+#   http://localhost:8180/auth/admin
+#   https://shogun.pjwstk.edu.pl:8443/auth/admin
+
+services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.2
+    container_name: pj_keycloak
+    restart: unless-stopped
+    command: start-dev
+    environment:
+      KC_DB: mariadb
+      # Lacze sie z pj_mariadb przez siec Docker (nie host.docker.internal)
+      KC_DB_URL: jdbc:mariadb://pj_mariadb:3306/shogun_users
+      KC_DB_USERNAME: ${KC_DB_USER:-root}
+      KC_DB_PASSWORD: ${KC_DB_PASS:-password}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASS:-admin_pass}
+      KC_HTTP_PORT: 8080
+      KC_HTTP_RELATIVE_PATH: /auth
+      KC_PROXY_HEADERS: xforwarded
+      KC_HOSTNAME_STRICT: false
+      KC_HTTP_ENABLED: "true"
+      KC_HEALTH_ENABLED: "true"
+    ports:
+      - "8180:8080"
+    networks:
+      - shogun_local
+
+networks:
+  shogun_local:
+    name: shogun_local_network
+    external: true

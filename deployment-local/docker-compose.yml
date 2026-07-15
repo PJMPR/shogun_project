@@ -1,0 +1,171 @@
+# docker-compose.yml
+# Lokalny stack aplikacji: API, mikrofrontendy, pliki statyczne i nginx.
+#
+# Wymagania:
+#   1. Bazy danych dzialaja (docker-compose.databases.yml up)
+#   2. Keycloak dziala (docker-compose.keycloak.yml up)
+#   3. Terraform zostal zastosowany (realm shogun + client secrets)
+#   4. Siec shogun_local_network istnieje
+#   5. Certyfikat TLS w ./certs/ (wygenerowany przez setup-local.ps1 z mkcert)
+#   6. Plik .env.local uzupelniony (w tym USERS_SERVICE_CLIENT_SECRET)
+#
+# Pierwsze uruchomienie:
+#   docker compose --env-file .env.local up -d --build
+#
+# Kolejne restarty (po zmianach kodu):
+#   docker compose --env-file .env.local up -d --build
+#
+# Bez przebudowania (np. po zmianie nginx):
+#   docker compose --env-file .env.local up -d
+
+services:
+
+  # ── Syllabi API ───────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ../backend/Shogun.ProgramData.Service
+      dockerfile: Shogun.Service.Api/Dockerfile
+    container_name: pj_syllabi_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MONGODB__CONNECTIONSTRING: "mongodb://${MONGO_USER:-admin}:${MONGO_PASS:-haslo123}@pj_mongo:27017/?authSource=admin"
+      MONGODB__DATABASENAME: "${MONGO_DB:-pj_sylabi}"
+      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
+    networks:
+      - shogun_local
+
+  # ── Assignments API ───────────────────────────────────────────────────────
+  assignments-api:
+    build:
+      context: ../backend/Shogun.Assignments
+      dockerfile: Shogun.Assignments.Service.Api/Dockerfile
+    container_name: pj_assignments_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MARIADB__CONNECTIONSTRING: "Server=pj_mariadb;Port=3306;Database=pj_assignments;User Id=root;Password=${MARIADB_ROOT_PASSWORD:-password};"
+      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
+    networks:
+      - shogun_local
+
+  # ── Users API ─────────────────────────────────────────────────────────────
+  users-api:
+    build:
+      context: ../backend/Shogun.Users
+      dockerfile: Shogun.Users.Api/Dockerfile
+    container_name: pj_users_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MARIADB__CONNECTIONSTRING: "Server=pj_mariadb;Port=3306;Database=shogun_users;User Id=root;Password=${MARIADB_ROOT_PASSWORD:-password};"
+      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
+      KEYCLOAK__ADMINBASEURL: "http://pj_keycloak:8080"
+      KEYCLOAK__REALM: "shogun"
+      KEYCLOAK__CLIENTID: "shogun-users-service"
+      KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET:-}"
+    networks:
+      - shogun_local
+
+  # ── Mikrofrontendy ────────────────────────────────────────────────────────
+  mfe-host:
+    build:
+      context: ../frontend/pj-studies-host
+      dockerfile: Dockerfile
+    container_name: pj_mfe_host
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+  mfe-program:
+    build:
+      context: ../frontend/pj-studies-program
+      dockerfile: Dockerfile
+    container_name: pj_mfe_program
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+  mfe-syllabi:
+    build:
+      context: ../frontend/pj-studies-syllabi
+      dockerfile: Dockerfile
+    container_name: pj_mfe_syllabi
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+  mfe-assignements:
+    build:
+      context: ../frontend/pj-studies-assignements
+      dockerfile: Dockerfile
+    container_name: pj_mfe_assignements
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+  mfe-users:
+    build:
+      context: ../frontend/pj-studies-users
+      dockerfile: Dockerfile
+    container_name: pj_mfe_users
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+  mfe-lecturers-assignments:
+    build:
+      context: ../frontend/pj-studies-lecturers-assignments
+      dockerfile: Dockerfile
+    container_name: pj_mfe_lecturers_assignments
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
+
+  # ── Pliki statyczne (PDF-y, DOCX) ─────────────────────────────────────────
+  files:
+    image: nginx:alpine
+    container_name: pj_files
+    restart: unless-stopped
+    volumes:
+      - ../backend/files:/usr/share/nginx/html:ro
+    networks:
+      - shogun_local
+
+  # ── Proxy (nginx z TLS) ───────────────────────────────────────────────────
+  proxy:
+    image: nginx:alpine
+    container_name: pj_proxy
+    restart: unless-stopped
+    volumes:
+      - ./nginx.local.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../frontend/public/assets:/usr/share/nginx/assets:ro
+      - ./certs:/etc/nginx/certs:ro
+    ports:
+      - "8080:80"
+      - "8443:443"
+    networks:
+      - shogun_local
+    depends_on:
+      - api
+      - assignments-api
+      - users-api
+      - mfe-host
+      - mfe-program
+      - mfe-syllabi
+      - mfe-assignements
+      - mfe-users
+      - mfe-lecturers-assignments
+      - files
+
+networks:
+  shogun_local:
+    name: shogun_local_network
+    external: true

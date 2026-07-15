@@ -28,6 +28,38 @@ export interface CreateAssignmentPayload {
   availability: CreateAssignmentAvailabilityPayload[];
 }
 
+export interface AssignmentSubjectResponse {
+  id: number;
+  mongoId: string | null;
+  name: string;
+  code: string | null;
+  trybStudiow: string;
+  semester: number;
+  hasWyklad: boolean;
+  hasCwiczenia: boolean;
+  hasLab: boolean;
+}
+
+export interface AssignmentAvailabilityResponse {
+  id: number;
+  day: string;
+  from: string;
+  to: string;
+}
+
+export interface AssignmentResponse {
+  id: number;
+  lecturerFirstName: string;
+  lecturerLastName: string;
+  lecturerEmail: string;
+  semesterType: string;
+  academicYear: string;
+  notes: string | null;
+  submittedAt: string;
+  subjects: AssignmentSubjectResponse[];
+  availability: AssignmentAvailabilityResponse[];
+}
+
 @Injectable({ providedIn: 'root' })
 export class AssignmentsApiService {
   private readonly http = inject(HttpClient);
@@ -36,6 +68,10 @@ export class AssignmentsApiService {
   readonly submitting = signal(false);
   readonly submitError = signal<string | null>(null);
   readonly submitSuccess = signal(false);
+
+  getMyAssignments() {
+    return this.http.get<AssignmentResponse[]>(`${this.base}/api/v1/assignments/me`);
+  }
 
   submit(payload: CreateAssignmentPayload) {
     this.submitting.set(true);

@@ -60,6 +60,15 @@
           <i class="pi pi-users"></i>
           Obsady
         </a>
+        <a
+          routerLink="/lecturers-assignments"
+          routerLinkActive="nav-link-active"
+          class="nav-link"
+          (click)="isMobile() && sidebarVisible.set(false)"
+        >
+          <i class="pi pi-calendar-clock"></i>
+          Dezyderaty
+        </a>
       }
 
       @if (authService.canAccessSyllabi()) {

@@ -54,6 +54,7 @@ services:
       - mfe-syllabi
       - mfe-assignements
       - mfe-users
+      - mfe-lecturers-assignments
       - files
 
   api:
@@ -141,11 +142,17 @@ services:
     container_name: pj_mfe_users
     restart: unless-stopped
 
+  mfe-lecturers-assignments:
+    build:
+      context: ../frontend/pj-studies-lecturers-assignments
+      dockerfile: Dockerfile
+    container_name: pj_mfe_lecturers_assignments
+    restart: unless-stopped
+
   files:
     image: nginx:alpine
     container_name: pj_files
     restart: unless-stopped
     volumes:
       - ./files:/usr/share/nginx/html:ro
-
 

@@ -1,4 +1,5 @@
-keycloak_url             = "http://localhost:8180"
+keycloak_url             = "http://127.0.0.1:8180/auth"
+app_port                 = ""                # lokalnie: "8443", produkcja: ""
 keycloak_admin_user      = "${KC_ADMIN_USER}"
 keycloak_admin_pass      = "${KC_ADMIN_PASS}"
 keycloak_admin_client_id = "admin-cli"

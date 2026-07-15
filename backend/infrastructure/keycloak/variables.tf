@@ -36,3 +36,9 @@ variable "google_client_secret" {
   type        = string
   sensitive   = true
 }
+
+variable "app_port" {
+  description = "Port aplikacji (np. 8443 lokalnie, pusty w produkcji na standardowym 443)"
+  type        = string
+  default     = ""
+}

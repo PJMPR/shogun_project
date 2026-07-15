@@ -7,6 +7,7 @@ module.exports = withNativeFederation({
     'mfe-syllabi':      'http://localhost:4202',
     'mfe-assignements': 'http://localhost:4203',
     'mfe-users':        'http://localhost:4204',
+    'mfe-lecturers-assignments': 'http://localhost:4205',
   },
   shared: {
     ...shareAll({

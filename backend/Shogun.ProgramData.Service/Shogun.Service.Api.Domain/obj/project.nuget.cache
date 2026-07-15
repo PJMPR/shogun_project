@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yH2S7KMQJtQ=",
+  "dgSpecHash": "OI5Sc+bCOac=",
   "success": true,
-  "projectFilePath": "d:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj",
+  "projectFilePath": "D:\\PJWSTK\\git\\shogun_project\\backend\\Shogun.ProgramData.Service\\Shogun.Service.Api.Domain\\Shogun.Service.Api.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adamu\\.nuget\\packages\\mongodb.bson\\3.3.0\\mongodb.bson.3.3.0.nupkg.sha512"
   ],
