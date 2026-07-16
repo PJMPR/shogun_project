@@ -19,6 +19,11 @@
 | `docker-compose.keycloak.prod.yml` | Produkcyjny Keycloak, uruchamiany osobno po bazach danych |
 | `docker-compose.prod.yml` | Produkcyjne API, frontendy, pliki statyczne i nginx proxy; bez baz danych i Keycloak |
 | `nginx.prod.conf` | Konfiguracja nginx z TLS i reverse proxy do aplikacji oraz Keycloak |
+
+`shogun.pjwstk.edu.pl` jest kanoniczną domeną uwierzytelniania (issuer Keycloak
+i callback brokera Google). Frontend otwarty z dowolnej domeny produkcyjnej
+rozpoczyna logowanie przez tę domenę, po czym wraca na adres, z którego został
+otwarty. Zapobiega to utracie cookie sesji przy przejściu między domenami.
 | `.env.prod.example` | Szablon zmiennych srodowiskowych produkcji |
 | `deploy.sh` | Redeploy glownego stacka aplikacji; nie sluzy do pierwszego uruchomienia baz ani Keycloak |
 

@@ -15,6 +15,20 @@ const TOKEN_REFRESH_INTERVAL_MS = 60_000;
 const TOKEN_MIN_VALIDITY_SEC = 60;
 const SESSION_ROLES_KEY = 'shogun_roles';
 const SESSION_PROJECTS_KEY = 'shogun_projects';
+const PRODUCTION_AUTH_ORIGIN = 'https://shogun.pjwstk.edu.pl';
+const PRODUCTION_HOSTNAMES = new Set(['shogun.pjwstk.edu.pl', 'shogun.pja.edu.pl']);
+
+function getKeycloakUrl(): string {
+  // Keycloak and the Google broker use the pjwstk.edu.pl hostname as their
+  // canonical issuer/callback. Starting a login session on the pja.edu.pl
+  // alias would bind its cookie to the wrong host and the callback would end
+  // with authentication_expired.
+  const authOrigin = PRODUCTION_HOSTNAMES.has(window.location.hostname)
+    ? PRODUCTION_AUTH_ORIGIN
+    : window.location.origin;
+
+  return `${authOrigin}/auth`;
+}
 
 interface MyProjectsResponse {
   projects: string[];
@@ -28,7 +42,7 @@ export class AuthService {
   private readonly http = inject(HttpClient);
 
   private readonly keycloak = new Keycloak({
-    url: `${window.location.origin}/auth`,
+    url: getKeycloakUrl(),
     realm: REALM,
     clientId: CLIENT_ID,
   });
