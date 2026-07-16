@@ -1,3 +1,5 @@
+<tour-step-template />
+
 <div class="obsady-page">
 
   <div class="page-title-row">
@@ -21,7 +23,7 @@
   </div>
 
   <!-- Przycisk zgłoszenia -->
-  <div class="zgloszenie-bar">
+  <div class="zgloszenie-bar" id="tour-zgloszenie-bar" tourAnchor="zgloszenie-bar">
     <p-button
       label="Zgłoszenie do Obsady"
       icon="pi pi-send"
@@ -45,7 +47,7 @@
 
     <!-- Zakładki trybu studiów -->
     <p-tabs value="stacjonarny">
-      <p-tablist>
+      <p-tablist id="tour-study-tabs" tourAnchor="study-tabs">
         <p-tab value="stacjonarny">Studia stacjonarne</p-tab>
         <p-tab value="niestacjonarny">Studia niestacjonarne</p-tab>
       </p-tablist>
@@ -57,17 +59,19 @@
           @if (stacSemesters().length === 0) {
             <p class="no-data">Brak danych dla wybranego semestru.</p>
           } @else {
+            <div id="tour-semester-tabs" tourAnchor="subject-table">
             <p-tabs [value]="stacSemesters()[0].semester.toString()" [scrollable]="true">
-              <p-tablist>
+              <p-tablist tourAnchor="semester-tabs">
                 @for (sem of stacSemesters(); track sem.semester) {
                   <p-tab [value]="sem.semester.toString()">Semestr {{ sem.semester }}</p-tab>
                 }
               </p-tablist>
               <p-tabpanels>
-                @for (sem of stacSemesters(); track sem.semester) {
+                @for (sem of stacSemesters(); track sem.semester; let stacFirst = $first) {
                   <p-tabpanel [value]="sem.semester.toString()">
 
                     <p-treeTable
+                      [attr.id]="stacFirst ? 'tour-subject-table' : null"
                       [value]="sem.nodes"
                       [columns]="[]"
                       styleClass="p-treetable-sm semester-table"
@@ -165,6 +169,7 @@
                 }
               </p-tabpanels>
             </p-tabs>
+            </div>
           }
         </p-tabpanel>
 
@@ -333,7 +338,7 @@
     [draggable]="false"
     [resizable]="false"
   >
-    @if (selectedEntries().length === 0) {
+    @if (selectedEntries().length === 0 && !tourMode()) {
       <div class="no-sylabus-info">
         <i class="pi pi-info-circle"></i>
         <span>Brak zaznaczonych przedmiotów.</span>
@@ -341,7 +346,7 @@
     } @else {
 
       <!-- Sekcja 1: Wybrane przedmioty -->
-      <h3 class="zgl-section-title">Wybrane przedmioty</h3>
+      <h3 class="zgl-section-title" id="tour-type-selection" tourAnchor="type-selection">Wybrane przedmioty</h3>
       <p-table
         [value]="selectedEntries()"
         [tableStyle]="{ 'min-width': '50rem' }"
@@ -439,7 +444,7 @@
       </p-table>
 
       <!-- Sekcja 2: Dezyderaty -->
-      <div class="zgl-section-availability">
+      <div class="zgl-section-availability" id="tour-availability" tourAnchor="availability">
         <h3 class="zgl-section-title">Dezyderaty</h3>
         <p class="zgl-section-hint">Podaj dni tygodnia i godziny, w których możesz prowadzić zajęcia.</p>
 
@@ -498,7 +503,7 @@
       </div>
 
       <!-- Sekcja 3: Uwagi -->
-      <div class="zgl-section-uwagi">
+      <div class="zgl-section-uwagi" id="tour-uwagi" tourAnchor="uwagi">
         <h3 class="zgl-section-title">Uwagi</h3>
         <textarea
           class="uwagi-textarea"
@@ -515,6 +520,8 @@
       }
       <p-button label="Zamknij" icon="pi pi-times" severity="secondary" (onClick)="zgloszenieVisible.set(false)" />
       <p-button
+        id="tour-submit-btn"
+        tourAnchor="submit-btn"
         label="Podgląd i wyślij"
         icon="pi pi-eye"
         iconPos="right"
@@ -525,6 +532,10 @@
     </ng-template>
   </p-dialog>
 
+  <!-- Przycisk uruchomienia tutoriala -->
+  <button class="tour-fab" (click)="startTour()" pTooltip="Pokaż tutorial" tooltipPosition="left">
+    <i class="pi pi-question-circle"></i>
+  </button>
 </div>
 
 <!-- ════ Dialog potwierdzenia zgłoszenia ════════════════════════════════ -->

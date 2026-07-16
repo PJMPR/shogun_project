@@ -227,3 +227,12 @@ resource "keycloak_role" "app_student" {
     "projects"  = "program,sylabus"
   }
 }
+
+resource "keycloak_role" "app_dezyderaty" {
+  realm_id    = keycloak_realm.shogun.id
+  name        = "dezyderaty"
+  description = "shogun: dostep do podgladu dezyderat wykladowcow"
+  attributes = {
+    "managedBy" = "shogun"
+  }
+}

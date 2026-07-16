@@ -3,6 +3,7 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 import {
   canAccessAdminGuard,
   canAccessAssignmentsGuard,
+  canAccessDezyderatyGuard,
   canAccessProgramGuard,
   canAccessSyllabiGuard,
 } from './route-access.guard';
@@ -27,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'lecturers-assignments',
-    canMatch: [canAccessAssignmentsGuard],
+    canMatch: [canAccessDezyderatyGuard],
     loadChildren: () =>
       loadRemoteModule('mfe-lecturers-assignments', './Routes').then(m => m.default),
   },

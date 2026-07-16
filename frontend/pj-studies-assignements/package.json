@@ -72,6 +72,8 @@
 
     "es-module-shims": "^2.8.0",
 
+    "ngx-ui-tour-primeng": "^3.0.0",
+
     "primeicons": "^7.0.0",
 
     "primeng": "^21.1.1",

@@ -6,6 +6,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
+import { provideUiTour } from 'ngx-ui-tour-primeng';
 
 import { routes } from './app.routes';
 
@@ -39,6 +40,12 @@ export const appConfig: ApplicationConfig = {
         preset: PJATKPreset,
         options: { darkModeSelector: false },
       },
+    }),
+    provideUiTour({
+      enableBackdrop: true,
+      prevBtnTitle: '← Wstecz',
+      nextBtnTitle: 'Dalej →',
+      endBtnTitle: 'Zakończ',
     }),
   ],
 };

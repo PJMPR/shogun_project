@@ -1,7 +1,8 @@
 import { Component, OnInit, signal, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, of, catchError } from 'rxjs';
+import { forkJoin, of, catchError, Subject } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 import { TabsModule } from 'primeng/tabs';
 import { TreeTableModule } from 'primeng/treetable';
 import { ButtonModule } from 'primeng/button';
@@ -21,6 +22,8 @@ import { BaseHrefService } from '../shared/base-href.service';
 import { SylabusPreviewComponent } from '../shared/sylabus-preview/sylabus-preview.component';
 import { AssignmentsApiService, CreateAssignmentPayload, AssignmentResponse } from '../shared/assignments-api.service';
 import { environment } from '../../environments/environment';
+import { ObsadyTourService } from './obsady-tour.service';
+import { TourService, TourPrimeNg, Direction } from 'ngx-ui-tour-primeng';
 
 export interface SelectedSubjectEntry {
   tryb: 'stacjonarny' | 'niestacjonarny';
@@ -57,6 +60,7 @@ interface SeasonConfig {
   imports: [
     CommonModule,
     FormsModule,
+    ...TourPrimeNg,
     TabsModule,
     TreeTableModule,
     ButtonModule,
@@ -77,8 +81,13 @@ export class ObsadyComponent implements OnInit {
   private baseHrefService = inject(BaseHrefService);
   private obsadyService = inject(ObsadyService);
   readonly assignmentsApi = inject(AssignmentsApiService);
+  private tourLocalService = inject(ObsadyTourService);
+  private ngxTourService = inject(TourService);
 
   loading = signal(true);
+  tourMode = signal(false);
+
+  private readonly tourDestroy$ = new Subject<void>();
   activeSeason = signal<'zimowy' | 'letni'>('zimowy');
   stacSemesters = signal<SemesterViewModel[]>([]);
   niestacSemesters = signal<SemesterViewModel[]>([]);
@@ -301,6 +310,129 @@ export class ObsadyComponent implements OnInit {
   private letConfig: SeasonConfig | null = null;
   private previousAssignments: AssignmentResponse[] = [];
 
+  startTour(): void {
+    // Reset poprzedniej sesji tour
+    this.tourDestroy$.next();
+    this.zgloszenieVisible.set(false);
+    this.tourMode.set(false);
+
+    this.ngxTourService.initialize(
+      [
+        {
+          stepId: 'step-1',
+          anchorId: 'study-tabs',
+          title: 'Krok 1 z 8 – Wybór trybu studiów',
+          content:
+            'Zacznij od wybóru trybu studiów. Kliknij zakładkę Studia stacjonarne lub ' +
+            'Studia niestacjonarne, aby zobaczyć plan zajęć dla wybranego trybu.',
+        },
+        {
+          stepId: 'step-2',
+          anchorId: 'semester-tabs',
+          title: 'Krok 2 z 8 – Przeglądanie semestrów',
+          content:
+            'Używaj zakładek z numerami semestrów, aby przełączać się między nimi. ' +
+            'W każdym semestrze zobaczysz listę przedmiotów z liczbą godzin, formą zaliczenia i punktami ECTS.',
+        },
+        {
+          stepId: 'step-3',
+          anchorId: 'subject-table',
+          title: 'Krok 3 z 8 – Wybór przedmiotów',
+          content:
+            'Zaznacz checkbox przy każdym przedmiocie, który chcesz prowadzić. ' +
+            'Możesz wybrać wiele przedmiotów z różnych semestrów i obu trybów studiów. ' +
+            'Zaznaczone wiersze są podkreślane na niebiesko.',
+        },
+        {
+          stepId: 'step-4',
+          anchorId: 'zgloszenie-bar',
+          title: 'Krok 4 z 8 – Przycisk „Zgłoszenie do Obsady”',
+          content:
+            'Po zaznaczeniu interesujących Cię przedmiotów kliknij przycisk Zgłoszenie do Obsady, ' +
+            'aby otworzyć formularz. Liczba zaznaczonych przedmiotów pojawi się obok przycisku.',
+          nextBtnTitle: 'Otwórz formularz →',
+        },
+        {
+          stepId: 'step-5',
+          anchorId: 'type-selection',
+          title: 'Krok 5 z 8 – Typ zajęć',
+          content:
+            'Dla każdego wybranego przedmiotu wskaż, jakie typy zajęć chcesz prowadzić: ' +
+            'Wykład, Ćwiczenia lub Laboratoria. ' +
+            'Checkboxy są aktywne tylko dla typów z przydzielonymi godzinami.',
+          isAsync: true,
+          asyncStepTimeout: 4000,
+          delayBeforeStepShow: 200,
+        },
+        {
+          stepId: 'step-6',
+          anchorId: 'availability',
+          title: 'Krok 6 z 8 – Dezyderaty (dostępność)',
+          content:
+            'Podaj dni tygodnia i godziny, w których możesz prowadzić zajęcia. ' +
+            'Dla stacjonarnych dostępne są dni Pn–Pt, dla niestacjonarnych Sb–Nd. ' +
+            'Kliknij „Dodaj wiersz”, aby dodać kolejne przedziały czasowe.',
+          isAsync: true,
+          asyncStepTimeout: 4000,
+        },
+        {
+          stepId: 'step-7',
+          anchorId: 'uwagi',
+          title: 'Krok 7 z 8 – Uwagi',
+          content:
+            'Opcjonalnie wpisz dodatkowe uwagi, preferencje lub ograniczenia, ' +
+            'które chcesz przekazać koordynatorowi obsad. To pole nie jest wymagane.',
+          isAsync: true,
+          asyncStepTimeout: 4000,
+        },
+        {
+          stepId: 'step-8',
+          anchorId: 'submit-btn',
+          title: 'Krok 8 z 8 – Potwierdzenie i wysłanie',
+          content:
+            'Gdy wszystko gotowe, kliknij „Podgląd i wyślij”, aby zobaczyć podsumowanie ' +
+            'i zatwierdzić zgłoszenie. Możesz też kliknąć „Zamknij”, aby wrócić do edycji.',
+          isAsync: true,
+          asyncStepTimeout: 4000,
+          endBtnTitle: 'Zakończ tutorial',
+        },
+      ],
+      {
+        enableBackdrop: true,
+        prevBtnTitle: '← Wstecz',
+        nextBtnTitle: 'Dalej →',
+        endBtnTitle: 'Zakończ',
+      },
+    );
+
+    // Otwórz dialog przy przejściu z kroku 4 na 5
+    this.ngxTourService.stepHide$
+      .pipe(takeUntil(this.tourDestroy$))
+      .subscribe(({ step, direction }) => {
+        if (step.stepId === 'step-4' && direction === Direction.Forwards) {
+          this.openZgloszenie();
+          this.tourMode.set(true);
+        }
+        // Zamknij dialog przy cofnięciu z kroku 5 na 4
+        if (step.stepId === 'step-5' && direction === Direction.Backwards) {
+          this.zgloszenieVisible.set(false);
+          this.tourMode.set(false);
+        }
+      });
+
+    // Sprzątanie po zakończeniu / zamknięciu tour
+    this.ngxTourService.end$
+      .pipe(take(1), takeUntil(this.tourDestroy$))
+      .subscribe(() => {
+        this.tourDestroy$.next();
+        this.zgloszenieVisible.set(false);
+        this.tourMode.set(false);
+        this.tourLocalService.markVisited();
+      });
+
+    this.ngxTourService.start();
+  }
+
   ngOnInit(): void {
     forkJoin({
       zim: this.http.get<SeasonConfig>(this.baseHrefService.assetUrl('semestr_zimowy_2627.json')),
@@ -355,6 +487,9 @@ export class ObsadyComponent implements OnInit {
         this.niestacSemesters.set(nstac);
         this.loading.set(false);
         this.prefillFromPreviousAssignment();
+        if (this.tourLocalService.isFirstVisit()) {
+          setTimeout(() => this.startTour(), 500);
+        }
       },
       error: (err) => {
         console.error('Błąd ładowania obsad:', err);

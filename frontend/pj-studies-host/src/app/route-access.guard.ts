@@ -22,6 +22,11 @@ export const canAccessAssignmentsGuard: CanMatchFn = () => {
   return authService.canAccessAssignments() ? true : deniedTree();
 };
 
+export const canAccessDezyderatyGuard: CanMatchFn = () => {
+  const authService = inject(AuthService);
+  return authService.canAccessDezyderaty() ? true : deniedTree();
+};
+
 export const canAccessAdminGuard: CanMatchFn = () => {
   const authService = inject(AuthService);
   return authService.hasRole('admin') ? true : deniedTree();

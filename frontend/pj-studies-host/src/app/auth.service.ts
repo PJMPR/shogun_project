@@ -82,6 +82,10 @@ export class AuthService {
     return this.keycloak.authenticated === true;
   }
 
+  canAccessDezyderaty(): boolean {
+    return this.hasRole('admin') || this.hasRole('dezyderaty');
+  }
+
   logout(): void {
     sessionStorage.removeItem(SESSION_ROLES_KEY);
     sessionStorage.removeItem(SESSION_PROJECTS_KEY);
