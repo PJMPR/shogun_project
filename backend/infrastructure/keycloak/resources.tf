@@ -25,6 +25,14 @@ resource "keycloak_openid_client" "shogun_web" {
     "https://shogun.pjwstk.edu.pl${local.port_suffix}/*",
     "https://shogun.pja.edu.pl${local.port_suffix}/*",
   ]
+  valid_post_logout_redirect_uris = [
+    "http://localhost:8080",
+    "https://localhost:8443",
+    "http://127.0.0.1:8080",
+    "https://127.0.0.1:8443",
+    "https://shogun.pjwstk.edu.pl${local.port_suffix}",
+    "https://shogun.pja.edu.pl${local.port_suffix}",
+  ]
   web_origins = [
     "http://localhost:8080",
     "https://localhost:8443",
@@ -58,11 +66,13 @@ resource "keycloak_oidc_google_identity_provider" "google" {
   trust_email                   = false
 }
 
-# Mapowania atrybutów Google
+# Poprzedni flow pozostaje zarządzany przez Terraform, ale nie jest już
+# przypisany do realmu. Standardowy flow "browser" udostępnia zarówno
+# logowanie lokalne, jak i przycisk logowania przez Google.
 resource "keycloak_authentication_flow" "google_browser" {
   realm_id    = keycloak_realm.shogun.id
   alias       = "shogun-google-browser"
-  description = "Browser flow that redirects users directly to Google."
+  description = "Legacy browser flow that redirects users directly to Google."
   provider_id = "basic-flow"
 }
 
@@ -85,13 +95,14 @@ resource "keycloak_authentication_execution_config" "google_redirector" {
 
 resource "keycloak_authentication_bindings" "browser_flow" {
   realm_id     = keycloak_realm.shogun.id
-  browser_flow = keycloak_authentication_flow.google_browser.alias
+  browser_flow = "browser"
 
   depends_on = [
     keycloak_authentication_execution_config.google_redirector,
   ]
 }
 
+# Mapowania atrybutów Google
 resource "keycloak_custom_identity_provider_mapper" "google_email" {
   name                     = "email"
   realm                    = keycloak_realm.shogun.id
