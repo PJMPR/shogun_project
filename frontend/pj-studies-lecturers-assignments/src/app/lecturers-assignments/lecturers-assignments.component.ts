@@ -16,6 +16,7 @@ import {
 type StudyMode = 'Stacjonarne' | 'Niestacjonarne';
 
 type ModeFilter = 'Wszystkie' | StudyMode;
+type SemesterType = 'zimowy' | 'letni';
 
 const DAY_ORDER: Record<string, number> = {
   Pon: 0, Pn: 0, Wt: 1, Śr: 2, Sr: 2, Czw: 3, Pt: 4, Sob: 5, Nd: 6,
@@ -60,10 +61,16 @@ export class LecturersAssignmentsComponent implements OnInit {
   lecturers = signal<LecturerAssignmentDto[]>([]);
   selectedLecturerId = signal<number | null>(null);
   selectedMode = signal<ModeFilter>('Wszystkie');
+  activeSemester = signal<SemesterType>('zimowy');
+
+  readonly semesterLecturers = computed(() =>
+    this.lecturers().filter((lecturer) => lecturer.semesterType === this.activeSemester()),
+  );
 
   readonly selectedLecturer = computed(() => {
     const id = this.selectedLecturerId();
-    return this.lecturers().find((l) => l.id === id) ?? this.lecturers()[0] ?? null;
+    const lecturers = this.semesterLecturers();
+    return lecturers.find((l) => l.id === id) ?? lecturers[0] ?? null;
   });
 
   readonly filteredSubjects = computed(() => {
@@ -77,7 +84,7 @@ export class LecturersAssignmentsComponent implements OnInit {
   });
 
   readonly stats = computed(() => {
-    const all = this.lecturers();
+    const all = this.semesterLecturers();
     return {
       lecturers: all.length,
       subjects: all.reduce((sum, l) => sum + l.subjects.length, 0),
@@ -92,9 +99,7 @@ export class LecturersAssignmentsComponent implements OnInit {
     this.api.getLatestPerLecturer().subscribe({
       next: (data) => {
         this.lecturers.set(data);
-        if (data.length > 0) {
-          this.selectedLecturerId.set(data[0].id);
-        }
+        this.selectFirstLecturer();
         this.loading.set(false);
       },
       error: () => {
@@ -107,6 +112,12 @@ export class LecturersAssignmentsComponent implements OnInit {
   selectLecturer(id: number): void {
     this.selectedLecturerId.set(id);
     this.selectedMode.set('Wszystkie');
+  }
+
+  setSemester(semester: SemesterType): void {
+    this.activeSemester.set(semester);
+    this.selectedMode.set('Wszystkie');
+    this.selectFirstLecturer();
   }
 
   setMode(mode: ModeFilter): void {
@@ -173,6 +184,10 @@ export class LecturersAssignmentsComponent implements OnInit {
 
   private dayMatches(apiDay: string, gridDay: string): boolean {
     return this.dayCanonical[apiDay] === this.dayCanonical[gridDay];
+  }
+
+  private selectFirstLecturer(): void {
+    this.selectedLecturerId.set(this.semesterLecturers()[0]?.id ?? null);
   }
 
   // unused but kept for template compatibility

@@ -37,9 +37,10 @@ public class LecturerAssignmentRepository(AssignmentsDbContext db) : ILecturerAs
 
     public async Task<IReadOnlyList<LecturerAssignment>> GetLatestPerLecturerAsync(CancellationToken ct = default)
     {
-        // For each lecturer email, pick the most recent submission
+        // Keep the most recent submission for each lecturer and semester type.
+        // A lecturer may submit separate desiderata for the winter and summer semesters.
         var latestIds = await db.LecturerAssignments
-            .GroupBy(a => a.LecturerEmail)
+            .GroupBy(a => new { a.LecturerEmail, a.SemesterType })
             .Select(g => g.OrderByDescending(a => a.SubmittedAt).First().Id)
             .ToListAsync(ct);
 

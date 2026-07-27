@@ -9,6 +9,21 @@
     </div>
   </header>
 
+  <div class="semester-switcher" aria-label="Wybór semestru">
+    <p-button
+      label="Semestr zimowy"
+      [outlined]="activeSemester() !== 'zimowy'"
+      severity="secondary"
+      (onClick)="setSemester('zimowy')"
+    />
+    <p-button
+      label="Semestr letni"
+      [outlined]="activeSemester() !== 'letni'"
+      severity="secondary"
+      (onClick)="setSemester('letni')"
+    />
+  </div>
+
   @if (loading()) {
     <div class="loading-wrapper">
       <p-progressspinner strokeWidth="4" />
@@ -38,10 +53,10 @@
       <aside class="lecturer-list" aria-label="Lista wykładowców">
         <div class="panel-heading">
           <h2>Wykładowcy</h2>
-          <span>{{ lecturers().length }} osób</span>
+          <span>{{ semesterLecturers().length }} osób</span>
         </div>
 
-        @for (lecturer of lecturers(); track lecturer.id) {
+        @for (lecturer of semesterLecturers(); track lecturer.id) {
           <button
             type="button"
             class="lecturer-card"
@@ -54,6 +69,8 @@
               <span class="lecturer-date">{{ lecturer.submittedAt | date:'dd.MM.yyyy' }}</span>
             </span>
           </button>
+        } @empty {
+          <p class="empty-info">Brak zgłoszeń na wybrany semestr.</p>
         }
       </aside>
 
