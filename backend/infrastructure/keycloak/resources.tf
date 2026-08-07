@@ -247,3 +247,12 @@ resource "keycloak_role" "app_dezyderaty" {
     "managedBy" = "shogun"
   }
 }
+
+resource "keycloak_role" "app_planner" {
+  realm_id    = keycloak_realm.shogun.id
+  name        = "planner"
+  description = "shogun: dostep do ukladania i zapisywania planow zajec"
+  attributes = {
+    "managedBy" = "shogun"
+  }
+}

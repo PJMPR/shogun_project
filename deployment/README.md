@@ -19,6 +19,7 @@
 | `docker-compose.keycloak.prod.yml` | Produkcyjny Keycloak, uruchamiany osobno po bazach danych |
 | `docker-compose.prod.yml` | Produkcyjne API, frontendy, pliki statyczne i nginx proxy; bez baz danych i Keycloak |
 | `nginx.prod.conf` | Konfiguracja nginx z TLS i reverse proxy do aplikacji oraz Keycloak |
+| `PLANZAJEC.md` | Selektywne wdrożenie PostgreSQL, API i frontendu planu zajęć |
 
 `shogun.pjwstk.edu.pl` jest kanoniczną domeną uwierzytelniania (issuer Keycloak
 i callback brokera Google). Frontend otwarty z dowolnej domeny produkcyjnej
@@ -105,6 +106,9 @@ Na tym etapie uzupelnij co najmniej:
 - `MONGO_USER`
 - `MONGO_PASS`
 - `MONGO_DB`
+- `SCHEDULE_POSTGRES_DB`
+- `SCHEDULE_POSTGRES_USER`
+- `SCHEDULE_POSTGRES_PASSWORD`
 - `KC_ADMIN_USER`
 - `KC_ADMIN_PASS`
 
@@ -218,6 +222,7 @@ Ten krok uruchamia:
 - API sylabusow
 - API assignments
 - API users
+- API planu zajęć
 - mikrofrontendy
 - serwis plikow
 - nginx proxy na portach `80` i `443`
@@ -315,12 +320,15 @@ Docker network: shogun_network
        +-- pj_syllabi_api
        +-- pj_assignments_api
        +-- pj_users_api
+       +-- pj_schedule_api
        +-- pj_mfe_host
        +-- pj_mfe_program
        +-- pj_mfe_syllabi
        +-- pj_mfe_assignements
        +-- pj_mfe_users
+       +-- pj_mfe_schedule
        +-- pj_files
        +-- pj_mariadb
        +-- pj_mongo
+       +-- pj_postgres_schedule
 ```
