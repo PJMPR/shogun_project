@@ -4,7 +4,6 @@ import { ScheduleEntry } from '../models/schedule.models';
 let _nextId = 1;
 const uid = (): string => String(_nextId++);
 
-// Two stacjonarny entries share sala 201 at Mon 8:00–9:30 — intentional conflict demo
 // Empty schedule — entries are added by the user
 const MOCK_ENTRIES: ScheduleEntry[] = [];
 

@@ -54,7 +54,7 @@ import { DAY_NAMES, ScheduleEntry, Semester, formatHour, semesterTypeOf } from '
                   value="Konflikt"
                   severity="danger"
                   icon="pi pi-exclamation-triangle"
-                  pTooltip="Nakładające się zajęcia w tej samej sali lub u tego samego wykładowcy"
+                  pTooltip="Prowadzący lub wybrana sala mają w tym czasie inne zajęcia"
                 />
               } @else {
                 <p-tag value="OK" severity="success" />

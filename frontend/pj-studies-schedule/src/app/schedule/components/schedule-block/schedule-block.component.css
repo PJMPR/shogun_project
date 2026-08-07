@@ -24,7 +24,7 @@
 }
 
 .block.conflict {
-  box-shadow: inset 0 0 0 2px var(--p-red-600);
+  opacity: 0.58;
 }
 
 .color-button {
@@ -98,10 +98,3 @@
   margin-top: auto;
 }
 
-.block-conflict-icon {
-  position: absolute;
-  bottom: 4px;
-  left: 5px;
-  color: var(--p-red-600);
-  font-size: 0.75rem;
-}

@@ -30,22 +30,22 @@ export class ConflictDetectionService {
         const a = entries[i];
         const b = entries[j];
 
-        if (
-          a.studyMode !== b.studyMode ||
-          a.dayOfWeek !== b.dayOfWeek ||
-          a.semesterNumber !== b.semesterNumber ||
-          a.academicYear !== b.academicYear
-        ) {
+        if (a.dayOfWeek !== b.dayOfWeek || a.academicYear !== b.academicYear) {
           continue;
         }
 
         if (!overlaps(a, b)) continue;
 
-        if (a.room === b.room) {
+        const lecturerA = a.lecturerName.trim().toLocaleLowerCase('pl-PL');
+        const lecturerB = b.lecturerName.trim().toLocaleLowerCase('pl-PL');
+        const roomA = a.room.trim().toLocaleLowerCase('pl-PL');
+        const roomB = b.room.trim().toLocaleLowerCase('pl-PL');
+
+        if (roomA && roomA === roomB) {
           addConflict(result, a.id, b.id, 'room');
           addConflict(result, b.id, a.id, 'room');
         }
-        if (a.lecturerName === b.lecturerName) {
+        if (lecturerA && lecturerA === lecturerB) {
           addConflict(result, a.id, b.id, 'lecturer');
           addConflict(result, b.id, a.id, 'lecturer');
         }
