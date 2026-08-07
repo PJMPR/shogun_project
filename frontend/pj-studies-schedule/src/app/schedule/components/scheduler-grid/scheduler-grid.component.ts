@@ -1,5 +1,5 @@
 import { CdkDrag, CdkDragEnd, CdkDragHandle } from '@angular/cdk/drag-drop';
-import { Component, ElementRef, OnDestroy, ViewChild, computed, input, output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output } from '@angular/core';
 import { ScheduleEntry } from '../../models/schedule.models';
 import { ScheduleBlockComponent } from '../schedule-block/schedule-block.component';
 
@@ -16,6 +16,7 @@ interface CellPosition { col: number; row: number }
   styleUrl: './scheduler-grid.component.css',
 })
 export class SchedulerGridComponent implements OnDestroy {
+  private readonly changeDetector = inject(ChangeDetectorRef);
   readonly entries = input<ScheduleEntry[]>([]);
   readonly conflicts = input<Set<string>>(new Set());
   readonly activeDays = input<number[]>([]);
@@ -113,12 +114,14 @@ export class SchedulerGridComponent implements OnDestroy {
       ...this.selection,
       end: { col: currentDay === startDay ? cell.col : this.dayEdgeColumn(startDay, cell.col), row: cell.row },
     };
+    this.changeDetector.markForCheck();
   }
 
   private finishSelection(): void {
     if (!this.selection) return;
     const { start, end } = this.selection;
     this.selection = null;
+    this.changeDetector.markForCheck();
     const minCol = Math.min(start.col, end.col);
     const maxCol = Math.max(start.col, end.col);
     const minRow = Math.min(start.row, end.row);
@@ -172,6 +175,7 @@ export class SchedulerGridComponent implements OnDestroy {
       id: this.resizing.entry.id,
       slots: Math.max(1, Math.min(this.totalRows - startSlot, this.resizing.initialSlots + deltaSlots)),
     };
+    this.changeDetector.markForCheck();
   }
 
   private finishResize(): void {
@@ -180,6 +184,7 @@ export class SchedulerGridComponent implements OnDestroy {
     const durationHours = this.resizePreview.slots / SLOTS_PER_HOUR;
     this.resizing = null;
     this.resizePreview = null;
+    this.changeDetector.markForCheck();
     if (!this.canPlace(entry.id, entry.dayOfWeek, entry.group, this.entryGroupSpan(entry), entry.startHour, durationHours)) {
       this.placementRejected.emit();
       return;

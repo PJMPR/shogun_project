@@ -14,6 +14,7 @@ export function rokOf(n: number): number {
 export interface ScheduleEntry {
   id: string;
   subjectName: string;
+  subjectCode?: string;
   lecturerName: string;
   room: string;
   /** 0=Pon, 1=Wt, 2=Śr, 3=Czw, 4=Pt, 5=Sob, 6=Nd */

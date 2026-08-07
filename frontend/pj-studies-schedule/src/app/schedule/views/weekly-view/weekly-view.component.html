@@ -80,6 +80,9 @@
   <app-entry-dialog
     #dialog
     [groupsPerDay]="groupsPerDay()"
+    [desiderata]="desiderataOptions()"
+    [desiderataLoading]="desiderataService.loading()"
+    [desiderataError]="desiderataService.error()"
     (saved)="onSaved($event)"
     (deleted)="onDeleted($event)"
   />

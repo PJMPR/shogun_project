@@ -8,6 +8,7 @@ import { TimeLabelsComponent } from '../../components/time-labels/time-labels.co
 import { EntryDialogComponent } from '../../components/entry-dialog/entry-dialog.component';
 import { ConflictDetectionService } from '../../services/conflict-detection.service';
 import { MockDataService } from '../../services/mock-data.service';
+import { DesideratumOption, LecturerDesiderataService } from '../../services/lecturer-desiderata.service';
 import { ScheduleEntry, ScheduleFilters, Semester, semesterTypeOf } from '../../models/schedule.models';
 
 @Component({
@@ -38,8 +39,10 @@ export class WeeklyViewComponent {
   private readonly conflictService = inject(ConflictDetectionService);
   private readonly messageService = inject(MessageService);
   private readonly confirmationService = inject(ConfirmationService);
+  protected readonly desiderataService = inject(LecturerDesiderataService);
 
   constructor() {
+    this.desiderataService.load();
     // Reset semester number when semester type changes
     effect(() => {
       this.semesterType();
@@ -56,6 +59,26 @@ export class WeeklyViewComponent {
       if (f.semesterNumber !== null && e.semesterNumber !== f.semesterNumber) return false;
       return true;
     });
+  });
+
+  protected readonly desiderataOptions = computed<DesideratumOption[]>(() => {
+    const filters = this.filters();
+    const semesterType = this.semesterType();
+    return this.desiderataService.items()
+      .filter((assignment) => assignment.semesterType.toLowerCase() === semesterType)
+      .flatMap((assignment) => assignment.subjects
+        .filter((subject) =>
+          subject.trybStudiow === filters.mode &&
+          semesterTypeOf(subject.semester) === semesterType &&
+          (filters.semesterNumber === null || subject.semester === filters.semesterNumber),
+        )
+        .map((subject) => ({
+          ...subject,
+          assignmentId: assignment.id,
+          lecturerName: `${assignment.lecturerFirstName} ${assignment.lecturerLastName}`.trim(),
+          semesterType: assignment.semesterType,
+          academicYear: assignment.academicYear,
+        })));
   });
 
   protected readonly conflictSet = computed(

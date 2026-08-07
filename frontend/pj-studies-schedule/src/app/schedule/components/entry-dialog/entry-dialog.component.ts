@@ -6,6 +6,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { ScheduleEntry, StudyMode } from '../../models/schedule.models';
+import { DesideratumOption } from '../../services/lecturer-desiderata.service';
 
 type EntryForm = Omit<ScheduleEntry, 'id'>;
 
@@ -45,20 +46,46 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       [(visible)]="visible"
       [header]="isEditing ? 'Edytuj wpis' : 'Nowy wpis'"
       [modal]="true"
-      [style]="{ width: '480px' }"
+      [style]="{ width: '920px', maxWidth: '96vw' }"
       (onHide)="onHide()"
     >
-      <div class="dialog-form">
+      <div class="dialog-body">
+        <aside class="desiderata-panel">
+          <div class="desiderata-heading">Dezyderaty dla wybranego semestru</div>
+          @if (desiderataLoading()) {
+            <div class="desiderata-state">Pobieranie dezyderatów…</div>
+          } @else if (desiderataError()) {
+            <div class="desiderata-state error">{{ desiderataError() }}</div>
+          } @else if (desiderata().length === 0) {
+            <div class="desiderata-state">Brak pasujących przedmiotów.</div>
+          } @else {
+            <div class="desiderata-list">
+              @for (item of desiderata(); track item.assignmentId + ':' + item.id) {
+                <button type="button" class="desideratum-card" (click)="applyDesideratum(item)">
+                  <strong>{{ item.name }}</strong>
+                  <span class="subject-code">{{ item.code || 'Brak kodu' }}</span>
+                  <span>{{ item.lecturerName }}</span>
+                </button>
+              }
+            </div>
+          }
+        </aside>
+
+        <div class="dialog-form">
         <div class="form-row">
           <label>Przedmiot</label>
           <input pInputText [(ngModel)]="form.subjectName" placeholder="Nazwa przedmiotu" class="w-full" />
+        </div>
+        <div class="form-row">
+          <label>Kod przedmiotu</label>
+          <input pInputText [(ngModel)]="form.subjectCode" placeholder="Kod przedmiotu" class="w-full" />
         </div>
         <div class="form-row">
           <label>Wykładowca</label>
           <input pInputText [(ngModel)]="form.lecturerName" placeholder="Imię i nazwisko" class="w-full" />
         </div>
         <div class="form-row">
-          <label>Sala</label>
+          <label>Sala (opcjonalnie)</label>
           <input pInputText [(ngModel)]="form.room" placeholder="np. 201, lab 105" class="w-full" />
         </div>
         <div class="form-row">
@@ -136,6 +163,7 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
             class="w-full"
           />
         </div>
+        </div>
       </div>
 
       <ng-template #footer>
@@ -168,6 +196,55 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         gap: 0.75rem;
         padding-top: 0.25rem;
       }
+      .dialog-body {
+        display: grid;
+        grid-template-columns: minmax(230px, 0.8fr) minmax(320px, 1.2fr);
+        gap: 1rem;
+        max-height: 68vh;
+      }
+      .desiderata-panel {
+        min-width: 0;
+        padding-right: 0.75rem;
+        border-right: 1px solid var(--p-surface-200);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .desiderata-heading {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--p-surface-700);
+      }
+      .desiderata-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        overflow-y: auto;
+        padding: 2px 5px 2px 2px;
+      }
+      .desideratum-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        width: 100%;
+        padding: 0.6rem;
+        text-align: left;
+        color: var(--p-surface-700);
+        border: 1px solid var(--p-surface-300);
+        border-radius: 7px;
+        background: var(--p-surface-0, white);
+        cursor: pointer;
+      }
+      .desideratum-card:hover {
+        border-color: var(--p-primary-400);
+        background: var(--p-primary-50);
+      }
+      .desideratum-card strong { color: var(--p-surface-900); }
+      .desideratum-card span { font-size: 0.78rem; }
+      .desideratum-card .subject-code { color: var(--p-primary-600); font-weight: 600; }
+      .desiderata-state { padding: 1rem 0.25rem; font-size: 0.82rem; color: var(--p-surface-500); }
+      .desiderata-state.error { color: var(--p-red-600); }
       .form-row {
         display: flex;
         flex-direction: column;
@@ -191,6 +268,10 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       .w-full {
         width: 100%;
       }
+      @media (max-width: 700px) {
+        .dialog-body { grid-template-columns: 1fr; max-height: 72vh; overflow-y: auto; }
+        .desiderata-panel { max-height: 230px; padding-right: 0; padding-bottom: 0.75rem; border-right: 0; border-bottom: 1px solid var(--p-surface-200); }
+      }
     `,
   ],
 })
@@ -198,6 +279,9 @@ export class EntryDialogComponent {
   readonly saved = output<ScheduleEntry>();
   readonly deleted = output<string>();
   readonly groupsPerDay = input<Record<number, string[]>>({});
+  readonly desiderata = input<DesideratumOption[]>([]);
+  readonly desiderataLoading = input(false);
+  readonly desiderataError = input<string | null>(null);
 
   protected get groupOptions(): { label: string; value: number }[] {
     const groups = this.groupsPerDay()[this.form.dayOfWeek];
@@ -237,8 +321,21 @@ export class EntryDialogComponent {
     if (!valid) this.form.dayOfWeek = this.dayOptions[0].value;
   }
 
+  protected applyDesideratum(item: DesideratumOption): void {
+    this.form = {
+      ...this.form,
+      subjectName: item.name,
+      subjectCode: item.code ?? '',
+      lecturerName: item.lecturerName,
+      studyMode: item.trybStudiow as StudyMode,
+      semesterNumber: item.semester,
+      academicYear: item.academicYear,
+    };
+    this.onModeChange();
+  }
+
   protected isValid(): boolean {
-    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim() && this.form.room?.trim());
+    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim());
   }
 
   protected onSave(): void {
@@ -266,6 +363,7 @@ export class EntryDialogComponent {
   private defaultForm(): EntryForm {
     return {
       subjectName: '',
+      subjectCode: '',
       lecturerName: '',
       room: '',
       studyMode: 'stacjonarny',
