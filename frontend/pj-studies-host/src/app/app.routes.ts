@@ -5,6 +5,7 @@ import {
   canAccessAssignmentsGuard,
   canAccessDezyderatyGuard,
   canAccessProgramGuard,
+  canAccessScheduleGuard,
   canAccessSyllabiGuard,
 } from './route-access.guard';
 
@@ -36,6 +37,11 @@ export const routes: Routes = [
     path: 'users',
     canMatch: [canAccessAdminGuard],
     loadChildren: () => loadRemoteModule('mfe-users', './Routes').then(m => m.default),
+  },
+  {
+    path: 'schedule',
+    canMatch: [canAccessScheduleGuard],
+    loadChildren: () => loadRemoteModule('mfe-schedule', './Routes').then(m => m.default),
   },
   {
     path: 'brak-dostepu',

@@ -97,6 +97,19 @@
         </a>
       }
 
+      @if (authService.canAccessSchedule()) {
+        <p class="nav-section-label">Plan zajęć</p>
+        <a
+          routerLink="/schedule"
+          routerLinkActive="nav-link-active"
+          class="nav-link"
+          (click)="isMobile() && sidebarVisible.set(false)"
+        >
+          <i class="pi pi-calendar"></i>
+          Plan zajęć
+        </a>
+      }
+
       @if (authService.hasRole('admin')) {
         <p class="nav-section-label">Administracja</p>
         <a

@@ -23,9 +23,14 @@ function getKeycloakUrl(): string {
   // canonical issuer/callback. Starting a login session on the pja.edu.pl
   // alias would bind its cookie to the wrong host and the callback would end
   // with authentication_expired.
-  const authOrigin = PRODUCTION_HOSTNAMES.has(window.location.hostname)
-    ? PRODUCTION_AUTH_ORIGIN
-    : window.location.origin;
+  // On non-standard ports (local dev via :8443) the canonical-host redirect
+  // doesn't apply — use origin as-is so the port is preserved.
+  const { hostname, port } = window.location;
+  const isNonStandardPort = port !== '' && port !== '80' && port !== '443';
+  const authOrigin =
+    !isNonStandardPort && PRODUCTION_HOSTNAMES.has(hostname)
+      ? PRODUCTION_AUTH_ORIGIN
+      : window.location.origin;
 
   return `${authOrigin}/auth`;
 }
@@ -98,6 +103,10 @@ export class AuthService {
 
   canAccessDezyderaty(): boolean {
     return this.hasRole('admin') || this.hasRole('dezyderaty');
+  }
+
+  canAccessSchedule(): boolean {
+    return this.hasRole('admin') || this.hasRole('planner');
   }
 
   logout(): void {

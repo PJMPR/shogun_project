@@ -1,0 +1,83 @@
+<div class="weekly-view">
+  <div class="toolbar">
+    <app-filter-bar [semesterType]="semesterType()" (filtersChanged)="onFiltersChanged($event)" />
+    <p-button
+      label="Dodaj wpis"
+      icon="pi pi-plus"
+      size="small"
+      (onClick)="openCreateDialog()"
+    />
+  </div>
+
+  <div class="headers-area">
+    <div class="time-gutter"></div>
+    <div class="col-headers">
+      <!-- Row 1: day names, each spanning its group count -->
+      <div class="day-header-row">
+        @for (day of activeDayNumbers(); track day; let i = $index) {
+          <div class="day-header" [style.flex]="groupsForDay(day)">
+            <span>{{ dayLabels()[i] }}</span>
+            <button class="add-group-btn" (click)="addGroup(day)" title="Dodaj grupę">+</button>
+          </div>
+        }
+      </div>
+      <!-- Row 2: group sub-columns -->
+      <div class="group-header-row">
+        @for (day of activeDayNumbers(); track day) {
+          @for (g of groupIndices(day); track g) {
+            <div class="group-header">
+              <input
+                class="group-name-input"
+                [value]="groupName(day, g)"
+                (blur)="renameGroup(day, g, $any($event.target).value)"
+                (keydown.enter)="$any($event.target).blur()"
+                title="Kliknij aby zmienić nazwę grupy"
+              />
+              @if (groupsForDay(day) > 1 && g === groupsForDay(day) - 1) {
+                <button class="remove-group-btn" (click)="removeGroup(day)" title="Usuń grupę">✕</button>
+              }
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-area">
+    <app-time-labels [startHour]="8" [endHour]="20" [rowHeightPx]="ROW_HEIGHT" />
+
+    <div class="gridstack-wrapper">
+      <!-- Vertical separators: light between groups, strong at day boundaries -->
+      <div class="day-separator-overlay">
+        @for (day of activeDayNumbers(); track day; let lastDay = $last) {
+          @for (g of groupIndices(day); track g; let lastGroup = $last) {
+            <div class="col-sep"
+                 [class.day-boundary]="lastGroup"
+                 [class.last]="lastDay && lastGroup">
+            </div>
+          }
+        }
+      </div>
+      <app-gridstack
+        [entries]="filteredEntries()"
+        [conflicts]="conflictSet()"
+        [activeDays]="activeDayNumbers()"
+        [groupsPerDay]="groupsPerDay()"
+        [rowHeightPx]="ROW_HEIGHT"
+        (entryMoved)="onEntryMoved($event)"
+        (entryClicked)="openEditDialog($event)"
+        (cellsSelected)="onCellsSelected($event)"
+        (entryCloned)="onEntryCloned($event)"
+      />
+    </div>
+  </div>
+
+  <app-entry-dialog
+    #dialog
+    [groupsPerDay]="groupsPerDay()"
+    (saved)="onSaved($event)"
+    (deleted)="onDeleted($event)"
+  />
+
+  <p-confirmdialog />
+</div>

@@ -31,3 +31,8 @@ export const canAccessAdminGuard: CanMatchFn = () => {
   const authService = inject(AuthService);
   return authService.hasRole('admin') ? true : deniedTree();
 };
+
+export const canAccessScheduleGuard: CanMatchFn = () => {
+  const authService = inject(AuthService);
+  return authService.canAccessSchedule() ? true : deniedTree();
+};

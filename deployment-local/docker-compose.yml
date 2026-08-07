@@ -128,6 +128,15 @@ services:
     networks:
       - shogun_local
 
+  mfe-schedule:
+    build:
+      context: ../frontend/pj-studies-schedule
+      dockerfile: Dockerfile
+    container_name: pj_mfe_schedule
+    restart: unless-stopped
+    networks:
+      - shogun_local
+
 
   # ── Pliki statyczne (PDF-y, DOCX) ─────────────────────────────────────────
   files:
@@ -163,6 +172,7 @@ services:
       - mfe-assignements
       - mfe-users
       - mfe-lecturers-assignments
+      - mfe-schedule
       - files
 
 networks:

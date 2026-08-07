@@ -1,0 +1,12 @@
+diff --git a/node_modules/@angular/build/src/builders/application/build-action.js b/node_modules/@angular/build/src/builders/application/build-action.js
+index 61d67ff..271e071 100644
+--- a/node_modules/@angular/build/src/builders/application/build-action.js
++++ b/node_modules/@angular/build/src/builders/application/build-action.js
+@@ -126,6 +126,7 @@ async function* runEsBuildBuildAction(action, options) {
+     yield* emitOutputResults(result, outputOptions);
+     // Finish if watch mode is not enabled
+     if (!watcher) {
++        await result.dispose(); // fix: dispose esbuild contexts so the process can exit
+         return;
+     }
+     // Used to force a full result on next rebuild if there were initial errors.

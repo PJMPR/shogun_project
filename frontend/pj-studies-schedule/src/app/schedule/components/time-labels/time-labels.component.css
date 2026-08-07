@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  flex-shrink: 0;
+}
+
+.time-labels {
+  display: flex;
+  flex-direction: column;
+  width: 52px;
+}
+
+.time-label {
+  height: var(--row-height);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+  font-size: 0.68rem;
+  color: var(--p-surface-400);
+  line-height: 1;
+  border-right: 1px solid var(--p-surface-200);
+  padding-right: 6px;
+  justify-content: flex-end;
+}

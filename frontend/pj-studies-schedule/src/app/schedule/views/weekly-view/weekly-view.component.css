@@ -1,0 +1,162 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.weekly-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  flex-wrap: wrap;
+}
+
+.headers-area {
+  display: flex;
+  align-items: stretch;
+}
+
+.col-headers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.day-header-row,
+.group-header-row {
+  display: flex;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.25rem;
+  color: var(--p-surface-700);
+  border-bottom: 2px solid var(--p-primary-400);
+  border-right: 2px solid var(--p-primary-300);
+  background: var(--p-primary-50);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.day-header:last-child {
+  border-right: none;
+}
+
+.add-group-btn {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--p-primary-500);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 0.2rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.add-group-btn:hover {
+  background: var(--p-primary-100);
+}
+
+.group-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--p-surface-500);
+  padding: 0.2rem 0;
+  border-bottom: 1px solid var(--p-surface-200);
+  background: var(--p-surface-50);
+  min-width: 0;
+}
+
+.group-name-input {
+  border: none;
+  background: transparent;
+  font-size: 0.72rem;
+  color: var(--p-surface-600);
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  width: 0;
+  flex: 1;
+  min-width: 0;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+}
+
+.group-name-input:hover {
+  background: var(--p-surface-100);
+}
+
+.group-name-input:focus {
+  color: var(--p-surface-800);
+  background: white;
+  border: 1px solid var(--p-primary-400);
+  cursor: text;
+}
+
+.remove-group-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--p-surface-400);
+  font-size: 0.75rem;
+  padding: 0 0.1rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.remove-group-btn:hover {
+  color: var(--p-red-500);
+  background: var(--p-red-50);
+}
+
+.grid-area {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.gridstack-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.day-separator-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.col-sep {
+  flex: 1;
+  border-right: 1px solid var(--p-surface-200); /* light group separator */
+}
+
+.col-sep.day-boundary {
+  border-right: 2px solid var(--p-primary-200); /* stronger day boundary */
+}
+
+.col-sep.last {
+  border-right: none;
+}
