@@ -145,7 +145,7 @@ else {
 # ---------------------------------------------------------------------------
 # 5. Uruchomienie baz danych
 # ---------------------------------------------------------------------------
-Write-Step "Uruchamianie baz danych (MariaDB + MongoDB)"
+Write-Step "Uruchamianie baz danych (MariaDB + MongoDB + PostgreSQL)"
 
 Push-Location $scriptDir
 docker compose -f docker-compose.databases.yml --env-file .env.local up -d
@@ -266,6 +266,7 @@ Write-Host "  Aplikacja:     https://shogun.pjwstk.edu.pl:8443"
 Write-Host "  Keycloak:      http://localhost:8180/auth/admin"
 Write-Host "  MariaDB:       localhost:3306 (root / z .env.local)"
 Write-Host "  MongoDB:       localhost:27017 (admin / z .env.local)"
+Write-Host "  PostgreSQL:    localhost:5432 (Schedule API / z .env.local)"
 Write-Host ""
 Write-Host "Kolejne uruchomienia (po restarcie PC):"
 Write-Host "  cd deployment-local"

@@ -73,6 +73,22 @@ services:
     networks:
       - shogun_local
 
+  # Schedule API
+  schedule-api:
+    build:
+      context: ../backend/Shogun.Schedule
+      dockerfile: Shogun.Schedule.Api/Dockerfile
+    container_name: pj_schedule_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      POSTGRES__CONNECTIONSTRING: "Host=pj_postgres_schedule;Port=5432;Database=${SCHEDULE_POSTGRES_DB:-pj_schedule};Username=${SCHEDULE_POSTGRES_USER:-shogun_schedule};Password=${SCHEDULE_POSTGRES_PASSWORD:-schedule_password}"
+      KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
+      KEYCLOAK__VALIDISSUERS__0: "https://shogun.pjwstk.edu.pl:8443/auth/realms/shogun"
+    networks:
+      - shogun_local
+
   # ── Mikrofrontendy ────────────────────────────────────────────────────────
   mfe-host:
     build:
@@ -166,6 +182,7 @@ services:
       - api
       - assignments-api
       - users-api
+      - schedule-api
       - mfe-host
       - mfe-program
       - mfe-syllabi

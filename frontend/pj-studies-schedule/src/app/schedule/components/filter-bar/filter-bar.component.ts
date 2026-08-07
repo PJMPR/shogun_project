@@ -24,7 +24,7 @@ const LETNIE_SEMESTRY = [2, 4, 6, 8];
         [options]="semestrOptions"
         [(ngModel)]="semesterNumber"
         placeholder="Semestr"
-        [showClear]="true"
+        [showClear]="false"
         (ngModelChange)="emit()"
         styleClass="filter-select"
       />
@@ -57,7 +57,7 @@ export class FilterBarComponent implements OnChanges {
   readonly filtersChanged = output<ScheduleFilters>();
 
   protected mode: StudyMode = 'stacjonarny';
-  protected semesterNumber: number | null = null;
+  protected semesterNumber: number | null = 1;
 
   protected readonly modeOptions = [
     { label: 'Stacjonarny', value: 'stacjonarny' as StudyMode },
@@ -69,7 +69,7 @@ export class FilterBarComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    this.semesterNumber = null;
+    this.semesterNumber = this.semestrOptions[0];
     this.emit();
   }
 
@@ -78,7 +78,7 @@ export class FilterBarComponent implements OnChanges {
   }
 
   protected clearFilters(): void {
-    this.semesterNumber = null;
+    this.semesterNumber = this.semestrOptions[0];
     this.emit();
   }
 }

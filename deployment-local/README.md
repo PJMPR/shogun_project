@@ -41,6 +41,7 @@ Skrypt wykona kolejno:
 | Keycloak Admin | http://localhost:8180/auth/admin |
 | MariaDB | localhost:3306 |
 | MongoDB | localhost:27017 |
+| PostgreSQL (plan) | localhost:5432 |
 
 ---
 
@@ -52,7 +53,7 @@ Skrypt wykona kolejno:
 | `start.ps1` | Uruchamia wszystkie serwisy (kolejne uruchomienia) |
 | `stop.ps1` | Zatrzymuje wszystkie serwisy |
 | `rebuild.ps1` | Przebudowuje wybrany serwis bez restartowania calego stosu |
-| `docker-compose.databases.yml` | Bazy danych: MariaDB (3306) + MongoDB (27017) |
+| `docker-compose.databases.yml` | Bazy danych: MariaDB (3306), MongoDB (27017), PostgreSQL (5432) |
 | `docker-compose.keycloak.yml` | Keycloak (8180) |
 | `docker-compose.yml` | API, mikrofrontendy, pliki statyczne, nginx proxy (8080/8443) |
 | `nginx.local.conf` | Konfiguracja nginx z TLS na porcie 8443 |
@@ -132,6 +133,7 @@ Docker network: shogun_local_network
       +-- pj_files
       +-- pj_mariadb            (port 3306 na hoście)
       +-- pj_mongo              (port 27017 na hoście)
+      +-- pj_postgres_schedule  (port 5432 na hoście)
 ```
 
 Wszystkie kontenery sa w jednej sieci Docker `shogun_local_network`.
@@ -149,6 +151,9 @@ Plik `.env.local` (kopiowany z `.env.local.example`):
 | `MONGO_USER` | `admin` | Uzytkownik MongoDB |
 | `MONGO_PASS` | `haslo123` | Haslo MongoDB |
 | `MONGO_DB` | `pj_sylabi` | Nazwa bazy MongoDB |
+| `SCHEDULE_POSTGRES_DB` | `pj_schedule` | Nazwa bazy planów |
+| `SCHEDULE_POSTGRES_USER` | `shogun_schedule` | Użytkownik bazy planów |
+| `SCHEDULE_POSTGRES_PASSWORD` | `schedule_password` | Lokalne hasło bazy planów |
 | `KC_DB_USER` | `root` | Uzytkownik Keycloak do MariaDB |
 | `KC_DB_PASS` | `password` | Haslo Keycloak do MariaDB |
 | `KC_ADMIN_USER` | `admin` | Login do Keycloak Admin Console |

@@ -5,7 +5,7 @@
 
 .DESCRIPTION
     Kolejnosc:
-      1. Bazy danych (MariaDB + MongoDB)
+      1. Bazy danych (MariaDB + MongoDB + PostgreSQL)
       2. Keycloak
       3. Aplikacja (API + frontendy + nginx)
 

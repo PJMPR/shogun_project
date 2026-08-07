@@ -27,6 +27,12 @@
   background: var(--p-surface-0, white);
 }
 
+.plan-actions { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; }
+.dirty-indicator { display: inline-flex; align-items: center; gap: .35rem; color: #92400e; font-size: .75rem; }
+.dirty-indicator span { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; }
+.missing-plan { color: var(--p-surface-500); font-size: .78rem; }
+.stale-banner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .65rem .8rem; border: 1px solid #fbbf24; border-radius: 7px; color: #92400e; background: #fffbeb; font-size: .8rem; }
+
 .schedule-scroll {
   flex: 1;
   min-height: 0;

@@ -9,6 +9,28 @@
 
 services:
 
+  # PostgreSQL — baza planów zajęć (Schedule API)
+  postgres-schedule:
+    image: postgres:17-alpine
+    container_name: pj_postgres_schedule
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${SCHEDULE_POSTGRES_DB:-pj_schedule}
+      POSTGRES_USER: ${SCHEDULE_POSTGRES_USER:-shogun_schedule}
+      POSTGRES_PASSWORD: ${SCHEDULE_POSTGRES_PASSWORD:-schedule_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_schedule_data:/var/lib/postgresql/data
+    networks:
+      - shogun_local
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
   # ── MariaDB ──────────────────────────────────────────────────────────────
   # Bazy: shogun_users (Keycloak + Users API), pj_assignments (Assignments API)
   mariadb:
@@ -80,3 +102,4 @@ networks:
 volumes:
   mariadb_data:
   mongo_data:
+  postgres_schedule_data:

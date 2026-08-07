@@ -1,14 +1,26 @@
 <div class="weekly-view">
   <div class="toolbar">
     <app-filter-bar [semesterType]="semesterType()" (filtersChanged)="onFiltersChanged($event)" />
-    <p-button
-      label="Dodaj wpis"
-      icon="pi pi-plus"
-      size="small"
-      (onClick)="openCreateDialog()"
-    />
+    <div class="plan-actions">
+      @if (mockData.dirty()) { <span class="dirty-indicator"><span></span> Niezapisane zmiany</span> }
+      @if (mockData.current()) {
+        <p-button icon="pi pi-trash" size="small" severity="danger" [text]="true" title="Usuń plan" (onClick)="deleteCurrentPlan()" />
+        <p-button label="Dodaj wpis" icon="pi pi-plus" size="small" (onClick)="openCreateDialog()" />
+      } @else {
+        <span class="missing-plan">Brak planu dla wybranego roku, semestru i trybu.</span>
+        <p-button label="Utwórz plan" icon="pi pi-plus" size="small" (onClick)="createCurrentPlan()" />
+      }
+    </div>
   </div>
 
+  @if (mockData.stale()) {
+    <div class="stale-banner">
+      <span><i class="pi pi-exclamation-triangle"></i> Ktoś inny zapisał nowszą wersję planu. Twoje zmiany nie zostały nadpisane.</span>
+      <p-button label="Odśwież z serwera" icon="pi pi-refresh" size="small" severity="warn" (onClick)="refreshPlan()" />
+    </div>
+  }
+
+  @if (mockData.current()) {
   <div class="schedule-scroll">
     <div class="headers-area">
       <div class="time-gutter"></div>
@@ -60,7 +72,7 @@
         }
       </div>
         <app-scheduler-grid
-        [entries]="filteredEntries()"
+        [entries]="resolvedEntries()"
         [conflicts]="conflictSet()"
         [activeDays]="activeDayNumbers()"
         [groupsPerDay]="groupsPerDay()"
@@ -80,6 +92,7 @@
       </div>
     </div>
   </div>
+  }
 
   <app-entry-dialog
     #dialog

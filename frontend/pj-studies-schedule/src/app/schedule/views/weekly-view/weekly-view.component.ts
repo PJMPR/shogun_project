@@ -9,7 +9,7 @@ import { EntryDialogComponent } from '../../components/entry-dialog/entry-dialog
 import { ConflictDetectionService } from '../../services/conflict-detection.service';
 import { MockDataService } from '../../services/mock-data.service';
 import { DesideratumOption, LecturerDesiderataService } from '../../services/lecturer-desiderata.service';
-import { ScheduleEntry, ScheduleFilters, Semester, semesterTypeOf } from '../../models/schedule.models';
+import { ScheduleEntry, ScheduleFilters, ScheduleGroup, SchedulePlanSummary, Semester, semesterTypeOf } from '../../models/schedule.models';
 import { CommentsDrawerComponent } from '../../components/comments-drawer/comments-drawer.component';
 import { ScheduleCommentsService } from '../../services/schedule-comments.service';
 
@@ -32,13 +32,18 @@ export class WeeklyViewComponent {
   protected readonly ROW_HEIGHT = 40;
 
   readonly semesterType = input<Semester>('zimowy');
+  readonly academicYear = input.required<string>();
+  readonly facultyCode = input.required<string>();
+  readonly selectedPlan = input<SchedulePlanSummary | null>(null);
 
   @ViewChild('dialog') dialog!: EntryDialogComponent;
 
   protected readonly filters = signal<ScheduleFilters>({ mode: 'stacjonarny', semesterNumber: null });
-  protected readonly groupsPerDay = signal<Record<number, string[]>>({});
+  protected readonly groupsPerDay = computed<Record<number, string[]>>(() =>
+    Object.fromEntries(this.activeDayNumbers().map((day) => [day, this.mockData.groups().map((group) => group.name)])),
+  );
 
-  private readonly mockData = inject(MockDataService);
+  protected readonly mockData = inject(MockDataService);
   private readonly conflictService = inject(ConflictDetectionService);
   private readonly messageService = inject(MessageService);
   private readonly confirmationService = inject(ConfirmationService);
@@ -51,7 +56,24 @@ export class WeeklyViewComponent {
     // Reset semester number when semester type changes
     effect(() => {
       this.semesterType();
-      this.filters.update((f) => ({ ...f, semesterNumber: null }));
+      this.filters.update((f) => ({ ...f, semesterNumber: this.semesterType() === 'zimowy' ? 1 : 2 }));
+    });
+    effect(() => {
+      const selected = this.selectedPlan();
+      if (!selected) return;
+      this.filters.set({
+        mode: selected.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
+        semesterNumber: selected.semesterNumber,
+      });
+      if (this.mockData.current()?.id !== selected.id) void this.mockData.reload(selected.id);
+    });
+    effect(() => {
+      this.mockData.plans();
+      const year = this.academicYear();
+      this.facultyCode();
+      const filters = this.filters();
+      if (this.selectedPlan()) return;
+      if (filters.semesterNumber !== null) void this.mockData.loadFor(year, filters.semesterNumber, filters.mode);
     });
   }
 
@@ -81,10 +103,21 @@ export class WeeklyViewComponent {
           ...subject,
           assignmentId: assignment.id,
           lecturerName: `${assignment.lecturerFirstName} ${assignment.lecturerLastName}`.trim(),
+          lecturerEmail: assignment.lecturerEmail,
           semesterType: assignment.semesterType,
           academicYear: assignment.academicYear,
-        })));
+      }))); 
   });
+
+  protected readonly resolvedEntries = computed(() => this.filteredEntries().map((entry) => {
+    if (entry.lecturerAssignmentId !== undefined) return entry;
+    const email = entry.lecturerEmail.trim().toLocaleLowerCase('pl-PL');
+    const candidates = this.desiderataOptions().filter((item) =>
+      item.lecturerEmail.trim().toLocaleLowerCase('pl-PL') === email &&
+      (item.code === entry.subjectCode || item.name === entry.subjectName),
+    );
+    return candidates.length === 1 ? { ...entry, lecturerAssignmentId: candidates[0].assignmentId } : entry;
+  }));
 
   protected readonly availabilityByAssignment = computed(() =>
     Object.fromEntries(
@@ -98,7 +131,12 @@ export class WeeklyViewComponent {
   });
 
   protected readonly conflictSet = computed(
-    () => new Set(this.conflictService.detectConflicts(this.mockData.entries()).map((c) => c.entryId)),
+    () => {
+      const currentEntries = this.resolvedEntries();
+      const currentIds = new Set(currentEntries.map((entry) => entry.id));
+      const otherPlans = this.mockData.conflictContextEntries().filter((entry) => !currentIds.has(entry.id));
+      return new Set(this.conflictService.detectConflicts([...otherPlans, ...currentEntries]).map((c) => c.entryId));
+    },
   );
 
   protected readonly isStacjonarny = computed(() => this.filters().mode === 'stacjonarny');
@@ -122,7 +160,7 @@ export class WeeklyViewComponent {
   }
 
   protected groupsForDay(day: number): number {
-    return this.groupsPerDay()[day]?.length ?? 1;
+    return Math.max(1, this.groupsPerDay()[day]?.length ?? 0);
   }
 
   protected groupIndices(day: number): number[] {
@@ -135,18 +173,14 @@ export class WeeklyViewComponent {
 
   protected renameGroup(day: number, g: number, name: string): void {
     if (!name.trim()) return;
-    this.groupsPerDay.update((m) => {
-      const current = [...(m[day] ?? ['Gr. 1'])];
-      current[g] = name.trim();
-      return { ...m, [day]: current };
-    });
+    const groups = [...this.mockData.groups()];
+    if (groups[g]) { groups[g] = { ...groups[g], name: name.trim() }; this.mockData.setGroups(groups); }
   }
 
   protected addGroup(day: number): void {
-    this.groupsPerDay.update((m) => {
-      const current = m[day] ?? ['Gr. 1'];
-      return { ...m, [day]: [...current, `Gr. ${current.length + 1}`] };
-    });
+    const groups = this.mockData.groups();
+    const number = groups.length + 1;
+    this.mockData.setGroups([...groups, { id: crypto.randomUUID(), code: `G${number}`, name: `Gr. ${number}`, sortOrder: groups.length }]);
   }
 
   protected removeGroup(day: number): void {
@@ -158,7 +192,7 @@ export class WeeklyViewComponent {
       rejectLabel: 'Anuluj',
       acceptButtonStyleClass: 'p-button-danger',
       accept: () => {
-        const currentGroups = this.groupsPerDay()[day] ?? ['Gr. 1'];
+        const currentGroups = this.mockData.groups();
         const newMaxGroup = currentGroups.length - 2;
         this.mockData.entries.update((list) =>
           list.map((e) =>
@@ -167,7 +201,7 @@ export class WeeklyViewComponent {
               : e,
           ),
         );
-        this.groupsPerDay.update((m) => ({ ...m, [day]: (m[day] ?? ['Gr. 1']).slice(0, -1) }));
+        this.mockData.setGroups(currentGroups.slice(0, -1));
       },
     });
   }
@@ -216,6 +250,7 @@ export class WeeklyViewComponent {
         id: crypto.randomUUID(),
         subjectName: 'Nowe zajęcia',
         lecturerName: '',
+        lecturerEmail: '',
         room: '',
         dayOfWeek: event.day,
         group: event.group,
@@ -223,7 +258,7 @@ export class WeeklyViewComponent {
         startHour: event.startHour,
         durationHours: event.durationHours,
         semesterNumber,
-        academicYear: '2025/2026',
+        academicYear: this.academicYear(),
         studyMode: f.mode,
     });
   }
@@ -249,14 +284,47 @@ export class WeeklyViewComponent {
     this.dialog.open(entry);
   }
 
+  protected async createCurrentPlan(): Promise<void> {
+    const filters = this.filters(); if (filters.semesterNumber === null) return;
+    try { await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode); this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: this.academicYear() }); }
+    catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Plan może już istnieć.' }); }
+  }
+
+  protected async saveChanges(): Promise<void> {
+    try { await this.mockData.save(); this.messageService.add({ severity: 'success', summary: 'Zapisano plan' }); }
+    catch { this.messageService.add({ severity: this.mockData.stale() ? 'warn' : 'error', summary: this.mockData.stale() ? 'Plan jest nieaktualny' : 'Błąd zapisu', detail: this.mockData.error() ?? undefined }); }
+  }
+
+  protected refreshPlan(): void {
+    const reload = () => void this.mockData.reload();
+    if (!this.mockData.dirty()) { reload(); return; }
+    this.confirmationService.confirm({ header: 'Odśwież plan', message: 'Niezapisane zmiany zostaną utracone. Kontynuować?', icon: 'pi pi-exclamation-triangle', acceptLabel: 'Odśwież', rejectLabel: 'Anuluj', accept: reload });
+  }
+
+  protected deleteCurrentPlan(): void {
+    const plan = this.mockData.current(); if (!plan) return;
+    this.confirmationService.confirm({ header: 'Usuń plan', message: `Usunąć plan ${plan.academicYear}, semestr ${plan.semesterNumber}?`, icon: 'pi pi-trash', acceptLabel: 'Usuń', rejectLabel: 'Anuluj', acceptButtonStyleClass: 'p-button-danger', accept: async () => { try { await this.mockData.deleteCurrent(); this.messageService.add({ severity: 'warn', summary: 'Usunięto plan' }); } catch { this.messageService.add({ severity: 'error', summary: 'Nie udało się usunąć planu' }); } } });
+  }
+
   protected openComments(id: string): void {
     const entry = this.mockData.entries().find((item) => item.id === id);
     if (!entry) return;
-    this.commentsService.ensureDemoComments(id);
+    if (!entry.concurrencyToken) {
+      this.messageService.add({ severity: 'info', summary: 'Najpierw zapisz plan', detail: 'Komentarze można dodać po zapisaniu nowego bloczka.' });
+      return;
+    }
+    this.commentsService.load(id);
     this.commentsEntry.set(entry);
   }
 
   protected onSaved(entry: ScheduleEntry): void {
+    const plan = this.mockData.current();
+    if (plan) entry = {
+      ...entry,
+      academicYear: plan.academicYear,
+      semesterNumber: plan.semesterNumber,
+      studyMode: plan.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
+    };
     if (this.mockData.entries().some((e) => e.id === entry.id)) {
       this.mockData.updateEntry(entry);
       this.messageService.add({ severity: 'success', summary: 'Zaktualizowano', detail: entry.subjectName });

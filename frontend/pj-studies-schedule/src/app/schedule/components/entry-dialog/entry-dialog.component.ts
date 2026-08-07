@@ -81,6 +81,10 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
           <input pInputText [(ngModel)]="form.subjectCode" placeholder="Kod przedmiotu" class="w-full" />
         </div>
         <div class="form-row">
+          <label>Forma zajęć</label>
+          <p-select [options]="classTypeOptions" [(ngModel)]="form.classType" optionLabel="label" optionValue="value" class="w-full" />
+        </div>
+        <div class="form-row">
           <label>Wykładowca</label>
           <input
             pInputText
@@ -89,6 +93,10 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
             placeholder="Imię i nazwisko"
             class="w-full"
           />
+        </div>
+        <div class="form-row">
+          <label>E-mail wykładowcy</label>
+          <input pInputText [(ngModel)]="form.lecturerEmail" placeholder="imie.nazwisko@pjwstk.edu.pl" class="w-full" />
         </div>
         <div class="form-row">
           <label>Sala (opcjonalnie)</label>
@@ -165,7 +173,7 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
           <input
             pInputText
             [(ngModel)]="form.academicYear"
-            placeholder="np. 2025/2026"
+            placeholder="np. 2026/2027"
             class="w-full"
           />
         </div>
@@ -305,6 +313,11 @@ export class EntryDialogComponent {
 
   protected readonly modeOptions = MODE_OPTIONS;
   protected readonly semesterNumberOptions = SEMESTER_NUMBER_OPTIONS;
+  protected readonly classTypeOptions = [
+    { label: 'Wykład', value: 'lecture' }, { label: 'Ćwiczenia', value: 'exercises' },
+    { label: 'Laboratorium', value: 'laboratory' }, { label: 'Projekt', value: 'project' },
+    { label: 'Seminarium', value: 'seminar' }, { label: 'Inne', value: 'other' },
+  ];
 
   open(entry: ScheduleEntry | null): void {
     this.isEditing = !!entry;
@@ -333,6 +346,7 @@ export class EntryDialogComponent {
       subjectName: item.name,
       subjectCode: item.code ?? '',
       lecturerName: item.lecturerName,
+      lecturerEmail: item.lecturerEmail,
       lecturerAssignmentId: item.assignmentId,
       studyMode: item.trybStudiow as StudyMode,
       semesterNumber: item.semester,
@@ -343,11 +357,14 @@ export class EntryDialogComponent {
 
   protected onLecturerNameChange(name: string): void {
     const linked = this.desiderata().find((item) => item.assignmentId === this.form.lecturerAssignmentId);
-    if (!linked || linked.lecturerName !== name) this.form.lecturerAssignmentId = undefined;
+    if (!linked || linked.lecturerName !== name) {
+      this.form.lecturerAssignmentId = undefined;
+      this.form.lecturerEmail = '';
+    }
   }
 
   protected isValid(): boolean {
-    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim());
+    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim() && this.form.lecturerEmail?.trim());
   }
 
   protected onSave(): void {
@@ -377,6 +394,8 @@ export class EntryDialogComponent {
       subjectName: '',
       subjectCode: '',
       lecturerName: '',
+      lecturerEmail: '',
+      classType: 'other',
       room: '',
       studyMode: 'stacjonarny',
       dayOfWeek: 0,
@@ -384,7 +403,7 @@ export class EntryDialogComponent {
       startHour: 8,
       durationHours: 1.5,
       semesterNumber: 1,
-      academicYear: '2025/2026',
+      academicYear: '2026/2027',
     };
   }
 }

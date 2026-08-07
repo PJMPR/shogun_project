@@ -20,7 +20,7 @@ Avoid scanning the whole repository. Route work by feature:
 - Flat table view: `views/list-view/list-view.component.ts`
 - Core types and day/hour helpers: `models/schedule.models.ts`
 - Comment types: `models/schedule-comment.models.ts`
-- In-memory schedule state: `services/mock-data.service.ts`
+- HTTP-backed plan store and working copy: `services/mock-data.service.ts`
 - Desiderata HTTP state and DTOs: `services/lecturer-desiderata.service.ts`
 - Comment persistence and author permissions: `services/schedule-comments.service.ts`
 - Room/lecturer collisions: `services/conflict-detection.service.ts`
@@ -32,7 +32,9 @@ Read a component's TS, template, and CSS together before changing its interactio
 
 Use standalone Angular components, signals, computed values, inputs, and outputs. `WeeklyViewComponent` is the coordinator: keep grid mechanics inside `SchedulerGridComponent`, block presentation inside `ScheduleBlockComponent`, and persistence-like concerns in services.
 
-The schedule has no backend yet. `MockDataService.entries` is the only schedule store and starts empty; entries disappear on reload. Do not imply durable schedule persistence. `scheduleApiBaseUrl` is currently unused.
+The schedule is persisted by `Shogun.Schedule` through `/api-schedule/api/v1`. Despite its legacy name, `MockDataService` is the HTTP-backed plan store. It owns plan summaries, the selected snapshot, groups, entries, dirty/stale/loading state, explicit save, refresh, creation, and deletion.
+
+Keep grid edits in the local working copy until `Zapisz zmiany`. Save groups and entries together using the schedule concurrency token. On HTTP 409 preserve local changes, mark the store stale, block another save, and require a confirmed refresh. Persist comments immediately outside the plan save transaction.
 
 `ScheduleEntry` is the shared object passed between weekly view, list view, dialogs, grid, conflict detection, clone/move/resize operations, and comments. When adding a field, preserve it in object spreads and check both views.
 
@@ -70,18 +72,18 @@ During drag/copy, show green 15-minute cells inside the linked lecturer's availa
 
 Availability day values may be abbreviations or Polish names. Preserve normalization for aliases such as `Pn/Pon`, `Wt`, `Śr/Sr`, `Czw`, `Pt`, `Sb/Sob`, and `Nd/Niedz`.
 
-## Maintain comments as a frontend prototype
+## Maintain server-backed comments
 
 Open comments only from the comment button on a weekly-view block; ordinary block click continues to open entry editing. Show the count badge and right-side drawer.
 
-Comments are stored in browser `localStorage` under versioned keys. They are not shared across browsers or users. The first open for a block seeds one demonstration exchange; record seeding separately so deleted demo comments do not reappear.
+Load and mutate comments through `ScheduleCommentsService` and `/api-schedule/api/v1`. Do not restore demo seeding or `localStorage`. A newly created block must be saved before comments can be added because it does not yet exist in PostgreSQL.
 
 Read the current author from host-provided `sessionStorage`:
 
 - `shogun_user_profile`: `{ firstName, lastName, email }`
 - `shogun_roles`: realm role names
 
-The host writes the profile in `frontend/pj-studies-host/src/app/auth.service.ts`; change that file only when the profile contract changes. Authors may edit/delete their own comments. Admins may delete every comment. Removing a block also removes its local comments. The comments feature is not currently present in list view.
+The host writes the profile in `frontend/pj-studies-host/src/app/auth.service.ts`; change that file only when the profile contract changes. The API derives authoritative author and permissions from JWT claims. Authors may edit/delete their own comments; admins may delete every comment. The comments feature is not currently present in list view.
 
 The host schedule route currently permits `admin` and `planner`, not lecturers. Do not broaden route authorization without an explicit request.
 

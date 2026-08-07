@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  scheduleApiBaseUrl: '',
+  scheduleApiBaseUrl: '/api-schedule',
   assignmentsApiBaseUrl: '/api-assignments',
 };
