@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ConflictInfo, ScheduleEntry } from '../models/schedule.models';
+import { ConflictInfo, ScheduleEntry, semesterTypeOf } from '../models/schedule.models';
 
 function overlaps(a: ScheduleEntry, b: ScheduleEntry): boolean {
   return a.startHour < b.startHour + b.durationHours && b.startHour < a.startHour + a.durationHours;
@@ -30,7 +30,11 @@ export class ConflictDetectionService {
         const a = entries[i];
         const b = entries[j];
 
-        if (a.dayOfWeek !== b.dayOfWeek || a.academicYear !== b.academicYear) {
+        if (
+          a.dayOfWeek !== b.dayOfWeek ||
+          a.academicYear !== b.academicYear ||
+          semesterTypeOf(a.semesterNumber) !== semesterTypeOf(b.semesterNumber)
+        ) {
           continue;
         }
 

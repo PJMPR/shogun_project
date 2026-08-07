@@ -82,7 +82,7 @@ export class WeeklyViewComponent {
   });
 
   protected readonly conflictSet = computed(
-    () => new Set(this.conflictService.detectConflicts(this.filteredEntries()).map((c) => c.entryId)),
+    () => new Set(this.conflictService.detectConflicts(this.mockData.entries()).map((c) => c.entryId)),
   );
 
   protected readonly isStacjonarny = computed(() => this.filters().mode === 'stacjonarny');

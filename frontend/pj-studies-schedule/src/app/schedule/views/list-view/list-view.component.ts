@@ -115,7 +115,7 @@ export class ListViewComponent {
   protected readonly conflictIds = computed(
     () =>
       new Set(
-        this.conflictService.detectConflicts(this.filteredEntries()).map((c) => c.entryId),
+        this.conflictService.detectConflicts(this.mockData.entries()).map((c) => c.entryId),
       ),
   );
 
