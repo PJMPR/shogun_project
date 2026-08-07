@@ -20,6 +20,10 @@ export interface ScheduleEntry {
   dayOfWeek: number;
   /** 0-based group (sub-column) index within the day */
   group: number;
+  /** Number of adjacent group columns occupied by this entry. */
+  groupSpan?: number;
+  /** User-selected block color in hexadecimal notation. */
+  color?: string;
   /** Decimal hour: 8.0 = 08:00, 9.5 = 09:30 */
   startHour: number;
   durationHours: number;

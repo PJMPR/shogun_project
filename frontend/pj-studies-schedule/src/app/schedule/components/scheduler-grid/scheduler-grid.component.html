@@ -1,0 +1,38 @@
+<div
+  #surface
+  class="scheduler-surface"
+  [style.--columns]="totalColumns()"
+  [style.--slot-height.px]="rowHeightPx() / 2"
+  [style.--rows]="totalRows"
+  (pointerdown)="startSelection($event)"
+>
+  @if (selection) {
+    @for (cell of selectedCells(); track cell.row + ':' + cell.col) {
+      <div
+        class="selection-cell"
+        [style.grid-column]="cell.col + 1"
+        [style.grid-row]="cell.row + 1"
+      ></div>
+    }
+  }
+  @for (entry of entries(); track entry.id) {
+    <div
+      class="schedule-item"
+      [style.grid-column]="entryColumn(entry) + ' / span ' + entryGroupSpan(entry)"
+      [style.grid-row]="entryRow(entry) + ' / span ' + entrySlots(entry)"
+      cdkDrag
+      [cdkDragData]="entry"
+      [cdkDragBoundary]="'.scheduler-surface'"
+      (cdkDragEnded)="finishDrag($event)"
+    >
+      <app-schedule-block
+        [entry]="entry"
+        [hasConflict]="conflicts().has(entry.id)"
+        (clicked)="clickEntry($event)"
+        (colorChanged)="entryColorChanged.emit($event)"
+      />
+      <div class="drag-handle pi pi-arrows-alt" cdkDragHandle title="Przenieś (Ctrl: kopiuj)"></div>
+      <div class="resize-handle" (pointerdown)="startResize($event, entry)" title="Zmień czas trwania"></div>
+    </div>
+  }
+</div>

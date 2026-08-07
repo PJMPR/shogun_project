@@ -21,6 +21,23 @@
 .headers-area {
   display: flex;
   align-items: stretch;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--p-surface-0, white);
+}
+
+.schedule-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.time-gutter {
+  width: 52px;
+  flex: 0 0 52px;
+  box-sizing: border-box;
+  border-right: 1px solid var(--p-surface-200);
 }
 
 .col-headers {
@@ -32,10 +49,12 @@
 
 .day-header-row,
 .group-header-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 }
 
 .day-header {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +64,7 @@
   padding: 0.35rem 0.25rem;
   color: var(--p-surface-700);
   border-bottom: 2px solid var(--p-primary-400);
-  border-right: 2px solid var(--p-primary-300);
+  border-right: 4px solid var(--p-primary-400);
   background: var(--p-primary-50);
   min-width: 0;
   overflow: hidden;
@@ -73,6 +92,7 @@
 }
 
 .group-header {
+  box-sizing: border-box;
   flex: 1;
   display: flex;
   align-items: center;
@@ -82,8 +102,17 @@
   color: var(--p-surface-500);
   padding: 0.2rem 0;
   border-bottom: 1px solid var(--p-surface-200);
+  border-right: 2px solid var(--p-surface-400);
   background: var(--p-surface-50);
   min-width: 0;
+}
+
+.group-header.day-boundary {
+  border-right: 4px solid var(--p-primary-400);
+}
+
+.group-header:last-child {
+  border-right: none;
 }
 
 .group-name-input {
@@ -130,11 +159,10 @@
 
 .grid-area {
   display: flex;
-  flex: 1;
-  overflow-y: auto;
+  min-width: 0;
 }
 
-.gridstack-wrapper {
+.scheduler-wrapper {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -143,18 +171,19 @@
 .day-separator-overlay {
   position: absolute;
   inset: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
   pointer-events: none;
   z-index: 1;
 }
 
 .col-sep {
-  flex: 1;
-  border-right: 1px solid var(--p-surface-200); /* light group separator */
+  box-sizing: border-box;
+  border-right: 2px solid var(--p-surface-400);
 }
 
 .col-sep.day-boundary {
-  border-right: 2px solid var(--p-primary-200); /* stronger day boundary */
+  border-right: 4px solid var(--p-primary-400);
 }
 
 .col-sep.last {

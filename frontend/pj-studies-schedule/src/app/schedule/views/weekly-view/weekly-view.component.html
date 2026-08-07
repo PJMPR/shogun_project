@@ -9,13 +9,14 @@
     />
   </div>
 
-  <div class="headers-area">
-    <div class="time-gutter"></div>
-    <div class="col-headers">
+  <div class="schedule-scroll">
+    <div class="headers-area">
+      <div class="time-gutter"></div>
+      <div class="col-headers" [style.--columns]="totalGroupColumns()">
       <!-- Row 1: day names, each spanning its group count -->
       <div class="day-header-row">
         @for (day of activeDayNumbers(); track day; let i = $index) {
-          <div class="day-header" [style.flex]="groupsForDay(day)">
+          <div class="day-header" [style.grid-column]="'span ' + groupsForDay(day)">
             <span>{{ dayLabels()[i] }}</span>
             <button class="add-group-btn" (click)="addGroup(day)" title="Dodaj grupę">+</button>
           </div>
@@ -24,8 +25,8 @@
       <!-- Row 2: group sub-columns -->
       <div class="group-header-row">
         @for (day of activeDayNumbers(); track day) {
-          @for (g of groupIndices(day); track g) {
-            <div class="group-header">
+          @for (g of groupIndices(day); track g; let lastGroup = $last) {
+            <div class="group-header" [class.day-boundary]="lastGroup">
               <input
                 class="group-name-input"
                 [value]="groupName(day, g)"
@@ -40,15 +41,15 @@
           }
         }
       </div>
+      </div>
     </div>
-  </div>
 
-  <div class="grid-area">
-    <app-time-labels [startHour]="8" [endHour]="20" [rowHeightPx]="ROW_HEIGHT" />
+    <div class="grid-area">
+      <app-time-labels [startHour]="8" [endHour]="20" [rowHeightPx]="ROW_HEIGHT" />
 
-    <div class="gridstack-wrapper">
+      <div class="scheduler-wrapper">
       <!-- Vertical separators: light between groups, strong at day boundaries -->
-      <div class="day-separator-overlay">
+      <div class="day-separator-overlay" [style.--columns]="totalGroupColumns()">
         @for (day of activeDayNumbers(); track day; let lastDay = $last) {
           @for (g of groupIndices(day); track g; let lastGroup = $last) {
             <div class="col-sep"
@@ -58,17 +59,21 @@
           }
         }
       </div>
-      <app-gridstack
+        <app-scheduler-grid
         [entries]="filteredEntries()"
         [conflicts]="conflictSet()"
         [activeDays]="activeDayNumbers()"
         [groupsPerDay]="groupsPerDay()"
         [rowHeightPx]="ROW_HEIGHT"
         (entryMoved)="onEntryMoved($event)"
+        (entryResized)="onEntryResized($event)"
         (entryClicked)="openEditDialog($event)"
+        (entryColorChanged)="onEntryColorChanged($event)"
         (cellsSelected)="onCellsSelected($event)"
         (entryCloned)="onEntryCloned($event)"
-      />
+        (placementRejected)="onPlacementRejected()"
+        />
+      </div>
     </div>
   </div>
 

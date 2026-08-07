@@ -3,7 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
-import { GridstackComponent } from '../../components/gridstack/gridstack.component';
+import { SchedulerGridComponent } from '../../components/scheduler-grid/scheduler-grid.component';
 import { TimeLabelsComponent } from '../../components/time-labels/time-labels.component';
 import { EntryDialogComponent } from '../../components/entry-dialog/entry-dialog.component';
 import { ConflictDetectionService } from '../../services/conflict-detection.service';
@@ -14,7 +14,7 @@ import { ScheduleEntry, ScheduleFilters, Semester, semesterTypeOf } from '../../
   selector: 'app-weekly-view',
   imports: [
     FilterBarComponent,
-    GridstackComponent,
+    SchedulerGridComponent,
     TimeLabelsComponent,
     EntryDialogComponent,
     ButtonModule,
@@ -66,6 +66,10 @@ export class WeeklyViewComponent {
 
   protected readonly activeDayNumbers = computed(() =>
     this.isStacjonarny() ? [0, 1, 2, 3, 4] : [4, 5, 6],
+  );
+
+  protected readonly totalGroupColumns = computed(() =>
+    this.activeDayNumbers().reduce((total, day) => total + this.groupsForDay(day), 0),
   );
 
   protected readonly dayLabels = computed(() =>
@@ -135,25 +139,49 @@ export class WeeklyViewComponent {
     this.mockData.updateEntry({ ...entry, dayOfWeek: event.newDay, group: event.newGroup, startHour: event.newStartHour });
   }
 
-  protected onCellsSelected(event: { day: number; groups: number[]; startHour: number; durationHours: number }): void {
+  protected onEntryResized(event: { id: string; newDurationHours: number }): void {
+    const entry = this.mockData.entries().find((e) => e.id === event.id);
+    if (entry) this.mockData.updateEntry({ ...entry, durationHours: event.newDurationHours });
+  }
+
+  protected onEntryColorChanged(event: { id: string; color: string }): void {
+    const entry = this.mockData.entries().find((e) => e.id === event.id);
+    if (entry) this.mockData.updateEntry({ ...entry, color: event.color });
+  }
+
+  protected onPlacementRejected(): void {
+    this.messageService.add({ severity: 'warn', summary: 'Nie można umieścić zajęć', detail: 'Wybrany termin nakłada się na inne zajęcia w tej grupie.' });
+  }
+
+  protected onCellsSelected(event: { day: number; group: number; groupSpan: number; startHour: number; durationHours: number }): void {
     const f = this.filters();
     const semType = this.semesterType();
     const semesterNumber = f.semesterNumber ?? (semType === 'zimowy' ? 1 : 2);
-    for (const group of event.groups) {
-      this.mockData.addEntry({
+    const endHour = event.startHour + event.durationHours;
+    const overlaps = this.filteredEntries().some((entry) =>
+      entry.dayOfWeek === event.day &&
+      event.group < entry.group + (entry.groupSpan ?? 1) &&
+      event.group + event.groupSpan > entry.group &&
+      event.startHour < entry.startHour + entry.durationHours && endHour > entry.startHour,
+    );
+    if (overlaps) {
+      this.onPlacementRejected();
+      return;
+    }
+    this.mockData.addEntry({
         id: crypto.randomUUID(),
         subjectName: 'Nowe zajęcia',
         lecturerName: '',
         room: '',
         dayOfWeek: event.day,
-        group,
+        group: event.group,
+        groupSpan: event.groupSpan,
         startHour: event.startHour,
         durationHours: event.durationHours,
         semesterNumber,
         academicYear: '2025/2026',
         studyMode: f.mode,
-      });
-    }
+    });
   }
 
   protected onEntryCloned(event: { sourceId: string; newDay: number; newGroup: number; newStartHour: number }): void {

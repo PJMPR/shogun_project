@@ -19,7 +19,6 @@ module.exports = withNativeFederation({
     'rxjs/testing',
     'rxjs/webSocket',
     'chart.js/auto',
-    '@angular/cdk/drag-drop',
     '@angular/common/upgrade',
     '@angular/router/upgrade',
     '@angular/upgrade/static',
@@ -34,6 +33,5 @@ module.exports = withNativeFederation({
     '@primeuix/styles',
     '@primeuix/utils',
     '@primeuix/motion',
-    'gridstack',
   ],
 });

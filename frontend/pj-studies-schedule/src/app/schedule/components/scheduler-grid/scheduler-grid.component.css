@@ -1,0 +1,59 @@
+:host { display: block; flex: 1; min-width: 0; }
+
+.scheduler-surface {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows), var(--slot-height));
+  width: 100%;
+  height: calc(var(--rows) * var(--slot-height));
+  overflow: hidden;
+  cursor: crosshair;
+  background-image:
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--slot-height) - 1px), var(--p-surface-200, #e5e7eb) calc(var(--slot-height) - 1px), var(--p-surface-200, #e5e7eb) var(--slot-height)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(2 * var(--slot-height) - 2px), var(--p-surface-300, #d1d5db) calc(2 * var(--slot-height) - 2px), var(--p-surface-300, #d1d5db) calc(2 * var(--slot-height)));
+}
+
+.schedule-item {
+  position: relative;
+  z-index: 2;
+  min-height: 0;
+  margin: 2px;
+  cursor: default;
+}
+
+.schedule-item.cdk-drag-dragging { z-index: 20; opacity: 0.85; }
+.schedule-item:focus-within { z-index: 25; }
+
+.drag-handle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 3;
+  font-size: .7rem;
+  color: var(--p-primary-500);
+  cursor: grab;
+}
+
+.resize-handle {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  left: 5px;
+  z-index: 4;
+  height: 7px;
+  cursor: ns-resize;
+  border-bottom: 2px solid transparent;
+}
+
+.resize-handle:hover { border-color: var(--p-primary-500); }
+
+.selection-cell {
+  z-index: 10;
+  margin: 1px;
+  pointer-events: none;
+  border: 1px solid #6366f1;
+  background: rgba(99, 102, 241, .28);
+}
+
+.cdk-drag-placeholder { opacity: .25; }
