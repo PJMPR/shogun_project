@@ -39,8 +39,15 @@ export class WeeklyViewComponent {
   @ViewChild('dialog') dialog!: EntryDialogComponent;
 
   protected readonly filters = signal<ScheduleFilters>({ mode: 'stacjonarny', semesterNumber: null });
+  protected readonly hiddenGroupsByDay = signal<Record<number, number[]>>({});
   protected readonly groupsPerDay = computed<Record<number, string[]>>(() =>
     Object.fromEntries(this.activeDayNumbers().map((day) => [day, this.mockData.groups().map((group) => group.name)])),
+  );
+  protected readonly visibleGroupIndices = computed<Record<number, number[]>>(() =>
+    Object.fromEntries(this.activeDayNumbers().map((day) => {
+      const hidden = new Set(this.hiddenGroupsByDay()[day] ?? []);
+      return [day, this.mockData.groups().map((_, index) => index).filter((index) => !hidden.has(index))];
+    })),
   );
 
   protected readonly mockData = inject(MockDataService);
@@ -160,11 +167,27 @@ export class WeeklyViewComponent {
   }
 
   protected groupsForDay(day: number): number {
-    return Math.max(1, this.groupsPerDay()[day]?.length ?? 0);
+    return Math.max(1, this.visibleGroupIndices()[day]?.length ?? 0);
   }
 
   protected groupIndices(day: number): number[] {
-    return Array.from({ length: this.groupsForDay(day) }, (_, i) => i);
+    return this.visibleGroupIndices()[day] ?? [];
+  }
+
+  protected hideGroup(day: number, group: number): void {
+    if (this.groupsForDay(day) <= 1) return;
+    this.hiddenGroupsByDay.update((hidden) => ({
+      ...hidden,
+      [day]: [...(hidden[day] ?? []), group],
+    }));
+  }
+
+  protected restoreGroups(day: number): void {
+    this.hiddenGroupsByDay.update((hidden) => ({ ...hidden, [day]: [] }));
+  }
+
+  protected hiddenGroupCount(day: number): number {
+    return this.hiddenGroupsByDay()[day]?.length ?? 0;
   }
 
   protected groupName(day: number, g: number): string {

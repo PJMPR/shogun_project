@@ -32,6 +32,7 @@
     }
   }
   @for (entry of entries(); track entry.id) {
+    @if (entryVisible(entry)) {
     <div
       class="schedule-item"
       [style.grid-column]="entryColumn(entry) + ' / span ' + entryGroupSpan(entry)"
@@ -55,5 +56,6 @@
       <div class="drag-handle pi pi-arrows-alt" cdkDragHandle title="Przenieś (Ctrl: kopiuj)"></div>
       <div class="resize-handle" (pointerdown)="startResize($event, entry)" title="Zmień czas trwania"></div>
     </div>
+    }
   }
 </div>

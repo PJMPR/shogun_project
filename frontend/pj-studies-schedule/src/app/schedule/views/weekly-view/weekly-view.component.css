@@ -103,6 +103,27 @@
   background: var(--p-primary-100);
 }
 
+.restore-groups-btn,
+.hide-group-btn {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--p-primary-500);
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+}
+
+.restore-groups-btn:hover,
+.hide-group-btn:hover {
+  background: var(--p-primary-100);
+}
+
+.hide-group-btn {
+  color: var(--p-surface-400);
+}
+
 .group-header {
   box-sizing: border-box;
   flex: 1;

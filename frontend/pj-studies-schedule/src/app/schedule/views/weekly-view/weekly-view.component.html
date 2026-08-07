@@ -30,6 +30,11 @@
         @for (day of activeDayNumbers(); track day; let i = $index) {
           <div class="day-header" [style.grid-column]="'span ' + groupsForDay(day)">
             <span>{{ dayLabels()[i] }}</span>
+            @if (hiddenGroupCount(day) > 0) {
+              <button class="restore-groups-btn" (click)="restoreGroups(day)" title="Pokaż ukryte grupy">
+                <i class="pi pi-eye"></i> {{ hiddenGroupCount(day) }}
+              </button>
+            }
             <button class="add-group-btn" (click)="addGroup(day)" title="Dodaj grupę">+</button>
           </div>
         }
@@ -46,6 +51,11 @@
                 (keydown.enter)="$any($event.target).blur()"
                 title="Kliknij aby zmienić nazwę grupy"
               />
+              @if (groupsForDay(day) > 1) {
+                <button class="hide-group-btn" (click)="hideGroup(day, g)" title="Ukryj tę grupę w tym dniu">
+                  <i class="pi pi-eye-slash"></i>
+                </button>
+              }
               @if (groupsForDay(day) > 1 && g === groupsForDay(day) - 1) {
                 <button class="remove-group-btn" (click)="removeGroup(day)" title="Usuń grupę">✕</button>
               }
@@ -76,6 +86,7 @@
         [conflicts]="conflictSet()"
         [activeDays]="activeDayNumbers()"
         [groupsPerDay]="groupsPerDay()"
+        [visibleGroupIndices]="visibleGroupIndices()"
         [availabilityByAssignment]="availabilityByAssignment()"
         [commentCounts]="commentCounts()"
         [rowHeightPx]="ROW_HEIGHT"

@@ -23,6 +23,7 @@ export class SchedulerGridComponent implements OnDestroy {
   readonly conflicts = input<Set<string>>(new Set());
   readonly activeDays = input<number[]>([]);
   readonly groupsPerDay = input<Record<number, string[]>>({});
+  readonly visibleGroupIndices = input<Record<number, number[]>>({});
   readonly rowHeightPx = input(40);
   readonly availabilityByAssignment = input<Record<number, LecturerAvailability[]>>({});
   readonly commentCounts = input<Partial<Record<string, number>>>({});
@@ -66,13 +67,21 @@ export class SchedulerGridComponent implements OnDestroy {
   }
 
   protected groupCount(day: number): number {
-    return this.groupsPerDay()[day]?.length ?? 1;
+    return this.visibleGroups(day).length || 1;
+  }
+
+  protected entryVisible(entry: ScheduleEntry): boolean {
+    const endGroup = entry.group + (entry.groupSpan ?? 1);
+    return this.visibleGroups(entry.dayOfWeek).some((group) => group >= entry.group && group < endGroup);
   }
 
   protected entryColumn(entry: ScheduleEntry): number {
     let column = 1;
     for (const day of this.activeDays()) {
-      if (day === entry.dayOfWeek) return column + Math.min(entry.group ?? 0, this.groupCount(day) - 1);
+      if (day === entry.dayOfWeek) {
+        const position = this.visibleGroups(day).findIndex((group) => group >= entry.group);
+        return column + Math.max(0, position);
+      }
       column += this.groupCount(day);
     }
     return 1;
@@ -83,7 +92,8 @@ export class SchedulerGridComponent implements OnDestroy {
   }
 
   protected entryGroupSpan(entry: ScheduleEntry): number {
-    return Math.max(1, Math.min(entry.groupSpan ?? 1, this.groupCount(entry.dayOfWeek) - entry.group));
+    const endGroup = entry.group + (entry.groupSpan ?? 1);
+    return Math.max(1, this.visibleGroups(entry.dayOfWeek).filter((group) => group >= entry.group && group < endGroup).length);
   }
 
   protected entrySlots(entry: ScheduleEntry): number {
@@ -205,7 +215,7 @@ export class SchedulerGridComponent implements OnDestroy {
     queueMicrotask(() => (this.dragged = false));
     const target = this.columnToDayGroup(col);
     const day = target.day;
-    const group = Math.min(target.group, this.groupCount(day) - this.entryGroupSpan(entry));
+    const group = target.group;
     const newStartHour = START_HOUR + row / SLOTS_PER_HOUR;
     const pointer = event.event as MouseEvent;
     if (!this.canPlace(pointer.ctrlKey ? '' : entry.id, day, group, this.entryGroupSpan(entry), newStartHour, entry.durationHours)) {
@@ -300,7 +310,7 @@ export class SchedulerGridComponent implements OnDestroy {
     let offset = 0;
     for (const day of this.activeDays()) {
       const count = this.groupCount(day);
-      if (column < offset + count) return { day, group: column - offset };
+      if (column < offset + count) return { day, group: this.visibleGroups(day)[column - offset] ?? 0 };
       offset += count;
     }
     return { day: this.activeDays().at(-1) ?? 0, group: 0 };
@@ -317,6 +327,10 @@ export class SchedulerGridComponent implements OnDestroy {
   }
 
   private slotHeight(): number { return this.rowHeightPx() / 2; }
+
+  private visibleGroups(day: number): number[] {
+    return this.visibleGroupIndices()[day] ?? this.groupsPerDay()[day]?.map((_, index) => index) ?? [0];
+  }
 
   ngOnDestroy(): void {
     document.removeEventListener('pointermove', this.onPointerMove);
