@@ -82,7 +82,13 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         </div>
         <div class="form-row">
           <label>Wykładowca</label>
-          <input pInputText [(ngModel)]="form.lecturerName" placeholder="Imię i nazwisko" class="w-full" />
+          <input
+            pInputText
+            [(ngModel)]="form.lecturerName"
+            (ngModelChange)="onLecturerNameChange($event)"
+            placeholder="Imię i nazwisko"
+            class="w-full"
+          />
         </div>
         <div class="form-row">
           <label>Sala (opcjonalnie)</label>
@@ -327,11 +333,17 @@ export class EntryDialogComponent {
       subjectName: item.name,
       subjectCode: item.code ?? '',
       lecturerName: item.lecturerName,
+      lecturerAssignmentId: item.assignmentId,
       studyMode: item.trybStudiow as StudyMode,
       semesterNumber: item.semester,
       academicYear: item.academicYear,
     };
     this.onModeChange();
+  }
+
+  protected onLecturerNameChange(name: string): void {
+    const linked = this.desiderata().find((item) => item.assignmentId === this.form.lecturerAssignmentId);
+    if (!linked || linked.lecturerName !== name) this.form.lecturerAssignmentId = undefined;
   }
 
   protected isValid(): boolean {

@@ -10,6 +10,8 @@ import { ConflictDetectionService } from '../../services/conflict-detection.serv
 import { MockDataService } from '../../services/mock-data.service';
 import { DesideratumOption, LecturerDesiderataService } from '../../services/lecturer-desiderata.service';
 import { ScheduleEntry, ScheduleFilters, Semester, semesterTypeOf } from '../../models/schedule.models';
+import { CommentsDrawerComponent } from '../../components/comments-drawer/comments-drawer.component';
+import { ScheduleCommentsService } from '../../services/schedule-comments.service';
 
 @Component({
   selector: 'app-weekly-view',
@@ -20,6 +22,7 @@ import { ScheduleEntry, ScheduleFilters, Semester, semesterTypeOf } from '../../
     EntryDialogComponent,
     ButtonModule,
     ConfirmDialogModule,
+    CommentsDrawerComponent,
   ],
   templateUrl: './weekly-view.component.html',
   styleUrl: './weekly-view.component.css',
@@ -40,6 +43,8 @@ export class WeeklyViewComponent {
   private readonly messageService = inject(MessageService);
   private readonly confirmationService = inject(ConfirmationService);
   protected readonly desiderataService = inject(LecturerDesiderataService);
+  protected readonly commentsService = inject(ScheduleCommentsService);
+  protected readonly commentsEntry = signal<ScheduleEntry | null>(null);
 
   constructor() {
     this.desiderataService.load();
@@ -79,6 +84,17 @@ export class WeeklyViewComponent {
           semesterType: assignment.semesterType,
           academicYear: assignment.academicYear,
         })));
+  });
+
+  protected readonly availabilityByAssignment = computed(() =>
+    Object.fromEntries(
+      this.desiderataService.items().map((assignment) => [assignment.id, assignment.availability ?? []]),
+    ),
+  );
+
+  protected readonly commentCounts = computed(() => {
+    this.commentsService.comments();
+    return Object.fromEntries(this.mockData.entries().map((entry) => [entry.id, this.commentsService.count(entry.id)]));
   });
 
   protected readonly conflictSet = computed(
@@ -172,6 +188,11 @@ export class WeeklyViewComponent {
     if (entry) this.mockData.updateEntry({ ...entry, color: event.color });
   }
 
+  protected onEntryRoomChanged(event: { id: string; room: string }): void {
+    const entry = this.mockData.entries().find((item) => item.id === event.id);
+    if (entry) this.mockData.updateEntry({ ...entry, room: event.room });
+  }
+
   protected onPlacementRejected(): void {
     this.messageService.add({ severity: 'warn', summary: 'Nie można umieścić zajęć', detail: 'Wybrany termin nakłada się na inne zajęcia w tej grupie.' });
   }
@@ -228,6 +249,13 @@ export class WeeklyViewComponent {
     this.dialog.open(entry);
   }
 
+  protected openComments(id: string): void {
+    const entry = this.mockData.entries().find((item) => item.id === id);
+    if (!entry) return;
+    this.commentsService.ensureDemoComments(id);
+    this.commentsEntry.set(entry);
+  }
+
   protected onSaved(entry: ScheduleEntry): void {
     if (this.mockData.entries().some((e) => e.id === entry.id)) {
       this.mockData.updateEntry(entry);
@@ -241,6 +269,8 @@ export class WeeklyViewComponent {
   protected onDeleted(id: string): void {
     const name = this.mockData.entries().find((e) => e.id === id)?.subjectName;
     this.mockData.removeEntry(id);
+    this.commentsService.removeForEntry(id);
+    if (this.commentsEntry()?.id === id) this.commentsEntry.set(null);
     this.messageService.add({ severity: 'warn', summary: 'Usunięto', detail: name });
   }
 }

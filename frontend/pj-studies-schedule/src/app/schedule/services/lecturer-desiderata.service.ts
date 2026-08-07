@@ -17,6 +17,14 @@ export interface LecturerDesideratum {
   semesterType: string;
   academicYear: string;
   subjects: DesideratumSubject[];
+  availability: LecturerAvailability[];
+}
+
+export interface LecturerAvailability {
+  id: number;
+  day: string;
+  from: string;
+  to: string;
 }
 
 export interface DesideratumOption extends DesideratumSubject {

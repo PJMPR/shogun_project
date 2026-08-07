@@ -44,6 +44,41 @@
 
 .color-button:hover { color: var(--block-color); background: white; }
 
+.comments-button {
+  position: absolute;
+  right: 28px;
+  bottom: 3px;
+  z-index: 6;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: var(--p-surface-600);
+  background: color-mix(in srgb, white 75%, transparent);
+  cursor: pointer;
+}
+
+.comments-button:hover { color: var(--p-primary-600); background: white; }
+
+.comment-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
+  background: var(--p-primary-600, #4f46e5);
+  font-family: inherit;
+  font-size: .56rem;
+  font-weight: 700;
+}
+
 .color-palette {
   position: absolute;
   bottom: 26px;
@@ -98,3 +133,39 @@
   margin-top: auto;
 }
 
+.availability-warning {
+  margin-left: .25rem;
+  color: #f59e0b;
+  font-size: .78rem;
+}
+
+.room-button {
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - 52px);
+  padding: 0;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: text;
+}
+
+.room-button:hover {
+  color: var(--p-primary-700);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.room-button .pi { font-size: .62rem; }
+
+.room-input {
+  width: calc(100% - 52px);
+  min-width: 45px;
+  height: 20px;
+  padding: 1px 4px;
+  border: 1px solid var(--p-primary-400);
+  border-radius: 3px;
+  outline: none;
+  background: white;
+  font-size: .68rem;
+}

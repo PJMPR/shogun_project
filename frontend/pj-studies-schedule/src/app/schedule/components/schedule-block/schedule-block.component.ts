@@ -19,6 +19,15 @@ import { ScheduleEntry, formatHour } from '../../models/schedule.models';
           aria-label="Wybierz kolor bloku"
           (click)="togglePalette($event)"
         ></button>
+        <button
+          type="button"
+          class="comments-button pi pi-comments"
+          title="Otwórz komentarze"
+          aria-label="Otwórz komentarze"
+          (click)="openComments($event, e.id)"
+        >
+          @if (commentCount() > 0) { <span class="comment-badge">{{ commentCount() }}</span> }
+        </button>
         @if (paletteOpen()) {
           <div class="color-palette" role="listbox" aria-label="Kolor bloku" (click)="$event.stopPropagation()">
             @for (color of colors; track color) {
@@ -35,8 +44,40 @@ import { ScheduleEntry, formatHour } from '../../models/schedule.models';
           </div>
         }
         <div class="block-subject">{{ e.subjectName }}</div>
-        <div class="block-meta">{{ e.lecturerName }}</div>
-        <div class="block-meta">{{ e.room }}</div>
+        <div class="block-meta">
+          {{ e.lecturerName }}
+          @if (hasAvailabilityWarning()) {
+            <span
+              class="pi pi-exclamation-triangle availability-warning"
+              title="Termin poza zadeklarowaną dostępnością prowadzącego"
+              aria-label="Termin poza dostępnością prowadzącego"
+            ></span>
+          }
+        </div>
+        @if (e.room) {
+          @if (editingRoom()) {
+            <input
+              #roomInput
+              class="room-input"
+              [value]="roomDraft()"
+              placeholder="Wyczyść, aby usunąć"
+              aria-label="Sala"
+              (input)="roomDraft.set(roomInput.value)"
+              (click)="$event.stopPropagation()"
+              (pointerdown)="$event.stopPropagation()"
+              (keydown.enter)="saveRoom($event, e.id)"
+              (keydown.escape)="cancelRoomEdit($event)"
+              (blur)="saveRoom($event, e.id)"
+            />
+          } @else {
+            <button
+              type="button"
+              class="block-meta room-button"
+              title="Kliknij, aby zmienić salę"
+              (click)="startRoomEdit($event, e.room)"
+            ><span class="pi pi-map-marker"></span> {{ e.room }}</button>
+          }
+        }
         <div class="block-time">{{ fmt(e.startHour) }} – {{ fmt(e.startHour + e.durationHours) }}</div>
       </div>
     }
@@ -46,10 +87,16 @@ import { ScheduleEntry, formatHour } from '../../models/schedule.models';
 export class ScheduleBlockComponent {
   readonly entry = input<ScheduleEntry>();
   readonly hasConflict = input<boolean>(false);
+  readonly hasAvailabilityWarning = input<boolean>(false);
+  readonly commentCount = input(0);
   readonly clicked = output<string>();
   readonly colorChanged = output<{ id: string; color: string }>();
+  readonly commentsClicked = output<string>();
+  readonly roomChanged = output<{ id: string; room: string }>();
 
   protected readonly paletteOpen = signal(false);
+  protected readonly editingRoom = signal(false);
+  protected readonly roomDraft = signal('');
   protected readonly colors = [
     '#6366f1', '#3b82f6', '#06b6d4', '#14b8a6',
     '#22c55e', '#84cc16', '#eab308', '#f59e0b',
@@ -62,6 +109,36 @@ export class ScheduleBlockComponent {
   protected togglePalette(event: MouseEvent): void {
     event.stopPropagation();
     this.paletteOpen.update((open) => !open);
+  }
+
+  protected openComments(event: MouseEvent, id: string): void {
+    event.stopPropagation();
+    this.commentsClicked.emit(id);
+  }
+
+  protected startRoomEdit(event: MouseEvent, room: string): void {
+    event.stopPropagation();
+    this.roomDraft.set(room);
+    this.editingRoom.set(true);
+    queueMicrotask(() => {
+      const input = (event.currentTarget as HTMLElement).parentElement?.querySelector<HTMLInputElement>('.room-input');
+      input?.focus();
+      input?.select();
+    });
+  }
+
+  protected saveRoom(event: Event, id: string): void {
+    event.stopPropagation();
+    if (!this.editingRoom()) return;
+    const room = this.roomDraft().trim();
+    this.editingRoom.set(false);
+    this.roomChanged.emit({ id, room });
+  }
+
+  protected cancelRoomEdit(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.editingRoom.set(false);
   }
 
   protected selectColor(event: MouseEvent, id: string, color: string): void {

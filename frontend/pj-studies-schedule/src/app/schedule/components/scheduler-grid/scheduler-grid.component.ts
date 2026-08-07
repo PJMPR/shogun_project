@@ -1,13 +1,15 @@
-import { CdkDrag, CdkDragEnd, CdkDragHandle } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragEnd, CdkDragHandle, CdkDragStart } from '@angular/cdk/drag-drop';
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output } from '@angular/core';
 import { ScheduleEntry } from '../../models/schedule.models';
 import { ScheduleBlockComponent } from '../schedule-block/schedule-block.component';
+import { LecturerAvailability } from '../../services/lecturer-desiderata.service';
 
 const START_HOUR = 8;
 const END_HOUR = 20;
 const SLOTS_PER_HOUR = 4;
 
 interface CellPosition { col: number; row: number }
+interface AvailabilityCell extends CellPosition { available: boolean }
 
 @Component({
   selector: 'app-scheduler-grid',
@@ -22,6 +24,8 @@ export class SchedulerGridComponent implements OnDestroy {
   readonly activeDays = input<number[]>([]);
   readonly groupsPerDay = input<Record<number, string[]>>({});
   readonly rowHeightPx = input(40);
+  readonly availabilityByAssignment = input<Record<number, LecturerAvailability[]>>({});
+  readonly commentCounts = input<Partial<Record<string, number>>>({});
 
   readonly entryMoved = output<{ id: string; newDay: number; newGroup: number; newStartHour: number }>();
   readonly entryResized = output<{ id: string; newDurationHours: number }>();
@@ -30,6 +34,8 @@ export class SchedulerGridComponent implements OnDestroy {
   readonly cellsSelected = output<{ day: number; group: number; groupSpan: number; startHour: number; durationHours: number }>();
   readonly entryCloned = output<{ sourceId: string; newDay: number; newGroup: number; newStartHour: number }>();
   readonly placementRejected = output<void>();
+  readonly commentsRequested = output<string>();
+  readonly entryRoomChanged = output<{ id: string; room: string }>();
 
   @ViewChild('surface') private surfaceRef!: ElementRef<HTMLElement>;
 
@@ -39,7 +45,9 @@ export class SchedulerGridComponent implements OnDestroy {
   protected readonly totalRows = (END_HOUR - START_HOUR) * SLOTS_PER_HOUR;
 
   protected selection: { start: CellPosition; end: CellPosition } | null = null;
+  protected selectionHint: { x: number; y: number; durationMinutes: number } | null = null;
   protected resizePreview: { id: string; slots: number } | null = null;
+  protected draggedEntry: ScheduleEntry | null = null;
   private resizing: { entry: ScheduleEntry; startY: number; initialSlots: number } | null = null;
   private dragged = false;
 
@@ -97,12 +105,38 @@ export class SchedulerGridComponent implements OnDestroy {
     return cells;
   }
 
+  protected availabilityCells(): AvailabilityCell[] {
+    if (!this.draggedEntry?.lecturerAssignmentId) return [];
+    const availability = this.availabilityByAssignment()[this.draggedEntry.lecturerAssignmentId];
+    if (!availability?.length) return [];
+    const cells: AvailabilityCell[] = [];
+    for (let col = 0; col < this.totalColumns(); col++) {
+      const day = this.columnToDayGroup(col).day;
+      for (let row = 0; row < this.totalRows; row++) {
+        const start = START_HOUR + row / SLOTS_PER_HOUR;
+        cells.push({ col, row, available: this.isAvailable(availability, day, start, 1 / SLOTS_PER_HOUR) });
+      }
+    }
+    return cells;
+  }
+
+  protected hasAvailabilityWarning(entry: ScheduleEntry): boolean {
+    if (!entry.lecturerAssignmentId) return false;
+    const availability = this.availabilityByAssignment()[entry.lecturerAssignmentId];
+    return !!availability?.length && !this.isAvailable(availability, entry.dayOfWeek, entry.startHour, entry.durationHours);
+  }
+
+  protected startDrag(event: CdkDragStart<ScheduleEntry>): void {
+    this.draggedEntry = event.source.data;
+  }
+
   protected startSelection(event: PointerEvent): void {
     if (event.button !== 0 || (event.target as Element).closest('.schedule-item')) return;
     const cell = this.eventToCell(event);
     if (!cell) return;
     event.preventDefault();
     this.selection = { start: cell, end: cell };
+    this.updateSelectionHint(event, cell);
   }
 
   private updateSelection(event: PointerEvent): void {
@@ -114,6 +148,7 @@ export class SchedulerGridComponent implements OnDestroy {
       ...this.selection,
       end: { col: currentDay === startDay ? cell.col : this.dayEdgeColumn(startDay, cell.col), row: cell.row },
     };
+    this.updateSelectionHint(event, cell);
     this.changeDetector.markForCheck();
   }
 
@@ -121,6 +156,7 @@ export class SchedulerGridComponent implements OnDestroy {
     if (!this.selection) return;
     const { start, end } = this.selection;
     this.selection = null;
+    this.selectionHint = null;
     this.changeDetector.markForCheck();
     const minCol = Math.min(start.col, end.col);
     const maxCol = Math.max(start.col, end.col);
@@ -138,6 +174,25 @@ export class SchedulerGridComponent implements OnDestroy {
     });
   }
 
+  protected formatSelectionDuration(minutes: number): string {
+    const hours = Math.floor(minutes / 60);
+    const remaining = minutes % 60;
+    if (!hours) return `${minutes} min`;
+    if (!remaining) return `${hours} godz.`;
+    return `${hours} godz. ${remaining} min`;
+  }
+
+  private updateSelectionHint(event: PointerEvent, cell: CellPosition): void {
+    if (!this.selection) return;
+    const rect = this.surfaceRef.nativeElement.getBoundingClientRect();
+    const selectedRows = Math.abs(cell.row - this.selection.start.row) + 1;
+    this.selectionHint = {
+      x: Math.max(8, Math.min(rect.width - 8, event.clientX - rect.left - 10)),
+      y: Math.max(8, Math.min(rect.height - 8, event.clientY - rect.top + 16)),
+      durationMinutes: selectedRows * 15,
+    };
+  }
+
   protected finishDrag(event: CdkDragEnd<ScheduleEntry>): void {
     const entry = event.source.data;
     const surface = this.surfaceRef.nativeElement.getBoundingClientRect();
@@ -145,6 +200,7 @@ export class SchedulerGridComponent implements OnDestroy {
     const col = Math.max(0, Math.min(this.totalColumns() - 1, Math.floor((item.left - surface.left + item.width / 2) / (surface.width / this.totalColumns()))));
     const row = Math.max(0, Math.min(this.totalRows - this.entrySlots(entry), Math.round((item.top - surface.top) / this.slotHeight())));
     event.source.reset();
+    this.draggedEntry = null;
     this.dragged = true;
     queueMicrotask(() => (this.dragged = false));
     const target = this.columnToDayGroup(col);
@@ -203,6 +259,32 @@ export class SchedulerGridComponent implements OnDestroy {
       group < entry.group + (entry.groupSpan ?? 1) && group + groupSpan > entry.group &&
       start < entry.startHour + entry.durationHours && end > entry.startHour,
     );
+  }
+
+  private isAvailable(availability: LecturerAvailability[], day: number, start: number, duration: number): boolean {
+    const end = start + duration;
+    return availability.some((range) =>
+      this.dayNumber(range.day) === day && start >= this.parseTime(range.from) && end <= this.parseTime(range.to),
+    );
+  }
+
+  private dayNumber(value: string): number {
+    const day = value.trim().toLocaleLowerCase('pl-PL').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const aliases: Record<string, number> = {
+      pn: 0, pon: 0, poniedzialek: 0,
+      wt: 1, wtorek: 1,
+      sr: 2, sroda: 2,
+      czw: 3, czwartek: 3,
+      pt: 4, piatek: 4,
+      sb: 5, sob: 5, sobota: 5,
+      nd: 6, niedz: 6, niedziela: 6,
+    };
+    return aliases[day] ?? -1;
+  }
+
+  private parseTime(value: string): number {
+    const [hours, minutes = '0'] = value.split(':');
+    return Number(hours) + Number(minutes) / 60;
   }
 
   private eventToCell(event: PointerEvent): CellPosition | null {

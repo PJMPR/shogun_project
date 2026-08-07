@@ -64,14 +64,18 @@
         [conflicts]="conflictSet()"
         [activeDays]="activeDayNumbers()"
         [groupsPerDay]="groupsPerDay()"
+        [availabilityByAssignment]="availabilityByAssignment()"
+        [commentCounts]="commentCounts()"
         [rowHeightPx]="ROW_HEIGHT"
         (entryMoved)="onEntryMoved($event)"
         (entryResized)="onEntryResized($event)"
         (entryClicked)="openEditDialog($event)"
         (entryColorChanged)="onEntryColorChanged($event)"
+        (entryRoomChanged)="onEntryRoomChanged($event)"
         (cellsSelected)="onCellsSelected($event)"
         (entryCloned)="onEntryCloned($event)"
         (placementRejected)="onPlacementRejected()"
+        (commentsRequested)="openComments($event)"
         />
       </div>
     </div>
@@ -88,4 +92,8 @@
   />
 
   <p-confirmdialog />
+
+  @if (commentsEntry(); as entry) {
+    <app-comments-drawer [entry]="entry" (closed)="commentsEntry.set(null)" />
+  }
 </div>

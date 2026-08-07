@@ -53,6 +53,12 @@
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 }
 
+.group-header-row {
+  background: #eff6ff;
+  border-bottom: 2px solid #93c5fd;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, .08);
+}
+
 .day-header {
   box-sizing: border-box;
   display: flex;
@@ -101,9 +107,9 @@
   font-size: 0.72rem;
   color: var(--p-surface-500);
   padding: 0.2rem 0;
-  border-bottom: 1px solid var(--p-surface-200);
+  border-bottom: 0;
   border-right: 2px solid var(--p-surface-400);
-  background: var(--p-surface-50);
+  background: transparent;
   min-width: 0;
 }
 

@@ -15,6 +15,7 @@ const TOKEN_REFRESH_INTERVAL_MS = 60_000;
 const TOKEN_MIN_VALIDITY_SEC = 60;
 const SESSION_ROLES_KEY = 'shogun_roles';
 const SESSION_PROJECTS_KEY = 'shogun_projects';
+const SESSION_PROFILE_KEY = 'shogun_user_profile';
 const PRODUCTION_AUTH_ORIGIN = 'https://shogun.pjwstk.edu.pl';
 const PRODUCTION_HOSTNAMES = new Set(['shogun.pjwstk.edu.pl', 'shogun.pja.edu.pl']);
 
@@ -61,11 +62,13 @@ export class AuthService {
 
     if (authenticated) {
       await this.keycloak.loadUserProfile();
-      this.userProfile.set({
+      const profile = {
         firstName: this.keycloak.profile?.firstName ?? '',
         lastName: this.keycloak.profile?.lastName ?? '',
         email: this.keycloak.profile?.email ?? '',
-      });
+      };
+      this.userProfile.set(profile);
+      sessionStorage.setItem(SESSION_PROFILE_KEY, JSON.stringify(profile));
       // Store realm roles in sessionStorage so MFEs can read them
       const roles = this.keycloak.realmAccess?.roles ?? [];
       sessionStorage.setItem(SESSION_ROLES_KEY, JSON.stringify(roles));
@@ -112,6 +115,7 @@ export class AuthService {
   logout(): void {
     sessionStorage.removeItem(SESSION_ROLES_KEY);
     sessionStorage.removeItem(SESSION_PROJECTS_KEY);
+    sessionStorage.removeItem(SESSION_PROFILE_KEY);
     this.keycloak.logout({ redirectUri: window.location.origin });
   }
 

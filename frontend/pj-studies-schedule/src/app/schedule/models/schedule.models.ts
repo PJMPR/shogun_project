@@ -13,6 +13,8 @@ export function rokOf(n: number): number {
 
 export interface ScheduleEntry {
   id: string;
+  /** Dezyderat, z którego wybrano prowadzącego. Brak dla nazwiska wpisanego ręcznie. */
+  lecturerAssignmentId?: number;
   subjectName: string;
   subjectCode?: string;
   lecturerName: string;
