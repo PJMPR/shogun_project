@@ -46,8 +46,8 @@
 
 .comments-button {
   position: absolute;
-  right: 28px;
-  bottom: 3px;
+  right: 3px;
+  bottom: 26px;
   z-index: 6;
   width: 20px;
   height: 20px;

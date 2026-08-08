@@ -36,3 +36,8 @@ export const canAccessScheduleGuard: CanMatchFn = () => {
   const authService = inject(AuthService);
   return authService.canAccessSchedule() ? true : deniedTree();
 };
+
+export const canAccessLecturerScheduleGuard: CanMatchFn = () => {
+  const authService = inject(AuthService);
+  return authService.canAccessLecturerSchedule() ? true : deniedTree();
+};

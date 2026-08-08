@@ -67,8 +67,8 @@ export class MockDataService {
     this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]); this.dirty.set(false); this.stale.set(false); await this.loadPlans(plan.facultyCode);
   }
 
-  async save(): Promise<void> {
-    const plan = this.current(); if (!plan || !this.dirty() || this.stale()) return;
+  async save(options: { reportError?: boolean } = {}): Promise<void> {
+    const plan = this.current(); if (!plan || !this.dirty() || this.stale() || this.saving()) return;
     this.saving.set(true); this.error.set(null);
     try {
       const groups = this.groups();
@@ -88,15 +88,12 @@ export class MockDataService {
       this.applyPlan(saved); this.dirty.set(false); await this.loadPlans(plan.facultyCode); await this.loadConflictContext(saved);
     } catch (error) {
       const detail = error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : null;
-      const exceptionType = error instanceof HttpErrorResponse && typeof error.error?.exceptionType === 'string' ? error.error.exceptionType : null;
-      const stackTrace = error instanceof HttpErrorResponse && typeof error.error?.stackTrace === 'string' ? error.error.stackTrace : null;
-      const isStale = error instanceof HttpErrorResponse && error.status === 409 && detail?.includes('zmieniony przez innego użytkownika');
+      const isStale = error instanceof HttpErrorResponse && error.status === 409;
       this.stale.set(Boolean(isStale));
-      this.error.set([
-        detail ?? 'Nie udało się zapisać planu.',
-        exceptionType ? `Typ: ${exceptionType}` : null,
-        stackTrace ? `Stack trace:\n${stackTrace}` : null,
-      ].filter(Boolean).join('\n\n'));
+      const diagnostic = isStale
+        ? 'Plan został w międzyczasie zmieniony. Odśwież plan przed dalszą edycją.'
+        : detail ?? 'Nie udało się zapisać planu.';
+      this.error.set(options.reportError === false ? null : diagnostic);
       throw error;
     } finally { this.saving.set(false); }
   }

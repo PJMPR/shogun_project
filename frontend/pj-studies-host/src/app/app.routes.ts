@@ -6,6 +6,7 @@ import {
   canAccessDezyderatyGuard,
   canAccessProgramGuard,
   canAccessScheduleGuard,
+  canAccessLecturerScheduleGuard,
   canAccessSyllabiGuard,
 } from './route-access.guard';
 
@@ -42,6 +43,11 @@ export const routes: Routes = [
     path: 'schedule',
     canMatch: [canAccessScheduleGuard],
     loadChildren: () => loadRemoteModule('mfe-schedule', './Routes').then(m => m.default),
+  },
+  {
+    path: 'plan-zajec',
+    canMatch: [canAccessLecturerScheduleGuard],
+    loadChildren: () => loadRemoteModule('mfe-lecturer-schedule', './Routes').then(m => m.default),
   },
   {
     path: 'brak-dostepu',

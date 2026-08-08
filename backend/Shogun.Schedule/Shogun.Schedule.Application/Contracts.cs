@@ -27,10 +27,11 @@ public interface IScheduleRepository
     Task<SchedulePlan?> GetAsync(Guid id, bool tracking, CancellationToken ct);
     Task AddAsync(SchedulePlan schedule, CancellationToken ct);
     Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct);
+    Task AddCommentAsync(ScheduleComment comment, CancellationToken ct);
     Task DeleteAsync(SchedulePlan schedule, CancellationToken ct);
     Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct);
     Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct);
-    Task<IReadOnlyList<SchedulePlan>> ListPublishedForFacultyAsync(Guid facultyId, Guid exceptScheduleId, CancellationToken ct);
+    Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct);
     Task SaveChangesAsync(CancellationToken ct);
     Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct);
     Task<IScheduleLock> LockFacultyAsync(Guid facultyId, CancellationToken ct);
@@ -41,7 +42,9 @@ public interface IScheduleLock : IAsyncDisposable { Task CompleteAsync(Cancellat
 public interface IScheduleService
 {
     Task<IReadOnlyList<ScheduleSummaryDto>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct);
+    Task<IReadOnlyList<ScheduleSummaryDto>> ListPublishedAsync(string? facultyCode, string? academicYear, CancellationToken ct);
     Task<ScheduleDto> GetAsync(Guid id, CancellationToken ct);
+    Task<ScheduleDto> GetPublishedAsync(Guid id, CancellationToken ct);
     Task<ScheduleDto> CreateAsync(CreateScheduleRequest request, CurrentUser user, CancellationToken ct);
     Task<ScheduleDto> SaveAsync(Guid id, SaveScheduleRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteAsync(Guid id, DeleteScheduleRequest request, CancellationToken ct);

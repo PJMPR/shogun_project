@@ -48,6 +48,7 @@
         [hasConflict]="conflicts().has(entry.id)"
         [hasAvailabilityWarning]="hasAvailabilityWarning(entry)"
         [commentCount]="commentCounts()[entry.id] ?? 0"
+        [compactLabels]="compactLabels()"
         (clicked)="clickEntry($event)"
         (colorChanged)="entryColorChanged.emit($event)"
         (commentsClicked)="commentsRequested.emit($event)"

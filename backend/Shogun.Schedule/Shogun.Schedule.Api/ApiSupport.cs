@@ -38,7 +38,7 @@ public static class ClaimsPrincipalExtensions
         var first = principal.FindFirstValue(ClaimTypes.GivenName) ?? principal.FindFirstValue("given_name") ?? "";
         var last = principal.FindFirstValue(ClaimTypes.Surname) ?? principal.FindFirstValue("family_name") ?? "";
         var name = principal.FindFirstValue("name") ?? $"{first} {last}".Trim(); if (string.IsNullOrWhiteSpace(name)) name = email;
-        var role = principal.IsInRole("admin") ? "admin" : "planner";
+        var role = principal.IsInRole("admin") ? "admin" : principal.IsInRole("planner") ? "planner" : "lecturer";
         return new CurrentUser(email.Trim().ToLowerInvariant(), name, principal.IsInRole("admin"), role);
     }
 }

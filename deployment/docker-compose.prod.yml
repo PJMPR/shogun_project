@@ -146,6 +146,15 @@ services:
     networks:
       - shogun
 
+  mfe-lecturer-schedule:
+    build:
+      context: ../frontend/pj-studies-lecturer-schedule
+      dockerfile: Dockerfile
+    container_name: pj_mfe_lecturer_schedule
+    restart: unless-stopped
+    networks:
+      - shogun
+
   files:
     image: nginx:alpine
     container_name: pj_files
@@ -180,6 +189,7 @@ services:
       - mfe-users
       - mfe-lecturers-assignments
       - mfe-schedule
+      - mfe-lecturer-schedule
       - files
 
 networks:

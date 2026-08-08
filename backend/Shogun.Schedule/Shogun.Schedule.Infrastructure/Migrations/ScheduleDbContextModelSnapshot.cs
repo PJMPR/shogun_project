@@ -272,9 +272,8 @@ namespace Shogun.Schedule.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FacultyId")
-                        .IsUnique()
-                        .HasFilter("\"Status\" = 2");
+                    b.HasIndex("FacultyId", "AcademicYear", "SemesterNumber", "StudyMode")
+                        .IsUnique();
 
                     b.ToTable("schedules", null, t =>
                         {

@@ -1,5 +1,5 @@
 import { CdkDrag, CdkDragEnd, CdkDragHandle, CdkDragStart } from '@angular/cdk/drag-drop';
-import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output, signal } from '@angular/core';
 import { ScheduleEntry } from '../../models/schedule.models';
 import { ScheduleBlockComponent } from '../schedule-block/schedule-block.component';
 import { LecturerAvailability } from '../../services/lecturer-desiderata.service';
@@ -7,6 +7,7 @@ import { LecturerAvailability } from '../../services/lecturer-desiderata.service
 const START_HOUR = 8;
 const END_HOUR = 20;
 const SLOTS_PER_HOUR = 4;
+const COMPACT_LABEL_COLUMN_WIDTH_PX = 112;
 
 interface CellPosition { col: number; row: number }
 interface AvailabilityCell extends CellPosition { available: boolean }
@@ -17,7 +18,7 @@ interface AvailabilityCell extends CellPosition { available: boolean }
   templateUrl: './scheduler-grid.component.html',
   styleUrl: './scheduler-grid.component.css',
 })
-export class SchedulerGridComponent implements OnDestroy {
+export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   private readonly changeDetector = inject(ChangeDetectorRef);
   readonly entries = input<ScheduleEntry[]>([]);
   readonly conflicts = input<Set<string>>(new Set());
@@ -43,6 +44,11 @@ export class SchedulerGridComponent implements OnDestroy {
   protected readonly totalColumns = computed(() =>
     this.activeDays().reduce((total, day) => total + this.groupCount(day), 0) || 1,
   );
+  private readonly surfaceWidthPx = signal(0);
+  protected readonly compactLabels = computed(() => {
+    const width = this.surfaceWidthPx();
+    return width > 0 && width / this.totalColumns() < COMPACT_LABEL_COLUMN_WIDTH_PX;
+  });
   protected readonly totalRows = (END_HOUR - START_HOUR) * SLOTS_PER_HOUR;
 
   protected selection: { start: CellPosition; end: CellPosition } | null = null;
@@ -51,6 +57,7 @@ export class SchedulerGridComponent implements OnDestroy {
   protected draggedEntry: ScheduleEntry | null = null;
   private resizing: { entry: ScheduleEntry; startY: number; initialSlots: number } | null = null;
   private dragged = false;
+  private surfaceResizeObserver?: ResizeObserver;
 
   private readonly onPointerMove = (event: PointerEvent): void => {
     if (this.resizing) this.updateResize(event);
@@ -64,6 +71,13 @@ export class SchedulerGridComponent implements OnDestroy {
   constructor() {
     document.addEventListener('pointermove', this.onPointerMove);
     document.addEventListener('pointerup', this.onPointerUp);
+  }
+
+  ngAfterViewInit(): void {
+    this.surfaceResizeObserver = new ResizeObserver(([entry]) => {
+      this.surfaceWidthPx.set(entry.contentRect.width);
+    });
+    this.surfaceResizeObserver.observe(this.surfaceRef.nativeElement);
   }
 
   protected groupCount(day: number): number {
@@ -333,6 +347,7 @@ export class SchedulerGridComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.surfaceResizeObserver?.disconnect();
     document.removeEventListener('pointermove', this.onPointerMove);
     document.removeEventListener('pointerup', this.onPointerUp);
   }

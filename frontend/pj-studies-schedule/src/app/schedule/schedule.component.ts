@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
@@ -116,10 +116,15 @@ import { MockDataService } from './services/mock-data.service';
   `,
   styleUrl: './schedule.component.css',
 })
-export class ScheduleComponent implements OnInit {
+export class ScheduleComponent implements OnInit, OnDestroy {
+  private static readonly AUTO_SAVE_INTERVAL_MS = 30_000;
   private static readonly FIRST_ACADEMIC_YEAR = 2026;
   protected readonly scheduleStore = inject(MockDataService);
   private readonly messages = inject(MessageService);
+  private readonly autoSaveTimer = window.setInterval(
+    () => void this.autoSave(),
+    ScheduleComponent.AUTO_SAVE_INTERVAL_MS,
+  );
   protected activeView: 'weekly' | 'list' = 'weekly';
   protected activeSemester: Semester = 'zimowy';
   protected activeAcademicYear = this.defaultAcademicYear();
@@ -151,6 +156,22 @@ export class ScheduleComponent implements OnInit {
       this.academicYearInput = this.activeAcademicYear;
       this.selectedPlanId = this.scheduleStore.current()?.id ?? null;
     } catch { this.messages.add({ severity: 'error', summary: 'Błąd', detail: 'Nie udało się pobrać listy planów.' }); }
+  }
+
+  ngOnDestroy(): void {
+    window.clearInterval(this.autoSaveTimer);
+  }
+
+  private async autoSave(): Promise<void> {
+    const plan = this.scheduleStore.current();
+    if (!plan || !this.scheduleStore.dirty() || this.scheduleStore.saving() || this.scheduleStore.stale()) return;
+
+    try {
+      await this.scheduleStore.save({ reportError: false });
+      console.info(`[schedule:auto-save] Zapisano plan ${plan.id}.`);
+    } catch (error) {
+      console.error(`[schedule:auto-save] Nie udało się zapisać planu ${plan.id}.`, error);
+    }
   }
 
   protected applyAcademicYear(): void {

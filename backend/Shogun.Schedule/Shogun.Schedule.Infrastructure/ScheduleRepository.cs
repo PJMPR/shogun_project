@@ -17,10 +17,11 @@ public sealed class ScheduleRepository(ScheduleDbContext db) : IScheduleReposito
     }
     public async Task AddAsync(SchedulePlan schedule, CancellationToken ct) => await db.Schedules.AddAsync(schedule, ct);
     public async Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct) => await db.ScheduleEntries.AddAsync(entry, ct);
+    public async Task AddCommentAsync(ScheduleComment comment, CancellationToken ct) => await db.ScheduleComments.AddAsync(comment, ct);
     public Task DeleteAsync(SchedulePlan schedule, CancellationToken ct) { db.Schedules.Remove(schedule); return Task.CompletedTask; }
     public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => db.ScheduleComments.Include(x => x.ScheduleEntry).ThenInclude(x => x.Schedule).FirstOrDefaultAsync(x => x.Id == id && x.DeletedAt == null, ct);
     public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => db.ScheduleEntries.Include(x => x.Schedule).Include(x => x.Comments).FirstOrDefaultAsync(x => x.Id == id, ct);
-    public async Task<IReadOnlyList<SchedulePlan>> ListPublishedForFacultyAsync(Guid facultyId, Guid exceptScheduleId, CancellationToken ct) => await db.Schedules.Where(x => x.FacultyId == facultyId && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToListAsync(ct);
+    public async Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct) => await db.Schedules.Where(x => x.FacultyId == facultyId && x.AcademicYear == academicYear && x.SemesterNumber == semesterNumber && x.StudyMode == studyMode && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToListAsync(ct);
     public Task SaveChangesAsync(CancellationToken ct) => db.SaveChangesAsync(ct);
     public async Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct)
     {

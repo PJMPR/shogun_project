@@ -45,7 +45,7 @@ public sealed class ScheduleServiceTests
     }
 
     [Fact]
-    public async Task Publishing_plan_withdraws_previous_publication_for_faculty()
+    public async Task Publishing_plan_withdraws_previous_publication_for_same_selection()
     {
         var repository = new FakeRepository(CreateSchedule());
         var previous = CreateSchedule();
@@ -60,6 +60,22 @@ public sealed class ScheduleServiceTests
         Assert.Equal(ScheduleStatus.Draft, previous.Status);
     }
 
+    [Fact]
+    public async Task Add_comment_registers_a_new_comment_for_insert()
+    {
+        var schedule = CreateSchedule();
+        schedule.Status = ScheduleStatus.Published;
+        var entry = new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule };
+        schedule.Entries.Add(entry);
+        var repository = new FakeRepository(schedule);
+
+        var result = await new ScheduleService(repository).AddCommentAsync(entry.Id, new AddCommentRequest("Test"), User, default);
+
+        Assert.True(repository.CommentAdded);
+        Assert.Equal(entry.Id, result.ScheduleEntryId);
+        Assert.Equal("Test", result.Body);
+    }
+
     private static SaveScheduleRequest EmptySave(Guid token, IReadOnlyList<StudentGroup> groups) => new(token, "Plan", ScheduleStatus.Draft, groups.Select(g => new SaveGroupRequest(g.Id, g.Code, g.Name, g.SortOrder)).ToList(), []);
     private static SaveEntryRequest Entry(Guid id, Guid groupId, int start, int duration) => new(id, null, null, "TST", "Test", ClassType.Laboratory, "lecturer@example.edu", "Wykładowca", null, 0, start, duration, null, [groupId]);
     private static SchedulePlan CreateSchedule()
@@ -72,15 +88,17 @@ public sealed class ScheduleServiceTests
     {
         public SchedulePlan Schedule { get; } = schedule;
         public List<SchedulePlan> PublishedPlans { get; } = [];
+        public bool CommentAdded { get; private set; }
         public Task<Faculty?> FindFacultyAsync(string code, CancellationToken ct) => Task.FromResult<Faculty?>(Schedule.Faculty);
         public Task<IReadOnlyList<SchedulePlan>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>([Schedule]);
         public Task<SchedulePlan?> GetAsync(Guid id, bool tracking, CancellationToken ct) => Task.FromResult<SchedulePlan?>(id == Schedule.Id ? Schedule : null);
         public Task AddAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct) => Task.CompletedTask;
+        public Task AddCommentAsync(ScheduleComment comment, CancellationToken ct) { CommentAdded = true; return Task.CompletedTask; }
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleComment?>(null);
-        public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleEntry?>(null);
-        public Task<IReadOnlyList<SchedulePlan>> ListPublishedForFacultyAsync(Guid facultyId, Guid exceptScheduleId, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>(PublishedPlans.Where(x => x.FacultyId == facultyId && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToList());
+        public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult(Schedule.Entries.FirstOrDefault(x => x.Id == id));
+        public Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>(PublishedPlans.Where(x => x.FacultyId == facultyId && x.AcademicYear == academicYear && x.SemesterNumber == semesterNumber && x.StudyMode == studyMode && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToList());
         public Task SaveChangesAsync(CancellationToken ct) => Task.CompletedTask;
         public Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());
         public Task<IScheduleLock> LockFacultyAsync(Guid facultyId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());

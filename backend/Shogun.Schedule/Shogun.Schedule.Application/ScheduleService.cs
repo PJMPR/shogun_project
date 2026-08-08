@@ -7,8 +7,18 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task<IReadOnlyList<ScheduleSummaryDto>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) =>
         (await repository.ListAsync(facultyCode, academicYear, ct)).Select(MapSummary).ToList();
 
+    public async Task<IReadOnlyList<ScheduleSummaryDto>> ListPublishedAsync(string? facultyCode, string? academicYear, CancellationToken ct) =>
+        (await repository.ListAsync(facultyCode, academicYear, ct)).Where(x => x.Status == ScheduleStatus.Published).Select(MapSummary).ToList();
+
     public async Task<ScheduleDto> GetAsync(Guid id, CancellationToken ct) =>
         Map(await repository.GetAsync(id, false, ct) ?? throw new NotFoundException("Plan nie istnieje."));
+
+    public async Task<ScheduleDto> GetPublishedAsync(Guid id, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(id, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        if (schedule.Status != ScheduleStatus.Published) throw new NotFoundException("Opublikowany plan nie istnieje.");
+        return Map(schedule);
+    }
 
     public async Task<ScheduleDto> CreateAsync(CreateScheduleRequest request, CurrentUser user, CancellationToken ct)
     {
@@ -79,7 +89,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         schedule.Name = request.Name.Trim();
         if (request.Status == ScheduleStatus.Published)
         {
-            var previouslyPublished = await repository.ListPublishedForFacultyAsync(schedule.FacultyId, schedule.Id, ct);
+            var previouslyPublished = await repository.ListPublishedForSelectionAsync(schedule.FacultyId, schedule.AcademicYear, schedule.SemesterNumber, schedule.StudyMode, schedule.Id, ct);
             foreach (var previous in previouslyPublished)
             {
                 previous.Status = ScheduleStatus.Draft;
@@ -116,7 +126,9 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
         EnsurePublished(entry.Schedule);
         var comment = new ScheduleComment { Id = Guid.NewGuid(), ScheduleEntryId = entryId, Body = body, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
-        entry.Comments.Add(comment); await repository.SaveChangesAsync(ct); return MapComment(comment, user);
+        await repository.AddCommentAsync(comment, ct);
+        await repository.SaveChangesAsync(ct);
+        return MapComment(comment, user);
     }
 
     public async Task<CommentDto> EditCommentAsync(Guid id, EditCommentRequest request, CurrentUser user, CancellationToken ct)

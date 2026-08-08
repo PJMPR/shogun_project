@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Shogun.Schedule.Application;
 
 namespace Shogun.Schedule.Api;
@@ -6,11 +7,13 @@ namespace Shogun.Schedule.Api;
 [ApiController, Route("api/v1/schedules")]
 public sealed class ScheduleController(IScheduleService service) : ControllerBase
 {
-    [HttpGet] public Task<IReadOnlyList<ScheduleSummaryDto>> List([FromQuery] string? facultyCode, [FromQuery] string? academicYear, CancellationToken ct) => service.ListAsync(facultyCode, academicYear, ct);
-    [HttpGet("{id:guid}")] public Task<ScheduleDto> Get(Guid id, CancellationToken ct) => service.GetAsync(id, ct);
-    [HttpPost] public async Task<ActionResult<ScheduleDto>> Create(CreateScheduleRequest request, CancellationToken ct) { var result = await service.CreateAsync(request, User.ToCurrentUser(), ct); return CreatedAtAction(nameof(Get), new { id = result.Id }, result); }
-    [HttpPut("{id:guid}/save")] public Task<ScheduleDto> Save(Guid id, SaveScheduleRequest request, CancellationToken ct) => service.SaveAsync(id, request, User.ToCurrentUser(), ct);
-    [HttpDelete("{id:guid}")] public async Task<IActionResult> Delete(Guid id, DeleteScheduleRequest request, CancellationToken ct) { await service.DeleteAsync(id, request, ct); return NoContent(); }
+    [HttpGet("published")] public Task<IReadOnlyList<ScheduleSummaryDto>> ListPublished([FromQuery] string? facultyCode, [FromQuery] string? academicYear, CancellationToken ct) => service.ListPublishedAsync(facultyCode, academicYear, ct);
+    [HttpGet("published/{id:guid}")] public Task<ScheduleDto> GetPublished(Guid id, CancellationToken ct) => service.GetPublishedAsync(id, ct);
+    [HttpGet, Authorize(Roles = "admin,planner")] public Task<IReadOnlyList<ScheduleSummaryDto>> List([FromQuery] string? facultyCode, [FromQuery] string? academicYear, CancellationToken ct) => service.ListAsync(facultyCode, academicYear, ct);
+    [HttpGet("{id:guid}"), Authorize(Roles = "admin,planner")] public Task<ScheduleDto> Get(Guid id, CancellationToken ct) => service.GetAsync(id, ct);
+    [HttpPost, Authorize(Roles = "admin,planner")] public async Task<ActionResult<ScheduleDto>> Create(CreateScheduleRequest request, CancellationToken ct) { var result = await service.CreateAsync(request, User.ToCurrentUser(), ct); return CreatedAtAction(nameof(Get), new { id = result.Id }, result); }
+    [HttpPut("{id:guid}/save"), Authorize(Roles = "admin,planner")] public Task<ScheduleDto> Save(Guid id, SaveScheduleRequest request, CancellationToken ct) => service.SaveAsync(id, request, User.ToCurrentUser(), ct);
+    [HttpDelete("{id:guid}"), Authorize(Roles = "admin,planner")] public async Task<IActionResult> Delete(Guid id, DeleteScheduleRequest request, CancellationToken ct) { await service.DeleteAsync(id, request, ct); return NoContent(); }
 }
 
 [ApiController, Route("api/v1")]

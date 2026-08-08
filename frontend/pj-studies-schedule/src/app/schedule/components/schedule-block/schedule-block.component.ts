@@ -43,9 +43,11 @@ import { ScheduleEntry, formatHour } from '../../models/schedule.models';
             }
           </div>
         }
-        <div class="block-subject">{{ e.subjectName }}</div>
-        <div class="block-meta">
-          {{ e.lecturerName }}
+        <div class="block-subject" [title]="e.subjectName">
+          {{ compactLabels() ? (e.subjectCode || e.subjectName) : e.subjectName }}
+        </div>
+        <div class="block-meta" [title]="e.lecturerName">
+          {{ compactLabels() ? initials(e.lecturerName) : e.lecturerName }}
           @if (hasAvailabilityWarning()) {
             <span
               class="pi pi-exclamation-triangle availability-warning"
@@ -89,6 +91,7 @@ export class ScheduleBlockComponent {
   readonly hasConflict = input<boolean>(false);
   readonly hasAvailabilityWarning = input<boolean>(false);
   readonly commentCount = input(0);
+  readonly compactLabels = input(false);
   readonly clicked = output<string>();
   readonly colorChanged = output<{ id: string; color: string }>();
   readonly commentsClicked = output<string>();
@@ -105,6 +108,16 @@ export class ScheduleBlockComponent {
   ];
 
   protected readonly fmt = formatHour;
+
+  protected initials(name: string): string {
+    return name
+      .trim()
+      .split(/\s+/)
+      .filter((part) => part && !/^(mgr|inż\.?|inz\.?|dr|hab\.?|prof\.?|lic\.?|lek\.?|doc\.?)$/i.test(part))
+      .map((part) => part[0])
+      .join('')
+      .toLocaleUpperCase('pl-PL');
+  }
 
   protected togglePalette(event: MouseEvent): void {
     event.stopPropagation();

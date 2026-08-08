@@ -14,6 +14,7 @@
       .\rebuild.ps1 mfe-assignements       # przebuduj MFE assignements
       .\rebuild.ps1 mfe-users              # przebuduj MFE users
       .\rebuild.ps1 mfe-lecturers-assignments
+      .\rebuild.ps1 mfe-lecturer-schedule
       .\rebuild.ps1 proxy                  # przeladuj nginx (bez rebuild)
       .\rebuild.ps1 all                    # przebuduj wszystko
 #>

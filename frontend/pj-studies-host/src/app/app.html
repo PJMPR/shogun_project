@@ -97,8 +97,20 @@
         </a>
       }
 
-      @if (authService.canAccessSchedule()) {
+      @if (authService.canAccessLecturerSchedule()) {
         <p class="nav-section-label">Plan zajęć</p>
+        <a
+          routerLink="/plan-zajec"
+          routerLinkActive="nav-link-active"
+          class="nav-link"
+          (click)="isMobile() && sidebarVisible.set(false)"
+        >
+          <i class="pi pi-eye"></i>
+          Podgląd planu
+        </a>
+      }
+
+      @if (authService.canAccessSchedule()) {
         <a
           routerLink="/schedule"
           routerLinkActive="nav-link-active"
