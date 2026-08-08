@@ -277,7 +277,7 @@ namespace Shogun.Schedule.Infrastructure.Migrations
 
                     b.HasIndex("FacultyId")
                         .IsUnique()
-                        .HasFilter("\"Status\" = 'published'::schedule_status");
+                        .HasFilter("\"Status\" = 2");
 
                     b.ToTable("schedules", null, t =>
                         {

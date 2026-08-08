@@ -21,10 +21,10 @@ namespace Shogun.Schedule.Infrastructure.Migrations
                         ORDER BY "UpdatedAt" DESC, "Id" DESC
                     ) AS position
                     FROM schedules
-                    WHERE "Status" = 'published'::schedule_status
+                    WHERE "Status" = 2
                 )
                 UPDATE schedules
-                SET "Status" = 'draft'::schedule_status
+                SET "Status" = 1
                 WHERE "Id" IN (SELECT "Id" FROM ranked WHERE position > 1);
                 """);
 
@@ -33,7 +33,7 @@ namespace Shogun.Schedule.Infrastructure.Migrations
                 table: "schedules",
                 column: "FacultyId",
                 unique: true,
-                filter: "\"Status\" = 'published'::schedule_status");
+                filter: "\"Status\" = 2");
         }
 
         /// <inheritdoc />

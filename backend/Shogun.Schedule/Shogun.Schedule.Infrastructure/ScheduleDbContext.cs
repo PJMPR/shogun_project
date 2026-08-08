@@ -28,7 +28,7 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
             e.ToTable("schedules", t => { t.HasCheckConstraint("ck_schedules_semester", "\"SemesterNumber\" BETWEEN 1 AND 8"); t.HasCheckConstraint("ck_schedules_year", "\"AcademicYear\" ~ '^[0-9]{4}/[0-9]{4}$'"); });
             e.HasKey(x => x.Id); e.Property(x => x.AcademicYear).HasMaxLength(9); e.Property(x => x.Name).HasMaxLength(200); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.UpdatedBy).HasMaxLength(320);
             e.Property(x => x.ConcurrencyToken).IsConcurrencyToken();
-            e.HasIndex(x => x.FacultyId).IsUnique().HasFilter("\"Status\" = 'published'::schedule_status");
+            e.HasIndex(x => x.FacultyId).IsUnique().HasFilter("\"Status\" = 2");
             e.HasOne(x => x.Faculty).WithMany(x => x.Schedules).HasForeignKey(x => x.FacultyId).OnDelete(DeleteBehavior.Restrict);
         });
         b.Entity<StudentGroup>(e =>
