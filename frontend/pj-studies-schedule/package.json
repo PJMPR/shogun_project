@@ -24,7 +24,7 @@
   "private": true,
   "packageManager": "npm@11.8.0",
   "dependencies": {
-    "@angular-architects/native-federation": "^21.0.0",
+    "@angular-architects/native-federation": "21.2.4",
     "@angular/animations": "^21.1.5",
     "@angular/cdk": "^21.2.10",
     "@angular/common": "^21.1.0",
