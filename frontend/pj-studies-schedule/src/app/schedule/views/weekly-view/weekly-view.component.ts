@@ -1,4 +1,4 @@
-import { Component, ViewChild, computed, effect, inject, input, signal } from '@angular/core';
+import { Component, ViewChild, computed, effect, inject, input, output, signal } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -35,6 +35,7 @@ export class WeeklyViewComponent {
   readonly academicYear = input.required<string>();
   readonly facultyCode = input.required<string>();
   readonly selectedPlan = input<SchedulePlanSummary | null>(null);
+  readonly planCreated = output<string>();
 
   @ViewChild('dialog') dialog!: EntryDialogComponent;
 
@@ -309,8 +310,13 @@ export class WeeklyViewComponent {
 
   protected async createCurrentPlan(): Promise<void> {
     const filters = this.filters(); if (filters.semesterNumber === null) return;
-    try { await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode); this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: this.academicYear() }); }
-    catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Plan może już istnieć.' }); }
+    try {
+      await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode);
+      const createdId = this.mockData.current()?.id;
+      if (createdId) this.planCreated.emit(createdId);
+      this.messageService.add({ severity: 'success', summary: 'Utworzono wariant planu', detail: this.academicYear() });
+    }
+    catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Spróbuj ponownie.' }); }
   }
 
   protected async saveChanges(): Promise<void> {
@@ -330,6 +336,10 @@ export class WeeklyViewComponent {
   }
 
   protected openComments(id: string): void {
+    if (this.mockData.current()?.status !== 'published') {
+      this.messageService.add({ severity: 'info', summary: 'Plan nie jest opublikowany', detail: 'Komentarze są dostępne tylko w aktualnym, opublikowanym planie wydziału.' });
+      return;
+    }
     const entry = this.mockData.entries().find((item) => item.id === id);
     if (!entry) return;
     if (!entry.concurrencyToken) {

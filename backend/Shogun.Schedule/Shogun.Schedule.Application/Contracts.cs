@@ -30,8 +30,10 @@ public interface IScheduleRepository
     Task DeleteAsync(SchedulePlan schedule, CancellationToken ct);
     Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct);
     Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct);
+    Task<IReadOnlyList<SchedulePlan>> ListPublishedForFacultyAsync(Guid facultyId, Guid exceptScheduleId, CancellationToken ct);
     Task SaveChangesAsync(CancellationToken ct);
     Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct);
+    Task<IScheduleLock> LockFacultyAsync(Guid facultyId, CancellationToken ct);
 }
 
 public interface IScheduleLock : IAsyncDisposable { Task CompleteAsync(CancellationToken ct); }

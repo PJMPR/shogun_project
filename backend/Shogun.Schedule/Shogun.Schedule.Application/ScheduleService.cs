@@ -34,7 +34,8 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
 
     public async Task<ScheduleDto> SaveAsync(Guid id, SaveScheduleRequest request, CurrentUser user, CancellationToken ct)
     {
-        await using var scheduleLock = await repository.LockScheduleAsync(id, ct);
+        var scheduleReference = await repository.GetAsync(id, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        await using var scheduleLock = await repository.LockFacultyAsync(scheduleReference.FacultyId, ct);
         var schedule = await repository.GetAsync(id, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
         if (schedule.ConcurrencyToken != request.ConcurrencyToken) throw new ConflictException("Plan został zmieniony przez innego użytkownika.");
         ValidatePayload(request);
@@ -75,7 +76,19 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
             }
         }
         ValidateOverlaps(request.Entries);
-        schedule.Name = request.Name.Trim(); schedule.Status = request.Status;
+        schedule.Name = request.Name.Trim();
+        if (request.Status == ScheduleStatus.Published)
+        {
+            var previouslyPublished = await repository.ListPublishedForFacultyAsync(schedule.FacultyId, schedule.Id, ct);
+            foreach (var previous in previouslyPublished)
+            {
+                previous.Status = ScheduleStatus.Draft;
+                previous.UpdatedAt = now;
+                previous.UpdatedBy = user.Email;
+                previous.ConcurrencyToken = Guid.NewGuid();
+            }
+        }
+        schedule.Status = request.Status;
         schedule.UpdatedAt = now; schedule.UpdatedBy = user.Email; schedule.ConcurrencyToken = Guid.NewGuid();
         await repository.SaveChangesAsync(ct);
         await scheduleLock.CompleteAsync(ct);
@@ -93,6 +106,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task<IReadOnlyList<CommentDto>> ListCommentsAsync(Guid entryId, CurrentUser user, CancellationToken ct)
     {
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
+        EnsurePublished(entry.Schedule);
         return entry.Comments.Where(x => x.DeletedAt is null).OrderBy(x => x.CreatedAt).Select(x => MapComment(x, user)).ToList();
     }
 
@@ -100,6 +114,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         var body = Required(request.Body, "Komentarz");
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
+        EnsurePublished(entry.Schedule);
         var comment = new ScheduleComment { Id = Guid.NewGuid(), ScheduleEntryId = entryId, Body = body, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
         entry.Comments.Add(comment); await repository.SaveChangesAsync(ct); return MapComment(comment, user);
     }
@@ -107,6 +122,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task<CommentDto> EditCommentAsync(Guid id, EditCommentRequest request, CurrentUser user, CancellationToken ct)
     {
         var comment = await repository.GetCommentAsync(id, ct) ?? throw new NotFoundException("Komentarz nie istnieje.");
+        EnsurePublished(comment.ScheduleEntry.Schedule);
         if (!comment.AuthorEmail.Equals(user.Email, StringComparison.OrdinalIgnoreCase)) throw new UnauthorizedAccessException("Można edytować tylko własny komentarz.");
         comment.Body = Required(request.Body, "Komentarz"); comment.UpdatedAt = DateTimeOffset.UtcNow;
         await repository.SaveChangesAsync(ct); return MapComment(comment, user);
@@ -115,8 +131,14 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task DeleteCommentAsync(Guid id, CurrentUser user, CancellationToken ct)
     {
         var comment = await repository.GetCommentAsync(id, ct) ?? throw new NotFoundException("Komentarz nie istnieje.");
+        EnsurePublished(comment.ScheduleEntry.Schedule);
         if (!user.IsAdmin && !comment.AuthorEmail.Equals(user.Email, StringComparison.OrdinalIgnoreCase)) throw new UnauthorizedAccessException("Brak uprawnień do usunięcia komentarza.");
         comment.DeletedAt = DateTimeOffset.UtcNow; comment.DeletedBy = user.Email; await repository.SaveChangesAsync(ct);
+    }
+
+    private static void EnsurePublished(SchedulePlan schedule)
+    {
+        if (schedule.Status != ScheduleStatus.Published) throw new ValidationException("Komentarze są dostępne tylko dla opublikowanego planu.");
     }
 
     private static void ValidatePlan(string year, int semester, string name)

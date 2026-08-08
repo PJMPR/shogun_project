@@ -78,6 +78,16 @@ import { MockDataService } from './services/mock-data.service';
             [disabled]="!scheduleStore.current() || !scheduleStore.dirty() || scheduleStore.stale()"
             (onClick)="savePlan()"
           />
+          @if (scheduleStore.current(); as plan) {
+            <p-button
+              [label]="plan.status === 'published' ? 'Wycofaj publikację' : 'Opublikuj plan'"
+              [icon]="plan.status === 'published' ? 'pi pi-eye-slash' : 'pi pi-send'"
+              [severity]="plan.status === 'published' ? 'secondary' : 'success'"
+              [outlined]="plan.status === 'published'"
+              [loading]="scheduleStore.saving()"
+              (onClick)="togglePublication()"
+            />
+          }
         </div>
       </div>
 
@@ -94,6 +104,7 @@ import { MockDataService } from './services/mock-data.service';
             [academicYear]="activeAcademicYear"
             [facultyCode]="activeFacultyCode"
             [selectedPlan]="selectedPlan()"
+            (planCreated)="selectCreatedPlan($event)"
           />
         } @else {
           <app-list-view [semesterType]="activeSemester" />
@@ -128,7 +139,7 @@ export class ScheduleComponent implements OnInit {
     return years.includes(this.activeAcademicYear) ? years : [this.activeAcademicYear, ...years];
   });
   protected readonly savedPlanOptions = computed(() => this.scheduleStore.plans().map((plan) => ({
-    label: `${plan.academicYear} · semestr ${plan.semesterNumber} · ${plan.studyMode === 'stationary' ? 'stacjonarne' : 'niestacjonarne'}`,
+    label: `${plan.status === 'published' ? '● Opublikowany · ' : ''}${plan.academicYear} · semestr ${plan.semesterNumber} · ${plan.studyMode === 'stationary' ? 'stacjonarne' : 'niestacjonarne'}`,
     value: plan.id,
   })));
   protected readonly selectedPlan = computed(() => this.scheduleStore.plans().find((plan) => plan.id === this.selectedPlanId) ?? null);
@@ -176,6 +187,10 @@ export class ScheduleComponent implements OnInit {
     await this.scheduleStore.reload(planId);
   }
 
+  protected selectCreatedPlan(planId: string): void {
+    this.selectedPlanId = planId;
+  }
+
   protected async savePlan(): Promise<void> {
     try {
       await this.scheduleStore.save();
@@ -193,6 +208,24 @@ export class ScheduleComponent implements OnInit {
       return;
     }
     this.messages.add({ severity: 'info', summary: 'Plan odświeżony', detail: 'Pobrano aktualną wersję planu.' });
+  }
+
+  protected async togglePublication(): Promise<void> {
+    const plan = this.scheduleStore.current();
+    if (!plan) return;
+    const publishing = plan.status !== 'published';
+    this.scheduleStore.setPublished(publishing);
+    try {
+      await this.scheduleStore.save();
+      this.messages.add({
+        severity: publishing ? 'success' : 'info',
+        summary: publishing ? 'Plan opublikowany' : 'Publikacja wycofana',
+        detail: publishing ? 'To jest teraz aktualny plan wydziału dostępny do komentowania.' : 'Plan nie jest już dostępny do komentowania.',
+      });
+    } catch {
+      this.scheduleStore.setPublished(!publishing);
+      this.messages.add({ severity: 'error', summary: 'Nie udało się zmienić publikacji', detail: this.scheduleStore.error() ?? undefined });
+    }
   }
 
   private defaultAcademicYear(): string {

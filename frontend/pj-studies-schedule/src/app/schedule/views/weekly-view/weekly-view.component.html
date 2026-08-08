@@ -4,6 +4,7 @@
     <div class="plan-actions">
       @if (mockData.dirty()) { <span class="dirty-indicator"><span></span> Niezapisane zmiany</span> }
       @if (mockData.current()) {
+        <p-button label="Nowy wariant" icon="pi pi-copy" size="small" severity="secondary" [outlined]="true" (onClick)="createCurrentPlan()" />
         <p-button icon="pi pi-trash" size="small" severity="danger" [text]="true" title="Usuń plan" (onClick)="deleteCurrentPlan()" />
         <p-button label="Dodaj wpis" icon="pi pi-plus" size="small" (onClick)="openCreateDialog()" />
       } @else {

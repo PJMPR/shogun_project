@@ -44,6 +44,22 @@ public sealed class ScheduleServiceTests
         Assert.Equal(2, result.Entries.Count);
     }
 
+    [Fact]
+    public async Task Publishing_plan_withdraws_previous_publication_for_faculty()
+    {
+        var repository = new FakeRepository(CreateSchedule());
+        var previous = CreateSchedule();
+        previous.FacultyId = repository.Schedule.FacultyId;
+        previous.Status = ScheduleStatus.Published;
+        repository.PublishedPlans.Add(previous);
+        var request = EmptySave(repository.Schedule.ConcurrencyToken, repository.Schedule.Groups) with { Status = ScheduleStatus.Published };
+
+        var result = await new ScheduleService(repository).SaveAsync(repository.Schedule.Id, request, User, default);
+
+        Assert.Equal(ScheduleStatus.Published, result.Status);
+        Assert.Equal(ScheduleStatus.Draft, previous.Status);
+    }
+
     private static SaveScheduleRequest EmptySave(Guid token, IReadOnlyList<StudentGroup> groups) => new(token, "Plan", ScheduleStatus.Draft, groups.Select(g => new SaveGroupRequest(g.Id, g.Code, g.Name, g.SortOrder)).ToList(), []);
     private static SaveEntryRequest Entry(Guid id, Guid groupId, int start, int duration) => new(id, null, null, "TST", "Test", ClassType.Laboratory, "lecturer@example.edu", "Wykładowca", null, 0, start, duration, null, [groupId]);
     private static SchedulePlan CreateSchedule()
@@ -55,6 +71,7 @@ public sealed class ScheduleServiceTests
     private sealed class FakeRepository(SchedulePlan schedule) : IScheduleRepository
     {
         public SchedulePlan Schedule { get; } = schedule;
+        public List<SchedulePlan> PublishedPlans { get; } = [];
         public Task<Faculty?> FindFacultyAsync(string code, CancellationToken ct) => Task.FromResult<Faculty?>(Schedule.Faculty);
         public Task<IReadOnlyList<SchedulePlan>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>([Schedule]);
         public Task<SchedulePlan?> GetAsync(Guid id, bool tracking, CancellationToken ct) => Task.FromResult<SchedulePlan?>(id == Schedule.Id ? Schedule : null);
@@ -63,8 +80,10 @@ public sealed class ScheduleServiceTests
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleComment?>(null);
         public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleEntry?>(null);
+        public Task<IReadOnlyList<SchedulePlan>> ListPublishedForFacultyAsync(Guid facultyId, Guid exceptScheduleId, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>(PublishedPlans.Where(x => x.FacultyId == facultyId && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToList());
         public Task SaveChangesAsync(CancellationToken ct) => Task.CompletedTask;
         public Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());
+        public Task<IScheduleLock> LockFacultyAsync(Guid facultyId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());
     }
     private sealed class FakeLock : IScheduleLock { public Task CompleteAsync(CancellationToken ct) => Task.CompletedTask; public ValueTask DisposeAsync() => ValueTask.CompletedTask; }
 }

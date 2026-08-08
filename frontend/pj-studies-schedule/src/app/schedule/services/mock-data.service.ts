@@ -35,7 +35,8 @@ export class MockDataService {
 
   async loadFor(academicYear: string, semesterNumber: number, mode: StudyMode): Promise<void> {
     const apiMode = mode === 'stacjonarny' ? 'stationary' : 'partTime';
-    const summary = this.plans().find((x) => x.academicYear === academicYear && x.semesterNumber === semesterNumber && x.studyMode === apiMode);
+    const matching = this.plans().filter((x) => x.academicYear === academicYear && x.semesterNumber === semesterNumber && x.studyMode === apiMode);
+    const summary = matching.find((x) => x.status === 'published') ?? matching[0];
     if (!summary) { this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]); this.dirty.set(false); this.stale.set(false); this.error.set(null); return; }
     await this.reload(summary.id);
   }
@@ -101,6 +102,10 @@ export class MockDataService {
   }
 
   addEntry(entry: ScheduleEntry): void { this.entries.update((list) => [...list, entry]); this.markDirty(); }
+  setPublished(published: boolean): void {
+    this.current.update((plan) => plan ? { ...plan, status: published ? 'published' : 'draft' } : plan);
+    this.markDirty();
+  }
   updateEntry(updated: ScheduleEntry): void { this.entries.update((list) => list.map((e) => e.id === updated.id ? updated : e)); this.markDirty(); }
   removeEntry(id: string): void { this.entries.update((list) => list.filter((e) => e.id !== id)); this.markDirty(); }
   setGroups(groups: ScheduleGroup[]): void { this.groups.set(groups.map((g, i) => ({ ...g, sortOrder: i }))); this.markDirty(); }
