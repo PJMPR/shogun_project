@@ -15,7 +15,7 @@
 | Plik | Opis |
 |---|---|
 | `check-install-tools.ps1` | Instaluje Docker, git i make na serwerze przez SSH; uruchamiany lokalnie |
-| `docker-compose.databases.prod.yml` | Produkcyjne bazy danych: MariaDB, MongoDB i jednorazowy init MongoDB |
+| `docker-compose.databases.prod.yml` | Produkcyjne bazy danych oraz automatyczny backup MariaDB i PostgreSQL |
 | `docker-compose.keycloak.prod.yml` | Produkcyjny Keycloak, uruchamiany osobno po bazach danych |
 | `docker-compose.prod.yml` | Produkcyjne API, frontendy, pliki statyczne i nginx proxy; bez baz danych i Keycloak |
 | `nginx.prod.conf` | Konfiguracja nginx z TLS i reverse proxy do aplikacji oraz Keycloak |
@@ -129,6 +129,16 @@ docker compose -f docker-compose.databases.prod.yml --env-file .env.prod ps
 ```
 
 Ten krok tworzy siec `shogun_network`, wolumeny `mariadb_data` i `mongo_data`, uruchamia MariaDB oraz MongoDB i wykonuje jednorazowy init MongoDB.
+
+Uruchamiany jest również `pj_db_backup`. Domyślnie wykonuje backup przy starcie i co 24 godziny do `deployment/backups`, zachowując pliki przez 14 dni. Ustaw `BACKUP_DIR` w `.env.prod` na katalog znajdujący się na osobnym dysku lub synchronizowany poza serwer. Szczegóły ręcznego backupu i odtwarzania znajdują się w `database/backup/README.md`.
+
+Sprawdzenie backupów:
+
+```bash
+docker logs pj_db_backup
+docker compose -f docker-compose.databases.prod.yml --env-file .env.prod ps db-backup
+find "${BACKUP_DIR:-./backups}" -maxdepth 2 -type f -ls
+```
 
 Nie uruchamiaj na produkcji:
 

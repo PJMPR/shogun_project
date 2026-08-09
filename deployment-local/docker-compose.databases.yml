@@ -54,6 +54,42 @@ services:
       retries: 10
       start_period: 30s
 
+  # Lokalne backupy testowe MariaDB i PostgreSQL.
+  db-backup:
+    build:
+      context: ../database/backup
+    container_name: pj_db_backup
+    restart: unless-stopped
+    environment:
+      TZ: ${BACKUP_TIMEZONE:-Europe/Warsaw}
+      BACKUP_ROOT: /backups
+      BACKUP_INTERVAL_SECONDS: ${BACKUP_INTERVAL_SECONDS:-86400}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+      BACKUP_MAX_AGE_SECONDS: ${BACKUP_MAX_AGE_SECONDS:-172800}
+      BACKUP_RUN_ON_STARTUP: ${BACKUP_RUN_ON_STARTUP:-true}
+      MARIADB_HOST: pj_mariadb
+      MARIADB_USER: root
+      MARIADB_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+      POSTGRES_HOST: pj_postgres_schedule
+      POSTGRES_DB: ${SCHEDULE_POSTGRES_DB:-pj_schedule}
+      POSTGRES_USER: ${SCHEDULE_POSTGRES_USER:-shogun_schedule}
+      POSTGRES_PASSWORD: ${SCHEDULE_POSTGRES_PASSWORD:-schedule_password}
+    volumes:
+      - ${BACKUP_DIR:-./backups}:/backups
+    networks:
+      - shogun_local
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      postgres-schedule:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "/app/healthcheck.sh"]
+      interval: 5m
+      timeout: 10s
+      retries: 2
+      start_period: 5m
+
   # ── MongoDB ───────────────────────────────────────────────────────────────
   # Baza: pj_sylabi (Syllabi API)
   mongo:

@@ -87,4 +87,6 @@ nuget.config
 
 # deployment binaries
 deployment/plink.exe
+deployment/backups/
+deployment-local/backups/
 
