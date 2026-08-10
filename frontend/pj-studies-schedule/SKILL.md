@@ -80,7 +80,7 @@ Load and mutate comments through `ScheduleCommentsService` and `/api-schedule/ap
 
 Read the current author from host-provided `sessionStorage`:
 
-- `shogun_user_profile`: `{ firstName, lastName, email }`
+- `shogun_user_profile`: `{ userId, firstName, lastName, email }`
 - `shogun_roles`: realm role names
 
 The host writes the profile in `frontend/pj-studies-host/src/app/auth.service.ts`; change that file only when the profile contract changes. The API derives authoritative author and permissions from JWT claims. Authors may edit/delete their own comments; admins may delete every comment. The comments feature is not currently present in list view.

@@ -23,6 +23,7 @@ builder.Services.AddAuthorization(); builder.Services.AddHealthChecks().AddCheck
 builder.Services.AddCors(o => o.AddDefaultPolicy(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 var app = builder.Build();
 await MigrateWithRetry(app.Services, app.Logger);
+using (var scope = app.Services.CreateScope()) await scope.ServiceProvider.GetRequiredService<KeycloakIdentityBackfill>().RunAsync();
 app.UseExceptionHandler(); app.UseCors(); app.UseAuthentication(); app.UseAuthorization(); app.UseSerilogRequestLogging();
 app.MapControllers().RequireAuthorization(); app.MapHealthChecks("/health"); app.Run();
 

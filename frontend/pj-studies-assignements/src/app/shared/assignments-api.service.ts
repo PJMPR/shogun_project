@@ -49,9 +49,10 @@ export interface AssignmentAvailabilityResponse {
 
 export interface AssignmentResponse {
   id: number;
+  lecturerUserId: string | null;
   lecturerFirstName: string;
   lecturerLastName: string;
-  lecturerEmail: string;
+  lecturerEmail: string | null;
   semesterType: string;
   academicYear: string;
   notes: string | null;

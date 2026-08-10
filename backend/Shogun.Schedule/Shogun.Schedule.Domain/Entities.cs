@@ -25,9 +25,11 @@ public sealed class SchedulePlan
     public ScheduleStatus Status { get; set; } = ScheduleStatus.Draft;
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
-    public string CreatedBy { get; set; } = string.Empty;
+    public string? CreatedBy { get; set; }
+    public string? CreatedByUserId { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
-    public string UpdatedBy { get; set; } = string.Empty;
+    public string? UpdatedBy { get; set; }
+    public string? UpdatedByUserId { get; set; }
     public List<StudentGroup> Groups { get; set; } = [];
     public List<ScheduleEntry> Entries { get; set; } = [];
 }
@@ -42,9 +44,11 @@ public sealed class StudentGroup
     public int SortOrder { get; set; }
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
-    public string CreatedBy { get; set; } = string.Empty;
+    public string? CreatedBy { get; set; }
+    public string? CreatedByUserId { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
-    public string UpdatedBy { get; set; } = string.Empty;
+    public string? UpdatedBy { get; set; }
+    public string? UpdatedByUserId { get; set; }
     public List<ScheduleEntryGroup> EntryGroups { get; set; } = [];
 }
 
@@ -58,7 +62,8 @@ public sealed class ScheduleEntry
     public string? SubjectCode { get; set; }
     public string SubjectName { get; set; } = string.Empty;
     public ClassType ClassType { get; set; }
-    public string LecturerEmail { get; set; } = string.Empty;
+    public string? LecturerUserId { get; set; }
+    public string? LecturerEmail { get; set; }
     public string LecturerDisplayName { get; set; } = string.Empty;
     public string? Room { get; set; }
     public int DayOfWeek { get; set; }
@@ -67,9 +72,11 @@ public sealed class ScheduleEntry
     public string? Color { get; set; }
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
-    public string CreatedBy { get; set; } = string.Empty;
+    public string? CreatedBy { get; set; }
+    public string? CreatedByUserId { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
-    public string UpdatedBy { get; set; } = string.Empty;
+    public string? UpdatedBy { get; set; }
+    public string? UpdatedByUserId { get; set; }
     public List<ScheduleEntryGroup> EntryGroups { get; set; } = [];
     public List<ScheduleComment> Comments { get; set; } = [];
 }
@@ -88,11 +95,13 @@ public sealed class ScheduleComment
     public Guid ScheduleEntryId { get; set; }
     public ScheduleEntry ScheduleEntry { get; set; } = null!;
     public string Body { get; set; } = string.Empty;
-    public string AuthorEmail { get; set; } = string.Empty;
+    public string? AuthorUserId { get; set; }
+    public string? AuthorEmail { get; set; }
     public string AuthorDisplayName { get; set; } = string.Empty;
     public string AuthorRole { get; set; } = string.Empty;
     public DateTimeOffset CreatedAt { get; set; }
     public DateTimeOffset? UpdatedAt { get; set; }
     public DateTimeOffset? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
+    public string? DeletedByUserId { get; set; }
 }

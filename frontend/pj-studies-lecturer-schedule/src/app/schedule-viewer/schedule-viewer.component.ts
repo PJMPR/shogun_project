@@ -12,9 +12,9 @@ type AuthorRole = 'admin' | 'planner' | 'lecturer';
 
 interface PlanSummary { id: string; facultyCode: string; facultyName: string; academicYear: string; semesterNumber: number; studyMode: StudyMode; status: 'draft' | 'published' }
 interface Group { id: string; code: string; name: string; sortOrder: number }
-interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerEmail: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[]; commentCount: number }
+interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerUserId?: string; lecturerEmail?: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[]; commentCount: number }
 interface Plan extends PlanSummary { groups: Group[]; entries: Entry[] }
-interface ApiComment { id: string; scheduleEntryId: string; body: string; authorEmail: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
+interface ApiComment { id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
 
 const DAYS = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
 const START_MINUTE = 8 * 60;
@@ -49,14 +49,14 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected studyMode: StudyMode = 'stationary';
   protected scope: Scope = 'all';
   protected view: View = 'weekly';
-  protected readonly currentEmail = this.readProfile().email.trim().toLowerCase();
+  protected readonly currentUserId = this.readProfile().userId;
   protected readonly facultyOptions = [{ label: 'Informatyka', value: 'WI' }, { label: 'Sztuka Nowych Mediów', value: 'SNM' }];
   protected readonly modeOptions = [{ label: 'Stacjonarne', value: 'stationary' as StudyMode }, { label: 'Niestacjonarne', value: 'partTime' as StudyMode }];
   protected readonly semesterOptions = Array.from({ length: 8 }, (_, index) => ({ label: `Semestr ${index + 1}`, value: index + 1 }));
   protected readonly yearOptions = computed(() => [...new Set(this.plans().filter(p => p.facultyCode === this.facultyCode && p.status === 'published').map(p => p.academicYear))].sort().reverse());
   protected readonly visibleEntries = computed(() => {
     const entries = this.plan()?.entries ?? [];
-    return this.scope === 'mine' ? entries.filter(entry => entry.lecturerEmail.trim().toLowerCase() === this.currentEmail) : entries;
+    return this.scope === 'mine' ? entries.filter(entry => entry.lecturerUserId === this.currentUserId) : entries;
   });
   protected readonly visibleDays = computed(() => this.studyMode === 'stationary' ? [0, 1, 2, 3, 4] : [4, 5, 6]);
   protected readonly hours = Array.from({ length: 13 }, (_, index) => index + 8);
@@ -148,6 +148,6 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   }
   private groupIndices(entry: Entry): number[] { const groups = this.plan()?.groups ?? []; const indices = entry.groupIds.map(id => groups.findIndex(group => group.id === id)).filter(index => index >= 0); return indices.length ? indices : [0]; }
   private adjustCommentCount(entryId: string, delta: number): void { this.plan.update(plan => plan ? { ...plan, entries: plan.entries.map(entry => entry.id === entryId ? { ...entry, commentCount: Math.max(0, entry.commentCount + delta) } : entry) } : plan); }
-  private readProfile(): { email: string } { try { return JSON.parse(sessionStorage.getItem('shogun_user_profile') ?? '{"email":""}'); } catch { return { email: '' }; } }
+  private readProfile(): { userId: string } { try { return JSON.parse(sessionStorage.getItem('shogun_user_profile') ?? '{"userId":""}'); } catch { return { userId: '' }; } }
   private errorMessage(error: unknown, fallback: string): string { return error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : fallback; }
 }

@@ -6,7 +6,7 @@ namespace Shogun.Schedule.Application.Tests;
 
 public sealed class ScheduleServiceTests
 {
-    private static readonly CurrentUser User = new("planner@example.edu", "Planista", false, "planner");
+    private static readonly CurrentUser User = new("kc-planner-id", "planner@example.edu", "Planista", false, "planner");
 
     [Fact]
     public async Task Save_rejects_stale_concurrency_token()
@@ -77,7 +77,7 @@ public sealed class ScheduleServiceTests
     }
 
     private static SaveScheduleRequest EmptySave(Guid token, IReadOnlyList<StudentGroup> groups) => new(token, "Plan", ScheduleStatus.Draft, groups.Select(g => new SaveGroupRequest(g.Id, g.Code, g.Name, g.SortOrder)).ToList(), []);
-    private static SaveEntryRequest Entry(Guid id, Guid groupId, int start, int duration) => new(id, null, null, "TST", "Test", ClassType.Laboratory, "lecturer@example.edu", "Wykładowca", null, 0, start, duration, null, [groupId]);
+    private static SaveEntryRequest Entry(Guid id, Guid groupId, int start, int duration) => new(id, null, null, "TST", "Test", ClassType.Laboratory, "kc-lecturer-id", "lecturer@example.edu", "Wykładowca", null, 0, start, duration, null, [groupId]);
     private static SchedulePlan CreateSchedule()
     {
         var id = Guid.NewGuid(); var now = DateTimeOffset.UtcNow;

@@ -22,6 +22,8 @@ public static class InfrastructureServiceCollectionExtensions
                 mySql.MigrationsAssembly(typeof(AssignmentsDbContext).Assembly.FullName)));
 
         services.AddScoped<ILecturerAssignmentRepository, LecturerAssignmentRepository>();
+        services.AddScoped<LecturerIdentityBackfill>();
+        services.AddHttpClient("keycloak-admin");
 
         return services;
     }

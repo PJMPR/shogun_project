@@ -14,7 +14,8 @@ export interface LecturerDesideratum {
   id: number;
   lecturerFirstName: string;
   lecturerLastName: string;
-  lecturerEmail: string;
+  lecturerUserId: string | null;
+  lecturerEmail: string | null;
   semesterType: string;
   academicYear: string;
   subjects: DesideratumSubject[];
@@ -31,7 +32,8 @@ export interface LecturerAvailability {
 export interface DesideratumOption extends DesideratumSubject {
   assignmentId: number;
   lecturerName: string;
-  lecturerEmail: string;
+  lecturerUserId: string;
+  lecturerEmail?: string;
   semesterType: string;
   academicYear: string;
 }

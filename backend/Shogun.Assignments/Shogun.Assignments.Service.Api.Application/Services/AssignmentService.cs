@@ -13,6 +13,7 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
         {
             LecturerFirstName = GetFirstName(user),
             LecturerLastName  = GetLastName(user),
+            LecturerUserId    = GetUserId(user),
             LecturerEmail     = GetEmail(user),
             SemesterType      = dto.SemesterType,
             AcademicYear      = dto.AcademicYear,
@@ -55,8 +56,8 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
 
     public async Task<IReadOnlyList<AssignmentResponseDto>> GetMyAsync(ClaimsPrincipal user, CancellationToken ct = default)
     {
-        var email = GetEmail(user);
-        var entities = await repository.GetByEmailAsync(email, ct);
+        var userId = GetUserId(user);
+        var entities = await repository.GetByUserIdAsync(userId, GetEmail(user), ct);
         return entities.Select(MapToDto).ToList();
     }
 
@@ -66,10 +67,14 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
         return entities.Select(MapToDto).ToList();
     }
 
-    private static string GetEmail(ClaimsPrincipal user) =>
+    private static string GetUserId(ClaimsPrincipal user) =>
+        user.FindFirst("sub")?.Value
+        ?? user.FindFirst(ClaimTypes.NameIdentifier)?.Value
+        ?? throw new UnauthorizedAccessException("Subject claim not found in token.");
+
+    private static string? GetEmail(ClaimsPrincipal user) =>
         user.FindFirst(ClaimTypes.Email)?.Value
-        ?? user.FindFirst("email")?.Value
-        ?? throw new UnauthorizedAccessException("Email claim not found in token.");
+        ?? user.FindFirst("email")?.Value;
 
     private static string GetFirstName(ClaimsPrincipal user) =>
         user.FindFirst(ClaimTypes.GivenName)?.Value
@@ -88,6 +93,7 @@ public class AssignmentService(ILecturerAssignmentRepository repository) : IAssi
         Id                = e.Id,
         LecturerFirstName = e.LecturerFirstName,
         LecturerLastName  = e.LecturerLastName,
+        LecturerUserId    = e.LecturerUserId,
         LecturerEmail     = e.LecturerEmail,
         SemesterType      = e.SemesterType,
         AcademicYear      = e.AcademicYear,

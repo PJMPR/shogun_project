@@ -18,7 +18,9 @@ public class AssignmentsDbContext(DbContextOptions<AssignmentsDbContext> options
             e.Property(x => x.Id).ValueGeneratedOnAdd();
             e.Property(x => x.LecturerFirstName).HasMaxLength(100).IsRequired();
             e.Property(x => x.LecturerLastName).HasMaxLength(100).IsRequired();
-            e.Property(x => x.LecturerEmail).HasMaxLength(200).IsRequired();
+            e.Property(x => x.LecturerUserId).HasMaxLength(100);
+            e.Property(x => x.LecturerEmail).HasMaxLength(200);
+            e.HasIndex(x => x.LecturerUserId);
             e.Property(x => x.SemesterType).HasMaxLength(20).IsRequired();
             e.Property(x => x.AcademicYear).HasMaxLength(20).IsRequired();
             e.Property(x => x.Notes).HasMaxLength(2000);

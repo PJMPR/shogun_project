@@ -111,7 +111,8 @@ export class WeeklyViewComponent {
           ...subject,
           assignmentId: assignment.id,
           lecturerName: `${assignment.lecturerFirstName} ${assignment.lecturerLastName}`.trim(),
-          lecturerEmail: assignment.lecturerEmail,
+          lecturerEmail: assignment.lecturerEmail ?? undefined,
+          lecturerUserId: assignment.lecturerUserId ?? '',
           semesterType: assignment.semesterType,
           academicYear: assignment.academicYear,
       }))); 
@@ -119,9 +120,9 @@ export class WeeklyViewComponent {
 
   protected readonly resolvedEntries = computed(() => this.filteredEntries().map((entry) => {
     if (entry.lecturerAssignmentId !== undefined) return entry;
-    const email = entry.lecturerEmail.trim().toLocaleLowerCase('pl-PL');
+    const userId = entry.lecturerUserId;
     const candidates = this.desiderataOptions().filter((item) =>
-      item.lecturerEmail.trim().toLocaleLowerCase('pl-PL') === email &&
+      item.lecturerUserId === userId &&
       (item.code === entry.subjectCode || item.name === entry.subjectName),
     );
     return candidates.length === 1 ? { ...entry, lecturerAssignmentId: candidates[0].assignmentId } : entry;
@@ -275,6 +276,7 @@ export class WeeklyViewComponent {
         subjectName: 'Nowe zajęcia',
         lecturerName: '',
         lecturerEmail: '',
+        lecturerUserId: '',
         room: '',
         dayOfWeek: event.day,
         group: event.group,

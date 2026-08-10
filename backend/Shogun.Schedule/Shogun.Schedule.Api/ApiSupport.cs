@@ -34,11 +34,12 @@ public static class ClaimsPrincipalExtensions
 {
     public static CurrentUser ToCurrentUser(this ClaimsPrincipal principal)
     {
-        var email = principal.FindFirstValue(ClaimTypes.Email) ?? principal.FindFirstValue("email") ?? principal.FindFirstValue("preferred_username") ?? throw new UnauthorizedAccessException("Token nie zawiera adresu e-mail.");
+        var userId = principal.FindFirstValue("sub") ?? principal.FindFirstValue(ClaimTypes.NameIdentifier) ?? throw new UnauthorizedAccessException("Token nie zawiera identyfikatora użytkownika.");
+        var email = principal.FindFirstValue(ClaimTypes.Email) ?? principal.FindFirstValue("email");
         var first = principal.FindFirstValue(ClaimTypes.GivenName) ?? principal.FindFirstValue("given_name") ?? "";
         var last = principal.FindFirstValue(ClaimTypes.Surname) ?? principal.FindFirstValue("family_name") ?? "";
-        var name = principal.FindFirstValue("name") ?? $"{first} {last}".Trim(); if (string.IsNullOrWhiteSpace(name)) name = email;
+        var name = principal.FindFirstValue("name") ?? $"{first} {last}".Trim(); if (string.IsNullOrWhiteSpace(name)) name = email ?? principal.FindFirstValue("preferred_username") ?? userId;
         var role = principal.IsInRole("admin") ? "admin" : principal.IsInRole("planner") ? "planner" : "lecturer";
-        return new CurrentUser(email.Trim().ToLowerInvariant(), name, principal.IsInRole("admin"), role);
+        return new CurrentUser(userId, email?.Trim().ToLowerInvariant(), name, principal.IsInRole("admin"), role);
     }
 }

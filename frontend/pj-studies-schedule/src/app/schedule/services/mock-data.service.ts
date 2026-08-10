@@ -6,7 +6,7 @@ import { ScheduleEntry, ScheduleGroup, SchedulePlan, SchedulePlanSummary, StudyM
 
 interface ApiEntry {
   id: string; subjectSource?: string; subjectExternalId?: string; subjectCode?: string; subjectName: string;
-  classType: ScheduleEntry['classType']; lecturerEmail: string; lecturerDisplayName: string; room?: string;
+  classType: ScheduleEntry['classType']; lecturerUserId?: string; lecturerEmail?: string; lecturerDisplayName: string; room?: string;
   dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[];
   concurrencyToken: string; commentCount: number;
 }
@@ -79,7 +79,7 @@ export class MockDataService {
           id: e.id, subjectSource: e.lecturerAssignmentId !== undefined ? 'assignments' : undefined,
           subjectExternalId: e.lecturerAssignmentId !== undefined ? String(e.lecturerAssignmentId) : undefined,
           subjectCode: e.subjectCode, subjectName: e.subjectName,
-          classType: e.classType ?? 'other', lecturerEmail: e.lecturerEmail,
+          classType: e.classType ?? 'other', lecturerUserId: e.lecturerUserId, lecturerEmail: e.lecturerEmail,
           lecturerDisplayName: e.lecturerName, room: e.room || null, dayOfWeek: e.dayOfWeek,
           startMinute: Math.round(e.startHour * 60), durationMinutes: Math.round(e.durationHours * 60),
           color: e.color, groupIds: this.groupIdsForEntry(e, groups),
@@ -124,7 +124,7 @@ export class MockDataService {
       return { id: e.id, subjectName: e.subjectName, subjectCode: e.subjectCode,
         lecturerAssignmentId: Number.isFinite(assignmentId) ? assignmentId : undefined,
         lecturerName: e.lecturerDisplayName,
-        lecturerEmail: e.lecturerEmail, classType: e.classType, room: e.room ?? '', dayOfWeek: e.dayOfWeek,
+        lecturerUserId: e.lecturerUserId ?? '', lecturerEmail: e.lecturerEmail, classType: e.classType, room: e.room ?? '', dayOfWeek: e.dayOfWeek,
         group: indices[0] ?? 0, groupSpan: Math.max(1, indices.length), color: e.color,
         startHour: e.startMinute / 60, durationHours: e.durationMinutes / 60,
         semesterNumber: plan.semesterNumber, academicYear: plan.academicYear,

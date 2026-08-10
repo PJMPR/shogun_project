@@ -27,20 +27,30 @@ public class LecturerAssignmentRepository(AssignmentsDbContext db) : ILecturerAs
                 .OrderByDescending(a => a.SubmittedAt)
                 .ToListAsync(ct);
 
-    public async Task<IReadOnlyList<LecturerAssignment>> GetByEmailAsync(string email, CancellationToken ct = default) =>
-        await db.LecturerAssignments
+    public async Task<IReadOnlyList<LecturerAssignment>> GetByUserIdAsync(string userId, string? legacyEmail, CancellationToken ct = default)
+    {
+        if (!string.IsNullOrWhiteSpace(legacyEmail))
+        {
+            var normalizedEmail = legacyEmail.Trim().ToLowerInvariant();
+            await db.LecturerAssignments
+                .Where(a => a.LecturerUserId == null && a.LecturerEmail != null && a.LecturerEmail.ToLower() == normalizedEmail)
+                .ExecuteUpdateAsync(update => update.SetProperty(a => a.LecturerUserId, userId), ct);
+        }
+
+        return await db.LecturerAssignments
                 .Include(a => a.Subjects)
                 .Include(a => a.Availability)
-                .Where(a => a.LecturerEmail == email)
+                .Where(a => a.LecturerUserId == userId)
                 .OrderByDescending(a => a.SubmittedAt)
                 .ToListAsync(ct);
+    }
 
     public async Task<IReadOnlyList<LecturerAssignment>> GetLatestPerLecturerAsync(CancellationToken ct = default)
     {
         // Keep the most recent submission for each lecturer and semester type.
         // A lecturer may submit separate desiderata for the winter and summer semesters.
         var latestIds = await db.LecturerAssignments
-            .GroupBy(a => new { a.LecturerEmail, a.SemesterType })
+            .GroupBy(a => new { Identity = a.LecturerUserId ?? a.LecturerEmail!, a.SemesterType })
             .Select(g => g.OrderByDescending(a => a.SubmittedAt).First().Id)
             .ToListAsync(ct);
 

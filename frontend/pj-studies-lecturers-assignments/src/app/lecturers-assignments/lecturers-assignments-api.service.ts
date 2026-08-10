@@ -25,7 +25,8 @@ export interface LecturerAssignmentDto {
   id: number;
   lecturerFirstName: string;
   lecturerLastName: string;
-  lecturerEmail: string;
+  lecturerUserId: string | null;
+  lecturerEmail: string | null;
   semesterType: string;
   academicYear: string;
   notes: string | null;

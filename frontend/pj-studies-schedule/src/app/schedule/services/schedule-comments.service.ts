@@ -5,7 +5,7 @@ import { CommentAuthor, CommentAuthorRole, ScheduleComment } from '../models/sch
 import { MockDataService } from './mock-data.service';
 
 interface ApiComment {
-  id: string; scheduleEntryId: string; body: string; authorEmail: string; authorDisplayName: string;
+  id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string;
   authorRole: CommentAuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean;
 }
 
@@ -41,14 +41,14 @@ export class ScheduleCommentsService {
 
   private readonly map = (item: ApiComment): ScheduleComment => ({
     id: item.id, entryId: item.scheduleEntryId, body: item.body,
-    author: { id: item.authorEmail, email: item.authorEmail, name: item.authorDisplayName, role: item.authorRole },
+    author: { id: item.authorUserId ?? '', email: item.authorEmail ?? '', name: item.authorDisplayName, role: item.authorRole },
     createdAt: item.createdAt, updatedAt: item.updatedAt,
   });
   private readCurrentAuthor(): CommentAuthor {
-    let profile = { firstName: '', lastName: '', email: '' }; let roles: string[] = [];
+    let profile = { userId: '', firstName: '', lastName: '', email: '' }; let roles: string[] = [];
     try { profile = JSON.parse(sessionStorage.getItem('shogun_user_profile') ?? JSON.stringify(profile)); } catch { /* fallback */ }
     try { roles = JSON.parse(sessionStorage.getItem('shogun_roles') ?? '[]'); } catch { /* fallback */ }
     const role: CommentAuthorRole = roles.includes('admin') ? 'admin' : 'planner';
-    return { id: profile.email || 'current-user', email: profile.email, name: `${profile.firstName} ${profile.lastName}`.trim() || 'Bieżący użytkownik', role };
+    return { id: profile.userId || 'current-user', email: profile.email, name: `${profile.firstName} ${profile.lastName}`.trim() || 'Bieżący użytkownik', role };
   }
 }

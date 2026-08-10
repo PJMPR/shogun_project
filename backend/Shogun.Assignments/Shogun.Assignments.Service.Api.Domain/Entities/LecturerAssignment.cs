@@ -5,7 +5,8 @@ public class LecturerAssignment
     public int Id { get; set; }
     public string LecturerFirstName { get; set; } = string.Empty;
     public string LecturerLastName { get; set; } = string.Empty;
-    public string LecturerEmail { get; set; } = string.Empty;
+    public string? LecturerUserId { get; set; }
+    public string? LecturerEmail { get; set; }
 
     /// <summary>"zimowy" or "letni"</summary>
     public string SemesterType { get; set; } = string.Empty;

@@ -94,6 +94,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AssignmentsDbContext>();
     await db.Database.EnsureCreatedAsync();
+    await scope.ServiceProvider.GetRequiredService<LecturerIdentityBackfill>().RunAsync();
 }
 
 app.UseExceptionHandler();

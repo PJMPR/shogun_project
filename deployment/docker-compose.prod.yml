@@ -46,6 +46,10 @@ services:
       MARIADB__CONNECTIONSTRING: "Server=pj_mariadb;Port=3306;Database=pj_assignments;User Id=root;Password=${MARIADB_ROOT_PASSWORD};"
       KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
       KEYCLOAK__VALIDISSUERS__0: "https://${DOMAIN}/auth/realms/shogun"
+      KEYCLOAK__ADMINBASEURL: "http://pj_keycloak:8080"
+      KEYCLOAK__REALM: "shogun"
+      KEYCLOAK__CLIENTID: "shogun-users-service"
+      KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET}"
     networks:
       - shogun
 
@@ -80,6 +84,10 @@ services:
       POSTGRES__CONNECTIONSTRING: "Host=pj_postgres_schedule;Port=5432;Database=${SCHEDULE_POSTGRES_DB};Username=${SCHEDULE_POSTGRES_USER};Password=${SCHEDULE_POSTGRES_PASSWORD}"
       KEYCLOAK__METADATAADDRESS: "http://pj_keycloak:8080/auth/realms/shogun/.well-known/openid-configuration"
       KEYCLOAK__VALIDISSUERS__0: "https://${DOMAIN}/auth/realms/shogun"
+      KEYCLOAK__ADMINBASEURL: "http://pj_keycloak:8080"
+      KEYCLOAK__REALM: "shogun"
+      KEYCLOAK__CLIENTID: "shogun-users-service"
+      KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET}"
     networks:
       - shogun
 

@@ -18,7 +18,8 @@ export interface ScheduleEntry {
   subjectName: string;
   subjectCode?: string;
   lecturerName: string;
-  lecturerEmail: string;
+  lecturerUserId: string;
+  lecturerEmail?: string;
   classType?: 'lecture' | 'exercises' | 'laboratory' | 'project' | 'seminar' | 'other';
   room: string;
   /** 0=Pon, 1=Wt, 2=Śr, 3=Czw, 4=Pt, 5=Sob, 6=Nd */
@@ -42,7 +43,7 @@ export interface ScheduleEntry {
 }
 
 export interface ScheduleGroup { id: string; code: string; name: string; sortOrder: number; concurrencyToken?: string }
-export interface SchedulePlanSummary { id: string; facultyCode: string; facultyName: string; academicYear: string; semesterNumber: number; studyMode: 'stationary' | 'partTime'; name: string; status: 'draft' | 'published'; concurrencyToken: string; updatedAt: string; updatedBy: string }
+export interface SchedulePlanSummary { id: string; facultyCode: string; facultyName: string; academicYear: string; semesterNumber: number; studyMode: 'stationary' | 'partTime'; name: string; status: 'draft' | 'published'; concurrencyToken: string; updatedAt: string; updatedBy?: string }
 export interface SchedulePlan extends SchedulePlanSummary { groups: ScheduleGroup[]; entries: ScheduleEntry[] }
 
 export interface ConflictInfo {

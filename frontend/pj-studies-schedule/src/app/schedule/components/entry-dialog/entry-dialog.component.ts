@@ -96,7 +96,11 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         </div>
         <div class="form-row">
           <label>E-mail wykładowcy</label>
-          <input pInputText [(ngModel)]="form.lecturerEmail" placeholder="imie.nazwisko@pjwstk.edu.pl" class="w-full" />
+          <input pInputText [(ngModel)]="form.lecturerEmail" placeholder="Opcjonalnie" class="w-full" />
+        </div>
+        <div class="form-row">
+          <label>Keycloak userId wykładowcy</label>
+          <input pInputText [(ngModel)]="form.lecturerUserId" placeholder="Identyfikator z Keycloak" class="w-full" />
         </div>
         <div class="form-row">
           <label>Sala (opcjonalnie)</label>
@@ -347,6 +351,7 @@ export class EntryDialogComponent {
       subjectCode: item.code ?? '',
       lecturerName: item.lecturerName,
       lecturerEmail: item.lecturerEmail,
+      lecturerUserId: item.lecturerUserId,
       lecturerAssignmentId: item.assignmentId,
       studyMode: item.trybStudiow as StudyMode,
       semesterNumber: item.semester,
@@ -360,11 +365,12 @@ export class EntryDialogComponent {
     if (!linked || linked.lecturerName !== name) {
       this.form.lecturerAssignmentId = undefined;
       this.form.lecturerEmail = '';
+      this.form.lecturerUserId = '';
     }
   }
 
   protected isValid(): boolean {
-    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim() && this.form.lecturerEmail?.trim());
+    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim() && this.form.lecturerUserId?.trim());
   }
 
   protected onSave(): void {
@@ -395,6 +401,7 @@ export class EntryDialogComponent {
       subjectCode: '',
       lecturerName: '',
       lecturerEmail: '',
+      lecturerUserId: '',
       classType: 'other',
       room: '',
       studyMode: 'stacjonarny',

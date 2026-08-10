@@ -18,7 +18,7 @@
   @if (error()) { <div class="message error"><i class="pi pi-exclamation-circle"></i>{{ error() }}<button (click)="error.set(null)" aria-label="Zamknij">×</button></div> }
   @if (loading()) { <div class="loading"><i class="pi pi-spin pi-spinner"></i> Pobieranie planu…</div> }
   @else if (!plan()) { <div class="empty"><i class="pi pi-calendar-times"></i><h2>Brak opublikowanego planu</h2><p>Dla wybranego roku, semestru, wydziału i trybu studiów nie opublikowano jeszcze planu.</p></div> }
-  @else if (!visibleEntries().length) { <div class="empty"><i class="pi pi-user"></i><h2>{{ scope === 'mine' ? 'Brak zajęć w Twoim planie' : 'Plan nie zawiera zajęć' }}</h2><p>@if (scope === 'mine') { Zajęcia są dopasowywane do adresu {{ currentEmail || 'e-mail zalogowanego użytkownika' }}. }</p></div> }
+  @else if (!visibleEntries().length) { <div class="empty"><i class="pi pi-user"></i><h2>{{ scope === 'mine' ? 'Brak zajęć w Twoim planie' : 'Plan nie zawiera zajęć' }}</h2><p>@if (scope === 'mine') { Zajęcia są dopasowywane do konta zalogowanego użytkownika. }</p></div> }
   @else if (view === 'weekly') {
     <div class="calendar-wrap"><div #calendar class="calendar" [style.--days]="visibleDays().length">
       <div class="corner"></div>@for (day of visibleDays(); track day) { <div class="day-title">{{ days[day] }}</div> }

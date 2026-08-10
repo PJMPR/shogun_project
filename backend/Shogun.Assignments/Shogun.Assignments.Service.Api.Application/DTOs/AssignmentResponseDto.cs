@@ -5,7 +5,8 @@ public class AssignmentResponseDto
     public int Id { get; set; }
     public string LecturerFirstName { get; set; } = string.Empty;
     public string LecturerLastName { get; set; } = string.Empty;
-    public string LecturerEmail { get; set; } = string.Empty;
+    public string? LecturerUserId { get; set; }
+    public string? LecturerEmail { get; set; }
     public string SemesterType { get; set; } = string.Empty;
     public string AcademicYear { get; set; } = string.Empty;
     public string? Notes { get; set; }

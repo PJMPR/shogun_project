@@ -4,6 +4,7 @@ import Keycloak from 'keycloak-js';
 import { firstValueFrom } from 'rxjs';
 
 export interface UserProfile {
+  userId: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -63,6 +64,7 @@ export class AuthService {
     if (authenticated) {
       await this.keycloak.loadUserProfile();
       const profile = {
+        userId: this.keycloak.tokenParsed?.sub ?? '',
         firstName: this.keycloak.profile?.firstName ?? '',
         lastName: this.keycloak.profile?.lastName ?? '',
         email: this.keycloak.profile?.email ?? '',

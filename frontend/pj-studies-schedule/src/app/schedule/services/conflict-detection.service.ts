@@ -40,8 +40,8 @@ export class ConflictDetectionService {
 
         if (!overlaps(a, b)) continue;
 
-        const lecturerA = (a.lecturerEmail || a.lecturerName).trim().toLocaleLowerCase('pl-PL');
-        const lecturerB = (b.lecturerEmail || b.lecturerName).trim().toLocaleLowerCase('pl-PL');
+        const lecturerA = (a.lecturerUserId || a.lecturerEmail || a.lecturerName).trim().toLocaleLowerCase('pl-PL');
+        const lecturerB = (b.lecturerUserId || b.lecturerEmail || b.lecturerName).trim().toLocaleLowerCase('pl-PL');
         const roomA = a.room.trim().toLocaleLowerCase('pl-PL');
         const roomB = b.room.trim().toLocaleLowerCase('pl-PL');
 
