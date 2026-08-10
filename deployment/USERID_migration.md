@@ -196,6 +196,16 @@ curl -fsS "https://${DOMAIN}/mfe-lecturer-schedule/remoteEntry.json" >/dev/null
 curl -fsS "https://${DOMAIN}/mfe-lecturers-assignments/remoteEntry.json" >/dev/null
 ```
 
+Manifesty `remoteEntry.json` muszą zwracać `Cache-Control: no-store`, a nieistniejący plik JavaScript powinien zwracać `404`, nigdy `index.html` z typem `text/html`. Przykładowa kontrola podglądu planu wykładowcy:
+
+```bash
+curl -fsSI "https://${DOMAIN}/mfe-lecturer-schedule/remoteEntry.json" | \
+  grep -iE 'HTTP/|content-type|cache-control'
+
+test "$(curl -sS -o /dev/null -w '%{http_code}' \
+  "https://${DOMAIN}/mfe-lecturer-schedule/nieistniejacy-plik.js")" = "404"
+```
+
 ## 6. Test funkcjonalny
 
 Wykonaj co najmniej następujące testy:
