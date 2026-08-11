@@ -18,7 +18,7 @@ export interface ScheduleEntry {
   subjectName: string;
   subjectCode?: string;
   lecturerName: string;
-  lecturerUserId: string;
+  lecturerUserId?: string;
   lecturerEmail?: string;
   classType?: 'lecture' | 'exercises' | 'laboratory' | 'project' | 'seminar' | 'other';
   room: string;

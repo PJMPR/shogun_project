@@ -99,10 +99,6 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
           <input pInputText [(ngModel)]="form.lecturerEmail" placeholder="Opcjonalnie" class="w-full" />
         </div>
         <div class="form-row">
-          <label>Keycloak userId wykładowcy</label>
-          <input pInputText [(ngModel)]="form.lecturerUserId" placeholder="Identyfikator z Keycloak" class="w-full" />
-        </div>
-        <div class="form-row">
           <label>Sala (opcjonalnie)</label>
           <input pInputText [(ngModel)]="form.room" placeholder="np. 201, lab 105" class="w-full" />
         </div>
@@ -169,15 +165,6 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
             [(ngModel)]="form.group"
             optionLabel="label"
             optionValue="value"
-            class="w-full"
-          />
-        </div>
-        <div class="form-row">
-          <label>Rok akademicki</label>
-          <input
-            pInputText
-            [(ngModel)]="form.academicYear"
-            placeholder="np. 2026/2027"
             class="w-full"
           />
         </div>
@@ -370,7 +357,7 @@ export class EntryDialogComponent {
   }
 
   protected isValid(): boolean {
-    return !!(this.form.subjectName?.trim() && this.form.lecturerName?.trim() && this.form.lecturerUserId?.trim());
+    return !!this.form.subjectName?.trim();
   }
 
   protected onSave(): void {

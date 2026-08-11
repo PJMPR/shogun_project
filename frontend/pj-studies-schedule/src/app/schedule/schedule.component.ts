@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, computed, inject } from '@angular/core';
+import { Component, OnInit, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
@@ -45,12 +45,12 @@ import { MockDataService } from './services/mock-data.service';
         <div class="year-controls">
           <input
             pInputText
-            [(ngModel)]="academicYearInput"
-            placeholder="Rok akademicki"
-            maxlength="9"
-            aria-label="Rok akademicki"
-            (blur)="applyAcademicYear()"
-            (keydown.enter)="applyAcademicYear()"
+            [(ngModel)]="planNameInput"
+            placeholder="Nazwa planu"
+            maxlength="200"
+            aria-label="Nazwa planu"
+            (blur)="applyPlanName()"
+            (keydown.enter)="applyPlanName()"
           />
         </div>
         <p-selectbutton
@@ -101,8 +101,9 @@ import { MockDataService } from './services/mock-data.service';
         @if (activeView === 'weekly') {
           <app-weekly-view
             [semesterType]="activeSemester"
-            [academicYear]="activeAcademicYear"
+            [academicYear]="internalAcademicYear"
             [facultyCode]="activeFacultyCode"
+            [planName]="planNameInput"
             [selectedPlan]="selectedPlan()"
             (planCreated)="selectCreatedPlan($event)"
           />
@@ -116,35 +117,22 @@ import { MockDataService } from './services/mock-data.service';
   `,
   styleUrl: './schedule.component.css',
 })
-export class ScheduleComponent implements OnInit, OnDestroy {
-  private static readonly AUTO_SAVE_INTERVAL_MS = 30_000;
+export class ScheduleComponent implements OnInit {
   private static readonly FIRST_ACADEMIC_YEAR = 2026;
   protected readonly scheduleStore = inject(MockDataService);
   private readonly messages = inject(MessageService);
-  private readonly autoSaveTimer = window.setInterval(
-    () => void this.autoSave(),
-    ScheduleComponent.AUTO_SAVE_INTERVAL_MS,
-  );
   protected activeView: 'weekly' | 'list' = 'weekly';
   protected activeSemester: Semester = 'zimowy';
-  protected activeAcademicYear = this.defaultAcademicYear();
-  protected academicYearInput = this.activeAcademicYear;
+  protected internalAcademicYear = this.defaultAcademicYear();
+  protected planNameInput = '';
   protected activeFacultyCode = 'WI';
   protected selectedPlanId: string | null = null;
   protected readonly facultyOptions = [
     { label: 'Informatyka', value: 'WI' },
     { label: 'Sztuka Nowych Mediów', value: 'SNM' },
   ];
-  protected readonly academicYearOptions = computed(() => {
-    const years = [...new Set(this.scheduleStore.plans()
-      .map((plan) => plan.academicYear)
-      .filter((year) => Number(year.slice(0, 4)) >= ScheduleComponent.FIRST_ACADEMIC_YEAR))]
-      .sort()
-      .reverse();
-    return years.includes(this.activeAcademicYear) ? years : [this.activeAcademicYear, ...years];
-  });
   protected readonly savedPlanOptions = computed(() => this.scheduleStore.plans().map((plan) => ({
-    label: `${plan.status === 'published' ? '● Opublikowany · ' : ''}${plan.academicYear} · semestr ${plan.semesterNumber} · ${plan.studyMode === 'stationary' ? 'stacjonarne' : 'niestacjonarne'}`,
+    label: `${plan.status === 'published' ? '● Opublikowany · ' : ''}${plan.name}`,
     value: plan.id,
   })));
   protected readonly selectedPlan = computed(() => this.scheduleStore.plans().find((plan) => plan.id === this.selectedPlanId) ?? null);
@@ -152,37 +140,18 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   async ngOnInit(): Promise<void> {
     try {
       await this.scheduleStore.loadPlans(this.activeFacultyCode);
-      this.activeAcademicYear = this.academicYearOptions()[0] ?? this.activeAcademicYear;
-      this.academicYearInput = this.activeAcademicYear;
-      this.selectedPlanId = this.scheduleStore.current()?.id ?? null;
+      const first = this.scheduleStore.plans()[0];
+      if (first) {
+        this.selectedPlanId = first.id;
+        this.planNameInput = first.name;
+        this.internalAcademicYear = first.academicYear;
+        await this.scheduleStore.reload(first.id);
+      }
     } catch { this.messages.add({ severity: 'error', summary: 'Błąd', detail: 'Nie udało się pobrać listy planów.' }); }
   }
 
-  ngOnDestroy(): void {
-    window.clearInterval(this.autoSaveTimer);
-  }
-
-  private async autoSave(): Promise<void> {
-    const plan = this.scheduleStore.current();
-    if (!plan || !this.scheduleStore.dirty() || this.scheduleStore.saving() || this.scheduleStore.stale()) return;
-
-    try {
-      await this.scheduleStore.save({ reportError: false });
-      console.info(`[schedule:auto-save] Zapisano plan ${plan.id}.`);
-    } catch (error) {
-      console.error(`[schedule:auto-save] Nie udało się zapisać planu ${plan.id}.`, error);
-    }
-  }
-
-  protected applyAcademicYear(): void {
-    const match = /^(\d{4})\/(\d{4})$/.exec(this.academicYearInput.trim());
-    if (!match || Number(match[2]) !== Number(match[1]) + 1) {
-      this.messages.add({ severity: 'warn', summary: 'Nieprawidłowy rocznik', detail: 'Wpisz rok w formacie 2026/2027.' });
-      return;
-    }
-    this.activeAcademicYear = `${match[1]}/${match[2]}`;
-    this.academicYearInput = this.activeAcademicYear;
-    this.selectedPlanId = null;
+  protected applyPlanName(): void {
+    if (this.scheduleStore.current() && this.planNameInput.trim()) this.scheduleStore.setPlanName(this.planNameInput);
   }
 
   protected async changeFaculty(facultyCode: string): Promise<void> {
@@ -190,8 +159,13 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.selectedPlanId = null;
     try {
       await this.scheduleStore.loadPlans(facultyCode);
-      this.activeAcademicYear = this.academicYearOptions()[0] ?? this.defaultAcademicYear();
-      this.academicYearInput = this.activeAcademicYear;
+      const first = this.scheduleStore.plans()[0];
+      this.planNameInput = first?.name ?? '';
+      if (first) {
+        this.selectedPlanId = first.id;
+        this.internalAcademicYear = first.academicYear;
+        await this.scheduleStore.reload(first.id);
+      }
     } catch {
       this.messages.add({ severity: 'error', summary: 'Błąd', detail: 'Nie udało się pobrać planów wydziału.' });
     }
@@ -202,8 +176,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     if (!planId) return;
     const plan = this.scheduleStore.plans().find((item) => item.id === planId);
     if (!plan) return;
-    this.activeAcademicYear = plan.academicYear;
-    this.academicYearInput = plan.academicYear;
+    this.internalAcademicYear = plan.academicYear;
+    this.planNameInput = plan.name;
     this.activeSemester = plan.semesterNumber % 2 === 1 ? 'zimowy' : 'letni';
     await this.scheduleStore.reload(planId);
   }

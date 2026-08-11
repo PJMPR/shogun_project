@@ -38,7 +38,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         schedule.Groups.Add(group);
         await repository.AddAsync(schedule, ct);
         try { await repository.SaveChangesAsync(ct); }
-        catch (Exception ex) when (ex.GetType().Name.Contains("DbUpdate")) { throw new ConflictException("Plan dla wybranego roku, semestru i trybu już istnieje."); }
+        catch (Exception ex) when (ex.GetType().Name.Contains("DbUpdate")) { throw new ConflictException("Nie udało się utworzyć planu z powodu konfliktu danych."); }
         return Map(schedule);
     }
 
@@ -63,8 +63,6 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         foreach (var dto in request.Entries)
         {
             var entry = schedule.Entries.FirstOrDefault(x => x.Id == dto.Id);
-            if (entry is null && string.IsNullOrWhiteSpace(dto.LecturerUserId))
-                throw new ValidationException("Identyfikator wykładowcy jest wymagany dla nowych wpisów.");
             if (entry is null)
             {
                 entry = new ScheduleEntry { Id = dto.Id, ScheduleId = id, CreatedAt = now, CreatedBy = user.Email, CreatedByUserId = user.UserId };
@@ -173,7 +171,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         var groups = request.Groups.Select(x => x.Id).ToHashSet();
         foreach (var e in request.Entries)
         {
-            Required(e.SubjectName, "Przedmiot"); Required(e.LecturerDisplayName, "Wykładowca");
+            Required(e.SubjectName, "Przedmiot");
             if (!string.IsNullOrWhiteSpace(e.LecturerEmail) && !e.LecturerEmail.Contains('@')) throw new ValidationException("Nieprawidłowy e-mail wykładowcy.");
             if (e.DayOfWeek is < 0 or > 6 || e.StartMinute < 480 || e.StartMinute + e.DurationMinutes > 1200 || e.DurationMinutes <= 0 || e.StartMinute % 15 != 0 || e.DurationMinutes % 15 != 0) throw new ValidationException("Nieprawidłowy termin bloczka.");
             if (e.GroupIds.Count == 0 || e.GroupIds.Any(x => !groups.Contains(x))) throw new ValidationException("Bloczek musi wskazywać grupy z tego planu.");
@@ -192,7 +190,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     }
 
     private static StudentGroup NewGroup(Guid scheduleId, string code, string name, int order, CurrentUser actor, DateTimeOffset now) => new() { Id = Guid.NewGuid(), ScheduleId = scheduleId, Code = code.Trim().ToUpperInvariant(), Name = name.Trim(), SortOrder = order, ConcurrencyToken = Guid.NewGuid(), CreatedAt = now, UpdatedAt = now, CreatedBy = actor.Email, CreatedByUserId = actor.UserId, UpdatedBy = actor.Email, UpdatedByUserId = actor.UserId };
-    private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; if (!string.IsNullOrWhiteSpace(d.LecturerUserId)) e.LecturerUserId = d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName.Trim(); e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
+    private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; e.LecturerUserId = string.IsNullOrWhiteSpace(d.LecturerUserId) ? null : d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName?.Trim() ?? ""; e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
     private static string Required(string? value, string field) => !string.IsNullOrWhiteSpace(value) ? value.Trim() : throw new ValidationException($"{field} jest wymagane.");
     private static ScheduleSummaryDto MapSummary(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy);
     private static ScheduleDto Map(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList());

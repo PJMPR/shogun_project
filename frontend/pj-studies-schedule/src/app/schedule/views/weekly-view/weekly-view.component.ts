@@ -33,6 +33,7 @@ export class WeeklyViewComponent {
 
   readonly semesterType = input<Semester>('zimowy');
   readonly academicYear = input.required<string>();
+  readonly planName = input.required<string>();
   readonly facultyCode = input.required<string>();
   readonly selectedPlan = input<SchedulePlanSummary | null>(null);
   readonly planCreated = output<string>();
@@ -312,11 +313,16 @@ export class WeeklyViewComponent {
 
   protected async createCurrentPlan(): Promise<void> {
     const filters = this.filters(); if (filters.semesterNumber === null) return;
+    const name = this.planName().trim();
+    if (!name) {
+      this.messageService.add({ severity: 'warn', summary: 'Podaj nazwę planu' });
+      return;
+    }
     try {
-      await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode);
+      await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode, name);
       const createdId = this.mockData.current()?.id;
       if (createdId) this.planCreated.emit(createdId);
-      this.messageService.add({ severity: 'success', summary: 'Utworzono wariant planu', detail: this.academicYear() });
+      this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: name });
     }
     catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Spróbuj ponownie.' }); }
   }
@@ -334,7 +340,7 @@ export class WeeklyViewComponent {
 
   protected deleteCurrentPlan(): void {
     const plan = this.mockData.current(); if (!plan) return;
-    this.confirmationService.confirm({ header: 'Usuń plan', message: `Usunąć plan ${plan.academicYear}, semestr ${plan.semesterNumber}?`, icon: 'pi pi-trash', acceptLabel: 'Usuń', rejectLabel: 'Anuluj', acceptButtonStyleClass: 'p-button-danger', accept: async () => { try { await this.mockData.deleteCurrent(); this.messageService.add({ severity: 'warn', summary: 'Usunięto plan' }); } catch { this.messageService.add({ severity: 'error', summary: 'Nie udało się usunąć planu' }); } } });
+    this.confirmationService.confirm({ header: 'Usuń plan', message: `Usunąć plan „${plan.name}”?`, icon: 'pi pi-trash', acceptLabel: 'Usuń', rejectLabel: 'Anuluj', acceptButtonStyleClass: 'p-button-danger', accept: async () => { try { await this.mockData.deleteCurrent(); this.messageService.add({ severity: 'warn', summary: 'Usunięto plan' }); } catch { this.messageService.add({ severity: 'error', summary: 'Nie udało się usunąć planu' }); } } });
   }
 
   protected openComments(id: string): void {
