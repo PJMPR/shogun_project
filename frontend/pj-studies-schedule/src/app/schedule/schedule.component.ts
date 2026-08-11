@@ -106,6 +106,7 @@ import { MockDataService } from './services/mock-data.service';
             [planName]="planNameInput"
             [selectedPlan]="selectedPlan()"
             (planCreated)="selectCreatedPlan($event)"
+            (planSelected)="selectPlanFromFilters($event)"
           />
         } @else {
           <app-list-view [semesterType]="activeSemester" />
@@ -184,6 +185,13 @@ export class ScheduleComponent implements OnInit {
 
   protected selectCreatedPlan(planId: string): void {
     this.selectedPlanId = planId;
+  }
+
+  protected selectPlanFromFilters(planId: string | null): void {
+    this.selectedPlanId = planId;
+    const plan = this.scheduleStore.plans().find((item) => item.id === planId);
+    this.planNameInput = plan?.name ?? '';
+    if (plan) this.internalAcademicYear = plan.academicYear;
   }
 
   protected async savePlan(): Promise<void> {

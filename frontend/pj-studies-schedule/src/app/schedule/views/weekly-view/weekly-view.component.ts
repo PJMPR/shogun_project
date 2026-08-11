@@ -37,8 +37,10 @@ export class WeeklyViewComponent {
   readonly facultyCode = input.required<string>();
   readonly selectedPlan = input<SchedulePlanSummary | null>(null);
   readonly planCreated = output<string>();
+  readonly planSelected = output<string | null>();
 
   @ViewChild('dialog') dialog!: EntryDialogComponent;
+  @ViewChild(FilterBarComponent) filterBar!: FilterBarComponent;
 
   protected readonly filters = signal<ScheduleFilters>({ mode: 'stacjonarny', semesterNumber: null });
   protected readonly hiddenGroupsByDay = signal<Record<number, number[]>>({});
@@ -165,8 +167,31 @@ export class WeeklyViewComponent {
       : ['Piątek', 'Sobota', 'Niedziela'],
   );
 
-  protected onFiltersChanged(f: ScheduleFilters): void {
+  protected async onFiltersChanged(f: ScheduleFilters): Promise<void> {
     this.filters.set(f);
+    const current = this.mockData.current();
+    const apiMode = f.mode === 'stacjonarny' ? 'stationary' : 'partTime';
+    if (f.semesterNumber === null || (current?.semesterNumber === f.semesterNumber && current.studyMode === apiMode)) return;
+
+    if (this.mockData.dirty()) {
+      const currentFilters: ScheduleFilters = {
+        mode: current!.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
+        semesterNumber: current!.semesterNumber,
+      };
+      this.filters.set(currentFilters);
+      this.filterBar.setValue(currentFilters);
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Najpierw zapisz plan',
+        detail: 'Zmiana semestru lub trybu wymaga zapisania albo odświeżenia bieżącego planu.',
+      });
+      return;
+    }
+
+    await this.mockData.loadFor(this.academicYear(), f.semesterNumber, f.mode);
+    this.hiddenGroupsByDay.set({});
+    this.commentsEntry.set(null);
+    this.planSelected.emit(this.mockData.current()?.id ?? null);
   }
 
   protected groupsForDay(day: number): number {
