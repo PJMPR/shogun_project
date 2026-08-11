@@ -60,11 +60,6 @@ export class FilterBarComponent implements OnChanges {
     this.emit();
   }
 
-  setValue(filters: ScheduleFilters): void {
-    this.mode = filters.mode;
-    this.semesterNumber = filters.semesterNumber;
-  }
-
   protected emit(): void {
     this.filtersChanged.emit({ mode: this.mode, semesterNumber: this.semesterNumber });
   }

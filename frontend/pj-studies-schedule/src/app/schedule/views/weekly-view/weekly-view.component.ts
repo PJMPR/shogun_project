@@ -39,7 +39,6 @@ export class WeeklyViewComponent {
   readonly planSelected = output<string | null>();
 
   @ViewChild('dialog') dialog!: EntryDialogComponent;
-  @ViewChild(FilterBarComponent) filterBar!: FilterBarComponent;
 
   protected readonly filters = signal<ScheduleFilters>({ mode: 'stacjonarny', semesterNumber: null });
   protected readonly hiddenGroupsByDay = signal<Record<number, number[]>>({});
@@ -172,21 +171,6 @@ export class WeeklyViewComponent {
     const current = this.mockData.current();
     const apiMode = f.mode === 'stacjonarny' ? 'stationary' : 'partTime';
     if (f.semesterNumber === null || (current?.semesterNumber === f.semesterNumber && current.studyMode === apiMode)) return;
-
-    if (this.mockData.dirty()) {
-      const currentFilters: ScheduleFilters = {
-        mode: current!.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
-        semesterNumber: current!.semesterNumber,
-      };
-      this.filters.set(currentFilters);
-      this.filterBar.setValue(currentFilters);
-      this.messageService.add({
-        severity: 'warn',
-        summary: 'Najpierw zapisz plan',
-        detail: 'Zmiana semestru lub trybu wymaga zapisania albo odświeżenia bieżącego planu.',
-      });
-      return;
-    }
 
     await this.mockData.loadFor(f.semesterNumber, f.mode);
     this.hiddenGroupsByDay.set({});
@@ -348,7 +332,7 @@ export class WeeklyViewComponent {
   }
 
   protected async saveChanges(): Promise<void> {
-    try { await this.mockData.save(); this.messageService.add({ severity: 'success', summary: 'Zapisano plan' }); }
+    try { await this.mockData.saveAll(); this.messageService.add({ severity: 'success', summary: 'Zapisano plany' }); }
     catch { this.messageService.add({ severity: this.mockData.stale() ? 'warn' : 'error', summary: this.mockData.stale() ? 'Plan jest nieaktualny' : 'Błąd zapisu', detail: this.mockData.error() ?? undefined }); }
   }
 

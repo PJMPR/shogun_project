@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, computed, inject, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { ScheduleEntry, ScheduleGroup, SchedulePlan, SchedulePlanSummary, StudyMode } from '../models/schedule.models';
@@ -11,11 +11,22 @@ interface ApiEntry {
   concurrencyToken: string; commentCount: number;
 }
 interface ApiPlan extends Omit<SchedulePlan, 'entries'> { entries: ApiEntry[] }
+interface PlanWorkingCopy {
+  summary: SchedulePlanSummary;
+  entries: ScheduleEntry[];
+  groups: ScheduleGroup[];
+  conflictContextEntries: ScheduleEntry[];
+  dirty: boolean;
+  stale: boolean;
+  error: string | null;
+}
 
 @Injectable({ providedIn: 'root' })
 export class MockDataService {
   private readonly http = inject(HttpClient);
   private readonly base = `${environment.scheduleApiBaseUrl}/api/v1/schedules`;
+  private readonly workingCopies = new Map<string, PlanWorkingCopy>();
+  private readonly workingCopyRevision = signal(0);
 
   readonly entries = signal<ScheduleEntry[]>([]);
   readonly conflictContextEntries = signal<ScheduleEntry[]>([]);
@@ -27,26 +38,46 @@ export class MockDataService {
   readonly dirty = signal(false);
   readonly stale = signal(false);
   readonly error = signal<string | null>(null);
+  readonly dirtyPlanCount = computed(() => {
+    this.workingCopyRevision();
+    const ids = new Set([...this.workingCopies.entries()].filter(([, copy]) => copy.dirty).map(([id]) => id));
+    if (this.dirty() && this.current()) ids.add(this.current()!.id);
+    return ids.size;
+  });
+  readonly hasDirtyPlans = computed(() => this.dirtyPlanCount() > 0);
 
   async loadPlans(facultyCode = 'WI'): Promise<void> {
-    this.plans.set(await firstValueFrom(this.http.get<SchedulePlanSummary[]>(`${this.base}?facultyCode=${encodeURIComponent(facultyCode)}`)));
+    this.rememberWorkingCopy();
+    const summaries = await firstValueFrom(this.http.get<SchedulePlanSummary[]>(`${this.base}?facultyCode=${encodeURIComponent(facultyCode)}`));
+    this.plans.set(summaries);
+    await Promise.all(summaries.map(async (summary) => {
+      const existing = this.workingCopies.get(summary.id);
+      if (existing?.dirty || existing?.stale) return;
+      const plan = await firstValueFrom(this.http.get<ApiPlan>(`${this.base}/${summary.id}`));
+      this.workingCopies.set(summary.id, this.workingCopyFromApi(plan));
+    }));
+    this.bumpWorkingCopies();
     this.error.set(null);
   }
 
   async loadFor(semesterNumber: number, mode: StudyMode): Promise<void> {
+    this.rememberWorkingCopy();
     const apiMode = mode === 'stacjonarny' ? 'stationary' : 'partTime';
     const matching = this.plans().filter((x) => x.semesterNumber === semesterNumber && x.studyMode === apiMode);
     const summary = matching.find((x) => x.status === 'published') ?? matching[0];
-    if (!summary) { this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]); this.dirty.set(false); this.stale.set(false); this.error.set(null); return; }
+    if (!summary) { this.clearActivePlan(); return; }
+    const workingCopy = this.workingCopies.get(summary.id);
+    if (workingCopy) { this.restoreWorkingCopy(workingCopy); return; }
     await this.reload(summary.id);
   }
 
   async reload(id = this.current()?.id): Promise<void> {
     if (!id) return;
+    this.workingCopies.delete(id);
     this.loading.set(true); this.error.set(null);
     try {
       const plan = await firstValueFrom(this.http.get<ApiPlan>(`${this.base}/${id}`));
-      this.applyPlan(plan); this.dirty.set(false); this.stale.set(false);
+      this.applyPlan(plan); this.workingCopies.set(id, this.workingCopyFromApi(plan)); this.bumpWorkingCopies(); this.dirty.set(false); this.stale.set(false);
       await this.loadConflictContext(plan);
     } catch { this.error.set('Nie udało się pobrać planu.'); }
     finally { this.loading.set(false); }
@@ -64,38 +95,32 @@ export class MockDataService {
   async deleteCurrent(): Promise<void> {
     const plan = this.current(); if (!plan) return;
     await firstValueFrom(this.http.delete(`${this.base}/${plan.id}`, { body: { concurrencyToken: plan.concurrencyToken } }));
-    this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]); this.dirty.set(false); this.stale.set(false); await this.loadPlans(plan.facultyCode);
+    this.workingCopies.delete(plan.id); this.bumpWorkingCopies(); this.clearActivePlan(); await this.loadPlans(plan.facultyCode);
   }
 
-  async save(options: { reportError?: boolean } = {}): Promise<void> {
-    const plan = this.current(); if (!plan || !this.dirty() || this.stale() || this.saving()) return;
+  async saveAll(): Promise<number> {
+    if (this.saving()) return 0;
+    this.rememberWorkingCopy();
+    const dirtyCopies = [...this.workingCopies.values()].filter((copy) => copy.dirty);
+    if (dirtyCopies.length === 0) return 0;
     this.saving.set(true); this.error.set(null);
+    let savedCount = 0;
     try {
-      const groups = this.groups();
-      const saved = await firstValueFrom(this.http.put<ApiPlan>(`${this.base}/${plan.id}/save`, {
-        concurrencyToken: plan.concurrencyToken, name: plan.name, status: plan.status,
-        groups: groups.map((g, i) => ({ id: g.id, code: g.code, name: g.name, sortOrder: i })),
-        entries: this.entries().map((e) => ({
-          id: e.id, subjectSource: e.lecturerAssignmentId !== undefined ? 'assignments' : undefined,
-          subjectExternalId: e.lecturerAssignmentId !== undefined ? String(e.lecturerAssignmentId) : undefined,
-          subjectCode: e.subjectCode, subjectName: e.subjectName,
-          classType: e.classType ?? 'other', lecturerUserId: e.lecturerUserId, lecturerEmail: e.lecturerEmail,
-          lecturerDisplayName: e.lecturerName, room: e.room || null, dayOfWeek: e.dayOfWeek,
-          startMinute: Math.round(e.startHour * 60), durationMinutes: Math.round(e.durationHours * 60),
-          color: e.color, groupIds: this.groupIdsForEntry(e, groups),
-        })),
-      }));
-      this.applyPlan(saved); this.dirty.set(false); await this.loadPlans(plan.facultyCode); await this.loadConflictContext(saved);
-    } catch (error) {
-      const detail = error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : null;
-      const isStale = error instanceof HttpErrorResponse && error.status === 409;
-      this.stale.set(Boolean(isStale));
-      const diagnostic = isStale
-        ? 'Plan został w międzyczasie zmieniony. Odśwież plan przed dalszą edycją.'
-        : detail ?? 'Nie udało się zapisać planu.';
-      this.error.set(options.reportError === false ? null : diagnostic);
-      throw error;
-    } finally { this.saving.set(false); }
+      for (const copy of dirtyCopies) { await this.saveWorkingCopy(copy); savedCount++; }
+      await this.loadPlans(this.current()?.facultyCode ?? dirtyCopies[0].summary.facultyCode);
+      return savedCount;
+    } catch (error) { this.handleSaveError(error); throw error; }
+    finally { this.saving.set(false); }
+  }
+
+  async saveCurrent(): Promise<void> {
+    const plan = this.current(); if (!plan || !this.dirty() || this.saving()) return;
+    this.rememberWorkingCopy();
+    const copy = this.workingCopies.get(plan.id); if (!copy) return;
+    this.saving.set(true); this.error.set(null);
+    try { await this.saveWorkingCopy(copy); await this.loadPlans(plan.facultyCode); }
+    catch (error) { this.handleSaveError(error); throw error; }
+    finally { this.saving.set(false); }
   }
 
   addEntry(entry: ScheduleEntry): void { this.entries.update((list) => [...list, entry]); this.markDirty(); }
@@ -108,6 +133,71 @@ export class MockDataService {
   setGroups(groups: ScheduleGroup[]): void { this.groups.set(groups.map((g, i) => ({ ...g, sortOrder: i }))); this.markDirty(); }
 
   private markDirty(): void { if (this.current()) this.dirty.set(true); }
+  private bumpWorkingCopies(): void { this.workingCopyRevision.update((value) => value + 1); }
+  private rememberWorkingCopy(): void {
+    const summary = this.current();
+    if (!summary || (!this.dirty() && !this.stale())) return;
+    this.workingCopies.set(summary.id, {
+      summary: { ...summary }, entries: this.entries().map((entry) => ({ ...entry })),
+      groups: this.groups().map((group) => ({ ...group })),
+      conflictContextEntries: this.conflictContextEntries().map((entry) => ({ ...entry })),
+      dirty: this.dirty(), stale: this.stale(), error: this.error(),
+    });
+    this.bumpWorkingCopies();
+  }
+  private restoreWorkingCopy(copy: PlanWorkingCopy): void {
+    this.current.set({ ...copy.summary });
+    this.entries.set(copy.entries.map((entry) => ({ ...entry })));
+    this.groups.set(copy.groups.map((group) => ({ ...group })));
+    const relatedEntries = [...this.workingCopies.values()]
+      .filter((item) => item.summary.academicYear === copy.summary.academicYear && item.summary.semesterNumber % 2 === copy.summary.semesterNumber % 2)
+      .flatMap((item) => item.entries.map((entry) => ({ ...entry })));
+    this.conflictContextEntries.set(copy.conflictContextEntries.length ? copy.conflictContextEntries.map((entry) => ({ ...entry })) : relatedEntries);
+    this.dirty.set(copy.dirty); this.stale.set(copy.stale); this.error.set(copy.error);
+  }
+  private clearActivePlan(): void {
+    this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]);
+    this.dirty.set(false); this.stale.set(false); this.error.set(null);
+  }
+  private workingCopyFromApi(plan: ApiPlan): PlanWorkingCopy {
+    const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
+    const { entries: _entries, groups: _groups, ...summary } = plan;
+    return { summary, entries: this.mapEntries(plan, groups), groups, conflictContextEntries: [], dirty: false, stale: false, error: null };
+  }
+  private async saveWorkingCopy(copy: PlanWorkingCopy): Promise<void> {
+    if (copy.stale) throw new Error(`Plan ${copy.summary.semesterNumber} wymaga odświeżenia.`);
+    const saved = await firstValueFrom(this.http.put<ApiPlan>(`${this.base}/${copy.summary.id}/save`, this.savePayload(copy)));
+    const cleanCopy = this.workingCopyFromApi(saved);
+    this.workingCopies.set(saved.id, cleanCopy);
+    this.plans.update((plans) => plans.map((plan) => plan.id === saved.id ? cleanCopy.summary : plan));
+    if (this.current()?.id === saved.id) {
+      this.applyPlan(saved); this.dirty.set(false); this.stale.set(false); this.error.set(null);
+      await this.loadConflictContext(saved);
+    }
+    this.bumpWorkingCopies();
+  }
+  private savePayload(copy: PlanWorkingCopy): object {
+    const groups = copy.groups;
+    return {
+      concurrencyToken: copy.summary.concurrencyToken, name: copy.summary.name, status: copy.summary.status,
+      groups: groups.map((group, index) => ({ id: group.id, code: group.code, name: group.name, sortOrder: index })),
+      entries: copy.entries.map((entry) => ({
+        id: entry.id, subjectSource: entry.lecturerAssignmentId !== undefined ? 'assignments' : undefined,
+        subjectExternalId: entry.lecturerAssignmentId !== undefined ? String(entry.lecturerAssignmentId) : undefined,
+        subjectCode: entry.subjectCode, subjectName: entry.subjectName, classType: entry.classType ?? 'other',
+        lecturerUserId: entry.lecturerUserId, lecturerEmail: entry.lecturerEmail, lecturerDisplayName: entry.lecturerName,
+        room: entry.room || null, dayOfWeek: entry.dayOfWeek, startMinute: Math.round(entry.startHour * 60),
+        durationMinutes: Math.round(entry.durationHours * 60), color: entry.color,
+        groupIds: this.groupIdsForEntry(entry, groups),
+      })),
+    };
+  }
+  private handleSaveError(error: unknown): void {
+    const detail = error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : null;
+    const isStale = error instanceof HttpErrorResponse && error.status === 409;
+    this.stale.set(Boolean(isStale));
+    this.error.set(isStale ? 'Co najmniej jeden plan został zmieniony przez innego użytkownika.' : detail ?? 'Nie udało się zapisać wszystkich planów.');
+  }
   private applyPlan(plan: ApiPlan): void {
     const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
     this.groups.set(groups);

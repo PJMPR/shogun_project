@@ -38,8 +38,8 @@ import { MockDataService } from './services/mock-data.service';
           optionValue="value"
         />
         <div class="save-actions">
-          @if (scheduleStore.dirty()) {
-            <span class="dirty-label">Niezapisane zmiany</span>
+          @if (scheduleStore.hasDirtyPlans()) {
+            <span class="dirty-label">Niezapisane plany: {{ scheduleStore.dirtyPlanCount() }}</span>
           }
           <p-button
             label="Odśwież plan"
@@ -50,10 +50,10 @@ import { MockDataService } from './services/mock-data.service';
             (onClick)="reloadPlan()"
           />
           <p-button
-            label="Zapisz plan"
+            label="Zapisz wszystkie plany"
             icon="pi pi-save"
             [loading]="scheduleStore.saving()"
-            [disabled]="!scheduleStore.current() || !scheduleStore.dirty() || scheduleStore.stale()"
+            [disabled]="!scheduleStore.hasDirtyPlans()"
             (onClick)="savePlan()"
           />
           @if (scheduleStore.current(); as plan) {
@@ -145,8 +145,8 @@ export class ScheduleComponent implements OnInit {
 
   protected async savePlan(): Promise<void> {
     try {
-      await this.scheduleStore.save();
-      this.messages.add({ severity: 'success', summary: 'Plan zapisany', detail: 'Wszystkie zmiany zostały zapisane.' });
+      const count = await this.scheduleStore.saveAll();
+      this.messages.add({ severity: 'success', summary: 'Plany zapisane', detail: `Zapisano zmienione plany: ${count}.` });
     } catch {
       const detail = this.scheduleStore.error() ?? 'Nie udało się zapisać planu.';
       this.messages.add({ severity: 'error', summary: 'Błąd zapisu', detail });
@@ -168,7 +168,7 @@ export class ScheduleComponent implements OnInit {
     const publishing = plan.status !== 'published';
     this.scheduleStore.setPublished(publishing);
     try {
-      await this.scheduleStore.save();
+      await this.scheduleStore.saveCurrent();
       this.messages.add({
         severity: publishing ? 'success' : 'info',
         summary: publishing ? 'Plan opublikowany' : 'Publikacja wycofana',
