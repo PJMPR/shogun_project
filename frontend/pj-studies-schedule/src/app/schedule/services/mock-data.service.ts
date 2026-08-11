@@ -90,7 +90,13 @@ export class MockDataService {
       studyMode: mode === 'stacjonarny' ? 'stationary' : 'partTime',
       name: `Semestr ${semesterNumber} · ${mode === 'stacjonarny' ? 'stacjonarne' : 'niestacjonarne'}`,
     }));
-    await this.loadPlans(facultyCode); this.applyPlan(created); await this.loadConflictContext(created); this.dirty.set(false); this.stale.set(false); this.error.set(null);
+    const copy = this.workingCopyFromApi(created);
+    this.workingCopies.set(created.id, copy);
+    this.plans.update((plans) => [...plans.filter((plan) => plan.id !== created.id), copy.summary]
+      .sort((a, b) => a.semesterNumber - b.semesterNumber || a.studyMode.localeCompare(b.studyMode)));
+    this.bumpWorkingCopies();
+    this.restoreWorkingCopy(copy);
+    this.dirty.set(false); this.stale.set(false); this.error.set(null);
   }
 
   async deleteCurrent(): Promise<void> {

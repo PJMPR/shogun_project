@@ -8,7 +8,7 @@
         <p-button icon="pi pi-trash" size="small" severity="danger" [text]="true" title="Usuń plan" (onClick)="deleteCurrentPlan()" />
       } @else {
         <span class="missing-plan">Brak planu dla wybranego semestru i trybu.</span>
-        <p-button label="Utwórz plan" icon="pi pi-plus" size="small" (onClick)="createCurrentPlan()" />
+        <p-button label="Utwórz plan" icon="pi pi-plus" size="small" [loading]="creatingPlan()" [disabled]="creatingPlan()" (onClick)="createCurrentPlan()" />
       }
     </div>
   </div>

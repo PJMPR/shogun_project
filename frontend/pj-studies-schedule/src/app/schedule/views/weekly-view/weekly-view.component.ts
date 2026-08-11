@@ -60,6 +60,7 @@ export class WeeklyViewComponent {
   protected readonly commentsService = inject(ScheduleCommentsService);
   protected readonly commentsDrawerOpen = signal(false);
   protected readonly selectedCommentEntryId = signal<string | null>(null);
+  protected readonly creatingPlan = signal(false);
 
   constructor() {
     this.desiderataService.load();
@@ -323,6 +324,8 @@ export class WeeklyViewComponent {
 
   protected async createCurrentPlan(): Promise<void> {
     const filters = this.filters(); if (filters.semesterNumber === null) return;
+    if (this.creatingPlan()) return;
+    this.creatingPlan.set(true);
     try {
       await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode);
       const createdId = this.mockData.current()?.id;
@@ -330,6 +333,7 @@ export class WeeklyViewComponent {
       this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: `Semestr ${filters.semesterNumber}` });
     }
     catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Spróbuj ponownie.' }); }
+    finally { this.creatingPlan.set(false); }
   }
 
   protected async saveChanges(): Promise<void> {
