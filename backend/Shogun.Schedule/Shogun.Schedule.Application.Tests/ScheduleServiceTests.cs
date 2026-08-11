@@ -61,10 +61,9 @@ public sealed class ScheduleServiceTests
     }
 
     [Fact]
-    public async Task Add_comment_registers_a_new_comment_for_insert()
+    public async Task Planner_can_add_comment_to_a_draft_plan()
     {
         var schedule = CreateSchedule();
-        schedule.Status = ScheduleStatus.Published;
         var entry = new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule };
         schedule.Entries.Add(entry);
         var repository = new FakeRepository(schedule);
@@ -74,6 +73,19 @@ public sealed class ScheduleServiceTests
         Assert.True(repository.CommentAdded);
         Assert.Equal(entry.Id, result.ScheduleEntryId);
         Assert.Equal("Test", result.Body);
+    }
+
+    [Fact]
+    public async Task Lecturer_cannot_add_comment_to_a_draft_plan()
+    {
+        var schedule = CreateSchedule();
+        var entry = new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule };
+        schedule.Entries.Add(entry);
+        var repository = new FakeRepository(schedule);
+        var lecturer = new CurrentUser("kc-lecturer-id", "lecturer@example.edu", "Wykładowca", false, "lecturer");
+
+        await Assert.ThrowsAsync<UnauthorizedAccessException>(() =>
+            new ScheduleService(repository).AddCommentAsync(entry.Id, new AddCommentRequest("Test"), lecturer, default));
     }
 
     private static SaveScheduleRequest EmptySave(Guid token, IReadOnlyList<StudentGroup> groups) => new(token, "Plan", ScheduleStatus.Draft, groups.Select(g => new SaveGroupRequest(g.Id, g.Code, g.Name, g.SortOrder)).ToList(), []);

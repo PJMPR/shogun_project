@@ -4,9 +4,8 @@
     <div class="plan-actions">
       @if (mockData.dirty()) { <span class="dirty-indicator"><span></span> Niezapisane zmiany</span> }
       @if (mockData.current()) {
-        <p-button label="Nowy wariant" icon="pi pi-copy" size="small" severity="secondary" [outlined]="true" (onClick)="createCurrentPlan()" />
+        <p-button label="Komentarze" icon="pi pi-comments" size="small" severity="secondary" [outlined]="true" (onClick)="openCommentsOverview()" />
         <p-button icon="pi pi-trash" size="small" severity="danger" [text]="true" title="Usuń plan" (onClick)="deleteCurrentPlan()" />
-        <p-button label="Dodaj wpis" icon="pi pi-plus" size="small" (onClick)="openCreateDialog()" />
       } @else {
         <span class="missing-plan">Brak planu dla wybranego semestru i trybu.</span>
         <p-button label="Utwórz plan" icon="pi pi-plus" size="small" (onClick)="createCurrentPlan()" />
@@ -118,7 +117,12 @@
 
   <p-confirmdialog />
 
-  @if (commentsEntry(); as entry) {
-    <app-comments-drawer [entry]="entry" (closed)="commentsEntry.set(null)" />
+  @if (commentsDrawerOpen()) {
+    <app-comments-drawer
+      [entries]="mockData.entries()"
+      [groups]="mockData.groups()"
+      [selectedEntryId]="selectedCommentEntryId()"
+      (closed)="closeComments()"
+    />
   }
 </div>

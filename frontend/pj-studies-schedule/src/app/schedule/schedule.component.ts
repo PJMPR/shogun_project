@@ -2,7 +2,6 @@ import { Component, OnInit, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
-import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -13,7 +12,7 @@ import { MockDataService } from './services/mock-data.service';
 
 @Component({
   selector: 'app-schedule',
-  imports: [FormsModule, SelectButtonModule, SelectModule, InputTextModule, ButtonModule, ToastModule, WeeklyViewComponent, ListViewComponent],
+  imports: [FormsModule, SelectButtonModule, SelectModule, ButtonModule, ToastModule, WeeklyViewComponent, ListViewComponent],
   providers: [MessageService],
   template: `
     <div class="schedule-page">
@@ -26,33 +25,12 @@ import { MockDataService } from './services/mock-data.service';
           optionValue="value"
           (ngModelChange)="changeFaculty($event)"
         />
-        <p-select
-          [options]="savedPlanOptions()"
-          [(ngModel)]="selectedPlanId"
-          optionLabel="label"
-          optionValue="value"
-          placeholder="Zapisane plany"
-          [showClear]="true"
-          emptyMessage="Brak zapisanych planów"
-          (ngModelChange)="selectSavedPlan($event)"
-        />
         <p-selectbutton
           [options]="semesterOptions"
           [(ngModel)]="activeSemester"
           optionLabel="label"
           optionValue="value"
         />
-        <div class="year-controls">
-          <input
-            pInputText
-            [(ngModel)]="planNameInput"
-            placeholder="Nazwa planu"
-            maxlength="200"
-            aria-label="Nazwa planu"
-            (blur)="applyPlanName()"
-            (keydown.enter)="applyPlanName()"
-          />
-        </div>
         <p-selectbutton
           [options]="viewOptions"
           [(ngModel)]="activeView"
@@ -103,7 +81,6 @@ import { MockDataService } from './services/mock-data.service';
             [semesterType]="activeSemester"
             [academicYear]="internalAcademicYear"
             [facultyCode]="activeFacultyCode"
-            [planName]="planNameInput"
             [selectedPlan]="selectedPlan()"
             (planCreated)="selectCreatedPlan($event)"
             (planSelected)="selectPlanFromFilters($event)"
@@ -125,34 +102,19 @@ export class ScheduleComponent implements OnInit {
   protected activeView: 'weekly' | 'list' = 'weekly';
   protected activeSemester: Semester = 'zimowy';
   protected internalAcademicYear = this.defaultAcademicYear();
-  protected planNameInput = '';
   protected activeFacultyCode = 'WI';
   protected selectedPlanId: string | null = null;
   protected readonly facultyOptions = [
     { label: 'Informatyka', value: 'WI' },
     { label: 'Sztuka Nowych Mediów', value: 'SNM' },
   ];
-  protected readonly savedPlanOptions = computed(() => this.scheduleStore.plans().map((plan) => ({
-    label: `${plan.status === 'published' ? '● Opublikowany · ' : ''}${plan.name}`,
-    value: plan.id,
-  })));
   protected readonly selectedPlan = computed(() => this.scheduleStore.plans().find((plan) => plan.id === this.selectedPlanId) ?? null);
 
   async ngOnInit(): Promise<void> {
     try {
       await this.scheduleStore.loadPlans(this.activeFacultyCode);
-      const first = this.scheduleStore.plans()[0];
-      if (first) {
-        this.selectedPlanId = first.id;
-        this.planNameInput = first.name;
-        this.internalAcademicYear = first.academicYear;
-        await this.scheduleStore.reload(first.id);
-      }
+      await this.selectPlanFor(1, 'stacjonarny');
     } catch { this.messages.add({ severity: 'error', summary: 'Błąd', detail: 'Nie udało się pobrać listy planów.' }); }
-  }
-
-  protected applyPlanName(): void {
-    if (this.scheduleStore.current() && this.planNameInput.trim()) this.scheduleStore.setPlanName(this.planNameInput);
   }
 
   protected async changeFaculty(facultyCode: string): Promise<void> {
@@ -160,27 +122,10 @@ export class ScheduleComponent implements OnInit {
     this.selectedPlanId = null;
     try {
       await this.scheduleStore.loadPlans(facultyCode);
-      const first = this.scheduleStore.plans()[0];
-      this.planNameInput = first?.name ?? '';
-      if (first) {
-        this.selectedPlanId = first.id;
-        this.internalAcademicYear = first.academicYear;
-        await this.scheduleStore.reload(first.id);
-      }
+      await this.selectPlanFor(1, 'stacjonarny');
     } catch {
       this.messages.add({ severity: 'error', summary: 'Błąd', detail: 'Nie udało się pobrać planów wydziału.' });
     }
-  }
-
-  protected async selectSavedPlan(planId: string | null): Promise<void> {
-    this.selectedPlanId = planId;
-    if (!planId) return;
-    const plan = this.scheduleStore.plans().find((item) => item.id === planId);
-    if (!plan) return;
-    this.internalAcademicYear = plan.academicYear;
-    this.planNameInput = plan.name;
-    this.activeSemester = plan.semesterNumber % 2 === 1 ? 'zimowy' : 'letni';
-    await this.scheduleStore.reload(planId);
   }
 
   protected selectCreatedPlan(planId: string): void {
@@ -190,8 +135,12 @@ export class ScheduleComponent implements OnInit {
   protected selectPlanFromFilters(planId: string | null): void {
     this.selectedPlanId = planId;
     const plan = this.scheduleStore.plans().find((item) => item.id === planId);
-    this.planNameInput = plan?.name ?? '';
     if (plan) this.internalAcademicYear = plan.academicYear;
+  }
+
+  private async selectPlanFor(semesterNumber: number, mode: 'stacjonarny' | 'niestacjonarny'): Promise<void> {
+    await this.scheduleStore.loadFor(semesterNumber, mode);
+    this.selectedPlanId = this.scheduleStore.current()?.id ?? null;
   }
 
   protected async savePlan(): Promise<void> {
@@ -223,7 +172,7 @@ export class ScheduleComponent implements OnInit {
       this.messages.add({
         severity: publishing ? 'success' : 'info',
         summary: publishing ? 'Plan opublikowany' : 'Publikacja wycofana',
-        detail: publishing ? 'To jest teraz aktualny plan wydziału dostępny do komentowania.' : 'Plan nie jest już dostępny do komentowania.',
+        detail: publishing ? 'Plan jest teraz widoczny dla wykładowców.' : 'Plan pozostaje dostępny dla planistów jako wersja robocza.',
       });
     } catch {
       this.scheduleStore.setPublished(!publishing);

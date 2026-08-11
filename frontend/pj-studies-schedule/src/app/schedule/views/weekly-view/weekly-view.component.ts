@@ -33,7 +33,6 @@ export class WeeklyViewComponent {
 
   readonly semesterType = input<Semester>('zimowy');
   readonly academicYear = input.required<string>();
-  readonly planName = input.required<string>();
   readonly facultyCode = input.required<string>();
   readonly selectedPlan = input<SchedulePlanSummary | null>(null);
   readonly planCreated = output<string>();
@@ -60,7 +59,8 @@ export class WeeklyViewComponent {
   private readonly confirmationService = inject(ConfirmationService);
   protected readonly desiderataService = inject(LecturerDesiderataService);
   protected readonly commentsService = inject(ScheduleCommentsService);
-  protected readonly commentsEntry = signal<ScheduleEntry | null>(null);
+  protected readonly commentsDrawerOpen = signal(false);
+  protected readonly selectedCommentEntryId = signal<string | null>(null);
 
   constructor() {
     this.desiderataService.load();
@@ -80,11 +80,11 @@ export class WeeklyViewComponent {
     });
     effect(() => {
       this.mockData.plans();
-      const year = this.academicYear();
+      this.academicYear();
       this.facultyCode();
       const filters = this.filters();
       if (this.selectedPlan()) return;
-      if (filters.semesterNumber !== null) void this.mockData.loadFor(year, filters.semesterNumber, filters.mode);
+      if (filters.semesterNumber !== null) void this.mockData.loadFor(filters.semesterNumber, filters.mode);
     });
   }
 
@@ -188,9 +188,9 @@ export class WeeklyViewComponent {
       return;
     }
 
-    await this.mockData.loadFor(this.academicYear(), f.semesterNumber, f.mode);
+    await this.mockData.loadFor(f.semesterNumber, f.mode);
     this.hiddenGroupsByDay.set({});
-    this.commentsEntry.set(null);
+    this.closeComments();
     this.planSelected.emit(this.mockData.current()?.id ?? null);
   }
 
@@ -338,16 +338,11 @@ export class WeeklyViewComponent {
 
   protected async createCurrentPlan(): Promise<void> {
     const filters = this.filters(); if (filters.semesterNumber === null) return;
-    const name = this.planName().trim();
-    if (!name) {
-      this.messageService.add({ severity: 'warn', summary: 'Podaj nazwę planu' });
-      return;
-    }
     try {
-      await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode, name);
+      await this.mockData.createPlan(this.facultyCode(), this.academicYear(), filters.semesterNumber, filters.mode);
       const createdId = this.mockData.current()?.id;
       if (createdId) this.planCreated.emit(createdId);
-      this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: name });
+      this.messageService.add({ severity: 'success', summary: 'Utworzono plan', detail: `Semestr ${filters.semesterNumber}` });
     }
     catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Spróbuj ponownie.' }); }
   }
@@ -365,14 +360,10 @@ export class WeeklyViewComponent {
 
   protected deleteCurrentPlan(): void {
     const plan = this.mockData.current(); if (!plan) return;
-    this.confirmationService.confirm({ header: 'Usuń plan', message: `Usunąć plan „${plan.name}”?`, icon: 'pi pi-trash', acceptLabel: 'Usuń', rejectLabel: 'Anuluj', acceptButtonStyleClass: 'p-button-danger', accept: async () => { try { await this.mockData.deleteCurrent(); this.messageService.add({ severity: 'warn', summary: 'Usunięto plan' }); } catch { this.messageService.add({ severity: 'error', summary: 'Nie udało się usunąć planu' }); } } });
+    this.confirmationService.confirm({ header: 'Usuń plan', message: `Usunąć plan dla semestru ${plan.semesterNumber}?`, icon: 'pi pi-trash', acceptLabel: 'Usuń', rejectLabel: 'Anuluj', acceptButtonStyleClass: 'p-button-danger', accept: async () => { try { await this.mockData.deleteCurrent(); this.planSelected.emit(null); this.messageService.add({ severity: 'warn', summary: 'Usunięto plan' }); } catch { this.messageService.add({ severity: 'error', summary: 'Nie udało się usunąć planu' }); } } });
   }
 
   protected openComments(id: string): void {
-    if (this.mockData.current()?.status !== 'published') {
-      this.messageService.add({ severity: 'info', summary: 'Plan nie jest opublikowany', detail: 'Komentarze są dostępne tylko w aktualnym, opublikowanym planie wydziału.' });
-      return;
-    }
     const entry = this.mockData.entries().find((item) => item.id === id);
     if (!entry) return;
     if (!entry.concurrencyToken) {
@@ -380,7 +371,18 @@ export class WeeklyViewComponent {
       return;
     }
     this.commentsService.load(id);
-    this.commentsEntry.set(entry);
+    this.selectedCommentEntryId.set(id);
+    this.commentsDrawerOpen.set(true);
+  }
+
+  protected openCommentsOverview(): void {
+    this.selectedCommentEntryId.set(null);
+    this.commentsDrawerOpen.set(true);
+  }
+
+  protected closeComments(): void {
+    this.commentsDrawerOpen.set(false);
+    this.selectedCommentEntryId.set(null);
   }
 
   protected onSaved(entry: ScheduleEntry): void {
@@ -404,7 +406,7 @@ export class WeeklyViewComponent {
     const name = this.mockData.entries().find((e) => e.id === id)?.subjectName;
     this.mockData.removeEntry(id);
     this.commentsService.removeForEntry(id);
-    if (this.commentsEntry()?.id === id) this.commentsEntry.set(null);
+    if (this.selectedCommentEntryId() === id) this.closeComments();
     this.messageService.add({ severity: 'warn', summary: 'Usunięto', detail: name });
   }
 }

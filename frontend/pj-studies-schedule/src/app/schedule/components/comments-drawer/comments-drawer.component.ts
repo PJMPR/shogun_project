@@ -1,6 +1,6 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ScheduleEntry } from '../../models/schedule.models';
+import { ScheduleEntry, ScheduleGroup, formatHour } from '../../models/schedule.models';
 import { CommentAuthorRole, ScheduleComment } from '../../models/schedule-comment.models';
 import { ScheduleCommentsService } from '../../services/schedule-comments.service';
 
@@ -11,48 +11,55 @@ import { ScheduleCommentsService } from '../../services/schedule-comments.servic
   styleUrl: './comments-drawer.component.css',
 })
 export class CommentsDrawerComponent {
-  readonly entry = input.required<ScheduleEntry>();
+  readonly entries = input.required<ScheduleEntry[]>();
+  readonly groups = input.required<ScheduleGroup[]>();
+  readonly selectedEntryId = input<string | null>(null);
   readonly closed = output<void>();
   protected readonly commentsService = inject(ScheduleCommentsService);
+  protected readonly expandedId = signal<string | null>(null);
   protected readonly draft = signal('');
   protected readonly editingId = signal<string | null>(null);
   protected readonly editDraft = signal('');
-  protected readonly comments = computed(() => this.commentsService.forEntry(this.entry().id));
+  protected readonly accordionEntries = computed(() => this.entries().filter((entry) =>
+    entry.id === this.selectedEntryId() || this.commentsService.count(entry.id) > 0,
+  ));
 
-  protected addComment(): void {
-    this.commentsService.add(this.entry().id, this.draft());
+  constructor() {
+    effect(() => {
+      const entries = this.entries();
+      const selectedId = this.selectedEntryId();
+      for (const entry of entries.filter((item) => item.id === selectedId || (item.commentCount ?? 0) > 0)) {
+        this.commentsService.load(entry.id);
+      }
+      if (selectedId) {
+        this.expandedId.set(selectedId);
+        queueMicrotask(() => document.getElementById(`comments-${selectedId}`)?.scrollIntoView({ block: 'nearest' }));
+      }
+    });
+  }
+
+  protected toggle(entryId: string): void {
+    const opening = this.expandedId() !== entryId;
+    this.expandedId.set(opening ? entryId : null);
     this.draft.set('');
-  }
-
-  protected startEdit(comment: ScheduleComment): void {
-    this.editingId.set(comment.id);
-    this.editDraft.set(comment.body);
-  }
-
-  protected saveEdit(): void {
-    const id = this.editingId();
-    if (id) this.commentsService.edit(id, this.editDraft());
     this.cancelEdit();
+    if (opening) this.commentsService.load(entryId);
   }
-
-  protected cancelEdit(): void {
-    this.editingId.set(null);
-    this.editDraft.set('');
+  protected comments(entryId: string): ScheduleComment[] { return this.commentsService.forEntry(entryId); }
+  protected addComment(entryId: string): void { this.commentsService.add(entryId, this.draft()); this.draft.set(''); }
+  protected startEdit(comment: ScheduleComment): void { this.editingId.set(comment.id); this.editDraft.set(comment.body); }
+  protected saveEdit(): void { const id = this.editingId(); if (id) this.commentsService.edit(id, this.editDraft()); this.cancelEdit(); }
+  protected cancelEdit(): void { this.editingId.set(null); this.editDraft.set(''); }
+  protected canDelete(comment: ScheduleComment): boolean { return this.commentsService.isOwn(comment) || this.commentsService.isAdmin; }
+  protected roleLabel(role: CommentAuthorRole): string { return role === 'admin' ? 'Administrator' : role === 'planner' ? 'Planista' : 'Wykładowca'; }
+  protected initials(name: string): string { return name.split(/\s+/).slice(0, 2).map((part) => part[0]?.toUpperCase()).join(''); }
+  protected formatDate(value: string): string { return new Intl.DateTimeFormat('pl-PL', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value)); }
+  protected entryLabel(entry: ScheduleEntry): string {
+    const code = entry.subjectCode?.trim() || entry.subjectName;
+    return `${code} · ${formatHour(entry.startHour)}–${formatHour(entry.startHour + entry.durationHours)} · ${this.groupLabel(entry)}`;
   }
-
-  protected canDelete(comment: ScheduleComment): boolean {
-    return this.commentsService.isOwn(comment) || this.commentsService.isAdmin;
-  }
-
-  protected roleLabel(role: CommentAuthorRole): string {
-    return role === 'admin' ? 'Administrator' : role === 'planner' ? 'Planista' : 'Wykładowca';
-  }
-
-  protected initials(name: string): string {
-    return name.split(/\s+/).slice(0, 2).map((part) => part[0]?.toUpperCase()).join('');
-  }
-
-  protected formatDate(value: string): string {
-    return new Intl.DateTimeFormat('pl-PL', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+  private groupLabel(entry: ScheduleEntry): string {
+    const names = this.groups().slice(entry.group, entry.group + (entry.groupSpan ?? 1)).map((group) => group.name);
+    return names.join(', ') || `Gr. ${entry.group + 1}`;
   }
 }

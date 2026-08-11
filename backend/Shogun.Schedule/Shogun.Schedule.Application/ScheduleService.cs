@@ -38,7 +38,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         schedule.Groups.Add(group);
         await repository.AddAsync(schedule, ct);
         try { await repository.SaveChangesAsync(ct); }
-        catch (Exception ex) when (ex.GetType().Name.Contains("DbUpdate")) { throw new ConflictException("Nie udało się utworzyć planu z powodu konfliktu danych."); }
+        catch (Exception ex) when (ex.GetType().Name.Contains("DbUpdate")) { throw new ConflictException("Plan dla wybranego semestru i trybu już istnieje."); }
         return Map(schedule);
     }
 
@@ -117,7 +117,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task<IReadOnlyList<CommentDto>> ListCommentsAsync(Guid entryId, CurrentUser user, CancellationToken ct)
     {
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
-        EnsurePublished(entry.Schedule);
+        EnsureCommentable(entry.Schedule, user);
         return entry.Comments.Where(x => x.DeletedAt is null).OrderBy(x => x.CreatedAt).Select(x => MapComment(x, user)).ToList();
     }
 
@@ -125,7 +125,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         var body = Required(request.Body, "Komentarz");
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
-        EnsurePublished(entry.Schedule);
+        EnsureCommentable(entry.Schedule, user);
         var comment = new ScheduleComment { Id = Guid.NewGuid(), ScheduleEntryId = entryId, Body = body, AuthorUserId = user.UserId, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
         await repository.AddCommentAsync(comment, ct);
         await repository.SaveChangesAsync(ct);
@@ -135,7 +135,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task<CommentDto> EditCommentAsync(Guid id, EditCommentRequest request, CurrentUser user, CancellationToken ct)
     {
         var comment = await repository.GetCommentAsync(id, ct) ?? throw new NotFoundException("Komentarz nie istnieje.");
-        EnsurePublished(comment.ScheduleEntry.Schedule);
+        EnsureCommentable(comment.ScheduleEntry.Schedule, user);
         if (!string.Equals(comment.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własny komentarz.");
         comment.Body = Required(request.Body, "Komentarz"); comment.UpdatedAt = DateTimeOffset.UtcNow;
         await repository.SaveChangesAsync(ct); return MapComment(comment, user);
@@ -144,14 +144,15 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     public async Task DeleteCommentAsync(Guid id, CurrentUser user, CancellationToken ct)
     {
         var comment = await repository.GetCommentAsync(id, ct) ?? throw new NotFoundException("Komentarz nie istnieje.");
-        EnsurePublished(comment.ScheduleEntry.Schedule);
+        EnsureCommentable(comment.ScheduleEntry.Schedule, user);
         if (!user.IsAdmin && !string.Equals(comment.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Brak uprawnień do usunięcia komentarza.");
         comment.DeletedAt = DateTimeOffset.UtcNow; comment.DeletedBy = user.Email; comment.DeletedByUserId = user.UserId; await repository.SaveChangesAsync(ct);
     }
 
-    private static void EnsurePublished(SchedulePlan schedule)
+    private static void EnsureCommentable(SchedulePlan schedule, CurrentUser user)
     {
-        if (schedule.Status != ScheduleStatus.Published) throw new ValidationException("Komentarze są dostępne tylko dla opublikowanego planu.");
+        if (schedule.Status != ScheduleStatus.Published && user.Role is not ("planner" or "admin"))
+            throw new UnauthorizedAccessException("Komentarze do wersji roboczej są dostępne tylko dla planistów.");
     }
 
     private static void ValidatePlan(string year, int semester, string name)

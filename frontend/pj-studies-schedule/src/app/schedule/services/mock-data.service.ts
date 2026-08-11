@@ -33,9 +33,9 @@ export class MockDataService {
     this.error.set(null);
   }
 
-  async loadFor(academicYear: string, semesterNumber: number, mode: StudyMode): Promise<void> {
+  async loadFor(semesterNumber: number, mode: StudyMode): Promise<void> {
     const apiMode = mode === 'stacjonarny' ? 'stationary' : 'partTime';
-    const matching = this.plans().filter((x) => x.academicYear === academicYear && x.semesterNumber === semesterNumber && x.studyMode === apiMode);
+    const matching = this.plans().filter((x) => x.semesterNumber === semesterNumber && x.studyMode === apiMode);
     const summary = matching.find((x) => x.status === 'published') ?? matching[0];
     if (!summary) { this.current.set(null); this.entries.set([]); this.groups.set([]); this.conflictContextEntries.set([]); this.dirty.set(false); this.stale.set(false); this.error.set(null); return; }
     await this.reload(summary.id);
@@ -52,11 +52,11 @@ export class MockDataService {
     finally { this.loading.set(false); }
   }
 
-  async createPlan(facultyCode: string, academicYear: string, semesterNumber: number, mode: StudyMode, name: string): Promise<void> {
+  async createPlan(facultyCode: string, academicYear: string, semesterNumber: number, mode: StudyMode): Promise<void> {
     const created = await firstValueFrom(this.http.post<ApiPlan>(this.base, {
       facultyCode, academicYear, semesterNumber,
       studyMode: mode === 'stacjonarny' ? 'stationary' : 'partTime',
-      name: name.trim(),
+      name: `Semestr ${semesterNumber} · ${mode === 'stacjonarny' ? 'stacjonarne' : 'niestacjonarne'}`,
     }));
     await this.loadPlans(facultyCode); this.applyPlan(created); await this.loadConflictContext(created); this.dirty.set(false); this.stale.set(false); this.error.set(null);
   }
@@ -101,12 +101,6 @@ export class MockDataService {
   addEntry(entry: ScheduleEntry): void { this.entries.update((list) => [...list, entry]); this.markDirty(); }
   setPublished(published: boolean): void {
     this.current.update((plan) => plan ? { ...plan, status: published ? 'published' : 'draft' } : plan);
-    this.markDirty();
-  }
-  setPlanName(name: string): void {
-    const trimmed = name.trim();
-    if (!trimmed) return;
-    this.current.update((plan) => plan ? { ...plan, name: trimmed } : plan);
     this.markDirty();
   }
   updateEntry(updated: ScheduleEntry): void { this.entries.update((list) => list.map((e) => e.id === updated.id ? updated : e)); this.markDirty(); }

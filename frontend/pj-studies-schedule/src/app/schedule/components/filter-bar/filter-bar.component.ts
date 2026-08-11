@@ -1,8 +1,6 @@
 import { Component, OnChanges, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { SelectModule } from 'primeng/select';
-import { ButtonModule } from 'primeng/button';
 import { ScheduleFilters, Semester, StudyMode } from '../../models/schedule.models';
 
 const ZIMOWE_SEMESTRY = [1, 3, 5, 7];
@@ -10,7 +8,7 @@ const LETNIE_SEMESTRY = [2, 4, 6, 8];
 
 @Component({
   selector: 'app-filter-bar',
-  imports: [SelectButtonModule, SelectModule, FormsModule, ButtonModule],
+  imports: [SelectButtonModule, FormsModule],
   template: `
     <div class="filter-bar">
       <p-selectbutton
@@ -20,21 +18,12 @@ const LETNIE_SEMESTRY = [2, 4, 6, 8];
         optionValue="value"
         (ngModelChange)="emit()"
       />
-      <p-select
+      <p-selectbutton
         [options]="semestrOptions"
         [(ngModel)]="semesterNumber"
-        placeholder="Semestr"
-        [showClear]="false"
+        optionLabel="label"
+        optionValue="value"
         (ngModelChange)="emit()"
-        styleClass="filter-select"
-      />
-      <p-button
-        label="Wyczyść"
-        severity="secondary"
-        [outlined]="true"
-        size="small"
-        icon="pi pi-times"
-        (onClick)="clearFilters()"
       />
     </div>
   `,
@@ -45,9 +34,6 @@ const LETNIE_SEMESTRY = [2, 4, 6, 8];
         align-items: center;
         gap: 0.5rem;
         flex-wrap: wrap;
-      }
-      :host ::ng-deep .filter-select {
-        min-width: 130px;
       }
     `,
   ],
@@ -64,12 +50,13 @@ export class FilterBarComponent implements OnChanges {
     { label: 'Niestacjonarny', value: 'niestacjonarny' as StudyMode },
   ];
 
-  protected get semestrOptions(): number[] {
-    return this.semesterType() === 'zimowy' ? ZIMOWE_SEMESTRY : LETNIE_SEMESTRY;
+  protected get semestrOptions(): { label: string; value: number }[] {
+    const semesters = this.semesterType() === 'zimowy' ? ZIMOWE_SEMESTRY : LETNIE_SEMESTRY;
+    return semesters.map((value) => ({ label: `Semestr ${value}`, value }));
   }
 
   ngOnChanges(): void {
-    this.semesterNumber = this.semestrOptions[0];
+    this.semesterNumber = this.semestrOptions[0].value;
     this.emit();
   }
 
@@ -82,8 +69,4 @@ export class FilterBarComponent implements OnChanges {
     this.filtersChanged.emit({ mode: this.mode, semesterNumber: this.semesterNumber });
   }
 
-  protected clearFilters(): void {
-    this.semesterNumber = this.semestrOptions[0];
-    this.emit();
-  }
 }

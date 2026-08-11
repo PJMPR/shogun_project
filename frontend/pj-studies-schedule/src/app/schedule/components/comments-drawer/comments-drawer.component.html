@@ -1,68 +1,49 @@
 <div class="drawer-backdrop" (click)="closed.emit()"></div>
-<aside class="comments-drawer" role="dialog" aria-modal="true" aria-label="Komentarze do zajęć">
+<aside class="comments-drawer" role="dialog" aria-modal="true" aria-label="Komentarze do planu">
   <header class="drawer-header">
-    <div>
-      <span class="eyebrow">Komentarze do bloczka</span>
-      <h3>{{ entry().subjectName }}</h3>
-      <p>{{ entry().lecturerName }}</p>
-    </div>
+    <div><span class="eyebrow">Bieżący semestr</span><h3>Komentarze do planu</h3></div>
     <button type="button" class="icon-button pi pi-times" aria-label="Zamknij" (click)="closed.emit()"></button>
   </header>
 
-  <div class="comments-list">
-    @for (comment of comments(); track comment.id) {
-      <article class="comment">
-        <div class="avatar">{{ initials(comment.author.name) }}</div>
-        <div class="comment-content">
-          <div class="comment-heading">
-            <div>
-              <strong>{{ comment.author.name }}</strong>
-              <span
-                class="role"
-                [class.planner]="comment.author.role === 'planner'"
-                [class.lecturer]="comment.author.role === 'lecturer'"
-                [class.admin]="comment.author.role === 'admin'"
-              >{{ roleLabel(comment.author.role) }}</span>
+  <div class="accordion">
+    @for (entry of accordionEntries(); track entry.id) {
+      <section class="accordion-item" [id]="'comments-' + entry.id" [class.expanded]="expandedId() === entry.id">
+        <button type="button" class="accordion-header" (click)="toggle(entry.id)" [attr.aria-expanded]="expandedId() === entry.id">
+          <span>{{ entryLabel(entry) }}</span>
+          <span class="header-meta"><span class="count">{{ commentsService.count(entry.id) }}</span><i class="pi pi-chevron-down"></i></span>
+        </button>
+        @if (expandedId() === entry.id) {
+          <div class="accordion-panel">
+            <div class="comments-list">
+              @for (comment of comments(entry.id); track comment.id) {
+                <article class="comment">
+                  <div class="avatar">{{ initials(comment.author.name) }}</div>
+                  <div class="comment-content">
+                    <div class="comment-heading"><div><strong>{{ comment.author.name }}</strong><span class="role" [class.planner]="comment.author.role === 'planner'" [class.lecturer]="comment.author.role === 'lecturer'" [class.admin]="comment.author.role === 'admin'">{{ roleLabel(comment.author.role) }}</span></div><time>{{ formatDate(comment.createdAt) }}@if (comment.updatedAt) { · edytowano }</time></div>
+                    @if (editingId() === comment.id) {
+                      <textarea rows="3" [ngModel]="editDraft()" (ngModelChange)="editDraft.set($event)" aria-label="Edytuj komentarz"></textarea>
+                      <div class="comment-actions edit-actions"><button type="button" class="text-button" (click)="cancelEdit()">Anuluj</button><button type="button" class="primary-button" [disabled]="!editDraft().trim()" (click)="saveEdit()">Zapisz</button></div>
+                    } @else {
+                      <p>{{ comment.body }}</p>
+                      <div class="comment-actions">
+                        @if (commentsService.isOwn(comment)) { <button type="button" class="text-button" (click)="startEdit(comment)">Edytuj</button> }
+                        @if (canDelete(comment)) { <button type="button" class="text-button danger" (click)="commentsService.remove(comment.id)">Usuń</button> }
+                      </div>
+                    }
+                  </div>
+                </article>
+              } @empty { <div class="empty-state"><span class="pi pi-comments"></span><p>Brak komentarzy. Rozpocznij rozmowę.</p></div> }
             </div>
-            <time>{{ formatDate(comment.createdAt) }}@if (comment.updatedAt) { · edytowano }</time>
+            <div class="composer">
+              <div class="composer-author">Komentujesz jako <strong>{{ commentsService.currentAuthor.name }}</strong> · {{ roleLabel(commentsService.currentAuthor.role) }}</div>
+              <textarea rows="3" [ngModel]="draft()" (ngModelChange)="draft.set($event)" placeholder="Napisz komentarz…" aria-label="Nowy komentarz"></textarea>
+              <button type="button" class="primary-button send-button" [disabled]="!draft().trim()" (click)="addComment(entry.id)"><span class="pi pi-send"></span> Dodaj komentarz</button>
+            </div>
           </div>
-          @if (editingId() === comment.id) {
-            <textarea rows="3" [ngModel]="editDraft()" (ngModelChange)="editDraft.set($event)" aria-label="Edytuj komentarz"></textarea>
-            <div class="comment-actions edit-actions">
-              <button type="button" class="text-button" (click)="cancelEdit()">Anuluj</button>
-              <button type="button" class="primary-button" [disabled]="!editDraft().trim()" (click)="saveEdit()">Zapisz</button>
-            </div>
-          } @else {
-            <p>{{ comment.body }}</p>
-            @if (commentsService.isOwn(comment) || canDelete(comment)) {
-              <div class="comment-actions">
-                @if (commentsService.isOwn(comment)) {
-                  <button type="button" class="text-button" (click)="startEdit(comment)">Edytuj</button>
-                }
-                @if (canDelete(comment)) {
-                  <button type="button" class="text-button danger" (click)="commentsService.remove(comment.id)">Usuń</button>
-                }
-              </div>
-            }
-          }
-        </div>
-      </article>
+        }
+      </section>
     } @empty {
-      <div class="empty-state">
-        <span class="pi pi-comments"></span>
-        <p>Brak komentarzy. Rozpocznij rozmowę.</p>
-      </div>
+      <div class="empty-state drawer-empty"><span class="pi pi-comments"></span><p>W tym semestrze nie ma jeszcze komentarzy.</p></div>
     }
   </div>
-
-  <footer class="composer">
-    <div class="composer-author">
-      Komentujesz jako <strong>{{ commentsService.currentAuthor.name }}</strong>
-      · {{ roleLabel(commentsService.currentAuthor.role) }}
-    </div>
-    <textarea rows="3" [ngModel]="draft()" (ngModelChange)="draft.set($event)" placeholder="Napisz komentarz…" aria-label="Nowy komentarz"></textarea>
-    <button type="button" class="primary-button send-button" [disabled]="!draft().trim()" (click)="addComment()">
-      <span class="pi pi-send"></span> Dodaj komentarz
-    </button>
-  </footer>
 </aside>
