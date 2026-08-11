@@ -49,13 +49,13 @@ export class MockDataService {
   async loadPlans(facultyCode = 'WI'): Promise<void> {
     this.rememberWorkingCopy();
     const summaries = await firstValueFrom(this.http.get<SchedulePlanSummary[]>(`${this.base}?facultyCode=${encodeURIComponent(facultyCode)}`));
-    this.plans.set(summaries);
     await Promise.all(summaries.map(async (summary) => {
       const existing = this.workingCopies.get(summary.id);
       if (existing?.dirty || existing?.stale) return;
       const plan = await firstValueFrom(this.http.get<ApiPlan>(`${this.base}/${summary.id}`));
       this.workingCopies.set(summary.id, this.workingCopyFromApi(plan));
     }));
+    this.plans.set(summaries);
     this.bumpWorkingCopies();
     this.error.set(null);
   }
