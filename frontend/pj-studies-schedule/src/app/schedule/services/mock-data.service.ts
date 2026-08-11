@@ -13,6 +13,7 @@ interface ApiEntry {
 interface ApiPlan extends Omit<SchedulePlan, 'entries'> { entries: ApiEntry[] }
 interface PlanWorkingCopy {
   summary: SchedulePlanSummary;
+  originalStatus: SchedulePlanSummary['status'];
   entries: ScheduleEntry[];
   groups: ScheduleGroup[];
   conflictContextEntries: ScheduleEntry[];
@@ -106,10 +107,16 @@ export class MockDataService {
     this.saving.set(true); this.error.set(null);
     let savedCount = 0;
     try {
-      for (const copy of dirtyCopies) { await this.saveWorkingCopy(copy); savedCount++; }
+      for (const copy of dirtyCopies) {
+        try {
+          const saved = await this.saveWorkingCopy(copy);
+          if (saved.status === 'published') await this.synchronizePlansDemotedByPublication(saved.id, saved.facultyCode);
+          savedCount++;
+        } catch (error) { this.handleSaveError(error, copy); throw error; }
+      }
       await this.loadPlans(this.current()?.facultyCode ?? dirtyCopies[0].summary.facultyCode);
       return savedCount;
-    } catch (error) { this.handleSaveError(error); throw error; }
+    } catch (error) { throw error; }
     finally { this.saving.set(false); }
   }
 
@@ -118,8 +125,12 @@ export class MockDataService {
     this.rememberWorkingCopy();
     const copy = this.workingCopies.get(plan.id); if (!copy) return;
     this.saving.set(true); this.error.set(null);
-    try { await this.saveWorkingCopy(copy); await this.loadPlans(plan.facultyCode); }
-    catch (error) { this.handleSaveError(error); throw error; }
+    try {
+      const saved = await this.saveWorkingCopy(copy);
+      if (saved.status === 'published') await this.synchronizePlansDemotedByPublication(saved.id, saved.facultyCode);
+      await this.loadPlans(plan.facultyCode);
+    }
+    catch (error) { this.handleSaveError(error, copy); throw error; }
     finally { this.saving.set(false); }
   }
 
@@ -138,7 +149,8 @@ export class MockDataService {
     const summary = this.current();
     if (!summary || (!this.dirty() && !this.stale())) return;
     this.workingCopies.set(summary.id, {
-      summary: { ...summary }, entries: this.entries().map((entry) => ({ ...entry })),
+      summary: { ...summary }, originalStatus: this.workingCopies.get(summary.id)?.originalStatus ?? summary.status,
+      entries: this.entries().map((entry) => ({ ...entry })),
       groups: this.groups().map((group) => ({ ...group })),
       conflictContextEntries: this.conflictContextEntries().map((entry) => ({ ...entry })),
       dirty: this.dirty(), stale: this.stale(), error: this.error(),
@@ -162,9 +174,9 @@ export class MockDataService {
   private workingCopyFromApi(plan: ApiPlan): PlanWorkingCopy {
     const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
     const { entries: _entries, groups: _groups, ...summary } = plan;
-    return { summary, entries: this.mapEntries(plan, groups), groups, conflictContextEntries: [], dirty: false, stale: false, error: null };
+    return { summary, originalStatus: summary.status, entries: this.mapEntries(plan, groups), groups, conflictContextEntries: [], dirty: false, stale: false, error: null };
   }
-  private async saveWorkingCopy(copy: PlanWorkingCopy): Promise<void> {
+  private async saveWorkingCopy(copy: PlanWorkingCopy): Promise<ApiPlan> {
     if (copy.stale) throw new Error(`Plan ${copy.summary.semesterNumber} wymaga odświeżenia.`);
     const saved = await firstValueFrom(this.http.put<ApiPlan>(`${this.base}/${copy.summary.id}/save`, this.savePayload(copy)));
     const cleanCopy = this.workingCopyFromApi(saved);
@@ -175,6 +187,7 @@ export class MockDataService {
       await this.loadConflictContext(saved);
     }
     this.bumpWorkingCopies();
+    return saved;
   }
   private savePayload(copy: PlanWorkingCopy): object {
     const groups = copy.groups;
@@ -192,11 +205,30 @@ export class MockDataService {
       })),
     };
   }
-  private handleSaveError(error: unknown): void {
+  private async synchronizePlansDemotedByPublication(savedId: string, facultyCode: string): Promise<void> {
+    const summaries = await firstValueFrom(this.http.get<SchedulePlanSummary[]>(`${this.base}?facultyCode=${encodeURIComponent(facultyCode)}`));
+    this.plans.set(summaries);
+    for (const summary of summaries) {
+      if (summary.id === savedId) continue;
+      const copy = this.workingCopies.get(summary.id);
+      if (!copy?.dirty || copy.originalStatus !== 'published' || copy.summary.status !== 'published' || summary.status !== 'draft') continue;
+      copy.summary = { ...copy.summary, ...summary };
+      copy.originalStatus = 'draft';
+      if (this.current()?.id === summary.id) this.current.set({ ...copy.summary });
+    }
+    this.bumpWorkingCopies();
+  }
+  private handleSaveError(error: unknown, copy: PlanWorkingCopy): void {
     const detail = error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : null;
     const isStale = error instanceof HttpErrorResponse && error.status === 409;
-    this.stale.set(Boolean(isStale));
-    this.error.set(isStale ? 'Co najmniej jeden plan został zmieniony przez innego użytkownika.' : detail ?? 'Nie udało się zapisać wszystkich planów.');
+    if (isStale) {
+      copy.stale = true;
+      if (this.current()?.id === copy.summary.id) this.stale.set(true);
+    }
+    const mode = copy.summary.studyMode === 'stationary' ? 'stacjonarne' : 'niestacjonarne';
+    this.error.set(isStale
+      ? `Plan dla semestru ${copy.summary.semesterNumber} (${mode}) został zmieniony przez innego użytkownika.`
+      : detail ?? `Nie udało się zapisać planu dla semestru ${copy.summary.semesterNumber} (${mode}).`);
   }
   private applyPlan(plan: ApiPlan): void {
     const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
