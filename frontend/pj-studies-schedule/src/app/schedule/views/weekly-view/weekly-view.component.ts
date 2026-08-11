@@ -1,4 +1,4 @@
-import { Component, ViewChild, computed, effect, inject, input, output, signal } from '@angular/core';
+import { Component, ViewChild, computed, effect, inject, input, output, signal, untracked } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -75,7 +75,8 @@ export class WeeklyViewComponent {
         mode: selected.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
         semesterNumber: selected.semesterNumber,
       });
-      if (this.mockData.current()?.id !== selected.id) void this.mockData.reload(selected.id);
+      const currentPlanId = untracked(() => this.mockData.current()?.id);
+      if (currentPlanId !== selected.id) void this.mockData.reload(selected.id);
     });
     effect(() => {
       this.mockData.plans();
