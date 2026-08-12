@@ -53,6 +53,7 @@ export class MockDataService {
     await Promise.all(summaries.map(async (summary) => {
       const existing = this.workingCopies.get(summary.id);
       if (existing?.dirty || existing?.stale) return;
+      if (existing?.summary.concurrencyToken === summary.concurrencyToken) return;
       const plan = await firstValueFrom(this.http.get<ApiPlan>(`${this.base}/${summary.id}`));
       this.workingCopies.set(summary.id, this.workingCopyFromApi(plan));
     }));

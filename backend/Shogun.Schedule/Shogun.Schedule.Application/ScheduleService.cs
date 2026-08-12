@@ -55,7 +55,13 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         foreach (var dto in request.Groups)
         {
             var group = schedule.Groups.FirstOrDefault(x => x.Id == dto.Id);
-            if (group is null) { group = NewGroup(id, dto.Code, dto.Name, dto.SortOrder, user, now); group.Id = dto.Id; schedule.Groups.Add(group); }
+            if (group is null)
+            {
+                group = NewGroup(id, dto.Code, dto.Name, dto.SortOrder, user, now);
+                group.Id = dto.Id;
+                schedule.Groups.Add(group);
+                await repository.AddGroupAsync(group, ct);
+            }
             else { group.Code = dto.Code.Trim().ToUpperInvariant(); group.Name = dto.Name.Trim(); group.SortOrder = dto.SortOrder; group.UpdatedAt = now; group.UpdatedBy = user.Email; group.UpdatedByUserId = user.UserId; group.ConcurrencyToken = Guid.NewGuid(); }
         }
         var requestedEntryIds = request.Entries.Select(x => x.Id).ToHashSet();

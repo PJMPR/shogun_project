@@ -26,6 +26,7 @@ public interface IScheduleRepository
     Task<IReadOnlyList<SchedulePlan>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct);
     Task<SchedulePlan?> GetAsync(Guid id, bool tracking, CancellationToken ct);
     Task AddAsync(SchedulePlan schedule, CancellationToken ct);
+    Task AddGroupAsync(StudentGroup group, CancellationToken ct);
     Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct);
     Task AddCommentAsync(ScheduleComment comment, CancellationToken ct);
     Task DeleteAsync(SchedulePlan schedule, CancellationToken ct);

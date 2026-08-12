@@ -79,14 +79,6 @@ export class WeeklyViewComponent {
       const currentPlanId = untracked(() => this.mockData.current()?.id);
       if (currentPlanId !== selected.id) void this.mockData.reload(selected.id);
     });
-    effect(() => {
-      this.mockData.plans();
-      this.academicYear();
-      this.facultyCode();
-      const filters = this.filters();
-      if (this.selectedPlan()) return;
-      if (filters.semesterNumber !== null) void this.mockData.loadFor(filters.semesterNumber, filters.mode);
-    });
   }
 
   protected readonly filteredEntries = computed(() => {
@@ -104,10 +96,10 @@ export class WeeklyViewComponent {
     const filters = this.filters();
     const semesterType = this.semesterType();
     return this.desiderataService.items()
-      .filter((assignment) => assignment.semesterType.toLowerCase() === semesterType)
+      .filter((assignment) => this.normalizeSemesterType(assignment.semesterType) === semesterType)
       .flatMap((assignment) => assignment.subjects
         .filter((subject) =>
-          subject.trybStudiow === filters.mode &&
+          this.normalizeStudyMode(subject.trybStudiow) === filters.mode &&
           semesterTypeOf(subject.semester) === semesterType &&
           (filters.semesterNumber === null || subject.semester === filters.semesterNumber),
         )
@@ -121,6 +113,20 @@ export class WeeklyViewComponent {
           academicYear: assignment.academicYear,
       }))); 
   });
+
+  private normalizeSemesterType(value: string): Semester | null {
+    const normalized = value.trim().toLocaleLowerCase('pl-PL');
+    if (normalized.includes('zimow')) return 'zimowy';
+    if (normalized.includes('letn')) return 'letni';
+    return null;
+  }
+
+  private normalizeStudyMode(value: string): ScheduleFilters['mode'] | null {
+    const normalized = value.trim().toLocaleLowerCase('pl-PL');
+    if (normalized === 'stationary' || normalized.startsWith('stacjonarn')) return 'stacjonarny';
+    if (normalized === 'parttime' || normalized === 'part-time' || normalized.startsWith('niestacjonarn')) return 'niestacjonarny';
+    return null;
+  }
 
   protected readonly resolvedEntries = computed(() => this.filteredEntries().map((entry) => {
     if (entry.lecturerAssignmentId !== undefined) return entry;

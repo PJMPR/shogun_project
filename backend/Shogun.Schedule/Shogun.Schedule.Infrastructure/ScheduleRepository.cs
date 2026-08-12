@@ -16,6 +16,7 @@ public sealed class ScheduleRepository(ScheduleDbContext db) : IScheduleReposito
         return query.FirstOrDefaultAsync(x => x.Id == id, ct);
     }
     public async Task AddAsync(SchedulePlan schedule, CancellationToken ct) => await db.Schedules.AddAsync(schedule, ct);
+    public async Task AddGroupAsync(StudentGroup group, CancellationToken ct) => await db.StudentGroups.AddAsync(group, ct);
     public async Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct) => await db.ScheduleEntries.AddAsync(entry, ct);
     public async Task AddCommentAsync(ScheduleComment comment, CancellationToken ct) => await db.ScheduleComments.AddAsync(comment, ct);
     public Task DeleteAsync(SchedulePlan schedule, CancellationToken ct) { db.Schedules.Remove(schedule); return Task.CompletedTask; }

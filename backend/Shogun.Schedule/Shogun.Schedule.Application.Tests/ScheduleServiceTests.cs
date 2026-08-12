@@ -45,6 +45,23 @@ public sealed class ScheduleServiceTests
     }
 
     [Fact]
+    public async Task Save_marks_client_generated_group_as_new()
+    {
+        var repository = new FakeRepository(CreateSchedule());
+        var service = new ScheduleService(repository);
+        var newGroup = new SaveGroupRequest(Guid.NewGuid(), "G2", "Gr. 2", 1);
+        var request = EmptySave(repository.Schedule.ConcurrencyToken, repository.Schedule.Groups) with
+        {
+            Groups = [.. EmptySave(repository.Schedule.ConcurrencyToken, repository.Schedule.Groups).Groups, newGroup],
+        };
+
+        var result = await service.SaveAsync(repository.Schedule.Id, request, User, default);
+
+        Assert.Contains(result.Groups, group => group.Id == newGroup.Id);
+        Assert.Contains(newGroup.Id, repository.AddedGroupIds);
+    }
+
+    [Fact]
     public async Task Publishing_plan_withdraws_previous_publication_for_same_selection()
     {
         var repository = new FakeRepository(CreateSchedule());
@@ -101,10 +118,12 @@ public sealed class ScheduleServiceTests
         public SchedulePlan Schedule { get; } = schedule;
         public List<SchedulePlan> PublishedPlans { get; } = [];
         public bool CommentAdded { get; private set; }
+        public List<Guid> AddedGroupIds { get; } = [];
         public Task<Faculty?> FindFacultyAsync(string code, CancellationToken ct) => Task.FromResult<Faculty?>(Schedule.Faculty);
         public Task<IReadOnlyList<SchedulePlan>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>([Schedule]);
         public Task<SchedulePlan?> GetAsync(Guid id, bool tracking, CancellationToken ct) => Task.FromResult<SchedulePlan?>(id == Schedule.Id ? Schedule : null);
         public Task AddAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
+        public Task AddGroupAsync(StudentGroup group, CancellationToken ct) { AddedGroupIds.Add(group.Id); return Task.CompletedTask; }
         public Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct) => Task.CompletedTask;
         public Task AddCommentAsync(ScheduleComment comment, CancellationToken ct) { CommentAdded = true; return Task.CompletedTask; }
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
