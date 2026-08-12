@@ -13,6 +13,7 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
     public DbSet<ScheduleComment> ScheduleComments => Set<ScheduleComment>();
     public DbSet<ScheduleSubject> ScheduleSubjects => Set<ScheduleSubject>();
     public DbSet<ScheduleLecturer> ScheduleLecturers => Set<ScheduleLecturer>();
+    public DbSet<ScheduleSubjectLecturer> ScheduleSubjectLecturers => Set<ScheduleSubjectLecturer>();
 
     protected override void OnModelCreating(ModelBuilder b)
     {
@@ -50,6 +51,12 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
             e.ToTable("schedule_lecturers"); e.HasKey(x => x.Id); e.Property(x => x.DisplayName).HasMaxLength(200); e.Property(x => x.Email).HasMaxLength(320); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100); e.Property(x => x.UpdatedBy).HasMaxLength(320); e.Property(x => x.UpdatedByUserId).HasMaxLength(100);
             e.HasIndex(x => new { x.ScheduleId, x.DisplayName });
             e.HasOne(x => x.Schedule).WithMany(x => x.Lecturers).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
+        });
+        b.Entity<ScheduleSubjectLecturer>(e =>
+        {
+            e.ToTable("schedule_subject_lecturers"); e.HasKey(x => x.Id); e.Property(x => x.SubjectCode).HasMaxLength(64); e.Property(x => x.LecturerKey).HasMaxLength(400); e.Property(x => x.LecturerDisplayName).HasMaxLength(200); e.Property(x => x.LecturerUserId).HasMaxLength(100); e.Property(x => x.LecturerEmail).HasMaxLength(320); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100);
+            e.HasIndex(x => new { x.ScheduleId, x.SubjectCode, x.LecturerKey }).IsUnique();
+            e.HasOne(x => x.Schedule).WithMany(x => x.SubjectLecturers).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
         });
         b.Entity<ScheduleEntry>(e =>
         {

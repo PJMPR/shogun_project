@@ -20,6 +20,8 @@ public sealed class ScheduleController(IScheduleService service) : ControllerBas
     [HttpPost("{id:guid}/lecturers"), Authorize(Roles = "admin,planner")] public Task<ScheduleLecturerDto> AddLecturer(Guid id, SaveScheduleLecturerRequest request, CancellationToken ct) => service.AddLecturerAsync(id, request, User.ToCurrentUser(), ct);
     [HttpPut("{id:guid}/lecturers/{lecturerId:guid}"), Authorize(Roles = "admin")] public Task<ScheduleLecturerDto> UpdateLecturer(Guid id, Guid lecturerId, SaveScheduleLecturerRequest request, CancellationToken ct) => service.UpdateLecturerAsync(id, lecturerId, request, User.ToCurrentUser(), ct);
     [HttpDelete("{id:guid}/lecturers/{lecturerId:guid}"), Authorize(Roles = "admin")] public async Task<IActionResult> DeleteLecturer(Guid id, Guid lecturerId, CancellationToken ct) { await service.DeleteLecturerAsync(id, lecturerId, ct); return NoContent(); }
+    [HttpPost("{id:guid}/subject-lecturers"), Authorize(Roles = "admin,planner")] public Task<ScheduleSubjectLecturerDto> AddSubjectLecturer(Guid id, AddScheduleSubjectLecturerRequest request, CancellationToken ct) => service.AddSubjectLecturerAsync(id, request, User.ToCurrentUser(), ct);
+    [HttpDelete("{id:guid}/subject-lecturers/{assignmentId:guid}"), Authorize(Roles = "admin,planner")] public async Task<IActionResult> DeleteSubjectLecturer(Guid id, Guid assignmentId, CancellationToken ct) { await service.DeleteSubjectLecturerAsync(id, assignmentId, ct); return NoContent(); }
 }
 
 [ApiController, Route("api/v1")]

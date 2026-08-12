@@ -6,7 +6,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
-import { ScheduleEntry, ScheduleLecturer, ScheduleSubject, StudyMode } from '../../models/schedule.models';
+import { ScheduleEntry, ScheduleLecturer, ScheduleSubject, ScheduleSubjectLecturer, StudyMode } from '../../models/schedule.models';
 import { DesideratumOption } from '../../services/lecturer-desiderata.service';
 import { MockDataService } from '../../services/mock-data.service';
 
@@ -32,7 +32,10 @@ interface LecturerChoice {
   name: string;
   email?: string;
   userId?: string;
+  assignmentId?: number;
 }
+
+interface ColumnLecturer extends LecturerChoice { persistedAssignment?: ScheduleSubjectLecturer }
 
 const STAC_DAYS: DayOption[] = [
   { label: 'Poniedziałek', value: 0 },
@@ -114,18 +117,22 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
                     }
                   </div>
                   <div class="lecturers-list">
-                    @for (item of column.lecturers; track item.assignmentId + ':' + item.id) {
-                      <button type="button" class="desideratum-card" (click)="applyDesideratum(item)">
-                        {{ item.lecturerName }}
-                      </button>
+                    @for (item of columnLecturers(column); track item.key) {
+                      <div class="lecturer-card-row">
+                        <button type="button" class="desideratum-card" (click)="applyColumnLecturer(column, item)">{{ item.name }}</button>
+                        @if (item.persistedAssignment) {
+                          <button type="button" class="remove-assignment" title="Odepnij od przedmiotu" (click)="removeSubjectLecturer(item.persistedAssignment)"><i class="pi pi-times"></i></button>
+                        }
+                      </div>
                     }
                     <p-select
-                      [options]="lecturerOptions()"
+                      [options]="availableLecturers(column)"
                       optionLabel="name"
                       placeholder="Wybierz prowadzącego"
                       appendTo="body"
                       class="lecturer-select"
-                      (onChange)="applyLecturer(column, $event.value)"
+                      [disabled]="availableLecturers(column).length === 0"
+                      (onChange)="addSubjectLecturer(column, $event.value)"
                     />
                   </div>
                 </section>
@@ -345,6 +352,9 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         background: var(--p-surface-0, white);
         cursor: pointer;
       }
+      .lecturer-card-row { display: flex; align-items: stretch; gap: 0.2rem; }
+      .lecturer-card-row .desideratum-card { flex: 1; }
+      .remove-assignment { flex: 0 0 24px; padding: 0; border: 1px solid var(--p-surface-300); border-radius: 5px; color: var(--p-red-600); background: var(--p-surface-0); cursor: pointer; }
       .desideratum-card:hover {
         border-color: var(--p-primary-400);
         background: var(--p-primary-50);
@@ -422,7 +432,7 @@ export class EntryDialogComponent {
     const choices = new Map<string, LecturerChoice>();
     for (const item of this.desiderata()) {
       const key = this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName);
-      if (!choices.has(key)) choices.set(key, { key, name: item.lecturerName, email: item.lecturerEmail, userId: item.lecturerUserId });
+      if (!choices.has(key)) choices.set(key, { key, name: item.lecturerName, email: item.lecturerEmail, userId: item.lecturerUserId, assignmentId: item.assignmentId });
     }
     for (const item of this.mockData.lecturers()) {
       const key = this.lecturerKey(undefined, item.email, item.displayName);
@@ -521,10 +531,35 @@ export class EntryDialogComponent {
     await this.catalogAction(async () => { await this.mockData.deleteLecturer(lecturer.id); });
   }
 
-  protected applyLecturer(column: DesiderataSubjectColumn, lecturer: LecturerChoice): void {
+  protected columnLecturers(column: DesiderataSubjectColumn): ColumnLecturer[] {
+    const items = new Map<string, ColumnLecturer>();
+    for (const item of column.lecturers) {
+      const key = this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName);
+      items.set(key, { key, name: item.lecturerName, email: item.lecturerEmail, userId: item.lecturerUserId, assignmentId: item.assignmentId });
+    }
+    for (const item of this.mockData.subjectLecturers().filter((x) => x.subjectCode.toLocaleUpperCase('pl-PL') === column.code.toLocaleUpperCase('pl-PL'))) {
+      if (!items.has(item.lecturerKey)) items.set(item.lecturerKey, { key: item.lecturerKey, name: item.lecturerDisplayName, email: item.lecturerEmail, userId: item.lecturerUserId, assignmentId: item.lecturerAssignmentId, persistedAssignment: item });
+    }
+    return [...items.values()];
+  }
+
+  protected availableLecturers(column: DesiderataSubjectColumn): LecturerChoice[] {
+    const assigned = new Set(this.columnLecturers(column).map((item) => item.key));
+    return this.lecturerOptions().filter((item) => !assigned.has(item.key));
+  }
+
+  protected async addSubjectLecturer(column: DesiderataSubjectColumn, lecturer: LecturerChoice): Promise<void> {
+    await this.catalogAction(async () => { await this.mockData.addSubjectLecturer(column.code, lecturer); });
+  }
+
+  protected async removeSubjectLecturer(item: ScheduleSubjectLecturer): Promise<void> {
+    await this.catalogAction(async () => { await this.mockData.deleteSubjectLecturer(item.id); });
+  }
+
+  protected applyColumnLecturer(column: DesiderataSubjectColumn, lecturer: ColumnLecturer): void {
     const desideratum = column.lecturers.find((item) => this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName) === lecturer.key);
     if (desideratum) { this.applyDesideratum(desideratum); return; }
-    this.form = { ...this.form, subjectName: column.name, subjectCode: column.code, lecturerName: lecturer.name, lecturerEmail: lecturer.email ?? '', lecturerUserId: lecturer.userId ?? '', lecturerAssignmentId: undefined };
+    this.form = { ...this.form, subjectName: column.name, subjectCode: column.code, lecturerName: lecturer.name, lecturerEmail: lecturer.email ?? '', lecturerUserId: lecturer.userId ?? '', lecturerAssignmentId: lecturer.assignmentId };
   }
 
   protected applyDesideratum(item: DesideratumOption): void {

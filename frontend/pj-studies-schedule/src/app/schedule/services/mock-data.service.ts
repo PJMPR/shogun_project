@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { ScheduleEntry, ScheduleGroup, ScheduleLecturer, SchedulePlan, SchedulePlanSummary, ScheduleSubject, StudyMode } from '../models/schedule.models';
+import { ScheduleEntry, ScheduleGroup, ScheduleLecturer, SchedulePlan, SchedulePlanSummary, ScheduleSubject, ScheduleSubjectLecturer, StudyMode } from '../models/schedule.models';
 
 interface ApiEntry {
   id: string; subjectSource?: string; subjectExternalId?: string; subjectCode?: string; subjectName: string;
@@ -18,6 +18,7 @@ interface PlanWorkingCopy {
   groups: ScheduleGroup[];
   subjects: ScheduleSubject[];
   lecturers: ScheduleLecturer[];
+  subjectLecturers: ScheduleSubjectLecturer[];
   conflictContextEntries: ScheduleEntry[];
   dirty: boolean;
   stale: boolean;
@@ -36,6 +37,7 @@ export class MockDataService {
   readonly groups = signal<ScheduleGroup[]>([]);
   readonly subjects = signal<ScheduleSubject[]>([]);
   readonly lecturers = signal<ScheduleLecturer[]>([]);
+  readonly subjectLecturers = signal<ScheduleSubjectLecturer[]>([]);
   readonly plans = signal<SchedulePlanSummary[]>([]);
   readonly current = signal<SchedulePlanSummary | null>(null);
   readonly loading = signal(false);
@@ -181,6 +183,15 @@ export class MockDataService {
     const plan = this.current(); if (!plan) return;
     await firstValueFrom(this.http.delete(`${this.base}/${plan.id}/lecturers/${id}`)); this.lecturers.update((items) => items.filter((x) => x.id !== id)); this.rememberCatalogs();
   }
+  async addSubjectLecturer(subjectCode: string, lecturer: { key: string; name: string; userId?: string; email?: string; assignmentId?: number }): Promise<ScheduleSubjectLecturer> {
+    const plan = this.current(); if (!plan) throw new Error('Brak aktywnego planu.');
+    const item = await firstValueFrom(this.http.post<ScheduleSubjectLecturer>(`${this.base}/${plan.id}/subject-lecturers`, { subjectCode, lecturerKey: lecturer.key, lecturerDisplayName: lecturer.name, lecturerUserId: lecturer.userId || null, lecturerEmail: lecturer.email || null, lecturerAssignmentId: lecturer.assignmentId }));
+    this.subjectLecturers.update((items) => [...items, item]); this.rememberCatalogs(); return item;
+  }
+  async deleteSubjectLecturer(id: string): Promise<void> {
+    const plan = this.current(); if (!plan) return;
+    await firstValueFrom(this.http.delete(`${this.base}/${plan.id}/subject-lecturers/${id}`)); this.subjectLecturers.update((items) => items.filter((x) => x.id !== id)); this.rememberCatalogs();
+  }
 
   private markDirty(): void { if (this.current()) this.dirty.set(true); }
   private bumpWorkingCopies(): void { this.workingCopyRevision.update((value) => value + 1); }
@@ -191,7 +202,7 @@ export class MockDataService {
       summary: { ...summary }, originalStatus: this.workingCopies.get(summary.id)?.originalStatus ?? summary.status,
       entries: this.entries().map((entry) => ({ ...entry })),
       groups: this.groups().map((group) => ({ ...group })),
-      subjects: this.subjects().map((item) => ({ ...item })), lecturers: this.lecturers().map((item) => ({ ...item })),
+      subjects: this.subjects().map((item) => ({ ...item })), lecturers: this.lecturers().map((item) => ({ ...item })), subjectLecturers: this.subjectLecturers().map((item) => ({ ...item })),
       conflictContextEntries: this.conflictContextEntries().map((entry) => ({ ...entry })),
       dirty: this.dirty(), stale: this.stale(), error: this.error(),
     });
@@ -201,7 +212,7 @@ export class MockDataService {
     this.current.set({ ...copy.summary });
     this.entries.set(copy.entries.map((entry) => ({ ...entry })));
     this.groups.set(copy.groups.map((group) => ({ ...group })));
-    this.subjects.set(copy.subjects.map((item) => ({ ...item }))); this.lecturers.set(copy.lecturers.map((item) => ({ ...item })));
+    this.subjects.set(copy.subjects.map((item) => ({ ...item }))); this.lecturers.set(copy.lecturers.map((item) => ({ ...item }))); this.subjectLecturers.set(copy.subjectLecturers.map((item) => ({ ...item })));
     const relatedEntries = [...this.workingCopies.values()]
       .filter((item) => item.summary.academicYear === copy.summary.academicYear && item.summary.semesterNumber % 2 === copy.summary.semesterNumber % 2)
       .flatMap((item) => item.entries.map((entry) => ({ ...entry })));
@@ -209,13 +220,13 @@ export class MockDataService {
     this.dirty.set(copy.dirty); this.stale.set(copy.stale); this.error.set(copy.error);
   }
   private clearActivePlan(): void {
-    this.current.set(null); this.entries.set([]); this.groups.set([]); this.subjects.set([]); this.lecturers.set([]); this.conflictContextEntries.set([]);
+    this.current.set(null); this.entries.set([]); this.groups.set([]); this.subjects.set([]); this.lecturers.set([]); this.subjectLecturers.set([]); this.conflictContextEntries.set([]);
     this.dirty.set(false); this.stale.set(false); this.error.set(null);
   }
   private workingCopyFromApi(plan: ApiPlan): PlanWorkingCopy {
     const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
-    const { entries: _entries, groups: _groups, subjects: _subjects, lecturers: _lecturers, ...summary } = plan;
-    return { summary, originalStatus: summary.status, entries: this.mapEntries(plan, groups), groups, subjects: plan.subjects ?? [], lecturers: plan.lecturers ?? [], conflictContextEntries: [], dirty: false, stale: false, error: null };
+    const { entries: _entries, groups: _groups, subjects: _subjects, lecturers: _lecturers, subjectLecturers: _subjectLecturers, ...summary } = plan;
+    return { summary, originalStatus: summary.status, entries: this.mapEntries(plan, groups), groups, subjects: plan.subjects ?? [], lecturers: plan.lecturers ?? [], subjectLecturers: plan.subjectLecturers ?? [], conflictContextEntries: [], dirty: false, stale: false, error: null };
   }
   private async saveWorkingCopy(copy: PlanWorkingCopy): Promise<ApiPlan> {
     if (copy.stale) throw new Error(`Plan ${copy.summary.semesterNumber} wymaga odświeżenia.`);
@@ -274,15 +285,15 @@ export class MockDataService {
   private applyPlan(plan: ApiPlan): void {
     const groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder);
     this.groups.set(groups);
-    this.subjects.set(plan.subjects ?? []); this.lecturers.set(plan.lecturers ?? []);
+    this.subjects.set(plan.subjects ?? []); this.lecturers.set(plan.lecturers ?? []); this.subjectLecturers.set(plan.subjectLecturers ?? []);
     this.entries.set(this.mapEntries(plan, groups));
-    const { entries: _entries, groups: _groups, subjects: _subjects, lecturers: _lecturers, ...summary } = plan;
+    const { entries: _entries, groups: _groups, subjects: _subjects, lecturers: _lecturers, subjectLecturers: _subjectLecturers, ...summary } = plan;
     this.current.set(summary);
   }
   private rememberCatalogs(): void {
     const plan = this.current(); if (!plan) return;
     const copy = this.workingCopies.get(plan.id); if (!copy) return;
-    copy.subjects = this.subjects().map((item) => ({ ...item })); copy.lecturers = this.lecturers().map((item) => ({ ...item })); this.bumpWorkingCopies();
+    copy.subjects = this.subjects().map((item) => ({ ...item })); copy.lecturers = this.lecturers().map((item) => ({ ...item })); copy.subjectLecturers = this.subjectLecturers().map((item) => ({ ...item })); this.bumpWorkingCopies();
   }
   private mapEntries(plan: ApiPlan, groups = [...plan.groups].sort((a, b) => a.sortOrder - b.sortOrder)): ScheduleEntry[] {
     return plan.entries.map((e) => {

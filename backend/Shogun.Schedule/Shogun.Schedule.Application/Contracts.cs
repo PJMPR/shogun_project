@@ -8,7 +8,8 @@ public sealed record GroupDto(Guid Id, string Code, string Name, int SortOrder, 
 public sealed record EntryDto(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds, Guid ConcurrencyToken, int CommentCount);
 public sealed record ScheduleSubjectDto(Guid Id, string Code, string Name);
 public sealed record ScheduleLecturerDto(Guid Id, string DisplayName, string? Email);
-public sealed record ScheduleDto(Guid Id, string FacultyCode, string FacultyName, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name, ScheduleStatus Status, Guid ConcurrencyToken, DateTimeOffset UpdatedAt, string? UpdatedBy, IReadOnlyList<GroupDto> Groups, IReadOnlyList<EntryDto> Entries, IReadOnlyList<ScheduleSubjectDto> Subjects, IReadOnlyList<ScheduleLecturerDto> Lecturers);
+public sealed record ScheduleSubjectLecturerDto(Guid Id, string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
+public sealed record ScheduleDto(Guid Id, string FacultyCode, string FacultyName, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name, ScheduleStatus Status, Guid ConcurrencyToken, DateTimeOffset UpdatedAt, string? UpdatedBy, IReadOnlyList<GroupDto> Groups, IReadOnlyList<EntryDto> Entries, IReadOnlyList<ScheduleSubjectDto> Subjects, IReadOnlyList<ScheduleLecturerDto> Lecturers, IReadOnlyList<ScheduleSubjectLecturerDto> SubjectLecturers);
 public sealed record CreateScheduleRequest(string FacultyCode, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name);
 public sealed record SaveGroupRequest(Guid Id, string Code, string Name, int SortOrder);
 public sealed record SaveEntryRequest(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string? LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds);
@@ -19,6 +20,7 @@ public sealed record AddCommentRequest(string Body);
 public sealed record EditCommentRequest(string Body);
 public sealed record SaveScheduleSubjectRequest(string Code, string Name);
 public sealed record SaveScheduleLecturerRequest(string DisplayName, string? Email);
+public sealed record AddScheduleSubjectLecturerRequest(string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
 
 public sealed class NotFoundException(string message) : Exception(message);
 public sealed class ConflictException(string message) : Exception(message);
@@ -35,6 +37,7 @@ public interface IScheduleRepository
     Task AddCommentAsync(ScheduleComment comment, CancellationToken ct);
     Task AddSubjectAsync(ScheduleSubject subject, CancellationToken ct);
     Task AddLecturerAsync(ScheduleLecturer lecturer, CancellationToken ct);
+    Task AddSubjectLecturerAsync(ScheduleSubjectLecturer item, CancellationToken ct);
     Task DeleteAsync(SchedulePlan schedule, CancellationToken ct);
     Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct);
     Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct);
@@ -65,4 +68,6 @@ public interface IScheduleService
     Task<ScheduleLecturerDto> AddLecturerAsync(Guid scheduleId, SaveScheduleLecturerRequest request, CurrentUser user, CancellationToken ct);
     Task<ScheduleLecturerDto> UpdateLecturerAsync(Guid scheduleId, Guid lecturerId, SaveScheduleLecturerRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteLecturerAsync(Guid scheduleId, Guid lecturerId, CancellationToken ct);
+    Task<ScheduleSubjectLecturerDto> AddSubjectLecturerAsync(Guid scheduleId, AddScheduleSubjectLecturerRequest request, CurrentUser user, CancellationToken ct);
+    Task DeleteSubjectLecturerAsync(Guid scheduleId, Guid assignmentId, CancellationToken ct);
 }
