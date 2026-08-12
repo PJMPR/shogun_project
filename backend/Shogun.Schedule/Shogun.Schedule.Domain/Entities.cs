@@ -32,6 +32,38 @@ public sealed class SchedulePlan
     public string? UpdatedByUserId { get; set; }
     public List<StudentGroup> Groups { get; set; } = [];
     public List<ScheduleEntry> Entries { get; set; } = [];
+    public List<ScheduleSubject> Subjects { get; set; } = [];
+    public List<ScheduleLecturer> Lecturers { get; set; } = [];
+}
+
+public sealed class ScheduleSubject
+{
+    public Guid Id { get; set; }
+    public Guid ScheduleId { get; set; }
+    public SchedulePlan Schedule { get; set; } = null!;
+    public string Code { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public DateTimeOffset CreatedAt { get; set; }
+    public string? CreatedBy { get; set; }
+    public string? CreatedByUserId { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
+    public string? UpdatedBy { get; set; }
+    public string? UpdatedByUserId { get; set; }
+}
+
+public sealed class ScheduleLecturer
+{
+    public Guid Id { get; set; }
+    public Guid ScheduleId { get; set; }
+    public SchedulePlan Schedule { get; set; } = null!;
+    public string DisplayName { get; set; } = string.Empty;
+    public string? Email { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public string? CreatedBy { get; set; }
+    public string? CreatedByUserId { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
+    public string? UpdatedBy { get; set; }
+    public string? UpdatedByUserId { get; set; }
 }
 
 public sealed class StudentGroup

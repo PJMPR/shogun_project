@@ -126,6 +126,8 @@ public sealed class ScheduleServiceTests
         public Task AddGroupAsync(StudentGroup group, CancellationToken ct) { AddedGroupIds.Add(group.Id); return Task.CompletedTask; }
         public Task AddEntryAsync(ScheduleEntry entry, CancellationToken ct) => Task.CompletedTask;
         public Task AddCommentAsync(ScheduleComment comment, CancellationToken ct) { CommentAdded = true; return Task.CompletedTask; }
+        public Task AddSubjectAsync(ScheduleSubject subject, CancellationToken ct) => Task.CompletedTask;
+        public Task AddLecturerAsync(ScheduleLecturer lecturer, CancellationToken ct) => Task.CompletedTask;
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleComment?>(null);
         public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult(Schedule.Entries.FirstOrDefault(x => x.Id == id));

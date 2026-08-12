@@ -139,6 +139,28 @@
   font-size: .78rem;
 }
 
+.lecturer-button {
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - 26px);
+  padding: 0;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lecturer-button:hover {
+  color: var(--p-primary-700);
+  text-decoration: underline dotted;
+}
+
+.lecturer-select {
+  width: 100%;
+  min-width: 0;
+  font-size: .68rem;
+}
+
 .room-button {
   display: block;
   width: fit-content;

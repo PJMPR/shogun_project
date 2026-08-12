@@ -9,7 +9,7 @@ import { EntryDialogComponent } from '../../components/entry-dialog/entry-dialog
 import { ConflictDetectionService } from '../../services/conflict-detection.service';
 import { MockDataService } from '../../services/mock-data.service';
 import { DesideratumOption, LecturerDesiderataService } from '../../services/lecturer-desiderata.service';
-import { ScheduleEntry, ScheduleFilters, ScheduleGroup, SchedulePlanSummary, Semester, semesterTypeOf } from '../../models/schedule.models';
+import { ScheduleEntry, ScheduleFilters, ScheduleGroup, ScheduleLecturerOption, SchedulePlanSummary, Semester, semesterTypeOf } from '../../models/schedule.models';
 import { CommentsDrawerComponent } from '../../components/comments-drawer/comments-drawer.component';
 import { ScheduleCommentsService } from '../../services/schedule-comments.service';
 
@@ -114,11 +114,31 @@ export class WeeklyViewComponent {
       }))); 
   });
 
+  protected readonly lecturerOptions = computed<ScheduleLecturerOption[]>(() => {
+    const options = new Map<string, ScheduleLecturerOption>();
+    for (const item of this.desiderataOptions()) {
+      const key = this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName);
+      if (!options.has(key)) options.set(key, {
+        key, name: item.lecturerName, lecturerAssignmentId: item.assignmentId,
+        lecturerUserId: item.lecturerUserId, lecturerEmail: item.lecturerEmail,
+      });
+    }
+    for (const item of this.mockData.lecturers()) {
+      const key = this.lecturerKey(undefined, item.email, item.displayName);
+      if (!options.has(key)) options.set(key, { key, name: item.displayName, lecturerEmail: item.email });
+    }
+    return [...options.values()].sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+  });
+
   private normalizeSemesterType(value: string): Semester | null {
     const normalized = value.trim().toLocaleLowerCase('pl-PL');
     if (normalized.includes('zimow')) return 'zimowy';
     if (normalized.includes('letn')) return 'letni';
     return null;
+  }
+
+  private lecturerKey(userId: string | undefined, email: string | undefined, name: string): string {
+    return (userId || email || name).trim().toLocaleLowerCase('pl-PL');
   }
 
   private normalizeStudyMode(value: string): ScheduleFilters['mode'] | null {
@@ -340,6 +360,18 @@ export class WeeklyViewComponent {
     }
     catch { this.messageService.add({ severity: 'error', summary: 'Nie utworzono planu', detail: 'Spróbuj ponownie.' }); }
     finally { this.creatingPlan.set(false); }
+  }
+
+  protected onEntryLecturerChanged(event: { id: string; lecturer: ScheduleLecturerOption }): void {
+    const entry = this.mockData.entries().find((item) => item.id === event.id);
+    if (!entry) return;
+    this.mockData.updateEntry({
+      ...entry,
+      lecturerName: event.lecturer.name,
+      lecturerAssignmentId: event.lecturer.lecturerAssignmentId,
+      lecturerUserId: event.lecturer.lecturerUserId ?? '',
+      lecturerEmail: event.lecturer.lecturerEmail ?? '',
+    });
   }
 
   protected async saveChanges(): Promise<void> {

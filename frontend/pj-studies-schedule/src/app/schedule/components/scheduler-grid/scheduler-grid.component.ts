@@ -1,6 +1,6 @@
 import { CdkDrag, CdkDragEnd, CdkDragHandle, CdkDragStart } from '@angular/cdk/drag-drop';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output, signal } from '@angular/core';
-import { ScheduleEntry } from '../../models/schedule.models';
+import { ScheduleEntry, ScheduleLecturerOption } from '../../models/schedule.models';
 import { ScheduleBlockComponent } from '../schedule-block/schedule-block.component';
 import { LecturerAvailability } from '../../services/lecturer-desiderata.service';
 
@@ -28,6 +28,7 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   readonly rowHeightPx = input(40);
   readonly availabilityByAssignment = input<Record<number, LecturerAvailability[]>>({});
   readonly commentCounts = input<Partial<Record<string, number>>>({});
+  readonly lecturerOptions = input<ScheduleLecturerOption[]>([]);
 
   readonly entryMoved = output<{ id: string; newDay: number; newGroup: number; newStartHour: number }>();
   readonly entryResized = output<{ id: string; newDurationHours: number }>();
@@ -38,6 +39,7 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   readonly placementRejected = output<void>();
   readonly commentsRequested = output<string>();
   readonly entryRoomChanged = output<{ id: string; room: string }>();
+  readonly entryLecturerChanged = output<{ id: string; lecturer: ScheduleLecturerOption }>();
 
   @ViewChild('surface') private surfaceRef!: ElementRef<HTMLElement>;
 

@@ -155,6 +155,59 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         comment.DeletedAt = DateTimeOffset.UtcNow; comment.DeletedBy = user.Email; comment.DeletedByUserId = user.UserId; await repository.SaveChangesAsync(ct);
     }
 
+    public async Task<ScheduleSubjectDto> AddSubjectAsync(Guid scheduleId, SaveScheduleSubjectRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var (code, name) = ValidateSubject(request);
+        if (schedule.Subjects.Any(x => string.Equals(x.Code, code, StringComparison.OrdinalIgnoreCase))) throw new ConflictException("Przedmiot o tym kodzie już istnieje w planie.");
+        var now = DateTimeOffset.UtcNow;
+        var subject = new ScheduleSubject { Id = Guid.NewGuid(), ScheduleId = scheduleId, Schedule = schedule, Code = code, Name = name, CreatedAt = now, UpdatedAt = now, CreatedBy = user.Email, CreatedByUserId = user.UserId, UpdatedBy = user.Email, UpdatedByUserId = user.UserId };
+        schedule.Subjects.Add(subject); await repository.AddSubjectAsync(subject, ct); await repository.SaveChangesAsync(ct); return MapSubject(subject);
+    }
+
+    public async Task<ScheduleSubjectDto> UpdateSubjectAsync(Guid scheduleId, Guid subjectId, SaveScheduleSubjectRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var subject = schedule.Subjects.FirstOrDefault(x => x.Id == subjectId) ?? throw new NotFoundException("Przedmiot nie istnieje.");
+        var (code, name) = ValidateSubject(request);
+        if (schedule.Subjects.Any(x => x.Id != subjectId && string.Equals(x.Code, code, StringComparison.OrdinalIgnoreCase))) throw new ConflictException("Przedmiot o tym kodzie już istnieje w planie.");
+        subject.Code = code; subject.Name = name; subject.UpdatedAt = DateTimeOffset.UtcNow; subject.UpdatedBy = user.Email; subject.UpdatedByUserId = user.UserId;
+        await repository.SaveChangesAsync(ct); return MapSubject(subject);
+    }
+
+    public async Task DeleteSubjectAsync(Guid scheduleId, Guid subjectId, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var subject = schedule.Subjects.FirstOrDefault(x => x.Id == subjectId) ?? throw new NotFoundException("Przedmiot nie istnieje.");
+        schedule.Subjects.Remove(subject); await repository.SaveChangesAsync(ct);
+    }
+
+    public async Task<ScheduleLecturerDto> AddLecturerAsync(Guid scheduleId, SaveScheduleLecturerRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var (name, email) = ValidateLecturer(request);
+        EnsureUniqueLecturer(schedule, name, email);
+        var now = DateTimeOffset.UtcNow;
+        var lecturer = new ScheduleLecturer { Id = Guid.NewGuid(), ScheduleId = scheduleId, Schedule = schedule, DisplayName = name, Email = email, CreatedAt = now, UpdatedAt = now, CreatedBy = user.Email, CreatedByUserId = user.UserId, UpdatedBy = user.Email, UpdatedByUserId = user.UserId };
+        schedule.Lecturers.Add(lecturer); await repository.AddLecturerAsync(lecturer, ct); await repository.SaveChangesAsync(ct); return MapLecturer(lecturer);
+    }
+
+    public async Task<ScheduleLecturerDto> UpdateLecturerAsync(Guid scheduleId, Guid lecturerId, SaveScheduleLecturerRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var lecturer = schedule.Lecturers.FirstOrDefault(x => x.Id == lecturerId) ?? throw new NotFoundException("Wykładowca nie istnieje.");
+        var (name, email) = ValidateLecturer(request); EnsureUniqueLecturer(schedule, name, email, lecturerId);
+        lecturer.DisplayName = name; lecturer.Email = email; lecturer.UpdatedAt = DateTimeOffset.UtcNow; lecturer.UpdatedBy = user.Email; lecturer.UpdatedByUserId = user.UserId;
+        await repository.SaveChangesAsync(ct); return MapLecturer(lecturer);
+    }
+
+    public async Task DeleteLecturerAsync(Guid scheduleId, Guid lecturerId, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var lecturer = schedule.Lecturers.FirstOrDefault(x => x.Id == lecturerId) ?? throw new NotFoundException("Wykładowca nie istnieje.");
+        schedule.Lecturers.Remove(lecturer); await repository.SaveChangesAsync(ct);
+    }
+
     private static void EnsureCommentable(SchedulePlan schedule, CurrentUser user)
     {
         if (schedule.Status != ScheduleStatus.Published && user.Role is not ("planner" or "admin"))
@@ -197,9 +250,24 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     }
 
     private static StudentGroup NewGroup(Guid scheduleId, string code, string name, int order, CurrentUser actor, DateTimeOffset now) => new() { Id = Guid.NewGuid(), ScheduleId = scheduleId, Code = code.Trim().ToUpperInvariant(), Name = name.Trim(), SortOrder = order, ConcurrencyToken = Guid.NewGuid(), CreatedAt = now, UpdatedAt = now, CreatedBy = actor.Email, CreatedByUserId = actor.UserId, UpdatedBy = actor.Email, UpdatedByUserId = actor.UserId };
+    private static (string Code, string Name) ValidateSubject(SaveScheduleSubjectRequest request) => (Required(request.Code, "Kod przedmiotu").ToUpperInvariant(), Required(request.Name, "Nazwa przedmiotu"));
+    private static (string Name, string? Email) ValidateLecturer(SaveScheduleLecturerRequest request)
+    {
+        var name = Required(request.DisplayName, "Imię i nazwisko wykładowcy");
+        var email = string.IsNullOrWhiteSpace(request.Email) ? null : request.Email.Trim().ToLowerInvariant();
+        if (email is not null && !email.Contains('@')) throw new ValidationException("Nieprawidłowy e-mail wykładowcy.");
+        return (name, email);
+    }
+    private static void EnsureUniqueLecturer(SchedulePlan schedule, string name, string? email, Guid? exceptId = null)
+    {
+        if (schedule.Lecturers.Any(x => x.Id != exceptId && ((email is not null && string.Equals(x.Email, email, StringComparison.OrdinalIgnoreCase)) || string.Equals(x.DisplayName, name, StringComparison.OrdinalIgnoreCase))))
+            throw new ConflictException("Wykładowca już istnieje w planie.");
+    }
     private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; e.LecturerUserId = string.IsNullOrWhiteSpace(d.LecturerUserId) ? null : d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName?.Trim() ?? ""; e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
     private static string Required(string? value, string field) => !string.IsNullOrWhiteSpace(value) ? value.Trim() : throw new ValidationException($"{field} jest wymagane.");
     private static ScheduleSummaryDto MapSummary(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy);
-    private static ScheduleDto Map(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList());
+    private static ScheduleDto Map(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList(), x.Subjects.OrderBy(s => s.Name).Select(MapSubject).ToList(), x.Lecturers.OrderBy(l => l.DisplayName).Select(MapLecturer).ToList());
+    private static ScheduleSubjectDto MapSubject(ScheduleSubject x) => new(x.Id, x.Code, x.Name);
+    private static ScheduleLecturerDto MapLecturer(ScheduleLecturer x) => new(x.Id, x.DisplayName, x.Email);
     private static CommentDto MapComment(ScheduleComment x, CurrentUser user) => new(x.Id, x.ScheduleEntryId, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal));
 }

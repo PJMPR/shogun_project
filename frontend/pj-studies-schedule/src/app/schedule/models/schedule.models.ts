@@ -43,8 +43,17 @@ export interface ScheduleEntry {
 }
 
 export interface ScheduleGroup { id: string; code: string; name: string; sortOrder: number; concurrencyToken?: string }
+export interface ScheduleSubject { id: string; code: string; name: string }
+export interface ScheduleLecturer { id: string; displayName: string; email?: string }
+export interface ScheduleLecturerOption {
+  key: string;
+  name: string;
+  lecturerAssignmentId?: number;
+  lecturerUserId?: string;
+  lecturerEmail?: string;
+}
 export interface SchedulePlanSummary { id: string; facultyCode: string; facultyName: string; academicYear: string; semesterNumber: number; studyMode: 'stationary' | 'partTime'; name: string; status: 'draft' | 'published'; concurrencyToken: string; updatedAt: string; updatedBy?: string }
-export interface SchedulePlan extends SchedulePlanSummary { groups: ScheduleGroup[]; entries: ScheduleEntry[] }
+export interface SchedulePlan extends SchedulePlanSummary { groups: ScheduleGroup[]; entries: ScheduleEntry[]; subjects: ScheduleSubject[]; lecturers: ScheduleLecturer[] }
 
 export interface ConflictInfo {
   entryId: string;

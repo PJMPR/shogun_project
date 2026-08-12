@@ -1,12 +1,14 @@
-import { Component, output, input } from '@angular/core';
+import { Component, computed, inject, output, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
-import { ScheduleEntry, StudyMode } from '../../models/schedule.models';
+import { MessageService } from 'primeng/api';
+import { ScheduleEntry, ScheduleLecturer, ScheduleSubject, StudyMode } from '../../models/schedule.models';
 import { DesideratumOption } from '../../services/lecturer-desiderata.service';
+import { MockDataService } from '../../services/mock-data.service';
 
 type EntryForm = Omit<ScheduleEntry, 'id'>;
 
@@ -15,6 +17,21 @@ type EntryForm = Omit<ScheduleEntry, 'id'>;
 interface DayOption {
   label: string;
   value: number;
+}
+
+interface DesiderataSubjectColumn {
+  key: string;
+  code: string;
+  name: string;
+  customSubject?: ScheduleSubject;
+  lecturers: DesideratumOption[];
+}
+
+interface LecturerChoice {
+  key: string;
+  name: string;
+  email?: string;
+  userId?: string;
 }
 
 const STAC_DAYS: DayOption[] = [
@@ -46,26 +63,72 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       [(visible)]="visible"
       [header]="isEditing ? 'Edytuj wpis' : 'Nowy wpis'"
       [modal]="true"
-      [style]="{ width: '920px', maxWidth: '96vw' }"
+      [style]="{ width: '1240px', maxWidth: '96vw' }"
       (onHide)="onHide()"
     >
       <div class="dialog-body">
         <aside class="desiderata-panel">
           <div class="desiderata-heading">Dezyderaty dla wybranego semestru</div>
+          <div class="catalog-tools">
+            <div class="catalog-form subject-form">
+              <input pInputText [(ngModel)]="newSubjectName" placeholder="Nazwa nowego przedmiotu" />
+              <input pInputText [(ngModel)]="newSubjectCode" placeholder="Kod" />
+              <p-button icon="pi pi-plus" label="Przedmiot" size="small" [loading]="catalogSaving" (onClick)="addSubject()" />
+            </div>
+            <div class="catalog-form lecturer-form">
+              <input pInputText [(ngModel)]="newLecturerName" placeholder="Imię i nazwisko wykładowcy" />
+              <input pInputText [(ngModel)]="newLecturerEmail" placeholder="E-mail (opcjonalnie)" />
+              <p-button icon="pi pi-user-plus" label="Wykładowca" size="small" [loading]="catalogSaving" (onClick)="addLecturer()" />
+            </div>
+            @if (customLecturers().length) {
+              <div class="custom-lecturers">
+                @for (lecturer of customLecturers(); track lecturer.id) {
+                  <span class="catalog-chip">
+                    {{ lecturer.displayName }}
+                    @if (isAdmin) {
+                      <button type="button" title="Edytuj" (click)="editLecturer(lecturer)"><i class="pi pi-pencil"></i></button>
+                      <button type="button" title="Usuń" (click)="deleteLecturer(lecturer)"><i class="pi pi-trash"></i></button>
+                    }
+                  </span>
+                }
+              </div>
+            }
+          </div>
           @if (desiderataLoading()) {
             <div class="desiderata-state">Pobieranie dezyderatów…</div>
           } @else if (desiderataError()) {
             <div class="desiderata-state error">{{ desiderataError() }}</div>
-          } @else if (desiderata().length === 0) {
+          } @else if (desiderataMatrix().length === 0) {
             <div class="desiderata-state">Brak pasujących przedmiotów.</div>
           } @else {
-            <div class="desiderata-list">
-              @for (item of desiderata(); track item.assignmentId + ':' + item.id) {
-                <button type="button" class="desideratum-card" (click)="applyDesideratum(item)">
-                  <strong>{{ item.name }}</strong>
-                  <span class="subject-code">{{ item.code || 'Brak kodu' }}</span>
-                  <span>{{ item.lecturerName }}</span>
-                </button>
+            <div class="desiderata-matrix">
+              @for (column of desiderataMatrix(); track column.key) {
+                <section class="subject-column">
+                  <div class="subject-heading" [title]="column.name">
+                    <span>{{ column.name }}</span>
+                    @if (column.customSubject && isAdmin) {
+                      <span class="heading-actions">
+                        <button type="button" title="Edytuj" (click)="editSubject(column.customSubject)"><i class="pi pi-pencil"></i></button>
+                        <button type="button" title="Usuń" (click)="deleteSubject(column.customSubject)"><i class="pi pi-trash"></i></button>
+                      </span>
+                    }
+                  </div>
+                  <div class="lecturers-list">
+                    @for (item of column.lecturers; track item.assignmentId + ':' + item.id) {
+                      <button type="button" class="desideratum-card" (click)="applyDesideratum(item)">
+                        {{ item.lecturerName }}
+                      </button>
+                    }
+                    <p-select
+                      [options]="lecturerOptions()"
+                      optionLabel="name"
+                      placeholder="Wybierz prowadzącego"
+                      appendTo="body"
+                      class="lecturer-select"
+                      (onChange)="applyLecturer(column, $event.value)"
+                    />
+                  </div>
+                </section>
               }
             </div>
           }
@@ -203,7 +266,7 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       }
       .dialog-body {
         display: grid;
-        grid-template-columns: minmax(230px, 0.8fr) minmax(320px, 1.2fr);
+        grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.85fr);
         gap: 1rem;
         max-height: 68vh;
       }
@@ -221,20 +284,61 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         font-weight: 600;
         color: var(--p-surface-700);
       }
-      .desiderata-list {
+      .catalog-tools { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.65rem; }
+      .catalog-form { display: grid; gap: 0.35rem; }
+      .subject-form { grid-template-columns: minmax(150px, 1fr) 90px auto; }
+      .lecturer-form { grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) auto; }
+      .catalog-form input { min-width: 0; width: 100%; font-size: 0.78rem; }
+      .custom-lecturers { display: flex; gap: 0.3rem; overflow-x: auto; padding-bottom: 2px; }
+      .catalog-chip { display: inline-flex; align-items: center; flex: 0 0 auto; gap: 0.2rem; padding: 0.25rem 0.4rem; font-size: 0.72rem; border-radius: 99px; color: var(--p-surface-700); background: var(--p-surface-100); }
+      .catalog-chip button, .heading-actions button { padding: 0.1rem; color: inherit; border: 0; background: transparent; cursor: pointer; }
+      .desiderata-matrix {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(170px, 1fr);
+        gap: 0.65rem;
+        min-height: 0;
+        overflow-x: auto;
+        padding: 2px 5px 8px 2px;
+      }
+      .subject-column {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 0;
+        border: 1px solid var(--p-surface-200);
+        border-radius: 8px;
+        background: var(--p-surface-50);
+        overflow: hidden;
+      }
+      .subject-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.4rem;
+        min-height: 3.2rem;
+        padding: 0.65rem;
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--p-surface-900);
+        border-bottom: 1px solid var(--p-surface-200);
+        background: var(--p-surface-100);
+      }
+      .heading-actions { display: inline-flex; flex: 0 0 auto; gap: 0.15rem; }
+      .lecturers-list {
         display: flex;
         flex-direction: column;
         gap: 0.4rem;
+        min-height: 0;
         overflow-y: auto;
-        padding: 2px 5px 2px 2px;
+        padding: 0.5rem;
       }
       .desideratum-card {
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
         width: 100%;
         padding: 0.6rem;
         text-align: left;
+        font-size: 0.82rem;
+        font-weight: 600;
         color: var(--p-surface-700);
         border: 1px solid var(--p-surface-300);
         border-radius: 7px;
@@ -245,9 +349,7 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         border-color: var(--p-primary-400);
         background: var(--p-primary-50);
       }
-      .desideratum-card strong { color: var(--p-surface-900); }
-      .desideratum-card span { font-size: 0.78rem; }
-      .desideratum-card .subject-code { color: var(--p-primary-600); font-weight: 600; }
+      .lecturer-select { width: 100%; margin-top: auto; font-size: 0.78rem; }
       .desiderata-state { padding: 1rem 0.25rem; font-size: 0.82rem; color: var(--p-surface-500); }
       .desiderata-state.error { color: var(--p-red-600); }
       .form-row {
@@ -276,17 +378,64 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       @media (max-width: 700px) {
         .dialog-body { grid-template-columns: 1fr; max-height: 72vh; overflow-y: auto; }
         .desiderata-panel { max-height: 230px; padding-right: 0; padding-bottom: 0.75rem; border-right: 0; border-bottom: 1px solid var(--p-surface-200); }
+        .desiderata-matrix { min-height: 170px; }
+        .subject-form, .lecturer-form { grid-template-columns: 1fr; }
       }
     `,
   ],
 })
 export class EntryDialogComponent {
+  private readonly mockData = inject(MockDataService);
+  private readonly messages = inject(MessageService);
   readonly saved = output<ScheduleEntry>();
   readonly deleted = output<string>();
   readonly groupsPerDay = input<Record<number, string[]>>({});
   readonly desiderata = input<DesideratumOption[]>([]);
   readonly desiderataLoading = input(false);
   readonly desiderataError = input<string | null>(null);
+  protected readonly customLecturers = this.mockData.lecturers;
+  protected readonly desiderataMatrix = computed<DesiderataSubjectColumn[]>(() => {
+    const columns = new Map<string, DesiderataSubjectColumn>();
+
+    for (const item of this.desiderata()) {
+      const normalizedCode = item.code?.trim().toLocaleUpperCase('pl-PL');
+      const key = normalizedCode || `name:${item.name.trim().toLocaleLowerCase('pl-PL')}`;
+      const existing = columns.get(key);
+
+      if (existing) {
+        existing.lecturers.push(item);
+      } else {
+        columns.set(key, { key, code: item.code ?? '', name: item.name, lecturers: [item] });
+      }
+    }
+
+    for (const subject of this.mockData.subjects()) {
+      const key = subject.code.trim().toLocaleUpperCase('pl-PL');
+      const existing = columns.get(key);
+      if (existing) existing.customSubject = subject;
+      else columns.set(key, { key, code: subject.code, name: subject.name, customSubject: subject, lecturers: [] });
+    }
+
+    return [...columns.values()];
+  });
+  protected readonly lecturerOptions = computed<LecturerChoice[]>(() => {
+    const choices = new Map<string, LecturerChoice>();
+    for (const item of this.desiderata()) {
+      const key = this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName);
+      if (!choices.has(key)) choices.set(key, { key, name: item.lecturerName, email: item.lecturerEmail, userId: item.lecturerUserId });
+    }
+    for (const item of this.mockData.lecturers()) {
+      const key = this.lecturerKey(undefined, item.email, item.displayName);
+      if (!choices.has(key)) choices.set(key, { key, name: item.displayName, email: item.email });
+    }
+    return [...choices.values()].sort((a, b) => a.name.localeCompare(b.name, 'pl'));
+  });
+  protected newSubjectName = '';
+  protected newSubjectCode = '';
+  protected newLecturerName = '';
+  protected newLecturerEmail = '';
+  protected catalogSaving = false;
+  protected readonly isAdmin = this.currentRoles().includes('admin');
 
   protected get groupOptions(): { label: string; value: number }[] {
     const groups = this.groupsPerDay()[this.form.dayOfWeek];
@@ -329,6 +478,53 @@ export class EntryDialogComponent {
     this.dayOptions = this.form.studyMode === 'niestacjonarny' ? NIESTAC_DAYS : STAC_DAYS;
     const valid = this.dayOptions.some((d) => d.value === this.form.dayOfWeek);
     if (!valid) this.form.dayOfWeek = this.dayOptions[0].value;
+  }
+
+  protected async addSubject(): Promise<void> {
+    const name = this.newSubjectName.trim(); const code = this.newSubjectCode.trim().toLocaleUpperCase('pl-PL');
+    if (!name || !code) { this.warn('Podaj nazwę i kod przedmiotu.'); return; }
+    if (this.desiderataMatrix().some((item) => item.key === code)) { this.warn('Przedmiot o tym kodzie już istnieje.'); return; }
+    await this.catalogAction(async () => {
+      await this.mockData.addSubject(code, name); this.newSubjectName = ''; this.newSubjectCode = '';
+      this.messages.add({ severity: 'success', summary: 'Dodano przedmiot', detail: name });
+    });
+  }
+
+  protected async addLecturer(): Promise<void> {
+    const name = this.newLecturerName.trim(); const email = this.newLecturerEmail.trim();
+    if (!name) { this.warn('Podaj imię i nazwisko wykładowcy.'); return; }
+    await this.catalogAction(async () => {
+      await this.mockData.addLecturer(name, email); this.newLecturerName = ''; this.newLecturerEmail = '';
+      this.messages.add({ severity: 'success', summary: 'Dodano wykładowcę', detail: name });
+    });
+  }
+
+  protected async editSubject(subject: ScheduleSubject): Promise<void> {
+    const name = window.prompt('Nazwa przedmiotu', subject.name)?.trim(); if (!name) return;
+    const code = window.prompt('Kod przedmiotu', subject.code)?.trim(); if (!code) return;
+    await this.catalogAction(async () => { await this.mockData.updateSubject(subject.id, code, name); });
+  }
+
+  protected async deleteSubject(subject: ScheduleSubject): Promise<void> {
+    if (!window.confirm(`Usunąć przedmiot „${subject.name}” z katalogu tego planu?`)) return;
+    await this.catalogAction(async () => { await this.mockData.deleteSubject(subject.id); });
+  }
+
+  protected async editLecturer(lecturer: ScheduleLecturer): Promise<void> {
+    const name = window.prompt('Imię i nazwisko wykładowcy', lecturer.displayName)?.trim(); if (!name) return;
+    const email = window.prompt('E-mail (opcjonalnie)', lecturer.email ?? '')?.trim(); if (email === undefined) return;
+    await this.catalogAction(async () => { await this.mockData.updateLecturer(lecturer.id, name, email); });
+  }
+
+  protected async deleteLecturer(lecturer: ScheduleLecturer): Promise<void> {
+    if (!window.confirm(`Usunąć wykładowcę „${lecturer.displayName}” z katalogu tego planu?`)) return;
+    await this.catalogAction(async () => { await this.mockData.deleteLecturer(lecturer.id); });
+  }
+
+  protected applyLecturer(column: DesiderataSubjectColumn, lecturer: LecturerChoice): void {
+    const desideratum = column.lecturers.find((item) => this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName) === lecturer.key);
+    if (desideratum) { this.applyDesideratum(desideratum); return; }
+    this.form = { ...this.form, subjectName: column.name, subjectCode: column.code, lecturerName: lecturer.name, lecturerEmail: lecturer.email ?? '', lecturerUserId: lecturer.userId ?? '', lecturerAssignmentId: undefined };
   }
 
   protected applyDesideratum(item: DesideratumOption): void {
@@ -400,4 +596,21 @@ export class EntryDialogComponent {
       academicYear: '2026/2027',
     };
   }
+
+  private lecturerKey(userId: string | undefined, email: string | undefined, name: string): string {
+    return (userId || email || name).trim().toLocaleLowerCase('pl-PL');
+  }
+
+  private currentRoles(): string[] {
+    try { return JSON.parse(sessionStorage.getItem('shogun_roles') ?? '[]'); } catch { return []; }
+  }
+
+  private async catalogAction(action: () => Promise<void>): Promise<void> {
+    if (this.catalogSaving) return; this.catalogSaving = true;
+    try { await action(); }
+    catch (error: any) { this.messages.add({ severity: 'error', summary: 'Nie udało się zapisać', detail: error?.error?.detail ?? 'Spróbuj ponownie.' }); }
+    finally { this.catalogSaving = false; }
+  }
+
+  private warn(detail: string): void { this.messages.add({ severity: 'warn', summary: 'Uzupełnij dane', detail }); }
 }

@@ -1,9 +1,11 @@
 import { Component, input, output, signal } from '@angular/core';
-import { ScheduleEntry, formatHour } from '../../models/schedule.models';
+import { FormsModule } from '@angular/forms';
+import { SelectModule } from 'primeng/select';
+import { ScheduleEntry, ScheduleLecturerOption, formatHour } from '../../models/schedule.models';
 
 @Component({
   selector: 'app-schedule-block',
-  imports: [],
+  imports: [FormsModule, SelectModule],
   template: `
     @if (entry(); as e) {
       <div
@@ -46,16 +48,28 @@ import { ScheduleEntry, formatHour } from '../../models/schedule.models';
         <div class="block-subject" [title]="e.subjectName">
           {{ compactLabels() ? (e.subjectCode || e.subjectName) : e.subjectName }}
         </div>
-        <div class="block-meta" [title]="e.lecturerName">
-          {{ compactLabels() ? initials(e.lecturerName) : e.lecturerName }}
-          @if (hasAvailabilityWarning()) {
-            <span
-              class="pi pi-exclamation-triangle availability-warning"
-              title="Termin poza zadeklarowaną dostępnością prowadzącego"
-              aria-label="Termin poza dostępnością prowadzącego"
-            ></span>
-          }
-        </div>
+        @if (editingLecturer()) {
+          <p-select
+            class="lecturer-select"
+            [options]="lecturerOptions()"
+            [ngModel]="lecturerKey(e)"
+            optionLabel="name"
+            optionValue="key"
+            appendTo="body"
+            placeholder="Wybierz wykładowcę"
+            (click)="$event.stopPropagation()"
+            (pointerdown)="$event.stopPropagation()"
+            (onChange)="selectLecturer($event, e.id)"
+            (onHide)="editingLecturer.set(false)"
+          />
+        } @else {
+          <button type="button" class="block-meta lecturer-button" [title]="e.lecturerName || 'Wybierz wykładowcę'" (click)="startLecturerEdit($event)">
+            {{ compactLabels() ? initials(e.lecturerName) : (e.lecturerName || 'Wybierz wykładowcę') }}
+            @if (hasAvailabilityWarning()) {
+              <span class="pi pi-exclamation-triangle availability-warning" title="Termin poza zadeklarowaną dostępnością prowadzącego"></span>
+            }
+          </button>
+        }
         @if (e.room) {
           @if (editingRoom()) {
             <input
@@ -92,13 +106,16 @@ export class ScheduleBlockComponent {
   readonly hasAvailabilityWarning = input<boolean>(false);
   readonly commentCount = input(0);
   readonly compactLabels = input(false);
+  readonly lecturerOptions = input<ScheduleLecturerOption[]>([]);
   readonly clicked = output<string>();
   readonly colorChanged = output<{ id: string; color: string }>();
   readonly commentsClicked = output<string>();
   readonly roomChanged = output<{ id: string; room: string }>();
+  readonly lecturerChanged = output<{ id: string; lecturer: ScheduleLecturerOption }>();
 
   protected readonly paletteOpen = signal(false);
   protected readonly editingRoom = signal(false);
+  protected readonly editingLecturer = signal(false);
   protected readonly roomDraft = signal('');
   protected readonly colors = [
     '#6366f1', '#3b82f6', '#06b6d4', '#14b8a6',
@@ -127,6 +144,21 @@ export class ScheduleBlockComponent {
   protected openComments(event: MouseEvent, id: string): void {
     event.stopPropagation();
     this.commentsClicked.emit(id);
+  }
+
+  protected startLecturerEdit(event: MouseEvent): void {
+    event.stopPropagation();
+    this.editingLecturer.set(true);
+  }
+
+  protected selectLecturer(event: { value: string }, id: string): void {
+    const lecturer = this.lecturerOptions().find((item) => item.key === event.value);
+    if (lecturer) this.lecturerChanged.emit({ id, lecturer });
+    this.editingLecturer.set(false);
+  }
+
+  protected lecturerKey(entry: ScheduleEntry): string {
+    return (entry.lecturerUserId || entry.lecturerEmail || entry.lecturerName).trim().toLocaleLowerCase('pl-PL');
   }
 
   protected startRoomEdit(event: MouseEvent, room: string): void {

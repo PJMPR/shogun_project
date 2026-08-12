@@ -49,10 +49,12 @@
         [hasAvailabilityWarning]="hasAvailabilityWarning(entry)"
         [commentCount]="commentCounts()[entry.id] ?? 0"
         [compactLabels]="compactLabels()"
+        [lecturerOptions]="lecturerOptions()"
         (clicked)="clickEntry($event)"
         (colorChanged)="entryColorChanged.emit($event)"
         (commentsClicked)="commentsRequested.emit($event)"
         (roomChanged)="entryRoomChanged.emit($event)"
+        (lecturerChanged)="entryLecturerChanged.emit($event)"
       />
       <div class="drag-handle pi pi-arrows-alt" cdkDragHandle title="Przenieś (Ctrl: kopiuj)"></div>
       <div class="resize-handle" (pointerdown)="startResize($event, entry)" title="Zmień czas trwania"></div>
