@@ -35,6 +35,7 @@
     @if (entryVisible(entry)) {
     <div
       class="schedule-item"
+      [class.selected]="selectedEntryIds().has(entry.id)"
       [style.grid-column]="entryColumn(entry) + ' / span ' + entryGroupSpan(entry)"
       [style.grid-row]="entryRow(entry) + ' / span ' + entrySlots(entry)"
       cdkDrag
@@ -58,6 +59,8 @@
       />
       <div class="drag-handle pi pi-arrows-alt" cdkDragHandle title="Przenieś (Ctrl: kopiuj)"></div>
       <div class="resize-handle" (pointerdown)="startResize($event, entry)" title="Zmień czas trwania"></div>
+      <button type="button" class="horizontal-resize left" title="Zmień szerokość od lewej" (pointerdown)="startHorizontalResize($event, entry, 'left')"></button>
+      <button type="button" class="horizontal-resize right" title="Zmień szerokość od prawej" (pointerdown)="startHorizontalResize($event, entry, 'right')"></button>
     </div>
     }
   }

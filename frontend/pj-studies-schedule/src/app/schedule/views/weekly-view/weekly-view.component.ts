@@ -1,4 +1,4 @@
-import { Component, ViewChild, computed, effect, inject, input, output, signal, untracked } from '@angular/core';
+import { Component, HostListener, ViewChild, computed, effect, inject, input, output, signal, untracked } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -12,6 +12,8 @@ import { DesideratumOption, LecturerDesiderataService } from '../../services/lec
 import { ScheduleEntry, ScheduleFilters, ScheduleGroup, ScheduleLecturerOption, SchedulePlanSummary, Semester, semesterTypeOf } from '../../models/schedule.models';
 import { CommentsDrawerComponent } from '../../components/comments-drawer/comments-drawer.component';
 import { ScheduleCommentsService } from '../../services/schedule-comments.service';
+import { ScheduleNotesService } from '../../services/schedule-notes.service';
+import { PlanNotesDrawerComponent } from '../../components/plan-notes-drawer/plan-notes-drawer.component';
 
 @Component({
   selector: 'app-weekly-view',
@@ -23,6 +25,7 @@ import { ScheduleCommentsService } from '../../services/schedule-comments.servic
     ButtonModule,
     ConfirmDialogModule,
     CommentsDrawerComponent,
+    PlanNotesDrawerComponent,
   ],
   templateUrl: './weekly-view.component.html',
   styleUrl: './weekly-view.component.css',
@@ -58,9 +61,12 @@ export class WeeklyViewComponent {
   private readonly confirmationService = inject(ConfirmationService);
   protected readonly desiderataService = inject(LecturerDesiderataService);
   protected readonly commentsService = inject(ScheduleCommentsService);
+  protected readonly notesService = inject(ScheduleNotesService);
   protected readonly commentsDrawerOpen = signal(false);
   protected readonly selectedCommentEntryId = signal<string | null>(null);
   protected readonly creatingPlan = signal(false);
+  protected readonly notesDrawerOpen = signal(false);
+  protected readonly expandedDay = signal<number | null>(null);
 
   constructor() {
     this.desiderataService.load();
@@ -180,9 +186,10 @@ export class WeeklyViewComponent {
 
   protected readonly isStacjonarny = computed(() => this.filters().mode === 'stacjonarny');
 
-  protected readonly activeDayNumbers = computed(() =>
-    this.isStacjonarny() ? [0, 1, 2, 3, 4] : [4, 5, 6],
-  );
+  protected readonly activeDayNumbers = computed(() => {
+    const days = this.isStacjonarny() ? [0, 1, 2, 3, 4] : [4, 5, 6];
+    const expanded = this.expandedDay(); return expanded === null ? days : days.filter((day) => day === expanded);
+  });
 
   protected readonly totalGroupColumns = computed(() =>
     this.activeDayNumbers().reduce((total, day) => total + this.groupsForDay(day), 0),
@@ -205,6 +212,10 @@ export class WeeklyViewComponent {
     this.closeComments();
     this.planSelected.emit(this.mockData.current()?.id ?? null);
   }
+
+  protected dayLabel(day: number): string { return ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'][day]; }
+  protected toggleExpandedDay(day: number): void { this.expandedDay.update((current) => current === day ? null : day); }
+  @HostListener('document:keydown.escape') protected closeExpandedDay(): void { this.expandedDay.set(null); }
 
   protected groupsForDay(day: number): number {
     return Math.max(1, this.visibleGroupIndices()[day]?.length ?? 0);
@@ -374,6 +385,22 @@ export class WeeklyViewComponent {
     });
   }
 
+  protected onEntriesMoved(event: { ids: string[]; dayDelta: number; groupDelta: number; hourDelta: number }): void {
+    const days = this.filters().mode === 'stacjonarny' ? [0, 1, 2, 3, 4] : [4, 5, 6]; const selected = new Set(event.ids);
+    const moved = this.mockData.entries().map((entry) => {
+      if (!selected.has(entry.id)) return entry;
+      const day = days[days.indexOf(entry.dayOfWeek) + event.dayDelta];
+      return { ...entry, dayOfWeek: day, group: entry.group + event.groupDelta, startHour: entry.startHour + event.hourDelta };
+    });
+    const valid = moved.filter((entry) => selected.has(entry.id)).every((entry) => entry.dayOfWeek !== undefined && entry.group >= 0 && entry.group + (entry.groupSpan ?? 1) <= this.mockData.groups().length && entry.startHour >= 8 && entry.startHour + entry.durationHours <= 20 && !moved.some((other) => other.id !== entry.id && other.dayOfWeek === entry.dayOfWeek && entry.group < other.group + (other.groupSpan ?? 1) && entry.group + (entry.groupSpan ?? 1) > other.group && entry.startHour < other.startHour + other.durationHours && entry.startHour + entry.durationHours > other.startHour));
+    if (!valid) { this.onPlacementRejected(); return; }
+    this.mockData.entries.set(moved); this.mockData.markEntriesDirty();
+  }
+
+  protected onEntryGroupRangeChanged(event: { id: string; group: number; groupSpan: number }): void {
+    const entry = this.mockData.entries().find((item) => item.id === event.id); if (entry) this.mockData.updateEntry({ ...entry, group: event.group, groupSpan: event.groupSpan });
+  }
+
   protected async saveChanges(): Promise<void> {
     try { await this.mockData.saveAll(); this.messageService.add({ severity: 'success', summary: 'Zapisano plany' }); }
     catch { this.messageService.add({ severity: this.mockData.stale() ? 'warn' : 'error', summary: this.mockData.stale() ? 'Plan jest nieaktualny' : 'Błąd zapisu', detail: this.mockData.error() ?? undefined }); }
@@ -406,6 +433,7 @@ export class WeeklyViewComponent {
     this.selectedCommentEntryId.set(null);
     this.commentsDrawerOpen.set(true);
   }
+  protected openNotes(): void { const id = this.mockData.current()?.id; if (!id) return; void this.notesService.load(id); this.notesDrawerOpen.set(true); }
 
   protected closeComments(): void {
     this.commentsDrawerOpen.set(false);

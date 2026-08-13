@@ -169,6 +169,12 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
           <input pInputText [(ngModel)]="form.lecturerEmail" placeholder="Opcjonalnie" class="w-full" />
         </div>
         <div class="form-row">
+          <label>Daty zajęć (DD.MM)</label>
+          <input pInputText [(ngModel)]="datesDraft" placeholder="np. 05.10, 19.10, 02.11" class="w-full" />
+          @if (datesInvalid()) { <small class="field-error">Podaj poprawne daty DD.MM oddzielone przecinkami.</small> }
+        </div>
+        <label class="visibility-toggle"><input type="checkbox" [(ngModel)]="form.hiddenInPublished" /> Ukryj te zajęcia w opublikowanym planie</label>
+        <div class="form-row">
           <label>Sala (opcjonalnie)</label>
           <input pInputText [(ngModel)]="form.room" placeholder="np. 201, lab 105" class="w-full" />
         </div>
@@ -362,6 +368,8 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       .lecturer-select { width: 100%; margin-top: auto; font-size: 0.78rem; }
       .desiderata-state { padding: 1rem 0.25rem; font-size: 0.82rem; color: var(--p-surface-500); }
       .desiderata-state.error { color: var(--p-red-600); }
+      .field-error { color: var(--p-red-600); }
+      .visibility-toggle { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--p-surface-700); }
       .form-row {
         display: flex;
         flex-direction: column;
@@ -445,6 +453,7 @@ export class EntryDialogComponent {
   protected newLecturerName = '';
   protected newLecturerEmail = '';
   protected catalogSaving = false;
+  protected datesDraft = '';
   protected readonly isAdmin = this.currentRoles().includes('admin');
 
   protected get groupOptions(): { label: string; value: number }[] {
@@ -476,8 +485,10 @@ export class EntryDialogComponent {
     if (entry) {
       const { id: _id, ...rest } = entry;
       this.form = { ...rest };
+      this.datesDraft = (entry.dates ?? []).join(', ');
     } else {
       this.form = this.defaultForm();
+      this.datesDraft = '';
     }
 
     this.dayOptions = this.form.studyMode === 'niestacjonarny' ? NIESTAC_DAYS : STAC_DAYS;
@@ -588,13 +599,16 @@ export class EntryDialogComponent {
   }
 
   protected isValid(): boolean {
-    return !!this.form.subjectName?.trim();
+    return !!this.form.subjectName?.trim() && !this.datesInvalid();
   }
+
+  protected datesInvalid(): boolean { return this.parseDates().some((value) => !this.validDate(value)); }
 
   protected onSave(): void {
     if (!this.isValid()) return;
     this.saved.emit({
       ...(this.form as EntryForm),
+      dates: this.parseDates(),
       id: this.currentId ?? crypto.randomUUID(),
     });
     this.close();
@@ -629,12 +643,17 @@ export class EntryDialogComponent {
       durationHours: 1.5,
       semesterNumber: 1,
       academicYear: '2026/2027',
+      dates: [],
+      hiddenInPublished: false,
     };
   }
 
   private lecturerKey(userId: string | undefined, email: string | undefined, name: string): string {
     return (userId || email || name).trim().toLocaleLowerCase('pl-PL');
   }
+
+  private parseDates(): string[] { return this.datesDraft.split(/[,;\s]+/).map((x) => x.trim()).filter(Boolean); }
+  private validDate(value: string): boolean { const match = /^(\d{2})\.(\d{2})$/.exec(value); if (!match) return false; const day = Number(match[1]); const month = Number(match[2]); return month >= 1 && month <= 12 && day >= 1 && day <= new Date(2000, month, 0).getDate(); }
 
   private currentRoles(): string[] {
     try { return JSON.parse(sessionStorage.getItem('shogun_roles') ?? '[]'); } catch { return []; }

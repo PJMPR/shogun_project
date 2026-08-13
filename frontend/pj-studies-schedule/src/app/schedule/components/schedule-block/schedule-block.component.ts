@@ -11,6 +11,7 @@ import { ScheduleEntry, ScheduleLecturerOption, formatHour } from '../../models/
       <div
         class="block"
         [class.conflict]="hasConflict()"
+        [class.hidden-published]="e.hiddenInPublished"
         [style.--block-color]="e.color ?? colors[0]"
         (click)="clicked.emit(e.id)"
       >
@@ -70,6 +71,8 @@ import { ScheduleEntry, ScheduleLecturerOption, formatHour } from '../../models/
             }
           </button>
         }
+        @if (e.dates?.length) { <div class="block-dates" [title]="e.dates!.join(', ')">{{ e.dates!.join(', ') }}</div> }
+        @if (e.hiddenInPublished) { <span class="hidden-badge pi pi-eye-slash" title="Ukryte w opublikowanym planie"></span> }
         @if (e.room) {
           @if (editingRoom()) {
             <input

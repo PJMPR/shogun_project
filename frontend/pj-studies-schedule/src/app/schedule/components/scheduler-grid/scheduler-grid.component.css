@@ -24,6 +24,11 @@
 
 .schedule-item.cdk-drag-dragging { z-index: 20; opacity: 0.85; }
 .schedule-item:focus-within { z-index: 25; }
+.schedule-item.selected { outline: 3px solid #4f46e5; outline-offset: -1px; border-radius: 7px; }
+.horizontal-resize { position: absolute; top: 35%; z-index: 7; width: 7px; height: 30%; padding: 0; border: 0; background: rgba(79,70,229,.55); cursor: ew-resize; opacity: 0; }
+.schedule-item:hover .horizontal-resize { opacity: 1; }
+.horizontal-resize.left { left: -2px; border-radius: 0 4px 4px 0; }
+.horizontal-resize.right { right: -2px; border-radius: 4px 0 0 4px; }
 
 .drag-handle {
   position: absolute;

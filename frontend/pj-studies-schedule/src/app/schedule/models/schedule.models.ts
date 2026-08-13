@@ -40,6 +40,8 @@ export interface ScheduleEntry {
   groupIds?: string[];
   concurrencyToken?: string;
   commentCount?: number;
+  dates?: string[];
+  hiddenInPublished?: boolean;
 }
 
 export interface ScheduleGroup { id: string; code: string; name: string; sortOrder: number; concurrencyToken?: string }

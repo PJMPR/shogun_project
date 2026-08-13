@@ -4,6 +4,7 @@
     <div class="plan-actions">
       @if (mockData.dirty()) { <span class="dirty-indicator"><span></span> Niezapisane zmiany</span> }
       @if (mockData.current()) {
+        <p-button label="Notatki" icon="pi pi-file-edit" size="small" severity="secondary" [outlined]="true" (onClick)="openNotes()" />
         <p-button label="Komentarze" icon="pi pi-comments" size="small" severity="secondary" [outlined]="true" (onClick)="openCommentsOverview()" />
         <p-button icon="pi pi-trash" size="small" severity="danger" [text]="true" title="Usuń plan" (onClick)="deleteCurrentPlan()" />
       } @else {
@@ -29,7 +30,10 @@
       <div class="day-header-row">
         @for (day of activeDayNumbers(); track day; let i = $index) {
           <div class="day-header" [style.grid-column]="'span ' + groupsForDay(day)">
-            <span>{{ dayLabels()[i] }}</span>
+            <span>{{ dayLabel(day) }}</span>
+            <button class="expand-day-btn" (click)="toggleExpandedDay(day)" [title]="expandedDay() === day ? 'Pokaż cały tydzień' : 'Powiększ dzień'">
+              <i class="pi" [class.pi-window-maximize]="expandedDay() !== day" [class.pi-window-minimize]="expandedDay() === day"></i>
+            </button>
             @if (hiddenGroupCount(day) > 0) {
               <button class="restore-groups-btn" (click)="restoreGroups(day)" title="Pokaż ukryte grupy">
                 <i class="pi pi-eye"></i> {{ hiddenGroupCount(day) }}
@@ -97,6 +101,8 @@
         (entryColorChanged)="onEntryColorChanged($event)"
         (entryRoomChanged)="onEntryRoomChanged($event)"
         (entryLecturerChanged)="onEntryLecturerChanged($event)"
+        (entriesMoved)="onEntriesMoved($event)"
+        (entryGroupRangeChanged)="onEntryGroupRangeChanged($event)"
         (cellsSelected)="onCellsSelected($event)"
         (entryCloned)="onEntryCloned($event)"
         (placementRejected)="onPlacementRejected()"
@@ -127,4 +133,5 @@
       (closed)="closeComments()"
     />
   }
+  @if (notesDrawerOpen() && mockData.current(); as plan) { <app-plan-notes-drawer [scheduleId]="plan.id" (closed)="notesDrawerOpen.set(false)" /> }
 </div>

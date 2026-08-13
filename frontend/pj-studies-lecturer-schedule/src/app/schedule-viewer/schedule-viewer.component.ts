@@ -12,7 +12,7 @@ type AuthorRole = 'admin' | 'planner' | 'lecturer';
 
 interface PlanSummary { id: string; facultyCode: string; facultyName: string; academicYear: string; semesterNumber: number; studyMode: StudyMode; status: 'draft' | 'published' }
 interface Group { id: string; code: string; name: string; sortOrder: number }
-interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerUserId?: string; lecturerEmail?: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[]; commentCount: number }
+interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerUserId?: string; lecturerEmail?: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; dates?: string[]; groupIds: string[]; commentCount: number }
 interface Plan extends PlanSummary { groups: Group[]; entries: Entry[] }
 interface ApiComment { id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
 

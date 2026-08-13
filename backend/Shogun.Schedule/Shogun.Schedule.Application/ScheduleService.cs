@@ -17,7 +17,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         var schedule = await repository.GetAsync(id, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
         if (schedule.Status != ScheduleStatus.Published) throw new NotFoundException("Opublikowany plan nie istnieje.");
-        return Map(schedule);
+        return Map(schedule, publishedView: true);
     }
 
     public async Task<ScheduleDto> CreateAsync(CreateScheduleRequest request, CurrentUser user, CancellationToken ct)
@@ -225,6 +225,33 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         schedule.SubjectLecturers.Remove(item); await repository.SaveChangesAsync(ct);
     }
 
+    public async Task<IReadOnlyList<NoteDto>> ListNotesAsync(Guid scheduleId, CurrentUser user, CancellationToken ct)
+    {
+        var schedule = await repository.GetAsync(scheduleId, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        return schedule.Notes.Where(x => x.DeletedAt == null).OrderBy(x => x.CreatedAt).Select(x => MapNote(x, user)).ToList();
+    }
+
+    public async Task<NoteDto> AddNoteAsync(Guid scheduleId, AddNoteRequest request, CurrentUser user, CancellationToken ct)
+    {
+        _ = await repository.GetAsync(scheduleId, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var note = new ScheduleNote { Id = Guid.NewGuid(), ScheduleId = scheduleId, Title = OptionalTitle(request.Title), Body = Required(request.Body, "Notatka"), AuthorUserId = user.UserId, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
+        await repository.AddNoteAsync(note, ct); await repository.SaveChangesAsync(ct); return MapNote(note, user);
+    }
+
+    public async Task<NoteDto> EditNoteAsync(Guid id, EditNoteRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var note = await repository.GetNoteAsync(id, ct) ?? throw new NotFoundException("Notatka nie istnieje.");
+        if (!string.Equals(note.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własną notatkę.");
+        note.Title = OptionalTitle(request.Title); note.Body = Required(request.Body, "Notatka"); note.UpdatedAt = DateTimeOffset.UtcNow; await repository.SaveChangesAsync(ct); return MapNote(note, user);
+    }
+
+    public async Task DeleteNoteAsync(Guid id, CurrentUser user, CancellationToken ct)
+    {
+        var note = await repository.GetNoteAsync(id, ct) ?? throw new NotFoundException("Notatka nie istnieje.");
+        if (!user.IsAdmin && !string.Equals(note.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Brak uprawnień do usunięcia notatki.");
+        note.DeletedAt = DateTimeOffset.UtcNow; note.DeletedBy = user.Email; note.DeletedByUserId = user.UserId; await repository.SaveChangesAsync(ct);
+    }
+
     private static void EnsureCommentable(SchedulePlan schedule, CurrentUser user)
     {
         if (schedule.Status != ScheduleStatus.Published && user.Role is not ("planner" or "admin"))
@@ -253,6 +280,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
             if (e.DayOfWeek is < 0 or > 6 || e.StartMinute < 480 || e.StartMinute + e.DurationMinutes > 1200 || e.DurationMinutes <= 0 || e.StartMinute % 15 != 0 || e.DurationMinutes % 15 != 0) throw new ValidationException("Nieprawidłowy termin bloczka.");
             if (e.GroupIds.Count == 0 || e.GroupIds.Any(x => !groups.Contains(x))) throw new ValidationException("Bloczek musi wskazywać grupy z tego planu.");
             if (e.Color is not null && !System.Text.RegularExpressions.Regex.IsMatch(e.Color, "^#[0-9a-fA-F]{6}$")) throw new ValidationException("Nieprawidłowy kolor bloczka.");
+            if (e.Dates?.Any(x => !IsValidDayMonth(x)) == true) throw new ValidationException("Daty zajęć muszą mieć format DD.MM.");
         }
     }
 
@@ -280,12 +308,15 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         if (schedule.Lecturers.Any(x => x.Id != exceptId && ((email is not null && string.Equals(x.Email, email, StringComparison.OrdinalIgnoreCase)) || string.Equals(x.DisplayName, name, StringComparison.OrdinalIgnoreCase))))
             throw new ConflictException("Wykładowca już istnieje w planie.");
     }
-    private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; e.LecturerUserId = string.IsNullOrWhiteSpace(d.LecturerUserId) ? null : d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName?.Trim() ?? ""; e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
+    private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; e.LecturerUserId = string.IsNullOrWhiteSpace(d.LecturerUserId) ? null : d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName?.Trim() ?? ""; e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.Dates = (d.Dates ?? []).Distinct().OrderBy(x => x[3..]).ThenBy(x => x[..2]).ToList(); e.HiddenInPublished = d.HiddenInPublished; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
     private static string Required(string? value, string field) => !string.IsNullOrWhiteSpace(value) ? value.Trim() : throw new ValidationException($"{field} jest wymagane.");
     private static ScheduleSummaryDto MapSummary(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy);
-    private static ScheduleDto Map(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList(), x.Subjects.OrderBy(s => s.Name).Select(MapSubject).ToList(), x.Lecturers.OrderBy(l => l.DisplayName).Select(MapLecturer).ToList(), x.SubjectLecturers.Select(MapSubjectLecturer).ToList());
+    private static ScheduleDto Map(SchedulePlan x, bool publishedView = false) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Where(e => !publishedView || !e.HiddenInPublished).Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.Dates, e.HiddenInPublished, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList(), x.Subjects.OrderBy(s => s.Name).Select(MapSubject).ToList(), x.Lecturers.OrderBy(l => l.DisplayName).Select(MapLecturer).ToList(), x.SubjectLecturers.Select(MapSubjectLecturer).ToList());
     private static ScheduleSubjectDto MapSubject(ScheduleSubject x) => new(x.Id, x.Code, x.Name);
     private static ScheduleLecturerDto MapLecturer(ScheduleLecturer x) => new(x.Id, x.DisplayName, x.Email);
     private static ScheduleSubjectLecturerDto MapSubjectLecturer(ScheduleSubjectLecturer x) => new(x.Id, x.SubjectCode, x.LecturerKey, x.LecturerDisplayName, x.LecturerUserId, x.LecturerEmail, x.LecturerAssignmentId);
+    private static NoteDto MapNote(ScheduleNote x, CurrentUser user) => new(x.Id, x.ScheduleId, x.Title, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal));
+    private static string? OptionalTitle(string? value) { var title = value?.Trim(); if (title?.Length > 200) throw new ValidationException("Tytuł notatki może mieć maksymalnie 200 znaków."); return string.IsNullOrEmpty(title) ? null : title; }
+    private static bool IsValidDayMonth(string value) => System.Text.RegularExpressions.Regex.IsMatch(value, @"^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])$") && DateOnly.TryParseExact($"{value}.2000", "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out _);
     private static CommentDto MapComment(ScheduleComment x, CurrentUser user) => new(x.Id, x.ScheduleEntryId, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal));
 }

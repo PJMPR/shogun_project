@@ -26,6 +26,9 @@
 .block.conflict {
   opacity: 0.58;
 }
+.block.hidden-published { background-image: repeating-linear-gradient(135deg, transparent 0 6px, rgba(100,116,139,.12) 6px 12px); }
+.block-dates { max-width: calc(100% - 28px); overflow: hidden; color: var(--p-primary-700); font-size: .64rem; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.hidden-badge { position: absolute; top: 3px; right: 28px; color: var(--p-surface-600); font-size: .7rem; }
 
 .color-button {
   position: absolute;

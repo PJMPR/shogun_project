@@ -35,6 +35,7 @@ public sealed class SchedulePlan
     public List<ScheduleSubject> Subjects { get; set; } = [];
     public List<ScheduleLecturer> Lecturers { get; set; } = [];
     public List<ScheduleSubjectLecturer> SubjectLecturers { get; set; } = [];
+    public List<ScheduleNote> Notes { get; set; } = [];
 }
 
 public sealed class ScheduleSubject
@@ -119,6 +120,8 @@ public sealed class ScheduleEntry
     public int StartMinute { get; set; }
     public int DurationMinutes { get; set; }
     public string? Color { get; set; }
+    public List<string> Dates { get; set; } = [];
+    public bool HiddenInPublished { get; set; }
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
     public string? CreatedBy { get; set; }
@@ -128,6 +131,24 @@ public sealed class ScheduleEntry
     public string? UpdatedByUserId { get; set; }
     public List<ScheduleEntryGroup> EntryGroups { get; set; } = [];
     public List<ScheduleComment> Comments { get; set; } = [];
+}
+
+public sealed class ScheduleNote
+{
+    public Guid Id { get; set; }
+    public Guid ScheduleId { get; set; }
+    public SchedulePlan Schedule { get; set; } = null!;
+    public string Body { get; set; } = string.Empty;
+    public string? Title { get; set; }
+    public string? AuthorUserId { get; set; }
+    public string? AuthorEmail { get; set; }
+    public string AuthorDisplayName { get; set; } = string.Empty;
+    public string AuthorRole { get; set; } = string.Empty;
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset? UpdatedAt { get; set; }
+    public DateTimeOffset? DeletedAt { get; set; }
+    public string? DeletedBy { get; set; }
+    public string? DeletedByUserId { get; set; }
 }
 
 public sealed class ScheduleEntryGroup

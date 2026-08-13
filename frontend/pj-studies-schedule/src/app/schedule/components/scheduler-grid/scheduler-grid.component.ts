@@ -1,5 +1,5 @@
 import { CdkDrag, CdkDragEnd, CdkDragHandle, CdkDragStart } from '@angular/cdk/drag-drop';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, computed, inject, input, output, signal } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, ViewChild, computed, inject, input, output, signal } from '@angular/core';
 import { ScheduleEntry, ScheduleLecturerOption } from '../../models/schedule.models';
 import { ScheduleBlockComponent } from '../schedule-block/schedule-block.component';
 import { LecturerAvailability } from '../../services/lecturer-desiderata.service';
@@ -40,6 +40,8 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   readonly commentsRequested = output<string>();
   readonly entryRoomChanged = output<{ id: string; room: string }>();
   readonly entryLecturerChanged = output<{ id: string; lecturer: ScheduleLecturerOption }>();
+  readonly entriesMoved = output<{ ids: string[]; dayDelta: number; groupDelta: number; hourDelta: number }>();
+  readonly entryGroupRangeChanged = output<{ id: string; group: number; groupSpan: number }>();
 
   @ViewChild('surface') private surfaceRef!: ElementRef<HTMLElement>;
 
@@ -56,17 +58,23 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   protected selection: { start: CellPosition; end: CellPosition } | null = null;
   protected selectionHint: { x: number; y: number; durationMinutes: number } | null = null;
   protected resizePreview: { id: string; slots: number } | null = null;
+  protected horizontalResizePreview: { id: string; group: number; groupSpan: number } | null = null;
   protected draggedEntry: ScheduleEntry | null = null;
+  protected readonly selectedEntryIds = signal<Set<string>>(new Set());
+  private marqueeSelection = false;
   private resizing: { entry: ScheduleEntry; startY: number; initialSlots: number } | null = null;
+  private horizontalResizing: { entry: ScheduleEntry; edge: 'left' | 'right'; startX: number; initialGroup: number; initialSpan: number } | null = null;
   private dragged = false;
   private surfaceResizeObserver?: ResizeObserver;
 
   private readonly onPointerMove = (event: PointerEvent): void => {
-    if (this.resizing) this.updateResize(event);
+    if (this.horizontalResizing) this.updateHorizontalResize(event);
+    else if (this.resizing) this.updateResize(event);
     else if (this.selection) this.updateSelection(event);
   };
   private readonly onPointerUp = (): void => {
-    if (this.resizing) this.finishResize();
+    if (this.horizontalResizing) this.finishHorizontalResize();
+    else if (this.resizing) this.finishResize();
     else if (this.selection) this.finishSelection();
   };
 
@@ -92,10 +100,12 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   }
 
   protected entryColumn(entry: ScheduleEntry): number {
+    const preview = this.horizontalResizePreview?.id === entry.id ? this.horizontalResizePreview : null;
+    const entryGroup = preview?.group ?? entry.group;
     let column = 1;
     for (const day of this.activeDays()) {
       if (day === entry.dayOfWeek) {
-        const position = this.visibleGroups(day).findIndex((group) => group >= entry.group);
+        const position = this.visibleGroups(day).findIndex((group) => group >= entryGroup);
         return column + Math.max(0, position);
       }
       column += this.groupCount(day);
@@ -108,8 +118,10 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   }
 
   protected entryGroupSpan(entry: ScheduleEntry): number {
-    const endGroup = entry.group + (entry.groupSpan ?? 1);
-    return Math.max(1, this.visibleGroups(entry.dayOfWeek).filter((group) => group >= entry.group && group < endGroup).length);
+    const preview = this.horizontalResizePreview?.id === entry.id ? this.horizontalResizePreview : null;
+    const entryGroup = preview?.group ?? entry.group;
+    const endGroup = entryGroup + (preview?.groupSpan ?? entry.groupSpan ?? 1);
+    return Math.max(1, this.visibleGroups(entry.dayOfWeek).filter((group) => group >= entryGroup && group < endGroup).length);
   }
 
   protected entrySlots(entry: ScheduleEntry): number {
@@ -157,10 +169,11 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   }
 
   protected startSelection(event: PointerEvent): void {
-    if (event.button !== 0 || (event.target as Element).closest('.schedule-item')) return;
+    if (event.button !== 0 || ((event.target as Element).closest('.schedule-item') && !event.shiftKey)) return;
     const cell = this.eventToCell(event);
     if (!cell) return;
     event.preventDefault();
+    this.marqueeSelection = event.shiftKey;
     this.selection = { start: cell, end: cell };
     this.updateSelectionHint(event, cell);
   }
@@ -188,6 +201,14 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
     const maxCol = Math.max(start.col, end.col);
     const minRow = Math.min(start.row, end.row);
     const maxRow = Math.max(start.row, end.row);
+    if (this.marqueeSelection) {
+      this.marqueeSelection = false;
+      this.selectedEntryIds.set(new Set(this.entries().filter((entry) => {
+        const col = this.entryColumn(entry) - 1; const row = this.entryRow(entry) - 1;
+        return col <= maxCol && col + this.entryGroupSpan(entry) - 1 >= minCol && row <= maxRow && row + this.entrySlots(entry) - 1 >= minRow;
+      }).map((entry) => entry.id)));
+      return;
+    }
     if (minCol === maxCol && minRow === maxRow) return;
     const { day } = this.columnToDayGroup(minCol);
     const { group } = this.columnToDayGroup(minCol);
@@ -223,7 +244,11 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
     const entry = event.source.data;
     const surface = this.surfaceRef.nativeElement.getBoundingClientRect();
     const item = event.source.element.nativeElement.getBoundingClientRect();
-    const col = Math.max(0, Math.min(this.totalColumns() - 1, Math.floor((item.left - surface.left + item.width / 2) / (surface.width / this.totalColumns()))));
+    // A wide entry is positioned by its leading (left) edge. Using its centre
+    // makes a three-column block start in the second column after dropping it,
+    // which changes its logical range and produces false overlap errors.
+    const columnWidth = surface.width / this.totalColumns();
+    const col = Math.max(0, Math.min(this.totalColumns() - 1, Math.round((item.left - surface.left) / columnWidth)));
     const row = Math.max(0, Math.min(this.totalRows - this.entrySlots(entry), Math.round((item.top - surface.top) / this.slotHeight())));
     event.source.reset();
     this.draggedEntry = null;
@@ -233,8 +258,13 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
     const day = target.day;
     const group = target.group;
     const newStartHour = START_HOUR + row / SLOTS_PER_HOUR;
+    if (this.selectedEntryIds().has(entry.id) && this.selectedEntryIds().size > 1) {
+      const dayDelta = this.activeDays().indexOf(day) - this.activeDays().indexOf(entry.dayOfWeek);
+      this.entriesMoved.emit({ ids: [...this.selectedEntryIds()], dayDelta, groupDelta: group - entry.group, hourDelta: newStartHour - entry.startHour });
+      return;
+    }
     const pointer = event.event as MouseEvent;
-    if (!this.canPlace(pointer.ctrlKey ? '' : entry.id, day, group, this.entryGroupSpan(entry), newStartHour, entry.durationHours)) {
+    if (!this.canPlace(pointer.ctrlKey ? '' : entry.id, day, group, entry.groupSpan ?? 1, newStartHour, entry.durationHours)) {
       this.placementRejected.emit();
       return;
     }
@@ -267,7 +297,7 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
     this.resizing = null;
     this.resizePreview = null;
     this.changeDetector.markForCheck();
-    if (!this.canPlace(entry.id, entry.dayOfWeek, entry.group, this.entryGroupSpan(entry), entry.startHour, durationHours)) {
+    if (!this.canPlace(entry.id, entry.dayOfWeek, entry.group, entry.groupSpan ?? 1, entry.startHour, durationHours)) {
       this.placementRejected.emit();
       return;
     }
@@ -278,7 +308,54 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
     if (!this.dragged && !this.resizing) this.entryClicked.emit(id);
   }
 
+  @HostListener('document:keydown.escape') protected clearSelection(): void { this.selectedEntryIds.set(new Set()); }
+
+  protected startHorizontalResize(event: PointerEvent, entry: ScheduleEntry, edge: 'left' | 'right'): void {
+    event.preventDefault();
+    event.stopPropagation();
+    const initialSpan = entry.groupSpan ?? 1;
+    this.horizontalResizing = { entry, edge, startX: event.clientX, initialGroup: entry.group, initialSpan };
+    this.horizontalResizePreview = { id: entry.id, group: entry.group, groupSpan: initialSpan };
+  }
+
+  private updateHorizontalResize(event: PointerEvent): void {
+    if (!this.horizontalResizing) return;
+    const state = this.horizontalResizing;
+    const columnWidth = this.surfaceRef.nativeElement.getBoundingClientRect().width / this.totalColumns();
+    if (columnWidth <= 0) return;
+    const delta = Math.round((event.clientX - state.startX) / columnWidth);
+    const max = this.groupsPerDay()[state.entry.dayOfWeek]?.length ?? 1;
+    let group = state.initialGroup;
+    let span = state.initialSpan;
+    if (state.edge === 'left') {
+      const rightEdge = state.initialGroup + state.initialSpan;
+      group = Math.max(0, Math.min(rightEdge - 1, state.initialGroup + delta));
+      span = rightEdge - group;
+    } else {
+      span = Math.max(1, Math.min(max - state.initialGroup, state.initialSpan + delta));
+    }
+    this.horizontalResizePreview = { id: state.entry.id, group, groupSpan: span };
+    this.changeDetector.markForCheck();
+  }
+
+  private finishHorizontalResize(): void {
+    if (!this.horizontalResizing || !this.horizontalResizePreview) return;
+    const { entry } = this.horizontalResizing;
+    const { group, groupSpan } = this.horizontalResizePreview;
+    this.horizontalResizing = null;
+    this.horizontalResizePreview = null;
+    this.changeDetector.markForCheck();
+    if (group === entry.group && groupSpan === (entry.groupSpan ?? 1)) return;
+    if (!this.canPlace(entry.id, entry.dayOfWeek, group, groupSpan, entry.startHour, entry.durationHours)) {
+      this.placementRejected.emit();
+      return;
+    }
+    this.entryGroupRangeChanged.emit({ id: entry.id, group, groupSpan });
+  }
+
   private canPlace(id: string, day: number, group: number, groupSpan: number, start: number, duration: number): boolean {
+    const groupCount = this.groupsPerDay()[day]?.length ?? 0;
+    if (group < 0 || groupSpan < 1 || group + groupSpan > groupCount) return false;
     const end = start + duration;
     return !this.entries().some((entry) =>
       entry.id !== id && entry.dayOfWeek === day &&

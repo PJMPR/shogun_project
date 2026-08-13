@@ -22,6 +22,15 @@ public sealed class ScheduleController(IScheduleService service) : ControllerBas
     [HttpDelete("{id:guid}/lecturers/{lecturerId:guid}"), Authorize(Roles = "admin")] public async Task<IActionResult> DeleteLecturer(Guid id, Guid lecturerId, CancellationToken ct) { await service.DeleteLecturerAsync(id, lecturerId, ct); return NoContent(); }
     [HttpPost("{id:guid}/subject-lecturers"), Authorize(Roles = "admin,planner")] public Task<ScheduleSubjectLecturerDto> AddSubjectLecturer(Guid id, AddScheduleSubjectLecturerRequest request, CancellationToken ct) => service.AddSubjectLecturerAsync(id, request, User.ToCurrentUser(), ct);
     [HttpDelete("{id:guid}/subject-lecturers/{assignmentId:guid}"), Authorize(Roles = "admin,planner")] public async Task<IActionResult> DeleteSubjectLecturer(Guid id, Guid assignmentId, CancellationToken ct) { await service.DeleteSubjectLecturerAsync(id, assignmentId, ct); return NoContent(); }
+    [HttpGet("{id:guid}/notes"), Authorize(Roles = "admin,planner")] public Task<IReadOnlyList<NoteDto>> ListNotes(Guid id, CancellationToken ct) => service.ListNotesAsync(id, User.ToCurrentUser(), ct);
+    [HttpPost("{id:guid}/notes"), Authorize(Roles = "admin,planner")] public Task<NoteDto> AddNote(Guid id, AddNoteRequest request, CancellationToken ct) => service.AddNoteAsync(id, request, User.ToCurrentUser(), ct);
+}
+
+[ApiController, Route("api/v1/notes"), Authorize(Roles = "admin,planner")]
+public sealed class ScheduleNotesController(IScheduleService service) : ControllerBase
+{
+    [HttpPut("{id:guid}")] public Task<NoteDto> Edit(Guid id, EditNoteRequest request, CancellationToken ct) => service.EditNoteAsync(id, request, User.ToCurrentUser(), ct);
+    [HttpDelete("{id:guid}")] public async Task<IActionResult> Delete(Guid id, CancellationToken ct) { await service.DeleteNoteAsync(id, User.ToCurrentUser(), ct); return NoContent(); }
 }
 
 [ApiController, Route("api/v1")]

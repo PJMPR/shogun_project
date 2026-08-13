@@ -222,3 +222,5 @@
 .col-sep.last {
   border-right: none;
 }
+.expand-day-btn { margin-left: .35rem; padding: .2rem .35rem; border: 0; border-radius: 4px; color: var(--p-surface-600); background: transparent; cursor: pointer; }
+.expand-day-btn:hover { color: var(--p-primary-700); background: var(--p-primary-50); }

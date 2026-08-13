@@ -5,14 +5,14 @@ namespace Shogun.Schedule.Application;
 public sealed record CurrentUser(string UserId, string? Email, string DisplayName, bool IsAdmin, string Role);
 public sealed record ScheduleSummaryDto(Guid Id, string FacultyCode, string FacultyName, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name, ScheduleStatus Status, Guid ConcurrencyToken, DateTimeOffset UpdatedAt, string? UpdatedBy);
 public sealed record GroupDto(Guid Id, string Code, string Name, int SortOrder, Guid ConcurrencyToken);
-public sealed record EntryDto(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds, Guid ConcurrencyToken, int CommentCount);
+public sealed record EntryDto(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<string> Dates, bool HiddenInPublished, IReadOnlyList<Guid> GroupIds, Guid ConcurrencyToken, int CommentCount);
 public sealed record ScheduleSubjectDto(Guid Id, string Code, string Name);
 public sealed record ScheduleLecturerDto(Guid Id, string DisplayName, string? Email);
 public sealed record ScheduleSubjectLecturerDto(Guid Id, string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
 public sealed record ScheduleDto(Guid Id, string FacultyCode, string FacultyName, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name, ScheduleStatus Status, Guid ConcurrencyToken, DateTimeOffset UpdatedAt, string? UpdatedBy, IReadOnlyList<GroupDto> Groups, IReadOnlyList<EntryDto> Entries, IReadOnlyList<ScheduleSubjectDto> Subjects, IReadOnlyList<ScheduleLecturerDto> Lecturers, IReadOnlyList<ScheduleSubjectLecturerDto> SubjectLecturers);
 public sealed record CreateScheduleRequest(string FacultyCode, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name);
 public sealed record SaveGroupRequest(Guid Id, string Code, string Name, int SortOrder);
-public sealed record SaveEntryRequest(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string? LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds);
+public sealed record SaveEntryRequest(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string? LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds, IReadOnlyList<string>? Dates = null, bool HiddenInPublished = false);
 public sealed record SaveScheduleRequest(Guid ConcurrencyToken, string Name, ScheduleStatus Status, IReadOnlyList<SaveGroupRequest> Groups, IReadOnlyList<SaveEntryRequest> Entries);
 public sealed record DeleteScheduleRequest(Guid ConcurrencyToken);
 public sealed record CommentDto(Guid Id, Guid ScheduleEntryId, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete);
@@ -21,6 +21,9 @@ public sealed record EditCommentRequest(string Body);
 public sealed record SaveScheduleSubjectRequest(string Code, string Name);
 public sealed record SaveScheduleLecturerRequest(string DisplayName, string? Email);
 public sealed record AddScheduleSubjectLecturerRequest(string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
+public sealed record NoteDto(Guid Id, Guid ScheduleId, string? Title, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete);
+public sealed record AddNoteRequest(string Body, string? Title);
+public sealed record EditNoteRequest(string Body, string? Title);
 
 public sealed class NotFoundException(string message) : Exception(message);
 public sealed class ConflictException(string message) : Exception(message);
@@ -38,9 +41,11 @@ public interface IScheduleRepository
     Task AddSubjectAsync(ScheduleSubject subject, CancellationToken ct);
     Task AddLecturerAsync(ScheduleLecturer lecturer, CancellationToken ct);
     Task AddSubjectLecturerAsync(ScheduleSubjectLecturer item, CancellationToken ct);
+    Task AddNoteAsync(ScheduleNote note, CancellationToken ct);
     Task DeleteAsync(SchedulePlan schedule, CancellationToken ct);
     Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct);
     Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct);
+    Task<ScheduleNote?> GetNoteAsync(Guid id, CancellationToken ct);
     Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct);
     Task SaveChangesAsync(CancellationToken ct);
     Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct);
@@ -70,4 +75,8 @@ public interface IScheduleService
     Task DeleteLecturerAsync(Guid scheduleId, Guid lecturerId, CancellationToken ct);
     Task<ScheduleSubjectLecturerDto> AddSubjectLecturerAsync(Guid scheduleId, AddScheduleSubjectLecturerRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteSubjectLecturerAsync(Guid scheduleId, Guid assignmentId, CancellationToken ct);
+    Task<IReadOnlyList<NoteDto>> ListNotesAsync(Guid scheduleId, CurrentUser user, CancellationToken ct);
+    Task<NoteDto> AddNoteAsync(Guid scheduleId, AddNoteRequest request, CurrentUser user, CancellationToken ct);
+    Task<NoteDto> EditNoteAsync(Guid id, EditNoteRequest request, CurrentUser user, CancellationToken ct);
+    Task DeleteNoteAsync(Guid id, CurrentUser user, CancellationToken ct);
 }

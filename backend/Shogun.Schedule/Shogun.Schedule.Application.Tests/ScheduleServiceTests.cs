@@ -129,9 +129,11 @@ public sealed class ScheduleServiceTests
         public Task AddSubjectAsync(ScheduleSubject subject, CancellationToken ct) => Task.CompletedTask;
         public Task AddLecturerAsync(ScheduleLecturer lecturer, CancellationToken ct) => Task.CompletedTask;
         public Task AddSubjectLecturerAsync(ScheduleSubjectLecturer item, CancellationToken ct) => Task.CompletedTask;
+        public Task AddNoteAsync(ScheduleNote note, CancellationToken ct) => Task.CompletedTask;
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleComment?>(null);
         public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult(Schedule.Entries.FirstOrDefault(x => x.Id == id));
+        public Task<ScheduleNote?> GetNoteAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleNote?>(null);
         public Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>(PublishedPlans.Where(x => x.FacultyId == facultyId && x.AcademicYear == academicYear && x.SemesterNumber == semesterNumber && x.StudyMode == studyMode && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToList());
         public Task SaveChangesAsync(CancellationToken ct) => Task.CompletedTask;
         public Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());

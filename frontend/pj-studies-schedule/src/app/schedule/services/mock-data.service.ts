@@ -8,6 +8,7 @@ interface ApiEntry {
   id: string; subjectSource?: string; subjectExternalId?: string; subjectCode?: string; subjectName: string;
   classType: ScheduleEntry['classType']; lecturerUserId?: string; lecturerEmail?: string; lecturerDisplayName: string; room?: string;
   dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[];
+  dates?: string[]; hiddenInPublished?: boolean;
   concurrencyToken: string; commentCount: number;
 }
 interface ApiPlan extends Omit<SchedulePlan, 'entries'> { entries: ApiEntry[] }
@@ -155,6 +156,7 @@ export class MockDataService {
   updateEntry(updated: ScheduleEntry): void { this.entries.update((list) => list.map((e) => e.id === updated.id ? updated : e)); this.markDirty(); }
   removeEntry(id: string): void { this.entries.update((list) => list.filter((e) => e.id !== id)); this.markDirty(); }
   setGroups(groups: ScheduleGroup[]): void { this.groups.set(groups.map((g, i) => ({ ...g, sortOrder: i }))); this.markDirty(); }
+  markEntriesDirty(): void { this.markDirty(); }
   async addSubject(code: string, name: string): Promise<ScheduleSubject> {
     const plan = this.current(); if (!plan) throw new Error('Brak aktywnego planu.');
     const item = await firstValueFrom(this.http.post<ScheduleSubject>(`${this.base}/${plan.id}/subjects`, { code, name }));
@@ -253,6 +255,7 @@ export class MockDataService {
         lecturerUserId: entry.lecturerUserId, lecturerEmail: entry.lecturerEmail, lecturerDisplayName: entry.lecturerName,
         room: entry.room || null, dayOfWeek: entry.dayOfWeek, startMinute: Math.round(entry.startHour * 60),
         durationMinutes: Math.round(entry.durationHours * 60), color: entry.color,
+        dates: entry.dates ?? [], hiddenInPublished: entry.hiddenInPublished ?? false,
         groupIds: this.groupIdsForEntry(entry, groups),
       })),
     };
@@ -309,7 +312,8 @@ export class MockDataService {
         startHour: e.startMinute / 60, durationHours: e.durationMinutes / 60,
         semesterNumber: plan.semesterNumber, academicYear: plan.academicYear,
         studyMode: plan.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
-        groupIds: e.groupIds, concurrencyToken: e.concurrencyToken, commentCount: e.commentCount };
+        groupIds: e.groupIds, concurrencyToken: e.concurrencyToken, commentCount: e.commentCount,
+        dates: e.dates ?? [], hiddenInPublished: e.hiddenInPublished ?? false };
     });
   }
   private async loadConflictContext(plan: ApiPlan): Promise<void> {
@@ -323,6 +327,10 @@ export class MockDataService {
     this.conflictContextEntries.set(aggregates.flatMap((item) => this.mapEntries(item)));
   }
   private groupIdsForEntry(entry: ScheduleEntry, groups: ScheduleGroup[]): string[] {
-    return groups.slice(entry.group, entry.group + (entry.groupSpan ?? 1)).map((g) => g.id);
+    const span = entry.groupSpan ?? 1;
+    if (entry.group < 0 || entry.group + span > groups.length) {
+      throw new Error(`Bloczek „${entry.subjectName}” nie mieści się w zakresie grup.`);
+    }
+    return groups.slice(entry.group, entry.group + span).map((g) => g.id);
   }
 }
