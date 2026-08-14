@@ -11,12 +11,14 @@
 
   <div class="semester-switcher" aria-label="Wybór semestru">
     <p-button
+      styleClass="semester-control semester-control-winter"
       label="Semestr zimowy"
       [outlined]="activeSemester() !== 'zimowy'"
       severity="secondary"
       (onClick)="setSemester('zimowy')"
     />
     <p-button
+      styleClass="semester-control semester-control-summer"
       label="Semestr letni"
       [outlined]="activeSemester() !== 'letni'"
       severity="secondary"
@@ -80,6 +82,7 @@
             <span>Tryb studiów:</span>
             @for (mode of ['Wszystkie', 'Stacjonarne', 'Niestacjonarne']; track mode) {
               <p-button
+                styleClass="mode-control"
                 [label]="mode"
                 size="small"
                 [outlined]="selectedMode() !== mode"
@@ -99,7 +102,7 @@
               @if (filteredSubjects().length === 0) {
                 <p class="empty-info">Brak deklaracji dla wybranego trybu.</p>
               } @else {
-                <p-table [value]="filteredSubjects()" styleClass="p-datatable-sm">
+                <p-table [value]="filteredSubjects()" styleClass="p-datatable-sm desiderata-table">
                   <ng-template pTemplate="header">
                     <tr>
                       <th>Kod</th>

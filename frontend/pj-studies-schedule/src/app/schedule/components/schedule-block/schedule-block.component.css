@@ -194,3 +194,21 @@
   background: white;
   font-size: .68rem;
 }
+
+.block {
+  border:1px solid color-mix(in srgb,var(--block-color) 55%,#173047);
+  border-left:3px solid var(--block-color);
+  border-radius:2px;
+  background:color-mix(in srgb,var(--block-color) 14%,#091525);
+  box-shadow:inset 0 0 12px rgba(0,0,0,.16);
+}
+.block:hover { background:color-mix(in srgb,var(--block-color) 22%,#0b192b); box-shadow:0 0 10px color-mix(in srgb,var(--block-color) 20%,transparent); }
+.block-subject { color:#e7f8ff; font-family:Consolas,monospace; }
+.block-meta { color:#9ab6c6; }
+.block-time,.block-dates { color:#71dcff; font-family:Consolas,monospace; }
+.color-button,.comments-button { border:1px solid rgba(69,213,255,.2); border-radius:2px; background:rgba(7,16,30,.82); color:#7fa3b6; }
+.color-button:hover,.comments-button:hover { background:#0b192b; color:#45d5ff; }
+.comment-badge { border-color:#07101e; border-radius:2px; background:#ff4057; }
+.color-palette { border-color:rgba(69,213,255,.3); border-radius:2px; background:#07101e; }
+.color-swatch { border-color:#07101e; border-radius:2px; }
+.room-input { border-color:#45d5ff; border-radius:2px; background:#07101e; color:#e7f8ff; }

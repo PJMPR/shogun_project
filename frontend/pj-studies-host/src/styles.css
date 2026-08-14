@@ -128,3 +128,36 @@ html, body {
   background: rgba(255, 64, 87, 0.07) !important;
   color: #ff687b !important;
 }
+
+/* Planner overlays and detached PrimeNG content */
+.cockpit-schedule-dialog.p-dialog {
+  overflow:hidden;
+  border:1px solid rgba(69,213,255,.42) !important;
+  border-top:2px solid #45d5ff !important;
+  border-radius:2px !important;
+  background:#07101e !important;
+  color:#c7d9e6 !important;
+  box-shadow:0 0 45px rgba(0,0,0,.72) !important;
+}
+.cockpit-schedule-dialog .p-dialog-header,.cockpit-schedule-dialog .p-dialog-footer { border-color:rgba(69,213,255,.25) !important; background:linear-gradient(90deg,rgba(69,213,255,.14),#091627 38%) !important; color:#e7f8ff !important; font-family:Consolas,monospace; text-transform:uppercase; }
+.cockpit-schedule-dialog .p-dialog-content { background:linear-gradient(rgba(69,213,255,.018) 1px,transparent 1px),#07101e !important; background-size:100% 24px !important; color:#c7d9e6 !important; }
+.cockpit-schedule-dialog .desiderata-panel { border-color:rgba(69,213,255,.2) !important; }
+.cockpit-schedule-dialog .subject-column,.cockpit-schedule-dialog .catalog-tools { border-color:rgba(69,213,255,.2) !important; border-radius:2px !important; background:#091525 !important; color:#c7d9e6 !important; }
+.cockpit-schedule-dialog .subject-heading,.cockpit-schedule-dialog label,.cockpit-schedule-dialog .desiderata-heading { color:#8fc8dc !important; font-family:Consolas,monospace; text-transform:uppercase; }
+.cockpit-schedule-dialog .p-inputtext,.cockpit-schedule-dialog .p-inputnumber-input,.cockpit-schedule-dialog .p-select { border-color:rgba(69,213,255,.28) !important; border-radius:2px !important; background:#081525 !important; color:#e7f8ff !important; }
+.cockpit-schedule-dialog .p-button,.cockpit-schedule-dialog button { border-radius:2px !important; }
+.cockpit-schedule-dialog .desideratum-card { border:1px solid rgba(69,213,255,.2) !important; background:rgba(69,213,255,.07) !important; color:#a8d9e9 !important; }
+.cockpit-schedule-dialog .desideratum-card:hover { border-color:#45d5ff !important; color:#45d5ff !important; }
+
+.cockpit-schedule-table .p-datatable-thead>tr>th { border-color:rgba(69,213,255,.18) !important; background:#0e1e32 !important; color:#8eb7ca !important; font:600 .58rem Consolas,monospace !important; text-transform:uppercase; }
+.cockpit-schedule-table .p-datatable-tbody>tr>td { border-color:rgba(69,213,255,.08) !important; background:#07101e !important; color:#bdd2df !important; }
+.cockpit-schedule-table .p-datatable-tbody>tr:nth-child(even)>td { background:#0c1b2e !important; }
+.cockpit-schedule-table .p-paginator { border-color:rgba(69,213,255,.18) !important; background:#091525 !important; color:#8eb7ca !important; }
+
+app-plan-notes-drawer .backdrop { background:rgba(1,5,13,.72) !important; backdrop-filter:blur(3px); }
+app-plan-notes-drawer aside { border-left:1px solid rgba(69,213,255,.4); border-top:2px solid #45d5ff; background:#07101e !important; color:#c7d9e6; box-shadow:-15px 0 40px rgba(0,0,0,.6) !important; }
+app-plan-notes-drawer header,app-plan-notes-drawer footer { border-color:rgba(69,213,255,.23) !important; background:#091525; }
+app-plan-notes-drawer h3 { color:#e7f8ff; font-family:Consolas,monospace; text-transform:uppercase; }
+app-plan-notes-drawer details { border-color:rgba(69,213,255,.18) !important; border-radius:2px !important; }
+app-plan-notes-drawer summary { background:#0b192b !important; color:#ccebf6; }
+app-plan-notes-drawer input,app-plan-notes-drawer textarea { border-color:rgba(69,213,255,.27) !important; border-radius:2px !important; background:#081525 !important; color:#e7f8ff !important; }

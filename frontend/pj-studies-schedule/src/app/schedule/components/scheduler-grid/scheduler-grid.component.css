@@ -93,3 +93,18 @@
 }
 
 .cdk-drag-placeholder { opacity: .25; }
+
+.scheduler-surface {
+  background-color:#07101e;
+  background-image:
+    repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--slot-height) - 1px),rgba(69,213,255,.07) calc(var(--slot-height) - 1px),rgba(69,213,255,.07) var(--slot-height)),
+    repeating-linear-gradient(to bottom,transparent 0,transparent calc(2 * var(--slot-height) - 2px),rgba(69,213,255,.15) calc(2 * var(--slot-height) - 2px),rgba(69,213,255,.15) calc(2 * var(--slot-height)));
+}
+.schedule-item.selected { outline:2px solid #45d5ff; border-radius:2px; box-shadow:0 0 12px rgba(69,213,255,.25); }
+.drag-handle { color:#45d5ff; }
+.horizontal-resize { background:rgba(69,213,255,.7); }
+.resize-handle:hover { border-color:#45d5ff; }
+.selection-cell { border-color:#45d5ff; background:rgba(69,213,255,.2); }
+.selection-hint { border:1px solid rgba(69,213,255,.35); border-radius:2px; background:#0b192b; color:#bfefff; font-family:Consolas,monospace; }
+.availability-cell.available { background:rgba(77,255,184,.16); box-shadow:inset 0 0 0 1px rgba(77,255,184,.25); }
+.availability-cell.unavailable { background:rgba(255,64,87,.12); box-shadow:inset 0 0 0 1px rgba(255,64,87,.16); }

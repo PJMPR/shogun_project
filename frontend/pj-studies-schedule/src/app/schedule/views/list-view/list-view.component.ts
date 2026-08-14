@@ -16,7 +16,7 @@ import { DAY_NAMES, ScheduleEntry, Semester, formatHour, semesterTypeOf } from '
     <div class="list-view">
       <p-table
         [value]="filteredEntries()"
-        styleClass="p-datatable-sm"
+        styleClass="p-datatable-sm cockpit-schedule-table"
         [paginator]="true"
         [rows]="15"
         [rowsPerPageOptions]="[10, 15, 25]"

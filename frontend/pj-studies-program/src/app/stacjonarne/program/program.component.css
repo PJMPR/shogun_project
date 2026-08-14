@@ -489,3 +489,260 @@
   padding-left: 0.5rem !important;
 }
 
+/* Cockpit program console */
+:host {
+  display: block;
+  min-height: 100%;
+  color: #c7d9e6;
+}
+
+.program-page {
+  position: relative;
+  margin: 0;
+  padding: 1.25rem clamp(0.75rem, 2vw, 1.5rem) 2rem;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.025) 1px, transparent 1px),
+    #050914;
+  background-size: 28px 28px;
+}
+
+.total-summary {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(69, 213, 255, 0.3);
+  border-top: 2px solid #45d5ff;
+  border-left: 3px solid #ff4057;
+  border-radius: 2px;
+  background: linear-gradient(105deg, rgba(69, 213, 255, 0.1), rgba(8, 20, 36, 0.96) 35%, #07101e);
+  box-shadow: inset 0 0 22px rgba(69, 213, 255, 0.035);
+}
+
+.page-title {
+  color: #e7f8ff;
+  font: 600 clamp(1.05rem, 2vw, 1.4rem) Consolas, "Courier New", monospace;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(69, 213, 255, 0.18);
+}
+
+.page-title::before {
+  content: "NAV // CURRICULUM";
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #ff687b;
+  font-size: 0.52rem;
+  letter-spacing: 0.11em;
+}
+
+.total-summary-title,
+.total-summary-label,
+.summary-label {
+  color: #7897aa;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.total-summary-value,
+.summary-value {
+  color: #e7f8ff;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.ects-value { color: #45d5ff; }
+.summary-separator { background: rgba(69, 213, 255, 0.24); }
+
+:host ::ng-deep .total-summary .p-button {
+  border: 1px solid rgba(255, 64, 87, 0.5) !important;
+  border-radius: 2px !important;
+  background: rgba(255, 64, 87, 0.1) !important;
+  color: #ff7a8a !important;
+  font: 600 0.65rem Consolas, monospace !important;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .program-page > p-tabs .p-tablist {
+  border: 1px solid rgba(69, 213, 255, 0.24) !important;
+  border-radius: 2px 2px 0 0 !important;
+  background: #081525 !important;
+}
+
+:host ::ng-deep .program-page > p-tabs .p-tab {
+  min-width: 112px;
+  border: 0 !important;
+  border-right: 1px solid rgba(69, 213, 255, 0.12) !important;
+  background: transparent !important;
+  color: #6f91a5 !important;
+  font: 600 0.64rem Consolas, monospace !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .program-page > p-tabs .p-tab::before {
+  content: "CH ";
+  color: #ff4057;
+  font-size: 0.52rem;
+}
+
+:host ::ng-deep .program-page > p-tabs .p-tab-active {
+  background: rgba(69, 213, 255, 0.12) !important;
+  color: #45d5ff !important;
+  box-shadow: inset 0 -2px #45d5ff;
+}
+
+:host ::ng-deep .program-page > p-tabs .p-tabpanels {
+  padding: 1rem !important;
+  border: 1px solid rgba(69, 213, 255, 0.2) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 2px 2px !important;
+  background: rgba(5, 12, 23, 0.96) !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .semester-table .p-treetable-table-container {
+  border: 1px solid rgba(69, 213, 255, 0.2);
+  background: #07101e;
+}
+
+:host ::ng-deep .semester-table .p-treetable-thead > tr > th {
+  border-color: rgba(69, 213, 255, 0.18) !important;
+  background: #0e1e32 !important;
+  color: #8eb7ca !important;
+  font: 600 0.58rem Consolas, monospace !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr > td {
+  border-color: rgba(69, 213, 255, 0.08) !important;
+  background: rgba(7, 16, 30, 0.96) !important;
+  color: #bdd2df !important;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr:nth-child(even) > td {
+  background: rgba(12, 27, 46, 0.96) !important;
+}
+
+:host ::ng-deep .semester-table .group-row > td {
+  border-block-color: rgba(69, 213, 255, 0.25) !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.14), #0b192b 40%) !important;
+  color: #45d5ff !important;
+  font-family: Consolas, monospace;
+}
+
+:host ::ng-deep .semester-table .p-treetable-node-toggle-button {
+  border: 1px solid rgba(69, 213, 255, 0.28) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.07) !important;
+  color: #45d5ff !important;
+}
+
+:host ::ng-deep .semester-table .p-tag {
+  border: 1px solid rgba(69, 213, 255, 0.24);
+  border-radius: 2px;
+  background: rgba(69, 213, 255, 0.08);
+  color: #9eeaff;
+  font: 600 0.56rem Consolas, monospace;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .action-cell .p-button,
+.doc-btn {
+  border: 1px solid rgba(69, 213, 255, 0.3) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.07) !important;
+  color: #45d5ff !important;
+  font: 600 0.58rem Consolas, monospace !important;
+}
+
+.summary-divider { border-top-color: rgba(69, 213, 255, 0.18); }
+
+.semester-summary {
+  border: 1px solid rgba(69, 213, 255, 0.22);
+  border-left: 2px solid #45d5ff;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.09), #0b192b 45%);
+}
+
+.changes-section {
+  border: 1px solid rgba(69, 213, 255, 0.2);
+  border-left: 3px solid #ffbc42;
+  border-radius: 2px;
+  background: rgba(7, 16, 30, 0.9);
+}
+
+.changes-header-icon { color: #ffbc42; }
+.changes-header-title { color: #dceef7; font-family: Consolas, monospace; text-transform: uppercase; }
+.change-card { border-color: rgba(69, 213, 255, 0.16); border-radius: 2px; background: #0b192b; box-shadow: none; }
+.change-subject { color: #dceef7; }
+.change-reason { color: #8eabbc; }
+.change-marker { border: 1px solid currentColor; border-radius: 2px; background: #0b192b !important; }
+.change-marker[data-type="nowy"] { color: #4dffb8; }
+.change-marker[data-type="zmiana"] { color: #45d5ff; }
+.change-marker[data-type="przeniesienie"] { color: #ffbc42; }
+.change-marker[data-type="usunięcie"] { color: #ff687b; }
+
+:host ::ng-deep .cockpit-program-dialog.p-dialog {
+  overflow: hidden;
+  border: 1px solid rgba(69, 213, 255, 0.4) !important;
+  border-top: 2px solid #45d5ff !important;
+  border-radius: 2px !important;
+  background: #07101e !important;
+  color: #c7d9e6 !important;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.72) !important;
+}
+
+:host ::ng-deep .cockpit-program-dialog .p-dialog-header,
+:host ::ng-deep .cockpit-program-dialog .p-dialog-footer {
+  border-color: rgba(69, 213, 255, 0.25) !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.13), #091627 38%) !important;
+  color: #e7f8ff !important;
+  font-family: Consolas, monospace;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .cockpit-program-dialog .p-dialog-content {
+  background: #07101e !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .cockpit-program-dialog .sylabus-card.p-card,
+:host ::ng-deep .cockpit-program-dialog .sylabus-panel.p-panel {
+  border: 1px solid rgba(69, 213, 255, 0.2) !important;
+  border-radius: 2px !important;
+  background: #091627 !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .cockpit-program-dialog .p-panel-header,
+.cockpit-program-dialog .sylabus-card-header {
+  border-bottom: 1px solid rgba(69, 213, 255, 0.2) !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.12), #0b192b) !important;
+  color: #9eeaff !important;
+}
+
+:host ::ng-deep .cockpit-program-dialog .p-panel-content,
+:host ::ng-deep .cockpit-program-dialog .p-card-body,
+:host ::ng-deep .cockpit-program-dialog .p-card-content {
+  background: #081321 !important;
+  color: #c7d9e6 !important;
+}
+
+.loading-info {
+  border: 1px solid rgba(69, 213, 255, 0.24);
+  background: #081525;
+  color: #45d5ff;
+  font-family: Consolas, monospace;
+}
+
+@media (max-width: 760px) {
+  .page-title-row, .total-summary-items, .semester-summary { align-items: flex-start; }
+  .page-title-row { flex-direction: column; }
+  .total-hours { margin-left: 0; }
+  :host ::ng-deep .program-page > p-tabs .p-tabpanels { padding: 0.55rem !important; }
+}
+

@@ -222,5 +222,33 @@
 .col-sep.last {
   border-right: none;
 }
+
+.weekly-view { color: #c7d9e6; }
+.toolbar { border-bottom: 1px solid rgba(69,213,255,.17); }
+:host ::ng-deep .toolbar .p-togglebutton,
+:host ::ng-deep .plan-actions .p-button {
+  border: 1px solid rgba(69,213,255,.28) !important;
+  border-radius: 2px !important;
+  background: #081525 !important;
+  color: #82a7ba !important;
+  font: 600 .59rem Consolas, monospace !important;
+  text-transform: uppercase;
+}
+:host ::ng-deep .toolbar .p-togglebutton-checked { border-color:#45d5ff !important; background:rgba(69,213,255,.14) !important; color:#45d5ff !important; }
+.dirty-indicator { color:#ffbc42; font-family:Consolas,monospace; }
+.dirty-indicator span { border-radius:1px; background:#ffbc42; box-shadow:0 0 8px rgba(255,188,66,.5); }
+.stale-banner { border-radius:2px; border-color:rgba(255,188,66,.5); background:rgba(255,188,66,.08); color:#ffd47e; }
+.headers-area { background:#07101e; }
+.time-gutter { border-color:rgba(69,213,255,.2); background:#091525; }
+.day-header { border-bottom-color:#45d5ff; border-right-color:rgba(69,213,255,.4); background:linear-gradient(180deg,rgba(69,213,255,.14),#0b192b); color:#d8f4ff; font-family:Consolas,monospace; text-transform:uppercase; }
+.group-header-row { border-bottom-color:rgba(69,213,255,.35); background:#0b192b; box-shadow:none; }
+.group-header { border-right-color:rgba(69,213,255,.17); color:#7897aa; background:#091525; }
+.group-header.day-boundary,.col-sep.day-boundary { border-right-color:rgba(69,213,255,.42); }
+.col-sep { border-right-color:rgba(69,213,255,.1); }
+.group-name-input { color:#8eb7ca; font-family:Consolas,monospace; }
+.group-name-input:hover,.group-name-input:focus { background:rgba(69,213,255,.09); color:#e7f8ff; border-color:#45d5ff; }
+.add-group-btn,.restore-groups-btn,.expand-day-btn { color:#45d5ff; border:1px solid rgba(69,213,255,.2); border-radius:2px; background:rgba(69,213,255,.06); }
+.hide-group-btn,.remove-group-btn { color:#66879a; }
+.schedule-scroll { border:1px solid rgba(69,213,255,.18); scrollbar-color:#285b73 #07101e; }
 .expand-day-btn { margin-left: .35rem; padding: .2rem .35rem; border: 0; border-radius: 4px; color: var(--p-surface-600); background: transparent; cursor: pointer; }
 .expand-day-btn:hover { color: var(--p-primary-700); background: var(--p-primary-50); }

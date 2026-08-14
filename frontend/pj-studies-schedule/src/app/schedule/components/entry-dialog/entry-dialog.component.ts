@@ -63,6 +63,7 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
   imports: [DialogModule, FormsModule, InputTextModule, InputNumberModule, SelectModule, ButtonModule],
   template: `
     <p-dialog
+      styleClass="cockpit-schedule-dialog"
       [(visible)]="visible"
       [header]="isEditing ? 'Edytuj wpis' : 'Nowy wpis'"
       [modal]="true"
