@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shogun Cockpit UI"
+  short_description: "Style Shogun modules as a sci-fi cockpit"
+  default_prompt: "Use $shogun-cockpit-ui to restyle this Shogun module as a consistent sci-fi cockpit without breaking functionality."
