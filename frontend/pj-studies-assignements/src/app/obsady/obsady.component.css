@@ -1,7 +1,18 @@
 .obsady-page {
-  margin-left: 15px;
-  margin-right: 1rem;
-  padding: 2rem 0;
+  position: relative;
+  margin: 0;
+  padding: 1.5rem 0;
+  color: var(--space-text);
+}
+
+.obsady-page::before {
+  content: "CREW ASSIGNMENT CONTROL  /  ACADEMIC OPERATIONS";
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--space-muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
 }
 
 /* ════ Floating tour button ════ */
@@ -38,20 +49,40 @@
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0 0 0.75rem 0;
-  color: #dc2626;
+  color: var(--space-cyan);
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(69, 213, 255, 0.25);
 }
 
 .page-title-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0.95rem 1.1rem 0.2rem;
+  border: 1px solid var(--space-line);
+  border-left: 3px solid var(--space-cyan);
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.1), rgba(11, 19, 36, 0.72));
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+.page-title-row::after {
+  content: "MODULE 02";
+  margin: 0 0 0.75rem auto;
+  color: var(--space-red);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
 }
 
 .season-switcher {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(69, 213, 255, 0.12);
+  background: rgba(5, 12, 24, 0.6);
 }
 
 .loading-info {
@@ -81,7 +112,7 @@
 }
 
 .group-row td {
-  background: #fff5f5 !important;
+  background: rgba(69, 213, 255, 0.09) !important;
   font-weight: 600;
 }
 
@@ -90,7 +121,7 @@
 }
 
 .child-row td {
-  background: #fffafa;
+  background: rgba(7, 15, 29, 0.82);
 }
 
 .text-center {
@@ -103,7 +134,7 @@
 
 .summary-divider {
   border: none;
-  border-top: 2px solid #d1d5db;
+  border-top: 1px solid var(--space-line);
   margin: 0.75rem 0;
 }
 
@@ -113,8 +144,10 @@
   gap: 1.25rem;
   align-items: center;
   padding: 0.75rem 1rem;
-  background: #e5e7eb;
-  border-radius: 6px;
+  border: 1px solid var(--space-line);
+  border-left: 3px solid var(--space-cyan);
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.08), rgba(11, 19, 36, 0.94));
+  border-radius: 3px;
   margin-bottom: 1rem;
 }
 
@@ -125,18 +158,18 @@
 }
 
 .summary-label {
-  color: #6b7280;
+  color: var(--space-muted);
   font-size: 0.875rem;
 }
 
 .summary-value {
   font-weight: 700;
   font-size: 0.95rem;
-  color: #111827;
+  color: var(--space-text);
 }
 
 .ects-value {
-  color: #dc2626;
+  color: var(--space-cyan);
   font-size: 1.05rem;
 }
 
@@ -457,4 +490,723 @@
 .conf-season-tag {
   font-size: 0.9rem !important;
   padding: 0.25rem 0.65rem !important;
+}
+
+/* Cockpit theme overrides */
+.zgloszenie-bar,
+.conf-section,
+.availability-table,
+.conf-info-grid {
+  border: 1px solid var(--space-line);
+  border-radius: 3px;
+  background: rgba(11, 19, 36, 0.9);
+  box-shadow: inset 0 0 28px rgba(69, 213, 255, 0.025);
+}
+
+.zgloszenie-bar {
+  padding: 0.75rem;
+  border-left: 3px solid var(--space-cyan);
+}
+
+.selection-count,
+.zgl-section-hint,
+.loading-info,
+.no-data,
+.sylabus-loading,
+.no-sylabus-info,
+.conf-label,
+.conf-avail-time {
+  color: var(--space-muted);
+}
+
+.row-selected td {
+  border-color: rgba(69, 213, 255, 0.26) !important;
+  background: rgba(69, 213, 255, 0.12) !important;
+  box-shadow: inset 3px 0 var(--space-cyan);
+}
+
+.selected-label,
+.zgl-section-title,
+.conf-section-title,
+.conf-value,
+.conf-code,
+.conf-avail-item {
+  color: var(--space-text);
+}
+
+.availability-table th,
+.conf-section-header,
+.zgl-group-header td,
+.zgl-footer td {
+  border-color: var(--space-line) !important;
+  background: var(--space-panel-raised) !important;
+  color: var(--space-cyan) !important;
+}
+
+.availability-table td,
+.conf-info-row {
+  border-color: rgba(69, 213, 255, 0.1);
+  color: var(--space-text);
+}
+
+.avail-select,
+.avail-time,
+.uwagi-textarea {
+  border-color: var(--space-line);
+  border-radius: 3px;
+  background: rgba(4, 11, 23, 0.82);
+  color: var(--space-text);
+}
+
+.avail-select:focus,
+.avail-time:focus,
+.uwagi-textarea:focus {
+  border-color: var(--space-cyan);
+  box-shadow: 0 0 0 2px rgba(69, 213, 255, 0.1);
+}
+
+.conf-notes {
+  border-color: rgba(255, 183, 77, 0.38);
+  border-left-color: #ffb74d;
+  background: rgba(255, 183, 77, 0.08);
+  color: #ffdca8;
+}
+
+.tour-fab {
+  border: 1px solid var(--space-line);
+  border-radius: 4px;
+  background: var(--space-panel-raised);
+  color: var(--space-cyan);
+  box-shadow: 0 0 18px rgba(69, 213, 255, 0.15);
+}
+
+.tour-fab:hover {
+  background: rgba(69, 213, 255, 0.18);
+  box-shadow: 0 0 22px rgba(69, 213, 255, 0.24);
+}
+
+.season-control {
+  position: relative;
+  justify-content: flex-start;
+  min-width: 176px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 2.2rem 0.65rem 0.9rem;
+  border: 1px solid rgba(69, 213, 255, 0.28);
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(18, 37, 59, 0.98), rgba(5, 13, 27, 0.98));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+  color: #89a3b8;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  cursor: pointer;
+  transition: border-color 0.16s, background 0.16s, box-shadow 0.16s;
+}
+
+.control-light {
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 7px;
+  height: 7px;
+  transform: translateY(-50%);
+  border: 1px solid #58758b;
+  border-radius: 50%;
+  background: #142235;
+}
+
+.season-control:hover,
+.season-control.control-active {
+  border-color: #45d5ff;
+  background: linear-gradient(180deg, rgba(69, 213, 255, 0.24), rgba(8, 27, 44, 0.98));
+  box-shadow: inset 3px 0 #45d5ff, 0 0 18px rgba(69, 213, 255, 0.18);
+  color: #45d5ff;
+}
+
+.control-active .control-light {
+  border-color: #4dffb8;
+  background: #4dffb8;
+  box-shadow: 0 0 9px #4dffb8;
+}
+
+.control-code {
+  color: #ff4057;
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+}
+
+.assignment-submit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 64, 87, 0.76);
+  border-left: 4px solid #ff4057;
+  border-radius: 3px;
+  background: linear-gradient(110deg, rgba(255, 64, 87, 0.24), rgba(28, 10, 23, 0.98) 42%, rgba(9, 20, 35, 0.98));
+  box-shadow: inset 0 0 22px rgba(255, 64, 87, 0.06), 0 0 20px rgba(255, 64, 87, 0.14);
+  color: #ffd8de;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+  cursor: pointer;
+}
+
+.submit-code {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 18px;
+  margin-left: 0.7rem;
+  border: 1px solid #ff4057;
+  color: #ff4057;
+  font-size: 0.55rem;
+  box-shadow: 0 0 8px rgba(255, 64, 87, 0.22);
+}
+
+.assignment-submit:hover {
+  background: linear-gradient(110deg, rgba(255, 64, 87, 0.34), rgba(38, 10, 25, 0.98) 48%, rgba(9, 20, 35, 0.98));
+  box-shadow: inset 0 0 24px rgba(255, 64, 87, 0.1), 0 0 25px rgba(255, 64, 87, 0.23);
+}
+
+.submit-signal {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 64, 87, 0.55);
+  color: #ff4057;
+  background: rgba(255, 64, 87, 0.08);
+}
+
+.submit-copy { display: grid; gap: 0.15rem; text-align: left; }
+.submit-copy small { color: #ff788a; font-size: 0.52rem; letter-spacing: 0.11em; }
+.submit-copy strong { font-size: 0.78rem; letter-spacing: 0.055em; }
+
+/* PrimeNG tab internals need explicit component-level cockpit styling. */
+:host ::ng-deep .study-mode-tabs.p-tablist {
+  margin-top: 1.25rem;
+  border: 1px solid rgba(69, 213, 255, 0.26) !important;
+  border-bottom-color: rgba(69, 213, 255, 0.5) !important;
+  border-radius: 3px 3px 0 0 !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.1), rgba(7, 16, 30, 0.98) 38%) !important;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+:host ::ng-deep .study-mode-tabs .p-tablist-tab-list,
+:host ::ng-deep .semester-channel-tabs .p-tablist-tab-list {
+  gap: 0.45rem;
+  padding: 0.45rem !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tab {
+  position: relative;
+  min-width: 220px;
+  padding: 0.8rem 2.4rem 0.8rem 1rem !important;
+  border: 1px solid rgba(69, 213, 255, 0.16) !important;
+  border-radius: 2px !important;
+  background: rgba(5, 13, 27, 0.76) !important;
+  color: #89a3b8 !important;
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tab::before {
+  content: "MODE";
+  margin-right: 0.65rem;
+  color: #ff4057;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tab::after,
+:host ::ng-deep .semester-channel-tabs .p-tab::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+  width: 6px;
+  height: 6px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #24384b;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tab-active {
+  border-color: #45d5ff !important;
+  background: linear-gradient(180deg, rgba(69, 213, 255, 0.21), rgba(8, 27, 44, 0.96)) !important;
+  box-shadow: inset 3px 0 #45d5ff, 0 0 16px rgba(69, 213, 255, 0.13);
+  color: #45d5ff !important;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tab-active::after,
+:host ::ng-deep .semester-channel-tabs .p-tab-active::after {
+  background: #4dffb8;
+  box-shadow: 0 0 8px #4dffb8;
+}
+
+:host ::ng-deep .semester-channel-tabs.p-tablist {
+  margin: 0 0 0.75rem;
+  border: 1px solid rgba(69, 213, 255, 0.14) !important;
+  border-radius: 2px !important;
+  background: rgba(4, 11, 23, 0.78) !important;
+}
+
+:host ::ng-deep .semester-channel-tabs .p-tab {
+  position: relative;
+  min-width: 112px;
+  padding: 0.58rem 1.8rem 0.58rem 0.75rem !important;
+  border: 1px solid transparent !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  color: #7892a7 !important;
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 0.66rem !important;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .semester-channel-tabs .p-tab-active {
+  border-color: rgba(69, 213, 255, 0.42) !important;
+  background: rgba(69, 213, 255, 0.12) !important;
+  color: #45d5ff !important;
+  box-shadow: inset 0 -2px #45d5ff;
+}
+
+:host ::ng-deep .study-mode-tabs .p-tablist-active-bar,
+:host ::ng-deep .semester-channel-tabs .p-tablist-active-bar {
+  display: none !important;
+}
+
+:host ::ng-deep .obsady-page .p-tabpanels {
+  padding: 1rem !important;
+  border: 1px solid rgba(69, 213, 255, 0.18) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 3px 3px !important;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.025) 1px, transparent 1px),
+    #07101e !important;
+  background-size: 28px 28px !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .obsady-page .p-tabpanel {
+  min-height: 0;
+  background: transparent !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .obsady-page .p-tabs,
+:host ::ng-deep .obsady-page .p-tablist-content,
+:host ::ng-deep .obsady-page .p-tablist-viewport {
+  background: transparent !important;
+}
+
+/* ── TreeTable data console ──────────────────────── */
+:host ::ng-deep .semester-table.p-treetable {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(69, 213, 255, 0.24);
+  border-top: 2px solid rgba(69, 213, 255, 0.55);
+  border-radius: 3px;
+  background: #07101e;
+  box-shadow: inset 0 0 42px rgba(69, 213, 255, 0.025), 0 18px 42px rgba(0, 0, 0, 0.27);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+:host ::ng-deep .semester-table .p-treetable-table-container {
+  background-image: repeating-linear-gradient(0deg, rgba(69, 213, 255, 0.012) 0, rgba(69, 213, 255, 0.012) 1px, transparent 1px, transparent 4px);
+}
+
+:host ::ng-deep .semester-table table {
+  border-collapse: collapse;
+  background: transparent;
+}
+
+:host ::ng-deep .semester-table .p-treetable-thead > tr > th {
+  height: 46px;
+  padding: 0.65rem 0.7rem !important;
+  border-color: rgba(69, 213, 255, 0.18) !important;
+  border-bottom-color: rgba(69, 213, 255, 0.42) !important;
+  background: linear-gradient(180deg, #13243a, #0b1729) !important;
+  color: #a9c7da !important;
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 0.62rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .semester-table .p-treetable-thead > tr > th:nth-child(2)::before {
+  content: "DATA // ";
+  color: #ff4057;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr > td {
+  height: 43px;
+  padding: 0.55rem 0.7rem !important;
+  border-color: rgba(69, 213, 255, 0.09) !important;
+  background: rgba(7, 16, 30, 0.91) !important;
+  color: #c7d9e6 !important;
+  transition: background 0.14s, color 0.14s, box-shadow 0.14s;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr:nth-child(even) > td {
+  background: rgba(11, 24, 42, 0.93) !important;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr:hover > td {
+  background: rgba(69, 213, 255, 0.095) !important;
+  color: #effbff !important;
+}
+
+:host ::ng-deep .semester-table .p-treetable-tbody > tr:hover > td:first-child {
+  box-shadow: inset 3px 0 #45d5ff;
+}
+
+:host ::ng-deep .semester-table .group-row > td {
+  border-top-color: rgba(69, 213, 255, 0.3) !important;
+  border-bottom-color: rgba(69, 213, 255, 0.22) !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.15), rgba(12, 27, 46, 0.97) 38%) !important;
+  color: #45d5ff !important;
+  font-family: Consolas, "Courier New", monospace;
+  letter-spacing: 0.025em;
+}
+
+:host ::ng-deep .semester-table .group-label::before {
+  content: "▰ ";
+  color: #ff4057;
+}
+
+:host ::ng-deep .semester-table .child-row > td:nth-child(2) {
+  color: #d8e8f3 !important;
+}
+
+:host ::ng-deep .semester-table .row-selected > td,
+:host ::ng-deep .semester-table .row-selected:nth-child(even) > td {
+  border-top-color: rgba(69, 213, 255, 0.24) !important;
+  border-bottom-color: rgba(69, 213, 255, 0.24) !important;
+  background: rgba(69, 213, 255, 0.16) !important;
+  color: #effcff !important;
+}
+
+:host ::ng-deep .semester-table .row-selected > td:first-child {
+  box-shadow: inset 3px 0 #4dffb8;
+}
+
+:host ::ng-deep .semester-table .p-treetable-node-toggle-button {
+  width: 26px;
+  height: 26px;
+  margin-right: 0.35rem;
+  border: 1px solid rgba(69, 213, 255, 0.25) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.06) !important;
+  color: #45d5ff !important;
+}
+
+:host ::ng-deep .semester-table .p-treetable-node-toggle-button:hover {
+  border-color: #45d5ff !important;
+  background: rgba(69, 213, 255, 0.17) !important;
+  box-shadow: 0 0 10px rgba(69, 213, 255, 0.15);
+}
+
+:host ::ng-deep .semester-table .p-checkbox-box {
+  border-color: rgba(69, 213, 255, 0.38) !important;
+  border-radius: 2px !important;
+  background: #071321 !important;
+}
+
+:host ::ng-deep .semester-table .p-checkbox-checked .p-checkbox-box {
+  border-color: #4dffb8 !important;
+  background: rgba(77, 255, 184, 0.16) !important;
+  color: #4dffb8 !important;
+  box-shadow: 0 0 9px rgba(77, 255, 184, 0.22);
+}
+
+:host ::ng-deep .semester-table .p-tag {
+  border: 1px solid rgba(69, 213, 255, 0.25);
+  border-radius: 2px;
+  background: rgba(69, 213, 255, 0.08);
+  color: #9eeaff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .semester-table td:nth-child(4),
+:host ::ng-deep .semester-table td:nth-child(9) {
+  color: #7fddf8 !important;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+/* ── Cockpit modal windows ───────────────────────── */
+:host ::ng-deep .p-dialog-mask {
+  background: rgba(1, 5, 13, 0.78) !important;
+  backdrop-filter: blur(5px) saturate(0.75);
+}
+
+:host ::ng-deep .cockpit-dialog.p-dialog {
+  overflow: hidden;
+  border: 1px solid rgba(69, 213, 255, 0.38) !important;
+  border-top: 2px solid #45d5ff !important;
+  border-radius: 3px !important;
+  background: #07101e !important;
+  box-shadow: 0 0 0 1px rgba(69, 213, 255, 0.06), 0 0 55px rgba(0, 0, 0, 0.7), 0 0 32px rgba(69, 213, 255, 0.1) !important;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-header {
+  position: relative;
+  min-height: 58px;
+  padding: 0.8rem 1.1rem 0.8rem 3.4rem !important;
+  border-bottom: 1px solid rgba(69, 213, 255, 0.38) !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.17), #0b1729 32%, #07101e) !important;
+  color: #dff7ff !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-header::before {
+  content: "SYS";
+  position: absolute;
+  left: 0.9rem;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 24px;
+  border: 1px solid #ff4057;
+  color: #ff687b;
+  font: 600 0.55rem Consolas, monospace;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 10px rgba(255, 64, 87, 0.13);
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-title {
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 0.86rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(69, 213, 255, 0.22);
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-header-actions {
+  gap: 0.4rem;
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-header-action {
+  width: 31px !important;
+  height: 31px !important;
+  border: 1px solid rgba(69, 213, 255, 0.28) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.06) !important;
+  color: #89a3b8 !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-header-action:hover {
+  border-color: #ff4057 !important;
+  background: rgba(255, 64, 87, 0.12) !important;
+  color: #ff687b !important;
+  box-shadow: 0 0 10px rgba(255, 64, 87, 0.12);
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-content {
+  border: 0 !important;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.018) 1px, transparent 1px),
+    #07101e !important;
+  background-size: 26px 26px !important;
+  color: #c7d9e6 !important;
+  scrollbar-color: #285b73 #07101e;
+}
+
+:host ::ng-deep .cockpit-dialog .p-dialog-footer {
+  min-height: 62px;
+  padding: 0.75rem 1rem !important;
+  border-top: 1px solid rgba(69, 213, 255, 0.28) !important;
+  background: linear-gradient(90deg, #0b1729, #07101e) !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-divider::before {
+  border-color: rgba(69, 213, 255, 0.2) !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-datatable {
+  border: 1px solid rgba(69, 213, 255, 0.2);
+  background: rgba(7, 16, 30, 0.92) !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-datatable-thead > tr > th {
+  border-color: rgba(69, 213, 255, 0.18) !important;
+  background: #101f34 !important;
+  color: #9fc2d7 !important;
+  font: 600 0.62rem Consolas, monospace !important;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .cockpit-dialog .p-datatable-tbody > tr > td,
+:host ::ng-deep .cockpit-dialog .p-datatable-tfoot > tr > td {
+  border-color: rgba(69, 213, 255, 0.09) !important;
+  background: rgba(7, 16, 30, 0.94) !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-datatable-tbody > tr:nth-child(even) > td {
+  background: rgba(12, 26, 44, 0.94) !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-button {
+  border: 1px solid rgba(69, 213, 255, 0.35) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.09) !important;
+  color: #45d5ff !important;
+  font: 600 0.66rem Consolas, monospace !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .cockpit-dialog .p-button-danger {
+  border-color: rgba(255, 64, 87, 0.42) !important;
+  background: rgba(255, 64, 87, 0.09) !important;
+  color: #ff687b !important;
+}
+
+:host ::ng-deep .cockpit-dialog .p-button:hover:not(:disabled) {
+  background: rgba(69, 213, 255, 0.18) !important;
+  box-shadow: 0 0 12px rgba(69, 213, 255, 0.13);
+}
+
+/* Confirmation readouts */
+:host ::ng-deep .cockpit-dialog-confirm .conf-info-grid {
+  gap: 0.75rem 2.2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(69, 213, 255, 0.24);
+  border-left: 2px solid #45d5ff;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.08), rgba(8, 20, 36, 0.82) 28%);
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-label {
+  color: #7897aa;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-value {
+  color: #e5f7ff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.82rem;
+}
+
+.conf-season-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(69, 213, 255, 0.48);
+  border-radius: 2px;
+  background: rgba(69, 213, 255, 0.1);
+  color: #72ddff;
+  font: 600 0.7rem Consolas, "Courier New", monospace;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 12px rgba(69, 213, 255, 0.06);
+}
+
+.conf-season-summer {
+  border-color: rgba(255, 188, 66, 0.52);
+  background: rgba(255, 188, 66, 0.09);
+  color: #ffc766;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-avail-list {
+  gap: 0.5rem;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-avail-item {
+  position: relative;
+  gap: 0.5rem;
+  min-height: 34px;
+  padding: 0.35rem 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(69, 213, 255, 0.26);
+  border-left: 2px solid #45d5ff;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.1), rgba(8, 20, 36, 0.88));
+  color: #ccebf6;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-avail-icon {
+  color: #45d5ff;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-avail-day {
+  color: #e8f8ff;
+  font-size: 0.72rem;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-avail-time {
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(69, 213, 255, 0.22);
+  color: #89bdd0;
+  font-size: 0.74rem;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-notes {
+  position: relative;
+  min-height: 54px;
+  margin: 0;
+  padding: 1.55rem 1rem 0.75rem 1.1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 188, 66, 0.38);
+  border-left: 3px solid #ffbc42;
+  border-radius: 2px;
+  background:
+    linear-gradient(90deg, rgba(255, 188, 66, 0.1), rgba(8, 20, 36, 0.88) 34%),
+    #081424;
+  color: #f2dfb3;
+  font: 0.78rem/1.55 Consolas, "Courier New", monospace;
+  letter-spacing: 0.015em;
+  box-shadow: inset 0 0 18px rgba(255, 188, 66, 0.035);
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-notes::before {
+  content: "OPERATOR NOTE // LOG";
+  position: absolute;
+  top: 0.45rem;
+  left: 1.1rem;
+  color: #ffbc42;
+  font: 600 0.54rem Consolas, "Courier New", monospace;
+  letter-spacing: 0.11em;
+}
+
+:host ::ng-deep .cockpit-dialog-confirm .conf-notes::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 1px;
+  background: #ffbc42;
+  box-shadow: 0 0 9px rgba(255, 188, 66, 0.45);
 }

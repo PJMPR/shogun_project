@@ -1,0 +1,72 @@
+<div class="data-console" [attr.id]="tableId">
+  <div class="console-caption">
+    <span>SUBJECT DATA MATRIX</span>
+    <span class="caption-meta">SEM-{{ semester }} // {{ mode === 'stacjonarny' ? 'FULL-TIME' : 'PART-TIME' }}</span>
+  </div>
+  <div class="table-viewport">
+    <table>
+      <thead>
+        <tr>
+          <th class="select-column">SEL</th>
+          <th class="subject-column">Nazwa przedmiotu</th>
+          <th>Typ</th>
+          <th>Kod</th>
+          <th class="numeric">Wykład</th>
+          <th class="numeric">Ćwiczenia</th>
+          <th class="numeric">Laborat.</th>
+          <th>Forma zal.</th>
+          <th class="numeric">ECTS</th>
+          <th class="action-column">Akcja</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of visibleRows(); track row.path) {
+          <tr
+            [class.group-row]="row.data.isGroup"
+            [class.child-row]="row.level > 0 && !row.data.isGroup"
+            [class.row-selected]="!row.data.isGroup && isSelected(row.data)"
+          >
+            <td class="select-column">
+              @if (!row.data.isGroup) {
+                <label class="cockpit-check">
+                  <input type="checkbox" [checked]="isSelected(row.data)" (change)="selectionToggle.emit(row.data)" />
+                  <span aria-hidden="true"></span>
+                </label>
+              }
+            </td>
+            <td class="subject-cell" [style.--tree-level]="row.level">
+              @if (hasChildren(row)) {
+                <button type="button" class="tree-toggle" [attr.aria-expanded]="isExpanded(row)" (click)="toggleExpanded(row)">
+                  <i class="pi" [class.pi-chevron-down]="isExpanded(row)" [class.pi-chevron-right]="!isExpanded(row)"></i>
+                </button>
+              } @else {
+                <span class="tree-terminal" aria-hidden="true"></span>
+              }
+              <span>{{ row.data.name }}</span>
+            </td>
+            <td>
+              @if (!row.data.isGroup || row.data.type === 'Specjalizacja') {
+                <span class="data-tag" [ngClass]="typeClass(row.data.type)">{{ row.data.type }}</span>
+              }
+            </td>
+            <td class="data-code">{{ row.data.code }}</td>
+            <td class="numeric">{{ row.data.lecture }}</td>
+            <td class="numeric">{{ row.data.tutorial }}</td>
+            <td class="numeric">{{ row.data.lab }}</td>
+            <td>{{ row.data.form }}</td>
+            <td class="numeric data-ects"><strong>{{ row.data.ects }}</strong></td>
+            <td class="action-column">
+              @if (!row.data.isGroup) {
+                <button type="button" class="details-control" [disabled]="!row.data.syllabusFile" (click)="detailsOpen.emit(row.data)">
+                  <i class="pi pi-info-circle"></i><span>Szczegóły</span>
+                </button>
+              }
+            </td>
+          </tr>
+        } @empty {
+          <tr><td colspan="10" class="empty-matrix">NO DATA SIGNAL</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

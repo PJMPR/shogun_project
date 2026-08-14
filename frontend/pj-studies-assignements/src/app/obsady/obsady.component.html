@@ -8,29 +8,40 @@
 
   <!-- Przełącznik sezonu -->
   <div class="season-switcher">
-    <p-button
-      label="Semestr zimowy"
-      [outlined]="activeSeason() !== 'zimowy'"
-      severity="secondary"
-      (onClick)="setSeason('zimowy')"
-    />
-    <p-button
-      label="Semestr letni"
-      [outlined]="activeSeason() !== 'letni'"
-      severity="secondary"
-      (onClick)="setSeason('letni')"
-    />
+    <button
+      type="button"
+      class="season-control season-control-winter"
+      [class.control-active]="activeSeason() === 'zimowy'"
+      [attr.aria-pressed]="activeSeason() === 'zimowy'"
+      (click)="setSeason('zimowy')"
+    >
+      <span class="control-code">CRYO</span>
+      <span class="control-label">Semestr zimowy</span>
+      <span class="control-light" aria-hidden="true"></span>
+    </button>
+    <button
+      type="button"
+      class="season-control season-control-summer"
+      [class.control-active]="activeSeason() === 'letni'"
+      [attr.aria-pressed]="activeSeason() === 'letni'"
+      (click)="setSeason('letni')"
+    >
+      <span class="control-code">SOLAR</span>
+      <span class="control-label">Semestr letni</span>
+      <span class="control-light" aria-hidden="true"></span>
+    </button>
   </div>
 
   <!-- Przycisk zgłoszenia -->
   <div class="zgloszenie-bar" id="tour-zgloszenie-bar" tourAnchor="zgloszenie-bar">
-    <p-button
-      label="Zgłoszenie do Obsady"
-      icon="pi pi-send"
-      iconPos="right"
-      size="large"
-      (onClick)="openZgloszenie()"
-    />
+    <button type="button" class="assignment-submit" (click)="openZgloszenie()">
+      <span class="submit-signal" aria-hidden="true"><i class="pi pi-send"></i></span>
+      <span class="submit-copy">
+        <small>TRANSMISSION COMMAND</small>
+        <strong>Zgłoszenie do Obsady</strong>
+      </span>
+      <span class="submit-code" aria-hidden="true">TX</span>
+    </button>
     @if (selectedKeys().size > 0) {
       <span class="selection-count">Zaznaczono: <strong>{{ selectedKeys().size }}</strong> przedmiotów</span>
     }
@@ -47,7 +58,7 @@
 
     <!-- Zakładki trybu studiów -->
     <p-tabs value="stacjonarny">
-      <p-tablist id="tour-study-tabs" tourAnchor="study-tabs">
+      <p-tablist id="tour-study-tabs" class="study-mode-tabs" tourAnchor="study-tabs">
         <p-tab value="stacjonarny">Studia stacjonarne</p-tab>
         <p-tab value="niestacjonarny">Studia niestacjonarne</p-tab>
       </p-tablist>
@@ -61,7 +72,7 @@
           } @else {
             <div id="tour-semester-tabs" tourAnchor="subject-table">
             <p-tabs [value]="stacSemesters()[0].semester.toString()" [scrollable]="true">
-              <p-tablist tourAnchor="semester-tabs">
+              <p-tablist class="semester-channel-tabs" tourAnchor="semester-tabs">
                 @for (sem of stacSemesters(); track sem.semester) {
                   <p-tab [value]="sem.semester.toString()">Semestr {{ sem.semester }}</p-tab>
                 }
@@ -70,6 +81,17 @@
                 @for (sem of stacSemesters(); track sem.semester; let stacFirst = $first) {
                   <p-tabpanel [value]="sem.semester.toString()">
 
+                    <app-cockpit-tree-table
+                      [nodes]="sem.nodes"
+                      mode="stacjonarny"
+                      [semester]="sem.semester"
+                      [selectedKeys]="selectedKeys()"
+                      [tableId]="stacFirst ? 'tour-subject-table' : null"
+                      (selectionToggle)="toggleSelection('stacjonarny', sem.semester, $event)"
+                      (detailsOpen)="openDetails($event, sem.semester)"
+                    />
+
+                    @if (false) {
                     <p-treeTable
                       [attr.id]="stacFirst ? 'tour-subject-table' : null"
                       [value]="sem.nodes"
@@ -139,6 +161,7 @@
                         </tr>
                       </ng-template>
                     </p-treeTable>
+                    }
 
                     <hr class="summary-divider" />
                     <div class="semester-summary">
@@ -179,7 +202,7 @@
             <p class="no-data">Brak danych dla wybranego semestru.</p>
           } @else {
             <p-tabs [value]="niestacSemesters()[0].semester.toString()" [scrollable]="true">
-              <p-tablist>
+              <p-tablist class="semester-channel-tabs">
                 @for (sem of niestacSemesters(); track sem.semester) {
                   <p-tab [value]="sem.semester.toString()">Semestr {{ sem.semester }}</p-tab>
                 }
@@ -188,6 +211,16 @@
                 @for (sem of niestacSemesters(); track sem.semester) {
                   <p-tabpanel [value]="sem.semester.toString()">
 
+                    <app-cockpit-tree-table
+                      [nodes]="sem.nodes"
+                      mode="niestacjonarny"
+                      [semester]="sem.semester"
+                      [selectedKeys]="selectedKeys()"
+                      (selectionToggle)="toggleSelection('niestacjonarny', sem.semester, $event)"
+                      (detailsOpen)="openDetails($event, sem.semester)"
+                    />
+
+                    @if (false) {
                     <p-treeTable
                       [value]="sem.nodes"
                       [columns]="[]"
@@ -256,6 +289,7 @@
                         </tr>
                       </ng-template>
                     </p-treeTable>
+                    }
 
                     <hr class="summary-divider" />
                     <div class="semester-summary">
@@ -296,6 +330,7 @@
 
   <!-- Dialog sylabusu -->
   <p-dialog
+    styleClass="cockpit-dialog cockpit-dialog-syllabus"
     [visible]="dialogVisible()"
     (visibleChange)="dialogVisible.set($event)"
     [header]="dialogTitle()"
@@ -328,6 +363,7 @@
 
   <!-- Dialog zgłoszenia do obsady -->
   <p-dialog
+    styleClass="cockpit-dialog cockpit-dialog-assignment"
     [visible]="zgloszenieVisible()"
     (visibleChange)="zgloszenieVisible.set($event)"
     header="Zgłoszenie do Obsady"
@@ -540,6 +576,7 @@
 
 <!-- ════ Dialog potwierdzenia zgłoszenia ════════════════════════════════ -->
 <p-dialog
+  styleClass="cockpit-dialog cockpit-dialog-confirm"
   [visible]="confirmVisible()"
   (visibleChange)="confirmVisible.set($event)"
   header="Podsumowanie zgłoszenia — sprawdź przed wysłaniem"
@@ -561,11 +598,14 @@
       <div class="conf-info-grid">
         <div class="conf-info-row">
           <span class="conf-label">Semestr:</span>
-          <p-tag
-            [value]="payload.semesterType === 'zimowy' ? '❄  Zimowy' : '☀  Letni'"
-            [severity]="payload.semesterType === 'zimowy' ? 'info' : 'warn'"
-            styleClass="conf-season-tag"
-          />
+          <span
+            class="conf-season-indicator"
+            [class.conf-season-winter]="payload.semesterType === 'zimowy'"
+            [class.conf-season-summer]="payload.semesterType === 'letni'"
+          >
+            <i [class]="payload.semesterType === 'zimowy' ? 'pi pi-sparkles' : 'pi pi-sun'"></i>
+            {{ payload.semesterType === 'zimowy' ? 'Semestr zimowy' : 'Semestr letni' }}
+          </span>
         </div>
         <div class="conf-info-row">
           <span class="conf-label">Rok akademicki:</span>
@@ -600,9 +640,6 @@
             <th style="width: 5%">Sem.</th>
             <th>Przedmiot</th>
             <th style="width: 8%">Kod</th>
-            <th style="width: 12%" class="text-center">
-              <span [pTooltip]="'ID dokumentu z bazy MongoDB'">Mongo ID</span>
-            </th>
             <th style="width: 8%" class="text-center">Wykład</th>
             <th style="width: 9%" class="text-center">Ćwiczenia</th>
             <th style="width: 9%" class="text-center">Laborat.</th>
@@ -611,7 +648,7 @@
 
         <ng-template pTemplate="groupheader" let-subj>
           <tr class="conf-group-row">
-            <td colspan="7">
+            <td colspan="6">
               <i class="pi pi-users" style="margin-right: 0.4rem;"></i>
               <strong>{{ subj.trybStudiow === 'stacjonarny' ? 'Studia stacjonarne' : 'Studia niestacjonarne' }}</strong>
             </td>
@@ -623,19 +660,6 @@
             <td class="text-center"><strong>{{ subj.semester }}</strong></td>
             <td>{{ subj.name }}</td>
             <td class="conf-code">{{ subj.code }}</td>
-            <td class="text-center">
-              @if (subj.mongoId) {
-                <p-tag
-                  [value]="subj.mongoId.slice(0, 8) + '…'"
-                  severity="secondary"
-                  styleClass="conf-mongoid-tag"
-                  [pTooltip]="subj.mongoId"
-                  tooltipPosition="top"
-                />
-              } @else {
-                <span class="type-na" pTooltip="Brak pasującego sylabusu" tooltipPosition="top">— brak —</span>
-              }
-            </td>
             <td class="text-center">
               @if (subj.hasWyklad) {
                 <i class="pi pi-check-circle conf-check"></i>

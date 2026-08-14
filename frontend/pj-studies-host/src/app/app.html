@@ -6,7 +6,7 @@
       <button class="toggle-btn" (click)="toggleSidebar()" aria-label="Menu">
         <i class="pi pi-bars"></i>
       </button>
-      <img src="assets/pjatk-logo.svg" alt="PJATK" class="topbar-logo" />
+      <img src="shogun-command-logo.svg" alt="Shogun Command System" class="topbar-logo" />
     </header>
   }
 
@@ -18,7 +18,7 @@
   <!-- Sidebar -->
   <aside class="app-sidebar" [class.sidebar-hidden]="!sidebarVisible()">
     <div class="sidebar-header">
-      <img src="assets/pjatk-logo.svg" alt="PJATK" class="sidebar-logo" />
+      <img src="shogun-command-logo.svg" alt="Shogun Command System" class="sidebar-logo" />
       @if (!isMobile()) {
         <button class="sidebar-hide-btn" (click)="toggleSidebar()" title="Zwiń panel">
           <i class="pi pi-chevron-left"></i>
@@ -175,7 +175,29 @@
 
   <!-- Główna treść -->
   <main class="app-main" [class.no-sidebar]="!sidebarVisible() && !isMobile()">
-    <router-outlet />
+    <div class="cockpit-shell">
+      <div class="hud-corner hud-corner-top-left" aria-hidden="true"></div>
+      <div class="hud-corner hud-corner-top-right" aria-hidden="true"></div>
+
+      <div class="cockpit-statusbar" aria-label="Status systemu">
+        <div class="cockpit-system-id">
+          <i class="pi pi-sparkles"></i>
+          <span>SHOGUN // COMMAND DECK</span>
+        </div>
+        <div class="cockpit-telemetry" aria-hidden="true">
+          <span><b class="status-light status-light-online"></b> CORE ONLINE</span>
+          <span><b class="status-light"></b> LINK STABLE</span>
+          <span class="telemetry-code">SYS–01</span>
+        </div>
+      </div>
+
+      <section class="cockpit-viewport">
+        <router-outlet />
+      </section>
+
+      <div class="hud-corner hud-corner-bottom-left" aria-hidden="true"></div>
+      <div class="hud-corner hud-corner-bottom-right" aria-hidden="true"></div>
+    </div>
   </main>
 
 </div>

@@ -2,6 +2,12 @@
 .app-layout {
   display: flex;
   min-height: 100vh;
+  background-color: var(--space-bg);
+  background-image:
+    linear-gradient(rgba(69, 213, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 78% 12%, rgba(32, 130, 190, 0.16), transparent 32%);
+  background-size: 32px 32px, 32px 32px, auto;
 }
 
 /* ── Sidebar ────────────────────────────────────── */
@@ -12,9 +18,9 @@
   top: 0;
   left: 0;
   height: 100vh;
-  background: #ffffff;
-  border-right: 3px solid #dc2626;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.10);
+  background: linear-gradient(180deg, rgba(13, 25, 45, 0.98), rgba(5, 10, 21, 0.99));
+  border-right: 1px solid var(--space-line);
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.35), 1px 0 18px rgba(69, 213, 255, 0.08);
   display: flex;
   flex-direction: column;
   z-index: 100;
@@ -31,22 +37,25 @@
 .sidebar-header {
   display: flex;
   align-items: center;
-  padding: 0.85rem 0.75rem 0.85rem 1rem;
-  border-bottom: 1px solid #f3f4f6;
+  min-height: 82px;
+  padding: 0.65rem 0.65rem 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--space-line);
   gap: 0.5rem;
 }
 
 .sidebar-logo {
-  width: 160px;
+  width: 202px;
+  max-width: calc(100% - 28px);
   height: auto;
   flex: 1;
+  filter: drop-shadow(0 0 9px rgba(69, 213, 255, 0.16));
 }
 
 /* ── Przycisk zwinięcia (desktop) ───────────────── */
 .sidebar-hide-btn {
   background: none;
   border: none;
-  color: #9ca3af;
+  color: var(--space-muted);
   font-size: 1rem;
   cursor: pointer;
   padding: 0.3rem 0.4rem;
@@ -56,7 +65,7 @@
   flex-shrink: 0;
   transition: color 0.15s, background 0.15s;
 }
-.sidebar-hide-btn:hover { color: #dc2626; background: #fee2e2; }
+.sidebar-hide-btn:hover { color: var(--space-cyan); background: rgba(69, 213, 255, 0.09); }
 
 /* ── Przycisk pokazania sidebara ────────────────── */
 .sidebar-show-btn {
@@ -64,8 +73,8 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  background: #1a1a2e;
-  border: none;
+  background: var(--space-panel-raised);
+  border: 1px solid var(--space-line);
   border-radius: 0 8px 8px 0;
   color: #e5e7eb;
   font-size: 1rem;
@@ -75,7 +84,7 @@
   box-shadow: 2px 0 8px rgba(0,0,0,0.25);
   transition: background 0.15s;
 }
-.sidebar-show-btn:hover { background: #dc2626; }
+.sidebar-show-btn:hover { color: #06111e; background: var(--space-cyan); }
 
 /* ── Nawigacja ──────────────────────────────────── */
 .sidebar-nav {
@@ -92,41 +101,147 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #9ca3af;
+  color: var(--space-muted);
   margin: 0 0 0.5rem 0.25rem;
+  text-shadow: 0 0 12px rgba(69, 213, 255, 0.22);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 0.75rem;
-  border-radius: 6px;
+  gap: 0.65rem;
+  min-height: 38px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
   text-decoration: none;
-  color: #374151;
-  font-size: 0.9rem;
+  color: #c5d8e7;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.76rem;
   font-weight: 500;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
 }
-.nav-link i { font-size: 0.95rem; color: #6b7280; }
-.nav-link:hover { background: #fee2e2; color: #991b1b; }
-.nav-link:hover i { color: #dc2626; }
-.nav-link-active { background: #fee2e2 !important; color: #991b1b !important; font-weight: 600; }
-.nav-link-active i { color: #dc2626 !important; }
+.nav-link::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  border: 1px solid #557087;
+  border-radius: 50%;
+  background: #142235;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+}
+.nav-link i { font-size: 0.85rem; color: #7595ac; }
+.nav-link:hover { border-color: var(--space-line); background: rgba(69, 213, 255, 0.07); color: var(--space-cyan); }
+.nav-link:hover i { color: var(--space-cyan); }
+.nav-link:hover::after { background: var(--space-cyan); box-shadow: 0 0 8px var(--space-cyan); }
+.nav-link-active {
+  border-color: rgba(69, 213, 255, 0.35) !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.16), rgba(69, 213, 255, 0.035)) !important;
+  color: var(--space-cyan) !important;
+  box-shadow: inset 3px 0 var(--space-cyan), 0 0 18px rgba(69, 213, 255, 0.05);
+  font-weight: 600;
+}
+.nav-link-active i { color: var(--space-cyan) !important; }
+.nav-link-active::after {
+  border-color: var(--space-cyan);
+  background: #4dffb8;
+  box-shadow: 0 0 9px #4dffb8;
+}
 
 /* ── Główna treść ────────────────────────────────── */
 .app-main {
   margin-left: 263px;
   flex: 1;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: transparent;
   transition: margin-left 0.25s ease;
 }
 
 .app-main.no-sidebar {
   margin-left: 0;
 }
+
+/* ── Cockpit viewport ────────────────────────────── */
+.cockpit-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 18px;
+}
+
+.cockpit-statusbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(69, 213, 255, 0.26);
+  border-bottom-color: rgba(69, 213, 255, 0.5);
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.13), rgba(8, 17, 32, 0.88) 28%, rgba(8, 17, 32, 0.94));
+  box-shadow: inset 0 -1px rgba(69, 213, 255, 0.08), 0 8px 28px rgba(0, 0, 0, 0.24);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  color: var(--space-muted);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.cockpit-system-id,
+.cockpit-telemetry,
+.cockpit-telemetry span {
+  display: flex;
+  align-items: center;
+}
+
+.cockpit-system-id { gap: 0.55rem; color: var(--space-cyan); font-weight: 700; }
+.cockpit-system-id i { text-shadow: 0 0 12px var(--space-cyan); }
+.cockpit-telemetry { gap: 1.25rem; }
+.cockpit-telemetry span { gap: 0.4rem; }
+
+.status-light {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--space-cyan);
+  box-shadow: 0 0 8px var(--space-cyan);
+}
+.status-light-online { background: #4dffb8; box-shadow: 0 0 8px #4dffb8; }
+.telemetry-code { color: var(--space-red); }
+
+.cockpit-viewport {
+  position: relative;
+  min-height: calc(100vh - 78px);
+  border-right: 1px solid rgba(69, 213, 255, 0.09);
+  border-bottom: 1px solid rgba(69, 213, 255, 0.14);
+}
+
+.cockpit-viewport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(69, 213, 255, 0.025), transparent 18%);
+}
+
+.hud-corner {
+  position: absolute;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  border-color: var(--space-cyan);
+  opacity: 0.65;
+}
+.hud-corner-top-left { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.hud-corner-top-right { top: 8px; right: 8px; border-top: 2px solid; border-right: 2px solid; }
+.hud-corner-bottom-left { bottom: 8px; left: 8px; border-bottom: 2px solid; border-left: 2px solid; }
+.hud-corner-bottom-right { right: 8px; bottom: 8px; border-right: 2px solid; border-bottom: 2px solid; }
 
 /* ── Mobile topbar ───────────────────────────────── */
 .mobile-topbar {
@@ -135,7 +250,8 @@
   left: 0;
   right: 0;
   height: 52px;
-  background: #1a1a2e;
+  background: rgba(7, 15, 29, 0.96);
+  border-bottom: 1px solid var(--space-line);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -145,7 +261,7 @@
 }
 
 .topbar-logo {
-  height: 30px;
+  height: 39px;
   width: auto;
 }
 
@@ -156,12 +272,13 @@
   font-size: 1.3rem;
   cursor: pointer;
   padding: 0.3rem;
-  border-radius: 6px;
+  border: 1px solid var(--space-line);
+  border-radius: 3px;
   display: flex;
   align-items: center;
   transition: background 0.15s;
 }
-.toggle-btn:hover { background: rgba(255,255,255,0.15); }
+.toggle-btn:hover { color: var(--space-cyan); background: rgba(69, 213, 255, 0.1); }
 
 /* ── Mobile overlay ──────────────────────────────── */
 .sidebar-overlay {
@@ -182,6 +299,9 @@
     top: 0;
     z-index: 150;
   }
+
+  .cockpit-shell { padding: 10px; }
+  .cockpit-telemetry span:not(:first-child) { display: none; }
 }
 
 /* ── Zalogowany użytkownik ───────────────────────── */
@@ -190,8 +310,8 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.75rem 0.75rem 0.85rem;
-  border-top: 1px solid #f3f4f6;
-  background: #fafafa;
+  border-top: 1px solid var(--space-line);
+  background: rgba(2, 8, 18, 0.62);
   flex-shrink: 0;
 }
 
@@ -199,7 +319,8 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #dc2626;
+  background: linear-gradient(135deg, var(--space-red), #a30d2a);
+  box-shadow: 0 0 16px rgba(255, 64, 87, 0.22);
   color: #fff;
   display: flex;
   align-items: center;
@@ -218,7 +339,7 @@
 .sidebar-user-name {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--space-text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -226,7 +347,7 @@
 
 .sidebar-user-email {
   font-size: 0.72rem;
-  color: #6b7280;
+  color: var(--space-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -235,7 +356,7 @@
 .sidebar-logout-btn {
   background: none;
   border: none;
-  color: #9ca3af;
+  color: var(--space-muted);
   font-size: 1rem;
   cursor: pointer;
   padding: 0.3rem 0.35rem;
@@ -245,4 +366,4 @@
   flex-shrink: 0;
   transition: color 0.15s, background 0.15s;
 }
-.sidebar-logout-btn:hover { color: #dc2626; background: #fee2e2; }
+.sidebar-logout-btn:hover { color: var(--space-red); background: rgba(255, 64, 87, 0.1); }

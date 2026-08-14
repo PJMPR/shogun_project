@@ -129,3 +129,134 @@
   list-style: disc;
 }
 
+/* Cockpit syllabus readout */
+.sylabus-container {
+  color: #c7d9e6;
+}
+
+:host ::ng-deep .sylabus-card.p-card,
+:host ::ng-deep .sylabus-panel.p-panel {
+  overflow: hidden;
+  border: 1px solid rgba(69, 213, 255, 0.22) !important;
+  border-radius: 2px !important;
+  background: rgba(7, 16, 30, 0.92) !important;
+  box-shadow: inset 0 0 18px rgba(69, 213, 255, 0.025);
+}
+
+:host ::ng-deep .sylabus-card .p-card-body,
+:host ::ng-deep .sylabus-card .p-card-content {
+  background: transparent !important;
+  color: #c7d9e6 !important;
+}
+
+.sylabus-card-header,
+:host ::ng-deep .sylabus-panel .p-panel-header {
+  min-height: 42px;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(69, 213, 255, 0.22) !important;
+  border-left: 2px solid #45d5ff !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, rgba(69, 213, 255, 0.12), #0c1b2e 38%, #091525) !important;
+  color: #ccecf7 !important;
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.sylabus-card-header i {
+  color: #45d5ff;
+}
+
+:host ::ng-deep .sylabus-panel .p-panel-header-toggle-button {
+  width: 29px !important;
+  height: 29px !important;
+  border: 1px solid rgba(69, 213, 255, 0.35) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.07) !important;
+  color: #45d5ff !important;
+}
+
+:host ::ng-deep .sylabus-panel .p-panel-header-toggle-button:hover {
+  border-color: #45d5ff !important;
+  background: rgba(69, 213, 255, 0.17) !important;
+  box-shadow: 0 0 10px rgba(69, 213, 255, 0.14);
+}
+
+:host ::ng-deep .sylabus-panel .p-panel-content-container,
+:host ::ng-deep .sylabus-panel .p-panel-content {
+  border: 0 !important;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.018) 1px, transparent 1px),
+    rgba(7, 16, 30, 0.94) !important;
+  background-size: 100% 24px !important;
+  color: #c7d9e6 !important;
+}
+
+.sylabus-info-grid {
+  padding: 0.2rem 0;
+  color: #d8e8f3;
+}
+
+.info-label {
+  color: #7897aa;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .sylabus-container .p-datatable {
+  border: 1px solid rgba(69, 213, 255, 0.18);
+  background: #07101e !important;
+}
+
+:host ::ng-deep .sylabus-container .p-datatable-thead > tr > th {
+  border-color: rgba(69, 213, 255, 0.18) !important;
+  background: #0d1d31 !important;
+  color: #8eb7ca !important;
+  font: 600 0.6rem Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .sylabus-container .p-datatable-tbody > tr > td {
+  border-color: rgba(69, 213, 255, 0.09) !important;
+  background: rgba(8, 19, 33, 0.96) !important;
+  color: #c7d9e6 !important;
+}
+
+:host ::ng-deep .sylabus-container .p-datatable-tbody > tr:nth-child(even) > td {
+  background: rgba(13, 29, 49, 0.96) !important;
+}
+
+.efekty-kategoria {
+  color: #45d5ff;
+  font-family: Consolas, "Courier New", monospace;
+  letter-spacing: 0.025em;
+}
+
+.metody-forma-label,
+.literatura-typ {
+  color: #8eb7ca;
+}
+
+.sylabus-list li::marker,
+.sylabus-list-inline li::marker {
+  color: #45d5ff;
+}
+
+.sylabus-cel-eng-label,
+.praca-wlasna-opis {
+  border-top-color: rgba(69, 213, 255, 0.22);
+}
+
+.sylabus-cel-eng-label {
+  color: #45d5ff;
+}
+
+.sylabus-text-eng {
+  color: #91adbd;
+}
+

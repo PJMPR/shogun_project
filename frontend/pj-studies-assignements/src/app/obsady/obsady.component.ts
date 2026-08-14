@@ -23,6 +23,7 @@ import { SylabusPreviewComponent } from '../shared/sylabus-preview/sylabus-previ
 import { AssignmentsApiService, CreateAssignmentPayload, AssignmentResponse } from '../shared/assignments-api.service';
 import { environment } from '../../environments/environment';
 import { ObsadyTourService } from './obsady-tour.service';
+import { CockpitTreeTableComponent } from './cockpit-tree-table.component';
 import { TourService, TourPrimeNg, Direction } from 'ngx-ui-tour-primeng';
 
 export interface SelectedSubjectEntry {
@@ -72,6 +73,7 @@ interface SeasonConfig {
     DividerModule,
     TooltipModule,
     SylabusPreviewComponent,
+    CockpitTreeTableComponent,
   ],
   templateUrl: './obsady.component.html',
   styleUrl: './obsady.component.css',

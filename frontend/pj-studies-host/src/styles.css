@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+:root {
+  --space-bg: #050914;
+  --space-panel: #0b1324;
+  --space-panel-raised: #101c31;
+  --space-line: rgba(69, 213, 255, 0.2);
+  --space-cyan: #45d5ff;
+  --space-red: #ff4057;
+  --space-text: #e6f4ff;
+  --space-muted: #89a3b8;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -8,7 +19,112 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f5f5f5;
-  color: #1a1a1a;
+  font-family: "Segoe UI", "Rajdhani", system-ui, sans-serif;
+  background: var(--space-bg);
+  color: var(--space-text);
+}
+
+/* Overlay tutoriala jest tworzony w body hosta, poza mikrofrontendem. */
+.tour-step.p-popover {
+  --p-popover-content-padding: 0;
+  overflow: visible;
+  border: 1px solid rgba(69, 213, 255, 0.5) !important;
+  border-top: 2px solid var(--space-cyan) !important;
+  border-radius: 2px !important;
+  background: #07101e !important;
+  color: #c7d9e6 !important;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.72), 0 0 24px rgba(69, 213, 255, 0.14) !important;
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));
+}
+
+.tour-step.p-popover .p-popover-content {
+  border-radius: 0 !important;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.022) 1px, transparent 1px),
+    #07101e !important;
+  background-size: 22px 22px !important;
+  color: #c7d9e6 !important;
+}
+
+.tour-step.p-popover::before,
+.tour-step.p-popover::after {
+  border-bottom-color: var(--space-cyan) !important;
+}
+
+.tour-step tour-default-step-template {
+  position: relative;
+  padding: 0.75rem 0.9rem 0.85rem !important;
+}
+
+.tour-step tour-default-step-template::before {
+  content: "NAV // TRAINING SEQUENCE";
+  display: block;
+  margin: -0.1rem 2.3rem 0.55rem 0;
+  color: #ff687b;
+  font: 600 0.52rem Consolas, "Courier New", monospace;
+  letter-spacing: 0.09em;
+}
+
+.tour-step .title-container {
+  margin-bottom: 0.65rem !important;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(69, 213, 255, 0.2);
+}
+
+.tour-step .title {
+  color: #e2f7ff !important;
+  font: 600 0.78rem/1.4 Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.tour-step .card-text {
+  color: #9fb9c9 !important;
+  font-size: 0.82rem;
+  line-height: 1.65 !important;
+}
+
+.tour-step .buttons {
+  gap: 0.65rem !important;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(69, 213, 255, 0.14);
+}
+
+.tour-step .progress {
+  color: #5f8296 !important;
+  font: 600 0.65rem Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.05em;
+}
+
+.tour-step .p-button {
+  min-height: 36px;
+  border: 1px solid rgba(69, 213, 255, 0.4) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.1) !important;
+  color: var(--space-cyan) !important;
+  font: 600 0.65rem Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.tour-step .p-button:hover:not(:disabled) {
+  background: rgba(69, 213, 255, 0.2) !important;
+  box-shadow: 0 0 12px rgba(69, 213, 255, 0.15);
+}
+
+.tour-step .p-button:disabled {
+  border-color: rgba(112, 137, 153, 0.18) !important;
+  background: rgba(112, 137, 153, 0.05) !important;
+  color: #496273 !important;
+  opacity: 0.7 !important;
+}
+
+.tour-step .title-container .p-button {
+  min-height: 28px;
+  width: 28px;
+  height: 28px;
+  border-color: rgba(255, 64, 87, 0.35) !important;
+  background: rgba(255, 64, 87, 0.07) !important;
+  color: #ff687b !important;
 }

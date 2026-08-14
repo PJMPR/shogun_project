@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+:root {
+  --space-bg: #050914;
+  --space-panel: #0b1324;
+  --space-panel-raised: #101c31;
+  --space-line: rgba(69, 213, 255, 0.2);
+  --space-cyan: #45d5ff;
+  --space-red: #ff4057;
+  --space-text: #e6f4ff;
+  --space-muted: #89a3b8;
+  --p-surface-0: #0b1324;
+  --p-surface-50: #101c31;
+  --p-surface-100: #15243a;
+  --p-surface-200: #20344d;
+  --p-text-color: #e6f4ff;
+  --p-text-muted-color: #89a3b8;
+  --p-content-background: #0b1324;
+  --p-content-border-color: rgba(69, 213, 255, 0.18);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -8,9 +27,9 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f5f5f5;
-  color: #1a1a1a;
+  font-family: "Segoe UI", "Rajdhani", system-ui, sans-serif;
+  background: transparent;
+  color: var(--space-text);
 }
 
 /* Stałe style globalne PrimeNG */
@@ -18,9 +37,10 @@ html, body {
 /* Odstępy między panelami akordeonu */
 .p-accordion-panel {
   margin-bottom: 1.25rem !important;
-  border-radius: 10px !important;
+  border: 1px solid var(--space-line) !important;
+  border-radius: 4px !important;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 }
 
 /* Zmniejszona czcionka w tabeli przedmiotów */
@@ -30,27 +50,150 @@ html, body {
 
 /* Zebra - co drugi wiersz */
 .p-treetable-tbody > tr:nth-child(even) > td {
-  background-color: #f3f4f6;
+  background-color: rgba(16, 28, 49, 0.82);
 }
 
 /* Nagłówki tabelki - nieco ciemniejsze niż zebra */
 .p-treetable-thead > tr > th {
-  background-color: #e5e7eb !important;
+  border-color: var(--space-line) !important;
+  background-color: var(--space-panel-raised) !important;
+  color: var(--space-text) !important;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.p-treetable-tbody > tr > td {
+  border-color: rgba(69, 213, 255, 0.1) !important;
+  color: var(--space-text);
 }
 
 /* Tabs – obramowanie i tło panelu */
 .p-tabpanels {
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
+  background: rgba(7, 15, 29, 0.9) !important;
+  border: 1px solid var(--space-line) !important;
   border-top: none !important;
-  border-radius: 0 0 8px 8px !important;
+  border-radius: 0 0 4px 4px !important;
   padding: 1.25rem !important;
 }
 
 .p-tablist {
-  background: #f9fafb !important;
-  border: 1px solid #e5e7eb !important;
-  border-radius: 8px 8px 0 0 !important;
+  background: var(--space-panel-raised) !important;
+  border: 1px solid var(--space-line) !important;
+  border-radius: 4px 4px 0 0 !important;
+}
+
+.p-tab {
+  color: var(--space-muted) !important;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.p-tab-active { color: var(--space-cyan) !important; text-shadow: 0 0 10px rgba(69, 213, 255, 0.25); }
+
+.p-button {
+  border: 1px solid rgba(69, 213, 255, 0.36);
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(69, 213, 255, 0.14), rgba(7, 18, 34, 0.9));
+  color: var(--space-cyan);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+}
+
+.p-button:hover:not(:disabled) {
+  border-color: var(--space-cyan);
+  background: rgba(69, 213, 255, 0.19);
+  box-shadow: 0 0 14px rgba(69, 213, 255, 0.13);
+}
+
+.season-control.p-button {
+  position: relative;
+  min-width: 176px;
+  min-height: 42px;
+  justify-content: flex-start;
+  padding: 0.65rem 2.2rem 0.65rem 0.9rem;
+  border-color: rgba(69, 213, 255, 0.26);
+  background: linear-gradient(180deg, rgba(18, 37, 59, 0.96), rgba(5, 13, 27, 0.98));
+  color: var(--space-muted);
+}
+
+.season-control.p-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 7px;
+  height: 7px;
+  transform: translateY(-50%);
+  border: 1px solid #58758b;
+  border-radius: 50%;
+  background: #142235;
+}
+
+.season-control.p-button:not(.p-button-outlined) {
+  border-color: var(--space-cyan);
+  background: linear-gradient(180deg, rgba(69, 213, 255, 0.22), rgba(8, 27, 44, 0.96));
+  color: var(--space-cyan);
+  box-shadow: inset 3px 0 var(--space-cyan), 0 0 16px rgba(69, 213, 255, 0.13);
+}
+
+.season-control.p-button:not(.p-button-outlined)::after {
+  border-color: #4dffb8;
+  background: #4dffb8;
+  box-shadow: 0 0 9px #4dffb8;
+}
+
+.season-control-winter.p-button::before { content: "CRYO"; }
+.season-control-summer.p-button::before { content: "SOLAR"; }
+.season-control.p-button::before {
+  margin-right: 0.55rem;
+  color: var(--space-red);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+}
+
+.assignment-submit.p-button {
+  min-height: 48px;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(255, 64, 87, 0.72);
+  border-left: 4px solid var(--space-red);
+  background: linear-gradient(110deg, rgba(255, 64, 87, 0.2), rgba(28, 10, 23, 0.96) 42%, rgba(9, 20, 35, 0.98));
+  color: #ffd8de;
+  box-shadow: inset 0 0 22px rgba(255, 64, 87, 0.05), 0 0 18px rgba(255, 64, 87, 0.1);
+  font-size: 0.78rem;
+  letter-spacing: 0.075em;
+}
+
+.assignment-submit.p-button::after {
+  content: "TX";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 18px;
+  margin-left: 0.7rem;
+  border: 1px solid var(--space-red);
+  color: var(--space-red);
+  font-size: 0.55rem;
+  box-shadow: 0 0 8px rgba(255, 64, 87, 0.2);
+}
+
+.assignment-submit.p-button:hover:not(:disabled) {
+  border-color: var(--space-red);
+  background: linear-gradient(110deg, rgba(255, 64, 87, 0.29), rgba(38, 10, 25, 0.98) 48%, rgba(9, 20, 35, 0.98));
+  box-shadow: inset 0 0 24px rgba(255, 64, 87, 0.08), 0 0 22px rgba(255, 64, 87, 0.18);
+}
+
+.p-dialog-header, .p-dialog-content, .p-dialog-footer,
+.p-select, .p-inputtext, .p-textarea {
+  border-color: var(--space-line) !important;
+  background: var(--space-panel) !important;
+  color: var(--space-text) !important;
 }
 
 /* Fix: dropdown overlay zawsze na wierzchu (np. w formularzach w panelach) */
@@ -69,5 +212,110 @@ html, body {
 /* Wyjątek: tabs muszą mieć scroll wewnątrz */
 .p-tabpanels {
   overflow: auto !important;
+}
+
+/* Cockpit tutorial popover */
+.p-popover.tour-step {
+  --p-popover-content-padding: 0;
+  overflow: visible;
+  border: 1px solid rgba(69, 213, 255, 0.5) !important;
+  border-top: 2px solid #45d5ff !important;
+  border-radius: 2px !important;
+  background: #07101e !important;
+  color: #c7d9e6 !important;
+  box-shadow: 0 0 0 1px rgba(69, 213, 255, 0.06), 0 14px 38px rgba(0, 0, 0, 0.72), 0 0 24px rgba(69, 213, 255, 0.12) !important;
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));
+}
+
+.p-popover.tour-step .p-popover-content {
+  border-radius: 0 !important;
+  background:
+    linear-gradient(rgba(69, 213, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 213, 255, 0.022) 1px, transparent 1px),
+    #07101e !important;
+  background-size: 22px 22px !important;
+  color: #c7d9e6 !important;
+}
+
+.p-popover.tour-step::before,
+.p-popover.tour-step::after {
+  border-bottom-color: #45d5ff !important;
+}
+
+.p-popover.tour-step tour-default-step-template {
+  position: relative;
+  padding: 0.75rem 0.9rem 0.85rem !important;
+}
+
+.p-popover.tour-step tour-default-step-template::before {
+  content: "NAV // TRAINING SEQUENCE";
+  display: block;
+  margin: -0.1rem 2.3rem 0.55rem 0;
+  color: #ff687b;
+  font: 600 0.52rem Consolas, "Courier New", monospace;
+  letter-spacing: 0.09em;
+}
+
+.p-popover.tour-step .title-container {
+  margin-bottom: 0.65rem !important;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(69, 213, 255, 0.2);
+}
+
+.p-popover.tour-step .title {
+  color: #e2f7ff;
+  font: 600 0.78rem/1.4 Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.p-popover.tour-step .card-text {
+  color: #9fb9c9;
+  font-size: 0.82rem;
+  line-height: 1.65 !important;
+}
+
+.p-popover.tour-step .buttons {
+  gap: 0.65rem !important;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(69, 213, 255, 0.14);
+}
+
+.p-popover.tour-step .progress {
+  color: #5f8296 !important;
+  font: 600 0.65rem Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.05em;
+}
+
+.p-popover.tour-step .p-button {
+  min-height: 36px;
+  border: 1px solid rgba(69, 213, 255, 0.4) !important;
+  border-radius: 2px !important;
+  background: rgba(69, 213, 255, 0.1) !important;
+  color: #45d5ff !important;
+  font: 600 0.65rem Consolas, "Courier New", monospace !important;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.p-popover.tour-step .p-button:hover:not(:disabled) {
+  background: rgba(69, 213, 255, 0.2) !important;
+  box-shadow: 0 0 12px rgba(69, 213, 255, 0.15);
+}
+
+.p-popover.tour-step .p-button:disabled {
+  border-color: rgba(112, 137, 153, 0.18) !important;
+  background: rgba(112, 137, 153, 0.05) !important;
+  color: #496273 !important;
+  opacity: 0.7 !important;
+}
+
+.p-popover.tour-step .title-container .p-button {
+  min-height: 28px;
+  width: 28px;
+  height: 28px;
+  border-color: rgba(255, 64, 87, 0.35) !important;
+  background: rgba(255, 64, 87, 0.07) !important;
+  color: #ff687b !important;
 }
 

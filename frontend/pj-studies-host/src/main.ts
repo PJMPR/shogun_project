@@ -11,7 +11,7 @@ initFederation({
 }, {
   // Changing this deployment tag forces browsers to fetch fresh federation
   // manifests while hashed JavaScript bundles can remain safely immutable.
-  cacheTag: 'local-20260808-viewer-responsive-blocks-v6',
+  cacheTag: 'local-20260814-cockpit-assignments-v11',
 })
   .catch(err => console.error(err))
   .then(_ => import('./bootstrap'))
