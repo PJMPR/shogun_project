@@ -95,6 +95,7 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
   }
 
   protected entryVisible(entry: ScheduleEntry): boolean {
+    if (!this.activeDays().includes(entry.dayOfWeek)) return false;
     const endGroup = entry.group + (entry.groupSpan ?? 1);
     return this.visibleGroups(entry.dayOfWeek).some((group) => group >= entry.group && group < endGroup);
   }
@@ -366,9 +367,22 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
 
   private isAvailable(availability: LecturerAvailability[], day: number, start: number, duration: number): boolean {
     const end = start + duration;
-    return availability.some((range) =>
-      this.dayNumber(range.day) === day && start >= this.parseTime(range.from) && end <= this.parseTime(range.to),
-    );
+    const ranges = availability
+      .filter((range) => this.dayNumber(range.day) === day)
+      .map((range) => ({ from: this.parseTime(range.from), to: this.parseTime(range.to) }))
+      .filter((range) => Number.isFinite(range.from) && Number.isFinite(range.to) && range.to > range.from)
+      .sort((a, b) => a.from - b.from || a.to - b.to);
+
+    // Treat touching/overlapping ranges as one interval. This makes availability
+    // independent of the order returned by the API and handles split declarations.
+    let coveredUntil = start;
+    for (const range of ranges) {
+      if (range.to <= coveredUntil) continue;
+      if (range.from > coveredUntil) return false;
+      coveredUntil = range.to;
+      if (coveredUntil >= end) return true;
+    }
+    return false;
   }
 
   private dayNumber(value: string): number {
@@ -377,7 +391,7 @@ export class SchedulerGridComponent implements AfterViewInit, OnDestroy {
       pn: 0, pon: 0, poniedzialek: 0,
       wt: 1, wtorek: 1,
       sr: 2, sroda: 2,
-      czw: 3, czwartek: 3,
+      cz: 3, czw: 3, czwartek: 3,
       pt: 4, piatek: 4,
       sb: 5, sob: 5, sobota: 5,
       nd: 6, niedz: 6, niedziela: 6,
