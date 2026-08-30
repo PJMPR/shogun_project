@@ -58,7 +58,6 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     const entries = this.plan()?.entries ?? [];
     return this.scope === 'mine' ? entries.filter(entry => entry.lecturerUserId === this.currentUserId) : entries;
   });
-  protected readonly visibleDays = computed(() => this.studyMode === 'stationary' ? [0, 1, 2, 3, 4] : [4, 5, 6]);
   protected readonly hours = Array.from({ length: 13 }, (_, index) => index + 8);
 
   async ngOnInit(): Promise<void> { await this.loadPlans(); }
@@ -99,6 +98,7 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   }
 
   protected entriesForDay(day: number): Entry[] { return this.visibleEntries().filter(entry => entry.dayOfWeek === day); }
+  protected visibleDays(): number[] { return this.studyMode === 'stationary' ? [0, 1, 2, 3, 4] : [5, 6]; }
   protected groupNames(entry: Entry): string { const groups = this.plan()?.groups ?? []; return entry.groupIds.map(id => groups.find(group => group.id === id)?.code).filter(Boolean).join(', '); }
   protected time(entry: Entry): string { return `${this.formatMinute(entry.startMinute)}–${this.formatMinute(entry.startMinute + entry.durationMinutes)}`; }
   protected top(entry: Entry): number { return ((entry.startMinute - START_MINUTE) / (END_MINUTE - START_MINUTE)) * 100; }
