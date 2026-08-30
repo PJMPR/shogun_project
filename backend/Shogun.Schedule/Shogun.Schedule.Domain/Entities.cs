@@ -121,6 +121,7 @@ public sealed class ScheduleEntry
     public int DurationMinutes { get; set; }
     public string? Color { get; set; }
     public List<string> Dates { get; set; } = [];
+    public int? MeetingCountOverride { get; set; }
     public bool HiddenInPublished { get; set; }
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }

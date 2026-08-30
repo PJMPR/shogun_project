@@ -173,6 +173,18 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
           <input pInputText [(ngModel)]="datesDraft" placeholder="np. 05.10, 19.10, 02.11" class="w-full" />
           @if (datesInvalid()) { <small class="field-error">Podaj poprawne daty DD.MM oddzielone przecinkami.</small> }
         </div>
+        <div class="form-row">
+          <label>Liczba spotkań w semestrze</label>
+          <p-inputnumber [(ngModel)]="form.meetingCountOverride" [min]="1" [max]="99" [showButtons]="true" placeholder="Automatycznie" class="w-full" />
+          <small class="field-hint">
+            @if (form.meetingCountOverride === undefined || form.meetingCountOverride === null) {
+              Automatycznie: {{ automaticMeetingCount() }} ({{ parseDates().length ? 'liczba podanych dat' : form.studyMode === 'stacjonarny' ? 'domyślnie dla dziennych' : 'domyślnie dla zaocznych' }}).
+            } @else {
+              Wartość ręczna zastępuje liczbę wynikającą z dat.
+              <button type="button" class="inline-reset" (click)="form.meetingCountOverride = undefined">Przywróć automatyczną</button>
+            }
+          </small>
+        </div>
         <label class="visibility-toggle"><input type="checkbox" [(ngModel)]="form.hiddenInPublished" /> Ukryj te zajęcia w opublikowanym planie</label>
         <div class="form-row">
           <label>Sala (opcjonalnie)</label>
@@ -369,6 +381,8 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
       .desiderata-state { padding: 1rem 0.25rem; font-size: 0.82rem; color: var(--p-surface-500); }
       .desiderata-state.error { color: var(--p-red-600); }
       .field-error { color: var(--p-red-600); }
+      .field-hint { color: var(--p-text-muted-color); line-height: 1.35; }
+      .inline-reset { padding: 0; border: 0; background: transparent; color: var(--p-primary-color); text-decoration: underline; cursor: pointer; font: inherit; }
       .visibility-toggle { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--p-surface-700); }
       .form-row {
         display: flex;
@@ -599,7 +613,12 @@ export class EntryDialogComponent {
   }
 
   protected isValid(): boolean {
-    return !!this.form.subjectName?.trim() && !this.datesInvalid();
+    return !!this.form.subjectName?.trim() && !this.datesInvalid() &&
+      (this.form.meetingCountOverride === undefined || this.form.meetingCountOverride >= 1);
+  }
+
+  protected automaticMeetingCount(): number {
+    return this.parseDates().length || (this.form.studyMode === 'stacjonarny' ? 15 : 8);
   }
 
   protected datesInvalid(): boolean { return this.parseDates().some((value) => !this.validDate(value)); }
@@ -652,7 +671,7 @@ export class EntryDialogComponent {
     return (userId || email || name).trim().toLocaleLowerCase('pl-PL');
   }
 
-  private parseDates(): string[] { return this.datesDraft.split(/[,;\s]+/).map((x) => x.trim()).filter(Boolean); }
+  protected parseDates(): string[] { return this.datesDraft.split(/[,;\s]+/).map((x) => x.trim()).filter(Boolean); }
   private validDate(value: string): boolean { const match = /^(\d{2})\.(\d{2})$/.exec(value); if (!match) return false; const day = Number(match[1]); const month = Number(match[2]); return month >= 1 && month <= 12 && day >= 1 && day <= new Date(2000, month, 0).getDate(); }
 
   private currentRoles(): string[] {

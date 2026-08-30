@@ -41,6 +41,8 @@ export interface ScheduleEntry {
   concurrencyToken?: string;
   commentCount?: number;
   dates?: string[];
+  /** Manual number of meetings; when absent, dates or the study-mode default are used. */
+  meetingCountOverride?: number;
   hiddenInPublished?: boolean;
 }
 

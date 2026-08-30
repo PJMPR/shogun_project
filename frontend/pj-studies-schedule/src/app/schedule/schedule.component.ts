@@ -86,7 +86,7 @@ import { MockDataService } from './services/mock-data.service';
             (planSelected)="selectPlanFromFilters($event)"
           />
         } @else {
-          <app-list-view [semesterType]="activeSemester" />
+          <app-list-view [academicYear]="internalAcademicYear" />
         }
       </div>
     </div>
@@ -192,6 +192,6 @@ export class ScheduleComponent implements OnInit {
 
   protected readonly viewOptions = [
     { label: 'Widok tygodniowy', value: 'weekly', icon: 'pi pi-calendar' },
-    { label: 'Lista', value: 'list', icon: 'pi pi-list' },
+    { label: 'Obsada', value: 'list', icon: 'pi pi-users' },
   ];
 }
