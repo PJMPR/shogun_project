@@ -197,6 +197,7 @@ export class ListViewComponent {
   }
 
   private lessonHours(entry: ScheduleEntry): number {
+    if ((entry.staffingLessonHoursOverride ?? 0) > 0) return entry.staffingLessonHoursOverride!;
     const meetings = entry.meetingCountOverride ?? (entry.dates?.length ? entry.dates.length : entry.studyMode === 'stacjonarny' ? 15 : 8);
     return entry.durationHours * 60 / 45 * meetings;
   }

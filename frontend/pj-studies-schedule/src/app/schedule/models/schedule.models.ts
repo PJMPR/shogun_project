@@ -43,6 +43,8 @@ export interface ScheduleEntry {
   dates?: string[];
   /** Manual number of meetings; when absent, dates or the study-mode default are used. */
   meetingCountOverride?: number;
+  /** Manual total of 45-minute lesson hours used in the staffing summary. Zero or absent means automatic calculation. */
+  staffingLessonHoursOverride?: number;
   hiddenInPublished?: boolean;
 }
 

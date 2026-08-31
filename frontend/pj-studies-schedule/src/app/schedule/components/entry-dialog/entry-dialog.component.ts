@@ -185,6 +185,23 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
             }
           </small>
         </div>
+        <div class="form-row">
+          <label>Godziny lekcyjne do obsady</label>
+          <p-inputnumber
+            [(ngModel)]="form.staffingLessonHoursOverride"
+            [min]="0"
+            [max]="999"
+            [step]="1"
+            [minFractionDigits]="0"
+            [maxFractionDigits]="0"
+            [showButtons]="true"
+            placeholder="Automatycznie"
+            class="w-full"
+          />
+          <small class="field-hint">
+            Puste pole lub 0 oznacza automatyczne wyliczenie na podstawie czasu trwania i liczby spotkań.
+          </small>
+        </div>
         <label class="visibility-toggle"><input type="checkbox" [(ngModel)]="form.hiddenInPublished" /> Ukryj te zajęcia w opublikowanym planie</label>
         <div class="form-row">
           <label>Sala (opcjonalnie)</label>
@@ -631,6 +648,8 @@ export class EntryDialogComponent {
   protected isValid(): boolean {
     return !!this.form.subjectName?.trim() && !this.datesInvalid() &&
       (this.form.meetingCountOverride == null || this.form.meetingCountOverride >= 1) &&
+      (this.form.staffingLessonHoursOverride == null ||
+        (Number.isInteger(this.form.staffingLessonHoursOverride) && this.form.staffingLessonHoursOverride >= 0)) &&
       this.form.startHour >= 8 && this.form.startHour <= 20 &&
       this.form.durationHours >= 0.5 && this.form.durationHours <= 6;
   }

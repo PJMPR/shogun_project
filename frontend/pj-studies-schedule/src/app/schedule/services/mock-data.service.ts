@@ -8,7 +8,7 @@ interface ApiEntry {
   id: string; subjectSource?: string; subjectExternalId?: string; subjectCode?: string; subjectName: string;
   classType: ScheduleEntry['classType']; lecturerUserId?: string; lecturerEmail?: string; lecturerDisplayName: string; room?: string;
   dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[];
-  dates?: string[]; meetingCountOverride?: number; hiddenInPublished?: boolean;
+  dates?: string[]; meetingCountOverride?: number; staffingLessonHoursOverride?: number; hiddenInPublished?: boolean;
   concurrencyToken: string; commentCount: number;
 }
 interface ApiPlan extends Omit<SchedulePlan, 'entries'> { entries: ApiEntry[] }
@@ -262,7 +262,8 @@ export class MockDataService {
         lecturerUserId: entry.lecturerUserId, lecturerEmail: entry.lecturerEmail, lecturerDisplayName: entry.lecturerName,
         room: entry.room || null, dayOfWeek: entry.dayOfWeek, startMinute: Math.round(entry.startHour * 60),
         durationMinutes: Math.round(entry.durationHours * 60), color: entry.color,
-        dates: entry.dates ?? [], meetingCountOverride: entry.meetingCountOverride, hiddenInPublished: entry.hiddenInPublished ?? false,
+        dates: entry.dates ?? [], meetingCountOverride: entry.meetingCountOverride,
+        staffingLessonHoursOverride: entry.staffingLessonHoursOverride, hiddenInPublished: entry.hiddenInPublished ?? false,
         groupIds: this.groupIdsForEntry(entry, groups),
       })),
     };
@@ -320,7 +321,8 @@ export class MockDataService {
         semesterNumber: plan.semesterNumber, academicYear: plan.academicYear,
         studyMode: plan.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
         groupIds: e.groupIds, concurrencyToken: e.concurrencyToken, commentCount: e.commentCount,
-        dates: e.dates ?? [], meetingCountOverride: e.meetingCountOverride, hiddenInPublished: e.hiddenInPublished ?? false };
+        dates: e.dates ?? [], meetingCountOverride: e.meetingCountOverride,
+        staffingLessonHoursOverride: e.staffingLessonHoursOverride, hiddenInPublished: e.hiddenInPublished ?? false };
     });
   }
   private async loadConflictContext(plan: ApiPlan): Promise<void> {
