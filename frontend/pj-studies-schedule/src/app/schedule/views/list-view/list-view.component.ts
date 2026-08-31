@@ -44,7 +44,13 @@ interface LecturerAggregate {
         <div class="hours"><span>Godziny lekcyjne (45 min)</span><strong>{{ number(totals().lessonHours) }}</strong></div>
       </div>
 
-      <p-treetable [value]="nodes()" styleClass="p-treetable-sm semester-table staffing-table" [showGridlines]="true" [scrollable]="true">
+      <p-treetable
+        [value]="nodes()"
+        styleClass="p-treetable-sm semester-table staffing-table"
+        [showGridlines]="true"
+        (onNodeExpand)="keepPagePosition()"
+        (onNodeCollapse)="keepPagePosition()"
+      >
         <ng-template pTemplate="header">
           <tr>
             <th class="name-column">
@@ -162,6 +168,11 @@ export class ListViewComponent {
 
   protected modeLabel(mode: StudyMode): string { return mode === 'stacjonarny' ? 'Dzienne' : 'Zaoczne'; }
   protected number(value: number): string { return new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 2 }).format(value); }
+  protected keepPagePosition(): void {
+    const left = window.scrollX;
+    const top = window.scrollY;
+    requestAnimationFrame(() => window.scrollTo({ left, top, behavior: 'auto' }));
+  }
 
   private aggregate(): Map<string, LecturerAggregate> {
     const lecturers = new Map<string, LecturerAggregate>();
