@@ -6,7 +6,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
-import { ScheduleEntry, ScheduleLecturer, ScheduleSubject, ScheduleSubjectLecturer, StudyMode } from '../../models/schedule.models';
+import { formatHour, ScheduleEntry, ScheduleLecturer, ScheduleSubject, ScheduleSubjectLecturer, StudyMode } from '../../models/schedule.models';
 import { DesideratumOption } from '../../services/lecturer-desiderata.service';
 import { MockDataService } from '../../services/mock-data.service';
 
@@ -214,25 +214,27 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
         <div class="form-row-two">
           <div class="form-row">
             <label>Godzina rozpoczęcia</label>
-            <p-inputnumber
-              [(ngModel)]="form.startHour"
-              [min]="8"
-              [max]="20"
-              [step]="0.5"
-              [minFractionDigits]="1"
-              [maxFractionDigits]="1"
+            <input
+              pInputText
+              type="time"
+              min="08:00"
+              max="20:00"
+              step="1800"
+              [ngModel]="startTime"
+              (ngModelChange)="onStartTimeChange($event)"
               class="w-full"
             />
           </div>
           <div class="form-row">
-            <label>Czas trwania (h)</label>
-            <p-inputnumber
-              [(ngModel)]="form.durationHours"
-              [min]="0.5"
-              [max]="6"
-              [step]="0.5"
-              [minFractionDigits]="1"
-              [maxFractionDigits]="1"
+            <label>Godzina zakończenia</label>
+            <input
+              pInputText
+              type="time"
+              min="08:30"
+              max="23:59"
+              step="1800"
+              [ngModel]="endTime"
+              (ngModelChange)="onEndTimeChange($event)"
               class="w-full"
             />
           </div>
@@ -612,9 +614,25 @@ export class EntryDialogComponent {
     }
   }
 
+  protected get startTime(): string { return formatHour(this.form.startHour); }
+
+  protected get endTime(): string { return formatHour(this.form.startHour + this.form.durationHours); }
+
+  protected onStartTimeChange(value: string): void {
+    const hour = this.parseTime(value);
+    if (hour !== null) this.form.startHour = hour;
+  }
+
+  protected onEndTimeChange(value: string): void {
+    const hour = this.parseTime(value);
+    if (hour !== null && hour > this.form.startHour) this.form.durationHours = hour - this.form.startHour;
+  }
+
   protected isValid(): boolean {
     return !!this.form.subjectName?.trim() && !this.datesInvalid() &&
-      (this.form.meetingCountOverride === undefined || this.form.meetingCountOverride >= 1);
+      (this.form.meetingCountOverride == null || this.form.meetingCountOverride >= 1) &&
+      this.form.startHour >= 8 && this.form.startHour <= 20 &&
+      this.form.durationHours >= 0.5 && this.form.durationHours <= 6;
   }
 
   protected automaticMeetingCount(): number {
@@ -673,6 +691,12 @@ export class EntryDialogComponent {
 
   protected parseDates(): string[] { return this.datesDraft.split(/[,;\s]+/).map((x) => x.trim()).filter(Boolean); }
   private validDate(value: string): boolean { const match = /^(\d{2})\.(\d{2})$/.exec(value); if (!match) return false; const day = Number(match[1]); const month = Number(match[2]); return month >= 1 && month <= 12 && day >= 1 && day <= new Date(2000, month, 0).getDate(); }
+
+  private parseTime(value: string): number | null {
+    const match = /^(\d{2}):(\d{2})$/.exec(value);
+    if (!match) return null;
+    return Number(match[1]) + Number(match[2]) / 60;
+  }
 
   private currentRoles(): string[] {
     try { return JSON.parse(sessionStorage.getItem('shogun_roles') ?? '[]'); } catch { return []; }

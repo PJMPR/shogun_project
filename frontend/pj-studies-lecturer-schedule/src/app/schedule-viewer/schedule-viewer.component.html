@@ -10,31 +10,47 @@
   <div class="filters">
     <label>Wydział<select [(ngModel)]="facultyCode" (ngModelChange)="changeFaculty()">@for (option of facultyOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
     <label>Rok akademicki<select [(ngModel)]="academicYear" (ngModelChange)="selectionChanged()" [disabled]="!yearOptions().length">@for (year of yearOptions(); track year) { <option [value]="year">{{ year }}</option> }</select></label>
-    <label>Semestr<select [(ngModel)]="semesterNumber" (ngModelChange)="selectionChanged()">@for (option of semesterOptions; track option.value) { <option [ngValue]="option.value">{{ option.label }}</option> }</select></label>
-    <label>Tryb studiów<select [(ngModel)]="studyMode" (ngModelChange)="selectionChanged()">@for (option of modeOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
-    <div class="scope"><span>Zakres</span><div><button [class.active]="scope === 'all'" (click)="scope = 'all'">Cały plan</button><button [class.active]="scope === 'mine'" (click)="scope = 'mine'">Mój plan</button></div></div>
+    <div class="semester-filter">
+      <span>Semestr</span>
+      <div class="semester-season" aria-label="Semestr zimowy lub letni">
+        <button type="button" [class.active]="semesterSeason() === 'winter'" (click)="seasonChanged('winter')">Zimowy</button>
+        <button type="button" [class.active]="semesterSeason() === 'summer'" (click)="seasonChanged('summer')">Letni</button>
+      </div>
+      @if (scope() === 'mine') {
+        <details class="semester-multiselect">
+          <summary>{{ selectedSemesters().length ? 'Wybrane: ' + selectedSemesters().join(', ') : 'Wybierz semestry' }}</summary>
+          <div>@for (option of semesterOptions(); track option.value) {
+            <label><input type="checkbox" [checked]="selectedSemesters().includes(option.value)" (change)="toggleSemester(option.value, $any($event.target).checked)"> {{ option.label }}</label>
+          }</div>
+        </details>
+      } @else {
+        <select [(ngModel)]="semesterNumber" (ngModelChange)="selectionChanged()" aria-label="Numer semestru">@for (option of semesterOptions(); track option.value) { <option [ngValue]="option.value">{{ option.label }}</option> }</select>
+      }
+    </div>
+    <label>Tryb studiów<select [ngModel]="studyMode()" (ngModelChange)="studyModeChanged($event)">@for (option of modeOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
+    <div class="scope"><span>Zakres</span><div><button [class.active]="scope() === 'all'" (click)="scopeChanged('all')">Cały plan</button><button [class.active]="scope() === 'mine'" (click)="scopeChanged('mine')">Mój plan</button></div></div>
   </div>
 
   @if (error()) { <div class="message error"><i class="pi pi-exclamation-circle"></i>{{ error() }}<button (click)="error.set(null)" aria-label="Zamknij">×</button></div> }
   @if (loading()) { <div class="loading"><i class="pi pi-spin pi-spinner"></i> Pobieranie planu…</div> }
-  @else if (!plan()) { <div class="empty"><i class="pi pi-calendar-times"></i><h2>Brak opublikowanego planu</h2><p>Dla wybranego roku, semestru, wydziału i trybu studiów nie opublikowano jeszcze planu.</p></div> }
-  @else if (!visibleEntries().length) { <div class="empty"><i class="pi pi-user"></i><h2>{{ scope === 'mine' ? 'Brak zajęć w Twoim planie' : 'Plan nie zawiera zajęć' }}</h2><p>@if (scope === 'mine') { Zajęcia są dopasowywane do konta zalogowanego użytkownika. }</p></div> }
+  @else if (scope() === 'all' && !plan()) { <div class="empty"><i class="pi pi-calendar-times"></i><h2>Brak opublikowanego planu</h2><p>Dla wybranego roku, semestru, wydziału i trybu studiów nie opublikowano jeszcze planu.</p></div> }
+  @else if (!visibleEntries().length) { <div class="empty"><i class="pi pi-user"></i><h2>{{ scope() === 'mine' ? 'Brak zajęć w Twoim planie' : 'Plan nie zawiera zajęć' }}</h2><p>@if (scope() === 'mine') { Zajęcia są dopasowywane do konta zalogowanego użytkownika. }</p></div> }
   @else if (view === 'weekly') {
-    <div class="calendar-wrap"><div #calendar class="calendar" [style.--days]="visibleDays().length">
-      <div class="corner"></div>@for (day of visibleDays(); track day) { <div class="day-title">{{ days[day] }}</div> }
+    <div class="calendar-wrap"><div #calendar class="calendar" [style.--days]="calendarColumns().length">
+      <div class="corner"></div>@for (column of calendarColumns(); track column.day + '-' + (column.semesterNumber ?? 'all')) { <div class="day-title"><strong>{{ days[column.day] }}</strong>@if (column.semesterNumber !== undefined) { <span>Semestr {{ column.semesterNumber }}</span> }</div> }
       <div class="times">@for (hour of hours; track hour) { <span [style.top.%]="((hour - 8) / 12) * 100">{{ formatHour(hour) }}</span> }</div>
-      @for (day of visibleDays(); track day) {
+      @for (column of calendarColumns(); track column.day + '-' + (column.semesterNumber ?? 'all')) {
         <div class="day-column">@for (hour of hours; track hour) { <div class="hour-line" [style.top.%]="((hour - 8) / 12) * 100"></div> }
-          @for (entry of entriesForDay(day); track entry.id) {
+          @for (entry of entriesForColumn(column); track entry.id) {
             <article class="entry" [style.top.%]="top(entry)" [style.height.%]="height(entry)" [style.left.%]="left(entry)" [style.width.%]="width(entry)" [style.--entry-color]="entry.color || '#dbeafe'" (click)="openComments(entry)" tabindex="0" (keydown.enter)="openComments(entry)">
-              <strong [title]="entry.subjectName">{{ subjectLabel(entry) }}</strong><span>{{ time(entry) }} · {{ groupNames(entry) }}</span><span [title]="entry.lecturerDisplayName">{{ lecturerLabel(entry) }}</span>@if (entry.dates?.length) { <span>{{ entry.dates!.join(', ') }}</span> }@if (entry.room) { <span>s. {{ entry.room }}</span> }<button class="comment-button" title="Komentarze"><i class="pi pi-comments"></i>@if (entry.commentCount) { <b>{{ entry.commentCount }}</b> }</button>
+              <strong [title]="entry.subjectName">{{ subjectLabel(entry) }}</strong>@if (scope() === 'mine') { <span class="entry-meta">Semestr {{ entry.semesterNumber }}@if (classTypeLabel(entry.classType)) { · {{ classTypeLabel(entry.classType) }} }</span> }<span>{{ time(entry) }} · {{ groupNames(entry) }}</span><span [title]="entry.lecturerDisplayName">{{ lecturerLabel(entry) }}</span>@if (entry.dates?.length) { <span>{{ entry.dates!.join(', ') }}</span> }@if (entry.room) { <span>s. {{ entry.room }}</span> }<button class="comment-button" title="Komentarze"><i class="pi pi-comments"></i>@if (entry.commentCount) { <b>{{ entry.commentCount }}</b> }</button>
             </article>
           }
         </div>
       }
     </div></div>
   } @else {
-    <div class="table-wrap"><table><thead><tr><th>Dzień</th><th>Godziny</th><th>Przedmiot</th><th>Prowadzący</th><th>Grupy</th><th>Sala</th><th>Komentarze</th></tr></thead><tbody>@for (entry of visibleEntries(); track entry.id) { <tr><td>{{ days[entry.dayOfWeek] }}</td><td>{{ time(entry) }}</td><td><strong>{{ entry.subjectName }}</strong></td><td>{{ entry.lecturerDisplayName }}</td><td>{{ groupNames(entry) }}</td><td>{{ entry.room || '—' }}</td><td><button class="table-comment" (click)="openComments(entry)"><i class="pi pi-comments"></i> {{ entry.commentCount || '' }}</button></td></tr> }</tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>Dzień</th><th>Godziny</th>@if (scope() === 'mine') { <th>Semestr</th><th>Typ zajęć</th> }<th>Przedmiot</th><th>Prowadzący</th><th>Grupy</th><th>Sala</th><th>Komentarze</th></tr></thead><tbody>@for (entry of visibleEntries(); track entry.id) { <tr><td>{{ days[entry.dayOfWeek] }}</td><td>{{ time(entry) }}</td>@if (scope() === 'mine') { <td>{{ entry.semesterNumber }}</td><td>{{ classTypeLabel(entry.classType) || '—' }}</td> }<td><strong>{{ entry.subjectName }}</strong></td><td>{{ entry.lecturerDisplayName }}</td><td>{{ groupNames(entry) }}</td><td>{{ entry.room || '—' }}</td><td><button class="table-comment" (click)="openComments(entry)"><i class="pi pi-comments"></i> {{ entry.commentCount || '' }}</button></td></tr> }</tbody></table></div>
   }
 </section>
 

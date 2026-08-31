@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 
 type StudyMode = 'stationary' | 'partTime';
 type Scope = 'all' | 'mine';
+type SemesterSeason = 'winter' | 'summer';
 type View = 'weekly' | 'list';
 type AuthorRole = 'admin' | 'planner' | 'lecturer';
 
@@ -14,6 +15,8 @@ interface PlanSummary { id: string; facultyCode: string; facultyName: string; ac
 interface Group { id: string; code: string; name: string; sortOrder: number }
 interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerUserId?: string; lecturerEmail?: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; dates?: string[]; groupIds: string[]; commentCount: number }
 interface Plan extends PlanSummary { groups: Group[]; entries: Entry[] }
+interface ViewEntry extends Entry { semesterNumber: number; groupCodes: string[] }
+interface CalendarColumn { day: number; semesterNumber?: number }
 interface ApiComment { id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
 
 const DAYS = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
@@ -34,6 +37,7 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected readonly days = DAYS;
   protected readonly plans = signal<PlanSummary[]>([]);
   protected readonly plan = signal<Plan | null>(null);
+  protected readonly myPlans = signal<Plan[]>([]);
   protected readonly loading = signal(false);
   protected readonly error = signal<string | null>(null);
   protected readonly comments = signal<ApiComment[]>([]);
@@ -46,17 +50,37 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected facultyCode = 'WI';
   protected academicYear = '';
   protected semesterNumber = 1;
-  protected studyMode: StudyMode = 'stationary';
-  protected scope: Scope = 'all';
+  protected readonly semesterSeason = signal<SemesterSeason>('winter');
+  protected readonly selectedSemesters = signal<number[]>([1, 3, 5, 7]);
+  protected readonly studyMode = signal<StudyMode>('stationary');
+  protected readonly scope = signal<Scope>('mine');
   protected view: View = 'weekly';
   protected readonly currentUserId = this.readProfile().userId;
   protected readonly facultyOptions = [{ label: 'Informatyka', value: 'WI' }, { label: 'Sztuka Nowych Mediów', value: 'SNM' }];
   protected readonly modeOptions = [{ label: 'Stacjonarne', value: 'stationary' as StudyMode }, { label: 'Niestacjonarne', value: 'partTime' as StudyMode }];
-  protected readonly semesterOptions = Array.from({ length: 8 }, (_, index) => ({ label: `Semestr ${index + 1}`, value: index + 1 }));
+  protected readonly semesterOptions = computed(() => {
+    const firstSemester = this.semesterSeason() === 'winter' ? 1 : 2;
+    return Array.from({ length: 4 }, (_, index) => {
+      const value = firstSemester + index * 2;
+      return { label: `Semestr ${value}`, value };
+    });
+  });
   protected readonly yearOptions = computed(() => [...new Set(this.plans().filter(p => p.facultyCode === this.facultyCode && p.status === 'published').map(p => p.academicYear))].sort().reverse());
   protected readonly visibleEntries = computed(() => {
-    const entries = this.plan()?.entries ?? [];
-    return this.scope === 'mine' ? entries.filter(entry => entry.lecturerUserId === this.currentUserId) : entries;
+    const sourcePlans = this.scope() === 'mine' ? this.myPlans() : (this.plan() ? [this.plan()!] : []);
+    return sourcePlans.flatMap(plan => plan.entries
+      .filter(entry => this.scope() === 'all' || entry.lecturerUserId === this.currentUserId)
+      .map(entry => ({
+        ...entry,
+        semesterNumber: plan.semesterNumber,
+        groupCodes: entry.groupIds.map(id => plan.groups.find(group => group.id === id)?.code).filter((code): code is string => Boolean(code)),
+      })));
+  });
+  protected readonly activeMySemesters = computed(() => [...new Set(this.visibleEntries().map(entry => entry.semesterNumber))].sort((a, b) => a - b));
+  protected readonly calendarColumns = computed<CalendarColumn[]>(() => {
+    const days = this.visibleDays();
+    if (this.scope() !== 'mine' || this.studyMode() === 'stationary') return days.map(day => ({ day }));
+    return days.flatMap(day => this.activeMySemesters().map(semesterNumber => ({ day, semesterNumber })));
   });
   protected readonly hours = Array.from({ length: 13 }, (_, index) => index + 8);
 
@@ -72,16 +96,33 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   }
 
   protected async changeFaculty(): Promise<void> { await this.loadPlans(); }
-  protected async selectionChanged(): Promise<void> { await this.loadSelectedPlan(); }
+  protected async selectionChanged(): Promise<void> { await this.loadCurrentView(); }
+  protected async studyModeChanged(mode: StudyMode): Promise<void> { this.studyMode.set(mode); await this.loadCurrentView(); }
+  protected async scopeChanged(scope: Scope): Promise<void> { this.scope.set(scope); await this.loadCurrentView(); }
+  protected async toggleSemester(semesterNumber: number, checked: boolean): Promise<void> {
+    this.selectedSemesters.update(selected => checked
+      ? [...new Set([...selected, semesterNumber])].sort((a, b) => a - b)
+      : selected.filter(value => value !== semesterNumber));
+    await this.loadMinePlans();
+  }
+  protected async seasonChanged(season: SemesterSeason): Promise<void> {
+    this.semesterSeason.set(season);
+    const isWinterSemester = Number(this.semesterNumber) % 2 === 1;
+    if ((season === 'winter') !== isWinterSemester) {
+      this.semesterNumber += season === 'winter' ? -1 : 1;
+    }
+    this.selectedSemesters.set(this.semesterOptions().map(option => option.value));
+    await this.loadCurrentView();
+  }
 
   private async loadPlans(): Promise<void> {
-    this.loading.set(true); this.error.set(null); this.plan.set(null);
+    this.loading.set(true); this.error.set(null); this.plan.set(null); this.myPlans.set([]);
     try {
       const items = await firstValueFrom(this.http.get<PlanSummary[]>(`${this.base}/schedules/published?facultyCode=${encodeURIComponent(this.facultyCode)}`));
       this.plans.set(items);
       const years = [...new Set(items.filter(p => p.status === 'published').map(p => p.academicYear))].sort().reverse();
       if (!years.includes(this.academicYear)) this.academicYear = years[0] ?? '';
-      await this.loadSelectedPlan();
+      await this.loadCurrentView();
     } catch (error) { this.error.set(this.errorMessage(error, 'Nie udało się pobrać planów zajęć.')); }
     finally { this.loading.set(false); }
   }
@@ -89,7 +130,7 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   private async loadSelectedPlan(): Promise<void> {
     this.commentsEntry.set(null);
     if (!this.academicYear) { this.plan.set(null); return; }
-    const match = this.plans().find(item => item.status === 'published' && item.facultyCode === this.facultyCode && item.academicYear === this.academicYear && item.semesterNumber === Number(this.semesterNumber) && item.studyMode === this.studyMode);
+    const match = this.plans().find(item => item.status === 'published' && item.facultyCode === this.facultyCode && item.academicYear === this.academicYear && item.semesterNumber === Number(this.semesterNumber) && item.studyMode === this.studyMode());
     if (!match) { this.plan.set(null); return; }
     this.loading.set(true); this.error.set(null);
     try { this.plan.set(await firstValueFrom(this.http.get<Plan>(`${this.base}/schedules/published/${match.id}`))); }
@@ -97,17 +138,52 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     finally { this.loading.set(false); }
   }
 
-  protected entriesForDay(day: number): Entry[] { return this.visibleEntries().filter(entry => entry.dayOfWeek === day); }
-  protected visibleDays(): number[] { return this.studyMode === 'stationary' ? [0, 1, 2, 3, 4] : [5, 6]; }
-  protected groupNames(entry: Entry): string { const groups = this.plan()?.groups ?? []; return entry.groupIds.map(id => groups.find(group => group.id === id)?.code).filter(Boolean).join(', '); }
+  private async loadMinePlans(): Promise<void> {
+    this.commentsEntry.set(null);
+    if (!this.academicYear || !this.selectedSemesters().length) { this.myPlans.set([]); return; }
+    const selected = new Set(this.selectedSemesters());
+    const matches = this.plans().filter(item => item.status === 'published'
+      && item.facultyCode === this.facultyCode
+      && item.academicYear === this.academicYear
+      && item.studyMode === this.studyMode()
+      && selected.has(item.semesterNumber));
+    this.loading.set(true); this.error.set(null);
+    try {
+      const loaded = await Promise.all(matches.map(match => firstValueFrom(this.http.get<Plan>(`${this.base}/schedules/published/${match.id}`))));
+      this.myPlans.set(loaded.sort((a, b) => a.semesterNumber - b.semesterNumber));
+    } catch (error) { this.myPlans.set([]); this.error.set(this.errorMessage(error, 'Nie udało się pobrać planów prowadzącego.')); }
+    finally { this.loading.set(false); }
+  }
+
+  private async loadCurrentView(): Promise<void> {
+    if (this.scope() === 'mine') await this.loadMinePlans();
+    else await this.loadSelectedPlan();
+  }
+
+  protected entriesForColumn(column: CalendarColumn): ViewEntry[] { return this.visibleEntries().filter(entry => entry.dayOfWeek === column.day && (column.semesterNumber === undefined || entry.semesterNumber === column.semesterNumber)); }
+  protected visibleDays(): number[] { return this.studyMode() === 'stationary' ? [0, 1, 2, 3, 4] : [5, 6]; }
+  protected groupNames(entry: Entry | ViewEntry): string { return 'groupCodes' in entry ? entry.groupCodes.join(', ') : ''; }
   protected time(entry: Entry): string { return `${this.formatMinute(entry.startMinute)}–${this.formatMinute(entry.startMinute + entry.durationMinutes)}`; }
   protected top(entry: Entry): number { return ((entry.startMinute - START_MINUTE) / (END_MINUTE - START_MINUTE)) * 100; }
   protected height(entry: Entry): number { return (entry.durationMinutes / (END_MINUTE - START_MINUTE)) * 100; }
-  protected left(entry: Entry): number { const indices = this.groupIndices(entry); return (Math.min(...indices) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100; }
-  protected width(entry: Entry): number { const indices = this.groupIndices(entry); return ((Math.max(...indices) - Math.min(...indices) + 1) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100; }
+  protected left(entry: ViewEntry): number {
+    if (this.scope() === 'mine') {
+      if (this.studyMode() === 'partTime') return 0;
+      return (this.activeMySemesters().indexOf(entry.semesterNumber) / Math.max(1, this.activeMySemesters().length)) * 100;
+    }
+    const indices = this.groupIndices(entry); return (Math.min(...indices) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100;
+  }
+  protected width(entry: ViewEntry): number {
+    if (this.scope() === 'mine') return this.studyMode() === 'partTime' ? 100 : 100 / Math.max(1, this.activeMySemesters().length);
+    const indices = this.groupIndices(entry); return ((Math.max(...indices) - Math.min(...indices) + 1) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100;
+  }
   protected formatHour(hour: number): string { return `${String(hour).padStart(2, '0')}:00`; }
   protected subjectLabel(entry: Entry): string { return this.useCompactLabels() ? (entry.subjectCode || entry.subjectName) : entry.subjectName; }
   protected lecturerLabel(entry: Entry): string { return this.useCompactLabels() ? this.initials(entry.lecturerDisplayName) : entry.lecturerDisplayName; }
+  protected classTypeLabel(classType: string | null | undefined): string {
+    const labels: Record<string, string> = { '1': 'Wykład', '2': 'Ćwiczenia', '3': 'Laboratorium', lecture: 'Wykład', exercises: 'Ćwiczenia', laboratory: 'Laboratorium' };
+    return classType ? labels[classType.toLowerCase()] ?? '' : '';
+  }
 
   protected async openComments(entry: Entry): Promise<void> {
     this.commentsEntry.set(entry); this.commentDraft.set(''); this.editingId.set(null); this.comments.set([]);
@@ -147,7 +223,11 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     return dayWidth / Math.max(1, plan.groups.length) < COMPACT_LABEL_COLUMN_WIDTH_PX;
   }
   private groupIndices(entry: Entry): number[] { const groups = this.plan()?.groups ?? []; const indices = entry.groupIds.map(id => groups.findIndex(group => group.id === id)).filter(index => index >= 0); return indices.length ? indices : [0]; }
-  private adjustCommentCount(entryId: string, delta: number): void { this.plan.update(plan => plan ? { ...plan, entries: plan.entries.map(entry => entry.id === entryId ? { ...entry, commentCount: Math.max(0, entry.commentCount + delta) } : entry) } : plan); }
+  private adjustCommentCount(entryId: string, delta: number): void {
+    const updatePlan = (plan: Plan): Plan => ({ ...plan, entries: plan.entries.map(entry => entry.id === entryId ? { ...entry, commentCount: Math.max(0, entry.commentCount + delta) } : entry) });
+    this.plan.update(plan => plan ? updatePlan(plan) : plan);
+    this.myPlans.update(plans => plans.map(updatePlan));
+  }
   private readProfile(): { userId: string } { try { return JSON.parse(sessionStorage.getItem('shogun_user_profile') ?? '{"userId":""}'); } catch { return { userId: '' }; } }
   private errorMessage(error: unknown, fallback: string): string { return error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : fallback; }
 }

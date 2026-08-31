@@ -169,7 +169,10 @@ export class ListViewComponent {
     for (const { entry } of this.store.allPlanEntries()) {
       if (entry.academicYear !== this.academicYear() || !entry.lecturerName.trim()) continue;
       if (lecturerFilter && !entry.lecturerName.toLocaleLowerCase('pl-PL').includes(lecturerFilter)) continue;
-      const lecturerKey = (entry.lecturerUserId || entry.lecturerEmail || entry.lecturerName).trim().toLocaleLowerCase('pl-PL');
+      // Across plans the same lecturer may have a user id, an e-mail, or only a
+      // display name. Group by the normalized display name so those variants
+      // do not create separate rows in the staffing summary.
+      const lecturerKey = this.normalizeLecturerName(entry.lecturerName);
       const subjectKey = (entry.subjectCode || entry.subjectName).trim().toLocaleLowerCase('pl-PL');
       const lecturer = lecturers.get(lecturerKey) ?? { name: entry.lecturerName, modes: new Map(), lessonHours: 0 };
       const mode = lecturer.modes.get(entry.studyMode) ?? { mode: entry.studyMode, subjects: new Map(), lessonHours: 0 };
@@ -185,5 +188,9 @@ export class ListViewComponent {
   private lessonHours(entry: ScheduleEntry): number {
     const meetings = entry.meetingCountOverride ?? (entry.dates?.length ? entry.dates.length : entry.studyMode === 'stacjonarny' ? 15 : 8);
     return entry.durationHours * 60 / 45 * meetings;
+  }
+
+  private normalizeLecturerName(name: string): string {
+    return name.normalize('NFKC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('pl-PL');
   }
 }
