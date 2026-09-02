@@ -98,26 +98,27 @@ export class WeeklyViewComponent {
     });
   });
 
+  protected readonly allDesiderataOptions = computed<DesideratumOption[]>(() =>
+    this.desiderataService.items().flatMap((assignment) => assignment.subjects.map((subject) => ({
+      ...subject,
+      assignmentId: assignment.id,
+      lecturerName: `${assignment.lecturerFirstName} ${assignment.lecturerLastName}`.trim(),
+      lecturerEmail: assignment.lecturerEmail ?? undefined,
+      lecturerUserId: assignment.lecturerUserId ?? '',
+      semesterType: assignment.semesterType,
+      academicYear: assignment.academicYear,
+    }))),
+  );
+
   protected readonly desiderataOptions = computed<DesideratumOption[]>(() => {
     const filters = this.filters();
     const semesterType = this.semesterType();
-    return this.desiderataService.items()
-      .filter((assignment) => this.normalizeSemesterType(assignment.semesterType) === semesterType)
-      .flatMap((assignment) => assignment.subjects
-        .filter((subject) =>
-          this.normalizeStudyMode(subject.trybStudiow) === filters.mode &&
-          semesterTypeOf(subject.semester) === semesterType &&
-          (filters.semesterNumber === null || subject.semester === filters.semesterNumber),
-        )
-        .map((subject) => ({
-          ...subject,
-          assignmentId: assignment.id,
-          lecturerName: `${assignment.lecturerFirstName} ${assignment.lecturerLastName}`.trim(),
-          lecturerEmail: assignment.lecturerEmail ?? undefined,
-          lecturerUserId: assignment.lecturerUserId ?? '',
-          semesterType: assignment.semesterType,
-          academicYear: assignment.academicYear,
-      }))); 
+    return this.allDesiderataOptions().filter((item) =>
+      this.normalizeSemesterType(item.semesterType) === semesterType &&
+      this.normalizeStudyMode(item.trybStudiow) === filters.mode &&
+      semesterTypeOf(item.semester) === semesterType &&
+      (filters.semesterNumber === null || item.semester === filters.semesterNumber),
+    );
   });
 
   protected readonly lecturerOptions = computed<ScheduleLecturerOption[]>(() => {

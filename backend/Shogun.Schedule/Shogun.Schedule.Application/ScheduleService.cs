@@ -205,6 +205,14 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
         var lecturer = schedule.Lecturers.FirstOrDefault(x => x.Id == lecturerId) ?? throw new NotFoundException("Wykładowca nie istnieje.");
+        var normalizedName = lecturer.DisplayName.Trim().ToLowerInvariant();
+        var normalizedEmail = lecturer.Email?.Trim().ToLowerInvariant();
+        bool Matches(string displayName, string? email) =>
+            displayName.Trim().ToLowerInvariant() == normalizedName ||
+            (normalizedEmail is not null && email?.Trim().ToLowerInvariant() == normalizedEmail);
+        if (schedule.SubjectLecturers.Any(x => Matches(x.LecturerDisplayName, x.LecturerEmail)) ||
+            schedule.Entries.Any(x => Matches(x.LecturerDisplayName, x.LecturerEmail)))
+            throw new ConflictException("Nie można usunąć wykładowcy przypisanego do zajęć.");
         schedule.Lecturers.Remove(lecturer); await repository.SaveChangesAsync(ct);
     }
 

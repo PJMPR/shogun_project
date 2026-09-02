@@ -90,7 +90,9 @@ const SEMESTER_NUMBER_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8];
                     {{ lecturer.displayName }}
                     @if (isAdmin) {
                       <button type="button" title="Edytuj" (click)="editLecturer(lecturer)"><i class="pi pi-pencil"></i></button>
-                      <button type="button" title="Usuń" (click)="deleteLecturer(lecturer)"><i class="pi pi-trash"></i></button>
+                    }
+                    @if (canDeleteLecturer(lecturer)) {
+                      <button type="button" title="Usuń wykładowcę" aria-label="Usuń wykładowcę" (click)="deleteLecturer(lecturer)"><i class="pi pi-times"></i></button>
                     }
                   </span>
                 }
@@ -442,6 +444,7 @@ export class EntryDialogComponent {
   readonly deleted = output<string>();
   readonly groupsPerDay = input<Record<number, string[]>>({});
   readonly desiderata = input<DesideratumOption[]>([]);
+  readonly allDesiderata = input<DesideratumOption[]>([]);
   readonly desiderataLoading = input(false);
   readonly desiderataError = input<string | null>(null);
   protected readonly customLecturers = this.mockData.lecturers;
@@ -471,7 +474,7 @@ export class EntryDialogComponent {
   });
   protected readonly lecturerOptions = computed<LecturerChoice[]>(() => {
     const choices = new Map<string, LecturerChoice>();
-    for (const item of this.desiderata()) {
+    for (const item of [...this.desiderata(), ...this.allDesiderata()]) {
       const key = this.lecturerKey(item.lecturerUserId, item.lecturerEmail, item.lecturerName);
       if (!choices.has(key)) choices.set(key, { key, name: item.lecturerName, email: item.lecturerEmail, userId: item.lecturerUserId, assignmentId: item.assignmentId });
     }
@@ -571,8 +574,25 @@ export class EntryDialogComponent {
   }
 
   protected async deleteLecturer(lecturer: ScheduleLecturer): Promise<void> {
+    if (!this.canDeleteLecturer(lecturer)) return;
     if (!window.confirm(`Usunąć wykładowcę „${lecturer.displayName}” z katalogu tego planu?`)) return;
     await this.catalogAction(async () => { await this.mockData.deleteLecturer(lecturer.id); });
+  }
+
+  protected canDeleteLecturer(lecturer: ScheduleLecturer): boolean {
+    const normalizedName = lecturer.displayName.trim().toLocaleLowerCase('pl-PL');
+    const normalizedEmail = lecturer.email?.trim().toLocaleLowerCase('pl-PL');
+    const isLecturer = (name: string, email?: string): boolean =>
+      name.trim().toLocaleLowerCase('pl-PL') === normalizedName ||
+      (!!normalizedEmail && email?.trim().toLocaleLowerCase('pl-PL') === normalizedEmail);
+
+    const assignedToSubject = this.mockData.subjectLecturers().some((item) =>
+      isLecturer(item.lecturerDisplayName, item.lecturerEmail),
+    );
+    const assignedToEntry = this.mockData.entries().some((entry) =>
+      isLecturer(entry.lecturerName, entry.lecturerEmail),
+    );
+    return !assignedToSubject && !assignedToEntry;
   }
 
   protected columnLecturers(column: DesiderataSubjectColumn): ColumnLecturer[] {
@@ -623,7 +643,7 @@ export class EntryDialogComponent {
   }
 
   protected onLecturerNameChange(name: string): void {
-    const linked = this.desiderata().find((item) => item.assignmentId === this.form.lecturerAssignmentId);
+    const linked = this.allDesiderata().find((item) => item.assignmentId === this.form.lecturerAssignmentId);
     if (!linked || linked.lecturerName !== name) {
       this.form.lecturerAssignmentId = undefined;
       this.form.lecturerEmail = '';

@@ -105,6 +105,30 @@ public sealed class ScheduleServiceTests
             new ScheduleService(repository).AddCommentAsync(entry.Id, new AddCommentRequest("Test"), lecturer, default));
     }
 
+    [Fact]
+    public async Task Delete_lecturer_rejects_lecturer_assigned_to_an_entry()
+    {
+        var schedule = CreateSchedule();
+        var lecturer = new ScheduleLecturer { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule, DisplayName = "Jan Kowalski", Email = "jan@example.edu" };
+        schedule.Lecturers.Add(lecturer);
+        schedule.Entries.Add(new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule, LecturerDisplayName = lecturer.DisplayName, LecturerEmail = lecturer.Email });
+
+        await Assert.ThrowsAsync<ConflictException>(() =>
+            new ScheduleService(new FakeRepository(schedule)).DeleteLecturerAsync(schedule.Id, lecturer.Id, default));
+    }
+
+    [Fact]
+    public async Task Delete_lecturer_removes_unassigned_lecturer()
+    {
+        var schedule = CreateSchedule();
+        var lecturer = new ScheduleLecturer { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule, DisplayName = "Jan Kowalski" };
+        schedule.Lecturers.Add(lecturer);
+
+        await new ScheduleService(new FakeRepository(schedule)).DeleteLecturerAsync(schedule.Id, lecturer.Id, default);
+
+        Assert.DoesNotContain(lecturer, schedule.Lecturers);
+    }
+
     private static SaveScheduleRequest EmptySave(Guid token, IReadOnlyList<StudentGroup> groups) => new(token, "Plan", ScheduleStatus.Draft, groups.Select(g => new SaveGroupRequest(g.Id, g.Code, g.Name, g.SortOrder)).ToList(), []);
     private static SaveEntryRequest Entry(Guid id, Guid groupId, int start, int duration) => new(id, null, null, "TST", "Test", ClassType.Laboratory, "kc-lecturer-id", "lecturer@example.edu", "Wykładowca", null, 0, start, duration, null, [groupId]);
     private static SchedulePlan CreateSchedule()
