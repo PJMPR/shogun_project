@@ -48,7 +48,7 @@
       @for (column of calendarColumns(); track column.day + '-' + (column.semesterNumber ?? 'all')) {
         <div class="day-column">@for (hour of hours; track hour) { <div class="hour-line" [style.top.%]="((hour - 8) / 12) * 100"></div> }
           @for (entry of entriesForColumn(column); track entry.id) {
-            <article class="entry" [style.top.%]="top(entry)" [style.height.%]="height(entry)" [style.left.%]="left(entry)" [style.width.%]="width(entry)" [style.--entry-color]="entry.color || '#dbeafe'" (click)="openComments(entry)" tabindex="0" (keydown.enter)="openComments(entry)">
+            <article class="entry" [style.top.%]="top(entry)" [style.height.%]="height(entry)" [style.left.%]="left(entry, column)" [style.width.%]="width(entry, column)" [style.--entry-color]="entry.color || '#dbeafe'" (click)="openComments(entry)" tabindex="0" (keydown.enter)="openComments(entry)">
               <strong [title]="entry.subjectName">{{ subjectLabel(entry) }}</strong>@if (scope() === 'mine') { <span class="entry-meta">Semestr {{ entry.semesterNumber }}@if (classTypeLabel(entry.classType)) { · {{ classTypeLabel(entry.classType) }} }</span> }<span>{{ time(entry) }} · {{ groupNames(entry) }}</span><span [title]="entry.lecturerDisplayName">{{ lecturerLabel(entry) }}</span>@if (entry.dates?.length) { <span>{{ entry.dates!.join(', ') }}</span> }@if (entry.room) { <span>s. {{ entry.room }}</span> }<button class="comment-button" title="Komentarze"><i class="pi pi-comments"></i>@if (entry.commentCount) { <b>{{ entry.commentCount }}</b> }</button>
             </article>
           }

@@ -18,6 +18,7 @@ interface Plan extends PlanSummary { groups: Group[]; entries: Entry[] }
 interface ViewEntry extends Entry { semesterNumber: number; groupCodes: string[] }
 interface LecturerOption { key: string; label: string }
 interface CalendarColumn { day: number; semesterNumber?: number }
+interface EntryLayout { left: number; width: number }
 interface ApiComment { id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
 
 const DAYS = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
@@ -70,10 +71,9 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     });
   });
   protected readonly yearOptions = computed(() => [...new Set(this.plans().filter(p => p.facultyCode === this.facultyCode && p.status === 'published').map(p => p.academicYear))].sort().reverse());
-  private readonly unfilteredEntries = computed(() => {
+  private readonly planEntries = computed(() => {
     const sourcePlans = this.scope() === 'mine' ? this.myPlans() : (this.plan() ? [this.plan()!] : []);
     return sourcePlans.flatMap(plan => plan.entries
-      .filter(entry => this.scope() === 'all' || entry.lecturerUserId === this.currentUserId)
       .map(entry => ({
         ...entry,
         semesterNumber: plan.semesterNumber,
@@ -82,7 +82,7 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   });
   protected readonly lecturerOptions = computed<LecturerOption[]>(() => {
     const unique = new Map<string, LecturerOption>();
-    for (const entry of this.unfilteredEntries()) {
+    for (const entry of this.planEntries()) {
       const key = this.lecturerKey(entry);
       if (key && !unique.has(key)) unique.set(key, { key, label: entry.lecturerDisplayName });
     }
@@ -90,7 +90,11 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   });
   protected readonly visibleEntries = computed(() => {
     const lecturer = this.selectedLecturer();
-    return this.unfilteredEntries().filter(entry => !this.isPlanner || !lecturer || this.lecturerKey(entry) === lecturer);
+    return this.planEntries().filter(entry => {
+      if (this.scope() === 'all') return !this.isPlanner || !lecturer || this.lecturerKey(entry) === lecturer;
+      if (this.isPlanner && lecturer) return this.lecturerKey(entry) === lecturer;
+      return entry.lecturerUserId === this.currentUserId;
+    });
   });
   protected readonly activeMySemesters = computed(() => [...new Set(this.visibleEntries().map(entry => entry.semesterNumber))].sort((a, b) => a - b));
   protected readonly calendarColumns = computed<CalendarColumn[]>(() => {
@@ -115,11 +119,12 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected async selectionChanged(): Promise<void> { await this.loadCurrentView(); }
   protected async studyModeChanged(mode: StudyMode): Promise<void> { this.studyMode.set(mode); await this.loadCurrentView(); }
   protected async scopeChanged(scope: Scope): Promise<void> { this.scope.set(scope); await this.loadCurrentView(); }
-  protected lecturerChanged(query: string): void {
+  protected async lecturerChanged(query: string): Promise<void> {
     this.lecturerQuery.set(query);
     const normalizedQuery = query.trim().toLocaleLowerCase('pl-PL');
     const match = this.lecturerOptions().find(option => option.label.toLocaleLowerCase('pl-PL') === normalizedQuery);
     this.selectedLecturer.set(match?.key ?? '');
+    if (match && this.scope() !== 'mine') await this.scopeChanged('mine');
   }
   protected async toggleSemester(semesterNumber: number, checked: boolean): Promise<void> {
     this.selectedSemesters.update(selected => checked
@@ -188,15 +193,12 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected time(entry: Entry): string { return `${this.formatMinute(entry.startMinute)}–${this.formatMinute(entry.startMinute + entry.durationMinutes)}`; }
   protected top(entry: Entry): number { return ((entry.startMinute - START_MINUTE) / (END_MINUTE - START_MINUTE)) * 100; }
   protected height(entry: Entry): number { return (entry.durationMinutes / (END_MINUTE - START_MINUTE)) * 100; }
-  protected left(entry: ViewEntry): number {
-    if (this.scope() === 'mine') {
-      if (this.studyMode() === 'partTime') return 0;
-      return (this.activeMySemesters().indexOf(entry.semesterNumber) / Math.max(1, this.activeMySemesters().length)) * 100;
-    }
+  protected left(entry: ViewEntry, column: CalendarColumn): number {
+    if (this.scope() === 'mine') return this.entryLayout(entry, column).left;
     const indices = this.groupIndices(entry); return (Math.min(...indices) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100;
   }
-  protected width(entry: ViewEntry): number {
-    if (this.scope() === 'mine') return this.studyMode() === 'partTime' ? 100 : 100 / Math.max(1, this.activeMySemesters().length);
+  protected width(entry: ViewEntry, column: CalendarColumn): number {
+    if (this.scope() === 'mine') return this.entryLayout(entry, column).width;
     const indices = this.groupIndices(entry); return ((Math.max(...indices) - Math.min(...indices) + 1) / Math.max(1, this.plan()?.groups.length ?? 1)) * 100;
   }
   protected formatHour(hour: number): string { return `${String(hour).padStart(2, '0')}:00`; }
@@ -245,6 +247,32 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     return dayWidth / Math.max(1, plan.groups.length) < COMPACT_LABEL_COLUMN_WIDTH_PX;
   }
   private groupIndices(entry: Entry): number[] { const groups = this.plan()?.groups ?? []; const indices = entry.groupIds.map(id => groups.findIndex(group => group.id === id)).filter(index => index >= 0); return indices.length ? indices : [0]; }
+  private entryLayout(entry: ViewEntry, column: CalendarColumn): EntryLayout {
+    const entries = [...this.entriesForColumn(column)].sort((a, b) => a.startMinute - b.startMinute || b.durationMinutes - a.durationMinutes);
+    const groups: ViewEntry[][] = [];
+    let groupEnd = -1;
+    for (const candidate of entries) {
+      if (!groups.length || candidate.startMinute >= groupEnd) {
+        groups.push([candidate]);
+        groupEnd = candidate.startMinute + candidate.durationMinutes;
+      } else {
+        groups.at(-1)!.push(candidate);
+        groupEnd = Math.max(groupEnd, candidate.startMinute + candidate.durationMinutes);
+      }
+    }
+    const group = groups.find(items => items.some(item => item.id === entry.id));
+    if (!group) return { left: 0, width: 100 };
+    const laneEnds: number[] = [];
+    const lanes = new Map<string, number>();
+    for (const candidate of group) {
+      let lane = laneEnds.findIndex(end => end <= candidate.startMinute);
+      if (lane < 0) lane = laneEnds.length;
+      laneEnds[lane] = candidate.startMinute + candidate.durationMinutes;
+      lanes.set(candidate.id, lane);
+    }
+    const width = 100 / Math.max(1, laneEnds.length);
+    return { left: (lanes.get(entry.id) ?? 0) * width, width };
+  }
   private lecturerKey(entry: Entry): string { return entry.lecturerUserId || entry.lecturerEmail || entry.lecturerDisplayName; }
   private adjustCommentCount(entryId: string, delta: number): void {
     const updatePlan = (plan: Plan): Plan => ({ ...plan, entries: plan.entries.map(entry => entry.id === entryId ? { ...entry, commentCount: Math.max(0, entry.commentCount + delta) } : entry) });
