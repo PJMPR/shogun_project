@@ -6,14 +6,14 @@ h1 { margin: .2rem 0; font-size: 1.8rem; } .page-header p, .drawer header p { ma
 .view-switch, .scope > div, .semester-season { display: flex; padding: 3px; border: 1px solid #e5e7eb; border-radius: 9px; background: #fff; }
 .view-switch button, .scope button, .semester-season button { padding: .55rem .75rem; border: 0; border-radius: 6px; color: #64748b; background: transparent; cursor: pointer; }
 .view-switch button.active, .scope button.active, .semester-season button.active { color: #991b1b; background: #fee2e2; font-weight: 600; }
-.filters { display: grid; grid-template-columns: repeat(4, minmax(145px, 1fr)) auto; gap: .75rem; align-items: end; padding: 1rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px rgba(15,23,42,.04); }
+.filters { display: grid; grid-template-columns: repeat(5, minmax(145px, 1fr)) auto; gap: .75rem; align-items: end; padding: 1rem; margin-bottom: 1rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 2px 8px rgba(15,23,42,.04); }
 .filters label, .scope, .semester-filter { display: grid; gap: .35rem; color: #64748b; font-size: .72rem; font-weight: 600; }
 .semester-season button { flex: 1; padding-block: .35rem; }
 .semester-multiselect { position: relative; }
 .semester-multiselect summary { display: flex; align-items: center; height: 40px; padding: 0 .65rem; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #111827; cursor: pointer; }
 .semester-multiselect > div { position: absolute; top: calc(100% + 4px); left: 0; z-index: 10; display: grid; min-width: 100%; padding: .45rem; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; box-shadow: 0 8px 20px rgba(15,23,42,.14); }
 .semester-multiselect > div label { display: flex; grid-template-columns: none; align-items: center; grid-auto-flow: column; justify-content: start; padding: .35rem; white-space: nowrap; cursor: pointer; }
-select { height: 40px; padding: 0 .65rem; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #111827; }
+select, .filters input { height: 40px; padding: 0 .65rem; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #111827; }
 .message, .loading, .empty { border-radius: 10px; background: #fff; text-align: center; }
 .message { display: flex; align-items: center; gap: .5rem; padding: .75rem 1rem; margin-bottom: 1rem; color: #991b1b; background: #fef2f2; }.message button { margin-left: auto; border: 0; background: transparent; cursor: pointer; }
 .loading { padding: 4rem; color: #64748b; }.empty { padding: 5rem 1rem; border: 1px dashed #cbd5e1; }.empty > i { color: #94a3b8; font-size: 2.4rem; }.empty h2 { margin: .8rem 0 .3rem; font-size: 1.1rem; }.empty p { margin: 0; color: #64748b; font-size: .85rem; }

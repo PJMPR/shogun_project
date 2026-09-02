@@ -28,6 +28,12 @@
       }
     </div>
     <label>Tryb studiów<select [ngModel]="studyMode()" (ngModelChange)="studyModeChanged($event)">@for (option of modeOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
+    @if (isPlanner) {
+      <label>Wykładowca
+        <input type="search" list="lecturer-options" placeholder="Wszyscy wykładowcy" autocomplete="off" [ngModel]="lecturerQuery()" (ngModelChange)="lecturerChanged($event)">
+        <datalist id="lecturer-options">@for (lecturer of lecturerOptions(); track lecturer.key) { <option [value]="lecturer.label"></option> }</datalist>
+      </label>
+    }
     <div class="scope"><span>Zakres</span><div><button [class.active]="scope() === 'all'" (click)="scopeChanged('all')">Cały plan</button><button [class.active]="scope() === 'mine'" (click)="scopeChanged('mine')">Mój plan</button></div></div>
   </div>
 

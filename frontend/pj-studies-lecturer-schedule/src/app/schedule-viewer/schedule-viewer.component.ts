@@ -16,6 +16,7 @@ interface Group { id: string; code: string; name: string; sortOrder: number }
 interface Entry { id: string; subjectName: string; subjectCode?: string; lecturerDisplayName: string; lecturerUserId?: string; lecturerEmail?: string; classType: string; room?: string; dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; dates?: string[]; groupIds: string[]; commentCount: number }
 interface Plan extends PlanSummary { groups: Group[]; entries: Entry[] }
 interface ViewEntry extends Entry { semesterNumber: number; groupCodes: string[] }
+interface LecturerOption { key: string; label: string }
 interface CalendarColumn { day: number; semesterNumber?: number }
 interface ApiComment { id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string; authorRole: AuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean }
 
@@ -54,8 +55,11 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected readonly selectedSemesters = signal<number[]>([1, 3, 5, 7]);
   protected readonly studyMode = signal<StudyMode>('stationary');
   protected readonly scope = signal<Scope>('mine');
+  protected readonly selectedLecturer = signal('');
+  protected readonly lecturerQuery = signal('');
   protected view: View = 'weekly';
   protected readonly currentUserId = this.readProfile().userId;
+  protected readonly isPlanner = this.readRoles().includes('planner');
   protected readonly facultyOptions = [{ label: 'Informatyka', value: 'WI' }, { label: 'Sztuka Nowych Mediów', value: 'SNM' }];
   protected readonly modeOptions = [{ label: 'Stacjonarne', value: 'stationary' as StudyMode }, { label: 'Niestacjonarne', value: 'partTime' as StudyMode }];
   protected readonly semesterOptions = computed(() => {
@@ -66,7 +70,7 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     });
   });
   protected readonly yearOptions = computed(() => [...new Set(this.plans().filter(p => p.facultyCode === this.facultyCode && p.status === 'published').map(p => p.academicYear))].sort().reverse());
-  protected readonly visibleEntries = computed(() => {
+  private readonly unfilteredEntries = computed(() => {
     const sourcePlans = this.scope() === 'mine' ? this.myPlans() : (this.plan() ? [this.plan()!] : []);
     return sourcePlans.flatMap(plan => plan.entries
       .filter(entry => this.scope() === 'all' || entry.lecturerUserId === this.currentUserId)
@@ -75,6 +79,18 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
         semesterNumber: plan.semesterNumber,
         groupCodes: entry.groupIds.map(id => plan.groups.find(group => group.id === id)?.code).filter((code): code is string => Boolean(code)),
       })));
+  });
+  protected readonly lecturerOptions = computed<LecturerOption[]>(() => {
+    const unique = new Map<string, LecturerOption>();
+    for (const entry of this.unfilteredEntries()) {
+      const key = this.lecturerKey(entry);
+      if (key && !unique.has(key)) unique.set(key, { key, label: entry.lecturerDisplayName });
+    }
+    return [...unique.values()].sort((a, b) => a.label.localeCompare(b.label, 'pl'));
+  });
+  protected readonly visibleEntries = computed(() => {
+    const lecturer = this.selectedLecturer();
+    return this.unfilteredEntries().filter(entry => !this.isPlanner || !lecturer || this.lecturerKey(entry) === lecturer);
   });
   protected readonly activeMySemesters = computed(() => [...new Set(this.visibleEntries().map(entry => entry.semesterNumber))].sort((a, b) => a - b));
   protected readonly calendarColumns = computed<CalendarColumn[]>(() => {
@@ -99,6 +115,12 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   protected async selectionChanged(): Promise<void> { await this.loadCurrentView(); }
   protected async studyModeChanged(mode: StudyMode): Promise<void> { this.studyMode.set(mode); await this.loadCurrentView(); }
   protected async scopeChanged(scope: Scope): Promise<void> { this.scope.set(scope); await this.loadCurrentView(); }
+  protected lecturerChanged(query: string): void {
+    this.lecturerQuery.set(query);
+    const normalizedQuery = query.trim().toLocaleLowerCase('pl-PL');
+    const match = this.lecturerOptions().find(option => option.label.toLocaleLowerCase('pl-PL') === normalizedQuery);
+    this.selectedLecturer.set(match?.key ?? '');
+  }
   protected async toggleSemester(semesterNumber: number, checked: boolean): Promise<void> {
     this.selectedSemesters.update(selected => checked
       ? [...new Set([...selected, semesterNumber])].sort((a, b) => a - b)
@@ -223,11 +245,13 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     return dayWidth / Math.max(1, plan.groups.length) < COMPACT_LABEL_COLUMN_WIDTH_PX;
   }
   private groupIndices(entry: Entry): number[] { const groups = this.plan()?.groups ?? []; const indices = entry.groupIds.map(id => groups.findIndex(group => group.id === id)).filter(index => index >= 0); return indices.length ? indices : [0]; }
+  private lecturerKey(entry: Entry): string { return entry.lecturerUserId || entry.lecturerEmail || entry.lecturerDisplayName; }
   private adjustCommentCount(entryId: string, delta: number): void {
     const updatePlan = (plan: Plan): Plan => ({ ...plan, entries: plan.entries.map(entry => entry.id === entryId ? { ...entry, commentCount: Math.max(0, entry.commentCount + delta) } : entry) });
     this.plan.update(plan => plan ? updatePlan(plan) : plan);
     this.myPlans.update(plans => plans.map(updatePlan));
   }
   private readProfile(): { userId: string } { try { return JSON.parse(sessionStorage.getItem('shogun_user_profile') ?? '{"userId":""}'); } catch { return { userId: '' }; } }
+  private readRoles(): string[] { try { const roles = JSON.parse(sessionStorage.getItem('shogun_roles') ?? '[]'); return Array.isArray(roles) ? roles : []; } catch { return []; } }
   private errorMessage(error: unknown, fallback: string): string { return error instanceof HttpErrorResponse && typeof error.error?.detail === 'string' ? error.error.detail : fallback; }
 }
