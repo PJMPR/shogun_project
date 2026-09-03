@@ -13,6 +13,8 @@ public static class DependencyInjection
         services.AddDbContext<ScheduleDbContext>(o => o.UseNpgsql(connection));
         services.AddScoped<IScheduleRepository, ScheduleRepository>();
         services.AddScoped<IScheduleService, ScheduleService>();
+        services.AddHttpContextAccessor();
+        services.AddHttpClient<IUserDirectory, UserDirectoryClient>(client => client.BaseAddress = new Uri(configuration["UsersApiBaseUrl"] ?? "http://pj_users_api:8080"));
         services.AddScoped<KeycloakIdentityBackfill>();
         services.AddHttpClient("keycloak-admin");
         return services;

@@ -15,6 +15,8 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
     public DbSet<ScheduleLecturer> ScheduleLecturers => Set<ScheduleLecturer>();
     public DbSet<ScheduleSubjectLecturer> ScheduleSubjectLecturers => Set<ScheduleSubjectLecturer>();
     public DbSet<ScheduleNote> ScheduleNotes => Set<ScheduleNote>();
+    public DbSet<ScheduleCommentRecipient> ScheduleCommentRecipients => Set<ScheduleCommentRecipient>();
+    public DbSet<ScheduleNoteRecipient> ScheduleNoteRecipients => Set<ScheduleNoteRecipient>();
 
     protected override void OnModelCreating(ModelBuilder b)
     {
@@ -71,6 +73,12 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
             e.ToTable("schedule_notes"); e.HasKey(x => x.Id); e.Property(x => x.Body).HasMaxLength(4000); e.Property(x => x.Title).HasMaxLength(200); e.Property(x => x.AuthorUserId).HasMaxLength(100); e.Property(x => x.AuthorEmail).HasMaxLength(320); e.Property(x => x.AuthorDisplayName).HasMaxLength(200); e.Property(x => x.AuthorRole).HasMaxLength(64); e.Property(x => x.DeletedBy).HasMaxLength(320); e.Property(x => x.DeletedByUserId).HasMaxLength(100); e.HasIndex(x => new { x.ScheduleId, x.CreatedAt });
             e.HasOne(x => x.Schedule).WithMany(x => x.Notes).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
         });
+        b.Entity<ScheduleNoteRecipient>(e =>
+        {
+            e.ToTable("schedule_note_recipients"); e.HasKey(x => x.Id); e.Property(x => x.RecipientUserId).HasMaxLength(100); e.Property(x => x.RecipientDisplayName).HasMaxLength(200); e.Property(x => x.RecipientEmail).HasMaxLength(320);
+            e.HasIndex(x => new { x.ScheduleNoteId, x.RecipientUserId }).IsUnique();
+            e.HasOne(x => x.ScheduleNote).WithMany(x => x.Recipients).HasForeignKey(x => x.ScheduleNoteId).OnDelete(DeleteBehavior.Cascade);
+        });
         b.Entity<ScheduleEntryGroup>(e =>
         {
             e.ToTable("schedule_entry_groups"); e.HasKey(x => new { x.ScheduleEntryId, x.StudentGroupId });
@@ -81,6 +89,12 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
         {
             e.ToTable("schedule_comments"); e.HasKey(x => x.Id); e.Property(x => x.Body).HasMaxLength(4000); e.Property(x => x.AuthorUserId).HasMaxLength(100); e.Property(x => x.AuthorEmail).HasMaxLength(320); e.Property(x => x.AuthorDisplayName).HasMaxLength(200); e.Property(x => x.AuthorRole).HasMaxLength(64); e.Property(x => x.DeletedBy).HasMaxLength(320); e.Property(x => x.DeletedByUserId).HasMaxLength(100); e.HasIndex(x => new { x.ScheduleEntryId, x.CreatedAt });
             e.HasOne(x => x.ScheduleEntry).WithMany(x => x.Comments).HasForeignKey(x => x.ScheduleEntryId).OnDelete(DeleteBehavior.Cascade);
+        });
+        b.Entity<ScheduleCommentRecipient>(e =>
+        {
+            e.ToTable("schedule_comment_recipients"); e.HasKey(x => x.Id); e.Property(x => x.RecipientUserId).HasMaxLength(100); e.Property(x => x.RecipientDisplayName).HasMaxLength(200); e.Property(x => x.RecipientEmail).HasMaxLength(320);
+            e.HasIndex(x => new { x.ScheduleCommentId, x.RecipientUserId }).IsUnique();
+            e.HasOne(x => x.ScheduleComment).WithMany(x => x.Recipients).HasForeignKey(x => x.ScheduleCommentId).OnDelete(DeleteBehavior.Cascade);
         });
     }
 }

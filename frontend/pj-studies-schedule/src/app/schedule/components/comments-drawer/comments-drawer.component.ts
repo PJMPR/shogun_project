@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { ScheduleEntry, ScheduleGroup, formatHour } from '../../models/schedule.models';
 import { CommentAuthorRole, ScheduleComment } from '../../models/schedule-comment.models';
 import { ScheduleCommentsService } from '../../services/schedule-comments.service';
+import { MentionInputComponent, MentionRecipient } from '../mention-input/mention-input.component';
 
 @Component({
   selector: 'app-comments-drawer',
-  imports: [FormsModule],
+  imports: [FormsModule, MentionInputComponent],
   templateUrl: './comments-drawer.component.html',
   styleUrl: './comments-drawer.component.css',
 })
@@ -20,6 +21,8 @@ export class CommentsDrawerComponent {
   protected readonly draft = signal('');
   protected readonly editingId = signal<string | null>(null);
   protected readonly editDraft = signal('');
+  protected readonly draftRecipients = signal<MentionRecipient[]>([]);
+  protected readonly editRecipients = signal<MentionRecipient[]>([]);
   protected readonly accordionEntries = computed(() => this.entries().filter((entry) =>
     entry.id === this.selectedEntryId() || this.commentsService.count(entry.id) > 0,
   ));
@@ -46,14 +49,23 @@ export class CommentsDrawerComponent {
     if (opening) this.commentsService.load(entryId);
   }
   protected comments(entryId: string): ScheduleComment[] { return this.commentsService.forEntry(entryId); }
-  protected addComment(entryId: string): void { this.commentsService.add(entryId, this.draft()); this.draft.set(''); }
-  protected startEdit(comment: ScheduleComment): void { this.editingId.set(comment.id); this.editDraft.set(comment.body); }
-  protected saveEdit(): void { const id = this.editingId(); if (id) this.commentsService.edit(id, this.editDraft()); this.cancelEdit(); }
-  protected cancelEdit(): void { this.editingId.set(null); this.editDraft.set(''); }
+  protected threadRecipients(entryId: string): MentionRecipient[] {
+    return [...new Map(this.comments(entryId).flatMap(comment => comment.recipients).map(recipient => [recipient.userId, recipient])).values()];
+  }
+  protected addComment(entryId: string): void { this.commentsService.add(entryId, this.draft(), this.draftRecipients().map(x => x.userId)); this.draft.set(''); this.draftRecipients.set([]); }
+  protected startEdit(comment: ScheduleComment): void { this.editingId.set(comment.id); this.editDraft.set(comment.body); this.editRecipients.set(comment.recipients); }
+  protected saveEdit(): void { const id = this.editingId(); if (id) this.commentsService.edit(id, this.editDraft(), this.editRecipients().map(x => x.userId)); this.cancelEdit(); }
+  protected cancelEdit(): void { this.editingId.set(null); this.editDraft.set(''); this.editRecipients.set([]); }
   protected canDelete(comment: ScheduleComment): boolean { return this.commentsService.isOwn(comment) || this.commentsService.isAdmin; }
   protected roleLabel(role: CommentAuthorRole): string { return role === 'admin' ? 'Administrator' : role === 'planner' ? 'Planista' : 'Wykładowca'; }
   protected initials(name: string): string { return name.split(/\s+/).slice(0, 2).map((part) => part[0]?.toUpperCase()).join(''); }
   protected formatDate(value: string): string { return new Intl.DateTimeFormat('pl-PL', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value)); }
+  protected bodyParts(comment: ScheduleComment): { text: string; mention: boolean }[] {
+    const tokens = comment.recipients.map(recipient => `@${recipient.displayName}`).sort((a, b) => b.length - a.length);
+    if (!tokens.length) return [{ text: comment.body, mention: false }];
+    const tokenSet = new Set(tokens); const pattern = new RegExp(`(${tokens.map(token => token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
+    return comment.body.split(pattern).filter(Boolean).map(text => ({ text, mention: tokenSet.has(text) }));
+  }
   protected entryLabel(entry: ScheduleEntry): string {
     const code = entry.subjectCode?.trim() || entry.subjectName;
     return `${code} · ${formatHour(entry.startHour)}–${formatHour(entry.startHour + entry.durationHours)} · ${this.groupLabel(entry)}`;

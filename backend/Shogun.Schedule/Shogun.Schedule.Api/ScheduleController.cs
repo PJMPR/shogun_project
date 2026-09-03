@@ -33,7 +33,7 @@ public sealed class ScheduleNotesController(IScheduleService service) : Controll
     [HttpDelete("{id:guid}")] public async Task<IActionResult> Delete(Guid id, CancellationToken ct) { await service.DeleteNoteAsync(id, User.ToCurrentUser(), ct); return NoContent(); }
 }
 
-[ApiController, Route("api/v1")]
+[ApiController, Route("api/v1"), Authorize(Roles = "admin,planner,lecturer")]
 public sealed class ScheduleCommentsController(IScheduleService service) : ControllerBase
 {
     [HttpGet("entries/{entryId:guid}/comments")] public Task<IReadOnlyList<CommentDto>> List(Guid entryId, CancellationToken ct) => service.ListCommentsAsync(entryId, User.ToCurrentUser(), ct);

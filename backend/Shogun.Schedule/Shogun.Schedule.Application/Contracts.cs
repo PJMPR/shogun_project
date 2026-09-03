@@ -15,15 +15,17 @@ public sealed record SaveGroupRequest(Guid Id, string Code, string Name, int Sor
 public sealed record SaveEntryRequest(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string? LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<Guid> GroupIds, IReadOnlyList<string>? Dates = null, int? MeetingCountOverride = null, int? StaffingLessonHoursOverride = null, bool HiddenInPublished = false);
 public sealed record SaveScheduleRequest(Guid ConcurrencyToken, string Name, ScheduleStatus Status, IReadOnlyList<SaveGroupRequest> Groups, IReadOnlyList<SaveEntryRequest> Entries);
 public sealed record DeleteScheduleRequest(Guid ConcurrencyToken);
-public sealed record CommentDto(Guid Id, Guid ScheduleEntryId, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete);
-public sealed record AddCommentRequest(string Body);
-public sealed record EditCommentRequest(string Body);
+public sealed record RecipientDto(string UserId, string DisplayName, string? Email);
+public sealed record DirectoryUser(string UserId, string DisplayName, string? Email, bool HasEmail);
+public sealed record CommentDto(Guid Id, Guid ScheduleEntryId, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete, IReadOnlyList<RecipientDto> Recipients);
+public sealed record AddCommentRequest(string Body, IReadOnlyList<string>? MentionedUserIds = null);
+public sealed record EditCommentRequest(string Body, IReadOnlyList<string>? MentionedUserIds = null);
 public sealed record SaveScheduleSubjectRequest(string Code, string Name);
 public sealed record SaveScheduleLecturerRequest(string DisplayName, string? Email);
 public sealed record AddScheduleSubjectLecturerRequest(string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
-public sealed record NoteDto(Guid Id, Guid ScheduleId, string? Title, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete);
-public sealed record AddNoteRequest(string Body, string? Title);
-public sealed record EditNoteRequest(string Body, string? Title);
+public sealed record NoteDto(Guid Id, Guid ScheduleId, string? Title, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete, IReadOnlyList<RecipientDto> Recipients);
+public sealed record AddNoteRequest(string Body, string? Title, IReadOnlyList<string>? MentionedUserIds = null);
+public sealed record EditNoteRequest(string Body, string? Title, IReadOnlyList<string>? MentionedUserIds = null);
 
 public sealed class NotFoundException(string message) : Exception(message);
 public sealed class ConflictException(string message) : Exception(message);
@@ -53,6 +55,11 @@ public interface IScheduleRepository
 }
 
 public interface IScheduleLock : IAsyncDisposable { Task CompleteAsync(CancellationToken ct); }
+
+public interface IUserDirectory
+{
+    Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct);
+}
 
 public interface IScheduleService
 {

@@ -105,6 +105,46 @@ public sealed class UsersService(IKeycloakAdminPort keycloak) : IUsersService
         return result;
     }
 
+    public async Task<IReadOnlyList<UserDirectoryItemDto>> SearchUserDirectoryAsync(string query, int limit, string currentUserId, CancellationToken ct = default)
+    {
+        var term = query.Trim();
+        if (term.Length < 2) throw new ArgumentException("Wpisz co najmniej 2 znaki.", nameof(query));
+        var take = Math.Clamp(limit, 1, 20);
+        var users = await keycloak.GetUsersAsync(ct);
+
+        return users
+            .Where(user => user.Enabled && !string.Equals(user.Id, currentUserId, StringComparison.Ordinal))
+            .Select(user => new
+            {
+                User = user,
+                DisplayName = string.Join(' ', new[] { user.FirstName, user.LastName }.Where(value => !string.IsNullOrWhiteSpace(value))).Trim()
+            })
+            .Select(item => new
+            {
+                item.User,
+                DisplayName = string.IsNullOrWhiteSpace(item.DisplayName) ? item.User.Username : item.DisplayName,
+                SearchText = $"{item.User.FirstName} {item.User.LastName} {item.User.Username} {item.User.Email}".ToLowerInvariant()
+            })
+            .Where(item => item.SearchText.Contains(term.ToLowerInvariant(), StringComparison.Ordinal))
+            .OrderByDescending(item => item.DisplayName.StartsWith(term, StringComparison.OrdinalIgnoreCase))
+            .ThenBy(item => item.DisplayName, StringComparer.Create(new System.Globalization.CultureInfo("pl-PL"), true))
+            .Take(take)
+            .Select(item => new UserDirectoryItemDto(item.User.Id, item.DisplayName, item.User.Email, !string.IsNullOrWhiteSpace(item.User.Email)))
+            .ToList();
+    }
+
+    public async Task<IReadOnlyList<UserDirectoryItemDto>> ResolveUserDirectoryAsync(IReadOnlyList<string> userIds, CancellationToken ct = default)
+    {
+        var requested = userIds.Where(id => !string.IsNullOrWhiteSpace(id)).Distinct(StringComparer.Ordinal).Take(50).ToHashSet(StringComparer.Ordinal);
+        if (requested.Count == 0) return [];
+        var users = await keycloak.GetUsersAsync(ct);
+        return users.Where(user => user.Enabled && requested.Contains(user.Id)).Select(user =>
+        {
+            var displayName = string.Join(' ', new[] { user.FirstName, user.LastName }.Where(value => !string.IsNullOrWhiteSpace(value))).Trim();
+            return new UserDirectoryItemDto(user.Id, string.IsNullOrWhiteSpace(displayName) ? user.Username : displayName, user.Email, !string.IsNullOrWhiteSpace(user.Email));
+        }).ToList();
+    }
+
     public async Task<IReadOnlyList<string>> GetUserRolesAsync(string userId, CancellationToken ct = default)
     {
         var managedRoles = await keycloak.GetManagedRoleNamesAsync(ct);

@@ -151,6 +151,18 @@ public sealed class ScheduleNote
     public DateTimeOffset? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
     public string? DeletedByUserId { get; set; }
+    public List<ScheduleNoteRecipient> Recipients { get; set; } = [];
+}
+
+public sealed class ScheduleNoteRecipient
+{
+    public Guid Id { get; set; }
+    public Guid ScheduleNoteId { get; set; }
+    public ScheduleNote ScheduleNote { get; set; } = null!;
+    public string RecipientUserId { get; set; } = string.Empty;
+    public string RecipientDisplayName { get; set; } = string.Empty;
+    public string RecipientEmail { get; set; } = string.Empty;
+    public DateTimeOffset CreatedAt { get; set; }
 }
 
 public sealed class ScheduleEntryGroup
@@ -176,4 +188,16 @@ public sealed class ScheduleComment
     public DateTimeOffset? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
     public string? DeletedByUserId { get; set; }
+    public List<ScheduleCommentRecipient> Recipients { get; set; } = [];
+}
+
+public sealed class ScheduleCommentRecipient
+{
+    public Guid Id { get; set; }
+    public Guid ScheduleCommentId { get; set; }
+    public ScheduleComment ScheduleComment { get; set; } = null!;
+    public string RecipientUserId { get; set; } = string.Empty;
+    public string RecipientDisplayName { get; set; } = string.Empty;
+    public string RecipientEmail { get; set; } = string.Empty;
+    public DateTimeOffset CreatedAt { get; set; }
 }

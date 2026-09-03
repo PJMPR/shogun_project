@@ -7,6 +7,7 @@ import { MockDataService } from './mock-data.service';
 interface ApiComment {
   id: string; scheduleEntryId: string; body: string; authorUserId?: string; authorEmail?: string; authorDisplayName: string;
   authorRole: CommentAuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean;
+  recipients: { userId: string; displayName: string; email?: string | null }[];
 }
 
 @Injectable({ providedIn: 'root' })
@@ -26,14 +27,14 @@ export class ScheduleCommentsService {
   }
   forEntry(entryId: string): ScheduleComment[] { return this.commentsByEntry()[entryId] ?? []; }
   count(entryId: string): number { return this.commentsByEntry()[entryId]?.length ?? (this.schedules.entries().find((e) => e.id === entryId)?.commentCount ?? 0); }
-  add(entryId: string, body: string): void {
+  add(entryId: string, body: string, mentionedUserIds: string[] = []): void {
     const trimmed = body.trim(); if (!trimmed) return;
-    this.http.post<ApiComment>(`${this.base}/entries/${entryId}/comments`, { body: trimmed }).subscribe((item) =>
+    this.http.post<ApiComment>(`${this.base}/entries/${entryId}/comments`, { body: trimmed, mentionedUserIds }).subscribe((item) =>
       this.commentsByEntry.update((all) => ({ ...all, [entryId]: [...(all[entryId] ?? []), this.map(item)] })));
   }
-  edit(id: string, body: string): void {
+  edit(id: string, body: string, mentionedUserIds: string[] = []): void {
     const trimmed = body.trim(); if (!trimmed) return;
-    this.http.put<ApiComment>(`${this.base}/comments/${id}`, { body: trimmed }).subscribe((item) => this.replaceComment(this.map(item)));
+    this.http.put<ApiComment>(`${this.base}/comments/${id}`, { body: trimmed, mentionedUserIds }).subscribe((item) => this.replaceComment(this.map(item)));
   }
   remove(id: string): void { this.http.delete(`${this.base}/comments/${id}`).subscribe(() => this.commentsByEntry.update((all) => Object.fromEntries(Object.entries(all).map(([entryId, list]) => [entryId, list.filter((item) => item.id !== id)])))); }
   removeForEntry(entryId: string): void { this.commentsByEntry.update((all) => Object.fromEntries(Object.entries(all).filter(([id]) => id !== entryId))); }
@@ -43,7 +44,7 @@ export class ScheduleCommentsService {
   private readonly map = (item: ApiComment): ScheduleComment => ({
     id: item.id, entryId: item.scheduleEntryId, body: item.body,
     author: { id: item.authorUserId ?? '', email: item.authorEmail ?? '', name: item.authorDisplayName, role: item.authorRole },
-    createdAt: item.createdAt, updatedAt: item.updatedAt,
+    createdAt: item.createdAt, updatedAt: item.updatedAt, recipients: item.recipients ?? [],
   });
   private setForEntry(entryId: string, comments: ScheduleComment[]): void {
     this.commentsByEntry.update((all) => ({ ...all, [entryId]: comments }));

@@ -21,10 +21,10 @@
                   <div class="comment-content">
                     <div class="comment-heading"><div><strong>{{ comment.author.name }}</strong><span class="role" [class.planner]="comment.author.role === 'planner'" [class.lecturer]="comment.author.role === 'lecturer'" [class.admin]="comment.author.role === 'admin'">{{ roleLabel(comment.author.role) }}</span></div><time>{{ formatDate(comment.createdAt) }}@if (comment.updatedAt) { · edytowano }</time></div>
                     @if (editingId() === comment.id) {
-                      <textarea rows="3" [ngModel]="editDraft()" (ngModelChange)="editDraft.set($event)" aria-label="Edytuj komentarz"></textarea>
+                      <app-mention-input [value]="editDraft()" (valueChange)="editDraft.set($event)" [recipients]="editRecipients()" (recipientsChange)="editRecipients.set($event)" placeholder="Edytuj komentarz" />
                       <div class="comment-actions edit-actions"><button type="button" class="text-button" (click)="cancelEdit()">Anuluj</button><button type="button" class="primary-button" [disabled]="!editDraft().trim()" (click)="saveEdit()">Zapisz</button></div>
                     } @else {
-                      <p>{{ comment.body }}</p>
+                      <p>@for (part of bodyParts(comment); track $index) { @if (part.mention) { <mark>{{ part.text }}</mark> } @else { {{ part.text }} } }</p>
                       <div class="comment-actions">
                         @if (commentsService.isOwn(comment)) { <button type="button" class="text-button" (click)="startEdit(comment)">Edytuj</button> }
                         @if (canDelete(comment)) { <button type="button" class="text-button danger" (click)="commentsService.remove(comment.id)">Usuń</button> }
@@ -34,9 +34,17 @@
                 </article>
               } @empty { <div class="empty-state"><span class="pi pi-comments"></span><p>Brak komentarzy. Rozpocznij rozmowę.</p></div> }
             </div>
+            @if (threadRecipients(entry.id); as recipients) {
+              @if (recipients.length) {
+                <details class="saved-recipients thread-recipients">
+                  <summary><span class="pi pi-envelope"></span> Odbiorcy wątku <b>{{ recipients.length }}</b></summary>
+                  <div class="saved-recipient-chips">@for (recipient of recipients; track recipient.userId) { <span>{{ recipient.displayName }}@if (recipient.email) { · {{ recipient.email }} }</span> }</div>
+                </details>
+              }
+            }
             <div class="composer">
               <div class="composer-author">Komentujesz jako <strong>{{ commentsService.currentAuthor.name }}</strong> · {{ roleLabel(commentsService.currentAuthor.role) }}</div>
-              <textarea rows="3" [ngModel]="draft()" (ngModelChange)="draft.set($event)" placeholder="Napisz komentarz…" aria-label="Nowy komentarz"></textarea>
+              <app-mention-input [value]="draft()" (valueChange)="draft.set($event)" [recipients]="draftRecipients()" (recipientsChange)="draftRecipients.set($event)" placeholder="Napisz komentarz… Użyj @, aby wskazać odbiorcę" />
               <button type="button" class="primary-button send-button" [disabled]="!draft().trim()" (click)="addComment(entry.id)"><span class="pi pi-send"></span> Dodaj komentarz</button>
             </div>
           </div>

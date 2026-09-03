@@ -77,3 +77,26 @@ public class UsersController(IUsersService usersService) : ControllerBase
         return NoContent();
     }
 }
+
+[ApiController]
+[Route("api/v1/user-directory")]
+[Produces("application/json")]
+[Authorize(Roles = "admin,planner,lecturer")]
+public sealed class UserDirectoryController(IUsersService usersService) : ControllerBase
+{
+    [HttpGet]
+    public async Task<ActionResult<IReadOnlyList<UserDirectoryItemDto>>> Search(
+        [FromQuery] string query,
+        [FromQuery] int limit = 20,
+        CancellationToken ct = default)
+    {
+        var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+            ?? User.FindFirst("sub")?.Value
+            ?? string.Empty;
+        return Ok(await usersService.SearchUserDirectoryAsync(query ?? string.Empty, limit, currentUserId, ct));
+    }
+
+    [HttpPost("resolve")]
+    public async Task<ActionResult<IReadOnlyList<UserDirectoryItemDto>>> Resolve(ResolveUserDirectoryRequest request, CancellationToken ct) =>
+        Ok(await usersService.ResolveUserDirectoryAsync(request.UserIds, ct));
+}

@@ -88,6 +88,7 @@ services:
       KEYCLOAK__REALM: "shogun"
       KEYCLOAK__CLIENTID: "shogun-users-service"
       KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET}"
+      USERSAPIBASEURL: "http://pj_users_api:8080"
     networks:
       - shogun
 

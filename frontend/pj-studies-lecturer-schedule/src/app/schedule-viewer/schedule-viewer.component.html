@@ -1,69 +1,400 @@
 <section class="page">
   <header class="page-header">
-    <div><span class="eyebrow">Opublikowany harmonogram</span><h1>Plan zajęć</h1><p>Podgląd planu i komentarzy do zajęć.</p></div>
+    <div>
+      <span class="eyebrow">Opublikowany harmonogram</span>
+      <h1>Plan zajęć</h1>
+      <p>Podgląd planu i komentarzy do zajęć.</p>
+    </div>
     <div class="view-switch" aria-label="Rodzaj widoku">
-      <button [class.active]="view === 'weekly'" (click)="view = 'weekly'"><i class="pi pi-calendar"></i> Tydzień</button>
-      <button [class.active]="view === 'list'" (click)="view = 'list'"><i class="pi pi-list"></i> Lista</button>
+      <button [class.active]="view === 'weekly'" (click)="view = 'weekly'">
+        <i class="pi pi-calendar"></i> Tydzień
+      </button>
+      <button [class.active]="view === 'list'" (click)="view = 'list'">
+        <i class="pi pi-list"></i> Lista
+      </button>
     </div>
   </header>
 
   <div class="filters">
-    <label>Wydział<select [(ngModel)]="facultyCode" (ngModelChange)="changeFaculty()">@for (option of facultyOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
-    <label>Rok akademicki<select [(ngModel)]="academicYear" (ngModelChange)="selectionChanged()" [disabled]="!yearOptions().length">@for (year of yearOptions(); track year) { <option [value]="year">{{ year }}</option> }</select></label>
+    <label
+      >Wydział<select
+        [(ngModel)]="facultyCode"
+        (ngModelChange)="changeFaculty()"
+      >
+        @for (option of facultyOptions; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select></label
+    >
+    <label
+      >Rok akademicki<select
+        [(ngModel)]="academicYear"
+        (ngModelChange)="selectionChanged()"
+        [disabled]="!yearOptions().length"
+      >
+        @for (year of yearOptions(); track year) {
+          <option [value]="year">{{ year }}</option>
+        }
+      </select></label
+    >
     <div class="semester-filter">
       <span>Semestr</span>
       <div class="semester-season" aria-label="Semestr zimowy lub letni">
-        <button type="button" [class.active]="semesterSeason() === 'winter'" (click)="seasonChanged('winter')">Zimowy</button>
-        <button type="button" [class.active]="semesterSeason() === 'summer'" (click)="seasonChanged('summer')">Letni</button>
+        <button
+          type="button"
+          [class.active]="semesterSeason() === 'winter'"
+          (click)="seasonChanged('winter')"
+        >
+          Zimowy
+        </button>
+        <button
+          type="button"
+          [class.active]="semesterSeason() === 'summer'"
+          (click)="seasonChanged('summer')"
+        >
+          Letni
+        </button>
       </div>
-      @if (scope() === 'mine') {
+      @if (scope() === "mine") {
         <details class="semester-multiselect">
-          <summary>{{ selectedSemesters().length ? 'Wybrane: ' + selectedSemesters().join(', ') : 'Wybierz semestry' }}</summary>
-          <div>@for (option of semesterOptions(); track option.value) {
-            <label><input type="checkbox" [checked]="selectedSemesters().includes(option.value)" (change)="toggleSemester(option.value, $any($event.target).checked)"> {{ option.label }}</label>
-          }</div>
+          <summary>
+            {{
+              selectedSemesters().length
+                ? "Wybrane: " + selectedSemesters().join(", ")
+                : "Wybierz semestry"
+            }}
+          </summary>
+          <div>
+            @for (option of semesterOptions(); track option.value) {
+              <label
+                ><input
+                  type="checkbox"
+                  [checked]="selectedSemesters().includes(option.value)"
+                  (change)="
+                    toggleSemester(option.value, $any($event.target).checked)
+                  "
+                />
+                {{ option.label }}</label
+              >
+            }
+          </div>
         </details>
       } @else {
-        <select [(ngModel)]="semesterNumber" (ngModelChange)="selectionChanged()" aria-label="Numer semestru">@for (option of semesterOptions(); track option.value) { <option [ngValue]="option.value">{{ option.label }}</option> }</select>
+        <select
+          [(ngModel)]="semesterNumber"
+          (ngModelChange)="selectionChanged()"
+          aria-label="Numer semestru"
+        >
+          @for (option of semesterOptions(); track option.value) {
+            <option [ngValue]="option.value">{{ option.label }}</option>
+          }
+        </select>
       }
     </div>
-    <label>Tryb studiów<select [ngModel]="studyMode()" (ngModelChange)="studyModeChanged($event)">@for (option of modeOptions; track option.value) { <option [value]="option.value">{{ option.label }}</option> }</select></label>
+    <label
+      >Tryb studiów<select
+        [ngModel]="studyMode()"
+        (ngModelChange)="studyModeChanged($event)"
+      >
+        @for (option of modeOptions; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select></label
+    >
     @if (isPlanner) {
-      <label>Wykładowca
-        <input type="search" list="lecturer-options" placeholder="Wszyscy wykładowcy" autocomplete="off" [ngModel]="lecturerQuery()" (ngModelChange)="lecturerChanged($event)">
-        <datalist id="lecturer-options">@for (lecturer of lecturerOptions(); track lecturer.key) { <option [value]="lecturer.label"></option> }</datalist>
+      <label
+        >Wykładowca
+        <input
+          type="search"
+          list="lecturer-options"
+          placeholder="Wszyscy wykładowcy"
+          autocomplete="off"
+          [ngModel]="lecturerQuery()"
+          (ngModelChange)="lecturerChanged($event)"
+        />
+        <datalist id="lecturer-options">
+          @for (lecturer of lecturerOptions(); track lecturer.key) {
+            <option [value]="lecturer.label"></option>
+          }
+        </datalist>
       </label>
     }
-    <div class="scope"><span>Zakres</span><div><button [class.active]="scope() === 'all'" (click)="scopeChanged('all')">Cały plan</button><button [class.active]="scope() === 'mine'" (click)="scopeChanged('mine')">Mój plan</button></div></div>
+    <div class="scope">
+      <span>Zakres</span>
+      <div>
+        <button
+          [class.active]="scope() === 'all'"
+          (click)="scopeChanged('all')"
+        >
+          Cały plan</button
+        ><button
+          [class.active]="scope() === 'mine'"
+          (click)="scopeChanged('mine')"
+        >
+          Mój plan
+        </button>
+      </div>
+    </div>
   </div>
 
-  @if (error()) { <div class="message error"><i class="pi pi-exclamation-circle"></i>{{ error() }}<button (click)="error.set(null)" aria-label="Zamknij">×</button></div> }
-  @if (loading()) { <div class="loading"><i class="pi pi-spin pi-spinner"></i> Pobieranie planu…</div> }
-  @else if (scope() === 'all' && !plan()) { <div class="empty"><i class="pi pi-calendar-times"></i><h2>Brak opublikowanego planu</h2><p>Dla wybranego roku, semestru, wydziału i trybu studiów nie opublikowano jeszcze planu.</p></div> }
-  @else if (!visibleEntries().length) { <div class="empty"><i class="pi pi-user"></i><h2>{{ scope() === 'mine' ? 'Brak zajęć w Twoim planie' : 'Plan nie zawiera zajęć' }}</h2><p>@if (scope() === 'mine') { Zajęcia są dopasowywane do konta zalogowanego użytkownika. }</p></div> }
-  @else if (view === 'weekly') {
-    <div class="calendar-wrap"><div #calendar class="calendar" [style.--days]="calendarColumns().length">
-      <div class="corner"></div>@for (column of calendarColumns(); track column.day + '-' + (column.semesterNumber ?? 'all')) { <div class="day-title"><strong>{{ days[column.day] }}</strong>@if (column.semesterNumber !== undefined) { <span>Semestr {{ column.semesterNumber }}</span> }</div> }
-      <div class="times">@for (hour of hours; track hour) { <span [style.top.%]="((hour - 8) / 12) * 100">{{ formatHour(hour) }}</span> }</div>
-      @for (column of calendarColumns(); track column.day + '-' + (column.semesterNumber ?? 'all')) {
-        <div class="day-column">@for (hour of hours; track hour) { <div class="hour-line" [style.top.%]="((hour - 8) / 12) * 100"></div> }
-          @for (entry of entriesForColumn(column); track entry.id) {
-            <article class="entry" [style.top.%]="top(entry)" [style.height.%]="height(entry)" [style.left.%]="left(entry, column)" [style.width.%]="width(entry, column)" [style.--entry-color]="entry.color || '#dbeafe'" (click)="openComments(entry)" tabindex="0" (keydown.enter)="openComments(entry)">
-              <strong [title]="entry.subjectName">{{ subjectLabel(entry) }}</strong>@if (scope() === 'mine') { <span class="entry-meta">Semestr {{ entry.semesterNumber }}@if (classTypeLabel(entry.classType)) { · {{ classTypeLabel(entry.classType) }} }</span> }<span>{{ time(entry) }} · {{ groupNames(entry) }}</span><span [title]="entry.lecturerDisplayName">{{ lecturerLabel(entry) }}</span>@if (entry.dates?.length) { <span>{{ entry.dates!.join(', ') }}</span> }@if (entry.room) { <span>s. {{ entry.room }}</span> }<button class="comment-button" title="Komentarze"><i class="pi pi-comments"></i>@if (entry.commentCount) { <b>{{ entry.commentCount }}</b> }</button>
-            </article>
+  @if (error()) {
+    <div class="message error">
+      <i class="pi pi-exclamation-circle"></i>{{ error()
+      }}<button (click)="error.set(null)" aria-label="Zamknij">×</button>
+    </div>
+  }
+  @if (loading()) {
+    <div class="loading">
+      <i class="pi pi-spin pi-spinner"></i> Pobieranie planu…
+    </div>
+  } @else if (scope() === "all" && !plan()) {
+    <div class="empty">
+      <i class="pi pi-calendar-times"></i>
+      <h2>Brak opublikowanego planu</h2>
+      <p>
+        Dla wybranego roku, semestru, wydziału i trybu studiów nie opublikowano
+        jeszcze planu.
+      </p>
+    </div>
+  } @else if (!visibleEntries().length) {
+    <div class="empty">
+      <i class="pi pi-user"></i>
+      <h2>
+        {{
+          scope() === "mine"
+            ? "Brak zajęć w Twoim planie"
+            : "Plan nie zawiera zajęć"
+        }}
+      </h2>
+      <p>
+        @if (scope() === "mine") {
+          Zajęcia są dopasowywane do konta zalogowanego użytkownika.
+        }
+      </p>
+    </div>
+  } @else if (view === "weekly") {
+    <div class="calendar-wrap">
+      <div #calendar class="calendar" [style.--days]="calendarColumns().length">
+        <div class="corner"></div>
+        @for (
+          column of calendarColumns();
+          track column.day + "-" + (column.semesterNumber ?? "all")
+        ) {
+          <div class="day-title">
+            <strong>{{ days[column.day] }}</strong>
+            @if (column.semesterNumber !== undefined) {
+              <span>Semestr {{ column.semesterNumber }}</span>
+            }
+          </div>
+        }
+        <div class="times">
+          @for (hour of hours; track hour) {
+            <span [style.top.%]="((hour - 8) / 12) * 100">{{
+              formatHour(hour)
+            }}</span>
           }
         </div>
-      }
-    </div></div>
+        @for (
+          column of calendarColumns();
+          track column.day + "-" + (column.semesterNumber ?? "all")
+        ) {
+          <div class="day-column">
+            @for (hour of hours; track hour) {
+              <div
+                class="hour-line"
+                [style.top.%]="((hour - 8) / 12) * 100"
+              ></div>
+            }
+            @for (entry of entriesForColumn(column); track entry.id) {
+              <article
+                class="entry"
+                [style.top.%]="top(entry)"
+                [style.height.%]="height(entry)"
+                [style.left.%]="left(entry, column)"
+                [style.width.%]="width(entry, column)"
+                [style.--entry-color]="entry.color || '#dbeafe'"
+                (click)="openComments(entry)"
+                tabindex="0"
+                (keydown.enter)="openComments(entry)"
+              >
+                <strong [title]="entry.subjectName">{{
+                  subjectLabel(entry)
+                }}</strong>
+                @if (scope() === "mine") {
+                  <span class="entry-meta"
+                    >Semestr {{ entry.semesterNumber }}
+                    @if (classTypeLabel(entry.classType)) {
+                      · {{ classTypeLabel(entry.classType) }}
+                    }
+                  </span>
+                }
+                <span>{{ time(entry) }} · {{ groupNames(entry) }}</span
+                ><span [title]="entry.lecturerDisplayName">{{
+                  lecturerLabel(entry)
+                }}</span>
+                @if (entry.dates?.length) {
+                  <span>{{ entry.dates!.join(", ") }}</span>
+                }
+                @if (entry.room) {
+                  <span>s. {{ entry.room }}</span>
+                }
+                <button class="comment-button" title="Komentarze">
+                  <i class="pi pi-comments"></i>
+                  @if (entry.commentCount) {
+                    <b>{{ entry.commentCount }}</b>
+                  }
+                </button>
+              </article>
+            }
+          </div>
+        }
+      </div>
+    </div>
   } @else {
-    <div class="table-wrap"><table><thead><tr><th>Dzień</th><th>Godziny</th>@if (scope() === 'mine') { <th>Semestr</th><th>Typ zajęć</th> }<th>Przedmiot</th><th>Prowadzący</th><th>Grupy</th><th>Sala</th><th>Komentarze</th></tr></thead><tbody>@for (entry of visibleEntries(); track entry.id) { <tr><td>{{ days[entry.dayOfWeek] }}</td><td>{{ time(entry) }}</td>@if (scope() === 'mine') { <td>{{ entry.semesterNumber }}</td><td>{{ classTypeLabel(entry.classType) || '—' }}</td> }<td><strong>{{ entry.subjectName }}</strong></td><td>{{ entry.lecturerDisplayName }}</td><td>{{ groupNames(entry) }}</td><td>{{ entry.room || '—' }}</td><td><button class="table-comment" (click)="openComments(entry)"><i class="pi pi-comments"></i> {{ entry.commentCount || '' }}</button></td></tr> }</tbody></table></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Dzień</th>
+            <th>Godziny</th>
+            @if (scope() === "mine") {
+              <th>Semestr</th>
+              <th>Typ zajęć</th>
+            }
+            <th>Przedmiot</th>
+            <th>Prowadzący</th>
+            <th>Grupy</th>
+            <th>Sala</th>
+            <th>Komentarze</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (entry of visibleEntries(); track entry.id) {
+            <tr>
+              <td>{{ days[entry.dayOfWeek] }}</td>
+              <td>{{ time(entry) }}</td>
+              @if (scope() === "mine") {
+                <td>{{ entry.semesterNumber }}</td>
+                <td>{{ classTypeLabel(entry.classType) || "—" }}</td>
+              }
+              <td>
+                <strong>{{ entry.subjectName }}</strong>
+              </td>
+              <td>{{ entry.lecturerDisplayName }}</td>
+              <td>{{ groupNames(entry) }}</td>
+              <td>{{ entry.room || "—" }}</td>
+              <td>
+                <button class="table-comment" (click)="openComments(entry)">
+                  <i class="pi pi-comments"></i> {{ entry.commentCount || "" }}
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   }
 </section>
 
 @if (commentsEntry(); as entry) {
-  <div class="drawer-backdrop" (click)="closeComments()"></div><aside class="drawer" role="dialog" aria-modal="true" aria-label="Komentarze do zajęć">
-    <header><div><span class="eyebrow">Komentarze do bloczka</span><h2>{{ entry.subjectName }}</h2><p>{{ entry.lecturerDisplayName }} · {{ time(entry) }}</p></div><button class="close" (click)="closeComments()" aria-label="Zamknij"><i class="pi pi-times"></i></button></header>
-    <div class="comments">@for (comment of comments(); track comment.id) { <article class="comment"><div class="avatar">{{ initials(comment.authorDisplayName) }}</div><div><div class="comment-head"><strong>{{ comment.authorDisplayName }}</strong><span class="role">{{ roleLabel(comment.authorRole) }}</span><time>{{ formatDate(comment.createdAt) }}@if (comment.updatedAt) { · edytowano }</time></div>@if (editingId() === comment.id) { <textarea rows="3" [ngModel]="editDraft()" (ngModelChange)="editDraft.set($event)"></textarea><div class="actions"><button (click)="cancelEdit()">Anuluj</button><button class="primary" [disabled]="!editDraft().trim()" (click)="saveEdit()">Zapisz</button></div> } @else { <p>{{ comment.body }}</p>@if (comment.canEdit || comment.canDelete) { <div class="actions">@if (comment.canEdit) { <button (click)="startEdit(comment)">Edytuj</button> }@if (comment.canDelete) { <button class="danger" (click)="removeComment(comment)">Usuń</button> }</div> } }</div></article> } @empty { <div class="comments-empty"><i class="pi pi-comments"></i><p>Brak komentarzy. Rozpocznij rozmowę.</p></div> }</div>
-    <footer><textarea rows="3" [ngModel]="commentDraft()" (ngModelChange)="commentDraft.set($event)" placeholder="Napisz komentarz…"></textarea><button class="primary" [disabled]="!commentDraft().trim()" (click)="addComment()"><i class="pi pi-send"></i> Dodaj komentarz</button></footer>
+  <div class="drawer-backdrop" (click)="closeComments()"></div>
+  <aside
+    class="drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Komentarze do zajęć"
+  >
+    <header>
+      <div>
+        <span class="eyebrow">Komentarze do bloczka</span>
+        <h2>{{ entry.subjectName }}</h2>
+        <p>{{ entry.lecturerDisplayName }} · {{ time(entry) }}</p>
+      </div>
+      <button class="close" (click)="closeComments()" aria-label="Zamknij">
+        <i class="pi pi-times"></i>
+      </button>
+    </header>
+    <div class="comments">
+      @for (comment of comments(); track comment.id) {
+        <article class="comment">
+          <div class="avatar">{{ initials(comment.authorDisplayName) }}</div>
+          <div>
+            <div class="comment-head">
+              <strong>{{ comment.authorDisplayName }}</strong
+              ><span class="role">{{ roleLabel(comment.authorRole) }}</span
+              ><time
+                >{{ formatDate(comment.createdAt) }}
+                @if (comment.updatedAt) {
+                  · edytowano
+                }
+              </time>
+            </div>
+            @if (editingId() === comment.id) {
+              <app-mention-input
+                [value]="editDraft()"
+                (valueChange)="editDraft.set($event)"
+                [recipients]="editRecipients()"
+                (recipientsChange)="editRecipients.set($event)"
+                placeholder="Edytuj komentarz"
+              />
+              <div class="actions">
+                <button (click)="cancelEdit()">Anuluj</button
+                ><button
+                  class="primary"
+                  [disabled]="!editDraft().trim()"
+                  (click)="saveEdit()"
+                >
+                  Zapisz
+                </button>
+              </div>
+            } @else {
+              <p>@for (part of bodyParts(comment); track $index) { @if (part.mention) { <mark>{{ part.text }}</mark> } @else { {{ part.text }} } }</p>
+              @if (comment.canEdit || comment.canDelete) {
+                <div class="actions">
+                  @if (comment.canEdit) {
+                    <button (click)="startEdit(comment)">Edytuj</button>
+                  }
+                  @if (comment.canDelete) {
+                    <button class="danger" (click)="removeComment(comment)">
+                      Usuń
+                    </button>
+                  }
+                </div>
+              }
+            }
+          </div>
+        </article>
+      } @empty {
+        <div class="comments-empty">
+          <i class="pi pi-comments"></i>
+          <p>Brak komentarzy. Rozpocznij rozmowę.</p>
+        </div>
+      }
+    </div>
+    @if (threadRecipients().length) {
+      <details class="saved-recipients thread-recipients">
+        <summary><span class="pi pi-envelope"></span> Odbiorcy wątku <b>{{ threadRecipients().length }}</b></summary>
+        <div class="saved-recipient-chips">
+          @for (recipient of threadRecipients(); track recipient.userId) {
+            <span>{{ recipient.displayName }} @if (recipient.email) { · {{ recipient.email }} }</span>
+          }
+        </div>
+      </details>
+    }
+    <footer>
+      <app-mention-input
+        [value]="commentDraft()"
+        (valueChange)="commentDraft.set($event)"
+        [recipients]="commentRecipients()"
+        (recipientsChange)="commentRecipients.set($event)"
+        placeholder="Napisz komentarz… Użyj @, aby wskazać odbiorcę"
+      /><button
+        class="primary"
+        [disabled]="!commentDraft().trim()"
+        (click)="addComment()"
+      >
+        <i class="pi pi-send"></i> Dodaj komentarz
+      </button>
+    </footer>
   </aside>
 }

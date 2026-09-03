@@ -9,6 +9,14 @@ public sealed record UserDto(
     bool Enabled,
     IReadOnlyList<string> Roles);
 
+public sealed record UserDirectoryItemDto(
+    string UserId,
+    string DisplayName,
+    string? Email,
+    bool HasEmail);
+
+public sealed record ResolveUserDirectoryRequest(IReadOnlyList<string> UserIds);
+
 public sealed record SetRolesRequest(IReadOnlyList<string> Roles);
 
 public sealed record CreateRoleRequest(

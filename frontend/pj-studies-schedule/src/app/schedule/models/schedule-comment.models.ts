@@ -14,4 +14,5 @@ export interface ScheduleComment {
   author: CommentAuthor;
   createdAt: string;
   updatedAt?: string;
+  recipients: { userId: string; displayName: string; email?: string | null }[];
 }

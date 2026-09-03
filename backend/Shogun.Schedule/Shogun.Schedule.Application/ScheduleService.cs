@@ -2,8 +2,9 @@ using Shogun.Schedule.Domain;
 
 namespace Shogun.Schedule.Application;
 
-public sealed class ScheduleService(IScheduleRepository repository) : IScheduleService
+public sealed class ScheduleService(IScheduleRepository repository, IUserDirectory userDirectory) : IScheduleService
 {
+    public ScheduleService(IScheduleRepository repository) : this(repository, new EmptyUserDirectory()) { }
     public async Task<IReadOnlyList<ScheduleSummaryDto>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) =>
         (await repository.ListAsync(facultyCode, academicYear, ct)).Select(MapSummary).ToList();
 
@@ -133,6 +134,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
         EnsureCommentable(entry.Schedule, user);
         var comment = new ScheduleComment { Id = Guid.NewGuid(), ScheduleEntryId = entryId, Body = body, AuthorUserId = user.UserId, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
+        comment.Recipients = (await ResolveRecipients(request.MentionedUserIds, user, ct)).Select(x => NewCommentRecipient(comment.Id, x)).ToList();
         await repository.AddCommentAsync(comment, ct);
         await repository.SaveChangesAsync(ct);
         return MapComment(comment, user);
@@ -144,6 +146,8 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
         EnsureCommentable(comment.ScheduleEntry.Schedule, user);
         if (!string.Equals(comment.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własny komentarz.");
         comment.Body = Required(request.Body, "Komentarz"); comment.UpdatedAt = DateTimeOffset.UtcNow;
+        var commentRecipients = await ResolveRecipients(request.MentionedUserIds, user, ct);
+        comment.Recipients.Clear(); comment.Recipients.AddRange(commentRecipients.Select(x => NewCommentRecipient(comment.Id, x)));
         await repository.SaveChangesAsync(ct); return MapComment(comment, user);
     }
 
@@ -243,6 +247,7 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         _ = await repository.GetAsync(scheduleId, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
         var note = new ScheduleNote { Id = Guid.NewGuid(), ScheduleId = scheduleId, Title = OptionalTitle(request.Title), Body = Required(request.Body, "Notatka"), AuthorUserId = user.UserId, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
+        note.Recipients = (await ResolveRecipients(request.MentionedUserIds, user, ct)).Select(x => NewNoteRecipient(note.Id, x)).ToList();
         await repository.AddNoteAsync(note, ct); await repository.SaveChangesAsync(ct); return MapNote(note, user);
     }
 
@@ -250,7 +255,10 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     {
         var note = await repository.GetNoteAsync(id, ct) ?? throw new NotFoundException("Notatka nie istnieje.");
         if (!string.Equals(note.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własną notatkę.");
-        note.Title = OptionalTitle(request.Title); note.Body = Required(request.Body, "Notatka"); note.UpdatedAt = DateTimeOffset.UtcNow; await repository.SaveChangesAsync(ct); return MapNote(note, user);
+        note.Title = OptionalTitle(request.Title); note.Body = Required(request.Body, "Notatka"); note.UpdatedAt = DateTimeOffset.UtcNow;
+        var noteRecipients = await ResolveRecipients(request.MentionedUserIds, user, ct);
+        note.Recipients.Clear(); note.Recipients.AddRange(noteRecipients.Select(x => NewNoteRecipient(note.Id, x)));
+        await repository.SaveChangesAsync(ct); return MapNote(note, user);
     }
 
     public async Task DeleteNoteAsync(Guid id, CurrentUser user, CancellationToken ct)
@@ -325,8 +333,31 @@ public sealed class ScheduleService(IScheduleRepository repository) : IScheduleS
     private static ScheduleSubjectDto MapSubject(ScheduleSubject x) => new(x.Id, x.Code, x.Name);
     private static ScheduleLecturerDto MapLecturer(ScheduleLecturer x) => new(x.Id, x.DisplayName, x.Email);
     private static ScheduleSubjectLecturerDto MapSubjectLecturer(ScheduleSubjectLecturer x) => new(x.Id, x.SubjectCode, x.LecturerKey, x.LecturerDisplayName, x.LecturerUserId, x.LecturerEmail, x.LecturerAssignmentId);
-    private static NoteDto MapNote(ScheduleNote x, CurrentUser user) => new(x.Id, x.ScheduleId, x.Title, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal));
+    private static NoteDto MapNote(ScheduleNote x, CurrentUser user) => new(x.Id, x.ScheduleId, x.Title, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), MapRecipients(x.Recipients, x.AuthorUserId, user));
     private static string? OptionalTitle(string? value) { var title = value?.Trim(); if (title?.Length > 200) throw new ValidationException("Tytuł notatki może mieć maksymalnie 200 znaków."); return string.IsNullOrEmpty(title) ? null : title; }
     private static bool IsValidDayMonth(string value) => System.Text.RegularExpressions.Regex.IsMatch(value, @"^(0[1-9]|[12]\d|3[01])\.(0[1-9]|1[0-2])$") && DateOnly.TryParseExact($"{value}.2000", "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None, out _);
-    private static CommentDto MapComment(ScheduleComment x, CurrentUser user) => new(x.Id, x.ScheduleEntryId, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal));
+    private static CommentDto MapComment(ScheduleComment x, CurrentUser user) => new(x.Id, x.ScheduleEntryId, x.Body, x.AuthorUserId, x.AuthorEmail, x.AuthorDisplayName, x.AuthorRole, x.CreatedAt, x.UpdatedAt, string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), user.IsAdmin || string.Equals(x.AuthorUserId, user.UserId, StringComparison.Ordinal), MapRecipients(x.Recipients, x.AuthorUserId, user));
+
+    private async Task<IReadOnlyList<DirectoryUser>> ResolveRecipients(IReadOnlyList<string>? ids, CurrentUser user, CancellationToken ct)
+    {
+        var requested = (ids ?? []).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct(StringComparer.Ordinal).ToList();
+        if (requested.Count == 0) return [];
+        if (requested.Count > 20) throw new ValidationException("Można wskazać maksymalnie 20 odbiorców.");
+        if (requested.Contains(user.UserId, StringComparer.Ordinal)) throw new ValidationException("Nie można wskazać siebie jako odbiorcy.");
+        var resolved = await userDirectory.ResolveAsync(requested, ct);
+        if (resolved.Count != requested.Count || resolved.Any(x => !x.HasEmail || string.IsNullOrWhiteSpace(x.Email))) throw new ValidationException("Wybrany odbiorca jest nieaktywny lub nie ma adresu e-mail.");
+        return resolved;
+    }
+    private static ScheduleCommentRecipient NewCommentRecipient(Guid ownerId, DirectoryUser x) => new() { Id = Guid.NewGuid(), ScheduleCommentId = ownerId, RecipientUserId = x.UserId, RecipientDisplayName = x.DisplayName, RecipientEmail = x.Email!, CreatedAt = DateTimeOffset.UtcNow };
+    private static ScheduleNoteRecipient NewNoteRecipient(Guid ownerId, DirectoryUser x) => new() { Id = Guid.NewGuid(), ScheduleNoteId = ownerId, RecipientUserId = x.UserId, RecipientDisplayName = x.DisplayName, RecipientEmail = x.Email!, CreatedAt = DateTimeOffset.UtcNow };
+    private static IReadOnlyList<RecipientDto> MapRecipients<T>(IEnumerable<T> recipients, string? authorId, CurrentUser user) where T : class => recipients.Select(item => item switch
+    {
+        ScheduleCommentRecipient x => new RecipientDto(x.RecipientUserId, x.RecipientDisplayName, user.IsAdmin || user.UserId == authorId ? x.RecipientEmail : null),
+        ScheduleNoteRecipient x => new RecipientDto(x.RecipientUserId, x.RecipientDisplayName, user.IsAdmin || user.UserId == authorId ? x.RecipientEmail : null),
+        _ => throw new InvalidOperationException()
+    }).ToList();
+    private sealed class EmptyUserDirectory : IUserDirectory
+    {
+        public Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct) => Task.FromResult<IReadOnlyList<DirectoryUser>>([]);
+    }
 }
