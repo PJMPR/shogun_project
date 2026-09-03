@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shogun.Service.Api.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+527d2cf09bcf87cc2d37d6d357ae0f9901cf9d4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bd3895ef055ebf014642e1298c4d18e2018ac00")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shogun.Service.Api.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shogun.Service.Api.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

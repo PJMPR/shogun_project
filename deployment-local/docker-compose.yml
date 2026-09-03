@@ -98,6 +98,27 @@ services:
     networks:
       - shogun_local
 
+  # Email API
+  email-api:
+    build:
+      context: ../backend/Shogun.Email
+      dockerfile: Shogun.Email.Api/Dockerfile
+    container_name: pj_email_api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      SMTP__HOST: smtp.gmail.com
+      SMTP__PORT: 587
+      SMTP__USERNAME: "${SMTP_USERNAME:-}"
+      SMTP__PASSWORD: "${SMTP_PASSWORD:-}"
+      SMTP__FROMEMAIL: shogun@pjwstk.edu.pl
+      SMTP__FROMNAME: Shogun
+      SMTP__MAXATTEMPTS: 3
+      INTERNALAPIKEY__APIKEY: "${EMAIL_API_KEY:-local-development-key-change-me}"
+    networks:
+      - shogun_local
+
   # ── Mikrofrontendy ────────────────────────────────────────────────────────
   mfe-host:
     build:
@@ -201,6 +222,7 @@ services:
       - assignments-api
       - users-api
       - schedule-api
+      - email-api
       - mfe-host
       - mfe-program
       - mfe-syllabi

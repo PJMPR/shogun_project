@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Shogun.Email.Api/Shogun.Email.Api.csproj" />
+  <Project Path="Shogun.Email.Api.Tests/Shogun.Email.Api.Tests.csproj" />
+</Solution>
