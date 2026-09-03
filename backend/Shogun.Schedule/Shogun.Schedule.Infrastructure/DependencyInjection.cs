@@ -15,6 +15,11 @@ public static class DependencyInjection
         services.AddScoped<IScheduleService, ScheduleService>();
         services.AddHttpContextAccessor();
         services.AddHttpClient<IUserDirectory, UserDirectoryClient>(client => client.BaseAddress = new Uri(configuration["UsersApiBaseUrl"] ?? "http://pj_users_api:8080"));
+        services.AddHttpClient<IMentionNotifier, EmailMentionNotifier>(client =>
+        {
+            client.BaseAddress = new Uri(configuration["EmailApi:BaseUrl"] ?? "http://pj_email_api:8080");
+            client.Timeout = TimeSpan.FromSeconds(20);
+        });
         services.AddScoped<KeycloakIdentityBackfill>();
         services.AddHttpClient("keycloak-admin");
         return services;

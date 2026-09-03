@@ -2,9 +2,9 @@ using Shogun.Schedule.Domain;
 
 namespace Shogun.Schedule.Application;
 
-public sealed class ScheduleService(IScheduleRepository repository, IUserDirectory userDirectory) : IScheduleService
+public sealed class ScheduleService(IScheduleRepository repository, IUserDirectory userDirectory, IMentionNotifier mentionNotifier) : IScheduleService
 {
-    public ScheduleService(IScheduleRepository repository) : this(repository, new EmptyUserDirectory()) { }
+    public ScheduleService(IScheduleRepository repository) : this(repository, new EmptyUserDirectory(), new EmptyMentionNotifier()) { }
     public async Task<IReadOnlyList<ScheduleSummaryDto>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct) =>
         (await repository.ListAsync(facultyCode, academicYear, ct)).Select(MapSummary).ToList();
 
@@ -137,6 +137,9 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
         comment.Recipients = (await ResolveRecipients(request.MentionedUserIds, user, ct)).Select(x => NewCommentRecipient(comment.Id, x)).ToList();
         await repository.AddCommentAsync(comment, ct);
         await repository.SaveChangesAsync(ct);
+        await mentionNotifier.NotifyAsync(new MentionNotification(
+            "comment", user.DisplayName, $"Nowy komentarz: {entry.SubjectName}", body,
+            entry.Schedule.Name, entry.ScheduleId, ToDirectoryUsers(comment.Recipients)), ct);
         return MapComment(comment, user);
     }
 
@@ -146,9 +149,15 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
         EnsureCommentable(comment.ScheduleEntry.Schedule, user);
         if (!string.Equals(comment.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własny komentarz.");
         comment.Body = Required(request.Body, "Komentarz"); comment.UpdatedAt = DateTimeOffset.UtcNow;
+        var previousRecipientIds = comment.Recipients.Select(x => x.RecipientUserId).ToHashSet(StringComparer.Ordinal);
         var commentRecipients = await ResolveRecipients(request.MentionedUserIds, user, ct);
         comment.Recipients.Clear(); comment.Recipients.AddRange(commentRecipients.Select(x => NewCommentRecipient(comment.Id, x)));
-        await repository.SaveChangesAsync(ct); return MapComment(comment, user);
+        await repository.SaveChangesAsync(ct);
+        var newlyMentioned = commentRecipients.Where(x => !previousRecipientIds.Contains(x.UserId)).ToList();
+        await mentionNotifier.NotifyAsync(new MentionNotification(
+            "comment", user.DisplayName, $"Komentarz został zaktualizowany: {comment.ScheduleEntry.SubjectName}", comment.Body,
+            comment.ScheduleEntry.Schedule.Name, comment.ScheduleEntry.ScheduleId, newlyMentioned), ct);
+        return MapComment(comment, user);
     }
 
     public async Task DeleteCommentAsync(Guid id, CurrentUser user, CancellationToken ct)
@@ -245,10 +254,14 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
 
     public async Task<NoteDto> AddNoteAsync(Guid scheduleId, AddNoteRequest request, CurrentUser user, CancellationToken ct)
     {
-        _ = await repository.GetAsync(scheduleId, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
+        var schedule = await repository.GetAsync(scheduleId, false, ct) ?? throw new NotFoundException("Plan nie istnieje.");
         var note = new ScheduleNote { Id = Guid.NewGuid(), ScheduleId = scheduleId, Title = OptionalTitle(request.Title), Body = Required(request.Body, "Notatka"), AuthorUserId = user.UserId, AuthorEmail = user.Email, AuthorDisplayName = user.DisplayName, AuthorRole = user.Role, CreatedAt = DateTimeOffset.UtcNow };
         note.Recipients = (await ResolveRecipients(request.MentionedUserIds, user, ct)).Select(x => NewNoteRecipient(note.Id, x)).ToList();
-        await repository.AddNoteAsync(note, ct); await repository.SaveChangesAsync(ct); return MapNote(note, user);
+        await repository.AddNoteAsync(note, ct); await repository.SaveChangesAsync(ct);
+        await mentionNotifier.NotifyAsync(new MentionNotification(
+            "note", user.DisplayName, note.Title ?? "Nowa notatka do planu", note.Body,
+            schedule.Name, schedule.Id, ToDirectoryUsers(note.Recipients)), ct);
+        return MapNote(note, user);
     }
 
     public async Task<NoteDto> EditNoteAsync(Guid id, EditNoteRequest request, CurrentUser user, CancellationToken ct)
@@ -256,9 +269,15 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
         var note = await repository.GetNoteAsync(id, ct) ?? throw new NotFoundException("Notatka nie istnieje.");
         if (!string.Equals(note.AuthorUserId, user.UserId, StringComparison.Ordinal)) throw new UnauthorizedAccessException("Można edytować tylko własną notatkę.");
         note.Title = OptionalTitle(request.Title); note.Body = Required(request.Body, "Notatka"); note.UpdatedAt = DateTimeOffset.UtcNow;
+        var previousRecipientIds = note.Recipients.Select(x => x.RecipientUserId).ToHashSet(StringComparer.Ordinal);
         var noteRecipients = await ResolveRecipients(request.MentionedUserIds, user, ct);
         note.Recipients.Clear(); note.Recipients.AddRange(noteRecipients.Select(x => NewNoteRecipient(note.Id, x)));
-        await repository.SaveChangesAsync(ct); return MapNote(note, user);
+        await repository.SaveChangesAsync(ct);
+        var newlyMentioned = noteRecipients.Where(x => !previousRecipientIds.Contains(x.UserId)).ToList();
+        await mentionNotifier.NotifyAsync(new MentionNotification(
+            "note", user.DisplayName, note.Title ?? "Notatka do planu została zaktualizowana", note.Body,
+            note.Schedule.Name, note.ScheduleId, newlyMentioned), ct);
+        return MapNote(note, user);
     }
 
     public async Task DeleteNoteAsync(Guid id, CurrentUser user, CancellationToken ct)
@@ -350,6 +369,8 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
     }
     private static ScheduleCommentRecipient NewCommentRecipient(Guid ownerId, DirectoryUser x) => new() { Id = Guid.NewGuid(), ScheduleCommentId = ownerId, RecipientUserId = x.UserId, RecipientDisplayName = x.DisplayName, RecipientEmail = x.Email!, CreatedAt = DateTimeOffset.UtcNow };
     private static ScheduleNoteRecipient NewNoteRecipient(Guid ownerId, DirectoryUser x) => new() { Id = Guid.NewGuid(), ScheduleNoteId = ownerId, RecipientUserId = x.UserId, RecipientDisplayName = x.DisplayName, RecipientEmail = x.Email!, CreatedAt = DateTimeOffset.UtcNow };
+    private static IReadOnlyList<DirectoryUser> ToDirectoryUsers(IEnumerable<ScheduleCommentRecipient> recipients) => recipients.Select(x => new DirectoryUser(x.RecipientUserId, x.RecipientDisplayName, x.RecipientEmail, true)).ToList();
+    private static IReadOnlyList<DirectoryUser> ToDirectoryUsers(IEnumerable<ScheduleNoteRecipient> recipients) => recipients.Select(x => new DirectoryUser(x.RecipientUserId, x.RecipientDisplayName, x.RecipientEmail, true)).ToList();
     private static IReadOnlyList<RecipientDto> MapRecipients<T>(IEnumerable<T> recipients, string? authorId, CurrentUser user) where T : class => recipients.Select(item => item switch
     {
         ScheduleCommentRecipient x => new RecipientDto(x.RecipientUserId, x.RecipientDisplayName, user.IsAdmin || user.UserId == authorId ? x.RecipientEmail : null),
@@ -359,5 +380,9 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
     private sealed class EmptyUserDirectory : IUserDirectory
     {
         public Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct) => Task.FromResult<IReadOnlyList<DirectoryUser>>([]);
+    }
+    private sealed class EmptyMentionNotifier : IMentionNotifier
+    {
+        public Task NotifyAsync(MentionNotification notification, CancellationToken ct) => Task.CompletedTask;
     }
 }

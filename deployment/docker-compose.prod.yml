@@ -89,6 +89,9 @@ services:
       KEYCLOAK__CLIENTID: "shogun-users-service"
       KEYCLOAK__CLIENTSECRET: "${USERS_SERVICE_CLIENT_SECRET}"
       USERSAPIBASEURL: "http://pj_users_api:8080"
+      EMAILAPI__BASEURL: "http://pj_email_api:8080"
+      EMAILAPI__APIKEY: "${EMAIL_API_KEY:?EMAIL_API_KEY is required}"
+      EMAILAPI__PUBLICAPPBASEURL: "https://${DOMAIN}"
     networks:
       - shogun
 

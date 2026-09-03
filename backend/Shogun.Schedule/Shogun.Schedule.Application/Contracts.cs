@@ -61,6 +61,20 @@ public interface IUserDirectory
     Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct);
 }
 
+public sealed record MentionNotification(
+    string Kind,
+    string AuthorDisplayName,
+    string Heading,
+    string Body,
+    string ScheduleName,
+    Guid ScheduleId,
+    IReadOnlyList<DirectoryUser> Recipients);
+
+public interface IMentionNotifier
+{
+    Task NotifyAsync(MentionNotification notification, CancellationToken ct);
+}
+
 public interface IScheduleService
 {
     Task<IReadOnlyList<ScheduleSummaryDto>> ListAsync(string? facultyCode, string? academicYear, CancellationToken ct);

@@ -73,6 +73,8 @@ Znaczenie zmiennych:
 - `SMTP_PASSWORD` — hasło aplikacji Google;
 - `EMAIL_API_KEY` — losowy sekret wymagany w nagłówku `X-Internal-Api-Key`.
 
+Ten sam `EMAIL_API_KEY` jest automatycznie przekazywany przez Compose do Schedule API. Dzięki temu powiadomienia o oznaczeniach są wysyłane serwer–serwer, bez ujawniania sekretu w mikrofrontendzie.
+
 Adres nadawcy `shogun@pjwstk.edu.pl`, nazwa `Shogun`, host `smtp.gmail.com`, port `587` i trzy próby wysyłki są już ustawione w `docker-compose.prod.yml`.
 
 Sprawdź, czy zmienne występują dokładnie raz, bez spacji wokół znaku `=`:
@@ -220,6 +222,8 @@ Po teście sprawdź:
 2. czy nadawcą jest `Shogun <shogun@pjwstk.edu.pl>`;
 3. czy treść HTML, komentarz i przycisk są poprawnie wyświetlane;
 4. czy odpowiedź na wiadomość nie jest elementem oczekiwanego procesu biznesowego.
+
+Następnie sprawdź integrację z planem zajęć: dodaj komentarz lub notatkę, wpisz `@`, wybierz użytkownika posiadającego adres e-mail i zapisz. Przy edycji powiadomienie otrzymają wyłącznie nowo oznaczone osoby. Błąd wysyłki nie wycofuje zapisanego komentarza lub notatki; szczegóły techniczne pojawią się w logach `schedule-api` i `email-api`.
 
 Usuń zmienne zaimportowane do bieżącej powłoki:
 

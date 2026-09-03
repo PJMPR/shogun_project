@@ -93,6 +93,56 @@ public sealed class ScheduleServiceTests
     }
 
     [Fact]
+    public async Task Adding_comment_notifies_mentioned_users()
+    {
+        var schedule = CreateSchedule();
+        var entry = new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule, SubjectName = "Programowanie" };
+        schedule.Entries.Add(entry);
+        var repository = new FakeRepository(schedule);
+        var directory = new FakeUserDirectory(
+            new DirectoryUser("recipient-1", "Jan Kowalski", "jan@example.edu", true));
+        var notifier = new FakeMentionNotifier();
+
+        await new ScheduleService(repository, directory, notifier)
+            .AddCommentAsync(entry.Id, new AddCommentRequest("Proszę sprawdzić zmianę.", ["recipient-1"]), User, default);
+
+        var notification = Assert.Single(notifier.Notifications);
+        Assert.Equal("comment", notification.Kind);
+        Assert.Equal("jan@example.edu", Assert.Single(notification.Recipients).Email);
+        Assert.Equal(schedule.Id, notification.ScheduleId);
+    }
+
+    [Fact]
+    public async Task Editing_note_notifies_only_newly_mentioned_users()
+    {
+        var schedule = CreateSchedule();
+        var note = new ScheduleNote
+        {
+            Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule, Body = "Notatka",
+            AuthorUserId = User.UserId, AuthorDisplayName = User.DisplayName, AuthorRole = User.Role,
+        };
+        note.Recipients.Add(new ScheduleNoteRecipient
+        {
+            Id = Guid.NewGuid(), ScheduleNoteId = note.Id, ScheduleNote = note,
+            RecipientUserId = "recipient-1", RecipientDisplayName = "Jan Kowalski",
+            RecipientEmail = "jan@example.edu",
+        });
+        schedule.Notes.Add(note);
+        var repository = new FakeRepository(schedule);
+        var directory = new FakeUserDirectory(
+            new DirectoryUser("recipient-1", "Jan Kowalski", "jan@example.edu", true),
+            new DirectoryUser("recipient-2", "Anna Nowak", "anna@example.edu", true));
+        var notifier = new FakeMentionNotifier();
+
+        await new ScheduleService(repository, directory, notifier)
+            .EditNoteAsync(note.Id, new EditNoteRequest("Zmieniona notatka", null, ["recipient-1", "recipient-2"]), User, default);
+
+        var notification = Assert.Single(notifier.Notifications);
+        Assert.Equal("note", notification.Kind);
+        Assert.Equal("recipient-2", Assert.Single(notification.Recipients).UserId);
+    }
+
+    [Fact]
     public async Task Lecturer_cannot_add_comment_to_a_draft_plan()
     {
         var schedule = CreateSchedule();
@@ -157,11 +207,25 @@ public sealed class ScheduleServiceTests
         public Task DeleteAsync(SchedulePlan value, CancellationToken ct) => Task.CompletedTask;
         public Task<ScheduleComment?> GetCommentAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleComment?>(null);
         public Task<ScheduleEntry?> GetEntryAsync(Guid id, CancellationToken ct) => Task.FromResult(Schedule.Entries.FirstOrDefault(x => x.Id == id));
-        public Task<ScheduleNote?> GetNoteAsync(Guid id, CancellationToken ct) => Task.FromResult<ScheduleNote?>(null);
+        public Task<ScheduleNote?> GetNoteAsync(Guid id, CancellationToken ct) => Task.FromResult(Schedule.Notes.FirstOrDefault(x => x.Id == id));
         public Task<IReadOnlyList<SchedulePlan>> ListPublishedForSelectionAsync(Guid facultyId, string academicYear, int semesterNumber, StudyMode studyMode, Guid exceptScheduleId, CancellationToken ct) => Task.FromResult<IReadOnlyList<SchedulePlan>>(PublishedPlans.Where(x => x.FacultyId == facultyId && x.AcademicYear == academicYear && x.SemesterNumber == semesterNumber && x.StudyMode == studyMode && x.Id != exceptScheduleId && x.Status == ScheduleStatus.Published).ToList());
         public Task SaveChangesAsync(CancellationToken ct) => Task.CompletedTask;
         public Task<IScheduleLock> LockScheduleAsync(Guid scheduleId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());
         public Task<IScheduleLock> LockFacultyAsync(Guid facultyId, CancellationToken ct) => Task.FromResult<IScheduleLock>(new FakeLock());
     }
     private sealed class FakeLock : IScheduleLock { public Task CompleteAsync(CancellationToken ct) => Task.CompletedTask; public ValueTask DisposeAsync() => ValueTask.CompletedTask; }
+    private sealed class FakeUserDirectory(params DirectoryUser[] users) : IUserDirectory
+    {
+        public Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct) =>
+            Task.FromResult<IReadOnlyList<DirectoryUser>>(users.Where(x => userIds.Contains(x.UserId)).ToList());
+    }
+    private sealed class FakeMentionNotifier : IMentionNotifier
+    {
+        public List<MentionNotification> Notifications { get; } = [];
+        public Task NotifyAsync(MentionNotification notification, CancellationToken ct)
+        {
+            if (notification.Recipients.Count > 0) Notifications.Add(notification);
+            return Task.CompletedTask;
+        }
+    }
 }
