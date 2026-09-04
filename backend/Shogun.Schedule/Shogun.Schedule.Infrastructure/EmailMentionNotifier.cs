@@ -49,6 +49,6 @@ public sealed class EmailMentionNotifier(
     {
         var baseUrl = configuration["EmailApi:PublicAppBaseUrl"]?.TrimEnd('/')
             ?? "https://shogun.pjwstk.edu.pl";
-        return $"{baseUrl}/schedule";
+        return $"{baseUrl}/plan-zajec";
     }
 }

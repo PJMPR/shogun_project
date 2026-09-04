@@ -12,7 +12,7 @@ Wewnętrzny serwis wysyłający osobne wiadomości HTML przez Gmail SMTP.
   "heading": "Aktualizacja planu",
   "message": "Plan zajęć został zaktualizowany.",
   "comments": ["Zmiana sali na 204"],
-  "link": "https://shogun.pjwstk.edu.pl/schedule",
+  "link": "https://shogun.pjwstk.edu.pl/plan-zajec",
   "linkText": "Otwórz plan zajęć",
   "recipients": [{ "name": "Jan Kowalski", "email": "jan.kowalski@pjwstk.edu.pl" }]
 }
