@@ -173,7 +173,7 @@ export class WeeklyViewComponent {
 
   protected readonly commentCounts = computed(() => {
     this.commentsService.comments();
-    return Object.fromEntries(this.mockData.entries().map((entry) => [entry.id, this.commentsService.count(entry.id)]));
+    return Object.fromEntries(this.mockData.entries().map((entry) => [entry.id, entry.commentThreadClosed ? 0 : this.commentsService.count(entry.id)]));
   });
 
   protected readonly conflictSet = computed(

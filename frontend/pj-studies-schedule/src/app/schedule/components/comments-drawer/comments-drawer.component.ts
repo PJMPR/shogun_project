@@ -23,9 +23,14 @@ export class CommentsDrawerComponent {
   protected readonly editDraft = signal('');
   protected readonly draftRecipients = signal<MentionRecipient[]>([]);
   protected readonly editRecipients = signal<MentionRecipient[]>([]);
-  protected readonly accordionEntries = computed(() => this.entries().filter((entry) =>
-    entry.id === this.selectedEntryId() || this.commentsService.count(entry.id) > 0,
-  ));
+  protected readonly activeTab = signal<'active' | 'closed'>('active');
+  protected readonly closingEntry = signal<ScheduleEntry | null>(null);
+  protected readonly accordionEntries = computed(() => this.entries().filter((entry) => {
+    const visible = entry.id === this.selectedEntryId() || this.commentsService.count(entry.id) > 0;
+    return visible && Boolean(entry.commentThreadClosed) === (this.activeTab() === 'closed');
+  }));
+  protected readonly activeCount = computed(() => this.threadCount(false));
+  protected readonly closedCount = computed(() => this.threadCount(true));
 
   constructor() {
     effect(() => {
@@ -48,6 +53,15 @@ export class CommentsDrawerComponent {
     this.cancelEdit();
     if (opening) this.commentsService.load(entryId);
   }
+  protected selectTab(tab: 'active' | 'closed'): void { this.activeTab.set(tab); this.expandedId.set(null); this.cancelEdit(); }
+  protected requestClose(entry: ScheduleEntry): void { this.closingEntry.set(entry); }
+  protected cancelClose(): void { this.closingEntry.set(null); }
+  protected confirmClose(): void {
+    const entry = this.closingEntry(); if (!entry) return;
+    this.commentsService.setThreadClosed(entry.id, true);
+    this.closingEntry.set(null); this.expandedId.set(null);
+  }
+  protected reopen(entryId: string): void { this.commentsService.setThreadClosed(entryId, false); this.expandedId.set(null); }
   protected comments(entryId: string): ScheduleComment[] { return this.commentsService.forEntry(entryId); }
   protected threadRecipients(entryId: string): MentionRecipient[] {
     return [...new Map(this.comments(entryId).flatMap(comment => comment.recipients).map(recipient => [recipient.userId, recipient])).values()];
@@ -73,5 +87,8 @@ export class CommentsDrawerComponent {
   private groupLabel(entry: ScheduleEntry): string {
     const names = this.groups().slice(entry.group, entry.group + (entry.groupSpan ?? 1)).map((group) => group.name);
     return names.join(', ') || `Gr. ${entry.group + 1}`;
+  }
+  private threadCount(closed: boolean): number {
+    return this.entries().filter((entry) => (entry.id === this.selectedEntryId() || this.commentsService.count(entry.id) > 0) && Boolean(entry.commentThreadClosed) === closed).length;
   }
 }

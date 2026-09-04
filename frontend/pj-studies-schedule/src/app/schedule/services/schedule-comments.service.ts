@@ -9,6 +9,7 @@ interface ApiComment {
   authorRole: CommentAuthorRole; createdAt: string; updatedAt?: string; canEdit: boolean; canDelete: boolean;
   recipients: { userId: string; displayName: string; email?: string | null }[];
 }
+interface ApiThreadStatus { scheduleEntryId: string; closed: boolean }
 
 @Injectable({ providedIn: 'root' })
 export class ScheduleCommentsService {
@@ -37,6 +38,10 @@ export class ScheduleCommentsService {
     this.http.put<ApiComment>(`${this.base}/comments/${id}`, { body: trimmed, mentionedUserIds }).subscribe((item) => this.replaceComment(this.map(item)));
   }
   remove(id: string): void { this.http.delete(`${this.base}/comments/${id}`).subscribe(() => this.commentsByEntry.update((all) => Object.fromEntries(Object.entries(all).map(([entryId, list]) => [entryId, list.filter((item) => item.id !== id)])))); }
+  setThreadClosed(entryId: string, closed: boolean): void {
+    this.http.patch<ApiThreadStatus>(`${this.base}/entries/${entryId}/comment-thread`, { closed }).subscribe((status) =>
+      this.schedules.setCommentThreadClosed(status.scheduleEntryId, status.closed));
+  }
   removeForEntry(entryId: string): void { this.commentsByEntry.update((all) => Object.fromEntries(Object.entries(all).filter(([id]) => id !== entryId))); }
   clear(): void { this.commentsByEntry.set({}); }
   isOwn(comment: ScheduleComment): boolean { return comment.author.id === this.currentAuthor.id; }

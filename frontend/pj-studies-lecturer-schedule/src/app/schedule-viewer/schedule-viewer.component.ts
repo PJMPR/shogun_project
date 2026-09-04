@@ -54,6 +54,7 @@ interface Entry {
   dates?: string[];
   groupIds: string[];
   commentCount: number;
+  commentThreadClosed: boolean;
 }
 interface Plan extends PlanSummary {
   groups: Group[];
@@ -324,6 +325,8 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
     [...new Map(this.comments().flatMap(comment => comment.recipients).map(recipient => [recipient.userId, recipient])).values()],
   );
   protected readonly commentsEntry = signal<Entry | null>(null);
+  protected readonly commentThreadTab = signal<'active' | 'closed'>('active');
+  protected readonly closeThreadModalOpen = signal(false);
   protected readonly commentDraft = signal('');
   protected readonly editingId = signal<string | null>(null);
   protected readonly editDraft = signal('');
@@ -671,15 +674,20 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
       '1': 'Wykład',
       '2': 'Ćwiczenia',
       '3': 'Laboratorium',
+      '4': 'Projekt',
+      '5': 'Seminarium',
       lecture: 'Wykład',
       exercises: 'Ćwiczenia',
       laboratory: 'Laboratorium',
+      project: 'Projekt',
+      seminar: 'Seminarium',
     };
     return classType ? (labels[classType.toLowerCase()] ?? '') : '';
   }
 
   protected async openComments(entry: Entry): Promise<void> {
     this.commentsEntry.set(entry);
+    this.commentThreadTab.set('active');
     this.commentDraft.set('');
     this.commentRecipients.set([]);
     this.editingId.set(null);
@@ -700,8 +708,20 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
   }
 
   protected closeComments(): void {
+    this.closeThreadModalOpen.set(false);
     this.commentsEntry.set(null);
     this.comments.set([]);
+  }
+  protected async setCommentThreadClosed(closed: boolean): Promise<void> {
+    const entry = this.commentsEntry(); if (!entry) return;
+    try {
+      const status = await firstValueFrom(this.http.patch<{ scheduleEntryId: string; closed: boolean }>(`${this.base}/entries/${entry.id}/comment-thread`, { closed }));
+      this.commentsEntry.set({ ...entry, commentThreadClosed: status.closed });
+      this.updateCommentThreadStatus(status.scheduleEntryId, status.closed);
+      this.closeThreadModalOpen.set(false);
+    } catch (error) {
+      this.error.set(this.errorMessage(error, 'Nie udało się zmienić statusu wątku.'));
+    }
   }
   protected async addComment(): Promise<void> {
     const entry = this.commentsEntry();
@@ -879,6 +899,14 @@ export class ScheduleViewerComponent implements OnInit, OnDestroy {
       ),
     });
     this.plan.update((plan) => (plan ? updatePlan(plan) : plan));
+    this.myPlans.update((plans) => plans.map(updatePlan));
+  }
+  private updateCommentThreadStatus(entryId: string, closed: boolean): void {
+    const updatePlan = (plan: Plan): Plan => ({
+      ...plan,
+      entries: plan.entries.map((entry) => entry.id === entryId ? { ...entry, commentThreadClosed: closed } : entry),
+    });
+    this.plan.update((plan) => plan ? updatePlan(plan) : plan);
     this.myPlans.update((plans) => plans.map(updatePlan));
   }
   private readProfile(): { userId: string } {

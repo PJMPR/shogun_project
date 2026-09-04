@@ -124,6 +124,7 @@ public sealed class ScheduleEntry
     public int? MeetingCountOverride { get; set; }
     public int? StaffingLessonHoursOverride { get; set; }
     public bool HiddenInPublished { get; set; }
+    public bool CommentThreadClosed { get; set; }
     public Guid ConcurrencyToken { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
     public string? CreatedBy { get; set; }

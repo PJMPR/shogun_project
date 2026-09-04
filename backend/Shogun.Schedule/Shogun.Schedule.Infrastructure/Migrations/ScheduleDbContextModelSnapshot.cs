@@ -201,6 +201,9 @@ namespace Shogun.Schedule.Infrastructure.Migrations
                     b.Property<bool>("HiddenInPublished")
                         .HasColumnType("boolean");
 
+                    b.Property<bool>("CommentThreadClosed")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("LecturerDisplayName")
                         .IsRequired()
                         .HasMaxLength(200)

@@ -40,6 +40,7 @@ export interface ScheduleEntry {
   groupIds?: string[];
   concurrencyToken?: string;
   commentCount?: number;
+  commentThreadClosed?: boolean;
   dates?: string[];
   /** Manual number of meetings; when absent, dates or the study-mode default are used. */
   meetingCountOverride?: number;

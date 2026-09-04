@@ -168,6 +168,18 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
         comment.DeletedAt = DateTimeOffset.UtcNow; comment.DeletedBy = user.Email; comment.DeletedByUserId = user.UserId; await repository.SaveChangesAsync(ct);
     }
 
+    public async Task<CommentThreadStatusDto> SetCommentThreadStatusAsync(Guid entryId, SetCommentThreadStatusRequest request, CurrentUser user, CancellationToken ct)
+    {
+        var entry = await repository.GetEntryAsync(entryId, ct) ?? throw new NotFoundException("Bloczek nie istnieje.");
+        EnsureCommentable(entry.Schedule, user);
+        entry.CommentThreadClosed = request.Closed;
+        entry.UpdatedAt = DateTimeOffset.UtcNow;
+        entry.UpdatedBy = user.Email;
+        entry.UpdatedByUserId = user.UserId;
+        await repository.SaveChangesAsync(ct);
+        return new CommentThreadStatusDto(entry.Id, entry.CommentThreadClosed);
+    }
+
     public async Task<ScheduleSubjectDto> AddSubjectAsync(Guid scheduleId, SaveScheduleSubjectRequest request, CurrentUser user, CancellationToken ct)
     {
         var schedule = await repository.GetAsync(scheduleId, true, ct) ?? throw new NotFoundException("Plan nie istnieje.");
@@ -348,7 +360,7 @@ public sealed class ScheduleService(IScheduleRepository repository, IUserDirecto
     private static void Apply(ScheduleEntry e, SaveEntryRequest d, CurrentUser actor, DateTimeOffset now) { e.SubjectSource = d.SubjectSource?.Trim(); e.SubjectExternalId = d.SubjectExternalId?.Trim(); e.SubjectCode = d.SubjectCode?.Trim(); e.SubjectName = d.SubjectName.Trim(); e.ClassType = d.ClassType; e.LecturerUserId = string.IsNullOrWhiteSpace(d.LecturerUserId) ? null : d.LecturerUserId.Trim(); e.LecturerEmail = string.IsNullOrWhiteSpace(d.LecturerEmail) ? null : d.LecturerEmail.Trim().ToLowerInvariant(); e.LecturerDisplayName = d.LecturerDisplayName?.Trim() ?? ""; e.Room = string.IsNullOrWhiteSpace(d.Room) ? null : d.Room.Trim(); e.DayOfWeek = d.DayOfWeek; e.StartMinute = d.StartMinute; e.DurationMinutes = d.DurationMinutes; e.Color = d.Color; e.Dates = (d.Dates ?? []).Distinct().OrderBy(x => x[3..]).ThenBy(x => x[..2]).ToList(); e.MeetingCountOverride = d.MeetingCountOverride; e.StaffingLessonHoursOverride = d.StaffingLessonHoursOverride; e.HiddenInPublished = d.HiddenInPublished; e.UpdatedAt = now; e.UpdatedBy = actor.Email; e.UpdatedByUserId = actor.UserId; e.ConcurrencyToken = Guid.NewGuid(); }
     private static string Required(string? value, string field) => !string.IsNullOrWhiteSpace(value) ? value.Trim() : throw new ValidationException($"{field} jest wymagane.");
     private static ScheduleSummaryDto MapSummary(SchedulePlan x) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy);
-    private static ScheduleDto Map(SchedulePlan x, bool publishedView = false) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Where(e => !publishedView || !e.HiddenInPublished).Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.Dates, e.MeetingCountOverride, e.StaffingLessonHoursOverride, e.HiddenInPublished, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList(), x.Subjects.OrderBy(s => s.Name).Select(MapSubject).ToList(), x.Lecturers.OrderBy(l => l.DisplayName).Select(MapLecturer).ToList(), x.SubjectLecturers.Select(MapSubjectLecturer).ToList());
+    private static ScheduleDto Map(SchedulePlan x, bool publishedView = false) => new(x.Id, x.Faculty.Code, x.Faculty.Name, x.AcademicYear, x.SemesterNumber, x.StudyMode, x.Name, x.Status, x.ConcurrencyToken, x.UpdatedAt, x.UpdatedBy, x.Groups.OrderBy(g => g.SortOrder).Select(g => new GroupDto(g.Id, g.Code, g.Name, g.SortOrder, g.ConcurrencyToken)).ToList(), x.Entries.Where(e => !publishedView || !e.HiddenInPublished).Select(e => new EntryDto(e.Id, e.SubjectSource, e.SubjectExternalId, e.SubjectCode, e.SubjectName, e.ClassType, e.LecturerUserId, e.LecturerEmail, e.LecturerDisplayName, e.Room, e.DayOfWeek, e.StartMinute, e.DurationMinutes, e.Color, e.Dates, e.MeetingCountOverride, e.StaffingLessonHoursOverride, e.HiddenInPublished, e.CommentThreadClosed, e.EntryGroups.Select(g => g.StudentGroupId).ToList(), e.ConcurrencyToken, e.Comments.Count(c => c.DeletedAt == null))).ToList(), x.Subjects.OrderBy(s => s.Name).Select(MapSubject).ToList(), x.Lecturers.OrderBy(l => l.DisplayName).Select(MapLecturer).ToList(), x.SubjectLecturers.Select(MapSubjectLecturer).ToList());
     private static ScheduleSubjectDto MapSubject(ScheduleSubject x) => new(x.Id, x.Code, x.Name);
     private static ScheduleLecturerDto MapLecturer(ScheduleLecturer x) => new(x.Id, x.DisplayName, x.Email);
     private static ScheduleSubjectLecturerDto MapSubjectLecturer(ScheduleSubjectLecturer x) => new(x.Id, x.SubjectCode, x.LecturerKey, x.LecturerDisplayName, x.LecturerUserId, x.LecturerEmail, x.LecturerAssignmentId);

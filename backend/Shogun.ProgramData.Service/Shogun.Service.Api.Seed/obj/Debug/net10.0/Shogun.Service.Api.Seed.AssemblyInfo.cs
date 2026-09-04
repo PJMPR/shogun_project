@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Shogun.Service.Api.Seed")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bd3895ef055ebf014642e1298c4d18e2018ac00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5339906f755171d07f093c6b0a05859facf4541d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Shogun.Service.Api.Seed")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Shogun.Service.Api.Seed")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

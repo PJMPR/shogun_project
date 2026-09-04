@@ -5,7 +5,7 @@ namespace Shogun.Schedule.Application;
 public sealed record CurrentUser(string UserId, string? Email, string DisplayName, bool IsAdmin, string Role);
 public sealed record ScheduleSummaryDto(Guid Id, string FacultyCode, string FacultyName, string AcademicYear, int SemesterNumber, StudyMode StudyMode, string Name, ScheduleStatus Status, Guid ConcurrencyToken, DateTimeOffset UpdatedAt, string? UpdatedBy);
 public sealed record GroupDto(Guid Id, string Code, string Name, int SortOrder, Guid ConcurrencyToken);
-public sealed record EntryDto(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<string> Dates, int? MeetingCountOverride, int? StaffingLessonHoursOverride, bool HiddenInPublished, IReadOnlyList<Guid> GroupIds, Guid ConcurrencyToken, int CommentCount);
+public sealed record EntryDto(Guid Id, string? SubjectSource, string? SubjectExternalId, string? SubjectCode, string SubjectName, ClassType ClassType, string? LecturerUserId, string? LecturerEmail, string LecturerDisplayName, string? Room, int DayOfWeek, int StartMinute, int DurationMinutes, string? Color, IReadOnlyList<string> Dates, int? MeetingCountOverride, int? StaffingLessonHoursOverride, bool HiddenInPublished, bool CommentThreadClosed, IReadOnlyList<Guid> GroupIds, Guid ConcurrencyToken, int CommentCount);
 public sealed record ScheduleSubjectDto(Guid Id, string Code, string Name);
 public sealed record ScheduleLecturerDto(Guid Id, string DisplayName, string? Email);
 public sealed record ScheduleSubjectLecturerDto(Guid Id, string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
@@ -20,6 +20,8 @@ public sealed record DirectoryUser(string UserId, string DisplayName, string? Em
 public sealed record CommentDto(Guid Id, Guid ScheduleEntryId, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete, IReadOnlyList<RecipientDto> Recipients);
 public sealed record AddCommentRequest(string Body, IReadOnlyList<string>? MentionedUserIds = null);
 public sealed record EditCommentRequest(string Body, IReadOnlyList<string>? MentionedUserIds = null);
+public sealed record SetCommentThreadStatusRequest(bool Closed);
+public sealed record CommentThreadStatusDto(Guid ScheduleEntryId, bool Closed);
 public sealed record SaveScheduleSubjectRequest(string Code, string Name);
 public sealed record SaveScheduleLecturerRequest(string DisplayName, string? Email);
 public sealed record AddScheduleSubjectLecturerRequest(string SubjectCode, string LecturerKey, string LecturerDisplayName, string? LecturerUserId, string? LecturerEmail, int? LecturerAssignmentId);
@@ -88,6 +90,7 @@ public interface IScheduleService
     Task<CommentDto> AddCommentAsync(Guid entryId, AddCommentRequest request, CurrentUser user, CancellationToken ct);
     Task<CommentDto> EditCommentAsync(Guid id, EditCommentRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteCommentAsync(Guid id, CurrentUser user, CancellationToken ct);
+    Task<CommentThreadStatusDto> SetCommentThreadStatusAsync(Guid entryId, SetCommentThreadStatusRequest request, CurrentUser user, CancellationToken ct);
     Task<ScheduleSubjectDto> AddSubjectAsync(Guid scheduleId, SaveScheduleSubjectRequest request, CurrentUser user, CancellationToken ct);
     Task<ScheduleSubjectDto> UpdateSubjectAsync(Guid scheduleId, Guid subjectId, SaveScheduleSubjectRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteSubjectAsync(Guid scheduleId, Guid subjectId, CancellationToken ct);

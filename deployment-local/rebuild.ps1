@@ -36,17 +36,35 @@ if (-not (Test-Path $envFile)) {
 
 Push-Location $scriptDir
 
+function Invoke-DockerCompose {
+    if (Get-Command docker-compose -ErrorAction SilentlyContinue) {
+        & docker-compose @args
+    }
+    else {
+        & docker compose @args
+    }
+
+    if ($LASTEXITCODE -ne 0) {
+        throw "Docker Compose zakonczyl dzialanie kodem $LASTEXITCODE."
+    }
+}
+
 if ($Service -eq 'all') {
     Write-Host "[*] Przebudowywanie wszystkich serwisow aplikacji..." -ForegroundColor Cyan
-    docker compose --env-file .env.local up -d --build
+    Invoke-DockerCompose --env-file .env.local up -d --build
 }
 elseif ($Service -eq 'proxy') {
     Write-Host "[*] Przeladowywanie nginx..." -ForegroundColor Cyan
-    docker compose --env-file .env.local up -d proxy
+    Invoke-DockerCompose --env-file .env.local up -d proxy
 }
 else {
     Write-Host "[*] Przebudowywanie serwisu: $Service..." -ForegroundColor Cyan
-    docker compose --env-file .env.local up -d --build $Service
+    Invoke-DockerCompose --env-file .env.local up -d --build $Service
+
+    # Recreate nginx after a service container receives a new Docker IP.
+    # Otherwise nginx keeps the address resolved when it was started.
+    Write-Host "[*] Odswiezanie routingu nginx..." -ForegroundColor Cyan
+    Invoke-DockerCompose --env-file .env.local up -d --force-recreate proxy
 }
 
 Pop-Location

@@ -5,6 +5,11 @@
     <button type="button" class="icon-button pi pi-times" aria-label="Zamknij" (click)="closed.emit()"></button>
   </header>
 
+  <nav class="thread-tabs" aria-label="Status wątków">
+    <button type="button" [class.active]="activeTab() === 'active'" (click)="selectTab('active')">Aktywne <span>{{ activeCount() }}</span></button>
+    <button type="button" [class.active]="activeTab() === 'closed'" (click)="selectTab('closed')">Zamknięte <span>{{ closedCount() }}</span></button>
+  </nav>
+
   <div class="accordion">
     @for (entry of accordionEntries(); track entry.id) {
       <section class="accordion-item" [id]="'comments-' + entry.id" [class.expanded]="expandedId() === entry.id">
@@ -45,13 +50,30 @@
             <div class="composer">
               <div class="composer-author">Komentujesz jako <strong>{{ commentsService.currentAuthor.name }}</strong> · {{ roleLabel(commentsService.currentAuthor.role) }}</div>
               <app-mention-input [value]="draft()" (valueChange)="draft.set($event)" [recipients]="draftRecipients()" (recipientsChange)="draftRecipients.set($event)" placeholder="Napisz komentarz… Użyj @, aby wskazać odbiorcę" />
-              <button type="button" class="primary-button send-button" [disabled]="!draft().trim()" (click)="addComment(entry.id)"><span class="pi pi-send"></span> Dodaj komentarz</button>
+              <div class="composer-actions">
+                @if (entry.commentThreadClosed) {
+                  <button type="button" class="thread-button reopen" (click)="reopen(entry.id)"><span class="pi pi-refresh"></span> Otwórz wątek</button>
+                } @else {
+                  <button type="button" class="thread-button" (click)="requestClose(entry)"><span class="pi pi-check-circle"></span> Zakończ wątek</button>
+                }
+                <button type="button" class="primary-button send-button" [disabled]="!draft().trim()" (click)="addComment(entry.id)"><span class="pi pi-send"></span> Dodaj komentarz</button>
+              </div>
             </div>
           </div>
         }
       </section>
     } @empty {
-      <div class="empty-state drawer-empty"><span class="pi pi-comments"></span><p>W tym semestrze nie ma jeszcze komentarzy.</p></div>
+      <div class="empty-state drawer-empty"><span class="pi pi-comments"></span><p>{{ activeTab() === 'active' ? 'Brak aktywnych wątków.' : 'Brak zamkniętych wątków.' }}</p></div>
     }
   </div>
 </aside>
+
+@if (closingEntry(); as entry) {
+  <div class="modal-backdrop" (click)="cancelClose()"></div>
+  <section class="confirm-modal" role="alertdialog" aria-modal="true" aria-labelledby="close-thread-title">
+    <div class="modal-icon"><span class="pi pi-check-circle"></span></div>
+    <h4 id="close-thread-title">Zakończyć wątek?</h4>
+    <p>Wątek „{{ entryLabel(entry) }}” trafi do zakładki Zamknięte. Nadal będzie można go komentować lub ponownie otworzyć.</p>
+    <div class="modal-actions"><button type="button" class="secondary-button" (click)="cancelClose()">Anuluj</button><button type="button" class="primary-button" (click)="confirmClose()">Zakończ wątek</button></div>
+  </section>
+}

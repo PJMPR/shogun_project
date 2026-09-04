@@ -40,4 +40,5 @@ public sealed class ScheduleCommentsController(IScheduleService service) : Contr
     [HttpPost("entries/{entryId:guid}/comments")] public Task<CommentDto> Add(Guid entryId, AddCommentRequest request, CancellationToken ct) => service.AddCommentAsync(entryId, request, User.ToCurrentUser(), ct);
     [HttpPut("comments/{id:guid}")] public Task<CommentDto> Edit(Guid id, EditCommentRequest request, CancellationToken ct) => service.EditCommentAsync(id, request, User.ToCurrentUser(), ct);
     [HttpDelete("comments/{id:guid}")] public async Task<IActionResult> Delete(Guid id, CancellationToken ct) { await service.DeleteCommentAsync(id, User.ToCurrentUser(), ct); return NoContent(); }
+    [HttpPatch("entries/{entryId:guid}/comment-thread")] public Task<CommentThreadStatusDto> SetThreadStatus(Guid entryId, SetCommentThreadStatusRequest request, CancellationToken ct) => service.SetCommentThreadStatusAsync(entryId, request, User.ToCurrentUser(), ct);
 }

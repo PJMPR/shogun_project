@@ -9,7 +9,7 @@ interface ApiEntry {
   classType: ScheduleEntry['classType']; lecturerUserId?: string; lecturerEmail?: string; lecturerDisplayName: string; room?: string;
   dayOfWeek: number; startMinute: number; durationMinutes: number; color?: string; groupIds: string[];
   dates?: string[]; meetingCountOverride?: number; staffingLessonHoursOverride?: number; hiddenInPublished?: boolean;
-  concurrencyToken: string; commentCount: number;
+  concurrencyToken: string; commentCount: number; commentThreadClosed: boolean;
 }
 interface ApiPlan extends Omit<SchedulePlan, 'entries'> { entries: ApiEntry[] }
 interface PlanWorkingCopy {
@@ -161,6 +161,13 @@ export class MockDataService {
     this.markDirty();
   }
   updateEntry(updated: ScheduleEntry): void { this.entries.update((list) => list.map((e) => e.id === updated.id ? updated : e)); this.markDirty(); }
+  setCommentThreadClosed(entryId: string, closed: boolean): void {
+    this.entries.update((list) => list.map((entry) => entry.id === entryId ? { ...entry, commentThreadClosed: closed } : entry));
+    const planId = this.current()?.id;
+    const copy = planId ? this.workingCopies.get(planId) : undefined;
+    if (copy) copy.entries = copy.entries.map((entry) => entry.id === entryId ? { ...entry, commentThreadClosed: closed } : entry);
+    this.bumpWorkingCopies();
+  }
   removeEntry(id: string): void { this.entries.update((list) => list.filter((e) => e.id !== id)); this.markDirty(); }
   setGroups(groups: ScheduleGroup[]): void { this.groups.set(groups.map((g, i) => ({ ...g, sortOrder: i }))); this.markDirty(); }
   markEntriesDirty(): void { this.markDirty(); }
@@ -320,7 +327,7 @@ export class MockDataService {
         startHour: e.startMinute / 60, durationHours: e.durationMinutes / 60,
         semesterNumber: plan.semesterNumber, academicYear: plan.academicYear,
         studyMode: plan.studyMode === 'stationary' ? 'stacjonarny' : 'niestacjonarny',
-        groupIds: e.groupIds, concurrencyToken: e.concurrencyToken, commentCount: e.commentCount,
+        groupIds: e.groupIds, concurrencyToken: e.concurrencyToken, commentCount: e.commentCount, commentThreadClosed: e.commentThreadClosed ?? false,
         dates: e.dates ?? [], meetingCountOverride: e.meetingCountOverride,
         staffingLessonHoursOverride: e.staffingLessonHoursOverride, hiddenInPublished: e.hiddenInPublished ?? false };
     });

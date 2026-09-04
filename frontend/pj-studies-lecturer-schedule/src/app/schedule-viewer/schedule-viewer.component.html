@@ -227,6 +227,8 @@
                       · {{ classTypeLabel(entry.classType) }}
                     }
                   </span>
+                } @else if (classTypeLabel(entry.classType)) {
+                  <span class="entry-meta">{{ classTypeLabel(entry.classType) }}</span>
                 }
                 <span>{{ time(entry) }} · {{ groupNames(entry) }}</span
                 ><span [title]="entry.lecturerDisplayName">{{
@@ -240,7 +242,7 @@
                 }
                 <button class="comment-button" title="Komentarze">
                   <i class="pi pi-comments"></i>
-                  @if (entry.commentCount) {
+                  @if (!entry.commentThreadClosed && entry.commentCount) {
                     <b>{{ entry.commentCount }}</b>
                   }
                 </button>
@@ -285,7 +287,7 @@
               <td>{{ entry.room || "—" }}</td>
               <td>
                 <button class="table-comment" (click)="openComments(entry)">
-                  <i class="pi pi-comments"></i> {{ entry.commentCount || "" }}
+                  <i class="pi pi-comments"></i> {{ entry.commentThreadClosed ? "" : (entry.commentCount || "") }}
                 </button>
               </td>
             </tr>
@@ -314,6 +316,11 @@
         <i class="pi pi-times"></i>
       </button>
     </header>
+    <nav class="thread-tabs" aria-label="Status wątków">
+      <button [class.active]="commentThreadTab() === 'active'" (click)="commentThreadTab.set('active')">Aktywne <span>{{ entry.commentThreadClosed ? 0 : 1 }}</span></button>
+      <button [class.active]="commentThreadTab() === 'closed'" (click)="commentThreadTab.set('closed')">Zamknięte <span>{{ entry.commentThreadClosed ? 1 : 0 }}</span></button>
+    </nav>
+    @if ((commentThreadTab() === 'closed') === entry.commentThreadClosed) {
     <div class="comments">
       @for (comment of comments(); track comment.id) {
         <article class="comment">
@@ -388,13 +395,31 @@
         [recipients]="commentRecipients()"
         (recipientsChange)="commentRecipients.set($event)"
         placeholder="Napisz komentarz… Użyj @, aby wskazać odbiorcę"
-      /><button
+      /><div class="composer-actions">
+      @if (entry.commentThreadClosed) {
+        <button class="thread-action reopen" (click)="setCommentThreadClosed(false)"><i class="pi pi-refresh"></i> Otwórz wątek</button>
+      } @else {
+        <button class="thread-action" (click)="closeThreadModalOpen.set(true)"><i class="pi pi-check-circle"></i> Zakończ wątek</button>
+      }
+      <button
         class="primary"
         [disabled]="!commentDraft().trim()"
         (click)="addComment()"
       >
         <i class="pi pi-send"></i> Dodaj komentarz
-      </button>
+      </button></div>
     </footer>
+    } @else {
+      <div class="comments-empty thread-empty"><i class="pi pi-comments"></i><p>{{ commentThreadTab() === 'active' ? 'Brak aktywnych wątków.' : 'Brak zamkniętych wątków.' }}</p></div>
+    }
   </aside>
+  @if (closeThreadModalOpen()) {
+    <div class="confirm-backdrop" (click)="closeThreadModalOpen.set(false)"></div>
+    <section class="confirm-modal" role="alertdialog" aria-modal="true" aria-labelledby="close-thread-title">
+      <div class="modal-icon"><i class="pi pi-check-circle"></i></div>
+      <h3 id="close-thread-title">Zakończyć wątek?</h3>
+      <p>Wątek trafi do zakładki Zamknięte. Nadal będzie można go komentować lub ponownie otworzyć.</p>
+      <div><button class="modal-cancel" (click)="closeThreadModalOpen.set(false)">Anuluj</button><button class="modal-confirm" (click)="setCommentThreadClosed(true)">Zakończ wątek</button></div>
+    </section>
+  }
 }
