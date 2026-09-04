@@ -156,6 +156,31 @@ public sealed class ScheduleServiceTests
     }
 
     [Fact]
+    public async Task Lecturer_can_list_comments_of_a_published_plan()
+    {
+        var schedule = CreateSchedule();
+        schedule.Status = ScheduleStatus.Published;
+        var entry = new ScheduleEntry { Id = Guid.NewGuid(), ScheduleId = schedule.Id, Schedule = schedule };
+        entry.Comments.Add(new ScheduleComment
+        {
+            Id = Guid.NewGuid(),
+            ScheduleEntryId = entry.Id,
+            ScheduleEntry = entry,
+            Body = "Widoczny komentarz",
+            AuthorUserId = "planner-id",
+            AuthorDisplayName = "Planista",
+            AuthorRole = "planner",
+        });
+        schedule.Entries.Add(entry);
+        var lecturer = new CurrentUser("kc-lecturer-id", "lecturer@example.edu", "Wykładowca", false, "lecturer");
+
+        var result = await new ScheduleService(new FakeRepository(schedule))
+            .ListCommentsAsync(entry.Id, lecturer, default);
+
+        Assert.Equal("Widoczny komentarz", Assert.Single(result).Body);
+    }
+
+    [Fact]
     public async Task Delete_lecturer_rejects_lecturer_assigned_to_an_entry()
     {
         var schedule = CreateSchedule();
