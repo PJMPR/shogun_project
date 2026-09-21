@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+output/
+Shogun.SyllabusPdf.Api.Tests/
+.git/
+.gitignore

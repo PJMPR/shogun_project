@@ -2,7 +2,7 @@ import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { forkJoin } from 'rxjs';
+import { forkJoin, switchMap } from 'rxjs';
 import { ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -148,6 +148,9 @@ export class EdytujSylabusComponent implements OnInit {
   savingToApi = false;
   saveApiSuccess = false;
   saveApiError = '';
+  savingPdf = false;
+  pdfSuccess = false;
+  pdfError = '';
 
   // Dialogi
   previewDialogVisible = false;
@@ -612,7 +615,8 @@ export class EdytujSylabusComponent implements OnInit {
       : this.shogunApi.createSyllabus(s.kod_przedmiotu, s.tryb_studiow, false, data);
 
     obs.subscribe({
-      next: () => {
+      next: saved => {
+        this.loadedSyllabusId = saved.id;
         this.savingToApi = false;
         this.saveApiSuccess = true;
         this.cdr.detectChanges();
@@ -623,6 +627,52 @@ export class EdytujSylabusComponent implements OnInit {
         this.cdr.detectChanges();
       },
     });
+  }
+
+  saveAndDownloadPdf(): void {
+    if (!this.loadedSylabus) return;
+    const s = this.loadedSylabus;
+    const data = (this.buildJson() as { sylabus: SylabusData }).sylabus;
+    this.savingPdf = true;
+    this.pdfSuccess = false;
+    this.pdfError = '';
+    this.saveApiSuccess = false;
+    this.saveApiError = '';
+
+    const saveRequest = this.loadedSyllabusId
+      ? this.shogunApi.updateSyllabus(this.loadedSyllabusId, s.kod_przedmiotu, s.tryb_studiow, false, data)
+      : this.shogunApi.createSyllabus(s.kod_przedmiotu, s.tryb_studiow, false, data);
+
+    saveRequest.pipe(
+      switchMap(saved => {
+        this.loadedSyllabusId = saved.id;
+        this.saveApiSuccess = true;
+        if (!saved.sylabus) throw new Error('API zapisu nie zwróciło treści sylabusa.');
+        return this.shogunApi.generateSyllabusPdf(saved.sylabus);
+      })
+    ).subscribe({
+      next: pdf => {
+        this.downloadPdf(pdf, data.kod_przedmiotu);
+        this.savingPdf = false;
+        this.saveApiSuccess = false;
+        this.pdfSuccess = true;
+        this.cdr.detectChanges();
+      },
+      error: (err: any) => {
+        this.savingPdf = false;
+        this.pdfError = err?.error?.title ?? err?.message ?? 'Nie udało się zapisać sylabusa lub wygenerować PDF.';
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  private downloadPdf(pdf: Blob, subjectCode: string): void {
+    const url = URL.createObjectURL(pdf);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${subjectCode || 'sylabus'}.pdf`;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 
   downloadJson(): void {

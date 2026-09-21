@@ -72,6 +72,22 @@ services:
     networks:
       - shogun
 
+  syllabus-pdf:
+    build:
+      context: ../backend/Shogun.SyllabusPdf
+      dockerfile: Shogun.SyllabusPdf.Api/Dockerfile
+    container_name: pj_syllabus_pdf
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      GENERATOR__TIMEOUTSECONDS: 60
+      GENERATOR__MAXCONCURRENCY: 2
+    tmpfs:
+      - /tmp:size=512m
+    networks:
+      - shogun
+
   schedule-api:
     build:
       context: ../backend/Shogun.Schedule

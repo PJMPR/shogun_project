@@ -487,18 +487,21 @@
     <div class="es-action-bar">
       <p-button label="Podgląd sylabusa" icon="pi pi-eye" severity="info"
                 (onClick)="previewSylabus()" styleClass="es-btn" />
-      <p-button label="Podgląd JSON" icon="pi pi-code" severity="secondary"
-                (onClick)="previewJson()" styleClass="es-btn" />
-      <p-button
-        [label]="'Pobierz JSON (' + (loadedSylabus.kod_przedmiotu) + '.json)'"
-        icon="pi pi-download" severity="success"
-        (onClick)="downloadJson()" styleClass="es-btn" />
       <p-button
         label="Zapisz do API"
         icon="pi pi-save"
         severity="contrast"
         [loading]="savingToApi"
+        [disabled]="savingPdf"
         (onClick)="saveToApi()"
+        styleClass="es-btn" />
+      <p-button
+        label="Zapisz i pobierz PDF"
+        icon="pi pi-file-pdf"
+        severity="danger"
+        [loading]="savingPdf"
+        [disabled]="savingToApi"
+        (onClick)="saveAndDownloadPdf()"
         styleClass="es-btn" />
     </div>
     @if (saveApiSuccess) {
@@ -506,6 +509,12 @@
     }
     @if (saveApiError) {
       <p-message severity="error" [text]="saveApiError" styleClass="es-api-msg" />
+    }
+    @if (pdfSuccess) {
+      <p-message severity="success" text="Zapisano sylabus i pobrano plik PDF." styleClass="es-api-msg" />
+    }
+    @if (pdfError) {
+      <p-message severity="error" [text]="pdfError" styleClass="es-api-msg" />
     }
 
   }

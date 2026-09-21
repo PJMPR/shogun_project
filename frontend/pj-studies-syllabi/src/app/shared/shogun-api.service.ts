@@ -33,7 +33,7 @@ interface ElectiveApiItem {
   data: any;
 }
 
-interface SyllabusApiItem {
+export interface SyllabusApiItem {
   id: string;
   kod_przedmiotu: string;
   tryb_studiow: string;
@@ -134,8 +134,8 @@ export class ShogunApiService {
     tryb_studiow: string,
     is_stary: boolean,
     sylabus: object
-  ): Observable<{ id: string }> {
-    return this.http.post<{ id: string }>(`${this.base}/api/v1/syllabi`, {
+  ): Observable<SyllabusApiItem> {
+    return this.http.post<SyllabusApiItem>(`${this.base}/api/v1/syllabi`, {
       kod_przedmiotu,
       tryb_studiow,
       is_stary,
@@ -150,13 +150,19 @@ export class ShogunApiService {
     tryb_studiow: string,
     is_stary: boolean,
     sylabus: object
-  ): Observable<unknown> {
-    return this.http.put(`${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`, {
+  ): Observable<SyllabusApiItem> {
+    return this.http.put<SyllabusApiItem>(`${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`, {
       kod_przedmiotu,
       tryb_studiow,
       is_stary,
       _source: null,
       sylabus,
+    });
+  }
+
+  generateSyllabusPdf(sylabus: SylabusData): Observable<Blob> {
+    return this.http.post(`${this.base}/api-syllabus-pdf/api/v1/syllabi/pdf`, { sylabus }, {
+      responseType: 'blob',
     });
   }
 

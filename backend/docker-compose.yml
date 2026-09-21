@@ -107,6 +107,20 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
+  syllabus-pdf:
+    build:
+      context: ./Shogun.SyllabusPdf
+      dockerfile: Shogun.SyllabusPdf.Api/Dockerfile
+    container_name: pj_syllabus_pdf
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      GENERATOR__TIMEOUTSECONDS: 60
+      GENERATOR__MAXCONCURRENCY: 2
+    tmpfs:
+      - /tmp:size=512m
+
   mfe-host:
     build:
       context: ../frontend/pj-studies-host
@@ -155,4 +169,3 @@ services:
     restart: unless-stopped
     volumes:
       - ./files:/usr/share/nginx/html:ro
-
