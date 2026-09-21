@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { forkJoin, switchMap } from 'rxjs';
-import { ShogunApiService } from '../../shared/shogun-api.service';
+import { extractApiErrors, ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -151,6 +151,7 @@ export class EdytujSylabusComponent implements OnInit {
   savingPdf = false;
   pdfSuccess = false;
   pdfError = '';
+  validationErrors: string[] = [];
 
   // Dialogi
   previewDialogVisible = false;
@@ -604,6 +605,7 @@ export class EdytujSylabusComponent implements OnInit {
 
   saveToApi(): void {
     if (!this.loadedSylabus) return;
+    this.validationErrors = [];
     const s = this.loadedSylabus;
     const data = (this.buildJson() as any).sylabus;
     this.savingToApi = true;
@@ -623,6 +625,7 @@ export class EdytujSylabusComponent implements OnInit {
       },
       error: (err: any) => {
         this.savingToApi = false;
+        this.validationErrors = extractApiErrors(err, 'Błąd zapisu do API.');
         this.saveApiError = err?.error?.title ?? err?.message ?? 'Błąd zapisu do API.';
         this.cdr.detectChanges();
       },
@@ -631,6 +634,7 @@ export class EdytujSylabusComponent implements OnInit {
 
   saveAndDownloadPdf(): void {
     if (!this.loadedSylabus) return;
+    this.validationErrors = [];
     const s = this.loadedSylabus;
     const data = (this.buildJson() as { sylabus: SylabusData }).sylabus;
     this.savingPdf = true;
@@ -666,6 +670,7 @@ export class EdytujSylabusComponent implements OnInit {
       },
       error: (err: any) => {
         this.savingPdf = false;
+        this.validationErrors = extractApiErrors(err, 'Nie udało się potwierdzić zapisu sylabusa lub wygenerować PDF.');
         this.pdfError = err?.error?.title ?? err?.message ?? 'Nie udało się potwierdzić zapisu sylabusa lub wygenerować PDF.';
         this.cdr.detectChanges();
       },

@@ -41,6 +41,19 @@ export interface SyllabusApiItem {
   sylabus: SylabusData | null;
 }
 
+export function extractApiErrors(error: any, fallback: string): string[] {
+  const validationErrors = error?.error?.errors;
+  if (validationErrors && typeof validationErrors === 'object') {
+    const messages = Object.entries(validationErrors).flatMap(([field, value]) => {
+      const values = Array.isArray(value) ? value : [value];
+      return values.filter(Boolean).map(message => `${field}: ${String(message)}`);
+    });
+    if (messages.length) return messages;
+  }
+
+  return [error?.error?.detail ?? error?.error?.title ?? error?.message ?? fallback];
+}
+
 interface StudyModesMetadata {
   tryb_studiow: string[];
 }
@@ -133,6 +146,14 @@ export class ShogunApiService {
     return this.http.get<SyllabusApiItem>(
       `${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`
     );
+  }
+
+  findSyllabusRecord(kodPrzedmiotu: string, tryb: string): Observable<SyllabusApiItem | null> {
+    return this.http
+      .get<PagedResult<SyllabusApiItem>>(`${this.base}/api/v1/syllabi`, {
+        params: { kod_przedmiotu: kodPrzedmiotu, tryb_studiow: tryb, pageSize: '1' },
+      })
+      .pipe(map(r => r.items[0] ?? null));
   }
 
   createSyllabus(

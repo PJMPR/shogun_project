@@ -1,4 +1,5 @@
 <div class="ns-container">
+  <p-confirmDialog />
 
   <div class="ns-header">
     <h1 class="ns-title"><i class="pi pi-file-edit"></i> Nowy sylabus</h1>
@@ -486,6 +487,16 @@
   }
   @if (pdfError) {
     <p-message severity="error" [text]="pdfError" styleClass="ns-api-msg" />
+  }
+  @if (validationErrors.length) {
+    <div class="ns-api-msg" role="alert">
+      <p-message severity="error" text="Wykryto następujące problemy:" />
+      <ul>
+        @for (error of validationErrors; track $index) {
+          <li>{{ error }}</li>
+        }
+      </ul>
+    </div>
   }
 
 </div>

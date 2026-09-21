@@ -515,8 +515,18 @@
     @if (pdfSuccess) {
       <p-message severity="success" text="Zapisano sylabus i pobrano plik PDF." styleClass="es-api-msg" />
     }
-    @if (pdfError) {
+  @if (pdfError) {
       <p-message severity="error" [text]="pdfError" styleClass="es-api-msg" />
+    }
+    @if (validationErrors.length) {
+      <div class="es-api-msg" role="alert">
+        <p-message severity="error" text="Wykryto następujące problemy:" />
+        <ul>
+          @for (error of validationErrors; track $index) {
+            <li>{{ error }}</li>
+          }
+        </ul>
+      </div>
     }
 
   }

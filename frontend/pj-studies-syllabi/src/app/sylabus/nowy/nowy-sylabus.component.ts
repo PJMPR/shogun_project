@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ShogunApiService } from '../../shared/shogun-api.service';
+import { extractApiErrors, ShogunApiService } from '../../shared/shogun-api.service';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -13,6 +13,8 @@ import { DialogModule } from 'primeng/dialog';
 import { CheckboxModule } from 'primeng/checkbox';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { MessageModule } from 'primeng/message';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 import { SylabusPreviewComponent } from '../../shared/sylabus-preview/sylabus-preview.component';
 import { SylabusData } from '../../models/program.models';
 import { switchMap } from 'rxjs';
@@ -123,10 +125,12 @@ const PROFILE_STUDIOW = [
     CheckboxModule,
     MultiSelectModule,
     MessageModule,
+    ConfirmDialogModule,
     SylabusPreviewComponent,
   ],
   templateUrl: './nowy-sylabus.component.html',
   styleUrl: './nowy-sylabus.component.css',
+  providers: [ConfirmationService],
 })
 export class NowySylabusComponent implements OnInit {
 
@@ -154,6 +158,7 @@ export class NowySylabusComponent implements OnInit {
   savingPdf = false;
   pdfSuccess = false;
   pdfError = '';
+  validationErrors: string[] = [];
   private savedSyllabusId: string | null = null;
 
   /** Dostępne opcje z plików JSON */
@@ -216,6 +221,7 @@ export class NowySylabusComponent implements OnInit {
 
   private readonly shogunApi = inject(ShogunApiService);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly confirmationService = inject(ConfirmationService);
 
   ngOnInit(): void {
     this.shogunApi.getStudyModes().subscribe(data => {
@@ -588,10 +594,15 @@ export class NowySylabusComponent implements OnInit {
     };
   }
 
-  saveToApi(): void {
+  saveToApi(overwriteConfirmed = false): void {
     const f = this.form;
+    this.validationErrors = [];
     if (!f.kod_przedmiotu.trim()) {
       this.saveApiError = 'Podaj kod przedmiotu przed zapisem do API.';
+      return;
+    }
+    if (!this.savedSyllabusId && !overwriteConfirmed) {
+      this.confirmOverwriteIfNeeded(() => this.saveToApi(true));
       return;
     }
     const data = (this.buildJson() as any).sylabus;
@@ -612,19 +623,25 @@ export class NowySylabusComponent implements OnInit {
       },
       error: (err: any) => {
         this.savingToApi = false;
+        this.validationErrors = extractApiErrors(err, 'Błąd zapisu do API.');
         this.saveApiError = err?.error?.title ?? err?.message ?? 'Błąd zapisu do API.';
         this.cdr.detectChanges();
       },
     });
   }
 
-  saveAndDownloadPdf(): void {
+  saveAndDownloadPdf(overwriteConfirmed = false): void {
     const f = this.form;
+    this.validationErrors = [];
     if (!f.kod_przedmiotu.trim()) {
       this.pdfError = 'Podaj kod przedmiotu przed wygenerowaniem PDF.';
       return;
     }
 
+    if (!this.savedSyllabusId && !overwriteConfirmed) {
+      this.confirmOverwriteIfNeeded(() => this.saveAndDownloadPdf(true));
+      return;
+    }
     const data = (this.buildJson() as { sylabus: SylabusData }).sylabus;
     this.savingPdf = true;
     this.pdfSuccess = false;
@@ -658,7 +675,40 @@ export class NowySylabusComponent implements OnInit {
       },
       error: (err: any) => {
         this.savingPdf = false;
+        this.validationErrors = extractApiErrors(err, 'Nie udało się potwierdzić zapisu sylabusa lub wygenerować PDF.');
         this.pdfError = err?.error?.title ?? err?.message ?? 'Nie udało się potwierdzić zapisu sylabusa lub wygenerować PDF.';
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  private confirmOverwriteIfNeeded(onReady: () => void): void {
+    const code = this.form.kod_przedmiotu.trim();
+    const mode = this.form.tryb_studiow;
+    this.validationErrors = [];
+
+    this.shogunApi.findSyllabusRecord(code, mode).subscribe({
+      next: existing => {
+        if (!existing) {
+          onReady();
+          return;
+        }
+
+        this.confirmationService.confirm({
+          header: 'Sylabus już istnieje',
+          message: `Sylabus ${code} dla trybu ${mode} już istnieje. Czy chcesz go nadpisać?`,
+          icon: 'pi pi-exclamation-triangle',
+          acceptLabel: 'Tak, nadpisz',
+          rejectLabel: 'Nie',
+          acceptButtonStyleClass: 'p-button-danger',
+          accept: () => {
+            this.savedSyllabusId = existing.id;
+            onReady();
+          },
+        });
+      },
+      error: err => {
+        this.validationErrors = extractApiErrors(err, 'Nie udało się sprawdzić, czy sylabus już istnieje.');
         this.cdr.detectChanges();
       },
     });
