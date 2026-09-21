@@ -74,7 +74,13 @@ public class SyllabiRepository : ISyllabiRepository
         }
 
         if (!string.IsNullOrWhiteSpace(q.StudyMode))
-            filters.Add(builder.Eq(x => x.StudyMode, q.StudyMode));
+        {
+            var normalizedStudyMode = q.StudyMode.Trim().ToLowerInvariant();
+            var pattern = normalizedStudyMode.StartsWith("niestacjon", StringComparison.Ordinal)
+                ? "^niestacjonarn(?:y|e)$"
+                : "^stacjonarn(?:y|e)$";
+            filters.Add(builder.Regex(x => x.StudyMode, new BsonRegularExpression(pattern, "i")));
+        }
 
         if (q.IsLegacy.HasValue)
             filters.Add(builder.Eq(x => x.IsLegacy, q.IsLegacy.Value));

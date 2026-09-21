@@ -17,8 +17,8 @@ public class MetadataController : ControllerBase
     {
         tryb_studiow = new[]
         {
-            "stacjonarne",
-            "niestacjonarne",
+            "stacjonarny",
+            "niestacjonarny",
         },
     };
 
@@ -104,15 +104,15 @@ public class MetadataController : ControllerBase
                 new { kod_efektu = "K_W02", tresc = "ma rozszerzoną wiedzę z zakresu fizyki, obejmującą dziedziny przydatne dla studiów na kierunku informatyka, w tym elementy mechaniki klasycznej, podstawy elektryczności i magnetyzmu oraz optyki i akustyki" },
                 new { kod_efektu = "K_W03", tresc = "ma uporządkowaną, podbudowaną teoretycznie wiedzę ogólną w zakresie elektrotechniki, elektroniki i miernictwa; rozumie powiązania informatyki z tymi obszarami" },
                 new { kod_efektu = "K_W04", tresc = "zna i rozumie podstawowe pojęcia w zakresie konstrukcji programistycznych, rekurencji oraz struktur danych, jak też ich implementacji" },
-                new { kod_efektu = "K_W05", tresc = "ma uporządkowaną i podbudowaną teoretycznie wiedzę w zakresie kluczowych zagadnień z zakresu algorytmów i złożoności obliczeniowej jak również abstrakcyjnych struktur i metod ich implementacji; zna i rozumie zagadnienia nierozstrzygalne i obliczeniowo trudne; zna i rozumie problem weryfikacji poprawności programów" },
-                new { kod_efektu = "K_W06", tresc = "zna i rozumie zaawansowane pojęcia w zakresie techniki cyfrowej i systemów cyfrowych, architektury i organizacji systemów komputerowych, architektur wieloprocesorowych oraz programowania na poziomie assemblera" },
-                new { kod_efektu = "K_W07", tresc = "zna i rozumie zaawansowane pojęcia z zakresu kluczowych zagadnień dotyczących systemów operacyjnych – zasady ich działania, konstrukcji, organizacji współbieżności; zna i rozumie powszechnie stosowane systemy." },
-                new { kod_efektu = "K_W08", tresc = "zna i rozumie zaawansowane pojęcia w zakresie sieci komputerowych, ich technologii, protokołów komunikacyjnych i zagadnień bezpieczeństwa, telekomunikacji oraz potrzebę przenoszenia dobrych praktyk na grunt informatyki" },
-                new { kod_efektu = "K_W09", tresc = "zna i rozumie podstawowe pojęcia w zakresie głównych protokołów internetowych, zasad tworzenia bezpiecznych, warstwowych aplikacji internetowych; zna i rozumie podstawowe techniki, wzorce projektowe i technologie towarzyszące wytwarzaniu takich aplikacji" },
-                new { kod_efektu = "K_W10", tresc = "zna i rozumie zaawansowane pojęcia z zakresu programowania, konstrukcji programów, ich implementacji, testowania i uruchamiania, a także ma podstawową wiedzę w zakresie języków, poziomów i paradygmatów programowania, w tym obiektowego; zna i rozumie pojęcia z zakresu aktualnych metod, technik i narzędzi stosowanych podczas tworzenia, testowania i uruchamiania oprogramowania" },
-                new { kod_efektu = "K_W11", tresc = "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień i metod w zakresie grafiki, multimediów i komunikacji człowiek-komputer" },
-                new { kod_efektu = "K_W12", tresc = "zna i rozumie zaawansowane pojęcia w zakresie zagadnień probabilistyki i statystyki oraz sztucznej inteligencji, a także ich zastosowania w praktyce informatycznej; zna i rozumie podstawowe pojecia z zakresu narzędzi wspomagających rozwiązywanie problemów inżynierskich w obszarze tych zagadnień" },
-                new { kod_efektu = "K_W13", tresc = "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień w zarządzania informacją i modelowania danych; zna i rozumie zaawansowane zagadnienia konstrukcji relacyjnych baz danych, ich programowania i przetwarzania transakcji; ma dogłębną znajomość aktualnie stosowanych systemów baz danych" },
+                new { kod_efektu = "K_W05", tresc = "ma podstawową wiedzę z zakresu architektury komputerów i systemów operacyjnych" },
+                new { kod_efektu = "K_W06", tresc = "ma podstawową wiedzę z zakresu sieci komputerowych i systemów rozproszonych" },
+                new { kod_efektu = "K_W07", tresc = "ma szczegółową wiedzę z zakresu technologii programowania; zna zagadnienia związane z aplikacjami obiektowymi, komponentami, frameworkami, narzędziami i środowiskami programistycznymi" },
+                new { kod_efektu = "K_W08", tresc = "ma wiedzę w zakresie projektowania, wytwarzania, testowania i utrzymania oprogramowania; zna metodyki i techniki inżynierii oprogramowania" },
+                new { kod_efektu = "K_W09", tresc = "ma wiedzę w zakresie baz danych, systemów zarządzania bazami danych, hurtowni danych" },
+                new { kod_efektu = "K_W10", tresc = "ma wiedzę w zakresie wybranych języków i technik programowania w obszarze wybranej specjalności" },
+                new { kod_efektu = "K_W11", tresc = "zna i rozumie podstawowe pojęcia i zasady z zakresu ochrony własności przemysłowej i prawa autorskiego" },
+                new { kod_efektu = "K_W12", tresc = "ma podstawową wiedzę z zakresu zarządzania, ekonomii i prawa niezbędną do rozumienia społecznych, ekonomicznych, prawnych i innych pozatechnicznych uwarunkowań działalności inżynierskiej" },
+                new { kod_efektu = "K_W13", tresc = "zna ogólne zasady tworzenia i rozwoju form indywidualnej przedsiębiorczości" },
                 new { kod_efektu = "K_W14", tresc = "zna i rozumie zaawansowane pojęcia z zakresu zagadnień inżynierii oprogramowania, standardów i kształtu cykli wytwórczych oraz ewolucji oprogramowania; zna podstawy zarządzania przedsięwzięciem programistycznym i rozumie problem jakości oprogramowania; rozumie rolę modelowania i ma szczegółową, podbudowaną teoretycznie wiedzę o obiektowym wytwarzaniu oprogramowania i notacji UML, zna i rozumie zasady korzystania z wzorców programowych i standardowych API; ma podsawową wiedzę o typowych narzędziach i środowiskach wspomagających;" },
                 new { kod_efektu = "K_W15", tresc = "zna i rozumie podstawowe pojęcia z zakresu kluczowych zagadnień inżynierii wymagań, rozumie potrzebę systematycznego budowania i pielęgnacji specyfikacji wymagań; ma rozszerzoną wiedzę dotyczącą ich specyfikacji, analizy i modelowania z użyciem dostępnych narzędzi;" },
                 new { kod_efektu = "K_W16", tresc = "ma rozszerzoną wiedzę z zakresu walidacji i testowania oprogramowania" },

@@ -17,6 +17,17 @@ public class SyllabusValidatorTests
     }
 
     [Theory]
+    [InlineData("Stacjonarny")]
+    [InlineData("stacjonarne")]
+    [InlineData("NIESTACJONARNE")]
+    public async Task Legacy_study_mode_variants_pass(string tryb)
+    {
+        var req = new CreateSyllabusRequest("PRG1", tryb, false, null, null);
+        var result = await _validator.ValidateAsync(req);
+        result.IsValid.Should().BeTrue();
+    }
+
+    [Theory]
     [InlineData("", "stacjonarny")]
     [InlineData(null, "stacjonarny")]
     public async Task Missing_kod_przedmiotu_fails(string? kod, string tryb)

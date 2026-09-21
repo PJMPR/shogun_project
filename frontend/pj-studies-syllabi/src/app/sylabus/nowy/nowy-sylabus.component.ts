@@ -225,15 +225,15 @@ export class NowySylabusComponent implements OnInit {
 
   ngOnInit(): void {
     this.shogunApi.getStudyModes().subscribe(data => {
-      const toLabel = (mode: string) => {
+      const normalizeMode = (mode: string) => {
         const normalized = mode?.trim().toLowerCase() ?? '';
-        if (normalized.startsWith('stacjon')) return 'Stacjonarny';
-        if (normalized.startsWith('niestacjon')) return 'Niestacjonarny';
-        return mode;
+        if (normalized.startsWith('niestacjon')) return 'niestacjonarny';
+        if (normalized.startsWith('stacjon')) return 'stacjonarny';
+        return normalized;
       };
       this.trybOptions = (data.tryb_studiow ?? []).map(mode => ({
-        label: toLabel(mode),
-        value: mode,
+        label: normalizeMode(mode) === 'stacjonarny' ? 'Stacjonarny' : 'Niestacjonarny',
+        value: normalizeMode(mode),
       }));
       this.cdr.detectChanges();
     });

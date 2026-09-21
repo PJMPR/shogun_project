@@ -44,6 +44,25 @@ public class SyllabiServiceTests
     }
 
     [Fact]
+    public async Task GetByIdAsync_normalizes_legacy_study_mode_without_updating_database()
+    {
+        var entity = new Syllabus
+        {
+            Id = "64a1b2c3d4e5f6a7b8c9d0e2",
+            SubjectCode = "PRG2",
+            StudyMode = "Stacjonarne",
+            Content = new SyllabusContent { StudyMode = "Stacjonarne" },
+        };
+        _repo.GetByIdAsync(entity.Id, default).Returns(entity);
+
+        var dto = await _svc.GetByIdAsync(entity.Id);
+
+        dto!.StudyMode.Should().Be("stacjonarny");
+        dto.Content!.StudyMode.Should().Be("stacjonarny");
+        await _repo.DidNotReceive().UpdateAsync(Arg.Any<string>(), Arg.Any<Syllabus>(), default);
+    }
+
+    [Fact]
     public async Task DeleteAsync_delegates_to_repo()
     {
         _repo.DeleteAsync("some_id", default).Returns(true);

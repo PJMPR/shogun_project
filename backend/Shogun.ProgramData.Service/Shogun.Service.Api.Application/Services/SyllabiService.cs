@@ -25,10 +25,14 @@ public class SyllabiService
 
     public async Task<SyllabusDto> CreateAsync(CreateSyllabusRequest req, CancellationToken ct = default)
     {
+        var studyMode = StudyModes.StudyModeNormalizer.Normalize(req.StudyMode);
+        if (req.Content is not null)
+            req.Content.StudyMode = studyMode;
+
         var entity = new Syllabus
         {
             SubjectCode = req.SubjectCode,
-            StudyMode = req.StudyMode,
+            StudyMode = studyMode,
             IsLegacy = req.IsLegacy,
             Source = req.Source,
             Content = req.Content,
@@ -39,10 +43,14 @@ public class SyllabiService
 
     public async Task<SyllabusDto?> UpdateAsync(string id, UpdateSyllabusRequest req, CancellationToken ct = default)
     {
+        var studyMode = StudyModes.StudyModeNormalizer.Normalize(req.StudyMode);
+        if (req.Content is not null)
+            req.Content.StudyMode = studyMode;
+
         var entity = new Syllabus
         {
             SubjectCode = req.SubjectCode,
-            StudyMode = req.StudyMode,
+            StudyMode = studyMode,
             IsLegacy = req.IsLegacy,
             Source = req.Source,
             Content = req.Content,
@@ -54,11 +62,18 @@ public class SyllabiService
     public Task<bool> DeleteAsync(string id, CancellationToken ct = default)
         => _repo.DeleteAsync(id, ct);
 
-    private static SyllabusDto Map(Syllabus s) => new(
-        s.Id!,
-        s.SubjectCode,
-        s.StudyMode,
-        s.IsLegacy,
-        s.Source,
-        s.Content);
+    private static SyllabusDto Map(Syllabus s)
+    {
+        var studyMode = StudyModes.StudyModeNormalizer.Normalize(s.StudyMode);
+        if (s.Content is not null)
+            s.Content.StudyMode = studyMode;
+
+        return new SyllabusDto(
+            s.Id!,
+            s.SubjectCode,
+            studyMode,
+            s.IsLegacy,
+            s.Source,
+            s.Content);
+    }
 }

@@ -68,6 +68,13 @@ export class ShogunApiService {
   private readonly http = inject(HttpClient);
   private readonly base = environment.apiBaseUrl;
 
+  private normalizeStudyMode(mode: string): string {
+    const normalized = mode.trim().toLowerCase();
+    if (normalized.startsWith('niestacjon')) return 'niestacjonarny';
+    if (normalized.startsWith('stacjon')) return 'stacjonarny';
+    return normalized;
+  }
+
   getProgramData(
     tryb: 'stacjonarny' | 'niestacjonarny',
     isStary = false
@@ -151,7 +158,11 @@ export class ShogunApiService {
   findSyllabusRecord(kodPrzedmiotu: string, tryb: string): Observable<SyllabusApiItem | null> {
     return this.http
       .get<PagedResult<SyllabusApiItem>>(`${this.base}/api/v1/syllabi`, {
-        params: { kod_przedmiotu: kodPrzedmiotu, tryb_studiow: tryb, pageSize: '1' },
+        params: {
+          kod_przedmiotu: kodPrzedmiotu,
+          tryb_studiow: this.normalizeStudyMode(tryb),
+          pageSize: '1',
+        },
       })
       .pipe(map(r => r.items[0] ?? null));
   }
@@ -164,7 +175,7 @@ export class ShogunApiService {
   ): Observable<SyllabusApiItem> {
     return this.http.post<SyllabusApiItem>(`${this.base}/api/v1/syllabi`, {
       kod_przedmiotu,
-      tryb_studiow,
+      tryb_studiow: this.normalizeStudyMode(tryb_studiow),
       is_stary,
       _source: null,
       sylabus,
@@ -180,7 +191,7 @@ export class ShogunApiService {
   ): Observable<SyllabusApiItem> {
     return this.http.put<SyllabusApiItem>(`${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`, {
       kod_przedmiotu,
-      tryb_studiow,
+      tryb_studiow: this.normalizeStudyMode(tryb_studiow),
       is_stary,
       _source: null,
       sylabus,

@@ -13,7 +13,7 @@ public class CreateSyllabusRequestValidator : AbstractValidator<CreateSyllabusRe
 
         RuleFor(x => x.StudyMode)
             .NotEmpty().WithMessage("tryb_studiow is required.")
-            .Must(v => v == "stacjonarny" || v == "niestacjonarny")
+            .Must(StudyModes.StudyModeNormalizer.IsValid)
             .WithMessage("tryb_studiow must be 'stacjonarny' or 'niestacjonarny'.");
     }
 }
@@ -28,7 +28,7 @@ public class UpdateSyllabusRequestValidator : AbstractValidator<UpdateSyllabusRe
 
         RuleFor(x => x.StudyMode)
             .NotEmpty().WithMessage("tryb_studiow is required.")
-            .Must(v => v == "stacjonarny" || v == "niestacjonarny")
+            .Must(StudyModes.StudyModeNormalizer.IsValid)
             .WithMessage("tryb_studiow must be 'stacjonarny' or 'niestacjonarny'.");
     }
 }
