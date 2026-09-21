@@ -38,9 +38,22 @@ public class SyllabiRepository : ISyllabiRepository
 
     public async Task<Syllabus?> UpdateAsync(string id, Syllabus entity, CancellationToken ct = default)
     {
-        entity.Id = id;
-        var result = await _col.ReplaceOneAsync(x => x.Id == id, entity, cancellationToken: ct);
-        return result.MatchedCount > 0 ? entity : null;
+        var update = Builders<Syllabus>.Update
+            .Set(x => x.SubjectCode, entity.SubjectCode)
+            .Set(x => x.StudyMode, entity.StudyMode)
+            .Set(x => x.IsLegacy, entity.IsLegacy)
+            .Set(x => x.Source, entity.Source)
+            .Set(x => x.Content, entity.Content);
+
+        return await _col.FindOneAndUpdateAsync(
+            x => x.Id == id,
+            update,
+            new FindOneAndUpdateOptions<Syllabus>
+            {
+                ReturnDocument = ReturnDocument.After,
+                IsUpsert = false,
+            },
+            ct);
     }
 
     public async Task<bool> DeleteAsync(string id, CancellationToken ct = default)
@@ -55,7 +68,10 @@ public class SyllabiRepository : ISyllabiRepository
         var filters = new List<FilterDefinition<Syllabus>>();
 
         if (!string.IsNullOrWhiteSpace(q.SubjectCode))
-            filters.Add(builder.Regex(x => x.SubjectCode, new BsonRegularExpression(q.SubjectCode, "i")));
+        {
+            var exactSubjectCode = $"^{System.Text.RegularExpressions.Regex.Escape(q.SubjectCode.Trim())}$";
+            filters.Add(builder.Regex(x => x.SubjectCode, new BsonRegularExpression(exactSubjectCode, "i")));
+        }
 
         if (!string.IsNullOrWhiteSpace(q.StudyMode))
             filters.Add(builder.Eq(x => x.StudyMode, q.StudyMode));

@@ -129,6 +129,12 @@ export class ShogunApiService {
       );
   }
 
+  getSyllabusById(id: string): Observable<SyllabusApiItem> {
+    return this.http.get<SyllabusApiItem>(
+      `${this.base}/api/v1/syllabi/${encodeURIComponent(id)}`
+    );
+  }
+
   createSyllabus(
     kod_przedmiotu: string,
     tryb_studiow: string,

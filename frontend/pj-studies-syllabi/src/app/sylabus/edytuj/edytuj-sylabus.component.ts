@@ -647,9 +647,15 @@ export class EdytujSylabusComponent implements OnInit {
       switchMap(saved => {
         this.loadedSyllabusId = saved.id;
         this.saveApiSuccess = true;
-        if (!saved.sylabus) throw new Error('API zapisu nie zwróciło treści sylabusa.');
-        return this.shogunApi.generateSyllabusPdf(saved.sylabus);
-      })
+        return this.shogunApi.getSyllabusById(saved.id);
+      }),
+      switchMap(persisted => {
+        if (!persisted.sylabus) {
+          throw new Error('Nie można potwierdzić zapisu sylabusa w bazie danych.');
+        }
+        this.loadedSylabus = persisted.sylabus;
+        return this.shogunApi.generateSyllabusPdf(persisted.sylabus);
+      }),
     ).subscribe({
       next: pdf => {
         this.downloadPdf(pdf, data.kod_przedmiotu);
@@ -660,7 +666,7 @@ export class EdytujSylabusComponent implements OnInit {
       },
       error: (err: any) => {
         this.savingPdf = false;
-        this.pdfError = err?.error?.title ?? err?.message ?? 'Nie udało się zapisać sylabusa lub wygenerować PDF.';
+        this.pdfError = err?.error?.title ?? err?.message ?? 'Nie udało się potwierdzić zapisu sylabusa lub wygenerować PDF.';
         this.cdr.detectChanges();
       },
     });
