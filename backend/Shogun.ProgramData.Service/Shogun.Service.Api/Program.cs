@@ -79,7 +79,7 @@ builder.Services.AddAuthorization(opts =>
         policy.RequireAssertion(ctx => HasProjectAccess(ctx.User, "program")));
 
     opts.AddPolicy("SyllabiAccess", policy =>
-        policy.RequireAssertion(ctx => HasProjectAccess(ctx.User, "sylabus")));
+        policy.RequireRole("admin", "sylabus"));
 });
 
 builder.Services.AddHealthChecks()

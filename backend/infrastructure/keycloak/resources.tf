@@ -229,6 +229,16 @@ resource "keycloak_role" "app_pracownik" {
   }
 }
 
+resource "keycloak_role" "app_sylabus" {
+  realm_id    = keycloak_realm.shogun.id
+  name        = "sylabus"
+  description = "shogun: dodawanie i edycja sylabusow"
+  attributes = {
+    "managedBy" = "shogun"
+    "projects"  = "sylabus"
+  }
+}
+
 resource "keycloak_role" "app_student" {
   realm_id    = keycloak_realm.shogun.id
   name        = "student"

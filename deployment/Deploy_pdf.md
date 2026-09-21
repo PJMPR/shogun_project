@@ -35,10 +35,18 @@ Przed rozpoczęciem sprawdź, czy:
 - plik `deployment/.env.prod` jest obecny i zawiera dotychczasową konfigurację,
 - certyfikaty TLS znajdują się w `deployment/certs/`,
 - zmiany zostały zatwierdzone i wysłane do zdalnego repozytorium,
+- w Keycloak istnieje realmowa rola `sylabus`, przypisana użytkownikom
+  uprawnionym do dodawania i edycji sylabusów,
 - na dysku jest co najmniej kilka GB wolnego miejsca na budowę obrazu z TeX Live.
 
 Obraz generatora jest większy od typowego obrazu ASP.NET, ponieważ zawiera
 PowerShell oraz pakiety LaTeX potrzebne do utworzenia dokumentu.
+
+Jeżeli rola `sylabus` nie została jeszcze utworzona na produkcji, zastosuj
+konfigurację Terraform z `backend/infrastructure/keycloak` zgodnie z główną
+instrukcją wdrożeniową. Następnie przypisz rolę właściwym użytkownikom. Po
+zmianie roli użytkownik musi wylogować się i zalogować ponownie, aby otrzymać
+nowy token. Rola `admin` nadal zapewnia pełny dostęp administracyjny.
 
 ## 3. Wymagane elementy konfiguracji
 
@@ -226,7 +234,7 @@ rm -f /tmp/ASD.pdf
 
 ### Test w interfejsie
 
-1. Zaloguj się do aplikacji.
+1. Zaloguj się do aplikacji użytkownikiem z realmową rolą `sylabus`.
 2. Otwórz dodawanie nowego sylabusa.
 3. Sprawdź obecność przycisku **Zapisz i pobierz PDF**.
 4. Otwórz edycję istniejącego sylabusa i sprawdź ten sam przycisk.
