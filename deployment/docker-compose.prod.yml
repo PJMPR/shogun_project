@@ -227,6 +227,7 @@ services:
       - shogun
     depends_on:
       - api
+      - syllabus-pdf
       - assignments-api
       - users-api
       - schedule-api
