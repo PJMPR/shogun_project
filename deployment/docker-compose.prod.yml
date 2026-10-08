@@ -203,6 +203,15 @@ services:
     networks:
       - shogun
 
+  mfe-faculty:
+    build:
+      context: ../frontend/pj-studies-faculty
+      dockerfile: Dockerfile
+    container_name: pj_mfe_faculty
+    restart: unless-stopped
+    networks:
+      - shogun
+
   files:
     image: nginx:alpine
     container_name: pj_files

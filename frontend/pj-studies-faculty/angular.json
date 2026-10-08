@@ -1,0 +1,11 @@
+{
+  "$schema":"./node_modules/@angular/cli/lib/config/schema.json",
+  "version":1,
+  "cli":{"packageManager":"npm","analytics":false},
+  "projects":{"pj-studies-faculty":{"projectType":"application","root":"","sourceRoot":"src","prefix":"app","architect":{
+    "build":{"builder":"@angular/build:application","options":{"outputPath":"dist/pj-studies-faculty","browser":"src/main.ts","tsConfig":"tsconfig.app.json","assets":[{"glob":"es-module-shims.js","input":"node_modules/es-module-shims/dist/","output":"/"},{"glob":"**/*","input":"public"}],"styles":["src/styles.css"]},"configurations":{"production":{"budgets":[{"type":"initial","maximumWarning":"1MB","maximumError":"5MB"},{"type":"anyComponentStyle","maximumWarning":"4kB","maximumError":"8kB"}],"outputHashing":"all"},"development":{"optimization":false,"extractLicenses":false,"sourceMap":true}},"defaultConfiguration":"production"},
+    "serve":{"builder":"@angular/build:dev-server","options":{"port":4208},"configurations":{"development":{"buildTarget":"pj-studies-faculty:build:development"},"production":{"buildTarget":"pj-studies-faculty:build:production"}},"defaultConfiguration":"development"},
+    "serve-mfe":{"builder":"@angular-architects/native-federation:build","options":{"target":"pj-studies-faculty:serve:development","federationConfig":"federation.config.js"}},
+    "build-mfe":{"builder":"@angular-architects/native-federation:build","options":{"target":"pj-studies-faculty:build:production","federationConfig":"federation.config.js"},"configurations":{"production":{"target":"pj-studies-faculty:build:production"}}}
+  }}}
+}

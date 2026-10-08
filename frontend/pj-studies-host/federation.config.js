@@ -10,6 +10,7 @@ module.exports = withNativeFederation({
     'mfe-lecturers-assignments': 'http://localhost:4205',
     'mfe-schedule':              'http://localhost:4206',
     'mfe-lecturer-schedule':     'http://localhost:4207',
+    'mfe-faculty':               'http://localhost:4208',
   },
   shared: {
     ...shareAll({

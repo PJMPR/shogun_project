@@ -103,6 +103,7 @@ Po zmianach kodu backendu lub frontendu nie musisz restartowac calego stosu:
 .\rebuild.ps1 mfe-assignements      # MFE assignements
 .\rebuild.ps1 mfe-users             # MFE users
 .\rebuild.ps1 mfe-lecturers-assignments
+.\rebuild.ps1 mfe-faculty            # MFE kadra
 .\rebuild.ps1 proxy                 # przeladuj nginx (bez rebuild)
 .\rebuild.ps1 all                   # przebuduj wszystko
 ```

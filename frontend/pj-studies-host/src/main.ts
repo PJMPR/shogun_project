@@ -8,6 +8,7 @@ initFederation({
   'mfe-lecturers-assignments': `/mfe-lecturers-assignments/remoteEntry.json`,
   'mfe-schedule':              `/mfe-schedule/remoteEntry.json`,
   'mfe-lecturer-schedule':     `/mfe-lecturer-schedule/remoteEntry.json`,
+  'mfe-faculty':               `/mfe-faculty/remoteEntry.json`,
 }, {
   // Changing this deployment tag forces browsers to fetch fresh federation
   // manifests while hashed JavaScript bundles can remain safely immutable.

@@ -45,6 +45,11 @@ export const routes: Routes = [
     loadChildren: () => loadRemoteModule('mfe-schedule', './Routes').then(m => m.default),
   },
   {
+    path: 'faculty',
+    canMatch: [canAccessDezyderatyGuard],
+    loadChildren: () => loadRemoteModule('mfe-faculty', './Routes').then(m => m.default),
+  },
+  {
     path: 'plan-zajec',
     canMatch: [canAccessLecturerScheduleGuard],
     loadChildren: () => loadRemoteModule('mfe-lecturer-schedule', './Routes').then(m => m.default),

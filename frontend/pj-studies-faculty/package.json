@@ -1,0 +1,11 @@
+{
+  "name": "pj-studies-faculty",
+  "version": "0.0.0",
+  "scripts": {"ng": "ng", "start": "ng run pj-studies-faculty:serve-mfe", "build": "ng run pj-studies-faculty:build-mfe", "build:prod": "ng run pj-studies-faculty:build-mfe:production", "test": "ng test"},
+  "private": true,
+  "packageManager": "npm@11.8.0",
+  "dependencies": {
+    "@angular-architects/native-federation": "^21.0.0", "@angular/animations": "^21.1.5", "@angular/common": "^21.1.0", "@angular/compiler": "^21.1.0", "@angular/core": "^21.1.0", "@angular/forms": "^21.1.0", "@angular/platform-browser": "^21.1.0", "@angular/router": "^21.1.0", "@primeuix/themes": "^2.0.3", "chart.js": "^4.5.1", "es-module-shims": "^2.8.0", "primeicons": "^7.0.0", "primeng": "^21.1.1", "rxjs": "~7.8.0", "tslib": "^2.3.0"
+  },
+  "devDependencies": {"@angular/build": "^21.1.4", "@angular/cli": "^21.1.4", "@angular/compiler-cli": "^21.1.0", "typescript": "~5.9.2"}
+}
