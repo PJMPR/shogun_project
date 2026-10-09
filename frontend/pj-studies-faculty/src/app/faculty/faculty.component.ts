@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button'; import { DialogModule } from 'primeng/dialog'; import { InputTextModule } from 'primeng/inputtext'; import { SelectModule } from 'primeng/select'; import { TableModule } from 'primeng/table'; import { TagModule } from 'primeng/tag';
+import { ButtonModule } from 'primeng/button'; import { DialogModule } from 'primeng/dialog'; import { InputTextModule } from 'primeng/inputtext'; import { RadioButtonModule } from 'primeng/radiobutton'; import { SelectModule } from 'primeng/select'; import { TableModule } from 'primeng/table'; import { TagModule } from 'primeng/tag';
 import { FacultyDataService } from './faculty-data.service'; import { ClassType, Lecturer, StudyMode } from './faculty.models';
 type ViewMode = 'lecturers' | 'subjects';
 interface DisplayRow { subject: string; lecturer: string; title: string; classType: ClassType; semester: number; season: string; hours: number | null; }
 interface Group { key: string; label: string; subtitle: string; hours: number; rows: DisplayRow[]; }
 
-@Component({ selector: 'app-faculty', standalone: true, imports: [CommonModule, FormsModule, ButtonModule, DialogModule, InputTextModule, SelectModule, TableModule, TagModule], templateUrl: './faculty.component.html', styleUrl: './faculty.component.css' })
+@Component({ selector: 'app-faculty', standalone: true, imports: [CommonModule, FormsModule, ButtonModule, DialogModule, InputTextModule, RadioButtonModule, SelectModule, TableModule, TagModule], templateUrl: './faculty.component.html', styleUrl: './faculty.component.css' })
 export class FacultyComponent {
   readonly data = inject(FacultyDataService);
   readonly yearOptions = computed(() => this.data.academicYears()); readonly fieldOptions = computed(() => this.data.faculties().map(x => x.code)); readonly levelOptions = ['I stopień'];
