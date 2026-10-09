@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <ProjectReference Include="..\..\Shogun.Schedule\Shogun.Schedule.Application\Shogun.Schedule.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup><Content Include="Assets-Program.xlsx" CopyToOutputDirectory="PreserveNewest" /><Content Include="Assets-Lecturers.xlsx" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+</Project>

@@ -55,7 +55,7 @@ public sealed class FacultyRepository(ScheduleDbContext db) : IFacultyRepository
 {
     public async Task<IReadOnlyList<SchedulePlan>> ListSchedulesAsync(CancellationToken ct) => await db.Schedules.AsNoTracking().ToListAsync(ct);
     public async Task<IReadOnlyList<SchedulePlan>> ListForWorkloadAsync(string academicYear, string facultyCode, StudyMode studyMode, CancellationToken ct) =>
-        await db.Schedules.AsNoTracking().AsSplitQuery().Include(x => x.Faculty).Include(x => x.Subjects).Include(x => x.Entries).ThenInclude(x => x.LecturerProfile)
+        await db.Schedules.AsNoTracking().AsSplitQuery().Include(x => x.Faculty).Include(x => x.Subjects).Include(x => x.SubjectLecturers).ThenInclude(x => x.LecturerProfile).Include(x => x.Entries).ThenInclude(x => x.LecturerProfile)
             .Where(x => x.AcademicYear == academicYear && x.Faculty.Code == facultyCode && x.StudyMode == studyMode).ToListAsync(ct);
     public async Task<IReadOnlyList<Faculty>> ListFacultiesAsync(CancellationToken ct) => await db.Faculties.AsNoTracking().OrderBy(x => x.Name).ToListAsync(ct);
     public async Task<IReadOnlyList<LecturerProfile>> ListLecturerProfilesAsync(string? query, CancellationToken ct)

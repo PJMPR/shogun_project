@@ -32,8 +32,8 @@ public sealed record FacultyFiltersDto(IReadOnlyList<string> AcademicYears, IRea
 public sealed record FacultyOptionDto(string Code, string Name);
 public sealed record StudyModeOptionDto(StudyMode Value, string Label);
 public sealed record FacultyLecturerDto(Guid Id, string DisplayName, string? Email, string? AcademicTitle, Guid ConcurrencyToken);
-public sealed record FacultySubjectDto(Guid Id, string? Code, string Name);
-public sealed record FacultyAssignmentDto(Guid LecturerId, Guid SubjectId, string AcademicYear, string FacultyCode, string StudyLevel, StudyMode StudyMode, int SemesterNumber, string SemesterSeason, string ClassType, decimal WorkloadHours);
+public sealed record FacultySubjectDto(Guid Id, string? Code, string Name, string? Source = null, string? ExternalId = null);
+public sealed record FacultyAssignmentDto(Guid LecturerId, Guid SubjectId, string AcademicYear, string FacultyCode, string StudyLevel, StudyMode StudyMode, int SemesterNumber, string SemesterSeason, string ClassType, decimal? WorkloadHours);
 public sealed record FacultyWorkloadDto(IReadOnlyList<FacultyLecturerDto> Lecturers, IReadOnlyList<FacultySubjectDto> Subjects, IReadOnlyList<FacultyAssignmentDto> Assignments, int UnassignedEntryCount);
 public sealed record FacultyTitleUpdate(Guid LecturerId, string? AcademicTitle, Guid ConcurrencyToken);
 public sealed record FacultyTitleUpdateRequest(IReadOnlyList<FacultyTitleUpdate> Items);

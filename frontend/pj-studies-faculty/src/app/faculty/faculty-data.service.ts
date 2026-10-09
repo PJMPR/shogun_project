@@ -22,4 +22,12 @@ export class FacultyDataService {
     const saved = await firstValueFrom(this.http.patch<{ lecturerId: string; academicTitle?: string; concurrencyToken: string }[]>(`${this.base}/lecturers/academic-titles`, { items })); const byId = new Map(saved.map(x => [x.lecturerId, x]));
     this.lecturers.update(list => list.map(x => byId.has(x.id) ? { ...x, academicTitle: byId.get(x.id)!.academicTitle, concurrencyToken: byId.get(x.id)!.concurrencyToken } : x));
   }
+  async downloadExport(kind: 'study-program' | 'lecturers', academicYear: string, facultyCode: string, studyMode: StudyMode): Promise<void> {
+    const response = await firstValueFrom(this.http.get(`/api-export/api/v1/exports/${kind}`, { params: { academicYear, facultyCode, studyMode }, observe: 'response', responseType: 'blob' }));
+    if (!response.body) throw new Error('Pusta odpowiedź eksportu.');
+    const disposition = response.headers.get('content-disposition') ?? '';
+    const match = disposition.match(/filename\*?=(?:UTF-8''|\")?([^;\"]+)/i);
+    const filename = match?.[1] ? decodeURIComponent(match[1].trim()) : `${kind}.xlsx`;
+    const url = URL.createObjectURL(response.body); const anchor = document.createElement('a'); anchor.href = url; anchor.download = filename; anchor.click(); URL.revokeObjectURL(url);
+  }
 }

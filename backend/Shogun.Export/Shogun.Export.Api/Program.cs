@@ -1,0 +1,22 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using Shogun.Export.Api.Clients;
+using Shogun.Export.Api.Generators;
+using Shogun.Export.Api.Services;
+using System.Security.Claims;
+using System.Text.Json;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog((ctx, services, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration).ReadFrom.Services(services).WriteTo.Console());
+builder.Services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter(JsonNamingPolicy.CamelCase)));
+builder.Services.AddProblemDetails(); builder.Services.AddHttpContextAccessor(); builder.Services.AddTransient<ForwardAuthorizationHandler>();
+builder.Services.AddHttpClient<ScheduleSourceClient>(client => { client.BaseAddress = new Uri(builder.Configuration["ScheduleApiBaseUrl"] ?? "http://pj_schedule_api:8080/"); client.Timeout = TimeSpan.FromSeconds(30); }).AddHttpMessageHandler<ForwardAuthorizationHandler>();
+builder.Services.AddHttpClient<ProgramDataSourceClient>(client => { client.BaseAddress = new Uri(builder.Configuration["ProgramDataApiBaseUrl"] ?? "http://pj_program_data_api:8080/"); client.Timeout = TimeSpan.FromSeconds(60); }).AddHttpMessageHandler<ForwardAuthorizationHandler>();
+builder.Services.AddScoped<LecturersExportGenerator>(); builder.Services.AddScoped<StudyProgramExportGenerator>(); builder.Services.AddScoped<ExportService>();
+var kc = builder.Configuration.GetSection("Keycloak");
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o => { o.MetadataAddress = kc["MetadataAddress"]!; o.RequireHttpsMetadata = false; o.TokenValidationParameters = new TokenValidationParameters { ValidateIssuer = true, ValidIssuers = kc.GetSection("ValidIssuers").Get<string[]>(), ValidateAudience = false }; o.Events = new JwtBearerEvents { OnTokenValidated = context => { var value = context.Principal?.FindFirst("realm_access")?.Value; if (value is null) return Task.CompletedTask; using var doc = JsonDocument.Parse(value); if (!doc.RootElement.TryGetProperty("roles", out var roles)) return Task.CompletedTask; var identity = (ClaimsIdentity)context.Principal!.Identity!; foreach (var role in roles.EnumerateArray()) if (role.GetString() is { Length: > 0 } name) identity.AddClaim(new Claim(ClaimTypes.Role, name)); return Task.CompletedTask; } }; });
+builder.Services.AddAuthorization();
+builder.Services.AddHealthChecks();
+var app = builder.Build(); app.UseExceptionHandler(); app.UseAuthentication(); app.UseAuthorization(); app.MapControllers().RequireAuthorization(); app.MapHealthChecks("/health"); app.Run();
+public partial class Program;
