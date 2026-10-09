@@ -38,6 +38,22 @@ public sealed class SchedulePlan
     public List<ScheduleNote> Notes { get; set; } = [];
 }
 
+public sealed class LecturerProfile
+{
+    public Guid Id { get; set; }
+    public string? UserId { get; set; }
+    public string DisplayName { get; set; } = string.Empty;
+    public string? Email { get; set; }
+    public string? AcademicTitle { get; set; }
+    public Guid ConcurrencyToken { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset UpdatedAt { get; set; }
+    public string? UpdatedByUserId { get; set; }
+    public List<ScheduleLecturer> ScheduleLecturers { get; set; } = [];
+    public List<ScheduleSubjectLecturer> SubjectLecturers { get; set; } = [];
+    public List<ScheduleEntry> Entries { get; set; } = [];
+}
+
 public sealed class ScheduleSubject
 {
     public Guid Id { get; set; }
@@ -60,6 +76,8 @@ public sealed class ScheduleLecturer
     public SchedulePlan Schedule { get; set; } = null!;
     public string DisplayName { get; set; } = string.Empty;
     public string? Email { get; set; }
+    public Guid? LecturerProfileId { get; set; }
+    public LecturerProfile? LecturerProfile { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
     public string? CreatedBy { get; set; }
     public string? CreatedByUserId { get; set; }
@@ -79,6 +97,8 @@ public sealed class ScheduleSubjectLecturer
     public string? LecturerUserId { get; set; }
     public string? LecturerEmail { get; set; }
     public int? LecturerAssignmentId { get; set; }
+    public Guid? LecturerProfileId { get; set; }
+    public LecturerProfile? LecturerProfile { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
     public string? CreatedBy { get; set; }
     public string? CreatedByUserId { get; set; }
@@ -115,6 +135,8 @@ public sealed class ScheduleEntry
     public string? LecturerUserId { get; set; }
     public string? LecturerEmail { get; set; }
     public string LecturerDisplayName { get; set; } = string.Empty;
+    public Guid? LecturerProfileId { get; set; }
+    public LecturerProfile? LecturerProfile { get; set; }
     public string? Room { get; set; }
     public int DayOfWeek { get; set; }
     public int StartMinute { get; set; }

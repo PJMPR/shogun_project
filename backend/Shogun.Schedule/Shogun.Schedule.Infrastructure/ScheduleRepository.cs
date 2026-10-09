@@ -50,3 +50,20 @@ public sealed class ScheduleRepository(ScheduleDbContext db) : IScheduleReposito
         public async ValueTask DisposeAsync() { if (!completed) await transaction.RollbackAsync(); await transaction.DisposeAsync(); }
     }
 }
+
+public sealed class FacultyRepository(ScheduleDbContext db) : IFacultyRepository
+{
+    public async Task<IReadOnlyList<SchedulePlan>> ListSchedulesAsync(CancellationToken ct) => await db.Schedules.AsNoTracking().ToListAsync(ct);
+    public async Task<IReadOnlyList<SchedulePlan>> ListForWorkloadAsync(string academicYear, string facultyCode, StudyMode studyMode, CancellationToken ct) =>
+        await db.Schedules.AsNoTracking().AsSplitQuery().Include(x => x.Faculty).Include(x => x.Subjects).Include(x => x.Entries).ThenInclude(x => x.LecturerProfile)
+            .Where(x => x.AcademicYear == academicYear && x.Faculty.Code == facultyCode && x.StudyMode == studyMode).ToListAsync(ct);
+    public async Task<IReadOnlyList<Faculty>> ListFacultiesAsync(CancellationToken ct) => await db.Faculties.AsNoTracking().OrderBy(x => x.Name).ToListAsync(ct);
+    public async Task<IReadOnlyList<LecturerProfile>> ListLecturerProfilesAsync(string? query, CancellationToken ct)
+    {
+        var q = db.LecturerProfiles.AsNoTracking().AsQueryable();
+        if (!string.IsNullOrWhiteSpace(query)) { var value = query.Trim().ToLower(); q = q.Where(x => x.DisplayName.ToLower().Contains(value) || (x.Email != null && x.Email.ToLower().Contains(value))); }
+        return await q.OrderBy(x => x.DisplayName).ToListAsync(ct);
+    }
+    public async Task<IReadOnlyList<LecturerProfile>> GetLecturerProfilesAsync(IReadOnlyList<Guid> ids, CancellationToken ct) => await db.LecturerProfiles.Where(x => ids.Contains(x.Id)).ToListAsync(ct);
+    public Task SaveChangesAsync(CancellationToken ct) => db.SaveChangesAsync(ct);
+}

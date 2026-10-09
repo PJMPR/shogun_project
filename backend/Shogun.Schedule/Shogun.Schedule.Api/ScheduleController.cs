@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Shogun.Schedule.Application;
+using Shogun.Schedule.Domain;
 
 namespace Shogun.Schedule.Api;
 
@@ -41,4 +42,13 @@ public sealed class ScheduleCommentsController(IScheduleService service) : Contr
     [HttpPut("comments/{id:guid}")] public Task<CommentDto> Edit(Guid id, EditCommentRequest request, CancellationToken ct) => service.EditCommentAsync(id, request, User.ToCurrentUser(), ct);
     [HttpDelete("comments/{id:guid}")] public async Task<IActionResult> Delete(Guid id, CancellationToken ct) { await service.DeleteCommentAsync(id, User.ToCurrentUser(), ct); return NoContent(); }
     [HttpPatch("entries/{entryId:guid}/comment-thread")] public Task<CommentThreadStatusDto> SetThreadStatus(Guid entryId, SetCommentThreadStatusRequest request, CancellationToken ct) => service.SetCommentThreadStatusAsync(entryId, request, User.ToCurrentUser(), ct);
+}
+
+[ApiController, Route("api/v1/faculty"), Authorize(Roles = "admin,dezyderaty")]
+public sealed class FacultyController(IFacultyService service) : ControllerBase
+{
+    [HttpGet("filters")] public Task<FacultyFiltersDto> Filters(CancellationToken ct) => service.GetFiltersAsync(ct);
+    [HttpGet("workload")] public Task<FacultyWorkloadDto> Workload([FromQuery] string academicYear, [FromQuery] string facultyCode, [FromQuery] StudyMode studyMode, CancellationToken ct) => service.GetWorkloadAsync(academicYear, facultyCode, studyMode, ct);
+    [HttpGet("lecturers")] public Task<IReadOnlyList<FacultyLecturerDto>> Lecturers([FromQuery] string? query, CancellationToken ct) => service.ListLecturersAsync(query, ct);
+    [HttpPatch("lecturers/academic-titles")] public Task<IReadOnlyList<FacultyTitleUpdateResult>> Titles(FacultyTitleUpdateRequest request, CancellationToken ct) => service.UpdateTitlesAsync(request, User.ToCurrentUser(), ct);
 }

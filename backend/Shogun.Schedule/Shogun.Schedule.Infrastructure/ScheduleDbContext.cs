@@ -6,6 +6,7 @@ namespace Shogun.Schedule.Infrastructure;
 public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> options) : DbContext(options)
 {
     public DbSet<Faculty> Faculties => Set<Faculty>();
+    public DbSet<LecturerProfile> LecturerProfiles => Set<LecturerProfile>();
     public DbSet<SchedulePlan> Schedules => Set<SchedulePlan>();
     public DbSet<StudentGroup> StudentGroups => Set<StudentGroup>();
     public DbSet<ScheduleEntry> ScheduleEntries => Set<ScheduleEntry>();
@@ -29,12 +30,19 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
                 new Faculty { Id = Guid.Parse("31e7c100-9d3f-4eb1-a388-c38f36b999a1"), Code = "WI", Name = "Informatyka", CreatedAt = new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero) },
                 new Faculty { Id = Guid.Parse("63c16df1-c743-41e0-b6da-8c67b19d5b1e"), Code = "SNM", Name = "Sztuka Nowych Mediów", CreatedAt = new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero) });
         });
+        b.Entity<LecturerProfile>(e =>
+        {
+            e.ToTable("lecturer_profiles"); e.HasKey(x => x.Id);
+            e.Property(x => x.UserId).HasMaxLength(100); e.Property(x => x.DisplayName).HasMaxLength(200).IsRequired();
+            e.Property(x => x.Email).HasMaxLength(320); e.Property(x => x.AcademicTitle).HasMaxLength(200); e.Property(x => x.UpdatedByUserId).HasMaxLength(100);
+            e.Property(x => x.ConcurrencyToken).IsConcurrencyToken(); e.HasIndex(x => x.UserId).IsUnique().HasFilter("\"UserId\" IS NOT NULL"); e.HasIndex(x => x.Email);
+        });
         b.Entity<SchedulePlan>(e =>
         {
             e.ToTable("schedules", t => { t.HasCheckConstraint("ck_schedules_semester", "\"SemesterNumber\" BETWEEN 1 AND 8"); t.HasCheckConstraint("ck_schedules_year", "\"AcademicYear\" ~ '^[0-9]{4}/[0-9]{4}$'"); });
             e.HasKey(x => x.Id); e.Property(x => x.AcademicYear).HasMaxLength(9); e.Property(x => x.Name).HasMaxLength(200); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100); e.Property(x => x.UpdatedBy).HasMaxLength(320); e.Property(x => x.UpdatedByUserId).HasMaxLength(100);
             e.Property(x => x.ConcurrencyToken).IsConcurrencyToken();
-            e.HasIndex(x => new { x.FacultyId, x.SemesterNumber, x.StudyMode }).IsUnique();
+            e.HasIndex(x => new { x.FacultyId, x.AcademicYear, x.SemesterNumber, x.StudyMode }).IsUnique();
             e.HasOne(x => x.Faculty).WithMany(x => x.Schedules).HasForeignKey(x => x.FacultyId).OnDelete(DeleteBehavior.Restrict);
         });
         b.Entity<StudentGroup>(e =>
@@ -54,12 +62,14 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
             e.ToTable("schedule_lecturers"); e.HasKey(x => x.Id); e.Property(x => x.DisplayName).HasMaxLength(200); e.Property(x => x.Email).HasMaxLength(320); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100); e.Property(x => x.UpdatedBy).HasMaxLength(320); e.Property(x => x.UpdatedByUserId).HasMaxLength(100);
             e.HasIndex(x => new { x.ScheduleId, x.DisplayName });
             e.HasOne(x => x.Schedule).WithMany(x => x.Lecturers).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(x => x.LecturerProfile).WithMany(x => x.ScheduleLecturers).HasForeignKey(x => x.LecturerProfileId).OnDelete(DeleteBehavior.SetNull);
         });
         b.Entity<ScheduleSubjectLecturer>(e =>
         {
             e.ToTable("schedule_subject_lecturers"); e.HasKey(x => x.Id); e.Property(x => x.SubjectCode).HasMaxLength(64); e.Property(x => x.LecturerKey).HasMaxLength(400); e.Property(x => x.LecturerDisplayName).HasMaxLength(200); e.Property(x => x.LecturerUserId).HasMaxLength(100); e.Property(x => x.LecturerEmail).HasMaxLength(320); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100);
             e.HasIndex(x => new { x.ScheduleId, x.SubjectCode, x.LecturerKey }).IsUnique();
             e.HasOne(x => x.Schedule).WithMany(x => x.SubjectLecturers).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(x => x.LecturerProfile).WithMany(x => x.SubjectLecturers).HasForeignKey(x => x.LecturerProfileId).OnDelete(DeleteBehavior.SetNull);
         });
         b.Entity<ScheduleEntry>(e =>
         {
@@ -67,6 +77,7 @@ public sealed class ScheduleDbContext(DbContextOptions<ScheduleDbContext> option
             e.HasKey(x => x.Id); e.Property(x => x.SubjectSource).HasMaxLength(64); e.Property(x => x.SubjectExternalId).HasMaxLength(200); e.Property(x => x.SubjectCode).HasMaxLength(64); e.Property(x => x.SubjectName).HasMaxLength(300); e.Property(x => x.LecturerUserId).HasMaxLength(100); e.Property(x => x.LecturerEmail).HasMaxLength(320); e.Property(x => x.LecturerDisplayName).HasMaxLength(200); e.Property(x => x.Room).HasMaxLength(120); e.Property(x => x.Color).HasMaxLength(7); e.Property(x => x.CreatedBy).HasMaxLength(320); e.Property(x => x.CreatedByUserId).HasMaxLength(100); e.Property(x => x.UpdatedBy).HasMaxLength(320); e.Property(x => x.UpdatedByUserId).HasMaxLength(100); e.Property(x => x.ConcurrencyToken).IsConcurrencyToken();
             e.HasIndex(x => new { x.ScheduleId, x.DayOfWeek, x.StartMinute }); e.HasIndex(x => new { x.ScheduleId, x.LecturerUserId });
             e.HasOne(x => x.Schedule).WithMany(x => x.Entries).HasForeignKey(x => x.ScheduleId).OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(x => x.LecturerProfile).WithMany(x => x.Entries).HasForeignKey(x => x.LecturerProfileId).OnDelete(DeleteBehavior.SetNull);
         });
         b.Entity<ScheduleNote>(e =>
         {

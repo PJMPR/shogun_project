@@ -1,34 +1,25 @@
-import { Injectable, signal } from '@angular/core';
-import { Lecturer, Subject, TeachingAssignment } from './faculty.models';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject, signal } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+import { FacultyFilters, FacultyWorkload, Lecturer, TeachingAssignment, Subject, StudyMode } from './faculty.models';
 
-const lecturers: Lecturer[] = [
-  {id:'l1', firstName:'Anna', lastName:'Kowalska', academicTitle:'dr inż.'},
-  {id:'l2', firstName:'Piotr', lastName:'Nowak', academicTitle:'prof. dr hab.'},
-  {id:'l3', firstName:'Marta', lastName:'Wiśniewska', academicTitle:'dr hab. inż.'},
-  {id:'l4', firstName:'Tomasz', lastName:'Zieliński', academicTitle:''},
-  {id:'l5', firstName:'Julia', lastName:'Wójcik', academicTitle:'dr'},
-];
-const subjects: Subject[] = [
-  {id:'s1', name:'Programowanie obiektowe'}, {id:'s2', name:'Bazy danych'}, {id:'s3', name:'Projekt zespołowy'},
-  {id:'s4', name:'Historia sztuki nowych mediów'}, {id:'s5', name:'Interakcja człowiek–komputer'},
-];
-const assignments: TeachingAssignment[] = [
-  {id:'a1',lecturerId:'l1',subjectId:'s1',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:1,semesterSeason:'zimowy',classType:'wykład',workloadHours:10},
-  {id:'a2',lecturerId:'l2',subjectId:'s1',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:1,semesterSeason:'zimowy',classType:'wykład',workloadHours:20},
-  {id:'a3',lecturerId:'l1',subjectId:'s1',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:1,semesterSeason:'zimowy',classType:'ćwiczenia',workloadHours:90},
-  {id:'a4',lecturerId:'l3',subjectId:'s2',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:2,semesterSeason:'letni',classType:'wykład',workloadHours:30},
-  {id:'a5',lecturerId:'l1',subjectId:'s2',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:2,semesterSeason:'letni',classType:'ćwiczenia',workloadHours:30},
-  {id:'a6',lecturerId:'l4',subjectId:'s3',academicYear:'2026/2027',fieldOfStudy:'Informatyka',studyLevel:'II stopień',studyMode:'niestacjonarny',semesterNumber:3,semesterSeason:'zimowy',classType:'ćwiczenia',workloadHours:45},
-  {id:'a7',lecturerId:'l5',subjectId:'s4',academicYear:'2026/2027',fieldOfStudy:'Sztuka Nowych Mediów',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:1,semesterSeason:'zimowy',classType:'wykład',workloadHours:30},
-  {id:'a8',lecturerId:'l4',subjectId:'s5',academicYear:'2026/2027',fieldOfStudy:'Sztuka Nowych Mediów',studyLevel:'II stopień',studyMode:'niestacjonarny',semesterNumber:3,semesterSeason:'letni',classType:'ćwiczenia',workloadHours:60},
-  {id:'a9',lecturerId:'l2',subjectId:'s1',academicYear:'2025/2026',fieldOfStudy:'Informatyka',studyLevel:'I stopień',studyMode:'stacjonarny',semesterNumber:1,semesterSeason:'zimowy',classType:'wykład',workloadHours:30},
-  {id:'a10',lecturerId:'l3',subjectId:'s4',academicYear:'2025/2026',fieldOfStudy:'Sztuka Nowych Mediów',studyLevel:'I stopień',studyMode:'niestacjonarny',semesterNumber:2,semesterSeason:'letni',classType:'ćwiczenia',workloadHours:90},
-];
-
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class FacultyDataService {
-  readonly lecturers = signal(lecturers.map(x=>({...x})));
-  readonly subjects = subjects.map(x=>({...x}));
-  readonly assignments = assignments.map(x=>({...x}));
-  saveTitles(values: Record<string,string>): void { this.lecturers.update(items=>items.map(l=>({...l, academicTitle: values[l.id] ?? l.academicTitle}))); }
+  private readonly http = inject(HttpClient);
+  private readonly base = '/api-schedule/api/v1/faculty';
+  readonly lecturers = signal<Lecturer[]>([]); readonly subjects = signal<Subject[]>([]); readonly assignments = signal<TeachingAssignment[]>([]);
+  readonly academicYears = signal<string[]>([]); readonly faculties = signal<{ code: string; name: string }[]>([]); readonly loading = signal(false); readonly error = signal<string | null>(null); readonly unassignedEntryCount = signal(0);
+  async loadFilters(): Promise<void> { const f = await firstValueFrom(this.http.get<FacultyFilters>(`${this.base}/filters`)); this.academicYears.set(f.academicYears); this.faculties.set(f.faculties); }
+  async loadWorkload(academicYear: string, facultyCode: string, studyMode: StudyMode): Promise<void> {
+    this.loading.set(true); this.error.set(null);
+    try { const r = await firstValueFrom(this.http.get<FacultyWorkload>(`${this.base}/workload`, { params: { academicYear, facultyCode, studyMode } })); this.lecturers.set(r.lecturers); this.subjects.set(r.subjects); this.assignments.set(r.assignments); this.unassignedEntryCount.set(r.unassignedEntryCount); }
+    catch { this.error.set('Nie udało się pobrać zestawienia Kadry.'); this.lecturers.set([]); this.subjects.set([]); this.assignments.set([]); }
+    finally { this.loading.set(false); }
+  }
+  async loadLecturers(query = ''): Promise<void> { this.lecturers.set(await firstValueFrom(this.http.get<Lecturer[]>(`${this.base}/lecturers`, { params: { query } }))); }
+  async saveTitles(values: Record<string, string>): Promise<void> {
+    const items = this.lecturers().filter(x => values[x.id] !== undefined && values[x.id] !== (x.academicTitle ?? '')).map(x => ({ lecturerId: x.id, academicTitle: values[x.id] || null, concurrencyToken: x.concurrencyToken })); if (!items.length) return;
+    const saved = await firstValueFrom(this.http.patch<{ lecturerId: string; academicTitle?: string; concurrencyToken: string }[]>(`${this.base}/lecturers/academic-titles`, { items })); const byId = new Map(saved.map(x => [x.lecturerId, x]));
+    this.lecturers.update(list => list.map(x => byId.has(x.id) ? { ...x, academicTitle: byId.get(x.id)!.academicTitle, concurrencyToken: byId.get(x.id)!.concurrencyToken } : x));
+  }
 }

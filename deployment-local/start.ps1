@@ -47,6 +47,11 @@ else {
     docker compose --env-file .env.local up -d --build
 }
 
+# Recreate nginx after application containers are rebuilt/recreated.
+# Otherwise nginx may retain stale container IPs for the microfrontends.
+Write-Step "Odswiezanie routingu nginx"
+docker compose --env-file .env.local up -d --force-recreate proxy
+
 Pop-Location
 
 Write-Host ""

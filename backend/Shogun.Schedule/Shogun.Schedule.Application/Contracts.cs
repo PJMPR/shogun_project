@@ -28,6 +28,16 @@ public sealed record AddScheduleSubjectLecturerRequest(string SubjectCode, strin
 public sealed record NoteDto(Guid Id, Guid ScheduleId, string? Title, string Body, string? AuthorUserId, string? AuthorEmail, string AuthorDisplayName, string AuthorRole, DateTimeOffset CreatedAt, DateTimeOffset? UpdatedAt, bool CanEdit, bool CanDelete, IReadOnlyList<RecipientDto> Recipients);
 public sealed record AddNoteRequest(string Body, string? Title, IReadOnlyList<string>? MentionedUserIds = null);
 public sealed record EditNoteRequest(string Body, string? Title, IReadOnlyList<string>? MentionedUserIds = null);
+public sealed record FacultyFiltersDto(IReadOnlyList<string> AcademicYears, IReadOnlyList<FacultyOptionDto> Faculties, IReadOnlyList<StudyModeOptionDto> StudyModes, string StudyLevel);
+public sealed record FacultyOptionDto(string Code, string Name);
+public sealed record StudyModeOptionDto(StudyMode Value, string Label);
+public sealed record FacultyLecturerDto(Guid Id, string DisplayName, string? Email, string? AcademicTitle, Guid ConcurrencyToken);
+public sealed record FacultySubjectDto(Guid Id, string? Code, string Name);
+public sealed record FacultyAssignmentDto(Guid LecturerId, Guid SubjectId, string AcademicYear, string FacultyCode, string StudyLevel, StudyMode StudyMode, int SemesterNumber, string SemesterSeason, string ClassType, decimal WorkloadHours);
+public sealed record FacultyWorkloadDto(IReadOnlyList<FacultyLecturerDto> Lecturers, IReadOnlyList<FacultySubjectDto> Subjects, IReadOnlyList<FacultyAssignmentDto> Assignments, int UnassignedEntryCount);
+public sealed record FacultyTitleUpdate(Guid LecturerId, string? AcademicTitle, Guid ConcurrencyToken);
+public sealed record FacultyTitleUpdateRequest(IReadOnlyList<FacultyTitleUpdate> Items);
+public sealed record FacultyTitleUpdateResult(Guid LecturerId, string? AcademicTitle, Guid ConcurrencyToken);
 
 public sealed class NotFoundException(string message) : Exception(message);
 public sealed class ConflictException(string message) : Exception(message);
@@ -61,6 +71,16 @@ public interface IScheduleLock : IAsyncDisposable { Task CompleteAsync(Cancellat
 public interface IUserDirectory
 {
     Task<IReadOnlyList<DirectoryUser>> ResolveAsync(IReadOnlyList<string> userIds, CancellationToken ct);
+}
+
+public interface IFacultyRepository
+{
+    Task<IReadOnlyList<SchedulePlan>> ListSchedulesAsync(CancellationToken ct);
+    Task<IReadOnlyList<SchedulePlan>> ListForWorkloadAsync(string academicYear, string facultyCode, StudyMode studyMode, CancellationToken ct);
+    Task<IReadOnlyList<Faculty>> ListFacultiesAsync(CancellationToken ct);
+    Task<IReadOnlyList<LecturerProfile>> ListLecturerProfilesAsync(string? query, CancellationToken ct);
+    Task<IReadOnlyList<LecturerProfile>> GetLecturerProfilesAsync(IReadOnlyList<Guid> ids, CancellationToken ct);
+    Task SaveChangesAsync(CancellationToken ct);
 }
 
 public sealed record MentionNotification(
@@ -103,4 +123,12 @@ public interface IScheduleService
     Task<NoteDto> AddNoteAsync(Guid scheduleId, AddNoteRequest request, CurrentUser user, CancellationToken ct);
     Task<NoteDto> EditNoteAsync(Guid id, EditNoteRequest request, CurrentUser user, CancellationToken ct);
     Task DeleteNoteAsync(Guid id, CurrentUser user, CancellationToken ct);
+}
+
+public interface IFacultyService
+{
+    Task<FacultyFiltersDto> GetFiltersAsync(CancellationToken ct);
+    Task<FacultyWorkloadDto> GetWorkloadAsync(string academicYear, string facultyCode, StudyMode studyMode, CancellationToken ct);
+    Task<IReadOnlyList<FacultyLecturerDto>> ListLecturersAsync(string? query, CancellationToken ct);
+    Task<IReadOnlyList<FacultyTitleUpdateResult>> UpdateTitlesAsync(FacultyTitleUpdateRequest request, CurrentUser user, CancellationToken ct);
 }

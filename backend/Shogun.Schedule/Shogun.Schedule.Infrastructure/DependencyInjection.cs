@@ -12,7 +12,9 @@ public static class DependencyInjection
         var connection = configuration["Postgres:ConnectionString"] ?? throw new InvalidOperationException("Brak Postgres:ConnectionString.");
         services.AddDbContext<ScheduleDbContext>(o => o.UseNpgsql(connection));
         services.AddScoped<IScheduleRepository, ScheduleRepository>();
+        services.AddScoped<IFacultyRepository, FacultyRepository>();
         services.AddScoped<IScheduleService, ScheduleService>();
+        services.AddScoped<IFacultyService, FacultyService>();
         services.AddHttpContextAccessor();
         services.AddHttpClient<IUserDirectory, UserDirectoryClient>(client => client.BaseAddress = new Uri(configuration["UsersApiBaseUrl"] ?? "http://pj_users_api:8080"));
         services.AddHttpClient<IMentionNotifier, EmailMentionNotifier>(client =>
